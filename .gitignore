@@ -1,0 +1,23 @@
+# Local model and benchmark checkout
+04_project/amd_rtl_agent/model/*.gguf
+04_project/amd_rtl_agent/bench/verilog-eval/
+
+# Generated build, simulation and cache files
+04_project/amd_rtl_agent/outputs/
+**/__pycache__/
+*.py[cod]
+*.jou
+*.log
+.Xil/
+.pytest_cache/
+dfx_runtime.txt
+TRACE_LOG_FILE_IS_UNDEFINED
+-p/
+04_project/amd_rtl_agent//
+
+# Authentication/install traces and private team evidence
+05_handoff/environment/amd_2025.2_auth_token.log
+01_sources/chat/
+01_sources/images/报名确认_队伍45561_高云J280.png
+01_sources/images/报名信息_队伍45561_高云J280_含学校组别.png
+01_sources/images/其他队伍_46576_AMD_赛题待发布.jpg

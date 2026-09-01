@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "last_updated": "2026-09-01T11:40:00+08:00",
+  "project": {
+    "name": "2026 FPGA 赛道项目",
+    "workspace": "D:/HUST/IC/FPGA",
+    "phase": "amd_rtl_local_implementation_and_validation",
+    "development_started": true
+  },
+  "evidence_status": {
+    "materials_archived": true,
+    "source_file_count": 15,
+    "pdf_count": 7,
+    "pdf_text_extracted": true,
+    "source_hashes_generated": true,
+    "registration_evidence_archived": true,
+    "workspace_deployed_to_d": true,
+    "deployment_verification": {
+      "source_file_count": 35,
+      "target_file_count": 35,
+      "missing_files": 0,
+      "extra_files": 0,
+      "sha256_mismatches": 0
+    },
+    "official_schedule_verified": false
+  },
+  "team": {
+    "registration_status": "registered",
+    "team_id": "45561",
+    "team_name": "前世被甩，今生变为奶龙归来",
+    "registration_evidence": "01_sources/images/报名信息_队伍45561_高云J280_含学校组别.png",
+    "member_join_status": "pending_verification",
+    "member_join_evidence": "01_sources/chat/群聊补充摘录_2026-08-22_1538-1703.md"
+  },
+  "external_team_references": [
+    {
+      "team_id": "46576",
+      "team_name": "烧这么多次代码，却烧不进她的心",
+      "vendor": "AMD",
+      "platform": "AMD FPGA器件",
+      "track_status": "赛题待发布",
+      "work_title": "待定",
+      "work_summary": "待定",
+      "classification": "external_team_not_ours",
+      "classification_source": "user_statement",
+      "evidence": "01_sources/images/其他队伍_46576_AMD_赛题待发布.jpg"
+    }
+  ],
+  "constraints": [
+    {
+      "claim": "团队很多内容需要现学",
+      "source": "01_sources/chat/群聊原始摘录_2026-08-22.md",
+      "evidence_class": "U"
+    },
+    {
+      "claim": "至少一名成员被描述为缺少数电基础",
+      "source": "01_sources/chat/群聊原始摘录_2026-08-22.md",
+      "evidence_class": "U"
+    },
+    {
+      "claim": "比赛 11 月结束",
+      "source": "01_sources/chat/群聊原始摘录_2026-08-22.md",
+      "evidence_class": "U",
+      "verified": false
+    },
+    {
+      "claim": "队长请成员在网上加入队伍，两名成员回复 OK",
+      "source": "01_sources/chat/群聊补充摘录_2026-08-22_1538-1703.md",
+      "evidence_class": "U",
+      "verified": false,
+      "note": "回复 OK 不等于竞赛平台成员加入已完成"
+    },
+    {
+      "claim": "队长安排成员学习数电",
+      "source": "01_sources/chat/群聊补充摘录_2026-08-22_1538-1703.md",
+      "evidence_class": "U",
+      "status": "planned_not_completed"
+    }
+  ],
+  "selection": {
+    "status": "confirmed_registered",
+    "decision_date": "2026-08-22",
+    "selected_vendor": "高云半导体",
+    "selected_platform": "高云-J280姿态控制系统竞赛套件",
+    "selected_track": "基于FPGA的实时姿态控制系统",
+    "work_title": "凌衡实时姿态控制系统",
+    "decision_record": "DECISIONS.md",
+    "previous_recommendation_status": "superseded_by_team_decision",
+    "previous_recommended_shortlist": [
+      "安路科技/选题一/基于安路 EG4S20 的 HDMI 多媒体播放系统",
+      "易灵思/赛题四/基于 FPGA 的实时图像边缘检测系统",
+      "安路科技/选题二/基于安路 PH1P35 的实时数字图像处理系统"
+    ]
+  },
+  "active_development": {
+    "vendor": "AMD",
+    "topic": "题目一：RTL/HLS 本地智能体设计赛道",
+    "subtrack": "RTL",
+    "authorization": "user_directed",
+    "registration_change_verified": false,
+    "workspace": "04_project/amd_rtl_agent",
+    "status": "local_implementation_and_validation",
+    "rocm_validation_status": "deferred_by_user_scope",
+    "official_base_image_status": "not_published",
+    "hidden_dataset_status": "not_published",
+    "final_caller_and_time_budget_status": "not_published"
+  },
+  "environment": {
+    "python": {
+      "version": "3.12.10",
+      "status": "verified"
+    },
+    "vivado_vitis": {
+      "version": "2025.2",
+      "install_root": "F:/vivado/2025.2",
+      "xvlog_xelab_xsim_status": "verified",
+      "target_part": "xczu3eg-sbva484-1-e",
+      "target_part_status": "verified_installed",
+      "target_part_count": 1,
+      "environment_check": "verified_pass",
+      "installation_evidence": "05_handoff/environment/zynquplus_install_result.log"
+    },
+    "docker": {
+      "engine_version": "29.7.2",
+      "runtime": "WSL2 Ubuntu-22.04-ROS2",
+      "offline_container_smoke": "verified",
+      "offline_real_model_smoke": "verified",
+      "agent_image_id": "sha256:a449bd5e2200162d42a34f57160fcaf56fe7dd857cc8de331f2ca37add80841f",
+      "agent_image_bytes": 4645865911
+    },
+    "local_model": {
+      "name": "Qwen2.5-Coder-7B-Instruct-GGUF Q4_K_M",
+      "bytes": 4683073536,
+      "sha256": "509287f78cb4d4cf6b3843734733b914b2c158e43e22a7f4bf5e963800894d3c",
+      "llama_cpp_commit": "010be9683afabe14ce299197b38c329f94bae568"
+    }
+  },
+  "implementation": {
+    "status": "implemented_and_locally_validated_except_rocm_and_unpublished_official_inputs",
+    "entry": "04_project/amd_rtl_agent/agent.py",
+    "unit_tests": {
+      "passed": 8,
+      "failed": 0
+    },
+    "mock_baseline_and_five_samples": "verified",
+    "offline_real_model_health_and_chat": "verified",
+    "vivado_compile_elaborate_simulate": "verified",
+    "official_target_synthesis": {
+      "status": "verified_pass",
+      "target_part": "xczu3eg-sbva484-1-e",
+      "clock_period_ns": 5.0,
+      "functional_fixture": "compile_elaborate_simulate_and_synthesize_passed",
+      "functional_mismatches": 0,
+      "clocked_fixture": "synthesis_passed",
+      "timing_constraints": "met",
+      "functional_evidence": "04_project/amd_rtl_agent/outputs/final_official_target_synthesis",
+      "clocked_evidence": "04_project/amd_rtl_agent/outputs/final_clocked_5ns_synthesis"
+    },
+    "public_dataset": {
+      "name": "NVlabs VerilogEval",
+      "commit": "c498220d0a52248f8e3fdffe279075215bde2da6",
+      "triple_count": 156,
+      "full_run_status": "not_run",
+      "note": "small CPU smoke only; upstream inconsistent items are reported separately"
+    }
+  },
+  "proposal": {
+    "status": "registration_plan_not_implementation_evidence",
+    "planned_core": [
+      "角位移传感器实时采集",
+      "电机编码器实时采集",
+      "姿态状态计算",
+      "控制量运算",
+      "PWM电机驱动",
+      "摆杆起摆与直立自平衡闭环"
+    ],
+    "planned_control": [
+      "起摆阶段能量控制",
+      "平衡阶段PID或LQR",
+      "输出限幅",
+      "异常停机",
+      "参数调节"
+    ],
+    "planned_extensions": [
+      "摆臂位置控制",
+      "抗扰恢复",
+      "运行状态可视化"
+    ],
+    "planned_metrics": [
+      "起摆时间",
+      "角度波动",
+      "稳定时长",
+      "扰动恢复时间"
+    ]
+  },
+  "next_execution_inputs": [
+    "AMD_registration_or_track_switch_evidence",
+    "organizer_official_base_image",
+    "organizer_hidden_dataset_and_final_caller",
+    "ROCm_hardware_for_final_measurement"
+  ]
+}
