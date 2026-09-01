@@ -18,6 +18,7 @@
 - `tools/check_environment.ps1` 返回 `ENVIRONMENT_CHECK=PASS`；在 `xczu3eg-sbva484-1-e` 上完成编译/展开/仿真/综合，功能 fixture 为 `Mismatches: 0`，含时钟 fixture 的 5 ns（200 MHz）时序约束全部满足，并生成 DCP、时序和资源报告。
 - 修正新 PowerShell 会话可能优先命中 WindowsApps 空 `python.exe` 别名的问题；环境检查现在优先使用已安装的 Python 3.12 实际路径，8 个单元测试复验通过。
 - 初始化 Git `main` 分支并发布到公开仓库 `https://github.com/854259/FPGA`；首次导入提交 `ad143eb` 使用 `854259 <3260548169@qq.com>`。上传前排除模型权重、生成缓存、认证日志及含团队/第三方隐私的原始截图和群聊，原文件仍保留在本机。
+- 向 GitHub 用户 `nzh152-lang` 发出 `854259/FPGA` 的 Write 协作者邀请；邀请 ID `331205643`，当前状态为等待对方接受。
 - ROCm 实测及赛事方尚未发布的官方镜像/隐藏题集/最终接口保持待办，不写成完成。
 
 ## 2026-08-22
