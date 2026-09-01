@@ -7,6 +7,7 @@
 - 用户已授权在 `D:\HUST\IC\FPGA` 开发 AMD 题目一的 **RTL track**；实现目录为 `04_project/amd_rtl_agent`。
 - 现有报名证据仍显示队伍 `45561` 报名高云 J280。尚无 AMD 改报截图，因此“报名事实”和“当前开发目标”分开记录，不能互相冒充。
 - 除 AMD ROCm 实测和赛事方尚未公开内容外，当前可在本机执行的环境、代码、模型、容器、Vivado 官方目标器件综合与 5 ns 时序验证均已落地。
+- 项目已发布到公开仓库 `https://github.com/854259/FPGA` 的 `main` 分支；首次导入提交为 `ad143eb`，提交邮箱为 `3260548169@qq.com`。
 
 ## 已完成并验证
 
@@ -23,6 +24,7 @@
 - 在官方指定器件 `xczu3eg-sbva484-1-e` 上完成完整编译、展开、仿真与综合：功能 fixture 为 `Mismatches: 0`，并生成 `post_synth.dcp`、时序报告和资源报告。
 - 额外使用含真实时钟端口的 fixture 进行 5 ns（200 MHz）综合；时序报告明确为 `All user specified timing constraints are met.`。
 - 接入 NVlabs VerilogEval commit `c498220d0a52248f8e3fdffe279075215bde2da6`，共 156 组三元组；真实 7B CPU 小样本验证已运行，详见 `04_project/amd_rtl_agent/REPORT.md`。
+- Git 上传前已排除 4.68 GB 模型权重、生成缓存、认证日志、群聊原文、报名截图和其他队伍截图；这些本机文件均保留未删除。仓库包含源码、测试、脚本、说明文档、公开指南和精简后的综合/时序验证报告。
 
 ## 当前未完成及原因
 
