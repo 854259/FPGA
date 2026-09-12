@@ -1,6 +1,45 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-09-01T12:40:00+08:00",
+  "dataset_local_20260912": {
+    "commit": "c498220d0a52248f8e3fdffe279075215bde2da6",
+    "complete_triples": 156,
+    "limit_20_selection": "sorted prompt paths, Prob001_zero through Prob020_mt2015_eq2",
+    "benchmark_20_run": false,
+    "benchmark_completed_problems": 10,
+    "baseline_passed": 10,
+    "agent_passed": 10,
+    "agent_repairs_used": 0,
+    "benchmark_evidence": "04_project/amd_rtl_agent/outputs/cloud_benchmark20_20260912_225725/summary_first10.json",
+    "benchmark_20_launcher": "run_cloud_smoke.ps1 -Benchmark20",
+    "benchmark_20_status": "stopped at user request; first 10 complete, problem 11 interrupted; original 20-problem benchmark incomplete"
+  },
+  "retest_20260912": {
+    "unit_tests_passed": 14,
+    "unit_tests_failed": 0,
+    "python_version": "3.11.9",
+    "vivado_fixture_passed": true,
+    "highest_stage": "synthesis",
+    "mismatches": 0,
+    "evidence": "04_project/amd_rtl_agent/outputs/retest_20260912/correct",
+    "cloud_model_tested": false,
+    "cloud_blocker": "LLM_API_KEY is absent in the current process"
+  },
+  "last_updated": "2026-09-12",
+  "github_sync_20260912": {
+    "branch": "fix/reliable-evaluation",
+    "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
+    "contents": "evaluation reliability fixes, cloud launcher, regression tests, first 10 public benchmark results"
+  },
+  "local_optimization": {
+    "workspace": "E:/26qiansai/FPGA-teammate-review",
+    "branch": "fix/reliable-evaluation",
+    "result_schema_version": 2,
+    "unit_tests_passed": 14,
+    "unit_tests_failed": 0,
+    "real_model_eda_rocm_revalidated": false,
+    "published": false,
+    "note": "本次仅在 E 盘副本完成代码与回归测试；以下原开发机环境和实测记录为 2026-09-01 历史证据，不代表本次复验。"
+  },
   "project": {
     "name": "2026 FPGA 赛道项目",
     "workspace": "D:/HUST/IC/FPGA",
@@ -215,5 +254,21 @@
     "organizer_official_base_image",
     "organizer_hidden_dataset_and_final_caller",
     "ROCm_hardware_for_final_measurement"
-  ]
+  ],
+  "cloud_smoke_20260912": {
+    "model": "qwen3.6-27b",
+    "local_vivado": "E:/vivado/2025.2/Vivado/bin",
+    "preflight": "compile_elaborate_simulate_synthesize_pass",
+    "mismatches": 0,
+    "evidence": "04_project/amd_rtl_agent/outputs/local_preflight_20260912",
+    "cloud_run": "passed_real_model_baseline_and_one_agent_sample",
+    "api_setup": "Live API verified by user-launched run_cloud_smoke.ps1",
+    "cloud_evidence": "04_project/amd_rtl_agent/outputs/cloud_smoke_20260912_225041/result.json",
+    "cloud_mock_model": false,
+    "cloud_baseline_pass": true,
+    "cloud_agent_pass": true,
+    "cloud_agent_attempts": 1,
+    "cloud_elapsed_s": 118.891,
+    "unit_tests_passed": 14
+  }
 }

@@ -1,6 +1,24 @@
 # 项目状态
 
-更新时间：2026-09-01
+更新时间：2026-09-12
+
+## 当前同步内容：2026-09-12
+
+- GitHub 同步分支：`fix/reliable-evaluation`，包含评测可靠性修复、云端启动脚本和 14 项自动测试。
+- 当前 Qwen3.6-27B 公开集前 10 题：baseline 10/10，agent 10/10，均首次生成通过 Vivado 编译、仿真和综合。原 20 题实验按用户要求中止。
+- 可移植精简报告：`04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json`。原始日志、缓存、权重及密钥不上传。
+- 下文“尚未推送”“未重跑”等为当日历史记录，以本节和后续 2026-09-12 记录为准。
+
+## 本次优化：2026-09-10
+
+- 在 `E:/26qiansai/FPGA-teammate-review` 的本地分支 `fix/reliable-evaluation` 修改，尚未推送 GitHub。
+- 修正超时日志崩溃；修复循环保留验证阶段更好的候选，同时保存每次原始响应、代码与评测记录。
+- 结果升级为 schema 2：不足 5 个样本不报告 pass@5；跳过 EDA 或没有测试台时，功能通过率为 `null`，不再冒充通过。
+- 仿真要求所有 `Mismatches` 计数为零且无 ERROR/FATAL；批测提前检查数据三元组，每题结束保存进度，并标记整批是否完成。
+- 14 项 Python 测试通过（含真实子进程超时测试；模型与 EDA 场景采用模拟返回值）。尚未在本次机器重跑真实模型、Vivado、Docker 或 ROCm，不能宣称通过率或推理速度提升。
+- 下一步：在原开发机按实现目录 README 运行 20 题、单样本、一次修复对照实验，使用新的输出目录；之后再做 5 样本实验和 ROCm 复验。
+
+以下为 2026-09-01 原开发机的历史状态，环境、赛事公告及报名事项未在本次重新核验。
 
 ## 结论
 
@@ -38,3 +56,43 @@
 - 等赛事方发布官方基础镜像、隐藏题集、最终调用器和时间预算后，用现有入口复验。
 - 若团队确实改报 AMD，补存队伍 `45561` 的官网变更证据。
 - ROCm 硬件可用且用户要求补测时，再记录显存、墙钟和稳定性；不得用 CPU 数据估算。
+
+## 2026-09-12 当前机器验证
+- 在 E:/26qiansai/FPGA-teammate-review 执行；历史 D 盘目录在本机不存在。
+- E:/vivado/2025.2/Vivado/bin：固定 AND 样例编译、展开、仿真、综合通过，Mismatches: 0。证据：04_project/amd_rtl_agent/outputs/local_preflight_20260912。
+- 14 项单元测试通过。新增可选 LLM_ENABLE_THINKING 参数及 run_cloud_smoke.ps1；云端 Qwen3.6-27B 真实闭环仍待用户在已配置临时密钥的 PowerShell 中启动，不能称为云端验证通过。
+
+## 2026-09-12 本轮复测
+- Python 3.11.9 下运行全部 14 项单元测试，全部通过（1.617 秒）。
+- 固定 correct.sv 样例在当前 E 盘 Vivado 2025.2 下完成编译、展开、仿真、综合，各步骤退出码为 0；Mismatches: 0。
+- 测试日志：04_project/amd_rtl_agent/outputs/retest_20260912/correct。
+- 当前进程未配置 LLM_API_KEY，未执行云端真实模型测试；以上结果不代表模型生成通过率。
+
+## 2026-09-12 API 接入入口
+- run_cloud_smoke.ps1 支持读取当前进程/用户级 LLM_API_KEY，缺失时在终端隐藏输入；密钥不写入项目文件。
+- 保留现有 Qwen 服务地址、qwen3.6-27b 模型和真实模型 + Vivado 测试入口；Python 改为使用当前环境命令。
+- PowerShell 语法检查通过。当前机器未配置密钥，尚未验证 API 连通性或真实生成结果。
+
+## 2026-09-12 云端真实模型测试通过
+- 用户在终端输入密钥并启动 run_cloud_smoke.ps1，qwen3.6-27b API 已验证连通。
+- outputs/cloud_smoke_20260912_225041/result.json：mock_model=false，baseline_pass=true，单个 agent 样本首次生成通过编译、仿真和综合，无需修复；进程退出码 0，总耗时 118.891 秒。
+- 证据目录位于 04_project/amd_rtl_agent/outputs/cloud_smoke_20260912_225041。
+- 本次仅为 AND 门题目的真实模型冒烟测试，不代表公开题集通过率；pass_at_5=null，真实模型修复分支未触发。此前待密钥/待云端验证记录为历史状态。
+
+## 2026-09-12 公开数据集就绪
+- 已获取 NVlabs/verilog-eval 并固定到 c498220d0a52248f8e3fdffe279075215bde2da6。
+- dataset_spec-to-rtl 的 156 组题面、参考和测试台完整。
+- benchmark --limit 20 按排序选择 Prob001_zero 至 Prob020_mt2015_eq2；本轮仅核对数据，尚未运行 20 题模型评测。
+
+## 2026-09-12 20 题评测入口
+- run_cloud_smoke.ps1 新增 -Benchmark20：前 20 题，每题 baseline + 1 个 agent 样本，最多 1 次修复，完整 Vivado 编译/仿真/综合。
+- 语法及 20 组三元组完整性检查通过；输出独立 cloud_benchmark20 时间戳目录并汇总通过数量。
+- 当前进程及用户环境无 API 密钥，需要用户在终端隐藏输入后启动；20 题评测尚未开始。
+
+## 2026-09-12 云端公开集前 10 题结果
+- 按用户最新要求停止于前 10 道完成题；已终止正在运行的第 11 题及其子进程，未计入统计。
+- Qwen3.6-27B，VerilogEval v2 固定版本前 10 题：baseline 10/10，agent 10/10；每题 1 个 agent 样本，均首次通过，无修复。
+- 两种生成均完成 Vivado 编译、仿真和综合；mock_model=false。10 题耗时合计 1125.189 秒（约 18.75 分钟），不含中断题。
+- 原始 benchmark.json 保持 complete=false、requested_problems=20；另存 summary_first10.json 记录用户缩减范围后的结果，不把原 20 题任务标成完成。
+- 证据：04_project/amd_rtl_agent/outputs/cloud_benchmark20_20260912_225725/summary_first10.json。
+- 此结果仅适用于前 10 题，不能外推完整 156 题通过率；两种方式均满分，尚未体现技能提示或修复的增益。

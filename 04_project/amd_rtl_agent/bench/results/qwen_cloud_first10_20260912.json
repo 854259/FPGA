@@ -1,0 +1,99 @@
+{
+  "scope": "first 10 sorted VerilogEval v2 problems",
+  "stop_reason": "user requested stop after 10; original 20-problem run is incomplete",
+  "completed_problems": 10,
+  "baseline_passed": 10,
+  "agent_passed": 10,
+  "agent_attempts": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "elapsed_s_completed_problems": 1125.189,
+  "records": [
+    {
+      "problem": "Prob001_zero_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 113.016
+    },
+    {
+      "problem": "Prob002_m2014_q4i_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 97.875
+    },
+    {
+      "problem": "Prob003_step_one_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 99.454
+    },
+    {
+      "problem": "Prob004_vector2_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 115.813
+    },
+    {
+      "problem": "Prob005_notgate_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 119.563
+    },
+    {
+      "problem": "Prob006_vectorr_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 119.75
+    },
+    {
+      "problem": "Prob007_wire_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 115.969
+    },
+    {
+      "problem": "Prob008_m2014_q4h_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 114.328
+    },
+    {
+      "problem": "Prob009_popcount3_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 114.937
+    },
+    {
+      "problem": "Prob010_mt2015_q4a_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 114.484
+    }
+  ],
+  "model": "qwen3.6-27b",
+  "dataset_commit": "c498220d0a52248f8e3fdffe279075215bde2da6",
+  "evaluation_mode": "compile_simulation_synthesis",
+  "mock_model": false,
+  "max_repairs": 1,
+  "samples_per_problem": 1,
+  "limitation": "First 10 sorted problems only; does not establish full dataset accuracy or an improvement over baseline."
+}

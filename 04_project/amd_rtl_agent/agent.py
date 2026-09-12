@@ -44,6 +44,24 @@ def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def write_json(path: Path, value: dict) -> None:
+    """Replace a checkpoint only after its complete contents have been written."""
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    write_text(temporary, json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+    temporary.replace(path)
+
+
+def quality(result: dict) -> tuple:
+    return (bool(result["passed"]), STAGE_ORDER.get(str(result["highest_stage"]), 0))
+
+
+def functional_pass(result: dict) -> bool | None:
+    # Format-only and synthesis-only checks are not functional evidence.
+    if result.get("eda_skipped") or not result.get("testbench_available", False):
+        return None
+    return bool(result["passed"] and result.get("functional_checked"))
+
+
 def model_settings() -> dict[str, object]:
     return {
         "model": os.environ.get("LLM_MODEL", "local-model"),
@@ -89,6 +107,9 @@ def call_model(messages: list[dict[str, str]], seed: int) -> str:
         "seed": seed,
         "stream": False,
     }
+    thinking = os.environ.get("LLM_ENABLE_THINKING")
+    if thinking is not None:
+        body["enable_thinking"] = thinking.lower() in ("1", "true", "yes")
     base = os.environ.get("LLM_BASE_URL", "http://127.0.0.1:8000/v1").rstrip("/")
     endpoint = base if base.endswith("/chat/completions") else base + "/chat/completions"
     headers = {"Content-Type": "application/json"}
@@ -188,9 +209,10 @@ def run_process(command: list[str], cwd: Path, timeout: int, log_path: Path) -> 
         returncode = completed.returncode
         timed_out = False
     except subprocess.TimeoutExpired as exc:
-        output = (exc.stdout or "") + "\nTIMEOUT"
+        output = exc.stdout or ""
         if isinstance(output, bytes):
             output = output.decode("utf-8", errors="replace")
+        output += "\nTIMEOUT"
         returncode = 124
         timed_out = True
     except OSError as exc:
@@ -312,16 +334,17 @@ def evaluate_candidate(
         )
         steps.append({k: v for k, v in simulation_step.items() if k != "output"})
         simulation_output = str(simulation_step["output"])
-        mismatch = re.search(r"Mismatches\s*:\s*(\d+)", simulation_output, re.IGNORECASE)
+        mismatches = re.findall(r"^\s*Mismatches\s*:\s*(\d+)\b", simulation_output, re.IGNORECASE | re.MULTILINE)
         simulation_ok = (
             simulation_step["returncode"] == 0
             and "TIMEOUT" not in simulation_output.upper()
-            and mismatch is not None
-            and int(mismatch.group(1)) == 0
+            and bool(mismatches)
+            and all(int(value) == 0 for value in mismatches)
+            and not re.search(r"^\s*(?:ERROR|FATAL)\b", simulation_output, re.MULTILINE | re.IGNORECASE)
         )
         if not simulation_ok:
             explanation = simulation_output
-            if simulation_step["returncode"] == 0 and mismatch is None:
+            if simulation_step["returncode"] == 0 and not mismatches:
                 explanation += "\nERROR: simulator did not emit the required 'Mismatches: N' marker"
             result = _failed("simulation", {**simulation_step, "output": explanation})
             result["steps"] = steps
@@ -421,11 +444,16 @@ def generate_agent_sample(
     attempts = []
     code = ""
     evaluation: dict[str, object] = _failed("not_checked", None, "not evaluated")
+    best_evaluation = None
+    best_code = ""
+    selected_attempt = 0
     for attempt in range(max_repairs + 1):
         response = call_model(messages, seed + attempt * 1000)
         code = extract_verilog(response)
         write_text(output, code)
         attempt_dir = eval_dir / f"attempt_{attempt + 1}"
+        write_text(attempt_dir / "response.txt", response)
+        write_text(attempt_dir / "candidate.sv", code)
         if skip_eda:
             error = basic_check(code)
             evaluation = {
@@ -450,19 +478,29 @@ def generate_agent_sample(
             "highest_stage": evaluation["highest_stage"],
             "feedback": evaluation.get("feedback", ""),
         })
+        write_json(attempt_dir / "evaluation.json", evaluation)
+        if best_evaluation is None or quality(evaluation) > quality(best_evaluation):
+            best_evaluation = evaluation
+            best_code = code
+            selected_attempt = attempt + 1
         if evaluation["passed"]:
             break
         if attempt < max_repairs:
             feedback = repair_feedback(code, str(evaluation.get("feedback", "")))
             messages = repair_messages(problem, code, feedback)
+    evaluation = best_evaluation
+    write_text(output, best_code)
     return {
         "path": str(output),
         "seed": seed,
         "attempts": len(attempts),
+        "selected_attempt": selected_attempt,
         "attempt_history": attempts,
         "passed": evaluation["passed"],
         "highest_stage": evaluation["highest_stage"],
         "functional_checked": evaluation.get("functional_checked", False),
+        "testbench_available": bool(testbench),
+        "eda_skipped": skip_eda,
         "elapsed_s": round(time.monotonic() - started, 3),
     }
 
@@ -494,7 +532,10 @@ def run_problem(args: argparse.Namespace) -> dict[str, object]:
         "passed": baseline_eval["passed"],
         "highest_stage": baseline_eval["highest_stage"],
         "functional_checked": baseline_eval.get("functional_checked", False),
+        "testbench_available": bool(args.testbench),
+        "eda_skipped": args.skip_eda,
     })
+    write_json(out / "logs" / "baseline" / "evaluation.json", baseline_eval)
 
     samples = []
     for index in range(1, args.samples + 1):
@@ -513,19 +554,25 @@ def run_problem(args: argparse.Namespace) -> dict[str, object]:
     best = max(samples, key=lambda item: (bool(item["passed"]), STAGE_ORDER.get(str(item["highest_stage"]), 0), -int(item["attempts"])))
     shutil.copy2(best["path"], out / "best.sv")
     result = {
-        "schema_version": 1,
+        "schema_version": 2,
         "problem_sha256": sha256_text(problem),
         "model": model_settings(),
+        "skill_sha256": sha256_text(skill_text()),
+        "evaluation_mode": "format_only" if args.skip_eda else (
+            "compile_simulation" if args.skip_synthesis else "compile_simulation_synthesis"),
+        "mock_model": bool(os.environ.get("LLM_MOCK_FILE")),
+        "baseline_pass": functional_pass(baseline),
         "baseline": baseline,
         "samples": samples,
-        "pass_at_1": bool(samples and samples[0]["passed"]),
-        "pass_at_5": any(bool(item["passed"]) for item in samples[:5]),
+        "pass_at_1": functional_pass(samples[0]),
+        "pass_at_5": (any(functional_pass(item) for item in samples)
+                      if len(samples) == 5 and functional_pass(samples[0]) is not None else None),
         "best": Path(best["path"]).name,
         "elapsed_s": round(time.monotonic() - started, 3),
         "official_target": "xczu3eg-sbva484-1-e",
         "clock_period_ns": 5.0,
     }
-    write_text(out / "result.json", json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+    write_json(out / "result.json", result)
     return result
 
 
@@ -536,17 +583,43 @@ def benchmark(args: argparse.Namespace) -> dict[str, object]:
         prompts = prompts[:args.limit]
     if not prompts:
         raise RuntimeError(f"no *_prompt.txt files found below {dataset}")
+    # Reject incomplete data before spending any inference budget.
+    for prompt in prompts:
+        prefix = prompt.name[:-len("_prompt.txt")]
+        for suffix in ("_ref.sv", "_test.sv"):
+            if not prompt.with_name(prefix + suffix).is_file():
+                raise RuntimeError(f"incomplete dataset triple: {prompt.with_name(prefix + suffix)}")
     output_root = Path(args.output_dir).resolve()
     records = []
+
+    def save_summary(complete=False):
+        def rate(key):
+            values = [r[key] for r in records]
+            return (sum(values) / len(values)
+                    if values and all(v is not None for v in values) else None)
+        comparable = [r for r in records if r["baseline_pass"] is not None and r["pass_at_1"] is not None]
+        summary = {
+            "schema_version": 2, "dataset": str(dataset),
+            "complete": complete, "requested_problems": len(prompts), "problems": len(records),
+            "baseline_pass_rate": rate("baseline_pass"),
+            "pass_at_1": rate("pass_at_1"), "pass_at_5": rate("pass_at_5"),
+            "repaired_problems": sum(not r["baseline_pass"] and r["pass_at_1"] for r in comparable),
+            "regressed_problems": sum(r["baseline_pass"] and not r["pass_at_1"] for r in comparable),
+            "mean_elapsed_s": sum(r["elapsed_s"] for r in records) / len(records) if records else None,
+            "mock_model": bool(os.environ.get("LLM_MOCK_FILE")),
+            "records": records,
+        }
+        write_json(output_root / "benchmark.json", summary)
+        return summary
+
+    save_summary()
     for prompt in prompts:
         prefix = prompt.name[:-len("_prompt.txt")]
         reference = prompt.with_name(prefix + "_ref.sv")
         testbench = prompt.with_name(prefix + "_test.sv")
-        if not reference.exists() or not testbench.exists():
-            continue
         child = argparse.Namespace(
             problem=str(prompt),
-            output_dir=str(output_root / prefix),
+            output_dir=str(output_root / prompt.relative_to(dataset).parent / prefix),
             testbench=str(testbench),
             reference=str(reference),
             samples=args.samples,
@@ -557,24 +630,15 @@ def benchmark(args: argparse.Namespace) -> dict[str, object]:
         )
         result = run_problem(child)
         records.append({
-            "problem": prefix,
-            "baseline_pass": result["baseline"]["passed"],
+            "problem": str(prompt.relative_to(dataset)),
+            "baseline_pass": result["baseline_pass"],
             "pass_at_1": result["pass_at_1"],
             "pass_at_5": result["pass_at_5"],
             "elapsed_s": result["elapsed_s"],
         })
-    count = len(records)
-    summary = {
-        "schema_version": 1,
-        "dataset": str(dataset),
-        "problems": count,
-        "baseline_pass_rate": sum(bool(x["baseline_pass"]) for x in records) / count if count else 0.0,
-        "pass_at_1": sum(bool(x["pass_at_1"]) for x in records) / count if count else 0.0,
-        "pass_at_5": sum(bool(x["pass_at_5"]) for x in records) / count if count else 0.0,
-        "records": records,
-    }
-    write_text(output_root / "benchmark.json", json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
-    return summary
+        save_summary()
+        print(f"[{len(records)}/{len(prompts)}] {prefix}", file=sys.stderr, flush=True)
+    return save_summary(complete=True)
 
 
 def build_parser() -> argparse.ArgumentParser:

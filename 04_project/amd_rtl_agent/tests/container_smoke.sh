@@ -34,8 +34,10 @@ import sys
 with open(sys.argv[1], encoding="utf-8") as handle:
     result = json.load(handle)
 assert len(result["samples"]) == 5
-assert result["pass_at_1"] is True
-assert result["pass_at_5"] is True
+assert result["pass_at_1"] is None
+assert result["pass_at_5"] is None
+assert all(sample["passed"] for sample in result["samples"])
+assert result["evaluation_mode"] == "format_only"
 print("CONTAINER_OFFLINE_SMOKE=PASS")
 PY
 
