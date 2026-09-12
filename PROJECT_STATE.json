@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-09-01T12:40:00+08:00",
+  "last_updated": "2026-09-13T00:00:00+08:00",
   "project": {
     "name": "2026 FPGA 赛道项目",
     "workspace": "D:/HUST/IC/FPGA",
@@ -30,7 +30,8 @@
     "pdf_count": 7,
     "pdf_text_extracted": true,
     "source_hashes_generated": true,
-    "registration_evidence_archived": true,
+    "registration_evidence_archived": false,
+    "historical_registration_evidence_archived": true,
     "workspace_deployed_to_d": true,
     "deployment_verification": {
       "source_file_count": 35,
@@ -42,10 +43,12 @@
     "official_schedule_verified": false
   },
   "team": {
-    "registration_status": "registered",
+    "registration_status": "registered_amd_confirmed_by_user",
     "team_id": "45561",
     "team_name": "前世被甩，今生变为奶龙归来",
-    "registration_evidence": "01_sources/images/报名信息_队伍45561_高云J280_含学校组别.png",
+    "registration_evidence": "user_direct_confirmation_2026-09-13",
+    "current_registration_screenshot_archived": false,
+    "historical_registration_evidence": "01_sources/images/报名信息_队伍45561_高云J280_含学校组别.png",
     "member_join_status": "pending_verification",
     "member_join_evidence": "01_sources/chat/群聊补充摘录_2026-08-22_1538-1703.md"
   },
@@ -95,13 +98,22 @@
     }
   ],
   "selection": {
-    "status": "confirmed_registered",
-    "decision_date": "2026-08-22",
-    "selected_vendor": "高云半导体",
-    "selected_platform": "高云-J280姿态控制系统竞赛套件",
-    "selected_track": "基于FPGA的实时姿态控制系统",
-    "work_title": "凌衡实时姿态控制系统",
+    "status": "confirmed_registered_by_user",
+    "decision_date": "2026-09-13",
+    "selected_vendor": "AMD",
+    "selected_platform": "AMD FPGA器件",
+    "selected_track": "题目一：RTL/HLS 本地智能体设计赛道",
+    "selected_subtrack": "RTL",
+    "work_title": null,
+    "work_title_status": "not_provided",
     "decision_record": "DECISIONS.md",
+    "previous_registration": {
+      "vendor": "高云半导体",
+      "platform": "高云-J280姿态控制系统竞赛套件",
+      "track": "基于FPGA的实时姿态控制系统",
+      "work_title": "凌衡实时姿态控制系统",
+      "status": "superseded_by_amd_registration"
+    },
     "previous_recommendation_status": "superseded_by_team_decision",
     "previous_recommended_shortlist": [
       "安路科技/选题一/基于安路 EG4S20 的 HDMI 多媒体播放系统",
@@ -114,7 +126,8 @@
     "topic": "题目一：RTL/HLS 本地智能体设计赛道",
     "subtrack": "RTL",
     "authorization": "user_directed",
-    "registration_change_verified": false,
+    "registration_change_verified": true,
+    "registration_confirmation": "user_direct_confirmation_2026-09-13",
     "workspace": "04_project/amd_rtl_agent",
     "status": "local_implementation_and_validation",
     "rocm_validation_status": "deferred_by_user_scope",
@@ -182,7 +195,7 @@
     }
   },
   "proposal": {
-    "status": "registration_plan_not_implementation_evidence",
+    "status": "historical_superseded_j280_registration_plan_not_current",
     "planned_core": [
       "角位移传感器实时采集",
       "电机编码器实时采集",
@@ -211,7 +224,6 @@
     ]
   },
   "next_execution_inputs": [
-    "AMD_registration_or_track_switch_evidence",
     "organizer_official_base_image",
     "organizer_hidden_dataset_and_final_caller",
     "ROCm_hardware_for_final_measurement"
