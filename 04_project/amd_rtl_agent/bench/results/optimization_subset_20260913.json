@@ -1,0 +1,87 @@
+{
+  "scope": "targeted development retest; selection biased; not full pass@1",
+  "source_run": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459",
+  "complete": true,
+  "requested_problems": [
+    "Prob001_zero",
+    "Prob030_popcount255",
+    "Prob039_always_if",
+    "Prob054_edgedetect",
+    "Prob108_rule90"
+  ],
+  "model": {
+    "model": "qwen3.6-27b",
+    "max_tokens": 2048,
+    "temperature": 0.2,
+    "context": 8192
+  },
+  "skill_sha256": "2c60c4bf4043803bc23a035ae666bbb302c22bdb8aaaa34a5317ccc7acd2c054",
+  "repair_skill_sha256": "c9ac09605cb8181cc44e220ff8599d651d1fa02401be55ddfb50f2383b3b6c3a",
+  "agent_sha256": "ec3f3def4a2df09de7ceed47002bef68a55a1d2d85d4ceb73866ebe3a7ca640a",
+  "evaluation_mode": "compile_simulation_synthesis",
+  "records": [
+    {
+      "problem": "Prob001_zero",
+      "previous_pass": true,
+      "passed": true,
+      "highest_stage": "synthesis",
+      "attempts": 1,
+      "seed": 2,
+      "repairs": 1,
+      "elapsed_s": 41.0,
+      "previous_skill_sha256": "913ace1622338bc01654bc9d0544408030419d89cc541807703546d449f50da0",
+      "source_result": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\001_Prob001_zero\\Prob001_zero\\result.json"
+    },
+    {
+      "problem": "Prob030_popcount255",
+      "previous_pass": false,
+      "passed": true,
+      "highest_stage": "synthesis",
+      "attempts": 1,
+      "seed": 2902,
+      "repairs": 1,
+      "elapsed_s": 58.063,
+      "previous_skill_sha256": "913ace1622338bc01654bc9d0544408030419d89cc541807703546d449f50da0",
+      "source_result": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\030_Prob030_popcount255\\Prob030_popcount255\\result.json"
+    },
+    {
+      "problem": "Prob039_always_if",
+      "previous_pass": false,
+      "passed": false,
+      "highest_stage": "compile",
+      "attempts": 2,
+      "seed": 3802,
+      "repairs": 1,
+      "elapsed_s": 9.218,
+      "previous_skill_sha256": "913ace1622338bc01654bc9d0544408030419d89cc541807703546d449f50da0",
+      "source_result": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\039_Prob039_always_if\\Prob039_always_if\\result.json"
+    },
+    {
+      "problem": "Prob054_edgedetect",
+      "previous_pass": false,
+      "passed": true,
+      "highest_stage": "synthesis",
+      "attempts": 2,
+      "seed": 5302,
+      "repairs": 1,
+      "elapsed_s": 69.875,
+      "previous_skill_sha256": "913ace1622338bc01654bc9d0544408030419d89cc541807703546d449f50da0",
+      "source_result": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\054_Prob054_edgedetect\\Prob054_edgedetect\\result.json"
+    },
+    {
+      "problem": "Prob108_rule90",
+      "previous_pass": false,
+      "passed": false,
+      "highest_stage": "compile",
+      "attempts": 2,
+      "seed": 10702,
+      "repairs": 1,
+      "elapsed_s": 10.61,
+      "previous_skill_sha256": "913ace1622338bc01654bc9d0544408030419d89cc541807703546d449f50da0",
+      "source_result": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\108_Prob108_rule90\\Prob108_rule90\\result.json"
+    }
+  ],
+  "previous_passed": 1,
+  "passed": 3,
+  "mock_model": false
+}

@@ -1,0 +1,481 @@
+{
+  "source_run": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459",
+  "completed": 156,
+  "functional_problems": 156,
+  "baseline_passed": 101,
+  "agent_passed": 110,
+  "initially_passed": 94,
+  "repaired": 16,
+  "improved": 17,
+  "regressed": 8,
+  "repair_attempts": 62,
+  "identical_repairs": 15,
+  "failure_stages": {
+    "format": 4,
+    "simulation": 35,
+    "compile": 6,
+    "elaboration": 1
+  },
+  "failures": [
+    {
+      "problem": "Prob030_popcount255",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "format",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\030_Prob030_popcount255\\Prob030_popcount255\\result.json"
+    },
+    {
+      "problem": "Prob034_dff8",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\034_Prob034_dff8\\Prob034_dff8\\result.json"
+    },
+    {
+      "problem": "Prob039_always_if",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "compile",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\039_Prob039_always_if\\Prob039_always_if\\result.json"
+    },
+    {
+      "problem": "Prob050_kmap1",
+      "baseline_pass": true,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\050_Prob050_kmap1\\Prob050_kmap1\\result.json"
+    },
+    {
+      "problem": "Prob053_m2014_q4d",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\053_Prob053_m2014_q4d\\Prob053_m2014_q4d\\result.json"
+    },
+    {
+      "problem": "Prob054_edgedetect",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\054_Prob054_edgedetect\\Prob054_edgedetect\\result.json"
+    },
+    {
+      "problem": "Prob057_kmap2",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\057_Prob057_kmap2\\Prob057_kmap2\\result.json"
+    },
+    {
+      "problem": "Prob058_alwaysblock2",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "compile",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\058_Prob058_alwaysblock2\\Prob058_alwaysblock2\\result.json"
+    },
+    {
+      "problem": "Prob062_bugs_mux2",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\062_Prob062_bugs_mux2\\Prob062_bugs_mux2\\result.json"
+    },
+    {
+      "problem": "Prob066_edgecapture",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\066_Prob066_edgecapture\\Prob066_edgecapture\\result.json"
+    },
+    {
+      "problem": "Prob070_ece241_2013_q2",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "format",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\070_Prob070_ece241_2013_q2\\Prob070_ece241_2013_q2\\result.json"
+    },
+    {
+      "problem": "Prob074_ece241_2014_q4",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\074_Prob074_ece241_2014_q4\\Prob074_ece241_2014_q4\\result.json"
+    },
+    {
+      "problem": "Prob078_dualedge",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\078_Prob078_dualedge\\Prob078_dualedge\\result.json"
+    },
+    {
+      "problem": "Prob082_lfsr32",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "format",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\082_Prob082_lfsr32\\Prob082_lfsr32\\result.json"
+    },
+    {
+      "problem": "Prob084_ece241_2013_q12",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\084_Prob084_ece241_2013_q12\\Prob084_ece241_2013_q12\\result.json"
+    },
+    {
+      "problem": "Prob086_lfsr5",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "format",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\086_Prob086_lfsr5\\Prob086_lfsr5\\result.json"
+    },
+    {
+      "problem": "Prob089_ece241_2014_q5a",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\089_Prob089_ece241_2014_q5a\\Prob089_ece241_2014_q5a\\result.json"
+    },
+    {
+      "problem": "Prob093_ece241_2014_q3",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\093_Prob093_ece241_2014_q3\\Prob093_ece241_2014_q3\\result.json"
+    },
+    {
+      "problem": "Prob095_review2015_fsmshift",
+      "baseline_pass": true,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\095_Prob095_review2015_fsmshift\\Prob095_review2015_fsmshift\\result.json"
+    },
+    {
+      "problem": "Prob099_m2014_q6c",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "elaboration",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\099_Prob099_m2014_q6c\\Prob099_m2014_q6c\\result.json"
+    },
+    {
+      "problem": "Prob101_circuit4",
+      "baseline_pass": true,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\101_Prob101_circuit4\\Prob101_circuit4\\result.json"
+    },
+    {
+      "problem": "Prob102_circuit3",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\102_Prob102_circuit3\\Prob102_circuit3\\result.json"
+    },
+    {
+      "problem": "Prob104_mt2015_muxdff",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\104_Prob104_mt2015_muxdff\\Prob104_mt2015_muxdff\\result.json"
+    },
+    {
+      "problem": "Prob108_rule90",
+      "baseline_pass": true,
+      "agent_pass": false,
+      "stage": "compile",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\108_Prob108_rule90\\Prob108_rule90\\result.json"
+    },
+    {
+      "problem": "Prob112_always_case2",
+      "baseline_pass": true,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\112_Prob112_always_case2\\Prob112_always_case2\\result.json"
+    },
+    {
+      "problem": "Prob113_2012_q1g",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\113_Prob113_2012_q1g\\Prob113_2012_q1g\\result.json"
+    },
+    {
+      "problem": "Prob116_m2014_q3",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\116_Prob116_m2014_q3\\Prob116_m2014_q3\\result.json"
+    },
+    {
+      "problem": "Prob117_circuit9",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\117_Prob117_circuit9\\Prob117_circuit9\\result.json"
+    },
+    {
+      "problem": "Prob121_2014_q3bfsm",
+      "baseline_pass": true,
+      "agent_pass": false,
+      "stage": "compile",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\121_Prob121_2014_q3bfsm\\Prob121_2014_q3bfsm\\result.json"
+    },
+    {
+      "problem": "Prob125_kmap3",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\125_Prob125_kmap3\\Prob125_kmap3\\result.json"
+    },
+    {
+      "problem": "Prob126_circuit6",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "compile",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\126_Prob126_circuit6\\Prob126_circuit6\\result.json"
+    },
+    {
+      "problem": "Prob130_circuit5",
+      "baseline_pass": true,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\130_Prob130_circuit5\\Prob130_circuit5\\result.json"
+    },
+    {
+      "problem": "Prob133_2014_q3fsm",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\133_Prob133_2014_q3fsm\\Prob133_2014_q3fsm\\result.json"
+    },
+    {
+      "problem": "Prob134_2014_q3c",
+      "baseline_pass": true,
+      "agent_pass": false,
+      "stage": "compile",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\134_Prob134_2014_q3c\\Prob134_2014_q3c\\result.json"
+    },
+    {
+      "problem": "Prob139_2013_q2bfsm",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\139_Prob139_2013_q2bfsm\\Prob139_2013_q2bfsm\\result.json"
+    },
+    {
+      "problem": "Prob141_count_clock",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\141_Prob141_count_clock\\Prob141_count_clock\\result.json"
+    },
+    {
+      "problem": "Prob142_lemmings2",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\142_Prob142_lemmings2\\Prob142_lemmings2\\result.json"
+    },
+    {
+      "problem": "Prob145_circuit8",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\145_Prob145_circuit8\\Prob145_circuit8\\result.json"
+    },
+    {
+      "problem": "Prob146_fsm_serialdata",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\146_Prob146_fsm_serialdata\\Prob146_fsm_serialdata\\result.json"
+    },
+    {
+      "problem": "Prob147_circuit10",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\147_Prob147_circuit10\\Prob147_circuit10\\result.json"
+    },
+    {
+      "problem": "Prob149_ece241_2013_q4",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\149_Prob149_ece241_2013_q4\\Prob149_ece241_2013_q4\\result.json"
+    },
+    {
+      "problem": "Prob152_lemmings3",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\152_Prob152_lemmings3\\Prob152_lemmings3\\result.json"
+    },
+    {
+      "problem": "Prob153_gshare",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\153_Prob153_gshare\\Prob153_gshare\\result.json"
+    },
+    {
+      "problem": "Prob154_fsm_ps2data",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 1,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\154_Prob154_fsm_ps2data\\Prob154_fsm_ps2data\\result.json"
+    },
+    {
+      "problem": "Prob155_lemmings4",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\155_Prob155_lemmings4\\Prob155_lemmings4\\result.json"
+    },
+    {
+      "problem": "Prob156_review2015_fancytimer",
+      "baseline_pass": false,
+      "agent_pass": false,
+      "stage": "simulation",
+      "initially_passed": false,
+      "attempts": 2,
+      "identical_repairs": 0,
+      "result_path": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\156_Prob156_review2015_fancytimer\\Prob156_review2015_fancytimer\\result.json"
+    }
+  ]
+}

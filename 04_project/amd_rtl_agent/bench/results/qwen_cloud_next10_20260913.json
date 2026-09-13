@@ -1,0 +1,115 @@
+{
+  "scope": "sorted VerilogEval v2 problems 11-20",
+  "dataset_total": 156,
+  "dataset_commit": "c498220d0a52248f8e3fdffe279075215bde2da6",
+  "complete": true,
+  "completed_problems": 10,
+  "baseline_passed": 10,
+  "agent_passed": 10,
+  "agent_attempts": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "elapsed_s_completed_problems": 1099.498,
+  "model": {
+    "model": "qwen3.6-27b",
+    "max_tokens": 2048,
+    "temperature": 0.2,
+    "context": 8192
+  },
+  "skill_sha256": "913ace1622338bc01654bc9d0544408030419d89cc541807703546d449f50da0",
+  "evaluation_mode": "compile_simulation_synthesis",
+  "mock_model": false,
+  "pass_at_5": null,
+  "records": [
+    {
+      "problem": "Prob011_norgate_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 109.234,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob012_xnorgate_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 113.547,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob013_m2014_q4e_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 112.609,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob014_andgate_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 111.375,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob015_vector1_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 112.297,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob016_m2014_q4j_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 108.734,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob017_mux2to1v_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 100.984,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob018_mux256to1_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 114.953,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob019_m2014_q4f_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 111.25,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob020_mt2015_eq2_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 104.515,
+      "repair_succeeded": false
+    }
+  ],
+  "raw_evidence": "04_project/amd_rtl_agent/outputs/cloud_benchmark11_20_20260913_091816"
+}

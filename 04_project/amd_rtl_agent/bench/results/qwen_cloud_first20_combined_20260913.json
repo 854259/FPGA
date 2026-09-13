@@ -1,0 +1,176 @@
+{
+  "scope": "first 20 sorted problems, combined from two runs on 2026-09-12 and 2026-09-13",
+  "dataset_total": 156,
+  "completed_problems": 20,
+  "untested_problems": 136,
+  "baseline_passed": 20,
+  "agent_passed": 20,
+  "agent_repairs_used": 0,
+  "model": {
+    "model": "qwen3.6-27b",
+    "max_tokens": 2048,
+    "temperature": 0.2,
+    "context": 8192
+  },
+  "skill_sha256": "913ace1622338bc01654bc9d0544408030419d89cc541807703546d449f50da0",
+  "evaluation_mode": "compile_simulation_synthesis",
+  "pass_at_5": null,
+  "elapsed_s_completed_problems": 2224.687,
+  "sources": [
+    "qwen_cloud_first10_20260912.json",
+    "qwen_cloud_next10_20260913.json"
+  ],
+  "records": [
+    {
+      "problem": "Prob001_zero_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 113.016
+    },
+    {
+      "problem": "Prob002_m2014_q4i_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 97.875
+    },
+    {
+      "problem": "Prob003_step_one_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 99.454
+    },
+    {
+      "problem": "Prob004_vector2_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 115.813
+    },
+    {
+      "problem": "Prob005_notgate_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 119.563
+    },
+    {
+      "problem": "Prob006_vectorr_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 119.75
+    },
+    {
+      "problem": "Prob007_wire_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 115.969
+    },
+    {
+      "problem": "Prob008_m2014_q4h_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 114.328
+    },
+    {
+      "problem": "Prob009_popcount3_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 114.937
+    },
+    {
+      "problem": "Prob010_mt2015_q4a_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 114.484
+    },
+    {
+      "problem": "Prob011_norgate_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 109.234,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob012_xnorgate_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 113.547,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob013_m2014_q4e_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 112.609,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob014_andgate_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 111.375,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob015_vector1_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 112.297,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob016_m2014_q4j_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 108.734,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob017_mux2to1v_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 100.984,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob018_mux256to1_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 114.953,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob019_m2014_q4f_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 111.25,
+      "repair_succeeded": false
+    },
+    {
+      "problem": "Prob020_mt2015_eq2_prompt.txt",
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "pass_at_5": null,
+      "elapsed_s": 104.515,
+      "repair_succeeded": false
+    }
+  ],
+  "limitations": "20/156 sampled in sorted order, one agent sample per problem; no evidence of skill or repair gain; original interrupted 20-problem report unchanged."
+}

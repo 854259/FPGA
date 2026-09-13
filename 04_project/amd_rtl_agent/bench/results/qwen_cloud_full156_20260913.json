@@ -1,0 +1,1423 @@
+{
+  "scope": "all 156 VerilogEval spec-to-rtl problems",
+  "dataset_total": 156,
+  "completed_problems": 156,
+  "failed_problems": [],
+  "baseline_passed": 101,
+  "agent_passed": 110,
+  "agent_repairs_used": 16,
+  "model": {
+    "model": "qwen3.6-27b",
+    "max_tokens": 2048,
+    "temperature": 0.2,
+    "context": 8192
+  },
+  "evaluation_mode": "compile_simulation_synthesis",
+  "elapsed_s_completed_problems": 13884.799,
+  "records": [
+    {
+      "problem": "Prob001_zero",
+      "offset": 0,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 80.781,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob002_m2014_q4i",
+      "offset": 1,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 83.516,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob003_step_one",
+      "offset": 2,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 87.656,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob004_vector2",
+      "offset": 3,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 109.875,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob005_notgate",
+      "offset": 4,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 115.359,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob006_vectorr",
+      "offset": 5,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 94.281,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob007_wire",
+      "offset": 6,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 92.407,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob008_m2014_q4h",
+      "offset": 7,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 91.719,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob009_popcount3",
+      "offset": 8,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 92.063,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob010_mt2015_q4a",
+      "offset": 9,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 92.391,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob011_norgate",
+      "offset": 10,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 92.766,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob012_xnorgate",
+      "offset": 11,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 93.234,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob013_m2014_q4e",
+      "offset": 12,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 92.688,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob014_andgate",
+      "offset": 13,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 91.516,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob015_vector1",
+      "offset": 14,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 90.343,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob016_m2014_q4j",
+      "offset": 15,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 95.031,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob017_mux2to1v",
+      "offset": 16,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.609,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob018_mux256to1",
+      "offset": 17,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.812,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob019_m2014_q4f",
+      "offset": 18,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 88.828,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob020_mt2015_eq2",
+      "offset": 19,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 88.547,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob021_mux256to1v",
+      "offset": 20,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 94.5,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob022_mux2to1",
+      "offset": 21,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 87.64,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob023_vector100r",
+      "offset": 22,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 100.297,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob024_hadd",
+      "offset": 23,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.141,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob025_reduction",
+      "offset": 24,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.266,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob026_alwaysblock1",
+      "offset": 25,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 48.391,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob027_fadd",
+      "offset": 26,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.859,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob028_m2014_q4a",
+      "offset": 27,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.297,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob029_m2014_q4g",
+      "offset": 28,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.406,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob030_popcount255",
+      "offset": 29,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 76.781,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob031_dff",
+      "offset": 30,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 95.422,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob032_vector0",
+      "offset": 31,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.781,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob033_ece241_2014_q1c",
+      "offset": 32,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 92.078,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob034_dff8",
+      "offset": 33,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 15.515,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob035_count1to10",
+      "offset": 34,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 96.937,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob036_ringer",
+      "offset": 35,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 88.281,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob037_review2015_count1k",
+      "offset": 36,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 96.829,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob038_count15",
+      "offset": 37,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 96.36,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob039_always_if",
+      "offset": 38,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 8.188,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob040_count10",
+      "offset": 39,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 96.422,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob041_dff8r",
+      "offset": 40,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 97.406,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob042_vector4",
+      "offset": 41,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 88.984,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob043_vector5",
+      "offset": 42,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 102.656,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob044_vectorgates",
+      "offset": 43,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 90.844,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob045_edgedetect2",
+      "offset": 44,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 58.578,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob046_dff8p",
+      "offset": 45,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 93.89,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob047_dff8ar",
+      "offset": 46,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 96.047,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob048_m2014_q4c",
+      "offset": 47,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 94.922,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob049_m2014_q4b",
+      "offset": 48,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 95.062,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob050_kmap1",
+      "offset": 49,
+      "baseline_pass": true,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 89.422,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob051_gates4",
+      "offset": 50,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 89.375,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob052_gates100",
+      "offset": 51,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 90.781,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob053_m2014_q4d",
+      "offset": 52,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 16.484,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob054_edgedetect",
+      "offset": 53,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 19.0,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob055_conditional",
+      "offset": 54,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 94.14,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob056_ece241_2013_q7",
+      "offset": 55,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 100.765,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob057_kmap2",
+      "offset": 56,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 61.703,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob058_alwaysblock2",
+      "offset": 57,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 7.531,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob059_wire4",
+      "offset": 58,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 110.156,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob060_m2014_q4k",
+      "offset": 59,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 116.453,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob061_2014_q4a",
+      "offset": 60,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 119.625,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob062_bugs_mux2",
+      "offset": 61,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 24.734,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob063_review2015_shiftcount",
+      "offset": 62,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 65.75,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob064_vector3",
+      "offset": 63,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 111.734,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob065_7420",
+      "offset": 64,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 106.703,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob066_edgecapture",
+      "offset": 65,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 20.891,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob067_countslow",
+      "offset": 66,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 116.297,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob068_countbcd",
+      "offset": 67,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 151.812,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob069_truthtable1",
+      "offset": 68,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 115.313,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob070_ece241_2013_q2",
+      "offset": 69,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 86.485,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob071_always_casez",
+      "offset": 70,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 111.672,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob072_thermostat",
+      "offset": 71,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 110.328,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob073_dff16e",
+      "offset": 72,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 120.203,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob074_ece241_2014_q4",
+      "offset": 73,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 22.391,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob075_counter_2bc",
+      "offset": 74,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 124.485,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob076_always_case",
+      "offset": 75,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 63.812,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob077_wire_decl",
+      "offset": 76,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 113.031,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob078_dualedge",
+      "offset": 77,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 27.282,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob079_fsm3onehot",
+      "offset": 78,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 122.562,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob080_timer",
+      "offset": 79,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 124.656,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob081_7458",
+      "offset": 80,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 115.141,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob082_lfsr32",
+      "offset": 81,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 99.203,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob083_mt2015_q4b",
+      "offset": 82,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 116.672,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob084_ece241_2013_q12",
+      "offset": 83,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 18.875,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob085_shift4",
+      "offset": 84,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 119.328,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob086_lfsr5",
+      "offset": 85,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 106.234,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob087_gates",
+      "offset": 86,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 107.859,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob088_ece241_2014_q5b",
+      "offset": 87,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 122.125,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob089_ece241_2014_q5a",
+      "offset": 88,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 47.609,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob090_circuit1",
+      "offset": 89,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 110.079,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob091_2012_q2b",
+      "offset": 90,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 113.922,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob092_gatesv100",
+      "offset": 91,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 115.578,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob093_ece241_2014_q3",
+      "offset": 92,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 53.485,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob094_gatesv",
+      "offset": 93,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 115.297,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob095_review2015_fsmshift",
+      "offset": 94,
+      "baseline_pass": true,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 80.266,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob096_review2015_fsmseq",
+      "offset": 95,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 135.094,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob097_mux9to1v",
+      "offset": 96,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 72.453,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob098_circuit7",
+      "offset": 97,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 150.484,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob099_m2014_q6c",
+      "offset": 98,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 30.782,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob100_fsm3comb",
+      "offset": 99,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 61.515,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob101_circuit4",
+      "offset": 100,
+      "baseline_pass": true,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 73.75,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob102_circuit3",
+      "offset": 101,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 37.828,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob103_circuit2",
+      "offset": 102,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 120.375,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob104_mt2015_muxdff",
+      "offset": 103,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 32.406,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob105_rotate100",
+      "offset": 104,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 122.188,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob106_always_nolatches",
+      "offset": 105,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 110.281,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob107_fsm1s",
+      "offset": 106,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 119.75,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob108_rule90",
+      "offset": 107,
+      "baseline_pass": true,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 68.531,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob109_fsm1",
+      "offset": 108,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 64.141,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob110_fsm2",
+      "offset": 109,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 120.703,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob111_fsm2s",
+      "offset": 110,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 118.984,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob112_always_case2",
+      "offset": 111,
+      "baseline_pass": true,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 73.141,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob113_2012_q1g",
+      "offset": 112,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 68.531,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob114_bugs_case",
+      "offset": 113,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 62.735,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob115_shift18",
+      "offset": 114,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 127.36,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob116_m2014_q3",
+      "offset": 115,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 39.578,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob117_circuit9",
+      "offset": 116,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 38.547,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob118_history_shift",
+      "offset": 117,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 139.953,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob119_fsm3",
+      "offset": 118,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 122.891,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob120_fsm3s",
+      "offset": 119,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 129.266,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob121_2014_q3bfsm",
+      "offset": 120,
+      "baseline_pass": true,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 85.344,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob122_kmap4",
+      "offset": 121,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 116.047,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob123_bugs_addsubz",
+      "offset": 122,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 61.047,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob124_rule110",
+      "offset": 123,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 137.156,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob125_kmap3",
+      "offset": 124,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 61.344,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob126_circuit6",
+      "offset": 125,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 37.156,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob127_lemmings1",
+      "offset": 126,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 128.797,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob128_fsm_ps2",
+      "offset": 127,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 127.094,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob129_ece241_2013_q8",
+      "offset": 128,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 137.219,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob130_circuit5",
+      "offset": 129,
+      "baseline_pass": true,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 74.078,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob131_mt2015_q4",
+      "offset": 130,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 82.719,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob132_always_if2",
+      "offset": 131,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 64.172,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob133_2014_q3fsm",
+      "offset": 132,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 93.141,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob134_2014_q3c",
+      "offset": 133,
+      "baseline_pass": true,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 74.922,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob135_m2014_q6b",
+      "offset": 134,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 153.75,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob136_m2014_q6",
+      "offset": 135,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 137.093,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob137_fsm_serial",
+      "offset": 136,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 88.719,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob138_2012_q2fsm",
+      "offset": 137,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 122.047,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob139_2013_q2bfsm",
+      "offset": 138,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 68.688,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob140_fsm_hdlc",
+      "offset": 139,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 129.75,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob141_count_clock",
+      "offset": 140,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 54.281,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob142_lemmings2",
+      "offset": 141,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 48.484,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob143_fsm_onehot",
+      "offset": 142,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 81.188,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob144_conwaylife",
+      "offset": 143,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 92.563,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob145_circuit8",
+      "offset": 144,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 89.641,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob146_fsm_serialdata",
+      "offset": 145,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 65.047,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob147_circuit10",
+      "offset": 146,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 42.078,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob148_2013_q2afsm",
+      "offset": 147,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": false,
+      "elapsed_s": 123.641,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob149_ece241_2013_q4",
+      "offset": 148,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 89.016,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob150_review2015_fsmonehot",
+      "offset": 149,
+      "baseline_pass": false,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 87.703,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob151_review2015_fsm",
+      "offset": 150,
+      "baseline_pass": true,
+      "pass_at_1": true,
+      "repair_succeeded": true,
+      "elapsed_s": 171.922,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob152_lemmings3",
+      "offset": 151,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 74.563,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob153_gshare",
+      "offset": 152,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 53.062,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob154_fsm_ps2data",
+      "offset": 153,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 36.875,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob155_lemmings4",
+      "offset": 154,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 82.156,
+      "attempts": 1
+    },
+    {
+      "problem": "Prob156_review2015_fancytimer",
+      "offset": 155,
+      "baseline_pass": false,
+      "pass_at_1": false,
+      "repair_succeeded": false,
+      "elapsed_s": 72.578,
+      "attempts": 1
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 module TopModule(
+    input logic a,
+    input logic b,
     output logic y
 );
-    initial begin
-        y = 1'b0;
-        forever #1 y = ~y;
-    end
+    // Legal simulation syntax, but no unique clock or asynchronous reset.
+    always @(posedge a or posedge b)
+        y <= a ^ b;
 endmodule

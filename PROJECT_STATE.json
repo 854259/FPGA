@@ -24,7 +24,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-13",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -34,11 +34,12 @@
     "workspace": "E:/26qiansai/FPGA-teammate-review",
     "branch": "fix/reliable-evaluation",
     "result_schema_version": 2,
-    "unit_tests_passed": 14,
+    "unit_tests_passed": 18,
     "unit_tests_failed": 0,
     "real_model_eda_rocm_revalidated": false,
     "published": false,
-    "note": "本次仅在 E 盘副本完成代码与回归测试；以下原开发机环境和实测记录为 2026-09-01 历史证据，不代表本次复验。"
+    "note": "本次仅在 E 盘副本完成代码与回归测试；以下原开发机环境和实测记录为 2026-09-01 历史证据，不代表本次复验。",
+    "benchmark_schema_version": 3
   },
   "project": {
     "name": "2026 FPGA 赛道项目",
@@ -270,5 +271,150 @@
     "cloud_agent_attempts": 1,
     "cloud_elapsed_s": 118.891,
     "unit_tests_passed": 14
+  },
+  "regression_20260913": {
+    "date": "2026-09-13",
+    "unit_tests_passed": 18,
+    "unit_tests_failed": 0,
+    "vivado": {
+      "vivado_bin": "E:\\vivado\\2025.2\\Vivado\\bin\\vivado.bat",
+      "mock_model_for_repair": true,
+      "passed": true,
+      "checks": [
+        {
+          "case": "correct",
+          "expected_pass": true,
+          "expected_stage": "synthesis",
+          "passed": true
+        },
+        {
+          "case": "compile_fail",
+          "expected_pass": false,
+          "expected_stage": "compile",
+          "passed": true
+        },
+        {
+          "case": "sim_fail",
+          "expected_pass": false,
+          "expected_stage": "simulation",
+          "passed": true
+        },
+        {
+          "case": "synth_fail",
+          "expected_pass": false,
+          "expected_stage": "synthesis",
+          "passed": true
+        },
+        {
+          "case": "repair_loop",
+          "passed": true
+        }
+      ]
+    },
+    "cloud_model_retested": false,
+    "cloud_note": "Cloud API and first 10 problems already verified on 2026-09-12; no new cloud requests in this regression.",
+    "initial_finding": "Old synth_fail fixture unexpectedly synthesized successfully; replaced with ambiguous clock fixture and reran all 5 integration checks.",
+    "evidence": "04_project/amd_rtl_agent/outputs/regression_20260913_verified",
+    "repair_scope": "Fixed model responses with real Vivado simulation; not a cloud model capability measurement."
+  },
+  "cloud_next10_20260913": {
+    "status": "completed",
+    "offset": 10,
+    "limit": 10,
+    "model": "qwen3.6-27b",
+    "samples": 1,
+    "repairs": 1,
+    "full_vivado": true,
+    "unit_tests_passed": 20,
+    "launcher": "run_cloud_smoke.ps1 -BenchmarkNext10",
+    "evidence": "04_project/amd_rtl_agent/outputs/cloud_benchmark11_20_20260913_091816",
+    "completed_problems": 10,
+    "baseline_passed": 10,
+    "agent_passed": 10,
+    "agent_repairs_used": 0,
+    "elapsed_s": 1099.498,
+    "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_next10_20260913.json"
+  },
+  "cloud_combined_20260913": {
+    "tested": 20,
+    "total": 156,
+    "untested": 136,
+    "baseline_passed": 20,
+    "agent_passed": 20,
+    "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first20_combined_20260913.json"
+  },
+  "full156_optimization_20260913": {
+    "source_run": "04_project/amd_rtl_agent/outputs/full156_20260913_111459",
+    "original_completed": 156,
+    "original_baseline_passed": 101,
+    "original_agent_initial_passed": 94,
+    "original_agent_final_passed": 110,
+    "original_repaired": 16,
+    "original_improved": 17,
+    "original_regressed": 8,
+    "original_failure_stages": {
+      "format": 4,
+      "compile": 6,
+      "elaboration": 1,
+      "simulation": 35
+    },
+    "unit_tests_passed": 24,
+    "unit_tests_failed": 0,
+    "generation_skill": "04_project/amd_rtl_agent/skill/RTL_SKILL.md",
+    "repair_skill": "04_project/amd_rtl_agent/skill/RTL_REPAIR_SKILL.md",
+    "targeted_retest": {
+      "problems": 5,
+      "previous_passed": 1,
+      "passed": 3,
+      "complete": true,
+      "mock_model": false,
+      "evaluation_mode": "compile_simulation_synthesis",
+      "newly_passed": [
+        "Prob030_popcount255",
+        "Prob054_edgedetect"
+      ],
+      "still_failed": [
+        "Prob039_always_if",
+        "Prob108_rule90"
+      ],
+      "evidence": "04_project/amd_rtl_agent/bench/results/optimization_subset_20260913.json"
+    },
+    "new_full156_result_available": false,
+    "published": false,
+    "note": "Failure-selected historical comparison, not a held-out or full benchmark; no reference code added to skills."
+  },
+  "repair_controller_20260913": {
+    "status": "implemented_and_validated",
+    "unit_tests_passed": 30,
+    "unit_tests_failed": 0,
+    "archived_response_replay_passed": 2,
+    "cloud_model_retested": false,
+    "full156_retested": false,
+    "published": false,
+    "evidence": "04_project/amd_rtl_agent/bench/results/declaration_regression_20260913.json",
+    "changes": [
+      "compiler-guided simple ANSI output declaration repair within existing repair budget",
+      "exact duplicate detection and reuse of completed format/compile failure diagnostics",
+      "repair provenance and model call count tracking"
+    ]
+  },
+  "benchmark_resume_20260913": {
+    "status": "validated_locally",
+    "benchmark_schema_version": 4,
+    "unit_tests_passed": 39,
+    "unit_tests_failed": 0,
+    "cli_mock_resume_verified": true,
+    "cloud_retested": false,
+    "published": false,
+    "evidence": "04_project/amd_rtl_agent/bench/results/resume_regression_20260913.json"
+  },
+  "planned_rental_test": {
+    "source": "user_statement",
+    "period": "2026 National Day holiday",
+    "duration_days": 7,
+    "gpu": "RTX 5090",
+    "model": "Qwen3.8-27B",
+    "status": "planned_not_booked_or_deployed",
+    "amd_rocm_validation": "still_required_separately"
   }
 }

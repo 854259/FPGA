@@ -96,3 +96,54 @@
 - 原始 benchmark.json 保持 complete=false、requested_problems=20；另存 summary_first10.json 记录用户缩减范围后的结果，不把原 20 题任务标成完成。
 - 证据：04_project/amd_rtl_agent/outputs/cloud_benchmark20_20260912_225725/summary_first10.json。
 - 此结果仅适用于前 10 题，不能外推完整 156 题通过率；两种方式均满分，尚未体现技能提示或修复的增益。
+
+## 2026-09-13 优化与完整本地回归
+
+- 延续当前 E 盘项目和昨天已接通的云端 API；保留 Qwen3.6-27B 前 10 题 baseline/agent 均 10/10 的历史成绩。本轮未调用云端 API。
+- 修正批量统计：schema_version=3，improved_problems 表示相对 baseline 改善；repaired_problems 只统计首个 agent 样本初次失败后实际修复成功的题目。单题格式仍为 2。
+- API 空内容、异常响应结构统一明确报错，不额外重试；批量题数拒绝零和负数。
+- Python 自动回归 18/18 通过；真实 Vivado 回归 5/5 符合预期：正确代码通过综合，编译/仿真/综合负例分别在预期阶段失败，固定模型响应驱动的修复流程由仿真失败恢复通过。
+- 首轮发现旧 synth_fail.sv 实际可综合，已更换为仿真语法合法但时钟不明确的负例，并完整复测。首轮失败记录保留，不覆盖。
+- 修复流程使用固定响应和真实 Vivado，不表示真实云端模型修复能力已验证；ROCm 本轮未测。
+- 可复现入口：04_project/amd_rtl_agent/tests/run_vivado_regression.py；指定 VIVADO_BIN 和新的 --output-dir。
+- 精简报告：04_project/amd_rtl_agent/bench/results/local_regression_20260913.json；完整日志：04_project/amd_rtl_agent/outputs/regression_20260913_verified。
+
+## 2026-09-13 第 11–20 题云端评测准备
+
+- 用户明确要求测试后 10 题；增加 --offset 与 -BenchmarkNext10，严格选择固定公开集第 11–20 题，保留原完整 20 题运行中的 seed 编号。
+- 20 项自动测试通过，PowerShell 语法检查通过；固定数据集版本仍为 c498220d0a52248f8e3fdffe279075215bde2da6。
+- 当前进程/用户环境均无密钥，准备交互终端隐藏输入后启动。尚未产生新的云端成绩。
+
+## 2026-09-13 第 11–20 题云端验证完成
+
+- Qwen3.6-27B，固定 VerilogEval v2 第 11–20 题：baseline 10/10、agent 10/10；每题 1 个 agent 样本，均首次通过，无修复。真实 Vivado 编译、展开、仿真、综合各阶段退出码均为 0。
+- 本轮 complete=true，进程退出码 0，题目耗时合计 1099.498 秒（约 18.32 分钟）。完整证据：04_project/amd_rtl_agent/outputs/cloud_benchmark11_20_20260913_091816。
+- 模型参数、技能提示哈希、完整验证模式与昨日一致。两轮独立汇总后前 20 题 baseline 和 agent 均 20/20；本地共有 156 组完整题目，剩余 136 题未评测，不能外推全量通过率或宣称修复增益。
+- 精简报告：04_project/amd_rtl_agent/bench/results/qwen_cloud_next10_20260913.json；合并报告：04_project/amd_rtl_agent/bench/results/qwen_cloud_first20_combined_20260913.json。
+- 昨日中断的原始 20 题报告保持 complete=false，不覆盖历史记录。此前待密钥记录已由本条完成状态取代。
+
+## 2026-09-13 全量 156 题复盘与 skill 优化完成
+
+- 原始 156 题全部完成：baseline 101/156，agent 首次 94/156，最多一次修复后 110/156；修复成功 16 题，相对 baseline 改善 17、退化 8。此前“剩余 136 题未测”为历史状态。
+- 最终失败：格式 4、编译 6、展开 1、仿真 35；62 次修复中 15 次代码未变。复盘脚本与证据：04_project/amd_rtl_agent/bench/analyze_run.py、bench/results/full156_failure_analysis_20260913.json。
+- 提炼并接入生成 skill 与仅修复时加载的 RTL_REPAIR_SKILL.md：变量声明、作用域、精简完整代码、时序、状态机和基于反馈的修复；不含参考答案。两份技能分别记录哈希。
+- 修复日志保留首个错误和最终统计；相同阶段优先保留仿真错误比例更低的候选。24 项自动测试通过。
+- Qwen3.6-27B 定向复测 5 题（同模型参数和原 seed，1 个样本、最多 1 次修复）：旧版 1/5，新版 3/5。Prob030 首次通过、Prob054 修复通过、Prob001 保持通过，均完成真实 Vivado 仿真和综合；Prob039 与 Prob108 仍编译失败。
+- 定向成绩证据：04_project/amd_rtl_agent/bench/results/optimization_subset_20260913.json；详细复盘：03_analysis/08_全量156题优化与技能总结.md。
+- 该样本按失败类型选择，只能说明局部结果；新版 156 题全量成绩未测，不外推通过率。本次变更未发布。
+
+## 2026-09-13 编译驱动修复与重复检测验证完成
+
+- agent 根据 Vivado VRFC 10-1280 报错，将简单 ANSI 输出声明中的对应 output/output wire 修正为 output reg，保留位宽、符号、方向与逻辑；宏、参数化及复杂声明不自动修改。修正占已有修复次数，仍需完整 EDA 验证。
+- 同一样本内按精确代码哈希检测重复，重复的格式/编译失败复用已完成诊断，下一次模型提示明确指出原样返回。超时、工具缺失和仿真不缓存。记录 source、duplicate_of_attempt、evaluation_reused、model_calls。
+- 30 项自动测试通过。两道历史失败代码 Prob039、Prob058 重放均由编译失败经一次声明修正通过真实 Vivado 仿真和综合（分别 Mismatches: 0 in 114 / 219 samples）。
+- 本轮使用归档候选替代模型响应，没有调用云端 API；这是修复控制逻辑验证，不是新的模型成绩，不能合并进旧 156 题通过率。模型配置未切换。
+- 复现入口：04_project/amd_rtl_agent/tests/run_declaration_regression.py；精简证据：04_project/amd_rtl_agent/bench/results/declaration_regression_20260913.json。未发布。
+
+## 2026-09-13 批量实验续跑与统计
+
+- 新增 benchmark --resume，按完成题检查点恢复，核对模型配置、代码/skill、题目/测试台/参考内容哈希和结果文件。未完成题在 restart_N 新目录重跑；保留中断证据。
+- 输出目录防覆盖、单写入进程锁；旧实验无配置清单时不冒充可续跑。恢复不依赖可能尚未写完的总报告，而使用逐题原子检查点。
+- schema_version 4 新增模型调用数、生成耗时与 EDA 耗时；未完成题历史尝试耗时未计入汇总。旧批量启动器改用独立尝试目录，执行异常题可重新运行。
+- 39 项单元测试通过（包括中断、检查点先于总报告保存、配置/数据变化、结果篡改、目录锁、秘密字段不落盘）；真实 CLI 两题 mock 首跑与续跑一致。证据：04_project/amd_rtl_agent/bench/results/resume_regression_20260913.json。
+- 用户计划国庆租 RTX 5090 一周测试 Qwen3.8-27B，当前仅计划，尚未租用/部署。GPU 与云端模型本轮未测；AMD ROCm 验证仍需单独完成。

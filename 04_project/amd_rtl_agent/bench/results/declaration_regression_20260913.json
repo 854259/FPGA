@@ -1,0 +1,27 @@
+{
+  "scope": "archived response replay with real Vivado; not a new model benchmark",
+  "mock_model": true,
+  "complete": true,
+  "records": [
+    {
+      "problem": "Prob039_always_if",
+      "regression_passed": true,
+      "source": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\039_Prob039_always_if\\Prob039_always_if\\logs\\candidate_1\\attempt_1\\candidate.sv",
+      "source_sha256": "bc7eb4ecc8d1f0df74e64f1ff9db10f10c788b9592c155444e98eb2230024f08",
+      "model_calls": 1,
+      "selected_attempt": 2
+    },
+    {
+      "problem": "Prob058_alwaysblock2",
+      "regression_passed": true,
+      "source": "E:\\26qiansai\\FPGA-teammate-review\\04_project\\amd_rtl_agent\\outputs\\full156_20260913_111459\\problems\\058_Prob058_alwaysblock2\\Prob058_alwaysblock2\\logs\\candidate_1\\attempt_1\\candidate.sv",
+      "source_sha256": "61cbfdc75dbade909761c5d56ebc2e5f8491bc90103f50754f0439d7f5a5a5f2",
+      "model_calls": 1,
+      "selected_attempt": 2
+    }
+  ],
+  "agent_sha256": "c983990ff6b1e7b867f90d577f1ff36c8c7e33972f573902774884d5c1c9f0a7",
+  "passed": true,
+  "unit_tests_passed": 30,
+  "unit_tests_failed": 0
+}

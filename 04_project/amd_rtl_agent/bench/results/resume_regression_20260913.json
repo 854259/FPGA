@@ -1,0 +1,22 @@
+{
+  "unit_tests_passed": 39,
+  "unit_tests_failed": 0,
+  "command": "python -m unittest discover -s tests -q",
+  "mock_cli_problems": 2,
+  "mock_cli_resume_identical": true,
+  "functional_pass": null,
+  "cloud_model_tested": false,
+  "gpu_tested": false,
+  "artifacts": "outputs/resume_smoke_20260913",
+  "coverage": [
+    "completed resume without model calls",
+    "interrupted problem preservation",
+    "checkpoint before summary interruption",
+    "configuration and testbench mismatch",
+    "candidate integrity",
+    "output protection",
+    "writer lock",
+    "credential omission",
+    "legacy retry isolation"
+  ]
+}

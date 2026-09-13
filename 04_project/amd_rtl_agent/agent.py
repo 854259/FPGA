@@ -52,7 +52,13 @@ def write_json(path: Path, value: dict) -> None:
 
 
 def quality(result: dict) -> tuple:
-    return (bool(result["passed"]), STAGE_ORDER.get(str(result["highest_stage"]), 0))
+    # Within the same simulation stage prefer fewer mismatched samples.
+    # Only compare normalized counts when the simulator reports a denominator.
+    counts = re.findall(r"Mismatches\s*:\s*(\d+)\s+in\s+(\d+)\s+samples",
+                        str(result.get("feedback", "")), re.IGNORECASE)
+    mismatch_rate = max((int(n) / int(d) for n, d in counts if int(d) > 0), default=1.0)
+    return (bool(result["passed"]), STAGE_ORDER.get(str(result["highest_stage"]), 0),
+            -mismatch_rate)
 
 
 def functional_pass(result: dict) -> bool | None:
@@ -126,8 +132,11 @@ def call_model(messages: list[dict[str, str]], seed: int) -> str:
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             payload = json.loads(response.read().decode("utf-8"))
-        return payload["choices"][0]["message"]["content"]
-    except (urllib.error.URLError, KeyError, IndexError, json.JSONDecodeError) as exc:
+        content = payload["choices"][0]["message"]["content"]
+        if not isinstance(content, str) or not content.strip():
+            raise ValueError("model response content must be a non-empty string")
+        return content
+    except (urllib.error.URLError, TimeoutError, KeyError, IndexError, TypeError, ValueError) as exc:
         raise RuntimeError(f"model request failed: {exc}") from exc
 
 
@@ -247,14 +256,65 @@ def compact_feedback(output: str, limit: int = 4096) -> str:
     marker = re.compile(r"error|critical|fatal|mismatch|timeout|syntax|failed", re.IGNORECASE)
     for line in output.splitlines():
         if marker.search(line):
-            selected.append(line.strip())
-    text = "\n".join(selected[-40:]) if selected else output[-limit:]
-    return text[-limit:]
+            # Long absolute workspace paths otherwise crowd out the root error.
+            cleaned = re.sub(r"\[[^\[\]\n]*[\\/][^\[\]\n]*:(\d+)\]", r"[line \1]", line.strip())
+            if cleaned not in selected:
+                selected.append(cleaned)
+    if not selected:
+        return output[-limit:]
+    text = "\n".join(selected)
+    if len(text) <= limit:
+        return text
+    # Keep the first compiler diagnostics AND the simulator's final totals.
+    tail = min(limit // 3, 1024)
+    return text[:limit - tail - 5] + "\n...\n" + text[-tail:]
+
+
+def repair_output_declarations(code: str, feedback: str) -> str | None:
+    """Fix only simple ANSI output nets named by Vivado's procedural-write error.
+
+    Deliberately not a Verilog parser: grouped/non-ANSI/parameterized ports and
+    preprocessor constructs fall back to model repair. The result still needs EDA.
+    """
+    names = set(re.findall(r"\[VRFC 10-1280\] procedural assignment to a non-register (\w+)\b", feedback))
+    if not names or '`' in code:
+        return None
+    # Mask comments without shifting offsets, so comments cannot become ports.
+    masked = re.sub(r"//[^\n]*|/\*.*?\*/", lambda m: re.sub(r"[^\n]", " ", m[0]), code, flags=re.DOTALL)
+    if len(re.findall(r"\bmodule\b", masked)) != 1:
+        return None
+    header = re.search(r"\bmodule\s+TopModule\s*\((.*?)\)\s*;", masked, re.DOTALL)
+    if not header:
+        return None
+    changes = []
+    for segment in re.finditer(r"[^,]+", header[1]):
+        match = re.fullmatch(r"\s*output\s+(?:(wire)\s+)?(?:signed\s+)?(?:\[[^\[\]]+\]\s*)?(\w+)\s*", segment[0])
+        if not match or match[2] not in names:
+            continue
+        # A following unqualified grouped port would inherit the changed type.
+        rest = header[1][segment.end():].lstrip(', \t\r\n')
+        if rest and not re.match(r"(?:input|output|inout)\b", rest):
+            continue
+        base = header.start(1) + segment.start()
+        if match[1]:
+            changes.append((base + match.start(1), base + match.end(1), 'reg'))
+        else:
+            pos = base + re.search(r"\boutput\b", segment[0]).end()
+            changes.append((pos, pos, ' reg'))
+    for start, end, replacement in reversed(changes):
+        code = code[:start] + replacement + code[end:]
+    return code if changes else None
 
 
 def repair_feedback(code: str, feedback: str) -> str:
     """Add only contradictions explicitly exposed by simulator feedback."""
     notes = []
+    if "non-register" in feedback:
+        notes.append("过程赋值的目标必须声明为 reg 或 logic（包括 output）；wire 不能在 always 中赋值。保留端口方向和位宽。")
+    if "keyword 'wire' used in incorrect context" in feedback:
+        notes.append("不要在 always 的过程块内声明 wire；将组合连线移到模块作用域并用 assign，或使用块内变量和过程赋值。")
+    if "endmodule is missing" in feedback or "code fence" in feedback:
+        notes.append("输出可能被截断。请重写为简短完整实现：重复位运算使用固定边界 for 循环或向量表达式，省略解释和长注释，必须以 endmodule 结束。")
     for port in re.findall(r"Output ['\"]([A-Za-z_]\w*)['\"].*mismatch", feedback, re.IGNORECASE):
         input_port = re.search(
             rf"\binput\b[^;\n]*\b{re.escape(port)}\b",
@@ -417,7 +477,7 @@ def first_agent_messages(problem: str) -> list[dict[str, str]]:
 
 def repair_messages(problem: str, previous: str, feedback: str) -> list[dict[str, str]]:
     return [
-        {"role": "system", "content": skill_text()},
+        {"role": "system", "content": skill_text() + "\n" + read_text(ROOT / "skill" / "RTL_REPAIR_SKILL.md")},
         {
             "role": "user",
             "content": (
@@ -447,14 +507,35 @@ def generate_agent_sample(
     best_evaluation = None
     best_code = ""
     selected_attempt = 0
+    seen = {}
+    model_calls = 0
     for attempt in range(max_repairs + 1):
-        response = call_model(messages, seed + attempt * 1000)
+        patched = (repair_output_declarations(code, str(evaluation.get('feedback', '')))
+                   if attempt and evaluation['highest_stage'] == 'compile' else None)
+        origin = 'compiler_declaration_repair' if patched is not None else 'model'
+        generation_started = time.monotonic()
+        if patched is not None:
+            response = patched
+        else:
+            response = call_model(messages, seed + attempt * 1000)
+            model_calls += 1
+        generation_elapsed = time.monotonic() - generation_started if patched is None else 0.0
         code = extract_verilog(response)
+        digest = sha256_text(code)
+        prior = seen.get(digest)
+        duplicate_of = prior[0] if prior else None
         write_text(output, code)
         attempt_dir = eval_dir / f"attempt_{attempt + 1}"
         write_text(attempt_dir / "response.txt", response)
         write_text(attempt_dir / "candidate.sv", code)
-        if skip_eda:
+        reusable = (prior is not None and prior[1]['highest_stage'] in ('format', 'compile')
+                    and not prior[1]['passed']
+                    and all(not s.get('timed_out') and s.get('returncode') not in (124, 127)
+                            for s in prior[1].get('steps', [])))
+        evaluation_started = time.monotonic()
+        if reusable:
+            evaluation = {**prior[1], 'steps': [], 'reused_from_attempt': prior[0]}
+        elif skip_eda:
             error = basic_check(code)
             evaluation = {
                 "passed": error is None,
@@ -477,7 +558,14 @@ def generate_agent_sample(
             "passed": evaluation["passed"],
             "highest_stage": evaluation["highest_stage"],
             "feedback": evaluation.get("feedback", ""),
+            "source": origin,
+            "duplicate_of_attempt": duplicate_of,
+            "evaluation_reused": reusable,
+            "model_elapsed_s": round(generation_elapsed, 3),
+            "eda_elapsed_s": round(time.monotonic() - evaluation_started, 3) if not reusable and not skip_eda else 0.0,
         })
+        if digest not in seen:
+            seen[digest] = (attempt + 1, evaluation)
         write_json(attempt_dir / "evaluation.json", evaluation)
         if best_evaluation is None or quality(evaluation) > quality(best_evaluation):
             best_evaluation = evaluation
@@ -487,6 +575,8 @@ def generate_agent_sample(
             break
         if attempt < max_repairs:
             feedback = repair_feedback(code, str(evaluation.get("feedback", "")))
+            if duplicate_of is not None:
+                feedback += "\n当前代码与已失败的第 " + str(duplicate_of) + " 次尝试完全相同。请针对上述错误修改实现，不要原样重发。"
             messages = repair_messages(problem, code, feedback)
     evaluation = best_evaluation
     write_text(output, best_code)
@@ -496,6 +586,9 @@ def generate_agent_sample(
         "attempts": len(attempts),
         "selected_attempt": selected_attempt,
         "attempt_history": attempts,
+        "model_calls": model_calls,
+        "model_elapsed_s": round(sum(a['model_elapsed_s'] for a in attempts), 3),
+        "eda_elapsed_s": round(sum(a['eda_elapsed_s'] for a in attempts), 3),
         "passed": evaluation["passed"],
         "highest_stage": evaluation["highest_stage"],
         "functional_checked": evaluation.get("functional_checked", False),
@@ -558,6 +651,7 @@ def run_problem(args: argparse.Namespace) -> dict[str, object]:
         "problem_sha256": sha256_text(problem),
         "model": model_settings(),
         "skill_sha256": sha256_text(skill_text()),
+        "repair_skill_sha256": sha256_text(read_text(ROOT / "skill" / "RTL_REPAIR_SKILL.md")),
         "evaluation_mode": "format_only" if args.skip_eda else (
             "compile_simulation" if args.skip_synthesis else "compile_simulation_synthesis"),
         "mock_model": bool(os.environ.get("LLM_MOCK_FILE")),
@@ -571,14 +665,68 @@ def run_problem(args: argparse.Namespace) -> dict[str, object]:
         "elapsed_s": round(time.monotonic() - started, 3),
         "official_target": "xczu3eg-sbva484-1-e",
         "clock_period_ns": 5.0,
+        "model_calls": baseline['calls'] + sum(s['model_calls'] for s in samples),
+        "model_elapsed_s": round(baseline['elapsed_s'] + sum(s['model_elapsed_s'] for s in samples), 3),
+        "eda_elapsed_s": round(sum(s.get('elapsed_s', 0) for s in baseline_eval.get('steps', []))
+                               + sum(s['eda_elapsed_s'] for s in samples), 3),
     }
     write_json(out / "result.json", result)
     return result
 
 
+def experiment_config(args, prompts, dataset):
+    """Fingerprint effective inputs; credentials are never persisted."""
+    return {
+        'model': model_settings(),
+        'settings': {key: os.environ.get(key, '') for key in (
+            'LLM_ENABLE_THINKING', 'LLM_MODEL_REVISION', 'LLM_QUANTIZATION',
+            'LLM_TIMEOUT_SECONDS', 'EDA_TIMEOUT_SECONDS', 'TB_TOP', 'VIVADO_BIN')},
+        'endpoint_sha256': sha256_text(os.environ.get('LLM_BASE_URL', 'http://127.0.0.1:8000/v1')),
+        'mock_sha256': (sha256_text(read_text(os.environ['LLM_MOCK_FILE']))
+                        if os.environ.get('LLM_MOCK_FILE') else None),
+        'samples': args.samples, 'repairs': args.repairs, 'seed': args.seed,
+        'offset': getattr(args, 'offset', 0),
+        'skip_eda': args.skip_eda, 'skip_synthesis': args.skip_synthesis,
+        'implementation': {name: sha256_text(read_text(ROOT / name)) for name in (
+            'agent.py', 'vivado_eval.tcl', 'skill/RTL_SKILL.md', 'skill/RTL_REPAIR_SKILL.md')},
+        'inputs': [{
+            'problem': str(p.relative_to(dataset)),
+            'sha256': {suffix: hashlib.sha256(p.with_name(
+                p.name[:-len('_prompt.txt')] + suffix).read_bytes()).hexdigest()
+                       for suffix in ('_prompt.txt', '_ref.sv', '_test.sv')}
+        } for p in prompts],
+    }
+
+
 def benchmark(args: argparse.Namespace) -> dict[str, object]:
+    """One writer per output directory; completed problems survive interruption."""
+    if args.limit is not None and args.limit <= 0:
+        raise ValueError('benchmark limit must be positive')
+    if getattr(args, 'offset', 0) < 0:
+        raise ValueError('benchmark offset must be non-negative')
+    output = Path(args.output_dir).resolve()
+    output.mkdir(parents=True, exist_ok=True)
+    lock = output / '.benchmark.lock'
+    try:
+        descriptor = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        raise RuntimeError(f'benchmark directory is locked: {lock}; check the owner process before removing a stale lock')
+    try:
+        with os.fdopen(descriptor, 'w') as stream:
+            stream.write(str(os.getpid()))
+        return _benchmark(args)
+    finally:
+        lock.unlink(missing_ok=True)
+
+
+def _benchmark(args: argparse.Namespace) -> dict[str, object]:
+    if args.limit is not None and args.limit <= 0:
+        raise ValueError("benchmark limit must be positive")
+    offset = getattr(args, "offset", 0)
+    if offset < 0:
+        raise ValueError("benchmark offset must be non-negative")
     dataset = Path(args.dataset).resolve()
-    prompts = sorted(dataset.rglob("*_prompt.txt"))
+    prompts = sorted(dataset.rglob("*_prompt.txt"))[offset:]
     if args.limit:
         prompts = prompts[:args.limit]
     if not prompts:
@@ -590,7 +738,31 @@ def benchmark(args: argparse.Namespace) -> dict[str, object]:
             if not prompt.with_name(prefix + suffix).is_file():
                 raise RuntimeError(f"incomplete dataset triple: {prompt.with_name(prefix + suffix)}")
     output_root = Path(args.output_dir).resolve()
+    config = experiment_config(args, prompts, dataset)
+    manifest = output_root / 'experiment.json'
+    resume = getattr(args, 'resume', False)
+    if resume:
+        if not manifest.is_file() or json.loads(read_text(manifest)) != config:
+            raise RuntimeError('resume configuration/input mismatch or missing experiment.json; use a new output directory')
+    else:
+        if any(p.name != '.benchmark.lock' for p in output_root.iterdir()):
+            raise RuntimeError('output directory is not empty; use --resume or a new output directory')
+        write_json(manifest, config)
     records = []
+    completed = {}
+    for prompt in prompts:
+        name = str(prompt.relative_to(dataset))
+        checkpoint = output_root / '.checkpoints' / (sha256_text(name) + '.json')
+        if resume and checkpoint.exists():
+            saved = json.loads(read_text(checkpoint))
+            if saved['record']['problem'] != name or not saved['artifacts']:
+                raise RuntimeError(f'invalid checkpoint for {name}')
+            for relative, digest in saved['artifacts'].items():
+                artifact = (output_root / relative).resolve()
+                if not artifact.is_relative_to(output_root) or not artifact.is_file() or hashlib.sha256(artifact.read_bytes()).hexdigest() != digest:
+                    raise RuntimeError(f'resume artifact missing or changed: {relative}')
+            completed[name] = saved['record']
+    records = [completed[str(p.relative_to(dataset))] for p in prompts if str(p.relative_to(dataset)) in completed]
 
     def save_summary(complete=False):
         def rate(key):
@@ -599,43 +771,81 @@ def benchmark(args: argparse.Namespace) -> dict[str, object]:
                     if values and all(v is not None for v in values) else None)
         comparable = [r for r in records if r["baseline_pass"] is not None and r["pass_at_1"] is not None]
         summary = {
-            "schema_version": 2, "dataset": str(dataset),
+            "schema_version": 4, "dataset": str(dataset),
+            "offset": offset,
             "complete": complete, "requested_problems": len(prompts), "problems": len(records),
             "baseline_pass_rate": rate("baseline_pass"),
             "pass_at_1": rate("pass_at_1"), "pass_at_5": rate("pass_at_5"),
-            "repaired_problems": sum(not r["baseline_pass"] and r["pass_at_1"] for r in comparable),
+            "improved_problems": sum(not r["baseline_pass"] and r["pass_at_1"] for r in comparable),
+            "repaired_problems": (sum(r["repair_succeeded"] for r in records)
+                                  if records and all(r["repair_succeeded"] is not None for r in records) else None),
             "regressed_problems": sum(r["baseline_pass"] and not r["pass_at_1"] for r in comparable),
             "mean_elapsed_s": sum(r["elapsed_s"] for r in records) / len(records) if records else None,
             "mock_model": bool(os.environ.get("LLM_MOCK_FILE")),
+            "total_model_calls": (sum(r['model_calls'] for r in records)
+                                  if records and all(r['model_calls'] is not None for r in records) else None),
+            "total_model_elapsed_s": (round(sum(r['model_elapsed_s'] for r in records), 3)
+                                      if records and all(r['model_elapsed_s'] is not None for r in records) else None),
+            "total_eda_elapsed_s": (round(sum(r['eda_elapsed_s'] for r in records), 3)
+                                    if records and all(r['eda_elapsed_s'] is not None for r in records) else None),
             "records": records,
         }
         write_json(output_root / "benchmark.json", summary)
         return summary
 
     save_summary()
-    for prompt in prompts:
+    for position, prompt in enumerate(prompts):
+        name = str(prompt.relative_to(dataset))
+        if name in completed:
+            continue
         prefix = prompt.name[:-len("_prompt.txt")]
         reference = prompt.with_name(prefix + "_ref.sv")
         testbench = prompt.with_name(prefix + "_test.sv")
+        problem_output = output_root / prompt.relative_to(dataset).parent / prefix
+        # Preserve all evidence from an interrupted problem. Restart that problem
+        # in a fresh directory; only completed problems are resumed.
+        if problem_output.exists() and any(problem_output.iterdir()):
+            retry = 1
+            while (problem_output / f'restart_{retry}').exists():
+                retry += 1
+            problem_output = problem_output / f'restart_{retry}'
         child = argparse.Namespace(
             problem=str(prompt),
-            output_dir=str(output_root / prompt.relative_to(dataset).parent / prefix),
+            output_dir=str(problem_output),
             testbench=str(testbench),
             reference=str(reference),
             samples=args.samples,
             repairs=args.repairs,
-            seed=args.seed + len(records) * 100,
+            seed=args.seed + (offset + position) * 100,
             skip_eda=args.skip_eda,
             skip_synthesis=args.skip_synthesis,
         )
         result = run_problem(child)
-        records.append({
+        # Compare the first agent sample with its own initial attempt, not with
+        # the independent baseline. Keep this aligned with pass_at_1.
+        first = result["samples"][0]
+        repair_succeeded = (bool(result["pass_at_1"] and first["selected_attempt"] > 1
+                                 and not first["attempt_history"][0]["passed"])
+                            if result["pass_at_1"] is not None else None)
+        record = {
             "problem": str(prompt.relative_to(dataset)),
             "baseline_pass": result["baseline_pass"],
             "pass_at_1": result["pass_at_1"],
             "pass_at_5": result["pass_at_5"],
             "elapsed_s": result["elapsed_s"],
-        })
+            "repair_succeeded": repair_succeeded,
+            "result_path": str((problem_output / 'result.json').relative_to(output_root)),
+            "model_calls": result.get('model_calls'),
+            "model_elapsed_s": result.get('model_elapsed_s'),
+            "eda_elapsed_s": result.get('eda_elapsed_s'),
+        }
+        write_json(problem_output / 'result.json', result)
+        artifacts = {str(p.relative_to(output_root)): hashlib.sha256(p.read_bytes()).hexdigest()
+                     for p in problem_output.rglob('*') if p.is_file() and p.suffix in ('.sv', '.json', '.txt')}
+        write_json(output_root / '.checkpoints' / (sha256_text(name) + '.json'),
+                   {'record': record, 'artifacts': artifacts})
+        completed[name] = record
+        records = [completed[str(p.relative_to(dataset))] for p in prompts if str(p.relative_to(dataset)) in completed]
         save_summary()
         print(f"[{len(records)}/{len(prompts)}] {prefix}", file=sys.stderr, flush=True)
     return save_summary(complete=True)
@@ -672,6 +882,8 @@ def build_parser() -> argparse.ArgumentParser:
     bench_parser.add_argument("--dataset", required=True)
     bench_parser.add_argument("--output-dir", required=True)
     bench_parser.add_argument("--limit", type=int)
+    bench_parser.add_argument("--offset", type=int, default=0, help="skip this many sorted problems before applying limit")
+    bench_parser.add_argument("--resume", action="store_true", help="resume completed problems with identical configuration and inputs")
     bench_parser.add_argument("--samples", type=int, default=5, choices=range(1, 6))
     bench_parser.add_argument("--repairs", type=int, default=2, choices=range(0, 3))
     bench_parser.add_argument("--seed", type=int, default=1)

@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-13",
+  "unit_tests_passed": 18,
+  "unit_tests_failed": 0,
+  "vivado": {
+    "vivado_bin": "E:\\vivado\\2025.2\\Vivado\\bin\\vivado.bat",
+    "mock_model_for_repair": true,
+    "passed": true,
+    "checks": [
+      {
+        "case": "correct",
+        "expected_pass": true,
+        "expected_stage": "synthesis",
+        "passed": true
+      },
+      {
+        "case": "compile_fail",
+        "expected_pass": false,
+        "expected_stage": "compile",
+        "passed": true
+      },
+      {
+        "case": "sim_fail",
+        "expected_pass": false,
+        "expected_stage": "simulation",
+        "passed": true
+      },
+      {
+        "case": "synth_fail",
+        "expected_pass": false,
+        "expected_stage": "synthesis",
+        "passed": true
+      },
+      {
+        "case": "repair_loop",
+        "passed": true
+      }
+    ]
+  },
+  "cloud_model_retested": false,
+  "cloud_note": "Cloud API and first 10 problems already verified on 2026-09-12; no new cloud requests in this regression.",
+  "initial_finding": "Old synth_fail fixture unexpectedly synthesized successfully; replaced with ambiguous clock fixture and reran all 5 integration checks.",
+  "evidence": "04_project/amd_rtl_agent/outputs/regression_20260913_verified",
+  "repair_scope": "Fixed model responses with real Vivado simulation; not a cloud model capability measurement."
+}
