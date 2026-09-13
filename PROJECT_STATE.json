@@ -37,7 +37,7 @@
     "unit_tests_passed": 18,
     "unit_tests_failed": 0,
     "real_model_eda_rocm_revalidated": false,
-    "published": false,
+    "published": true,
     "note": "本次仅在 E 盘副本完成代码与回归测试；以下原开发机环境和实测记录为 2026-09-01 历史证据，不代表本次复验。",
     "benchmark_schema_version": 3
   },
@@ -392,7 +392,7 @@
       "evidence": "04_project/amd_rtl_agent/bench/results/optimization_subset_20260913.json"
     },
     "new_full156_result_available": false,
-    "published": false,
+    "published": true,
     "note": "Failure-selected historical comparison, not a held-out or full benchmark; no reference code added to skills."
   },
   "repair_controller_20260913": {
@@ -402,7 +402,7 @@
     "archived_response_replay_passed": 2,
     "cloud_model_retested": false,
     "full156_retested": false,
-    "published": false,
+    "published": true,
     "evidence": "04_project/amd_rtl_agent/bench/results/declaration_regression_20260913.json",
     "changes": [
       "compiler-guided simple ANSI output declaration repair within existing repair budget",
@@ -417,7 +417,7 @@
     "unit_tests_failed": 0,
     "cli_mock_resume_verified": true,
     "cloud_retested": false,
-    "published": false,
+    "published": true,
     "evidence": "04_project/amd_rtl_agent/bench/results/resume_regression_20260913.json"
   },
   "planned_rental_test": {
@@ -428,5 +428,14 @@
     "model": "Qwen3.8-27B",
     "status": "planned_not_booked_or_deployed",
     "amd_rocm_validation": "still_required_separately"
+  },
+  "github_sync_20260913": {
+    "status": "code_push_verified",
+    "branch": "fix/reliable-evaluation",
+    "verified_code_commit": "6abfdd96d2550d24ff347bc9a5d0637a9a34fbdd",
+    "integrated_main_commit": "d5753b467c12c0a204aae37b26911035d7a983ad",
+    "unit_tests_passed": 39,
+    "includes": "full156 reports, skills, compiler repairs, duplicate detection, resumable benchmarks and timings",
+    "note": "main branch itself was not updated; development branch contains current main registration changes"
   }
 }
