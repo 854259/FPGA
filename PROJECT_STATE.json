@@ -672,7 +672,7 @@
       "POSIX process cleanup",
       "mutable service and tool versions behind unchanged paths"
     ],
-    "publication_status": "pending",
+    "publication_status": "published_and_remote_verified",
     "cleanup": {
       "status": "blocked_by_policy",
       "removed_cache_directories": 0,
@@ -680,6 +680,9 @@
       "scope": "outputs/reliability_20260920_220835 .Xil and xsim.dir only",
       "reason": "automatic approval rejected the native PowerShell cleanup command; no further reason supplied",
       "original_sources_and_validation_evidence_preserved": true
-    }
+    },
+    "implementation_commit": "b9fd7b50609510a99137d89ca65cf70b70d35173",
+    "remote_branch": "origin/fix/reliable-evaluation",
+    "main_branch_modified": false
   }
 }
