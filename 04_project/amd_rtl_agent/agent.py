@@ -15,6 +15,7 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import time
@@ -24,7 +25,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-DEFAULT_VIVADO_BIN = Path(r"F:\vivado\2025.2\Vivado\bin")
+DEFAULT_VIVADO_BIN = Path(r"F:\vivado\2026.1\Vivado\bin")
+TARGET_PART = "xczu3eg-sbva484-1-e"
 STAGE_ORDER = {"not_checked": 0, "format": 1, "compile": 2, "elaboration": 3,
                "simulation": 4, "synthesis": 5}
 _MOCK_CACHE: dict[str, dict[str, object]] = {}
@@ -42,6 +44,14 @@ def write_text(path: str | Path, content: str) -> None:
 
 def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def sha256_file(path: str | Path) -> str:
+    digest = hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def write_json(path: Path, value: dict) -> None:
@@ -172,7 +182,8 @@ def tool_path(name: str) -> str:
     directory = Path(override) if override else DEFAULT_VIVADO_BIN
     suffix = ".bat" if os.name == "nt" else ""
     candidate = directory / f"{name}{suffix}"
-    if candidate.exists():
+    # An explicit installation must not silently fall back to another version.
+    if override:
         return str(candidate)
     found = shutil.which(name) or shutil.which(name + suffix)
     return found or str(candidate)
@@ -202,7 +213,7 @@ def run_process(command: list[str], cwd: Path, timeout: int, log_path: Path) -> 
         actual = [env.get("COMSPEC", "cmd.exe"), "/d", "/s", "/c", "call", *command]
     started = time.monotonic()
     try:
-        completed = subprocess.run(
+        process = subprocess.Popen(
             actual,
             cwd=str(cwd),
             env=env,
@@ -211,25 +222,60 @@ def run_process(command: list[str], cwd: Path, timeout: int, log_path: Path) -> 
             text=True,
             encoding="utf-8",
             errors="replace",
-            timeout=timeout,
-            check=False,
+            start_new_session=os.name != "nt",
         )
-        output = completed.stdout
-        returncode = completed.returncode
-        timed_out = False
-    except subprocess.TimeoutExpired as exc:
-        output = exc.stdout or ""
-        if isinstance(output, bytes):
-            output = output.decode("utf-8", errors="replace")
-        output += "\nTIMEOUT"
-        returncode = 124
-        timed_out = True
+        try:
+            output, _ = process.communicate(timeout=timeout)
+            returncode = process.returncode
+            timed_out = False
+        except BaseException as exc:
+            # Kill the launcher and its EDA children before collecting output.
+            if os.name == "nt":
+                try:
+                    subprocess.run(["taskkill", "/PID", str(process.pid), "/T", "/F"],
+                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                   timeout=10, check=False)
+                except (OSError, subprocess.TimeoutExpired):
+                    pass  # Still terminate the direct process below.
+            else:
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+            if process.poll() is None:
+                process.kill()
+            try:
+                output, _ = process.communicate(timeout=5)
+            except subprocess.TimeoutExpired:
+                output = getattr(exc, 'stdout', None) or ""
+                process.stdout.close()
+                process.wait(timeout=5)
+            if isinstance(output, bytes):
+                output = output.decode("utf-8", errors="replace")
+            if not isinstance(exc, subprocess.TimeoutExpired):
+                write_text(log_path, output + "\nINTERRUPTED")
+                raise
+            output += "\nTIMEOUT"
+            returncode = 124
+            timed_out = True
     except OSError as exc:
         output = f"ERROR: unable to start command: {exc}"
         returncode = 127
         timed_out = False
     elapsed = time.monotonic() - started
     write_text(log_path, output)
+    # These failures cannot be repaired by changing the generated RTL. Preserve
+    # the log, abort this run, and leave the problem without a score/checkpoint.
+    if returncode == 127 or re.search(
+        r"(?im)^(?:ERROR:\s*(?:\[[^\]]+\]\s*)?)?(?:"
+        r"Could not obtain the necessary license|"
+        r"Vivado Design Suite cannot be launched because a valid license|"
+        r"A valid license was not found|Failed to get a license|License checkout failed|"
+        r"required target part \S+ is not installed|"
+        r".*error while loading shared libraries:|"
+        r"'.+' is not recognized as an internal or external command)", output
+    ):
+        raise RuntimeError(f"EDA environment error; scoring stopped. See {log_path}")
     return {
         "command": command,
         "returncode": returncode,
@@ -338,6 +384,10 @@ def evaluate_candidate(
 ) -> dict[str, object]:
     """Run the official RTL stage order; reference/test files are never sent to the model."""
     work = Path(work_dir).resolve()
+    if any((work / name).exists() for name in (
+        '01_xvlog.log', '02_xelab.log', '03_xsim.log', '04_vivado.log', 'synthesis'
+    )):
+        raise RuntimeError(f"evaluation directory contains previous evidence: {work}; use a new directory")
     work.mkdir(parents=True, exist_ok=True)
     candidate_copy = work / "candidate.sv"
     source = Path(candidate).resolve()
@@ -435,11 +485,28 @@ def evaluate_candidate(
         work / "04_vivado.log",
     )
     steps.append({k: v for k, v in vivado_step.items() if k != "output"})
-    if vivado_step["returncode"] != 0 or re.search(r"^ERROR:", str(vivado_step["output"]), re.MULTILINE):
+    if vivado_step["returncode"] != 0 or re.search(r"^\s*(?:ERROR|FATAL)\b", str(vivado_step["output"]), re.MULTILINE | re.IGNORECASE):
         result = _failed("synthesis", vivado_step)
         result["steps"] = steps
         result["functional_checked"] = functional_checked
         return result
+    marker = f"RTL_SYNTHESIS_PASS part={TARGET_PART} clock_period_ns=5.000"
+    required = ('PASS', 'post_synth.dcp', 'timing.rpt', 'utilization.rpt')
+    if marker not in str(vivado_step['output']).splitlines() or any(
+        not (synthesis_dir / name).is_file() or not (synthesis_dir / name).stat().st_size
+        for name in required
+    ):
+        raise RuntimeError(f"EDA synthesis completion evidence is missing; scoring stopped. See {work / '04_vivado.log'}")
+    metadata = dict(line.split('=', 1) for line in read_text(synthesis_dir / 'PASS').splitlines() if '=' in line)
+    if metadata.get('part') != TARGET_PART or metadata.get('clock_period_ns') != '5.000':
+        raise RuntimeError(f"EDA synthesis metadata mismatch: {synthesis_dir / 'PASS'}")
+    # A constraint is not a measured timing pass. Retain the report for review.
+    timing = {
+        'requested_clock_period_ns': 5.0,
+        'constrained_clock_ports': metadata.get('constrained_clock_ports', '').split(),
+        'timing_pass': None,
+        'report': str(synthesis_dir / 'timing.rpt'),
+    }
     return {
         "passed": True,
         "highest_stage": "synthesis",
@@ -447,10 +514,13 @@ def evaluate_candidate(
         "feedback": "",
         "steps": steps,
         "synthesis_skipped": False,
+        "timing": timing,
     }
 
 
 def baseline_generate(problem: str, output: str | Path, seed: int = 1) -> dict[str, object]:
+    if Path(output).exists():
+        raise RuntimeError(f"baseline output already exists: {output}; use a new path")
     started = time.monotonic()
     # This exact one-message call is the competition baseline contract.
     response = call_model([{"role": "user", "content": problem}], seed)
@@ -591,6 +661,8 @@ def generate_agent_sample(
         "eda_elapsed_s": round(sum(a['eda_elapsed_s'] for a in attempts), 3),
         "passed": evaluation["passed"],
         "highest_stage": evaluation["highest_stage"],
+        "feedback": evaluation.get("feedback", ""),
+        "timing": evaluation.get("timing"),
         "functional_checked": evaluation.get("functional_checked", False),
         "testbench_available": bool(testbench),
         "eda_skipped": skip_eda,
@@ -601,6 +673,8 @@ def generate_agent_sample(
 def run_problem(args: argparse.Namespace) -> dict[str, object]:
     problem = read_text(args.problem)
     out = Path(args.output_dir).resolve()
+    if out.exists() and any(out.iterdir()):
+        raise RuntimeError(f"output directory is not empty: {out}; use a new directory")
     out.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
 
@@ -627,6 +701,7 @@ def run_problem(args: argparse.Namespace) -> dict[str, object]:
         "functional_checked": baseline_eval.get("functional_checked", False),
         "testbench_available": bool(args.testbench),
         "eda_skipped": args.skip_eda,
+        "timing": baseline_eval.get("timing"),
     })
     write_json(out / "logs" / "baseline" / "evaluation.json", baseline_eval)
 
@@ -644,7 +719,7 @@ def run_problem(args: argparse.Namespace) -> dict[str, object]:
             skip_synthesis=args.skip_synthesis,
         ))
 
-    best = max(samples, key=lambda item: (bool(item["passed"]), STAGE_ORDER.get(str(item["highest_stage"]), 0), -int(item["attempts"])))
+    best = max(samples, key=lambda item: (*quality(item), -int(item["attempts"])))
     shutil.copy2(best["path"], out / "best.sv")
     result = {
         "schema_version": 2,
@@ -663,8 +738,10 @@ def run_problem(args: argparse.Namespace) -> dict[str, object]:
                       if len(samples) == 5 and functional_pass(samples[0]) is not None else None),
         "best": Path(best["path"]).name,
         "elapsed_s": round(time.monotonic() - started, 3),
-        "official_target": "xczu3eg-sbva484-1-e",
+        "official_target": TARGET_PART,
         "clock_period_ns": 5.0,
+        "clock_period_is_constraint": True,
+        "timing": best.get("timing"),
         "model_calls": baseline['calls'] + sum(s['model_calls'] for s in samples),
         "model_elapsed_s": round(baseline['elapsed_s'] + sum(s['model_elapsed_s'] for s in samples), 3),
         "eda_elapsed_s": round(sum(s.get('elapsed_s', 0) for s in baseline_eval.get('steps', []))
@@ -691,8 +768,8 @@ def experiment_config(args, prompts, dataset):
             'agent.py', 'vivado_eval.tcl', 'skill/RTL_SKILL.md', 'skill/RTL_REPAIR_SKILL.md')},
         'inputs': [{
             'problem': str(p.relative_to(dataset)),
-            'sha256': {suffix: hashlib.sha256(p.with_name(
-                p.name[:-len('_prompt.txt')] + suffix).read_bytes()).hexdigest()
+            'sha256': {suffix: sha256_file(p.with_name(
+                p.name[:-len('_prompt.txt')] + suffix))
                        for suffix in ('_prompt.txt', '_ref.sv', '_test.sv')}
         } for p in prompts],
     }
@@ -759,7 +836,7 @@ def _benchmark(args: argparse.Namespace) -> dict[str, object]:
                 raise RuntimeError(f'invalid checkpoint for {name}')
             for relative, digest in saved['artifacts'].items():
                 artifact = (output_root / relative).resolve()
-                if not artifact.is_relative_to(output_root) or not artifact.is_file() or hashlib.sha256(artifact.read_bytes()).hexdigest() != digest:
+                if not artifact.is_relative_to(output_root) or not artifact.is_file() or sha256_file(artifact) != digest:
                     raise RuntimeError(f'resume artifact missing or changed: {relative}')
             completed[name] = saved['record']
     records = [completed[str(p.relative_to(dataset))] for p in prompts if str(p.relative_to(dataset)) in completed]
@@ -820,7 +897,11 @@ def _benchmark(args: argparse.Namespace) -> dict[str, object]:
             skip_eda=args.skip_eda,
             skip_synthesis=args.skip_synthesis,
         )
-        result = run_problem(child)
+        try:
+            result = run_problem(child)
+        except Exception as exc:
+            write_json(problem_output / 'error.json', {'problem': name, 'error': str(exc)})
+            raise
         # Compare the first agent sample with its own initial attempt, not with
         # the independent baseline. Keep this aligned with pass_at_1.
         first = result["samples"][0]
@@ -840,8 +921,9 @@ def _benchmark(args: argparse.Namespace) -> dict[str, object]:
             "eda_elapsed_s": result.get('eda_elapsed_s'),
         }
         write_json(problem_output / 'result.json', result)
-        artifacts = {str(p.relative_to(output_root)): hashlib.sha256(p.read_bytes()).hexdigest()
-                     for p in problem_output.rglob('*') if p.is_file() and p.suffix in ('.sv', '.json', '.txt')}
+        artifacts = {str(p.relative_to(output_root)): sha256_file(p)
+                     for p in problem_output.rglob('*') if p.is_file() and
+                     (p.suffix in ('.sv', '.json', '.txt', '.log', '.rpt', '.dcp') or p.name == 'PASS')}
         write_json(output_root / '.checkpoints' / (sha256_text(name) + '.json'),
                    {'record': record, 'artifacts': artifacts})
         completed[name] = record

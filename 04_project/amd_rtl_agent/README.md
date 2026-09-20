@@ -1,5 +1,53 @@
 # AMD RTL 本地智能体（最简实现）
 
+## 当前分工与本轮修复（2026-09-20）
+
+用户已确认：本机受内存限制，只做代码调试；完整计算交给队友，实际评测使用
+Qwen3.6-27B。7B CPU 模型与相关镜像是历史冒烟环境，不是当前正式评测模型。
+通用 agent 不强制模型名称，启动脚本默认 27B，已配置的服务、模型和工具路径优先。
+
+本轮主要修改：
+
+- `bench/run_full_156.py` 直接调用统一的 `agent.py benchmark`，必须显式指定输出目录。
+  不再寻找最近的历史目录、不再单独拼接 progress.jsonl，也不自动循环重试模型请求。
+  只有 `--resume` 且指纹一致时才能恢复；旧格式实验仅保留查阅，另开新实验。
+- 已识别的工具缺失、许可证缺失、器件缺失会保存日志并停止评分，不进入 RTL 修复。
+  当前题写 `error.json`，没有成绩或检查点；已完成题不丢失，整批保持未完成。
+- 单题 `run`、独立 baseline 和重复 EDA 工作目录拒绝覆盖已有证据。
+  续跑校验增加 `.log/.rpt/.dcp/PASS`，文件哈希按块读取以降低内存占用。
+- 综合通过同时要求正确退出、无 ERROR/FATAL、准确完成标志及非空 PASS、DCP、时序和资源报告。
+  `clock_period_ns` 仍是约束配置；新增 `clock_period_is_constraint`、实际 `constrained_clock_ports`
+  与 `timing_pass=null`，不把综合通过写成 200MHz 时序已达标。
+- 多个样本间沿用样本内的验证阶段/错误比例排序，避免仅因顺序靠前选中更差失败候选。
+- EDA 超时或普通中断会尝试终止 Windows 进程树或 POSIX 进程组；保留中断前日志。
+  负例回归要求预期 RTL 诊断，修复流程也检查综合，不接受“缺许可证导致失败”作为负例通过。
+
+队友在配置好实际 `LLM_BASE_URL`、`LLM_API_KEY`、`VIVADO_BIN` 和许可证后，从此目录运行：
+
+```powershell
+$env:LLM_MODEL = 'qwen3.6-27b'
+# 请先按队友机器设置 VIVADO_BIN 和已有模型服务，不照抄本机 F 盘路径。
+python -B tests/run_vivado_regression.py --output-dir outputs/preflight_20260920
+python -B bench/run_full_156.py --output-dir outputs/qwen27b_20260920_new --samples 1 --repairs 1
+# 同一代码、环境和数据下中断恢复：
+python -B bench/run_full_156.py --output-dir outputs/qwen27b_20260920_new --samples 1 --repairs 1 --resume
+# 仅读进度，无模型调用：
+python -B bench/run_full_156.py --output-dir outputs/qwen27b_20260920_new --status
+```
+
+先检查 preflight 全部通过再执行全量命令。新的代码/技能/模型预算必须用新目录，不能为继续跑
+而修改 `experiment.json` 或检查点。已有旧 10/156 批次保持暂停，不自动迁移或恢复。
+`tools/check_environment.ps1` 默认只检查 Python、Vivado 与目标器件；仅显式加
+`-IncludeLocalRuntime` 时才检查历史 7B 权重与启动 WSL/Docker。
+
+本轮不会自动下载/加载 27B、启动模型服务或执行收费评测。仍需队友验证新版完整 156 题、pass@5、
+实际显存与墙钟、目标部署环境。未知的工具故障文本、同一路径下被替换的工具/服务版本、完整时序
+约束与官方最终评分口径仍不能由本轮修改保证；详见项目分析与交接文档。
+
+本机验证：52 项自动测试通过，Vivado 2026.1 的 5 项真实 EDA 回归通过，其中 mock 模型
+修复后的候选也经过综合。Windows 超时子进程回收已用真实小进程验证；POSIX 分支未实测。
+精简证据：`bench/results/reliability_20260920.json`。这不是新版 27B 成绩。
+
 ## 批量续跑与实验记录（2026-09-13）
 
 批量报告升级为 schema_version 4，单题仍为 2。`benchmark --resume` 会跳过已完成题，

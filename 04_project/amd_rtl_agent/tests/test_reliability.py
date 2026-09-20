@@ -10,6 +10,7 @@ from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import agent
+from run_vivado_regression import fixture_passed
 
 
 class ReliabilityTests(unittest.TestCase):
@@ -85,17 +86,20 @@ class ReliabilityTests(unittest.TestCase):
             self.assertIsNone(result['baseline_pass'])
             args.skip_eda = False
             args.testbench = 'tb'
+            args.output_dir = str(root/'with_tb')
             with mock.patch.object(agent, 'evaluate_candidate', return_value={
                 'passed': True, 'highest_stage': 'simulation', 'functional_checked': True}):
                 result = agent.run_problem(args)
             self.assertTrue(result['pass_at_1'])
             self.assertIsNone(result['pass_at_5'])
             args.samples = 5
+            args.output_dir = str(root/'five_samples')
             with mock.patch.object(agent, 'evaluate_candidate', return_value={
                 'passed': True, 'highest_stage': 'simulation', 'functional_checked': True}):
                 result = agent.run_problem(args)
                 self.assertTrue(result['pass_at_5'])
                 args.testbench = None
+                args.output_dir = str(root/'without_tb')
                 result = agent.run_problem(args)
                 self.assertIsNone(result['pass_at_1'])
                 self.assertIsNone(result['pass_at_5'])
@@ -204,6 +208,156 @@ class ReliabilityTests(unittest.TestCase):
             request.return_value.__enter__.return_value.read.return_value = json.dumps(
                 {'choices': [{'message': {'content': 'module TopModule; endmodule'}}]}).encode()
             self.assertEqual(agent.call_model([{'role': 'user', 'content': 'p'}], 1), 'module TopModule; endmodule')
+
+    def test_run_and_baseline_reject_existing_evidence_before_model_call(self):
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(agent, 'call_model') as model:
+            root = Path(tmp)
+            agent.write_text(root/'problem.txt', 'p')
+            agent.write_text(root/'out/baseline.sv', 'keep this evidence')
+            args = argparse.Namespace(problem=str(root/'problem.txt'), output_dir=str(root/'out'))
+            with self.assertRaisesRegex(RuntimeError, 'not empty'):
+                agent.run_problem(args)
+            with self.assertRaisesRegex(RuntimeError, 'already exists'):
+                agent.baseline_generate('p', root/'out/baseline.sv')
+            model.assert_not_called()
+            self.assertEqual((root/'out/baseline.sv').read_text(), 'keep this evidence')
+
+    def test_environment_errors_preserve_log_and_abort_scoring(self):
+        messages = [
+            'Could not obtain the necessary license for Simulator.',
+            'ERROR: Vivado Design Suite cannot be launched because a valid license was not found.',
+            'ERROR: [Common 17-345] A valid license was not found for feature Vivado_Synthesis.',
+            'ERROR: required target part xczu3eg-sbva484-1-e is not installed',
+        ]
+        for message in messages:
+            with self.subTest(message=message), tempfile.TemporaryDirectory() as tmp:
+                log = Path(tmp)/'environment.log'
+                with self.assertRaisesRegex(RuntimeError, 'EDA environment error'):
+                    agent.run_process([sys.executable, '-c', f'print({message!r}); raise SystemExit(1)'], Path(tmp), 5, log)
+                self.assertIn(message, log.read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(RuntimeError, 'EDA environment error'):
+                agent.run_process([str(Path(tmp)/'missing-tool')], Path(tmp), 1, Path(tmp)/'missing.log')
+            self.assertTrue((Path(tmp)/'missing.log').is_file())
+
+    def test_environment_abort_does_not_consume_repair_calls(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+             mock.patch.object(agent, 'call_model', return_value='module TopModule; endmodule') as model, \
+             mock.patch.object(agent, 'run_process', side_effect=RuntimeError('EDA environment error')):
+            root = Path(tmp)
+            with self.assertRaisesRegex(RuntimeError, 'EDA environment error'):
+                agent.generate_agent_sample('p', root/'out.sv', root/'logs', 1, None, None, 2, False, False)
+            self.assertEqual(model.call_count, 1)
+            self.assertTrue((root/'logs/attempt_1/response.txt').is_file())
+
+    def test_negative_fixtures_require_the_expected_rtl_diagnostic(self):
+        cases = [('compile_fail', 'compile', 'ERROR: [VRFC 10-4982] syntax error near assign'),
+                 ('sim_fail', 'simulation', 'Mismatches: 2'),
+                 ('synth_fail', 'synthesis', 'ERROR: [Synth 8-91] ambiguous clock in event control')]
+        for name, stage, feedback in cases:
+            result = dict(passed=False, highest_stage=stage, feedback=feedback, steps=[dict(returncode=1)])
+            self.assertTrue(fixture_passed(name, result))
+            self.assertFalse(fixture_passed(name, {**result, 'feedback': 'Could not obtain the necessary license for Simulator.'}))
+            self.assertFalse(fixture_passed(name, {**result, 'steps': [dict(returncode=124, timed_out=True)]}))
+
+    def test_synthesis_requires_current_completion_marker_and_nonempty_artifacts(self):
+        for missing in ('marker', 'PASS', 'post_synth.dcp', 'timing.rpt', 'utilization.rpt', None):
+            with self.subTest(missing=missing), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                agent.write_text(root/'input.sv', 'module TopModule; endmodule')
+                def process(command, cwd, timeout, log):
+                    if '-source' not in command:
+                        return dict(returncode=0, output='ok')
+                    directory = cwd/'synthesis'
+                    for name in ('PASS', 'post_synth.dcp', 'timing.rpt', 'utilization.rpt'):
+                        content = 'part=xczu3eg-sbva484-1-e\nclock_period_ns=5.000\nconstrained_clock_ports=\n' if name == 'PASS' else 'test artifact'
+                        agent.write_text(directory/name, '' if name == missing else content)
+                    return dict(returncode=0, output='tool exited' if missing == 'marker' else
+                                'RTL_SYNTHESIS_PASS part=xczu3eg-sbva484-1-e clock_period_ns=5.000')
+                with mock.patch.object(agent, 'run_process', side_effect=process):
+                    if missing is not None:
+                        with self.assertRaisesRegex(RuntimeError, 'completion evidence is missing'):
+                            agent.evaluate_candidate(root/'input.sv', root/'eval')
+                    else:
+                        result = agent.evaluate_candidate(root/'input.sv', root/'eval')
+                        self.assertTrue(result['passed'])
+                        self.assertEqual(result['timing']['constrained_clock_ports'], [])
+                        self.assertIsNone(result['timing']['timing_pass'])
+
+    def test_reusing_evaluation_directory_does_not_overwrite_logs(self):
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(agent, 'run_process') as run:
+            root = Path(tmp)
+            agent.write_text(root/'input.sv', 'module TopModule; endmodule')
+            agent.write_text(root/'eval/01_xvlog.log', 'old log')
+            with self.assertRaisesRegex(RuntimeError, 'previous evidence'):
+                agent.evaluate_candidate(root/'input.sv', root/'eval')
+            self.assertEqual((root/'eval/01_xvlog.log').read_text(), 'old log')
+            run.assert_not_called()
+
+    def test_explicit_tool_path_never_falls_back_to_another_installation(self):
+        with mock.patch.dict(os.environ, {'VIVADO_BIN': 'Z:/explicit-version/bin'}), \
+             mock.patch.object(agent.shutil, 'which', return_value='other-version/vivado'):
+            self.assertEqual(Path(agent.tool_path('vivado')).parent, Path('Z:/explicit-version/bin'))
+
+    def test_best_sample_compares_selected_error_rate_across_samples(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+             mock.patch.object(agent, 'call_model', side_effect=[
+                 'module TopModule; wire baseline; endmodule',
+                 'module TopModule; wire a; endmodule',
+                 'module TopModule; wire b; endmodule',
+                 'module TopModule; wire c; endmodule',
+                 'module TopModule; wire d; endmodule']), \
+             mock.patch.object(agent, 'evaluate_candidate', side_effect=[
+                 dict(passed=False, highest_stage='simulation', functional_checked=True, feedback=f'Mismatches: {n} in 100 samples')
+                 for n in (99, 80, 90, 40, 10)]):
+            root = Path(tmp)
+            agent.write_text(root/'problem.txt', 'p')
+            args = argparse.Namespace(problem=str(root/'problem.txt'), output_dir=str(root/'out'),
+                seed=1, testbench='tb', reference=None, samples=2, repairs=1, skip_eda=False, skip_synthesis=True)
+            result = agent.run_problem(args)
+            self.assertEqual(result['best'], 'candidate_2.sv')
+            self.assertIn('wire d', (root/'out/best.sv').read_text())
+            self.assertFalse(result['pass_at_1'])
+
+    def test_timeout_terminates_spawned_child_process(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            code = ('import subprocess,sys,time; '
+                    'child=subprocess.Popen([sys.executable,"-c","import time; time.sleep(30)"]); '
+                    'print(child.pid,flush=True); time.sleep(30)')
+            result = agent.run_process([sys.executable, '-c', code], root, 1, root/'tree.log')
+            self.assertTrue(result['timed_out'])
+            child_pid = int(result['output'].splitlines()[0])
+            if os.name == 'nt':
+                listing = subprocess.run(['tasklist', '/FI', f'PID eq {child_pid}', '/FO', 'CSV', '/NH'],
+                                         capture_output=True, text=True, timeout=5).stdout
+                try:
+                    self.assertNotIn(f'"{child_pid}"', listing)
+                finally:
+                    if f'"{child_pid}"' in listing:
+                        subprocess.run(['taskkill', '/PID', str(child_pid), '/T', '/F'], capture_output=True, timeout=5)
+            else:
+                stat = Path(f'/proc/{child_pid}/stat')
+                if stat.exists():
+                    self.assertEqual(stat.read_text().split()[2], 'Z')
+
+    def test_interruption_terminates_process_and_preserves_partial_log(self):
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(agent.subprocess, 'Popen') as start, \
+             mock.patch.object(agent.subprocess, 'run') as taskkill, \
+             mock.patch.object(agent.os, 'killpg', create=True) as killpg:
+            process = start.return_value
+            process.pid = 12345
+            process.poll.return_value = None
+            process.communicate.side_effect = [KeyboardInterrupt(), ('partial EDA output', None)]
+            log = Path(tmp)/'interrupted.log'
+            with self.assertRaises(KeyboardInterrupt):
+                agent.run_process(['eda-test-command'], Path(tmp), 10, log)
+            process.kill.assert_called_once()
+            if os.name == 'nt':
+                self.assertEqual(taskkill.call_args.args[0], ['taskkill', '/PID', '12345', '/T', '/F'])
+            else:
+                killpg.assert_called_once_with(12345, agent.signal.SIGKILL)
+            self.assertIn('partial EDA output\nINTERRUPTED', log.read_text())
 
 
 if __name__ == '__main__':

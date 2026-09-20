@@ -24,7 +24,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-09-13",
+  "last_updated": "2026-09-20",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -66,8 +66,9 @@
   },
   "evidence_status": {
     "materials_archived": true,
-    "source_file_count": 15,
-    "pdf_count": 7,
+    "source_file_count": 17,
+    "pdf_count": 8,
+    "docx_count": 1,
     "pdf_text_extracted": true,
     "source_hashes_generated": true,
     "registration_evidence_archived": false,
@@ -232,6 +233,17 @@
       "triple_count": 156,
       "full_run_status": "not_run",
       "note": "small CPU smoke only; upstream inconsistent items are reported separately"
+    },
+    "supplemental_test_documents": {
+      "received_date": "2026-09-13",
+      "docx": "01_sources/docx/国赛测试_2024能力测试.docx",
+      "pdf": "01_sources/pdf/国赛测试_密码锁与交通灯.pdf",
+      "task_count": 4,
+      "same_content": false,
+      "twenty_task_source": "not_identified_in_received_files",
+      "official_2026_hidden_set": "not_established",
+      "execution_status": "not_adapted_not_run",
+      "repeated_amd_guide": "sha256_identical_to_archived_version"
     }
   },
   "proposal": {
@@ -437,5 +449,237 @@
     "unit_tests_passed": 39,
     "includes": "full156 reports, skills, compiler repairs, duplicate detection, resumable benchmarks and timings",
     "note": "main branch itself was not updated; development branch contains current main registration changes"
+  },
+  "repository_sync_20260920": {
+    "branch": "fix/reliable-evaluation",
+    "verified_remote_commit": "da2fb8ea0890cd68012a983eefb710f4c2299e7a",
+    "main_commit": "d5753b467c12c0a204aae37b26911035d7a983ad",
+    "local_changes_stash": "de9254643da829767e8bacb3ee57a5c633a4718f",
+    "overlapping_local_code_merged": false,
+    "nonoverlapping_material_records_restored": true,
+    "unit_tests": {
+      "passed": 39,
+      "failed": 0,
+      "command": "python -B -m unittest discover -s tests -v"
+    },
+    "historical_summary_recount": {
+      "records": 156,
+      "baseline": 101,
+      "agent_final": 110,
+      "improved": 17,
+      "regressed": 8
+    },
+    "historical_full156_raw_logs_available_locally": false,
+    "latest_code_full156_retested": false,
+    "cloud_called": false,
+    "vivado_integration_rerun": false,
+    "gpu_tested": false,
+    "analysis": "03_analysis/08_全量156题优化与技能总结.md"
+  },
+  "local_stopped_benchmark_20260913": {
+    "name": "NVlabs VerilogEval",
+    "commit": "c498220d0a52248f8e3fdffe279075215bde2da6",
+    "triple_count": 156,
+    "full_run_status": "stopped_by_user",
+    "stopped_at": "2026-09-13T11:20:57+08:00",
+    "completed_at_stop": 10,
+    "resume_authorized": false,
+    "followup_status": "PAUSED",
+    "run_directory": "04_project/amd_rtl_agent/outputs/qwen36_api_full156_20260913",
+    "started_at": "2026-09-13T10:36:01+08:00",
+    "model": "qwen3.6-27b",
+    "baseline_samples": 1,
+    "agent_samples": 5,
+    "max_repairs": 2,
+    "workers": 2,
+    "skip_synthesis": false,
+    "initial_process_id": 26452,
+    "exec_session_id": 75264,
+    "followup_automation_id": "fpga-156",
+    "note": "User explicitly stopped run. Benchmark Python and descendant EDA processes terminated; matching processes=0. Automation fpga-156 paused. 10 complete results and partial work retained. Do not resume without a new explicit request."
+  },
+  "vivado_upgrade_20260920": {
+    "requested_version": "2026.1",
+    "authorization": "user_direct_request",
+    "status": "upgraded_old_version_uninstalled_cleanup_partial",
+    "current_install": "F:/vivado/2026.1",
+    "planned_destination": "F:/vivado/2026.1",
+    "download_page": "https://www.amd.com/en/support/downloads/adaptive-socs-and-fpgas/development-tools/2026-1.html",
+    "installer_filename": "FPGAs_AdaptiveSoCs_Unified_SDI_2026.1_0616_1700_Win64.exe",
+    "installer_downloaded": true,
+    "installed": true,
+    "validation_completed": true,
+    "previous_version_preserved": false,
+    "amd_login_verified": true,
+    "installer_path": "F:/Downloads/FPGAs_AdaptiveSoCs_Unified_SDI_2026.1_0616_1700_Win64.exe",
+    "installer_bytes": 300277378,
+    "installer_md5": "9e315e7b98310a8816d8eb3184ffd1ad",
+    "official_checksum_verified": true,
+    "extracted_path": "F:/vivado/Downloads/Installer_2026.1",
+    "installer_launch_pid": 3912,
+    "failure": "HTTP 500 Internal Server Error at reAuthenticate; installer rolled back at 2026-09-20 16:04:11",
+    "remove_previous_version_after_validation": true,
+    "installation_completed_at": "2026-09-20T18:43:31+08:00",
+    "validation_evidence": "04_project/amd_rtl_agent/outputs/vivado_2026_1_licensepath_20260920/summary.json",
+    "validation_blocker": null,
+    "license_type": "Vivado Basic Tier Node Locked",
+    "license_path": "C:/Users/Ken Zou/.Xilinx/Vivado_Basic_2026_1.lic",
+    "license_expiry": "2027-09-20",
+    "license_search_path": "User XILINXD_LICENSE_FILE configured",
+    "validation_checks_passed": 5,
+    "old_version_uninstalled": true,
+    "default_paths_switched": true,
+    "default_vivado_bin": "F:/vivado/2026.1/Vivado/bin",
+    "post_path_unit_tests_passed": 39,
+    "free_bytes_before_uninstall": 50130616320,
+    "free_bytes_after_uninstall": 129391996928,
+    "uninstall_evidence": "05_handoff/environment/vivado2025_uninstall.log",
+    "cleanup_remaining": [
+      "License Manager window",
+      "old .xinstall residual",
+      "installer caches",
+      "temporary maintenance scripts"
+    ],
+    "cleanup_blocker": "Additional UAC cancelled; temporary cleanup command blocked by policy"
+  },
+  "deep_analysis_20260920": {
+    "status": "completed_analysis_only",
+    "workspace": "D:/HUST/IC/FPGA",
+    "branch": "fix/reliable-evaluation",
+    "verified_remote_commit": "da2fb8ea0890cd68012a983eefb710f4c2299e7a",
+    "main_commit": "d5753b467c12c0a204aae37b26911035d7a983ad",
+    "runtime_delta_from_remote": "four existing Vivado default paths changed to F:/vivado/2026.1/Vivado/bin during the preceding upgrade",
+    "report": "03_analysis/08_全量156题优化与技能总结.md",
+    "existing_validation_reviewed": {
+      "unit_tests_passed": 39,
+      "vivado_2026_1_regression_checks_passed": 5,
+      "repair_case_model": "mock",
+      "repair_case_synthesis_checked": false,
+      "evidence": "04_project/amd_rtl_agent/outputs/vivado_2026_1_licensepath_20260920/summary.json"
+    },
+    "historical_full156_recount": {
+      "records": 156,
+      "baseline_passed": 101,
+      "agent_final_passed": 110,
+      "both_passed": 93,
+      "both_failed": 38,
+      "improved": 17,
+      "regressed": 8,
+      "net_gain_percentage_points": 5.769230769230769,
+      "recorded_problem_elapsed_seconds_sum": 13884.799,
+      "original_full_run_logs_available_locally": false,
+      "new_code_or_2026_1_full156_score": null
+    },
+    "offline_mock_probes": {
+      "synthesis_without_success_marker_or_artifacts_accepted": true,
+      "direct_run_overwrites_existing_baseline": true,
+      "scope": "temporary directories and mocked model/process returns; not actual EDA false positives"
+    },
+    "findings": [
+      {
+        "priority": "P1",
+        "id": "legacy_batch_mixes_experiments",
+        "evidence": "04_project/amd_rtl_agent/bench/run_full_156.py:49,213",
+        "status": "confirmed_by_source_not_fixed"
+      },
+      {
+        "priority": "P1",
+        "id": "environment_failures_count_as_candidate_failures",
+        "evidence": "04_project/amd_rtl_agent/agent.py:368,405; tests/run_vivado_regression.py:35; outputs/vivado_2026_1_regression_20260920",
+        "status": "source_and_real_logs_confirmed_not_fixed"
+      },
+      {
+        "priority": "P2",
+        "id": "single_problem_output_overwrite",
+        "evidence": "04_project/amd_rtl_agent/agent.py:603",
+        "status": "offline_mock_reproduced_not_fixed"
+      },
+      {
+        "priority": "P2",
+        "id": "synthesis_completion_not_verified",
+        "evidence": "04_project/amd_rtl_agent/agent.py:438",
+        "status": "offline_mock_reproduced_not_fixed"
+      },
+      {
+        "priority": "P2",
+        "id": "clock_configuration_not_timing_success",
+        "evidence": "04_project/amd_rtl_agent/vivado_eval.tcl:18",
+        "status": "confirmed_by_source_not_fixed"
+      },
+      {
+        "priority": "P2",
+        "id": "cross_sample_quality_order_differs",
+        "evidence": "04_project/amd_rtl_agent/agent.py:647",
+        "status": "confirmed_by_source_not_real_model_reproduced"
+      }
+    ],
+    "next_steps": [
+      "Use the existing protected benchmark entry; classify infrastructure errors; verify synthesis completion and protect single-run evidence",
+      "Freeze an independent 2026.1 experiment and obtain a same-budget full comparison when requested",
+      "Analyze simulation failures and regressions; then validate pass@5 and final offline deployment"
+    ],
+    "runtime_logic_changed_in_analysis": false,
+    "model_api_called": false,
+    "full_benchmark_started": false,
+    "stopped_benchmark_resumed": false,
+    "gpu_tested": false,
+    "final_official_rules_verified_online": false,
+    "original_sources_modified": false,
+    "new_project_intermediate_files": false,
+    "previously_blocked_cleanup_retried": false
+  },
+  "development_workflow_20260920": {
+    "source": "user_direct_confirmation",
+    "local_role": "code debugging with limited memory",
+    "full_evaluation_owner": "teammate",
+    "evaluation_model": "Qwen3.6-27B",
+    "local_7b_role": "historical smoke asset, not current evaluation model",
+    "model_revision_and_quantization": "teammate to record actual deployment",
+    "local_full_benchmark_authorized": false
+  },
+  "reliability_optimization_20260920": {
+    "status": "implemented_and_locally_validated",
+    "branch": "fix/reliable-evaluation",
+    "unit_tests_passed": 52,
+    "unit_tests_failed": 0,
+    "real_eda_checks_passed": 5,
+    "vivado_version": "2026.1",
+    "repair_model": "mock",
+    "repair_synthesis_checked": true,
+    "evidence": "04_project/amd_rtl_agent/bench/results/reliability_20260920.json",
+    "raw_evidence": "04_project/amd_rtl_agent/outputs/reliability_20260920_220835",
+    "changes": [
+      "unified protected full156 launcher",
+      "respect teammate model service and tool paths",
+      "abort recognized EDA environment failures without scoring",
+      "protect single-run and evaluation evidence",
+      "verify synthesis completion and artifacts",
+      "report clock constraint separately from timing pass",
+      "rank samples by selected evaluation quality",
+      "hash EDA evidence with bounded memory",
+      "attempt process-tree cleanup on timeout or interruption",
+      "check expected negative diagnostics and repaired synthesis",
+      "make local 7B and Docker checks opt-in"
+    ],
+    "real_27b_evaluated": false,
+    "model_api_called": false,
+    "stopped_benchmark_resumed": false,
+    "remaining_uncertainty": [
+      "new 27B full156 and pass@5 scores",
+      "teammate machine and actual 27B deployment",
+      "timing closure and complete constraints",
+      "unknown tool failure diagnostics",
+      "POSIX process cleanup",
+      "mutable service and tool versions behind unchanged paths"
+    ],
+    "publication_status": "pending",
+    "cleanup": {
+      "status": "blocked_by_policy",
+      "removed_cache_directories": 0,
+      "requested_cache_directories": 9,
+      "scope": "outputs/reliability_20260920_220835 .Xil and xsim.dir only",
+      "reason": "automatic approval rejected the native PowerShell cleanup command; no further reason supplied",
+      "original_sources_and_validation_evidence_preserved": true
+    }
   }
 }

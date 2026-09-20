@@ -118,25 +118,52 @@ class ResumeTests(unittest.TestCase):
         self.assertNotIn('secret-test-api-key', saved)
         self.assertNotIn('secret-password', saved)
 
-    def test_legacy_launcher_retries_into_fresh_directories(self):
-        directories = []
-        def run(command, **kwargs):
-            output = Path(command[command.index('--output-dir') + 1])
-            self.assertFalse(output.exists())
-            output.mkdir(parents=True)
-            directories.append(output)
-            if len(directories) == 1:
-                (output/'partial.txt').write_text('keep')
-                return argparse.Namespace(returncode=1)
-            agent.write_json(output/'benchmark.json', {'records': [dict(
-                baseline_pass=True, pass_at_1=True, repair_succeeded=False, elapsed_s=1)]})
-            return argparse.Namespace(returncode=0)
-        with mock.patch.object(run_full_156.subprocess, 'run', side_effect=run), mock.patch.object(run_full_156.time, 'sleep'):
-            result = run_full_156.run_one(0, 'p', self.root/'legacy', {})
-        self.assertTrue(result['pass_at_1'])
-        self.assertEqual(result['attempts'], 2)
-        self.assertNotEqual(*directories)
-        self.assertEqual((directories[0]/'partial.txt').read_text(), 'keep')
+    def test_full_launcher_uses_protected_benchmark_and_preserves_machine_config(self):
+        environment = {'LLM_BASE_URL': 'http://teammate.local/v1', 'LLM_MODEL': 'team-27b',
+                       'LLM_API_KEY': 'test-only', 'VIVADO_BIN': 'E:/Vivado/2026.1/bin'}
+        with mock.patch.dict(os.environ, environment, clear=True), \
+             mock.patch.object(run_full_156, 'TOTAL', 2), mock.patch.object(agent, 'main', return_value=0) as run:
+            self.assertEqual(run_full_156.main(['--dataset', str(self.dataset), '--output-dir', str(self.root/'full'), '--resume']), 0)
+            self.assertEqual(os.environ['VIVADO_BIN'], environment['VIVADO_BIN'])
+            self.assertEqual(os.environ['LLM_BASE_URL'], environment['LLM_BASE_URL'])
+            self.assertEqual(os.environ['LLM_MODEL'], 'team-27b')
+        self.assertEqual(run.call_args.args[0][0], 'benchmark')
+        self.assertIn('--resume', run.call_args.args[0])
+
+    def test_full_launcher_refuses_legacy_directory_without_changing_its_files(self):
+        out = self.root/'legacy'
+        agent.write_text(out/'progress.jsonl', '{"problem":"a"}\n')
+        before = (out/'progress.jsonl').read_bytes()
+        with mock.patch.dict(os.environ, {'LLM_API_KEY': 'test-only', 'LLM_MOCK_FILE': ''}), \
+             mock.patch.object(run_full_156, 'TOTAL', 2):
+            self.assertEqual(run_full_156.main(['--dataset', str(self.dataset), '--output-dir', str(out), '--resume']), 1)
+        self.model.assert_not_called()
+        self.assertEqual((out/'progress.jsonl').read_bytes(), before)
+
+    def test_full_launcher_status_does_not_run_inference(self):
+        agent.write_json(self.root/'status/benchmark.json', {'complete': False, 'problems': 1})
+        with mock.patch.object(agent, 'main') as run:
+            self.assertEqual(run_full_156.main(['--output-dir', str(self.root/'status'), '--status']), 0)
+        run.assert_not_called()
+
+    def test_checkpoint_protects_eda_evidence_as_well_as_candidate(self):
+        original = agent.run_problem
+        def with_reports(args):
+            result = original(args)
+            for name in ('01_xvlog.log', 'timing.rpt', 'post_synth.dcp', 'PASS'):
+                agent.write_text(Path(args.output_dir)/name, 'original evidence')
+            return result
+        with mock.patch.object(agent, 'run_problem', side_effect=with_reports):
+            agent.benchmark(self.args)
+        self.args.resume = True
+        self.model.reset_mock()
+        for name in ('01_xvlog.log', 'timing.rpt', 'post_synth.dcp', 'PASS'):
+            path = self.root/'out/a'/name
+            path.write_text('changed')
+            with self.assertRaisesRegex(RuntimeError, 'artifact missing or changed'):
+                agent.benchmark(self.args)
+            path.write_text('original evidence')
+        self.model.assert_not_called()
 
 
 if __name__ == '__main__':

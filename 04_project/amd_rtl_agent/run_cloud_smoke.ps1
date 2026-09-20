@@ -30,12 +30,18 @@ if (-not $env:LLM_API_KEY) {
     }
     if ([string]::IsNullOrWhiteSpace($env:LLM_API_KEY)) { throw 'API key cannot be empty.' }
 }
-$env:LLM_BASE_URL = 'https://ws-zx533vazjgfeshi6.cn-beijing.maas.aliyuncs.com/compatible-mode/v1'
-$env:LLM_MODEL = 'qwen3.6-27b'
-$env:LLM_ENABLE_THINKING = 'false'
-$env:LLM_MAX_TOKENS = '2048'
-$env:LLM_TIMEOUT_SECONDS = '120'
-$env:VIVADO_BIN = 'E:\vivado\2025.2\Vivado\bin'
+$defaults = @{
+    LLM_BASE_URL = 'https://ws-zx533vazjgfeshi6.cn-beijing.maas.aliyuncs.com/compatible-mode/v1'
+    LLM_MODEL = 'qwen3.6-27b'
+    LLM_ENABLE_THINKING = 'false'
+    LLM_MAX_TOKENS = '2048'
+    LLM_TIMEOUT_SECONDS = '120'
+}
+foreach ($entry in $defaults.GetEnumerator()) {
+    if (-not [Environment]::GetEnvironmentVariable($entry.Key, 'Process')) {
+        [Environment]::SetEnvironmentVariable($entry.Key, $entry.Value, 'Process')
+    }
+}
 Remove-Item Env:LLM_MOCK_FILE -ErrorAction SilentlyContinue
 $runPrefix = if ($BenchmarkNext10) { 'outputs\cloud_benchmark11_20_' } elseif ($Benchmark20) { 'outputs\cloud_benchmark20_' } else { 'outputs\cloud_smoke_' }
 $runDir = Join-Path $PSScriptRoot ($runPrefix + (Get-Date -Format 'yyyyMMdd_HHmmss'))
@@ -44,10 +50,10 @@ Push-Location $PSScriptRoot
 try {
     Write-Host "Results: $runDir"
     if ($isBenchmark) {
-        Write-Host "Running $benchmarkCount VerilogEval problems after offset ${benchmarkOffset}: Qwen3.6-27B, baseline + one agent candidate, at most one repair, full Vivado checks."
+        Write-Host "Running $benchmarkCount VerilogEval problems after offset ${benchmarkOffset}: $env:LLM_MODEL, baseline + one agent candidate, at most one repair, full Vivado checks."
         & python .\agent.py benchmark --dataset $datasetPath --output-dir $runDir --offset $benchmarkOffset --limit $benchmarkCount --samples 1 --repairs 1
     } else {
-        Write-Host 'Running Qwen3.6-27B + Vivado: baseline, one candidate, at most one repair.'
+        Write-Host "Running $env:LLM_MODEL + Vivado: baseline, one candidate, at most one repair."
         & python .\agent.py run --problem .\tests\fixtures\problem.txt --output-dir $runDir --testbench .\tests\fixtures\test.sv --reference .\tests\fixtures\ref.sv --samples 1 --repairs 1
     }
     $runExit = $LASTEXITCODE

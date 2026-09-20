@@ -1,0 +1,113 @@
+{
+  "scope": "2026-09-20 local reliability regression; no real model inference or full benchmark",
+  "python": "3.12.10",
+  "unit_tests": {
+    "command": "python -B -m unittest discover -s tests -q",
+    "passed": 52,
+    "failed": 0
+  },
+  "powershell_syntax_check": "passed for run_cloud_smoke.ps1 and tools/check_environment.ps1",
+  "eda": {
+    "version": "2026.1",
+    "part": "xczu3eg-sbva484-1-e",
+    "passed": true,
+    "checks": [
+      {
+        "case": "correct",
+        "expected_pass": true,
+        "expected_stage": "synthesis",
+        "passed": true,
+        "stage_returncodes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "highest_stage": "synthesis",
+        "functional_checked": true,
+        "timing": {
+          "requested_clock_period_ns": 5.0,
+          "constrained_clock_ports": [],
+          "timing_pass": null,
+          "report": "outputs/reliability_20260920_220835/correct/synthesis/timing.rpt"
+        }
+      },
+      {
+        "case": "compile_fail",
+        "expected_pass": false,
+        "expected_stage": "compile",
+        "passed": true,
+        "stage_returncodes": [
+          1
+        ],
+        "highest_stage": "compile",
+        "functional_checked": false,
+        "timing": null
+      },
+      {
+        "case": "sim_fail",
+        "expected_pass": false,
+        "expected_stage": "simulation",
+        "passed": true,
+        "stage_returncodes": [
+          0,
+          0,
+          0
+        ],
+        "highest_stage": "simulation",
+        "functional_checked": true,
+        "timing": null
+      },
+      {
+        "case": "synth_fail",
+        "expected_pass": false,
+        "expected_stage": "synthesis",
+        "passed": true,
+        "stage_returncodes": [
+          0,
+          0,
+          1
+        ],
+        "highest_stage": "synthesis",
+        "functional_checked": false,
+        "timing": null
+      },
+      {
+        "case": "repair_loop",
+        "passed": true,
+        "selected_attempt": 2,
+        "highest_stage": "synthesis",
+        "model_calls": 2
+      }
+    ],
+    "mock_model_for_repair": true,
+    "repair_synthesis_checked": true,
+    "source_run": "04_project/amd_rtl_agent/outputs/reliability_20260920_220835"
+  },
+  "validation_boundary": "Normal EDA stages and repaired synthesis passed; subsequent interruption cleanup addition passed unit tests. Windows child timeout termination was exercised with real Python processes; POSIX path was not run.",
+  "real_27b_evaluated": false,
+  "model_api_called": false,
+  "full_benchmark_resumed": false,
+  "unverified": [
+    "new 27B full156 and pass@5 scores",
+    "teammate machine and actual 27B deployment",
+    "timing closure and complete constraints",
+    "unknown tool failure diagnostics",
+    "POSIX process cleanup",
+    "mutable service and tool versions behind unchanged paths"
+  ],
+  "cleanup": {
+    "status": "blocked_by_policy",
+    "removed_cache_directories": 0,
+    "requested_cache_directories": 9,
+    "scope": "outputs/reliability_20260920_220835 .Xil and xsim.dir only",
+    "reason": "automatic approval rejected the native PowerShell cleanup command; no further reason supplied",
+    "original_sources_and_validation_evidence_preserved": true
+  },
+  "implementation_sha256_normalized_text": {
+    "agent.py": "206d88d44f444bfc6417766f56d3745978d5086453addaefb38e6933c4007f48",
+    "vivado_eval.tcl": "0707e548aba3155de6e99e8a466a7f26c5cdaa5d62474da8ac106230f1152a40",
+    "bench/run_full_156.py": "b16c2d498a28e4a6340031513dc3005f33fa25a88c8203f5d4cb8e8b41c05769",
+    "tests/run_vivado_regression.py": "6eff5a75f48947c7cb35886bbfeea087496ffc6831f690131f092b21bd527cbc"
+  }
+}

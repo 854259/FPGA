@@ -16,8 +16,10 @@ set rc [catch {
     }
     read_verilog -sv $source_file
     synth_design -top TopModule -part $target_part
+    set constrained_clock_ports ""
     if {[llength [get_ports -quiet clk]] == 1} {
         create_clock -name clk -period 5.000 [get_ports clk]
+        set constrained_clock_ports "clk"
     }
     write_checkpoint -force [file join $output_dir post_synth.dcp]
     report_utilization -file [file join $output_dir utilization.rpt]
@@ -25,6 +27,7 @@ set rc [catch {
     set fp [open [file join $output_dir PASS] w]
     puts $fp "part=$target_part"
     puts $fp "clock_period_ns=5.000"
+    puts $fp "constrained_clock_ports=$constrained_clock_ports"
     close $fp
 } message options]
 
