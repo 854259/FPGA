@@ -14,6 +14,20 @@ from run_vivado_regression import fixture_passed
 
 
 class ReliabilityTests(unittest.TestCase):
+    def test_failed_evaluation_keeps_adjacent_diagnostic_context(self):
+        log = ('INFO: preparation\nTime: unrelated\n'
+               'FATAL: invalid design state\n'
+               'Time: 10 ns  Iteration: 0  Process: /tb/checker\n'
+               'File: test.sv Line: 42\n'
+               'INFO: simulation stopped\nTime: unrelated later')
+        feedback = agent._failed('simulation', {'output': log})['feedback']
+        self.assertIn('FATAL: invalid design state', feedback)
+        self.assertIn('Time: 10 ns', feedback)
+        self.assertIn('File: test.sv Line: 42', feedback)
+        self.assertNotIn('unrelated', feedback)
+        self.assertNotIn('INFO:', feedback)
+        self.assertLessEqual(len(agent.compact_feedback(log * 100, limit=128)), 128)
+
     def test_feedback_retains_root_error_and_final_mismatch_count(self):
         log = "ERROR: root syntax error [E:/very/long/path/candidate.sv:17]\n"
         log += "\n".join(f"ERROR: cascading diagnostic {i}" for i in range(300))

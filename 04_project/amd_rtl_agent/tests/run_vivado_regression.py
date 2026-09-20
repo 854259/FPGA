@@ -31,11 +31,40 @@ def fixture_passed(name, result):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', required=True)
+    parser.add_argument('--repair-backtrack-only', action='store_true',
+                        help='check repair regression recovery with real compile/simulation, without synthesis')
     args = parser.parse_args()
     out = Path(args.output_dir).resolve()
     if out.exists() and any(out.iterdir()):
         parser.error('use a new or empty output directory to preserve previous evidence')
     fixtures = agent.ROOT / 'tests' / 'fixtures'
+    if args.repair_backtrack_only:
+        responses = [agent.read_text(fixtures / f'{name}.sv')
+                     for name in ('sim_fail', 'compile_fail', 'correct')]
+        with mock.patch.object(agent, 'call_model', side_effect=responses) as model:
+            result = agent.generate_agent_sample(agent.read_text(fixtures / 'problem.txt'),
+                out / 'repair.sv', out / 'repair', 1, fixtures / 'test.sv', fixtures / 'ref.sv',
+                2, False, True)
+        prompt = model.call_args_list[2].args[0][1]['content'] if model.call_count == 3 else ''
+        history = result['attempt_history']
+        checks = {
+            'initial_simulation_failure': fixture_passed('sim_fail', {**history[0], 'steps': []}),
+            'regressed_compile_failure': len(history) >= 2 and fixture_passed(
+                'compile_fail', {**history[1], 'steps': []}),
+            'repair_restored_best_code_and_feedback': responses[0].strip() in prompt
+                and responses[1].strip() not in prompt and history[0]['feedback'] in prompt,
+            'repair_lineage_and_budget': [a.get('repair_from_attempt') for a in history] == [None, 1, 1]
+                and model.call_count == 3,
+            'repaired_simulation_passed': result['passed'] and result['functional_checked']
+                and result['highest_stage'] == 'simulation' and result['selected_attempt'] == 3,
+        }
+        agent.write_json(out / 'repair' / 'result.json', {
+            **result, 'mock_model': True, 'final_repair_user_message': prompt})
+        summary = {'vivado_bin': agent.tool_path('vivado'), 'mock_model_for_repair': True,
+                   'repair_synthesis_checked': False, 'passed': all(checks.values()), 'checks': checks}
+        agent.write_json(out / 'summary.json', summary)
+        print(json.dumps(summary), flush=True)
+        return 0 if summary['passed'] else 1
     records = []
     for name, expected_pass, stage, with_tb in [
         ('correct', True, 'synthesis', True),

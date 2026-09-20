@@ -300,8 +300,14 @@ def _failed(stage: str, process: dict[str, object] | None, message: str = "") ->
 def compact_feedback(output: str, limit: int = 4096) -> str:
     selected = []
     marker = re.compile(r"error|critical|fatal|mismatch|timeout|syntax|failed", re.IGNORECASE)
+    context_remaining = 0
     for line in output.splitlines():
-        if marker.search(line):
+        diagnostic = marker.search(line)
+        # Vivado may put the time and source location on separate lines.
+        context = context_remaining > 0 and re.match(
+            r"\s*(?:Time|File|Scope|Process|Iteration)\s*:", line, re.IGNORECASE)
+        context_remaining = 2 if diagnostic else max(0, context_remaining - 1)
+        if diagnostic or context:
             # Long absolute workspace paths otherwise crowd out the root error.
             cleaned = re.sub(r"\[[^\[\]\n]*[\\/][^\[\]\n]*:(\d+)\]", r"[line \1]", line.strip())
             if cleaned not in selected:
@@ -361,13 +367,19 @@ def repair_feedback(code: str, feedback: str) -> str:
         notes.append("不要在 always 的过程块内声明 wire；将组合连线移到模块作用域并用 assign，或使用块内变量和过程赋值。")
     if "endmodule is missing" in feedback or "code fence" in feedback:
         notes.append("输出可能被截断。请重写为简短完整实现：重复位运算使用固定边界 for 循环或向量表达式，省略解释和长注释，必须以 endmodule 结束。")
+    # Inspect only simple ANSI ports of TopModule. Do not infer directions from
+    # comments, other modules, range expressions, or unsupported declarations.
+    masked = re.sub(r'"(?:\\.|[^"\\])*"|//[^\n]*|/\*.*?\*/', ' ', code, flags=re.DOTALL)
+    header = re.search(r"\bmodule\s+TopModule\s*\((.*?)\)\s*;", masked, re.DOTALL)
+    input_ports = set()
+    if header and '`' not in masked:
+        for declaration in re.finditer(
+            r"\binput\s+(?:(?:wire|reg|logic)\s+)?(?:(?:signed|unsigned)\s+)?"
+            r"(?:\[[^\[\]]+\]\s*)?([A-Za-z_]\w*(?:\s*,\s*[A-Za-z_]\w*)*)\s*"
+            r"(?=[;)]|,\s*(?:input|output|inout)\b)", header[1] + ')'):
+            input_ports.update(name.strip() for name in declaration[1].split(','))
     for port in re.findall(r"Output ['\"]([A-Za-z_]\w*)['\"].*mismatch", feedback, re.IGNORECASE):
-        input_port = re.search(
-            rf"\binput\b[^;\n]*\b{re.escape(port)}\b",
-            code,
-            re.IGNORECASE,
-        )
-        if input_port:
+        if port in input_ports:
             notes.append(
                 f"仿真反馈将端口 {port} 标识为 DUT 输出，但当前候选将其声明为 input；"
                 "请检查并修正端口方向。"
@@ -579,6 +591,7 @@ def generate_agent_sample(
     selected_attempt = 0
     seen = {}
     model_calls = 0
+    repair_from_attempt = None
     for attempt in range(max_repairs + 1):
         patched = (repair_output_declarations(code, str(evaluation.get('feedback', '')))
                    if attempt and evaluation['highest_stage'] == 'compile' else None)
@@ -629,6 +642,7 @@ def generate_agent_sample(
             "highest_stage": evaluation["highest_stage"],
             "feedback": evaluation.get("feedback", ""),
             "source": origin,
+            "repair_from_attempt": repair_from_attempt,
             "duplicate_of_attempt": duplicate_of,
             "evaluation_reused": reusable,
             "model_elapsed_s": round(generation_elapsed, 3),
@@ -644,9 +658,18 @@ def generate_agent_sample(
         if evaluation["passed"]:
             break
         if attempt < max_repairs:
+            repair_from_attempt = attempt + 1
+            regressed = quality(evaluation) < quality(best_evaluation)
+            if regressed:
+                code, evaluation = best_code, best_evaluation
+                repair_from_attempt = selected_attempt
             feedback = repair_feedback(code, str(evaluation.get("feedback", "")))
+            feedback = (f"本次修复基于第 {repair_from_attempt} 次候选；"
+                        f"未通过阶段：{evaluation['highest_stage']}。\n" + feedback)
+            if regressed:
+                feedback += "\n上一次修改的验证结果退步，已恢复验证结果较好的候选。请从当前代码继续修复。"
             if duplicate_of is not None:
-                feedback += "\n当前代码与已失败的第 " + str(duplicate_of) + " 次尝试完全相同。请针对上述错误修改实现，不要原样重发。"
+                feedback += "\n上一次返回的代码与已失败的第 " + str(duplicate_of) + " 次尝试完全相同。请针对上述错误修改实现，不要原样重发。"
             messages = repair_messages(problem, code, feedback)
     evaluation = best_evaluation
     write_text(output, best_code)

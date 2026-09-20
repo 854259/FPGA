@@ -1,5 +1,15 @@
 # AI 高密度上下文
 
+## 2026-09-20 后续修复反馈优化（最新）
+
+- 已复现并修复三项控制问题：端口方向提示跨越声明边界误报；修复退步后下一轮仍使用较差代码；日志压缩丢掉紧邻诊断的时间/位置行。
+- 仅识别TopModule的简单ANSI输入声明；复杂接口不推断方向。按现有验证阶段/归一化错误率回退到较好候选，质量相同仍沿用新候选；记录repair_from_attempt，不增加修复/模型调用上限。
+- 57项自动测试通过。固定模型响应配合真实Vivado2026.1完成“仿真失败→编译失败→回到首版→仿真通过”，5个流程断言通过；本轮跳过综合，不是新的27B成绩。
+- 证据：04_project/amd_rtl_agent/bench/results/repair_feedback_20260920.json。复现：tests/run_vivado_regression.py --repair-backtrack-only --output-dir outputs/repair_feedback_check_new。
+- 初始生成skill、baseline、模型参数未改；完整评测仍由队友使用27B执行，新代码需新实验目录。仅一次修复时不会发生再次回退修复。
+- 本轮新测试目录的缓存清理被自动审批拒绝（blocked by policy）；未删除或换方式绕过。此前暂停批次、原始资料和stash继续保留。
+- 本轮发布状态以PROJECT_STATE.json的repair_feedback_optimization_20260920为准；下方52项/5项综合回归属于上一轮证据。
+
 ## 2026-09-20 最新分工与优化结果（优先于下方历史记录）
 
 - 优化代码已推送并用ls-remote核验：fix/reliable-evaluation，提交b9fd7b50609510a99137d89ca65cf70b70d35173；main未修改。后续文档提交只同步此发布事实。

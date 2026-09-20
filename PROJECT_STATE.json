@@ -684,5 +684,41 @@
     "implementation_commit": "b9fd7b50609510a99137d89ca65cf70b70d35173",
     "remote_branch": "origin/fix/reliable-evaluation",
     "main_branch_modified": false
+  },
+  "repair_feedback_optimization_20260920": {
+    "status": "implemented_and_locally_validated",
+    "branch": "fix/reliable-evaluation",
+    "changes": [
+      "Conservative ANSI input direction hints",
+      "Backtrack to best validated candidate after regression",
+      "Keep adjacent simulator diagnostic context",
+      "Record repair_from_attempt without increasing budget"
+    ],
+    "unit_tests_passed": 57,
+    "real_eda_scenarios": 1,
+    "real_eda_assertions_passed": 5,
+    "vivado_version": "2026.1",
+    "synthesis_checked": false,
+    "repair_model": "mock",
+    "evidence": "04_project/amd_rtl_agent/bench/results/repair_feedback_20260920.json",
+    "raw_evidence": "04_project/amd_rtl_agent/outputs/repair_feedback_20260920_234100",
+    "real_27b_evaluated": false,
+    "model_api_called": false,
+    "stopped_benchmark_resumed": false,
+    "baseline_generation_and_model_budget_changed": false,
+    "publication_status": "not_yet_published",
+    "remaining_uncertainty": [
+      "No new 27B accuracy, latency, VRAM or pass@5 results",
+      "Backtracking requires remaining repair budget; one-repair runs do not gain extra calls",
+      "Stage and mismatch-rate ranking does not prove semantic distance to a correct design",
+      "Direction hint only supports simple ANSI ports; ambiguous interfaces keep raw feedback",
+      "No synthesis, timing, GPU or POSIX validation in this round"
+    ],
+    "cleanup": {
+      "status": "blocked_by_policy",
+      "removed_cache_directories": 0,
+      "cache_directories_retained": 3,
+      "reason": "Automatic approval rejected native PowerShell removal of this run caches; no further reason supplied; no workaround attempted"
+    }
   }
 }

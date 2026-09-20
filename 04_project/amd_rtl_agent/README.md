@@ -1,5 +1,25 @@
 # AMD RTL 本地智能体（最简实现）
 
+## 后续修复反馈优化（2026-09-20）
+
+- 修复端口方向误报：`input clk, output q`不会再被说成`q`是输入；忽略注释、字符串和其他模块。
+  只检查简单ANSI端口；参数化、宏、非ANSI等复杂接口保留原始工具反馈，不猜方向。
+- 修复结果退步且仍有修复机会时，下一轮使用验证结果较好的代码及其对应反馈；相同质量继续使用新候选。
+  `attempt_history[].repair_from_attempt`记录从哪一轮继续。比较沿用验证阶段和归一化错误率，不能保证其等价于语义上更接近正确解。
+- 保留报错紧邻两行内的时间和源位置；反馈仍最多4096字符。初始生成skill、裸模型baseline、模型设置、修复预算不变。
+  `--repairs 1`最多修复一次，不会为了回退额外调用模型；回退后再修复需要现有预算还有剩余。
+
+低内存本机复现（固定模型响应，真实Vivado编译/仿真，不做综合）：
+
+```powershell
+python -B -m unittest discover -s tests -q
+python -B tests/run_vivado_regression.py --repair-backtrack-only --output-dir outputs/repair_feedback_check_new
+```
+
+本轮57项自动测试通过；上述真实流程验证“仿真失败→编译失败→从较好候选继续→仿真通过”，
+5个断言通过。证据`bench/results/repair_feedback_20260920.json`。这不代表新版27B通过率或综合/时序结论。
+队友执行全量时仍沿用下节命令，但必须使用新的输出目录；修改代码后不能恢复旧版本实验。
+
 ## 当前分工与本轮修复（2026-09-20）
 
 用户已确认：本机受内存限制，只做代码调试；完整计算交给队友，实际评测使用

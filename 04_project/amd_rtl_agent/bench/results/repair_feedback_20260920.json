@@ -1,0 +1,119 @@
+{
+  "scope": "Repair feedback and backtracking regression; fixed model responses, real compile and simulation only",
+  "unit_tests": {
+    "command": "python -X utf8 -B -m unittest discover -s tests -q",
+    "passed": 57,
+    "failed": 0
+  },
+  "reproduction": "python -B tests/run_vivado_regression.py --repair-backtrack-only --output-dir outputs/repair_feedback_check_new",
+  "eda": {
+    "version": "2026.1",
+    "scenarios": 1,
+    "checks": {
+      "initial_simulation_failure": true,
+      "regressed_compile_failure": true,
+      "repair_restored_best_code_and_feedback": true,
+      "repair_lineage_and_budget": true,
+      "repaired_simulation_passed": true
+    },
+    "passed": true,
+    "synthesis_checked": false,
+    "mock_model": true,
+    "mock_model_calls": 3,
+    "attempt_history": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "highest_stage": "simulation",
+        "feedback": "Mismatches: 2",
+        "source": "model",
+        "repair_from_attempt": null,
+        "duplicate_of_attempt": null,
+        "evaluation_reused": false,
+        "model_elapsed_s": 0.0,
+        "eda_elapsed_s": 6.453,
+        "stage_returncodes": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "attempt": 2,
+        "passed": false,
+        "highest_stage": "compile",
+        "feedback": "ERROR: [VRFC 10-4982] syntax error near 'assign' [line 2]\nERROR: [VRFC 10-8549] SystemVerilog 2017 keyword 'assign' used in incorrect context [line 2]",
+        "source": "model",
+        "repair_from_attempt": 1,
+        "duplicate_of_attempt": null,
+        "evaluation_reused": false,
+        "model_elapsed_s": 0.0,
+        "eda_elapsed_s": 0.86,
+        "stage_returncodes": [
+          1
+        ]
+      },
+      {
+        "attempt": 3,
+        "passed": true,
+        "highest_stage": "simulation",
+        "feedback": "",
+        "source": "model",
+        "repair_from_attempt": 1,
+        "duplicate_of_attempt": null,
+        "evaluation_reused": false,
+        "model_elapsed_s": 0.0,
+        "eda_elapsed_s": 4.234,
+        "stage_returncodes": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "source_run": "outputs/repair_feedback_20260920_234100"
+  },
+  "code_sha256_normalized_utf8": {
+    "agent.py": "9bd450c8c7f4f550e55ca5cbf27db6979e56b062632fd9e7939146de517f1f80",
+    "tests/test_repairs.py": "6dea039e790a2fd0882ee61aab4187b7cd29671b22c34eb89baa9acbba25b1e9",
+    "tests/test_reliability.py": "462a2b7a5b00e9c99c7386256f5d15253312b11e1b733fd85ffefb6563984e3c",
+    "tests/run_vivado_regression.py": "01e4f0a13670637f984b527102adbfdf7f48bdbe8373dac51e06027210f66f94"
+  },
+  "raw_evidence_sha256": {
+    "repair/attempt_1/01_xvlog.log": "414b46322006247a1cc19f24133c417132f7d1b539dea159e7d8d44fb93e0d4b",
+    "repair/attempt_1/02_xelab.log": "d5f57b632540aa8321369ff2e62e159b8a3e92be8f017208eb75d0f22df5b30b",
+    "repair/attempt_1/03_xsim.log": "1603b59e9fb8b721035e85a5f22d6846fb2c74ecb71739a86ab1a827374c946d",
+    "repair/attempt_1/candidate.sv": "b42cae5cd49abb24e644e4945cbc968c030230ec138669a72b040c9439a1f1e5",
+    "repair/attempt_1/evaluation.json": "2c9a8f6e026a70f39f46f00dbdc1540cceb808f914da9bb6bcd06315314fa471",
+    "repair/attempt_1/response.txt": "b42cae5cd49abb24e644e4945cbc968c030230ec138669a72b040c9439a1f1e5",
+    "repair/attempt_2/01_xvlog.log": "0e24b45a081704d9baa6414a105a13d9e51993648e5d5553c18145128c2394f1",
+    "repair/attempt_2/candidate.sv": "d9214678dd6cbffd5f83711bb7b25930fd0e2f53c6759e1c880d75b0a7812c3d",
+    "repair/attempt_2/evaluation.json": "9361ee5ddfd7a4ceec9eccc49e1d012df4a15b8bce39c08ca7393899b3e42d20",
+    "repair/attempt_2/response.txt": "d9214678dd6cbffd5f83711bb7b25930fd0e2f53c6759e1c880d75b0a7812c3d",
+    "repair/attempt_3/01_xvlog.log": "2a910a6f9833eb132ba8ae0fe385650c488c2d17673eefc57bbd57910e3b9a6c",
+    "repair/attempt_3/02_xelab.log": "d5f57b632540aa8321369ff2e62e159b8a3e92be8f017208eb75d0f22df5b30b",
+    "repair/attempt_3/03_xsim.log": "467a411feb709ff40b7e391721559eabb41310d395ef540b71eef76adc5bcf68",
+    "repair/attempt_3/candidate.sv": "3d3ad80522711be73f7f93762b9097868e5ca6556c37a56b9110b936e63f65c1",
+    "repair/attempt_3/evaluation.json": "f5b3400ac73ee81c565e2c25f9d76fd544d23f66b2b52ca0a511332ceb0d861b",
+    "repair/attempt_3/response.txt": "3d3ad80522711be73f7f93762b9097868e5ca6556c37a56b9110b936e63f65c1",
+    "summary.json": "9b355e8659d0adaf86501640ae04c0804d8f9c7da614e616da800a0452b8539c",
+    "repair/result.json": "3b7bc5ac8fbd03823b3785b5d112f6543fab68fc8732c3b89486d9aa3e725b1c"
+  },
+  "model_api_called": false,
+  "real_27b_evaluated": false,
+  "stopped_benchmark_resumed": false,
+  "baseline_generation_and_model_budget_changed": false,
+  "limitations": [
+    "No new 27B accuracy, latency, VRAM or pass@5 results",
+    "Backtracking requires remaining repair budget; one-repair runs do not gain extra calls",
+    "Stage and mismatch-rate ranking does not prove semantic distance to a correct design",
+    "Direction hint only supports simple ANSI ports; ambiguous interfaces keep raw feedback",
+    "No synthesis, timing, GPU or POSIX validation in this round"
+  ],
+  "cleanup": {
+    "status": "blocked_by_policy",
+    "removed_cache_directories": 0,
+    "cache_directories_retained": 3,
+    "reason": "Automatic approval rejected native PowerShell removal of this run caches; no further reason supplied; no workaround attempted"
+  }
+}
