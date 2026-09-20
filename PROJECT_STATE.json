@@ -706,7 +706,7 @@
     "model_api_called": false,
     "stopped_benchmark_resumed": false,
     "baseline_generation_and_model_budget_changed": false,
-    "publication_status": "not_yet_published",
+    "publication_status": "published_and_remote_verified",
     "remaining_uncertainty": [
       "No new 27B accuracy, latency, VRAM or pass@5 results",
       "Backtracking requires remaining repair budget; one-repair runs do not gain extra calls",
@@ -719,6 +719,9 @@
       "removed_cache_directories": 0,
       "cache_directories_retained": 3,
       "reason": "Automatic approval rejected native PowerShell removal of this run caches; no further reason supplied; no workaround attempted"
-    }
+    },
+    "implementation_commit": "21223b2ebf840e57b836add7a70efe99a38d4c02",
+    "remote_branch": "origin/fix/reliable-evaluation",
+    "main_branch_modified": false
   }
 }
