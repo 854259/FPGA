@@ -25,7 +25,7 @@
   },
   "raw_evidence": "04_project/amd_rtl_agent/outputs/prompt_feedback_20260921",
   "real_model_validation": "pending; no accuracy or latency gain claimed",
-  "publication_status": "local_uncommitted",
+  "publication_status": "published_and_remote_verified",
   "file_sha256": {
     "agent.py": "79dd996396a149f19ea0b40f6929865ec6900caab23841f0fac239c18c667dc7",
     "skill\\RTL_SKILL.md": "e0eba7ae86a9844eb4fb92068a7dc14d45666e04b9cf57ba01049e1280731ba0",
@@ -88,5 +88,7 @@
     ],
     "preserved_evidence_hashes_verified": true,
     "reason": "Automatic approval rejected scoped native PowerShell cleanup; no further reason supplied; no workaround attempted."
-  }
+  },
+  "implementation_commit": "5eb9711bb134638f0a107731b6224ab0a17725ca",
+  "remote_branch": "origin/fix/reliable-evaluation"
 }
