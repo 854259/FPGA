@@ -1,0 +1,4555 @@
+{
+  "scope": "offline review only; no model calls; original results unchanged",
+  "source_run": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new",
+  "baseline_passed": 100,
+  "initial_passed": 92,
+  "final_passed": 112,
+  "repairs": 64,
+  "compiler_repairs": 9,
+  "compiler_repair_passes": 7,
+  "model_repairs": 55,
+  "model_repair_passes": 13,
+  "exact_duplicate_repairs": [
+    "Prob034_dff8",
+    "Prob053_m2014_q4d",
+    "Prob074_ece241_2014_q4",
+    "Prob078_dualedge",
+    "Prob084_ece241_2013_q12",
+    "Prob089_ece241_2014_q5a",
+    "Prob097_mux9to1v",
+    "Prob099_m2014_q6c",
+    "Prob104_mt2015_muxdff",
+    "Prob112_always_case2",
+    "Prob126_circuit6",
+    "Prob136_m2014_q6",
+    "Prob142_lemmings2"
+  ],
+  "worse_repairs_retained_previous": [
+    "Prob057_kmap2",
+    "Prob062_bugs_mux2",
+    "Prob113_2012_q1g",
+    "Prob116_m2014_q3",
+    "Prob125_kmap3",
+    "Prob133_2014_q3fsm",
+    "Prob134_2014_q3c",
+    "Prob149_ece241_2013_q4"
+  ],
+  "format_attempts": [
+    {
+      "problem": "Prob070_ece241_2013_q2",
+      "attempt": 1,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob070_ece241_2013_q2",
+      "attempt": 2,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob082_lfsr32",
+      "attempt": 1,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob113_2012_q1g",
+      "attempt": 2,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob116_m2014_q3",
+      "attempt": 2,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob125_kmap3",
+      "attempt": 2,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob140_fsm_hdlc",
+      "attempt": 1,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob145_circuit8",
+      "attempt": 1,
+      "feedback": "output still contains a Markdown code fence"
+    },
+    {
+      "problem": "Prob146_fsm_serialdata",
+      "attempt": 1,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob147_circuit10",
+      "attempt": 1,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob147_circuit10",
+      "attempt": 2,
+      "feedback": "endmodule is missing"
+    },
+    {
+      "problem": "Prob149_ece241_2013_q4",
+      "attempt": 2,
+      "feedback": "endmodule is missing"
+    }
+  ],
+  "transitions": [
+    {
+      "initial_stage": "compile",
+      "repair_source": "model",
+      "passed": true,
+      "count": 2
+    },
+    {
+      "initial_stage": "compile",
+      "repair_source": "compiler_declaration_repair",
+      "passed": true,
+      "count": 7
+    },
+    {
+      "initial_stage": "simulation",
+      "repair_source": "model",
+      "passed": false,
+      "count": 30
+    },
+    {
+      "initial_stage": "simulation",
+      "repair_source": "model",
+      "passed": true,
+      "count": 11
+    },
+    {
+      "initial_stage": "format",
+      "repair_source": "model",
+      "passed": false,
+      "count": 6
+    },
+    {
+      "initial_stage": "compile",
+      "repair_source": "compiler_declaration_repair",
+      "passed": false,
+      "count": 2
+    },
+    {
+      "initial_stage": "elaboration",
+      "repair_source": "model",
+      "passed": false,
+      "count": 2
+    },
+    {
+      "initial_stage": "compile",
+      "repair_source": "model",
+      "passed": false,
+      "count": 4
+    }
+  ],
+  "dataset_self_checks": {
+    "099": "reference itself cannot elaborate due to testbench port mismatch",
+    "156": "reference compared with itself emits TIMEOUT with zero mismatches; timed_out=false"
+  },
+  "records": [
+    {
+      "problem": "Prob001_zero",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.328,
+          "eda_elapsed_s": 37.891
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob001_zero\\result.json"
+    },
+    {
+      "problem": "Prob002_m2014_q4i",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.375,
+          "eda_elapsed_s": 38.204
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob002_m2014_q4i\\result.json"
+    },
+    {
+      "problem": "Prob003_step_one",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.407,
+          "eda_elapsed_s": 41.86
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob003_step_one\\result.json"
+    },
+    {
+      "problem": "Prob004_vector2",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.062,
+          "eda_elapsed_s": 53.797
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob004_vector2\\result.json"
+    },
+    {
+      "problem": "Prob005_notgate",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.328,
+          "eda_elapsed_s": 55.031
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob005_notgate\\result.json"
+    },
+    {
+      "problem": "Prob006_vectorr",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.844,
+          "eda_elapsed_s": 54.766
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob006_vectorr\\result.json"
+    },
+    {
+      "problem": "Prob007_wire",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.328,
+          "eda_elapsed_s": 51.516
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob007_wire\\result.json"
+    },
+    {
+      "problem": "Prob008_m2014_q4h",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.468,
+          "eda_elapsed_s": 53.828
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob008_m2014_q4h\\result.json"
+    },
+    {
+      "problem": "Prob009_popcount3",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.703,
+          "eda_elapsed_s": 53.375
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob009_popcount3\\result.json"
+    },
+    {
+      "problem": "Prob010_mt2015_q4a",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.531,
+          "eda_elapsed_s": 54.485
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob010_mt2015_q4a\\result.json"
+    },
+    {
+      "problem": "Prob011_norgate",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.547,
+          "eda_elapsed_s": 55.375
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob011_norgate\\result.json"
+    },
+    {
+      "problem": "Prob012_xnorgate",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.656,
+          "eda_elapsed_s": 56.437
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob012_xnorgate\\result.json"
+    },
+    {
+      "problem": "Prob013_m2014_q4e",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.625,
+          "eda_elapsed_s": 52.718
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob013_m2014_q4e\\result.json"
+    },
+    {
+      "problem": "Prob014_andgate",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.297,
+          "eda_elapsed_s": 53.859
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob014_andgate\\result.json"
+    },
+    {
+      "problem": "Prob015_vector1",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.343,
+          "eda_elapsed_s": 47.063
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob015_vector1\\result.json"
+    },
+    {
+      "problem": "Prob016_m2014_q4j",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.829,
+          "eda_elapsed_s": 45.593
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob016_m2014_q4j\\result.json"
+    },
+    {
+      "problem": "Prob017_mux2to1v",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.75,
+          "eda_elapsed_s": 46.61
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob017_mux2to1v\\result.json"
+    },
+    {
+      "problem": "Prob018_mux256to1",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.187,
+          "eda_elapsed_s": 47.328
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob018_mux256to1\\result.json"
+    },
+    {
+      "problem": "Prob019_m2014_q4f",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.109,
+          "eda_elapsed_s": 49.781
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob019_m2014_q4f\\result.json"
+    },
+    {
+      "problem": "Prob020_mt2015_eq2",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.719,
+          "eda_elapsed_s": 46.343
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob020_mt2015_eq2\\result.json"
+    },
+    {
+      "problem": "Prob021_mux256to1v",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-4982] syntax error near '+:' [line 7]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.14,
+          "eda_elapsed_s": 0.703
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.969,
+          "eda_elapsed_s": 47.875
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob021_mux256to1v\\result.json"
+    },
+    {
+      "problem": "Prob022_mux2to1",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.75,
+          "eda_elapsed_s": 45.766
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob022_mux2to1\\result.json"
+    },
+    {
+      "problem": "Prob023_vector100r",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.64,
+          "eda_elapsed_s": 50.875
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob023_vector100r\\result.json"
+    },
+    {
+      "problem": "Prob024_hadd",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.578,
+          "eda_elapsed_s": 48.985
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob024_hadd\\result.json"
+    },
+    {
+      "problem": "Prob025_reduction",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.516,
+          "eda_elapsed_s": 47.093
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob025_reduction\\result.json"
+    },
+    {
+      "problem": "Prob026_alwaysblock1",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register out_alwaysblock is not permitted, left-hand side should be reg/integer/time/genvar [line 11]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.671,
+          "eda_elapsed_s": 0.829
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 48.531
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob026_alwaysblock1\\result.json"
+    },
+    {
+      "problem": "Prob027_fadd",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.063,
+          "eda_elapsed_s": 46.406
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob027_fadd\\result.json"
+    },
+    {
+      "problem": "Prob028_m2014_q4a",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.406,
+          "eda_elapsed_s": 47.109
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob028_m2014_q4a\\result.json"
+    },
+    {
+      "problem": "Prob029_m2014_q4g",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.734,
+          "eda_elapsed_s": 46.719
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob029_m2014_q4g\\result.json"
+    },
+    {
+      "problem": "Prob030_popcount255",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.89,
+          "eda_elapsed_s": 50.641
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob030_popcount255\\result.json"
+    },
+    {
+      "problem": "Prob031_dff",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.531,
+          "eda_elapsed_s": 49.75
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob031_dff\\result.json"
+    },
+    {
+      "problem": "Prob032_vector0",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.171,
+          "eda_elapsed_s": 45.516
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob032_vector0\\result.json"
+    },
+    {
+      "problem": "Prob033_ece241_2014_q1c",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.891,
+          "eda_elapsed_s": 46.015
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob033_ece241_2014_q1c\\result.json"
+    },
+    {
+      "problem": "Prob034_dff8",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 1 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 1 out of 41 samples\nMismatches: 1 in 41 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.688,
+          "eda_elapsed_s": 4.312
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 1 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 1 out of 41 samples\nMismatches: 1 in 41 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.656,
+          "eda_elapsed_s": 4.297
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob034_dff8\\result.json",
+      "review": "题面未规定初值，参考额外 initial q=0；候选是标准正沿DFF，仅首个采样错误。归为初值契约问题，不从参考向生成器注入答案。"
+    },
+    {
+      "problem": "Prob035_count1to10",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.735,
+          "eda_elapsed_s": 49.703
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob035_count1to10\\result.json"
+    },
+    {
+      "problem": "Prob036_ringer",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.875,
+          "eda_elapsed_s": 46.469
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob036_ringer\\result.json"
+    },
+    {
+      "problem": "Prob037_review2015_count1k",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.672,
+          "eda_elapsed_s": 49.625
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob037_review2015_count1k\\result.json"
+    },
+    {
+      "problem": "Prob038_count15",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.797,
+          "eda_elapsed_s": 48.5
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob038_count15\\result.json"
+    },
+    {
+      "problem": "Prob039_always_if",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register out_always is not permitted, left-hand side should be reg/integer/time/genvar [line 14]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out_always is not permitted, left-hand side should be reg/integer/time/genvar [line 16]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.688,
+          "eda_elapsed_s": 0.703
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 46.391
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob039_always_if\\result.json"
+    },
+    {
+      "problem": "Prob040_count10",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.781,
+          "eda_elapsed_s": 48.719
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob040_count10\\result.json"
+    },
+    {
+      "problem": "Prob041_dff8r",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.156,
+          "eda_elapsed_s": 49.531
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob041_dff8r\\result.json"
+    },
+    {
+      "problem": "Prob042_vector4",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.625,
+          "eda_elapsed_s": 45.234
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob042_vector4\\result.json"
+    },
+    {
+      "problem": "Prob043_vector5",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.0,
+          "eda_elapsed_s": 45.312
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob043_vector5\\result.json"
+    },
+    {
+      "problem": "Prob044_vectorgates",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.312,
+          "eda_elapsed_s": 46.532
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob044_vectorgates\\result.json"
+    },
+    {
+      "problem": "Prob045_edgedetect2",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'anyedge' has 212 mismatches. First mismatch occurred at time 30.\nHint: Total mismatched samples is 212 out of 228 samples\nMismatches: 212 in 228 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.407,
+          "eda_elapsed_s": 4.359
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.359,
+          "eda_elapsed_s": 49.219
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob045_edgedetect2\\result.json"
+    },
+    {
+      "problem": "Prob046_dff8p",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.14,
+          "eda_elapsed_s": 48.844
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob046_dff8p\\result.json"
+    },
+    {
+      "problem": "Prob047_dff8ar",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.719,
+          "eda_elapsed_s": 49.656
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob047_dff8ar\\result.json"
+    },
+    {
+      "problem": "Prob048_m2014_q4c",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.36,
+          "eda_elapsed_s": 49.609
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob048_m2014_q4c\\result.json"
+    },
+    {
+      "problem": "Prob049_m2014_q4b",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.907,
+          "eda_elapsed_s": 48.406
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob049_m2014_q4b\\result.json"
+    },
+    {
+      "problem": "Prob050_kmap1",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 61 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 61 out of 219 samples\nMismatches: 61 in 219 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.625,
+          "eda_elapsed_s": 4.344
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 32 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 32 out of 219 samples\nMismatches: 32 in 219 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.766,
+          "eda_elapsed_s": 4.375
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob050_kmap1\\result.json",
+      "review": "明确功能错误：K图仅000为0，首版在b=c=0时输出~a；修复仍不满足题面。"
+    },
+    {
+      "problem": "Prob051_gates4",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.094,
+          "eda_elapsed_s": 46.14
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob051_gates4\\result.json"
+    },
+    {
+      "problem": "Prob052_gates100",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.469,
+          "eda_elapsed_s": 46.234
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob052_gates100\\result.json"
+    },
+    {
+      "problem": "Prob053_m2014_q4d",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 1 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 1 out of 100 samples\nMismatches: 1 in 100 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.906,
+          "eda_elapsed_s": 4.297
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 1 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 1 out of 100 samples\nMismatches: 1 in 100 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.813,
+          "eda_elapsed_s": 4.359
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob053_m2014_q4d\\result.json",
+      "review": "题面无复位、未规定初值，参考额外 initial out=0；候选反馈寄存器初值未知。需审计初始化契约。"
+    },
+    {
+      "problem": "Prob054_edgedetect",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'pedge' has 206 mismatches. First mismatch occurred at time 30.\nHint: Total mismatched samples is 206 out of 227 samples\nMismatches: 206 in 227 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.344,
+          "eda_elapsed_s": 4.36
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.125,
+          "eda_elapsed_s": 49.546
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob054_edgedetect\\result.json"
+    },
+    {
+      "problem": "Prob055_conditional",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.562,
+          "eda_elapsed_s": 45.969
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob055_conditional\\result.json"
+    },
+    {
+      "problem": "Prob056_ece241_2013_q7",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.203,
+          "eda_elapsed_s": 50.203
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob056_ece241_2013_q7\\result.json"
+    },
+    {
+      "problem": "Prob057_kmap2",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 63 mismatches. First mismatch occurred at time 70.\nHint: Total mismatched samples is 63 out of 232 samples\nMismatches: 63 in 232 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.641,
+          "eda_elapsed_s": 4.39
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 14]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 15]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 16]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 17]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 18]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 19]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 20]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 21]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 22]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 23]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 24]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 25]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 26]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 27]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 28]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 29]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [line 30]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.204,
+          "eda_elapsed_s": 0.718
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob057_kmap2\\result.json",
+      "review": "K图表达式与表不符；修复版本又产生output非变量过程赋值错误，最终保留首版。"
+    },
+    {
+      "problem": "Prob058_alwaysblock2",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register out_always_comb is not permitted, left-hand side should be reg/integer/time/genvar [line 13]\nERROR: [VRFC 10-1280] procedural assignment to a non-register out_always_ff is not permitted, left-hand side should be reg/integer/time/genvar [line 17]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.297,
+          "eda_elapsed_s": 0.718
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 49.235
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob058_alwaysblock2\\result.json"
+    },
+    {
+      "problem": "Prob059_wire4",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.344,
+          "eda_elapsed_s": 46.14
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob059_wire4\\result.json"
+    },
+    {
+      "problem": "Prob060_m2014_q4k",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.5,
+          "eda_elapsed_s": 48.734
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob060_m2014_q4k\\result.json"
+    },
+    {
+      "problem": "Prob061_2014_q4a",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.422,
+          "eda_elapsed_s": 49.516
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob061_2014_q4a\\result.json"
+    },
+    {
+      "problem": "Prob062_bugs_mux2",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 110 mismatches. First mismatch occurred at time 20.\nHint: Total mismatched samples is 110 out of 114 samples\nMismatches: 110 in 114 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.86,
+          "eda_elapsed_s": 4.359
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 111 mismatches. First mismatch occurred at time 20.\nHint: Total mismatched samples is 111 out of 114 samples\nMismatches: 111 in 114 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.813,
+          "eda_elapsed_s": 4.407
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob062_bugs_mux2\\result.json",
+      "review": "题面原mux方向为sel=0选a，候选修复位宽后保持该方向；参考却sel=1选a，存在语义契约歧义，不能简单算模型读错。"
+    },
+    {
+      "problem": "Prob063_review2015_shiftcount",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 13]\nERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 15]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.641,
+          "eda_elapsed_s": 0.703
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 50.234
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob063_review2015_shiftcount\\result.json"
+    },
+    {
+      "problem": "Prob064_vector3",
+      "baseline_pass": false,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.735,
+          "eda_elapsed_s": 46.031
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob064_vector3\\result.json"
+    },
+    {
+      "problem": "Prob065_7420",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.578,
+          "eda_elapsed_s": 46.953
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob065_7420\\result.json"
+    },
+    {
+      "problem": "Prob066_edgecapture",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 229 mismatches. First mismatch occurred at time 100.\nHint: Total mismatched samples is 229 out of 266 samples\nMismatches: 229 in 266 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.328,
+          "eda_elapsed_s": 4.344
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 91 mismatches. First mismatch occurred at time 140.\nHint: Total mismatched samples is 91 out of 266 samples\nMismatches: 91 in 266 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.875,
+          "eda_elapsed_s": 4.406
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob066_edgecapture\\result.json",
+      "review": "候选复位时把历史输入in_prev清零，参考每拍采样in；造成复位释放后边沿捕获差异。属于题面对历史采样规则不够明确的边界，待独立定义。"
+    },
+    {
+      "problem": "Prob067_countslow",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.969,
+          "eda_elapsed_s": 49.531
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob067_countslow\\result.json"
+    },
+    {
+      "problem": "Prob068_countbcd",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 9.328,
+          "eda_elapsed_s": 50.203
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob068_countbcd\\result.json"
+    },
+    {
+      "problem": "Prob069_truthtable1",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.406,
+          "eda_elapsed_s": 47.015
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob069_truthtable1\\result.json"
+    },
+    {
+      "problem": "Prob070_ece241_2013_q2",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "format",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 31.281,
+          "eda_elapsed_s": 0.016
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 30.062,
+          "eda_elapsed_s": 0.016
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob070_ece241_2013_q2\\result.json",
+      "review": "两轮均大量输出推导注释，缺少endmodule；102/104行中大多数为注释。疑似输出预算耗尽，API未保存finish_reason无法确认。"
+    },
+    {
+      "problem": "Prob071_always_casez",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.469,
+          "eda_elapsed_s": 45.484
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob071_always_casez\\result.json"
+    },
+    {
+      "problem": "Prob072_thermostat",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.438,
+          "eda_elapsed_s": 46.563
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob072_thermostat\\result.json"
+    },
+    {
+      "problem": "Prob073_dff16e",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.703,
+          "eda_elapsed_s": 49.891
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob073_dff16e\\result.json"
+    },
+    {
+      "problem": "Prob074_ece241_2014_q4",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'z' has 45 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 45 out of 118 samples\nMismatches: 45 in 118 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.531,
+          "eda_elapsed_s": 4.36
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'z' has 45 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 45 out of 118 samples\nMismatches: 45 in 118 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.282,
+          "eda_elapsed_s": 4.343
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob074_ece241_2014_q4\\result.json",
+      "review": "题目明确触发器初值全零且无复位端口，候选未初始化；skill第5条全面禁止initial，与此题要求冲突。"
+    },
+    {
+      "problem": "Prob075_counter_2bc",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.953,
+          "eda_elapsed_s": 49.86
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob075_counter_2bc\\result.json"
+    },
+    {
+      "problem": "Prob076_always_case",
+      "baseline_pass": false,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.5,
+          "eda_elapsed_s": 46.781
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob076_always_case\\result.json"
+    },
+    {
+      "problem": "Prob077_wire_decl",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.234,
+          "eda_elapsed_s": 46.203
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob077_wire_decl\\result.json"
+    },
+    {
+      "problem": "Prob078_dualedge",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 93 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 93 out of 224 samples\nMismatches: 93 in 224 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.328,
+          "eda_elapsed_s": 4.359
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 93 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 93 out of 224 samples\nMismatches: 93 in 224 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.375,
+          "eda_elapsed_s": 4.328
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob078_dualedge\\result.json",
+      "review": "双边沿结构与参考基本一致，但参考特意用非阻塞组合赋值延迟delta周期；候选连续assign存在采样调度差异，需专门审计。"
+    },
+    {
+      "problem": "Prob079_fsm3onehot",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.016,
+          "eda_elapsed_s": 47.375
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob079_fsm3onehot\\result.json"
+    },
+    {
+      "problem": "Prob080_timer",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 11.734,
+          "eda_elapsed_s": 50.032
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob080_timer\\result.json"
+    },
+    {
+      "problem": "Prob081_7458",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.375,
+          "eda_elapsed_s": 45.86
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob081_7458\\result.json"
+    },
+    {
+      "problem": "Prob082_lfsr32",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "compile",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 33.922,
+          "eda_elapsed_s": 0.016
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 30]\nERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 32]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.062,
+          "eda_elapsed_s": 0.735
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob082_lfsr32\\result.json",
+      "review": "首版输出不完整；修复完成后对wire型q作过程赋值，预算已耗尽。"
+    },
+    {
+      "problem": "Prob083_mt2015_q4b",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.891,
+          "eda_elapsed_s": 46.766
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob083_mt2015_q4b\\result.json"
+    },
+    {
+      "problem": "Prob084_ece241_2013_q12",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'Z' has 124 mismatches. First mismatch occurred at time 380.\nHint: Total mismatched samples is 124 out of 530 samples\nMismatches: 124 in 530 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.969,
+          "eda_elapsed_s": 4.406
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'Z' has 124 mismatches. First mismatch occurred at time 380.\nHint: Total mismatched samples is 124 out of 530 samples\nMismatches: 124 in 530 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.688,
+          "eda_elapsed_s": 4.359
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob084_ece241_2013_q12\\result.json",
+      "review": "明确索引颠倒：题面按ABC寻址，候选使用Q[{C,B,A}]；修复代码不变。"
+    },
+    {
+      "problem": "Prob085_shift4",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.062,
+          "eda_elapsed_s": 48.672
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob085_shift4\\result.json"
+    },
+    {
+      "problem": "Prob086_lfsr5",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 22]\nERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 24]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 17.547,
+          "eda_elapsed_s": 0.719
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 4264 mismatches. First mismatch occurred at time 50.\nHint: Total mismatched samples is 4264 out of 4443 samples\nMismatches: 4264 in 4443 samples",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 4.375
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob086_lfsr5\\result.json",
+      "review": "Galois抽头逻辑错误：以原位q[4]/q[2]翻转替代移位后的相邻位反馈；自动声明修复仅解决编译。"
+    },
+    {
+      "problem": "Prob087_gates",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.0,
+          "eda_elapsed_s": 45.641
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob087_gates\\result.json"
+    },
+    {
+      "problem": "Prob088_ece241_2014_q5b",
+      "baseline_pass": false,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 8.406,
+          "eda_elapsed_s": 48.609
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob088_ece241_2014_q5b\\result.json"
+    },
+    {
+      "problem": "Prob089_ece241_2014_q5a",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'z' has 210 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 210 out of 436 samples\nMismatches: 210 in 436 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.281,
+          "eda_elapsed_s": 4.406
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'z' has 210 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 210 out of 436 samples\nMismatches: 210 in 436 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.5,
+          "eda_elapsed_s": 4.437
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob089_ece241_2014_q5a\\result.json",
+      "review": "要求Moore输出，候选z直接依赖当前输入x，属于Mealy形式；修复代码不变。"
+    },
+    {
+      "problem": "Prob090_circuit1",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.515,
+          "eda_elapsed_s": 47.125
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob090_circuit1\\result.json"
+    },
+    {
+      "problem": "Prob091_2012_q2b",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'Y1' has 244 mismatches. First mismatch occurred at time 10.\nHint: Output 'Y3' has 121 mismatches. First mismatch occurred at time 25.\nHint: Total mismatched samples is 322 out of 600 samples\nMismatches: 322 in 600 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.765,
+          "eda_elapsed_s": 4.313
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.922,
+          "eda_elapsed_s": 45.922
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob091_2012_q2b\\result.json"
+    },
+    {
+      "problem": "Prob092_gatesv100",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.328,
+          "eda_elapsed_s": 45.812
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob092_gatesv100\\result.json"
+    },
+    {
+      "problem": "Prob093_ece241_2014_q3",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'mux_in' has 60 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 60 out of 60 samples\nMismatches: 60 in 60 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.047,
+          "eda_elapsed_s": 4.36
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'mux_in' has 38 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 38 out of 60 samples\nMismatches: 38 in 60 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.203,
+          "eda_elapsed_s": 4.422
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob093_ece241_2014_q3\\result.json",
+      "review": "K图Gray列次序00,01,11,10与二进制mux索引混淆；候选把mux_in[2]/[3]函数放反。"
+    },
+    {
+      "problem": "Prob094_gatesv",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out_both' has no mismatches.\nHint: Output 'out_any' has no mismatches.\nHint: Output 'out_different' has 160 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 160 out of 213 samples\nMismatches: 160 in 213 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.844,
+          "eda_elapsed_s": 4.406
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.109,
+          "eda_elapsed_s": 46.266
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob094_gatesv\\result.json"
+    },
+    {
+      "problem": "Prob095_review2015_fsmshift",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'shift_ena' has 2 mismatches. First mismatch occurred at time 380.\nHint: Total mismatched samples is 2 out of 200 samples\nMismatches: 2 in 200 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.359,
+          "eda_elapsed_s": 4.344
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'shift_ena' has 2 mismatches. First mismatch occurred at time 380.\nHint: Total mismatched samples is 2 out of 200 samples\nMismatches: 2 in 200 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.328,
+          "eda_elapsed_s": 4.359
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob095_review2015_fsmshift\\result.json",
+      "review": "明确少一拍：2位计数器装载3、输出cnt!=0，只高3个周期；修复仅新增未使用ena_reg。"
+    },
+    {
+      "problem": "Prob096_review2015_fsmseq",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 11.687,
+          "eda_elapsed_s": 49.391
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob096_review2015_fsmseq\\result.json"
+    },
+    {
+      "problem": "Prob097_mux9to1v",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "elaboration",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "elaboration",
+          "feedback": "ERROR: [XSIM 43-3980] File \"E:/26qiansai/FPGA-repairfix-eval/04_project/amd_rtl_agent/outputs/qwen27b_repairfix_r1_new/Prob097_mux9to1v/logs/candidate_1/attempt_1/candidate.sv\" Line 15 : The SystemVerilog feature \"Indexed Expression\" is not supported yet for simulation.",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.063,
+          "eda_elapsed_s": 1.437
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "elaboration",
+          "feedback": "ERROR: [XSIM 43-3980] File \"E:/26qiansai/FPGA-repairfix-eval/04_project/amd_rtl_agent/outputs/qwen27b_repairfix_r1_new/Prob097_mux9to1v/logs/candidate_1/attempt_2/candidate.sv\" Line 15 : The SystemVerilog feature \"Indexed Expression\" is not supported yet for simulation.",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.313,
+          "eda_elapsed_s": 1.406
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob097_mux9to1v\\result.json",
+      "review": "对表达式直接切片触发Vivado Indexed Expression不支持；修复仍原样，需工具兼容写法。"
+    },
+    {
+      "problem": "Prob098_circuit7",
+      "baseline_pass": false,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.344,
+          "eda_elapsed_s": 48.781
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob098_circuit7\\result.json"
+    },
+    {
+      "problem": "Prob099_m2014_q6c",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "elaboration",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "elaboration",
+          "feedback": "ERROR: [VRFC 10-3180] cannot find port 'Y4' on this module [line 75]\nERROR: [VRFC 10-3180] cannot find port 'Y2' on this module [line 74]\nERROR: [VRFC 10-3180] cannot find port 'Y4' on this module [line 81]\nERROR: [VRFC 10-3180] cannot find port 'Y2' on this module [line 80]\nERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.938,
+          "eda_elapsed_s": 1.453
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "elaboration",
+          "feedback": "ERROR: [VRFC 10-3180] cannot find port 'Y4' on this module [line 75]\nERROR: [VRFC 10-3180] cannot find port 'Y2' on this module [line 74]\nERROR: [VRFC 10-3180] cannot find port 'Y4' on this module [line 81]\nERROR: [VRFC 10-3180] cannot find port 'Y2' on this module [line 80]\nERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.047,
+          "eda_elapsed_s": 2.094
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob099_m2014_q6c\\result.json",
+      "review": "测试台连接Y2/Y4，而题面接口与参考为Y1/Y3。参考自检也展开失败。候选另漏掉F到D项，数据缺陷不代表候选功能正确。"
+    },
+    {
+      "problem": "Prob100_fsm3comb",
+      "baseline_pass": false,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.015,
+          "eda_elapsed_s": 45.985
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob100_fsm3comb\\result.json"
+    },
+    {
+      "problem": "Prob101_circuit4",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 38 mismatches. First mismatch occurred at time 70.\nHint: Total mismatched samples is 38 out of 121 samples\nMismatches: 38 in 121 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.86,
+          "eda_elapsed_s": 4.343
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 26 mismatches. First mismatch occurred at time 70.\nHint: Total mismatched samples is 26 out of 121 samples\nMismatches: 26 in 121 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.907,
+          "eda_elapsed_s": 4.328
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob101_circuit4\\result.json",
+      "review": "题面波形q=b|c，与a无关；候选错误引入a门控，修复后仍错。"
+    },
+    {
+      "problem": "Prob102_circuit3",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 15 mismatches. First mismatch occurred at time 25.\nHint: Total mismatched samples is 15 out of 121 samples\nMismatches: 15 in 121 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.344,
+          "eda_elapsed_s": 4.359
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.016,
+          "eda_elapsed_s": 45.672
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob102_circuit3\\result.json"
+    },
+    {
+      "problem": "Prob103_circuit2",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.25,
+          "eda_elapsed_s": 45.11
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob103_circuit2\\result.json"
+    },
+    {
+      "problem": "Prob104_mt2015_muxdff",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'Q' has 1 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 1 out of 199 samples\nMismatches: 1 in 199 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.219,
+          "eda_elapsed_s": 4.312
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'Q' has 1 mismatches. First mismatch occurred at time 5.\nHint: Total mismatched samples is 1 out of 199 samples\nMismatches: 1 in 199 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.969,
+          "eda_elapsed_s": 4.297
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob104_mt2015_muxdff\\result.json",
+      "review": "题面未规定初值，参考额外initial Q=0；候选仅首个采样不符，初值契约问题。"
+    },
+    {
+      "problem": "Prob105_rotate100",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 13]\nERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 16]\nERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 17]\nERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 18]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.672,
+          "eda_elapsed_s": 0.719
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 48.125
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob105_rotate100\\result.json"
+    },
+    {
+      "problem": "Prob106_always_nolatches",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.593,
+          "eda_elapsed_s": 46.125
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob106_always_nolatches\\result.json"
+    },
+    {
+      "problem": "Prob107_fsm1s",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.937,
+          "eda_elapsed_s": 47.813
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob107_fsm1s\\result.json"
+    },
+    {
+      "problem": "Prob108_rule90",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 16]\nERROR: [VRFC 10-1280] procedural assignment to a non-register q is not permitted, left-hand side should be reg/integer/time/genvar [line 18]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.484,
+          "eda_elapsed_s": 0.719
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 50.391
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob108_rule90\\result.json"
+    },
+    {
+      "problem": "Prob109_fsm1",
+      "baseline_pass": false,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.578,
+          "eda_elapsed_s": 49.203
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob109_fsm1\\result.json"
+    },
+    {
+      "problem": "Prob110_fsm2",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.438,
+          "eda_elapsed_s": 49.046
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob110_fsm2\\result.json"
+    },
+    {
+      "problem": "Prob111_fsm2s",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.562,
+          "eda_elapsed_s": 49.188
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob111_fsm2s\\result.json"
+    },
+    {
+      "problem": "Prob112_always_case2",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'pos' has 56 mismatches. First mismatch occurred at time 90.\nHint: Total mismatched samples is 56 out of 94 samples\nMismatches: 56 in 94 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.312,
+          "eda_elapsed_s": 4.297
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'pos' has 56 mismatches. First mismatch occurred at time 90.\nHint: Total mismatched samples is 56 out of 94 samples\nMismatches: 56 in 94 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.187,
+          "eda_elapsed_s": 4.329
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob112_always_case2\\result.json",
+      "review": "题面例子指定低位优先，候选从in[3]开始高位优先；修复代码不变。"
+    },
+    {
+      "problem": "Prob113_2012_q1g",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'f' has 67 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 67 out of 100 samples\nMismatches: 67 in 100 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.078,
+          "eda_elapsed_s": 4.406
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 30.156,
+          "eda_elapsed_s": 0.016
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob113_2012_q1g\\result.json",
+      "review": "K图坐标与x位序转换错误；修复陷入长注释且缺endmodule，最终保留首版。"
+    },
+    {
+      "problem": "Prob114_bugs_case",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.844,
+          "eda_elapsed_s": 46.406
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob114_bugs_case\\result.json"
+    },
+    {
+      "problem": "Prob115_shift18",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 5.578,
+          "eda_elapsed_s": 49.297
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob115_shift18\\result.json"
+    },
+    {
+      "problem": "Prob116_m2014_q3",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'f' has 29 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 29 out of 100 samples\nMismatches: 29 in 100 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 2.954,
+          "eda_elapsed_s": 4.296
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 29.891,
+          "eda_elapsed_s": 0.016
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob116_m2014_q3\\result.json",
+      "review": "题面4位x但表标x[1]到x[4]，存在索引约定歧义；当前逻辑不通过，修复输出不完整，需单独审计。"
+    },
+    {
+      "problem": "Prob117_circuit9",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 200 mismatches. First mismatch occurred at time 80.\nHint: Total mismatched samples is 200 out of 245 samples\nMismatches: 200 in 245 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.172,
+          "eda_elapsed_s": 4.297
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.547,
+          "eda_elapsed_s": 48.828
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob117_circuit9\\result.json"
+    },
+    {
+      "problem": "Prob118_history_shift",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.704,
+          "eda_elapsed_s": 49.312
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob118_history_shift\\result.json"
+    },
+    {
+      "problem": "Prob119_fsm3",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.468,
+          "eda_elapsed_s": 48.641
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob119_fsm3\\result.json"
+    },
+    {
+      "problem": "Prob120_fsm3s",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.297,
+          "eda_elapsed_s": 48.781
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob120_fsm3s\\result.json"
+    },
+    {
+      "problem": "Prob121_2014_q3bfsm",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.578,
+          "eda_elapsed_s": 48.797
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob121_2014_q3bfsm\\result.json"
+    },
+    {
+      "problem": "Prob122_kmap4",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.093,
+          "eda_elapsed_s": 45.406
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob122_kmap4\\result.json"
+    },
+    {
+      "problem": "Prob123_bugs_addsubz",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.735,
+          "eda_elapsed_s": 46.39
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob123_bugs_addsubz\\result.json"
+    },
+    {
+      "problem": "Prob124_rule110",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 6220 mismatches. First mismatch occurred at time 40.\nHint: Total mismatched samples is 6220 out of 6283 samples\nMismatches: 6220 in 6283 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.25,
+          "eda_elapsed_s": 4.641
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'q' has 6220 mismatches. First mismatch occurred at time 40.\nHint: Total mismatched samples is 6220 out of 6283 samples\nMismatches: 6220 in 6283 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 9.125,
+          "eda_elapsed_s": 4.641
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob124_rule110\\result.json",
+      "review": "邻域整体错位：extended_q={2'b00,q}，取[i+2:i]而非以q[i]为中心；修复只改注释。"
+    },
+    {
+      "problem": "Prob125_kmap3",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out' has 91 mismatches. First mismatch occurred at time 30.\nHint: Total mismatched samples is 91 out of 232 samples\nMismatches: 91 in 232 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.625,
+          "eda_elapsed_s": 4.375
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 30.516,
+          "eda_elapsed_s": 0.016
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob125_kmap3\\result.json",
+      "review": "K图使用非通常列顺序01,00,10,11，候选表达式不符；修复输出不完整。"
+    },
+    {
+      "problem": "Prob126_circuit6",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "compile",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-4982] syntax error near 'casez' [line 6]\nERROR: [VRFC 10-8549] SystemVerilog keyword 'casez' used in incorrect context [line 6]\nERROR: [VRFC 10-4982] syntax error near ':' [line 8]\nERROR: [VRFC 10-4982] syntax error near ':' [line 9]\nERROR: [VRFC 10-4982] syntax error near ':' [line 10]\nERROR: [VRFC 10-4982] syntax error near ':' [line 11]\nERROR: [VRFC 10-4982] syntax error near ':' [line 12]\nERROR: [VRFC 10-4982] syntax error near ':' [line 13]\nERROR: [VRFC 10-4982] syntax error near ':' [line 14]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.391,
+          "eda_elapsed_s": 0.703
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-4982] syntax error near 'casez' [line 6]\nERROR: [VRFC 10-8549] SystemVerilog keyword 'casez' used in incorrect context [line 6]\nERROR: [VRFC 10-4982] syntax error near ':' [line 8]\nERROR: [VRFC 10-4982] syntax error near ':' [line 9]\nERROR: [VRFC 10-4982] syntax error near ':' [line 10]\nERROR: [VRFC 10-4982] syntax error near ':' [line 11]\nERROR: [VRFC 10-4982] syntax error near ':' [line 12]\nERROR: [VRFC 10-4982] syntax error near ':' [line 13]\nERROR: [VRFC 10-4982] syntax error near ':' [line 14]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": true,
+          "model_elapsed_s": 5.657,
+          "eda_elapsed_s": 0.0
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob126_circuit6\\result.json",
+      "review": "非法assign q = casez(a)表达式；两轮源码相同，第二次仅去掉Markdown包裹。"
+    },
+    {
+      "problem": "Prob127_lemmings1",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.86,
+          "eda_elapsed_s": 49.562
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob127_lemmings1\\result.json"
+    },
+    {
+      "problem": "Prob128_fsm_ps2",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'done' has 70 mismatches. First mismatch occurred at time 230.\nHint: Total mismatched samples is 70 out of 400 samples\nMismatches: 70 in 400 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.547,
+          "eda_elapsed_s": 4.313
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 15.328,
+          "eda_elapsed_s": 48.891
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob128_fsm_ps2\\result.json"
+    },
+    {
+      "problem": "Prob129_ece241_2013_q8",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register z is not permitted, left-hand side should be reg/integer/time/genvar [line 42]\nERROR: [VRFC 10-1280] procedural assignment to a non-register z is not permitted, left-hand side should be reg/integer/time/genvar [line 51]\nERROR: [VRFC 10-1280] procedural assignment to a non-register z is not permitted, left-hand side should be reg/integer/time/genvar [line 59]\nERROR: [VRFC 10-1280] procedural assignment to a non-register z is not permitted, left-hand side should be reg/integer/time/genvar [line 64]\nERROR: [VRFC 10-1280] procedural assignment to a non-register z is not permitted, left-hand side should be reg/integer/time/genvar [line 71]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 12.14,
+          "eda_elapsed_s": 0.735
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 48.562
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob129_ece241_2013_q8\\result.json"
+    },
+    {
+      "problem": "Prob130_circuit5",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "elaboration",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-4982] syntax error near ''x' [line 10]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.078,
+          "eda_elapsed_s": 0.703
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "elaboration",
+          "feedback": "ERROR: [VRFC 10-8871] constant expression is required here [line 10]\nERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 4.813,
+          "eda_elapsed_s": 1.406
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob130_circuit5\\result.json",
+      "review": "非法常量4'xf、表达式直接切片及动态切片宽度4-c；修复只改部分字面量，仍展开失败。"
+    },
+    {
+      "problem": "Prob131_mt2015_q4",
+      "baseline_pass": false,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 11.969,
+          "eda_elapsed_s": 46.344
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob131_mt2015_q4\\result.json"
+    },
+    {
+      "problem": "Prob132_always_if2",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.828,
+          "eda_elapsed_s": 45.406
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob132_always_if2\\result.json"
+    },
+    {
+      "problem": "Prob133_2014_q3fsm",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'z' has 230 mismatches. First mismatch occurred at time 110.\nHint: Total mismatched samples is 230 out of 1414 samples\nMismatches: 230 in 1414 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 12.078,
+          "eda_elapsed_s": 4.407
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register z is not permitted, left-hand side should be reg/integer/time/genvar [line 108]\nERROR: [VRFC 10-1280] procedural assignment to a non-register z is not permitted, left-hand side should be reg/integer/time/genvar [line 112]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 18.953,
+          "eda_elapsed_s": 0.734
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob133_2014_q3fsm\\result.json",
+      "review": "每3拍采样后额外插入一拍输出态，该拍没有采样下一组w；修复又引入输出声明错误。"
+    },
+    {
+      "problem": "Prob134_2014_q3c",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'Y0' has 12 mismatches. First mismatch occurred at time 160.\nHint: Output 'z' has 22 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 22 out of 200 samples\nMismatches: 22 in 200 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 34.563,
+          "eda_elapsed_s": 4.406
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'Y0' has no mismatches.\nHint: Output 'z' has 55 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 55 out of 200 samples\nMismatches: 55 in 200 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 22.578,
+          "eda_elapsed_s": 4.375
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob134_2014_q3c\\result.json",
+      "review": "首版{y,x}为4位却写3位case常量；编译已警告截断。修复纠正位宽却擅自将z寄存，仿真更差。"
+    },
+    {
+      "problem": "Prob135_m2014_q6b",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'Y1' has 45 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 45 out of 100 samples\nMismatches: 45 in 100 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 3.781,
+          "eda_elapsed_s": 4.297
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 14.046,
+          "eda_elapsed_s": 46.032
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob135_m2014_q6b\\result.json"
+    },
+    {
+      "problem": "Prob136_m2014_q6",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'z' has 6 mismatches. First mismatch occurred at time 445.\nHint: Total mismatched samples is 6 out of 200 samples\nMismatches: 6 in 200 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 8.328,
+          "eda_elapsed_s": 4.422
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'z' has 6 mismatches. First mismatch occurred at time 445.\nHint: Total mismatched samples is 6 out of 200 samples\nMismatches: 6 in 200 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 6.609,
+          "eda_elapsed_s": 4.36
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob136_m2014_q6\\result.json",
+      "review": "题面规定所有时序逻辑正沿触发，候选另加异步reset事件；参考与通过baseline为同步复位。两轮代码相同。"
+    },
+    {
+      "problem": "Prob137_fsm_serial",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'done' has 38 mismatches. First mismatch occurred at time 110.\nHint: Total mismatched samples is 38 out of 905 samples\nMismatches: 38 in 905 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 11.266,
+          "eda_elapsed_s": 4.484
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'done' has 38 mismatches. First mismatch occurred at time 110.\nHint: Total mismatched samples is 38 out of 905 samples\nMismatches: 38 in 905 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 12.204,
+          "eda_elapsed_s": 4.375
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob137_fsm_serial\\result.json",
+      "review": "bit_count仅3位却比较3'd8（截断为0）；next_state==DATA_BITS分支每拍重置计数为1，后续递增分支不可达。"
+    },
+    {
+      "problem": "Prob138_2012_q2fsm",
+      "baseline_pass": true,
+      "initial_pass": true,
+      "final_pass": true,
+      "selected_attempt": 1,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 10.578,
+          "eda_elapsed_s": 48.656
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob138_2012_q2fsm\\result.json"
+    },
+    {
+      "problem": "Prob139_2013_q2bfsm",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 37]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 38]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 42]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 43]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 52]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 53]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 58]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 59]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 83]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 84]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 98]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 99]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 113]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 114]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 124]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 125]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 135]\nERROR: [VRFC 10-1280] procedural assignment to a non-register g is not permitted, left-hand side should be reg/integer/time/genvar [line 136]\nERROR: [VRFC 10-1280] procedural assignment to a non-register f is not permitted, left-hand side should be reg/integer/time/genvar [line 141]\nINFO: [VRFC 10-10021] Sorry, too many errors..",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 25.766,
+          "eda_elapsed_s": 0.734
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'f' has 6 mismatches. First mismatch occurred at time 1980.\nHint: Output 'g' has 272 mismatches. First mismatch occurred at time 2020.\nHint: Total mismatched samples is 278 out of 1002 samples\nMismatches: 278 in 1002 samples",
+          "source": "compiler_declaration_repair",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 0.0,
+          "eda_elapsed_s": 4.469
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob139_2013_q2bfsm\\result.json",
+      "review": "9个状态仅3位编码，3'd8截断与A重合；编译警告未进入仿真修复反馈。自动声明修复后仍功能失败。"
+    },
+    {
+      "problem": "Prob140_fsm_hdlc",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "compile",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 36.203,
+          "eda_elapsed_s": 0.016
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-1280] procedural assignment to a non-register disc is not permitted, left-hand side should be reg/integer/time/genvar [line 42]\nERROR: [VRFC 10-1280] procedural assignment to a non-register flag is not permitted, left-hand side should be reg/integer/time/genvar [line 43]\nERROR: [VRFC 10-1280] procedural assignment to a non-register err is not permitted, left-hand side should be reg/integer/time/genvar [line 44]\nERROR: [VRFC 10-1280] procedural assignment to a non-register disc is not permitted, left-hand side should be reg/integer/time/genvar [line 51]\nERROR: [VRFC 10-1280] procedural assignment to a non-register disc is not permitted, left-hand side should be reg/integer/time/genvar [line 53]\nERROR: [VRFC 10-1280] procedural assignment to a non-register flag is not permitted, left-hand side should be reg/integer/time/genvar [line 57]\nERROR: [VRFC 10-1280] procedural assignment to a non-register flag is not permitted, left-hand side should be reg/integer/time/genvar [line 59]\nERROR: [VRFC 10-1280] procedural assignment to a non-register err is not permitted, left-hand side should be reg/integer/time/genvar [line 67]\nERROR: [VRFC 10-1280] procedural assignment to a non-register err is not permitted, left-hand side should be reg/integer/time/genvar [line 69]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 11.484,
+          "eda_elapsed_s": 0.75
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob140_fsm_hdlc\\result.json",
+      "review": "首版输出不完整，修复后disc/flag/err仍为wire却在always_ff赋值，未进入功能验证。"
+    },
+    {
+      "problem": "Prob141_count_clock",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "TIMEOUT\nHint: Output 'pm' has 105600 mismatches. First mismatch occurred at time 8270.\nHint: Output 'hh' has 186746 mismatches. First mismatch occurred at time 8270.\nHint: Output 'mm' has 197532 mismatches. First mismatch occurred at time 170.\nHint: Output 'ss' has 174586 mismatches. First mismatch occurred at time 2870.\nHint: Total mismatched samples is 199612 out of 199999 samples\nMismatches: 199612 in 199999 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 19.578,
+          "eda_elapsed_s": 5.641
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "TIMEOUT\nHint: Output 'pm' has 177946 mismatches. First mismatch occurred at time 38270.\nHint: Output 'hh' has no mismatches.\nHint: Output 'mm' has no mismatches.\nHint: Output 'ss' has no mismatches.\nHint: Total mismatched samples is 177946 out of 199999 samples\nMismatches: 177946 in 199999 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 11.422,
+          "eda_elapsed_s": 5.625
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob141_count_clock\\result.json",
+      "review": "修复后hh/mm/ss零错误，但pm在12→1翻转而非11→12；另测试台TIMEOUT，不应把全部失败归为时间预算。"
+    },
+    {
+      "problem": "Prob142_lemmings2",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'walk_left' has 154 mismatches. First mismatch occurred at time 270.\nHint: Output 'walk_right' has 154 mismatches. First mismatch occurred at time 270.\nHint: Output 'aaah' has no mismatches.\nHint: Total mismatched samples is 154 out of 441 samples\nMismatches: 154 in 441 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 8.937,
+          "eda_elapsed_s": 4.515
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'walk_left' has 154 mismatches. First mismatch occurred at time 270.\nHint: Output 'walk_right' has 154 mismatches. First mismatch occurred at time 270.\nHint: Output 'aaah' has no mismatches.\nHint: Total mismatched samples is 154 out of 441 samples\nMismatches: 154 in 441 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": 1,
+          "evaluation_reused": false,
+          "model_elapsed_s": 46.141,
+          "eda_elapsed_s": 4.437
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob142_lemmings2\\result.json",
+      "review": "左右行走均用bump_left||bump_right转向，没有区分前进方向上的碰撞；原样重发。"
+    },
+    {
+      "problem": "Prob143_fsm_onehot",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "compile",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-4982] syntax error near '|=' [line 24]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 28]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 32]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 36]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 48]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 49]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 52]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 53]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 56]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 57]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 11.75,
+          "eda_elapsed_s": 0.718
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-4982] syntax error near '|=' [line 19]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 23]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 27]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 31]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 43]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 44]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 47]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 48]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 51]\nERROR: [VRFC 10-4982] syntax error near '|=' [line 52]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 10.86,
+          "eda_elapsed_s": 0.719
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob143_fsm_onehot\\result.json",
+      "review": "非法连续赋值assign ns[i] |= ...，还有输出重复驱动；修复仍保留非法结构。"
+    },
+    {
+      "problem": "Prob144_conwaylife",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-4982] syntax error near 'cell' [line 10]\nERROR: [VRFC 10-4982] syntax error near 'cell' [line 105]\nERROR: [VRFC 10-4982] syntax error near 'cell' [line 107]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 19.687,
+          "eda_elapsed_s": 0.75
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 10.5,
+          "eda_elapsed_s": 57.563
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob144_conwaylife\\result.json"
+    },
+    {
+      "problem": "Prob145_circuit8",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "output still contains a Markdown code fence",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 32.75,
+          "eda_elapsed_s": 0.016
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'p' has 181 mismatches. First mismatch occurred at time 30.\nHint: Output 'q' has 229 mismatches. First mismatch occurred at time 60.\nHint: Total mismatched samples is 235 out of 240 samples\nMismatches: 235 in 240 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.812,
+          "eda_elapsed_s": 4.407
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob145_circuit8\\result.json",
+      "review": "首版不完整；修复用双边沿always_ff、声明时初始化的边沿变量等复杂结构，功能不符；尚未走到综合。"
+    },
+    {
+      "problem": "Prob146_fsm_serialdata",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 33.891,
+          "eda_elapsed_s": 0.031
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out_byte' has 32 mismatches. First mismatch occurred at time 850.\nHint: Output 'done' has 64 mismatches. First mismatch occurred at time 110.\nHint: Total mismatched samples is 64 out of 905 samples\nMismatches: 64 in 905 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 21.297,
+          "eda_elapsed_s": 4.344
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob146_fsm_serialdata\\result.json",
+      "review": "状态转移和数据采样混用next_state，DATA退出时最后数据位未按连续8位正确收集；done脉冲时机也不符。"
+    },
+    {
+      "problem": "Prob147_circuit10",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "format",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 30.719,
+          "eda_elapsed_s": 0.015
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 33.36,
+          "eda_elapsed_s": 0.015
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob147_circuit10\\result.json",
+      "review": "两轮都陷入波形推导注释，缺endmodule；去注释后均未形成完整实现，不是成功修复。"
+    },
+    {
+      "problem": "Prob148_2013_q2afsm",
+      "baseline_pass": true,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'g' has 4 mismatches. First mismatch occurred at time 65.\nHint: Total mismatched samples is 4 out of 1054 samples\nMismatches: 4 in 1054 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 8.625,
+          "eda_elapsed_s": 4.406
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 7.625,
+          "eda_elapsed_s": 50.11
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob148_2013_q2afsm\\result.json"
+    },
+    {
+      "problem": "Prob149_ece241_2013_q4",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'fr2' has no mismatches.\nHint: Output 'fr1' has no mismatches.\nHint: Output 'fr0' has no mismatches.\nHint: Output 'dfr' has 1240 mismatches. First mismatch occurred at time 10.\nHint: Total mismatched samples is 1240 out of 2040 samples\nMismatches: 1240 in 2040 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 20.359,
+          "eda_elapsed_s": 4.485
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "format",
+          "feedback": "endmodule is missing",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 40.156,
+          "eda_elapsed_s": 0.015
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob149_ece241_2013_q4\\result.json",
+      "review": "候选reset时dfr并非题面要求的1，未记住上次水位变化方向；参考上升/下降规则与题面也有冲突，需分开审计。"
+    },
+    {
+      "problem": "Prob150_review2015_fsmonehot",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'B3_next' has no mismatches.\nHint: Output 'S_next' has no mismatches.\nHint: Output 'S1_next' has no mismatches.\nHint: Output 'Count_next' has 13 mismatches. First mismatch occurred at time 270.\nHint: Output 'Wait_next' has 10 mismatches. First mismatch occurred at time 60.\nHint: Output 'done' has no mismatches.\nHint: Output 'counting' has no mismatches.\nHint: Output 'shift_ena' has no mismatches.\nHint: Total mismatched samples is 23 out of 300 samples\nMismatches: 23 in 300 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 10.407,
+          "eda_elapsed_s": 4.546
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 10.704,
+          "eda_elapsed_s": 46.25
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob150_review2015_fsmonehot\\result.json"
+    },
+    {
+      "problem": "Prob151_review2015_fsm",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "compile",
+          "feedback": "ERROR: [VRFC 10-2989] 'S3' is not declared [line 69]\nERROR: [VRFC 10-2989] 'S3' is not declared [line 72]\nERROR: [VRFC 10-8530] module 'TopModule' is ignored due to previous errors [line 1]",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 17.438,
+          "eda_elapsed_s": 0.734
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'shift_ena' has 146 mismatches. First mismatch occurred at time 2560.\nHint: Output 'counting' has 330 mismatches. First mismatch occurred at time 2600.\nHint: Output 'done' has 158 mismatches. First mismatch occurred at time 2690.\nHint: Total mismatched samples is 522 out of 5069 samples\nMismatches: 522 in 5069 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 10.422,
+          "eda_elapsed_s": 4.5
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob151_review2015_fsm\\result.json",
+      "review": "1101序列前缀重叠错误：状态已见11再遇1应保持11，候选退回只见1的状态。"
+    },
+    {
+      "problem": "Prob152_lemmings3",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'walk_left' has 218 mismatches. First mismatch occurred at time 120.\nHint: Output 'walk_right' has 149 mismatches. First mismatch occurred at time 280.\nHint: Output 'aaah' has no mismatches.\nHint: Output 'digging' has no mismatches.\nHint: Total mismatched samples is 311 out of 443 samples\nMismatches: 311 in 443 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 18.594,
+          "eda_elapsed_s": 4.578
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'walk_left' has 218 mismatches. First mismatch occurred at time 120.\nHint: Output 'walk_right' has 149 mismatches. First mismatch occurred at time 280.\nHint: Output 'aaah' has no mismatches.\nHint: Output 'digging' has no mismatches.\nHint: Total mismatched samples is 311 out of 443 samples\nMismatches: 311 in 443 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 14.656,
+          "eda_elapsed_s": 4.563
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob152_lemmings3\\result.json",
+      "review": "walk_left/right在坠落和挖掘态仍置1；碰撞转向也不区分方向。"
+    },
+    {
+      "problem": "Prob153_gshare",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'predict_taken' has 171 mismatches. First mismatch occurred at time 300.\nHint: Output 'predict_history' has 456 mismatches. First mismatch occurred at time 300.\nHint: Total mismatched samples is 456 out of 1083 samples\nMismatches: 456 in 1083 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 16.703,
+          "eda_elapsed_s": 4.64
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'predict_taken' has 130 mismatches. First mismatch occurred at time 30.\nHint: Output 'predict_history' has 414 mismatches. First mismatch occurred at time 130.\nHint: Total mismatched samples is 431 out of 1083 samples\nMismatches: 431 in 1083 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 12.047,
+          "eda_elapsed_s": 4.594
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob153_gshare\\result.json",
+      "review": "错误恢复ghr仅赋train_history，漏拼接train_taken；另候选PHT复位为00、参考为01，但题面未写明该复位值，需作为规格缺口单独审计。"
+    },
+    {
+      "problem": "Prob154_fsm_ps2data",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": true,
+      "selected_attempt": 2,
+      "stage": "synthesis",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'out_bytes' has 316 mismatches. First mismatch occurred at time 240.\nHint: Output 'done' has 490 mismatches. First mismatch occurred at time 210.\nHint: Total mismatched samples is 490 out of 1619 samples\nMismatches: 490 in 1619 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 26.797,
+          "eda_elapsed_s": 4.593
+        },
+        {
+          "attempt": 2,
+          "passed": true,
+          "highest_stage": "synthesis",
+          "feedback": "",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 8.5,
+          "eda_elapsed_s": 50.25
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob154_fsm_ps2data\\result.json"
+    },
+    {
+      "problem": "Prob155_lemmings4",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 1,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'walk_left' has 106 mismatches. First mismatch occurred at time 580.\nHint: Output 'walk_right' has 84 mismatches. First mismatch occurred at time 600.\nHint: Output 'aaah' has 20 mismatches. First mismatch occurred at time 690.\nHint: Output 'digging' has 38 mismatches. First mismatch occurred at time 620.\nHint: Total mismatched samples is 202 out of 1003 samples\nMismatches: 202 in 1003 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 22.344,
+          "eda_elapsed_s": 4.5
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "Hint: Output 'walk_left' has 106 mismatches. First mismatch occurred at time 580.\nHint: Output 'walk_right' has 84 mismatches. First mismatch occurred at time 600.\nHint: Output 'aaah' has 20 mismatches. First mismatch occurred at time 690.\nHint: Output 'digging' has 38 mismatches. First mismatch occurred at time 620.\nHint: Total mismatched samples is 202 out of 1003 samples\nMismatches: 202 in 1003 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 22.859,
+          "eda_elapsed_s": 4.563
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob155_lemmings4\\result.json",
+      "review": "碰撞方向混淆；5位坠落计数会回绕，无法稳健表示持续超阈值；首末拍和死亡条件需继续分项复测。"
+    },
+    {
+      "problem": "Prob156_review2015_fancytimer",
+      "baseline_pass": false,
+      "initial_pass": false,
+      "final_pass": false,
+      "selected_attempt": 2,
+      "stage": "simulation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "TIMEOUT\nHint: Output 'count' has 176596 mismatches. First mismatch occurred at time 130.\nHint: Output 'counting' has 5072 mismatches. First mismatch occurred at time 130.\nHint: Output 'done' has 680 mismatches. First mismatch occurred at time 20130.\nHint: Total mismatched samples is 179384 out of 199999 samples\nMismatches: 179384 in 199999 samples",
+          "source": "model",
+          "repair_from_attempt": null,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 27.203,
+          "eda_elapsed_s": 5.547
+        },
+        {
+          "attempt": 2,
+          "passed": false,
+          "highest_stage": "simulation",
+          "feedback": "TIMEOUT\nHint: Output 'count' has no mismatches.\nHint: Output 'counting' has no mismatches.\nHint: Output 'done' has no mismatches.\nHint: Total mismatched samples is 0 out of 199999 samples\nMismatches: 0 in 199999 samples",
+          "source": "model",
+          "repair_from_attempt": 1,
+          "duplicate_of_attempt": null,
+          "evaluation_reused": false,
+          "model_elapsed_s": 19.594,
+          "eda_elapsed_s": 5.531
+        }
+      ],
+      "evidence": "04_project\\amd_rtl_agent\\outputs\\qwen27b_repairfix_r1_new\\Prob156_review2015_fancytimer\\result.json",
+      "review": "第二次候选199999个采样零错误，但测试台固定1,000,000ps截止，刺激序列需要更久；参考自比也TIMEOUT。保持未完成，不能自动判通过。"
+    }
+  ]
+}

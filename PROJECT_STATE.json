@@ -723,5 +723,45 @@
     "implementation_commit": "21223b2ebf840e57b836add7a70efe99a38d4c02",
     "remote_branch": "origin/fix/reliable-evaluation",
     "main_branch_modified": false
+  },
+  "local_repairfix_r1_20260921": {
+    "status": "completed",
+    "code_commit": "10bddd90fecf0d9bc94f0f08a32129c14bf2e6e1",
+    "workspace": "E:/26qiansai/FPGA-repairfix-eval",
+    "model": "qwen3.6-27b",
+    "vivado": "E:/vivado/2025.2/Vivado/bin",
+    "samples": 1,
+    "repairs": 1,
+    "requested_problems": 156,
+    "output": "04_project/amd_rtl_agent/outputs/qwen27b_repairfix_r1_new",
+    "unit_tests_passed": 57,
+    "real_eda_regressions_passed": 5,
+    "launcher_pid": 49784,
+    "full_results_verified": true,
+    "baseline_passed": 100,
+    "agent_initial_passed": 92,
+    "agent_final_passed": 112,
+    "repaired_problems": 20,
+    "improved_problems": 18,
+    "regressed_problems": 6,
+    "exit_code": 0,
+    "summary": "04_project\\amd_rtl_agent\\bench\\results\\repairfix_r1_20260921_summary.json",
+    "offline_review": {
+      "report": "03_analysis\\09_新版156题离线复盘_20260921.md",
+      "model_calls": 0,
+      "reference_self_checks": 2,
+      "original_score_unchanged": true,
+      "confirmed_dataset_issues": [
+        "Prob099 port mismatch",
+        "Prob156 testbench deadline"
+      ],
+      "code_modified": false
+    },
+    "handoff": {
+      "path": "05_handoff/OPTIMIZATION_HANDOFF_20260921.md",
+      "branch": "fix/reliable-evaluation",
+      "evidence_bundle": "04_project/amd_rtl_agent/bench/results/repairfix_r1_20260921_evidence.json",
+      "runtime_code_changed": false
+    }
   }
 }
