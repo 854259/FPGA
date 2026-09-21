@@ -2,6 +2,10 @@
 
 ## 本轮结果
 
+- 已按用户要求发布并核验：官方适配代码075de5f4bdc797e82b43121d9097be6878fa073c已推送origin/feat/official-rtl-contract，远端SHA一致；main与队友原分支未改动。本次只同步发布状态，没有修改运行代码或重跑评测。
+
+队友可获取GitHub分支 `feat/official-rtl-contract`；实现提交为 `075de5f`。
+
 从队友最新 `60fca42` 派生，工作区 `E:/26qiansai/FPGA-official-contract`，
 分支 `feat/official-rtl-contract`。旧工作区和历史112/156保持原样。
 官方仓库固定到 `afd135e7ba5f6ec4c6d77e7c927c894327537801`。

@@ -2,6 +2,8 @@
 
 ## 2026-09-21 官方RTL接口适配（当前优先）
 
+- 已按用户要求发布并核验：官方适配代码075de5f4bdc797e82b43121d9097be6878fa073c已推送origin/feat/official-rtl-contract，远端SHA一致；main与队友原分支未改动。本次只同步发布状态，没有修改运行代码或重跑评测。
+
 - 工作区E:/26qiansai/FPGA-official-contract，分支feat/official-rtl-contract，基于队友60fca42；此前路径和待办以本节为准。
 - 官方RTL仓库固定afd135e7ba5f6ec4c6d77e7c927c894327537801。submission目录新增独立题面入口、原版baseline、solution.v/trace.jsonl、带鉴权HTTP服务和限时进程；仅候选编译修复，参考测试反馈不进入智能体。
 - official_reference为外部判定/规则/示例，官方文件按Git原始字节保存并锁定SHA-256；official_eval.py使用官方L0–L3判定与汇总，完整样本校验、异常排除单列，不换算未公布阈值的正式总分。
