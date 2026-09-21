@@ -19,7 +19,7 @@ class AgentTests(unittest.TestCase):
     def test_baseline_is_one_problem_only_call(self):
         seen = []
 
-        def fake(messages, seed):
+        def fake(messages, seed, metadata=None):
             seen.append((messages, seed))
             return "module TopModule; endmodule"
 
@@ -31,7 +31,7 @@ class AgentTests(unittest.TestCase):
     def test_repair_limit_is_enforced(self):
         calls = []
 
-        def always_bad(messages, seed):
+        def always_bad(messages, seed, metadata=None):
             calls.append((messages, seed))
             return "not verilog"
 

@@ -1,0 +1,92 @@
+{
+  "scope": "offline regression and real Vivado 2026.1; fixed mock responses, no real model calls",
+  "unit_tests_passed": 61,
+  "real_eda": {
+    "vivado_bin": "F:\\vivado\\2026.1\\Vivado\\bin\\vivado.BAT",
+    "mock_model_for_repair": true,
+    "passed": true,
+    "checks": {
+      "candidate_warning_in_simulation_feedback": true,
+      "one_repair_no_extra_calls": true,
+      "repaired_simulation_and_synthesis": true,
+      "explicit_initialization_simulation_and_synthesis": true
+    },
+    "timing_pass": null
+  },
+  "archived_candidate_warning_checks": {
+    "Prob134_2014_q3c": "WARNING: [VRFC 10-8497] literal value 'b100_0 truncated to fit in 3 bits [candidate.sv:23]\nWARNING: [VRFC 10-8497] literal value 'b100_1 truncated to fit in 3 bits [candidate.sv:24]",
+    "Prob137_fsm_serial": "WARNING: [VRFC 10-8497] literal value 'd8 truncated to fit in 3 bits [candidate.sv:64]",
+    "Prob139_2013_q2bfsm": "WARNING: [VRFC 10-8497] literal value 'd8 truncated to fit in 3 bits [candidate.sv:19]"
+  },
+  "original_score_unchanged": "112/156",
+  "dataset_audit_only": {
+    "Prob099": "reference self-check fails elaboration due to Y1/Y3 versus Y2/Y4 interface mismatch",
+    "Prob156": "reference self-check reaches testbench TIMEOUT with 0 mismatches in 199999 samples"
+  },
+  "raw_evidence": "04_project/amd_rtl_agent/outputs/prompt_feedback_20260921",
+  "real_model_validation": "pending; no accuracy or latency gain claimed",
+  "publication_status": "local_uncommitted",
+  "file_sha256": {
+    "agent.py": "79dd996396a149f19ea0b40f6929865ec6900caab23841f0fac239c18c667dc7",
+    "skill\\RTL_SKILL.md": "e0eba7ae86a9844eb4fb92068a7dc14d45666e04b9cf57ba01049e1280731ba0",
+    "skill\\RTL_REPAIR_SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+  },
+  "preserved_evidence_sha256": {
+    "init.sv": "402c9d1c2f0027996092a866f58e92e8d71f9b9773d8186eabfda4e7ed675d5f",
+    "init_tb.sv": "64ecafcbf4f6cc900daf2201bc26277d0220c6f1bea8717ea8c407dba2180081",
+    "repair.sv": "3d3ad80522711be73f7f93762b9097868e5ca6556c37a56b9110b936e63f65c1",
+    "summary.json": "309dd58e76a88f5177576fbd75250940fa6b873f0f62ba1d6acd06b0fcd4e444",
+    "initialization\\01_xvlog.log": "862fbf7bb45b09799d91b3ee00711582cdb5758ab38a006f2d0836da32af42b1",
+    "initialization\\02_xelab.log": "3ecfb0c0d9f079380fcccc955b9ccf201d9028c564ebf7ddb6112da8e27046b2",
+    "initialization\\03_xsim.log": "78c492ed9c9b751e6efdf1ff88c08c697e58bd81ffd3faaab673353087bbae09",
+    "initialization\\04_vivado.log": "cb64228efe18fe568a0529b7d49e1d4eeb9f3e129416fcfa51a9f85782d58902",
+    "initialization\\candidate.sv": "402c9d1c2f0027996092a866f58e92e8d71f9b9773d8186eabfda4e7ed675d5f",
+    "initialization\\evaluation.json": "ca9c5efc11bd88fafaef064fbe983dcbc9a5daad1629fec17579c7c4c7117e23",
+    "repair\\result.json": "13c62910991b7fc98e11c666e662f1d7cb2fa27fabfc47f41187bafc0c144bb3",
+    "initialization\\synthesis\\PASS": "ef3e454036cd1cee1afa869dbc09bdede51787cb7ca7b2efa010d7b04061a631",
+    "initialization\\synthesis\\post_synth.dcp": "6cc4db5d749c21e46c762777a762239edbc150c6830b3592e29d0238571851c6",
+    "initialization\\synthesis\\timing.rpt": "ae39988625dfd1343331d19c1421ce8794bff0ba18f27f94a24626abebc20325",
+    "initialization\\synthesis\\utilization.rpt": "d9598f116e11251b66a1d3be4f0f262611f21735636b32d9e9da1284d80c06bd",
+    "repair\\attempt_1\\01_xvlog.log": "275b2206d3efa1d380d1d92f517203c356c76b025c897098373ec3a46269e842",
+    "repair\\attempt_1\\02_xelab.log": "d5f57b632540aa8321369ff2e62e159b8a3e92be8f017208eb75d0f22df5b30b",
+    "repair\\attempt_1\\03_xsim.log": "9cc83c01cbd3a8d3eaa67ec11f4fc3f99ce3a3c61dd63398848129bb449aa610",
+    "repair\\attempt_1\\candidate.sv": "de38079732750aa37c35d5b7add2cf70ea5320363055cf68691052cd12c175f7",
+    "repair\\attempt_1\\evaluation.json": "fbb06d47456c4d92e173ad52203c525bda9ab51a5cad301297ffc84a7e97ed1b",
+    "repair\\attempt_1\\response_metadata.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "repair\\attempt_2\\01_xvlog.log": "6a7df5fbeab1078dfc56a46851383935a81931ef6ab4d04f66aca970acdccf9c",
+    "repair\\attempt_2\\02_xelab.log": "d5f57b632540aa8321369ff2e62e159b8a3e92be8f017208eb75d0f22df5b30b",
+    "repair\\attempt_2\\03_xsim.log": "058247644f1ea7ba8a327e98eca22c2ef6f25c5945f9c18b139bf35b48f65b63",
+    "repair\\attempt_2\\04_vivado.log": "10a21279a904d8a3afd56b72a49ddbf468820bc4e7080efa1b29fcd1381e40e8",
+    "repair\\attempt_2\\candidate.sv": "3d3ad80522711be73f7f93762b9097868e5ca6556c37a56b9110b936e63f65c1",
+    "repair\\attempt_2\\evaluation.json": "c3a7e7dadba3b774e60540bae6e9aac037df0733f1c0abb856ac77e311493f2c",
+    "repair\\attempt_2\\response_metadata.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "repair\\attempt_2\\synthesis\\PASS": "913155d1caf6e492b018f64d9f1bea96cfc3f46f7c03c4da2aa5d92a15791d70",
+    "repair\\attempt_2\\synthesis\\post_synth.dcp": "64408fcf2a9ef231049e542fb9356c199731667e464d84dbca13c7cb84baf665",
+    "repair\\attempt_2\\synthesis\\timing.rpt": "935afaf7078acb0e8daba3628e32dc535c593570d82e1ca4baf807841d4d1192",
+    "repair\\attempt_2\\synthesis\\utilization.rpt": "4331c7246fdf067a0f3b4c881736f916be5dd587f3c5d453a972976557cc8c51"
+  },
+  "cleanup": {
+    "status": "blocked_by_policy",
+    "removed": 0,
+    "cache_directories_retained": [
+      "initialization\\.Xil",
+      "initialization\\xsim.dir",
+      "repair\\attempt_1\\xsim.dir",
+      "repair\\attempt_2\\.Xil",
+      "repair\\attempt_2\\xsim.dir"
+    ],
+    "temporary_files_retained": [
+      "initialization\\xelab.pb",
+      "initialization\\xsim.jou",
+      "initialization\\xvlog.pb",
+      "repair\\attempt_1\\xelab.pb",
+      "repair\\attempt_1\\xsim.jou",
+      "repair\\attempt_1\\xvlog.pb",
+      "repair\\attempt_2\\xelab.pb",
+      "repair\\attempt_2\\xsim.jou",
+      "repair\\attempt_2\\xvlog.pb"
+    ],
+    "preserved_evidence_hashes_verified": true,
+    "reason": "Automatic approval rejected scoped native PowerShell cleanup; no further reason supplied; no workaround attempted."
+  }
+}

@@ -31,6 +31,8 @@ def fixture_passed(name, result):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', required=True)
+    parser.add_argument('--prompt-feedback-only', action='store_true',
+                        help='check candidate width feedback and explicit FPGA initialization')
     parser.add_argument('--repair-backtrack-only', action='store_true',
                         help='check repair regression recovery with real compile/simulation, without synthesis')
     args = parser.parse_args()
@@ -38,6 +40,39 @@ def main():
     if out.exists() and any(out.iterdir()):
         parser.error('use a new or empty output directory to preserve previous evidence')
     fixtures = agent.ROOT / 'tests' / 'fixtures'
+    if args.prompt_feedback_only:
+        bad = "module TopModule(input a, b, output y); assign y = ({a,b} == 2'b100); endmodule"
+        with mock.patch.object(agent, 'call_model', side_effect=[bad, agent.read_text(fixtures/'correct.sv')]) as model:
+            repaired = agent.generate_agent_sample(agent.read_text(fixtures/'problem.txt'),
+                out/'repair.sv', out/'repair', 1, fixtures/'test.sv', fixtures/'ref.sv', 1, False, False)
+        prompt = model.call_args_list[1].args[0][1]['content']
+        agent.write_json(out/'repair/result.json', {**repaired, 'mock_model': True, 'repair_prompt': prompt})
+        agent.write_text(out/'init.sv', 'module TopModule(input clk, output reg q); initial q=0; always @(posedge clk) q<=~q; endmodule\n')
+        agent.write_text(out/'init_tb.sv', '''module tb;
+reg clk=0; wire q; integer mismatches=0;
+TopModule dut(clk,q);
+initial begin
+ #1; if(q !== 0) mismatches=mismatches+1;
+ clk=1; #1; if(q !== 1) mismatches=mismatches+1;
+ clk=0; #1; clk=1; #1; if(q !== 0) mismatches=mismatches+1;
+ $display("Mismatches: %0d",mismatches); $finish;
+end
+endmodule
+''')
+        initialized = agent.evaluate_candidate(out/'init.sv', out/'initialization', out/'init_tb.sv')
+        agent.write_json(out/'initialization/evaluation.json', initialized)
+        checks = {
+            'candidate_warning_in_simulation_feedback': repaired['attempt_history'][0]['highest_stage'] == 'simulation'
+                and '[VRFC 10-8497]' in prompt and '[candidate.sv:1]' in prompt,
+            'one_repair_no_extra_calls': model.call_count == 2 and repaired['model_calls'] == 2,
+            'repaired_simulation_and_synthesis': repaired['passed'] and repaired['highest_stage'] == 'synthesis',
+            'explicit_initialization_simulation_and_synthesis': initialized['passed'] and initialized['highest_stage'] == 'synthesis',
+        }
+        summary = {'vivado_bin': agent.tool_path('vivado'), 'mock_model_for_repair': True,
+                   'passed': all(checks.values()), 'checks': checks, 'timing_pass': None}
+        agent.write_json(out/'summary.json', summary)
+        print(json.dumps(summary), flush=True)
+        return 0 if summary['passed'] else 1
     if args.repair_backtrack_only:
         responses = [agent.read_text(fixtures / f'{name}.sv')
                      for name in ('sim_fail', 'compile_fail', 'correct')]

@@ -1,5 +1,15 @@
 # AMD RTL 本地智能体（最简实现）
 
+## 提示与反馈优化（2026-09-21）
+
+- 编译阶段只新增候选文件绝对路径匹配的单行 VRFC 位宽/截断警告，最多1024字符；与后续失败诊断合计不超过4096字符。其他路径、无来源警告不进入此通道。
+- 题面明确要求上电初值时允许 Vivado FPGA 常量初始化；未规定时不补初值。要求只输出精简完整代码，不输出推导注释。
+- baseline结果及每轮attempt_history保存response_metadata（返回model、finish_reason、三项token计数）；agent每轮另存response_metadata.json。缺失字段保持缺失；自动声明修复为空对象，不伪造模型响应。length且格式失败时明确提示截断，不额外调用或扩大预算。
+- 原始112/156不变。离线核实的099端口错配、156测试台截止见03_analysis/09_新版156题离线复盘_20260921.md；不改数据、不剔题、不向模型注入参考答案。
+
+本机复现：`python -B -m unittest discover -s tests -q`；`python -B tests/run_vivado_regression.py --prompt-feedback-only --output-dir outputs/prompt_feedback_check_new`。
+代码/skill已变化，真实模型必须另开实验目录。本机固定响应EDA结果只证明控制流程和工具兼容性，不证明27B收益。
+
 ## 后续修复反馈优化（2026-09-20）
 
 - 修复端口方向误报：`input clk, output q`不会再被说成`q`是输入；忽略注释、字符串和其他模块。

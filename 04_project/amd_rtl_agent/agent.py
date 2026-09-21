@@ -108,10 +108,14 @@ def _next_mock(path: str) -> str:
     return responses[index % len(responses)]
 
 
-def call_model(messages: list[dict[str, str]], seed: int) -> str:
+def call_model(messages: list[dict[str, str]], seed: int, metadata: dict | None = None) -> str:
     """Call one OpenAI-compatible completion; mock mode is for deterministic tests."""
     mock_file = os.environ.get("LLM_MOCK_FILE")
+    if metadata is not None:
+        metadata.clear()
     if mock_file:
+        if metadata is not None:
+            metadata['mock'] = True
         return _next_mock(mock_file)
 
     settings = model_settings()
@@ -142,7 +146,22 @@ def call_model(messages: list[dict[str, str]], seed: int) -> str:
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             payload = json.loads(response.read().decode("utf-8"))
-        content = payload["choices"][0]["message"]["content"]
+        choice = payload["choices"][0]
+        if not isinstance(choice, dict):
+            raise ValueError("model response choice must be an object")
+        if metadata is not None:
+            # Allowlist only response provenance and numeric usage; never headers,
+            # provider extensions, reasoning text, credentials or request bodies.
+            for key, value in [('model', payload.get('model')),
+                               ('finish_reason', choice.get('finish_reason'))]:
+                if isinstance(value, str):
+                    metadata[key] = value[:256]
+            usage = payload.get('usage')
+            if isinstance(usage, dict):
+                metadata['usage'] = {key: usage[key] for key in
+                    ('prompt_tokens', 'completion_tokens', 'total_tokens')
+                    if type(usage.get(key)) is int and usage[key] >= 0}
+        content = choice["message"]["content"]
         if not isinstance(content, str) or not content.strip():
             raise ValueError("model response content must be a non-empty string")
         return content
@@ -286,15 +305,32 @@ def run_process(command: list[str], cwd: Path, timeout: int, log_path: Path) -> 
     }
 
 
-def _failed(stage: str, process: dict[str, object] | None, message: str = "") -> dict[str, object]:
+def _failed(stage: str, process: dict[str, object] | None, message: str = "", warnings: str = "") -> dict[str, object]:
     output = str(process.get("output", "")) if process else message
+    warning_suffix = "\n" + warnings if warnings else ""
     return {
         "passed": False,
         "highest_stage": stage,
         "functional_checked": False,
-        "feedback": compact_feedback(output or message),
+        "feedback": compact_feedback(output or message, 4096 - len(warning_suffix)) + warning_suffix,
         "steps": [],
     }
+
+
+def candidate_warnings(output: str, candidate: Path) -> str:
+    """Retain bounded, single-line width diagnostics with exact candidate provenance."""
+    selected = []
+    expected = str(candidate.resolve()).replace('\\', '/').casefold()
+    for line in output.splitlines():
+        match = re.match(r"^WARNING: \[VRFC [\d-]+\].*\[([^\[\]]+):(\d+)\]\s*$", line)
+        if not match or not re.search(r'truncat|width|size mismatch', line, re.IGNORECASE):
+            continue
+        if match[1].replace('\\', '/').casefold() != expected:
+            continue
+        cleaned = line[:match.start(1) - 1] + f'[candidate.sv:{match[2]}]'
+        if cleaned not in selected:
+            selected.append(cleaned)
+    return '\n'.join(selected)[:1024]
 
 
 def compact_feedback(output: str, limit: int = 4096) -> str:
@@ -427,8 +463,9 @@ def evaluate_candidate(
         work / "01_xvlog.log",
     )
     steps.append({k: v for k, v in compile_step.items() if k != "output"})
+    warnings = candidate_warnings(str(compile_step.get('output', '')), candidate_copy)
     if compile_step["returncode"] != 0:
-        result = _failed("compile", compile_step)
+        result = _failed("compile", compile_step, warnings=warnings)
         result["steps"] = steps
         return result
 
@@ -442,7 +479,7 @@ def evaluate_candidate(
     )
     steps.append({k: v for k, v in elaborate_step.items() if k != "output"})
     if elaborate_step["returncode"] != 0:
-        result = _failed("elaboration", elaborate_step)
+        result = _failed("elaboration", elaborate_step, warnings=warnings)
         result["steps"] = steps
         return result
 
@@ -468,7 +505,7 @@ def evaluate_candidate(
             explanation = simulation_output
             if simulation_step["returncode"] == 0 and not mismatches:
                 explanation += "\nERROR: simulator did not emit the required 'Mismatches: N' marker"
-            result = _failed("simulation", {**simulation_step, "output": explanation})
+            result = _failed("simulation", {**simulation_step, "output": explanation}, warnings=warnings)
             result["steps"] = steps
             result["functional_checked"] = True
             return result
@@ -498,7 +535,7 @@ def evaluate_candidate(
     )
     steps.append({k: v for k, v in vivado_step.items() if k != "output"})
     if vivado_step["returncode"] != 0 or re.search(r"^\s*(?:ERROR|FATAL)\b", str(vivado_step["output"]), re.MULTILINE | re.IGNORECASE):
-        result = _failed("synthesis", vivado_step)
+        result = _failed("synthesis", vivado_step, warnings=warnings)
         result["steps"] = steps
         result["functional_checked"] = functional_checked
         return result
@@ -535,7 +572,8 @@ def baseline_generate(problem: str, output: str | Path, seed: int = 1) -> dict[s
         raise RuntimeError(f"baseline output already exists: {output}; use a new path")
     started = time.monotonic()
     # This exact one-message call is the competition baseline contract.
-    response = call_model([{"role": "user", "content": problem}], seed)
+    metadata = {}
+    response = call_model([{"role": "user", "content": problem}], seed, metadata=metadata)
     code = extract_verilog(response)
     write_text(output, code)
     return {
@@ -543,6 +581,7 @@ def baseline_generate(problem: str, output: str | Path, seed: int = 1) -> dict[s
         "elapsed_s": round(time.monotonic() - started, 3),
         "calls": 1,
         "seed": seed,
+        "response_metadata": metadata,
     }
 
 
@@ -597,10 +636,11 @@ def generate_agent_sample(
                    if attempt and evaluation['highest_stage'] == 'compile' else None)
         origin = 'compiler_declaration_repair' if patched is not None else 'model'
         generation_started = time.monotonic()
+        metadata = {}
         if patched is not None:
             response = patched
         else:
-            response = call_model(messages, seed + attempt * 1000)
+            response = call_model(messages, seed + attempt * 1000, metadata=metadata)
             model_calls += 1
         generation_elapsed = time.monotonic() - generation_started if patched is None else 0.0
         code = extract_verilog(response)
@@ -610,6 +650,7 @@ def generate_agent_sample(
         write_text(output, code)
         attempt_dir = eval_dir / f"attempt_{attempt + 1}"
         write_text(attempt_dir / "response.txt", response)
+        write_json(attempt_dir / "response_metadata.json", metadata)
         write_text(attempt_dir / "candidate.sv", code)
         reusable = (prior is not None and prior[1]['highest_stage'] in ('format', 'compile')
                     and not prior[1]['passed']
@@ -636,12 +677,17 @@ def generate_agent_sample(
                 reference=reference,
                 skip_synthesis=skip_synthesis,
             )
+        cache_evaluation = evaluation
+        if metadata.get('finish_reason') == 'length' and evaluation['highest_stage'] == 'format':
+            evaluation = {**evaluation, 'feedback': str(evaluation.get('feedback', '')) +
+                          '\nAPI finish_reason=length: 输出达到长度限制；请压缩实现并返回完整代码。'}
         attempts.append({
             "attempt": attempt + 1,
             "passed": evaluation["passed"],
             "highest_stage": evaluation["highest_stage"],
             "feedback": evaluation.get("feedback", ""),
             "source": origin,
+            "response_metadata": metadata,
             "repair_from_attempt": repair_from_attempt,
             "duplicate_of_attempt": duplicate_of,
             "evaluation_reused": reusable,
@@ -649,7 +695,7 @@ def generate_agent_sample(
             "eda_elapsed_s": round(time.monotonic() - evaluation_started, 3) if not reusable and not skip_eda else 0.0,
         })
         if digest not in seen:
-            seen[digest] = (attempt + 1, evaluation)
+            seen[digest] = (attempt + 1, cache_evaluation)
         write_json(attempt_dir / "evaluation.json", evaluation)
         if best_evaluation is None or quality(evaluation) > quality(best_evaluation):
             best_evaluation = evaluation

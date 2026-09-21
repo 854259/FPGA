@@ -1,4 +1,6 @@
 import sys
+import os
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -11,6 +13,63 @@ ERROR = 'ERROR: [VRFC 10-1280] procedural assignment to a non-register q is not 
 
 
 class RepairTests(unittest.TestCase):
+    def test_candidate_warning_provenance_and_budget(self):
+        path = Path('candidate.sv').resolve()
+        warning = "WARNING: [VRFC 10-8497] literal value 'b1000 truncated to fit in 3 bits"
+        log = '\n'.join([f'{warning} [{path}:4]', f'{warning} [{path.parent / "ref.sv"}:5]',
+                         f'{warning} [{path.parent / "test.sv"}:6]', warning])
+        selected = agent.candidate_warnings(log, path)
+        self.assertEqual(selected, warning + ' [candidate.sv:4]')
+        many = '\n'.join(f'{warning} [{path}:{n}]' for n in range(100))
+        selected = agent.candidate_warnings(many, path)
+        result = agent._failed('simulation', None, 'ERROR ' + 'x' * 6000 + '\nMismatches: 8', selected)
+        self.assertLessEqual(len(result['feedback']), 4096)
+        self.assertIn('Mismatches: 8', result['feedback'])
+        self.assertIn('[candidate.sv:0]', result['feedback'])
+
+    def test_compile_warning_reaches_simulation_repair_prompt(self):
+        code = 'module TopModule; endmodule'
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            def process(command, cwd, timeout, log_path):
+                output = ('WARNING: [VRFC 10-8497] literal truncated [' + str(cwd / 'candidate.sv') + ':1]'
+                          if '01_' in log_path.name else 'Mismatches: 3 in 4 samples')
+                return dict(returncode=0, output=output, timed_out=False)
+            with mock.patch.object(agent, 'call_model', return_value=code) as model, mock.patch.object(agent, 'run_process', side_effect=process):
+                result = agent.generate_agent_sample('p', root/'out.sv', root/'logs', 1, root/'tb.sv', root/'ref.sv', 1, False, True)
+            self.assertIn('[candidate.sv:1]', model.call_args_list[1].args[0][1]['content'])
+            self.assertEqual(result['model_calls'], 2)
+
+    def test_response_metadata_allowlist_and_truncation_is_per_call(self):
+        payload = {'model': 'returned-model', 'api_key': 'SECRET',
+                   'usage': {'prompt_tokens': 3, 'completion_tokens': 9, 'total_tokens': 12,
+                             'private_extension': 'SECRET'},
+                   'choices': [{'finish_reason': 'length', 'message': {'content': 'module TopModule;'}}]}
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(os.environ, {'LLM_MOCK_FILE': ''}), mock.patch.object(agent.urllib.request, 'urlopen') as request:
+            stopped = json.loads(json.dumps(payload))
+            stopped['choices'][0]['finish_reason'] = 'stop'
+            request.return_value.__enter__.return_value.read.side_effect = [json.dumps(p).encode() for p in (payload, stopped)]
+            root = Path(tmp)
+            result = agent.generate_agent_sample('p', root/'out.sv', root/'logs', 1, None, None, 1, True, True)
+            first, second = result['attempt_history']
+            self.assertIn('finish_reason=length', first['feedback'])
+            self.assertNotIn('finish_reason=length', second['feedback'])
+            self.assertTrue(second['evaluation_reused'])
+            saved = agent.read_text(root/'logs/attempt_1/response_metadata.json')
+            self.assertNotIn('SECRET', saved)
+            self.assertEqual(json.loads(saved), {'model': 'returned-model', 'finish_reason': 'length',
+                'usage': {'prompt_tokens': 3, 'completion_tokens': 9, 'total_tokens': 12}})
+            self.assertEqual(request.call_count, 2)
+
+    def test_baseline_response_metadata_without_prompt_change(self):
+        payload = {'model': 'returned-model', 'choices': [{'finish_reason': 'stop',
+                   'message': {'content': 'module TopModule; endmodule'}}]}
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(os.environ, {'LLM_MOCK_FILE': ''}), mock.patch.object(agent.urllib.request, 'urlopen') as request:
+            request.return_value.__enter__.return_value.read.return_value = json.dumps(payload).encode()
+            result = agent.baseline_generate('p', Path(tmp)/'out.sv')
+            self.assertEqual(result['response_metadata'], {'model': 'returned-model', 'finish_reason': 'stop'})
+            self.assertEqual(json.loads(request.call_args.args[0].data)['messages'], [{'role': 'user', 'content': 'p'}])
+
     def test_direction_feedback_does_not_cross_port_boundaries(self):
         feedback = "Hint: Output 'q' has 2 mismatches"
         for code in [

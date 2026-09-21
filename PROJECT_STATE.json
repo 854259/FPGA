@@ -24,7 +24,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-21",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -762,6 +762,57 @@
       "branch": "fix/reliable-evaluation",
       "evidence_bundle": "04_project/amd_rtl_agent/bench/results/repairfix_r1_20260921_evidence.json",
       "runtime_code_changed": false
+    }
+  },
+  "prompt_feedback_optimization_20260921": {
+    "updated_at": "2026-09-21T14:09:12+08:00",
+    "status": "implementation_locally_validated_cleanup_blocked",
+    "unit_tests_passed": 61,
+    "real_eda_assertions_passed": 4,
+    "vivado_version": "2026.1",
+    "synthesis_checked": true,
+    "real_model_calls": 0,
+    "real_27b_evaluated": false,
+    "stopped_benchmark_resumed": false,
+    "original_score_unchanged": "112/156",
+    "publication_status": "local_uncommitted_not_pushed",
+    "evidence": "04_project/amd_rtl_agent/bench/results/prompt_feedback_20260921.json",
+    "raw_evidence": "04_project/amd_rtl_agent/outputs/prompt_feedback_20260921",
+    "changes": [
+      "candidate-only bounded width warning feedback",
+      "explicit problem-driven FPGA initialization and concise output rules",
+      "allowlisted per-call model/finish_reason/token usage metadata",
+      "length-format failures marked without extra retries"
+    ],
+    "completed_unverified": [
+      "real 27B correctness and latency effect"
+    ],
+    "pending": [
+      "authorized matched-config real-model subset then full156 if warranted"
+    ],
+    "cleanup": {
+      "status": "blocked_by_policy",
+      "removed": 0,
+      "cache_directories_retained": [
+        "initialization\\.Xil",
+        "initialization\\xsim.dir",
+        "repair\\attempt_1\\xsim.dir",
+        "repair\\attempt_2\\.Xil",
+        "repair\\attempt_2\\xsim.dir"
+      ],
+      "temporary_files_retained": [
+        "initialization\\xelab.pb",
+        "initialization\\xsim.jou",
+        "initialization\\xvlog.pb",
+        "repair\\attempt_1\\xelab.pb",
+        "repair\\attempt_1\\xsim.jou",
+        "repair\\attempt_1\\xvlog.pb",
+        "repair\\attempt_2\\xelab.pb",
+        "repair\\attempt_2\\xsim.jou",
+        "repair\\attempt_2\\xvlog.pb"
+      ],
+      "preserved_evidence_hashes_verified": true,
+      "reason": "Automatic approval rejected scoped native PowerShell cleanup; no further reason supplied; no workaround attempted."
     }
   }
 }
