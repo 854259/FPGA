@@ -1,0 +1,40 @@
+{
+  "scope": "offline Windows protocol and scoring integration; local fake OpenAI-compatible server only",
+  "tests_passed": 68,
+  "test_duration_s": 42.292,
+  "continuous_requests": 200,
+  "agent_requests": 100,
+  "baseline_requests": 100,
+  "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "baseline_sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+  "real_model_calls": 0,
+  "real_eda_run": false,
+  "linux_signal_verification": false,
+  "old_112_of_156_unchanged": true,
+  "formal_score": null,
+  "checks": [
+    "official source byte integrity",
+    "baseline exactly one model call, no tools",
+    "prompt-only staging with hidden file canaries",
+    "candidate compile error reaches repair",
+    "both modes same model endpoint",
+    "HTTP auth and mode validation",
+    "fresh output isolation",
+    "deadline cancellation and subsequent request recovery",
+    "200 sequential requests",
+    "real VRAM absent implies not ready in submission profile",
+    "official weighted coefficients and exclusions",
+    "legacy score rejection"
+  ],
+  "limitations": [
+    "No WSL or Vivado2026.1 on this host",
+    "No GPU/offline image verification",
+    "No model quality gain claimed",
+    "Self-generated functional tests not implemented"
+  ],
+  "files": {
+    "submission/runtime.py": "07e2c95b9ba72e011d0a78760a4396ba3fa8c10aac356b1b9ea022084309c6b0",
+    "official_eval.py": "fe0774cd50e90fe893c8e944029bcb15e367c871f714844a4d8e20fb5d20a92d",
+    "tests/test_official_contract.py": "c483132f79a1858a765770789ae2d7a3787816b619429deedb22358651b6a0b5"
+  }
+}

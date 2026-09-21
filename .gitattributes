@@ -16,3 +16,9 @@ Dockerfile text eol=lf
 *.gguf binary
 *.so binary
 *.so.* binary
+
+# Preserve official scripts byte-for-byte, including their baseline hash.
+04_project/amd_rtl_agent/official_reference/** -text
+04_project/amd_rtl_agent/submission/baseline.py -text
+04_project/amd_rtl_agent/submission/*.sh text eol=lf
+04_project/amd_rtl_agent/submission/run_baseline.sh -text
