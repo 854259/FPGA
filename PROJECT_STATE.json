@@ -24,7 +24,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-09-21",
+  "last_updated": "2026-09-26",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -838,5 +838,20 @@
     "evidence": "04_project/amd_rtl_agent/bench/results/official_contract_20260921.json",
     "implementation_commit": "075de5f4bdc797e82b43121d9097be6878fa073c",
     "remote_branch": "origin/feat/official-rtl-contract"
+  },
+  "autodl_preparation_20260926": {
+    "handoff": "05_handoff/autodl_20260927/README.md",
+    "code_commit": "a53e343ed9f02434050fdf86e61bae1b4a0c11a7",
+    "dataset_commit": "c498220d0a52248f8e3fdffe279075215bde2da6",
+    "converted_tasks": 156,
+    "local_tests_passed": 68,
+    "bundle_sha256": "7dbc4216db64d5f1d1c407c0b377dbec95e22ed2d236480d8c53d36bd1aa075e",
+    "verification": "05_handoff/autodl_20260927/logs/bundle-verification.json",
+    "gpu_tested": false,
+    "linux_vivado_tested": false,
+    "weights_downloaded": false,
+    "cloud_instance_created": false,
+    "publication_branch": "feat/official-rtl-contract",
+    "status": "local_preparation_complete_cloud_validation_pending"
   }
 }
