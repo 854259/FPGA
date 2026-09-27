@@ -5,6 +5,7 @@ is deliberately outside the submission directory and must not be shipped with it
 """
 from __future__ import annotations
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import importlib.util
 import json
@@ -69,18 +70,45 @@ def summarize(results, expected_tasks, modes, samples):
             'limits': 'Gain threshold, cost baseline, final time budget and engineering score are not established here.'}
 
 
+def run_references(tasks, ids, samples, out, results, deadline, workers):
+    """Parallelize only independent reference checks; never call a model here."""
+    def check(path, tid, sample):
+        dst = out/'reference'/tid/f's{sample}'
+        dst.mkdir(parents=True)
+        task_meta = json.loads(path.read_text(encoding='utf-8'))
+        shutil.copyfile(path.parent/task_meta['reference'], dst/'solution.v')
+        subprocess.run([sys.executable, str(OFFICIAL/'selftest/judge.py'),
+                        '--task', str(path.parent), '--solution', str(dst/'solution.v'),
+                        '--outdir', str(dst/'judge_logs'), '--timeout', str(deadline),
+                        '--json', str(results/f'reference.{tid}.s{sample}.json')], check=True)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        pending = [pool.submit(check, path, tid, sample)
+                   for path, tid in zip(tasks, ids) for sample in range(samples)]
+        try:
+            for future in as_completed(pending):
+                future.result()
+        except BaseException:
+            for future in pending:
+                future.cancel()
+            raise
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--tasks', type=Path, required=True)
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--samples', type=int, default=5)
     ap.add_argument('--reference', action='store_true', help='only validate evaluator fixtures; no model calls')
+    ap.add_argument('--reference-workers', type=int, default=1,
+                    help='1..4 independent reference checks; model runs remain sequential')
     ap.add_argument('--deadline', type=float, required=True, help='local trial budget, not an official announced limit')
     args = ap.parse_args()
     if os.name != 'posix':
         ap.error('Official judge targets Linux/WSL; do not report native Windows results as official validation')
     if args.samples not in range(1, 6) or args.deadline <= 0:
         ap.error('samples must be 1..5 and deadline positive')
+    if args.reference_workers not in range(1, 5) or (not args.reference and args.reference_workers != 1):
+        ap.error('reference-workers must be 1..4 and requires --reference when greater than 1')
     commit = verify_upstream()
     # Fail before any model call if tools are unavailable or not the required version.
     for name in ('xvlog', 'xelab', 'xsim', 'vivado'):
@@ -103,7 +131,8 @@ def main():
     results.mkdir()
     modes = ['reference'] if args.reference else ['agent', 'baseline']
     meta = dict(upstream_commit=commit, samples=args.samples, task_ids=ids, modes=modes,
-                local_deadline_s=args.deadline, complete=False, started_at=time.time(),
+                local_deadline_s=args.deadline, reference_workers=args.reference_workers,
+                complete=False, started_at=time.time(),
                 model=os.environ.get('MODEL_NAME'), vivado_version=version.strip(),
                 input_sha256={str(p.relative_to(args.tasks.resolve())): hashlib.sha256(p.read_bytes()).hexdigest()
                               for p in args.tasks.resolve().rglob('*') if p.is_file()},
@@ -116,16 +145,13 @@ def main():
     # No service calls for --reference. For actual runs require one explicitly named shared model.
     if not args.reference and (not os.environ.get('MODEL_NAME') or os.environ['MODEL_NAME'] not in runtime.models()):
         raise ValueError('MODEL_NAME must match the shared model service')
-    for path, tid in zip(tasks, ids):
+    if args.reference:
+        run_references(tasks, ids, args.samples, out, results, args.deadline, args.reference_workers)
+    for path, tid in ([] if args.reference else zip(tasks, ids)):
         for sample in range(args.samples):
             for mode in modes:
                 dst = out/mode/tid/f's{sample}'
-                if mode == 'reference':
-                    dst.mkdir(parents=True)
-                    task_meta = json.loads(path.read_text(encoding='utf-8'))
-                    shutil.copyfile(path.parent/task_meta['reference'], dst/'solution.v')
-                else:
-                    runtime.run_job(mode, path.parent, dst, args.deadline)
+                runtime.run_job(mode, path.parent, dst, args.deadline)
                 subprocess.run([sys.executable, str(OFFICIAL/'selftest/judge.py'),
                                 '--task', str(path.parent), '--solution', str(dst/'solution.v'),
                                 '--outdir', str(dst/'judge_logs'), '--timeout', str(args.deadline),
@@ -133,6 +159,7 @@ def main():
     report = summarize(results, ids, modes, args.samples)
     (out/'graded_summary.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     meta['complete'] = True
+    meta['finished_at'] = time.time()
     save()
 
 

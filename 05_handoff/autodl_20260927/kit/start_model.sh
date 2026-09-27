@@ -24,6 +24,10 @@ stamp="$(date +%Y%m%d_%H%M%S)_$$"
 python3 -m pip freeze > "logs/inference_packages_$stamp.txt"
 nvidia-smi > "logs/gpu_before_$stamp.txt"
 # Both baseline and agent share this model and the same default chat template.
+case "${MODEL_ENABLE_THINKING:-true}" in
+  true|false) ;;
+  *) echo 'MODEL_ENABLE_THINKING must be true or false.' >&2; exit 1 ;;
+esac
 vllm serve "$MODEL_PATH" \
   --served-model-name "$MODEL_NAME" \
   --host 127.0.0.1 --port 8000 \
@@ -31,4 +35,5 @@ vllm serve "$MODEL_PATH" \
   --gpu-memory-utilization 0.85 \
   --kv-cache-dtype fp8 --attention-backend flashinfer \
   --reasoning-parser qwen3 \
+  --default-chat-template-kwargs "{\"enable_thinking\":${MODEL_ENABLE_THINKING:-true}}" \
   2>&1 | tee "logs/model_$stamp.log"
