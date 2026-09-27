@@ -918,5 +918,24 @@
     "backup_sha256": "45bfca053a44d96e16bbabfc61eeb716adfcb3ebdc50f4c2a693647837d87358",
     "advisor_briefing": "05_handoff/老师首次进度汇报_20260928.md",
     "advisor_briefing_scope": "Test-focused: real EDA scenarios, automated protocol tests, model evaluation, reference selfcheck and full156"
+  },
+  "api_history_audit_20260927": {
+    "full_runs": 3,
+    "dates": [
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "baseline_passed": [
+      101,
+      82,
+      100
+    ],
+    "agent_passed": [
+      110,
+      110,
+      112
+    ],
+    "recovered_evidence": "04_project/amd_rtl_agent/bench/results/qwen_api_full156_20260914_audit.json"
   }
 }
