@@ -24,7 +24,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-09-26",
+  "last_updated": "2026-09-27",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -853,5 +853,68 @@
     "cloud_instance_created": false,
     "publication_branch": "feat/official-rtl-contract",
     "status": "local_preparation_complete_cloud_validation_pending"
+  },
+  "autodl_full156_20260927": {
+    "run_id": "full156_20260927_131610_dc69ee",
+    "complete": true,
+    "started_at": "2026-09-27T13:16:11.302291+08:00",
+    "finished_at": "2026-09-27T22:21:10.723228+08:00",
+    "elapsed_seconds": 32699.420936584473,
+    "model_repository": "nvidia/Qwen3.6-27B-NVFP4",
+    "model_revision": "0893e1606ff3d5f97a441f405d5fc541a6bdf404",
+    "summaries": {
+      "agent": {
+        "tasks": 156,
+        "levels": {
+          "3": 103,
+          "0": 34,
+          "1": 19
+        },
+        "l3_passed": 103,
+        "model_calls": 213,
+        "length_limited_calls": 79,
+        "tasks_with_length_limit": 51,
+        "l0_last_call_length": 29,
+        "repair_attempted_tasks": 57,
+        "l3_after_repair": 19
+      },
+      "baseline": {
+        "tasks": 156,
+        "levels": {
+          "3": 76,
+          "0": 57,
+          "1": 23
+        },
+        "l3_passed": 76,
+        "model_calls": 156,
+        "length_limited_calls": 45,
+        "tasks_with_length_limit": 45,
+        "l0_last_call_length": 45,
+        "repair_attempted_tasks": 0,
+        "l3_after_repair": 0
+      }
+    },
+    "reference_non_l3_tasks": [
+      "Prob082_lfsr32",
+      "Prob099_m2014_q6c",
+      "Prob141_count_clock",
+      "Prob156_review2015_fancytimer"
+    ],
+    "graded_scores": {
+      "agent": 0.6846,
+      "baseline": 0.5167
+    },
+    "limitations": [
+      "Single sample per task; not pass@5.",
+      "Development run on NVIDIA; not AMD ROCm or final isolated acceptance.",
+      "Paired system comparison, not an ablation of individual optimizations.",
+      "Reference anomalies retained in raw 156-task result.",
+      "Source model-lock contains preparation-era status flags; those are not current runtime status."
+    ],
+    "status": "complete_audited",
+    "report": "04_project/amd_rtl_agent/bench/results/autodl_full156_20260927.json",
+    "analysis": "03_analysis/10_AutoDL全量结果与优化建议_20260927.md",
+    "next_priority": "Controlled output-completeness experiment; not yet run",
+    "backup_sha256": "45bfca053a44d96e16bbabfc61eeb716adfcb3ebdc50f4c2a693647837d87358"
   }
 }
