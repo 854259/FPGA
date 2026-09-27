@@ -50,6 +50,12 @@ simulation logs and metadata are retained; raw reasoning text is not saved.
 Known simulator scratch is removed only inside a newly owned per-trial directory.
 Current source/model settings and the original full156 artifacts remain intact.
 
+Simulation success requires both a final PASS marker and zero FAIL markers; a
+zero xsim exit code alone is insufficient. The startup negative control caught
+this issue before any model call. Failed preparation evidence is retained, and
+any infrastructure recovery uses a new directory with byte-identical frozen
+inputs rather than overwriting the original experiment.
+
 CPU-only regression checks:
 
 ```bash

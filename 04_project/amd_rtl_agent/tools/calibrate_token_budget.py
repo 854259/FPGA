@@ -290,7 +290,12 @@ def simulate(code, rows, directory, vivado_bin):
             if rc:
                 break
         else:
-            outcome['functional_pass'] = 'CALIBRATION_PASS' in (directory/'simulate.log').read_text(errors='replace')
+            log_text = (directory/'simulate.log').read_text(errors='replace')
+            # xsim may continue after $fatal and still return zero. Any observed
+            # mismatch invalidates a later end-of-test success marker.
+            outcome['failure_markers'] = len(re.findall(r'^CALIBRATION_FAIL\b', log_text, re.M))
+            outcome['functional_pass'] = (re.search(r'^CALIBRATION_PASS\s*$', log_text, re.M) is not None
+                                          and outcome['failure_markers'] == 0)
     finally:
         # This directory was created exclusively by this call. Keep source/logs;
         # remove only known simulator products owned by this call.

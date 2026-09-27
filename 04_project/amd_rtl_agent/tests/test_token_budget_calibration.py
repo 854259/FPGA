@@ -101,6 +101,20 @@ class CalibrationTests(unittest.TestCase):
         finally:
             sys.path.pop(0)
 
+    def test_failure_marker_overrides_late_success_with_zero_exit(self):
+        # Actual xsim can continue after $fatal and reach the final PASS marker.
+        # Exercise simulate's real verdict path, including successful tool exits.
+        with tempfile.TemporaryDirectory(prefix='rtl-budget-test-') as td:
+            def replay(args, cwd, timeout, log):
+                log.write_text('CALIBRATION_FAIL cycle=2\nCALIBRATION_PASS\n'
+                               if log.name=='simulate.log' else 'tool completed\n')
+                return 0
+            with patch.object(cal,'run_tool',side_effect=replay):
+                result=cal.simulate(cal.reference('gf_product'),
+                                    cal.make_vectors('gf_product',1),
+                                    Path(td)/'replay',Path(td))
+            self.assertFalse(result['functional_pass'])
+
 
 if __name__=='__main__':
     unittest.main()
