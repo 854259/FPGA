@@ -937,5 +937,12 @@
       112
     ],
     "recovered_evidence": "04_project/amd_rtl_agent/bench/results/qwen_api_full156_20260914_audit.json"
+  },
+  "dynamic_token_budget_handoff": {
+    "status": "proposal_not_implemented",
+    "document": "05_handoff/DYNAMIC_TOKEN_BUDGET_HANDOFF.md",
+    "approach": "Separate thinking budget; feedback-driven output escalation bounded by context and remaining time; optional EWMA throughput estimate",
+    "validation": "A current settings; B thinking budget; C dynamic escalation; small paired subset before full run",
+    "new_model_runs": 0
   }
 }
