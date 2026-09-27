@@ -944,5 +944,18 @@
     "approach": "Separate thinking budget; feedback-driven output escalation bounded by context and remaining time; optional EWMA throughput estimate",
     "validation": "A current settings; B thinking budget; C dynamic escalation; small paired subset before full run",
     "new_model_runs": 0
+  },
+  "rtl_optimization_handoff": {
+    "status": "proposal_not_implemented",
+    "document": "05_handoff/RTL_OPTIMIZATION_NEXT_STEPS.md",
+    "priorities": [
+      "Audit existing official-runtime capabilities",
+      "Interface and source precheck",
+      "Classified repairs and candidate preservation",
+      "Prompt-derived functional selftests",
+      "Conditional skill loading",
+      "Runtime profiling and AMD deployment"
+    ],
+    "new_model_runs": 0
   }
 }
