@@ -7,6 +7,7 @@ import tempfile
 import threading
 import time
 import sys
+import subprocess
 import unittest
 import urllib.error
 import urllib.request
@@ -47,6 +48,64 @@ class VivadoHealthTests(unittest.TestCase):
                          returncode=returncode, stdout=banner)):
                     self.assertEqual(runtime.health()['ready'], expected)
         runtime.vivado_version.cache_clear()
+
+
+class ReferenceConcurrencyTests(unittest.TestCase):
+    def test_parallel_reference_checks_preserve_every_sample_and_bound_concurrency(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            ids = ['a', 'b', 'c']
+            tasks = []
+            for tid in ids:
+                task = root/'tasks'/tid
+                task.mkdir(parents=True)
+                (task/'ref.sv').write_text('reference-' + tid, encoding='utf-8')
+                (task/'task.json').write_text(json.dumps({'reference': 'ref.sv'}), encoding='utf-8')
+                tasks.append(task/'task.json')
+            outputs = []
+            for workers in (1, 2):
+                out = root/str(workers)
+                results = out/'results'
+                results.mkdir(parents=True)
+                lock = threading.Lock()
+                barrier = threading.Barrier(2) if workers == 2 else None
+                active = peak = 0
+
+                def judge(command, **kwargs):
+                    nonlocal active, peak
+                    self.assertTrue(kwargs['check'])
+                    self.assertTrue(Path(command[1]).as_posix().endswith('selftest/judge.py'))
+                    task = Path(command[command.index('--task') + 1])
+                    candidate = Path(command[command.index('--solution') + 1])
+                    result = Path(command[command.index('--json') + 1])
+                    self.assertEqual(candidate.read_text(), (task/'ref.sv').read_text())
+                    with lock:
+                        active += 1
+                        peak = max(peak, active)
+                    if barrier:
+                        barrier.wait(timeout=5)
+                    time.sleep(.01)
+                    result.write_text(json.dumps({'task_id': task.name, 'level': 3}), encoding='utf-8')
+                    with lock:
+                        active -= 1
+
+                with mock.patch.object(evaluation.subprocess, 'run', side_effect=judge):
+                    evaluation.run_references(tasks, ids, 2, out, results, 300, workers)
+                self.assertEqual(peak, workers)
+                self.assertEqual(len(list(results.glob('*.json'))), 6)
+                outputs.append({p.name: p.read_text() for p in results.glob('*.json')})
+            self.assertEqual(outputs[0], outputs[1])
+
+    def test_reference_process_failure_is_not_reported_as_complete(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            task = root/'task'
+            task.mkdir()
+            (task/'ref.sv').write_text('reference', encoding='utf-8')
+            (task/'task.json').write_text(json.dumps({'reference': 'ref.sv'}), encoding='utf-8')
+            with mock.patch.object(evaluation.subprocess, 'run', side_effect=subprocess.CalledProcessError(2, 'judge')):
+                with self.assertRaises(subprocess.CalledProcessError):
+                    evaluation.run_references([task/'task.json'], ['t'], 1, root/'out', root/'results', 300, 1)
 
 
 class FakeModel(BaseHTTPRequestHandler):
