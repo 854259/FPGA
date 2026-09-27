@@ -17,6 +17,7 @@ STAGES = {
     'pair3x5': ('official_reference/tasks', 5, False),
     'reference156': ('bench/tasks_veval', 1, True),
     'full156': ('bench/tasks_veval', 1, False),
+    'full156x5': ('bench/tasks_veval', 5, False),
 }
 
 def main():
