@@ -88,6 +88,14 @@ class VivadoHealthTests(unittest.TestCase):
                     self.assertEqual(runtime.health()['ready'], expected)
         runtime.vivado_version.cache_clear()
 
+    def test_health_requires_candidate_elaborator(self):
+        with mock.patch.dict(os.environ, RTL_PROFILE='development', MODEL_NAME='m'), \
+             mock.patch.object(runtime, 'models', return_value=['m']), \
+             mock.patch.object(runtime, 'baseline_integrity', return_value=True), \
+             mock.patch.object(runtime, 'vivado_tool', side_effect=lambda name: None if name == 'xelab' else 'tool'), \
+             mock.patch.object(runtime, 'vivado_version', return_value='2026.1'):
+            self.assertFalse(runtime.health()['ready'])
+
 
 class ReferenceConcurrencyTests(unittest.TestCase):
     def test_parallel_reference_checks_preserve_every_sample_and_bound_concurrency(self):
@@ -367,6 +375,7 @@ class ContractTests(unittest.TestCase):
                  mock.patch.object(runtime, 'vivado_tool', return_value='fake-xvlog'), \
                  mock.patch.object(runtime.subprocess, 'run', side_effect=[
                      mock.Mock(returncode=1, stdout='ERROR: own candidate invalid wire assignment'),
+                     mock.Mock(returncode=0, stdout=''),
                      mock.Mock(returncode=0, stdout='')]), \
                  mock.patch.object(sys, 'path', [str(ROOT/'submission')] + sys.path):
                 runtime.worker(task, out)
@@ -374,6 +383,48 @@ class ContractTests(unittest.TestCase):
             self.assertIn('own candidate invalid wire assignment', FakeModel.requests[1]['messages'][1]['content'])
             events = [json.loads(s) for s in (out/'trace.jsonl').read_text(encoding='utf-8').splitlines()]
             self.assertEqual([s['rc'] for s in events if s['tool'] == 'lint'], [1, 0])
+
+    def test_elaboration_error_gets_one_repair_without_external_testbench(self):
+        first = 'module TopModule(input a, output y); missing_cell u(.a(a),.y(y)); endmodule'
+        repaired = 'module TopModule(input a, output y); assign y=a; endmodule'
+        with tempfile.TemporaryDirectory() as td:
+            task, out = Path(td)/'task', Path(td)/'out'
+            task.mkdir(); out.mkdir()
+            (task/'prompt.txt').write_text('Implement a pass-through TopModule.', encoding='utf-8')
+            FakeModel.replies = [first, repaired]
+            with mock.patch.object(runtime.Path, 'cwd', return_value=Path(td)), \
+                 mock.patch.object(runtime, 'vivado_tool', side_effect=lambda name: 'fake-' + name), \
+                 mock.patch.object(runtime.subprocess, 'run', side_effect=[
+                     mock.Mock(returncode=0, stdout=''),
+                     mock.Mock(returncode=1, stdout='ERROR: missing_cell not found'),
+                     mock.Mock(returncode=0, stdout=''),
+                     mock.Mock(returncode=0, stdout='')]) as checked, \
+                 mock.patch.object(sys, 'path', [str(ROOT/'submission')] + sys.path):
+                runtime.worker(task, out)
+            self.assertEqual(len(FakeModel.requests), 2)
+            self.assertIn('missing_cell not found', FakeModel.requests[1]['messages'][1]['content'])
+            self.assertEqual((out/'solution.v').read_text().strip(), repaired)
+            elab = [c.args[0] for c in checked.call_args_list if c.args[0][0] == 'fake-xelab']
+            self.assertEqual(len(elab), 2)
+            self.assertTrue(all('work.TopModule' in c and 'tb' not in c for c in elab))
+
+    def test_failed_elaboration_of_repair_preserves_first_candidate(self):
+        first = 'module TopModule(input a, output y); assign y=a; endmodule'
+        broken = 'module TopModule(input a, output y); missing_cell u(.a(a),.y(y)); endmodule'
+        with tempfile.TemporaryDirectory() as td:
+            task, out = Path(td)/'task', Path(td)/'out'
+            task.mkdir(); out.mkdir()
+            (task/'prompt.txt').write_text('p', encoding='utf-8')
+            FakeModel.replies = [first, broken]
+            with mock.patch.object(runtime.Path, 'cwd', return_value=Path(td)), \
+                 mock.patch.object(runtime, 'vivado_tool', return_value='tool'), \
+                 mock.patch.object(runtime.subprocess, 'run', side_effect=[
+                     mock.Mock(returncode=1, stdout='ERROR: first candidate check failed'),
+                     mock.Mock(returncode=0, stdout=''),
+                     mock.Mock(returncode=1, stdout='ERROR: missing_cell not found')]), \
+                 mock.patch.object(sys, 'path', [str(ROOT/'submission')] + sys.path):
+                runtime.worker(task, out)
+            self.assertEqual((out/'solution.v').read_text().strip(), first)
 
     def test_blank_or_partial_repair_does_not_erase_complete_candidate(self):
         first = 'module TopModule(input a, output y); assign y=a; endmodule'

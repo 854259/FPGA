@@ -33,10 +33,14 @@ python3 runtime.py baseline TASK_DIR NEW_OUT_DIR
 
 The latter calls the unchanged official baseline in a supervised subprocess.
 The agent reads only staged prompt/interface text. It generates once, checks
-source structure, and optionally compiles its own candidate with `xvlog`.
+source structure, and checks its own candidate with `xvlog` followed by
+`xelab work.TopModule`. The second check catches unresolved submodules and port
+connections that parsing alone accepts. Both checks share the remaining solve
+deadline and use only the candidate source, with no testbench or reference.
 `RTL_REPAIRS=0..1` controls additional model calls (default 1). No hidden
 testbench, reference solution, task metadata, or external judging result is
-read by this worker. No self-generated functional testbench is implemented
+read by this worker. Missing tools leave the candidate explicitly unverified.
+No self-generated functional testbench is implemented
 in this first adaptation. A successful candidate compile is **not** labelled
 official L1 or functional success; only the external official judge assigns
 L0–L3. The old development agent remains outside this directory.
@@ -87,7 +91,7 @@ in-flight operations if a deadline interrupts them. A supervisor timeout event
 is additional diagnostic information, not a fabricated baseline model call.
 Normal baseline traces remain exactly upstream `baseline_meta` + one `llm`.
 
-Health checks the model listing, baseline hashes, xvlog availability and actual
+Health checks the model listing, baseline hashes, xvlog/xelab availability and actual
 Vivado 2026.1 version. In submission mode it also requires readable amdgpu
 VRAM byte counters and <=32,000,000,000 bytes (conservative 32 GB limit);
 the legacy `vram_gb` response field is in GiB. Unavailable VRAM is `null` and readiness is

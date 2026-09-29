@@ -239,6 +239,7 @@ def health():
     ready = False
     try:
         ready = bool(model and model in models() and baseline_integrity() and vivado_tool('xvlog')
+                     and vivado_tool('xelab')
                      and vivado_version(vivado_tool('vivado')) == '2026.1')
     except (OSError, ValueError, KeyError, TypeError):
         pass
@@ -385,32 +386,40 @@ def worker(task, out):
         if not best_code:
             best_code = code
             write(out / 'solution.v', best_code)
-        tool = vivado_tool('xvlog')
-        if not tool:
-            trace(out, 'lint', rc=None, error='xvlog unavailable; candidate unverified')
-            return
         wd = Path.cwd() / ('compile-' + str(attempt))
         wd.mkdir()
         write(wd / 'candidate.sv', code)
-        trace(out, 'lint_start', round=attempt)
-        remaining = deadline - time.monotonic()
-        if remaining <= 0:
-            trace(out, 'agent_stop', reason='deadline_before_lint', round=attempt)
-            return
-        try:
-            result = subprocess.run([tool, '--sv', str(wd / 'candidate.sv')], cwd=wd,
-                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                    text=True, errors='replace', timeout=remaining)
-        except subprocess.TimeoutExpired:
-            trace(out, 'lint', rc=None, error='deadline', round=attempt)
-            return
-        lines = [s for s in result.stdout.splitlines() if re.search('ERROR|WARNING|FATAL', s)]
-        feedback = '\n'.join(lines)[:2048] or result.stdout[-2048:]
-        trace(out, 'lint', rc=result.returncode, excerpt=feedback, round=attempt)
-        if result.returncode == 0:
+        # xvlog accepts unresolved children/ports. Elaborate only the candidate's
+        # own top; no reference, testbench, simulation or external judge input.
+        for stage, name, args in (
+                ('lint', 'xvlog', ['--sv', str(wd / 'candidate.sv')]),
+                ('elaborate', 'xelab', ['work.TopModule', '--snapshot', 'candidate_check'])):
+            tool = vivado_tool(name)
+            if not tool:
+                trace(out, stage, rc=None, error=name + ' unavailable; candidate unverified')
+                return
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                trace(out, 'agent_stop', reason='deadline_before_' + stage, round=attempt)
+                return
+            trace(out, stage + '_start', round=attempt)
+            try:
+                result = subprocess.run([tool, *args], cwd=wd,
+                                        stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                        text=True, errors='replace', timeout=remaining)
+            except (OSError, subprocess.TimeoutExpired) as exc:
+                trace(out, stage, rc=None, error='deadline' if isinstance(exc, subprocess.TimeoutExpired)
+                      else type(exc).__name__, round=attempt)
+                return
+            lines = [s for s in result.stdout.splitlines() if re.search('ERROR|WARNING|FATAL', s)]
+            feedback = '\n'.join(lines)[:2048] or result.stdout[-2048:]
+            trace(out, stage, rc=result.returncode, excerpt=feedback, round=attempt)
+            if result.returncode != 0:
+                break
+        else:
             best_code = code
             write(out / 'solution.v', best_code)
-            return  # Compilation is NOT an official L1/L2/L3 judgement.
+            return  # Candidate checks are NOT an official L1/L2/L3 judgement.
 
 
 def solve(data, received_at=None):
