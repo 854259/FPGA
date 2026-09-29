@@ -29,6 +29,16 @@ evaluation = load('contract_eval', ROOT/'official_eval.py')
 
 
 class VivadoHealthTests(unittest.TestCase):
+    def test_submission_memory_guard_uses_conservative_32gb_bytes(self):
+        with mock.patch.dict(os.environ, {'MODEL_NAME': 'm', 'RTL_PROFILE': 'submission'}), \
+             mock.patch.object(runtime, 'models', return_value=['m']), \
+             mock.patch.object(runtime, 'baseline_integrity', return_value=True), \
+             mock.patch.object(runtime, 'vivado_tool', return_value='tool'), \
+             mock.patch.object(runtime, 'vivado_version', return_value='2026.1'):
+            for size, expected in [(32_000_000_000, True), (32_000_000_001, False)]:
+                with self.subTest(bytes=size), mock.patch.object(runtime, 'vram_gb', return_value=size/1024**3):
+                    self.assertEqual(runtime.health()['ready'], expected)
+
     def test_diagnostic_rejects_changed_plan_or_replayed_run_before_network(self):
         diagnostic = load('bounded_diagnostic', ROOT/'tools/diagnose_runtime.py')
         with tempfile.TemporaryDirectory() as td:
@@ -299,6 +309,42 @@ class ContractTests(unittest.TestCase):
             server.shutdown()
             server.server_close()
             thread.join()
+
+    def test_http_body_receive_time_consumes_solve_deadline(self):
+        entered = threading.Event()
+        class ObservedHandler(runtime.Handler):
+            def do_POST(self):
+                entered.set()
+                super().do_POST()
+        server = ThreadingHTTPServer(('127.0.0.1', 0), ObservedHandler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            for deadline in (.05, 1.0):
+                with self.subTest(deadline=deadline), mock.patch.object(runtime, 'run_job', return_value=('candidate', '')) as job:
+                    entered.clear()
+                    connection = runtime.http.client.HTTPConnection('127.0.0.1', server.server_port, timeout=3)
+                    body = json.dumps(dict(task_id='transport-delay', prompt='p', deadline_s=deadline)).encode()
+                    connection.putrequest('POST', '/v1/solve')
+                    connection.putheader('Authorization', 'Bearer local-test-token')
+                    connection.putheader('Content-Length', str(len(body)))
+                    connection.endheaders()
+                    self.assertTrue(entered.wait(2))
+                    time.sleep(.15)
+                    connection.send(body)
+                    response = connection.getresponse()
+                    data = json.load(response)
+                    connection.close()
+                    self.assertEqual(response.status, 200)
+                    self.assertGreaterEqual(data['elapsed_s'], .14)
+                    if deadline < .15:
+                        self.assertEqual(data['solution'], '')
+                        job.assert_not_called()
+                    else:
+                        self.assertEqual(data['solution'], 'candidate')
+                        self.assertLess(job.call_args.args[-1], .8)
+        finally:
+            server.shutdown(); server.server_close(); thread.join()
 
     def test_repair_uses_only_own_compile_diagnostics(self):
         with tempfile.TemporaryDirectory() as td:

@@ -244,7 +244,9 @@ def health():
         pass
     used = vram_gb()
     if os.environ.get('RTL_PROFILE', 'submission') != 'development':
-        ready = ready and used is not None and used <= 32
+        # The counter helper reports GiB. Use a conservative 32 GB byte limit
+        # instead of silently allowing 32 GiB (about 34.36 decimal GB).
+        ready = ready and used is not None and used * 1024**3 <= 32_000_000_000
     return dict(ready=bool(ready), track='rtl', model=model, vram_gb=used)
 
 
@@ -411,8 +413,8 @@ def worker(task, out):
             return  # Compilation is NOT an official L1/L2/L3 judgement.
 
 
-def solve(data):
-    started = time.monotonic()
+def solve(data, received_at=None):
+    started = time.monotonic() if received_at is None else received_at
     if not isinstance(data, dict):
         raise ValueError('JSON object required')
     for key in ('task_id', 'prompt'):
@@ -425,7 +427,7 @@ def solve(data):
     deadline = data.get('deadline_s', 360)
     if mode not in ('agent', 'baseline') or type(deadline) not in (int, float) or not math.isfinite(deadline) or deadline <= 0:
         raise ValueError('invalid mode or deadline')
-    if not LOCK.acquire(timeout=max(0, deadline - .1)):
+    if not LOCK.acquire(timeout=max(0, deadline - (time.monotonic() - started) - .1)):
         return dict(task_id=data['task_id'], solution='', trace='', elapsed_s=time.monotonic()-started)
     try:
         if os.environ.get('EDA_TMP'):
@@ -468,6 +470,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_json(200, health()) if self.path == '/v1/health' else self.send_json(404, {'error': 'not found'})
 
     def do_POST(self):
+        received_at = time.monotonic()
         if not self.authorized():
             return
         if self.path != '/v1/solve':
@@ -478,7 +481,7 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError('invalid body size')
             self.connection.settimeout(10)
             data = json.loads(self.rfile.read(size))
-            self.send_json(200, solve(data))
+            self.send_json(200, solve(data, received_at=received_at))
         except (ValueError, UnicodeError) as exc:
             self.send_json(400, {'error': str(exc)})
         except (OSError, KeyError, subprocess.SubprocessError):

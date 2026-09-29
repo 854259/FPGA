@@ -77,7 +77,7 @@ Both `GET /v1/health` and `POST /v1/solve` require
 Requests accept `task_id`, `nonce`, `mode` (`agent` or `baseline`), `prompt`,
 `interface` (normally empty), and `deadline_s`. Responses contain `task_id`,
 `solution`, `trace`, and `elapsed_s`. Task IDs are echoed, never used as paths.
-Requests are serialized for the shared model and their waiting time consumes
+Requests are serialized for the shared model. HTTP body reception and waiting time consume
 the supplied deadline. Each request uses new local scratch and a separate
 worker process. Timeout cancels the process tree and returns the candidate
 already available (or empty text), followed by future requests normally.
@@ -89,7 +89,8 @@ Normal baseline traces remain exactly upstream `baseline_meta` + one `llm`.
 
 Health checks the model listing, baseline hashes, xvlog availability and actual
 Vivado 2026.1 version. In submission mode it also requires readable amdgpu
-VRAM byte counters and <=32 GiB; unavailable VRAM is `null` and readiness is
+VRAM byte counters and <=32,000,000,000 bytes (conservative 32 GB limit);
+the legacy `vram_gb` response field is in GiB. Unavailable VRAM is `null` and readiness is
 false, never an invented zero. This is a readiness probe, not a GPU performance
 test. Model loading, quantization, offline network enforcement and final image
 validation remain deployment work. Do not expose the inference port.
