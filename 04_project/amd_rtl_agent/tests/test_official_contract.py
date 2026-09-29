@@ -29,6 +29,24 @@ evaluation = load('contract_eval', ROOT/'official_eval.py')
 
 
 class VivadoHealthTests(unittest.TestCase):
+    def test_diagnostic_rejects_changed_plan_or_replayed_run_before_network(self):
+        diagnostic = load('bounded_diagnostic', ROOT/'tools/diagnose_runtime.py')
+        with tempfile.TemporaryDirectory() as td:
+            out = Path(td)
+            plan = diagnostic.make_plan()
+            self.assertEqual(plan['calls_max'], len(plan['requests']))
+            changed = dict(plan, calls_max=4)
+            (out/'plan.json').write_text(json.dumps(changed), encoding='utf-8')
+            with mock.patch.dict(os.environ), mock.patch.object(diagnostic.urllib.request, 'urlopen', side_effect=AssertionError('no network')):
+                with self.assertRaisesRegex(ValueError, 'mismatch'):
+                    diagnostic.run(out)
+                self.assertFalse((out/'started.json').exists())
+                (out/'plan.json').write_text(json.dumps(plan), encoding='utf-8')
+                (out/'started.json').write_text('prior evidence', encoding='utf-8')
+                with self.assertRaises(FileExistsError):
+                    diagnostic.run(out)
+            self.assertEqual((out/'started.json').read_text(), 'prior evidence')
+
     def test_health_accepts_linux_and_windows_version_banners(self):
         cases = (
             ('vivado v2026.1 (64-bit)\n', 0, True),
@@ -111,6 +129,8 @@ class ReferenceConcurrencyTests(unittest.TestCase):
 class FakeModel(BaseHTTPRequestHandler):
     requests = []
     delay = 0
+    replies = []
+    stream_mode = 'normal'
 
     def log_message(self, *args):
         pass
@@ -132,8 +152,48 @@ class FakeModel(BaseHTTPRequestHandler):
         body = json.loads(self.rfile.read(int(self.headers['Content-Length'])))
         self.requests.append(body)
         time.sleep(self.delay)
+        reply = self.replies.pop(0) if self.replies else 'module TopModule(input a, output y); assign y=a; endmodule'
+        if body.get('stream'):
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/event-stream')
+            self.end_headers()
+            def event(value):
+                return ('data: ' + json.dumps(value, ensure_ascii=False) + '\r\n\r\n').encode('utf-8')
+            packets = [
+                event({'id': 'mock-stream', 'prompt_token_ids': [9, 10], 'choices': [
+                    {'index': 0, 'delta': {'reasoning': '想'}, 'token_ids': [11]}]}),
+                event({'choices': [{'index': 0, 'delta': {'content': reply}, 'token_ids': [12]}]}),
+                event({'choices': [{'index': 0, 'delta': {}, 'finish_reason': 'stop'}],
+                       'usage': {'prompt_tokens': 2, 'completion_tokens': 2}}),
+                b'data: [DONE]\n\n']
+            try:
+                if self.stream_mode == 'malformed':
+                    packets = [b'data: {invalid}\n\n']
+                elif self.stream_mode == 'broken':
+                    packets = packets[:2]
+                elif self.stream_mode == 'oversized':
+                    packets = [b'data: ' + b' ' * (16 * 1024 * 1024 + 1)]
+                elif self.stream_mode == 'long':
+                    chunk = event({'id': 'chatcmpl-00000000000000000000000000000000', 'object': 'chat.completion.chunk',
+                                   'created': 1790679259, 'model': 'rtl-qwen27b-awq',
+                                   'choices': [{'index': 0, 'delta': {'content': 'token_text'},
+                                                'logprobs': None, 'finish_reason': None, 'token_ids': [42]}]})
+                    packets = [chunk]*8192 + packets[-2:]
+                for packet in packets:
+                    if self.stream_mode == 'split':
+                        for byte in packet:
+                            self.wfile.write(bytes([byte])); self.wfile.flush()
+                    else:
+                        self.wfile.write(packet); self.wfile.flush()
+                    if self.stream_mode == 'drip':
+                        for _ in range(100):
+                            self.wfile.write(b': keepalive\n\n'); self.wfile.flush()
+                            time.sleep(.02)
+            except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
+                pass
+            return
         self.emit({'model': 'contract-test-model', 'choices': [{'finish_reason': 'stop',
-                   'message': {'content': 'module TopModule(input a, output y); assign y=a; endmodule'}}],
+                   'message': {'content': reply}}],
                    'usage': {'prompt_tokens': 10, 'completion_tokens': 20}})
 
 
@@ -153,6 +213,8 @@ class ContractTests(unittest.TestCase):
     def setUp(self):
         FakeModel.requests = []
         FakeModel.delay = 0
+        FakeModel.replies = []
+        FakeModel.stream_mode = 'normal'
         self.env = mock.patch.dict(os.environ, {
             'LLM_BASE_URL': f'http://127.0.0.1:{self.model.server_port}/v1',
             'MODEL_NAME': 'contract-test-model', 'RTL_PROFILE': 'development',
@@ -255,6 +317,143 @@ class ContractTests(unittest.TestCase):
             self.assertIn('own candidate invalid wire assignment', FakeModel.requests[1]['messages'][1]['content'])
             events = [json.loads(s) for s in (out/'trace.jsonl').read_text(encoding='utf-8').splitlines()]
             self.assertEqual([s['rc'] for s in events if s['tool'] == 'lint'], [1, 0])
+
+    def test_blank_or_partial_repair_does_not_erase_complete_candidate(self):
+        first = 'module TopModule(input a, output y); assign y=a; endmodule'
+        for broken in (None, '', 'module TopModule(input a, output y);'):
+            with self.subTest(broken=broken), tempfile.TemporaryDirectory() as td:
+                task, out = Path(td)/'task', Path(td)/'out'
+                task.mkdir(); out.mkdir()
+                (task/'prompt.txt').write_text('Implement TopModule with a and y.', encoding='utf-8')
+                FakeModel.replies = [first, broken]
+                with mock.patch.object(runtime.Path, 'cwd', return_value=Path(td)), \
+                     mock.patch.object(runtime, 'vivado_tool', return_value='fake-xvlog'), \
+                     mock.patch.object(runtime.subprocess, 'run', return_value=mock.Mock(
+                         returncode=1, stdout='ERROR: synthetic compile diagnostic')), \
+                     mock.patch.object(sys, 'path', [str(ROOT/'submission')] + sys.path):
+                    runtime.worker(task, out)
+                self.assertEqual((out/'solution.v').read_text().strip(), first)
+
+    def test_vram_does_not_sum_invisible_host_cards(self):
+        own = mock.Mock(); own.name = 'card5'
+        # The container exposes card5; host sysfs additionally exposes card3.
+        def glob(path, pattern):
+            if str(path).replace('\\', '/') == '/dev/dri':
+                return [own] if pattern.startswith('card') else []
+            return [Path('/sys/class/drm/card5/device/mem_info_vram_used'),
+                    Path('/sys/class/drm/card3/device/mem_info_vram_used')]
+        def read(path, *args, **kwargs):
+            return str((4 if 'card5' in str(path) else 40) * 1024**3)
+        with mock.patch.object(runtime.Path, 'glob', glob), \
+             mock.patch.object(runtime.Path, 'read_text', read):
+            self.assertEqual(runtime.vram_gb(), 4.0)
+
+    def test_stream_utf8_boundaries_ids_and_no_replay(self):
+        with tempfile.TemporaryDirectory() as td:
+            FakeModel.stream_mode = 'split'
+            path = Path(td)/'call.sse'
+            body = dict(model='contract-test-model', messages=[], max_tokens=64, return_token_ids=True)
+            result = runtime.chat_stream(body, path, 2)
+            self.assertEqual(result['status'], 'complete')
+            self.assertEqual(result['reasoning'], '想')
+            self.assertIn('endmodule', result['content'])
+            self.assertEqual(result['token_ids'], [11, 12])
+            self.assertEqual(result['prompt_token_ids'], [9, 10])
+            self.assertEqual(result['usage']['completion_tokens'], 2)
+            with self.assertRaises(FileExistsError):
+                runtime.chat_stream(body, path, 2)
+            self.assertEqual(len(FakeModel.requests), 1)
+
+    def test_stream_absolute_deadline_even_with_continuous_bytes(self):
+        with tempfile.TemporaryDirectory() as td:
+            FakeModel.stream_mode = 'drip'
+            path = Path(td)/'slow.sse'
+            result = runtime.chat_stream(dict(model='contract-test-model', messages=[]), path, .25)
+            self.assertEqual(result['status'], 'deadline')
+            self.assertLess(result['elapsed_s'], .8)
+            self.assertEqual(result['reasoning'], '想')
+            self.assertIn(b'keepalive', path.read_bytes())
+            self.assertEqual(len(FakeModel.requests), 1)
+
+    def test_stream_disconnect_malformed_and_limit_are_not_success(self):
+        with tempfile.TemporaryDirectory() as td:
+            for mode, status in [('broken', 'incomplete'), ('malformed', 'stream_error'),
+                                 ('oversized', 'stream_error')]:
+                FakeModel.stream_mode = mode
+                path = Path(td)/(mode+'.sse')
+                result = runtime.chat_stream(dict(model='contract-test-model', messages=[]), path, 2)
+                self.assertEqual(result['status'], status)
+                self.assertLessEqual(path.stat().st_size, 16*1024*1024)
+
+    def test_valid_long_stream_metadata_does_not_exhaust_evidence_limit(self):
+        with tempfile.TemporaryDirectory() as td:
+            FakeModel.stream_mode = 'long'
+            path = Path(td)/'long.sse'
+            result = runtime.chat_stream(dict(model='contract-test-model', messages=[], max_tokens=8192), path, 5)
+            self.assertEqual(result['status'], 'complete')
+            self.assertEqual(len(result['token_ids']), 8192)
+            self.assertEqual(result['content'], 'token_text'*8192)
+            self.assertGreater(path.stat().st_size, 2*1024*1024)
+
+    def test_external_resource_stop_interrupts_request(self):
+        with tempfile.TemporaryDirectory() as td:
+            FakeModel.stream_mode = 'drip'
+            stop = threading.Event()
+            timer = threading.Timer(.1, stop.set)
+            timer.start()
+            try:
+                result = runtime.chat_stream(dict(model='contract-test-model', messages=[]),
+                                             Path(td)/'cancelled.sse', 3, stop)
+            finally:
+                timer.cancel(); timer.join()
+            self.assertEqual(result['status'], 'cancelled')
+            self.assertLess(result['elapsed_s'], .8)
+
+    def test_worker_never_retries_broken_stream_or_submits_partial(self):
+        with tempfile.TemporaryDirectory() as td:
+            task = Path(td)/'task'; task.mkdir()
+            (task/'prompt.txt').write_text('p', encoding='utf-8')
+            FakeModel.stream_mode = 'broken'
+            solution, events = runtime.run_job('agent', task, Path(td)/'out', 3)
+            self.assertEqual(solution, '')
+            self.assertEqual(len(FakeModel.requests), 1)
+            self.assertIn('incomplete_response', events)
+            self.assertGreater((Path(td)/'out/response-0.sse').stat().st_size, 0)
+
+    def test_no_candidate_remains_empty_and_failed_complete_repair_preserves_first(self):
+        first = 'module TopModule(input a, output y); assign y=a; endmodule'
+        other = 'module TopModule(input a, output y); assign y=~a; endmodule'
+        for replies, expected in [([None, None], ''), ([first, other], first)]:
+            with self.subTest(expected=expected), tempfile.TemporaryDirectory() as td:
+                task, out = Path(td)/'task', Path(td)/'out'
+                task.mkdir(); out.mkdir()
+                (task/'prompt.txt').write_text('p', encoding='utf-8')
+                FakeModel.replies = replies.copy()
+                with mock.patch.object(runtime.Path, 'cwd', return_value=Path(td)), \
+                     mock.patch.object(runtime, 'vivado_tool', return_value='fake-xvlog'), \
+                     mock.patch.object(runtime.subprocess, 'run', return_value=mock.Mock(
+                         returncode=1, stdout='ERROR: own candidate')), \
+                     mock.patch.object(sys, 'path', [str(ROOT/'submission')] + sys.path):
+                    runtime.worker(task, out)
+                self.assertEqual((out/'solution.v').read_text().strip(), expected)
+
+    def test_compile_receives_remaining_whole_task_budget(self):
+        with tempfile.TemporaryDirectory() as td:
+            task, out = Path(td)/'task', Path(td)/'out'
+            task.mkdir(); out.mkdir()
+            (task/'prompt.txt').write_text('p', encoding='utf-8')
+            def compile_once(*args, **kwargs):
+                self.assertGreater(kwargs['timeout'], 0)
+                self.assertLessEqual(kwargs['timeout'], 1)
+                raise subprocess.TimeoutExpired('xvlog', kwargs['timeout'])
+            with mock.patch.object(runtime.Path, 'cwd', return_value=Path(td)), \
+                 mock.patch.object(runtime, 'vivado_tool', return_value='fake-xvlog'), \
+                 mock.patch.object(runtime.subprocess, 'run', side_effect=compile_once), \
+                 mock.patch.object(sys, 'path', [str(ROOT/'submission')] + sys.path), \
+                 mock.patch.dict(os.environ, RTL_DEADLINE_MONOTONIC=str(time.monotonic()+1)):
+                runtime.worker(task, out)
+            self.assertEqual(len(FakeModel.requests), 1)
+            self.assertIn('deadline', (out/'trace.jsonl').read_text())
 
     def test_submission_requires_local_service_and_actual_vram(self):
         with mock.patch.dict(os.environ, RTL_PROFILE='submission', LLM_BASE_URL='https://example.com/v1'):

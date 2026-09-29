@@ -5,6 +5,7 @@ import argparse
 import hashlib
 from functools import lru_cache
 import hmac
+import http.client
 import json
 import math
 import os
@@ -12,6 +13,7 @@ from pathlib import Path
 import re
 import shutil
 import signal
+import socket
 import subprocess
 import sys
 import tempfile
@@ -26,7 +28,10 @@ LOCK = threading.Lock()
 
 
 def write(path, text):
-    Path(path).write_text(text, encoding='utf-8', newline='\n')
+    path = Path(path)
+    temp = path.with_name(path.name + '.tmp')
+    temp.write_text(text, encoding='utf-8', newline='\n')
+    temp.replace(path)
 
 
 def trace(out, tool, **fields):
@@ -58,14 +63,152 @@ def models():
 
 
 def vram_gb():
-    # Linux amdgpu counters are bytes, unlike rocm-smi's percentage output.
-    counters = list(Path('/sys/class/drm').glob('card[0-9]*/device/mem_info_vram_used'))
-    if not counters:
+    # sysfs may expose the entire host; count only the container's assigned card.
+    cards = list(Path('/dev/dri').glob('card[0-9]*'))
+    if len(cards) != 1:
         return None
     try:
-        return round(sum(int(p.read_text().strip()) for p in counters) / 1024**3, 3)
+        counter = Path('/sys/class/drm') / cards[0].name / 'device/mem_info_vram_used'
+        return int(counter.read_text().strip()) / 1024**3
     except (OSError, ValueError):
         return None
+
+
+def chat_stream(body, path, seconds, cancel_event=None):
+    """One request, bounded by a wall deadline; keep received SSE evidence on failure.
+
+    No retry and no extraction from reasoning. Partial content is diagnostic only.
+    The socket watchdog also covers a peer that sends bytes indefinitely.
+    """
+    if not math.isfinite(seconds) or seconds <= 0:
+        raise ValueError('invalid request budget')
+    url = urlparse(endpoint() + '/chat/completions')
+    connection_type = http.client.HTTPSConnection if url.scheme == 'https' else http.client.HTTPConnection
+    conn = connection_type(url.hostname, url.port, timeout=seconds)
+    began = time.monotonic()
+    deadline = began + seconds
+    expired = threading.Event()
+    watcher_stop = threading.Event()
+    sock = None
+    response = None
+    result = dict(status='incomplete', content='', reasoning='', usage={}, token_ids=[],
+                  prompt_token_ids=None, finish_reason=None, response_id=None,
+                  first_event_s=None, elapsed_s=None, bytes_received=0)
+    def watch():
+        while time.monotonic() < deadline and not (cancel_event and cancel_event.is_set()):
+            if watcher_stop.wait(min(.02, max(0, deadline - time.monotonic()))):
+                return
+        if time.monotonic() >= deadline:
+            expired.set()
+        active = sock or conn.sock
+        if active is not None:
+            try:
+                active.shutdown(socket.SHUT_RDWR)
+            except OSError:
+                pass
+    watcher = threading.Thread(target=watch, daemon=True)
+    # Exclusive create makes accidental replays at the same call path fail before sending.
+    with Path(path).open('xb') as evidence:
+        watcher.start()
+        try:
+            request = dict(body, stream=True, stream_options={'include_usage': True})
+            conn.connect()
+            sock = conn.sock
+            if expired.is_set() or (cancel_event and cancel_event.is_set()):
+                raise TimeoutError('request deadline')
+            conn.request('POST', url.path + ('?' + url.query if url.query else ''),
+                         body=json.dumps(request).encode(), headers={'Content-Type': 'application/json'})
+            response = conn.getresponse()
+            result['http_status'] = response.status
+            if response.status != 200:
+                result['status'] = 'http_error'
+                return result
+            if 'text/event-stream' not in response.getheader('Content-Type', ''):
+                raise ValueError('expected SSE response')
+            pending, event_lines = b'', []
+            done = False
+            while not done:
+                if expired.is_set() or time.monotonic() >= deadline or (cancel_event and cancel_event.is_set()):
+                    raise TimeoutError('request deadline')
+                chunk = response.read1(65536)
+                if not chunk:
+                    break
+                result['bytes_received'] += len(chunk)
+                # SSE includes an envelope per token plus prompt IDs. A 2 MiB cap
+                # can reject a valid 8192-token response solely due to metadata.
+                if result['bytes_received'] > 16 * 1024 * 1024:
+                    raise ValueError('response evidence limit exceeded')
+                evidence.write(chunk)
+                evidence.flush()
+                pending += chunk
+                while b'\n' in pending and not done:
+                    line, pending = pending.split(b'\n', 1)
+                    line = line.rstrip(b'\r')
+                    if line:
+                        if line.startswith(b'data:'):
+                            event_lines.append(line[5:].lstrip(b' '))
+                        continue
+                    if not event_lines:
+                        continue
+                    data = b'\n'.join(event_lines)
+                    event_lines = []
+                    if data == b'[DONE]':
+                        done = True
+                        break
+                    event = json.loads(data.decode('utf-8'))
+                    if not isinstance(event, dict):
+                        raise ValueError('stream event must be an object')
+                    if event.get('error'):
+                        raise ValueError('server stream error')
+                    if result['first_event_s'] is None:
+                        result['first_event_s'] = time.monotonic() - began
+                    result['response_id'] = event.get('id', result['response_id'])
+                    if event.get('usage') is not None:
+                        if not isinstance(event['usage'], dict):
+                            raise ValueError('invalid usage')
+                        result['usage'] = event['usage']
+                    if event.get('prompt_token_ids') is not None:
+                        ids = event['prompt_token_ids']
+                        if not isinstance(ids, list) or any(type(x) is not int for x in ids):
+                            raise ValueError('invalid prompt token IDs')
+                        if result['prompt_token_ids'] not in (None, ids):
+                            raise ValueError('inconsistent prompt token IDs')
+                        result['prompt_token_ids'] = ids
+                    for choice in event.get('choices', []):
+                        if not isinstance(choice, dict):
+                            raise ValueError('invalid choice')
+                        if choice.get('index', 0) != 0:
+                            raise ValueError('only one choice is supported')
+                        delta = choice.get('delta') or {}
+                        if not isinstance(delta, dict):
+                            raise ValueError('invalid delta')
+                        result['content'] += delta.get('content') or ''
+                        result['reasoning'] += delta.get('reasoning') or delta.get('reasoning_content') or ''
+                        ids = choice.get('token_ids')
+                        if ids is not None:
+                            if not isinstance(ids, list) or any(type(x) is not int for x in ids):
+                                raise ValueError('invalid token IDs')
+                            result['token_ids'].extend(ids)
+                        if choice.get('finish_reason') is not None:
+                            result['finish_reason'] = choice['finish_reason']
+            if cancel_event and cancel_event.is_set():
+                result['status'] = 'cancelled'
+            elif expired.is_set() or time.monotonic() >= deadline:
+                result['status'] = 'deadline'
+            elif done and result['finish_reason'] is not None:
+                result['status'] = 'complete'
+        except (OSError, ValueError, TypeError, KeyError, http.client.HTTPException) as exc:
+            result['status'] = ('cancelled' if cancel_event and cancel_event.is_set() else
+                                'deadline' if expired.is_set() or time.monotonic() >= deadline else 'stream_error')
+            result['error_type'] = type(exc).__name__
+        finally:
+            watcher_stop.set()
+            if response is not None:
+                response.close()
+            conn.close()
+            watcher.join(timeout=1)
+            result['elapsed_s'] = time.monotonic() - began
+    return result
 
 
 def vivado_tool(name):
@@ -151,7 +294,8 @@ def run_job(mode, task, out, seconds):
         iface = Path(task) / 'interface.txt'
         if iface.is_file():
             write(inp / 'interface.txt', iface.read_text(encoding='utf-8'))
-        env = dict(os.environ, PYTHONUTF8='1', TRACK='rtl')
+        env = dict(os.environ, PYTHONUTF8='1', TRACK='rtl',
+                   RTL_DEADLINE_MONOTONIC=str(started + max(0, seconds - min(.2, seconds * .1))))
         if mode == 'baseline':
             command = [sys.executable, str(ROOT / 'baseline.py'), str(inp), str(out), 'rtl']
         else:
@@ -190,14 +334,20 @@ def worker(task, out):
     skill = (ROOT / 'skill/RTL_SKILL.md').read_text(encoding='utf-8')
     repair_skill = (ROOT / 'skill/RTL_REPAIR_SKILL.md').read_text(encoding='utf-8')
     repairs = int(os.environ.get('RTL_REPAIRS', '1'))
-    if not 0 <= repairs <= 2:
-        raise ValueError('RTL_REPAIRS must be 0..2')
+    if not 0 <= repairs <= 1:
+        raise ValueError('RTL_REPAIRS must be 0..1')
+    deadline = float(os.environ.get('RTL_DEADLINE_MONOTONIC', str(time.monotonic() + 300)))
     model = os.environ.get('MODEL_NAME') or models()[0]
-    code, feedback = '', ''
+    code, feedback, best_code = '', '', ''
+    write(out / 'solution.v', '')
     trace(out, 'agent_meta', boundary='prompt_only_candidate_compile',
           skill_sha256=hashlib.sha256(skill.encode()).hexdigest(),
           repair_skill_sha256=hashlib.sha256(repair_skill.encode()).hexdigest(), repairs=repairs)
     for attempt in range(repairs + 1):
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            trace(out, 'agent_stop', reason='deadline', round=attempt)
+            return
         user = prompt if attempt == 0 else prompt + '\nPrevious candidate:\n' + code + '\nCandidate diagnostics:\n' + feedback
         body = dict(model=model, messages=[dict(role='system', content=skill + ('\n' + repair_skill if attempt else '')),
                                          dict(role='user', content=user)],
@@ -205,20 +355,20 @@ def worker(task, out):
                     top_p=1.0, max_tokens=int(os.environ.get('RTL_MAX_TOKENS', '8192')))
         trace(out, 'llm_start', round=attempt)
         try:
-            req = urllib.request.Request(endpoint() + '/chat/completions',
-                                         data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'})
-            with urllib.request.urlopen(req, timeout=300) as r:
-                payload = json.load(r)
-            choice = payload['choices'][0]
-            usage = payload.get('usage') or {}
-            reply = choice['message'].get('content') or ''
+            response = chat_stream(body, out / ('response-' + str(attempt) + '.sse'), remaining)
+            usage = response['usage']
+            reply = response['content']
             trace(out, 'llm', round=attempt, tokens_in=usage.get('prompt_tokens'),
-                  tokens_out=usage.get('completion_tokens'), finish=choice.get('finish_reason'))
+                  tokens_out=usage.get('completion_tokens'), finish=response['finish_reason'],
+                  response_status=response['status'], content_chars=len(reply),
+                  reasoning_chars=len(response['reasoning']), elapsed_s=response['elapsed_s'])
+            if response['status'] != 'complete':
+                trace(out, 'agent_stop', reason='incomplete_response', preserved=bool(best_code))
+                return  # A disconnected request must never become an implicit retry.
             code = baseline.extract(reply, 'rtl')
         except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
             trace(out, 'llm', round=attempt, error=type(exc).__name__)
             return
-        write(out / 'solution.v', code)
         # Includes/file IO are unnecessary for a self-contained TopModule and could cross the input boundary.
         if re.search(r'`include|\$(?:readmem\w*|fopen|system)\b', code):
             feedback = 'Return a self-contained module without file access or include directives.'
@@ -226,10 +376,13 @@ def worker(task, out):
             continue
         if not re.search(r'\bmodule\s+TopModule\b', code) or 'endmodule' not in code:
             feedback = 'Return a complete TopModule ending in endmodule.'
-            if choice.get('finish_reason') == 'length':
+            if response['finish_reason'] == 'length':
                 feedback += ' Output reached the token limit; shorten the implementation.'
             trace(out, 'check_source', rc=1, excerpt=feedback)
             continue
+        if not best_code:
+            best_code = code
+            write(out / 'solution.v', best_code)
         tool = vivado_tool('xvlog')
         if not tool:
             trace(out, 'lint', rc=None, error='xvlog unavailable; candidate unverified')
@@ -238,13 +391,23 @@ def worker(task, out):
         wd.mkdir()
         write(wd / 'candidate.sv', code)
         trace(out, 'lint_start', round=attempt)
-        result = subprocess.run([tool, '--sv', str(wd / 'candidate.sv')], cwd=wd,
-                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                text=True, errors='replace')
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            trace(out, 'agent_stop', reason='deadline_before_lint', round=attempt)
+            return
+        try:
+            result = subprocess.run([tool, '--sv', str(wd / 'candidate.sv')], cwd=wd,
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                    text=True, errors='replace', timeout=remaining)
+        except subprocess.TimeoutExpired:
+            trace(out, 'lint', rc=None, error='deadline', round=attempt)
+            return
         lines = [s for s in result.stdout.splitlines() if re.search('ERROR|WARNING|FATAL', s)]
         feedback = '\n'.join(lines)[:2048] or result.stdout[-2048:]
         trace(out, 'lint', rc=result.returncode, excerpt=feedback, round=attempt)
         if result.returncode == 0:
+            best_code = code
+            write(out / 'solution.v', best_code)
             return  # Compilation is NOT an official L1/L2/L3 judgement.
 
 
