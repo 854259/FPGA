@@ -356,6 +356,112 @@ def judge_candidate(task, solution, out, result_path, seconds, batch_deadline_at
         (out/'supervisor.json').write_text(json.dumps(record, indent=2)+'\n', encoding='utf-8')
 
 
+def supervise_http_batch(batch, submission, backend_endpoint, model, out, deadline_at):
+    """Watch two already-owned Linux child sessions; never accept a PID from disk.
+
+    This external watchdog must outlive the batch and submission HTTP processes.
+    It samples assigned-card VRAM every 50ms and reserves the last five seconds
+    of the absolute batch budget for cancellation and a GET-only idle check.
+    A forced group kill cannot prove cleanup of descendants that created their
+    own sessions; such runs remain unaccepted until deployment isolation proves
+    teardown. The live launcher/CLI remains gated separately.
+    """
+    if os.name != 'posix' or threading.current_thread() is not threading.main_thread():
+        raise ValueError('Linux main-thread watchdog required')
+    if not math.isfinite(deadline_at) or deadline_at - time.monotonic() <= 5:
+        raise TimeoutError('insufficient whole-batch cleanup reserve')
+    owned = (batch, submission)
+    if batch is submission or any(not isinstance(p, subprocess.Popen) for p in owned):
+        raise ValueError('two distinct owned Popen children required')
+    for proc in owned:
+        if proc.poll() is not None or os.getpgid(proc.pid) != proc.pid:
+            raise ValueError('live child must own a new process session')
+        status = Path(f'/proc/{proc.pid}/status').read_text()
+        if not re.search(r'^PPid:\s*'+str(os.getpid())+r'\s*$', status, re.M):
+            raise ValueError('process is not a direct owned child')
+    out = Path(out)
+    out.mkdir(parents=True, exist_ok=False)
+    began = time.monotonic()
+    record = dict(started_at=time.time(), batch_pid=batch.pid, submission_pid=submission.pid,
+                  stop_reason=None, sampled_peak_bytes=None, sample_interval_s=.05,
+                  forced_group_kill=False, owned_leaders_exited=False, backend_idle=None,
+                  formal_acceptance=False)
+    previous = {}
+    def interrupted(signum, frame):
+        raise SystemExit(128 + signum)
+    def exited(proc):
+        # Keep the exited leader unreaped until after killpg. Its reserved PID
+        # prevents this group id from being reused for an unrelated process.
+        return os.waitid(os.P_PID, proc.pid, os.WEXITED | os.WNOHANG | os.WNOWAIT) is not None
+    try:
+        for sig in (signal.SIGTERM, signal.SIGINT):
+            previous[sig] = signal.signal(sig, interrupted)
+        runtime = module('watch_runtime', ROOT/'submission/runtime.py')
+        with (out/'resources.jsonl').open('x', encoding='utf-8') as log:
+            while True:
+                try:
+                    gib = runtime.vram_gb()
+                    valid = type(gib) in (int, float) and math.isfinite(gib) and gib >= 0
+                except (OSError, ValueError):
+                    gib, valid = None, False
+                used = int(gib * 1024**3) if valid else None
+                log.write(json.dumps(dict(elapsed_s=time.monotonic()-began, vram_bytes=used))+'\n')
+                log.flush()
+                if used is not None:
+                    record['sampled_peak_bytes'] = max(record['sampled_peak_bytes'] or 0, used)
+                if not valid:
+                    record['stop_reason'] = 'vram_unavailable'
+                elif used > 32_000_000_000:
+                    record['stop_reason'] = 'vram_limit'
+                elif exited(submission):
+                    record['stop_reason'] = 'submission_exit'
+                elif exited(batch):
+                    record['stop_reason'] = 'batch_exit'
+                elif time.monotonic() >= deadline_at-5:
+                    record['stop_reason'] = 'batch_deadline'
+                if record['stop_reason'] is not None:
+                    break
+                time.sleep(min(.05, max(0, deadline_at-5-time.monotonic())))
+    except BaseException as exc:
+        record['stop_reason'] = type(exc).__name__
+        if not isinstance(exc, Exception):
+            raise
+    finally:
+        try:
+            # Let each owner cancel its separately supervised children first.
+            for proc in owned:
+                if not exited(proc):
+                    try: os.kill(proc.pid, signal.SIGTERM)
+                    except ProcessLookupError: pass
+            soft_end = min(deadline_at-2, time.monotonic()+2)
+            while any(not exited(p) for p in owned) and time.monotonic() < soft_end:
+                time.sleep(.01)
+            record['forced_group_kill'] = any(not exited(p) for p in owned)
+            for proc in owned:
+                # Also remove same-session descendants whose leader already quit.
+                try: os.killpg(proc.pid, signal.SIGKILL)
+                except ProcessLookupError: pass
+                try: proc.wait(timeout=max(.001, deadline_at-time.monotonic()))
+                except subprocess.TimeoutExpired: pass
+            record['owned_leaders_exited'] = all(p.poll() is not None for p in owned)
+            record['returncodes'] = dict(batch=batch.poll(), submission=submission.poll())
+            try:
+                # Keep a small final reserve for durable evidence/handler restore.
+                idle = wait_backend_idle(backend_endpoint, model, out/'idle', deadline_at-.25)
+                record['backend_idle'] = True
+                record['backend_final'] = idle
+            except Exception as exc:
+                record['backend_idle'] = False
+                record['idle_error_type'] = type(exc).__name__
+        finally:
+            for sig, handler in previous.items():
+                signal.signal(sig, handler)
+            record['elapsed_s'] = time.monotonic()-began
+            record['deadline_exceeded'] = time.monotonic() > deadline_at
+            (out/'watchdog.json').write_text(json.dumps(record, indent=2)+'\n', encoding='utf-8')
+    return record
+
+
 def run_http_batch(plan_path, plan_sha256, candidate_archive, out, endpoint,
                    backend_endpoint, batch_started_at):
     """Sequential evaluator orchestration, not yet a live CLI entry point.

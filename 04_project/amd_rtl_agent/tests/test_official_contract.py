@@ -322,6 +322,120 @@ class JudgeSupervisionTests(unittest.TestCase):
             self.assertFalse((root/'out').exists())
 
 
+@unittest.skipUnless(sys.platform == 'linux', 'Linux owned process supervision')
+class BatchWatchdogTests(unittest.TestCase):
+    serve = HttpEvaluationTests.serve
+
+    def test_expired_budget_or_unowned_process_never_signals(self):
+        with tempfile.TemporaryDirectory() as td, mock.patch.object(
+                evaluation.os, 'killpg', side_effect=AssertionError('must not signal')):
+            with self.assertRaises(TimeoutError):
+                evaluation.supervise_http_batch(None, None, '', '', Path(td)/'out', time.monotonic()+1)
+            with self.assertRaises(ValueError):
+                evaluation.supervise_http_batch(None, None, '', '', Path(td)/'out', time.monotonic()+10)
+            self.assertFalse((Path(td)/'out').exists())
+
+    def test_nonidle_backend_cannot_be_reported_as_clean(self):
+        class Busy(BaseHTTPRequestHandler):
+            def log_message(self, *args): pass
+            def do_GET(self):
+                raw = HttpEvaluationTests.metrics(running=1)
+                self.send_response(200); self.send_header('Content-Length', str(len(raw)))
+                self.end_headers(); self.wfile.write(raw)
+        endpoint = self.serve(Busy)
+        with tempfile.TemporaryDirectory() as td:
+            children = [subprocess.Popen([sys.executable, '-c', 'import time;time.sleep(30)'],
+                                         start_new_session=True) for _ in range(2)]
+            before = signal.getsignal(signal.SIGTERM)
+            began = time.monotonic()
+            try:
+                with mock.patch.object(evaluation, 'module', return_value=types.SimpleNamespace(vram_gb=lambda: None)):
+                    result = evaluation.supervise_http_batch(*children, endpoint, 'fixture', Path(td)/'out', began+5.1)
+                self.assertFalse(result['backend_idle'])
+                self.assertEqual(result['idle_error_type'], 'TimeoutError')
+                self.assertFalse(result['deadline_exceeded'])
+                self.assertTrue(result['owned_leaders_exited'])
+                self.assertEqual(signal.getsignal(signal.SIGTERM), before)
+            finally:
+                for p in children:
+                    try: os.killpg(p.pid, signal.SIGKILL)
+                    except ProcessLookupError: pass
+                    p.wait(timeout=2)
+
+    def test_watchdog_stops_owned_work_on_resource_deadline_or_service_exit(self):
+        metrics = HttpEvaluationTests.metrics
+        class Idle(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+            def do_GET(self):
+                raw = metrics()
+                self.send_response(200)
+                self.send_header('Content-Length', str(len(raw)))
+                self.end_headers(); self.wfile.write(raw)
+        endpoint = self.serve(Idle)
+        for mode, reason in [('spike', 'vram_limit'), ('unknown', 'vram_unavailable'),
+                             ('deadline', 'batch_deadline'), ('normal', 'batch_exit'),
+                             ('service', 'submission_exit'), ('stubborn', 'batch_deadline'),
+                             ('sigterm', 'SystemExit')]:
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as td:
+                root = Path(td)
+                processes = []
+                child = root/'child.pid'
+                # Independent innocent process proves cleanup is not a broad kill.
+                innocent = subprocess.Popen([sys.executable, '-c', 'import time;time.sleep(30)'], start_new_session=True)
+                processes.append(innocent)
+                service = subprocess.Popen([sys.executable, '-c',
+                    'import time;time.sleep(.15)' if mode == 'service' else 'import time;time.sleep(30)'], start_new_session=True)
+                processes.append(service)
+                code = ('import time,subprocess,sys,signal\nfrom pathlib import Path\n'
+                        'p=subprocess.Popen([sys.executable,"-c","import time;time.sleep(30)"])\n'
+                        f'Path({str(child)!r}).write_text(str(p.pid))\n'
+                        + ('signal.signal(signal.SIGTERM,signal.SIG_IGN)\n' if mode == 'stubborn' else '')
+                        + ('time.sleep(.15)\n' if mode == 'normal' else 'time.sleep(30)\n'))
+                batch = subprocess.Popen([sys.executable, '-c', code], start_new_session=True)
+                processes.append(batch)
+                began = time.monotonic()
+                prior = signal.getsignal(signal.SIGTERM)
+                def resource():
+                    if time.monotonic()-began < .15:
+                        return 1.
+                    if mode == 'sigterm':
+                        os.kill(os.getpid(), signal.SIGTERM)
+                    return 40. if mode == 'spike' else None if mode == 'unknown' else 1.
+                try:
+                    with mock.patch.object(evaluation, 'module', return_value=types.SimpleNamespace(vram_gb=resource)):
+                        if mode == 'sigterm':
+                            with self.assertRaises(SystemExit):
+                                evaluation.supervise_http_batch(batch, service, endpoint, 'fixture', root/'watch', began+5.3)
+                            value = json.loads((root/'watch/watchdog.json').read_text())
+                        else:
+                            value = evaluation.supervise_http_batch(batch, service, endpoint, 'fixture', root/'watch', began+5.3)
+                    self.assertEqual(signal.getsignal(signal.SIGTERM), prior)
+                    self.assertEqual(value['stop_reason'], reason)
+                    self.assertTrue(value['backend_idle'])
+                    self.assertTrue(value['owned_leaders_exited'])
+                    self.assertIsNone(innocent.poll())
+                    self.assertLess(time.monotonic()-began, 5.3)
+                    if mode == 'spike':
+                        self.assertEqual(value['sampled_peak_bytes'], 40*1024**3)
+                    if mode == 'stubborn':
+                        self.assertTrue(value['forced_group_kill'])
+                    pid = int(child.read_text())
+                    for _ in range(100):
+                        stat = Path(f'/proc/{pid}/stat')
+                        if not stat.exists() or stat.read_text().split(') ')[1].split()[0] == 'Z':
+                            break
+                        time.sleep(.01)
+                    else:
+                        self.fail('same-group descendant survived')
+                    self.assertGreater(len((root/'watch/resources.jsonl').read_text().splitlines()), 1)
+                finally:
+                    for proc in processes:
+                        try: os.killpg(proc.pid, signal.SIGKILL)
+                        except ProcessLookupError: pass
+                        proc.wait(timeout=2)
+
+
 class HttpBatchTests(unittest.TestCase):
     serve = HttpEvaluationTests.serve
     metrics = staticmethod(HttpEvaluationTests.metrics)
@@ -720,6 +834,13 @@ class ContractTests(unittest.TestCase):
 
     @unittest.skipUnless(sys.platform == 'linux', 'Linux process lifecycle')
     def test_http_sigterm_stops_active_worker(self):
+        self.check_http_cleanup(False)
+
+    @unittest.skipUnless(sys.platform == 'linux', 'Linux external watchdog')
+    def test_resource_watchdog_cancels_active_http_worker(self):
+        self.check_http_cleanup(True)
+
+    def check_http_cleanup(self, watchdog):
         with tempfile.TemporaryDirectory() as td:
             with socket.socket() as sock:
                 sock.bind(('127.0.0.1', 0))
@@ -728,7 +849,8 @@ class ContractTests(unittest.TestCase):
             env = dict(os.environ, EDA_TMP=td, PYTHONDONTWRITEBYTECODE='1')
             server = subprocess.Popen([sys.executable, str(ROOT/'submission/runtime.py'),
                                        'serve', '--port', str(port)], env=env,
-                                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                      start_new_session=True)
             children = []
             def post():
                 try:
@@ -759,8 +881,35 @@ class ContractTests(unittest.TestCase):
                         if int(fields[1]) == server.pid: children.append(int(path.parent.name))
                     except (OSError, ValueError): pass
                 self.assertTrue(children, 'no worker observed')
-                server.send_signal(signal.SIGTERM)
-                server.wait(timeout=3)
+                if watchdog:
+                    # Observe actual runtime workers; metrics are a fixed local
+                    # backend fixture, not a claim about vLLM cancellation.
+                    class Metrics(BaseHTTPRequestHandler):
+                        def log_message(self, *args): pass
+                        def do_GET(self):
+                            busy = any(Path(f'/proc/{pid}/stat').exists() and
+                                Path(f'/proc/{pid}/stat').read_text().split(') ', 1)[1][0] != 'Z'
+                                for pid in children)
+                            raw = HttpEvaluationTests.metrics(running=int(busy))
+                            self.send_response(200); self.send_header('Content-Length', str(len(raw)))
+                            self.end_headers(); self.wfile.write(raw)
+                    backend = HttpEvaluationTests.serve(self, Metrics)
+                    batch = subprocess.Popen([sys.executable, '-c', 'import time;time.sleep(30)'], start_new_session=True)
+                    try:
+                        with tempfile.TemporaryDirectory() as evidence, mock.patch.object(evaluation, 'module',
+                                return_value=types.SimpleNamespace(vram_gb=lambda: 40.)):
+                            result = evaluation.supervise_http_batch(batch, server, backend, 'fixture',
+                                Path(evidence)/'out', time.monotonic()+6)
+                        self.assertEqual(result['stop_reason'], 'vram_limit')
+                        self.assertTrue(result['backend_idle'])
+                        self.assertFalse(result['forced_group_kill'])
+                    finally:
+                        try: os.killpg(batch.pid, signal.SIGKILL)
+                        except ProcessLookupError: pass
+                        batch.wait(timeout=2)
+                else:
+                    server.send_signal(signal.SIGTERM)
+                    server.wait(timeout=3)
                 live = []
                 for pid in children:
                     path = Path(f'/proc/{pid}/stat')
