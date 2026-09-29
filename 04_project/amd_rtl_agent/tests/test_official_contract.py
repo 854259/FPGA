@@ -337,7 +337,7 @@ public.mkdir(); scratch.mkdir(); private.mkdir()
 (scratch/'alias').symlink_to(private/'reference')
 assert (private/'reference').read_text() == (scratch/'alias').read_text() == 'private'
 try:
-    abi=ev.restrict_filesystem(['/usr','/lib','/lib64',public],[scratch])
+    abi=ev.restrict_filesystem(['/usr','/lib','/lib64',sys.prefix,sys.base_prefix,public],[scratch])
 except OSError as exc:
     if exc.errno in (errno.ENOSYS,errno.EOPNOTSUPP):
         print('LANDLOCK_UNAVAILABLE');sys.exit(77)
@@ -355,7 +355,7 @@ for operation in [lambda:(private/'reference').read_text(),
     else: raise AssertionError('filesystem rule escaped')
 code='from pathlib import Path;import sys;Path(sys.argv[1]).read_text()'
 child=subprocess.run([sys.executable,'-B','-c',code,str(private/'reference')],capture_output=True,text=True)
-assert child.returncode!=0 and 'PermissionError' in child.stderr,child.stderr
+assert child.returncode!=0 and 'PermissionError' in child.stderr and str(private/'reference') in child.stderr,child.stderr
 child=subprocess.run([sys.executable,'-B','-c','from pathlib import Path;import sys;Path(sys.argv[1]).write_text("child")',str(scratch/'child')],capture_output=True,text=True)
 assert child.returncode==0,child.stderr
 print(json.dumps({'abi':abi,'blocked_checks':6,'output_checks':3,'model_calls':0}))
