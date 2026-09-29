@@ -12,6 +12,8 @@ import sys
 import subprocess
 import socket
 import signal
+import types
+import zipfile
 import unittest
 import urllib.error
 import urllib.request
@@ -317,6 +319,133 @@ class JudgeSupervisionTests(unittest.TestCase):
                 evaluation.judge_candidate(root, root/'solution', root/'out', root/'result',
                                            1, time.monotonic()+3)
             self.assertEqual((root/'result').read_text(), 'original')
+            self.assertFalse((root/'out').exists())
+
+
+class HttpBatchTests(unittest.TestCase):
+    serve = HttpEvaluationTests.serve
+    metrics = staticmethod(HttpEvaluationTests.metrics)
+    def make_batch(self, root, task_ids=None, **changes):
+        inputs = root/'inputs'
+        task_ids = task_ids or ['t']
+        for tid in task_ids:
+            (inputs/'agent-input'/tid).mkdir(parents=True)
+            (inputs/'judge-only'/tid).mkdir(parents=True)
+            (inputs/'agent-input'/tid/'prompt.txt').write_text('public synthetic spec', encoding='utf-8')
+            (inputs/'judge-only'/tid/'task.json').write_text(json.dumps(
+                dict(task_id=tid, private_canary='HIDDEN_REFERENCE')), encoding='utf-8')
+            (inputs/'judge-only'/tid/'ref.sv').write_text('HIDDEN_REFERENCE', encoding='utf-8')
+        archive = root/'candidate.zip'
+        with zipfile.ZipFile(archive, 'x') as z:
+            for name in ('runtime.py', 'baseline.py', 'run.sh', 'run_baseline.sh', 'LICENSE.official',
+                         'README.md', 'upstream.json', 'skill/RTL_SKILL.md', 'skill/RTL_REPAIR_SKILL.md'):
+                z.write(ROOT/'submission'/name, name)
+        plan = dict(files_sha256={p.relative_to(inputs).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                                   for p in inputs.rglob('*') if p.is_file()},
+                    launch_ready=True, gates=[dict(status='passed')], official_commit=evaluation.verify_upstream(),
+                    candidate_archive_sha256=hashlib.sha256(archive.read_bytes()).hexdigest(),
+                    selection=dict(task_ids=task_ids), samples_per_task_per_mode=2, modes=['agent', 'baseline'],
+                    agent_repairs_max=1, model_retries=0, solve_requests_max=4, model_requests_max=6,
+                    solve_deadline_s=1, judge_timeout_s=1, batch_wall_limit_s=60,
+                    model=dict(served_name='fixture'))
+        plan.update(changes)
+        path = inputs/'plan.json'
+        path.write_text(json.dumps(plan), encoding='utf-8')
+        return path, hashlib.sha256(path.read_bytes()).hexdigest(), archive
+
+    def server_batch(self, fault=None):
+        fixture = dict(requests=[], calls=0)
+        metrics = self.metrics
+        class BatchServer(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+            def send(self, raw):
+                self.send_response(200)
+                self.send_header('Content-Length', str(len(raw)))
+                self.end_headers()
+                self.wfile.write(raw)
+            def do_GET(self):
+                self.send(metrics(count=fixture['calls']) if self.path == '/metrics' else
+                          json.dumps(dict(ready=True, track='rtl', model='fixture')).encode())
+            def do_POST(self):
+                req = json.loads(self.rfile.read(int(self.headers['Content-Length'])))
+                fixture['requests'].append(req)
+                fixture['calls'] += 2 if fault == 'count_mismatch' else 1
+                if fault == 'transport':
+                    return self.send(b'{}')
+                events = [dict(tool='llm_start', round=0)] if req['mode'] == 'agent' else []
+                if fault == 'timeout':
+                    events.append(dict(tool='supervisor', event='deadline'))
+                else:
+                    events.append(dict(tool='llm', round=0, tokens_in=3, tokens_out=4,
+                                       finish='stop', response_status='complete'))
+                self.send(json.dumps(dict(task_id=req['task_id'], elapsed_s=.01,
+                    solution='' if fault == 'timeout' else 'module TopModule; endmodule',
+                    trace='\n'.join(json.dumps(e) for e in events))).encode())
+        return self.serve(BatchServer), fixture
+
+    def judge_fixture(self, task, solution, out, result_path, seconds, batch_deadline_at):
+        # Fixed evaluator fixture only: no generated answer, real EDA or accuracy claim.
+        level = 0 if not solution.read_text() else 3
+        value = dict(task_id=task.name, level=level, coefficient=float(level == 3), tool_error=None)
+        Path(out).mkdir(parents=True)
+        Path(result_path).write_text(json.dumps(value), encoding='utf-8')
+        return value
+
+    def run_fixture(self, args, out, endpoint, **kwargs):
+        real_module = evaluation.module
+        def modules(name, path):
+            return types.SimpleNamespace(vram_gb=lambda: 1.) if name == 'batch_runtime' else real_module(name, path)
+        with mock.patch.object(evaluation, 'module', side_effect=modules), \
+             mock.patch.object(evaluation, 'judge_candidate', side_effect=self.judge_fixture), \
+             mock.patch.dict(os.environ, FPGACHINA_TOKEN='fixture-only'):
+            return evaluation.run_http_batch(*args, out, endpoint, endpoint, kwargs.get('started_at', time.monotonic()))
+
+    def test_batch_completed_with_original_denominator_and_separate_inputs(self):
+        endpoint, state = self.server_batch()
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); args = self.make_batch(root, task_ids=['a','b','c','d'],
+                samples_per_task_per_mode=5, solve_requests_max=40, model_requests_max=60,
+                batch_wall_limit_s=120)
+            result = self.run_fixture(args, root/'out', endpoint)
+            self.assertTrue(result['complete'])
+            self.assertEqual(result['expected_solves'], 40)
+            self.assertEqual(result['model_calls_reserved'], 60)
+            self.assertEqual(result['verified_backend_calls'], 40)
+            self.assertEqual([r['mode'] for r in state['requests']], ['agent', 'baseline']*20)
+            self.assertEqual(len(set(r['nonce'] for r in state['requests'])), 40)
+            self.assertNotIn('HIDDEN_REFERENCE', json.dumps(state['requests']))
+            self.assertEqual(len(list((root/'out/results').glob('*.json'))), 40)
+            with self.assertRaises(FileExistsError):
+                self.run_fixture(args, root/'out', endpoint)
+            self.assertEqual(len(state['requests']), 40)
+
+    def test_batch_caps_and_failure_stops_preserve_missing_rows(self):
+        for changes, fault, expected_posts, reason in [
+            ({'model_requests_max': 2}, None, 1, 'request_cap'),
+            ({'solve_requests_max': 1}, None, 1, 'request_cap'),
+            ({'batch_wall_limit_s': 5}, None, 0, 'whole_batch_time'),
+            ({}, 'timeout', 2, 'two_consecutive_timeouts'),
+            ({}, 'transport', 1, 'ValueError'),
+            ({}, 'count_mismatch', 1, 'ValueError')]:
+            with self.subTest(changes=changes, fault=fault), tempfile.TemporaryDirectory() as td:
+                endpoint, state = self.server_batch(fault)
+                root = Path(td); args = self.make_batch(root, **changes)
+                result = self.run_fixture(args, root/'out', endpoint)
+                self.assertFalse(result['complete'])
+                self.assertEqual(result['stop_reason'], reason)
+                self.assertEqual(len(state['requests']), expected_posts)
+                self.assertEqual(len(result['rows']), 4)
+                self.assertEqual(len([r for r in result['rows'] if r['state'] == 'not_started']), 4-expected_posts)
+                self.assertFalse((root/'out/graded_summary.json').exists())
+                self.assertEqual(result['verified_backend_calls'], state['calls'])
+
+    def test_batch_rejects_changed_or_blocked_inputs_without_http(self):
+        with tempfile.TemporaryDirectory() as td, mock.patch.object(
+                evaluation, 'http_exchange', side_effect=AssertionError('no HTTP')):
+            root = Path(td); args = self.make_batch(root, launch_ready=False)
+            with self.assertRaisesRegex(ValueError, 'launch blocked'):
+                self.run_fixture(args, root/'out', 'http://127.0.0.1:1')
             self.assertFalse((root/'out').exists())
 
 

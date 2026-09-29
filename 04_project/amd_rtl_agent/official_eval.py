@@ -22,6 +22,8 @@ import sys
 import tempfile
 import threading
 import time
+import uuid
+import zipfile
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent
@@ -352,6 +354,175 @@ def judge_candidate(task, solution, out, result_path, seconds, batch_deadline_at
             signal.signal(signal.SIGTERM, old_handler)
         record['elapsed_s'] = time.monotonic() - started
         (out/'supervisor.json').write_text(json.dumps(record, indent=2)+'\n', encoding='utf-8')
+
+
+def run_http_batch(plan_path, plan_sha256, candidate_archive, out, endpoint,
+                   backend_endpoint, batch_started_at):
+    """Sequential evaluator orchestration, not yet a live CLI entry point.
+
+    The launcher must include setup time in batch_started_at. Continuous resource
+    cancellation and deployment receipts remain admission requirements; the real
+    frozen protocol is blocked. Fixed local services exercise this orchestration
+    without generating model answers or altering the official judge/scorer.
+    """
+    plan_path = Path(plan_path).resolve()
+    plan = verify_http_protocol(plan_path, plan_sha256)
+    if verify_upstream() != plan['official_commit']:
+        raise ValueError('official commit differs from frozen protocol')
+    raw_archive = Path(candidate_archive).read_bytes()
+    if hashlib.sha256(raw_archive).hexdigest() != plan['candidate_archive_sha256']:
+        raise ValueError('candidate archive hash mismatch')
+    allowed = {'runtime.py', 'baseline.py', 'run.sh', 'run_baseline.sh', 'LICENSE.official',
+               'README.md', 'upstream.json', 'skill/RTL_SKILL.md', 'skill/RTL_REPAIR_SKILL.md'}
+    with zipfile.ZipFile(candidate_archive) as archive:
+        if len(archive.namelist()) != len(allowed) or set(archive.namelist()) != allowed:
+            raise ValueError('candidate archive allowlist mismatch')
+        for name in allowed:
+            if archive.read(name) != (ROOT/'submission'/name).read_bytes():
+                raise ValueError('candidate source differs from frozen archive')
+    ids = sorted(plan['selection']['task_ids'])
+    samples = plan['samples_per_task_per_mode']
+    if (not ids or len(ids) != len(set(ids)) or any(not re.fullmatch(r'[A-Za-z0-9_-]+', tid) for tid in ids)
+            or type(samples) is not int or not 1 <= samples <= 5 or plan['modes'] != ['agent', 'baseline']
+            or plan['agent_repairs_max'] != 1 or plan['model_retries'] != 0):
+        raise ValueError('unsupported frozen sampling protocol')
+    for key, upper in [('solve_requests_max', 40), ('model_requests_max', 60)]:
+        if type(plan[key]) is not int or not 0 < plan[key] <= upper:
+            raise ValueError('invalid request cap')
+    for key in ('solve_deadline_s', 'judge_timeout_s', 'batch_wall_limit_s'):
+        if type(plan[key]) not in (int, float) or not math.isfinite(plan[key]) or plan[key] <= 0:
+            raise ValueError('finite positive wall budgets required')
+    if not math.isfinite(batch_started_at) or batch_started_at > time.monotonic():
+        raise ValueError('invalid batch start clock')
+    until = batch_started_at + plan['batch_wall_limit_s']
+    if time.monotonic() >= until:
+        raise TimeoutError('whole-batch deadline already expired')
+    # Each task's judge directory stays on the evaluator side. Read only the
+    # separately hashed prompt when constructing an HTTP request.
+    manifest = {name.replace('\\', '/'): digest for name, digest in plan['files_sha256'].items()}
+    for tid in ids:
+        key = f'agent-input/{tid}/prompt.txt'
+        if key not in manifest or f'judge-only/{tid}/task.json' not in manifest:
+            raise ValueError('frozen task manifest incomplete')
+    out = Path(out).resolve()
+    out.mkdir(parents=True, exist_ok=False)
+    (out/'results').mkdir()
+    rows = [dict(task_id=tid, sample=sample, mode=mode, state='not_started', nonce=uuid.uuid4().hex,
+                 model_calls=None, timed_out=None)
+            for tid in ids for sample in range(samples) for mode in plan['modes']]
+    status = dict(complete=False, protocol_sha256=plan_sha256, rows=rows, expected_solves=len(rows),
+                  solves_started=0, model_calls_reserved=0, verified_backend_calls=0,
+                  started_at=time.time(), stop_reason=None,
+                  resource_observations=[],
+                  resource_supervision='boundary checks only; continuous cancellation not accepted')
+
+    def save():
+        status['elapsed_s'] = time.monotonic() - batch_started_at
+        pending = out/'batch.pending.json'
+        with pending.open('w', encoding='utf-8') as handle:
+            json.dump(status, handle, ensure_ascii=False, indent=2)
+            handle.write('\n')
+            handle.flush()
+            os.fsync(handle.fileno())
+        pending.replace(out/'batch.json')
+
+    save()
+    runtime = module('batch_runtime', ROOT/'submission/runtime.py')
+    model = plan['model']['served_name']
+    consecutive_timeouts = 0
+    current = None
+    try:
+        health_raw, _ = http_exchange(endpoint, '/v1/health', None, out/'health', min(until, time.monotonic()+10),
+                                      os.environ.get('FPGACHINA_TOKEN', ''))
+        health = json.loads(health_raw)
+        if health.get('ready') is not True or health.get('track') != 'rtl' or health.get('model') != model:
+            raise ValueError('submission health does not match frozen model/track')
+        for index, current in enumerate(rows):
+            cap = 2 if current['mode'] == 'agent' else 1
+            if (status['solves_started'] >= plan['solve_requests_max'] or
+                    status['model_calls_reserved'] + cap > plan['model_requests_max']):
+                status['stop_reason'] = 'request_cap'
+                break
+            # Leave time for unshortened solve, external judge, idle confirmation
+            # and cleanup. The original per-solve budgets are never increased.
+            if until - time.monotonic() < plan['solve_deadline_s'] + plan['judge_timeout_s'] + 10:
+                status['stop_reason'] = 'whole_batch_time'
+                break
+            used = runtime.vram_gb()
+            status['resource_observations'].append(dict(sample=index, phase='before', gib=used))
+            if used is None or not math.isfinite(used) or used < 0 or used * 1024**3 > 32_000_000_000:
+                raise ValueError('resource admission failed')
+            dst = out/'samples'/str(index)
+            before = wait_backend_idle(backend_endpoint, model, dst/'before', min(until, time.monotonic()+10))
+            tid = current['task_id']
+            prompt_path = plan_path.parent/'agent-input'/tid/'prompt.txt'
+            prompt = prompt_path.read_bytes()
+            if hashlib.sha256(prompt).hexdigest() != manifest[f'agent-input/{tid}/prompt.txt']:
+                raise ValueError('prompt changed after admission')
+            # This reservation is durable BEFORE POST and is never refunded.
+            status['solves_started'] += 1
+            status['model_calls_reserved'] += cap
+            current.update(state='started', reserved_upper_bound=cap)
+            save()
+            request = dict(task_id=tid, nonce=current['nonce'], mode=current['mode'],
+                           prompt=prompt.decode('utf-8'), interface='', deadline_s=plan['solve_deadline_s'])
+            try:
+                response, ledger = solve_http(endpoint, request, dst/'solve', until)
+            finally:
+                # A broken POST always stops the batch; this GET only determines
+                # whether the service still has outstanding generation work.
+                after = wait_backend_idle(backend_endpoint, model, dst/'after', min(until, time.monotonic()+10))
+                # Retain verified executions even when the response is malformed.
+                delta = backend_call_delta(before, after)
+                calls = sum(delta.values())
+                current.update(model_calls=calls, backend_finished_reasons=delta)
+                status['verified_backend_calls'] += calls
+            used = runtime.vram_gb()
+            status['resource_observations'].append(dict(sample=index, phase='after', gib=used))
+            if used is None or not math.isfinite(used) or used < 0 or used * 1024**3 > 32_000_000_000:
+                raise ValueError('resource limit after solve')
+            events = [json.loads(line) for line in response['trace'].splitlines() if line.strip()]
+            timed_out = any(e.get('event') == 'deadline' or e.get('response_status') == 'deadline' or
+                            e.get('error') == 'deadline' or str(e.get('reason', '')).startswith('deadline')
+                            for e in events)
+            current['timed_out'] = timed_out
+            if (calls > cap or (ledger['observed_attempts'] is not None and calls != ledger['observed_attempts']) or
+                    (not ledger['accounting_complete'] and not timed_out)):
+                raise ValueError('model call accounting incomplete or inconsistent')
+            if any(e.get('tool') in ('lint', 'elaborate') and e.get('rc') is None and
+                   e.get('error') != 'deadline' for e in events):
+                raise ValueError('internal EDA unavailable')
+            result = judge_candidate(plan_path.parent/'judge-only'/tid, dst/'solve/solution.v', dst/'judge',
+                out/'results'/f"{current['mode']}.{tid}.s{current['sample']}.json",
+                plan['judge_timeout_s'], until)
+            if result.get('task_id') != tid or (not result.get('tool_error') and
+                    (result.get('level') not in (0, 1, 2, 3) or
+                     result.get('coefficient') != {0: 0., 1: .2, 2: .7, 3: 1.}[result['level']])):
+                raise ValueError('invalid official judgement')
+            current.update(state='graded', level=result.get('level'), tool_error=result.get('tool_error'))
+            save()
+            if result.get('tool_error'):
+                status['stop_reason'] = 'official_tool_error'
+                break
+            consecutive_timeouts = consecutive_timeouts + 1 if timed_out else 0
+            if consecutive_timeouts >= 2:
+                status['stop_reason'] = 'two_consecutive_timeouts'
+                break
+        if time.monotonic() >= until:
+            status['stop_reason'] = 'whole_batch_time'
+        if all(row['state'] == 'graded' for row in rows) and status['stop_reason'] is None:
+            report = summarize(out/'results', ids, plan['modes'], samples)
+            (out/'graded_summary.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
+            status['complete'] = True
+    except BaseException as exc:
+        status['stop_reason'] = type(exc).__name__
+        if current is not None and current['state'] == 'started':
+            current.update(state='failed', error_type=type(exc).__name__)
+        if not isinstance(exc, Exception):
+            raise
+    finally:
+        save()
+    return status
 
 
 def module(name, path):
