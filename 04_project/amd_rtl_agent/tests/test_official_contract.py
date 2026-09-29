@@ -1,5 +1,6 @@
 """Protocol integration tests use a local fake model, never a paid endpoint."""
 import importlib.util
+import http.client
 import json
 import os
 from pathlib import Path
@@ -8,6 +9,8 @@ import threading
 import time
 import sys
 import subprocess
+import socket
+import signal
 import unittest
 import urllib.error
 import urllib.request
@@ -296,6 +299,63 @@ class ContractTests(unittest.TestCase):
             FakeModel.delay = 0
             solution, _ = runtime.run_job('baseline', task, Path(td)/'next', 10)
             self.assertIn('endmodule', solution)
+
+    @unittest.skipUnless(sys.platform == 'linux', 'Linux process lifecycle')
+    def test_http_sigterm_stops_active_worker(self):
+        with tempfile.TemporaryDirectory() as td:
+            with socket.socket() as sock:
+                sock.bind(('127.0.0.1', 0))
+                port = sock.getsockname()[1]
+            FakeModel.delay = 5
+            env = dict(os.environ, EDA_TMP=td, PYTHONDONTWRITEBYTECODE='1')
+            server = subprocess.Popen([sys.executable, str(ROOT/'submission/runtime.py'),
+                                       'serve', '--port', str(port)], env=env,
+                                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            children = []
+            def post():
+                try:
+                    req = urllib.request.Request(f'http://127.0.0.1:{port}/v1/solve',
+                        data=json.dumps(dict(task_id='lifecycle', prompt='p', deadline_s=15)).encode(),
+                        headers={'Authorization': 'Bearer local-test-token'})
+                    with urllib.request.urlopen(req, timeout=20) as r: r.read()
+                except (OSError, http.client.HTTPException):
+                    pass
+            request = None
+            try:
+                until = time.monotonic()+5
+                while True:
+                    try:
+                        with socket.create_connection(('127.0.0.1', port), timeout=.1): break
+                    except OSError:
+                        self.assertLess(time.monotonic(), until, 'HTTP service not ready')
+                        time.sleep(.02)
+                request = threading.Thread(target=post, daemon=True)
+                request.start()
+                until = time.monotonic()+5
+                while not FakeModel.requests:
+                    self.assertLess(time.monotonic(), until, 'worker never called fixture')
+                    time.sleep(.02)
+                for path in Path('/proc').glob('[0-9]*/stat'):
+                    try:
+                        fields = path.read_text().split(') ', 1)[1].split()
+                        if int(fields[1]) == server.pid: children.append(int(path.parent.name))
+                    except (OSError, ValueError): pass
+                self.assertTrue(children, 'no worker observed')
+                server.send_signal(signal.SIGTERM)
+                server.wait(timeout=3)
+                live = []
+                for pid in children:
+                    path = Path(f'/proc/{pid}/stat')
+                    if path.exists() and path.read_text().split(') ', 1)[1][0] != 'Z': live.append(pid)
+                self.assertEqual(live, [], f'SIGTERM left active workers: {live}')
+                self.assertEqual(list(Path(td).iterdir()), [], 'request scratch not cleaned')
+            finally:
+                if server.poll() is None: server.kill()
+                server.wait(timeout=3)
+                for pid in children:
+                    try: os.killpg(pid, signal.SIGKILL)
+                    except ProcessLookupError: pass
+                if request: request.join(timeout=2)
 
     def test_http_auth_validation_and_repeated_modes(self):
         server = ThreadingHTTPServer(('127.0.0.1', 0), runtime.Handler)

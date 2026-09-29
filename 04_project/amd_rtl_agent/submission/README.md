@@ -88,6 +88,9 @@ Requests are serialized for the shared model. HTTP body reception and waiting ti
 the supplied deadline. Each request uses new local scratch and a separate
 worker process. Timeout cancels the process tree and returns the candidate
 already available (or empty text), followed by future requests normally.
+SIGTERM/SIGINT to the HTTP service blocks new worker launches and stops the
+active worker process group before exit; the Linux regression checks both
+worker termination and request scratch cleanup.
 
 Trace records model calls and candidate checks; `*_start` entries identify
 in-flight operations if a deadline interrupts them. A supervisor timeout event

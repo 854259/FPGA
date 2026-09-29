@@ -25,6 +25,9 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 ROOT = Path(__file__).resolve().parent
 LOCK = threading.Lock()
+PROCESS_LOCK = threading.Lock()
+PROCESSES = {}
+STOPPING = threading.Event()
 
 
 def write(path, text):
@@ -305,7 +308,11 @@ def run_job(mode, task, out, seconds):
             command = [sys.executable, str(ROOT / 'runtime.py'), 'worker', str(inp), str(out)]
         flags = {'start_new_session': True} if os.name != 'nt' else {}
         with (out / 'worker.log').open('w', encoding='utf-8') as log:
-            proc = subprocess.Popen(command, cwd=work, env=env, stdout=log, stderr=log, **flags)
+            with PROCESS_LOCK:
+                if STOPPING.is_set():
+                    raise OSError('service stopping')
+                proc = subprocess.Popen(command, cwd=work, env=env, stdout=log, stderr=log, **flags)
+                PROCESSES[proc] = threading.current_thread()
             previous = {}
             def cancelled(signum, frame):
                 stop_tree(proc)
@@ -321,6 +328,8 @@ def run_job(mode, task, out, seconds):
                 trace(out, 'supervisor', event='deadline', mode=mode)
             finally:
                 stop_tree(proc)
+                with PROCESS_LOCK:
+                    PROCESSES.pop(proc, None)
                 for sig, handler in previous.items():
                     signal.signal(sig, handler)
     return (out / 'solution.v').read_text(encoding='utf-8'), (out / 'trace.jsonl').read_text(encoding='utf-8')
@@ -513,7 +522,25 @@ def main():
         endpoint()
         if os.environ.get('EDA_TMP'):
             Path(os.environ['EDA_TMP']).mkdir(parents=True, exist_ok=True)
-        ThreadingHTTPServer(('127.0.0.1', args.port), Handler).serve_forever()
+        server = ThreadingHTTPServer(('127.0.0.1', args.port), Handler)
+        def cancelled(signum, frame):
+            raise SystemExit(128 + signum)
+        previous = {sig: signal.signal(sig, cancelled) for sig in (signal.SIGTERM, signal.SIGINT)}
+        try:
+            server.serve_forever()
+        finally:
+            # HTTP handlers run outside the main thread and cannot install signal
+            # handlers. Stop their separate process groups before leaving serve.
+            with PROCESS_LOCK:
+                STOPPING.set()
+                active = list(PROCESSES.items())
+            for proc, thread in active:
+                stop_tree(proc)
+            server.server_close()
+            for proc, thread in active:
+                thread.join(timeout=2)
+            for sig, handler in previous.items():
+                signal.signal(sig, handler)
     elif args.task is None or args.out is None:
         p.error('task_dir and out_dir required')
     elif args.action == 'worker':
