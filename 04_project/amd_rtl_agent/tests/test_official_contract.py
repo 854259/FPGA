@@ -326,13 +326,134 @@ class JudgeSupervisionTests(unittest.TestCase):
 class BatchWatchdogTests(unittest.TestCase):
     serve = HttpEvaluationTests.serve
 
+    def test_filesystem_rules_block_judge_reads_and_preserve_worker_outputs(self):
+        script = r'''
+import errno, json, os, subprocess, sys
+from pathlib import Path
+import official_eval as ev
+root=Path(sys.argv[1]); public=root/'public'; scratch=root/'scratch'; private=root/'judge-only'
+public.mkdir(); scratch.mkdir(); private.mkdir()
+(public/'prompt').write_text('public'); (private/'reference').write_text('private')
+(scratch/'alias').symlink_to(private/'reference')
+assert (private/'reference').read_text() == (scratch/'alias').read_text() == 'private'
+try:
+    abi=ev.restrict_filesystem(['/usr','/lib','/lib64',public],[scratch])
+except OSError as exc:
+    if exc.errno in (errno.ENOSYS,errno.EOPNOTSUPP):
+        print('LANDLOCK_UNAVAILABLE');sys.exit(77)
+    raise
+assert (public/'prompt').read_text()=='public'
+(scratch/'output').write_text('candidate')
+assert (scratch/'output').read_text()=='candidate'
+for operation in [lambda:(private/'reference').read_text(),
+                  lambda:(scratch/'alias').read_text(),
+                  lambda:(public/'prompt').write_text('overwrite'),
+                  lambda:(root/'escape').write_text('escape'),
+                  lambda:os.link(private/'reference',scratch/'linked')]:
+    try: operation()
+    except OSError as exc: assert exc.errno in (errno.EACCES,errno.EPERM,errno.EXDEV),exc
+    else: raise AssertionError('filesystem rule escaped')
+code='from pathlib import Path;import sys;Path(sys.argv[1]).read_text()'
+child=subprocess.run([sys.executable,'-B','-c',code,str(private/'reference')],capture_output=True,text=True)
+assert child.returncode!=0 and 'PermissionError' in child.stderr,child.stderr
+child=subprocess.run([sys.executable,'-B','-c','from pathlib import Path;import sys;Path(sys.argv[1]).write_text("child")',str(scratch/'child')],capture_output=True,text=True)
+assert child.returncode==0,child.stderr
+print(json.dumps({'abi':abi,'blocked_checks':6,'output_checks':3,'model_calls':0}))
+'''
+        with tempfile.TemporaryDirectory() as td:
+            result = subprocess.run([sys.executable, '-B', '-c', script, td], cwd=ROOT,
+                                    capture_output=True, text=True, timeout=10)
+            if result.returncode == 77:
+                self.skipTest('kernel does not provide Landlock ABI 3')
+            self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
+            self.assertEqual((Path(td)/'judge-only/reference').read_text(), 'private')
+            self.assertEqual((Path(td)/'public/prompt').read_text(), 'public')
+            self.assertFalse((Path(td)/'escape').exists())
+
+    def test_launcher_waits_for_http_readiness_before_starting_batch(self):
+        script = r'''
+import inspect, json, os, socket, subprocess, sys, time, types
+from pathlib import Path
+from unittest import mock
+import official_eval as ev
+root = Path(sys.argv[1]); mode = sys.argv[2]
+with socket.socket() as port:
+    port.bind(('127.0.0.1', 0)); number = port.getsockname()[1]
+endpoint = f'http://127.0.0.1:{number}'
+if mode == 'occupied':
+    endpoint=sys.argv[3]; number=int(endpoint.rsplit(':',1)[1])
+service = r"""
+import json, sys, time
+from http.server import BaseHTTPRequestHandler, HTTPServer
+mode=sys.argv[1]; began=time.monotonic()
+if mode == 'exit': sys.exit(7)
+if mode == 'occupied': time.sleep(30); sys.exit(0)
+class H(BaseHTTPRequestHandler):
+    def log_message(self,*args): pass
+    def do_GET(self):
+        if mode == 'hang': time.sleep(30)
+        raw=json.dumps({'ready':mode != 'never' and time.monotonic()-began > .3,
+                        'track':'rtl','model':'wrong' if mode == 'wrong' else 'fixture'}).encode()
+        if mode == 'malformed': raw=b'{'
+        self.send_response(200); self.send_header('Content-Length',str(len(raw)))
+        self.end_headers(); self.wfile.write(raw)
+HTTPServer(('127.0.0.1',int(sys.argv[2])),H).serve_forever()
+"""
+batch = r"""
+import json, sys, time, urllib.request
+from pathlib import Path
+try:
+    with urllib.request.urlopen(sys.argv[1]+'/v1/health',timeout=.5) as r: ready=json.load(r)['ready']
+except Exception: ready=False
+Path(sys.argv[2]).write_text('ready' if ready else 'too_early')
+time.sleep(.1)
+"""
+kwargs = {}
+if 'submission_endpoint' in inspect.signature(ev.launch_supervised_batch).parameters:
+    kwargs = dict(submission_endpoint=endpoint, startup_timeout_s=.9)
+began=time.monotonic(); failure=None
+try:
+    with mock.patch.object(ev,'module',return_value=types.SimpleNamespace(vram_gb=lambda:40. if mode=='vram' else 1.)), \
+         mock.patch.object(ev,'wait_backend_idle',return_value={'running':0,'waiting':0}):
+        ev.launch_supervised_batch([sys.executable,'-B','-c',batch,endpoint,str(root/'batch-started')],
+            [sys.executable,'-B','-c',service,mode,str(number)],endpoint,'fixture',root/'owned',began+9,**kwargs)
+except (ValueError, RuntimeError, TimeoutError) as exc: failure=type(exc).__name__
+record=json.loads((root/'owned/ownership.json').read_text())
+assert record['descendants_reaped'] and not record['formal_acceptance'], record
+assert time.monotonic()-began < 4, record
+if mode == 'delayed':
+    assert failure is None, failure
+    assert (root/'batch-started').read_text() == 'ready', 'batch ran before HTTP service ready'
+else:
+    assert failure is not None, 'invalid startup did not fail'
+    assert not (root/'batch-started').exists(), 'batch launched despite failed readiness'
+assert not Path('/proc/self/task/'+str(os.getpid())+'/children').read_text().strip()
+try: os.waitpid(-1,os.WNOHANG)
+except ChildProcessError: pass
+else: raise AssertionError('owned child remains')
+print(json.dumps({'mode':mode,'failure':failure,**record}))
+'''
+        class ExistingService(BaseHTTPRequestHandler):
+            def log_message(self, *args): pass
+            def do_GET(self):
+                raw = b'{"ready":true,"track":"rtl","model":"fixture"}'
+                self.send_response(200); self.send_header('Content-Length', str(len(raw)))
+                self.end_headers(); self.wfile.write(raw)
+        occupied_endpoint = self.serve(ExistingService)
+        for mode in ('delayed', 'never', 'wrong', 'malformed', 'exit', 'hang', 'vram', 'occupied'):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as td:
+                result = subprocess.run([sys.executable, '-B', '-c', script, td, mode, occupied_endpoint],
+                                        cwd=ROOT, capture_output=True, text=True, timeout=12)
+                self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
+
     def test_launcher_rejects_shared_process_without_signalling(self):
         child = subprocess.Popen([sys.executable, '-c', 'import time;time.sleep(30)'])
         try:
             with tempfile.TemporaryDirectory() as td, mock.patch.object(
                     evaluation.os, 'kill', side_effect=AssertionError('must not signal')):
                 with self.assertRaisesRegex(ValueError, 'preexisting children'):
-                    evaluation.launch_supervised_batch([], [], '', '', Path(td)/'out', time.monotonic()+10)
+                    evaluation.launch_supervised_batch([], [], '', '', Path(td)/'out', time.monotonic()+10,
+                                                       submission_endpoint='http://127.0.0.1:1')
                 self.assertIsNone(child.poll())
                 self.assertFalse((Path(td)/'out').exists())
         finally:
@@ -372,13 +493,18 @@ def memory():
     if mode == 'sigterm':
         os.kill(os.getpid(), signal.SIGTERM)
     return 1. if mode == 'normal' else 40.
+def get_module(name, path):
+    return types.SimpleNamespace(vram_gb=(lambda:1.) if name == 'startup_runtime' else memory)
 try:
     with mock.patch.object(ev.subprocess, 'Popen', Launch), \
-         mock.patch.object(ev, 'module', return_value=types.SimpleNamespace(vram_gb=memory)), \
+         mock.patch.object(ev, 'module', side_effect=get_module), \
+         mock.patch.object(ev, 'owns_tcp_listener', return_value=True), \
+         mock.patch.object(ev, 'http_exchange', return_value=(b'{"ready":true,"track":"rtl","model":"fixture"}',{})), \
          mock.patch.object(ev, 'wait_backend_idle', return_value={'running':0,'waiting':0}):
-        ev.launch_supervised_batch([sys.executable, '-c', code],
-            [sys.executable, '-c', 'import time;time.sleep(30)'],
-            'http://127.0.0.1:1', 'fixture', root/'owned', started+9)
+        ev.launch_supervised_batch([sys.executable, '-c', 'import time;time.sleep(30)'],
+            [sys.executable, '-c', code],
+            'http://127.0.0.1:1', 'fixture', root/'owned', started+9,
+            submission_endpoint='http://127.0.0.1:1')
 except FileNotFoundError:
     assert mode == 'startup_failure'
 except SystemExit:

@@ -356,11 +356,85 @@ def judge_candidate(task, solution, out, result_path, seconds, batch_deadline_at
         (out/'supervisor.json').write_text(json.dumps(record, indent=2)+'\n', encoding='utf-8')
 
 
-def launch_supervised_batch(batch_command, submission_command, backend_endpoint, model, out, deadline_at):
+def restrict_filesystem(read_paths, write_paths):
+    """Irreversibly restrict a dedicated Linux x86-64 child and its descendants.
+
+    This is a filesystem primitive, not deployment admission. The caller must
+    close inherited file descriptors, drop unnecessary privileges and separately
+    enforce network/process isolation. ABI 3+ is required to cover truncation.
+    Never call in the shared evaluator or a multithreaded process.
+    """
+    if sys.platform != 'linux' or os.uname().machine != 'x86_64':
+        raise ValueError('Linux x86-64 Landlock required')
+    if len(list(Path('/proc/self/task').iterdir())) != 1:
+        raise ValueError('dedicated single-threaded child required')
+    import ctypes
+    import struct
+    libc = ctypes.CDLL(None, use_errno=True)
+    libc.syscall.restype = ctypes.c_long
+    abi = libc.syscall(444, 0, 0, 1)  # landlock_create_ruleset VERSION
+    if abi < 3:
+        raise OSError(ctypes.get_errno() if abi < 0 else 95, 'Landlock ABI 3 required')
+    handled = (1 << 15)-1  # All ABI 3 filesystem rights, including REFER/TRUNCATE.
+    attr = ctypes.create_string_buffer(struct.pack('Q', handled))
+    ruleset = libc.syscall(444, ctypes.byref(attr), 8, 0)
+    if ruleset < 0:
+        raise OSError(ctypes.get_errno(), 'create filesystem ruleset')
+    try:
+        for writable, paths in ((False, read_paths), (True, write_paths)):
+            for path in paths:
+                path = Path(path).resolve(strict=True)
+                if path == Path('/'):
+                    raise ValueError('whole filesystem allow rule rejected')
+                rights = ((handled & ~((1 << 6) | (1 << 11))) if writable else 13)
+                if not path.is_dir():
+                    rights &= 1 | 2 | 4 | (1 << 14)
+                fd = os.open(path, os.O_PATH | os.O_CLOEXEC)
+                try:
+                    rule = ctypes.create_string_buffer(struct.pack('=Qi', rights, fd))
+                    if libc.syscall(445, ruleset, 1, ctypes.byref(rule), 0) != 0:
+                        raise OSError(ctypes.get_errno(), 'add filesystem rule')
+                finally:
+                    os.close(fd)
+        if libc.prctl(38, 1, 0, 0, 0) != 0:  # PR_SET_NO_NEW_PRIVS
+            raise OSError(ctypes.get_errno(), 'set no_new_privs')
+        if libc.syscall(446, ruleset, 0) != 0:
+            raise OSError(ctypes.get_errno(), 'restrict filesystem')
+    finally:
+        os.close(ruleset)
+    return abi
+
+
+def owns_tcp_listener(process, port):
+    """Match a listening socket inode to this still-live owned child, not a PID file."""
+    if process.poll() is not None:
+        return False
+    sockets = set()
+    try:
+        for fd in Path(f'/proc/{process.pid}/fd').iterdir():
+            try:
+                sockets.add(os.readlink(fd))
+            except FileNotFoundError:
+                pass
+        for family in ('tcp', 'tcp6'):
+            for line in Path(f'/proc/{process.pid}/net/{family}').read_text().splitlines()[1:]:
+                fields = line.split()
+                if (fields[3] == '0A' and int(fields[1].rsplit(':', 1)[1], 16) == port and
+                        'socket:['+fields[9]+']' in sockets and process.poll() is None):
+                    return True
+    except (FileNotFoundError, PermissionError):
+        pass
+    return False
+
+
+def launch_supervised_batch(batch_command, submission_command, backend_endpoint, model, out, deadline_at,
+                            *, submission_endpoint, startup_timeout_s=30):
     """Own a Linux process tree in a dedicated, initially childless interpreter.
 
     Subreaping closes accidental setsid/double-fork leaks while THIS supervisor
-    lives. It is not a sandbox or protection against this supervisor's SIGKILL,
+    lives. Start the service, verify HTTP health, then launch the batch. Readiness
+    GETs share the whole-batch deadline and never send generation requests.
+    This is not a sandbox or protection against this supervisor's SIGKILL,
     OOM, hostile children or uninterruptible kernel work. No live CLI admission
     is implied. Never call from a shared application/test-runner process.
     """
@@ -376,6 +450,13 @@ def launch_supervised_batch(batch_command, submission_command, backend_endpoint,
         raise ValueError('dedicated supervisor must have no preexisting children')
     if not math.isfinite(deadline_at) or deadline_at-time.monotonic() <= 6:
         raise TimeoutError('insufficient startup and cleanup reserve')
+    if type(startup_timeout_s) not in (int, float) or not math.isfinite(startup_timeout_s) or startup_timeout_s <= 0:
+        raise ValueError('finite positive startup timeout required')
+    endpoint = urlsplit(submission_endpoint)
+    if (endpoint.scheme != 'http' or endpoint.hostname not in ('127.0.0.1', '::1') or
+            endpoint.username or endpoint.password or endpoint.path not in ('', '/') or endpoint.query or endpoint.fragment):
+        raise ValueError('numeric loopback submission origin required')
+    startup_until = min(deadline_at-6, time.monotonic()+startup_timeout_s)
     import ctypes
     libc = ctypes.CDLL(None, use_errno=True)
     previous_reaper = ctypes.c_int()
@@ -383,7 +464,8 @@ def launch_supervised_batch(batch_command, submission_command, backend_endpoint,
         raise OSError(ctypes.get_errno(), 'get child subreaper')
     out = Path(out)
     out.mkdir(parents=True, exist_ok=False)
-    record = dict(descendants_reaped=False, formal_acceptance=False, started_pids=[], reaped_count=0)
+    record = dict(descendants_reaped=False, formal_acceptance=False, started_pids=[], reaped_count=0,
+                  service_ready=False, batch_started=False, readiness_attempts=0)
     previous = {}
     owned = []
     def interrupted(signum, frame):
@@ -393,11 +475,49 @@ def launch_supervised_batch(batch_command, submission_command, backend_endpoint,
             previous[sig] = signal.signal(sig, interrupted)
         if libc.prctl(36, 1, 0, 0, 0) != 0:  # PR_SET_CHILD_SUBREAPER
             raise OSError(ctypes.get_errno(), 'set child subreaper')
-        for command in (batch_command, submission_command):
-            proc = subprocess.Popen(command, start_new_session=True)
-            owned.append(proc)
-            record['started_pids'].append(proc.pid)
-        record['watchdog'] = supervise_http_batch(*owned, backend_endpoint, model, out/'watchdog', deadline_at-1)
+        service = subprocess.Popen(submission_command, start_new_session=True)
+        owned.append(service)
+        record['started_pids'].append(service.pid)
+        runtime = module('startup_runtime', ROOT/'submission/runtime.py')
+        while time.monotonic() < startup_until:
+            if service.poll() is not None:
+                raise RuntimeError('submission exited before HTTP readiness')
+            used = runtime.vram_gb()
+            if (type(used) not in (int, float) or not math.isfinite(used) or used < 0 or
+                    used * 1024**3 > 32_000_000_000):
+                raise ValueError('startup resource admission failed')
+            attempt = record['readiness_attempts']
+            record['readiness_attempts'] += 1
+            try:
+                raw, _ = http_exchange(submission_endpoint, '/v1/health', None, out/'readiness'/str(attempt),
+                                       min(startup_until, time.monotonic()+.5),
+                                       os.environ.get('FPGACHINA_TOKEN', ''))
+            except (ConnectionRefusedError, TimeoutError, ConnectionResetError, http.client.RemoteDisconnected):
+                # Only readiness GET transport can be retried, never solve/model POST.
+                time.sleep(min(.05, max(0, startup_until-time.monotonic())))
+                continue
+            health = json.loads(raw)
+            if not isinstance(health, dict) or health.get('track') != 'rtl' or health.get('model') != model:
+                raise ValueError('submission health differs from frozen model/track')
+            if health.get('ready') is True:
+                if not owns_tcp_listener(service, endpoint.port or 80):
+                    raise ValueError('ready HTTP listener is not owned by the launched submission')
+                record['listener_owned'] = True
+                record['service_ready'] = True
+                break
+            if health.get('ready') is not False:
+                raise ValueError('invalid readiness state')
+            time.sleep(min(.05, max(0, startup_until-time.monotonic())))
+        if not record['service_ready']:
+            raise TimeoutError('submission HTTP readiness deadline')
+        record['backend_before_batch'] = wait_backend_idle(backend_endpoint, model, out/'startup-idle', startup_until)
+        if service.poll() is not None or time.monotonic() >= startup_until:
+            raise RuntimeError('submission stopped or startup budget expired before batch launch')
+        batch = subprocess.Popen(batch_command, start_new_session=True)
+        owned.append(batch)
+        record['started_pids'].append(batch.pid)
+        record['batch_started'] = True
+        record['watchdog'] = supervise_http_batch(batch, service, backend_endpoint, model, out/'watchdog', deadline_at-1)
     except BaseException as exc:
         record['error_type'] = type(exc).__name__
         raise
