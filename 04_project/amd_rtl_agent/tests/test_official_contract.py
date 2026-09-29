@@ -326,6 +326,89 @@ class JudgeSupervisionTests(unittest.TestCase):
 class BatchWatchdogTests(unittest.TestCase):
     serve = HttpEvaluationTests.serve
 
+    def test_launcher_rejects_shared_process_without_signalling(self):
+        child = subprocess.Popen([sys.executable, '-c', 'import time;time.sleep(30)'])
+        try:
+            with tempfile.TemporaryDirectory() as td, mock.patch.object(
+                    evaluation.os, 'kill', side_effect=AssertionError('must not signal')):
+                with self.assertRaisesRegex(ValueError, 'preexisting children'):
+                    evaluation.launch_supervised_batch([], [], '', '', Path(td)/'out', time.monotonic()+10)
+                self.assertIsNone(child.poll())
+                self.assertFalse((Path(td)/'out').exists())
+        finally:
+            child.terminate(); child.wait(timeout=2)
+
+    def test_owned_launcher_reaps_detached_children_and_failed_startup(self):
+        # A separate interpreter is essential: the subreaper must never adopt
+        # unrelated children of the test runner (or of the eventual launcher).
+        script = r'''
+import json, os, signal, subprocess, sys, time, types
+from pathlib import Path
+from unittest import mock
+import official_eval as ev
+root = Path(sys.argv[1]); mode = sys.argv[2]
+childfile = root/'child.pid'
+code = ('import os,signal,subprocess,sys,time\nfrom pathlib import Path\n'
+        'p=subprocess.Popen([sys.executable,"-c","import time;time.sleep(30)"],start_new_session=True)\n'
+        f'Path({str(childfile)!r}).write_text(str(p.pid))\n'
+        + ('os.kill(os.getpid(),signal.SIGSTOP)\n' if mode == 'stopped' else '')
+        + ('time.sleep(.1)\n' if mode == 'normal' else 'time.sleep(30)\n'))
+original = subprocess.Popen
+calls = []
+class Launch(original):
+    def __init__(self, *a, **kw):
+        if calls:
+            until = time.monotonic()+2
+            while not childfile.exists():
+                assert time.monotonic()<until
+                time.sleep(.01)
+            if mode == 'startup_failure':
+                raise FileNotFoundError('synthetic second launch failure')
+            if mode == 'startup_sigterm':
+                os.kill(os.getpid(), signal.SIGTERM)
+        super().__init__(*a, **kw); calls.append(self)
+started = time.monotonic()
+def memory():
+    if mode == 'sigterm':
+        os.kill(os.getpid(), signal.SIGTERM)
+    return 1. if mode == 'normal' else 40.
+try:
+    with mock.patch.object(ev.subprocess, 'Popen', Launch), \
+         mock.patch.object(ev, 'module', return_value=types.SimpleNamespace(vram_gb=memory)), \
+         mock.patch.object(ev, 'wait_backend_idle', return_value={'running':0,'waiting':0}):
+        ev.launch_supervised_batch([sys.executable, '-c', code],
+            [sys.executable, '-c', 'import time;time.sleep(30)'],
+            'http://127.0.0.1:1', 'fixture', root/'owned', started+9)
+except FileNotFoundError:
+    assert mode == 'startup_failure'
+except SystemExit:
+    assert mode in ('sigterm','startup_sigterm')
+record = json.loads((root/'owned/ownership.json').read_text())
+assert record['descendants_reaped'] is True, record
+assert record['formal_acceptance'] is False
+assert time.monotonic()-started < 9
+assert not Path('/proc/'+childfile.read_text()).exists(), 'detached descendant remains'
+for p in calls:
+    assert not Path(f'/proc/{p.pid}').exists()
+try:
+    os.waitpid(-1, os.WNOHANG)
+except ChildProcessError:
+    pass
+else:
+    raise AssertionError('owned child remains')
+print(json.dumps({'mode':mode, **record}))
+'''
+        innocent = subprocess.Popen([sys.executable, '-c', 'import time;time.sleep(60)'])
+        try:
+            for mode in ('stopped', 'normal', 'startup_failure', 'sigterm', 'startup_sigterm'):
+                with self.subTest(mode=mode), tempfile.TemporaryDirectory() as td:
+                    result = subprocess.run([sys.executable, '-B', '-c', script, td, mode],
+                                            cwd=ROOT, capture_output=True, text=True, timeout=12)
+                    self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
+                    self.assertIsNone(innocent.poll())
+        finally:
+            innocent.terminate(); innocent.wait(timeout=2)
+
     def test_expired_budget_or_unowned_process_never_signals(self):
         with tempfile.TemporaryDirectory() as td, mock.patch.object(
                 evaluation.os, 'killpg', side_effect=AssertionError('must not signal')):

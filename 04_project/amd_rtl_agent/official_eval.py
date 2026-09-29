@@ -356,6 +356,102 @@ def judge_candidate(task, solution, out, result_path, seconds, batch_deadline_at
         (out/'supervisor.json').write_text(json.dumps(record, indent=2)+'\n', encoding='utf-8')
 
 
+def launch_supervised_batch(batch_command, submission_command, backend_endpoint, model, out, deadline_at):
+    """Own a Linux process tree in a dedicated, initially childless interpreter.
+
+    Subreaping closes accidental setsid/double-fork leaks while THIS supervisor
+    lives. It is not a sandbox or protection against this supervisor's SIGKILL,
+    OOM, hostile children or uninterruptible kernel work. No live CLI admission
+    is implied. Never call from a shared application/test-runner process.
+    """
+    if sys.platform != 'linux' or threading.current_thread() is not threading.main_thread():
+        raise ValueError('dedicated Linux main thread required')
+    if len(list(Path('/proc/self/task').iterdir())) != 1 or signal.getsignal(signal.SIGCHLD) != signal.SIG_DFL:
+        raise ValueError('single thread and default SIGCHLD required')
+    try:
+        os.waitid(os.P_ALL, 0, os.WEXITED | os.WNOHANG | os.WNOWAIT)
+    except ChildProcessError:
+        pass
+    else:
+        raise ValueError('dedicated supervisor must have no preexisting children')
+    if not math.isfinite(deadline_at) or deadline_at-time.monotonic() <= 6:
+        raise TimeoutError('insufficient startup and cleanup reserve')
+    import ctypes
+    libc = ctypes.CDLL(None, use_errno=True)
+    previous_reaper = ctypes.c_int()
+    if libc.prctl(37, ctypes.byref(previous_reaper), 0, 0, 0) != 0:  # PR_GET_CHILD_SUBREAPER
+        raise OSError(ctypes.get_errno(), 'get child subreaper')
+    out = Path(out)
+    out.mkdir(parents=True, exist_ok=False)
+    record = dict(descendants_reaped=False, formal_acceptance=False, started_pids=[], reaped_count=0)
+    previous = {}
+    owned = []
+    def interrupted(signum, frame):
+        raise SystemExit(128+signum)
+    try:
+        for sig in (signal.SIGTERM, signal.SIGINT):
+            previous[sig] = signal.signal(sig, interrupted)
+        if libc.prctl(36, 1, 0, 0, 0) != 0:  # PR_SET_CHILD_SUBREAPER
+            raise OSError(ctypes.get_errno(), 'set child subreaper')
+        for command in (batch_command, submission_command):
+            proc = subprocess.Popen(command, start_new_session=True)
+            owned.append(proc)
+            record['started_pids'].append(proc.pid)
+        record['watchdog'] = supervise_http_batch(*owned, backend_endpoint, model, out/'watchdog', deadline_at-1)
+    except BaseException as exc:
+        record['error_type'] = type(exc).__name__
+        raise
+    finally:
+        # Repeated TERM/INT cannot interrupt the bounded cleanup itself.
+        for sig in previous:
+            signal.signal(sig, signal.SIG_IGN)
+        try:
+            while time.monotonic() < deadline_at:
+                # Kernel-owned child list, never PID files supplied by a worker.
+                children = Path(f'/proc/self/task/{os.getpid()}/children').read_text().split()
+                for item in children:
+                    pid = int(item)
+                    try:
+                        # No other thread/handler reaps children. Even a child
+                        # exiting here retains its PID until our wait below.
+                        os.waitid(os.P_PID, pid, os.WEXITED | os.WNOHANG | os.WNOWAIT)
+                    except ChildProcessError:
+                        continue
+                    try:
+                        os.kill(pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                # Popen owns the return status of the two original children.
+                for proc in owned:
+                    proc.poll()
+                try:
+                    while True:
+                        pid, status = os.waitpid(-1, os.WNOHANG)
+                        if pid == 0:
+                            break
+                        for proc in owned:
+                            if proc.pid == pid:
+                                proc.returncode = os.waitstatus_to_exitcode(status)
+                        record['reaped_count'] += 1
+                except ChildProcessError:
+                    record['descendants_reaped'] = True
+                    break
+                time.sleep(.01)
+            if not record['descendants_reaped']:
+                raise TimeoutError('owned descendants not reaped before deadline')
+        finally:
+            record['deadline_exceeded'] = time.monotonic() > deadline_at
+            record['returncodes'] = [p.returncode for p in owned]
+            # Preserve subreaper ownership if cleanup failed; never claim ready.
+            if record['descendants_reaped']:
+                if libc.prctl(36, previous_reaper.value, 0, 0, 0) != 0:
+                    record['restore_errno'] = ctypes.get_errno()
+            for sig, handler in previous.items():
+                signal.signal(sig, handler)
+            (out/'ownership.json').write_text(json.dumps(record, indent=2)+'\n', encoding='utf-8')
+    return record
+
+
 def supervise_http_batch(batch, submission, backend_endpoint, model, out, deadline_at):
     """Watch two already-owned Linux child sessions; never accept a PID from disk.
 
