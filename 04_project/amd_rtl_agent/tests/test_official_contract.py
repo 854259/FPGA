@@ -439,6 +439,17 @@ class BatchWatchdogTests(unittest.TestCase):
 class HttpBatchTests(unittest.TestCase):
     serve = HttpEvaluationTests.serve
     metrics = staticmethod(HttpEvaluationTests.metrics)
+
+    def test_legacy_model_cli_is_blocked_before_tools_or_processes(self):
+        with tempfile.TemporaryDirectory() as td, mock.patch.object(sys, 'argv',
+                ['official_eval.py', '--tasks', td, '--out', str(Path(td)/'out'), '--deadline', '300']), \
+             mock.patch.object(evaluation, 'verify_upstream', side_effect=AssertionError('before tools')), \
+             mock.patch.object(evaluation, 'http_exchange', side_effect=AssertionError('zero HTTP')), \
+             mock.patch.object(evaluation.subprocess, 'Popen', side_effect=AssertionError('zero processes')):
+            with self.assertRaises(SystemExit) as raised:
+                evaluation.main()
+            self.assertEqual(raised.exception.code, 2)
+            self.assertFalse((Path(td)/'out').exists())
     def make_batch(self, root, task_ids=None, **changes):
         inputs = root/'inputs'
         task_ids = task_ids or ['t']

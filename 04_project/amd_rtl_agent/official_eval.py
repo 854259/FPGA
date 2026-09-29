@@ -719,6 +719,9 @@ def main():
         ap.error('samples must be 1..5 and deadline positive')
     if args.reference_workers not in range(1, 5) or (not args.reference and args.reference_workers != 1):
         ap.error('reference-workers must be 1..4 and requires --reference when greater than 1')
+    if not args.reference:
+        ap.error('model evaluation CLI blocked: isolated owned-process teardown and HTTP launcher admission '
+                 'are not verified; --reference remains available without model calls')
     commit = verify_upstream()
     # Fail before any model call if tools are unavailable or not the required version.
     for name in ('xvlog', 'xelab', 'xsim', 'vivado'):
