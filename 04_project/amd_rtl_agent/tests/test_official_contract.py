@@ -29,6 +29,17 @@ evaluation = load('contract_eval', ROOT/'official_eval.py')
 
 
 class VivadoHealthTests(unittest.TestCase):
+    def test_remote_model_endpoint_rejected_in_every_profile(self):
+        for profile in ('development', 'submission'):
+            with self.subTest(profile=profile), mock.patch.dict(os.environ, {'RTL_PROFILE': profile}):
+                for url in ('https://api.example.com/v1', 'http://192.0.2.1:8000/v1'):
+                    with mock.patch.dict(os.environ, LLM_BASE_URL=url):
+                        with self.assertRaisesRegex(ValueError, 'server-local'):
+                            runtime.endpoint()
+                for url in ('http://127.0.0.1:8000/v1', 'http://localhost:8000/v1', 'http://[::1]:8000/v1'):
+                    with mock.patch.dict(os.environ, LLM_BASE_URL=url):
+                        self.assertEqual(runtime.endpoint(), url)
+
     def test_submission_memory_guard_uses_conservative_32gb_bytes(self):
         with mock.patch.dict(os.environ, {'MODEL_NAME': 'm', 'RTL_PROFILE': 'submission'}), \
              mock.patch.object(runtime, 'models', return_value=['m']), \

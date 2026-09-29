@@ -34,7 +34,7 @@ python3 runtime.py baseline TASK_DIR NEW_OUT_DIR
 The latter calls the unchanged official baseline in a supervised subprocess.
 The agent reads only staged prompt/interface text. It generates once, checks
 source structure, and optionally compiles its own candidate with `xvlog`.
-`RTL_REPAIRS=0..2` controls additional model calls (default 1). No hidden
+`RTL_REPAIRS=0..1` controls additional model calls (default 1). No hidden
 testbench, reference solution, task metadata, or external judging result is
 read by this worker. No self-generated functional testbench is implemented
 in this first adaptation. A successful candidate compile is **not** labelled
@@ -59,13 +59,13 @@ defaults match the sampling limits; `RTL_MAX_TOKENS` and `RTL_TEMPERATURE`
 are explicit agent-only experiment settings. No legacy `LLM_MOCK_FILE`,
 `LLM_MODEL`, `LLM_API_KEY` or `enable_thinking` option is used here.
 
-The default `RTL_PROFILE=submission` rejects non-loopback model URLs. An
-explicit `RTL_PROFILE=development` permits a remote compatible endpoint but
-does **not** establish final offline compliance. Upstream baseline has no
-Bearer-key support; authenticated commercial APIs require a separately
-configured common compatible gateway for both modes. Do not edit the baseline
-or run it without authentication against an endpoint that requires a key.
-No such gateway or paid API test was added in this change.
+Both `RTL_PROFILE=submission` and `RTL_PROFILE=development` reject non-loopback
+model URLs. All current experiments require weights deployed on the same server
+and direct access to its local inference process; no external model API or
+forwarding gateway is allowed. A loopback address alone does not establish this:
+verify the served local weight path/version and enforce no external network at
+complete-runtime acceptance. Keep the official baseline unchanged and point it
+at that same verified local service.
 
 `VIVADO_BIN` overrides the tool directory; otherwise `XILINX_VIVADO/bin` or
 PATH is used. There are no hardcoded drive letters in the submission code.
