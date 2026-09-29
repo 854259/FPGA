@@ -1,6 +1,7 @@
 """Protocol integration tests use a local fake model, never a paid endpoint."""
 import importlib.util
 import http.client
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -29,6 +30,220 @@ def load(name, path):
 
 runtime = load('contract_runtime', ROOT/'submission/runtime.py')
 evaluation = load('contract_eval', ROOT/'official_eval.py')
+
+
+class HttpEvaluationTests(unittest.TestCase):
+    @staticmethod
+    def metrics(running=0, waiting=0, count=0, created=10):
+        return ('vllm:num_requests_running{engine="0",model_name="fixture"} '+str(running)+'\n'+
+                'vllm:num_requests_waiting{engine="0",model_name="fixture"} '+str(waiting)+'\n'+
+                'vllm:request_success_total{engine="0",model_name="fixture",finished_reason="stop"} '+str(count)+'\n'+
+                'vllm:request_success_created{engine="0",model_name="fixture",finished_reason="stop"} '+str(created)+'\n').encode()
+
+    def serve(self, handler):
+        server = ThreadingHTTPServer(('127.0.0.1', 0), handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        self.addCleanup(thread.join, 2)
+        self.addCleanup(server.server_close)
+        self.addCleanup(server.shutdown)
+        return f'http://127.0.0.1:{server.server_port}'
+
+    def test_frozen_protocol_checks_hashes_and_blocks_unmet_gates(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root/'agent-input').mkdir()
+            (root/'agent-input/prompt.txt').write_bytes(b'spec')
+            plan = dict(files_sha256={'agent-input\\prompt.txt': hashlib.sha256(b'spec').hexdigest()},
+                        launch_ready=False, gates=[{'status': 'blocked'}])
+            path = root/'plan.json'
+            raw = json.dumps(plan).encode()
+            path.write_bytes(raw)
+            digest = hashlib.sha256(raw).hexdigest()
+            with self.assertRaisesRegex(ValueError, 'protocol hash'):
+                evaluation.verify_http_protocol(path, '0'*64)
+            with self.assertRaisesRegex(ValueError, 'launch blocked'):
+                evaluation.verify_http_protocol(path, digest)
+            (root/'agent-input/prompt.txt').write_bytes(b'changed')
+            with self.assertRaisesRegex(ValueError, 'input hash'):
+                evaluation.verify_http_protocol(path, digest)
+
+    def test_slow_drip_is_absolute_timeout_preserves_partial_and_never_retries(self):
+        seen = []
+        class Drip(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+            def do_GET(self):
+                seen.append(self.path)
+                self.send_response(200)
+                self.send_header('Content-Length', '100')
+                self.end_headers()
+                try:
+                    for _ in range(100):
+                        self.wfile.write(b'x')
+                        self.wfile.flush()
+                        time.sleep(.02)
+                except OSError:
+                    pass
+        endpoint = self.serve(Drip)
+        with tempfile.TemporaryDirectory() as td:
+            out = Path(td)/'request'
+            started = time.monotonic()
+            with self.assertRaises((TimeoutError, OSError)):
+                evaluation.http_exchange(endpoint, '/metrics', None, out, started + .25)
+            self.assertLess(time.monotonic()-started, 1.0)
+            record = json.loads((out/'transport.json').read_text())
+            self.assertEqual(record['error'], 'wall_timeout')
+            self.assertFalse(record['response_complete'])
+            self.assertGreater((out/'response.bin').stat().st_size, 0)
+            with self.assertRaises(FileExistsError):
+                evaluation.http_exchange(endpoint, '/metrics', None, out, time.monotonic()+1)
+            self.assertEqual(len(seen), 1)
+
+    def test_incomplete_body_and_redirect_are_not_followed(self):
+        seen = []
+        class Broken(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+            def do_GET(self):
+                seen.append(self.path)
+                self.send_response(302 if self.path == '/metrics' else 200)
+                self.send_header('Location', 'http://invalid.example')
+                self.send_header('Content-Length', '10' if self.path == '/v1/health' else '1')
+                self.end_headers()
+                self.wfile.write(b'x')
+        endpoint = self.serve(Broken)
+        with tempfile.TemporaryDirectory() as td:
+            for index, route in enumerate(('/v1/health', '/metrics')):
+                with self.assertRaisesRegex(ValueError, 'incomplete HTTP body|HTTP status 302'):
+                    evaluation.http_exchange(endpoint, route, None, Path(td)/str(index), time.monotonic()+1)
+            self.assertEqual(len(seen), 2)
+
+    def test_solve_payload_boundary_and_response_ledger(self):
+        seen = []
+        events = '\n'.join(json.dumps(x) for x in (
+            dict(tool='llm_start', round=0),
+            dict(tool='llm', round=0, tokens_in=4, tokens_out=5, finish='stop', response_status='complete')))
+        class Fixed(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+            def do_POST(self):
+                value = json.loads(self.rfile.read(int(self.headers['Content-Length'])))
+                seen.append(value)
+                raw = json.dumps(dict(task_id=value['task_id'], solution='module TopModule; endmodule',
+                                      trace=events, elapsed_s=.01)).encode()
+                self.send_response(200)
+                self.send_header('Content-Length', str(len(raw)))
+                self.end_headers()
+                self.wfile.write(raw)
+        endpoint = self.serve(Fixed)
+        request = dict(task_id='fixture', nonce='unique', mode='agent', prompt='only public spec',
+                       interface='', deadline_s=1)
+        with tempfile.TemporaryDirectory() as td, mock.patch.dict(os.environ, FPGACHINA_TOKEN='fixture-only'):
+            out = Path(td)/'request'
+            with self.assertRaisesRegex(ValueError, 'official solve fields'):
+                evaluation.solve_http(endpoint, dict(request, reference='secret'), out, time.monotonic()+2)
+            with self.assertRaises(TimeoutError):
+                evaluation.solve_http(endpoint, request, out, time.monotonic()+.5)
+            self.assertEqual(seen, [])
+            result, ledger = evaluation.solve_http(endpoint, request, out, time.monotonic()+2)
+            self.assertEqual(seen, [request])
+            self.assertEqual(ledger['observed_attempts'], 1)
+            self.assertEqual(ledger['tokens_out'], 5)
+            self.assertTrue(ledger['accounting_complete'])
+            self.assertIsNone(ledger['backend_executions'])
+            started_record = json.loads((out/'started.json').read_text())
+            self.assertTrue(started_record['request_attempted'])
+            self.assertEqual(started_record['model_requests_reserved'], 2)
+            self.assertIsNone(started_record['model_executions'])
+            self.assertNotIn('fixture-only', ''.join(p.read_text() for p in out.iterdir()))
+
+    def test_header_stall_is_bounded_and_malformed_response_is_preserved(self):
+        class Invalid(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+            def do_GET(self):
+                time.sleep(.4)  # No response headers before the client's deadline.
+            def do_POST(self):
+                self.rfile.read(int(self.headers['Content-Length']))
+                self.send_response(200)
+                self.send_header('Content-Length', '2')
+                self.end_headers()
+                self.wfile.write(b'{}')
+        endpoint = self.serve(Invalid)
+        with tempfile.TemporaryDirectory() as td, mock.patch.dict(os.environ, FPGACHINA_TOKEN='fixture-only'):
+            started = time.monotonic()
+            with self.assertRaises((TimeoutError, OSError, http.client.HTTPException)):
+                evaluation.http_exchange(endpoint, '/v1/health', None, Path(td)/'header', started+.1)
+            self.assertLess(time.monotonic()-started, .35)
+            request = dict(task_id='fixture', nonce='unique', mode='baseline', prompt='spec', interface='', deadline_s=1)
+            out = Path(td)/'invalid'
+            with self.assertRaisesRegex(ValueError, 'invalid solve response'):
+                evaluation.solve_http(endpoint, request, out, time.monotonic()+2)
+            self.assertEqual((out/'response.bin').read_bytes(), b'{}')
+            self.assertFalse((out/'solution.v').exists())
+            ledger = json.loads((out/'call-ledger.json').read_text())
+            self.assertFalse(ledger['valid_response'])
+            self.assertIsNone(ledger['observed_attempts'])
+
+    def test_incomplete_model_ledger_is_unknown_not_zero_or_double_counted(self):
+        self.assertIsNone(evaluation.trace_call_accounting('', 'baseline')['observed_attempts'])
+        started = json.dumps(dict(tool='llm_start', round=0))
+        ledger = evaluation.trace_call_accounting(started, 'agent')
+        self.assertEqual(ledger['observed_attempts'], 1)
+        self.assertFalse(ledger['accounting_complete'])
+        self.assertIsNone(ledger['tokens_out'])
+        with self.assertRaises(ValueError):
+            evaluation.trace_call_accounting(started+'\n'+started, 'agent')
+        error = json.dumps(dict(tool='llm', round=0, error='timeout'))
+        self.assertFalse(evaluation.trace_call_accounting(error, 'baseline')['accounting_complete'])
+
+    def test_no_network_for_unsafe_origin_or_expired_deadline(self):
+        with tempfile.TemporaryDirectory() as td, mock.patch.object(
+                evaluation.http.client.HTTPConnection, 'connect', side_effect=AssertionError('no network')):
+            for origin in ('https://api.example/v1', 'http://localhost:8000',
+                           'http://user:secret@127.0.0.1:8000', 'http://127.0.0.1:8000/path'):
+                with self.assertRaises(ValueError):
+                    evaluation.http_exchange(origin, '/metrics', None, Path(td)/'out', time.monotonic()+1)
+            with self.assertRaises(TimeoutError):
+                evaluation.http_exchange('http://127.0.0.1:8000', '/metrics', None,
+                                         Path(td)/'out', time.monotonic()-1)
+
+    def test_backend_counts_include_completed_calls_only_between_idle_snapshots(self):
+        before = evaluation.backend_snapshot(self.metrics(count=2), 'fixture')
+        after = evaluation.backend_snapshot(self.metrics(count=4), 'fixture')
+        self.assertEqual(evaluation.backend_call_delta(before, after), {'stop': 2})
+        for raw in (self.metrics(running=1), self.metrics(waiting=1),
+                    self.metrics(count=1), self.metrics(created=11)):
+            with self.assertRaises(ValueError):
+                evaluation.backend_call_delta(before, evaluation.backend_snapshot(raw, 'fixture'))
+        for raw in (b'', self.metrics().replace(b'num_requests_waiting{', b'num_requests_waiting_by_reason{'),
+                    self.metrics().replace(b'fixture', b'foreign'), self.metrics(count=float('nan'))):
+            with self.assertRaises(ValueError):
+                evaluation.backend_snapshot(raw, 'fixture')
+
+    def test_backend_busy_then_idle_and_permanently_busy_stop(self):
+        states = [self.metrics(running=1), self.metrics(waiting=1), self.metrics(count=1)]
+        seen = []
+        class Metrics(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+            def do_GET(self):
+                seen.append(self.path)
+                raw = states.pop(0) if len(states) > 1 else states[0]
+                self.send_response(200)
+                self.send_header('Content-Length', str(len(raw)))
+                self.end_headers()
+                self.wfile.write(raw)
+        endpoint = self.serve(Metrics)
+        with tempfile.TemporaryDirectory() as td:
+            state = evaluation.wait_backend_idle(endpoint, 'fixture', Path(td)/'idle', time.monotonic()+2)
+            self.assertEqual(state['counts'], {'stop': 1})
+            self.assertEqual(len(seen), 3)
+            states[:] = [self.metrics(running=1)]
+            with self.assertRaises(TimeoutError):
+                evaluation.wait_backend_idle(endpoint, 'fixture', Path(td)/'busy', time.monotonic()+.25)
+            self.assertTrue(all(route == '/metrics' for route in seen))
 
 
 class VivadoHealthTests(unittest.TestCase):
