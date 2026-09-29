@@ -33,7 +33,10 @@ python3 runtime.py baseline TASK_DIR NEW_OUT_DIR
 
 The latter calls the unchanged official baseline in a supervised subprocess.
 The agent reads only staged prompt/interface text. It generates once, checks
-source structure, and checks its own candidate with `xvlog` followed by
+the full returned source (unwrapping only a single unambiguous code fence),
+and preserves helper modules, directives and comments. It does not use a
+regex to crop at the first `endmodule`. Official baseline extraction is unchanged.
+After the structure check, it checks its own candidate with `xvlog` followed by
 `xelab work.TopModule`. The second check catches unresolved submodules and port
 connections that parsing alone accepts. Both checks share the remaining solve
 deadline and use only the candidate source, with no testbench or reference.

@@ -408,6 +408,26 @@ class ContractTests(unittest.TestCase):
             self.assertEqual(len(elab), 2)
             self.assertTrue(all('work.TopModule' in c and 'tb' not in c for c in elab))
 
+    def test_candidate_extraction_preserves_whole_source(self):
+        source = ('`default_nettype none\n'
+                  'module leaf(input wire a, output wire y); assign y=a; endmodule\n'
+                  'module TopModule(input wire a, output wire y); // do not stop at endmodule in a comment\n'
+                  'leaf u(.a(a),.y(y)); endmodule\n`default_nettype wire')
+        for reply in (source, 'Here is the code:\n```systemverilog\n' + source + '\n```'):
+            with self.subTest(fenced='```' in reply), tempfile.TemporaryDirectory() as td:
+                FakeModel.requests = []
+                task, out = Path(td)/'task', Path(td)/'out'
+                task.mkdir(); out.mkdir()
+                (task/'prompt.txt').write_text('Implement TopModule.', encoding='utf-8')
+                FakeModel.replies = [reply]
+                with mock.patch.object(runtime.Path, 'cwd', return_value=Path(td)), \
+                     mock.patch.object(runtime, 'vivado_tool', return_value='tool'), \
+                     mock.patch.object(runtime.subprocess, 'run', return_value=mock.Mock(returncode=0, stdout='')), \
+                     mock.patch.object(sys, 'path', [str(ROOT/'submission')] + sys.path):
+                    runtime.worker(task, out)
+                self.assertEqual((out/'solution.v').read_text().strip(), source)
+                self.assertEqual(len(FakeModel.requests), 1)
+
     def test_failed_elaboration_of_repair_preserves_first_candidate(self):
         first = 'module TopModule(input a, output y); assign y=a; endmodule'
         broken = 'module TopModule(input a, output y); missing_cell u(.a(a),.y(y)); endmodule'

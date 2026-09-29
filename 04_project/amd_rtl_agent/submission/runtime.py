@@ -327,8 +327,6 @@ def run_job(mode, task, out, seconds):
 
 
 def worker(task, out):
-    # Import ONLY the untouched extraction helper; never import the development evaluator.
-    import baseline
     out = Path(out)
     prompt = (Path(task) / 'prompt.txt').read_text(encoding='utf-8')
     iface = Path(task) / 'interface.txt'
@@ -368,7 +366,12 @@ def worker(task, out):
             if response['status'] != 'complete':
                 trace(out, 'agent_stop', reason='incomplete_response', preserved=bool(best_code))
                 return  # A disconnected request must never become an implicit retry.
-            code = baseline.extract(reply, 'rtl')
+            # Retain the complete source, including helper modules/directives.
+            # A regex ending at the first "endmodule" also truncates comments.
+            # Only unwrap one unambiguous Markdown code block; Vivado validates
+            # the result. Never alter the official baseline's own extraction.
+            blocks = re.findall(r'```(?:systemverilog|verilog|sv)?\s*(.*?)```', reply, re.S)
+            code = (blocks[0] if len(blocks) == 1 and reply.count('```') == 2 else reply).strip() + '\n'
         except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
             trace(out, 'llm', round=attempt, error=type(exc).__name__)
             return
