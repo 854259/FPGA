@@ -246,6 +246,80 @@ class HttpEvaluationTests(unittest.TestCase):
             self.assertTrue(all(route == '/metrics' for route in seen))
 
 
+@unittest.skipUnless(sys.platform == 'linux', 'Linux external judge process groups')
+class JudgeSupervisionTests(unittest.TestCase):
+    def test_outer_judge_cleanup_after_exit_timeout_and_sigterm(self):
+        for action in ('normal', 'timeout', 'sigterm'):
+            with self.subTest(action=action), tempfile.TemporaryDirectory() as td:
+                root = Path(td)
+                official = root/'official'
+                (official/'selftest').mkdir(parents=True)
+                child_path = root/'child.pid'
+                scratch_path = root/'scratch.path'
+                fake = official/'selftest/judge.py'
+                fake.write_text(
+                    'import sys,os,signal,subprocess,time,json\nfrom pathlib import Path\n'
+                    'child=subprocess.Popen([sys.executable,"-c","import time; time.sleep(30)"])\n'
+                    f'Path({str(child_path)!r}).write_text(str(child.pid))\n'
+                    f'Path({str(scratch_path)!r}).write_text(os.environ["SELFTEST_TMP"])\n'
+                    'Path("child.log").write_text("synthetic diagnostic")\n'
+                    + ('Path(sys.argv[sys.argv.index("--json")+1]).write_text(json.dumps({"tool_error":"fixture timeout"}))\n'
+                       if action == 'normal' else
+                       'os.kill(os.getppid(),signal.SIGTERM)\ntime.sleep(30)\n' if action == 'sigterm' else
+                       'time.sleep(30)\n'), encoding='utf-8')
+                out, result = root/'logs', root/'result.json'
+                child = None
+                old_handler = signal.getsignal(signal.SIGTERM)
+                start = time.monotonic()
+                try:
+                    with mock.patch.object(evaluation, 'OFFICIAL', official):
+                        if action == 'normal':
+                            value = evaluation.judge_candidate(root, root/'solution.v', out, result, 2, start+5)
+                            self.assertEqual(value['tool_error'], 'fixture timeout')
+                        else:
+                            expected = SystemExit if action == 'sigterm' else subprocess.TimeoutExpired
+                            with self.assertRaises(expected):
+                                evaluation.judge_candidate(root, root/'solution.v', out, result, .5, start+5)
+                            self.assertFalse(result.exists())  # No invented L0 or successful result.
+                    self.assertLess(time.monotonic()-start, 2)
+                    self.assertEqual(signal.getsignal(signal.SIGTERM), old_handler)
+                    child = int(child_path.read_text())
+                    for _ in range(100):
+                        stat = Path(f'/proc/{child}/stat')
+                        if not stat.exists() or stat.read_text().split(') ')[1].split()[0] == 'Z':
+                            break
+                        time.sleep(.01)
+                    else:
+                        self.fail('judge child survived outer cleanup')
+                    self.assertFalse(Path(scratch_path.read_text()).exists())
+                    record = json.loads((out/'supervisor.json').read_text())
+                    self.assertTrue(record['process_group_cleanup'])
+                    if action != 'normal':
+                        self.assertEqual((out/'interrupted_logs/child.log').read_text(), 'synthetic diagnostic')
+                finally:
+                    if child is None and child_path.exists():
+                        child = int(child_path.read_text())
+                    if child is not None:
+                        try:
+                            os.kill(child, signal.SIGKILL)
+                        except ProcessLookupError:
+                            pass
+
+    def test_deadline_and_existing_result_prevent_launch(self):
+        with tempfile.TemporaryDirectory() as td, mock.patch.object(
+                evaluation.subprocess, 'Popen', side_effect=AssertionError('must not spawn')):
+            root = Path(td)
+            with self.assertRaises(TimeoutError):
+                evaluation.judge_candidate(root, root/'solution', root/'out', root/'result',
+                                           1, time.monotonic()-1)
+            (root/'result').write_text('original')
+            with self.assertRaises(FileExistsError):
+                evaluation.judge_candidate(root, root/'solution', root/'out', root/'result',
+                                           1, time.monotonic()+3)
+            self.assertEqual((root/'result').read_text(), 'original')
+            self.assertFalse((root/'out').exists())
+
+
 class VivadoHealthTests(unittest.TestCase):
     def test_remote_model_endpoint_rejected_in_every_profile(self):
         for profile in ('development', 'submission'):

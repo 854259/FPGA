@@ -15,6 +15,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import signal
 import socket
 import subprocess
 import sys
@@ -274,6 +275,83 @@ def wait_backend_idle(endpoint, model, out, deadline_at):
         index += 1
         time.sleep(max(0, min(.1, deadline_at-time.monotonic())))
     raise TimeoutError('backend did not become idle; stop batch')
+
+
+def judge_candidate(task, solution, out, result_path, seconds, batch_deadline_at):
+    """Bound the unchanged Linux judge and kill its entire owned process group.
+
+    The official wrapper's subprocess timeout kills only its direct child. EDA
+    grandchildren can survive even when that wrapper exits normally with a tool
+    error, so cleanup must also run after exit code zero. No verdict is invented
+    if the outer wall deadline interrupts the official result writer.
+    """
+    if os.name != 'posix':
+        raise ValueError('Linux judge process groups required')
+    if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds <= 0:
+        raise ValueError('finite positive judge deadline required')
+    started = time.monotonic()
+    until = min(started + seconds, batch_deadline_at)
+    if not math.isfinite(until) or until <= started:
+        raise TimeoutError('batch deadline before judge launch')
+    out, result_path = Path(out), Path(result_path).resolve()
+    if result_path.exists():
+        raise FileExistsError('official judgement already exists; no replay')
+    out.mkdir(parents=True, exist_ok=False)
+    record = dict(started_at=time.time(), pid=None, returncode=None, error=None,
+                  deadline_s=seconds, process_group_cleanup=False)
+    proc = None
+    old_handler = None
+    try:
+        with (out/'process.log').open('xb') as log:
+            # This scratch contains only the external evaluator's data. Never
+            # expose it to the submission container or model process.
+            with tempfile.TemporaryDirectory(prefix='rtl-judge-', dir=os.environ.get('EDA_TMP')) as scratch:
+                env = dict(os.environ, SELFTEST_TMP=scratch)
+                if threading.current_thread() is threading.main_thread():
+                    def interrupted(signum, frame):
+                        raise SystemExit(128 + signum)
+                    old_handler = signal.signal(signal.SIGTERM, interrupted)
+                try:
+                    proc = subprocess.Popen([sys.executable, str(OFFICIAL/'selftest/judge.py'),
+                        '--task', str(Path(task).resolve()), '--solution', str(Path(solution).resolve()),
+                        '--outdir', str(out.resolve()), '--timeout', str(seconds),
+                        '--json', str(result_path)], cwd=scratch, env=env,
+                        stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+                    record['pid'] = proc.pid
+                    remaining = until - time.monotonic()
+                    if remaining <= 0:
+                        raise TimeoutError('batch deadline during judge launch')
+                    record['returncode'] = proc.wait(timeout=remaining)
+                    if record['returncode']:
+                        raise subprocess.CalledProcessError(record['returncode'], 'official judge')
+                finally:
+                    if proc is not None:
+                        try:
+                            os.killpg(proc.pid, signal.SIGKILL)
+                        except ProcessLookupError:
+                            pass
+                        proc.wait(timeout=5)
+                        record['process_group_cleanup'] = True
+                    # Preserve diagnostic text before removing our own scratch.
+                    # Large compiler caches and binaries are not evaluation inputs.
+                    saved = out/'interrupted_logs'
+                    if record['returncode'] is None:
+                        for path in Path(scratch).rglob('*'):
+                            if path.is_file() and path.suffix in ('.log', '.jou', '.json'):
+                                target = saved/path.relative_to(scratch)
+                                target.parent.mkdir(parents=True, exist_ok=True)
+                                shutil.copyfile(path, target)
+        if not result_path.is_file():
+            raise ValueError('official judge returned no result')
+        return json.loads(result_path.read_text(encoding='utf-8'))
+    except BaseException as exc:
+        record['error'] = type(exc).__name__
+        raise
+    finally:
+        if old_handler is not None:
+            signal.signal(signal.SIGTERM, old_handler)
+        record['elapsed_s'] = time.monotonic() - started
+        (out/'supervisor.json').write_text(json.dumps(record, indent=2)+'\n', encoding='utf-8')
 
 
 def module(name, path):
