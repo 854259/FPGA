@@ -1,19 +1,29 @@
 {
   "codex_cloud_migration_20260930": {
-  "updated_at": "2026-09-30T20:22:21+08:00",
-  "status": "repository_policy_prepared_cloud_login_pending",
+  "updated_at": "2026-09-30T20:27:38+08:00",
+  "status": "cloud_environment_saved_policy_published",
   "editing_location": "Codex Cloud",
   "execution_location": "current authorized AMD server only",
   "cloud_project_execution_allowed": false,
   "cloud_automatic_setup": false,
   "cloud_internet_access": "off",
+  "cloud_container_cache": false,
+  "cloud_secrets_configured": false,
   "cloud_branch": "codex/fpga-cloud-amd-execution",
   "source_branch": "fix/rtl-stream-runtime-20260929",
   "source_commit": "42233283b839ae30af451ab5319242103cbf091f",
   "server_instance": "rgapi-one-click-20835-fcadfc78",
-  "cloud_created": false,
+  "cloud_created": true,
+  "environment_id": "6abcffa0e9c08191b315724c3ad140cc",
+  "environment_name": "FPGA-edit-only-AMD-runtime",
+  "environment_url": "https://chatgpt.com/codex/cloud/settings/environment/6abcffa0e9c08191b315724c3ad140cc",
+  "pull_request": "https://github.com/854259/FPGA/pull/4",
+  "cloud_clone_and_setup_verified": false,
+  "automatic_amd_connection_verified": false,
   "amd_runtime_verified": false,
-  "model_calls": 0
+  "new_cloud_task_created": false,
+  "model_calls": 0,
+  "policy_is_os_execution_sandbox": false
 },
   "schema_version": 1,
   "dataset_local_20260912": {
