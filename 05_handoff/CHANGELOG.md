@@ -1,5 +1,21 @@
 # 变更记录
 
+## 2026-10-01 AMD 全量 156 题官方 L0–L3 完成并复盘
+
+- **新增运行结果**：整条流水线 `reference3 → smoke3 → reference156 → full156` 全部完成，`complete=true`，312 样本，零工具错误。云端 `/workspace/team/runs/fpga_owner/amd156_20261001T075230Z`。
+- **成绩**：agent 题集得分 **0.7269**（L3 105 / L1 42 / L0 9），baseline **0.6590**（L3 95 / L1 39 / L0 22）；能力分 21.81/30，增益 **1.103×**；配对改进 25、持平 121、回归 10。reference156 自检 152/156 L3、set_score 0.9782。
+- **新增分析工具**：`04_project/amd_rtl_agent/bench/analyze_official_run.py` —— 对官方评测运行做离线复盘（总览／逐题配对／trace 截断／失败阶段／跨运行对照／结论边界）。已用 reference156 与 partial、full 三轮真实数据验证。
+  - 实现要点：`trace.jsonl` 的判别字段是 `tool` 而非 `event`；官方 `graded_summary.json` 与 09-27 bench 报告 schema 不同，对照时做归一化但**不重算分数**；只从 `vivado -version` 输出中提取版本行（原字段含 locale 警告与换行，会破坏 Markdown）。
+- **新增复盘报告**：`03_analysis/11_AMD全量结果与复盘_20261001.md`。
+- **三条结论**（A 分析判断，已在报告内标注）：
+  1. 截断从 79/213（37.1%）降到 3/167（1.8%）；旧结论"截断是最大失分原因、优先做动态 token 预算"仅适用于未关闭思考的配置。
+  2. agent 全部增益来自编译鲁棒性（编译失败 9 vs 22），仿真失败反而略多（42 vs 39）；优化重点应转向功能正确性。
+  3. baseline 跨轮改善是 agent 的 3 倍以上（+0.1423 vs +0.0423），增益比由 1.325 压缩到 1.103。
+- **回归题实测归因**（核对 `stages` 字段，非推断）：编译失败 5 题、仿真失败 5 题；`Prob070` 的编译失败由输出截断导致。`Prob143`/`Prob150` 同为 onehot FSM 回归，疑似 `RTL_SKILL.md` 有误导性规则，列为待查项。
+- **环境记录**：实例无直接外网；出网必须使用 `/proc/1/environ` 中的平台出网代理（交互 shell 的 `env` 看不到）。已实测 `hf-mirror.com` 经该代理返回 200，iCoder GGUF `Content-Length` 与 HF 记录一致。
+- **证据**：`AMD-test-20260930/amd156-20261001/amd156_full.tgz`，298,085 字节，SHA-256 `37eca7ed7f59b6bf5245515dcc738bed0315443790b75c05cc0a7b5b5fb0ce85`；回归核对脚本 `verify_regressions.py`。
+- **边界**：development profile，**不是赛事方最终隔离镜像验收**；单样本非 pass@5；正式总分与增益得分未建立。本成绩记录为换模型前的回滚基线。
+
 ## 2026-10-01 最新部署状态（覆盖下方同日早期记录）
 
 - Vivado 已安装，仿真与 xczu3eg-sbva484-1-e 综合成功；固定官方三题参考验证 3/3 L3、零工具错误。验证证据已备份本机 vivado-validation-20261001.tgz。

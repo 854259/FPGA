@@ -1058,5 +1058,68 @@
     "model_pair_smoke_baseline_L3": 3,
     "model_pair_smoke_tool_errors": 0,
     "evaluation_phase": "reference156"
+  },
+  "amd_full156_completed_20261001": {
+    "status": "completed_official_l0_l3_full_pair",
+    "date": "2026-10-01",
+    "finished_utc": "2026-10-01T13:27:31+00:00",
+    "run_dir_cloud": "/workspace/team/runs/fpga_owner/amd156_20261001T075230Z",
+    "evidence_local": "E:/26qiansai/AMD-test-20260930/amd156-20261001/amd156_full.tgz",
+    "evidence_bytes": 298085,
+    "evidence_sha256": "37eca7ed7f59b6bf5245515dcc738bed0315443790b75c05cc0a7b5b5fb0ce85",
+    "retro_report": "03_analysis/11_AMD全量结果与复盘_20261001.md",
+    "retro_generated": "E:/26qiansai/AMD-test-20260930/amd156-20261001/final-retro.md",
+    "retro_script": "04_project/amd_rtl_agent/bench/analyze_official_run.py",
+    "profile": "development",
+    "not_final_isolated_evaluation": true,
+    "samples_per_mode_per_task": 1,
+    "max_agent_repairs": 1,
+    "deadline_s": 300,
+    "backend": "llama.cpp v0.5.0-dev c13fcbf HIP",
+    "reasoning": "off",
+    "model": "Qwen3.6-27B-Q4_K_M",
+    "model_sha256": "65b753ea835627f7b511143c6ceb976525c7f21f5df8c664bc0a9c23d1c49921",
+    "code_commit": "a53e343ed9f02434050fdf86e61bae1b4a0c11a7",
+    "agent_set_score": 0.7269,
+    "baseline_set_score": 0.6590,
+    "agent_levels": {"L3": 105, "L1": 42, "L0": 9},
+    "baseline_levels": {"L3": 95, "L1": 39, "L0": 22},
+    "capability_score": 21.81,
+    "gain": 1.103,
+    "gain_formal_score": null,
+    "tool_errors": 0,
+    "paired_tasks": 156,
+    "improved_tasks": 25,
+    "regressed_tasks": 10,
+    "same_tasks": 121,
+    "stages": {
+      "reference3_L3": 3,
+      "smoke3_count": 6,
+      "smoke3_L3": 5,
+      "reference156_L3": 152,
+      "reference156_set_score": 0.9782,
+      "full156_samples": 312,
+      "full156_L3": 200
+    },
+    "failure_stages": {
+      "agent": {"compile": 9, "simulate": 42, "synth": 0},
+      "baseline": {"compile": 22, "simulate": 39, "synth": 0}
+    },
+    "truncation": {
+      "agent_calls": 167,
+      "agent_truncated": 3,
+      "baseline_calls": 156,
+      "baseline_truncated": 2,
+      "agent_truncated_tasks": ["Prob070_ece241_2013_q2", "Prob145_circuit8", "Prob147_circuit10"]
+    },
+    "key_findings": [
+      "Truncation fell from 79/213 (37.1%) on 2026-09-27 vLLM to 3/167 (1.8%) here; the old 'truncation is the dominant loss' priority only holds with thinking left on.",
+      "All of the agent's gain comes from compile robustness: compile failures 9 vs 22, while simulation failures are 42 vs 39 (agent slightly worse).",
+      "Baseline improved far more than the agent across runs (+0.1423 vs +0.0423), compressing the gain ratio from 1.325 to 1.103.",
+      "The 4 non-L3 reference tasks (082/099/141/156) reproduce identically on AMD, supporting an upstream dataset anomaly rather than a local environment fault."
+    ],
+    "regression_attribution": "5 compile failures (Prob028/070/128/130/133) and 5 simulation failures (Prob094/122/143/150/154); Prob070's compile failure is caused by output truncation.",
+    "not_extrapolable": "development profile, not the organizers' final isolated image; single sample, not pass@5; formal total score and gain threshold not established.",
+    "next_step": "recorded as rollback baseline before swapping to iCoder-27B"
   }
 }
