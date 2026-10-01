@@ -1121,5 +1121,60 @@
     "regression_attribution": "5 compile failures (Prob028/070/128/130/133) and 5 simulation failures (Prob094/122/143/150/154); Prob070's compile failure is caused by output truncation.",
     "not_extrapolable": "development profile, not the organizers' final isolated image; single sample, not pass@5; formal total score and gain threshold not established.",
     "next_step": "recorded as rollback baseline before swapping to iCoder-27B"
+  },
+  "icoder27b_comparison_20261002": {
+    "status": "completed_single_variable_model_comparison",
+    "date": "2026-10-02",
+    "finished_utc": "2026-10-01T19:13:19+00:00",
+    "conclusion": "iCoder-27B is the stronger base model but scores LOWER under this contest's rules; do not switch",
+    "run_dir_cloud": "/workspace/team/runs/fpga_owner/icoder_full156_20261001T141649Z",
+    "evidence_local": "E:/26qiansai/AMD-test-20260930/icoder-20261002/icoder_full.tgz",
+    "evidence_bytes": 236234,
+    "evidence_sha256": "d3cbab9c7fc8d49a6f595115ffe49dd7c972f2a10525f317df63f2dc29511a07",
+    "report": "03_analysis/12_iCoder对照结果与结论_20261002.md",
+    "retro_generated": "E:/26qiansai/AMD-test-20260930/icoder-20261002/icoder-final-retro.md",
+    "model": "iCoder-27B-Q4_K_M",
+    "model_repository": "mradermacher/iCoder-27B-GGUF",
+    "model_upstream": "i-Coder/iCoder-27B",
+    "model_revision": "a03de89c276bd7e1490c9abc771cfa905dfba1de",
+    "model_license": "apache-2.0",
+    "model_bytes": 16547399456,
+    "model_sha256": "078d03cb34d55b62db6f4460111cc95eaffc70f655a8cd37c4e311fa61ba8e72",
+    "single_variable": "code a53e343, dataset c498220, official judge afd135e7, skills, backend, reasoning-off, sampling and deadline all identical to the Qwen run; only the weights differ",
+    "agent_set_score": 0.7679,
+    "baseline_set_score": 0.7564,
+    "agent_levels": {"L3": 112, "L1": 39, "L0": 5},
+    "baseline_levels": {"L3": 111, "L1": 35, "L0": 10},
+    "capability_score": 23.04,
+    "gain": 1.015,
+    "tool_errors": 0,
+    "paired_tasks": 156,
+    "improved_tasks": 18,
+    "regressed_tasks": 13,
+    "failure_stages": {
+      "agent": {"compile": 5, "simulate": 39, "synth": 0},
+      "baseline": {"compile": 10, "simulate": 35, "synth": 0}
+    },
+    "truncation": {
+      "agent_calls": 161,
+      "agent_truncated": 10,
+      "baseline_calls": 156,
+      "baseline_truncated": 7,
+      "note": "worse than the Qwen run (3/167); average output 845/911 tokens vs 520/504"
+    },
+    "wall_clock_full156_hours": 4.96,
+    "qwen_wall_clock_full156_hours": 3.82,
+    "comparison_vs_qwen": {
+      "capability_delta": 1.23,
+      "gain_score_qwen": 4.29,
+      "gain_score_icoder": 0.66,
+      "combined_qwen": 26.09,
+      "combined_icoder": 23.69,
+      "qwen_lead": 2.40,
+      "note": "gain full-mark multiplier 2.5 is a placeholder; Qwen leads under 1.5, 2.5 and 5.0 alike because iCoder's gain is near 1"
+    },
+    "key_finding": "Four tasks regress under BOTH models (Prob094_gatesv, Prob143_fsm_onehot, Prob150_review2015_fsmonehot, Prob154_fsm_ps2data): the bare model reaches L3 and the skill prompt knocks it to L1/L0. This is model-independent evidence that the skill, not the model, is the bottleneck. A further 34 tasks fail to reach L3 under the agent in both models.",
+    "decision": "keep Qwen3.6-27B Q4_K_M as the contest base model; next priority is fixing the skill, one change at a time with a matched re-run",
+    "not_extrapolable": "development profile, not the organizers' final isolated image; single sample, not pass@5; gain threshold and cost baseline are placeholders"
   }
 }

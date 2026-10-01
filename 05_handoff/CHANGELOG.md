@@ -1,5 +1,18 @@
 # 变更记录
 
+## 2026-10-02 iCoder-27B 单变量对照完成，决定保留 Qwen3.6-27B
+
+- **换模型执行**：清理旧权重（释放 17.78 GiB）→ 下载 iCoder-27B Q4_K_M（16,547,399,456 字节，SHA-256 `078d03cb…a61ba8e72` 校验通过）→ 起 llama.cpp 服务 → smoke3 → full156 配对。全程未改动代码、数据、官方判定与 skill。
+- **下载踩坑记录**：实例无直接外网，出网必须用 `/proc/1/environ` 中的平台代理（交互 shell 的 `env` 看不到），已在部署脚本中沿用的同一机制。hf-mirror 在 97.3% 处断流一次（`curl: (18)`），用 `-C -` 续传 43 秒补完。
+- **chat template 风险已排除**：iCoder 模板默认输出 `<think>`，实测 `--reasoning off` 生效，6 次 smoke 与全量均无 `<think>` 残留。
+- **成绩**：iCoder agent **0.7679**（L3 112 / L1 39 / L0 5）、baseline 0.7564；能力分 23.04，**增益 1.015**。Qwen agent 0.7269、baseline 0.6590；能力分 21.81，增益 1.103。
+- **结论：不换 iCoder。** 能力分 +1.23 但增益分 −3.63，能力+增益合计 **26.09 vs 23.69**，Qwen 领先 **2.40**；墙钟 Qwen 快 29%。满分线 1.5/2.5/5.0 三档全验证，Qwen 均领先。
+- **最有价值的发现**：**4 道题在两个模型上都回归**（`Prob094_gatesv`、`Prob143_fsm_onehot`、`Prob150_review2015_fsmonehot`、`Prob154_fsm_ps2data`）—— 裸模型都能拿 L3，加 skill 后掉到 L1/L0。**这是"skill 而非模型是瓶颈"的模型无关证据**，取代此前仅有的推测。另有 34 题两个模型的 agent 都不达 L3。
+- **修正**：iCoder 输出**更长**（平均 845/911 token vs Qwen 520/504），截断率 **6.2% vs 1.8%**；早期"iCoder 输出更短"只在前 22 道简单题成立。
+- **新增报告**：`03_analysis/12_iCoder对照结果与结论_20261002.md`。证据包 `AMD-test-20260930/icoder-20261002/icoder_full.tgz`，SHA-256 `d3cbab9c7fc8d49a6f595115ffe49dd7c972f2a10525f317df63f2dc29511a07`。
+- **下一步**：优先修 skill（从 4 道模型无关回归题入手），一次只改一处并做同配置配对复跑，与本次 Qwen 全量结果比较。
+- **边界**：development profile，不是赛事方最终隔离镜像验收；单样本非 pass@5；满分线与代价基准时长为占位值。
+
 ## 2026-10-01 AMD 全量 156 题官方 L0–L3 完成并复盘
 
 - **新增运行结果**：整条流水线 `reference3 → smoke3 → reference156 → full156` 全部完成，`complete=true`，312 样本，零工具错误。云端 `/workspace/team/runs/fpga_owner/amd156_20261001T075230Z`。
