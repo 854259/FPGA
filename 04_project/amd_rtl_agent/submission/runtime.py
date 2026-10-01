@@ -85,7 +85,7 @@ def vivado_version(tool):
         with tempfile.TemporaryDirectory(prefix='rtl-version-') as td:
             result = subprocess.run([tool, '-version'], cwd=td, capture_output=True,
                                     text=True, errors='replace', timeout=5)
-        match = re.search(r'Vivado\s+v?(\d{4}\.\d+)', result.stdout)
+        match = re.search(r'Vivado\s+v?(\d{4}\.\d+)', result.stdout, re.IGNORECASE)
         return match[1] if result.returncode == 0 and match else None
     except (OSError, subprocess.SubprocessError):
         return None

@@ -27,6 +27,28 @@ runtime = load('contract_runtime', ROOT/'submission/runtime.py')
 evaluation = load('contract_eval', ROOT/'official_eval.py')
 
 
+class VivadoHealthTests(unittest.TestCase):
+    def test_health_accepts_linux_and_windows_version_banners(self):
+        cases = (
+            ('vivado v2026.1 (64-bit)\n', 0, True),
+            ('Vivado v2026.1 (64-bit)\n', 0, True),
+            ('vivado v2025.2 (64-bit)\n', 0, False),
+            ('vivado v2026.1 (64-bit)\n', 1, False),
+        )
+        for banner, returncode, expected in cases:
+            with self.subTest(banner=banner, returncode=returncode):
+                runtime.vivado_version.cache_clear()
+                with mock.patch.dict(os.environ, RTL_PROFILE='development', MODEL_NAME='test-model'), \
+                     mock.patch.object(runtime, 'models', return_value=['test-model']), \
+                     mock.patch.object(runtime, 'baseline_integrity', return_value=True), \
+                     mock.patch.object(runtime, 'vivado_tool', return_value='fake-vivado'), \
+                     mock.patch.object(runtime, 'vram_gb', return_value=None), \
+                     mock.patch.object(runtime.subprocess, 'run', return_value=mock.Mock(
+                         returncode=returncode, stdout=banner)):
+                    self.assertEqual(runtime.health()['ready'], expected)
+        runtime.vivado_version.cache_clear()
+
+
 class FakeModel(BaseHTTPRequestHandler):
     requests = []
     delay = 0
