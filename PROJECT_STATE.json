@@ -1176,5 +1176,64 @@
     "key_finding": "Four tasks regress under BOTH models (Prob094_gatesv, Prob143_fsm_onehot, Prob150_review2015_fsmonehot, Prob154_fsm_ps2data): the bare model reaches L3 and the skill prompt knocks it to L1/L0. This is model-independent evidence that the skill, not the model, is the bottleneck. A further 34 tasks fail to reach L3 under the agent in both models.",
     "decision": "keep Qwen3.6-27B Q4_K_M as the contest base model; next priority is fixing the skill, one change at a time with a matched re-run",
     "not_extrapolable": "development profile, not the organizers' final isolated image; single sample, not pass@5; gain threshold and cost baseline are placeholders"
+  },
+  "skill_simplification_20261002": {
+    "status": "validated_net_improvement",
+    "date": "2026-10-02",
+    "finished_utc": "2026-10-02T03:36:48+00:00",
+    "change": "removed skill rules 8-11 (the internal-check block); kept the rule-5 initialization clarification",
+    "skill_old_sha256": "e0eba7ae86a9844eb4fb92068a7dc14d45666e04b9cf57ba01049e1280731ba0",
+    "skill_old_bytes": 1979,
+    "skill_old_rules": 11,
+    "skill_new_sha256": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "skill_new_bytes": 1071,
+    "skill_new_rules": 7,
+    "files_changed": [
+      "04_project/amd_rtl_agent/skill/RTL_SKILL.md",
+      "04_project/amd_rtl_agent/submission/skill/RTL_SKILL.md"
+    ],
+    "rationale": [
+      "Git history: 0703982 (7 rules, 913ace16) scored 17/40 in the 2026-09-14 A/B; f00be0c (11 rules, 2c60c4bf) scored 11/40. Rules 1-7 are byte-identical between them, so the entire delta is the added rules 8-11.",
+      "Observed failure mode: 3 of the 4 model-independent regressions are omissions during enumeration (Prob143 missing a state, Prob150 missing self-loops, Prob154 missing a transition path), and the failing outputs share a long enumerated and commented style that rules 9 and 11 encourage."
+    ],
+    "run_dir_cloud": "/workspace/team/runs/fpga_owner/skillfix_full156_20261001T235258Z",
+    "evidence_local": "E:/26qiansai/AMD-test-20260930/skillfix-full-20261002/skillfix_full.tgz",
+    "evidence_bytes": 214233,
+    "evidence_sha256": "3225035cfb36e56bf677af6bd1c406ba9c3a1aa276a92a1554529160fd6a1b43",
+    "subset_evidence_sha256": "e0e652889b5ab15066a3c9f8b78e997aede56ceea72c011e7f34590110c79acb",
+    "report": "03_analysis/13_Skill精简对照结果_20261002.md",
+    "model": "Qwen3.6-27B-Q4_K_M",
+    "single_variable": "code a53e343, dataset c498220, official judge afd135e7, model, backend, reasoning-off, sampling and deadline identical to the 2026-10-01 run; only the skill text differs",
+    "new_agent_set_score": 0.7603,
+    "new_baseline_set_score": 0.6744,
+    "old_agent_set_score": 0.7269,
+    "old_baseline_set_score": 0.6590,
+    "new_levels": {"agent": {"L3": 111, "L1": 38, "L0": 7}, "baseline": {"L3": 98, "L1": 36, "L0": 22}},
+    "new_capability_score": 22.81,
+    "new_gain": 1.1274,
+    "old_capability_score": 21.81,
+    "old_gain": 1.1031,
+    "combined_old": 26.09,
+    "combined_new": 28.04,
+    "combined_delta": 1.96,
+    "in_run_pairing": {"old": {"improved": 25, "regressed": 10, "net": 15}, "new": {"improved": 27, "regressed": 7, "net": 20}},
+    "failure_structure_agent": {"old": {"L3": 105, "compile": 9, "simulate": 42}, "new": {"L3": 111, "compile": 7, "simulate": 38}},
+    "model_independent_regressions": {
+      "fixed": ["Prob094_gatesv", "Prob143_fsm_onehot"],
+      "still_regressing": ["Prob150_review2015_fsmonehot", "Prob154_fsm_ps2data"]
+    },
+    "new_regressions": ["Prob082_lfsr32", "Prob083_mt2015_q4b", "Prob086_lfsr5", "Prob108_rule90", "Prob144_conwaylife"],
+    "old_regressions_cleared": 8,
+    "subset_to_full_consistency": "every task that moved in the 29-task subset moved the same way in the full run",
+    "noise_floor": {
+      "baseline_flipped_tasks": 5,
+      "baseline_flip_rate": 0.032,
+      "flipped": ["Prob086_lfsr5", "Prob100_fsm3comb", "Prob103_circuit2", "Prob133_2014_q3fsm", "Prob140_fsm_hdlc"],
+      "cause": "A judgement: with -t 8 the floating-point reduction order is not fixed, so temperature 0 still shows roughly a 3 percent per-task flip rate",
+      "consequence": "single-task deltas are not conclusions; multi-seed or 5-sample protocols are needed for strict attribution"
+    },
+    "conclusion": "Keep the 7-rule skill. Removing rules 8-11 improves capability, gain and pairing alike, and confirms the 2026-09-14 A/B finding on the current pipeline. Skill text should stay short; any future addition must be justified before it is added.",
+    "next_targets": ["Prob150_review2015_fsmonehot (missing next-state self-loops)", "Prob154_fsm_ps2data (datapath not covering a transition that bypasses an intermediate state)"],
+    "not_extrapolable": "development profile, not the organizers' final isolated image; single sample, not pass@5; gain threshold and cost baseline are placeholders"
   }
 }
