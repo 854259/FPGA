@@ -1,5 +1,88 @@
 {
   "schema_version": 1,
+  "documentation_and_contract_pilot_20261002": {
+    "date": "2026-10-02",
+    "status": "documentation_correction_and_two_task_pilot_report",
+    "evidence_origin": "Repository documents and sanitized summary supplied by the existing AMD task; cloud did not execute or independently recheck AMD runtime results",
+    "audit_entry": "03_analysis/rtllm_contract_audit_20261002/README.md",
+    "documentation_receipt_correction_commit": "29e01ca7aca8e8332351de5ef5c79fc026cc3a64",
+    "comparison_rounds": {
+      "model_only_11_rules": {
+        "qwen_run": "amd156_20261001T075230Z",
+        "agent": 0.7269,
+        "baseline": 0.659,
+        "gain": 1.1031,
+        "combined_placeholder": 26.09,
+        "source": "03_analysis/12_iCoder对照结果与结论_20261002.md"
+      },
+      "skill_7_rules_independent": {
+        "qwen_run": "skillfix_full156_20261001T235258Z",
+        "agent": 0.7603,
+        "baseline": 0.6744,
+        "gain": 1.1274,
+        "combined_placeholder": 28.04,
+        "source": "03_analysis/13_Skill精简对照结果_20261002.md"
+      },
+      "no_cross_round_pairing": true,
+      "full_mark_multiplier_2_5_is_placeholder": true
+    },
+    "historical_rtllm": {
+      "run_id": "rtllm_pair_20261002T074340Z",
+      "denominator": 44,
+      "agent": 0.5181818181818182,
+      "baseline": 0.5590909090909091,
+      "improved": 2,
+      "regressed": 5,
+      "same": 37,
+      "contract_issues": 12,
+      "specification_ambiguities": 11,
+      "limited_coverage": 21,
+      "reliable_generalisation_claim": false
+    },
+    "statistical_boundary": "Shared defective fixtures need not affect implementations symmetrically. Old VerilogEval 5/156 changes are an observation, not an RTLLM variance model or evidence for 1.25 sigma / within noise.",
+    "pilot": {
+      "run_id": "rtllm_contract_pilot_20261002T113602Z",
+      "status": "complete_as_reported_by_execution_task",
+      "finished_utc": "2026-10-02T11:39:18.525375+00:00",
+      "fixed_denominator": 2,
+      "candidates": 4,
+      "tool_errors": 0,
+      "controls_passed": 5,
+      "source": "03_analysis/rtllm_contract_audit_20261002/pilot_summary_projection.json",
+      "source_is_sanitized_projection": true,
+      "cloud_independently_reran": false,
+      "results": {
+        "adder_bcd": {
+          "agent": "L1 -> L3",
+          "baseline": "L3 -> L3"
+        },
+        "instr_reg": {
+          "agent": "L3 -> L3",
+          "baseline": "L3 -> L3"
+        }
+      },
+      "remaining": {
+        "specification_ambiguity": 11,
+        "not_repaired_or_coverage_validated": 31
+      },
+      "no_new_44_task_aggregate": true,
+      "original_frozen_manifest_benefit_stays_pending": true
+    },
+    "next_batch": {
+      "tasks": [
+        "freq_div",
+        "up_down_counter"
+      ],
+      "status": "proposed_not_started"
+    },
+    "boundaries": {
+      "cloud_edit_only": true,
+      "no_code_model_or_test_change": true,
+      "no_experiment_branch_merge": true,
+      "amd_runtime_owned_by_existing_task": true
+    },
+    "rollback": "Revert documentation commits; for the reported pilot, discard only its isolated directory and retain original artifacts."
+  },
   "dataset_local_20260912": {
     "commit": "c498220d0a52248f8e3fdffe279075215bde2da6",
     "complete_triples": 156,
@@ -1229,8 +1312,8 @@
       "baseline_flipped_tasks": 5,
       "baseline_flip_rate": 0.032,
       "flipped": ["Prob086_lfsr5", "Prob100_fsm3comb", "Prob103_circuit2", "Prob133_2014_q3fsm", "Prob140_fsm_hdlc"],
-      "cause": "A judgement: with -t 8 the floating-point reduction order is not fixed, so temperature 0 still shows roughly a 3 percent per-task flip rate",
-      "consequence": "single-task deltas are not conclusions; multi-seed or 5-sample protocols are needed for strict attribution"
+      "cause": "Unverified hypothesis: multithreaded floating-point reduction may contribute. The observed 5/156 changes do not estimate a stable flip probability or an RTLLM noise model",
+      "consequence": "The retained baseline_flip_rate=0.032 is a historical descriptive fraction, not a statistical noise floor; strict attribution requires a predefined repeated-run protocol and analysis"
     },
     "conclusion": "Keep the 7-rule skill. Removing rules 8-11 improves capability, gain and pairing alike, and confirms the 2026-09-14 A/B finding on the current pipeline. Skill text should stay short; any future addition must be justified before it is added.",
     "next_targets": ["Prob150_review2015_fsmonehot (missing next-state self-loops)", "Prob154_fsm_ps2data (datapath not covering a transition that bypasses an intermediate state)"],
@@ -1280,7 +1363,7 @@
     "not_extrapolable": "package structure and self-checks are validated; this is not an official-image acceptance run"
   },
   "generalisation_test_rtllm_20261002": {
-    "status": "task_set_built_and_reference_checked",
+    "status": "historical_initial_reference_check_superseded_by_44_task_audit_and_pilot",
     "evidence_class": "S2",
     "why": "The organisers' evaluation set is unpublished and only partly drawn from public benchmarks, while every tuning decision so far was made on the 156 public VerilogEval tasks. If the hidden set emphasises different circuit families, that tuning may not transfer. This is the first independent check.",
     "source": {
@@ -1313,10 +1396,10 @@
       "excluded_meaning": "A analysis: these are pipeline, fixed-point and asynchronous-FIFO designs whose generated testbench does not hold. They need repair or removal before the set is used, and the denominator is therefore 43 rather than 49.",
       "path": "bench/rtllm_refcheck_20261002/graded_summary.json"
     },
-    "paired_run": "not_run",
-    "decision_rule": "If the gain transfers (clearly above 1.0), the skill generalises and further tuning is worthwhile. If it collapses toward 1.0, the skill is overfitted to VerilogEval and tuning must stop until it generalises. If the RTLLM baseline is near zero the gain is undefined, and only absolute scores should be compared.",
+    "paired_run": "44-task historical run completed; see documentation_and_contract_pilot_20261002 and audit evidence; this object retains the earlier 43-task reference check",
+    "decision_rule": "Withdrawn: gain above or near 1 alone cannot establish generalisation or overfitting. Repair and validate contracts first, preserve historical results, and use a predefined matched protocol; do not splice pilot scores into the old aggregate.",
     "cited_in": "HANDOFF_20261002.md section 5 and 8",
-    "not_extrapolable": "the task set and its reference self-check are validated; no model has been run on it yet"
+    "not_extrapolable": "Reference self-check and controls do not prove prompt contracts. The later 44-task scores are historical fixture observations; two-task pilot results do not validate the other 42 tasks."
   },
   "agent_functional_feedback_analysis_20261002": {
     "evidence_class": "S2",

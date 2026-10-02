@@ -1,0 +1,189 @@
+{
+  "evidence_type": "sanitized_summary_projection_not_verbatim_original_json",
+  "provenance": "Provided by the existing AMD execution task through the parent task; cloud editor did not run or independently inspect the server experiment.",
+  "run_id": "rtllm_contract_pilot_20261002T113602Z",
+  "manifest_projection": {
+    "fixed_denominator": 2,
+    "frozen_before_scoring": true,
+    "selected": [
+      "adder_bcd",
+      "instr_reg"
+    ],
+    "no_llm": true,
+    "no_prompt_change": true,
+    "immutable_file_count": 1880,
+    "original_manifest_sha256": "d09c74d9f193a7561cf0f0b683cb69da26b64472b22a13975e138027ca28af76",
+    "prepared_testbench_sha256": {
+      "adder_bcd": "b103d5d63806bddac0c316463d95762ebd82b0cc5fd28c47d1df95c7c9c67d84",
+      "instr_reg": "412e3e0c2c005918c84adaad5049c4800c27808ee12cdd22a2d48a716b035b7e"
+    },
+    "exclusions": {
+      "specification_ambiguity": 11,
+      "not_repaired_in_this_pilot": 31
+    },
+    "scope": "two-task pilot; not an aggregate 44-task score",
+    "rollback": "discard isolated pilot directory; original artifacts and shared code unchanged",
+    "demonstrated_benefit_at_freeze": "pending",
+    "chronology_note": "The frozen original manifest retains demonstrated_benefit=pending. Terminal results are recorded separately in summary.json; the frozen file is not rewritten."
+  },
+  "summary_projection": {
+    "complete": true,
+    "fixed_denominator": 2,
+    "candidate_count": 4,
+    "finished_utc": "2026-10-02T11:39:18.525375+00:00",
+    "original_and_prepared_hashes_reverified_by_driver": true,
+    "no_model_generation": true,
+    "rows": [
+      {
+        "task": "adder_bcd",
+        "side": "agent",
+        "old_level": 1,
+        "new_level": 3,
+        "mismatches": 0,
+        "samples": 200,
+        "tool_error": null
+      },
+      {
+        "task": "adder_bcd",
+        "side": "baseline",
+        "old_level": 3,
+        "new_level": 3,
+        "mismatches": 0,
+        "samples": 200,
+        "tool_error": null
+      },
+      {
+        "task": "instr_reg",
+        "side": "agent",
+        "old_level": 3,
+        "new_level": 3,
+        "mismatches": 0,
+        "samples": 200,
+        "tool_error": null
+      },
+      {
+        "task": "instr_reg",
+        "side": "baseline",
+        "old_level": 3,
+        "new_level": 3,
+        "mismatches": 0,
+        "samples": 200,
+        "tool_error": null
+      }
+    ],
+    "controls": [
+      {
+        "task": "adder_bcd",
+        "mode": "positive",
+        "stages": [
+          0,
+          0,
+          0
+        ],
+        "pair": [
+          0,
+          200
+        ],
+        "passed": true
+      },
+      {
+        "task": "adder_bcd",
+        "mode": "negative",
+        "stages": [
+          0,
+          0,
+          0
+        ],
+        "pair": [
+          200,
+          200
+        ],
+        "passed": true
+      },
+      {
+        "task": "instr_reg",
+        "mode": "positive",
+        "stages": [
+          0,
+          0,
+          0
+        ],
+        "pair": [
+          0,
+          200
+        ],
+        "passed": true
+      },
+      {
+        "task": "instr_reg",
+        "mode": "negative",
+        "stages": [
+          0,
+          0,
+          0
+        ],
+        "pair": [
+          200,
+          200
+        ],
+        "passed": true
+      },
+      {
+        "task": "instr_reg",
+        "mode": "stuck_zero",
+        "stages": [
+          0,
+          0,
+          0
+        ],
+        "pair": [
+          516,
+          200
+        ],
+        "passed": true
+      }
+    ],
+    "control_pair_definition": "[output mismatch count, sample count]; multiple outputs may mismatch at one sample, so 516/200 is valid and is not a probability."
+  },
+  "status_projection": {
+    "complete": true,
+    "phase": "complete",
+    "active_pid": null,
+    "selected": [
+      "adder_bcd",
+      "instr_reg"
+    ],
+    "updated_utc": "2026-10-02T11:39:18.525388+00:00",
+    "finished_utc": "2026-10-02T11:39:18.525375+00:00"
+  },
+  "supervisor_report": {
+    "exited": true,
+    "resource_lock_empty_at_finish": true
+  },
+  "verification_scope": [
+    "adder_bcd: exhaustive 10x10x2 legal BCD inputs; independent decimal arithmetic oracle",
+    "instr_reg: active-low reset, two fetch modes, holding and a second reset; independent expected registers; stuck-zero negative control",
+    "Original differential checks, 200-sample acceptance and watchdog retained",
+    "No prompt/candidate/model/skill/baseline/official evaluator changes; no new model calls, as reported by the execution task"
+  ],
+  "limitations": [
+    "Cloud has only this sanitized projection, not the complete raw manifest/status/summary/supervisor and per-task result.json files",
+    "No illegal BCD input behavior defined or accepted",
+    "instr_reg checks clock-edge behavior without imposing extra inter-edge asynchronous reset semantics",
+    "11 ambiguous tasks remain separate; 31 other tasks were not repaired or coverage-validated in this pilot",
+    "Do not combine these two results with old fixture scores as a new 44-task aggregate"
+  ],
+  "next_batch_proposal": {
+    "status": "suggested_not_started",
+    "selected": [
+      "freq_div",
+      "up_down_counter"
+    ],
+    "fixed_denominator": 2,
+    "candidate_count": 4,
+    "reasons": [
+      "freq_div: 10 ns period for specified 100 MHz input; check both edges, output period/ratio and reset against independent expectations",
+      "up_down_counter: independent synchronous-reset counter oracle; reset between rising edges, check pre-edge hold, next-edge reset and wraparound; asynchronous reference is not the oracle for this property"
+    ]
+  }
+}
