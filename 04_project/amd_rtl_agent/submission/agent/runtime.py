@@ -22,7 +22,36 @@ from urllib.parse import urlparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 ROOT = Path(__file__).resolve().parent
+# In the packaged layout the agent lives at <pkg>/agent/ while the official baseline
+# and our integrity manifest sit at the package root; the development tree keeps
+# everything beside this file. Detect the layout instead of assuming one.
+PKG = ROOT.parent if (ROOT.parent / 'baseline.py').is_file() else ROOT
+# `worker` imports the untouched official baseline to reuse its extract() helper.
+# In the packaged layout that module sits at the package root rather than beside
+# this file, so make the package root importable in both layouts.
+if str(PKG) not in sys.path:
+    sys.path.insert(0, str(PKG))
 LOCK = threading.Lock()
+
+
+def skill_texts():
+    """Locate the skill pack in either the development or the packaged layout.
+
+    The submission package keeps the agent at <pkg>/agent/ and skills at
+    <pkg>/skill/<name>/SKILL.md, while the development tree keeps them flat
+    beside this file. Both layouts are resolved so the packaged tree can be
+    tested without editing paths.
+    """
+    pairs = (
+        (ROOT / 'skill/rtl-generation/SKILL.md', ROOT / 'skill/rtl-feedback-repair/SKILL.md'),
+        (ROOT.parent / 'skill/rtl-generation/SKILL.md', ROOT.parent / 'skill/rtl-feedback-repair/SKILL.md'),
+        (ROOT / 'skill/RTL_SKILL.md', ROOT / 'skill/RTL_REPAIR_SKILL.md'),
+        (ROOT.parent / 'skill/RTL_SKILL.md', ROOT.parent / 'skill/RTL_REPAIR_SKILL.md'),
+    )
+    for generation, repair in pairs:
+        if generation.is_file() and repair.is_file():
+            return generation.read_text(encoding='utf-8'), repair.read_text(encoding='utf-8')
+    raise FileNotFoundError('skill pack not found relative to ' + str(ROOT))
 
 
 def write(path, text):
@@ -47,8 +76,8 @@ def endpoint():
 
 
 def baseline_integrity():
-    lock = json.loads((ROOT / 'upstream.json').read_text(encoding='utf-8'))
-    return all(hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == digest
+    lock = json.loads((PKG / 'upstream.json').read_text(encoding='utf-8'))
+    return all(hashlib.sha256((PKG / name).read_bytes()).hexdigest() == digest
                for name, digest in lock['files'].items())
 
 
@@ -153,7 +182,7 @@ def run_job(mode, task, out, seconds):
             write(inp / 'interface.txt', iface.read_text(encoding='utf-8'))
         env = dict(os.environ, PYTHONUTF8='1', TRACK='rtl')
         if mode == 'baseline':
-            command = [sys.executable, str(ROOT / 'baseline.py'), str(inp), str(out), 'rtl']
+            command = [sys.executable, str(PKG / 'baseline.py'), str(inp), str(out), 'rtl']
         else:
             command = [sys.executable, str(ROOT / 'runtime.py'), 'worker', str(inp), str(out)]
         flags = {'start_new_session': True} if os.name != 'nt' else {}
@@ -187,8 +216,7 @@ def worker(task, out):
     iface = Path(task) / 'interface.txt'
     if iface.is_file() and iface.read_text(encoding='utf-8').strip():
         prompt += '\n\nInterface:\n' + iface.read_text(encoding='utf-8')
-    skill = (ROOT / 'skill/RTL_SKILL.md').read_text(encoding='utf-8')
-    repair_skill = (ROOT / 'skill/RTL_REPAIR_SKILL.md').read_text(encoding='utf-8')
+    skill, repair_skill = skill_texts()
     repairs = int(os.environ.get('RTL_REPAIRS', '1'))
     if not 0 <= repairs <= 2:
         raise ValueError('RTL_REPAIRS must be 0..2')

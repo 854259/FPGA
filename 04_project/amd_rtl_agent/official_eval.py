@@ -112,7 +112,7 @@ def main():
     def save():
         (out/'experiment.json').write_text(json.dumps(meta, indent=2)+'\n', encoding='utf-8')
     save()
-    runtime = module('submission_runtime', ROOT/'submission/runtime.py')
+    runtime = module('submission_runtime', ROOT/'submission/agent/runtime.py')
     # No service calls for --reference. For actual runs require one explicitly named shared model.
     if not args.reference and (not os.environ.get('MODEL_NAME') or os.environ['MODEL_NAME'] not in runtime.models()):
         raise ValueError('MODEL_NAME must match the shared model service')

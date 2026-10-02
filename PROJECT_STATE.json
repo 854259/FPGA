@@ -1235,5 +1235,48 @@
     "conclusion": "Keep the 7-rule skill. Removing rules 8-11 improves capability, gain and pairing alike, and confirms the 2026-09-14 A/B finding on the current pipeline. Skill text should stay short; any future addition must be justified before it is added.",
     "next_targets": ["Prob150_review2015_fsmonehot (missing next-state self-loops)", "Prob154_fsm_ps2data (datapath not covering a transition that bypasses an intermediate state)"],
     "not_extrapolable": "development profile, not the organizers' final isolated image; single sample, not pass@5; gain threshold and cost baseline are placeholders"
+  },
+  "submission_package_20261002": {
+    "status": "restructured_and_validated",
+    "date": "2026-10-02",
+    "reason": "Scoring rule 2.4 requires MODEL.md to declare model source, version, quantization and context, and failure loses the entire 40-point gain item. MODEL.md described the historical Qwen2.5-Coder-7B with 8192 context, 2048 output tokens and temperature 0.2, none of which matched the running configuration.",
+    "model_md_fix": {
+      "file": "04_project/amd_rtl_agent/model/MODEL.md",
+      "declares": "ggml-org/Qwen3.6-27B-GGUF revision 8a7ee08e8b9bfb857107ecc25a5599d2f38b76f8, Q4_K_M, 19,095,766,304 bytes, sha256 65b753ea835627f7b511143c6ceb976525c7f21f5df8c664bc0a9c23d1c49921, Apache-2.0, not finetuned",
+      "corrected_runtime_facts": {"context": 16384, "max_output_tokens": 8192, "temperature": 0},
+      "measured_vram": "about 19.0 GiB (20,376,678,400 bytes) sampled 2026-10-02 with rocm-smi on the gfx1100 development card; explicitly labelled as not a final-card acceptance measurement",
+      "historical_assets": "the 7B CPU weights and image are retained but marked as historical, not the submission model"
+    },
+    "package_layout": {
+      "root": "04_project/amd_rtl_agent/submission/ now equals the official <team_name>-agent/ layout",
+      "added": ["manifest.json", "skill/README.md", "serve/llama.sh", "serve/README.md", "model/MODEL.md", "model/LICENSE-Qwen2.5-Coder", "Dockerfile", "REPORT.md"],
+      "moved": "runtime.py to agent/runtime.py; skills to skill/rtl-generation/SKILL.md and skill/rtl-feedback-repair/SKILL.md",
+      "official_5_1_items_present": 12
+    },
+    "code_change": {
+      "file": "04_project/amd_rtl_agent/submission/agent/runtime.py",
+      "change": "introduced PKG (package root) detection alongside ROOT, resolved upstream.json and baseline.py against PKG, added PKG to sys.path so the worker can import the official baseline, and made skill_texts() try both the new and the old skill locations",
+      "bug_found_and_fixed": "moving runtime.py into agent/ broke `import baseline` because sys.path[0] became agent/ instead of the package root; the first validation run produced agent 0.0000 (three L0 compile failures) with ModuleNotFoundError in worker.log, which is why the package is validated by running it rather than by inspection"
+    },
+    "validation": {
+      "reference3": {"command": "official_eval.py --reference", "result": "3/3 L3, set_score 1.0000, tool_errors 0, complete true"},
+      "smoke3": {"result": "agent 3/3 L3 set_score 1.0000, baseline 3/3 L3, tool_errors 0, complete true"},
+      "note": "the agent also moved ex02_detect_1101 from L1 to L3, the same fixture that previously regressed under the 11-rule skill",
+      "skill_hashes_on_instance": {
+        "rtl-generation": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+        "rtl-feedback-repair": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+      }
+    },
+    "instance_notes": {
+      "old_layout_backup": "/workspace/team/tasks/autodl-rtl-kit/project/submission.old-layout",
+      "official_eval_path_patched": "the kit's official_eval.py now loads submission/agent/runtime.py",
+      "ssh": "the instance dropped the SSH transport twice during this work; nohup'd work survived and was recovered on reconnect"
+    },
+    "still_open": [
+      "Dockerfile is the historical development one and has not been rebuilt against an official base image",
+      "model/ still carries LICENSE-Qwen2.5-Coder for the historical weights; the Qwen3.6-27B license file is not added",
+      "the final card VRAM measurement and the official time budget and gain threshold remain unpublished"
+    ],
+    "not_extrapolable": "package structure and self-checks are validated; this is not an official-image acceptance run"
   }
 }

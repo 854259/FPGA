@@ -27,9 +27,17 @@ driver supervise both modes. Use a new output directory per sample.
 Python equivalents for local integration checks:
 
 ```bash
-python3 runtime.py run TASK_DIR NEW_OUT_DIR
-python3 runtime.py baseline TASK_DIR NEW_OUT_DIR
+python3 agent/runtime.py run TASK_DIR NEW_OUT_DIR
+python3 agent/runtime.py baseline TASK_DIR NEW_OUT_DIR
 ```
+
+This directory follows the official package layout, so it can be shipped as
+`<team_name>-agent/` unchanged: `agent/` holds the agent source, `skill/<name>/`
+the skill pack, `serve/` the inference service, and `baseline.py`, `run.sh`,
+`run_baseline.sh`, `manifest.json`, `Dockerfile`, `model/MODEL.md`, `REPORT.md`
+sit at the package root. `agent/runtime.py` resolves `baseline.py`, `upstream.json`
+and the skill pack relative to this root, and also still works when everything
+lives beside the script (the development tree).
 
 The latter calls the unchanged official baseline in a supervised subprocess.
 The agent reads only staged prompt/interface text. It generates once, checks

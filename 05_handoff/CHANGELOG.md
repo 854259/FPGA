@@ -1,5 +1,23 @@
 # 变更记录
 
+## 2026-10-02 提交包结构与 MODEL.md 修正（保护 40 分项）
+
+- **触发**：核对评分细则发现 **2.4**（`MODEL.md` 声明模型来源/版本/量化/上下文）未满足时**增益项 40 分不得分**；而原 `MODEL.md` 描述的是历史上的 Qwen2.5-Coder-7B，上下文 8192、输出上限 2048、温度 0.2，**与实际运行的 27B 配置全部不符**。（此前我说过 2.6 是"20 分悬崖"，核实后 2.6 不会触发——我们本来就有源码和技能包；真正的风险是 2.4 的 40 分。）
+- **`MODEL.md` 重写**：声明 `ggml-org/Qwen3.6-27B-GGUF` @ `8a7ee08e`、Q4_K_M、19,095,766,304 字节、SHA-256 `65b753ea…`、Apache-2.0、未微调；运行事实改为上下文 **16384**、输出上限 **8192**、温度 **0**；实测显存 **约 19.0 GiB**（`20,376,678,400` 字节，2026-10-02 `rocm-smi` 采样），并**明确标注这是 gfx1100 开发卡、不是决赛卡验收值**；7B 资产降级为"历史资产，不是提交模型"。
+- **提交包重排**：`submission/` 现在**就是**官方 `<team_name>-agent/` 布局，12 项 §5.1 条目齐备。
+  - 新增：`manifest.json`、`skill/README.md`、`serve/llama.sh`、`serve/README.md`、`model/MODEL.md`、`Dockerfile`、`REPORT.md`
+  - 移动：`runtime.py` → `agent/runtime.py`；skill → `skill/rtl-generation/SKILL.md`、`skill/rtl-feedback-repair/SKILL.md`
+- **代码改动**（`agent/runtime.py`）：引入 `PKG`（包根）探测，`upstream.json` 与 `baseline.py` 按 `PKG` 解析，把 `PKG` 加入 `sys.path`，`skill_texts()` 同时兼容新旧两处 skill 位置。
+- **改出来的 bug 及修复**：把 `runtime.py` 移进 `agent/` 后 **`import baseline` 失效**（`sys.path[0]` 从包根变成了 `agent/`）。首次验证 agent 得 **0.0000（3 题全 L0）**，`worker.log` 里是 `ModuleNotFoundError: No module named 'baseline'`。修复后重测通过。**教训：包结构必须靠实跑来验证，不能靠看。**
+- **验证结果**：
+  - `reference3`：3/3 L3，set_score 1.0000，零工具错误，`complete=true`
+  - `smoke3`（端到端，走模型）：**agent 3/3 L3、baseline 3/3 L3**，零工具错误
+  - 额外佐证：agent 在 `ex02_detect_1101` 上由 L1 升到 L3——正是当初"加 skill 反而更差"的那道题
+  - 实例上两份 skill 哈希与本地一致（`f4c4c8e2…` / `aee81f18…`）
+- **实例侧**：旧布局备份在 `submission.old-layout/`；kit 的 `official_eval.py` 已改为加载 `submission/agent/runtime.py`。本次 SSH 传输层两次瞬断，`nohup` 任务均存活并已恢复。
+- **仍未完成**：`Dockerfile` 仍是历史开发版、未按官方基础镜像重建；`model/` 里仍是历史 7B 的许可证文件；决赛卡显存实测、官方时间预算与增益阈值仍待公布。
+- 边界：以上验证的是包结构与自检，**不是官方镜像验收**。
+
 ## 2026-10-02 Skill 精简（11 规则 → 7 规则）验证为净改善
 
 - **改动**：`RTL_SKILL.md` 删除规则 8–11（"生成前在内部检查"整段），保留规则 5 的初始化修正。1979 B / 11 条 → **1071 B / 7 条**，`e0eba7ae…` → **`f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01`**。

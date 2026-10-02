@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "track": "rtl",
+  "model": {
+    "name": "ggml-org/Qwen3.6-27B-GGUF",
+    "source": "https://huggingface.co/ggml-org/Qwen3.6-27B-GGUF",
+    "revision": "8a7ee08e8b9bfb857107ecc25a5599d2f38b76f8",
+    "quantization": "Q4_K_M",
+    "measured_vram_gb": 18.98,
+    "finetuned": false,
+    "finetune_weights_url": null
+  },
+  "context": {
+    "max_model_len": 16384,
+    "max_output_tokens": 8192,
+    "rope_scaling": null
+  },
+  "serving": {
+    "backend": "llama.cpp",
+    "version": "0.5.0-dev c13fcbf (HIP, gfx1100)",
+    "start_command": "./serve/llama.sh",
+    "port": 8000
+  },
+  "endpoints": {
+    "solve": "./run.sh",
+    "baseline": "./run_baseline.sh",
+    "http_port": 7860
+  },
+  "agent": {
+    "max_rounds": 2,
+    "tools": [
+      "xvlog_lint"
+    ],
+    "skills": [
+      "rtl-generation",
+      "rtl-feedback-repair"
+    ]
+  }
+}
