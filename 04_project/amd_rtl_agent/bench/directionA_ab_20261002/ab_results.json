@@ -1,0 +1,114 @@
+[
+  {
+    "variant": "X_no_hint",
+    "task": "adder_16bit",
+    "rc": 0,
+    "elab_rounds": [
+      1,
+      1
+    ],
+    "llm_calls": 2,
+    "final_elab_ok": false,
+    "elapsed_s": 30.4
+  },
+  {
+    "variant": "X_no_hint",
+    "task": "adder_32bit",
+    "rc": 0,
+    "elab_rounds": [
+      1,
+      1
+    ],
+    "llm_calls": 2,
+    "final_elab_ok": false,
+    "elapsed_s": 267.7
+  },
+  {
+    "variant": "X_no_hint",
+    "task": "barrel_shifter",
+    "rc": 0,
+    "elab_rounds": [
+      1,
+      0
+    ],
+    "llm_calls": 2,
+    "final_elab_ok": true,
+    "elapsed_s": 28.7
+  },
+  {
+    "variant": "X_no_hint",
+    "task": "div_16bit",
+    "rc": 0,
+    "elab_rounds": [
+      1,
+      0
+    ],
+    "llm_calls": 2,
+    "final_elab_ok": true,
+    "elapsed_s": 61.7
+  },
+  {
+    "variant": "X_no_hint",
+    "task": "multi_pipe_8bit",
+    "rc": 0,
+    "elab_rounds": [],
+    "llm_calls": 2,
+    "final_elab_ok": false,
+    "elapsed_s": 114.5
+  },
+  {
+    "variant": "Y_hint",
+    "task": "adder_16bit",
+    "rc": 0,
+    "elab_rounds": [
+      1
+    ],
+    "llm_calls": 2,
+    "final_elab_ok": false,
+    "elapsed_s": 26.9
+  },
+  {
+    "variant": "Y_hint",
+    "task": "adder_32bit",
+    "rc": 0,
+    "elab_rounds": [
+      1,
+      1
+    ],
+    "llm_calls": 2,
+    "final_elab_ok": false,
+    "elapsed_s": 110.5
+  },
+  {
+    "variant": "Y_hint",
+    "task": "barrel_shifter",
+    "rc": 0,
+    "elab_rounds": [
+      1,
+      0
+    ],
+    "llm_calls": 2,
+    "final_elab_ok": true,
+    "elapsed_s": 28.0
+  },
+  {
+    "variant": "Y_hint",
+    "task": "div_16bit",
+    "rc": 0,
+    "elab_rounds": [
+      1
+    ],
+    "llm_calls": 2,
+    "final_elab_ok": false,
+    "elapsed_s": 300.1
+  },
+  {
+    "variant": "Y_hint",
+    "task": "multi_pipe_8bit",
+    "rc": 0,
+    "elab_rounds": [],
+    "llm_calls": 2,
+    "final_elab_ok": false,
+    "elapsed_s": 112.9
+  }
+]
