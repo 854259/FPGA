@@ -1,0 +1,263 @@
+{
+  "evidence_type": "sanitized_summary_projection_not_verbatim_original_files",
+  "provenance": "Terminal report supplied by the existing AMD execution task via the parent task. The cloud editor neither executed nor independently read server artifacts.",
+  "source_artifact_names": [
+    "summary.json",
+    "failure_evidence.json",
+    "manifest.json"
+  ],
+  "run_id": "rtllm_contract_pilot3_v3_20261002T121353Z",
+  "finished_utc": "2026-10-02T12:17:21.064581+00:00",
+  "complete": true,
+  "fixed_denominator": 4,
+  "candidate_count": 8,
+  "controls_passed": 10,
+  "controls_total": 10,
+  "reported_frozen_manifest_sha256": "af0f039807ea7a26e3379bc4d6f6b7014492baac8334a5e97a7443641eb500f9",
+  "rows": [
+    {
+      "task": "accu",
+      "side": "agent",
+      "old_level": 1,
+      "new_level": 1,
+      "mismatches": 31,
+      "samples": 200,
+      "tool_error": null
+    },
+    {
+      "task": "accu",
+      "side": "baseline",
+      "old_level": 1,
+      "new_level": 3,
+      "mismatches": 0,
+      "samples": 200,
+      "tool_error": null
+    },
+    {
+      "task": "fsm",
+      "side": "agent",
+      "old_level": 1,
+      "new_level": 1,
+      "mismatches": 55,
+      "samples": 200,
+      "tool_error": null
+    },
+    {
+      "task": "fsm",
+      "side": "baseline",
+      "old_level": 0,
+      "new_level": 0,
+      "mismatches": null,
+      "samples": null,
+      "tool_error": null,
+      "candidate_failure": "compile/elaboration failed: invalid combination of procedural drivers for MATCH; not an infrastructure error"
+    },
+    {
+      "task": "serial2parallel",
+      "side": "agent",
+      "old_level": 1,
+      "new_level": 1,
+      "mismatches": 49,
+      "samples": 200,
+      "tool_error": null
+    },
+    {
+      "task": "serial2parallel",
+      "side": "baseline",
+      "old_level": 1,
+      "new_level": 1,
+      "mismatches": 49,
+      "samples": 200,
+      "tool_error": null
+    },
+    {
+      "task": "synchronizer",
+      "side": "agent",
+      "old_level": 3,
+      "new_level": 3,
+      "mismatches": 0,
+      "samples": 400,
+      "tool_error": null
+    },
+    {
+      "task": "synchronizer",
+      "side": "baseline",
+      "old_level": 3,
+      "new_level": 3,
+      "mismatches": 0,
+      "samples": 400,
+      "tool_error": null
+    }
+  ],
+  "failure_evidence_projection": {
+    "accu_agent": {
+      "cause": "Undeclared data_out_reg_next becomes an implicit one-bit net, truncating the 10-bit accumulated sum; not simply omission of the fourth input.",
+      "first_mismatch_sample": 6,
+      "expected_four_255_sum": 1020,
+      "source_derived_truncated_output": 0,
+      "derived_output_is_not_waveform_capture": true
+    },
+    "fsm_agent": {
+      "cause": "MATCH assigned only on a rising clock edge misses the prompt's Mealy input response.",
+      "first_mismatch_sample": 7
+    },
+    "fsm_baseline": {
+      "cause": "Both a combinational block and always_ff drive MATCH.",
+      "reported_diagnostic": "[VRFC 10-3818] ... invalid combination of procedural drivers",
+      "classification": "candidate error, not infrastructure"
+    },
+    "serial2parallel_both": {
+      "cause": "dout_valid asserted at the eighth valid input while dout_parallel_reg <= shift_reg captures the old seven-bit data; cleared on the following cycle.",
+      "first_mismatch_sample": 10,
+      "first_mismatch_phase": "continuous input",
+      "first_group_bits": "00100100",
+      "expected_next_cycle_output": "0x24",
+      "source_derived_early_eighth_cycle_output": "0x12",
+      "derived_output_is_not_waveform_capture": true,
+      "invalid_gap_count_retained_in_both_candidates": true,
+      "do_not_attribute_failure_to": "losing count across invalid input gaps"
+    }
+  },
+  "controls": [
+    {
+      "task": "accu",
+      "mode": "correct",
+      "mismatches": 0,
+      "samples": 200,
+      "passed": true
+    },
+    {
+      "task": "accu",
+      "mode": "old_incorrect_reference",
+      "mismatches": 39,
+      "samples": 200,
+      "passed": true
+    },
+    {
+      "task": "accu",
+      "mode": "omit_last_input",
+      "mismatches": 31,
+      "samples": 200,
+      "passed": true
+    },
+    {
+      "task": "fsm",
+      "mode": "correct",
+      "mismatches": 0,
+      "samples": 200,
+      "passed": true
+    },
+    {
+      "task": "fsm",
+      "mode": "registered_output",
+      "mismatches": 55,
+      "samples": 200,
+      "passed": true
+    },
+    {
+      "task": "serial2parallel",
+      "mode": "correct",
+      "mismatches": 0,
+      "samples": 200,
+      "passed": true
+    },
+    {
+      "task": "serial2parallel",
+      "mode": "old_gap_incorrect_reference",
+      "mismatches": 24,
+      "samples": 200,
+      "passed": true
+    },
+    {
+      "task": "serial2parallel",
+      "mode": "reversed_bit_order",
+      "mismatches": 11,
+      "samples": 200,
+      "passed": true
+    },
+    {
+      "task": "synchronizer",
+      "mode": "correct",
+      "mismatches": 0,
+      "samples": 400,
+      "passed": true
+    },
+    {
+      "task": "synchronizer",
+      "mode": "old_A_enable_reset_error",
+      "mismatches": 4,
+      "samples": 400,
+      "passed": true
+    }
+  ],
+  "coverage": {
+    "accu": {
+      "groups": 32,
+      "invalid_cycles": 67,
+      "scope": "Transactions and single-cycle valid pulses; no extra fixed output latency imposed."
+    },
+    "fsm": {
+      "matches": 28
+    },
+    "serial2parallel": {
+      "groups": 16,
+      "gaps": 44,
+      "output_cycles_with_valid_input": 8,
+      "output_cycles_with_invalid_input": 8
+    },
+    "synchronizer": {
+      "legal_transactions": 10,
+      "independent_A_reset_checks": 1,
+      "independent_B_reset_checks": 1
+    }
+  },
+  "integrity_as_reported": {
+    "original_files_checked": 1884,
+    "prepared_files_checked": 43,
+    "hash_differences": 0,
+    "no_model_calls": true,
+    "no_repeat_launch": true,
+    "shared_code_unchanged": true,
+    "supervisor_exited": true,
+    "resource_lock_released_at_finish": true,
+    "model": {
+      "name": "Qwen3.6-27B-Q4_K_M",
+      "context": 16384,
+      "reasoning": "off",
+      "same_process": true,
+      "health_http": 200,
+      "health_status": "ok",
+      "restarted": false,
+      "weights_rehashed": false
+    }
+  },
+  "current_scope": {
+    "rejudged_in_declared_repaired_domains": 8,
+    "not_closed_or_coverage_pending": 24,
+    "ambiguous_or_blocked": 12,
+    "pending_breakdown": {
+      "fixed_point_parameter_and_encoding": 2,
+      "float_multi_unresolved": 1,
+      "coverage_enhancement": 21
+    },
+    "blocked_breakdown": {
+      "existing_specification_ambiguities": 11,
+      "div_16bit_equality_and_divide_by_zero_contract": 1
+    },
+    "no_new_44_task_aggregate": true
+  },
+  "interpretation": "BCD agent and accu baseline each recover L1 to L3 because judging was corrected, not because the model improved. Eight tasks are comparable only in their stated repaired domains.",
+  "decision": {
+    "test_expansion": "paused",
+    "next": "Return to the 156-task main evaluation evidence and make an explicit decision about a concrete agent defect; do not continue unbounded benchmark repair.",
+    "new_run_authorized_or_started_by_this_document": false,
+    "cloud_ssh_and_key_operations": "stopped"
+  },
+  "limitations": [
+    "Finite declared transaction/clock/reset coverage does not prove arbitrary-environment correctness.",
+    "The 12 ambiguous/blocked tasks are not validated; the 24 pending tasks remain open.",
+    "No new overall score may be formed by splicing pilot results into old 44-task fixture results.",
+    "The cloud publishes only the supplied sanitized projection; original server evidence was not independently verified."
+  ],
+  "rollback": "Discard the isolated pilot directory while retaining original frozen data and shared code; documentation can be reverted independently."
+}
