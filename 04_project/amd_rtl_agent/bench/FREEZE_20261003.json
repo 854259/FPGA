@@ -1,0 +1,134 @@
+{
+  "freeze_id": "candidate-20261003T0219Z",
+  "purpose": "Second candidate freeze. Supersedes baseline-20261002T1515Z, which is kept for history. Exactly one file changed: submission/agent/runtime.py gained two validated mechanisms. baseline.py, the generation skill and the repair skill are byte-identical to the previous freeze, so any score movement is attributable to the runtime alone.",
+  "frozen_utc": "2026-10-03T02:19:00Z",
+  "frozen_by": "engineering owner (original session agent)",
+  "supersedes": "baseline-20261002T1515Z",
+  "evidence_class": "S2 mechanical extraction over S1 artefacts; per-mechanism effect measured with the official judge, full-set re-measurement in progress at time of writing",
+
+  "code": {
+    "local_root": "E:\\26qiansai\\FPGA-official-contract\\04_project\\amd_rtl_agent",
+    "cloud_root": "/workspace/team/tasks/autodl-rtl-kit/project",
+    "local_and_cloud_identical": true,
+    "files": {
+      "submission/agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+      "submission/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "submission/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "submission/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+    },
+    "previous_runtime_sha256": "82e3a72e006e35d6",
+    "rollback": "cp /workspace/team/runs/fpga_owner/runtime_backup_20261003/runtime.before_82e3a72e006e35d6.py <cloud_root>/submission/agent/runtime.py"
+  },
+
+  "changes_since_previous_freeze": [
+    {
+      "name": "text detection of undefined submodules",
+      "function": "undefined_submodules / check_submodules trace event",
+      "why": "A design that instantiates a module it never defines passes xvlog, because analysis does not resolve module instantiation; it fails only at elaboration, which the judge runs and the agent does not. The agent therefore submitted it believing it had succeeded.",
+      "method": "Text only. Finds instantiations carrying a named port map and checks whether the module is defined in the same file. The named-port requirement is what keeps it precise: matching any 'Name inst (' instead produced 69 false positives out of 156 because loop headers such as 'for (i = 0; ...)' were read as instantiations.",
+      "validation": {
+        "false_positives": "0 across 200 generated solutions",
+        "coverage": "4 of 4 true missing-submodule cases found",
+        "misses_are_other_classes": "Prob156 is VRFC 10-3818; multi_pipe_8bit is a missing TopModule",
+        "outcome_effect": "On the four RTLLM tasks it fires on, adoption moved barrel_shifter from L0 to L3 and the subset score from 0.0000 to 0.2500, matching the baseline",
+        "cost": "Zero on VerilogEval, where it fires zero times. Roughly one repair generation on tasks where it does fire."
+      },
+      "safety": "Wrapped so that any failure counts as nothing flagged. The check runs on every candidate and a raise would kill the task, which a one-task gain does not justify."
+    },
+    {
+      "name": "deterministic repair of ANSI declaration faults",
+      "function": "repair_ansi_declarations / declaration_fix trace event",
+      "why": "VRFC 10-1280 and VRFC 10-9336 are mechanical: an ANSI output assigned in a procedural block is an implicit wire and must be declared reg, and the same signal also declared reg in the body is a redeclaration. The old path spent a model call on this and on the two tasks where it appeared the model did not fix it.",
+      "method": "Only signals named by the compiler are touched. The port becomes output reg where it is not already reg or logic, and the duplicate body declaration is removed.",
+      "validation": {
+        "outcome_effect": "Prob058_alwaysblock2 through the real runtime: L0 to L3, seven seconds, single model call, declaration_fix emitted, official judge returns level 3 with all three stages passing. The old path spent two model calls and still ended at L0.",
+        "unit_tests": "6 cases; they caught two real bugs, a nonexistent group index and re.subn counting a match whose replacement was identical, the latter of which would have caused pointless recompiles of already-correct designs.",
+        "not_repairable_this_way": "Prob134_2014_q3c carries the same signature but assigns to an input port; that is a design fault, not a declaration one."
+      },
+      "safety": "Attempted only after the compiler has already failed, and the patched source must recompile before it is accepted; otherwise the normal model repair runs. It cannot make a result worse than the L0 it started from."
+    }
+  ],
+
+  "model": {
+    "name": "Qwen3.6-27B-Q4_K_M",
+    "file": "/workspace/team/models/Qwen3.6-27B-Q4_K_M.gguf",
+    "sha256_prefix16": "65b753ea835627f7",
+    "bytes": 19095766304,
+    "unchanged_since_previous_freeze": true
+  },
+
+  "serving": {
+    "binary": "/workspace/team/tools/llama-build/bin/llama-server",
+    "args": "-m <model> --alias Qwen3.6-27B-Q4_K_M --host 127.0.0.1 --port 8000 -ngl 99 -c 16384 -np 1 -t 8 --reasoning off",
+    "parallel_slots": 1,
+    "hardware": "No GPU present. Two AMD EPYC 9334 sockets, 64 physical cores, 128 threads, ~503 GB RAM.",
+    "throughput": "29.7 tokens per second, measured from the server's own eval time over 700 generated tokens.",
+    "throughput_is_bandwidth_bound": "Thread count was swept at 8, 32, 64 and 128 and all four measure 29.3 tokens per second, which is the signature of a memory bandwidth limit rather than a threading one: 19.1 GB of weights per token at 29.7 tokens per second is 567 GB/s, about sixty percent of the theoretical 24-channel DDR5 bandwidth. The cost item therefore cannot be improved by configuration.",
+    "avx512": "The build enables up to AVX2 while the CPU also has AVX-512. On a bandwidth-bound workload this is unlikely to matter and no rebuild was attempted, so nothing is claimed either way."
+  },
+
+  "generation_parameters": {
+    "RTL_PROFILE": "development",
+    "RTL_REPAIRS": "1",
+    "RTL_MAX_TOKENS": "8192",
+    "RTL_TEMPERATURE": "0"
+  },
+
+  "reference_scores": {
+    "previous_freeze": {
+      "verilog_eval_agent": 0.7603,
+      "verilog_eval_baseline": 0.6744,
+      "verilog_eval_gain": 1.1274,
+      "verilog_eval_run": "/workspace/team/runs/fpga_owner/skillfix_full156_20261001T235258Z",
+      "repeatability": "A second full run of the identical configuration reproduced this exactly: 312 common samples, zero level flips, identical coefficient totals. The earlier 3.2 percent figure came from a pair of runs that differed in the generation skill and must not be reused as a constant."
+    },
+    "current_freeze": {
+      "status": "measurement in progress",
+      "run": "/workspace/team/runs/fpga_owner/full156_declfix_20261003",
+      "prediction": "Only Prob058 is affected on VerilogEval, so the agent set score should move from 0.7603 to about 0.7667 and the gain from 1.1274 to about 1.1369. L0 should go from 7 to 6 and L3 from 111 to 112. This is a prediction, not a measurement."
+    },
+    "rtllm": {
+      "agent": 0.5182,
+      "baseline": 0.5591,
+      "gain": 0.9268,
+      "caveat": "Historical and materially affected by a prompt conversion defect described below. Must not be cited as evidence of overfitting."
+    }
+  },
+
+  "corrections_to_previous_records": [
+    "baseline-20261002T1515Z claimed the agent already had a deterministic patch for VRFC 10-1280 that cost no model call. No such patch existed in the runtime. The claim was wrong and is corrected by the second change above.",
+    "The prompt converter substituted the module name taken from the reference file rather than the one declared in the description. RTLLM often names them differently, so the substitution missed and a second 'Module name:' line was prepended. Twenty-three of forty-four prompts ended up declaring the module twice, and two tasks answered with the lower declaration and scored L0. Fixed; the corrected set is delivered to the evaluation owner."
+  ],
+
+  "direction_closures": [
+    {
+      "direction": "functional self-verification via a self-written testbench",
+      "verdict": "not adopted",
+      "evidence": "A perfect oracle built from the official testbench fixes 10 of 38 L1 tasks, worth about plus 4.28 points. Generating a testbench costs 41.5 seconds per task on average, which moves the cost item from 8.39 to 2.71, a loss of 5.69. The net is minus 1.41 even with a testbench that is perfectly usable. Break-even needs an announced baseline duration of at least 25.2 seconds per task against the 16.58 we measure, which is unknowable until the organisers publish it.",
+      "note": "Explicitly not claimed to be worthless in all conditions."
+    },
+    {
+      "direction": "cost item optimisation by configuration",
+      "verdict": "not available",
+      "evidence": "See throughput_is_bandwidth_bound above."
+    },
+    {
+      "direction": "ROSS vivado-rtl-lint",
+      "verdict": "unverified, not rejected",
+      "evidence": "Both the non-project and the project invocation report zero violations on a control design carrying an inferred latch, an undriven output and an arithmetic overflow, so its diagnostic value could not be established. To be raised with AMD at the 10 October session."
+    }
+  ],
+
+  "exhausted_lines": {
+    "static_checks_on_verilog_eval_l0": "All seven agent L0 tasks were diagnosed. One was repairable by text and has been fixed. The rest are not: Prob134 assigns to an input, Prob147 exhausted the token budget on reasoning written into comments and never emitted endmodule, Prob082 places wire and assign inside an always block, Prob144 uses an integer as a generate loop variable, and Prob099 and Prob156 compile cleanly and fail later. This vein is worked out."
+  },
+
+  "not_yet_done": [
+    "Full-set re-measurement with the new runtime, in progress.",
+    "Five-sample protocol (156 tasks x 2 modes x 5 = 1560 top-level runs). Required by the scoring rules; single-sample results must not be presented as if this were complete.",
+    "Re-run of the RTLLM pairing with the corrected prompts, which is the evaluation owner's call.",
+    "Official base image rebuild and offline run verification.",
+    "Final-card VRAM measurement, per-task and whole-set time limits, gain full-mark line.",
+    "Confirmation from the organisers on whether ROSS is required and how official skills may be reused."
+  ]
+}
