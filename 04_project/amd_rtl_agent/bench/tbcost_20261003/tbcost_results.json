@@ -1,0 +1,55 @@
+[
+  {
+    "task": "Prob034_dff8",
+    "gen_tb": 28.1,
+    "tb_tokens": 789,
+    "compile_tb": 1.1,
+    "compile_ok": true,
+    "xsim": 4.4,
+    "mismatches": 1,
+    "total_extra_s": 33.6
+  },
+  {
+    "task": "Prob045_edgedetect2",
+    "gen_tb": 32.4,
+    "tb_tokens": 934,
+    "compile_tb": 1.1,
+    "compile_ok": true,
+    "xsim": 4.5,
+    "mismatches": 7,
+    "total_extra_s": 38.0
+  },
+  {
+    "task": "Prob050_kmap1",
+    "gen_tb": 18.8,
+    "tb_tokens": 534,
+    "compile_tb": 1.1,
+    "compile_ok": true,
+    "xsim": 4.4,
+    "mismatches": 4,
+    "total_extra_s": 24.3
+  },
+  {
+    "task": "Prob053_m2014_q4d",
+    "gen_tb": 29.0,
+    "tb_tokens": 831,
+    "compile_tb": 1.1,
+    "compile_ok": false,
+    "regen_tb": 29.7,
+    "compile_tb2": 1.1,
+    "compile_ok_after_retry": true,
+    "xsim": 4.5,
+    "mismatches": 20,
+    "total_extra_s": 65.3
+  },
+  {
+    "task": "Prob054_edgedetect",
+    "gen_tb": 40.7,
+    "tb_tokens": 1179,
+    "compile_tb": 1.1,
+    "compile_ok": true,
+    "xsim": 4.4,
+    "mismatches": 4,
+    "total_extra_s": 46.2
+  }
+]
