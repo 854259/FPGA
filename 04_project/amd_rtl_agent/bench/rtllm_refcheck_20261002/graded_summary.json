@@ -1,0 +1,585 @@
+{
+  "scoring_source": "pinned official selftest/score.py summarize()",
+  "modes": {
+    "reference": {
+      "tasks": 49,
+      "scored_tasks": 43,
+      "samples_per_task": 1,
+      "set_score": 0.986,
+      "pass@1": 0.986,
+      "pass@5": 0.986,
+      "level_counts": {
+        "L2": 2,
+        "L3": 41
+      },
+      "tool_errors": 6,
+      "excluded": [
+        {
+          "task_id": "adder_pipe_64bit",
+          "reason": "题目自带的参考实现或测试台有问题，与待测代码无关"
+        },
+        {
+          "task_id": "asyn_fifo",
+          "reason": "题目自带的参考实现或测试台有问题，与待测代码无关"
+        },
+        {
+          "task_id": "fixed_point_adder",
+          "reason": "题目自带的参考实现或测试台有问题，与待测代码无关"
+        },
+        {
+          "task_id": "fixed_point_substractor",
+          "reason": "题目自带的参考实现或测试台有问题，与待测代码无关"
+        },
+        {
+          "task_id": "multi_pipe_4bit",
+          "reason": "题目自带的参考实现或测试台有问题，与待测代码无关"
+        },
+        {
+          "task_id": "multi_pipe_8bit",
+          "reason": "题目自带的参考实现或测试台有问题，与待测代码无关"
+        }
+      ],
+      "judge_elapsed_s": 1614.8,
+      "per_task": [
+        {
+          "task_id": "JC_counter",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "LFSR",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "LIFObuffer",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "RAM",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "ROM",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "accu",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "adder_16bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "adder_32bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "adder_8bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "adder_bcd",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "adder_pipe_64bit",
+          "samples": 1,
+          "scored_samples": 0,
+          "excluded_samples": 1,
+          "levels": [],
+          "pass@1": null,
+          "pass@5": null,
+          "note": "全部采样均为环境失败，该题不计入题集得分"
+        },
+        {
+          "task_id": "alu",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "asyn_fifo",
+          "samples": 1,
+          "scored_samples": 0,
+          "excluded_samples": 1,
+          "levels": [],
+          "pass@1": null,
+          "pass@5": null,
+          "note": "全部采样均为环境失败，该题不计入题集得分"
+        },
+        {
+          "task_id": "barrel_shifter",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "calendar",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "comparator_3bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "comparator_4bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "counter_12",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "div_16bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "edge_detect",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "fixed_point_adder",
+          "samples": 1,
+          "scored_samples": 0,
+          "excluded_samples": 1,
+          "levels": [],
+          "pass@1": null,
+          "pass@5": null,
+          "note": "全部采样均为环境失败，该题不计入题集得分"
+        },
+        {
+          "task_id": "fixed_point_substractor",
+          "samples": 1,
+          "scored_samples": 0,
+          "excluded_samples": 1,
+          "levels": [],
+          "pass@1": null,
+          "pass@5": null,
+          "note": "全部采样均为环境失败，该题不计入题集得分"
+        },
+        {
+          "task_id": "float_multi",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            2
+          ],
+          "pass@1": 0.7,
+          "pass@5": 0.7
+        },
+        {
+          "task_id": "freq_div",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "freq_divbyeven",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "freq_divbyfrac",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "freq_divbyodd",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "fsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "instr_reg",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "multi_16bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "multi_8bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "multi_booth_8bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "multi_pipe_4bit",
+          "samples": 1,
+          "scored_samples": 0,
+          "excluded_samples": 1,
+          "levels": [],
+          "pass@1": null,
+          "pass@5": null,
+          "note": "全部采样均为环境失败，该题不计入题集得分"
+        },
+        {
+          "task_id": "multi_pipe_8bit",
+          "samples": 1,
+          "scored_samples": 0,
+          "excluded_samples": 1,
+          "levels": [],
+          "pass@1": null,
+          "pass@5": null,
+          "note": "全部采样均为环境失败，该题不计入题集得分"
+        },
+        {
+          "task_id": "parallel2serial",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "pe",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "pulse_detect",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "radix2_div",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "right_shifter",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "ring_counter",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "sequence_detector",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "serial2parallel",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "signal_generator",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "square_wave",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "sub_64bit",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "synchronizer",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            2
+          ],
+          "pass@1": 0.7,
+          "pass@5": 0.7
+        },
+        {
+          "task_id": "traffic_light",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "up_down_counter",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "width_8to16",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        }
+      ]
+    }
+  },
+  "samples_requested": 1,
+  "five_sample_protocol": false,
+  "diagnostic_note": "Upstream pass@5 field is best-of-available; only a five-sample run is pass@5 protocol.",
+  "formal_total_score": null,
+  "limits": "Gain threshold, cost baseline, final time budget and engineering score are not established here."
+}
