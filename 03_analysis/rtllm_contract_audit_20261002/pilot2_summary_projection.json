@@ -1,0 +1,130 @@
+{
+  "evidence_type": "sanitized_summary_projection_not_verbatim_original_json",
+  "provenance": "Terminal results supplied by the existing AMD execution task through the parent task; the cloud editor did not execute or independently inspect the server experiment.",
+  "run_id": "rtllm_contract_pilot2_v2_20261002T115303Z",
+  "finished_utc": "2026-10-02T11:56:07.303530+00:00",
+  "complete": true,
+  "fixed_denominator": 2,
+  "candidate_count": 4,
+  "reported_manifest_sha256": "14f4495a67fa51311dcfc115830725f17b585560e768614d76acd63ac11a7aec",
+  "rows": [
+    {
+      "task": "freq_div",
+      "side": "agent",
+      "old_level": 3,
+      "new_level": 3,
+      "mismatches": 0,
+      "samples": 1200,
+      "tool_error": null
+    },
+    {
+      "task": "freq_div",
+      "side": "baseline",
+      "old_level": 3,
+      "new_level": 3,
+      "mismatches": 0,
+      "samples": 1200,
+      "tool_error": null
+    },
+    {
+      "task": "up_down_counter",
+      "side": "agent",
+      "old_level": 3,
+      "new_level": 3,
+      "mismatches": 0,
+      "samples": 200,
+      "tool_error": null
+    },
+    {
+      "task": "up_down_counter",
+      "side": "baseline",
+      "old_level": 3,
+      "new_level": 3,
+      "mismatches": 0,
+      "samples": 200,
+      "tool_error": null
+    }
+  ],
+  "fixture_changes": {
+    "freq_div": {
+      "reason": "Input clock must match the prompt's 100 MHz requirement; reference differential equivalence alone does not prove absolute frequency.",
+      "input_frequency_mhz": 100,
+      "independent_oracle": "Expected divide-by-2, divide-by-10 and divide-by-100 outputs from effective rising-edge counts.",
+      "observed_properties": "Both-edge checks of 20/100/1000 ns output periods and asynchronous reset.",
+      "positive_control_complete_period_counts": [
+        292,
+        57,
+        2
+      ],
+      "negative_controls": [
+        {
+          "mode": "wrong_ratio",
+          "mismatches": 665,
+          "samples": 1200,
+          "detected": true
+        },
+        {
+          "mode": "wrong_sync_reset",
+          "mismatches": 3,
+          "samples": 1200,
+          "detected": true
+        }
+      ],
+      "coverage_input_cycles": 600
+    },
+    "up_down_counter": {
+      "reason": "The prompt specifies synchronous reset; the old asynchronous-reset reference must not serve as the oracle for that property.",
+      "independent_oracle": "Independent synchronous 16-bit counter state; pre-edge hold after inter-edge reset assertion, next-edge clearing and wraparound.",
+      "down_wraparounds": 9,
+      "up_wraparounds": 8,
+      "negative_controls": [
+        {
+          "mode": "old_asynchronous_reference",
+          "mismatches": 1,
+          "samples": 200,
+          "detected": true
+        }
+      ],
+      "coverage_input_cycles": 100
+    }
+  },
+  "failed_predecessor": {
+    "reported_run_name": "pilot2_20261002T114835Z",
+    "retained_as_failed_evidence": true,
+    "candidates_scored": false,
+    "failure": "Exact floating-point period equality rejected the positive control.",
+    "v2_correction": "Compare times rounded to 1 ps; acceptance values unchanged.",
+    "note": "The failed preparation run is not counted as candidate failure and was not overwritten."
+  },
+  "invariants_as_reported": {
+    "no_model_calls": true,
+    "prompt_unchanged": true,
+    "candidates_unchanged": true,
+    "skill_unchanged": true,
+    "baseline_unchanged": true,
+    "official_judge_unchanged": true,
+    "original_and_prepared_hashes_reverified": true,
+    "supervisor_exited": true,
+    "resource_lock_empty_at_finish": true
+  },
+  "cumulative_scope": {
+    "tasks_checked_in_two_pilots": 4,
+    "task_names": [
+      "adder_bcd",
+      "instr_reg",
+      "freq_div",
+      "up_down_counter"
+    ],
+    "not_repaired_or_coverage_validated": 29,
+    "specification_ambiguities_separate": 11,
+    "new_44_task_aggregate_created": false
+  },
+  "limitations": [
+    "600 freq_div input cycles and 100 up_down_counter cycles in deterministic sequences do not validate arbitrary environments.",
+    "No extra direction protocol is imposed.",
+    "Candidate grades remain L3; observed benefit is stronger contract validation and successful negative-control detection, not a new score gain.",
+    "Do not combine these pilot scores with old fixtures into a new 44-task aggregate.",
+    "The cloud has this supplied projection only; the original server artifacts were not independently read back."
+  ],
+  "rollback": "Discard the isolated pilot directory while retaining the failed predecessor and original frozen artifacts; revert this documentation commit separately if needed."
+}
