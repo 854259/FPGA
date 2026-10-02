@@ -1,0 +1,111 @@
+{
+  "scoring_source": "pinned official selftest/score.py summarize()",
+  "modes": {
+    "agent": {
+      "tasks": 3,
+      "scored_tasks": 3,
+      "samples_per_task": 1,
+      "set_score": 0.7333,
+      "pass@1": 0.7333,
+      "pass@5": 0.7333,
+      "level_counts": {
+        "L1": 1,
+        "L3": 2
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 72.4,
+      "per_task": [
+        {
+          "task_id": "Prob001_zero",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob050_kmap1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        }
+      ]
+    },
+    "baseline": {
+      "tasks": 3,
+      "scored_tasks": 3,
+      "samples_per_task": 1,
+      "set_score": 0.4,
+      "pass@1": 0.4,
+      "pass@5": 0.4,
+      "level_counts": {
+        "L0": 1,
+        "L1": 1,
+        "L3": 1
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 37.0,
+      "per_task": [
+        {
+          "task_id": "Prob001_zero",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob050_kmap1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        }
+      ]
+    }
+  },
+  "samples_requested": 1,
+  "five_sample_protocol": false,
+  "diagnostic_note": "Upstream pass@5 field is best-of-available; only a five-sample run is pass@5 protocol.",
+  "formal_total_score": null,
+  "limits": "Gain threshold, cost baseline, final time budget and engineering score are not established here."
+}
