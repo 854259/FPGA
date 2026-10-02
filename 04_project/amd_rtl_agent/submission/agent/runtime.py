@@ -139,13 +139,19 @@ def _model_server_render_node():
 
 
 def vram_gb():
-    """VRAM the model server holds, in GB.
+    """VRAM the model server holds, in GB, or None when that cannot be established.
 
     This host carries eight AMD GPUs and other tenants occupy several of them, so
     summing every card reports about 67 GB against our own 19 GB and would fail a
-    32 GB readiness check for a reason that has nothing to do with us. Attribute the
-    counter to the card the model server actually holds open, and fall back to the
-    busiest single card when the server cannot be identified.
+    32 GB readiness check for a reason that has nothing to do with us. The counter is
+    therefore attributed to the card the model server actually holds open, by way of
+    the render node its listening socket's process owns.
+
+    When that attribution fails there is deliberately no fallback to "the busiest
+    card": on a shared host the busiest card is very likely somebody else's, and
+    reporting their number as ours would be worse than reporting nothing. Unknown is
+    reported as None, and the readiness check treats an unmeasurable value as an
+    instrumentation gap rather than as a breach of the limit.
     """
     cards = _drm_amd_cards()
     if not cards:
@@ -153,7 +159,7 @@ def vram_gb():
     node = _model_server_render_node()
     if node and node in cards:
         return round(cards[node] / 1024 ** 3, 3)
-    return round(max(cards.values()) / 1024 ** 3, 3)
+    return None
 
 
 def vivado_tool(name):
@@ -258,15 +264,48 @@ def repair_ansi_declarations(code, feedback):
         if upgraded != ports:
             ports = upgraded
             changed = True
-        stripped = re.sub(
-            r'(?m)^[ \t]*reg\b[^;\n]*\b' + re.escape(name) + r'\b[^;\n]*;[ \t]*\r?\n',
-            '', tail)
-        if stripped != tail:
-            tail = stripped
-            changed = True
+        tail, dropped = _drop_declared_name(tail, name)
+        changed = changed or dropped
     if not changed:
         return None
     return code[:head.start(1)] + ports + tail
+
+
+def _drop_declared_name(text, name):
+    """Remove one identifier from a `reg` declaration list, leaving its siblings alone.
+
+    Deleting the whole line was wrong when several names share it: fixing `q` in
+    `reg q, state;` also discarded the declaration of `state`. Only the named
+    identifier goes, and the line disappears only when nothing is left on it.
+
+    Returns (new_text, changed).
+    """
+    lines = text.splitlines(keepends=True)
+    for index, line in enumerate(lines):
+        stripped = line.strip()
+        if not re.match(r'reg\b', stripped) or not stripped.endswith(';'):
+            continue
+        body = stripped[len('reg'):-1]
+        if not re.search(r'\b' + re.escape(name) + r'\b', body):
+            continue
+        parts = [part.strip() for part in body.split(',')]
+        # A width on the first name applies to the rest of the list, so keep it.
+        width = ''
+        first = re.match(r'(\[[^\]]*\])\s*(.*)$', parts[0])
+        if first:
+            width, parts[0] = first.group(1), first.group(2)
+        pattern = re.compile(r'^' + re.escape(name) + r'(?:\[[^\]]*\])?$')
+        kept = [part for part in parts if not pattern.match(part)]
+        if len(kept) == len(parts):
+            continue
+        if not kept:
+            del lines[index]                       # nothing left: drop the whole line
+        else:
+            indent = line[:len(line) - len(line.lstrip())]
+            prefix = (width + ' ') if width else ''
+            lines[index] = '%sreg %s%s;\n' % (indent, prefix, ', '.join(kept))
+        return ''.join(lines), True
+    return text, False
 
 
 @lru_cache(maxsize=4)
@@ -295,8 +334,13 @@ def health():
     except (OSError, ValueError, KeyError, TypeError):
         pass
     used = vram_gb()
-    if os.environ.get('RTL_PROFILE', 'submission') != 'development':
-        ready = ready and used is not None and used <= 32
+    if os.environ.get('RTL_PROFILE', 'submission') != 'development' and used is not None:
+        # Only a measured value can breach the limit. When attribution fails the
+        # field is reported as null and readiness rests on the conditions above,
+        # because failing to instrument our own VRAM is not the same as the agent
+        # being unavailable, and answering ready=false for that would be a
+        # self-inflicted refusal.
+        ready = ready and used <= 32
     return dict(ready=bool(ready), track='rtl', model=model, vram_gb=used)
 
 

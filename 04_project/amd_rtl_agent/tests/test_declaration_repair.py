@@ -106,6 +106,80 @@ endmodule
         self.assertIn('always_ff @(posedge clk) begin', fixed)
         self.assertTrue(fixed.rstrip().endswith('endmodule'))
 
+    # The cases below guard a real defect: the first version deleted the whole
+    # declaration line, so fixing q in `reg q, state;` also discarded state's
+    # declaration. The recompile check meant it could never yield a wrong accepted
+    # answer, but the patch silently stopped working on such designs instead.
+    MULTI = """module TopModule (
+    input clk,
+    output q,
+    output state
+);
+    reg q, state;
+    always @(posedge clk) begin
+        q <= ~q;
+        state <= q;
+    end
+endmodule
+"""
+    FB_Q = ("ERROR: [VRFC 10-1280] procedural assignment to a non-register q "
+            "is not permitted, left-hand side should be reg/integer/time/genvar")
+
+    def test_sibling_declaration_on_the_same_line_survives(self):
+        fixed = runtime.repair_ansi_declarations(self.MULTI, self.FB_Q)
+        self.assertIsNotNone(fixed)
+        self.assertIn('output reg q', fixed)
+        self.assertIn('reg state;', fixed)          # the sibling must still be declared
+        self.assertNotIn('reg q, state;', fixed)
+        self.assertNotIn('reg q;', fixed)
+
+    def test_width_is_carried_over_to_the_remaining_names(self):
+        code = """module TopModule (
+    input clk,
+    output [7:0] q,
+    output [7:0] r
+);
+    reg [7:0] q, r;
+    always @(posedge clk) begin
+        q <= r;
+        r <= q;
+    end
+endmodule
+"""
+        fixed = runtime.repair_ansi_declarations(code, self.FB_Q)
+        self.assertIsNotNone(fixed)
+        self.assertIn('output reg [7:0] q', fixed)
+        self.assertIn('reg [7:0] r;', fixed)        # width preserved for the sibling
+
+    def test_single_name_declaration_is_removed_entirely(self):
+        code = """module TopModule (
+    input clk,
+    output q
+);
+    reg q;
+    always @(posedge clk) q <= ~q;
+endmodule
+"""
+        fixed = runtime.repair_ansi_declarations(code, self.FB_Q)
+        self.assertIsNotNone(fixed)
+        self.assertIn('output reg q', fixed)
+        self.assertNotIn('reg q;', fixed)
+
+    def test_drop_declared_name_leaves_unrelated_lines_alone(self):
+        text = "    reg a;\n    reg b, c;\n    wire d;\n"
+        new, changed = runtime._drop_declared_name(text, 'b')
+        self.assertTrue(changed)
+        self.assertIn('reg a;', new)
+        self.assertIn('reg c;', new)               # sibling kept
+        self.assertIn('wire d;', new)
+        self.assertNotIn('reg b, c;', new)
+
+    def test_drop_declared_name_reports_no_change_when_absent(self):
+        text = "    reg a;\n"
+        new, changed = runtime._drop_declared_name(text, 'zzz')
+        self.assertFalse(changed)
+        self.assertEqual(new, text)
+
 
 if __name__ == '__main__':
     unittest.main()
