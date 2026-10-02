@@ -273,7 +273,23 @@ def worker(task, out):
         feedback = '\n'.join(lines)[:2048] or result.stdout[-2048:]
         trace(out, 'lint', rc=result.returncode, excerpt=feedback, round=attempt)
         if result.returncode == 0:
-            return  # Compilation is NOT an official L1/L2/L3 judgement.
+            # xvlog only analyses; a hierarchical design that instantiates a module it
+            # never defines passes analysis and fails elaboration. Elaborate here so
+            # that class of error reaches the repair loop instead of the judge.
+            # Elaboration costs a couple of seconds, far less than a generation, and
+            # the check is skipped when xelab is unavailable.
+            elab = vivado_tool('xelab')
+            if not elab:
+                return
+            trace(out, 'elab_start', round=attempt)
+            result = subprocess.run([elab, 'TopModule', '-s', 'candidate_' + str(attempt),
+                                     '--nolog'], cwd=wd, stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT, text=True, errors='replace')
+            lines = [s for s in result.stdout.splitlines() if re.search('ERROR|FATAL', s)]
+            feedback = '\n'.join(lines)[:2048] or result.stdout[-2048:]
+            trace(out, 'elab', rc=result.returncode, excerpt=feedback, round=attempt)
+            if result.returncode == 0:
+                return  # Compilation is NOT an official L1/L2/L3 judgement.
 
 
 def solve(data):
