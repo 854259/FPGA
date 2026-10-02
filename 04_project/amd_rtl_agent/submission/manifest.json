@@ -28,12 +28,22 @@
   },
   "agent": {
     "max_rounds": 2,
-    "tools": [
-      "xvlog_lint"
+    "checks": [
+      "source_shape: requires a complete TopModule ending in endmodule, and rejects include directives and file IO",
+      "undefined_submodules: text check that flags an instantiation whose module is never defined in the same file, because analysis does not resolve instantiation and the failure would otherwise appear only at elaboration",
+      "xvlog_compile: the only tool that runs the compiler"
+    ],
+    "deterministic_repairs": [
+      "repair_ansi_declarations: turns an ANSI output assigned in a procedural block into output reg and drops the duplicate body declaration, accepted only if the source then recompiles"
     ],
     "skills": [
       "rtl-generation",
       "rtl-feedback-repair"
-    ]
+    ],
+    "no_functional_feedback": "The agent never sees the reference testbench, expected outputs or simulation results. Only compiler diagnostics and the two text checks above."
+  },
+  "runtime": {
+    "path": "agent/runtime.py",
+    "sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7"
   }
 }
