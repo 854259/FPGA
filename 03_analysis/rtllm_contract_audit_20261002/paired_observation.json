@@ -1,0 +1,411 @@
+{
+  "status": "historical_fixture_equivalence_observation_not_validated_prompt_accuracy",
+  "run_id": "rtllm_pair_20261002T074340Z",
+  "pair_start_utc": "2026-10-02T08:33:41.683420+00:00",
+  "pair_finish_utc": "2026-10-02T09:49:21.873184+00:00",
+  "denominator": 44,
+  "samples_per_task": 1,
+  "max_repairs": 1,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 8192,
+  "context": 16384,
+  "reasoning": "off",
+  "metrics": {
+    "agent": {
+      "tasks": 44,
+      "levels": {
+        "0": 10,
+        "1": 14,
+        "2": 0,
+        "3": 20
+      },
+      "score": 0.5181818181818182,
+      "tool_errors": 0
+    },
+    "baseline": {
+      "tasks": 44,
+      "levels": {
+        "0": 9,
+        "1": 13,
+        "2": 0,
+        "3": 22
+      },
+      "score": 0.5590909090909091,
+      "tool_errors": 0
+    }
+  },
+  "changes": {
+    "improved": 2,
+    "regressed": 5,
+    "same": 37,
+    "l3_improved": 1,
+    "l3_regressed": 3
+  },
+  "audit_categories": {
+    "confirmed_contract_issue": 12,
+    "specification_ambiguity": 11,
+    "no_explicit_conflict_found_but_limited_coverage": 21
+  },
+  "claims_not_supported": [
+    "prompt-level generalisation gain",
+    "overfitting proof",
+    "two-task difference within noise or 1.25 sigma",
+    "symmetric impact of shared broken fixtures"
+  ],
+  "paired": [
+    {
+      "task": "JC_counter",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "LFSR",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "accu",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "adder_16bit",
+      "agent_level": 0,
+      "baseline_level": 0,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.0,
+      "level_change": 0
+    },
+    {
+      "task": "adder_32bit",
+      "agent_level": 0,
+      "baseline_level": 0,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.0,
+      "level_change": 0
+    },
+    {
+      "task": "adder_8bit",
+      "agent_level": 3,
+      "baseline_level": 0,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 0.0,
+      "level_change": 3
+    },
+    {
+      "task": "adder_bcd",
+      "agent_level": 1,
+      "baseline_level": 3,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 1.0,
+      "level_change": -2
+    },
+    {
+      "task": "adder_pipe_64bit",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "barrel_shifter",
+      "agent_level": 0,
+      "baseline_level": 3,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 1.0,
+      "level_change": -3
+    },
+    {
+      "task": "calendar",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "comparator_3bit",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "comparator_4bit",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "counter_12",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "div_16bit",
+      "agent_level": 0,
+      "baseline_level": 0,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.0,
+      "level_change": 0
+    },
+    {
+      "task": "edge_detect",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "fixed_point_adder",
+      "agent_level": 0,
+      "baseline_level": 0,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.0,
+      "level_change": 0
+    },
+    {
+      "task": "fixed_point_substractor",
+      "agent_level": 0,
+      "baseline_level": 1,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.2,
+      "level_change": -1
+    },
+    {
+      "task": "float_multi",
+      "agent_level": 0,
+      "baseline_level": 0,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.0,
+      "level_change": 0
+    },
+    {
+      "task": "freq_div",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "freq_divbyeven",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "freq_divbyfrac",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "freq_divbyodd",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "fsm",
+      "agent_level": 1,
+      "baseline_level": 0,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.0,
+      "level_change": 1
+    },
+    {
+      "task": "instr_reg",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "multi_16bit",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "multi_8bit",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "multi_booth_8bit",
+      "agent_level": 1,
+      "baseline_level": 3,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 1.0,
+      "level_change": -2
+    },
+    {
+      "task": "multi_pipe_4bit",
+      "agent_level": 0,
+      "baseline_level": 0,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.0,
+      "level_change": 0
+    },
+    {
+      "task": "multi_pipe_8bit",
+      "agent_level": 0,
+      "baseline_level": 1,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.2,
+      "level_change": -1
+    },
+    {
+      "task": "parallel2serial",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "pe",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "pulse_detect",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "radix2_div",
+      "agent_level": 0,
+      "baseline_level": 0,
+      "agent_coefficient": 0.0,
+      "baseline_coefficient": 0.0,
+      "level_change": 0
+    },
+    {
+      "task": "right_shifter",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "ring_counter",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "sequence_detector",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "serial2parallel",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "signal_generator",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "square_wave",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "sub_64bit",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "synchronizer",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "traffic_light",
+      "agent_level": 1,
+      "baseline_level": 1,
+      "agent_coefficient": 0.2,
+      "baseline_coefficient": 0.2,
+      "level_change": 0
+    },
+    {
+      "task": "up_down_counter",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    },
+    {
+      "task": "width_8to16",
+      "agent_level": 3,
+      "baseline_level": 3,
+      "agent_coefficient": 1.0,
+      "baseline_coefficient": 1.0,
+      "level_change": 0
+    }
+  ]
+}

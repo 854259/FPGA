@@ -1,0 +1,1137 @@
+{
+  "controls": {
+    "JC_counter": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "LFSR": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "LIFObuffer": {
+      "positive": {
+        "diagnostic": [
+          "Fatal: RTLLM_FIXTURE_UNKNOWN EMPTY sample=1"
+        ],
+        "fixture_unknown": "RTLLM_FIXTURE_UNKNOWN EMPTY sample=1",
+        "infrastructure_error": false,
+        "mismatches_samples": null
+      }
+    },
+    "RAM": {
+      "positive": {
+        "diagnostic": [
+          "Fatal: RTLLM_FIXTURE_UNKNOWN read_data sample=3"
+        ],
+        "fixture_unknown": "RTLLM_FIXTURE_UNKNOWN read_data sample=3",
+        "infrastructure_error": false,
+        "mismatches_samples": null
+      }
+    },
+    "ROM": {
+      "positive": {
+        "diagnostic": [
+          "Fatal: RTLLM_FIXTURE_UNKNOWN dout sample=1"
+        ],
+        "fixture_unknown": "RTLLM_FIXTURE_UNKNOWN dout sample=1",
+        "infrastructure_error": false,
+        "mismatches_samples": null
+      }
+    },
+    "accu": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "adder_16bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "adder_32bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "adder_8bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "adder_bcd": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "adder_pipe_64bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "alu": {
+      "positive": {
+        "diagnostic": [
+          "Fatal: RTLLM_FIXTURE_UNKNOWN r sample=1"
+        ],
+        "fixture_unknown": "RTLLM_FIXTURE_UNKNOWN r sample=1",
+        "infrastructure_error": false,
+        "mismatches_samples": null
+      }
+    },
+    "asyn_fifo": {
+      "positive": {
+        "diagnostic": [
+          "Fatal: RTLLM_FIXTURE_UNKNOWN rdata sample=1"
+        ],
+        "fixture_unknown": "RTLLM_FIXTURE_UNKNOWN rdata sample=1",
+        "infrastructure_error": false,
+        "mismatches_samples": null
+      }
+    },
+    "barrel_shifter": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "calendar": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "comparator_3bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "comparator_4bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "counter_12": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "div_16bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "edge_detect": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "fixed_point_adder": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "fixed_point_substractor": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "float_multi": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "freq_div": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "freq_divbyeven": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "freq_divbyfrac": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "freq_divbyodd": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "fsm": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "instr_reg": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "multi_16bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "multi_8bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "multi_booth_8bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          4200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "multi_pipe_4bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "multi_pipe_8bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "parallel2serial": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "pe": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "pulse_detect": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "radix2_div": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "right_shifter": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "ring_counter": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "sequence_detector": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "serial2parallel": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "signal_generator": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "square_wave": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "sub_64bit": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "synchronizer": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "traffic_light": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "up_down_counter": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    },
+    "width_8to16": {
+      "negative": {
+        "diagnostic": [
+          "Fatal: RTLLM_FAIL"
+        ],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          200,
+          200
+        ]
+      },
+      "positive": {
+        "diagnostic": [],
+        "fixture_unknown": null,
+        "infrastructure_error": false,
+        "mismatches_samples": [
+          0,
+          200
+        ]
+      }
+    }
+  },
+  "current_task_hash_mismatches": [],
+  "denominator": 44,
+  "excluded": [
+    {
+      "classification": "undefined reference output under fixed deterministic fixture; excluded before model generation",
+      "reason": [
+        "Fatal: RTLLM_FIXTURE_UNKNOWN EMPTY sample=1"
+      ],
+      "task": "LIFObuffer"
+    },
+    {
+      "classification": "undefined reference output under fixed deterministic fixture; excluded before model generation",
+      "reason": [
+        "Fatal: RTLLM_FIXTURE_UNKNOWN read_data sample=3"
+      ],
+      "task": "RAM"
+    },
+    {
+      "classification": "undefined reference output under fixed deterministic fixture; excluded before model generation",
+      "reason": [
+        "Fatal: RTLLM_FIXTURE_UNKNOWN dout sample=1"
+      ],
+      "task": "ROM"
+    },
+    {
+      "classification": "undefined reference output under fixed deterministic fixture; excluded before model generation",
+      "reason": [
+        "Fatal: RTLLM_FIXTURE_UNKNOWN r sample=1"
+      ],
+      "task": "alu"
+    },
+    {
+      "classification": "undefined reference output under fixed deterministic fixture; excluded before model generation",
+      "reason": [
+        "Fatal: RTLLM_FIXTURE_UNKNOWN rdata sample=1"
+      ],
+      "task": "asyn_fifo"
+    }
+  ],
+  "frozen_task_files": 220,
+  "frozen_utc": "2026-10-02T08:00:52.592480+00:00",
+  "manifest_sha256": "8349801dee5bdf6a90449d3dc5b3a65b87e50ac5d40c05cf2ca02a3657a9f341",
+  "reference": {
+    "complete": true,
+    "modes": {
+      "reference": {
+        "excluded": [],
+        "judge_elapsed_s": 1650.5,
+        "level_counts": {
+          "L2": 2,
+          "L3": 42
+        },
+        "pass@1": 0.9864,
+        "pass@5": 0.9864,
+        "samples_per_task": 1,
+        "scored_tasks": 44,
+        "set_score": 0.9864,
+        "tasks": 44,
+        "tool_errors": 0
+      }
+    }
+  },
+  "run_id": "rtllm_pair_20261002T074340Z",
+  "selected": [
+    "JC_counter",
+    "LFSR",
+    "accu",
+    "adder_16bit",
+    "adder_32bit",
+    "adder_8bit",
+    "adder_bcd",
+    "adder_pipe_64bit",
+    "barrel_shifter",
+    "calendar",
+    "comparator_3bit",
+    "comparator_4bit",
+    "counter_12",
+    "div_16bit",
+    "edge_detect",
+    "fixed_point_adder",
+    "fixed_point_substractor",
+    "float_multi",
+    "freq_div",
+    "freq_divbyeven",
+    "freq_divbyfrac",
+    "freq_divbyodd",
+    "fsm",
+    "instr_reg",
+    "multi_16bit",
+    "multi_8bit",
+    "multi_booth_8bit",
+    "multi_pipe_4bit",
+    "multi_pipe_8bit",
+    "parallel2serial",
+    "pe",
+    "pulse_detect",
+    "radix2_div",
+    "right_shifter",
+    "ring_counter",
+    "sequence_detector",
+    "serial2parallel",
+    "signal_generator",
+    "square_wave",
+    "sub_64bit",
+    "synchronizer",
+    "traffic_light",
+    "up_down_counter",
+    "width_8to16"
+  ],
+  "source_files": {
+    "official_eval.py": "7fe9ebfcad4e36f886e0727b2414432d973c5cf60f07cea1fc880307d7c2f0f9",
+    "submission/agent/runtime.py": "82e3a72e006e35d6302633675d8270eca377fe4b43fa44cf6c019d50a2b906d3",
+    "submission/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "submission/run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75"
+  }
+}
