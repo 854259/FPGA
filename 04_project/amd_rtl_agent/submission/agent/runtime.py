@@ -86,15 +86,74 @@ def models():
         return [v['id'] for v in json.load(r)['data']]
 
 
-def vram_gb():
-    # Linux amdgpu counters are bytes, unlike rocm-smi's percentage output.
-    counters = list(Path('/sys/class/drm').glob('card[0-9]*/device/mem_info_vram_used'))
-    if not counters:
-        return None
+def _drm_amd_cards():
+    """Render node -> bytes of VRAM in use, for AMD cards only."""
+    cards = {}
+    for node in sorted(Path('/sys/class/drm').glob('renderD*')):
+        device = node / 'device'
+        try:
+            if (device / 'vendor').read_text().strip() != '0x1002':
+                continue
+            cards[node.name] = int((device / 'mem_info_vram_used').read_text().strip())
+        except (OSError, ValueError):
+            continue
+    return cards
+
+
+def _model_server_render_node():
+    """The render node held open by whatever process serves the model endpoint."""
     try:
-        return round(sum(int(p.read_text().strip()) for p in counters) / 1024**3, 3)
-    except (OSError, ValueError):
+        port = urlparse(endpoint()).port or 80
+    except (ValueError, TypeError):
         return None
+    inode = None
+    try:
+        for line in Path('/proc/net/tcp').read_text().splitlines()[1:]:
+            fields = line.split()
+            if len(fields) > 9 and fields[3] == '0A' and int(fields[1].split(':')[1], 16) == port:
+                inode = fields[9]
+                break
+    except (OSError, IndexError, ValueError):
+        return None
+    if not inode:
+        return None
+    for proc in Path('/proc').glob('[0-9]*'):
+        try:
+            fds = list((proc / 'fd').iterdir())
+        except OSError:
+            continue
+        for entry in fds:
+            try:
+                if os.readlink(entry) != 'socket:[' + inode + ']':
+                    continue
+            except OSError:
+                continue
+            for other in fds:
+                try:
+                    target = os.readlink(other)
+                except OSError:
+                    continue
+                if 'renderD' in target:
+                    return Path(target).name
+    return None
+
+
+def vram_gb():
+    """VRAM the model server holds, in GB.
+
+    This host carries eight AMD GPUs and other tenants occupy several of them, so
+    summing every card reports about 67 GB against our own 19 GB and would fail a
+    32 GB readiness check for a reason that has nothing to do with us. Attribute the
+    counter to the card the model server actually holds open, and fall back to the
+    busiest single card when the server cannot be identified.
+    """
+    cards = _drm_amd_cards()
+    if not cards:
+        return None
+    node = _model_server_render_node()
+    if node and node in cards:
+        return round(cards[node] / 1024 ** 3, 3)
+    return round(max(cards.values()) / 1024 ** 3, 3)
 
 
 def vivado_tool(name):
@@ -217,8 +276,11 @@ def vivado_version(tool):
     try:
         with tempfile.TemporaryDirectory(prefix='rtl-version-') as td:
             result = subprocess.run([tool, '-version'], cwd=td, capture_output=True,
-                                    text=True, errors='replace', timeout=5)
-        match = re.search(r'Vivado\s+v?(\d{4}\.\d+)', result.stdout)
+                                    text=True, errors='replace', timeout=30)
+        # The banner lowercases it: `vivado v2026.1 (64-bit)`. Matching `Vivado`
+        # case-sensitively never matched, which left the tool reported as absent and
+        # held /v1/health at ready=false even though everything was working.
+        match = re.search(r'vivado\s+v?(\d{4}\.\d+)', result.stdout, re.I)
         return match[1] if result.returncode == 0 and match else None
     except (OSError, subprocess.SubprocessError):
         return None
