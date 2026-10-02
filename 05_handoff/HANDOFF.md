@@ -352,7 +352,7 @@ ARG BASE_IMAGE=fpgachina2026/base-gfx1100:REPLACE_WITH_ANNOUNCED_TAG
 队友登录：
 
 ```bash
-ssh -i ~/.ssh/amd_rtl -p <INSTANCE_PORT> root@<INSTANCE_HOST>
+ssh -i ~/.ssh/<TEAMMATE_KEY> -p <INSTANCE_PORT> root@<INSTANCE_HOST>
 ```
 
 **首次连接会停在主机身份验证**（`The authenticity of host ... can't be established`）。**这一步在认证之前**，与钥匙无关。核对指纹一致后输 `yes`。
