@@ -1278,5 +1278,68 @@
       "the final card VRAM measurement and the official time budget and gain threshold remain unpublished"
     ],
     "not_extrapolable": "package structure and self-checks are validated; this is not an official-image acceptance run"
+  },
+  "generalisation_test_rtllm_20261002": {
+    "status": "task_set_built_and_reference_checked",
+    "evidence_class": "S2",
+    "why": "The organisers' evaluation set is unpublished and only partly drawn from public benchmarks, while every tuning decision so far was made on the 156 public VerilogEval tasks. If the hidden set emphasises different circuit families, that tuning may not transfer. This is the first independent check.",
+    "source": {
+      "benchmark": "RTLLM v2.1",
+      "commit": "51ed553d0ffd32797a1a0a13e051656bf302c81f",
+      "date": "2026-08-16",
+      "licence": "MIT",
+      "designs": 50,
+      "fetched_via": "the instance egress proxy; gitee.com and raw.githubusercontent.com resolve to non-public addresses from the local machine",
+      "rejected_candidates": {
+        "VeriBench": "a Lean 4 formal-verification benchmark, unrelated to RTL",
+        "ChipBench": "paper exists but the repository and dataset were not reachable through the proxy"
+      }
+    },
+    "why_rtllm_fits": "Its design_description.txt carries the module name and every port name, width and meaning, and every design ships a hand-written reference implementation. Its own testbench does not fit: it instantiates a single DUT, prints a pass banner rather than comparing against a reference, and cannot report the mismatch counts the judge parses.",
+    "builder": "04_project/amd_rtl_agent/bench/build_rtllm_taskset.py",
+    "built": 49,
+    "skipped": {"clkgenerator": "one output port and no inputs, so no stimulus can be applied"},
+    "conversion_choices": {
+      "module_rename": "the prompt asks for TopModule and the reference becomes RefModule in ref.sv and TopModule in reference/solution.sv, because the skill fixes the output module name as TopModule and the skill is global rather than per task",
+      "testbench": "regenerated as a dual-instantiation comparison. The stimulus generator is mechanical and does not involve the model."
+    },
+    "bug_found_and_fixed": "RTLLM names clocks and resets inconsistently: clk, CLK, Clk, CLK_in, clk_a, clk_b, wclk, rclk and rst, RST, Rst, rst_n, arstn, brstn. The first version matched only a bare lowercase clk, which left ten sequential designs with no clock at all. Unfixed, those references would never advance, would be judged as failures, and would have been misread as model weakness rather than conversion error.",
+    "reference_self_check": {
+      "result": "set_score 0.9860",
+      "levels": {"L3": 41, "L2": 2},
+      "scored_tasks": 43,
+      "tool_errors": 6,
+      "excluded": ["adder_pipe_64bit", "asyn_fifo", "fixed_point_adder", "fixed_point_substractor", "multi_pipe_4bit", "multi_pipe_8bit"],
+      "excluded_meaning": "A analysis: these are pipeline, fixed-point and asynchronous-FIFO designs whose generated testbench does not hold. They need repair or removal before the set is used, and the denominator is therefore 43 rather than 49.",
+      "path": "bench/rtllm_refcheck_20261002/graded_summary.json"
+    },
+    "paired_run": "not_run",
+    "decision_rule": "If the gain transfers (clearly above 1.0), the skill generalises and further tuning is worthwhile. If it collapses toward 1.0, the skill is overfitted to VerilogEval and tuning must stop until it generalises. If the RTLLM baseline is near zero the gain is undefined, and only absolute scores should be compared.",
+    "cited_in": "HANDOFF_20261002.md section 5 and 8",
+    "not_extrapolable": "the task set and its reference self-check are validated; no model has been run on it yet"
+  },
+  "agent_functional_feedback_analysis_20261002": {
+    "evidence_class": "S2",
+    "finding": "agent/runtime.py runs only xvlog. It has no functional feedback at all, so on the 38 simulation failures it believes it succeeded and submits.",
+    "consequence": "The agent reduced baseline compile failures from 22 to 7 and produced all of its gain there. Its functional failure count (38) is two worse than the bare model (36), so functional correctness is unchanged from single-shot generation.",
+    "repair_prompt_already_exists": "RTL_REPAIR_SKILL.md rule 3 already describes how to repair a non-zero mismatch count, but it has never executed because the simulation step does not exist in the official-contract runtime. The legacy agent.py did run xvlog to xelab to xsim to synth_design; the official-contract version dropped it because no reference testbench is provided.",
+    "static_check_route": {
+      "status": "tested_and_disproven",
+      "result": "xvlog on successfully compiling candidates emits no RTL warnings beyond the locale notice, and xelab emits no useful diagnostics either. The failing designs are syntactically and elaboratively clean; they are simply functionally wrong, which static tooling cannot see.",
+      "trap": "A count of 151 of 156 tasks appearing to have warnings is an artifact of the per-invocation locale notice WARNING: The locale 'C.utf8' is not installed. Do not read warning counts without reading the warning text."
+    },
+    "remaining_routes": {
+      "A_independent_second_implementation": "Generate a second implementation from the same prompt, then compare the two with a mechanically generated dual-instantiation testbench. The model only has to write RTL, which it is good at, instead of a testbench, which it is not. Requires non-zero temperature or the two generations are identical.",
+      "B_model_written_testbench": "The intended core of the track. A probe over eight L1 tasks found only three usable discriminators: three testbenches failed to compile and two also rejected the correct reference.",
+      "shared_limit": "Both depend on the same model's reading of the prompt, so a consistent misreading makes both implementations wrong in the same way and the testbench wrong the same way. Functional self-checking lowers the error rate but cannot drive it to zero."
+    },
+    "cost_tension": {
+      "evidence_class": "S2",
+      "measured": "agent averages 19.75 s per task against our own baseline at 16.58 s, so the cost item is about 8.40 of 10 before any self-verification is added",
+      "added_cost": "A self-written testbench adds roughly 38 s per task, which would move the cost item to about 2.9",
+      "unknown": "The cost formula divides a fixed, pre-announced baseline duration by our measured duration. Because that number is unpublished, the penalty is a range, not a certainty: a generous announced baseline would make self-verification free. An earlier statement that self-verification was certainly net negative was too strong.",
+      "decisive_experiment_not_yet_run": "Feed the official testbench's mismatch feedback directly into the repair loop on the 38 L1 failures as a perfect oracle, and count how many reach L3. If even a perfect oracle fixes few tasks, both routes are dead and the effort is saved."
+    },
+    "not_extrapolable": "measured on the public VerilogEval set under the development profile; the announced baseline duration is unknown"
   }
 }
