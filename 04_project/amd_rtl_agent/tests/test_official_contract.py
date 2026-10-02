@@ -23,7 +23,22 @@ def load(name, path):
     return value
 
 
-runtime = load('contract_runtime', ROOT/'submission/runtime.py')
+def agent_runtime_path():
+    """Locate the agent runtime.
+
+    The package was realigned to the official <team_name>-agent/ layout, which
+    moved runtime.py under agent/ and left baseline.py and upstream.json at the
+    package root. Accept either location so the tests keep working from both the
+    packaged tree and the older flat one.
+    """
+    for rel in ('submission/agent/runtime.py', 'submission/runtime.py'):
+        candidate = ROOT / rel
+        if candidate.is_file():
+            return candidate
+    raise FileNotFoundError('agent runtime not found under submission/')
+
+
+runtime = load('contract_runtime', agent_runtime_path())
 evaluation = load('contract_eval', ROOT/'official_eval.py')
 
 

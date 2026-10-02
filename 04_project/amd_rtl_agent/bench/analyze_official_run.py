@@ -70,8 +70,8 @@ def read_results(stage: Path) -> dict[str, dict[str, dict]]:
 def read_traces(stage: Path) -> dict[str, list[dict]]:
     """mode -> list of llm call events across all tasks/samples.
 
-    trace.jsonl is written by submission/runtime.py; the discriminator field is
-    `tool` (not `event`). The official baseline additionally records
+    trace.jsonl is written by submission/agent/runtime.py; the discriminator
+    field is `tool` (not `event`). The official baseline additionally records
     `empty_content` and `sec`, which the agent path does not.
     Each event: {task, round, finish, tokens_in, tokens_out, error, empty, sec}
     """

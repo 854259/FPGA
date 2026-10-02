@@ -1,0 +1,132 @@
+{
+  "freeze_id": "baseline-20261002T1515Z",
+  "purpose": "Reference version for all subsequent comparisons. Any candidate build must be diffed against this record.",
+  "frozen_utc": "2026-10-02T15:15:00Z",
+  "frozen_by": "原会话 Agent",
+  "evidence_class": "S2",
+
+  "code": {
+    "local_root": "E:/26qiansai/FPGA-official-contract",
+    "git_branch": "feat/official-rtl-contract",
+    "git_head_at_freeze": "218a0b1",
+    "cloud_root": "/workspace/team/tasks/autodl-rtl-kit/project",
+    "local_and_cloud_identical": true,
+    "xelab_experiment_enabled": false,
+    "note_on_xelab": "Neither the local nor the deployed runtime.py contains the xelab change. The xelab variant exists only on branch exp/xelab-check (not merged) and as preserved copies under /workspace/team/runs/fpga_owner/rtllm_xelab_20261002/. The earlier handover statement that a local uncommitted change existed is therefore outdated and was re-verified here.",
+    "files": {
+      "submission/agent/runtime.py": {
+        "sha256_prefix16": "82e3a72e006e35d6",
+        "bytes": 17037,
+        "local": "82e3a72e006e35d6",
+        "cloud": "82e3a72e006e35d6",
+        "match": true
+      },
+      "submission/skill/rtl-generation/SKILL.md": {
+        "sha256_prefix16": "f4c4c8e2d97ec476",
+        "bytes": 1071,
+        "rules": 7,
+        "local": "f4c4c8e2d97ec476",
+        "cloud": "f4c4c8e2d97ec476",
+        "match": true
+      },
+      "submission/skill/rtl-feedback-repair/SKILL.md": {
+        "sha256_prefix16": "aee81f188b3717ce",
+        "bytes": 1162,
+        "local": "aee81f188b3717ce",
+        "cloud": "aee81f188b3717ce",
+        "match": true
+      },
+      "submission/baseline.py": {
+        "sha256_prefix16": "537783e39db22079",
+        "local": "537783e39db22079",
+        "cloud": "537783e39db22079",
+        "matches_official_upstream_json": true
+      },
+      "submission/upstream.json": {
+        "sha256_prefix16": "cd9f2bebfb5aae8f"
+      },
+      "submission/manifest.json": {
+        "sha256_prefix16": "7e41b141f2081c98"
+      },
+      "official_eval.py": {
+        "sha256_prefix16": "7fe9ebfcad4e36f8",
+        "local": "7fe9ebfcad4e36f8",
+        "cloud": "7fe9ebfcad4e36f8",
+        "match": true
+      },
+      "tests/test_official_contract.py": {
+        "sha256_prefix16": "a1078cc3bfbfe975",
+        "note": "Path fix applied in this freeze window: the suite now resolves submission/agent/runtime.py with a fallback to submission/runtime.py. 68 tests pass."
+      },
+      "skill/RTL_SKILL.md": {
+        "sha256_prefix16": "f4c4c8e2d97ec476",
+        "note": "Byte-identical to submission/skill/rtl-generation/SKILL.md, as intended."
+      }
+    }
+  },
+
+  "model": {
+    "name": "Qwen3.6-27B-Q4_K_M",
+    "file": "/workspace/team/models/Qwen3.6-27B-Q4_K_M.gguf",
+    "sha256_prefix16": "65b753ea835627f7",
+    "bytes": 19095766304,
+    "matches_model_md": true
+  },
+
+  "serving": {
+    "binary": "/workspace/team/tools/llama-build/bin/llama-server",
+    "pid_at_freeze": 1198635,
+    "args": "-m <model> --alias Qwen3.6-27B-Q4_K_M --host 127.0.0.1 --port 8000 -ngl 99 -c 16384 -np 1 -t 8 --reasoning off",
+    "parallel_slots": 1,
+    "note": "Single slot. All evaluation runs must queue; the slot lock is /workspace/team/slot.sh."
+  },
+
+  "generation_parameters": {
+    "RTL_PROFILE": "development",
+    "RTL_REPAIRS": 1,
+    "RTL_MAX_TOKENS": 8192,
+    "RTL_TEMPERATURE": 0,
+    "samples_per_task": 1,
+    "deadline_s": 300,
+    "baseline": "official baseline.py, byte-identical to the pinned upstream copy"
+  },
+
+  "task_sets": {
+    "verilog_eval": {
+      "path": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval",
+      "tasks": 156,
+      "source": "VerilogEval v2 dataset_spec-to-rtl, pinned commit c498220d0a52248f8e3fdffe279075215bde2da6"
+    },
+    "rtllm": {
+      "path": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/tasks_verified",
+      "tasks": 44,
+      "source": "RTLLM v2.1, commit 51ed553d0ffd32797a1a0a13e051656bf302c81f, converted by bench/build_rtllm_taskset.py and repaired by the teammate",
+      "status": "Contracts under audit by the teammate; several tasks flagged ambiguous. Treat any RTLLM result from this set as provisional until that audit closes."
+    },
+    "official_contract": {
+      "path": "/workspace/team/tasks/autodl-rtl-kit/project/official_reference",
+      "commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801"
+    }
+  },
+
+  "reference_scores": {
+    "verilog_eval_agent": 0.7603,
+    "verilog_eval_baseline": 0.6744,
+    "verilog_eval_gain": 1.1274,
+    "verilog_eval_run": "/workspace/team/runs/fpga_owner/skillfix_full156_20261001T235258Z",
+    "verilog_eval_note": "Single sample. Historical, not a stable generalisation claim.",
+    "rtllm_agent": 0.5182,
+    "rtllm_baseline": 0.5591,
+    "rtllm_gain": 0.9268,
+    "rtllm_run": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z",
+    "rtllm_note": "Historical result under the old task-set conditions. Reference implementations, testbenches and specification contracts were subsequently found to have problems in some tasks. This number must not be used to claim that the agent fails to generalise or has overfitted, and the assumption that faulty testbenches penalise both modes symmetrically is also not established."
+  },
+
+  "not_yet_done": [
+    "Five-sample protocol (156 tasks x 2 modes x 5 = 1560 top-level runs). Required by the scoring rules; single-sample results must not be presented as if this were complete.",
+    "Official base image rebuild and offline run verification.",
+    "Final-card VRAM measurement, per-task and whole-set time limits, gain full-mark line.",
+    "Confirmation from the organisers on whether ROSS is required and how official skills may be reused.",
+    "Repair or removal of the RTLLM tasks whose contracts are ambiguous."
+  ]
+}
