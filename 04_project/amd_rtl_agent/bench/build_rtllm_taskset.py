@@ -277,11 +277,26 @@ def gen_testbench(module_inputs, module_outputs, clk_names, rst_names):
     return "\n".join(L) + "\n"
 
 
-def load_prompt(desc_path: Path, design_name: str) -> str:
+def load_prompt(desc_path: Path, module_name: str) -> str:
+    """Rename the module the prompt asks for, without leaving a second declaration.
+
+    The name to replace must be read out of the DESCRIPTION, not taken from the
+    reference file: RTLLM often names the reference module differently (for example
+    `verified_multi_pipe_8bit` while the description says `multi_pipe_8bit`). Passing
+    the reference name made the substitution miss, the guard below then prepended a
+    second `Module name:` line, and the prompt ended up declaring the module twice.
+    Models sometimes followed the lower, original declaration and named the module
+    after the task instead of TopModule. The declared name is therefore parsed from
+    the description itself.
+    """
     text = desc_path.read_text(encoding="utf-8", errors="replace")
-    # The contract says the module name comes from the prompt; our skill emits TOP_NAME.
-    text = re.sub(r"(Module name:\s*\n?\s*)" + re.escape(design_name), r"\1" + TOP_NAME, text)
-    if TOP_NAME not in text:
+    declared = re.search(r"Module\s+name\s*[:：]\s*(?:\r?\n\s*)?([A-Za-z_]\w*)", text)
+    target = declared.group(1) if declared else module_name
+    text = re.sub(r"(Module\s+name\s*[:：]\s*(?:\r?\n\s*)?)" + re.escape(target) + r"\b",
+                  r"\1" + TOP_NAME, text, count=1)
+    # If the description never declared a name, say it once at the top. Never add a
+    # second declaration when one already exists.
+    if not re.search(r"Module\s+name\s*[:：]\s*(?:\r?\n\s*)?" + re.escape(TOP_NAME) + r"\b", text):
         text = f"Module name: {TOP_NAME}\n\n" + text
     return text
 
