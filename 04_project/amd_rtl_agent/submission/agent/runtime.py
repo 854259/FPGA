@@ -309,12 +309,22 @@ def worker(task, out):
         # costs nothing, whereas an xelab pass costs about a second on every task.
         # Validated against xelab ground truth on 200 generated solutions with no false
         # positives; it finds every missing-submodule case and ignores other error classes.
-        undefined = undefined_submodules(code)
+        # Measured effect on the four tasks it fires on: one moved L0 to L3.
+        #
+        # This runs on every candidate, so it must never be able to break one. The check
+        # is an optimisation, not a requirement: any failure here means "nothing flagged"
+        # and the pipeline carries on exactly as before.
+        try:
+            undefined = undefined_submodules(code)
+        except Exception:
+            undefined = []
         if undefined:
-            feedback = ('The design instantiates module(s) that it never defines: ' +
-                        ', '.join(undefined) +
-                        '. Define every instantiated module in this same file, or rewrite '
-                        'the design as a single flat module with no submodules.')
+            # Report the fact only. A paired A/B showed that adding a prescription
+            # ("define it, or rewrite as one flat module") produced no benefit and
+            # steered the model into a flattened form that then failed xvlog, so the
+            # message stays factual, matching the condition that recovered 2 of 5.
+            feedback = ('The design instantiates module(s) that this file never defines: ' +
+                        ', '.join(undefined) + '.')
             trace(out, 'check_submodules', rc=1, excerpt=feedback)
             continue
         tool = vivado_tool('xvlog')
