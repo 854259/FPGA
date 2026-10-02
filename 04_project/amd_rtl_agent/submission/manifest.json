@@ -44,6 +44,12 @@
   },
   "runtime": {
     "path": "agent/runtime.py",
-    "sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7"
+    "sha256": "cea6479c6364fbfce55ca8129e8cfd7bb4b9afd3b2a4c7ae2e3cd381af2968b1"
+  },
+  "contract": {
+    "health": "GET /v1/health returns ready/track/model/vram_gb; verified end to end over HTTP, including the 401 without a token",
+    "solve": "POST /v1/solve takes task_id, nonce, mode, prompt, interface and deadline_s, and returns exactly task_id, solution, trace and elapsed_s; verified with eight conformance cases, including an empty interface, a one-second deadline returning an empty solution rather than an error, and 400 for a missing task_id",
+    "sigterm": "exits within 0.10 s of SIGTERM, measured both early and while EDA tools were running, against the contract's ten-second limit",
+    "bind": "127.0.0.1 only"
   }
 }
