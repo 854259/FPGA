@@ -151,6 +151,65 @@ def undefined_submodules(code):
     return missing
 
 
+_RE_NONREG = re.compile(
+    r'VRFC 10-1280\]\s*procedural assignment to a non-register\s+(\w+)')
+_RE_REDECL = re.compile(
+    r"VRFC 10-9336\]\s*redeclaration of ANSI port\s+'?(\w+)'?")
+
+
+def repair_ansi_declarations(code, feedback):
+    """Fix a mechanical declaration fault in place, or return None.
+
+    Two shapes, both reported by xvlog as a compile error:
+
+      * an ANSI output assigned in a procedural block is an implicit wire, so the
+        port has to become `output reg`;
+      * the same signal then also declared `reg` inside the body is a redeclaration.
+
+    Only signals named by the compiler are touched, and the caller recompiles before
+    accepting anything, so a wrong guess costs one compile and not a wrong answer.
+    Validated on Prob058_alwaysblock2, which this moves from L0 to L3 with no model
+    call at all.
+    """
+    names = []
+    for pattern in (_RE_NONREG, _RE_REDECL):
+        for match in pattern.finditer(feedback or ''):
+            if match.group(1) not in names:
+                names.append(match.group(1))
+    if not names:
+        return None
+    head = re.search(r'\bmodule\s+\w+\s*(?:#\s*\(.*?\)\s*)?\((.*?)\)\s*;', code, re.S)
+    if not head:
+        return None
+    ports, tail = head.group(1), code[head.end(1):]
+    changed = False
+    for name in names:
+        pattern = re.compile(
+            r'(\boutput\b)(\s+(?:wire\s+|logic\s+|reg\s+)?)((?:\[[^\]]*\]\s*)?)'
+            r'(\b' + re.escape(name) + r'\b)')
+
+        def upgrade(match, _name=name):
+            if 'reg' in match.group(2) or 'logic' in match.group(2):
+                return match.group(0)
+            return match.group(1) + ' reg ' + match.group(3) + match.group(4)
+
+        # Compare text rather than counting substitutions: re.subn counts a match even
+        # when the replacement is identical, which made an already-`reg` port look patched.
+        upgraded = pattern.sub(upgrade, ports)
+        if upgraded != ports:
+            ports = upgraded
+            changed = True
+        stripped = re.sub(
+            r'(?m)^[ \t]*reg\b[^;\n]*\b' + re.escape(name) + r'\b[^;\n]*;[ \t]*\r?\n',
+            '', tail)
+        if stripped != tail:
+            tail = stripped
+            changed = True
+    if not changed:
+        return None
+    return code[:head.start(1)] + ports + tail
+
+
 @lru_cache(maxsize=4)
 def vivado_version(tool):
     if not tool:
@@ -341,6 +400,24 @@ def worker(task, out):
         lines = [s for s in result.stdout.splitlines() if re.search('ERROR|WARNING|FATAL', s)]
         feedback = '\n'.join(lines)[:2048] or result.stdout[-2048:]
         trace(out, 'lint', rc=result.returncode, excerpt=feedback, round=attempt)
+        if result.returncode != 0:
+            # A declaration fault is mechanical, so fix it by text instead of spending a
+            # model call on it. The patch is only accepted if it actually recompiles;
+            # otherwise the loop falls through to the normal model repair below.
+            # Prob058_alwaysblock2 goes from L0 to L3 this way with no model call.
+            try:
+                patched = repair_ansi_declarations(code, feedback)
+            except Exception:
+                patched = None
+            if patched:
+                write(wd / 'candidate.sv', patched)
+                again = subprocess.run([tool, '--sv', str(wd / 'candidate.sv')], cwd=wd,
+                                       stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                       text=True, errors='replace')
+                if again.returncode == 0:
+                    write(out / 'solution.v', patched)
+                    trace(out, 'declaration_fix', rc=0, round=attempt)
+                    return  # Compilation is NOT an official L1/L2/L3 judgement.
         if result.returncode == 0:
             return  # Compilation is NOT an official L1/L2/L3 judgement.
 
