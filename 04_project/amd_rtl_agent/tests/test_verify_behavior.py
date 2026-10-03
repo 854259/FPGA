@@ -193,8 +193,50 @@ class ComparabilityTests(HarnessCase):
     def test_a_real_improvement_is_reported_as_a_win(self):
         self.build_pair({"ProbA": 3}, {"ProbA": 1})
         rc, out, flat = self.run_script()
-        self.assertIn("可比: 是", out)
-        self.assertIn("本轮胜出", out)
+        self.assertIn("可比: 是", flat)
+        self.assertIn("本轮胜出", flat)
+
+    def test_disjoint_task_sets_cannot_be_decided(self):
+        """反例一：新旧各一题，但题目不同（新 ProbA、旧 ProbB）。
+
+        曾经只把原因写进 reasons、忘了置 comparable=False，
+        于是题目完全不同的对照被判成"可比：是"并宣布胜出。
+        """
+        make_run(self.new, {"ProbA": 3})
+        make_experiment(self.new, ["ProbA"])
+        make_run(self.old, {"ProbB": 1})
+        make_experiment(self.old, ["ProbB"])
+        self.skill_sha = self.set_skill("# stable skill restored\n")
+        rc, out, flat = self.run_script()
+        self.assertIn("暂不可判定", flat)
+        self.assertIn("题目集合不同", flat)
+        self.assertNotIn("本轮胜出", flat)
+        self.assertNotIn("→ 持平", flat)
+
+
+class VersionGateTests(HarnessCase):
+    """反例二：题目一致但新 runtime 哈希错误 —— 不能先宣布胜出再报验收失败。"""
+
+    def test_wrong_runtime_blocks_the_verdict_entirely(self):
+        self.build_pair({"ProbA": 3}, {"ProbA": 1})      # 成绩确实提高了
+        rc, out, flat = self.run_script(extra=["--expect-runtime", "f" * 16])
+        self.assertIn("暂不可判定", flat)
+        self.assertNotIn("本轮胜出", flat)
+        self.assertNotEqual(rc, 0)
+
+    def test_version_failure_is_listed_under_acceptance(self):
+        self.build_pair({"ProbA": 3}, {"ProbA": 1})
+        rc, out, flat = self.run_script(extra=["--expect-runtime", "f" * 16])
+        self.assertIn("[验收]", flat)
+        self.assertIn("哈希不匹配", flat)
+
+
+class GateSharesOneConditionTests(unittest.TestCase):
+    """两块失败条件必须共享：可比性与验收问题都要挡住胜负判定。"""
+
+    def test_source_uses_a_shared_gate(self):
+        text = SCRIPT.read_text(encoding="utf-8")
+        self.assertIn("verdict_allowed = comparable and not problems", text)
 
 
 class RegressionOnTheExactBugTests(unittest.TestCase):

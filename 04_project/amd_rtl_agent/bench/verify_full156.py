@@ -346,7 +346,11 @@ def main():
         reasons.append("本轮 agent 样本并非全部使用预定技能")
     common = sorted(set(new["agent"]) & set(old["agent"]))
     if len(common) != res["agent"]["tasks"]:
-        reasons.append("共同题目 %d 少于本轮题数 %d" % (len(common), res["agent"]["tasks"]))
+        # 这里曾经只 append 原因、忘了置 False，于是"新题 ProbA、旧题 ProbB"
+        # 这种题目完全不同的对照会被判成"可比：是"并宣布胜出。
+        comparable = False
+        reasons.append("共同题目 %d 少于本轮题数 %d（题目集合不同）"
+                       % (len(common), res["agent"]["tasks"]))
     if res["agent"]["scored_tasks"] != res["agent"]["tasks"] or \
             oldres["agent"]["scored_tasks"] != oldres["agent"]["tasks"]:
         comparable = False
@@ -354,6 +358,10 @@ def main():
     print("  可比: %s" % ("是" if comparable else "否"))
     for r in reasons:
         print("    - %s" % r)
+
+    # 胜负判定的前置条件 = 可比 且 无验收问题（版本/技能/还原等）。
+    # 两块失败条件必须共享，否则会出现"先宣布胜出、最后才报版本错误"的矛盾报告。
+    verdict_allowed = comparable and not problems
 
     # ---------- 9. 共同题目变化 ----------
     up_list, down_list = [], []
@@ -378,10 +386,16 @@ def main():
 
     print()
     print("【10】结论")
-    if not comparable:
-        print("  ★ 暂不可判定 —— 不满足比较条件：")
-        for r in reasons:
-            print("     - %s" % r)
+    if not verdict_allowed:
+        print("  ★ 暂不可判定 —— 不满足判定条件：")
+        if not comparable:
+            print("    [可比性]")
+            for r in reasons:
+                print("       - %s" % r)
+        if problems:
+            print("    [验收]")
+            for p in problems:
+                print("       - %s" % p)
         print("  共同题目上的变化可以报告，但不能据此宣布胜出或退步。")
     else:
         d = res["agent"]["set_score"] - oldres["agent"]["set_score"]
