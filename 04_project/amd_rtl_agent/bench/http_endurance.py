@@ -197,9 +197,11 @@ def main():
             t.start()
         for t in ts:
             t.join()
-        # 逐个断言：三个都必须 200
-        record("并发3请求", sorted(codes) == [200, 200, 200],
-               "全部响应码=%s" % sorted(codes), expected="[200,200,200]")
+        # 逐个断言：三个都必须 200。
+        # 用 all(code == 200 ...) 而不是 sorted(codes) == [...]：请求超时/连接失败
+        # 会得到 None，排序 None 会抛异常，把后续的恢复检查与报告写出一起中断。
+        concurrent_ok = len(codes) == 3 and all(c == 200 for c in codes)
+        record("并发3请求", concurrent_ok, "响应码=%s" % codes, expected="三个都 200")
 
         # 8) 恢复后的正常请求：必须含非空 solution，不能只看状态码
         code, body, _ = request("/v1/solve", body_ok, timeout=300)

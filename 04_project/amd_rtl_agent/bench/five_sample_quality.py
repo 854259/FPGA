@@ -31,6 +31,7 @@ import importlib.util
 import json
 import os
 import pathlib
+import shutil
 import subprocess
 import sys
 import time
@@ -115,18 +116,26 @@ def post_solve(port, task_id, prompt, mode, deadline):
 
 
 def run_judge(task_dir, solution_path, outdir):
+    """判一份解答。目录必须唯一，且必须确认结果是本轮生成的。
+
+    第一版把判定输出写到可复用目录，又不检查子进程退出码——本次判定失败时
+    可能读到上一轮留下的 verdict.json，把旧成绩当成本次成绩。所以这里先清空目录，
+    再确认 verdict.json 确实由本次运行写出；拿不到就标为环境失败，不猜等级。
+    """
+    if os.path.exists(outdir):
+        shutil.rmtree(outdir, ignore_errors=True)
     os.makedirs(outdir, exist_ok=True)
     jf = os.path.join(outdir, "verdict.json")
-    subprocess.run(["python3", "-B", str(JUDGE), "--task", str(task_dir),
-                    "--solution", str(solution_path), "--outdir", outdir,
-                    "--json", jf, "--timeout", "600"],
-                   capture_output=True, text=True, errors="replace")
-    if os.path.isfile(jf):
-        try:
-            return json.loads(pathlib.Path(jf).read_text())
-        except ValueError:
-            return {}
-    return {}
+    proc = subprocess.run(["python3", "-B", str(JUDGE), "--task", str(task_dir),
+                           "--solution", str(solution_path), "--outdir", outdir,
+                           "--json", jf, "--timeout", "600"],
+                          capture_output=True, text=True, errors="replace")
+    if not os.path.isfile(jf):
+        return {"tool_error": "judge produced no verdict (rc=%s)" % proc.returncode}
+    try:
+        return json.loads(pathlib.Path(jf).read_text())
+    except ValueError as exc:
+        return {"tool_error": "unreadable verdict: %s" % exc}
 
 
 def main():
@@ -162,11 +171,19 @@ def main():
 
         # by_task[mode][task_id] = [verdict, ...]   —— 与官方 collect() 的结构一致
         by_task = {"agent": {}, "baseline": {}}
+        # 完整性台账：预期 vs 实际。只比 scored_tasks 与 tasks 会漏掉两种情形：
+        #   - 请求了 20 题，其中 1 题不存在 -> 仍显示 19/19，看不出少了
+        #   - 某题 5 次采样只有 1 次有效，其余环境失败 -> 仍算"已计分题"
+        # 所以按 题目 x 模式 x 采样 逐格记账。
+        ledger = dict(expected_tasks=len(args.tasks), missing_tasks=[],
+                      expected_cells=len(args.tasks) * 2 * args.samples,
+                      attempted=0, empty=0, tool_error=0, graded=0)
         for task in args.tasks:
             task_dir = TASKS_DIR / task
             prompt_file = task_dir / "prompt.txt"
             if not prompt_file.is_file():
-                print("  跳过（题不存在）:", task, flush=True)
+                ledger["missing_tasks"].append(task)
+                print("  ⚠ 题目不存在，未评测:", task, flush=True)
                 continue
             prompt = prompt_file.read_text(encoding="utf-8")
             for mode in ("agent", "baseline"):
@@ -180,18 +197,41 @@ def main():
                     (d / "trace.jsonl").write_text(payload.get("trace") or "", encoding="utf-8")
                     (d / "response.json").write_text(
                         json.dumps(payload, ensure_ascii=False)[:20000], encoding="utf-8")
-                    # 空答案交给官方判定器：它会判为 L0（judge.py 明确写了"空解属于 L0"）
+                    # 空答案交给官方判定器：它会判为 L0（judge.py 明确写了空解属于 L0）
                     v = run_judge(task_dir, d / "solution.v", str(d / "judge"))
                     if not v:
-                        # 判定没产出结果：标记为环境失败，让官方汇总把它单列，
-                        # 而不是当成 L0 静默计入（否则会把工具问题算成模型失分）
-                        v = {"task_id": task, "tool_error": "judge produced no verdict"}
+                        # 判定没产出结果：标为环境失败，让官方汇总单列，
+                        # 而不是当成 L0 静默计入（否则工具问题会被算成模型失分）
+                        v = {"tool_error": "judge produced no verdict"}
                     v.setdefault("task_id", task)
                     by_task[mode][task].append(v)
+                    ledger["attempted"] += 1
+                    if v.get("tool_error"):
+                        ledger["tool_error"] += 1
+                    else:
+                        ledger["graded"] += 1
+                        if not sol.strip():
+                            ledger["empty"] += 1
                 lv = [s.get("level") for s in by_task[mode][task]]
                 te = sum(1 for s in by_task[mode][task] if s.get("tool_error"))
                 print("  %-32s %-8s 等级=%-22s 环境失败=%d"
                       % (task, mode, lv, te), flush=True)
+
+        print()
+        print("=== 完整性台账（预期 vs 实际）===")
+        print("  预期题数          : %d" % ledger["expected_tasks"])
+        print("  题目不存在（未评测）: %d %s"
+              % (len(ledger["missing_tasks"]),
+                 ledger["missing_tasks"] if ledger["missing_tasks"] else ""))
+        print("  预期采样格数      : %d （题 x 2 模式 x %d）"
+              % (ledger["expected_cells"], args.samples))
+        print("  实际尝试          : %d" % ledger["attempted"])
+        print("  有效判分          : %d" % ledger["graded"])
+        print("  其中空答案(记 L0) : %d" % ledger["empty"])
+        print("  环境失败(单列)    : %d" % ledger["tool_error"])
+        complete = (ledger["attempted"] == ledger["expected_cells"]
+                    and not ledger["missing_tasks"])
+        print("  评测完整性        : %s" % ("完整" if complete else "★ 不完整 —— 结论只能当部分结果看"))
 
         print()
         print("=== 官方 summarize() 的结果 ===")
@@ -203,13 +243,16 @@ def main():
                   % (mode, res["set_score"], res["pass@5"],
                      res["scored_tasks"], res["tasks"], res["tool_errors"]))
             if res["scored_tasks"] != res["tasks"]:
-                print("    ⚠ 评测不完整：%d 题未计入（见 excluded）"
+                print("    ⚠ 该模式有 %d 题无有效成绩"
                       % (res["tasks"] - res["scored_tasks"]))
         a = summary["agent"]["set_score"]
         b = summary["baseline"]["set_score"]
         gain, gscore = official.gain_score(a, b)
         print("  增益 = %s   增益得分(满分线 %.1f) = %.2f"
               % ("%.4f" % gain if gain is not None else "N/A", official.GAIN_FULL_MARK, gscore))
+        if summary["agent"]["scored_tasks"] == 0 or summary["baseline"]["scored_tasks"] == 0:
+            print("  ★ 有模式【没有任何有效成绩】：官方汇总此时返回 0 只是兜底，")
+            print("    不代表真实得分为零——本次结果不能用于比较。")
 
         # 另起名字的辅助指标：五次中是否出现过 L3
         print()
@@ -224,16 +267,18 @@ def main():
                   % (mode, anyl3, len(by_task[mode])))
 
         (args.out / "quality_official.json").write_text(
-            json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
+            json.dumps(dict(summary=summary, ledger=ledger, complete=complete),
+                       indent=2, ensure_ascii=False), encoding="utf-8")
         (args.out / "by_task.json").write_text(
             json.dumps(by_task, indent=2, ensure_ascii=False), encoding="utf-8")
         print()
         print("说明：空答案按官方口径是 L0（judge.py 写明「空解属于 L0」），留在分母里。")
-        print("      环境失败按官方口径单列排除；整题全为环境失败时该题不计分，")
-        print("      代码注释如此，但官方算术会给 set_score 一个 0 —— 所以这里同时报")
-        print("      scored_tasks/tasks，让「评测不完整」可见，而不是静默通过。")
+        print("      环境失败按官方口径单列排除。")
+        print("      【更正一处此前的表述】：一道题全为环境失败，并不会让整个题集成绩变成 0；")
+        print("      只有【所有题都未计分】时，官方汇总才返回 0 作为兜底。")
+        print("      关键是把「无有效成绩」标出来，而不是把兜底的 0 当成真实得分。")
         print("      这是子集评测，不是完整 1560 次协议。")
-        return 0
+        return 0 if complete else 2
     finally:
         srv.terminate()
         try:

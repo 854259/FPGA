@@ -14,12 +14,16 @@
 否则工具问题会被算成模型失分，把成绩做低而不自知。
 """
 import importlib.util
+import os
+import shutil
+import tempfile
 from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 OFFICIAL_SCORE = ROOT / "official_reference/selftest/score.py"
 QUALITY = ROOT / "bench/five_sample_quality.py"
+ENDURANCE = ROOT / "bench/http_endurance.py"
 
 COEFF = {0: 0.0, 1: 0.2, 2: 0.7, 3: 1.0}
 
@@ -123,6 +127,122 @@ class HarnessWiringTests(unittest.TestCase):
         text = QUALITY.read_text(encoding="utf-8")
         self.assertIn("scored_tasks", text)
         self.assertIn("评测不完整", text)
+
+
+class JudgeInvocationTests(unittest.TestCase):
+    """模拟失败路径：判定出问题时必须标成环境失败，不能读到上一轮的结果。
+
+    评审指出第一版把判定输出写到可复用目录、又不检查子进程退出码，
+    本次判定失败时可能读到上次留下的 verdict.json，把旧成绩当本次成绩。
+    """
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(prefix="judge-invocation-")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.solution = Path(self.tmp) / "solution.v"
+        self.solution.write_text("module TopModule; endmodule\n", encoding="utf-8")
+        self.real_judge = quality.JUDGE
+        self.addCleanup(lambda: setattr(quality, "JUDGE", self.real_judge))
+
+    def test_missing_judge_yields_tool_error(self):
+        quality.JUDGE = Path(self.tmp) / "does-not-exist.py"
+        outdir = os.path.join(self.tmp, "judge")
+        v = quality.run_judge(Path(self.tmp), self.solution, outdir)
+        self.assertIn("tool_error", v)
+        self.assertIsNone(v.get("level"))
+
+    def test_stale_verdict_from_a_previous_run_is_not_reused(self):
+        """核心用例：目录里已有旧 verdict.json，本次判定失败时绝不能返回它。"""
+        outdir = os.path.join(self.tmp, "judge")
+        os.makedirs(outdir, exist_ok=True)
+        stale = Path(outdir) / "verdict.json"
+        stale.write_text('{"level": 3, "coefficient": 1.0}', encoding="utf-8")
+
+        quality.JUDGE = Path(self.tmp) / "does-not-exist.py"
+        v = quality.run_judge(Path(self.tmp), self.solution, outdir)
+        self.assertIn("tool_error", v)
+        self.assertNotEqual(v.get("level"), 3)      # 旧成绩没有被当成新成绩
+        self.assertFalse(stale.exists())            # 旧文件已被清掉
+
+    def test_unreadable_verdict_is_a_tool_error(self):
+        judge = Path(self.tmp) / "fake_judge.py"
+        judge.write_text(
+            "import argparse, pathlib\n"
+            "p = argparse.ArgumentParser()\n"
+            "p.add_argument('--task'); p.add_argument('--solution'); p.add_argument('--outdir')\n"
+            "p.add_argument('--json'); p.add_argument('--timeout')\n"
+            "a = p.parse_args()\n"
+            "pathlib.Path(a.json).write_text('{not json', encoding='utf-8')\n",
+            encoding="utf-8")
+        quality.JUDGE = judge
+        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "judge2"))
+        self.assertIn("tool_error", v)
+
+    def test_a_failing_judge_does_not_invent_a_level(self):
+        """判定失败时返回里【不能有 level】，否则官方汇总会把它当成一次真实成绩。"""
+        quality.JUDGE = Path(self.tmp) / "nope.py"
+        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "judge3"))
+        self.assertNotIn("level", v)
+        self.assertNotIn("coefficient", v)
+
+
+class CompletenessLedgerTests(unittest.TestCase):
+    """完整性台账：预期 vs 实际，缺题目/缺采样都要看得出来。"""
+
+    def test_ledger_counts_missing_tasks(self):
+        ledger = dict(expected_tasks=3, missing_tasks=["ProbNope"],
+                      expected_cells=3 * 2 * 5, attempted=2 * 2 * 5,
+                      empty=0, tool_error=0, graded=20)
+        complete = (ledger["attempted"] == ledger["expected_cells"]
+                    and not ledger["missing_tasks"])
+        self.assertFalse(complete)                  # 少了一题，不能算完整
+
+    def test_ledger_flags_short_sampling(self):
+        # 题都在，但总采样数不足（例如中途中断），也必须算不完整
+        ledger = dict(expected_tasks=2, missing_tasks=[],
+                      expected_cells=2 * 2 * 5, attempted=2 * 2 * 3,
+                      empty=0, tool_error=0, graded=12)
+        complete = (ledger["attempted"] == ledger["expected_cells"]
+                    and not ledger["missing_tasks"])
+        self.assertFalse(complete)
+
+    def test_ledger_complete_only_when_everything_ran(self):
+        ledger = dict(expected_tasks=2, missing_tasks=[],
+                      expected_cells=2 * 2 * 5, attempted=20,
+                      empty=0, tool_error=0, graded=20)
+        complete = (ledger["attempted"] == ledger["expected_cells"]
+                    and not ledger["missing_tasks"])
+        self.assertTrue(complete)
+
+    def test_script_reports_the_whole_ledger(self):
+        text = QUALITY.read_text(encoding="utf-8")
+        for field in ("expected_tasks", "missing_tasks", "expected_cells",
+                      "attempted", "tool_error", "graded", "complete"):
+            self.assertIn(field, text)
+
+
+class EnduranceAssertionTests(unittest.TestCase):
+    """耐久测试的并发断言不能在 codes 含 None 时抛异常。"""
+
+    def test_none_in_codes_does_not_raise_and_fails(self):
+        codes = [200, None, 200]
+        # 旧写法 sorted(codes) 在 Python 3 里会因 None 与 int 不可比而抛 TypeError
+        with self.assertRaises(TypeError):
+            sorted(codes)
+        ok = len(codes) == 3 and all(c == 200 for c in codes)
+        self.assertFalse(ok)
+
+    def test_all_200_passes(self):
+        codes = [200, 200, 200]
+        self.assertTrue(len(codes) == 3 and all(c == 200 for c in codes))
+
+    def test_script_uses_all_not_sorted(self):
+        """只检查代码行，不看注释——注释里提到旧写法是允许的（那是解释）。"""
+        lines = [ln for ln in ENDURANCE.read_text(encoding="utf-8").splitlines()
+                 if ln.strip() and not ln.strip().startswith("#")]
+        code = "\n".join(lines)
+        self.assertIn("all(c == 200 for c in codes)", code)
+        self.assertNotIn("sorted(codes)", code)
 
 
 if __name__ == "__main__":

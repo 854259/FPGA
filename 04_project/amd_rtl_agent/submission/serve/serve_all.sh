@@ -165,7 +165,12 @@ case $(agent_state; echo $?) in
   *) start_agent ;;
 esac
 if [ ! -f "$AGENT_PIDFILE" ]; then
-  say "⚠ 没有 $AGENT_PIDFILE，本脚本无法确认 agent 进程归属，循环中只会告警不会杀"
+  # 统一策略说明：没有 PID 文件时无法确认归属。
+  #   - 服务活着       -> 不碰它（可能是别的终端启动的，杀了就是误杀）
+  #   - 端口无响应     -> 会尝试启动。这是自限的：若端口确实被占，bind 会失败并记入
+  #                       日志，不会杀掉占用者；若端口真的空了，则正好恢复。
+  # 这样"日志说的"和"循环做的"才一致。
+  say "⚠ 没有 $AGENT_PIDFILE：无法确认归属。活着就不碰；无响应时会尝试启动（bind 失败即记录，不杀占用者）"
 fi
 
 say "进入守护循环，间隔 ${CHECK_INTERVAL}s，日志 $LOG_DIR"
