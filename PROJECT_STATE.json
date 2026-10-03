@@ -186,7 +186,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-01",
+  "last_updated": "2026-10-03",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -1243,9 +1243,17 @@
     "model_sha256": "65b753ea835627f7b511143c6ceb976525c7f21f5df8c664bc0a9c23d1c49921",
     "code_commit": "a53e343ed9f02434050fdf86e61bae1b4a0c11a7",
     "agent_set_score": 0.7269,
-    "baseline_set_score": 0.6590,
-    "agent_levels": {"L3": 105, "L1": 42, "L0": 9},
-    "baseline_levels": {"L3": 95, "L1": 39, "L0": 22},
+    "baseline_set_score": 0.659,
+    "agent_levels": {
+      "L3": 105,
+      "L1": 42,
+      "L0": 9
+    },
+    "baseline_levels": {
+      "L3": 95,
+      "L1": 39,
+      "L0": 22
+    },
     "capability_score": 21.81,
     "gain": 1.103,
     "gain_formal_score": null,
@@ -1264,15 +1272,27 @@
       "full156_L3": 200
     },
     "failure_stages": {
-      "agent": {"compile": 9, "simulate": 42, "synth": 0},
-      "baseline": {"compile": 22, "simulate": 39, "synth": 0}
+      "agent": {
+        "compile": 9,
+        "simulate": 42,
+        "synth": 0
+      },
+      "baseline": {
+        "compile": 22,
+        "simulate": 39,
+        "synth": 0
+      }
     },
     "truncation": {
       "agent_calls": 167,
       "agent_truncated": 3,
       "baseline_calls": 156,
       "baseline_truncated": 2,
-      "agent_truncated_tasks": ["Prob070_ece241_2013_q2", "Prob145_circuit8", "Prob147_circuit10"]
+      "agent_truncated_tasks": [
+        "Prob070_ece241_2013_q2",
+        "Prob145_circuit8",
+        "Prob147_circuit10"
+      ]
     },
     "key_findings": [
       "Truncation fell from 79/213 (37.1%) on 2026-09-27 vLLM to 3/167 (1.8%) here; the old 'truncation is the dominant loss' priority only holds with thinking left on.",
@@ -1305,8 +1325,16 @@
     "single_variable": "code a53e343, dataset c498220, official judge afd135e7, skills, backend, reasoning-off, sampling and deadline all identical to the Qwen run; only the weights differ",
     "agent_set_score": 0.7679,
     "baseline_set_score": 0.7564,
-    "agent_levels": {"L3": 112, "L1": 39, "L0": 5},
-    "baseline_levels": {"L3": 111, "L1": 35, "L0": 10},
+    "agent_levels": {
+      "L3": 112,
+      "L1": 39,
+      "L0": 5
+    },
+    "baseline_levels": {
+      "L3": 111,
+      "L1": 35,
+      "L0": 10
+    },
     "capability_score": 23.04,
     "gain": 1.015,
     "tool_errors": 0,
@@ -1314,8 +1342,16 @@
     "improved_tasks": 18,
     "regressed_tasks": 13,
     "failure_stages": {
-      "agent": {"compile": 5, "simulate": 39, "synth": 0},
-      "baseline": {"compile": 10, "simulate": 35, "synth": 0}
+      "agent": {
+        "compile": 5,
+        "simulate": 39,
+        "synth": 0
+      },
+      "baseline": {
+        "compile": 10,
+        "simulate": 35,
+        "synth": 0
+      }
     },
     "truncation": {
       "agent_calls": 161,
@@ -1332,7 +1368,7 @@
       "gain_score_icoder": 0.66,
       "combined_qwen": 26.09,
       "combined_icoder": 23.69,
-      "qwen_lead": 2.40,
+      "qwen_lead": 2.4,
       "note": "gain full-mark multiplier 2.5 is a placeholder; Qwen leads under 1.5, 2.5 and 5.0 alike because iCoder's gain is near 1"
     },
     "key_finding": "Four tasks regress under BOTH models (Prob094_gatesv, Prob143_fsm_onehot, Prob150_review2015_fsmonehot, Prob154_fsm_ps2data): the bare model reaches L3 and the skill prompt knocks it to L1/L0. This is model-independent evidence that the skill, not the model, is the bottleneck. A further 34 tasks fail to reach L3 under the agent in both models.",
@@ -1369,8 +1405,19 @@
     "new_agent_set_score": 0.7603,
     "new_baseline_set_score": 0.6744,
     "old_agent_set_score": 0.7269,
-    "old_baseline_set_score": 0.6590,
-    "new_levels": {"agent": {"L3": 111, "L1": 38, "L0": 7}, "baseline": {"L3": 98, "L1": 36, "L0": 22}},
+    "old_baseline_set_score": 0.659,
+    "new_levels": {
+      "agent": {
+        "L3": 111,
+        "L1": 38,
+        "L0": 7
+      },
+      "baseline": {
+        "L3": 98,
+        "L1": 36,
+        "L0": 22
+      }
+    },
     "new_capability_score": 22.81,
     "new_gain": 1.1274,
     "old_capability_score": 21.81,
@@ -1378,24 +1425,67 @@
     "combined_old": 26.09,
     "combined_new": 28.04,
     "combined_delta": 1.96,
-    "in_run_pairing": {"old": {"improved": 25, "regressed": 10, "net": 15}, "new": {"improved": 27, "regressed": 7, "net": 20}},
-    "failure_structure_agent": {"old": {"L3": 105, "compile": 9, "simulate": 42}, "new": {"L3": 111, "compile": 7, "simulate": 38}},
-    "model_independent_regressions": {
-      "fixed": ["Prob094_gatesv", "Prob143_fsm_onehot"],
-      "still_regressing": ["Prob150_review2015_fsmonehot", "Prob154_fsm_ps2data"]
+    "in_run_pairing": {
+      "old": {
+        "improved": 25,
+        "regressed": 10,
+        "net": 15
+      },
+      "new": {
+        "improved": 27,
+        "regressed": 7,
+        "net": 20
+      }
     },
-    "new_regressions": ["Prob082_lfsr32", "Prob083_mt2015_q4b", "Prob086_lfsr5", "Prob108_rule90", "Prob144_conwaylife"],
+    "failure_structure_agent": {
+      "old": {
+        "L3": 105,
+        "compile": 9,
+        "simulate": 42
+      },
+      "new": {
+        "L3": 111,
+        "compile": 7,
+        "simulate": 38
+      }
+    },
+    "model_independent_regressions": {
+      "fixed": [
+        "Prob094_gatesv",
+        "Prob143_fsm_onehot"
+      ],
+      "still_regressing": [
+        "Prob150_review2015_fsmonehot",
+        "Prob154_fsm_ps2data"
+      ]
+    },
+    "new_regressions": [
+      "Prob082_lfsr32",
+      "Prob083_mt2015_q4b",
+      "Prob086_lfsr5",
+      "Prob108_rule90",
+      "Prob144_conwaylife"
+    ],
     "old_regressions_cleared": 8,
     "subset_to_full_consistency": "every task that moved in the 29-task subset moved the same way in the full run",
     "noise_floor": {
       "baseline_flipped_tasks": 5,
       "baseline_flip_rate": 0.032,
-      "flipped": ["Prob086_lfsr5", "Prob100_fsm3comb", "Prob103_circuit2", "Prob133_2014_q3fsm", "Prob140_fsm_hdlc"],
+      "flipped": [
+        "Prob086_lfsr5",
+        "Prob100_fsm3comb",
+        "Prob103_circuit2",
+        "Prob133_2014_q3fsm",
+        "Prob140_fsm_hdlc"
+      ],
       "cause": "Unverified hypothesis: multithreaded floating-point reduction may contribute. The observed 5/156 changes do not estimate a stable flip probability or an RTLLM noise model",
       "consequence": "The retained baseline_flip_rate=0.032 is a historical descriptive fraction, not a statistical noise floor; strict attribution requires a predefined repeated-run protocol and analysis"
     },
     "conclusion": "Keep the 7-rule skill. Removing rules 8-11 improves capability, gain and pairing alike, and confirms the 2026-09-14 A/B finding on the current pipeline. Skill text should stay short; any future addition must be justified before it is added.",
-    "next_targets": ["Prob150_review2015_fsmonehot (missing next-state self-loops)", "Prob154_fsm_ps2data (datapath not covering a transition that bypasses an intermediate state)"],
+    "next_targets": [
+      "Prob150_review2015_fsmonehot (missing next-state self-loops)",
+      "Prob154_fsm_ps2data (datapath not covering a transition that bypasses an intermediate state)"
+    ],
     "not_extrapolable": "development profile, not the organizers' final isolated image; single sample, not pass@5; gain threshold and cost baseline are placeholders"
   },
   "submission_package_20261002": {
@@ -1405,13 +1495,26 @@
     "model_md_fix": {
       "file": "04_project/amd_rtl_agent/model/MODEL.md",
       "declares": "ggml-org/Qwen3.6-27B-GGUF revision 8a7ee08e8b9bfb857107ecc25a5599d2f38b76f8, Q4_K_M, 19,095,766,304 bytes, sha256 65b753ea835627f7b511143c6ceb976525c7f21f5df8c664bc0a9c23d1c49921, Apache-2.0, not finetuned",
-      "corrected_runtime_facts": {"context": 16384, "max_output_tokens": 8192, "temperature": 0},
+      "corrected_runtime_facts": {
+        "context": 16384,
+        "max_output_tokens": 8192,
+        "temperature": 0
+      },
       "measured_vram": "about 19.0 GiB (20,376,678,400 bytes) sampled 2026-10-02 with rocm-smi on the gfx1100 development card; explicitly labelled as not a final-card acceptance measurement",
       "historical_assets": "the 7B CPU weights and image are retained but marked as historical, not the submission model"
     },
     "package_layout": {
       "root": "04_project/amd_rtl_agent/submission/ now equals the official <team_name>-agent/ layout",
-      "added": ["manifest.json", "skill/README.md", "serve/llama.sh", "serve/README.md", "model/MODEL.md", "model/LICENSE-Qwen2.5-Coder", "Dockerfile", "REPORT.md"],
+      "added": [
+        "manifest.json",
+        "skill/README.md",
+        "serve/llama.sh",
+        "serve/README.md",
+        "model/MODEL.md",
+        "model/LICENSE-Qwen2.5-Coder",
+        "Dockerfile",
+        "REPORT.md"
+      ],
       "moved": "runtime.py to agent/runtime.py; skills to skill/rtl-generation/SKILL.md and skill/rtl-feedback-repair/SKILL.md",
       "official_5_1_items_present": 12
     },
@@ -1421,8 +1524,13 @@
       "bug_found_and_fixed": "moving runtime.py into agent/ broke `import baseline` because sys.path[0] became agent/ instead of the package root; the first validation run produced agent 0.0000 (three L0 compile failures) with ModuleNotFoundError in worker.log, which is why the package is validated by running it rather than by inspection"
     },
     "validation": {
-      "reference3": {"command": "official_eval.py --reference", "result": "3/3 L3, set_score 1.0000, tool_errors 0, complete true"},
-      "smoke3": {"result": "agent 3/3 L3 set_score 1.0000, baseline 3/3 L3, tool_errors 0, complete true"},
+      "reference3": {
+        "command": "official_eval.py --reference",
+        "result": "3/3 L3, set_score 1.0000, tool_errors 0, complete true"
+      },
+      "smoke3": {
+        "result": "agent 3/3 L3 set_score 1.0000, baseline 3/3 L3, tool_errors 0, complete true"
+      },
       "note": "the agent also moved ex02_detect_1101 from L1 to L3, the same fixture that previously regressed under the 11-rule skill",
       "skill_hashes_on_instance": {
         "rtl-generation": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
@@ -1460,7 +1568,9 @@
     "why_rtllm_fits": "Its design_description.txt carries the module name and every port name, width and meaning, and every design ships a hand-written reference implementation. Its own testbench does not fit: it instantiates a single DUT, prints a pass banner rather than comparing against a reference, and cannot report the mismatch counts the judge parses.",
     "builder": "04_project/amd_rtl_agent/bench/build_rtllm_taskset.py",
     "built": 49,
-    "skipped": {"clkgenerator": "one output port and no inputs, so no stimulus can be applied"},
+    "skipped": {
+      "clkgenerator": "one output port and no inputs, so no stimulus can be applied"
+    },
     "conversion_choices": {
       "module_rename": "the prompt asks for TopModule and the reference becomes RefModule in ref.sv and TopModule in reference/solution.sv, because the skill fixes the output module name as TopModule and the skill is global rather than per task",
       "testbench": "regenerated as a dual-instantiation comparison. The stimulus generator is mechanical and does not involve the model."
@@ -1468,10 +1578,20 @@
     "bug_found_and_fixed": "RTLLM names clocks and resets inconsistently: clk, CLK, Clk, CLK_in, clk_a, clk_b, wclk, rclk and rst, RST, Rst, rst_n, arstn, brstn. The first version matched only a bare lowercase clk, which left ten sequential designs with no clock at all. Unfixed, those references would never advance, would be judged as failures, and would have been misread as model weakness rather than conversion error.",
     "reference_self_check": {
       "result": "set_score 0.9860",
-      "levels": {"L3": 41, "L2": 2},
+      "levels": {
+        "L3": 41,
+        "L2": 2
+      },
       "scored_tasks": 43,
       "tool_errors": 6,
-      "excluded": ["adder_pipe_64bit", "asyn_fifo", "fixed_point_adder", "fixed_point_substractor", "multi_pipe_4bit", "multi_pipe_8bit"],
+      "excluded": [
+        "adder_pipe_64bit",
+        "asyn_fifo",
+        "fixed_point_adder",
+        "fixed_point_substractor",
+        "multi_pipe_4bit",
+        "multi_pipe_8bit"
+      ],
       "excluded_meaning": "A analysis: these are pipeline, fixed-point and asynchronous-FIFO designs whose generated testbench does not hold. They need repair or removal before the set is used, and the denominator is therefore 43 rather than 49.",
       "path": "bench/rtllm_refcheck_20261002/graded_summary.json"
     },
@@ -1503,5 +1623,142 @@
       "decisive_experiment_not_yet_run": "Feed the official testbench's mismatch feedback directly into the repair loop on the 38 L1 failures as a perfect oracle, and count how many reach L3. If even a perfect oracle fixes few tasks, both routes are dead and the effort is saved."
     },
     "not_extrapolable": "measured on the public VerilogEval set under the development profile; the announced baseline duration is unknown"
+  },
+  "agent_readiness_and_contract_20261003": {
+    "date": "2026-10-03",
+    "status": "fixed_deployed_and_verified_over_real_http",
+    "defect": "GET /v1/health always returned ready=false",
+    "why_it_mattered": "contract has the organisers call health before submitting; a false not-ready could have cost every sample",
+    "root_causes": [
+      "vivado -version prints lower-case 'vivado v2026.1' while the check matched 'Vivado', so it never matched",
+      "vram_gb summed all eight AMD GPUs on the shared host including other tenants, reporting 67.4 GB against our real 18.94 GB"
+    ],
+    "fixes": [
+      "case-insensitive match, timeout widened from 5s to 30s",
+      "attribute the counter to the card the model server holds open (renderD133 -> card6)",
+      "VRAM attribution failure now returns None instead of falling back to the busiest card, which could be another tenant's",
+      "readiness only treats a measured value as able to breach the 32 GB limit"
+    ],
+    "verified": {
+      "ready_true_both_profiles": true,
+      "track_rtl": true,
+      "vram_gb_measured": 18.94,
+      "solve_cases_passed": "8/8",
+      "sigterm_exit_seconds": 0.1,
+      "binds_loopback_only": true
+    },
+    "lesson": "every self-check went through the CLI while the organisers use HTTP; the readiness defect lived on the one path never exercised end to end"
+  },
+  "baseline_20261003": {
+    "date": "2026-10-03",
+    "status": "paired_verification_complete",
+    "changes_deployed": [
+      "textual undefined-submodule check",
+      "deterministic ANSI declaration repair"
+    ],
+    "agent_set_score": 0.7667,
+    "baseline_set_score": 0.6744,
+    "gain": 1.1369,
+    "levels": {
+      "L0": 6,
+      "L1": 38,
+      "L3": 112
+    },
+    "samples": 312,
+    "prediction_matched": "all four predicted figures (agent, gain, L0 count, L3 count)",
+    "task_by_task": "baseline zero flips; agent exactly one flip (Prob058_alwaysblock2 L0->L3); other 155 identical",
+    "supersedes": "frozen VerilogEval baseline agent 0.7603 / baseline 0.6744 / gain 1.1274"
+  },
+  "skill_variant_h3_20261003": {
+    "date": "2026-10-03",
+    "status": "running_no_conclusion_yet",
+    "run_id": "full156_skill9_20261003",
+    "hypothesis": "harm came from the semantic rules, so add back only the syntactic ones (rule 8 declarations, rule 9 first half vector ops)",
+    "variant_sha256_prefix": "8fb63de303486c9e",
+    "baseline_sha256_prefix": "f4c4c8e2d97ec476",
+    "interim_signal": {
+      "targets_recovered": [
+        "Prob108_rule90 L1->L3",
+        "Prob115_shift18 L1->L3"
+      ],
+      "targets_unchanged": [
+        "Prob082_lfsr32 L0->L0",
+        "Prob086_lfsr5 L1->L1"
+      ],
+      "guard_tasks_so_far": "not damaged"
+    },
+    "acceptance_rule_written_in_advance": "adopt only if the agent set score rises",
+    "caveat": "even if it wins, this shows only that this specific variant did better in this evaluation; it does not generalise to a rule about syntax versus semantics"
+  },
+  "l1_root_cause_attribution_20261003": {
+    "date": "2026-10-03",
+    "status": "attribution_done_candidate_not_proven_root_cause",
+    "method": "first-mismatch time from the testbench hints, classification rules written before looking",
+    "result": {
+      "early_reset_or_basic": 21,
+      "late_timing_or_boundary": 17,
+      "total": 38
+    },
+    "first_sample_mismatch_candidates": [
+      "Prob104_mt2015_muxdff 1/199",
+      "Prob053_m2014_q4d 1/100",
+      "Prob034_dff8 1/41"
+    ],
+    "withdraws": "the earlier claim that the forty L1 failures are unrelated mistakes with no common structure",
+    "not_claimed": [
+      "attributing a task to a category is not the same as having a working check for it",
+      "the three initial-value candidates are not shown to be fixable",
+      "first-mismatch times are not comparable across testbenches",
+      "seeing the hidden testbench offline does not mean the agent has that signal at submission time"
+    ]
+  },
+  "evaluation_tooling_calibrated_20261003": {
+    "date": "2026-10-03",
+    "status": "calibrated_with_tests_pending_cloud_run",
+    "errors_found_by_review_and_confirmed_against_official_code": [
+      "an empty solution is L0 and stays in the denominator; excluding it made one L3 plus four empty answers read as 1.0 instead of 0.2",
+      "pass@5 is the maximum coefficient across samples, not a flag for whether any sample reached L3; five L2 samples read as 0 instead of 0.7"
+    ],
+    "resolution": "the harness now delegates to the official score.summarize instead of computing its own statistics",
+    "tests": {
+      "count": 22,
+      "needs_gpu": false,
+      "covers": [
+        "the two worked examples",
+        "tool-error exclusion",
+        "all-environment-failure",
+        "gain formula",
+        "stale verdict must not be reused",
+        "missing verdict must not invent a level",
+        "completeness ledger",
+        "concurrency with a None response"
+      ]
+    },
+    "completeness": "cell-by-cell ledger of expected tasks x modes x samples against attempted, graded, empty and tool-failed; an incomplete run returns exit code 2",
+    "not_done": "neither the quality harness nor the endurance harness has been run in the cloud yet"
+  },
+  "p0_fixes_20261003": {
+    "date": "2026-10-03",
+    "status": "committed_not_deployed",
+    "why_not_deployed": "the declaration repair is grading-relevant and an evaluation is in flight against the current runtime; two variables must not change at once",
+    "fixes": [
+      "declaration repair deleted the whole declaration line, so fixing q in 'reg q, state;' also discarded state; now only the named identifier is removed, siblings and width kept",
+      "VRAM attribution no longer falls back to the busiest card",
+      "supervisor parses status code and ready field, and separates a dead process from one that is alive but not ready",
+      "supervisor restarts only a pid it recorded and re-verified against the command line"
+    ],
+    "repo_runtime_sha256_prefix": "728499f4699ed221",
+    "deployed_runtime_sha256_prefix": "cea6479c6364fbfc"
+  },
+  "submission_package_hygiene_20261003": {
+    "date": "2026-10-03",
+    "removed": [
+      "agent/runtime.py.my-xelab-version",
+      "agent/runtime.py.pre-xelab.bak",
+      "__pycache__ directories"
+    ],
+    "renamed": "model/LICENSE-Qwen2.5-Coder -> model/LICENSE-Qwen3.6-27B (the text was already the correct Apache-2.0; only the name pointed at the historical model)",
+    "deployed_late": "serve/serve_all.sh was tracked in the repository but had never been copied to the deployed package",
+    "verified": "the deployed runtime hash was checked before and after the cleanup and is unchanged"
   }
 }
