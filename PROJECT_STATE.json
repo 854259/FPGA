@@ -1676,18 +1676,56 @@
     "hypothesis": "harm came from the semantic rules, so add back only the syntactic ones (rule 8 declarations, rule 9 first half vector ops)",
     "variant_sha256_prefix": "8fb63de303486c9e",
     "baseline_sha256_prefix": "f4c4c8e2d97ec476",
-    "interim_signal": {
-      "targets_recovered": [
-        "Prob108_rule90 L1->L3",
-        "Prob115_shift18 L1->L3"
-      ],
-      "targets_unchanged": [
-        "Prob082_lfsr32 L0->L0",
-        "Prob086_lfsr5 L1->L1"
-      ],
-      "guard_tasks_so_far": "not damaged"
+    "correction": "an earlier version of this record said the guard tasks were not damaged. That was written from a partial view of a handful of watched tasks and it is wrong. The complete paired comparison is below.",
+    "paired_result_at_139_tasks_per_mode": {
+      "note": "verified independently from the cloud artifacts; both modes had completed 139 of 156 tasks at that point",
+      "agent_up": {
+        "L1_to_L3": [
+          "Prob054",
+          "Prob083",
+          "Prob108",
+          "Prob115",
+          "Prob126"
+        ],
+        "L0_to_L1": [
+          "Prob134"
+        ]
+      },
+      "agent_down": {
+        "L3_to_L0": [
+          "Prob006",
+          "Prob068",
+          "Prob128"
+        ],
+        "L3_to_L1": [
+          "Prob096"
+        ],
+        "L1_to_L0": [
+          "Prob133",
+          "Prob137"
+        ]
+      },
+      "agent_coefficient_delta": 0.0,
+      "tasks_up": 6,
+      "tasks_down": 6,
+      "baseline_tasks_changed": 9,
+      "baseline_coefficient_delta": 0.4,
+      "baseline_attribution_note": "the bare model does not read the skill, so the baseline movement cannot be attributed to the added rules; it also means the 9 of 139 cannot be treated as a fixed noise rate"
     },
+    "comparable_scope_warning": "the partial agent mean of about 0.8115 must not be compared with the full-set 0.7667; the task range differs. On the same first 139 tasks the two skill versions currently score the same.",
+    "verification_already_done": [
+      "identical task lists in both runs",
+      "all 936 input file hashes identical",
+      "baseline file hash identical",
+      "the two runtimes do differ, but the diff touches health checking, version detection and VRAM attribution, not the generation or repair path"
+    ],
+    "still_to_check": [
+      "model service configuration",
+      "generation process",
+      "run-state repeatability"
+    ],
     "acceptance_rule_written_in_advance": "adopt only if the agent set score rises",
+    "current_position": "a candidate experiment that has not demonstrated a net gain, but has already produced valuable failure samples",
     "caveat": "even if it wins, this shows only that this specific variant did better in this evaluation; it does not generalise to a rule about syntax versus semantics"
   },
   "l1_root_cause_attribution_20261003": {
@@ -1760,5 +1798,68 @@
     "renamed": "model/LICENSE-Qwen2.5-Coder -> model/LICENSE-Qwen3.6-27B (the text was already the correct Apache-2.0; only the name pointed at the historical model)",
     "deployed_late": "serve/serve_all.sh was tracked in the repository but had never been copied to the deployed package",
     "verified": "the deployed runtime hash was checked before and after the cleanup and is unchanged"
+  },
+  "multi_driver_lead_20261003": {
+    "date": "2026-10-03",
+    "status": "lead_not_yet_confirmed_as_root_cause",
+    "what": "the newly broken L0 tasks share a structural pattern: one signal assigned from more than one process",
+    "candidates": {
+      "Prob006_vectorr": "the same output both continuous-assigned and procedurally assigned",
+      "Prob128_fsm_ps2": "done_reg assigned in both a combinational and a clocked process",
+      "Prob133_2014_q3fsm": "z_reg assigned in both a combinational and a clocked process",
+      "Prob137_fsm_serial": "done_reg assigned in both a combinational and a clocked process"
+    },
+    "why_it_matters": "this is a defect visible in the submitted code itself, so a check for it would not depend on the hidden testbench. That is a firmer footing than the earlier first-mismatch attribution",
+    "Prob128_trajectory": [
+      "first generation referenced an undeclared DONE and failed the syntax check",
+      "the model repaired it and the agent's own xvlog check passed",
+      "the submitted code still contained the multiple assignments",
+      "the official judge returned L0"
+    ],
+    "confirmed_conclusion": "an internal syntax check passing is not sufficient evidence that code will pass the organisers' downstream checks",
+    "not_claimed": "the retained official logs carry no specific failure diagnosis, so these four are not yet established as multi-driver failures; they are a research entry point, not a conclusion",
+    "method_required": "prove detection first, then repair; do not simply delete one of the assignments, because which one matches the intended behaviour still needs judgement",
+    "relation_to_earlier_work": "this concerns a different failure set from the thirty-eight L1 tasks already attributed, so it does not supersede that analysis"
+  },
+  "remaining_headroom_20261003": {
+    "date": "2026-10-03",
+    "stable_baseline_left": {
+      "L0": 6,
+      "L1": 38
+    },
+    "coefficient_loss_split": {
+      "L0": 6.0,
+      "L1": 30.4,
+      "L1_share": "about 83.5 percent"
+    },
+    "reading": "most of the remaining coefficient loss sits in L1, so the bottleneck has moved to functional correctness; this is a loss-structure analysis and does not mean those tasks are all fixable",
+    "why_it_persists": "the runtime generates, checks textually, compiles and repairs, but has no generally available functional verification feedback, so syntactically valid but logically wrong code is submitted as is",
+    "two_tracks_kept_apart": [
+      "near term: keep repairing clear structural defects, which is cheap and easy to verify",
+      "main growth: find cheap, accurate functional diagnosis that is available at official runtime"
+    ],
+    "how_to_judge_a_new_method": [
+      "false positives on correct code",
+      "detection of wrong code",
+      "actual repair rate after detection",
+      "added elapsed time"
+    ],
+    "not_refuted": "the earlier finding that generating a full testbench is too expensive does not refute functional feedback as a direction; smaller property checks, partial checks and conditionally triggered verification remain untested"
+  },
+  "delivery_vs_experiment_20261003": {
+    "date": "2026-10-03",
+    "status": "experiment_running_formal_service_not_in_continuous_standby",
+    "cloud_snapshot_20261003_0933": {
+      "model_port_8000": "listening",
+      "formal_agent_port_7860": "NOT listening",
+      "test_port_7867": "not listening",
+      "cloud_runtime": "cea6479c",
+      "local_new_runtime": "728499f4",
+      "cloud_skill": "8fb63de3 (the H3 variant)",
+      "supervisor_scripts": "local and cloud hashes differ, not fully synchronised"
+    },
+    "required_wording": "the readiness defect was fixed and verified, and separately, there is not currently a service accepting organiser requests. Both statements are true and must not be collapsed into one.",
+    "deferring_the_runtime_deploy": "correct, to protect the running comparison; after the experiment, acceptance must run from the start-up entry point through HTTP, covering recovery after abnormal exit, child process cleanup and version ownership",
+    "vram_none_reading": "returning None avoids a wrong attribution, but None means not measured, not proven within the limit; final resource acceptance still needs a measured record"
   }
 }
