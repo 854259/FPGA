@@ -149,8 +149,24 @@ start_agent() {
 }
 
 # ---- 首次启动 ----
-model_state || start_model
-agent_state || start_agent
+# 必须区分三种状态，不能写成 `state || start`：
+#   0 = 已就绪；1 = 有响应但未就绪（配置问题，重复启动只会起第二个实例）；
+#   2 = 无响应（这才是真的没起来）。
+# 第一版用 `model_state || start_model` 把 1 也当成"没起来"，与循环阶段
+# "只告警不重启"的策略自相矛盾，会重复拉起进程。
+case $(model_state; echo $?) in
+  0) say "模型已就绪" ;;
+  1) say "⚠ 模型有响应但未就绪，不重复启动（查 $LOG_DIR 下的日志）" ;;
+  *) start_model ;;
+esac
+case $(agent_state; echo $?) in
+  0) say "agent 已就绪" ;;
+  1) say "⚠ agent 在跑但未就绪（ready=false 或非 200），不重复启动；查令牌与 ready 条件" ;;
+  *) start_agent ;;
+esac
+if [ ! -f "$AGENT_PIDFILE" ]; then
+  say "⚠ 没有 $AGENT_PIDFILE，本脚本无法确认 agent 进程归属，循环中只会告警不会杀"
+fi
 
 say "进入守护循环，间隔 ${CHECK_INTERVAL}s，日志 $LOG_DIR"
 FAIL_MODEL=0
@@ -174,24 +190,33 @@ while true; do
       ;;
   esac
 
-  # agent：同上。区分"进程死了"（重启）与"活着但没就绪"（只告警）
-  if pid_is_ours "$(cat "$AGENT_PIDFILE" 2>/dev/null || true)" "runtime.py serve"; then
-    case $(agent_state; echo $?) in
-      0) FAIL_AGENT=0; NOTREADY_AGENT=0 ;;
-      1)
-        FAIL_AGENT=0
-        NOTREADY_AGENT=$((NOTREADY_AGENT+1))
-        say "⚠ agent 在跑但 health 未就绪（连续 $NOTREADY_AGENT 次）：查令牌 / ready 条件，不重启"
-        ;;
-      *)
-        FAIL_AGENT=$((FAIL_AGENT+1))
-        say "⚠ agent 无响应（连续 $FAIL_AGENT 次）"
-        [ "$FAIL_AGENT" -ge 2 ] && { stop_ours "$AGENT_PIDFILE" "runtime.py serve"; start_agent && FAIL_AGENT=0; }
-        ;;
-    esac
-  else
-    FAIL_AGENT=$((FAIL_AGENT+1))
-    say "⚠ agent 进程不在（连续 $FAIL_AGENT 次），重启"
-    start_agent && FAIL_AGENT=0
-  fi
+  # agent：三态处理。
+  #   0/1 -> 活着，不重启（1 是配置问题）
+  #   2   -> 无响应：只有确认"我们启动的那个进程确实不在了"才重启；
+  #          如果端口被别人的进程占着，只告警，不动它。
+  AGENT_PID=$(cat "$AGENT_PIDFILE" 2>/dev/null || true)
+  case $(agent_state; echo $?) in
+    0) FAIL_AGENT=0; NOTREADY_AGENT=0 ;;
+    1)
+      FAIL_AGENT=0
+      NOTREADY_AGENT=$((NOTREADY_AGENT+1))
+      say "⚠ agent 在跑但 health 未就绪（连续 $NOTREADY_AGENT 次）：查令牌 / ready 条件，不重启"
+      ;;
+    *)
+      FAIL_AGENT=$((FAIL_AGENT+1))
+      say "⚠ agent 无响应（连续 $FAIL_AGENT 次）"
+      if [ "$FAIL_AGENT" -ge 2 ]; then
+        if [ -z "$AGENT_PID" ] || ! kill -0 "$AGENT_PID" 2>/dev/null; then
+          say "本脚本启动的进程已不在，重新启动"
+          start_agent && FAIL_AGENT=0
+        elif pid_is_ours "$AGENT_PID" "runtime.py serve"; then
+          say "进程 $AGENT_PID 确认为本脚本启动且无响应，重启"
+          stop_ours "$AGENT_PIDFILE" "runtime.py serve"
+          start_agent && FAIL_AGENT=0
+        else
+          say "⚠ $AGENT_PORT 无响应，但占用者不是本脚本启动的，不动它"
+        fi
+      fi
+      ;;
+  esac
 done

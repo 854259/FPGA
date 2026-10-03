@@ -1,41 +1,65 @@
 #!/usr/bin/env python3
-"""5 样本质量评测：按赛事方的调用方式取 5 个样本，并用官方判定器逐个评分。
+"""5 样本质量评测：取 5 个样本，**用官方汇总函数**算成绩。
 
-为什么重写
-----------
-第一版只是"同一请求打 5 次，看返回是否相同"。那不是 5 样本协议：
-  - 五次相同不是成功标准。五次不同可以合法；五次相同也可能全错。
-  - 只跑 agent，没有 baseline，无法算增益。
-  - 没有判定，等级从哪来都不知道。
-  - 空答案（契约允许的"做不出来返回空串"）会被当成"一致"。
-  - development profile 与比赛配置不同。
+为什么重写（第二版）
+--------------------
+第一版只是"同请求打 5 次看返回是否相同"，不是协议。
+第二版我自己算了分数，但**算法与官方口径不符**：
 
-本脚本按协议真正要测的东西来：
-  对每题、每个模式（agent/baseline）、每个样本：
-      发请求 -> 存 solution + trace -> 交给官方 judge 判 L0..L3
-  然后算 pass@1（逐样本等级的均值）与 pass@5（5 次里有任意一次达 L3 的比例）
+| 项 | 我第二版的做法 | 官方口径（score.py::summarize） |
+|---|---|---|
+| 空答案 | 排除出平均分 | **属于 L0，系数 0，留在分母里** |
+| `pass@5` | 任意一次 L3 才记 1 | **取各样本等级系数的最大值** |
+| `tool_error` | 未单独处理 | **单列排除**；整题全为环境失败则记录不计分 |
 
-边界
+反例（评审给的，已在官方函数上核对过）：
+  1xL3 + 4x空答 -> 官方 pass@1=0.2   （我算成 1.0）
+  5xL2          -> 官方 pass@5=0.7   （我算成 0）
+
+所以本版**不再自己算**，而是把判定器的 verdict 原样交给官方 `summarize()`。
+判定器的 verdict 本来就含 `level` / `coefficient` / `tool_error`，可直接喂入。
+
+说明
 ----
-- 这只是**子集**（默认 8 题 x 2 模式 x 5 = 80 次），不是完整 1560 次协议。
-- 不改 agent、不改题集、不改判定器。
-- profile 由 RTL_PROFILE 决定；比赛用 submission，本地开发常用 development——
-  结果里会打印实际用的 profile，避免混淆。
+- "五次中是否出现 L3"仍有参考价值，但**另起名字** `any_l3`，不叫 pass@5。
+- 报告里同时给出 `scored_tasks / tasks`：**缺结果必须表现为"评测不完整"，不能静默跳过**。
+- 这只是**子集**评测，不是完整 1560 次协议。
+- 不改 agent、不改题集、不改判定器，只读官方汇总函数。
 """
 import argparse
+import importlib.util
 import json
 import os
 import pathlib
-import statistics
 import subprocess
 import sys
 import time
 import urllib.request
 
-KIT = pathlib.Path("/workspace/team/tasks/autodl-rtl-kit/project")
+def resolve_kit():
+    """Locate the kit in either layout.
+
+    Cloud deployment keeps it at a fixed path; the repository keeps the same tree
+    under 04_project/amd_rtl_agent/, which is this file's grandparent. Resolving
+    instead of hardcoding means the summary logic can be exercised by tests on a
+    machine that has no cloud path at all.
+    """
+    override = os.environ.get("RTL_KIT")
+    candidates = []
+    if override:
+        candidates.append(pathlib.Path(override))
+    candidates.append(pathlib.Path("/workspace/team/tasks/autodl-rtl-kit/project"))
+    candidates.append(pathlib.Path(__file__).resolve().parents[1])
+    for candidate in candidates:
+        if (candidate / "official_reference" / "selftest" / "score.py").is_file():
+            return candidate
+    return candidates[-1]
+
+
+KIT = resolve_kit()
 TASKS_DIR = KIT / "bench" / "tasks_veval"
 JUDGE = KIT / "official_reference" / "selftest" / "judge.py"
-COEFF = {0: 0.0, 1: 0.2, 2: 0.7, 3: 1.0}
+OFFICIAL_SCORE = KIT / "official_reference" / "selftest" / "score.py"
 TOKEN = "five-sample-quality-token"
 
 DEFAULT_PICK = [
@@ -44,15 +68,42 @@ DEFAULT_PICK = [
 ]
 
 
-def endpoint_url(port, path):
-    return "http://127.0.0.1:%d%s" % (port, path)
+def load_official_score():
+    """官方汇总函数。绝不自己重写统计口径。"""
+    spec = importlib.util.spec_from_file_location("official_score", OFFICIAL_SCORE)
+    module = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+    except SystemExit:
+        pass
+    if not hasattr(module, "summarize"):
+        raise RuntimeError("官方 score.py 里找不到 summarize()")
+    return module
+
+
+def wait_ready(port, timeout=90):
+    """只有 200 且 ready:true 才算就绪；只看"有没有响应"会把 401/500 当正常。"""
+    deadline = time.time() + timeout
+    last = {}
+    while time.time() < deadline:
+        try:
+            req = urllib.request.Request("http://127.0.0.1:%d/v1/health" % port,
+                                         headers={"Authorization": "Bearer " + TOKEN})
+            with urllib.request.urlopen(req, timeout=5) as r:
+                last = json.loads(r.read().decode())
+            if last.get("ready") is True:
+                return True, last
+        except Exception as exc:                        # noqa: BLE001
+            last = {"error": type(exc).__name__}
+        time.sleep(2)
+    return False, last
 
 
 def post_solve(port, task_id, prompt, mode, deadline):
     body = json.dumps({"task_id": task_id, "nonce": "%s-%d" % (task_id, time.time_ns()),
                        "mode": mode, "prompt": prompt, "interface": "",
                        "deadline_s": deadline}).encode()
-    req = urllib.request.Request(endpoint_url(port, "/v1/solve"), data=body,
+    req = urllib.request.Request("http://127.0.0.1:%d/v1/solve" % port, data=body,
                                  headers={"Content-Type": "application/json",
                                           "Authorization": "Bearer " + TOKEN})
     t0 = time.time()
@@ -61,24 +112,6 @@ def post_solve(port, task_id, prompt, mode, deadline):
             return r.status, json.loads(r.read().decode()), time.time() - t0
     except Exception as exc:                            # noqa: BLE001
         return None, {"error": type(exc).__name__}, time.time() - t0
-
-
-def wait_ready(port, timeout=90):
-    """只有真的 ready:true 才算就绪；只检查"有没有响应"会把 401/500 当成正常。"""
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        try:
-            req = urllib.request.Request(endpoint_url(port, "/v1/health"),
-                                         headers={"Authorization": "Bearer " + TOKEN})
-            with urllib.request.urlopen(req, timeout=5) as r:
-                d = json.loads(r.read().decode())
-            if r.status == 200 and d.get("ready") is True:
-                return True, d
-            last = d
-        except Exception as exc:                        # noqa: BLE001
-            last = {"error": type(exc).__name__}
-        time.sleep(2)
-    return False, locals().get("last", {})
 
 
 def run_judge(task_dir, solution_path, outdir):
@@ -101,26 +134,25 @@ def main():
     ap.add_argument("--tasks", nargs="*", default=DEFAULT_PICK)
     ap.add_argument("--samples", type=int, default=5)
     ap.add_argument("--deadline", type=float, default=300.0)
-    ap.add_argument("--port", type=int, default=7865)
+    ap.add_argument("--port", type=int, default=7867)
     ap.add_argument("--out", type=pathlib.Path,
                     default=pathlib.Path("/workspace/team/runs/fpga_owner/five_sample_quality_20261003"))
     args = ap.parse_args()
 
+    official = load_official_score()
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "scratch").mkdir(exist_ok=True)
-    profile = os.environ.get("RTL_PROFILE", "(unset)")
-    print("profile=%s  题数=%d  模式=agent+baseline  每模式 %d 样本  合计 %d 次"
-          % (profile, len(args.tasks), args.samples,
-             len(args.tasks) * 2 * args.samples), flush=True)
+    print("官方口径: summarize() 来自 %s" % OFFICIAL_SCORE.name, flush=True)
+    print("profile=%s 题数=%d 模式=agent+baseline 每模式 %d 样本"
+          % (os.environ.get("RTL_PROFILE", "(unset)"), len(args.tasks), args.samples), flush=True)
 
     env = os.environ.copy()
     env.update(FPGACHINA_TOKEN=TOKEN, PYTHONUTF8="1",
                EDA_TMP=str(args.out / "scratch"), SELFTEST_TMP=str(args.out / "scratch"))
-    srv = subprocess.Popen(
-        [sys.executable, "-B", str(KIT / "submission/agent/runtime.py"),
-         "serve", "--port", str(args.port)],
-        cwd=str(KIT), env=env, stdout=open(args.out / "server.log", "w"),
-        stderr=subprocess.STDOUT, start_new_session=True)
+    srv = subprocess.Popen([sys.executable, "-B", str(KIT / "submission/agent/runtime.py"),
+                            "serve", "--port", str(args.port)],
+                           cwd=str(KIT), env=env, stdout=open(args.out / "server.log", "w"),
+                           stderr=subprocess.STDOUT, start_new_session=True)
     try:
         ok, detail = wait_ready(args.port)
         print("就绪:", ok, detail, flush=True)
@@ -128,7 +160,8 @@ def main():
             print("服务未就绪，放弃（先查令牌与 ready 条件）", flush=True)
             return 1
 
-        rows = []
+        # by_task[mode][task_id] = [verdict, ...]   —— 与官方 collect() 的结构一致
+        by_task = {"agent": {}, "baseline": {}}
         for task in args.tasks:
             task_dir = TASKS_DIR / task
             prompt_file = task_dir / "prompt.txt"
@@ -137,7 +170,7 @@ def main():
                 continue
             prompt = prompt_file.read_text(encoding="utf-8")
             for mode in ("agent", "baseline"):
-                levels, elapsed, empties = [], [], 0
+                by_task[mode].setdefault(task, [])
                 for k in range(args.samples):
                     d = args.out / task / mode / ("s%d" % k)
                     d.mkdir(parents=True, exist_ok=True)
@@ -145,50 +178,60 @@ def main():
                     sol = payload.get("solution") or ""
                     (d / "solution.v").write_text(sol, encoding="utf-8")
                     (d / "trace.jsonl").write_text(payload.get("trace") or "", encoding="utf-8")
-                    (d / "response.json").write_text(json.dumps(payload, ensure_ascii=False)[:20000],
-                                                     encoding="utf-8")
-                    if not sol.strip():
-                        empties += 1
-                        levels.append(None)       # 空答案不计等级，但如实记下来
-                        elapsed.append(round(el, 1))
-                        continue
+                    (d / "response.json").write_text(
+                        json.dumps(payload, ensure_ascii=False)[:20000], encoding="utf-8")
+                    # 空答案交给官方判定器：它会判为 L0（judge.py 明确写了"空解属于 L0"）
                     v = run_judge(task_dir, d / "solution.v", str(d / "judge"))
-                    levels.append(v.get("level"))
-                    elapsed.append(round(el, 1))
-                graded = [x for x in levels if x is not None]
-                rows.append(dict(task=task, mode=mode, levels=levels,
-                                 graded=graded, empties=empties,
-                                 elapsed=elapsed,
-                                 mean_level=round(statistics.mean(graded), 3) if graded else None,
-                                 pass_at_1=round(statistics.mean(COEFF[x] for x in graded), 4) if graded else 0.0,
-                                 pass_at_5=1.0 if any(x == 3 for x in graded) else 0.0))
-                print("  %-32s %-8s 等级=%-22s 空答=%d 均值=%s pass@1=%.3f pass@5=%.0f 耗时=%s"
-                      % (task, mode, levels, empties, rows[-1]["mean_level"],
-                         rows[-1]["pass_at_1"], rows[-1]["pass_at_5"], elapsed), flush=True)
-                (args.out / "quality.json").write_text(
-                    json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
+                    if not v:
+                        # 判定没产出结果：标记为环境失败，让官方汇总把它单列，
+                        # 而不是当成 L0 静默计入（否则会把工具问题算成模型失分）
+                        v = {"task_id": task, "tool_error": "judge produced no verdict"}
+                    v.setdefault("task_id", task)
+                    by_task[mode][task].append(v)
+                lv = [s.get("level") for s in by_task[mode][task]]
+                te = sum(1 for s in by_task[mode][task] if s.get("tool_error"))
+                print("  %-32s %-8s 等级=%-22s 环境失败=%d"
+                      % (task, mode, lv, te), flush=True)
 
         print()
-        print("=== 汇总（%d 题 x %d 样本）===" % (len(args.tasks), args.samples))
+        print("=== 官方 summarize() 的结果 ===")
+        summary = {}
         for mode in ("agent", "baseline"):
-            sel = [r for r in rows if r["mode"] == mode]
-            if not sel:
-                continue
-            p1 = statistics.mean(r["pass_at_1"] for r in sel)
-            p5 = statistics.mean(r["pass_at_5"] for r in sel)
-            emp = sum(r["empties"] for r in sel)
-            print("  %-9s 题集得分(pass@1)=%.4f  pass@5=%.4f  空答案 %d 次"
-                  % (mode, p1, p5, emp))
-        ag = [r for r in rows if r["mode"] == "agent"]
-        bl = [r for r in rows if r["mode"] == "baseline"]
-        if ag and bl:
-            a = statistics.mean(r["pass_at_1"] for r in ag)
-            b = statistics.mean(r["pass_at_1"] for r in bl)
-            print("  增益 = %.4f" % (a / b if b else 0))
+            res = official.summarize(by_task[mode])
+            summary[mode] = res
+            print("  %-9s 题集得分(pass@1)=%.4f  pass@5=%.4f  计分题 %d/%d  环境失败 %d"
+                  % (mode, res["set_score"], res["pass@5"],
+                     res["scored_tasks"], res["tasks"], res["tool_errors"]))
+            if res["scored_tasks"] != res["tasks"]:
+                print("    ⚠ 评测不完整：%d 题未计入（见 excluded）"
+                      % (res["tasks"] - res["scored_tasks"]))
+        a = summary["agent"]["set_score"]
+        b = summary["baseline"]["set_score"]
+        gain, gscore = official.gain_score(a, b)
+        print("  增益 = %s   增益得分(满分线 %.1f) = %.2f"
+              % ("%.4f" % gain if gain is not None else "N/A", official.GAIN_FULL_MARK, gscore))
+
+        # 另起名字的辅助指标：五次中是否出现过 L3
         print()
-        print("说明：pass@1 取逐样本等级系数的均值；pass@5 取 5 次中有任意一次达 L3。")
-        print("      空答案按契约是合法返回，不计等级，但在上面单独计数——")
-        print("      五次都是空答案会表现为 pass@1=0，不会被误判成'一致=通过'。")
+        print("=== 辅助指标（不叫 pass@5，避免与官方口径混淆）===")
+        for mode in ("agent", "baseline"):
+            anyl3 = 0
+            for t, samples in by_task[mode].items():
+                good = [s for s in samples if not s.get("tool_error")]
+                if any(s.get("level") == 3 for s in good):
+                    anyl3 += 1
+            print("  %-9s any_l3（5 次中出现过 L3 的题数）= %d / %d"
+                  % (mode, anyl3, len(by_task[mode])))
+
+        (args.out / "quality_official.json").write_text(
+            json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
+        (args.out / "by_task.json").write_text(
+            json.dumps(by_task, indent=2, ensure_ascii=False), encoding="utf-8")
+        print()
+        print("说明：空答案按官方口径是 L0（judge.py 写明「空解属于 L0」），留在分母里。")
+        print("      环境失败按官方口径单列排除；整题全为环境失败时该题不计分，")
+        print("      代码注释如此，但官方算术会给 set_score 一个 0 —— 所以这里同时报")
+        print("      scored_tasks/tasks，让「评测不完整」可见，而不是静默通过。")
         print("      这是子集评测，不是完整 1560 次协议。")
         return 0
     finally:
