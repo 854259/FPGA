@@ -1,5 +1,55 @@
 {
   "schema_version": 1,
+  "conversation_handoff_20261003": {
+    "source": "user_requested_github_sync",
+    "document": "05_handoff/CONVERSATION_HANDOFF_20261003.md",
+    "scope": "conversation_summary_research_plans_review_evidence_and_matching_state_entries",
+    "format": "structured_summary_not_verbatim_chat_export",
+    "repository": "854259/FPGA",
+    "branch": "feat/official-rtl-contract",
+    "deployment_changed": false
+  },
+  "continuous_research_strategy_20261003": {
+    "source": "direct_user_clarification",
+    "horizon": "about_one_month_remaining_as_reported_by_user_not_official_deadline_verification",
+    "roles": {
+      "planning_and_review": "Codex",
+      "continuous_execution": "DeepSeek v4.1 Flash",
+      "optional_task_contributors": "teammates"
+    },
+    "status": "planning_document_created_execution_not_dispatched_by_this_turn",
+    "plan": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
+    "previous_plan_role": "foundation_and_acceptance_worklist_not_a_month_long_serial_gate",
+    "strategy": "retain_a_recoverable_baseline_while_running_bounded_research_and_independent_evaluation_in_parallel",
+    "routine_execution": "advance_autonomously_within_predeclared_scope_and_budget_escalate_substantive_research_decisions",
+    "calendar_schedule_requested": false,
+    "automation_created": false,
+    "deployment_changed": false
+  },
+  "execution_plan_review_20261003": {
+    "status": "plan_written_cloud_read_only_runtime_experiment_still_running_at_snapshot",
+    "snapshot_beijing": "2026-10-03 13:42",
+    "run": "full156_runtime728_20261003",
+    "result_files": 291,
+    "plan": "05_handoff/AI_EXECUTION_PLAN_20261003.md",
+    "observed_evidence": "03_analysis/runtime728_review_20261003/observed_artifacts.json",
+    "new_findings": [
+      "Prob005 agent source is byte-identical across old and new runs but the official verdict moved L3 to L2, with tool_error null; root cause unconfirmed and original verdicts preserved.",
+      "Cloud deploy_accept.sh selects a model PID by broad process matching before killing it, does not gate that action on ownership, and stops its supervisor at the end; do not execute unchanged.",
+      "The xelab economics write-up omits gain-score benefit, assumes positive repair benefit and mixes timing scopes; its B threshold does not establish a robust rejection.",
+      "At 13:29 the model listened on 8000 but agent 7860 did not; repository synchronization has not synchronized cloud report/model documents."
+    ],
+    "next_order": [
+      "close_and_validate_runtime_run",
+      "freeze_release",
+      "repair_and_run_deployment_acceptance",
+      "http_endurance_and_200_request_quality_subset",
+      "independent_taskset_validation",
+      "bounded_diagnostic_repair_experiment"
+    ],
+    "model_calls": 0,
+    "deployment_changed": false
+  },
   "report_consistency_followup_20261003": {
     "date": "2026-10-03",
     "status": "local_documentation_updated_runtime_experiment_pending",

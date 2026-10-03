@@ -1,0 +1,68 @@
+{
+  "evidence_kind": "projection_of_direct_cloud_reads_not_a_full_run_archive",
+  "observed_utc": "2026-10-03T05:35:08.335805+00:00",
+  "current_run": "full156_runtime728_20261003",
+  "result_files_at_snapshot": 280,
+  "experiment_complete_at_snapshot": false,
+  "latest_progress_snapshot": {
+    "observed_utc": "2026-10-03T05:42:45.480835+00:00",
+    "result_files": 291,
+    "tool_or_read_errors": [],
+    "terminal_verdict_present": false
+  },
+  "same_source_different_verdict": {
+    "task": "Prob005_notgate",
+    "mode": "agent",
+    "sample": 0,
+    "source_sha256_both_runs": "37b326dbfcc213d2a187001fe9e7d16e0d994ec559c02e27171dfa00faa2d11c",
+    "old_run": "full156_declfix_20261003",
+    "old_verdict": {
+      "level": 3,
+      "coefficient": 1.0,
+      "stages": {"compile": true, "simulate": true, "synth": true},
+      "mismatches": 0,
+      "samples": 239,
+      "tool_error": null,
+      "elapsed_s": 28.0
+    },
+    "new_verdict": {
+      "level": 2,
+      "coefficient": 0.7,
+      "stages": {"compile": true, "simulate": true, "synth": false},
+      "mismatches": 0,
+      "samples": 239,
+      "tool_error": null,
+      "elapsed_s": 22.9
+    },
+    "new_trace_has_declaration_fix": false,
+    "new_outer_judge_log_empty": true,
+    "baseline_source_sha256_both_runs": "7929b25a58e8387be3318b316d08812a090251c4e24d5a9a81dcbaa417a6a143",
+    "baseline_level_both_runs": 3,
+    "root_cause": "not_determined; identical RTL excludes changed generated source as the cause of this particular level change",
+    "original_artifact_root": "/workspace/team/runs/fpga_owner",
+    "solution_relative_path": "full/agent/Prob005_notgate/s0/solution.v",
+    "verdict_relative_path": "full/results/agent.Prob005_notgate.s0.json"
+  },
+  "deployment_script_review": {
+    "path": "/workspace/team/deploy_accept.sh",
+    "unsafe_pid_selection": "pgrep -f llama-server followed by head -1, then kill -9, without ownership gate",
+    "preexisting_model_pid_recorded_but_not_used_as_kill_gate": true,
+    "some_recovery_checks_only_require_http_200": true,
+    "final_step_stops_supervisor": true,
+    "executed_by_this_review": false
+  },
+  "hypothetical_economics_counterexample": {
+    "not_an_official_score_forecast": true,
+    "gain_full_mark_placeholder": 2.5,
+    "agent_old": 0.7666666666666666,
+    "one_task_L0_to_L3": true,
+    "capability_plus_gain_delta": 0.5557924460832945,
+    "assumed_T_old_s": 19.8,
+    "assumed_T_new_s": 20.96,
+    "assumed_B_s": 16.58,
+    "cost_score_loss": 0.46343203022592316,
+    "net_before_any_repair_time": 0.09236041585737131
+  },
+  "model_calls_by_this_review": 0,
+  "deployment_changed_by_this_review": false
+}
