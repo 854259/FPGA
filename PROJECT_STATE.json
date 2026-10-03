@@ -1,5 +1,17 @@
 {
   "schema_version": 1,
+  "h3_l0_elaboration_replay_20261003": {
+    "date": "2026-10-03",
+    "status": "four_h3_candidate_failures_reproduced_without_model_calls",
+    "evidence": "03_analysis/h3_l0_elab_replay_20261003/summary.json",
+    "evidence_sha256": "52faecf21c33ec91eff968317afec18d4e2c8234cb66a12c114f49cbcf0a6b0d",
+    "report": "03_analysis/H3_L0_ELAB_REPLAY_20261003.md",
+    "tasks": ["Prob006_vectorr", "Prob128_fsm_ps2", "Prob133_2014_q3fsm", "Prob137_fsm_serial"],
+    "result": "All four H3 candidates pass xvlog and fail xelab with VRFC 10-3823 or 10-3818, both standalone and in official L1 fixture context. All four archived seven-rule candidates pass standalone elaboration. Twelve checks complete, no timeout.",
+    "runtime_boundary": "Standalone diagnosis used only the generated candidate, without reference code or testbench.",
+    "not_proven": "No repair or score gain demonstrated; detection coverage and cost on the stable seven-rule baseline remain untested.",
+    "deployment_changed": false
+  },
   "contract_pilot2_20261002": {
     "date": "2026-10-02",
     "status": "complete_as_reported_by_execution_task",
@@ -1671,7 +1683,21 @@
   },
   "skill_variant_h3_20261003": {
     "date": "2026-10-03",
-    "status": "running_no_conclusion_yet",
+    "status": "complete_not_adopted_stable_skill_restored",
+    "final_independent_check_20261003_1021": {
+      "experiment_complete": true,
+      "samples": 312,
+      "tool_errors": 0,
+      "agent": 0.7628,
+      "baseline": 0.6782,
+      "control_agent": 0.7667,
+      "control_baseline": 0.6744,
+      "agent_up": 7,
+      "agent_down": 8,
+      "agent_coefficient_delta": -0.6,
+      "skill_restored_sha256": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "note": "The 139-task snapshot below is historical; this final result supersedes it."
+    },
     "run_id": "full156_skill9_20261003",
     "hypothesis": "harm came from the semantic rules, so add back only the syntactic ones (rule 8 declarations, rule 9 first half vector ops)",
     "variant_sha256_prefix": "8fb63de303486c9e",
@@ -1848,7 +1874,7 @@
   },
   "delivery_vs_experiment_20261003": {
     "date": "2026-10-03",
-    "status": "experiment_running_formal_service_not_in_continuous_standby",
+    "status": "h3_complete_formal_service_acceptance_pending",
     "cloud_snapshot_20261003_0933": {
       "model_port_8000": "listening",
       "formal_agent_port_7860": "NOT listening",

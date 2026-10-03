@@ -1,0 +1,547 @@
+{
+  "out": "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z",
+  "scope": "Archived candidates only; no model calls, no candidate edits. Reproduce official L1 commands and candidate-only elaboration. Passing this replay does not imply L2/L3.",
+  "complete": true,
+  "records": [
+    {
+      "task": "Prob006_vectorr",
+      "variant": "h3",
+      "mode": "candidate_only",
+      "source": "/workspace/team/runs/fpga_owner/full156_skill9_20261003/full/agent/Prob006_vectorr/s0/solution.v",
+      "source_sha256": "466f6503ee5258d0af8c1bbf29f974eed339af22f12adf51385b48264fdceb5d",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob006_vectorr/h3/candidate_only/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 1,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": [
+            "ERROR: [VRFC 10-3823] variable 'out' might have multiple concurrent drivers [/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob006_vectorr/h3/candidate_only/dut.sv:13]",
+            "ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed."
+          ]
+        }
+      ]
+    },
+    {
+      "task": "Prob006_vectorr",
+      "variant": "h3",
+      "mode": "official_L1",
+      "source": "/workspace/team/runs/fpga_owner/full156_skill9_20261003/full/agent/Prob006_vectorr/s0/solution.v",
+      "source_sha256": "466f6503ee5258d0af8c1bbf29f974eed339af22f12adf51385b48264fdceb5d",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob006_vectorr/h3/official_L1/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xvlog_fixture",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--relax",
+            "--nolog",
+            "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob006_vectorr/tb.sv",
+            "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob006_vectorr/ref.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "tb",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 1,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": [
+            "ERROR: [VRFC 10-3823] variable 'out' might have multiple concurrent drivers [/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob006_vectorr/h3/official_L1/dut.sv:13]",
+            "ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed."
+          ]
+        }
+      ]
+    },
+    {
+      "task": "Prob006_vectorr",
+      "variant": "control7",
+      "mode": "candidate_only",
+      "source": "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full/agent/Prob006_vectorr/s0/solution.v",
+      "source_sha256": "fb78dbd26e3e9312bef1810f483a59993d17861e3ee7f0dae23e2cac4cb0d758",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob006_vectorr/control7/candidate_only/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.166,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "task": "Prob128_fsm_ps2",
+      "variant": "h3",
+      "mode": "candidate_only",
+      "source": "/workspace/team/runs/fpga_owner/full156_skill9_20261003/full/agent/Prob128_fsm_ps2/s0/solution.v",
+      "source_sha256": "8a9ebd53ff5474aaea01a65f39ab46a4c02d6fec63d82ddfc15ff0cd5b04c932",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob128_fsm_ps2/h3/candidate_only/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 1,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": [
+            "ERROR: [VRFC 10-3818] variable 'done_reg' is driven by invalid combination of procedural drivers [/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob128_fsm_ps2/h3/candidate_only/dut.sv:21]",
+            "ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed."
+          ]
+        }
+      ]
+    },
+    {
+      "task": "Prob128_fsm_ps2",
+      "variant": "h3",
+      "mode": "official_L1",
+      "source": "/workspace/team/runs/fpga_owner/full156_skill9_20261003/full/agent/Prob128_fsm_ps2/s0/solution.v",
+      "source_sha256": "8a9ebd53ff5474aaea01a65f39ab46a4c02d6fec63d82ddfc15ff0cd5b04c932",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob128_fsm_ps2/h3/official_L1/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xvlog_fixture",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--relax",
+            "--nolog",
+            "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob128_fsm_ps2/tb.sv",
+            "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob128_fsm_ps2/ref.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "tb",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 1,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": [
+            "ERROR: [VRFC 10-3818] variable 'done_reg' is driven by invalid combination of procedural drivers [/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob128_fsm_ps2/h3/official_L1/dut.sv:21]",
+            "ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed."
+          ]
+        }
+      ]
+    },
+    {
+      "task": "Prob128_fsm_ps2",
+      "variant": "control7",
+      "mode": "candidate_only",
+      "source": "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full/agent/Prob128_fsm_ps2/s0/solution.v",
+      "source_sha256": "a345c441497a5bab3c0fcfb5dea4a1d980c0a1c070911cad0fb161eb03263272",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob128_fsm_ps2/control7/candidate_only/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.166,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "task": "Prob133_2014_q3fsm",
+      "variant": "h3",
+      "mode": "candidate_only",
+      "source": "/workspace/team/runs/fpga_owner/full156_skill9_20261003/full/agent/Prob133_2014_q3fsm/s0/solution.v",
+      "source_sha256": "54627a445ce6ed1c8be99a7221d725d615b2b81212efb89afd64964fd5b192bc",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob133_2014_q3fsm/h3/candidate_only/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.066,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 1,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": [
+            "ERROR: [VRFC 10-3818] variable 'z_reg' is driven by invalid combination of procedural drivers [/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob133_2014_q3fsm/h3/candidate_only/dut.sv:53]",
+            "ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed."
+          ]
+        }
+      ]
+    },
+    {
+      "task": "Prob133_2014_q3fsm",
+      "variant": "h3",
+      "mode": "official_L1",
+      "source": "/workspace/team/runs/fpga_owner/full156_skill9_20261003/full/agent/Prob133_2014_q3fsm/s0/solution.v",
+      "source_sha256": "54627a445ce6ed1c8be99a7221d725d615b2b81212efb89afd64964fd5b192bc",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob133_2014_q3fsm/h3/official_L1/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xvlog_fixture",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--relax",
+            "--nolog",
+            "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob133_2014_q3fsm/tb.sv",
+            "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob133_2014_q3fsm/ref.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "tb",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 1,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": [
+            "ERROR: [VRFC 10-3818] variable 'z_reg' is driven by invalid combination of procedural drivers [/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob133_2014_q3fsm/h3/official_L1/dut.sv:53]",
+            "ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed."
+          ]
+        }
+      ]
+    },
+    {
+      "task": "Prob133_2014_q3fsm",
+      "variant": "control7",
+      "mode": "candidate_only",
+      "source": "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full/agent/Prob133_2014_q3fsm/s0/solution.v",
+      "source_sha256": "5acb621337ff31c45a9c882406513e7b35342fe448fce4538e23bca4c767330f",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob133_2014_q3fsm/control7/candidate_only/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.166,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "task": "Prob137_fsm_serial",
+      "variant": "h3",
+      "mode": "candidate_only",
+      "source": "/workspace/team/runs/fpga_owner/full156_skill9_20261003/full/agent/Prob137_fsm_serial/s0/solution.v",
+      "source_sha256": "f5bd1ef0606bcc5a3659f94c224516de704b01f44f7475e96f7f5786cd1ac963",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob137_fsm_serial/h3/candidate_only/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.066,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 1,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": [
+            "ERROR: [VRFC 10-3818] variable 'done_reg' is driven by invalid combination of procedural drivers [/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob137_fsm_serial/h3/candidate_only/dut.sv:21]",
+            "ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed."
+          ]
+        }
+      ]
+    },
+    {
+      "task": "Prob137_fsm_serial",
+      "variant": "h3",
+      "mode": "official_L1",
+      "source": "/workspace/team/runs/fpga_owner/full156_skill9_20261003/full/agent/Prob137_fsm_serial/s0/solution.v",
+      "source_sha256": "f5bd1ef0606bcc5a3659f94c224516de704b01f44f7475e96f7f5786cd1ac963",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob137_fsm_serial/h3/official_L1/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xvlog_fixture",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--relax",
+            "--nolog",
+            "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob137_fsm_serial/tb.sv",
+            "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob137_fsm_serial/ref.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "tb",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 1,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": [
+            "ERROR: [VRFC 10-3818] variable 'done_reg' is driven by invalid combination of procedural drivers [/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob137_fsm_serial/h3/official_L1/dut.sv:21]",
+            "ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed."
+          ]
+        }
+      ]
+    },
+    {
+      "task": "Prob137_fsm_serial",
+      "variant": "control7",
+      "mode": "candidate_only",
+      "source": "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full/agent/Prob137_fsm_serial/s0/solution.v",
+      "source_sha256": "ea07ad8430c73d446008d0854955d44a0d805b7f01a7c16361abd8609db5fc9d",
+      "steps": [
+        {
+          "stage": "xvlog_dut",
+          "cmd": [
+            "xvlog",
+            "-sv",
+            "--nolog",
+            "/workspace/team/runs/fpga_owner/codex_h3_l0_replay_20261003T022302Z/Prob137_fsm_serial/control7/candidate_only/dut.sv"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.116,
+          "errors": []
+        },
+        {
+          "stage": "xelab",
+          "cmd": [
+            "xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "rc": 0,
+          "timeout": false,
+          "seconds": 1.166,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}
