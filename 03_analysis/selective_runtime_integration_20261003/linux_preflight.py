@@ -99,7 +99,13 @@ def group_records(pgid):
 
 
 def unique_records(rows):
-    return list({(row["pid"], row["starttime"]): row for row in rows if row}.values())
+    merged = {}
+    for row in rows:
+        if row:
+            key = (row["pid"], row["starttime"])
+            # Preserve fixture roles when /proc observations refresh process state.
+            merged[key] = {**merged.get(key, {}), **row}
+    return list(merged.values())
 
 
 def reap_owned(records):
