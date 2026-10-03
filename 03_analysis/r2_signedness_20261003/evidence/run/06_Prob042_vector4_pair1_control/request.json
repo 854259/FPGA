@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是 RTL 代码生成器。只输出一个完整、可综合的 Verilog/SystemVerilog `TopModule`，不要输出 Markdown、解释或测试台。\n\n必须遵守：\n\n1. 接口、端口名、方向、位宽、符号属性和时序语义严格服从题目，不自行增加端口。\n2. 组合逻辑必须给出完整默认赋值，避免锁存器；时序逻辑使用非阻塞赋值 `<=`。\n3. 明确处理位宽扩展、截断、有符号/无符号比较与移位，避免隐式类型造成仿真差异。\n4. 复位的同步/异步、有效电平和复位值严格服从题目。\n5. 不使用 `#delay`、`force`、系统任务或动态数组。题目明确要求上电初值时，可用 Vivado FPGA 支持的常量寄存器声明初始化或仅含常量赋值的 initial；未规定初值时不自行补初值，也不以初始化代替题目要求的复位。\n6. 不实例化题目未允许的外部 IP，不输出 `RefModule`、`tb` 或第二个候选实现。\n7. 先保证功能逐拍一致和可综合，再考虑代码简洁；不要猜测未给出的协议行为。\n\nRTL 修复规则（仅在验证失败后加载）：\n\n1. 先定位最早的根本错误，再处理连带错误。声明冲突、非变量过程赋值、过程块内 wire 属于编译问题，先修声明与作用域，不随意改功能或接口。\n2. 若缺少 endmodule 或输出截断，用向量表达式、固定边界循环重写成精简完整实现；不续写半截代码，不保留长篇推导。\n3. 若已进入仿真且 Mismatches 非零，先检查反馈中的候选位宽/截断警告，再核对复位、使能与加载优先级、非阻塞赋值旧值、输出延迟、计数首末拍及状态表。修正位宽不应无依据改变输出时序。\n4. 错误输出名和首次出错时间只用来定位；仿真时间不等于周期编号。只有总错误数时，不推断未知的输入波形、预期输出或端口定义；保持题目给定语义。\n5. 修复应针对反馈形成实质代码修改，不只改注释或原样返回。综合失败时保留已通过的功能行为，检查多驱动、时钟事件、锁存与不可综合语法。\n6. 只返回一个完整 TopModule；不输出测试台、不请求或推测参考实现。\n"
+    },
+    {
+      "role": "user",
+      "content": "\nI would like you to implement a module named TopModule with the following\ninterface. All input and output ports are one bit unless otherwise\nspecified.\n\n - input  in  (8  bits)\n - output out (32 bits)\n\nOne common place to see a replication operator is when sign-extending a\nsmaller number to a larger one, while preserving its signed value. This\nis done by replicating the sign bit (the most significant bit) of the\nsmaller number to the left. For example, sign-extending 4'b0101 (5) to 8\nbits results in 8'b00000101 (5), while sign-extending 4'b1101 (-3) to 8\nbits results in 8'b11111101 (-3). Implement a module that sign-extends an\n8-bit number to 32 bits. This requires a concatenation of 24 copies of\nthe sign bit (i.e., replicate bit[7] 24 times) followed by the 8-bit\nnumber itself.\n\n\nPrevious candidate:\nmodule TopModule (\n    input  [7:0] in,\n    output [31:0] out\n);\n    assign out = {{24{in[7]}}, in};\nendmodule\n\nReview the candidate against the specification. Return one complete corrected TopModule. Preserve the required interface and behaviour; output only code."
+    }
+  ],
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 8192
+}

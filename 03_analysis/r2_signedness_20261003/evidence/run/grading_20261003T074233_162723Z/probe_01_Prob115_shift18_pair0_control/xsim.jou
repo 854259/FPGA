@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sat Oct  3 07:48:08 2026
+# Process ID         : 2785924
+# Current directory  : /workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_01_Prob115_shift18_pair0_control
+# Command line       : xsim -nolog -mode tcl -source {xsim.dir/r2_probe/xsim_script.tcl}
+# Log file           : 
+# Journal file       : /workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_01_Prob115_shift18_pair0_control/xsim.jou
+# Running On         : j-fontq6fjcos6yvgiu52yotzx5v
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD EPYC 9334 32-Core Processor
+# CPU Frequency      : 2699.813 MHz
+# CPU Physical cores : 64
+# CPU Logical cores  : 128
+# Host memory        : 540696 MB
+# Swap memory        : 0 MB
+# Total Virtual      : 540696 MB
+# Available Virtual  : 463621 MB
+#-----------------------------------------------------------
+source xsim.dir/r2_probe/xsim_script.tcl
+run -all

@@ -1,0 +1,27 @@
+WARNING: The locale 'C.utf8' is not installed on your system.\nPlease install it by running:\n  Ubuntu/Debian: sudo locale-gen C.utf8 && sudo update-locale\n  RHEL/CentOS:   sudo localedef -i en_US -f UTF-8 C.utf8
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct  3 07:38:34 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/r2_probe/xsim_script.tcl
+# xsim {r2_probe} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+R2_MISMATCH in=80 got=00000080 expected=ffffff80
+R2_MISMATCH in=81 got=00000081 expected=ffffff81
+R2_MISMATCH in=82 got=00000082 expected=ffffff82
+R2_MISMATCH in=83 got=00000083 expected=ffffff83
+R2_MISMATCH in=84 got=00000084 expected=ffffff84
+R2_MISMATCH in=85 got=00000085 expected=ffffff85
+R2_MISMATCH in=86 got=00000086 expected=ffffff86
+R2_MISMATCH in=87 got=00000087 expected=ffffff87
+R2_PROBE_RESULT task=Prob042_vector4 checks=256 mismatches=128
+$finish called at time : 256 ns : File "/workspace/team/codex_r2_20261003/controls/Prob042_vector4/negative/tb.sv" Line 25
+exit
+INFO: xsimkernel Simulation Memory Usage: 142248 KB (Peak: 207784 KB), Simulation CPU Usage: 780 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct  3 07:38:36 2026...

@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "module TopModule (\n    input  [7:0] a,\n    input  [7:0] b,\n    input  [7:0] c,\n    input  [7:0] d,\n    output [7:0] min\n);\n\n    wire [7:0] min_ab;\n    wire [7:0] min_cd;\n\n    assign min_ab = (a < b) ? a : b;\n    assign min_cd = (c < d) ? c : d;\n\n    assign min = (min_ab < min_cd) ? min_ab : min_cd;\n\nendmodule"
+      }
+    }
+  ],
+  "created": 1791013337,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "system_fingerprint": "b1-c13fcbf",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 136,
+    "prompt_tokens": 879,
+    "total_tokens": 1015,
+    "prompt_tokens_details": {
+      "cached_tokens": 536
+    }
+  },
+  "id": "chatcmpl-lM2yt1OpZ5i11n75RX147CiFM33mkswM",
+  "timings": {
+    "cache_n": 536,
+    "prompt_n": 343,
+    "prompt_ms": 653.239,
+    "prompt_per_token_ms": 1.9044868804664723,
+    "prompt_per_second": 525.0758145181167,
+    "predicted_n": 136,
+    "predicted_ms": 4594.124,
+    "predicted_per_token_ms": 34.03054814814815,
+    "predicted_per_second": 29.38536269373661
+  }
+}

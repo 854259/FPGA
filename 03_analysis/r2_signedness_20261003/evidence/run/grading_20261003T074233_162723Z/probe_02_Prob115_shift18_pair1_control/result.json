@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob115_shift18",
+  "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_02_Prob115_shift18_pair1_control",
+  "status": "fail",
+  "failure_kind": "semantic_mismatch",
+  "checks": 31,
+  "mismatches": 12,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115429,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_02_Prob115_shift18_pair1_control/xvlog.log",
+      "log_sha256": "5669cdb109da3c162fb7c425c83f8c79e057594b5b89ad9dc5ccd2b9bcd441f1",
+      "log_bytes": 727
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.215494,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_02_Prob115_shift18_pair1_control/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.218421,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_02_Prob115_shift18_pair1_control/xsim.log",
+      "log_sha256": "884788b7124b19bc5e8242505abe6b082555701ccd86b96f1fd64d5c1f48b5e7",
+      "log_bytes": 1657
+    }
+  ],
+  "solution_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+  "tb_sha256": "616079f1fafa63fae52bfda00639809adf986c57474532572abf44c2dd0d1935",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

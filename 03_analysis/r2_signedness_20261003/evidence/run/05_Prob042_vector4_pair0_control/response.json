@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```verilog\nmodule TopModule (\n    input  [7:0] in,\n    output [31:0] out\n);\n    assign out = {{24{in[7]}}, in};\nendmodule\n```"
+      }
+    }
+  ],
+  "created": 1791013327,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "system_fingerprint": "b1-c13fcbf",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 53,
+    "prompt_tokens": 860,
+    "total_tokens": 913,
+    "prompt_tokens_details": {
+      "cached_tokens": 536
+    }
+  },
+  "id": "chatcmpl-32DT6AINc0hhOj1N6wX0h0LNSamPKpL6",
+  "timings": {
+    "cache_n": 536,
+    "prompt_n": 324,
+    "prompt_ms": 618.164,
+    "prompt_per_token_ms": 1.9079135802469136,
+    "prompt_per_second": 524.1327544146861,
+    "predicted_n": 53,
+    "predicted_ms": 1770.379,
+    "predicted_per_token_ms": 34.04575,
+    "predicted_per_second": 29.37224176292195
+  }
+}

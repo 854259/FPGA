@@ -1,0 +1,29 @@
+{
+  "task_id": "Prob042_vector4",
+  "top": "TopModule",
+  "level": 3,
+  "coefficient": 1.0,
+  "stages": {
+    "compile": true,
+    "simulate": true,
+    "synth": true
+  },
+  "tool_error": null,
+  "elapsed_s": 27.5,
+  "mismatches": 0,
+  "samples": 100,
+  "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_07_Prob042_vector4_pair1_diagnostic/judge-scratch-zhe0rxf6/judge_Prob042_vector4_2781649",
+  "judge_rc": 0,
+  "judge_evidence": [
+    "dut.sv",
+    "verdict.json",
+    "w_judge.log",
+    "w_synth_synth.json",
+    "w_synth_synth.log",
+    "w_synth_vivado.log"
+  ],
+  "judge_log_bytes": 32988,
+  "judge_evidence_complete": true,
+  "suspected_silent_degradation": false,
+  "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_07_Prob042_vector4_pair1_diagnostic/judge_receipt.json"
+}

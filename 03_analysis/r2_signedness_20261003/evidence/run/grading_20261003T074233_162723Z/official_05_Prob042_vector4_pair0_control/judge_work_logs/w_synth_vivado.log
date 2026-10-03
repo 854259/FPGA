@@ -1,0 +1,187 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 01-oct-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sat Oct  3 07:44:54 2026
+# Process ID         : 2780794
+# Current directory  : /workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control/judge-scratch-yechv5ec/judge_Prob042_vector4_2780194/w/synth
+# Command line       : vivado -mode batch -nojournal -notrace -source /workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/judge/l3_synth.tcl -tclargs xczu3eg-sbva484-1-e /workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control/judge-scratch-yechv5ec/judge_Prob042_vector4_2780194/dut.sv TopModule 5.0 /workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control/judge-scratch-yechv5ec/judge_Prob042_vector4_2780194/w/synth/synth.json
+# Log file           : /workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control/judge-scratch-yechv5ec/judge_Prob042_vector4_2780194/w/synth/vivado.log
+# Journal file       : 
+# Running On         : j-fontq6fjcos6yvgiu52yotzx5v
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD EPYC 9334 32-Core Processor
+# CPU Frequency      : 3899.234 MHz
+# CPU Physical cores : 64
+# CPU Logical cores  : 128
+# Host memory        : 540696 MB
+# Swap memory        : 0 MB
+# Total Virtual      : 540696 MB
+# Available Virtual  : 464733 MB
+#-----------------------------------------------------------
+source /workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/judge/l3_synth.tcl -notrace
+Command: synth_design -top TopModule -mode out_of_context -part xczu3eg-sbva484-1-e
+Starting synth_design
+Attempting to get a license for feature 'Vivado_Synthesis' and/or device 'xczu3eg'
+INFO: [Common 17-349] Got license for feature 'Vivado_Synthesis' and/or device 'xczu3eg'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2780824
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2200.051 ; gain = 502.555 ; free physical = 95033 ; free virtual = 442236
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'TopModule' [/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control/judge-scratch-yechv5ec/judge_Prob042_vector4_2780194/dut.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'TopModule' (0#1) [/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control/judge-scratch-yechv5ec/judge_Prob042_vector4_2780194/dut.sv:1]
+WARNING: [Synth 8-3330] design TopModule has an empty top module
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2285.020 ; gain = 587.523 ; free physical = 94924 ; free virtual = 442129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2299.863 ; gain = 602.367 ; free physical = 94932 ; free virtual = 442137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3eg-sbva484-1-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-e
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2308.770 ; gain = 611.273 ; free physical = 94932 ; free virtual = 442137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2308.770 ; gain = 611.273 ; free physical = 94931 ; free virtual = 442137
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3330] design TopModule has an empty top module
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3019.012 ; gain = 1321.516 ; free physical = 94279 ; free virtual = 441522
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3019.012 ; gain = 1321.516 ; free physical = 94271 ; free virtual = 441515
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3019.012 ; gain = 1321.516 ; free physical = 94271 ; free virtual = 441515
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3052.824 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3052.824 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3052.824 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3052.824 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3052.824 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3052.824 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     0|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3052.824 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441492
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3052.824 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441492
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3055.793 ; gain = 1355.328 ; free physical = 94221 ; free virtual = 441493
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.793 ; gain = 0.000 ; free physical = 94218 ; free virtual = 441489
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3150.230 ; gain = 0.000 ; free physical = 94233 ; free virtual = 441508
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: c71f892a
+INFO: [Common 17-83] Releasing license: Vivado_Synthesis
+13 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 3153.199 ; gain = 1455.703 ; free physical = 94237 ; free virtual = 441513
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2388.515; main = 2310.802; forked = 248.821
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4041.184; main = 3153.203; forked = 1022.168
+L3_OK: LUT=0 FF=0 DSP=0 BRAM=0 Fmax=
+INFO: [Common 17-206] Exiting Vivado at Sat Oct  3 07:45:12 2026...

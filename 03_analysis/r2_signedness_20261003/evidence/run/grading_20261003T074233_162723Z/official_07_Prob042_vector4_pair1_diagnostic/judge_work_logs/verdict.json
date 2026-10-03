@@ -1,0 +1,48 @@
+{
+  "dut": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_07_Prob042_vector4_pair1_diagnostic/judge-scratch-zhe0rxf6/judge_Prob042_vector4_2781649/dut.sv",
+  "ref": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob042_vector4/ref.sv",
+  "test": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob042_vector4/tb.sv",
+  "level": 3,
+  "verdict": "L3",
+  "stages": {
+    "xvlog_dut": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xvlog_fixture": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xelab": {
+      "rc": 0,
+      "sec": 1.17,
+      "timeout": false
+    },
+    "xsim": {
+      "rc": 0,
+      "sec": 3.27,
+      "timeout": false
+    },
+    "synth": {
+      "status": "OK",
+      "LUT": 0,
+      "FF": 0,
+      "DSP": 0,
+      "BRAM": 0,
+      "SRL": 0,
+      "CARRY": 0,
+      "MUXF": 0,
+      "has_clk": 0,
+      "WNS_ns": "",
+      "Fmax_MHz": "",
+      "sec": 19.84,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_07_Prob042_vector4_pair1_diagnostic/judge-scratch-zhe0rxf6/judge_Prob042_vector4_2781649/w/synth/synth.log"
+    }
+  },
+  "mismatches": 0,
+  "samples": 100,
+  "sim_timeout": false,
+  "vivado_version": "2026.1",
+  "sv_seed": "0",
+  "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_07_Prob042_vector4_pair1_diagnostic/judge-scratch-zhe0rxf6/judge_Prob042_vector4_2781649/w/judge.log"
+}

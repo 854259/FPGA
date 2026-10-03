@@ -1,0 +1,33 @@
+{
+  "dut": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_01_Prob115_shift18_pair0_control/judge-scratch-5q_676nf/judge_Prob115_shift18_2777710/dut.sv",
+  "ref": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob115_shift18/ref.sv",
+  "test": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob115_shift18/tb.sv",
+  "level": 1,
+  "verdict": "L1",
+  "stages": {
+    "xvlog_dut": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xvlog_fixture": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xelab": {
+      "rc": 0,
+      "sec": 1.22,
+      "timeout": false
+    },
+    "xsim": {
+      "rc": 0,
+      "sec": 3.27,
+      "timeout": false
+    }
+  },
+  "mismatches": 1614,
+  "samples": 4041,
+  "sim_timeout": false,
+  "vivado_version": "2026.1",
+  "sv_seed": "0",
+  "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_01_Prob115_shift18_pair0_control/judge-scratch-5q_676nf/judge_Prob115_shift18_2777710/w/judge.log"
+}

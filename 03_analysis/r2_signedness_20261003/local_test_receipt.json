@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-10-03T15:43:16+08:00",
+  "scope": "local tests with mocked model/EDA where applicable, separate from real cloud control validation",
+  "full_suite": {
+    "cwd": "04_project/amd_rtl_agent",
+    "command": "python -B -m unittest discover -s tests",
+    "exit_code": 0,
+    "tests": 238,
+    "seconds": 75.581
+  },
+  "probe_runner_suite": {
+    "cwd": ".",
+    "command": "python -B -m unittest discover -s 03_analysis/r2_signedness_20261003/probes -p test_probe_runner.py",
+    "exit_code": 0,
+    "tests": 9,
+    "seconds": 0.055
+  },
+  "note": "Summary transcribed from observed tool completion; not a full verbatim console capture."
+}

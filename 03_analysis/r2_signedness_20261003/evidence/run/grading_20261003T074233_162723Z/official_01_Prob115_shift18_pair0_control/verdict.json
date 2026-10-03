@@ -1,0 +1,26 @@
+{
+  "task_id": "Prob115_shift18",
+  "top": "TopModule",
+  "level": 1,
+  "coefficient": 0.2,
+  "stages": {
+    "compile": true,
+    "simulate": false,
+    "synth": false
+  },
+  "tool_error": null,
+  "elapsed_s": 7.7,
+  "mismatches": 1614,
+  "samples": 4041,
+  "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_01_Prob115_shift18_pair0_control/judge-scratch-5q_676nf/judge_Prob115_shift18_2777710",
+  "judge_rc": 0,
+  "judge_evidence": [
+    "dut.sv",
+    "verdict.json",
+    "w_judge.log"
+  ],
+  "judge_log_bytes": 4383,
+  "judge_evidence_complete": true,
+  "suspected_silent_degradation": false,
+  "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_01_Prob115_shift18_pair0_control/judge_receipt.json"
+}

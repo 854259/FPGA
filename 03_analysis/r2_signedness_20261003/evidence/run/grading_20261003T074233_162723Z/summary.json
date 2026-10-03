@@ -1,0 +1,1937 @@
+{
+  "complete": true,
+  "status": "graded_complete",
+  "output": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z",
+  "task_ids": [
+    "Prob115_shift18",
+    "Prob042_vector4",
+    "Prob055_conditional"
+  ],
+  "samples": [
+    {
+      "sequence": 0,
+      "task_id": "Prob115_shift18",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "00_Prob115_shift18_pair0_diagnostic",
+      "request_sha256": "c6d92efc4e00cfb591330358840c94d85c37f37dd26b44cc97f39c5bc0a9d522",
+      "generation": {
+        "sequence": 0,
+        "task_id": "Prob115_shift18",
+        "pair": 0,
+        "arm": "diagnostic",
+        "directory": "00_Prob115_shift18_pair0_diagnostic",
+        "request_sha256": "c6d92efc4e00cfb591330358840c94d85c37f37dd26b44cc97f39c5bc0a9d522",
+        "wall_seconds": 8.97782847750932,
+        "error": null,
+        "solution_sha256": "4aad640cfceee2d8b0b5ea9c6a00a483827fd6fc114bed09ffeabac2ff63a72b",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 214,
+          "prompt_tokens": 1130,
+          "total_tokens": 1344,
+          "prompt_tokens_details": {
+            "cached_tokens": 2
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/00_Prob115_shift18_pair0_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob115_shift18",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 44.8,
+        "mismatches": 0,
+        "samples": 4041,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_00_Prob115_shift18_pair0_diagnostic/judge-scratch-jqdsih_q/judge_Prob115_shift18_2776966",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 34048,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_00_Prob115_shift18_pair0_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 44.79626070614904,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_00_Prob115_shift18_pair0_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob115_shift18",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_00_Prob115_shift18_pair0_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 31,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115492,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_00_Prob115_shift18_pair0_diagnostic/xvlog.log",
+            "log_sha256": "2d89a9363e9d0d79858e75459e0ff264792f873a23b987bd053386a3b3d466fe",
+            "log_bytes": 733
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.215633,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_00_Prob115_shift18_pair0_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218454,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_00_Prob115_shift18_pair0_diagnostic/xsim.log",
+            "log_sha256": "ace522a691b1c1d7cba0fa03a86308babea4c1efd53b94ebf78850e2ce9be651",
+            "log_bytes": 1149
+          }
+        ],
+        "solution_sha256": "4aad640cfceee2d8b0b5ea9c6a00a483827fd6fc114bed09ffeabac2ff63a72b",
+        "tb_sha256": "616079f1fafa63fae52bfda00639809adf986c57474532572abf44c2dd0d1935",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.552016261033714
+    },
+    {
+      "sequence": 1,
+      "task_id": "Prob115_shift18",
+      "pair": 0,
+      "arm": "control",
+      "directory": "01_Prob115_shift18_pair0_control",
+      "request_sha256": "ae9b019a6b6e86d1aef93f9f15ba8df34fa617572370d4e90bf172894c72a627",
+      "generation": {
+        "sequence": 1,
+        "task_id": "Prob115_shift18",
+        "pair": 0,
+        "arm": "control",
+        "directory": "01_Prob115_shift18_pair0_control",
+        "request_sha256": "ae9b019a6b6e86d1aef93f9f15ba8df34fa617572370d4e90bf172894c72a627",
+        "wall_seconds": 8.126436185091734,
+        "error": null,
+        "solution_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 208,
+          "prompt_tokens": 1071,
+          "total_tokens": 1279,
+          "prompt_tokens_details": {
+            "cached_tokens": 614
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/01_Prob115_shift18_pair0_control/solution.v",
+      "verdict": {
+        "task_id": "Prob115_shift18",
+        "top": "TopModule",
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 7.7,
+        "mismatches": 1614,
+        "samples": 4041,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_01_Prob115_shift18_pair0_control/judge-scratch-5q_676nf/judge_Prob115_shift18_2777710",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4383,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_01_Prob115_shift18_pair0_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 7.781286966055632,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_01_Prob115_shift18_pair0_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob115_shift18",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_01_Prob115_shift18_pair0_control",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 31,
+        "mismatches": 12,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115564,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_01_Prob115_shift18_pair0_control/xvlog.log",
+            "log_sha256": "6c2cf6b0632d6aafd23a030246f815db1eccc490d5cb1e1e9d60ab8aef30ae7f",
+            "log_bytes": 727
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165367,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_01_Prob115_shift18_pair0_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.21829,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_01_Prob115_shift18_pair0_control/xsim.log",
+            "log_sha256": "e234e4e0167634fd6ca240763afea80ad14b82a8e650fa72f47a009d8f23eefa",
+            "log_bytes": 1657
+          }
+        ],
+        "solution_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+        "tb_sha256": "616079f1fafa63fae52bfda00639809adf986c57474532572abf44c2dd0d1935",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.501374515704811
+    },
+    {
+      "sequence": 2,
+      "task_id": "Prob115_shift18",
+      "pair": 1,
+      "arm": "control",
+      "directory": "02_Prob115_shift18_pair1_control",
+      "request_sha256": "ae9b019a6b6e86d1aef93f9f15ba8df34fa617572370d4e90bf172894c72a627",
+      "generation": {
+        "sequence": 2,
+        "task_id": "Prob115_shift18",
+        "pair": 1,
+        "arm": "control",
+        "directory": "02_Prob115_shift18_pair1_control",
+        "request_sha256": "ae9b019a6b6e86d1aef93f9f15ba8df34fa617572370d4e90bf172894c72a627",
+        "wall_seconds": 7.324466583319008,
+        "error": null,
+        "solution_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 208,
+          "prompt_tokens": 1071,
+          "total_tokens": 1279,
+          "prompt_tokens_details": {
+            "cached_tokens": 1067
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/02_Prob115_shift18_pair1_control/solution.v",
+      "verdict": {
+        "task_id": "Prob115_shift18",
+        "top": "TopModule",
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 7.9,
+        "mismatches": 1614,
+        "samples": 4041,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_02_Prob115_shift18_pair1_control/judge-scratch-iyqsh_8w/judge_Prob115_shift18_2778217",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4383,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_02_Prob115_shift18_pair1_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 7.903671680018306,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_02_Prob115_shift18_pair1_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob115_shift18",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_02_Prob115_shift18_pair1_control",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 31,
+        "mismatches": 12,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115429,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_02_Prob115_shift18_pair1_control/xvlog.log",
+            "log_sha256": "5669cdb109da3c162fb7c425c83f8c79e057594b5b89ad9dc5ccd2b9bcd441f1",
+            "log_bytes": 727
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.215494,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_02_Prob115_shift18_pair1_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218421,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_02_Prob115_shift18_pair1_control/xsim.log",
+            "log_sha256": "884788b7124b19bc5e8242505abe6b082555701ccd86b96f1fd64d5c1f48b5e7",
+            "log_bytes": 1657
+          }
+        ],
+        "solution_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+        "tb_sha256": "616079f1fafa63fae52bfda00639809adf986c57474532572abf44c2dd0d1935",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.551538695581257
+    },
+    {
+      "sequence": 3,
+      "task_id": "Prob115_shift18",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "03_Prob115_shift18_pair1_diagnostic",
+      "request_sha256": "c6d92efc4e00cfb591330358840c94d85c37f37dd26b44cc97f39c5bc0a9d522",
+      "generation": {
+        "sequence": 3,
+        "task_id": "Prob115_shift18",
+        "pair": 1,
+        "arm": "diagnostic",
+        "directory": "03_Prob115_shift18_pair1_diagnostic",
+        "request_sha256": "c6d92efc4e00cfb591330358840c94d85c37f37dd26b44cc97f39c5bc0a9d522",
+        "wall_seconds": 8.126443894580007,
+        "error": null,
+        "solution_sha256": "4aad640cfceee2d8b0b5ea9c6a00a483827fd6fc114bed09ffeabac2ff63a72b",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 214,
+          "prompt_tokens": 1130,
+          "total_tokens": 1344,
+          "prompt_tokens_details": {
+            "cached_tokens": 614
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/03_Prob115_shift18_pair1_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob115_shift18",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 44.8,
+        "mismatches": 0,
+        "samples": 4041,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_03_Prob115_shift18_pair1_diagnostic/judge-scratch-zl1ztj1e/judge_Prob115_shift18_2778724",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 34048,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_03_Prob115_shift18_pair1_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 44.802391182631254,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_03_Prob115_shift18_pair1_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob115_shift18",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_03_Prob115_shift18_pair1_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 31,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115454,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_03_Prob115_shift18_pair1_diagnostic/xvlog.log",
+            "log_sha256": "c6d4a0a5ab6186659bbb4882b7f16fd1ebeeb09a06171035fce8c8c52be2125d",
+            "log_bytes": 733
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.215681,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_03_Prob115_shift18_pair1_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218611,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_03_Prob115_shift18_pair1_diagnostic/xsim.log",
+            "log_sha256": "3a75873b5316b048093ca14d2e877ca929808be2c2594f444092dc9d90e204ee",
+            "log_bytes": 1149
+          }
+        ],
+        "solution_sha256": "4aad640cfceee2d8b0b5ea9c6a00a483827fd6fc114bed09ffeabac2ff63a72b",
+        "tb_sha256": "616079f1fafa63fae52bfda00639809adf986c57474532572abf44c2dd0d1935",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.551949601620436
+    },
+    {
+      "sequence": 4,
+      "task_id": "Prob042_vector4",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "04_Prob042_vector4_pair0_diagnostic",
+      "request_sha256": "18308db4a99d7853cfb474b2e3e43f2ed61d9dceec54b047aec10ed3adf54ccb",
+      "generation": {
+        "sequence": 4,
+        "task_id": "Prob042_vector4",
+        "pair": 0,
+        "arm": "diagnostic",
+        "directory": "04_Prob042_vector4_pair0_diagnostic",
+        "request_sha256": "18308db4a99d7853cfb474b2e3e43f2ed61d9dceec54b047aec10ed3adf54ccb",
+        "wall_seconds": 2.7179151652380824,
+        "error": null,
+        "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 47,
+          "prompt_tokens": 919,
+          "total_tokens": 966,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/04_Prob042_vector4_pair0_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob042_vector4",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.4,
+        "mismatches": 0,
+        "samples": 100,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_04_Prob042_vector4_pair0_diagnostic/judge-scratch-6w4mr2iz/judge_Prob042_vector4_2779468",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 32988,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_04_Prob042_vector4_pair0_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.42374718375504,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_04_Prob042_vector4_pair0_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob042_vector4",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_04_Prob042_vector4_pair0_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 256,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.06545,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_04_Prob042_vector4_pair0_diagnostic/xvlog.log",
+            "log_sha256": "49a223629733309f416615fb8eab904ce85b174d6f29fa719cc1519feda07cb3",
+            "log_bytes": 733
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165561,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_04_Prob042_vector4_pair0_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368862,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_04_Prob042_vector4_pair0_diagnostic/xsim.log",
+            "log_sha256": "1094f0312285fbbd874f90fe89b7e6a5937779b00feccf84f0da0d925254c0ee",
+            "log_bytes": 1150
+          }
+        ],
+        "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+        "tb_sha256": "f134847557c7ae5e2918f6d5772d24633648d04e7a89573e780b8d0048dfc016",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.602027020417154
+    },
+    {
+      "sequence": 5,
+      "task_id": "Prob042_vector4",
+      "pair": 0,
+      "arm": "control",
+      "directory": "05_Prob042_vector4_pair0_control",
+      "request_sha256": "bb6a6050bd5438c126038cef09da4d48acb23aa1003b7519d363bd15cfe11a58",
+      "generation": {
+        "sequence": 5,
+        "task_id": "Prob042_vector4",
+        "pair": 0,
+        "arm": "control",
+        "directory": "05_Prob042_vector4_pair0_control",
+        "request_sha256": "bb6a6050bd5438c126038cef09da4d48acb23aa1003b7519d363bd15cfe11a58",
+        "wall_seconds": 2.467369136400521,
+        "error": null,
+        "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 53,
+          "prompt_tokens": 860,
+          "total_tokens": 913,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/05_Prob042_vector4_pair0_control/solution.v",
+      "verdict": {
+        "task_id": "Prob042_vector4",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.0,
+        "mismatches": 0,
+        "samples": 100,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control/judge-scratch-yechv5ec/judge_Prob042_vector4_2780194",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 32952,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.043269677087665,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_05_Prob042_vector4_pair0_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob042_vector4",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_05_Prob042_vector4_pair0_control",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 256,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115556,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_05_Prob042_vector4_pair0_control/xvlog.log",
+            "log_sha256": "a695c4d0d8737776d6ab5bc6965c3b910cb3cb572f09a3e730dbf02418fda0c2",
+            "log_bytes": 727
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165542,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_05_Prob042_vector4_pair0_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218739,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_05_Prob042_vector4_pair0_control/xsim.log",
+            "log_sha256": "48f2dac60e31c2684fac662976ab824eebc302e470744834051bae461be9b61c",
+            "log_bytes": 1147
+          }
+        ],
+        "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+        "tb_sha256": "f134847557c7ae5e2918f6d5772d24633648d04e7a89573e780b8d0048dfc016",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.502017302438617
+    },
+    {
+      "sequence": 6,
+      "task_id": "Prob042_vector4",
+      "pair": 1,
+      "arm": "control",
+      "directory": "06_Prob042_vector4_pair1_control",
+      "request_sha256": "bb6a6050bd5438c126038cef09da4d48acb23aa1003b7519d363bd15cfe11a58",
+      "generation": {
+        "sequence": 6,
+        "task_id": "Prob042_vector4",
+        "pair": 1,
+        "arm": "control",
+        "directory": "06_Prob042_vector4_pair1_control",
+        "request_sha256": "bb6a6050bd5438c126038cef09da4d48acb23aa1003b7519d363bd15cfe11a58",
+        "wall_seconds": 2.016853116452694,
+        "error": null,
+        "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 53,
+          "prompt_tokens": 860,
+          "total_tokens": 913,
+          "prompt_tokens_details": {
+            "cached_tokens": 856
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/06_Prob042_vector4_pair1_control/solution.v",
+      "verdict": {
+        "task_id": "Prob042_vector4",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.3,
+        "mismatches": 0,
+        "samples": 100,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_06_Prob042_vector4_pair1_control/judge-scratch-6tl46x9k/judge_Prob042_vector4_2780920",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 32952,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_06_Prob042_vector4_pair1_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.32894948963076,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_06_Prob042_vector4_pair1_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob042_vector4",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_06_Prob042_vector4_pair1_control",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 256,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065398,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_06_Prob042_vector4_pair1_control/xvlog.log",
+            "log_sha256": "650dbfd9088801f88666cfefbaa601a0c0b53875914022dc21c787bbf23d1f67",
+            "log_bytes": 727
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165521,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_06_Prob042_vector4_pair1_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368549,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_06_Prob042_vector4_pair1_control/xsim.log",
+            "log_sha256": "ee3907ab517c6e5178a88b5a52d5d80590064c894e2f5ca55a4090796b30ff44",
+            "log_bytes": 1147
+          }
+        ],
+        "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+        "tb_sha256": "f134847557c7ae5e2918f6d5772d24633648d04e7a89573e780b8d0048dfc016",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.601629173383117
+    },
+    {
+      "sequence": 7,
+      "task_id": "Prob042_vector4",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "07_Prob042_vector4_pair1_diagnostic",
+      "request_sha256": "18308db4a99d7853cfb474b2e3e43f2ed61d9dceec54b047aec10ed3adf54ccb",
+      "generation": {
+        "sequence": 7,
+        "task_id": "Prob042_vector4",
+        "pair": 1,
+        "arm": "diagnostic",
+        "directory": "07_Prob042_vector4_pair1_diagnostic",
+        "request_sha256": "18308db4a99d7853cfb474b2e3e43f2ed61d9dceec54b047aec10ed3adf54ccb",
+        "wall_seconds": 2.3172321701422334,
+        "error": null,
+        "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 47,
+          "prompt_tokens": 919,
+          "total_tokens": 966,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/07_Prob042_vector4_pair1_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob042_vector4",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.5,
+        "mismatches": 0,
+        "samples": 100,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_07_Prob042_vector4_pair1_diagnostic/judge-scratch-zhe0rxf6/judge_Prob042_vector4_2781649",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 32988,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_07_Prob042_vector4_pair1_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.575480710715055,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_07_Prob042_vector4_pair1_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob042_vector4",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_07_Prob042_vector4_pair1_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 256,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115532,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_07_Prob042_vector4_pair1_diagnostic/xvlog.log",
+            "log_sha256": "3d7f8577eba8a73b241be0198e5ada1fe349180400c88ee0a900fe35d9a640f9",
+            "log_bytes": 733
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.16558,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_07_Prob042_vector4_pair1_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368435,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_07_Prob042_vector4_pair1_diagnostic/xsim.log",
+            "log_sha256": "86af2ce3a057db47b33788cdfa63cdd954d3dd359a75ceccc30eade748880853",
+            "log_bytes": 1150
+          }
+        ],
+        "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+        "tb_sha256": "f134847557c7ae5e2918f6d5772d24633648d04e7a89573e780b8d0048dfc016",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.651716472581029
+    },
+    {
+      "sequence": 8,
+      "task_id": "Prob055_conditional",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "08_Prob055_conditional_pair0_diagnostic",
+      "request_sha256": "48d27188825ab1f37930c25ff169503a6c30525cb5d80904238867478c29cf92",
+      "generation": {
+        "sequence": 8,
+        "task_id": "Prob055_conditional",
+        "pair": 0,
+        "arm": "diagnostic",
+        "directory": "08_Prob055_conditional_pair0_diagnostic",
+        "request_sha256": "48d27188825ab1f37930c25ff169503a6c30525cb5d80904238867478c29cf92",
+        "wall_seconds": 5.371709289960563,
+        "error": null,
+        "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 136,
+          "prompt_tokens": 879,
+          "total_tokens": 1015,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/08_Prob055_conditional_pair0_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob055_conditional",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.9,
+        "mismatches": 0,
+        "samples": 112,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_08_Prob055_conditional_pair0_diagnostic/judge-scratch-xy96jagb/judge_Prob055_conditional_2782375",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33482,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_08_Prob055_conditional_pair0_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.892160484567285,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_08_Prob055_conditional_pair0_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob055_conditional",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_08_Prob055_conditional_pair0_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 4096,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115582,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_08_Prob055_conditional_pair0_diagnostic/xvlog.log",
+            "log_sha256": "7a0e674d3ad73d1d11897ed4f4a3ad59bbfebe300af3975addd74293d554df56",
+            "log_bytes": 741
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165493,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_08_Prob055_conditional_pair0_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218121,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_08_Prob055_conditional_pair0_diagnostic/xsim.log",
+            "log_sha256": "c81f930efb96aea356eb772fc69d988d8deae53fdc234a1c61686261b886e6f8",
+            "log_bytes": 1160
+          }
+        ],
+        "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+        "tb_sha256": "6737aac39deb244cbeeb2e048310090f938d5723cfc020316d23ae7637f82ffa",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.501346366479993
+    },
+    {
+      "sequence": 9,
+      "task_id": "Prob055_conditional",
+      "pair": 0,
+      "arm": "control",
+      "directory": "09_Prob055_conditional_pair0_control",
+      "request_sha256": "f4c15601c2fd4673c37bf1d37e4d0e14afe763699ebde63c155a8a5810a6b62e",
+      "generation": {
+        "sequence": 9,
+        "task_id": "Prob055_conditional",
+        "pair": 0,
+        "arm": "control",
+        "directory": "09_Prob055_conditional_pair0_control",
+        "request_sha256": "f4c15601c2fd4673c37bf1d37e4d0e14afe763699ebde63c155a8a5810a6b62e",
+        "wall_seconds": 5.372060758061707,
+        "error": null,
+        "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 142,
+          "prompt_tokens": 820,
+          "total_tokens": 962,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/09_Prob055_conditional_pair0_control/solution.v",
+      "verdict": {
+        "task_id": "Prob055_conditional",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.9,
+        "mismatches": 0,
+        "samples": 112,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_09_Prob055_conditional_pair0_control/judge-scratch-af5_tqc1/judge_Prob055_conditional_2783111",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33446,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_09_Prob055_conditional_pair0_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.97639740165323,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_09_Prob055_conditional_pair0_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob055_conditional",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_09_Prob055_conditional_pair0_control",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 4096,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065267,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_09_Prob055_conditional_pair0_control/xvlog.log",
+            "log_sha256": "bbfbfce4d5ad15d2377412e88553501d10415aa9c495e72c02f8f6c2caaab107",
+            "log_bytes": 735
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.215417,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_09_Prob055_conditional_pair0_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368333,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_09_Prob055_conditional_pair0_control/xsim.log",
+            "log_sha256": "ecd9b8f1e65450526c067453d54f5236a268090e41e18fcbe1853e66b2ada230",
+            "log_bytes": 1157
+          }
+        ],
+        "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+        "tb_sha256": "6737aac39deb244cbeeb2e048310090f938d5723cfc020316d23ae7637f82ffa",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.6512149050831795
+    },
+    {
+      "sequence": 10,
+      "task_id": "Prob055_conditional",
+      "pair": 1,
+      "arm": "control",
+      "directory": "10_Prob055_conditional_pair1_control",
+      "request_sha256": "f4c15601c2fd4673c37bf1d37e4d0e14afe763699ebde63c155a8a5810a6b62e",
+      "generation": {
+        "sequence": 10,
+        "task_id": "Prob055_conditional",
+        "pair": 1,
+        "arm": "control",
+        "directory": "10_Prob055_conditional_pair1_control",
+        "request_sha256": "f4c15601c2fd4673c37bf1d37e4d0e14afe763699ebde63c155a8a5810a6b62e",
+        "wall_seconds": 5.021349259652197,
+        "error": null,
+        "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 142,
+          "prompt_tokens": 820,
+          "total_tokens": 962,
+          "prompt_tokens_details": {
+            "cached_tokens": 816
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/10_Prob055_conditional_pair1_control/solution.v",
+      "verdict": {
+        "task_id": "Prob055_conditional",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 28.0,
+        "mismatches": 0,
+        "samples": 112,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_10_Prob055_conditional_pair1_control/judge-scratch-17qumbwl/judge_Prob055_conditional_2783844",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33446,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_10_Prob055_conditional_pair1_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.99267956521362,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_10_Prob055_conditional_pair1_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob055_conditional",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_10_Prob055_conditional_pair1_control",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 4096,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115338,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_10_Prob055_conditional_pair1_control/xvlog.log",
+            "log_sha256": "99202af08f6a21a8942523d8218107ef4c39baeec7fa3eb97032f8cb2643e40b",
+            "log_bytes": 735
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165344,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_10_Prob055_conditional_pair1_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.268361,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_10_Prob055_conditional_pair1_control/xsim.log",
+            "log_sha256": "4f27cc43c1b7385018c1e5b586d5540cb739acf19dfaa4671a2c4d7baa1ea32c",
+            "log_bytes": 1157
+          }
+        ],
+        "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+        "tb_sha256": "6737aac39deb244cbeeb2e048310090f938d5723cfc020316d23ae7637f82ffa",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.551153208129108
+    },
+    {
+      "sequence": 11,
+      "task_id": "Prob055_conditional",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "11_Prob055_conditional_pair1_diagnostic",
+      "request_sha256": "48d27188825ab1f37930c25ff169503a6c30525cb5d80904238867478c29cf92",
+      "generation": {
+        "sequence": 11,
+        "task_id": "Prob055_conditional",
+        "pair": 1,
+        "arm": "diagnostic",
+        "directory": "11_Prob055_conditional_pair1_diagnostic",
+        "request_sha256": "48d27188825ab1f37930c25ff169503a6c30525cb5d80904238867478c29cf92",
+        "wall_seconds": 5.271694921888411,
+        "error": null,
+        "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 136,
+          "prompt_tokens": 879,
+          "total_tokens": 1015,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/11_Prob055_conditional_pair1_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob055_conditional",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.8,
+        "mismatches": 0,
+        "samples": 112,
+        "work_dir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_11_Prob055_conditional_pair1_diagnostic/judge-scratch-wrqt5_8u/judge_Prob055_conditional_2784577",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33482,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_11_Prob055_conditional_pair1_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.849789517000318,
+      "official_directory": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/official_11_Prob055_conditional_pair1_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob055_conditional",
+        "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_11_Prob055_conditional_pair1_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 4096,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115522,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_11_Prob055_conditional_pair1_diagnostic/xvlog.log",
+            "log_sha256": "08561ebc02e9243b6f01d3110edfb6946d069b860e1eafa192a93945c016ea2c",
+            "log_bytes": 741
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.215695,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_11_Prob055_conditional_pair1_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.268424,
+            "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_11_Prob055_conditional_pair1_diagnostic/xsim.log",
+            "log_sha256": "98ce11b8b812c56367c40d201604ae90839195759a2a2710c843b8c491a5ff6f",
+            "log_bytes": 1160
+          }
+        ],
+        "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+        "tb_sha256": "6737aac39deb244cbeeb2e048310090f938d5723cfc020316d23ae7637f82ffa",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.601815413683653
+    }
+  ],
+  "errors": [],
+  "valid_samples": 12,
+  "planned_samples": 12,
+  "slot_owner": "codex_r2_20261003",
+  "slot_sha256": "32f5f7218e18cc3af2627335c5048e006075c6ae0bbb0207829244ef34e4b190",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "prompt_comparison": "exact text after universal-newline decoding and stripping boundary LF only; both original byte hashes retained",
+  "tasks": {
+    "Prob115_shift18": {
+      "diagnostic": {
+        "levels": [
+          3,
+          3
+        ],
+        "coefficient_mean": 1.0,
+        "scored_samples": 2,
+        "planned_samples": 2,
+        "probe_statuses": [
+          "pass",
+          "pass"
+        ],
+        "probe_passed": 2,
+        "empty_answers": 0,
+        "truncated": 0,
+        "generation_wall_s": {
+          "values": [
+            8.97782847750932,
+            8.126443894580007
+          ],
+          "mean": 8.552136186044663,
+          "min": 8.126443894580007,
+          "max": 8.97782847750932
+        },
+        "usage_by_pair": [
+          {
+            "completion_tokens": 214,
+            "prompt_tokens": 1130,
+            "total_tokens": 1344,
+            "prompt_tokens_details": {
+              "cached_tokens": 2
+            }
+          },
+          {
+            "completion_tokens": 214,
+            "prompt_tokens": 1130,
+            "total_tokens": 1344,
+            "prompt_tokens_details": {
+              "cached_tokens": 614
+            }
+          }
+        ]
+      },
+      "control": {
+        "levels": [
+          1,
+          1
+        ],
+        "coefficient_mean": 0.2,
+        "scored_samples": 2,
+        "planned_samples": 2,
+        "probe_statuses": [
+          "fail",
+          "fail"
+        ],
+        "probe_passed": 0,
+        "empty_answers": 0,
+        "truncated": 0,
+        "generation_wall_s": {
+          "values": [
+            8.126436185091734,
+            7.324466583319008
+          ],
+          "mean": 7.725451384205371,
+          "min": 7.324466583319008,
+          "max": 8.126436185091734
+        },
+        "usage_by_pair": [
+          {
+            "completion_tokens": 208,
+            "prompt_tokens": 1071,
+            "total_tokens": 1279,
+            "prompt_tokens_details": {
+              "cached_tokens": 614
+            }
+          },
+          {
+            "completion_tokens": 208,
+            "prompt_tokens": 1071,
+            "total_tokens": 1279,
+            "prompt_tokens_details": {
+              "cached_tokens": 1067
+            }
+          }
+        ]
+      }
+    },
+    "Prob042_vector4": {
+      "diagnostic": {
+        "levels": [
+          3,
+          3
+        ],
+        "coefficient_mean": 1.0,
+        "scored_samples": 2,
+        "planned_samples": 2,
+        "probe_statuses": [
+          "pass",
+          "pass"
+        ],
+        "probe_passed": 2,
+        "empty_answers": 0,
+        "truncated": 0,
+        "generation_wall_s": {
+          "values": [
+            2.7179151652380824,
+            2.3172321701422334
+          ],
+          "mean": 2.517573667690158,
+          "min": 2.3172321701422334,
+          "max": 2.7179151652380824
+        },
+        "usage_by_pair": [
+          {
+            "completion_tokens": 47,
+            "prompt_tokens": 919,
+            "total_tokens": 966,
+            "prompt_tokens_details": {
+              "cached_tokens": 536
+            }
+          },
+          {
+            "completion_tokens": 47,
+            "prompt_tokens": 919,
+            "total_tokens": 966,
+            "prompt_tokens_details": {
+              "cached_tokens": 536
+            }
+          }
+        ]
+      },
+      "control": {
+        "levels": [
+          3,
+          3
+        ],
+        "coefficient_mean": 1.0,
+        "scored_samples": 2,
+        "planned_samples": 2,
+        "probe_statuses": [
+          "pass",
+          "pass"
+        ],
+        "probe_passed": 2,
+        "empty_answers": 0,
+        "truncated": 0,
+        "generation_wall_s": {
+          "values": [
+            2.467369136400521,
+            2.016853116452694
+          ],
+          "mean": 2.2421111264266074,
+          "min": 2.016853116452694,
+          "max": 2.467369136400521
+        },
+        "usage_by_pair": [
+          {
+            "completion_tokens": 53,
+            "prompt_tokens": 860,
+            "total_tokens": 913,
+            "prompt_tokens_details": {
+              "cached_tokens": 536
+            }
+          },
+          {
+            "completion_tokens": 53,
+            "prompt_tokens": 860,
+            "total_tokens": 913,
+            "prompt_tokens_details": {
+              "cached_tokens": 856
+            }
+          }
+        ]
+      }
+    },
+    "Prob055_conditional": {
+      "diagnostic": {
+        "levels": [
+          3,
+          3
+        ],
+        "coefficient_mean": 1.0,
+        "scored_samples": 2,
+        "planned_samples": 2,
+        "probe_statuses": [
+          "pass",
+          "pass"
+        ],
+        "probe_passed": 2,
+        "empty_answers": 0,
+        "truncated": 0,
+        "generation_wall_s": {
+          "values": [
+            5.371709289960563,
+            5.271694921888411
+          ],
+          "mean": 5.321702105924487,
+          "min": 5.271694921888411,
+          "max": 5.371709289960563
+        },
+        "usage_by_pair": [
+          {
+            "completion_tokens": 136,
+            "prompt_tokens": 879,
+            "total_tokens": 1015,
+            "prompt_tokens_details": {
+              "cached_tokens": 536
+            }
+          },
+          {
+            "completion_tokens": 136,
+            "prompt_tokens": 879,
+            "total_tokens": 1015,
+            "prompt_tokens_details": {
+              "cached_tokens": 536
+            }
+          }
+        ]
+      },
+      "control": {
+        "levels": [
+          3,
+          3
+        ],
+        "coefficient_mean": 1.0,
+        "scored_samples": 2,
+        "planned_samples": 2,
+        "probe_statuses": [
+          "pass",
+          "pass"
+        ],
+        "probe_passed": 2,
+        "empty_answers": 0,
+        "truncated": 0,
+        "generation_wall_s": {
+          "values": [
+            5.372060758061707,
+            5.021349259652197
+          ],
+          "mean": 5.196705008856952,
+          "min": 5.021349259652197,
+          "max": 5.372060758061707
+        },
+        "usage_by_pair": [
+          {
+            "completion_tokens": 142,
+            "prompt_tokens": 820,
+            "total_tokens": 962,
+            "prompt_tokens_details": {
+              "cached_tokens": 536
+            }
+          },
+          {
+            "completion_tokens": 142,
+            "prompt_tokens": 820,
+            "total_tokens": 962,
+            "prompt_tokens_details": {
+              "cached_tokens": 816
+            }
+          }
+        ]
+      }
+    }
+  },
+  "pairs": [
+    {
+      "task_id": "Prob115_shift18",
+      "pair": 0,
+      "diagnostic_level": 3,
+      "control_level": 1,
+      "diagnostic_probe": "pass",
+      "control_probe": "fail"
+    },
+    {
+      "task_id": "Prob115_shift18",
+      "pair": 1,
+      "diagnostic_level": 3,
+      "control_level": 1,
+      "diagnostic_probe": "pass",
+      "control_probe": "fail"
+    },
+    {
+      "task_id": "Prob042_vector4",
+      "pair": 0,
+      "diagnostic_level": 3,
+      "control_level": 3,
+      "diagnostic_probe": "pass",
+      "control_probe": "pass"
+    },
+    {
+      "task_id": "Prob042_vector4",
+      "pair": 1,
+      "diagnostic_level": 3,
+      "control_level": 3,
+      "diagnostic_probe": "pass",
+      "control_probe": "pass"
+    },
+    {
+      "task_id": "Prob055_conditional",
+      "pair": 0,
+      "diagnostic_level": 3,
+      "control_level": 3,
+      "diagnostic_probe": "pass",
+      "control_probe": "pass"
+    },
+    {
+      "task_id": "Prob055_conditional",
+      "pair": 1,
+      "diagnostic_level": 3,
+      "control_level": 3,
+      "diagnostic_probe": "pass",
+      "control_probe": "pass"
+    }
+  ],
+  "gates": {
+    "target_mean_improved": true,
+    "both_target_probes_pass": true,
+    "all_diagnostic_guards_L3": true
+  },
+  "decision": "single_target_positive_signal_expand_not_deploy",
+  "evidence_conflicts": [],
+  "mechanism_signal_without_score_advantage": false,
+  "scoring_source": "pinned official score.summarize, each task and arm includes both samples",
+  "limits": "One selected target and two development guards, two repetitions per arm. Not independent tasks, statistical significance, full-set gain or the five-sample protocol.",
+  "synthesis_review_samples": [],
+  "grading_wall_seconds": 393.608324367553
+}

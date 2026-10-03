@@ -28,3 +28,7 @@ Dockerfile text eol=lf
 03_analysis/codex_takeover_20261003/r1_runs/** -text -whitespace
 03_analysis/codex_takeover_20261003/judge_smoke/** -text -whitespace
 03_analysis/codex_takeover_20261003/deployment/** -text -whitespace
+
+# R2 immutable prompts, generated responses and measured receipts.
+03_analysis/r2_signedness_20261003/input/** -text -whitespace
+03_analysis/r2_signedness_20261003/evidence/** -text -whitespace

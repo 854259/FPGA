@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob042_vector4",
+  "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_05_Prob042_vector4_pair0_control",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 256,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115556,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_05_Prob042_vector4_pair0_control/xvlog.log",
+      "log_sha256": "a695c4d0d8737776d6ab5bc6965c3b910cb3cb572f09a3e730dbf02418fda0c2",
+      "log_bytes": 727
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165542,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_05_Prob042_vector4_pair0_control/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.218739,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_05_Prob042_vector4_pair0_control/xsim.log",
+      "log_sha256": "48f2dac60e31c2684fac662976ab824eebc302e470744834051bae461be9b61c",
+      "log_bytes": 1147
+    }
+  ],
+  "solution_sha256": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509",
+  "tb_sha256": "f134847557c7ae5e2918f6d5772d24633648d04e7a89573e780b8d0048dfc016",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

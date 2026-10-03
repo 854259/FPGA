@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob055_conditional",
+  "outdir": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_10_Prob055_conditional_pair1_control",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 4096,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115338,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_10_Prob055_conditional_pair1_control/xvlog.log",
+      "log_sha256": "99202af08f6a21a8942523d8218107ef4c39baeec7fa3eb97032f8cb2643e40b",
+      "log_bytes": 735
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165344,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_10_Prob055_conditional_pair1_control/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.268361,
+      "log": "/workspace/team/runs/fpga_owner/r2_signedness_20261003T074100Z/grading_20261003T074233_162723Z/probe_10_Prob055_conditional_pair1_control/xsim.log",
+      "log_sha256": "4f27cc43c1b7385018c1e5b586d5540cb739acf19dfaa4671a2c4d7baa1ea32c",
+      "log_bytes": 1157
+    }
+  ],
+  "solution_sha256": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+  "tb_sha256": "6737aac39deb244cbeeb2e048310090f938d5723cfc020316d23ae7637f82ffa",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

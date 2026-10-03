@@ -1,0 +1,183 @@
+{
+  "schema": "r2-signedness-pilot-v1",
+  "task_ids": [
+    "Prob115_shift18",
+    "Prob042_vector4",
+    "Prob055_conditional"
+  ],
+  "status": "frozen_not_run",
+  "package": "/workspace/team/tasks/autodl-rtl-kit/project/submission",
+  "package_sha256": {
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+  },
+  "harness_path": "/workspace/team/codex_r2_20261003/signedness_repair_pilot.py",
+  "harness_sha256": "8417c3c24bc9eae9dc8f4649c393413558b5ed5021140a6246749ffec14fbf0b",
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "endpoint": "http://127.0.0.1:8000/v1",
+  "input_sha256": {
+    "provenance.json": "10d3c03df5170cd09c6b6c2ff782857d9080d3296a264d352098283442c5b911",
+    "Prob115_shift18/prompt.txt": "2b1406045f6a92c759dc6b0de75ce7ffe7b44028c84e49534c9f4a2ce346566b",
+    "Prob115_shift18/candidate.sv": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+    "Prob055_conditional/prompt.txt": "a4cb1a6391988c0c0661808b8bafb625160c70dab00c917bc970be65aa9b34c7",
+    "Prob055_conditional/candidate.sv": "6ca243642c6efbaf8e88c8b3618d3af97f9406f86329921a72daa617bdebd5ce",
+    "Prob042_vector4/prompt.txt": "8d2ef1d00ecc693bcf3b1438fb20676ed098d3dd52660618f78a0a02a225d7da",
+    "Prob042_vector4/candidate.sv": "aa9fe811a0a7d67efffa1584f8c43e7e10bc6f5854d2c3e7441c5970d09d0509"
+  },
+  "probe_validation": {
+    "path": "/workspace/team/codex_r2_20261003/controls/controls_validation.json",
+    "sha256": "92b8cdeb4c4db4f55ac87a03260635e2615a2b1bd4bf5f853fda3b05e090337e"
+  },
+  "auxiliary_sha256": {
+    "/workspace/team/codex_r2_20261003/grade_pilot.py": "7b2d904f796390150f26a33755034c34dc045ca50f9badfafb0f1e7a9c12d53e",
+    "/workspace/team/codex_r2_20261003/probes/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "/workspace/team/codex_takeover_20261003/official_eval.py": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797",
+    "/workspace/team/tasks/autodl-rtl-kit/project/official_reference/UPSTREAM.json": "0e47545af9001ecd884807ef6008c9c88700cf77d72f543c357103888698984b",
+    "/workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/judge.py": "02238c62b598de5a835374b8dcbff9eebbeca7cd9fc01db8b5aad2d018882e10",
+    "/workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/veval_import.py": "3484265630656161a4f7235e226fd5c84012f2b436c51d34df8d4ed799d3be12",
+    "/workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/score.py": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+    "/workspace/team/codex_r2_20261003/probes/Prob115_shift18/tb.sv": "616079f1fafa63fae52bfda00639809adf986c57474532572abf44c2dd0d1935",
+    "/workspace/team/codex_r2_20261003/probes/Prob115_shift18/positive.sv": "b5cfeb3df59609b6343c0a7b6801b6eb83a5d5ceb81bfcf7c081c64888d20930",
+    "/workspace/team/codex_r2_20261003/probes/Prob115_shift18/negative.sv": "092f744dc82402ee901e7214e3cd10f878e974a6ce5d8ba3362c41fc1d1787d6",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob115_shift18/ref.sv": "a81fa17a7005bf6c9b73277fa116021804ec6fd5e49f04ea096f9b1e35f6cd73",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob115_shift18/top.txt": "c50a469b80a8d65583769db47df11f71ef00810079c897ce42b2447db7ddfed7",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob115_shift18/task.json": "4aeb4b095a7c484c8218c871192d5636549d378f754c8c14bb70244785c51f7f",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob115_shift18/tb.sv": "0a1ddc943f05a73e7b6337d6df56dbcf2aaa14547f2a91486852adcdb1084b30",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob115_shift18/prompt.txt": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386",
+    "/workspace/team/codex_r2_20261003/probes/Prob042_vector4/tb.sv": "f134847557c7ae5e2918f6d5772d24633648d04e7a89573e780b8d0048dfc016",
+    "/workspace/team/codex_r2_20261003/probes/Prob042_vector4/positive.sv": "d7c844dcd1ea6e7b5634c53aeab7c17f87de6748e80ebfeff395730c4056137c",
+    "/workspace/team/codex_r2_20261003/probes/Prob042_vector4/negative.sv": "3c28e0910dbaa0a72834c53f9f5c1751619924cd1e9decb254b643e244e4faf7",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob042_vector4/ref.sv": "477b65eeb96e4b20d59345490f043fe95f6498a4fb1adcfdd0e7aafae8924cd7",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob042_vector4/top.txt": "c50a469b80a8d65583769db47df11f71ef00810079c897ce42b2447db7ddfed7",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob042_vector4/task.json": "bf901cf362bfac73205bbe4ea896bd981005d1ff97d5aad7cab48a5b657ffd6e",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob042_vector4/tb.sv": "cf7674f03bf129171aa4519f6e27e413da84ad2b32f7bfc7d179c676181f2243",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob042_vector4/prompt.txt": "fd9224b3470ffa833e6acd82720a95c281c0b236c4409f91b8bff6ed683fa79b",
+    "/workspace/team/codex_r2_20261003/probes/Prob055_conditional/tb.sv": "6737aac39deb244cbeeb2e048310090f938d5723cfc020316d23ae7637f82ffa",
+    "/workspace/team/codex_r2_20261003/probes/Prob055_conditional/positive.sv": "96d387d6ae8c3bda854209375874877698c11640013229910c984cf8c758c448",
+    "/workspace/team/codex_r2_20261003/probes/Prob055_conditional/negative.sv": "d2823a85e9d88d687408eef5d97054b67bbec5ec153d290306b4ed78041a98d4",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob055_conditional/ref.sv": "5fcad522775af472dc39e81d214689a092bbcc08b1ab089cbfe39c9086e0c622",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob055_conditional/top.txt": "c50a469b80a8d65583769db47df11f71ef00810079c897ce42b2447db7ddfed7",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob055_conditional/task.json": "1510b988ae367c53c5ef68dd737e7520f13d8963d7fc2ea9f7fd3f5b6d5245a6",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob055_conditional/tb.sv": "82c992309d58adea2c56b032e15f26ff59f436c24c7f633ea35619342097c1c2",
+    "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob055_conditional/prompt.txt": "400ad0bd690760aa75008dc3f9f728af273b507ae0a5512650a6ef9fae43ce61"
+  },
+  "repetitions": 2,
+  "planned_calls": 12,
+  "per_call_wall_limit_s": 300,
+  "max_output_tokens_per_call": 8192,
+  "temperature": 0.0,
+  "seed": null,
+  "seed_note": "No seed is sent, matching runtime; repetitions are not independent tasks.",
+  "sole_treatment": "generic specification-derived signedness checklist vs generic review",
+  "budget_note": "Same call/token/time caps; actual tokens and time can differ.",
+  "promotion": "115 D mean > C mean; both 115 D probe pass; both guards D all L3. Expand only, no deployment.",
+  "conflict_stop": "Any official L3 with failed prompt probe blocks promotion for evidence review.",
+  "evaluation": "Pinned official judge and separate probes only after all twelve candidates exist.",
+  "inputs_exclude": [
+    "task.json",
+    "testbench",
+    "reference",
+    "mismatch",
+    "official verdict",
+    "probe feedback"
+  ],
+  "records": [
+    {
+      "sequence": 0,
+      "task_id": "Prob115_shift18",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "00_Prob115_shift18_pair0_diagnostic",
+      "request_sha256": "c6d92efc4e00cfb591330358840c94d85c37f37dd26b44cc97f39c5bc0a9d522"
+    },
+    {
+      "sequence": 1,
+      "task_id": "Prob115_shift18",
+      "pair": 0,
+      "arm": "control",
+      "directory": "01_Prob115_shift18_pair0_control",
+      "request_sha256": "ae9b019a6b6e86d1aef93f9f15ba8df34fa617572370d4e90bf172894c72a627"
+    },
+    {
+      "sequence": 2,
+      "task_id": "Prob115_shift18",
+      "pair": 1,
+      "arm": "control",
+      "directory": "02_Prob115_shift18_pair1_control",
+      "request_sha256": "ae9b019a6b6e86d1aef93f9f15ba8df34fa617572370d4e90bf172894c72a627"
+    },
+    {
+      "sequence": 3,
+      "task_id": "Prob115_shift18",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "03_Prob115_shift18_pair1_diagnostic",
+      "request_sha256": "c6d92efc4e00cfb591330358840c94d85c37f37dd26b44cc97f39c5bc0a9d522"
+    },
+    {
+      "sequence": 4,
+      "task_id": "Prob042_vector4",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "04_Prob042_vector4_pair0_diagnostic",
+      "request_sha256": "18308db4a99d7853cfb474b2e3e43f2ed61d9dceec54b047aec10ed3adf54ccb"
+    },
+    {
+      "sequence": 5,
+      "task_id": "Prob042_vector4",
+      "pair": 0,
+      "arm": "control",
+      "directory": "05_Prob042_vector4_pair0_control",
+      "request_sha256": "bb6a6050bd5438c126038cef09da4d48acb23aa1003b7519d363bd15cfe11a58"
+    },
+    {
+      "sequence": 6,
+      "task_id": "Prob042_vector4",
+      "pair": 1,
+      "arm": "control",
+      "directory": "06_Prob042_vector4_pair1_control",
+      "request_sha256": "bb6a6050bd5438c126038cef09da4d48acb23aa1003b7519d363bd15cfe11a58"
+    },
+    {
+      "sequence": 7,
+      "task_id": "Prob042_vector4",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "07_Prob042_vector4_pair1_diagnostic",
+      "request_sha256": "18308db4a99d7853cfb474b2e3e43f2ed61d9dceec54b047aec10ed3adf54ccb"
+    },
+    {
+      "sequence": 8,
+      "task_id": "Prob055_conditional",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "08_Prob055_conditional_pair0_diagnostic",
+      "request_sha256": "48d27188825ab1f37930c25ff169503a6c30525cb5d80904238867478c29cf92"
+    },
+    {
+      "sequence": 9,
+      "task_id": "Prob055_conditional",
+      "pair": 0,
+      "arm": "control",
+      "directory": "09_Prob055_conditional_pair0_control",
+      "request_sha256": "f4c15601c2fd4673c37bf1d37e4d0e14afe763699ebde63c155a8a5810a6b62e"
+    },
+    {
+      "sequence": 10,
+      "task_id": "Prob055_conditional",
+      "pair": 1,
+      "arm": "control",
+      "directory": "10_Prob055_conditional_pair1_control",
+      "request_sha256": "f4c15601c2fd4673c37bf1d37e4d0e14afe763699ebde63c155a8a5810a6b62e"
+    },
+    {
+      "sequence": 11,
+      "task_id": "Prob055_conditional",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "11_Prob055_conditional_pair1_diagnostic",
+      "request_sha256": "48d27188825ab1f37930c25ff169503a6c30525cb5d80904238867478c29cf92"
+    }
+  ]
+}

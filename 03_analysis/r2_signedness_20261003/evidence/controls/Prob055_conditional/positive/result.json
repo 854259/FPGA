@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob055_conditional",
+  "outdir": "/workspace/team/codex_r2_20261003/controls/Prob055_conditional/positive",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 4096,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115701,
+      "log": "/workspace/team/codex_r2_20261003/controls/Prob055_conditional/positive/xvlog.log",
+      "log_sha256": "b710d2dd1c001634b1d2a182a74599fa1ff583eecd8c5d1ab370460de8d5c1ca",
+      "log_bytes": 603
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.215858,
+      "log": "/workspace/team/codex_r2_20261003/controls/Prob055_conditional/positive/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.369151,
+      "log": "/workspace/team/codex_r2_20261003/controls/Prob055_conditional/positive/xsim.log",
+      "log_sha256": "624479375ad6eaff384f64d128f6eb75356f414cf7c4b15b7036b91378958f2b",
+      "log_bytes": 1091
+    }
+  ],
+  "solution_sha256": "96d387d6ae8c3bda854209375874877698c11640013229910c984cf8c758c448",
+  "tb_sha256": "6737aac39deb244cbeeb2e048310090f938d5723cfc020316d23ae7637f82ffa",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "module TopModule (\n    input  clk,\n    input  load,\n    input  ena,\n    input  [1:0] amount,\n    input  [63:0] data,\n    output [63:0] q\n);\n\n    reg [63:0] q_reg;\n\n    always @(posedge clk) begin\n        if (load) begin\n            q_reg <= data;\n        end else if (ena) begin\n            case (amount)\n                2'b00: q_reg <= q_reg << 1;\n                2'b01: q_reg <= q_reg << 8;\n                2'b10: q_reg <= $signed(q_reg) >>> 1;\n                2'b11: q_reg <= $signed(q_reg) >>> 8;\n                default: q_reg <= q_reg;\n            endcase\n        end\n    end\n\n    assign q = q_reg;\n\nendmodule"
+      }
+    }
+  ],
+  "created": 1791013322,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "system_fingerprint": "b1-c13fcbf",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 214,
+    "prompt_tokens": 1130,
+    "total_tokens": 1344,
+    "prompt_tokens_details": {
+      "cached_tokens": 614
+    }
+  },
+  "id": "chatcmpl-96E3RSCSFE2zOhuC9MRrWl6H2qWsDCi3",
+  "timings": {
+    "cache_n": 614,
+    "prompt_n": 516,
+    "prompt_ms": 783.902,
+    "prompt_per_token_ms": 1.5191899224806202,
+    "prompt_per_second": 658.2455459993723,
+    "predicted_n": 214,
+    "predicted_ms": 7248.634,
+    "predicted_per_token_ms": 34.031145539906106,
+    "predicted_per_second": 29.384846855283353
+  }
+}

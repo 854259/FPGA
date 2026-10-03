@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob115_shift18",
+  "outdir": "/workspace/team/codex_r2_20261003/controls/Prob115_shift18/positive",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 31,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115646,
+      "log": "/workspace/team/codex_r2_20261003/controls/Prob115_shift18/positive/xvlog.log",
+      "log_sha256": "a82a468e1197c990f70dde9a22bde88d4b74c30cc11ec424b39086216d218e4a",
+      "log_bytes": 595
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.215994,
+      "log": "/workspace/team/codex_r2_20261003/controls/Prob115_shift18/positive/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.369363,
+      "log": "/workspace/team/codex_r2_20261003/controls/Prob115_shift18/positive/xsim.log",
+      "log_sha256": "c7bca2579d52c0f02f20f79830b7a91101ce37deb1940e4f25c3c95d0fe0b05a",
+      "log_bytes": 1080
+    }
+  ],
+  "solution_sha256": "b5cfeb3df59609b6343c0a7b6801b6eb83a5d5ceb81bfcf7c081c64888d20930",
+  "tb_sha256": "616079f1fafa63fae52bfda00639809adf986c57474532572abf44c2dd0d1935",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}
