@@ -1,5 +1,25 @@
 {
   "schema_version": 1,
+  "report_consistency_followup_20261003": {
+    "date": "2026-10-03",
+    "status": "local_documentation_updated_runtime_experiment_pending",
+    "based_on_commits": ["e4037b5", "21d3d5a"],
+    "changes": [
+      "Synchronise both REPORT.md copies; keep historical skill scores unchanged; update current section 8 counts and deterministic-repair description.",
+      "Attribute full156_declfix_20261003 to recorded runtime 22e32251, distinguish the later health-only cea6479c and experimental 728499f4.",
+      "Synchronise MODEL.md copies and scope no-VRAM-fallback behaviour to candidate 728499f4 and the actual profile gate.",
+      "Correct the repeated inference that a reference L1 result establishes a universal L1 ceiling."
+    ],
+    "cloud_snapshot_1315_beijing": {
+      "run": "full156_runtime728_20261003",
+      "results": 256,
+      "complete": false,
+      "runtime": "728499f4",
+      "generation_skill": "f4c4c8e2"
+    },
+    "manifest": "unchanged_pending_adoption_or_rollback",
+    "deployment_changed_by_this_review": false
+  },
   "h3_l0_elaboration_replay_20261003": {
     "date": "2026-10-03",
     "status": "four_h3_candidate_failures_reproduced_without_model_calls",
@@ -1928,8 +1948,8 @@
       "the signal comes from the candidate code alone, so it is available at official runtime"
     ],
     "what_is_not_claimed": [
-      "one detection is plus 0.2 coefficient, which is plus 0.00128 on the set score, before the cost item is considered",
-      "that task is one of the four where the official reference itself never reached L3, so its ceiling is L1, not L3",
+      "detection alone adds no score; if repair reaches L1 from L0, the conditional gain is 0.2 coefficient or 0.00128 set score before cost",
+      "the reference self-check reached L1 on this task; this does not establish an L1 ceiling for other implementations",
       "detection is not repair; the repair rate needs a model slot and a fixed budget",
       "removing one of the assignments is not the answer, since which one matches the intended behaviour still needs judgement",
       "the four H3 regressions are not stable-version gains: all four seven-rule candidates elaborate cleanly"
