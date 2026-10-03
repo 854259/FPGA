@@ -2502,5 +2502,33 @@
       "Static-and-compile acceptance is not functional improvement",
       "Trace model_calls counts budget attempts, not exact service requests"
     ]
+  },
+  "codex_selective_followup_preparation_20261003": {
+    "status": "static_preparation_unrun_awaiting_existing_local_ssh_execution",
+    "source_commit": "773d4ce7d142fd04a0592caa86d3bdc6d46786c9",
+    "review_commit": "72f598a9f64e3d361ec9626433e55809a0a89bf9",
+    "status_report": "03_analysis/selective_runtime_integration_20261003/FOLLOWUP_STATUS.md",
+    "execution_runbook": "03_analysis/selective_runtime_integration_20261003/AMD_RUNBOOK.md",
+    "stages_pending": [
+      "linux_real_compile_default_budget_and_owned_process_cleanup",
+      "correct_candidate_forced_review_with_real_offline_oracle",
+      "checkpoint_paired_O_C_D_repair_regression_calls_and_cost"
+    ],
+    "real_model_calls_this_turn": 0,
+    "real_eda_calls_this_turn": 0,
+    "project_tests_run_this_turn": 0,
+    "amd_accessed_this_turn": false,
+    "ssh_credentials_created": false,
+    "formal_package_changed": false,
+    "prototype_runtime_changed": false,
+    "deployment_changed": false,
+    "full156_score_updated": false,
+    "limits": [
+      "New scripts have only static review, not executed behavior validation",
+      "Functional regression protection remains unverified until the forced negative control runs",
+      "Checkpoint costs exclude first model generation and complete HTTP transport",
+      "Constructed 11/17-bit families are mechanism transfer, not independent competition generalization",
+      "Existing local SSH task is the authorized AMD execution channel"
+    ]
   }
 }

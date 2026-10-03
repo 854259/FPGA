@@ -1,0 +1,6 @@
+Implement one synthesizable SystemVerilog module named TopModule with this interface:
+input clk; input load; input enable; input [1:0] mode; input [16:0] data; output [16:0] q.
+
+This is a 17-bit arithmetic shift register. Every update occurs on the rising edge of clk. When load is 1, q takes data exactly, regardless of enable or mode. When load is 0 and enable is 1, perform an arithmetic right shift by the selected distance: mode 00 means 0 positions, 01 means 1 position, 10 means 8 positions, and 11 means 18 positions. When load is 0 and enable is 0, q holds its preceding value for every mode. Hold also applies between rising edges.
+
+The q bit pattern represents a 17-bit two's-complement signed integer. An arithmetic right shift copies the old sign bit into every vacated high position; a distance of at least 17 produces all copies of that old sign bit. A zero distance preserves every bit. data and q ports transport 17 raw bits. No reset is specified. Initial contents are unspecified; callers first load known binary data. The contract covers binary 0/1 values.
