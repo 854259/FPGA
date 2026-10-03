@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Arithmetic8",
+  "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/concat8",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 18,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.065403,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/concat8/xvlog.log",
+      "log_sha256": "77bc3bf41f1c2c30a01a82836681c1386932b37a752f1b980aebf47b532ffe50",
+      "log_bytes": 591
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165573,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/concat8/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.368983,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/concat8/xsim.log",
+      "log_sha256": "a1f19b3115033ce531a7071df664539ff022a466ace14f6f273c7f963b7756b0",
+      "log_bytes": 1074
+    }
+  ],
+  "solution_sha256": "63fbb6e4062d5fd92d115bf937689766938da3815209e0e0327a307d495a8809",
+  "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+  "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+  "inputs_unchanged": true
+}

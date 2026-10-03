@@ -1,0 +1,25 @@
+{
+  "valid": true,
+  "controls_valid": true,
+  "semantic_mismatch_observed": true,
+  "candidates": {
+    "positive": {
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 269,
+      "mismatches": 0
+    },
+    "negative": {
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 269,
+      "mismatches": 220
+    },
+    "archived": {
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 269,
+      "mismatches": 220
+    }
+  }
+}

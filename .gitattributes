@@ -32,3 +32,7 @@ Dockerfile text eol=lf
 # R2 immutable prompts, generated responses and measured receipts.
 03_analysis/r2_signedness_20261003/input/** -text -whitespace
 03_analysis/r2_signedness_20261003/evidence/** -text -whitespace
+
+# Frozen R2b/R3 experiment inputs, probes and measured receipts.
+03_analysis/r2_selectivity_20261003/** -text -whitespace
+03_analysis/r3_lfsr_20261003/** -text -whitespace

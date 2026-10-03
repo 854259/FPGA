@@ -1,0 +1,1 @@
+Implement a 8-bit logical shift register named TopModule. The sole output q is the stored state. At the rising edge of clk, load loads data and takes priority over ena. Otherwise, ena performs an logical right shift by one bit; when disabled, hold the state. Do not assume an initial value.

@@ -1,0 +1,1607 @@
+{
+  "complete": true,
+  "valid": true,
+  "controls_valid": true,
+  "model_calls": 0,
+  "snapshot_before": {
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic13Renamed/negative.sv": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic13Renamed/positive.sv": "827beb90dd7fff5a61375d69b1e6cdac39bbf9494922c82b123dff3e8219e79d",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic13Renamed/tb.sv": "cd5b94c264c3fe048347c81bd27d387c80413729c7645fe480c8c5d1a350e37a",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic8/negative.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic8/positive.sv": "f3956f414ad747d61ff064adb802473ef0b595fca1ad739074d7e83cb20dab7c",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic8/tb.sv": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/comments8/candidate.sv": "7bcee23d5e28293cf7b852938b063779824c73d56b01050d74f105f4b1d589a7",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/comments8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/concat8/candidate.sv": "63fbb6e4062d5fd92d115bf937689766938da3815209e0e0327a307d495a8809",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/concat8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/explicit_cast8/candidate.sv": "5ac75c8a458e35a8e235b47d99b9b52d29198b404493a39a8d51c04f489b6231",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/explicit_cast8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/explicit_unsigned_cast8/candidate.sv": "81bf3b4811a540a9f09ed0872289be643fc87088250a1401f50d6ce1baadb23b",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/explicit_unsigned_cast8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/logical_unsigned8/candidate.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/logical_unsigned8/prompt.txt": "abdcc58f9eb9ba49433d249d173694163a32a9924316a998634e20bb1d68efa5",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/macro_unsigned8/candidate.sv": "3818e9797965ba08478a9bd85f6bbf44dd95f2fc88f280687fed0c5e1d2db45a",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/macro_unsigned8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/renamed_unsigned13/candidate.sv": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/renamed_unsigned13/prompt.txt": "62fad8e3f9303596003c9734b4eaf93edfc11a9152500c234e7313d3d8c33f25",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/restored_sign_composite8/candidate.sv": "9242a77589994ec74f01d61b4a627214945609c6c4148e1a5286326f686352b4",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/restored_sign_composite8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/signed8/candidate.sv": "175c12ee43c7126c3d8ae1e55f594528283256ec5c205410535413e87468d34d",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/signed8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/signed_part_select8/candidate.sv": "eeab35252abd375087dcceff06fa4584dc7fa57dd2182688e7910843b5e27d76",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/signed_part_select8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/unrelated_internal8/candidate.sv": "f4c8dcf0e30833099db1cdcc2ade469e33e7b24afe950d67954d0f0d888482c5",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/unrelated_internal8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/unsigned8/candidate.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/unsigned8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Logical8/negative.sv": "f3956f414ad747d61ff064adb802473ef0b595fca1ad739074d7e83cb20dab7c",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Logical8/positive.sv": "2c2ad25a6c49998ff2d4476c309c266dbfb54a7516ba623950411e420de31c13",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Logical8/tb.sv": "f28ab7a089fefad563cb9f3abdb80aa84f4056bf8175184a9325e405afebe3ca",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/manifest.json": "a9de86f3415693cfa2565031d352a33a8874d1c15463a4ecb80b10324c63702c",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/probe_runner.py": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+    "/workspace/team/codex_r2b_20261003/src/signedness_selector.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "/workspace/team/codex_r2b_20261003/src/shared/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+  },
+  "controls": {
+    "Arithmetic8": {
+      "positive": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic8/positive",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115563,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic8/positive/xvlog.log",
+            "log_sha256": "f8eab0eae078732310598a2f7d90e157ed47a6c82a6f38757c220893d2c17702",
+            "log_bytes": 623
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.166121,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic8/positive/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.219103,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic8/positive/xsim.log",
+            "log_sha256": "2ce7dc4e7c037636cd8d40d97cc350ce73e1986fba41e4a7cc5f17ca7fcd3e72",
+            "log_bytes": 1090
+          }
+        ],
+        "solution_sha256": "f3956f414ad747d61ff064adb802473ef0b595fca1ad739074d7e83cb20dab7c",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "negative": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic8/negative",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 18,
+        "mismatches": 10,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115843,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic8/negative/xvlog.log",
+            "log_sha256": "b9456205a678f708484ab1b3de765eabc0057a756c43e0bdf27ba6066aeebe90",
+            "log_bytes": 623
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165953,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic8/negative/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368865,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic8/negative/xsim.log",
+            "log_sha256": "abf2cfaaf16bc997836ea0888adcdf221ad1f74849c8f4edf17b297e98ccac39",
+            "log_bytes": 1496
+          }
+        ],
+        "solution_sha256": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "valid": true
+    },
+    "Arithmetic13Renamed": {
+      "positive": {
+        "schema_version": 1,
+        "task": "Arithmetic13Renamed",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/positive",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065467,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/positive/xvlog.log",
+            "log_sha256": "76682d1ffcdc65b272daa1aa1e6a1d79df9cc77906ad4b767b8c8e5bb0b91acc",
+            "log_bytes": 639
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165763,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/positive/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218314,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/positive/xsim.log",
+            "log_sha256": "24a5c0a8b00418ce5c6aa826f9c8f85038e9ca7273b313c81124f2c3182b03a5",
+            "log_bytes": 1106
+          }
+        ],
+        "solution_sha256": "827beb90dd7fff5a61375d69b1e6cdac39bbf9494922c82b123dff3e8219e79d",
+        "tb_sha256": "cd5b94c264c3fe048347c81bd27d387c80413729c7645fe480c8c5d1a350e37a",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "negative": {
+        "schema_version": 1,
+        "task": "Arithmetic13Renamed",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/negative",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 18,
+        "mismatches": 10,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115426,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/negative/xvlog.log",
+            "log_sha256": "e87519e4ac455106465c5e5e7f7ce8d99d7118d3ad2836c41ffdece1a9a998fa",
+            "log_bytes": 639
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.215656,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/negative/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.418839,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/negative/xsim.log",
+            "log_sha256": "5317bebfa706f3adf3146c7d5137b6f3d0b73aa4bf82f0ccf3e558a0c33b2140",
+            "log_bytes": 1552
+          }
+        ],
+        "solution_sha256": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+        "tb_sha256": "cd5b94c264c3fe048347c81bd27d387c80413729c7645fe480c8c5d1a350e37a",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "valid": true
+    },
+    "Logical8": {
+      "positive": {
+        "schema_version": 1,
+        "task": "Logical8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Logical8/positive",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115595,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Logical8/positive/xvlog.log",
+            "log_sha256": "9efbf99b9795a59b64a2bce5aa2b96df240158aa7a3b8c1b46f815356c06d170",
+            "log_bytes": 617
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.215798,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Logical8/positive/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368941,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Logical8/positive/xsim.log",
+            "log_sha256": "ea6048a1fae006243b9dbaf333cdbca2d683ff7b1aa2910a4807e9298a0d76ee",
+            "log_bytes": 1084
+          }
+        ],
+        "solution_sha256": "2c2ad25a6c49998ff2d4476c309c266dbfb54a7516ba623950411e420de31c13",
+        "tb_sha256": "f28ab7a089fefad563cb9f3abdb80aa84f4056bf8175184a9325e405afebe3ca",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "negative": {
+        "schema_version": 1,
+        "task": "Logical8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Logical8/negative",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 18,
+        "mismatches": 10,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115397,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Logical8/negative/xvlog.log",
+            "log_sha256": "29211cc999566ae942a2537aed3834f9ce31dcbf48699e5f83f06b5a6a87ef3f",
+            "log_bytes": 617
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165506,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Logical8/negative/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368494,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Logical8/negative/xsim.log",
+            "log_sha256": "69a9c6651880b354dcf9e20ff668248505b814d7e83d29bfc241ef798a62aefb",
+            "log_bytes": 1490
+          }
+        ],
+        "solution_sha256": "f3956f414ad747d61ff064adb802473ef0b595fca1ad739074d7e83cb20dab7c",
+        "tb_sha256": "f28ab7a089fefad563cb9f3abdb80aa84f4056bf8175184a9325e405afebe3ca",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "valid": true
+    }
+  },
+  "cases": [
+    {
+      "case": {
+        "id": "unsigned8",
+        "family": "Arithmetic8",
+        "expected_decision": "review",
+        "expected_probe": "fail",
+        "note": "in-scope unsigned state"
+      },
+      "classification": {
+        "decision": "review",
+        "reasons": [
+          "explicit_contract_with_unsigned_self_shift"
+        ],
+        "findings": [
+          {
+            "operand": "state",
+            "line": 7,
+            "width": 8,
+            "shift_amount": 1,
+            "evidence": "bare_unsigned_register",
+            "risk": true
+          }
+        ]
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/unsigned8",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 18,
+        "mismatches": 10,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115486,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/unsigned8/xvlog.log",
+            "log_sha256": "8746804a56d4b9ddf9e04318574d428a933733f2fc910a109a02dd79a17a541f",
+            "log_bytes": 595
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165602,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/unsigned8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.21837,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/unsigned8/xsim.log",
+            "log_sha256": "a419ac0b745c29cb520ae7aec41d4a39241cc75562594be12befef0dbe13fdf7",
+            "log_bytes": 1482
+          }
+        ],
+        "solution_sha256": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "renamed_unsigned13",
+        "family": "Arithmetic13Renamed",
+        "expected_decision": "review",
+        "expected_probe": "fail",
+        "note": "different width, all port and state names changed"
+      },
+      "classification": {
+        "decision": "review",
+        "reasons": [
+          "explicit_contract_with_unsigned_self_shift"
+        ],
+        "findings": [
+          {
+            "operand": "storage",
+            "line": 7,
+            "width": 13,
+            "shift_amount": 1,
+            "evidence": "bare_unsigned_register",
+            "risk": true
+          }
+        ]
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic13Renamed",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/renamed_unsigned13",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 18,
+        "mismatches": 10,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.215735,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/renamed_unsigned13/xvlog.log",
+            "log_sha256": "cb290881f7f59e94835d32fd6475f3c6a4af8058da62f98050d0a1394dcbaa97",
+            "log_bytes": 613
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165852,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/renamed_unsigned13/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218386,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/renamed_unsigned13/xsim.log",
+            "log_sha256": "13bf35aa20e0798cf8687e2f8379ba62cf7e08f5079c9dd34ec6e4cb75253fc3",
+            "log_bytes": 1539
+          }
+        ],
+        "solution_sha256": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+        "tb_sha256": "cd5b94c264c3fe048347c81bd27d387c80413729c7645fe480c8c5d1a350e37a",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "signed8",
+        "family": "Arithmetic8",
+        "expected_decision": "skip",
+        "expected_probe": "pass",
+        "note": "valid declared signed operand"
+      },
+      "classification": {
+        "decision": "skip",
+        "reasons": [
+          "no_demonstrated_bare_unsigned_self_shift_risk"
+        ],
+        "findings": [
+          {
+            "operand": "state",
+            "line": 7,
+            "width": 8,
+            "shift_amount": 1,
+            "evidence": "signed_declaration",
+            "risk": false
+          }
+        ]
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/signed8",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115439,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/signed8/xvlog.log",
+            "log_sha256": "adb85a46b9bfbf3446992606c07ac16b1fdc250e4eef1b77c9154ef97850a6a7",
+            "log_bytes": 591
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165586,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/signed8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.268619,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/signed8/xsim.log",
+            "log_sha256": "63855e531dc1faad70733c789f9a95ad9b96e5ff95b641f3734c4f0dd68c448d",
+            "log_bytes": 1074
+          }
+        ],
+        "solution_sha256": "175c12ee43c7126c3d8ae1e55f594528283256ec5c205410535413e87468d34d",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "explicit_cast8",
+        "family": "Arithmetic8",
+        "expected_decision": "skip",
+        "expected_probe": "pass",
+        "note": "valid explicit signed conversion"
+      },
+      "classification": {
+        "decision": "skip",
+        "reasons": [
+          "no_demonstrated_bare_unsigned_self_shift_risk"
+        ],
+        "findings": [
+          {
+            "operand": "state",
+            "line": 7,
+            "width": 8,
+            "shift_amount": 1,
+            "evidence": "explicit_signed_cast",
+            "risk": false
+          }
+        ]
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_cast8",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115725,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_cast8/xvlog.log",
+            "log_sha256": "c8640bfb559a677acad98271ca660e8ab263c9c00a6a16034c4d0e0359a77fda",
+            "log_bytes": 605
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165673,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_cast8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218934,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_cast8/xsim.log",
+            "log_sha256": "12a684bb594e7c3062cf6c3cef0297efe136dbeb422cb91f3a11c4b1f8868a7a",
+            "log_bytes": 1081
+          }
+        ],
+        "solution_sha256": "5ac75c8a458e35a8e235b47d99b9b52d29198b404493a39a8d51c04f489b6231",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "concat8",
+        "family": "Arithmetic8",
+        "expected_decision": "skip",
+        "expected_probe": "pass",
+        "note": "valid bit concatenation, no >>>"
+      },
+      "classification": {
+        "decision": "skip",
+        "reasons": [
+          "no_actual_triple_right_shift"
+        ],
+        "findings": []
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/concat8",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065403,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/concat8/xvlog.log",
+            "log_sha256": "77bc3bf41f1c2c30a01a82836681c1386932b37a752f1b980aebf47b532ffe50",
+            "log_bytes": 591
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165573,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/concat8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368983,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/concat8/xsim.log",
+            "log_sha256": "a1f19b3115033ce531a7071df664539ff022a466ace14f6f273c7f963b7756b0",
+            "log_bytes": 1074
+          }
+        ],
+        "solution_sha256": "63fbb6e4062d5fd92d115bf937689766938da3815209e0e0327a307d495a8809",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "logical_unsigned8",
+        "family": "Logical8",
+        "expected_decision": "no_review",
+        "expected_probe": "pass",
+        "note": "unsigned arithmetic-shift token valid for logical fill"
+      },
+      "classification": {
+        "decision": "abstain",
+        "reasons": [
+          "no_explicit_arithmetic_shift_register_contract"
+        ],
+        "findings": []
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Logical8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/logical_unsigned8",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065355,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/logical_unsigned8/xvlog.log",
+            "log_sha256": "af20ad83e1afbbe5a3ecb15ddc84265e4a3cda8d97be7b6851f171222dbaaddb",
+            "log_bytes": 611
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165718,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/logical_unsigned8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218306,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/logical_unsigned8/xsim.log",
+            "log_sha256": "87041c6e6e1272f24041e79ecbd2a86db7792502ef9fcc3b6758b73672672d6e",
+            "log_bytes": 1081
+          }
+        ],
+        "solution_sha256": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+        "tb_sha256": "f28ab7a089fefad563cb9f3abdb80aa84f4056bf8175184a9325e405afebe3ca",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "unrelated_internal8",
+        "family": "Arithmetic8",
+        "expected_decision": "abstain",
+        "expected_probe": "pass",
+        "note": "global arithmetic spec cannot assign meaning to unrelated internal state"
+      },
+      "classification": {
+        "decision": "abstain",
+        "reasons": [
+          "shift_outside_output_register"
+        ],
+        "findings": [
+          {
+            "operand": "state",
+            "line": 7,
+            "width": 8,
+            "shift_amount": 1,
+            "evidence": "explicit_signed_cast",
+            "risk": false
+          }
+        ]
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/unrelated_internal8",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115421,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/unrelated_internal8/xvlog.log",
+            "log_sha256": "20e60142db7b5a929895f3168c148939ac603f9fc7b4d53d4662edc43a947ac5",
+            "log_bytes": 615
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165472,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/unrelated_internal8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.368922,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/unrelated_internal8/xsim.log",
+            "log_sha256": "93d6e0f271e26edcea3bb1d90618eb3d0993393cf85ed7dba4acdea93b84b6b0",
+            "log_bytes": 1086
+          }
+        ],
+        "solution_sha256": "f4c8dcf0e30833099db1cdcc2ade469e33e7b24afe950d67954d0f0d888482c5",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "signed_part_select8",
+        "family": "Arithmetic8",
+        "expected_decision": "abstain",
+        "expected_probe": "fail",
+        "note": "signed declaration does not make a part-select signed; unsupported boundary"
+      },
+      "classification": {
+        "decision": "abstain",
+        "reasons": [
+          "shift_expression_or_operand_not_supported"
+        ],
+        "findings": []
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/signed_part_select8",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 18,
+        "mismatches": 10,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115515,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/signed_part_select8/xvlog.log",
+            "log_sha256": "aa33912f87a7b6e269f591a3eb16e49e5a30b5a943e5ac9c773357f13a0cd36d",
+            "log_bytes": 615
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165804,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/signed_part_select8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.36876,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/signed_part_select8/xsim.log",
+            "log_sha256": "4c2cd808b8bc89bbe583bfe2df7c195b44ccef0cb25e66e02807c1e41d267d10",
+            "log_bytes": 1492
+          }
+        ],
+        "solution_sha256": "eeab35252abd375087dcceff06fa4584dc7fa57dd2182688e7910843b5e27d76",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "restored_sign_composite8",
+        "family": "Arithmetic8",
+        "expected_decision": "abstain",
+        "expected_probe": "pass",
+        "note": "correct restoration in surrounding expression; no bare-operand inference"
+      },
+      "classification": {
+        "decision": "abstain",
+        "reasons": [
+          "shift_expression_or_operand_not_supported"
+        ],
+        "findings": []
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/restored_sign_composite8",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065507,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/restored_sign_composite8/xvlog.log",
+            "log_sha256": "009ef08c685cf4e9aef1ff1a0d0f2817828a103447682a56c06cc9c4dd0dba44",
+            "log_bytes": 625
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165879,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/restored_sign_composite8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.219094,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/restored_sign_composite8/xsim.log",
+            "log_sha256": "446269432c8a8a0df985ed68d5458c668d52f9e50c8fec7a7c1ebd470c182401",
+            "log_bytes": 1091
+          }
+        ],
+        "solution_sha256": "9242a77589994ec74f01d61b4a627214945609c6c4148e1a5286326f686352b4",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "comments8",
+        "family": "Arithmetic8",
+        "expected_decision": "skip",
+        "expected_probe": "pass",
+        "note": "comment-only shifts cannot trigger"
+      },
+      "classification": {
+        "decision": "skip",
+        "reasons": [
+          "no_actual_triple_right_shift"
+        ],
+        "findings": []
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/comments8",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 18,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115574,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/comments8/xvlog.log",
+            "log_sha256": "ad12729c4d262f1d0baf3c820d6f07a0b9306a8278ecb1d90eb3883869496e90",
+            "log_bytes": 595
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165815,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/comments8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218592,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/comments8/xsim.log",
+            "log_sha256": "99d6f2ed3b9aaf4aa468a18069d1ac3f70023f809712b14993a0ac86615f3083",
+            "log_bytes": 1076
+          }
+        ],
+        "solution_sha256": "7bcee23d5e28293cf7b852938b063779824c73d56b01050d74f105f4b1d589a7",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "macro_unsigned8",
+        "family": "Arithmetic8",
+        "expected_decision": "abstain",
+        "expected_probe": "fail",
+        "note": "unsupported preprocessor; missed error must remain explicit"
+      },
+      "classification": {
+        "decision": "abstain",
+        "reasons": [
+          "unsupported_macro_type_or_scope"
+        ],
+        "findings": []
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/macro_unsigned8",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 18,
+        "mismatches": 10,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115577,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/macro_unsigned8/xvlog.log",
+            "log_sha256": "fa7f050c942e548422011ab224931158352f71e9d96963b93e143dfa3c22a1c5",
+            "log_bytes": 607
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165746,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/macro_unsigned8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369184,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/macro_unsigned8/xsim.log",
+            "log_sha256": "96957ef1728a76e74d427aa902748ddf9609685b6f417e7eb96cd7f03cb9c24a",
+            "log_bytes": 1488
+          }
+        ],
+        "solution_sha256": "3818e9797965ba08478a9bd85f6bbf44dd95f2fc88f280687fed0c5e1d2db45a",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "explicit_unsigned_cast8",
+        "family": "Arithmetic8",
+        "expected_decision": "abstain",
+        "expected_probe": "fail",
+        "note": "unsupported conversion with wrong arithmetic semantics"
+      },
+      "classification": {
+        "decision": "abstain",
+        "reasons": [
+          "shift_expression_or_operand_not_supported"
+        ],
+        "findings": []
+      },
+      "probe": {
+        "schema_version": 1,
+        "task": "Arithmetic8",
+        "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_unsigned_cast8",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 18,
+        "mismatches": 10,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065747,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_unsigned_cast8/xvlog.log",
+            "log_sha256": "43f02a1b5be63942c6c0b0f2272c890aa6cb5d3152b9677937cae98ab85e5c48",
+            "log_bytes": 623
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165912,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_unsigned_cast8/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369049,
+            "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_unsigned_cast8/xsim.log",
+            "log_sha256": "e72b639f55c519300cf89780b7e20b035565114538429665123b93e2cf0c8036",
+            "log_bytes": 1496
+          }
+        ],
+        "solution_sha256": "81bf3b4811a540a9f09ed0872289be643fc87088250a1401f50d6ce1baadb23b",
+        "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+        "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+        "inputs_unchanged": true
+      },
+      "passed": true
+    }
+  ],
+  "snapshot_after": {
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic13Renamed/negative.sv": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic13Renamed/positive.sv": "827beb90dd7fff5a61375d69b1e6cdac39bbf9494922c82b123dff3e8219e79d",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic13Renamed/tb.sv": "cd5b94c264c3fe048347c81bd27d387c80413729c7645fe480c8c5d1a350e37a",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic8/negative.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic8/positive.sv": "f3956f414ad747d61ff064adb802473ef0b595fca1ad739074d7e83cb20dab7c",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Arithmetic8/tb.sv": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/comments8/candidate.sv": "7bcee23d5e28293cf7b852938b063779824c73d56b01050d74f105f4b1d589a7",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/comments8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/concat8/candidate.sv": "63fbb6e4062d5fd92d115bf937689766938da3815209e0e0327a307d495a8809",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/concat8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/explicit_cast8/candidate.sv": "5ac75c8a458e35a8e235b47d99b9b52d29198b404493a39a8d51c04f489b6231",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/explicit_cast8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/explicit_unsigned_cast8/candidate.sv": "81bf3b4811a540a9f09ed0872289be643fc87088250a1401f50d6ce1baadb23b",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/explicit_unsigned_cast8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/logical_unsigned8/candidate.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/logical_unsigned8/prompt.txt": "abdcc58f9eb9ba49433d249d173694163a32a9924316a998634e20bb1d68efa5",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/macro_unsigned8/candidate.sv": "3818e9797965ba08478a9bd85f6bbf44dd95f2fc88f280687fed0c5e1d2db45a",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/macro_unsigned8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/renamed_unsigned13/candidate.sv": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/renamed_unsigned13/prompt.txt": "62fad8e3f9303596003c9734b4eaf93edfc11a9152500c234e7313d3d8c33f25",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/restored_sign_composite8/candidate.sv": "9242a77589994ec74f01d61b4a627214945609c6c4148e1a5286326f686352b4",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/restored_sign_composite8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/signed8/candidate.sv": "175c12ee43c7126c3d8ae1e55f594528283256ec5c205410535413e87468d34d",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/signed8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/signed_part_select8/candidate.sv": "eeab35252abd375087dcceff06fa4584dc7fa57dd2182688e7910843b5e27d76",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/signed_part_select8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/unrelated_internal8/candidate.sv": "f4c8dcf0e30833099db1cdcc2ade469e33e7b24afe950d67954d0f0d888482c5",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/unrelated_internal8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/unsigned8/candidate.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/cases/unsigned8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Logical8/negative.sv": "f3956f414ad747d61ff064adb802473ef0b595fca1ad739074d7e83cb20dab7c",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Logical8/positive.sv": "2c2ad25a6c49998ff2d4476c309c266dbfb54a7516ba623950411e420de31c13",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/Logical8/tb.sv": "f28ab7a089fefad563cb9f3abdb80aa84f4056bf8175184a9325e405afebe3ca",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/manifest.json": "a9de86f3415693cfa2565031d352a33a8874d1c15463a4ecb80b10324c63702c",
+    "/workspace/team/codex_r2b_20261003/src/r2_selectivity/fixtures/probe_runner.py": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+    "/workspace/team/codex_r2b_20261003/src/signedness_selector.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "/workspace/team/codex_r2b_20261003/src/shared/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+  },
+  "assets_unchanged": true
+}

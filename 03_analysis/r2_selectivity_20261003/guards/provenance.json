@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "source_scope": "Original prompt and archived seven-rule candidate only; no official testbench, reference, verdict read.",
+  "tasks": {
+    "Prob033_ece241_2014_q1c": {
+      "prompt.txt": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\kit-inspection\\autodl-rtl-kit\\project\\bench\\verilog-eval\\dataset_spec-to-rtl\\Prob033_ece241_2014_q1c_prompt.txt",
+        "sha256": "e0af17e9255b0a9cc227c1fc506c6def2c13a044e9422a1eae329c766772f68b",
+        "bytes": 422
+      },
+      "candidate.sv": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\skillfix-full-20261002\\final\\full156\\agent\\Prob033_ece241_2014_q1c\\s0\\solution.v",
+        "sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "bytes": 199
+      }
+    },
+    "Prob016_m2014_q4j": {
+      "prompt.txt": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\kit-inspection\\autodl-rtl-kit\\project\\bench\\verilog-eval\\dataset_spec-to-rtl\\Prob016_m2014_q4j_prompt.txt",
+        "sha256": "bdc58ca32db81e53addd16cc5cd671c2d1f839591317ebe7174fb16b9ec23dc5",
+        "bytes": 315
+      },
+      "candidate.sv": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\skillfix-full-20261002\\final\\full156\\agent\\Prob016_m2014_q4j\\s0\\solution.v",
+        "sha256": "4d448bfd0a7cae29d2c4c213d800b4e2dc12059809503eedb118055b3f359362",
+        "bytes": 510
+      }
+    },
+    "Prob009_popcount3": {
+      "prompt.txt": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\kit-inspection\\autodl-rtl-kit\\project\\bench\\verilog-eval\\dataset_spec-to-rtl\\Prob009_popcount3_prompt.txt",
+        "sha256": "d15e01d44228cef9753c4f592176873c9bb1e89b322d7f06b36290baee5e891e",
+        "bytes": 311
+      },
+      "candidate.sv": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\skillfix-full-20261002\\final\\full156\\agent\\Prob009_popcount3\\s0\\solution.v",
+        "sha256": "e9fd4eaa043c02d5d9d719903d275904922f01a46dcdb3c4d96f6fc422b3e2fc",
+        "bytes": 116
+      }
+    },
+    "Prob085_shift4": {
+      "prompt.txt": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\kit-inspection\\autodl-rtl-kit\\project\\bench\\verilog-eval\\dataset_spec-to-rtl\\Prob085_shift4_prompt.txt",
+        "sha256": "3a52419d4e26618db46f28eac7b6a9d72a42aa7d7bb74c390ad0dfa86a0301af",
+        "bytes": 847
+      },
+      "candidate.sv": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\skillfix-full-20261002\\final\\full156\\agent\\Prob085_shift4\\s0\\solution.v",
+        "sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "bytes": 388
+      }
+    },
+    "Prob123_bugs_addsubz": {
+      "prompt.txt": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\kit-inspection\\autodl-rtl-kit\\project\\bench\\verilog-eval\\dataset_spec-to-rtl\\Prob123_bugs_addsubz_prompt.txt",
+        "sha256": "104c8b48752ca525a21220ee6fb2bfad62c6a9b42bf9d1aed3b8810106b089cb",
+        "bytes": 551
+      },
+      "candidate.sv": {
+        "source": "E:\\26qiansai\\AMD-test-20260930\\skillfix-full-20261002\\final\\full156\\agent\\Prob123_bugs_addsubz\\s0\\solution.v",
+        "sha256": "59c89e8e0036e8629a5c2a22acb8ba811eb23e15d27b6fdc94a80755e4f486a1",
+        "bytes": 368
+      }
+    }
+  }
+}

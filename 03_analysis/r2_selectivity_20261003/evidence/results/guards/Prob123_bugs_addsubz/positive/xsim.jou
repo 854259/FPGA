@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sat Oct  3 08:07:55 2026
+# Process ID         : 2799037
+# Current directory  : /workspace/team/codex_r2b_20261003/results/guards/Prob123_bugs_addsubz/positive
+# Command line       : xsim -nolog -mode tcl -source {xsim.dir/r2_probe/xsim_script.tcl}
+# Log file           : 
+# Journal file       : /workspace/team/codex_r2b_20261003/results/guards/Prob123_bugs_addsubz/positive/xsim.jou
+# Running On         : j-fontq6fjcos6yvgiu52yotzx5v
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD EPYC 9334 32-Core Processor
+# CPU Frequency      : 3893.956 MHz
+# CPU Physical cores : 64
+# CPU Logical cores  : 128
+# Host memory        : 540696 MB
+# Swap memory        : 0 MB
+# Total Virtual      : 540696 MB
+# Available Virtual  : 464092 MB
+#-----------------------------------------------------------
+source xsim.dir/r2_probe/xsim_script.tcl
+run -all

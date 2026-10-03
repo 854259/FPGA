@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Arithmetic13Renamed",
+  "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/negative",
+  "status": "fail",
+  "failure_kind": "semantic_mismatch",
+  "checks": 18,
+  "mismatches": 10,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115426,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/negative/xvlog.log",
+      "log_sha256": "e87519e4ac455106465c5e5e7f7ce8d99d7118d3ad2836c41ffdece1a9a998fa",
+      "log_bytes": 639
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.215656,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/negative/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.418839,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/negative/xsim.log",
+      "log_sha256": "5317bebfa706f3adf3146c7d5137b6f3d0b73aa4bf82f0ccf3e558a0c33b2140",
+      "log_bytes": 1552
+    }
+  ],
+  "solution_sha256": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+  "tb_sha256": "cd5b94c264c3fe048347c81bd27d387c80413729c7645fe480c8c5d1a350e37a",
+  "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+  "inputs_unchanged": true
+}

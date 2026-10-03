@@ -1,0 +1,196 @@
+{
+  "selector_sha256": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+  "phase": "repaired static gate; same original fixtures; semantic EDA pending",
+  "passed": true,
+  "rows": [
+    {
+      "case": "unsigned8",
+      "expected": "review",
+      "passed": true,
+      "result": {
+        "decision": "review",
+        "reasons": [
+          "explicit_contract_with_unsigned_self_shift"
+        ],
+        "findings": [
+          {
+            "operand": "state",
+            "line": 7,
+            "width": 8,
+            "shift_amount": 1,
+            "evidence": "bare_unsigned_register",
+            "risk": true
+          }
+        ]
+      }
+    },
+    {
+      "case": "renamed_unsigned13",
+      "expected": "review",
+      "passed": true,
+      "result": {
+        "decision": "review",
+        "reasons": [
+          "explicit_contract_with_unsigned_self_shift"
+        ],
+        "findings": [
+          {
+            "operand": "storage",
+            "line": 7,
+            "width": 13,
+            "shift_amount": 1,
+            "evidence": "bare_unsigned_register",
+            "risk": true
+          }
+        ]
+      }
+    },
+    {
+      "case": "signed8",
+      "expected": "skip",
+      "passed": true,
+      "result": {
+        "decision": "skip",
+        "reasons": [
+          "no_demonstrated_bare_unsigned_self_shift_risk"
+        ],
+        "findings": [
+          {
+            "operand": "state",
+            "line": 7,
+            "width": 8,
+            "shift_amount": 1,
+            "evidence": "signed_declaration",
+            "risk": false
+          }
+        ]
+      }
+    },
+    {
+      "case": "explicit_cast8",
+      "expected": "skip",
+      "passed": true,
+      "result": {
+        "decision": "skip",
+        "reasons": [
+          "no_demonstrated_bare_unsigned_self_shift_risk"
+        ],
+        "findings": [
+          {
+            "operand": "state",
+            "line": 7,
+            "width": 8,
+            "shift_amount": 1,
+            "evidence": "explicit_signed_cast",
+            "risk": false
+          }
+        ]
+      }
+    },
+    {
+      "case": "concat8",
+      "expected": "skip",
+      "passed": true,
+      "result": {
+        "decision": "skip",
+        "reasons": [
+          "no_actual_triple_right_shift"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "logical_unsigned8",
+      "expected": "no_review",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "no_explicit_arithmetic_shift_register_contract"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "unrelated_internal8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "shift_outside_output_register"
+        ],
+        "findings": [
+          {
+            "operand": "state",
+            "line": 7,
+            "width": 8,
+            "shift_amount": 1,
+            "evidence": "explicit_signed_cast",
+            "risk": false
+          }
+        ]
+      }
+    },
+    {
+      "case": "signed_part_select8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "shift_expression_or_operand_not_supported"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "restored_sign_composite8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "shift_expression_or_operand_not_supported"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "comments8",
+      "expected": "skip",
+      "passed": true,
+      "result": {
+        "decision": "skip",
+        "reasons": [
+          "no_actual_triple_right_shift"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "macro_unsigned8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "unsupported_macro_type_or_scope"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "explicit_unsigned_cast8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "shift_expression_or_operand_not_supported"
+        ],
+        "findings": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Arithmetic8",
+  "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/comments8",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 18,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115574,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/comments8/xvlog.log",
+      "log_sha256": "ad12729c4d262f1d0baf3c820d6f07a0b9306a8278ecb1d90eb3883869496e90",
+      "log_bytes": 595
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165815,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/comments8/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.218592,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/comments8/xsim.log",
+      "log_sha256": "99d6f2ed3b9aaf4aa468a18069d1ac3f70023f809712b14993a0ac86615f3083",
+      "log_bytes": 1076
+    }
+  ],
+  "solution_sha256": "7bcee23d5e28293cf7b852938b063779824c73d56b01050d74f105f4b1d589a7",
+  "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+  "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+  "inputs_unchanged": true
+}

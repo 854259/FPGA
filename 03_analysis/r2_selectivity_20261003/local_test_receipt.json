@@ -1,0 +1,28 @@
+{
+  "observed_at": "2026-10-03T16:07:21+08:00",
+  "full_suite": {
+    "command": "python -B -m unittest discover -s tests",
+    "cwd": "04_project/amd_rtl_agent",
+    "tests": 264,
+    "seconds": 76.78,
+    "exit_code": 0
+  },
+  "additional_suites": [
+    {
+      "path": "guards/test_guard_runner.py",
+      "tests": 8,
+      "seconds": 0.059
+    },
+    {
+      "path": "fixtures/test_probe_runner.py",
+      "tests": 4,
+      "seconds": 0.743
+    },
+    {
+      "path": "../r3_lfsr_20261003/probes/test_run_probe.py",
+      "tests": 7,
+      "seconds": 0.049
+    }
+  ],
+  "note": "Observed completion summary, not full raw console transcript. Initial discovery used incorrect paths (0 guard tests / missing R3 folder); corrected and actual nonzero test counts verified before cloud execution."
+}

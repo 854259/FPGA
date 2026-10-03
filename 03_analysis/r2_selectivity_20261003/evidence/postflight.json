@@ -1,0 +1,19 @@
+{
+  "observed_at_utc": "2026-10-03T08:10:27.830178+00:00",
+  "model_pid": 2013333,
+  "model_cmdline": "/workspace/team/tools/llama-build/bin/llama-server -m /workspace/team/models/Qwen3.6-27B-Q4_K_M.gguf --alias Qwen3.6-27B-Q4_K_M --host 127.0.0.1 --port 8000 -ngl 99 -c 16384 -np 1 -t 8 --reasoning off ",
+  "model_health": {
+    "status": "ok"
+  },
+  "instance_shutdown_or_release": false,
+  "ports": {
+    "7860": "URLError",
+    "7867": "URLError"
+  },
+  "package_sha256": {
+    "submission/agent/runtime.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
+    "submission/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "submission/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+  },
+  "slot_released": true
+}

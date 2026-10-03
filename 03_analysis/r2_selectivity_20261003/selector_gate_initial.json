@@ -1,0 +1,151 @@
+{
+  "selector_sha256": "582d51d876f130fb7ffe054f006301862faa83326aa9b70e64490a3366dd7859",
+  "phase": "first independent static gate before cloud EDA",
+  "passed": false,
+  "rows": [
+    {
+      "case": "unsigned8",
+      "expected": "review",
+      "passed": false,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "renamed_unsigned13",
+      "expected": "review",
+      "passed": false,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "signed8",
+      "expected": "skip",
+      "passed": false,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "explicit_cast8",
+      "expected": "skip",
+      "passed": false,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "concat8",
+      "expected": "skip",
+      "passed": true,
+      "result": {
+        "decision": "skip",
+        "reasons": [
+          "no_actual_triple_right_shift"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "logical_unsigned8",
+      "expected": "no_review",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "no_explicit_arithmetic_shift_register_contract"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "unrelated_internal8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "signed_part_select8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "restored_sign_composite8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "comments8",
+      "expected": "skip",
+      "passed": true,
+      "result": {
+        "decision": "skip",
+        "reasons": [
+          "no_actual_triple_right_shift"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "macro_unsigned8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    },
+    {
+      "case": "explicit_unsigned_cast8",
+      "expected": "abstain",
+      "passed": true,
+      "result": {
+        "decision": "abstain",
+        "reasons": [
+          "mixed_negated_or_ambiguous_specification"
+        ],
+        "findings": []
+      }
+    }
+  ]
+}

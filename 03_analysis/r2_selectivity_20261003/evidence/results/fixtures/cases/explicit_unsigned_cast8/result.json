@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Arithmetic8",
+  "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_unsigned_cast8",
+  "status": "fail",
+  "failure_kind": "semantic_mismatch",
+  "checks": 18,
+  "mismatches": 10,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.065747,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_unsigned_cast8/xvlog.log",
+      "log_sha256": "43f02a1b5be63942c6c0b0f2272c890aa6cb5d3152b9677937cae98ab85e5c48",
+      "log_bytes": 623
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165912,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_unsigned_cast8/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.369049,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/cases/explicit_unsigned_cast8/xsim.log",
+      "log_sha256": "e72b639f55c519300cf89780b7e20b035565114538429665123b93e2cf0c8036",
+      "log_bytes": 1496
+    }
+  ],
+  "solution_sha256": "81bf3b4811a540a9f09ed0872289be643fc87088250a1401f50d6ce1baadb23b",
+  "tb_sha256": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+  "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+  "inputs_unchanged": true
+}

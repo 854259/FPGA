@@ -1,0 +1,91 @@
+{
+  "complete": true,
+  "valid": true,
+  "controls_valid": true,
+  "cases": [
+    {
+      "id": "unsigned8",
+      "decision": "review",
+      "probe": "fail",
+      "mismatches": 10,
+      "passed": true
+    },
+    {
+      "id": "renamed_unsigned13",
+      "decision": "review",
+      "probe": "fail",
+      "mismatches": 10,
+      "passed": true
+    },
+    {
+      "id": "signed8",
+      "decision": "skip",
+      "probe": "pass",
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "id": "explicit_cast8",
+      "decision": "skip",
+      "probe": "pass",
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "id": "concat8",
+      "decision": "skip",
+      "probe": "pass",
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "id": "logical_unsigned8",
+      "decision": "abstain",
+      "probe": "pass",
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "id": "unrelated_internal8",
+      "decision": "abstain",
+      "probe": "pass",
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "id": "signed_part_select8",
+      "decision": "abstain",
+      "probe": "fail",
+      "mismatches": 10,
+      "passed": true
+    },
+    {
+      "id": "restored_sign_composite8",
+      "decision": "abstain",
+      "probe": "pass",
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "id": "comments8",
+      "decision": "skip",
+      "probe": "pass",
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "id": "macro_unsigned8",
+      "decision": "abstain",
+      "probe": "fail",
+      "mismatches": 10,
+      "passed": true
+    },
+    {
+      "id": "explicit_unsigned_cast8",
+      "decision": "abstain",
+      "probe": "fail",
+      "mismatches": 10,
+      "passed": true
+    }
+  ]
+}

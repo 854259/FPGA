@@ -277,7 +277,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-03T15:51:42+08:00",
+  "last_updated": "2026-10-03T16:15:05+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -2221,7 +2221,7 @@
       }
     },
     "verified": {
-      "full_local_tests": 238,
+      "full_local_tests": 264,
       "additional_endurance_tests": 7,
       "additional_r1_grader_tests": 7,
       "new_supervisor_shell_tests_rechecked": 9,
@@ -2234,8 +2234,8 @@
         "local_evidence": "03_analysis/codex_takeover_20261003/judge_smoke/"
       },
       "cloud_supervisor_sha256": "47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556",
-      "full_test_evidence": "03_analysis/r2_signedness_20261003/local_test_receipt.json",
-      "test_count_note": "R2 turn complete main suite 238 passed (75.581s); separate probe runner suite 9 passed (0.055s). Prior 208-suite evidence remains historical.",
+      "full_test_evidence": "03_analysis/r2_selectivity_20261003/local_test_receipt.json",
+      "test_count_note": "Complete main suite 264 tests passed (76.780s); separately 8 guard wrapper, 4 fixture wrapper and 7 LFSR wrapper tests passed. These are distinct from 36 actual cloud EDA candidates.",
       "final_api_failure_tests": 9
     },
     "r1": {
@@ -2294,7 +2294,7 @@
       "scope": "about 25 requests inferred from log, not an exact graded count; 1560 not completed"
     },
     "resource_limits": "legacy endurance counters do not prove process ownership or AMD VRAM compliance; result explicitly unknown",
-    "next_research": "03_analysis/r2_signedness_20261003/RESULT.md (selectivity, broader guards and distinct errors before integration)",
+    "next_research": "03_analysis/r3_lfsr_20261003/REPAIR_NEXT.md plus isolated integration/cost check of R2b selector",
     "automation_created": false,
     "server_lifecycle": {
       "source": "direct user clarification during takeover",
@@ -2356,5 +2356,83 @@
     "instance_shutdown_or_release": false,
     "slot_released": true,
     "limits": "One known development target with two repeats per arm, not independent generalization, full-set improvement, formal five-sample validation or release acceptance."
+  },
+  "codex_r2b_selectivity_20261003": {
+    "status": "offline_selector_gate_passed_not_integrated_or_deployed",
+    "report": "03_analysis/r2_selectivity_20261003/RESULT.md",
+    "selector": "04_project/amd_rtl_agent/bench/signedness_selector.py",
+    "selector_sha256": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "initial_static_gate": "4 false abstentions, preserved; corrected selector reevaluated without changing fixtures",
+    "synthetic_cases": {
+      "total": 12,
+      "correct": 7,
+      "correct_triggered": 0,
+      "wrong": 5,
+      "wrong_review": 2,
+      "wrong_abstain": 3,
+      "not_independent_tasks": true
+    },
+    "guard_tasks": 5,
+    "guard_originals_passed": 5,
+    "guard_originals_reviewed": 0,
+    "archived156_scan": {
+      "review": 1,
+      "skip": 155,
+      "abstain": 0,
+      "analysis_seconds_excluding_io": 0.015193900000667782,
+      "skip_does_not_mean_correct": true
+    },
+    "combined_real_eda_including_r3": {
+      "candidates": 36,
+      "stage_executions": 108,
+      "comparisons": 592374,
+      "pass": 21,
+      "expected_semantic_fail": 15,
+      "environment_errors": 0
+    },
+    "raw_files_hash_verified": 265,
+    "local_tests": {
+      "main": 264,
+      "guard_runner": 8,
+      "fixture_runner": 4,
+      "lfsr_runner": 7
+    },
+    "model_calls": 0,
+    "official_judgments": 0,
+    "deployment_changed": false,
+    "slot_released": true,
+    "original_model_healthy": true,
+    "limitations": "Narrow text recognition only; source outside supported scope can contain real errors. Functional probes do not establish new official grades or repair success.",
+    "next": "isolated runtime integration/cost evaluation, alongside the separately preregistered R3 state-update repair pilot"
+  },
+  "codex_r3_lfsr_probe_20261003": {
+    "status": "prompt_only_boundary_hypothesis_supported_not_repaired",
+    "task": "Prob086_lfsr5",
+    "model_calls": 0,
+    "official_judgments": 0,
+    "positive": {
+      "checks": 269,
+      "mismatches": 0
+    },
+    "negative": {
+      "checks": 269,
+      "mismatches": 220
+    },
+    "archived": {
+      "checks": 269,
+      "mismatches": 220
+    },
+    "first_mismatch": {
+      "check": 7,
+      "step_including_extra_reset": 3,
+      "nonreset_update": 2,
+      "expected": "01010",
+      "actual": "11010",
+      "q4_diff": true
+    },
+    "report": "03_analysis/r3_lfsr_20261003/RESULT.md",
+    "next_plan": "03_analysis/r3_lfsr_20261003/REPAIR_NEXT.md",
+    "next_model_calls_planned_not_run": 12,
+    "evidence": "03_analysis/r2_selectivity_20261003/evidence/results/lfsr/"
   }
 }

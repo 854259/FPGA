@@ -1,0 +1,24 @@
+WARNING: The locale 'C.utf8' is not installed on your system.\nPlease install it by running:\n  Ubuntu/Debian: sudo locale-gen C.utf8 && sudo update-locale\n  RHEL/CentOS:   sudo localedef -i en_US -f UTF-8 C.utf8
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct  3 08:08:01 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/r2_probe/xsim_script.tcl
+# xsim {r2_probe} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+MISMATCH sub=0 a=1 b=255 out=00 zero=0 expected=0 expected_zero=1
+MISMATCH sub=0 a=2 b=254 out=00 zero=0 expected=0 expected_zero=1
+MISMATCH sub=0 a=3 b=253 out=00 zero=0 expected=0 expected_zero=1
+MISMATCH sub=0 a=4 b=252 out=00 zero=0 expected=0 expected_zero=1
+MISMATCH sub=0 a=5 b=251 out=00 zero=0 expected=0 expected_zero=1
+R2_PROBE_RESULT task=Prob123_bugs_addsubz checks=131072 mismatches=255
+$finish called at time : 131072 ns : File "/workspace/team/codex_r2b_20261003/results/guards/Prob123_bugs_addsubz/negative/tb.sv" Line 28
+exit
+INFO: xsimkernel Simulation Memory Usage: 142252 KB (Peak: 207788 KB), Simulation CPU Usage: 800 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct  3 08:08:03 2026...

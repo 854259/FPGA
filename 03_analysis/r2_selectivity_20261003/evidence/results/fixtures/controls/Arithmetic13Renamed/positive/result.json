@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Arithmetic13Renamed",
+  "outdir": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/positive",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 18,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.065467,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/positive/xvlog.log",
+      "log_sha256": "76682d1ffcdc65b272daa1aa1e6a1d79df9cc77906ad4b767b8c8e5bb0b91acc",
+      "log_bytes": 639
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165763,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/positive/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.218314,
+      "log": "/workspace/team/codex_r2b_20261003/results/fixtures/controls/Arithmetic13Renamed/positive/xsim.log",
+      "log_sha256": "24a5c0a8b00418ce5c6aa826f9c8f85038e9ca7273b313c81124f2c3182b03a5",
+      "log_bytes": 1106
+    }
+  ],
+  "solution_sha256": "827beb90dd7fff5a61375d69b1e6cdac39bbf9494922c82b123dff3e8219e79d",
+  "tb_sha256": "cd5b94c264c3fe048347c81bd27d387c80413729c7645fe480c8c5d1a350e37a",
+  "runner_sha256": "dc3b71427a6dc83aa54942d9f11b079a6b7f8d3fc294d48ff8d5e9c6a44a8acb",
+  "inputs_unchanged": true
+}

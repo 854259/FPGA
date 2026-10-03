@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "source": "hand-written development controls, not independent benchmark tasks",
+  "planned_fixture_count": 12,
+  "families": {
+    "Arithmetic8": {
+      "checks": 18,
+      "width": 8,
+      "logical": false
+    },
+    "Arithmetic13Renamed": {
+      "checks": 18,
+      "width": 13,
+      "logical": false
+    },
+    "Logical8": {
+      "checks": 18,
+      "width": 8,
+      "logical": true
+    }
+  },
+  "cases": [
+    {
+      "id": "unsigned8",
+      "family": "Arithmetic8",
+      "expected_decision": "review",
+      "expected_probe": "fail",
+      "note": "in-scope unsigned state"
+    },
+    {
+      "id": "renamed_unsigned13",
+      "family": "Arithmetic13Renamed",
+      "expected_decision": "review",
+      "expected_probe": "fail",
+      "note": "different width, all port and state names changed"
+    },
+    {
+      "id": "signed8",
+      "family": "Arithmetic8",
+      "expected_decision": "skip",
+      "expected_probe": "pass",
+      "note": "valid declared signed operand"
+    },
+    {
+      "id": "explicit_cast8",
+      "family": "Arithmetic8",
+      "expected_decision": "skip",
+      "expected_probe": "pass",
+      "note": "valid explicit signed conversion"
+    },
+    {
+      "id": "concat8",
+      "family": "Arithmetic8",
+      "expected_decision": "skip",
+      "expected_probe": "pass",
+      "note": "valid bit concatenation, no >>>"
+    },
+    {
+      "id": "logical_unsigned8",
+      "family": "Logical8",
+      "expected_decision": "no_review",
+      "expected_probe": "pass",
+      "note": "unsigned arithmetic-shift token valid for logical fill"
+    },
+    {
+      "id": "unrelated_internal8",
+      "family": "Arithmetic8",
+      "expected_decision": "abstain",
+      "expected_probe": "pass",
+      "note": "global arithmetic spec cannot assign meaning to unrelated internal state"
+    },
+    {
+      "id": "signed_part_select8",
+      "family": "Arithmetic8",
+      "expected_decision": "abstain",
+      "expected_probe": "fail",
+      "note": "signed declaration does not make a part-select signed; unsupported boundary"
+    },
+    {
+      "id": "restored_sign_composite8",
+      "family": "Arithmetic8",
+      "expected_decision": "abstain",
+      "expected_probe": "pass",
+      "note": "correct restoration in surrounding expression; no bare-operand inference"
+    },
+    {
+      "id": "comments8",
+      "family": "Arithmetic8",
+      "expected_decision": "skip",
+      "expected_probe": "pass",
+      "note": "comment-only shifts cannot trigger"
+    },
+    {
+      "id": "macro_unsigned8",
+      "family": "Arithmetic8",
+      "expected_decision": "abstain",
+      "expected_probe": "fail",
+      "note": "unsupported preprocessor; missed error must remain explicit"
+    },
+    {
+      "id": "explicit_unsigned_cast8",
+      "family": "Arithmetic8",
+      "expected_decision": "abstain",
+      "expected_probe": "fail",
+      "note": "unsupported conversion with wrong arithmetic semantics"
+    }
+  ],
+  "input_sha256": {
+    "Arithmetic13Renamed/negative.sv": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+    "Arithmetic13Renamed/positive.sv": "827beb90dd7fff5a61375d69b1e6cdac39bbf9494922c82b123dff3e8219e79d",
+    "Arithmetic13Renamed/tb.sv": "cd5b94c264c3fe048347c81bd27d387c80413729c7645fe480c8c5d1a350e37a",
+    "Arithmetic8/negative.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "Arithmetic8/positive.sv": "f3956f414ad747d61ff064adb802473ef0b595fca1ad739074d7e83cb20dab7c",
+    "Arithmetic8/tb.sv": "5555991d83f58e4b29a6de694303ce6a7095257a14509d02caa6545fb84f93e5",
+    "cases/comments8/candidate.sv": "7bcee23d5e28293cf7b852938b063779824c73d56b01050d74f105f4b1d589a7",
+    "cases/comments8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/concat8/candidate.sv": "63fbb6e4062d5fd92d115bf937689766938da3815209e0e0327a307d495a8809",
+    "cases/concat8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/explicit_cast8/candidate.sv": "5ac75c8a458e35a8e235b47d99b9b52d29198b404493a39a8d51c04f489b6231",
+    "cases/explicit_cast8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/explicit_unsigned_cast8/candidate.sv": "81bf3b4811a540a9f09ed0872289be643fc87088250a1401f50d6ce1baadb23b",
+    "cases/explicit_unsigned_cast8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/logical_unsigned8/candidate.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "cases/logical_unsigned8/prompt.txt": "abdcc58f9eb9ba49433d249d173694163a32a9924316a998634e20bb1d68efa5",
+    "cases/macro_unsigned8/candidate.sv": "3818e9797965ba08478a9bd85f6bbf44dd95f2fc88f280687fed0c5e1d2db45a",
+    "cases/macro_unsigned8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/renamed_unsigned13/candidate.sv": "47a6bbef0cba5514b5dd100cbb414b2448611379add694dd6448bb784f6dad84",
+    "cases/renamed_unsigned13/prompt.txt": "62fad8e3f9303596003c9734b4eaf93edfc11a9152500c234e7313d3d8c33f25",
+    "cases/restored_sign_composite8/candidate.sv": "9242a77589994ec74f01d61b4a627214945609c6c4148e1a5286326f686352b4",
+    "cases/restored_sign_composite8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/signed8/candidate.sv": "175c12ee43c7126c3d8ae1e55f594528283256ec5c205410535413e87468d34d",
+    "cases/signed8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/signed_part_select8/candidate.sv": "eeab35252abd375087dcceff06fa4584dc7fa57dd2182688e7910843b5e27d76",
+    "cases/signed_part_select8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/unrelated_internal8/candidate.sv": "f4c8dcf0e30833099db1cdcc2ade469e33e7b24afe950d67954d0f0d888482c5",
+    "cases/unrelated_internal8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "cases/unsigned8/candidate.sv": "499425f76c3ae7b1e499b056cc69ad9779d6544069b2a7764518f38f2692f938",
+    "cases/unsigned8/prompt.txt": "529d66fa87ec5ebbc44dcbe7705d78b3a64ea17660c4c354bfc0d8144c98c5b6",
+    "Logical8/negative.sv": "f3956f414ad747d61ff064adb802473ef0b595fca1ad739074d7e83cb20dab7c",
+    "Logical8/positive.sv": "2c2ad25a6c49998ff2d4476c309c266dbfb54a7516ba623950411e420de31c13",
+    "Logical8/tb.sv": "f28ab7a089fefad563cb9f3abdb80aa84f4056bf8175184a9325e405afebe3ca"
+  }
+}

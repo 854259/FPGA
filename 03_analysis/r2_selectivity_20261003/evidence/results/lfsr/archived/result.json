@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob086_lfsr5",
+  "outdir": "/workspace/team/codex_r2b_20261003/results/lfsr/archived",
+  "status": "fail",
+  "failure_kind": "semantic_mismatch",
+  "checks": 269,
+  "mismatches": 220,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.065331,
+      "log": "/workspace/team/codex_r2b_20261003/results/lfsr/archived/xvlog.log",
+      "log_sha256": "ab2eceb84cd805e96664e0d84544aada326a5380edda0c6c447655c0956d6c70",
+      "log_bytes": 573
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165496,
+      "log": "/workspace/team/codex_r2b_20261003/results/lfsr/archived/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.218652,
+      "log": "/workspace/team/codex_r2b_20261003/results/lfsr/archived/xsim.log",
+      "log_sha256": "83d77de9cc935c0d93b15f81c5d21f0a34a0ebda68e1faecd244b9320eaf1c4e",
+      "log_bytes": 2231
+    }
+  ],
+  "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+  "tb_sha256": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

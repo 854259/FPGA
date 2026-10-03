@@ -1,0 +1,1 @@
+Implement a 13-bit arithmetic shift register named TopModule. The sole output word_out is the stored state. At the rising edge of tick, put loads word_in and takes priority over move. Otherwise, move performs an arithmetic right shift by one bit; when disabled, hold the state. Do not assume an initial value.

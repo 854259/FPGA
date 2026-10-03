@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob085_shift4",
+  "outdir": "/workspace/team/codex_r2b_20261003/results/guards/Prob085_shift4/positive",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 209,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115789,
+      "log": "/workspace/team/codex_r2b_20261003/results/guards/Prob085_shift4/positive/xvlog.log",
+      "log_sha256": "36761bb19a656ab29f98dbd90ef7e759d0e5d2d18c4dc48424844a374a159273",
+      "log_bytes": 607
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.166075,
+      "log": "/workspace/team/codex_r2b_20261003/results/guards/Prob085_shift4/positive/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.369033,
+      "log": "/workspace/team/codex_r2b_20261003/results/guards/Prob085_shift4/positive/xsim.log",
+      "log_sha256": "e3aad70b8553e6423220227550a14e51ce05016fd4cdf4cf1c5bac0bfb80f616",
+      "log_bytes": 1086
+    }
+  ],
+  "solution_sha256": "cdf9638b51bde16d3760a6fbe4a48ea015736942b7decbc1f86ff31d78807e1a",
+  "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+  "runner_sha256": "edb50b619d083f9f501a6a1fdb1c62c49b873b83da6b1eb37af4350c2ef2fb65",
+  "inputs_unchanged": true
+}

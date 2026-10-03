@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob033_ece241_2014_q1c",
+  "outdir": "/workspace/team/codex_r2b_20261003/results/guards/Prob033_ece241_2014_q1c/positive",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 65536,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.115584,
+      "log": "/workspace/team/codex_r2b_20261003/results/guards/Prob033_ece241_2014_q1c/positive/xvlog.log",
+      "log_sha256": "902f5b4d21bf6aeb2975e836914b90d5adefdcfa2520b3c1816bbfd1874e38ea",
+      "log_bytes": 625
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165879,
+      "log": "/workspace/team/codex_r2b_20261003/results/guards/Prob033_ece241_2014_q1c/positive/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.218526,
+      "log": "/workspace/team/codex_r2b_20261003/results/guards/Prob033_ece241_2014_q1c/positive/xsim.log",
+      "log_sha256": "38fbb225d387459cd6d1e9f475403000d211d1afbc805b6fda5334f3900e058f",
+      "log_bytes": 1108
+    }
+  ],
+  "solution_sha256": "a6d97a38e359b1ce02680b55b39608a8098beb50f3cc974adf36ed240024a012",
+  "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+  "runner_sha256": "edb50b619d083f9f501a6a1fdb1c62c49b873b83da6b1eb37af4350c2ef2fb65",
+  "inputs_unchanged": true
+}
