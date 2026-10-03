@@ -1,0 +1,430 @@
+--- 04_project/amd_rtl_agent/submission/agent/runtime.py
++++ 03_analysis/selective_runtime_integration_20261003/package/agent/runtime.py
+@@ -32,6 +32,10 @@
+ if str(PKG) not in sys.path:
+     sys.path.insert(0, str(PKG))
+ LOCK = threading.Lock()
++
++# Templates are unchanged from the frozen R2 diagnostic/control prompt.
++REVIEW_CONTROL = 'Review the candidate against the specification. Return one complete corrected TopModule. Preserve the required interface and behaviour; output only code.'
++REVIEW_CHECKLIST = '\nReview checklist:\nBefore finalizing, infer the required bit widths, signed or unsigned interpretation, extension behaviour and shift semantics from the explicit specification. Check that operand declarations and expression types implement those requirements. Correct only what the specification requires; do not add unspecified initialization or change the required interface.'
+ 
+ 
+ def skill_texts():
+@@ -394,7 +398,8 @@
+         if mode == 'baseline':
+             command = [sys.executable, str(PKG / 'baseline.py'), str(inp), str(out), 'rtl']
+         else:
+-            command = [sys.executable, str(ROOT / 'runtime.py'), 'worker', str(inp), str(out)]
++            command = [sys.executable, str(ROOT / 'runtime.py'), 'worker', str(inp), str(out),
++                       '--deadline-mono', str(started + seconds)]
+         flags = {'start_new_session': True} if os.name != 'nt' else {}
+         with (out / 'worker.log').open('w', encoding='utf-8') as log:
+             proc = subprocess.Popen(command, cwd=work, env=env, stdout=log, stderr=log, **flags)
+@@ -418,7 +423,351 @@
+     return (out / 'solution.v').read_text(encoding='utf-8'), (out / 'trace.jsonl').read_text(encoding='utf-8')
+ 
+ 
+-def worker(task, out):
++def _sha(value):
++    return hashlib.sha256(value.encode('utf-8') if isinstance(value, str) else value).hexdigest()
++
++
++def _review_config():
++    mode = os.environ.get('RTL_REVIEW_MODE', 'off')
++    if mode not in ('off', 'observe', 'control', 'checklist'):
++        raise ValueError('RTL_REVIEW_MODE must be off/observe/control/checklist')
++    config = {'mode': mode}
++    for name, env, default in (
++            ('llm_cap_s', 'RTL_REVIEW_LLM_CAP_S', '20'),
++            ('compile_cap_s', 'RTL_REVIEW_COMPILE_CAP_S', '5'),
++            ('cleanup_reserve_s', 'RTL_REVIEW_CLEANUP_RESERVE_S', '6')):
++        value = float(os.environ.get(env, default))
++        if not math.isfinite(value) or value <= 0:
++            raise ValueError(env + ' must be a finite positive number')
++        config[name] = value
++    value = float(os.environ.get('RTL_REVIEW_SOCKET_CAP_S', str(config['llm_cap_s'])))
++    if not math.isfinite(value) or value <= 0:
++        raise ValueError('RTL_REVIEW_SOCKET_CAP_S must be a finite positive number')
++    config['socket_cap_s'] = value
++    return config
++
++
++def _interface_signature(source):
++    """Simple ANSI port subset only; unknown syntax never means equal."""
++    import signedness_selector
++    code, closed = signedness_selector._strip_noncode(source)
++    if not closed:
++        return None
++    if len(re.findall(r'\bmodule\s+TopModule\b', code)) != 1:
++        return None
++    match = re.search(r'\bmodule\s+TopModule\s*\(([^()]*)\)\s*;', code, re.S)
++    if not match:
++        return None
++    ports, names, previous = [], set(), None
++    for item in match[1].split(','):
++        item = item.strip()
++        declared = re.fullmatch(r'(input|output|inout)\s+(?:(?:wire|reg|logic)\s+)?'
++                               r'(?:(signed|unsigned)\s+)?(?:\[\s*(\d+)\s*:\s*(\d+)\s*\]\s*)?'
++                               r'([A-Za-z_][A-Za-z0-9_$]*)', item)
++        if declared:
++            direction, sign, high, low, name = declared.groups()
++            previous = direction, sign == 'signed', (int(high), int(low)) if high else None
++        elif previous and re.fullmatch(r'[A-Za-z_][A-Za-z0-9_$]*', item):
++            name = item
++        else:
++            return None
++        if name in names:
++            return None
++        names.add(name)
++        ports.append((name, *previous))
++    return tuple(ports) if ports else None
++
++
++def _linux_descendants(pid):
++    """Best-effort PID/starttime ownership snapshot; outer PG is final cleanup."""
++    result, todo = {}, [pid]
++    while todo:
++        parent = todo.pop()
++        try:
++            children = (Path('/proc') / str(parent) / 'task' / str(parent) / 'children').read_text().split()
++        except OSError:
++            continue
++        for child in children:
++            child = int(child)
++            if child in result:
++                continue
++            try:
++                stat = (Path('/proc') / str(child) / 'stat').read_text()
++                start = stat[stat.rfind(')') + 2:].split()[19]
++            except (OSError, IndexError):
++                continue
++            result[child] = start
++            todo.append(child)
++    return result
++
++
++def _kill_owned_stage(proc, children, cleanup_cap):
++    # The child inherits the worker's group. Never start a nested session: outer
++    # supervision must still kill all this request's tools when the worker exits.
++    cleanup_deadline = time.monotonic() + cleanup_cap
++    if os.name == 'nt':
++        if proc.poll() is None:
++            try:
++                subprocess.run(['taskkill', '/PID', str(proc.pid), '/T', '/F'],
++                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
++                               timeout=min(5, max(.01, cleanup_cap)))
++            except (OSError, subprocess.SubprocessError):
++                proc.kill()
++    else:
++        # poll() reaps the root; only rediscover descendants while it remains
++        # live/unreaped, so a reused root PID cannot target unrelated processes.
++        if proc.poll() is None:
++            children.update(_linux_descendants(proc.pid))
++        for pid, start in reversed(list(children.items())):
++            try:
++                stat = (Path('/proc') / str(pid) / 'stat').read_text()
++                if stat[stat.rfind(')') + 2:].split()[19] == start:
++                    os.kill(pid, signal.SIGKILL)
++            except (OSError, IndexError):
++                pass
++        if proc.poll() is None:
++            proc.kill()
++    try:
++        proc.wait(timeout=max(.01, cleanup_deadline - time.monotonic()))
++    except subprocess.TimeoutExpired:
++        pass
++
++
++def _bounded_command(command, cwd, log_path, seconds, cleanup_cap):
++    """Wall-clock cap without PIPE/communicate or detached nested groups."""
++    started = time.monotonic()
++    deadline = started + seconds
++    children = {}
++    timed_out = False
++    with Path(log_path).open('wb') as log:
++        proc = subprocess.Popen(command, cwd=cwd, stdout=log, stderr=subprocess.STDOUT)
++        try:
++            while proc.poll() is None:
++                if os.name != 'nt':
++                    children.update(_linux_descendants(proc.pid))
++                left = deadline - time.monotonic()
++                if left <= 0:
++                    timed_out = True
++                    break
++                time.sleep(min(.025, left))
++        finally:
++            _kill_owned_stage(proc, children, cleanup_cap)
++    return {'rc': proc.returncode, 'timeout': timed_out, 'sec': time.monotonic() - started,
++            'pid': proc.pid, 'descendant_cleanup': 'best_effort_outer_group_final'}
++
++
++def review_call(request_path, response_path, deadline_mono):
++    """One HTTP client subprocess, inherited worker PG; no model lifecycle work."""
++    request = json.loads(Path(request_path).read_text(encoding='utf-8'))
++    body = request['body']
++    started = time.monotonic()
++    result = {'mono_start': started, 'request_attempted': False}
++    try:
++        remaining = deadline_mono - started
++        if remaining <= 0:
++            raise TimeoutError('request deadline reached')
++        req = urllib.request.Request(endpoint() + '/chat/completions',
++                                     data=json.dumps(body).encode(),
++                                     headers={'Content-Type': 'application/json'})
++        result['request_attempted'] = True
++        with urllib.request.urlopen(req, timeout=min(remaining, request['socket_cap_s'])) as response:
++            result['payload'] = json.load(response)
++    except Exception as exc:
++        result['error'] = type(exc).__name__
++        result['shared_model_cancellation'] = 'unknown'
++    result['mono_end'] = time.monotonic()
++    temp = Path(str(response_path) + '.tmp')
++    write(temp, json.dumps(result, ensure_ascii=False))
++    os.replace(temp, response_path)
++
++
++def finish_compiled(prompt, accepted_source, out, attempt, repairs, model, skill,
++                    repair_skill, deadline_mono, model_calls, iface=None):
++    """At most one optional review, preserving the already compiled answer."""
++    original_hash = _sha(accepted_source)
++    final_hash = original_hash
++    new_hash = None
++    used = model_calls
++    status, reason = 'rejected', 'exception'
++    config = None
++    llm_logged = False
++    started = time.monotonic()
++    try:
++        config = _review_config()
++        mode = config['mode']
++        selector_path = ROOT / 'signedness_selector.py'
++        template = REVIEW_CONTROL + (REVIEW_CHECKLIST if mode == 'checklist' else '')
++        trace(out, 'review_meta', mode=mode, runtime_sha256=_sha(Path(__file__).read_bytes()),
++              selector_sha256=_sha(selector_path.read_bytes()), skill_sha256=_sha(skill),
++              repair_skill_sha256=_sha(repair_skill), template_sha256=_sha(template),
++              repairs=repairs, **{k: v for k, v in config.items() if k != 'mode'})
++        if mode == 'off':
++            status, reason = 'bypassed', 'off'
++            return
++        selected_start = time.monotonic()
++        try:
++            import signedness_selector
++            selected = signedness_selector.analyze(prompt, accepted_source)
++        except Exception as exc:
++            trace(out, 'review_select', decision='abstain', error=type(exc).__name__,
++                  mono_start=selected_start, sec=time.monotonic()-selected_start,
++                  source_sha256=original_hash, prompt_sha256=_sha(prompt))
++            reason = 'selector_exception'
++            return
++        trace(out, 'review_select', **selected, mono_start=selected_start,
++              sec=time.monotonic()-selected_start, source_sha256=original_hash,
++              prompt_sha256=_sha(prompt))
++        remaining_calls = repairs - attempt
++        remaining_s = deadline_mono - time.monotonic()
++        admission = config['llm_cap_s'] + config['compile_cap_s'] + config['cleanup_reserve_s']
++        reason = ('observe' if mode == 'observe' else
++                  'selection_' + selected.get('decision', 'invalid') if selected.get('decision') != 'review' else
++                  'call_budget' if remaining_calls <= 0 else
++                  'time_budget' if remaining_s < admission else 'admitted')
++        trace(out, 'review_budget', calls_used=used, calls_remaining=remaining_calls,
++              remaining_s=remaining_s, admission_s=admission, reason=reason)
++        if reason != 'admitted':
++            status = 'bypassed'
++            return
++        old_interface = _interface_signature(accepted_source)
++        interface_text = Path(iface).read_text(encoding='utf-8') if iface and Path(iface).is_file() else ''
++        specified_interface = _interface_signature(interface_text) if interface_text.strip() else None
++        if old_interface is None or (interface_text.strip() and
++                                     (specified_interface is None or old_interface != specified_interface)):
++            reason = 'accepted_interface_unparseable_or_mismatch'
++            return
++        review_dir = out / 'review'
++        review_dir.mkdir()
++        body = dict(model=model,
++                    messages=[dict(role='system', content=skill+'\n'+repair_skill),
++                              dict(role='user', content=prompt+'\nPrevious candidate:\n'+accepted_source+'\n'+template)],
++                    temperature=float(os.environ.get('RTL_TEMPERATURE', '0')),
++                    top_p=1.0, max_tokens=int(os.environ.get('RTL_MAX_TOKENS', '8192')))
++        request_path, response_path = review_dir/'request.json', review_dir/'response.json'
++        write(request_path, json.dumps({'body': body, 'socket_cap_s': config['socket_cap_s']}, ensure_ascii=False))
++        request_hash = _sha(json.dumps(body).encode())
++        now = time.monotonic()
++        client_deadline = min(now+config['llm_cap_s'], deadline_mono-config['compile_cap_s']-config['cleanup_reserve_s'])
++        if client_deadline <= now:
++            reason = 'time_budget_before_llm'
++            return
++        used += 1
++        trace(out, 'review_llm_start', call_id='optional_review_1', request_sha256=request_hash,
++              model=model, temperature=body['temperature'], top_p=body['top_p'], max_tokens=body['max_tokens'],
++              mono_start=now, stage_deadline_mono=client_deadline, calls_used=used)
++        stage = _bounded_command([sys.executable, str(ROOT/'runtime.py'), 'review-call',
++                                  str(request_path), str(response_path), '--deadline-mono', str(client_deadline)],
++                                 review_dir, review_dir/'client.log', client_deadline-now,
++                                 config['cleanup_reserve_s'])
++        if stage['timeout'] or stage['rc'] != 0 or not response_path.is_file():
++            llm_logged = True
++            trace(out, 'review_llm_end', **stage, mono_end=time.monotonic(),
++                  error='client_timeout' if stage['timeout'] else 'client_failed',
++                  shared_model_cancellation='unknown')
++            reason = 'client_timeout' if stage['timeout'] else 'client_failed'
++            return
++        response = json.loads(response_path.read_text(encoding='utf-8'))
++        if response.get('error'):
++            llm_logged = True
++            trace(out, 'review_llm_end', **stage, mono_end=time.monotonic(),
++                  error=response['error'], shared_model_cancellation='unknown')
++            reason = 'llm_error'
++            return
++        payload = response['payload']
++        choice = payload['choices'][0]
++        usage = payload.get('usage') or {}
++        cache = {key: value for key, value in payload.items() if 'cache' in key.lower() or key == 'timings'}
++        llm_logged = True
++        trace(out, 'review_llm_end', **stage, mono_end=time.monotonic(), finish=choice.get('finish_reason'),
++              tokens_in=usage.get('prompt_tokens'), tokens_out=usage.get('completion_tokens'),
++              usage=usage, cache=cache, shared_model_cancellation='not_requested_response_received')
++        import baseline
++        candidate = baseline.extract(choice['message'].get('content') or '', 'rtl')
++        new_hash = _sha(candidate)
++        write(review_dir/'candidate.sv', candidate)
++        forbidden = re.search(r'`include|\$(?:readmem\w*|writemem\w*|dumpfile|dumpvars|dumpall|dumpon|dumpoff|'
++                              r'fopen|fclose|fdisplay\w*|fwrite\w*|fmonitor\w*|fstrobe\w*|fscanf|fread|'
++                              r'fgets|feof|fflush|rewind|ftell|fseek|ferror|system)\b', candidate)
++        gates = {'nonempty': bool(candidate.strip()), 'nonlength': choice.get('finish_reason') != 'length',
++                 'no_file_io': not forbidden,
++                 'complete_module': bool(re.search(r'\bmodule\s+TopModule\b', candidate) and
++                                         re.search(r'\bendmodule\b', candidate)),
++                 'same_interface': _interface_signature(candidate) == old_interface}
++        try:
++            gates['self_contained'] = not undefined_submodules(candidate)
++        except Exception:
++            gates['self_contained'] = False
++        trace(out, 'review_validate', source_sha256=new_hash, gates=gates)
++        if not all(gates.values()):
++            reason = 'candidate_gate:' + ','.join(key for key, value in gates.items() if not value)
++            return
++        if candidate == accepted_source:
++            status, reason = 'unchanged', 'identical_source'
++            return
++        tool = vivado_tool('xvlog')
++        if not tool:
++            reason = 'xvlog_unavailable'
++            return
++        cap = min(config['compile_cap_s'], deadline_mono-time.monotonic()-config['cleanup_reserve_s'])
++        if cap <= 0:
++            reason = 'time_budget_before_compile'
++            return
++        compile_dir = review_dir/'compile'
++        compile_dir.mkdir()
++        write(compile_dir/'candidate.sv', candidate)
++        log_path = compile_dir/'xvlog.log'
++        stage = _bounded_command([tool, '--sv', str(compile_dir/'candidate.sv')], compile_dir,
++                                 log_path, cap, config['cleanup_reserve_s'])
++        trace(out, 'review_validate', source_sha256=new_hash, **stage,
++              log_path=str(log_path), log_sha256=_sha(log_path.read_bytes()),
++              remaining_s=deadline_mono-time.monotonic())
++        if stage['timeout'] or stage['rc'] != 0:
++            reason = 'compile_timeout' if stage['timeout'] else 'compile_failed'
++            return
++        if deadline_mono-time.monotonic() < config['cleanup_reserve_s']:
++            reason = 'time_budget_before_commit'
++            return
++        # solution.v has contained accepted_source throughout review. Write the
++        # replacement beside it, then atomically switch complete files.
++        replacement = out/'solution.review.tmp'
++        write(replacement, candidate)
++        os.replace(replacement, out/'solution.v')
++        final_hash = new_hash
++        status, reason = 'accepted', 'static_and_compile_gates_only'
++    except Exception as exc:
++        reason = 'exception:' + type(exc).__name__
++    finally:
++        if used > model_calls and not llm_logged:
++            trace(out, 'review_llm_end', error=reason, mono_end=time.monotonic(),
++                  shared_model_cancellation='unknown')
++        trace(out, 'review_commit', mode=config['mode'] if config else 'invalid',
++              status=status, reason=reason, original_sha256=original_hash,
++              candidate_sha256=new_hash, final_sha256=final_hash, model_calls=used,
++              sec=time.monotonic()-started, functional_improvement='unverified')
++
++
++def worker(task, out, deadline_mono=None):
++    task = Path(task).resolve()
++    out = Path(out).resolve()
++    started = time.monotonic()
++    if deadline_mono is None:
++        deadline_mono = started + float(os.environ.get('AGENT_DEADLINE_S', '300'))
++    try:
++        _worker_impl(task, out, deadline_mono)
++    finally:
++        try:
++            events = [json.loads(line) for line in (out/'trace.jsonl').read_text(encoding='utf-8').splitlines()]
++            calls = sum(event.get('tool') in ('llm_start', 'review_llm_start') for event in events)
++            commit = next((event for event in reversed(events) if event.get('tool') == 'review_commit'), {})
++            trace(out, 'worker_done', mono_start=started, mono_end=time.monotonic(),
++                  elapsed_s=time.monotonic()-started, deadline_reached=time.monotonic() >= deadline_mono,
++                  final_sha256=_sha((out/'solution.v').read_bytes()), model_calls=calls,
++                  return_source='reviewed' if commit.get('status') == 'accepted' else 'original')
++        except (OSError, ValueError):
++            pass
++
++
++def _worker_impl(task, out, deadline_mono):
+     # Import ONLY the untouched extraction helper; never import the development evaluator.
+     import baseline
+     out = Path(out)
+@@ -432,6 +781,7 @@
+         raise ValueError('RTL_REPAIRS must be 0..2')
+     model = os.environ.get('MODEL_NAME') or models()[0]
+     code, feedback = '', ''
++    model_calls = 0
+     trace(out, 'agent_meta', boundary='prompt_only_candidate_compile',
+           skill_sha256=hashlib.sha256(skill.encode()).hexdigest(),
+           repair_skill_sha256=hashlib.sha256(repair_skill.encode()).hexdigest(), repairs=repairs)
+@@ -441,6 +791,7 @@
+                                          dict(role='user', content=user)],
+                     temperature=float(os.environ.get('RTL_TEMPERATURE', '0')),
+                     top_p=1.0, max_tokens=int(os.environ.get('RTL_MAX_TOKENS', '8192')))
++        model_calls += 1
+         trace(out, 'llm_start', round=attempt)
+         try:
+             req = urllib.request.Request(endpoint() + '/chat/completions',
+@@ -523,8 +874,12 @@
+                 if again.returncode == 0:
+                     write(out / 'solution.v', patched)
+                     trace(out, 'declaration_fix', rc=0, round=attempt)
++                    finish_compiled(prompt, patched, out, attempt, repairs, model, skill, repair_skill,
++                                    deadline_mono, model_calls, iface)
+                     return  # Compilation is NOT an official L1/L2/L3 judgement.
+         if result.returncode == 0:
++            finish_compiled(prompt, code, out, attempt, repairs, model, skill, repair_skill,
++                            deadline_mono, model_calls, iface)
+             return  # Compilation is NOT an official L1/L2/L3 judgement.
+ 
+ 
+@@ -604,10 +959,11 @@
+ 
+ def main():
+     p = argparse.ArgumentParser()
+-    p.add_argument('action', choices=('run', 'baseline', 'worker', 'serve'))
++    p.add_argument('action', choices=('run', 'baseline', 'worker', 'review-call', 'serve'))
+     p.add_argument('task', nargs='?')
+     p.add_argument('out', nargs='?')
+     p.add_argument('--port', type=int, default=7860)
++    p.add_argument('--deadline-mono', type=float)
+     args = p.parse_args()
+     if args.action == 'serve':
+         if not os.environ.get('FPGACHINA_TOKEN'):
+@@ -618,8 +974,10 @@
+         ThreadingHTTPServer(('127.0.0.1', args.port), Handler).serve_forever()
+     elif args.task is None or args.out is None:
+         p.error('task_dir and out_dir required')
++    elif args.action == 'review-call':
++        review_call(args.task, args.out, args.deadline_mono)
+     elif args.action == 'worker':
+-        worker(args.task, args.out)
++        worker(args.task, args.out, args.deadline_mono)
+     else:
+         run_job('agent' if args.action == 'run' else 'baseline', args.task, args.out,
+                 float(os.environ.get('AGENT_DEADLINE_S', '300')))
