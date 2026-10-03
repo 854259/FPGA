@@ -1,0 +1,91 @@
+----------------------------------------------------------------
+DEPLOY ACCEPTANCE v2 -- EXECUTE (controlled)
+self sha256: 0514eb27f116f5aaac369b2e19ffb761e61ca13a91ed6f2913fe4341b6010594
+----------------------------------------------------------------
+
+== preflight
+model 8000 HTTP 200 owner 2013333
+agent 7860 HTTP 000 owner none
+eval  none
+slot  codex_takeover_20261003
+deployed   entry /workspace/team/serve_all.sh
+           sha256 47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556
+submission entry /workspace/team/tasks/autodl-rtl-kit/project/submission/serve/serve_all.sh
+           sha256 47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556
+official judge   /workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/judge.py
+           sha256 02238c62b598de5a835374b8dcbff9eebbeca7cd9fc01db8b5aad2d018882e10
+PASS     ENTRY-HASH-MATCH                           deployed copy == submission package
+PASS     MANIFEST-RUNTIME                           manifest runtime.sha256 == disk (agent/runtime.py)
+PASS     MANIFEST-ENTRY                             supervisor path and hash match the submission entry
+INFO     ENTRY-RUN-PINNED                           running experiment pinned serve/serve_all.sh=2d349432e0189eb146f7ffb137b3eac95339b483f0042b1e5672f3bd4d6e1e6d, disk=47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556: that run's provenance refers to the earlier version (serve_all.sh is not read by official_eval.py)
+INFO     RESIDUE-BASELINE                           6 EDA process(es) pre-existed this run; they are never cleaned by this script
+PASS     EXECUTE-GATE                               token set, no eval running, slot held by operator, package verified
+UNTESTED MODEL-PREEXISTING                          pid 2013333 served 8000 before this run: external, not adopted, not killed
+
+== start from the submission entry
+guardian pid=2768857 starttime=828512483 entry=/workspace/team/serve_all.sh
+PASS     EXEC-START-guardian                        pid=2768857 starttime=828512483 logs=/workspace/team/codex_takeover_20261003/deploy_execute_071115/serve_logs
+PASS     EXEC-READY                                 OK ready=true track=rtl health.model=Qwen3.6-27B-Q4_K_M models.id=Qwen3.6-27B-Q4_K_M
+PASS     RESIDUE-AFTER-START                        no new EDA process vs baseline (baseline had 6)
+
+== http contract
+PASS     HTTP-NOTOKEN-health                        401 as required
+PASS     HTTP-NOTOKEN-solve                         401 as required
+PASS     HTTP-MISSING-FIELDS                        400 {"error": "task_id must be a string"}
+PASS     HTTP-BAD-JSON                              400
+PASS     HTTP-DEADLINE-ZERO                         400
+PASS     HTTP-BAD-MODE                              400
+PASS     HTTP-OVERSIZE-BODY                         400 (1.2 MB rejected)
+PASS     HTTP-UNKNOWN-PATH                          404
+PASS     HTTP-SHORT-DEADLINE                        200, solution len=0, elapsed_s=0.904 (empty string is the contract answer, not an error)
+
+== normal solve + official judge on a fixed small task
+PASS     SOLVE-NONEMPTY                             non-empty RTL (84 chars)
+PASS     OFFICIAL-JUDGE                             level L3 on Prob007_wire, judge sha=02238c62b598de5a835374b8dcbff9eebbeca7cd9fc01db8b5aad2d018882e10
+
+== concurrency, then recovery
+PASS     CONCURRENCY                                codes 200/200, solution lens 84/84 (>=1 non-empty)
+PASS     REC-postconc-health                        OK ready=true track=rtl health.model=Qwen3.6-27B-Q4_K_M models.id=Qwen3.6-27B-Q4_K_M
+PASS     REC-postconc-model-identity                /v1/models id=Qwen3.6-27B-Q4_K_M == alias
+PASS     REC-postconc-solve                         non-empty RTL (84 chars)
+PASS     REC-postconc-judge                         official judge L3 on Prob007_wire
+
+== controlled fault injection A: agent (SIGKILL, in-flight request)
+in-flight request started (bg pid 2771504); descendants so far:  2771531:828519730
+PASS     FAULT-A-OWNERSHIP                          agent pid=2768884 starttime=828512487 verified (cmdline+exe+port+starttime)
+INFO     FAULT-A-KILL                               SIGKILL sent to verified pid 2768884; in-flight request code=000
+PASS     FAULT-A-RESTART                            new agent pid=2771854 starttime=828521737 (old 2768884)
+PASS     FAULT-A-NEW-OWNERSHIP                      restarted agent verified
+PASS     FAULT-A-LEFTOVERS                          no surviving descendants after SIGKILL
+PASS     RESIDUE-AFTER-FAULT-A                      no new EDA process vs baseline (baseline had 6)
+PASS     REC-postagent-health                       OK ready=true track=rtl health.model=Qwen3.6-27B-Q4_K_M models.id=Qwen3.6-27B-Q4_K_M
+PASS     REC-postagent-model-identity               /v1/models id=Qwen3.6-27B-Q4_K_M == alias
+PASS     REC-postagent-solve                        non-empty RTL (84 chars)
+PASS     REC-postagent-judge                        official judge L3 on Prob007_wire
+
+== controlled fault injection B: model
+UNTESTED FAULT-B-RESTART                            pre-existing model pid 2013333 is shared; never signalled by this test
+
+== SIGTERM contract (10s, API_CONTRACT.md L287), in-flight request
+in-flight request started (bg pid 2773246); descendants so far:  2773258:828525275
+PASS     SIGTERM-EXIT                               exited after 117 ms (limit 10s)
+PASS     SIGTERM-RESTART                            guardian restarted agent pid=2773567
+PASS     SIGTERM-LEFTOVERS                          no surviving descendants after SIGTERM
+PASS     RESIDUE-AFTER-SIGTERM                      no new EDA process vs baseline (baseline had 6)
+PASS     REC-postsigterm-health                     OK ready=true track=rtl health.model=Qwen3.6-27B-Q4_K_M models.id=Qwen3.6-27B-Q4_K_M
+PASS     REC-postsigterm-model-identity             /v1/models id=Qwen3.6-27B-Q4_K_M == alias
+PASS     REC-postsigterm-solve                      non-empty RTL (84 chars)
+PASS     REC-postsigterm-judge                      official judge L3 on Prob007_wire
+
+== end state
+guardian pid=2768857 starttime=828512483 ownership=OK
+INFO     END-GUARDIAN                               restore mode: this run's guardian is stopped in cleanup; no standing-by claim
+PASS     END-EXTERNAL-MODEL                         pre-existing model pid 2013333 alive and untouched
+PASS     END-ENTRY-UNCHANGED                        entry hash unchanged during the run
+PASS     RESIDUE-END                                no new EDA process vs baseline (baseline had 6)
+final /v1/models: Qwen3.6-27B-Q4_K_M|Qwen3.6-27B-Q4_K_M
+final health: HTTP 200 {"ready": true, "track": "rtl", "model": "Qwen3.6-27B-Q4_K_M", "vram_gb": 18.937}
+UNTESTED END-REBOOT-AUTOSTART                       full-machine reboot autostart not tested (no reboot performed)
+summary written: /workspace/team/codex_takeover_20261003/deploy_execute_071115/summary.json
+cleanup: stopping this run's guardian pid=2768857
+cleanup: stopping the agent this run started pid=2773567

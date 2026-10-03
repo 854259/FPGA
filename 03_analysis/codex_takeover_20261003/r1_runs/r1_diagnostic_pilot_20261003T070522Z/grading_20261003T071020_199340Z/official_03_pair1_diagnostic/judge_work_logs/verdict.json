@@ -1,0 +1,28 @@
+{
+  "dut": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_03_pair1_diagnostic/judge-scratch-cl8f95g6/judge_Prob156_review2015_fancytimer_2766539/dut.sv",
+  "ref": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob156_review2015_fancytimer/ref.sv",
+  "test": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob156_review2015_fancytimer/tb.sv",
+  "level": 0,
+  "verdict": "L0",
+  "stages": {
+    "xvlog_dut": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xvlog_fixture": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xelab": {
+      "rc": 1,
+      "sec": 1.12,
+      "timeout": false
+    }
+  },
+  "mismatches": null,
+  "samples": null,
+  "sim_timeout": false,
+  "vivado_version": "2026.1",
+  "sv_seed": "0",
+  "log": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_03_pair1_diagnostic/judge-scratch-cl8f95g6/judge_Prob156_review2015_fancytimer_2766539/w/judge.log"
+}

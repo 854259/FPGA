@@ -1,0 +1,139 @@
+{
+  "complete": true,
+  "status": "generated_ungraded",
+  "plan_sha256": "b1ee5b8733d8feb56d9c6536d427a88835673aa47b90791b8ca86b9ab3381bf1",
+  "model_slot_owner": "codex_takeover_20261003",
+  "slot_sha256": "2cb504116911d80aee78c74456bc0424c1612657d3fe489ed5ad36bf57d9a116",
+  "calls_attempted": 6,
+  "records": [
+    {
+      "sequence": 0,
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "00_pair0_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+      "wall_seconds": 41.52801229339093,
+      "error": null,
+      "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+      "empty": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1195,
+        "prompt_tokens": 2564,
+        "total_tokens": 3759,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        }
+      },
+      "response_model": "Qwen3.6-27B-Q4_K_M"
+    },
+    {
+      "sequence": 1,
+      "pair": 0,
+      "arm": "control",
+      "directory": "01_pair0_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+      "wall_seconds": 41.87740710284561,
+      "error": null,
+      "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+      "empty": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1211,
+        "prompt_tokens": 2430,
+        "total_tokens": 3641,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        }
+      },
+      "response_model": "Qwen3.6-27B-Q4_K_M"
+    },
+    {
+      "sequence": 2,
+      "pair": 1,
+      "arm": "control",
+      "directory": "02_pair1_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+      "wall_seconds": 41.424848473630846,
+      "error": null,
+      "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+      "empty": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1211,
+        "prompt_tokens": 2430,
+        "total_tokens": 3641,
+        "prompt_tokens_details": {
+          "cached_tokens": 2426
+        }
+      },
+      "response_model": "Qwen3.6-27B-Q4_K_M"
+    },
+    {
+      "sequence": 3,
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "03_pair1_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+      "wall_seconds": 41.473718139342964,
+      "error": null,
+      "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+      "empty": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1195,
+        "prompt_tokens": 2564,
+        "total_tokens": 3759,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        }
+      },
+      "response_model": "Qwen3.6-27B-Q4_K_M"
+    },
+    {
+      "sequence": 4,
+      "pair": 2,
+      "arm": "diagnostic",
+      "directory": "04_pair2_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+      "wall_seconds": 40.83219608385116,
+      "error": null,
+      "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+      "empty": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1195,
+        "prompt_tokens": 2564,
+        "total_tokens": 3759,
+        "prompt_tokens_details": {
+          "cached_tokens": 2560
+        }
+      },
+      "response_model": "Qwen3.6-27B-Q4_K_M"
+    },
+    {
+      "sequence": 5,
+      "pair": 2,
+      "arm": "control",
+      "directory": "05_pair2_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+      "wall_seconds": 42.12464300263673,
+      "error": null,
+      "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+      "empty": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1211,
+        "prompt_tokens": 2430,
+        "total_tokens": 3641,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        }
+      },
+      "response_model": "Qwen3.6-27B-Q4_K_M"
+    }
+  ],
+  "grading_performed": false,
+  "served_model_before": "Qwen3.6-27B-Q4_K_M",
+  "total_call_wall_s": 249.26082509569824
+}

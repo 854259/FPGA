@@ -1,0 +1,48 @@
+{
+  "dut": "/workspace/team/runs/fpga_owner/codex_takeover_judge_smoke_20261003T0704/judge-scratch-od8vo82d/judge_Prob005_notgate_2764419/dut.sv",
+  "ref": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob005_notgate/ref.sv",
+  "test": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob005_notgate/tb.sv",
+  "level": 3,
+  "verdict": "L3",
+  "stages": {
+    "xvlog_dut": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xvlog_fixture": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xelab": {
+      "rc": 0,
+      "sec": 1.17,
+      "timeout": false
+    },
+    "xsim": {
+      "rc": 0,
+      "sec": 3.37,
+      "timeout": false
+    },
+    "synth": {
+      "status": "OK",
+      "LUT": 1,
+      "FF": 0,
+      "DSP": 0,
+      "BRAM": 0,
+      "SRL": 0,
+      "CARRY": 0,
+      "MUXF": 0,
+      "has_clk": 0,
+      "WNS_ns": "",
+      "Fmax_MHz": "",
+      "sec": 20.04,
+      "log": "/workspace/team/runs/fpga_owner/codex_takeover_judge_smoke_20261003T0704/judge-scratch-od8vo82d/judge_Prob005_notgate_2764419/w/synth/synth.log"
+    }
+  },
+  "mismatches": 0,
+  "samples": 239,
+  "sim_timeout": false,
+  "vivado_version": "2026.1",
+  "sv_seed": "0",
+  "log": "/workspace/team/runs/fpga_owner/codex_takeover_judge_smoke_20261003T0704/judge-scratch-od8vo82d/judge_Prob005_notgate_2764419/w/judge.log"
+}

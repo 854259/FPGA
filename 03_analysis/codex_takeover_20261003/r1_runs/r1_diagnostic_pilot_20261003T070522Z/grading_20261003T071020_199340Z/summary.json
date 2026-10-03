@@ -1,0 +1,685 @@
+{
+  "complete": true,
+  "status": "graded_complete",
+  "output": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z",
+  "task_id": "Prob156_review2015_fancytimer",
+  "samples": [
+    {
+      "sequence": 0,
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "00_pair0_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+      "generation": {
+        "sequence": 0,
+        "pair": 0,
+        "arm": "diagnostic",
+        "directory": "00_pair0_diagnostic",
+        "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+        "wall_seconds": 41.52801229339093,
+        "error": null,
+        "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1195,
+          "prompt_tokens": 2564,
+          "total_tokens": 3759,
+          "prompt_tokens_details": {
+            "cached_tokens": 2048
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/00_pair0_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob156_review2015_fancytimer",
+        "top": "TopModule",
+        "level": 0,
+        "coefficient": 0.0,
+        "stages": {
+          "compile": false,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 4.4,
+        "work_dir": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_00_pair0_diagnostic/judge-scratch-afytel4m/judge_Prob156_review2015_fancytimer_2765417",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4810,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_00_pair0_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 4.417480674572289,
+      "official_directory": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_00_pair0_diagnostic",
+      "structure": {
+        "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+        "passed": false,
+        "empty": false,
+        "xvlog": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+            "-sv",
+            "--nolog",
+            "dut.sv"
+          ],
+          "timeout": false,
+          "returncode": 0,
+          "pid": 2767661,
+          "wall_seconds": 1.1156354257836938
+        },
+        "xelab": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "timeout": false,
+          "returncode": 1,
+          "pid": 2767754,
+          "wall_seconds": 1.1159642338752747
+        },
+        "testbench_used": false
+      },
+      "structure_wall_seconds": 2.2331714909523726
+    },
+    {
+      "sequence": 1,
+      "pair": 0,
+      "arm": "control",
+      "directory": "01_pair0_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+      "generation": {
+        "sequence": 1,
+        "pair": 0,
+        "arm": "control",
+        "directory": "01_pair0_control",
+        "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+        "wall_seconds": 41.87740710284561,
+        "error": null,
+        "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1211,
+          "prompt_tokens": 2430,
+          "total_tokens": 3641,
+          "prompt_tokens_details": {
+            "cached_tokens": 2048
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/01_pair0_control/solution.v",
+      "verdict": {
+        "task_id": "Prob156_review2015_fancytimer",
+        "top": "TopModule",
+        "level": 0,
+        "coefficient": 0.0,
+        "stages": {
+          "compile": false,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 4.4,
+        "work_dir": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_01_pair0_control/judge-scratch-_r5nl1cl/judge_Prob156_review2015_fancytimer_2765791",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4786,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_01_pair0_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 4.448979243636131,
+      "official_directory": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_01_pair0_control",
+      "structure": {
+        "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+        "passed": false,
+        "empty": false,
+        "xvlog": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+            "-sv",
+            "--nolog",
+            "dut.sv"
+          ],
+          "timeout": false,
+          "returncode": 0,
+          "pid": 2767849,
+          "wall_seconds": 1.115759965032339
+        },
+        "xelab": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "timeout": false,
+          "returncode": 1,
+          "pid": 2767942,
+          "wall_seconds": 1.1156190866604447
+        },
+        "testbench_used": false
+      },
+      "structure_wall_seconds": 2.2328243535012007
+    },
+    {
+      "sequence": 2,
+      "pair": 1,
+      "arm": "control",
+      "directory": "02_pair1_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+      "generation": {
+        "sequence": 2,
+        "pair": 1,
+        "arm": "control",
+        "directory": "02_pair1_control",
+        "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+        "wall_seconds": 41.424848473630846,
+        "error": null,
+        "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1211,
+          "prompt_tokens": 2430,
+          "total_tokens": 3641,
+          "prompt_tokens_details": {
+            "cached_tokens": 2426
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/02_pair1_control/solution.v",
+      "verdict": {
+        "task_id": "Prob156_review2015_fancytimer",
+        "top": "TopModule",
+        "level": 0,
+        "coefficient": 0.0,
+        "stages": {
+          "compile": false,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 4.4,
+        "work_dir": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_02_pair1_control/judge-scratch-x85_i2t0/judge_Prob156_review2015_fancytimer_2766165",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4786,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_02_pair1_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 4.4135236935690045,
+      "official_directory": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_02_pair1_control",
+      "structure": {
+        "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+        "passed": false,
+        "empty": false,
+        "xvlog": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+            "-sv",
+            "--nolog",
+            "dut.sv"
+          ],
+          "timeout": false,
+          "returncode": 0,
+          "pid": 2768035,
+          "wall_seconds": 1.1156707350164652
+        },
+        "xelab": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "timeout": false,
+          "returncode": 1,
+          "pid": 2768128,
+          "wall_seconds": 1.1154213370755315
+        },
+        "testbench_used": false
+      },
+      "structure_wall_seconds": 2.2324303444474936
+    },
+    {
+      "sequence": 3,
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "03_pair1_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+      "generation": {
+        "sequence": 3,
+        "pair": 1,
+        "arm": "diagnostic",
+        "directory": "03_pair1_diagnostic",
+        "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+        "wall_seconds": 41.473718139342964,
+        "error": null,
+        "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1195,
+          "prompt_tokens": 2564,
+          "total_tokens": 3759,
+          "prompt_tokens_details": {
+            "cached_tokens": 2048
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/03_pair1_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob156_review2015_fancytimer",
+        "top": "TopModule",
+        "level": 0,
+        "coefficient": 0.0,
+        "stages": {
+          "compile": false,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 4.4,
+        "work_dir": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_03_pair1_diagnostic/judge-scratch-cl8f95g6/judge_Prob156_review2015_fancytimer_2766539",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4810,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_03_pair1_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 4.422312649898231,
+      "official_directory": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_03_pair1_diagnostic",
+      "structure": {
+        "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+        "passed": false,
+        "empty": false,
+        "xvlog": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+            "-sv",
+            "--nolog",
+            "dut.sv"
+          ],
+          "timeout": false,
+          "returncode": 0,
+          "pid": 2768222,
+          "wall_seconds": 1.1157124554738402
+        },
+        "xelab": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "timeout": false,
+          "returncode": 1,
+          "pid": 2768315,
+          "wall_seconds": 1.1156896548345685
+        },
+        "testbench_used": false
+      },
+      "structure_wall_seconds": 2.232804551720619
+    },
+    {
+      "sequence": 4,
+      "pair": 2,
+      "arm": "diagnostic",
+      "directory": "04_pair2_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+      "generation": {
+        "sequence": 4,
+        "pair": 2,
+        "arm": "diagnostic",
+        "directory": "04_pair2_diagnostic",
+        "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05",
+        "wall_seconds": 40.83219608385116,
+        "error": null,
+        "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1195,
+          "prompt_tokens": 2564,
+          "total_tokens": 3759,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/04_pair2_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob156_review2015_fancytimer",
+        "top": "TopModule",
+        "level": 0,
+        "coefficient": 0.0,
+        "stages": {
+          "compile": false,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 4.4,
+        "work_dir": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_04_pair2_diagnostic/judge-scratch-lrnms6o9/judge_Prob156_review2015_fancytimer_2766913",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4810,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_04_pair2_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 4.423935787752271,
+      "official_directory": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_04_pair2_diagnostic",
+      "structure": {
+        "solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+        "passed": false,
+        "empty": false,
+        "xvlog": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+            "-sv",
+            "--nolog",
+            "dut.sv"
+          ],
+          "timeout": false,
+          "returncode": 0,
+          "pid": 2768408,
+          "wall_seconds": 1.1156482147052884
+        },
+        "xelab": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "timeout": false,
+          "returncode": 1,
+          "pid": 2768501,
+          "wall_seconds": 1.1156888948753476
+        },
+        "testbench_used": false
+      },
+      "structure_wall_seconds": 2.232733082026243
+    },
+    {
+      "sequence": 5,
+      "pair": 2,
+      "arm": "control",
+      "directory": "05_pair2_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+      "generation": {
+        "sequence": 5,
+        "pair": 2,
+        "arm": "control",
+        "directory": "05_pair2_control",
+        "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288",
+        "wall_seconds": 42.12464300263673,
+        "error": null,
+        "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 1211,
+          "prompt_tokens": 2430,
+          "total_tokens": 3641,
+          "prompt_tokens_details": {
+            "cached_tokens": 2048
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/05_pair2_control/solution.v",
+      "verdict": {
+        "task_id": "Prob156_review2015_fancytimer",
+        "top": "TopModule",
+        "level": 0,
+        "coefficient": 0.0,
+        "stages": {
+          "compile": false,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 4.4,
+        "work_dir": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_05_pair2_control/judge-scratch-0bldxsg2/judge_Prob156_review2015_fancytimer_2767287",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4786,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_05_pair2_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 4.421308082528412,
+      "official_directory": "/workspace/team/runs/fpga_owner/r1_diagnostic_pilot_20261003T070522Z/grading_20261003T071020_199340Z/official_05_pair2_control",
+      "structure": {
+        "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+        "passed": false,
+        "empty": false,
+        "xvlog": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+            "-sv",
+            "--nolog",
+            "dut.sv"
+          ],
+          "timeout": false,
+          "returncode": 0,
+          "pid": 2768594,
+          "wall_seconds": 1.115640314295888
+        },
+        "xelab": {
+          "command": [
+            "/workspace/AMD/2026.1/Vivado/bin/xelab",
+            "TopModule",
+            "-s",
+            "snapshot",
+            "--nolog",
+            "-timescale",
+            "1ps/1ps"
+          ],
+          "timeout": false,
+          "returncode": 1,
+          "pid": 2768687,
+          "wall_seconds": 1.1156922448426485
+        },
+        "testbench_used": false
+      },
+      "structure_wall_seconds": 2.232746822759509
+    }
+  ],
+  "errors": [],
+  "valid_samples": 6,
+  "planned_samples": 6,
+  "slot_owner": "codex_takeover_20261003",
+  "slot_sha256": "2cb504116911d80aee78c74456bc0424c1612657d3fe489ed5ad36bf57d9a116",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "arms": {
+    "diagnostic": {
+      "levels": [
+        0,
+        0,
+        0
+      ],
+      "level_counts": {
+        "L0": 3,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0
+      },
+      "coefficient_mean": 0.0,
+      "scored_samples": 3,
+      "planned_samples": 3,
+      "elaboration_passed": 0,
+      "empty_answers": 0,
+      "truncated": 0,
+      "generation_wall_s": {
+        "values": [
+          41.52801229339093,
+          41.473718139342964,
+          40.83219608385116
+        ],
+        "mean": 41.27797550552835,
+        "min": 40.83219608385116,
+        "max": 41.52801229339093
+      },
+      "usage_by_pair": [
+        {
+          "completion_tokens": 1195,
+          "prompt_tokens": 2564,
+          "total_tokens": 3759,
+          "prompt_tokens_details": {
+            "cached_tokens": 2048
+          }
+        },
+        {
+          "completion_tokens": 1195,
+          "prompt_tokens": 2564,
+          "total_tokens": 3759,
+          "prompt_tokens_details": {
+            "cached_tokens": 2048
+          }
+        },
+        {
+          "completion_tokens": 1195,
+          "prompt_tokens": 2564,
+          "total_tokens": 3759,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560
+          }
+        }
+      ]
+    },
+    "control": {
+      "levels": [
+        0,
+        0,
+        0
+      ],
+      "level_counts": {
+        "L0": 3,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0
+      },
+      "coefficient_mean": 0.0,
+      "scored_samples": 3,
+      "planned_samples": 3,
+      "elaboration_passed": 0,
+      "empty_answers": 0,
+      "truncated": 0,
+      "generation_wall_s": {
+        "values": [
+          41.87740710284561,
+          41.424848473630846,
+          42.12464300263673
+        ],
+        "mean": 41.808966193037726,
+        "min": 41.424848473630846,
+        "max": 42.12464300263673
+      },
+      "usage_by_pair": [
+        {
+          "completion_tokens": 1211,
+          "prompt_tokens": 2430,
+          "total_tokens": 3641,
+          "prompt_tokens_details": {
+            "cached_tokens": 2048
+          }
+        },
+        {
+          "completion_tokens": 1211,
+          "prompt_tokens": 2430,
+          "total_tokens": 3641,
+          "prompt_tokens_details": {
+            "cached_tokens": 2426
+          }
+        },
+        {
+          "completion_tokens": 1211,
+          "prompt_tokens": 2430,
+          "total_tokens": 3641,
+          "prompt_tokens_details": {
+            "cached_tokens": 2048
+          }
+        }
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "pair": 0,
+      "diagnostic_level": 0,
+      "control_level": 0,
+      "coefficient_difference": 0.0
+    },
+    {
+      "pair": 1,
+      "diagnostic_level": 0,
+      "control_level": 0,
+      "coefficient_difference": 0.0
+    },
+    {
+      "pair": 2,
+      "diagnostic_level": 0,
+      "control_level": 0,
+      "coefficient_difference": 0.0
+    }
+  ],
+  "decision": "no_promotion_archive_this_implementation",
+  "scoring_source": "pinned official score.summarize({task_id: [v0,v1,v2]})",
+  "limits": "One previously selected candidate, three repeats per arm, no guards; not statistical significance, formal baseline gain, full-set improvement or five-sample validation.",
+  "synthesis_review_samples": [],
+  "grading_wall_seconds": 40.13077846169472
+}

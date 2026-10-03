@@ -1,0 +1,82 @@
+{
+  "schema": "r1-diagnostic-pilot-v1",
+  "task_id": "Prob156_review2015_fancytimer",
+  "status": "frozen_not_run",
+  "package": "/workspace/team/tasks/autodl-rtl-kit/project/submission",
+  "package_sha256": {
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+  },
+  "harness_sha256": "582c7a883e9bf5c735e624be8c7e9054b0fd3a8187e26ba1bc5af3c2fa8336ac",
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "endpoint": "http://127.0.0.1:8000/v1",
+  "input_sha256": {
+    "prompt.txt": "262f49e7ee666f52dd73fcc4077f172b7c50b549c9657e54cfc0849d419bd9f9",
+    "detect.json": "bb1bfa40308fe4df5665d8cd52f6a0339817ff77134eb6560c4d6ba8cc1aec63",
+    "candidate.sv": "ddda812b46cc944ca265f7cb0ef70af68877b9e73cf345a4a2dea7fa1ea3e0fb",
+    "diagnostics.txt": "6b4bdbe88ececa1f7bb493156bf7336ffc280ae687f200a429922e4f9faf31ae",
+    "provenance.json": "e9e268e3373b599e4875102885e6a3571a3556564027706436b42687e9d66c74"
+  },
+  "repetitions": 3,
+  "planned_calls": 6,
+  "per_call_wall_limit_s": 300,
+  "max_output_tokens_per_call": 8192,
+  "temperature": 0.0,
+  "seed": null,
+  "seed_note": "No seed is sent, matching runtime; three repetitions are not independent tasks.",
+  "sole_treatment": "candidate-only xelab diagnostics vs no diagnostic text",
+  "budget_note": "Same call/token/time caps; actual input/output tokens and time can differ.",
+  "evaluation": "External pinned official judge after all six candidates exist; never select best.",
+  "inputs_exclude": [
+    "task.json",
+    "testbench",
+    "reference",
+    "mismatch",
+    "official verdict"
+  ],
+  "records": [
+    {
+      "sequence": 0,
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "00_pair0_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05"
+    },
+    {
+      "sequence": 1,
+      "pair": 0,
+      "arm": "control",
+      "directory": "01_pair0_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288"
+    },
+    {
+      "sequence": 2,
+      "pair": 1,
+      "arm": "control",
+      "directory": "02_pair1_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288"
+    },
+    {
+      "sequence": 3,
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "03_pair1_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05"
+    },
+    {
+      "sequence": 4,
+      "pair": 2,
+      "arm": "diagnostic",
+      "directory": "04_pair2_diagnostic",
+      "request_sha256": "20ab87fcdaa7ae0dc05dec2ac3db066432c984ec3a76e6c25d76e870275e5a05"
+    },
+    {
+      "sequence": 5,
+      "pair": 2,
+      "arm": "control",
+      "directory": "05_pair2_control",
+      "request_sha256": "95af38d450f5ad64a3a64120af28598a34a52da765d58f1dd15b80d81c8ec288"
+    }
+  ]
+}

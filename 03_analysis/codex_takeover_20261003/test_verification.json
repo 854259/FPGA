@@ -1,0 +1,17 @@
+{
+  "full_suite": {
+    "command": "python -B -m unittest discover -s tests -q",
+    "tests": 208,
+    "passed": true,
+    "elapsed_s": 59.358,
+    "output": "unittest_final.txt"
+  },
+  "subsequent_narrow_check": {
+    "command": "python -B -m unittest discover -s tests -p test_api_failure_scoring.py -q",
+    "tests": 9,
+    "passed": true,
+    "new_cases_after_full_suite": 2
+  },
+  "evidence_git_bytes": "frozen input Git blobs compared byte-for-byte with files; gitattributes disables newline conversion for hashed raw evidence",
+  "code_commit": "44d64e679f19023825bbbc957f7aaaea53a64c6a"
+}

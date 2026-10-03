@@ -1,0 +1,29 @@
+{
+  "task_id": "Prob005_notgate",
+  "top": "TopModule",
+  "level": 3,
+  "coefficient": 1.0,
+  "stages": {
+    "compile": true,
+    "simulate": true,
+    "synth": true
+  },
+  "tool_error": null,
+  "elapsed_s": 27.9,
+  "mismatches": 0,
+  "samples": 239,
+  "work_dir": "/workspace/team/runs/fpga_owner/codex_takeover_judge_smoke_20261003T0704/judge-scratch-od8vo82d/judge_Prob005_notgate_2764419",
+  "judge_rc": 0,
+  "judge_evidence": [
+    "dut.sv",
+    "verdict.json",
+    "w_judge.log",
+    "w_synth_synth.json",
+    "w_synth_synth.log",
+    "w_synth_vivado.log"
+  ],
+  "judge_log_bytes": 32010,
+  "judge_evidence_complete": true,
+  "suspected_silent_degradation": false,
+  "judge_receipt": "/workspace/team/runs/fpga_owner/codex_takeover_judge_smoke_20261003T0704/judge_receipt.json"
+}

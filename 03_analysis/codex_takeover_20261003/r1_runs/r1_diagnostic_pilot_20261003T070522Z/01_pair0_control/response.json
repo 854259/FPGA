@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```verilog\nmodule TopModule (\n    input  clk,\n    input  reset,\n    input  data,\n    output [3:0] count,\n    output counting,\n    output done,\n    input  ack\n);\n\n    // State encoding\n    // S0: Search for '1'\n    // S1: Found '1', search for '1'\n    // S2: Found '11', search for '0'\n    // S3: Found '110', search for '1' -> Start detected\n    // S4: Shift in delay[3] (MSB)\n    // S5: Shift in delay[2]\n    // S6: Shift in delay[1]\n    // S7: Shift in delay[0] (LSB)\n    // S8: Counting\n    // S9: Done, wait for ack\n\n    typedef enum logic [3:0] {\n        S0 = 4'd0,\n        S1 = 4'd1,\n        S2 = 4'd2,\n        S3 = 4'd3,\n        S4 = 4'd4,\n        S5 = 4'd5,\n        S6 = 4'd6,\n        S7 = 4'd7,\n        S8 = 4'd8,\n        S9 = 4'd9\n    } state_t;\n\n    state_t state, next_state;\n\n    // Registers\n    logic [3:0] delay_reg;\n    logic [3:0] count_reg;\n    logic [9:0] cycle_cnt; // Counts up to 1000 (0 to 999)\n    logic counting_reg;\n    logic done_reg;\n\n    // Output assignments\n    assign count = (state == S8) ? count_reg : 4'b0;\n    assign counting = counting_reg;\n    assign done = done_reg;\n\n    // Next state logic and register updates\n    always_comb begin\n        next_state = state;\n        delay_reg = delay_reg;\n        count_reg = count_reg;\n        cycle_cnt = cycle_cnt;\n        counting_reg = counting_reg;\n        done_reg = done_reg;\n\n        case (state)\n            S0: begin\n                if (data == 1'b1)\n                    next_state = S1;\n                else\n                    next_state = S0;\n            end\n            S1: begin\n                if (data == 1'b1)\n                    next_state = S2;\n                else\n                    next_state = S0;\n            end\n            S2: begin\n                if (data == 1'b0)\n                    next_state = S3;\n                else\n                    next_state = S2;\n            end\n            S3: begin\n                if (data == 1'b1)\n                    next_state = S4;\n                else\n                    next_state = S0;\n            end\n            S4: begin\n                // Shift in MSB of delay\n                delay_reg = {delay_reg[2:0], data};\n                next_state = S5;\n            end\n            S5: begin\n                delay_reg = {delay_reg[2:0], data};\n                next_state = S6;\n            end\n            S6: begin\n                delay_reg = {delay_reg[2:0], data};\n                next_state = S7;\n            end\n            S7: begin\n                delay_reg = {delay_reg[2:0], data};\n                next_state = S8;\n                count_reg = delay_reg;\n                cycle_cnt = 10'd0;\n                counting_reg = 1'b1;\n                done_reg = 1'b0;\n            end\n            S8: begin\n                counting_reg = 1'b1;\n                done_reg = 1'b0;\n                if (cycle_cnt == 10'd999) begin\n                    // End of 1000 cycles\n                    if (count_reg == 4'd0) begin\n                        // Counting finished\n                        next_state = S9;\n                        counting_reg = 1'b0;\n                        done_reg = 1'b1;\n                    end else begin\n                        // Decrement count and reset cycle counter\n                        count_reg = count_reg - 1;\n                        cycle_cnt = 10'd0;\n                    end\n                end else begin\n                    cycle_cnt = cycle_cnt + 1;\n                end\n            end\n            S9: begin\n                done_reg = 1'b1;\n                counting_reg = 1'b0;\n                if (ack == 1'b1) begin\n                    next_state = S0;\n                    done_reg = 1'b0;\n                end\n            end\n            default: next_state = S0;\n        endcase\n    end\n\n    // Sequential logic\n    always_ff @(posedge clk) begin\n        if (reset) begin\n            state <= S0;\n            delay_reg <= 4'b0;\n            count_reg <= 4'b0;\n            cycle_cnt <= 10'd0;\n            counting_reg <= 1'b0;\n            done_reg <= 1'b0;\n        end else begin\n            state <= next_state;\n            delay_reg <= delay_reg;\n            count_reg <= count_reg;\n            cycle_cnt <= cycle_cnt;\n            counting_reg <= counting_reg;\n            done_reg <= done_reg;\n        end\n    end\n\nendmodule\n```"
+      }
+    }
+  ],
+  "created": 1791011206,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "system_fingerprint": "b1-c13fcbf",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1211,
+    "prompt_tokens": 2430,
+    "total_tokens": 3641,
+    "prompt_tokens_details": {
+      "cached_tokens": 2048
+    }
+  },
+  "id": "chatcmpl-6lPSRjYTX4okMNy517L7hfsnRXymQlP0",
+  "timings": {
+    "cache_n": 2048,
+    "prompt_n": 382,
+    "prompt_ms": 639.533,
+    "prompt_per_token_ms": 1.674170157068063,
+    "prompt_per_second": 597.3108502610498,
+    "predicted_n": 1211,
+    "predicted_ms": 41143.247,
+    "predicted_per_token_ms": 34.002683471074384,
+    "predicted_per_second": 29.409443547321384
+  }
+}

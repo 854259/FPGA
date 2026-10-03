@@ -14,17 +14,18 @@
     "horizon": "about_one_month_remaining_as_reported_by_user_not_official_deadline_verification",
     "roles": {
       "planning_and_review": "Codex",
-      "continuous_execution": "DeepSeek v4.1 Flash",
-      "optional_task_contributors": "teammates"
+      "continuous_execution": "Codex during authorized active work",
+      "optional_task_contributors": "teammates",
+      "previous_executor": "DeepSeek v4.1 Flash (historical)"
     },
-    "status": "planning_document_created_execution_not_dispatched_by_this_turn",
+    "status": "codex_takeover_implementation_and_bounded_research_in_progress",
     "plan": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
     "previous_plan_role": "foundation_and_acceptance_worklist_not_a_month_long_serial_gate",
     "strategy": "retain_a_recoverable_baseline_while_running_bounded_research_and_independent_evaluation_in_parallel",
     "routine_execution": "advance_autonomously_within_predeclared_scope_and_budget_escalate_substantive_research_decisions",
     "calendar_schedule_requested": false,
     "automation_created": false,
-    "deployment_changed": false
+    "deployment_changed": true
   },
   "execution_plan_review_20261003": {
     "status": "plan_written_cloud_read_only_runtime_experiment_still_running_at_snapshot",
@@ -53,7 +54,10 @@
   "report_consistency_followup_20261003": {
     "date": "2026-10-03",
     "status": "local_documentation_updated_runtime_experiment_pending",
-    "based_on_commits": ["e4037b5", "21d3d5a"],
+    "based_on_commits": [
+      "e4037b5",
+      "21d3d5a"
+    ],
     "changes": [
       "Synchronise both REPORT.md copies; keep historical skill scores unchanged; update current section 8 counts and deterministic-repair description.",
       "Attribute full156_declfix_20261003 to recorded runtime 22e32251, distinguish the later health-only cea6479c and experimental 728499f4.",
@@ -273,7 +277,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-03",
+  "last_updated": "2026-10-03T15:23:06+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -2026,7 +2030,7 @@
   },
   "runtime_validation_20261003": {
     "date": "2026-10-03",
-    "status": "running_no_conclusion_yet",
+    "status": "complete_failed_preregistered_nondecrease_rule",
     "single_variable": "runtime cea6479c -> 728499f4",
     "why_one_variable_is_enough": "of the three changes in 728499f4 only the declaration-repair boundary fix is on the grading path; vram_gb returning None and the health gate are only used by health(), which the solve path never calls",
     "the_change_under_test": "the old repair deleted the whole declaration line, so fixing q in 'reg q, state;' also discarded state and the patch was rejected on recompile; the new one removes only the named identifier",
@@ -2040,6 +2044,271 @@
     "control_run": "full156_declfix_20261003",
     "acceptance_rule_written_in_advance": "adopt and keep deployed if the agent set score does not fall; if it falls, restore and record as a negative result",
     "also_checked": "the declaration_fix trace events, to confirm the widened patch does not introduce new wrong edits",
-    "slot": "owner_runtime728, released by an exit trap which also restores the runtime"
+    "slot": "historical runtime728 experiment ended; see codex_takeover_20261003 for present resource ownership",
+    "result": {
+      "samples": 312,
+      "agent_old": 0.7667,
+      "agent_new": 0.7468,
+      "baseline_old": 0.6744,
+      "baseline_new": 0.6705,
+      "current_development_runtime": "728499f4",
+      "release_adopted": false,
+      "note": "Candidate remains available for correctness research; original failed experiment is not rewritten. Lack of accepted-repair events does not prove the repair path had no effect."
+    }
+  },
+  "rtllm_record_correction_20261003": {
+    "date": "2026-10-03",
+    "status": "records_were_stale_corrected_here_no_new_run",
+    "supersedes_stale_numbers": {
+      "stale": "2 pilots, 4 tasks rejudged, 29 not repaired/validated, 11 ambiguities",
+      "current": "cumulative 8 tasks rejudged, 24 not closed (21 L-class + 2 fixed-point + float_multi), 12 ambiguity-blocked (11 A-class + div_16bit)",
+      "source": "03_analysis/rtllm_contract_audit_20261002/pilot3_summary_projection.json (commit c7067d6) and VEVAL156 doc line 41"
+    },
+    "evidence_upgrade": {
+      "previous_belief": "only sanitised summary projections exist",
+      "actual": "all 7 cloud run directories are alive and were read directly, read-only: 44-task pair run plus 3 pilots plus 3 previously undisclosed failed predecessors",
+      "anchor": "taskset_manifest.json = 8349801dee5bdf6a90449d3dc5b3a65b87e50ac5d40c05cf2ca02a3657a9f341 (equals the recorded value)",
+      "projection_caveats": [
+        "the projections renamed every control mode (positive/negative/bad_sum/reset_sync became correct/old_incorrect_reference/...)",
+        "paired_changes.csv was trimmed from 7 columns to 5",
+        "the pilot3 projection omits two failed predecessors that exist in the raw summaries"
+      ]
+    },
+    "input_defect_findings": {
+      "double_module_name": "fixed only at the prompt layer in tasks_rtllm_fixed (0/49 duplicates), while the frozen 44-task set still has 23/44 duplicates; the fixed version was never reference-self-checked, never frozen and never used for any score",
+      "generator_cannot_rebuild_frozen_fixtures": "frozen 44 tasks vs the local generated set: tb.sv 44/44 differ, ref.sv 44/44 differ, task.json 44/44 identical, prompts 44/44 identical (pre-fix)",
+      "testbench_contract_coverage": "by the execution plan's criteria (positive control plus rejection of a deliberately wrong implementation) only 8 of 44 tasks (18.2%) count as checked; the other 36 are unverified; the mechanical output-flip negative control only proves the comparison channel is live",
+      "no_single_reference_selfcheck": "two fixture generations, 0.9860 (43 scored, 6 tool errors) and 0.9864 (44 scored, 0 tool errors), must not be quoted interchangeably; 0.5182/0.5591 bind only to the frozen patched set"
+    },
+    "ambiguous_tasks": 12,
+    "anti_selection_check": "of the 12 ambiguous tasks, 0 favour the agent and 2 are unfavourable, so the exclusion direction is not flattering",
+    "no_new_aggregate": true,
+    "remaining_before_task_E": [
+      "P1 back up the 7 raw cloud directories byte-for-byte (DONE 2026-10-03: /root/rtllm_evidence_backup_20261003, 14637 files, per-file hashes identical, plus an off-machine tar with a verified SHA-256)",
+      "P2 decide the prompt/interface generation for E (dual-track recommended)",
+      "P3 the corrected set must pass a reference self-check with zero tool errors",
+      "P4 own the model slot and EDA resources",
+      "P5 pin the judging-chain identities"
+    ],
+    "performed_by": "task-4 (rtllm-auditor), superseded stale numbers verified by the lead against the raw cloud directories",
+    "evidence": "03_analysis/rtllm_independent_20261003/"
+  },
+  "rtllm_evidence_backup_20261003": {
+    "date": "2026-10-03",
+    "status": "complete_two_copies_verified",
+    "why": "the cloud instance is the only site; releasing it would lose the evidence irreversibly",
+    "source": "/workspace/team/runs/fpga_teammate",
+    "files": 14637,
+    "bytes_du": "90M",
+    "second_copy_on_container_overlay": "/root/rtllm_evidence_backup_20261003/tree (verified: 14637 file hashes identical to the source, line-by-line diff of sorted sha256sum output)",
+    "off_machine_copy": "05_handoff/rtllm_evidence_20261003/rtllm_evidence_20261003.tgz",
+    "off_machine_sha256": "9184624410ef680ee237c97ac47ce462a77afd768ad6a3163a0885b32892ee2b",
+    "off_machine_sha256_verified_on_both_sides": true,
+    "anchor_reverified": "taskset_manifest.json = 8349801dee5bdf6a90449d3dc5b3a65b87e50ac5d40c05cf2ca02a3657a9f341",
+    "source_modified": false
+  },
+  "prob005_same_source_level_change_20261003": {
+    "date": "2026-10-03",
+    "status": "root_cause_under_investigation_strong_external_interference_signal_not_yet_proven",
+    "fact": "the agent answer is byte-identical across the two runs (sha256 37b326dbfcc213d2a187001fe9e7d16e0d994ec559c02e27171dfa00faa2d11c, 86 bytes, assign out = ~in;) yet the official verdict moved L3 to L2 with synth=false, mismatches=0, samples=239 and tool_error null in both",
+    "same_answer_passed_as_baseline": "in the new run the identical code scored L3 as baseline at 02:37:13Z, 29 s after the agent verdict",
+    "inputs_unchanged": "all 936 input_sha256 entries are identical between the two runs, so reference, testbench, task.json and prompt did not change",
+    "timeline_utc": {
+      "solution_v_written": "02:36:19.946",
+      "trace_written": "02:36:21.017",
+      "agent_judge_log_written": "02:36:43.969",
+      "agent_verdict_written": "02:36:43.972",
+      "baseline_verdict_written": "02:37:13.071",
+      "pkill_script_mtime": "02:36:43.902",
+      "interpretation": "the judge window is about 02:36:21 to 02:36:43.97, and the kill script was written 67 ms before the verdict, during the synthesis stage"
+    },
+    "mechanism_found": "/tmp/kp.sh (from the previous session, not this one) contains pkill -f 'vivado -mode batch', which matches the official judge's synthesis command line verbatim",
+    "corroborating_observation": "orphaned Vivado synthesis processes from that command were still alive about 3.4 hours later (a defunct parent plus an init-adopted parallel_synth_helper), proving the pattern did hit a real synthesis run; it does not by itself prove it hit this sample",
+    "empty_log_explained": "judge_logs loses its content because official_eval.py passes --quiet to veval-judge, so judge.py writes an empty raw dump; the detailed logs live in a workdir that is deleted unless SELFTEST_KEEP_WORK=1",
+    "required_handling": "do not alter the original verdict, do not regenerate RTL, do not rerun until a favourable result appears; re-judge the retained answer under fixed conditions in an isolated directory and save the underlying synthesis stdout/stderr, return codes, Tcl, part, licence information and the raw verdict",
+    "claim_boundary": "the runtime is not shown to have caused this regression, and zero counted tool errors only proves nothing was flagged, not that the environment was reliable",
+    "performed_by": "task-6 (prob005-forensics), timeline and orphan evidence verified by the lead"
+  },
+  "delivery_package_consistency_20261003": {
+    "date": "2026-10-03",
+    "status": "current_runtime_and_supervisor_manifest_verified_see_takeover_record",
+    "manifest_runtime_mismatch": {
+      "manifest_declares": "cea6479c6364fbfce55ca8129e8cfd7bb4b9afd3b2a4c7ae2e3cd381af2968b1",
+      "disk_actually_has": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97 (the candidate under test)",
+      "reading": "manifest.json has been wrong for the whole experiment, so package metadata cannot be treated as evidence of what is deployed"
+    },
+    "cloud_deploy_copy_is_stale": {
+      "direction": "local repository is newer; sync must be local to cloud",
+      "serve_all_three_generations": {
+        "local_HEAD_4cb57d3": "4c151ffe9dd70316 (9281 B) - the intended entry",
+        "cloud_team_root_9e2f80e": "7cbf2cfb58ef0cc6 (8809 B)",
+        "cloud_kit_copy_2a2eb22": "2d349432e0189eb1 (7526 B)",
+        "note": "the two cloud copies differ from each other, and the running experiment used a stale supervisor"
+      },
+      "other_stale_files": [
+        "submission/REPORT.md (cloud 23d17b0d vs local a4426ddf; the cloud copy lacks the current baseline section)",
+        "submission/model/MODEL.md (cloud ecc848a1 vs local cd8fcf62)",
+        "submission/Dockerfile (cloud 92b34987 vs local f24081e4)",
+        "submission/README.md (cloud 5025eadb vs local 4972c12a)",
+        "bench/http_endurance.py (cloud 7cf79184 vs local, the cloud concurrency assertion can crash the run)",
+        "bench/five_sample_quality.py (cloud 29fbab3a vs local, the cloud copy is missing three rounds of hardening)"
+      ],
+      "retired_script": "bench/five_sample_subset.py exists only in the cloud as a superseded snapshot (deleted in b8314b1); not restored"
+    },
+    "verification_tools_added": [
+      "04_project/amd_rtl_agent/bench/verify_package.py (checks manifest claims against actual file hashes, optional directory comparison)",
+      "04_project/amd_rtl_agent/bench/set_manifest_runtime.py (points the manifest runtime hash at the actually shipped version, adopted or rolled back)"
+    ],
+    "performed_by": "lead (package audit) and task-3 (script version audit)"
+  },
+  "deployment_acceptance_review_20261003": {
+    "date": "2026-10-03",
+    "status": "superseded_by_codex_takeover_tested_scope_passed_overall_incomplete",
+    "old_script": "/workspace/team/deploy_accept.sh, sha256 c7261bf61c9b1a12, local copy identical",
+    "defects": [
+      "it kills a model process chosen by a broad pgrep pattern before verifying ownership",
+      "some recovery checks accept a bare HTTP 200 without requiring ready:true",
+      "it stops its supervisor at the end and still describes the leftover service as standing by",
+      "it never verifies child-process residue after stopping anything"
+    ],
+    "required_before_execution": [
+      "fault injection only against a process this run started, verified by pid, start time, command line, executable, model path and port",
+      "a pre-existing shared model must not be adopted or killed; if ownership cannot be established the item is reported as not tested, never as a pass",
+      "each recovery must show the correct status code, JSON fields, ready:true, the expected model identity, a non-empty solution from a real request, and a fixed small task confirmed by the official judge",
+      "keep the formal supervisor alive at the end, and do not claim reboot autostart that was not tested"
+    ],
+    "live_facts_at_review": {
+      "model_port_8000": "200 with the model listening and about 20 GB of VRAM in use",
+      "formal_agent_port_7860": "no listener (curl returns 000)",
+      "test_port_7867": "no listener"
+    },
+    "performed_by": "task-1 (deploy-verifier) under lead review"
+  },
+  "xelab_economics_correction_20261003": {
+    "date": "2026-10-03",
+    "status": "arithmetic_corrected_conclusion_withdrawn",
+    "old_conclusion_withdrawn": "unless B is at least about 20.6 the elaboration check is not worth it",
+    "corrections": [
+      "the capability-only figure +0.1923 omits the gain term; including it gives +0.3629 and a capability-plus-gain total of +0.5549 (strict) or +0.5558 (incremental)",
+      "treating repaired-to-L1 as a benefit floor is wrong: repair may fail entirely or cause regressions",
+      "19.80 s belongs to the H3 variant round and is a recorded trace interval, not full service wall clock; detection averages 176/156 = 1.1282 s per request, and a repair cost applies only where it triggers",
+      "the cost function is piecewise and capped, the loss is not monotonic in B, and the peak loss 0.5967 sits at B about T_old"
+    ],
+    "current_wording": "detection is demonstrated (the stable version catches exactly one additional task, Prob156, with zero false positives on the 150 tasks judged L1 or L3); repair benefit and overall economics remain unproven; do not roll out broadly, run a fixed small experiment first",
+    "still_unknown": [
+      "official baseline duration B and the gain full-mark multiple",
+      "same-version, same-scope request wall clock T",
+      "repair success rate and system-level regression rate",
+      "repair round duration R, hidden-set trigger rate, five-sample scaling"
+    ],
+    "evidence": "03_analysis/xelab_econ_20261003/",
+    "performed_by": "task-2 (econ-analyst) under lead review"
+  },
+  "codex_takeover_20261003": {
+    "source": "direct user request: 不再使用另一个AI，Codex接手项目",
+    "current_owner": "Codex",
+    "scope": "planning, implementation, cloud verification, bounded research, review and GitHub sync",
+    "state_priority": "this record supersedes older current-state snapshots; raw historical results remain unchanged",
+    "runtime": {
+      "development": "728499f4",
+      "generation_skill": "f4c4c8e2",
+      "release_accepted": false,
+      "archived_score": {
+        "agent": 0.7667,
+        "baseline": 0.6744,
+        "run": "full156_declfix_20261003",
+        "recorded_runtime": "22e32251"
+      }
+    },
+    "verified": {
+      "full_local_tests": 208,
+      "additional_endurance_tests": 7,
+      "additional_r1_grader_tests": 7,
+      "new_supervisor_shell_tests_rechecked": 9,
+      "judge_smoke": {
+        "task": "Prob005_notgate",
+        "level": 3,
+        "samples": 239,
+        "mismatches": 0,
+        "tool_log_bytes": 32010,
+        "local_evidence": "03_analysis/codex_takeover_20261003/judge_smoke/"
+      },
+      "cloud_supervisor_sha256": "47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556",
+      "full_test_evidence": "03_analysis/codex_takeover_20261003/unittest_final.txt",
+      "test_count_note": "208-test full suite passed; subsequent HTTPError evidence change passed 9 targeted tests including 2 new cases. Do not describe it as one 210-test full run.",
+      "final_api_failure_tests": 9
+    },
+    "r1": {
+      "status": "complete_not_promoted",
+      "run": "r1_diagnostic_pilot_20261003T070522Z",
+      "valid_samples": 6,
+      "diagnostic_levels": [
+        0,
+        0,
+        0
+      ],
+      "control_levels": [
+        0,
+        0,
+        0
+      ],
+      "elaboration_passed": {
+        "diagnostic": 0,
+        "control": 0
+      },
+      "tool_errors": 0,
+      "first_interrupted_run": "r1_diagnostic_pilot_20261003T070202Z (2 recorded calls; excluded, not resumed)",
+      "total_generation_calls_including_interruption": 8,
+      "evidence": "03_analysis/codex_takeover_20261003/R1_RESULT.md",
+      "interpretation": "no benefit from this direct-diagnostic prompt on one fixed candidate; not a universal claim about diagnostic repair"
+    },
+    "deployment": {
+      "status": "tested_scope_passed_overall_incomplete_untested",
+      "mode": "development",
+      "pass": 43,
+      "fail": 0,
+      "untested": 3,
+      "verdict": "INCOMPLETE_UNTESTED",
+      "driver_exit_status": 2,
+      "sigterm_ms": 117,
+      "recovery_task": "Prob007_wire",
+      "recovery_judgements": "all L3",
+      "vram_gb_health_observation": 18.937,
+      "evidence": "03_analysis/codex_takeover_20261003/deployment/",
+      "end_mode": "restore",
+      "post_cleanup": {
+        "model_8000": "healthy original process",
+        "agent_7860": "not listening",
+        "test_7867": "not listening",
+        "slot": "released"
+      },
+      "limits": [
+        "model failure/recovery not tested (shared external process)",
+        "full-machine reboot autostart not tested",
+        "no formal submission-image acceptance",
+        "observed in-flight worker during faults; does not prove interruption during every EDA stage"
+      ]
+    },
+    "five_sample_quality": {
+      "status": "previous_200_cell_run_incomplete_new_harness_not_yet_real_cloud_tested",
+      "scope": "about 25 requests inferred from log, not an exact graded count; 1560 not completed"
+    },
+    "resource_limits": "legacy endurance counters do not prove process ownership or AMD VRAM compliance; result explicitly unknown",
+    "next_research": "03_analysis/codex_takeover_20261003/R2_NEXT.md",
+    "automation_created": false,
+    "server_lifecycle": {
+      "source": "direct user clarification during takeover",
+      "keep_instance_running_until_competition_end": true,
+      "shutdown_or_release_instance": false,
+      "whole_machine_reboot_for_testing": false,
+      "note": "User says the server will not be shut down before the competition ends. Stop/restart only explicitly scoped owned application test processes; preserve the cloud instance and existing shared model. No shutdown performed."
+    },
+    "http_failure_scoring": {
+      "source": "pinned API_CONTRACT.md 119-120; FAQ.md 159-168; SCORING.md 175-182",
+      "service_failures": "L0, retained in denominator, no retry",
+      "judge_environment_failures": "official tool_error exclusion unchanged",
+      "regression": "1 L3 plus 4 HTTP failures -> mean 0.2 with zero excluded samples",
+      "actual_cloud_quality_run": "new harness deployed; 200/1560 validation not completed"
+    }
   }
 }

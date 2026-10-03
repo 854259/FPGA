@@ -1,0 +1,33 @@
+{
+  "solution_sha256": "3cb7bad0695806d55d934d328cab8984f0e3b9bba5d640eb21ee6e1e436ff25c",
+  "passed": false,
+  "empty": false,
+  "xvlog": {
+    "command": [
+      "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+      "-sv",
+      "--nolog",
+      "dut.sv"
+    ],
+    "timeout": false,
+    "returncode": 0,
+    "pid": 2767849,
+    "wall_seconds": 1.115759965032339
+  },
+  "xelab": {
+    "command": [
+      "/workspace/AMD/2026.1/Vivado/bin/xelab",
+      "TopModule",
+      "-s",
+      "snapshot",
+      "--nolog",
+      "-timescale",
+      "1ps/1ps"
+    ],
+    "timeout": false,
+    "returncode": 1,
+    "pid": 2767942,
+    "wall_seconds": 1.1156190866604447
+  },
+  "testbench_used": false
+}

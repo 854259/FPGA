@@ -1,0 +1,59 @@
+
+===== [xvlog:dut] xvlog -sv --nolog /workspace/team/codex_takeover_20261003/deploy_execute_071115/work/judge.Lc8X8m/scratch/judge_Prob007_wire_2773964/dut.sv =====
+WARNING: The locale 'C.utf8' is not installed on your system.\nPlease install it by running:\n  Ubuntu/Debian: sudo locale-gen C.utf8 && sudo update-locale\n  RHEL/CentOS:   sudo localedef -i en_US -f UTF-8 C.utf8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/workspace/team/codex_takeover_20261003/deploy_execute_071115/work/judge.Lc8X8m/scratch/judge_Prob007_wire_2773964/dut.sv" into library work
+INFO: [VRFC 10-311] analyzing module TopModule
+
+===== [xvlog:fixture] xvlog -sv --relax --nolog /workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob007_wire/tb.sv /workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob007_wire/ref.sv =====
+WARNING: The locale 'C.utf8' is not installed on your system.\nPlease install it by running:\n  Ubuntu/Debian: sudo locale-gen C.utf8 && sudo update-locale\n  RHEL/CentOS:   sudo localedef -i en_US -f UTF-8 C.utf8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob007_wire/tb.sv" into library work
+INFO: [VRFC 10-311] analyzing module stimulus_gen
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob007_wire/ref.sv" into library work
+INFO: [VRFC 10-311] analyzing module RefModule
+
+===== [xelab] xelab tb -s tb_snap --nolog -timescale 1ps/1ps =====
+WARNING: The locale 'C.utf8' is not installed on your system.\nPlease install it by running:\n  Ubuntu/Debian: sudo locale-gen C.utf8 && sudo update-locale\n  RHEL/CentOS:   sudo localedef -i en_US -f UTF-8 C.utf8
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /workspace/AMD/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab tb -s tb_snap --nolog -timescale 1ps/1ps 
+Multi-threading is on. Using 126 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.stimulus_gen
+Compiling module work.RefModule
+Compiling module work.TopModule
+Compiling module work.tb
+Built simulation snapshot tb_snap
+
+===== [xsim] xsim tb_snap -R --nolog -sv_seed 0 =====
+WARNING: The locale 'C.utf8' is not installed on your system.\nPlease install it by running:\n  Ubuntu/Debian: sudo locale-gen C.utf8 && sudo update-locale\n  RHEL/CentOS:   sudo localedef -i en_US -f UTF-8 C.utf8
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct  3 07:13:53 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_snap/xsim_script.tcl
+# xsim {tb_snap} -autoloadwcfg -runall -sv_seed 0
+Time resolution is 1 ps
+run -all
+Hint: Output 'out' has no mismatches.
+Hint: Total mismatched samples is 0 out of 120 samples
+
+Simulation finished at 601 ps
+Mismatches: 0 in 120 samples
+$finish called at time : 601 ps : File "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob007_wire/tb.sv" Line 36
+exit
+INFO: xsimkernel Simulation Memory Usage: 142264 KB (Peak: 207800 KB), Simulation CPU Usage: 790 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct  3 07:13:56 2026...

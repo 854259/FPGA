@@ -1,0 +1,26 @@
+{
+  "script_sha256": "0514eb27f116f5aaac369b2e19ffb761e61ca13a91ed6f2913fe4341b6010594",
+  "mode": "execute",
+  "end_mode": "restore",
+  "generated_utc": "20261003T071115Z",
+  "steps": {
+    "pass": 43,
+    "fail": 0,
+    "untested": 3,
+    "info": 4
+  },
+  "entry_deployed": "/workspace/team/serve_all.sh",
+  "entry_deployed_sha256": "47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556",
+  "entry_submission": "/workspace/team/tasks/autodl-rtl-kit/project/submission/serve/serve_all.sh",
+  "entry_submission_sha256": "47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556",
+  "judge": "/workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/judge.py",
+  "judge_sha256": "02238c62b598de5a835374b8dcbff9eebbeca7cd9fc01db8b5aad2d018882e10",
+  "fixed_task": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob007_wire",
+  "pre_existing_model_pid": "2013333",
+  "guardian_pid": "2768857",
+  "agent_pid": "2773567",
+  "model_pid": "",
+  "final_models_identity": "Qwen3.6-27B-Q4_K_M|Qwen3.6-27B-Q4_K_M",
+  "acceptance_verdict": "INCOMPLETE_UNTESTED",
+  "note": "A PASS verdict covers only the items actually tested in this run; untested items are listed as UNTESTED in steps.txt. Never read this file as proof of anything that is marked UNTESTED."
+}
