@@ -33,6 +33,20 @@ KIT_CANDIDATES = [
 ]
 
 
+def script_identity():
+    """本脚本自身的 SHA-256。
+
+    为什么要写进结果：曾经发生过"本地已修好、实例上跑的仍是旧版"，
+    于是同一份产物由不同版本的脚本得出不同结论（成绩被算成全 0）。
+    把执行者的哈希钉进输出与 verification.json，事后才能判断"这次验收是谁跑的"。
+    本地测试通过与远端使用正确版本，是两件需要分别证明的事。
+    """
+    try:
+        return hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest()
+    except OSError:
+        return "(unavailable)"
+
+
 def load_official_score():
     """官方汇总函数。绝不自己重写统计口径。"""
     for kit in KIT_CANDIDATES:
@@ -151,6 +165,9 @@ def main():
     print("=" * 70)
     print("H3 产物验收（成绩走官方 summarize）")
     print("=" * 70)
+    printable_sha = script_identity()
+    print("执行脚本 sha256: %s" % printable_sha)
+    print("  （写进结果是为了区分「本地测试通过」与「远端确实用了这一版」）")
     print("新 : %s" % run)
     print("旧 : %s" % oldrun)
     print()
@@ -423,6 +440,7 @@ def main():
 
     try:
         (run / "verification.json").write_text(json.dumps(dict(
+            verifier_sha256=script_identity(),
             problems=problems, warnings=warnings, comparable=comparable, reasons=reasons,
             agent_up=[list(x) for x in up_list], agent_down=[list(x) for x in down_list],
             common_tasks=len(common), delta_common=delta_common,
