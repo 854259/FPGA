@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob086_lfsr5",
+  "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_01_Prob086_lfsr5_pair0_control",
+  "status": "fail",
+  "failure_kind": "semantic_mismatch",
+  "checks": 269,
+  "mismatches": 220,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.065872,
+      "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_01_Prob086_lfsr5_pair0_control/xvlog.log",
+      "log_sha256": "adf251276505e4d37f212d376d55145d0c2e9eb8f27278ee09f3405b0d910ebf",
+      "log_bytes": 685
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.166048,
+      "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_01_Prob086_lfsr5_pair0_control/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.369422,
+      "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_01_Prob086_lfsr5_pair0_control/xsim.log",
+      "log_sha256": "056ac63dd4cb1884c3347a2723bb75126bed9625ada9f7f07dab401e38f70361",
+      "log_bytes": 2287
+    }
+  ],
+  "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+  "tb_sha256": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

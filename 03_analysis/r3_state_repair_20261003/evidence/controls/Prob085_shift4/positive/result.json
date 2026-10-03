@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob085_shift4",
+  "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/positive",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 209,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.065866,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/positive/xvlog.log",
+      "log_sha256": "162ac97f730e834d3bd30d0c4981f67df4a491371b38e372dc535c3868d679d4",
+      "log_bytes": 605
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165854,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/positive/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.218892,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/positive/xsim.log",
+      "log_sha256": "751e3d51e11716169bae9d398b00fc44a34b57b77594258bee0fef71b112fd0c",
+      "log_bytes": 1085
+    }
+  ],
+  "solution_sha256": "cdf9638b51bde16d3760a6fbe4a48ea015736942b7decbc1f86ff31d78807e1a",
+  "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

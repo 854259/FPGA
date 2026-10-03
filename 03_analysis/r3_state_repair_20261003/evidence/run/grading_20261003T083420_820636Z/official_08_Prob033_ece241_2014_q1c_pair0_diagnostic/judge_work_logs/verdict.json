@@ -1,0 +1,48 @@
+{
+  "dut": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_08_Prob033_ece241_2014_q1c_pair0_diagnostic/judge-scratch-zam5y7ea/judge_Prob033_ece241_2014_q1c_2807644/dut.sv",
+  "ref": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob033_ece241_2014_q1c/ref.sv",
+  "test": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob033_ece241_2014_q1c/tb.sv",
+  "level": 3,
+  "verdict": "L3",
+  "stages": {
+    "xvlog_dut": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xvlog_fixture": {
+      "rc": 0,
+      "sec": 1.07
+    },
+    "xelab": {
+      "rc": 0,
+      "sec": 1.22,
+      "timeout": false
+    },
+    "xsim": {
+      "rc": 0,
+      "sec": 3.22,
+      "timeout": false
+    },
+    "synth": {
+      "status": "OK",
+      "LUT": 12,
+      "FF": 0,
+      "DSP": 0,
+      "BRAM": 0,
+      "SRL": 0,
+      "CARRY": 0,
+      "MUXF": 0,
+      "has_clk": 0,
+      "WNS_ns": "",
+      "Fmax_MHz": "",
+      "sec": 19.69,
+      "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_08_Prob033_ece241_2014_q1c_pair0_diagnostic/judge-scratch-zam5y7ea/judge_Prob033_ece241_2014_q1c_2807644/w/synth/synth.log"
+    }
+  },
+  "mismatches": 0,
+  "samples": 116,
+  "sim_timeout": false,
+  "vivado_version": "2026.1",
+  "sv_seed": "0",
+  "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_08_Prob033_ece241_2014_q1c_pair0_diagnostic/judge-scratch-zam5y7ea/judge_Prob033_ece241_2014_q1c_2807644/w/judge.log"
+}

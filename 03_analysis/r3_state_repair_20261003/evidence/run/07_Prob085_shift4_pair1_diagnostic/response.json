@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```systemverilog\nmodule TopModule (\n    input  clk,\n    input  areset,\n    input  load,\n    input  ena,\n    input  [3:0] data,\n    output reg [3:0] q\n);\n\n    always @(posedge clk or posedge areset) begin\n        if (areset) begin\n            q <= 4'b0;\n        end else if (load) begin\n            q <= data;\n        end else if (ena) begin\n            q <= {1'b0, q[3:1]};\n        end\n    end\n\nendmodule\n```"
+      }
+    }
+  ],
+  "created": 1791016446,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "system_fingerprint": "b1-c13fcbf",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 141,
+    "prompt_tokens": 1014,
+    "total_tokens": 1155,
+    "prompt_tokens_details": {
+      "cached_tokens": 536
+    }
+  },
+  "id": "chatcmpl-WAESzrk3031LBR2VZ2hrtgiQGHr8ZwRL",
+  "timings": {
+    "cache_n": 536,
+    "prompt_n": 478,
+    "prompt_ms": 766.626,
+    "prompt_per_token_ms": 1.6038200836820082,
+    "prompt_per_second": 623.5113340794599,
+    "predicted_n": 141,
+    "predicted_ms": 4738.835,
+    "predicted_per_token_ms": 33.848821428571426,
+    "predicted_per_second": 29.543126105888895
+  }
+}

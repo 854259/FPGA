@@ -1,0 +1,29 @@
+{
+  "task_id": "Prob085_shift4",
+  "top": "TopModule",
+  "level": 3,
+  "coefficient": 1.0,
+  "stages": {
+    "compile": true,
+    "simulate": true,
+    "synth": true
+  },
+  "tool_error": null,
+  "elapsed_s": 44.4,
+  "mismatches": 0,
+  "samples": 427,
+  "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_05_Prob085_shift4_pair0_control/judge-scratch-xk6caggw/judge_Prob085_shift4_2805415",
+  "judge_rc": 0,
+  "judge_evidence": [
+    "dut.sv",
+    "verdict.json",
+    "w_judge.log",
+    "w_synth_synth.json",
+    "w_synth_synth.log",
+    "w_synth_vivado.log"
+  ],
+  "judge_log_bytes": 33063,
+  "judge_evidence_complete": true,
+  "suspected_silent_degradation": false,
+  "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_05_Prob085_shift4_pair0_control/judge_receipt.json"
+}

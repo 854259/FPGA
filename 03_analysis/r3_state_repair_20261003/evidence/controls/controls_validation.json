@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "valid": true,
+  "probe_files": {
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "Prob086_lfsr5/tb.sv": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+    "Prob086_lfsr5/positive.sv": "69f95fb4500d0f2bb8c20931d5e33aa35c1240cc0e29fd1c3d2c28c8893aab9e",
+    "Prob086_lfsr5/negative.sv": "0ca044a06cfccfecbea2b0937a12ec8a1db5131ffa833167eba22d25cbd78b01",
+    "Prob085_shift4/tb.sv": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+    "Prob085_shift4/positive.sv": "cdf9638b51bde16d3760a6fbe4a48ea015736942b7decbc1f86ff31d78807e1a",
+    "Prob085_shift4/negative.sv": "4ffffa115e054410d4f4f7045620a817e1935856a27074aa60d4509596b362d3",
+    "Prob033_ece241_2014_q1c/tb.sv": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+    "Prob033_ece241_2014_q1c/positive.sv": "a6d97a38e359b1ce02680b55b39608a8098beb50f3cc974adf36ed240024a012",
+    "Prob033_ece241_2014_q1c/negative.sv": "d63ecb38a216faacc1e1c535e0152ff0b672ca640cb47c52f0ca31151079e03c"
+  },
+  "tasks": {
+    "Prob086_lfsr5": {
+      "positive": {
+        "schema_version": 1,
+        "task": "Prob086_lfsr5",
+        "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/positive",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 269,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065726,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/positive/xvlog.log",
+            "log_sha256": "d7f6a7fa90c37fb1ff7c2df6c404f41d6dc6518ba09432302da4ec3d92736eeb",
+            "log_bytes": 603
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.216031,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/positive/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.219183,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/positive/xsim.log",
+            "log_sha256": "467b14d204199bedfb36bef48fac33dc8043002c832c458b83aea10534747719",
+            "log_bytes": 1083
+          }
+        ],
+        "solution_sha256": "69f95fb4500d0f2bb8c20931d5e33aa35c1240cc0e29fd1c3d2c28c8893aab9e",
+        "tb_sha256": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "negative": {
+        "schema_version": 1,
+        "task": "Prob086_lfsr5",
+        "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/negative",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 269,
+        "mismatches": 220,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115875,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/negative/xvlog.log",
+            "log_sha256": "f2dfc51271bb23d921116bb34a3c95cf6d5496288e354c1937dd81aa3627dc2c",
+            "log_bytes": 603
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.216087,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/negative/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369444,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/negative/xsim.log",
+            "log_sha256": "b4ef32c8ae562c2c52708522686e1bcdb4305dcdbd1cc991144d3f07c4694ed3",
+            "log_bytes": 2246
+          }
+        ],
+        "solution_sha256": "0ca044a06cfccfecbea2b0937a12ec8a1db5131ffa833167eba22d25cbd78b01",
+        "tb_sha256": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "valid": true
+    },
+    "Prob085_shift4": {
+      "positive": {
+        "schema_version": 1,
+        "task": "Prob085_shift4",
+        "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/positive",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065866,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/positive/xvlog.log",
+            "log_sha256": "162ac97f730e834d3bd30d0c4981f67df4a491371b38e372dc535c3868d679d4",
+            "log_bytes": 605
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165854,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/positive/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218892,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/positive/xsim.log",
+            "log_sha256": "751e3d51e11716169bae9d398b00fc44a34b57b77594258bee0fef71b112fd0c",
+            "log_bytes": 1085
+          }
+        ],
+        "solution_sha256": "cdf9638b51bde16d3760a6fbe4a48ea015736942b7decbc1f86ff31d78807e1a",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "negative": {
+        "schema_version": 1,
+        "task": "Prob085_shift4",
+        "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/negative",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 209,
+        "mismatches": 40,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115695,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/negative/xvlog.log",
+            "log_sha256": "9558af1227ff035a622b973f9938ec512236bdf2c432587e5981d7237fe0ec97",
+            "log_bytes": 605
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165777,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/negative/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.268959,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob085_shift4/negative/xsim.log",
+            "log_sha256": "789db5e5393b55e04773b0f44691e2c3d6f58ff31f80313d4007f21d9c9ea47b",
+            "log_bytes": 1271
+          }
+        ],
+        "solution_sha256": "4ffffa115e054410d4f4f7045620a817e1935856a27074aa60d4509596b362d3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "valid": true
+    },
+    "Prob033_ece241_2014_q1c": {
+      "positive": {
+        "schema_version": 1,
+        "task": "Prob033_ece241_2014_q1c",
+        "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/positive",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 65536,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.11555,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/positive/xvlog.log",
+            "log_sha256": "7cfcbc5d4200026e8666c0fea36ef2aa33e88851c93d7f138da7e87a2abd7c65",
+            "log_bytes": 623
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.166066,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/positive/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369236,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/positive/xsim.log",
+            "log_sha256": "126b4c6c882262793eb246b21c8433827ed78c068c02127de897e8a0ccc0f389",
+            "log_bytes": 1107
+          }
+        ],
+        "solution_sha256": "a6d97a38e359b1ce02680b55b39608a8098beb50f3cc974adf36ed240024a012",
+        "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "negative": {
+        "schema_version": 1,
+        "task": "Prob033_ece241_2014_q1c",
+        "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/negative",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 65536,
+        "mismatches": 32512,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065671,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/negative/xvlog.log",
+            "log_sha256": "6fd0242f6305a18546020d647767bc1f9b433ccd58a4563aebb86d11f24986b4",
+            "log_bytes": 623
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165621,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/negative/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369055,
+            "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/negative/xsim.log",
+            "log_sha256": "38c9f925c8f9a42738547dd00bf099e215ceb48b641529b5e6c8552209c72c6e",
+            "log_bytes": 1397
+          }
+        ],
+        "solution_sha256": "d63ecb38a216faacc1e1c535e0152ff0b672ca640cb47c52f0ca31151079e03c",
+        "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "valid": true
+    }
+  },
+  "assets_unchanged": true,
+  "tools_before": {
+    "xvlog": {
+      "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+      "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+    },
+    "xelab": {
+      "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+      "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+    },
+    "xsim": {
+      "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+      "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+    }
+  },
+  "tools_after": {
+    "xvlog": {
+      "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+      "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+    },
+    "xelab": {
+      "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+      "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+    },
+    "xsim": {
+      "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+      "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+    }
+  },
+  "tools_unchanged": true,
+  "validator_sha256": "af405ab816ec8d8d42424a94d75bdb4da8b75e2c901ef46ae47c53e5f41eceb4"
+}

@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "module TopModule (\n    input  [7:0] a,\n    input  [7:0] b,\n    output [7:0] s,\n    output       overflow\n);\n\n    assign s = a + b;\n\n    assign overflow = (a[7] == b[7]) && (s[7] != a[7]);\n\nendmodule"
+      }
+    }
+  ],
+  "created": 1791016450,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "system_fingerprint": "b1-c13fcbf",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 82,
+    "prompt_tokens": 856,
+    "total_tokens": 938,
+    "prompt_tokens_details": {
+      "cached_tokens": 536
+    }
+  },
+  "id": "chatcmpl-PDLZmlRatLnI3lAtAHiEXoOWH1VLJMRo",
+  "timings": {
+    "cache_n": 536,
+    "prompt_n": 320,
+    "prompt_ms": 620.908,
+    "prompt_per_token_ms": 1.9403375,
+    "prompt_per_second": 515.3742583442313,
+    "predicted_n": 82,
+    "predicted_ms": 2736.499,
+    "predicted_per_token_ms": 33.78393827160494,
+    "predicted_per_second": 29.59986464456958
+  }
+}

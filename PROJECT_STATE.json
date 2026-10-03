@@ -277,7 +277,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-03T16:15:05+08:00",
+  "last_updated": "2026-10-03T16:43:44+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -2221,7 +2221,7 @@
       }
     },
     "verified": {
-      "full_local_tests": 264,
+      "full_local_tests": 281,
       "additional_endurance_tests": 7,
       "additional_r1_grader_tests": 7,
       "new_supervisor_shell_tests_rechecked": 9,
@@ -2234,8 +2234,8 @@
         "local_evidence": "03_analysis/codex_takeover_20261003/judge_smoke/"
       },
       "cloud_supervisor_sha256": "47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556",
-      "full_test_evidence": "03_analysis/r2_selectivity_20261003/local_test_receipt.json",
-      "test_count_note": "Complete main suite 264 tests passed (76.780s); separately 8 guard wrapper, 4 fixture wrapper and 7 LFSR wrapper tests passed. These are distinct from 36 actual cloud EDA candidates.",
+      "full_test_evidence": "03_analysis/r3_state_repair_20261003/local_main_tests.log",
+      "test_count_note": "281 main tests passed; 26 additional R3 grading/control-wrapper tests separately recorded. These are not model or EDA sample counts.",
       "final_api_failure_tests": 9
     },
     "r1": {
@@ -2294,7 +2294,7 @@
       "scope": "about 25 requests inferred from log, not an exact graded count; 1560 not completed"
     },
     "resource_limits": "legacy endurance counters do not prove process ownership or AMD VRAM compliance; result explicitly unknown",
-    "next_research": "03_analysis/r3_lfsr_20261003/REPAIR_NEXT.md plus isolated integration/cost check of R2b selector",
+    "next_research": "Isolated selective-review integration per 03_analysis/r3_state_repair_20261003/SELECTOR_INTEGRATION_NEXT.md; fixed-candidate declaration validation and independent error materials. R3 state checklist is a valid negative, not repeated without a new mechanism.",
     "automation_created": false,
     "server_lifecycle": {
       "source": "direct user clarification during takeover",
@@ -2434,5 +2434,42 @@
     "next_plan": "03_analysis/r3_lfsr_20261003/REPAIR_NEXT.md",
     "next_model_calls_planned_not_run": 12,
     "evidence": "03_analysis/r2_selectivity_20261003/evidence/results/lfsr/"
+  },
+  "codex_r3_state_repair_20261003": {
+    "status": "complete_valid_negative_not_adopted",
+    "result": "03_analysis/r3_state_repair_20261003/RESULT.md",
+    "evidence": "03_analysis/r3_state_repair_20261003/evidence",
+    "plan_sha256": "8db13401fab1120475b6d011847698f05f31b59d5f3fac275b20cc6f630e8854",
+    "calls": 12,
+    "official_verdicts": 12,
+    "candidate_probes": 12,
+    "pre_generation_controls": 6,
+    "target_levels": {
+      "diagnostic": [
+        1,
+        1
+      ],
+      "control": [
+        1,
+        1
+      ]
+    },
+    "guards_all_L3": true,
+    "all_12_extracted_sources_equal_originals": true,
+    "target_probe_mismatches_each": 220,
+    "target_probe_checks_each": 269,
+    "tool_errors": 0,
+    "empty_answers": 0,
+    "truncated_answers": 0,
+    "generation_call_wall_total_s": 88.49647786095738,
+    "grade_and_probe_wall_s": 386.8495594356209,
+    "archive_files_verified": 443,
+    "main_tests_passed": 281,
+    "additional_eval_tests_passed": 26,
+    "full156_score_updated": false,
+    "deployment_changed": false,
+    "slot_released": true,
+    "shared_model_preserved": true,
+    "next": "03_analysis/r3_state_repair_20261003/SELECTOR_INTEGRATION_NEXT.md (plan only)"
   }
 }

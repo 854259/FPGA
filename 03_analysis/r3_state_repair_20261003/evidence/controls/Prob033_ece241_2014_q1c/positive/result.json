@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob033_ece241_2014_q1c",
+  "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/positive",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 65536,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.11555,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/positive/xvlog.log",
+      "log_sha256": "7cfcbc5d4200026e8666c0fea36ef2aa33e88851c93d7f138da7e87a2abd7c65",
+      "log_bytes": 623
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.166066,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/positive/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.369236,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/positive/xsim.log",
+      "log_sha256": "126b4c6c882262793eb246b21c8433827ed78c068c02127de897e8a0ccc0f389",
+      "log_bytes": 1107
+    }
+  ],
+  "solution_sha256": "a6d97a38e359b1ce02680b55b39608a8098beb50f3cc974adf36ed240024a012",
+  "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

@@ -1,0 +1,1603 @@
+{
+  "complete": false,
+  "status": "prompt_only_probes",
+  "output": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z",
+  "task_ids": [
+    "Prob086_lfsr5",
+    "Prob085_shift4",
+    "Prob033_ece241_2014_q1c"
+  ],
+  "samples": [
+    {
+      "sequence": 0,
+      "task_id": "Prob086_lfsr5",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "00_Prob086_lfsr5_pair0_diagnostic",
+      "request_sha256": "7a4e20289b4f85f09677def66c4b62d871e277282ed02e94cdd8f1d3179b0031",
+      "generation": {
+        "sequence": 0,
+        "task_id": "Prob086_lfsr5",
+        "pair": 0,
+        "arm": "diagnostic",
+        "directory": "00_Prob086_lfsr5_pair0_diagnostic",
+        "request_sha256": "7a4e20289b4f85f09677def66c4b62d871e277282ed02e94cdd8f1d3179b0031",
+        "wall_seconds": 13.483483544550836,
+        "error": null,
+        "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 360,
+          "prompt_tokens": 1263,
+          "total_tokens": 1623,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/00_Prob086_lfsr5_pair0_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob086_lfsr5",
+        "top": "TopModule",
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 7.7,
+        "mismatches": 3716,
+        "samples": 4443,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_00_Prob086_lfsr5_pair0_diagnostic/judge-scratch-e251gmny/judge_Prob086_lfsr5_2802640",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4332,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_00_Prob086_lfsr5_pair0_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 7.703630430623889,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_00_Prob086_lfsr5_pair0_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob086_lfsr5",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_00_Prob086_lfsr5_pair0_diagnostic",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 269,
+        "mismatches": 220,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.116103,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_00_Prob086_lfsr5_pair0_diagnostic/xvlog.log",
+            "log_sha256": "86cca66a852b9f7af298349a0278f594c25e3a95bd1df13e9c543d51f077e1c1",
+            "log_bytes": 691
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.16609,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_00_Prob086_lfsr5_pair0_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369578,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_00_Prob086_lfsr5_pair0_diagnostic/xsim.log",
+            "log_sha256": "4d66b109d5382b481b089042df37077e1734ede1e694d059eed6674ac4db3899",
+            "log_bytes": 2290
+          }
+        ],
+        "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+        "tb_sha256": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.654359145089984
+    },
+    {
+      "sequence": 1,
+      "task_id": "Prob086_lfsr5",
+      "pair": 0,
+      "arm": "control",
+      "directory": "01_Prob086_lfsr5_pair0_control",
+      "request_sha256": "bc853514a00d00bd5ab9f83d8efcf159ed08511fbc0c5c646a51010af537241f",
+      "generation": {
+        "sequence": 1,
+        "task_id": "Prob086_lfsr5",
+        "pair": 0,
+        "arm": "control",
+        "directory": "01_Prob086_lfsr5_pair0_control",
+        "request_sha256": "bc853514a00d00bd5ab9f83d8efcf159ed08511fbc0c5c646a51010af537241f",
+        "wall_seconds": 13.033917530439794,
+        "error": null,
+        "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 360,
+          "prompt_tokens": 1183,
+          "total_tokens": 1543,
+          "prompt_tokens_details": {
+            "cached_tokens": 747
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/01_Prob086_lfsr5_pair0_control/solution.v",
+      "verdict": {
+        "task_id": "Prob086_lfsr5",
+        "top": "TopModule",
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 7.8,
+        "mismatches": 3716,
+        "samples": 4443,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_01_Prob086_lfsr5_pair0_control/judge-scratch-jtsbb_rw/judge_Prob086_lfsr5_2803150",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4326,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_01_Prob086_lfsr5_pair0_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 7.8460004813969135,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_01_Prob086_lfsr5_pair0_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob086_lfsr5",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_01_Prob086_lfsr5_pair0_control",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 269,
+        "mismatches": 220,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065872,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_01_Prob086_lfsr5_pair0_control/xvlog.log",
+            "log_sha256": "adf251276505e4d37f212d376d55145d0c2e9eb8f27278ee09f3405b0d910ebf",
+            "log_bytes": 685
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.166048,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_01_Prob086_lfsr5_pair0_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369422,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_01_Prob086_lfsr5_pair0_control/xsim.log",
+            "log_sha256": "056ac63dd4cb1884c3347a2723bb75126bed9625ada9f7f07dab401e38f70361",
+            "log_bytes": 2287
+          }
+        ],
+        "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+        "tb_sha256": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.604007133282721
+    },
+    {
+      "sequence": 2,
+      "task_id": "Prob086_lfsr5",
+      "pair": 1,
+      "arm": "control",
+      "directory": "02_Prob086_lfsr5_pair1_control",
+      "request_sha256": "bc853514a00d00bd5ab9f83d8efcf159ed08511fbc0c5c646a51010af537241f",
+      "generation": {
+        "sequence": 2,
+        "task_id": "Prob086_lfsr5",
+        "pair": 1,
+        "arm": "control",
+        "directory": "02_Prob086_lfsr5_pair1_control",
+        "request_sha256": "bc853514a00d00bd5ab9f83d8efcf159ed08511fbc0c5c646a51010af537241f",
+        "wall_seconds": 12.431256962008774,
+        "error": null,
+        "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 360,
+          "prompt_tokens": 1183,
+          "total_tokens": 1543,
+          "prompt_tokens_details": {
+            "cached_tokens": 1179
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/02_Prob086_lfsr5_pair1_control/solution.v",
+      "verdict": {
+        "task_id": "Prob086_lfsr5",
+        "top": "TopModule",
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 7.8,
+        "mismatches": 3716,
+        "samples": 4443,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_02_Prob086_lfsr5_pair1_control/judge-scratch-_cih2g5w/judge_Prob086_lfsr5_2803657",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4326,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_02_Prob086_lfsr5_pair1_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 7.84891642164439,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_02_Prob086_lfsr5_pair1_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob086_lfsr5",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_02_Prob086_lfsr5_pair1_control",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 269,
+        "mismatches": 220,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115885,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_02_Prob086_lfsr5_pair1_control/xvlog.log",
+            "log_sha256": "f81d5e10342dbc201b7ecc6bb79382694b7d8b60aae2d8b1bb304a8255fb0c1e",
+            "log_bytes": 685
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165885,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_02_Prob086_lfsr5_pair1_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.219522,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_02_Prob086_lfsr5_pair1_control/xsim.log",
+            "log_sha256": "4fc899c4519d2ce517d966ac022cebe32390066f03b5a3aea08937fbc5972680",
+            "log_bytes": 2287
+          }
+        ],
+        "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+        "tb_sha256": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.503978656604886
+    },
+    {
+      "sequence": 3,
+      "task_id": "Prob086_lfsr5",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "03_Prob086_lfsr5_pair1_diagnostic",
+      "request_sha256": "7a4e20289b4f85f09677def66c4b62d871e277282ed02e94cdd8f1d3179b0031",
+      "generation": {
+        "sequence": 3,
+        "task_id": "Prob086_lfsr5",
+        "pair": 1,
+        "arm": "diagnostic",
+        "directory": "03_Prob086_lfsr5_pair1_diagnostic",
+        "request_sha256": "7a4e20289b4f85f09677def66c4b62d871e277282ed02e94cdd8f1d3179b0031",
+        "wall_seconds": 13.082381101325154,
+        "error": null,
+        "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 360,
+          "prompt_tokens": 1263,
+          "total_tokens": 1623,
+          "prompt_tokens_details": {
+            "cached_tokens": 747
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/03_Prob086_lfsr5_pair1_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob086_lfsr5",
+        "top": "TopModule",
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 7.8,
+        "mismatches": 3716,
+        "samples": 4443,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_03_Prob086_lfsr5_pair1_diagnostic/judge-scratch-kxw58fxt/judge_Prob086_lfsr5_2804164",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4332,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_03_Prob086_lfsr5_pair1_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 7.83018315397203,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_03_Prob086_lfsr5_pair1_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob086_lfsr5",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_03_Prob086_lfsr5_pair1_diagnostic",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 269,
+        "mismatches": 220,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115717,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_03_Prob086_lfsr5_pair1_diagnostic/xvlog.log",
+            "log_sha256": "c2ec863b9260e24302c33acce94d5be56f4f1840a26b2c5823f091abf39732f2",
+            "log_bytes": 691
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165941,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_03_Prob086_lfsr5_pair1_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369662,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_03_Prob086_lfsr5_pair1_diagnostic/xsim.log",
+            "log_sha256": "bfdcac74a6c3284c70919859e84587f8abff0d679ab5eec5ca22b844524946d0",
+            "log_bytes": 2290
+          }
+        ],
+        "solution_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+        "tb_sha256": "55abffe10e7123a6f72b0bbf6b9764e7a8a7a8013d38a9801ba2e118ffb94bd6",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.6539352014660835
+    },
+    {
+      "sequence": 4,
+      "task_id": "Prob085_shift4",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "04_Prob085_shift4_pair0_diagnostic",
+      "request_sha256": "5cde74d84f83317318d0d9397adf3744427417df13a21350d20e4f2b65abfaf4",
+      "generation": {
+        "sequence": 4,
+        "task_id": "Prob085_shift4",
+        "pair": 0,
+        "arm": "diagnostic",
+        "directory": "04_Prob085_shift4_pair0_diagnostic",
+        "request_sha256": "5cde74d84f83317318d0d9397adf3744427417df13a21350d20e4f2b65abfaf4",
+        "wall_seconds": 6.17244369816035,
+        "error": null,
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 141,
+          "prompt_tokens": 1014,
+          "total_tokens": 1155,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/04_Prob085_shift4_pair0_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob085_shift4",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 44.4,
+        "mismatches": 0,
+        "samples": 427,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_04_Prob085_shift4_pair0_diagnostic/judge-scratch-poq6m6rp/judge_Prob085_shift4_2804671",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33099,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_04_Prob085_shift4_pair0_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 44.418373730033636,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_04_Prob085_shift4_pair0_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob085_shift4",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_04_Prob085_shift4_pair0_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.06566,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_04_Prob085_shift4_pair0_diagnostic/xvlog.log",
+            "log_sha256": "b1e3ff10d0e64bbbeb0d1d6db50d60894fbcc38bf44792fafd560306fb9c652d",
+            "log_bytes": 693
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165937,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_04_Prob085_shift4_pair0_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369059,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_04_Prob085_shift4_pair0_diagnostic/xsim.log",
+            "log_sha256": "6d16c71390bc29c776e9a68f516f5c919c2bfa3a08c493934fc6c05a86d3345d",
+            "log_bytes": 1129
+          }
+        ],
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.6032407796010375
+    },
+    {
+      "sequence": 5,
+      "task_id": "Prob085_shift4",
+      "pair": 0,
+      "arm": "control",
+      "directory": "05_Prob085_shift4_pair0_control",
+      "request_sha256": "293d9aa2e79cb46f86cf34836c64c31f4e1277a10e8e9f6740475cc89ab1df8e",
+      "generation": {
+        "sequence": 5,
+        "task_id": "Prob085_shift4",
+        "pair": 0,
+        "arm": "control",
+        "directory": "05_Prob085_shift4_pair0_control",
+        "request_sha256": "293d9aa2e79cb46f86cf34836c64c31f4e1277a10e8e9f6740475cc89ab1df8e",
+        "wall_seconds": 5.571910252794623,
+        "error": null,
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 140,
+          "prompt_tokens": 934,
+          "total_tokens": 1074,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/05_Prob085_shift4_pair0_control/solution.v",
+      "verdict": {
+        "task_id": "Prob085_shift4",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 44.4,
+        "mismatches": 0,
+        "samples": 427,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_05_Prob085_shift4_pair0_control/judge-scratch-xk6caggw/judge_Prob085_shift4_2805415",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33063,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_05_Prob085_shift4_pair0_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 44.40032635908574,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_05_Prob085_shift4_pair0_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob085_shift4",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_05_Prob085_shift4_pair0_control",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115662,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_05_Prob085_shift4_pair0_control/xvlog.log",
+            "log_sha256": "3ae384155fdd7670f4b50c426a0ab4d87be15564cec7e0366d6ab171b7e49ce2",
+            "log_bytes": 687
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165832,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_05_Prob085_shift4_pair0_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.219066,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_05_Prob085_shift4_pair0_control/xsim.log",
+            "log_sha256": "8ad9c08560f9449f5935827c571a674bca4739fd68c8c1363595b32d6c08916f",
+            "log_bytes": 1126
+          }
+        ],
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.503086742013693
+    },
+    {
+      "sequence": 6,
+      "task_id": "Prob085_shift4",
+      "pair": 1,
+      "arm": "control",
+      "directory": "06_Prob085_shift4_pair1_control",
+      "request_sha256": "293d9aa2e79cb46f86cf34836c64c31f4e1277a10e8e9f6740475cc89ab1df8e",
+      "generation": {
+        "sequence": 6,
+        "task_id": "Prob085_shift4",
+        "pair": 1,
+        "arm": "control",
+        "directory": "06_Prob085_shift4_pair1_control",
+        "request_sha256": "293d9aa2e79cb46f86cf34836c64c31f4e1277a10e8e9f6740475cc89ab1df8e",
+        "wall_seconds": 4.97126233112067,
+        "error": null,
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 140,
+          "prompt_tokens": 934,
+          "total_tokens": 1074,
+          "prompt_tokens_details": {
+            "cached_tokens": 930
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/06_Prob085_shift4_pair1_control/solution.v",
+      "verdict": {
+        "task_id": "Prob085_shift4",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 44.8,
+        "mismatches": 0,
+        "samples": 427,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_06_Prob085_shift4_pair1_control/judge-scratch-iwktarq8/judge_Prob085_shift4_2806156",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33069,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_06_Prob085_shift4_pair1_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 44.82116291858256,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_06_Prob085_shift4_pair1_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob085_shift4",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_06_Prob085_shift4_pair1_control",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065707,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_06_Prob085_shift4_pair1_control/xvlog.log",
+            "log_sha256": "a47964c5acb09b40a4c113fed104bef529107df856bcdd2f837d9d2d695c498a",
+            "log_bytes": 687
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.166136,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_06_Prob085_shift4_pair1_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.369255,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_06_Prob085_shift4_pair1_control/xsim.log",
+            "log_sha256": "29467a4670a322943870124bfc0aa05bd9ed609307951f1a3279acaeff52d950",
+            "log_bytes": 1126
+          }
+        ],
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.603575771674514
+    },
+    {
+      "sequence": 7,
+      "task_id": "Prob085_shift4",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "07_Prob085_shift4_pair1_diagnostic",
+      "request_sha256": "5cde74d84f83317318d0d9397adf3744427417df13a21350d20e4f2b65abfaf4",
+      "generation": {
+        "sequence": 7,
+        "task_id": "Prob085_shift4",
+        "pair": 1,
+        "arm": "diagnostic",
+        "directory": "07_Prob085_shift4_pair1_diagnostic",
+        "request_sha256": "5cde74d84f83317318d0d9397adf3744427417df13a21350d20e4f2b65abfaf4",
+        "wall_seconds": 5.622470004484057,
+        "error": null,
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 141,
+          "prompt_tokens": 1014,
+          "total_tokens": 1155,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/07_Prob085_shift4_pair1_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob085_shift4",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 44.7,
+        "mismatches": 0,
+        "samples": 427,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_07_Prob085_shift4_pair1_diagnostic/judge-scratch-pkzwkiun/judge_Prob085_shift4_2806900",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33099,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_07_Prob085_shift4_pair1_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 44.75183923356235,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_07_Prob085_shift4_pair1_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob085_shift4",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_07_Prob085_shift4_pair1_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115872,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_07_Prob085_shift4_pair1_diagnostic/xvlog.log",
+            "log_sha256": "dae6e6c0d717586e6f181f0dee34c660460432fe03e6fcbb205f3d0e0386bf21",
+            "log_bytes": 693
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.166039,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_07_Prob085_shift4_pair1_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.219346,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_07_Prob085_shift4_pair1_diagnostic/xsim.log",
+            "log_sha256": "16274a5f9d543543d048a8974bab5829f9cd14d79d1ef903613bec611498dcc2",
+            "log_bytes": 1129
+          }
+        ],
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.503851727582514
+    },
+    {
+      "sequence": 8,
+      "task_id": "Prob033_ece241_2014_q1c",
+      "pair": 0,
+      "arm": "diagnostic",
+      "directory": "08_Prob033_ece241_2014_q1c_pair0_diagnostic",
+      "request_sha256": "29fec4c3f6524cc909b39a98d6804422e1eb09f95bfd0314de4bd1e30c559557",
+      "generation": {
+        "sequence": 8,
+        "task_id": "Prob033_ece241_2014_q1c",
+        "pair": 0,
+        "arm": "diagnostic",
+        "directory": "08_Prob033_ece241_2014_q1c_pair0_diagnostic",
+        "request_sha256": "29fec4c3f6524cc909b39a98d6804422e1eb09f95bfd0314de4bd1e30c559557",
+        "wall_seconds": 3.870059938170016,
+        "error": null,
+        "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 82,
+          "prompt_tokens": 856,
+          "total_tokens": 938,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/08_Prob033_ece241_2014_q1c_pair0_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob033_ece241_2014_q1c",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.4,
+        "mismatches": 0,
+        "samples": 116,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_08_Prob033_ece241_2014_q1c_pair0_diagnostic/judge-scratch-zam5y7ea/judge_Prob033_ece241_2014_q1c_2807644",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33151,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_08_Prob033_ece241_2014_q1c_pair0_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.393743659369648,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_08_Prob033_ece241_2014_q1c_pair0_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob033_ece241_2014_q1c",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_08_Prob033_ece241_2014_q1c_pair0_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 65536,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115713,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_08_Prob033_ece241_2014_q1c_pair0_diagnostic/xvlog.log",
+            "log_sha256": "98520562820916b865715d83fa53d64c808d18de3b57ed18e59fd3d3ece405cc",
+            "log_bytes": 711
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165932,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_08_Prob033_ece241_2014_q1c_pair0_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218848,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_08_Prob033_ece241_2014_q1c_pair0_diagnostic/xsim.log",
+            "log_sha256": "b378572fd4e55385525e093c2a357ce2fa11bdb828ab794dc5be50236b2bbc00",
+            "log_bytes": 1151
+          }
+        ],
+        "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.503130126744509
+    },
+    {
+      "sequence": 9,
+      "task_id": "Prob033_ece241_2014_q1c",
+      "pair": 0,
+      "arm": "control",
+      "directory": "09_Prob033_ece241_2014_q1c_pair0_control",
+      "request_sha256": "ab7f0e375df5af789f7a3a35ab7b752e375e786c868f608bce2375b66c8d1e41",
+      "generation": {
+        "sequence": 9,
+        "task_id": "Prob033_ece241_2014_q1c",
+        "pair": 0,
+        "arm": "control",
+        "directory": "09_Prob033_ece241_2014_q1c_pair0_control",
+        "request_sha256": "ab7f0e375df5af789f7a3a35ab7b752e375e786c868f608bce2375b66c8d1e41",
+        "wall_seconds": 3.5694190906360745,
+        "error": null,
+        "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 88,
+          "prompt_tokens": 776,
+          "total_tokens": 864,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/09_Prob033_ece241_2014_q1c_pair0_control/solution.v",
+      "verdict": {
+        "task_id": "Prob033_ece241_2014_q1c",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.4,
+        "mismatches": 0,
+        "samples": 116,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_09_Prob033_ece241_2014_q1c_pair0_control/judge-scratch-clul7lj2/judge_Prob033_ece241_2014_q1c_2808370",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33115,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_09_Prob033_ece241_2014_q1c_pair0_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.42652865871787,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_09_Prob033_ece241_2014_q1c_pair0_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob033_ece241_2014_q1c",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_09_Prob033_ece241_2014_q1c_pair0_control",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 65536,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.116109,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_09_Prob033_ece241_2014_q1c_pair0_control/xvlog.log",
+            "log_sha256": "dac490100abbbb0d3b0837cab9606862755ae70728ee453a9d02700678109b95",
+            "log_bytes": 705
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165557,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_09_Prob033_ece241_2014_q1c_pair0_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218472,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_09_Prob033_ece241_2014_q1c_pair0_control/xsim.log",
+            "log_sha256": "c6a5048a4218b23f2dd1ec2202726ba439c1855a5761f84855d0ffeaa303361c",
+            "log_bytes": 1148
+          }
+        ],
+        "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.50239088665694
+    },
+    {
+      "sequence": 10,
+      "task_id": "Prob033_ece241_2014_q1c",
+      "pair": 1,
+      "arm": "control",
+      "directory": "10_Prob033_ece241_2014_q1c_pair1_control",
+      "request_sha256": "ab7f0e375df5af789f7a3a35ab7b752e375e786c868f608bce2375b66c8d1e41",
+      "generation": {
+        "sequence": 10,
+        "task_id": "Prob033_ece241_2014_q1c",
+        "pair": 1,
+        "arm": "control",
+        "directory": "10_Prob033_ece241_2014_q1c_pair1_control",
+        "request_sha256": "ab7f0e375df5af789f7a3a35ab7b752e375e786c868f608bce2375b66c8d1e41",
+        "wall_seconds": 3.2188471565023065,
+        "error": null,
+        "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 88,
+          "prompt_tokens": 776,
+          "total_tokens": 864,
+          "prompt_tokens_details": {
+            "cached_tokens": 772
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/10_Prob033_ece241_2014_q1c_pair1_control/solution.v",
+      "verdict": {
+        "task_id": "Prob033_ece241_2014_q1c",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.3,
+        "mismatches": 0,
+        "samples": 116,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_10_Prob033_ece241_2014_q1c_pair1_control/judge-scratch-vw1jx8rg/judge_Prob033_ece241_2014_q1c_2809096",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33115,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_10_Prob033_ece241_2014_q1c_pair1_control/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.375286102294922,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_10_Prob033_ece241_2014_q1c_pair1_control",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob033_ece241_2014_q1c",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_10_Prob033_ece241_2014_q1c_pair1_control",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 65536,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.065314,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_10_Prob033_ece241_2014_q1c_pair1_control/xvlog.log",
+            "log_sha256": "7a76a2ff137e1bdecc0badbfd3e594ef7318bb2575a9f773a3ecafc34c084c5a",
+            "log_bytes": 705
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165665,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_10_Prob033_ece241_2014_q1c_pair1_control/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.21819,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_10_Prob033_ece241_2014_q1c_pair1_control/xsim.log",
+            "log_sha256": "0df72b641e824e3485a1bc819dea9ffe000c20aa164120fc3510641e9846463a",
+            "log_bytes": 1148
+          }
+        ],
+        "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.451328654773533
+    },
+    {
+      "sequence": 11,
+      "task_id": "Prob033_ece241_2014_q1c",
+      "pair": 1,
+      "arm": "diagnostic",
+      "directory": "11_Prob033_ece241_2014_q1c_pair1_diagnostic",
+      "request_sha256": "29fec4c3f6524cc909b39a98d6804422e1eb09f95bfd0314de4bd1e30c559557",
+      "generation": {
+        "sequence": 11,
+        "task_id": "Prob033_ece241_2014_q1c",
+        "pair": 1,
+        "arm": "diagnostic",
+        "directory": "11_Prob033_ece241_2014_q1c_pair1_diagnostic",
+        "request_sha256": "29fec4c3f6524cc909b39a98d6804422e1eb09f95bfd0314de4bd1e30c559557",
+        "wall_seconds": 3.4690262507647276,
+        "error": null,
+        "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "empty": false,
+        "finish_reason": "stop",
+        "usage": {
+          "completion_tokens": 82,
+          "prompt_tokens": 856,
+          "total_tokens": 938,
+          "prompt_tokens_details": {
+            "cached_tokens": 536
+          }
+        },
+        "response_model": "Qwen3.6-27B-Q4_K_M"
+      },
+      "solution": "/workspace/team/codex_r3_state_20261003/run/11_Prob033_ece241_2014_q1c_pair1_diagnostic/solution.v",
+      "verdict": {
+        "task_id": "Prob033_ece241_2014_q1c",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 28.0,
+        "mismatches": 0,
+        "samples": 116,
+        "work_dir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_11_Prob033_ece241_2014_q1c_pair1_diagnostic/judge-scratch-03t8gdyg/judge_Prob033_ece241_2014_q1c_2809822",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33151,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_11_Prob033_ece241_2014_q1c_pair1_diagnostic/judge_receipt.json"
+      },
+      "official_wall_seconds": 27.991529766470194,
+      "official_directory": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_11_Prob033_ece241_2014_q1c_pair1_diagnostic",
+      "probe": {
+        "schema_version": 1,
+        "task": "Prob033_ece241_2014_q1c",
+        "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_11_Prob033_ece241_2014_q1c_pair1_diagnostic",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 65536,
+        "mismatches": 0,
+        "stages": [
+          {
+            "name": "xvlog",
+            "argv": [
+              "xvlog",
+              "-sv",
+              "--nolog",
+              "dut.sv",
+              "tb.sv"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.115542,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_11_Prob033_ece241_2014_q1c_pair1_diagnostic/xvlog.log",
+            "log_sha256": "ca33e47e75fceaa9d3c04eef8b9ebf8c13c07a7ea8e215c2bef860ae850837ee",
+            "log_bytes": 711
+          },
+          {
+            "name": "xelab",
+            "argv": [
+              "xelab",
+              "R2Probe",
+              "-s",
+              "r2_probe",
+              "--nolog",
+              "-timescale",
+              "1ns/1ps"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 1.165724,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_11_Prob033_ece241_2014_q1c_pair1_diagnostic/xelab.log",
+            "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+            "log_bytes": 1307
+          },
+          {
+            "name": "xsim",
+            "argv": [
+              "xsim",
+              "r2_probe",
+              "-runall",
+              "-nolog"
+            ],
+            "timeout": false,
+            "returncode": 0,
+            "launch_error": null,
+            "group_signals": [],
+            "elapsed_s": 3.218536,
+            "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_11_Prob033_ece241_2014_q1c_pair1_diagnostic/xsim.log",
+            "log_sha256": "820177f2f695d645be489f388b00eab8a8efbe926fe9a0ec342a2680d9f65ac5",
+            "log_bytes": 1151
+          }
+        ],
+        "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+        "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+        "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+        "inputs_unchanged": true
+      },
+      "probe_wall_seconds": 5.502067947760224
+    }
+  ],
+  "errors": [],
+  "valid_samples": 12,
+  "planned_samples": 12,
+  "slot_owner": "codex_r3_state_20261003",
+  "slot_sha256": "cbf0a435ebbcbd7886b7d776cd494e147db9d90f690398ac39c608d8e9f9a25f",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "prompt_comparison": "exact text after universal-newline decoding and stripping boundary LF only; both original byte hashes retained"
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob033_ece241_2014_q1c",
+  "outdir": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/negative",
+  "status": "fail",
+  "failure_kind": "semantic_mismatch",
+  "checks": 65536,
+  "mismatches": 32512,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.065671,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/negative/xvlog.log",
+      "log_sha256": "6fd0242f6305a18546020d647767bc1f9b433ccd58a4563aebb86d11f24986b4",
+      "log_bytes": 623
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165621,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/negative/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.369055,
+      "log": "/workspace/team/codex_r3_state_20261003/controls/Prob033_ece241_2014_q1c/negative/xsim.log",
+      "log_sha256": "38c9f925c8f9a42738547dd00bf099e215ceb48b641529b5e6c8552209c72c6e",
+      "log_bytes": 1397
+    }
+  ],
+  "solution_sha256": "d63ecb38a216faacc1e1c535e0152ff0b672ca640cb47c52f0ca31151079e03c",
+  "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

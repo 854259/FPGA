@@ -1,0 +1,48 @@
+{
+  "dut": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_04_Prob085_shift4_pair0_diagnostic/judge-scratch-poq6m6rp/judge_Prob085_shift4_2804671/dut.sv",
+  "ref": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob085_shift4/ref.sv",
+  "test": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob085_shift4/tb.sv",
+  "level": 3,
+  "verdict": "L3",
+  "stages": {
+    "xvlog_dut": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xvlog_fixture": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xelab": {
+      "rc": 0,
+      "sec": 1.22,
+      "timeout": false
+    },
+    "xsim": {
+      "rc": 0,
+      "sec": 3.37,
+      "timeout": false
+    },
+    "synth": {
+      "status": "OK",
+      "LUT": 5,
+      "FF": 4,
+      "DSP": 0,
+      "BRAM": 0,
+      "SRL": 0,
+      "CARRY": 0,
+      "MUXF": 0,
+      "has_clk": 1,
+      "WNS_ns": 4.605,
+      "Fmax_MHz": 2531.6,
+      "sec": 36.52,
+      "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_04_Prob085_shift4_pair0_diagnostic/judge-scratch-poq6m6rp/judge_Prob085_shift4_2804671/w/synth/synth.log"
+    }
+  },
+  "mismatches": 0,
+  "samples": 427,
+  "sim_timeout": false,
+  "vivado_version": "2026.1",
+  "sv_seed": "0",
+  "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_04_Prob085_shift4_pair0_diagnostic/judge-scratch-poq6m6rp/judge_Prob085_shift4_2804671/w/judge.log"
+}

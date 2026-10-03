@@ -1,0 +1,33 @@
+{
+  "dut": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_00_Prob086_lfsr5_pair0_diagnostic/judge-scratch-e251gmny/judge_Prob086_lfsr5_2802640/dut.sv",
+  "ref": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob086_lfsr5/ref.sv",
+  "test": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob086_lfsr5/tb.sv",
+  "level": 1,
+  "verdict": "L1",
+  "stages": {
+    "xvlog_dut": {
+      "rc": 0,
+      "sec": 1.07
+    },
+    "xvlog_fixture": {
+      "rc": 0,
+      "sec": 1.12
+    },
+    "xelab": {
+      "rc": 0,
+      "sec": 1.22,
+      "timeout": false
+    },
+    "xsim": {
+      "rc": 0,
+      "sec": 3.22,
+      "timeout": false
+    }
+  },
+  "mismatches": 3716,
+  "samples": 4443,
+  "sim_timeout": false,
+  "vivado_version": "2026.1",
+  "sv_seed": "0",
+  "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/official_00_Prob086_lfsr5_pair0_diagnostic/judge-scratch-e251gmny/judge_Prob086_lfsr5_2802640/w/judge.log"
+}

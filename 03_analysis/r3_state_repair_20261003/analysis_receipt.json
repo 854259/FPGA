@@ -1,0 +1,64 @@
+{
+  "run": "03_analysis/r3_state_repair_20261003/evidence/run",
+  "grading_directory": "grading_20261003T083420_820636Z",
+  "complete": true,
+  "decision": "no_promotion_archive_this_implementation",
+  "planned_calls": 12,
+  "calls_completed": 12,
+  "all_sources_unchanged": true,
+  "costs": {
+    "diagnostic": {
+      "calls": 6,
+      "wall_sum_s": 45.69986453745514,
+      "prompt_tokens": 6266,
+      "completion_tokens": 1166,
+      "cached_prompt_tokens": 3427
+    },
+    "control": {
+      "calls": 6,
+      "wall_sum_s": 42.79661332350224,
+      "prompt_tokens": 5786,
+      "completion_tokens": 1176,
+      "cached_prompt_tokens": 4700
+    }
+  },
+  "grading_wall_seconds": 386.8495594356209,
+  "controls_wall_seconds": 33.50280714035034,
+  "probe_comparisons": 396084,
+  "probe_count": 18,
+  "target_probe_mismatches": [
+    [
+      "diagnostic",
+      0,
+      220,
+      269
+    ],
+    [
+      "control",
+      0,
+      220,
+      269
+    ],
+    [
+      "control",
+      1,
+      220,
+      269
+    ],
+    [
+      "diagnostic",
+      1,
+      220,
+      269
+    ]
+  ],
+  "gates": {
+    "target_mean_improved": false,
+    "both_target_probes_pass": false,
+    "all_diagnostic_guards_L3": true
+  },
+  "evidence_conflicts": [],
+  "suspected_synthesis_degradation": [],
+  "empty_count": 0,
+  "truncated_count": 0
+}

@@ -1,0 +1,31 @@
+WARNING: The locale 'C.utf8' is not installed on your system.\nPlease install it by running:\n  Ubuntu/Debian: sudo locale-gen C.utf8 && sudo update-locale\n  RHEL/CentOS:   sudo localedef -i en_US -f UTF-8 C.utf8
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct  3 08:31:37 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/r2_probe/xsim_script.tcl
+# xsim {r2_probe} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+R3_MISMATCH check=7 step=3 phase=after_posedge reset=0 expected=01010 actual=11010 q4_diff=1
+R3_MISMATCH check=8 step=3 phase=before_posedge_hold reset=0 expected=01010 actual=11010 q4_diff=1
+R3_MISMATCH check=9 step=4 phase=after_posedge reset=0 expected=00101 actual=11101 q4_diff=1
+R3_MISMATCH check=10 step=4 phase=before_posedge_hold reset=0 expected=00101 actual=11101 q4_diff=1
+R3_MISMATCH check=11 step=5 phase=after_posedge reset=0 expected=10110 actual=01010 q4_diff=1
+R3_MISMATCH check=12 step=5 phase=before_posedge_hold reset=0 expected=10110 actual=01010 q4_diff=1
+R3_MISMATCH check=13 step=6 phase=after_posedge reset=0 expected=01011 actual=00101 q4_diff=0
+R3_MISMATCH check=14 step=6 phase=before_posedge_hold reset=0 expected=01011 actual=00101 q4_diff=0
+R3_MISMATCH check=15 step=7 phase=after_posedge reset=0 expected=10001 actual=10110 q4_diff=0
+R3_MISMATCH check=16 step=7 phase=before_posedge_hold reset=0 expected=10001 actual=10110 q4_diff=0
+R3_MISMATCH check=17 step=8 phase=after_posedge reset=0 expected=11100 actual=11011 q4_diff=0
+R3_MISMATCH check=18 step=8 phase=before_posedge_hold reset=0 expected=11100 actual=11011 q4_diff=0
+R2_PROBE_RESULT task=Prob086_lfsr5 checks=269 mismatches=220
+$finish called at time : 810 ns : File "/workspace/team/codex_r3_state_20261003/controls/Prob086_lfsr5/negative/tb.sv" Line 76
+exit
+INFO: xsimkernel Simulation Memory Usage: 146356 KB (Peak: 207792 KB), Simulation CPU Usage: 790 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct  3 08:31:39 2026...

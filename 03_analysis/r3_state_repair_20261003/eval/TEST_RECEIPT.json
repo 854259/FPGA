@@ -1,0 +1,42 @@
+{
+  "schema": "local-test-receipt-v1",
+  "scope": "R3 independent grader and control validation wrapper",
+  "execution_environment": "Local Windows PowerShell, Python unittest; no server/model/EDA calls",
+  "command": "python -B -m unittest discover -s 03_analysis/r3_state_repair_20261003/eval -p test_*.py -v",
+  "working_directory": "E:/26qiansai/FPGA-official-contract",
+  "result": {
+    "exit_code": 0,
+    "tests_run": 26,
+    "grader_tests": 21,
+    "control_wrapper_tests": 5,
+    "unittest_elapsed_seconds": 22.889,
+    "status": "OK"
+  },
+  "evidence_source": "Summary of the actual local tool execution observed in this task (exec session 99956; completion chunk f8af40). This JSON is not a preserved raw stdout transcript.",
+  "coverage": [
+    "All twelve official judgements precede prompt probes",
+    "Official score.summarize is the sole score aggregation",
+    "Empty answers remain in the denominator",
+    "Missing, duplicate, altered or incomplete generation blocks grading",
+    "Model identity must match before and after generation",
+    "Official and probe environment failures invalidate the pilot",
+    "Raw probe summary, exact checks and executed DUT/TB bytes are verified",
+    "Missing or altered judge/control logs block conclusion",
+    "Changed model-slot ownership stops without mutating the slot",
+    "Changed EDA executable identity invalidates control reuse",
+    "Any arm official L3/probe failure blocks promotion",
+    "Suspected silent synthesis degradation blocks promotion",
+    "Target tie and guard regression do not promote"
+  ],
+  "files_sha256": {
+    "grade_pilot.py": "26f039acec6258a44d1bd97b00ba5d6c9c1f5b334840d71fef86f8c258fda875",
+    "validate_controls.py": "af405ab816ec8d8d42424a94d75bdb4da8b75e2c901ef46ae47c53e5f41eceb4",
+    "test_grade_pilot.py": "805660f4530df9c91e7b6eee22d8f07ee2864a93d288095dd0b2f3a584852a49",
+    "test_validate_controls.py": "a7f41690d4e8efcf85378ae516ef92b4311f4d37575b060387a88937fcd4023b"
+  },
+  "notes": [
+    "All tests use local synthetic run fixtures and fake EDA calls; they are not real RTL simulation results.",
+    "The test suite loads the pinned official scoring implementation.",
+    "The two runtime scripts were not edited while writing this receipt."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task": "Prob033_ece241_2014_q1c",
+  "outdir": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_09_Prob033_ece241_2014_q1c_pair0_control",
+  "status": "pass",
+  "failure_kind": null,
+  "checks": 65536,
+  "mismatches": 0,
+  "stages": [
+    {
+      "name": "xvlog",
+      "argv": [
+        "xvlog",
+        "-sv",
+        "--nolog",
+        "dut.sv",
+        "tb.sv"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.116109,
+      "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_09_Prob033_ece241_2014_q1c_pair0_control/xvlog.log",
+      "log_sha256": "dac490100abbbb0d3b0837cab9606862755ae70728ee453a9d02700678109b95",
+      "log_bytes": 705
+    },
+    {
+      "name": "xelab",
+      "argv": [
+        "xelab",
+        "R2Probe",
+        "-s",
+        "r2_probe",
+        "--nolog",
+        "-timescale",
+        "1ns/1ps"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 1.165557,
+      "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_09_Prob033_ece241_2014_q1c_pair0_control/xelab.log",
+      "log_sha256": "e7e3a2e2e2ec04e384a050aa384fe16983fb99b77a543ea65c70a31cf962c74f",
+      "log_bytes": 1307
+    },
+    {
+      "name": "xsim",
+      "argv": [
+        "xsim",
+        "r2_probe",
+        "-runall",
+        "-nolog"
+      ],
+      "timeout": false,
+      "returncode": 0,
+      "launch_error": null,
+      "group_signals": [],
+      "elapsed_s": 3.218472,
+      "log": "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_09_Prob033_ece241_2014_q1c_pair0_control/xsim.log",
+      "log_sha256": "c6a5048a4218b23f2dd1ec2202726ba439c1855a5761f84855d0ffeaa303361c",
+      "log_bytes": 1148
+    }
+  ],
+  "solution_sha256": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+  "tb_sha256": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+  "runner_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "inputs_unchanged": true
+}

@@ -1,0 +1,19 @@
+WARNING: The locale 'C.utf8' is not installed on your system.\nPlease install it by running:\n  Ubuntu/Debian: sudo locale-gen C.utf8 && sudo update-locale\n  RHEL/CentOS:   sudo localedef -i en_US -f UTF-8 C.utf8
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct  3 08:40:12 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/r2_probe/xsim_script.tcl
+# xsim {r2_probe} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+R2_PROBE_RESULT task=Prob085_shift4 checks=209 mismatches=0
+$finish called at time : 789 ns : File "/workspace/team/codex_r3_state_20261003/run/grading_20261003T083420_820636Z/probe_05_Prob085_shift4_pair0_control/tb.sv" Line 49
+exit
+INFO: xsimkernel Simulation Memory Usage: 142256 KB (Peak: 207792 KB), Simulation CPU Usage: 790 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct  3 08:40:14 2026...
