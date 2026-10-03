@@ -38,6 +38,8 @@ LOG_DIR="${LOG_DIR:-/workspace/team/serve_logs}"
 mkdir -p "$LOG_DIR"
 MODEL_PIDFILE="$LOG_DIR/llama-server.pid"
 AGENT_PIDFILE="$LOG_DIR/agent-serve.pid"
+PYTHON_BIN="$(command -v python3)"
+RUNTIME_PATH="$KIT/submission/agent/runtime.py"
 
 if [ -z "${FPGACHINA_TOKEN:-}" ]; then
   echo "FPGACHINA_TOKEN is required" >&2
@@ -93,37 +95,95 @@ agent_state() {
   return 0
 }
 
-# --- 进程归属核验：只有命令行同时含我们自己的标识才认，避免误杀别人的进程 ---
-pid_is_ours() {  # $1=pid $2=匹配串
-  local pid="$1" want="$2"
-  [ -n "$pid" ] || return 1
-  [ -r "/proc/$pid/cmdline" ] || return 1
-  tr '\0' ' ' < "/proc/$pid/cmdline" 2>/dev/null | grep -q -- "$want"
+# A pidfile alone is not ownership: record the Linux process birth time and
+# verify the exact executable and argv before each signal (including SIGKILL).
+proc_starttime() {
+  python3 - "$1" <<'PY'
+import pathlib, sys
+try:
+    raw = pathlib.Path('/proc', sys.argv[1], 'stat').read_text()
+    print(raw[raw.rfind(')') + 2:].split()[19])
+except (OSError, IndexError):
+    raise SystemExit(1)
+PY
+}
+remember_pid() {
+  local pid="$1" file="$2" birth
+  birth=$(proc_starttime "$pid") || return 1
+  printf '%s\n' "$birth" > "$file.starttime"
+  printf '%s\n' "$pid" > "$file"
+}
+pid_is_ours() {  # $1=pidfile $2=agent|model
+  local file="$1" kind="$2" pid birth
+  pid=$(cat "$file" 2>/dev/null) || return 1
+  birth=$(cat "$file.starttime" 2>/dev/null) || return 1
+  python3 - "$pid" "$birth" "$kind" "$PYTHON_BIN" "$LLAMA_BIN" \
+    "$MODEL_PATH" "$MODEL_NAME" "$AGENT_PORT" "$MODEL_PORT" "$RUNTIME_PATH" <<'PY'
+import os, pathlib, sys
+pid, birth, kind, python, llama, model, alias, aport, mport, runtime = sys.argv[1:]
+try:
+    proc = pathlib.Path('/proc', str(int(pid)))
+    raw = (proc / 'stat').read_text()
+    fields = raw[raw.rfind(')') + 2:].split()
+    args = (proc / 'cmdline').read_bytes().rstrip(b'\0').decode().split('\0')
+    if fields[0] == 'Z' or fields[19] != birth:
+        raise ValueError('stale process')
+    exe = os.path.realpath(proc / 'exe')
+    def pair(flag, value):
+        return any(a == flag and b == value for a, b in zip(args, args[1:]))
+    if kind == 'agent':
+        ok = exe == os.path.realpath(python) and runtime in args and 'serve' in args and pair('--port', aport)
+    elif kind == 'model':
+        ok = exe == os.path.realpath(llama) and pair('-m', model) and pair('--alias', alias) and pair('--port', mport)
+    else:
+        ok = False
+    raise SystemExit(0 if ok else 1)
+except (OSError, ValueError, IndexError, UnicodeError):
+    raise SystemExit(1)
+PY
 }
 
-stop_ours() {  # $1=pidfile $2=匹配串
-  local pidfile="$1" want="$2" pid
+stop_ours() {  # $1=pidfile $2=agent|model
+  local pidfile="$1" kind="$2" pid
   pid=$(cat "$pidfile" 2>/dev/null || true)
   if [ -z "$pid" ]; then return 0; fi
-  if pid_is_ours "$pid" "$want"; then
+  if ! kill -0 "$pid" 2>/dev/null; then
+    rm -f "$pidfile" "$pidfile.starttime"
+    return 0
+  fi
+  if pid_is_ours "$pidfile" "$kind"; then
     say "停止自己启动的进程 PID=$pid"
     kill -TERM "$pid" 2>/dev/null
     for _ in $(seq 1 20); do kill -0 "$pid" 2>/dev/null || break; sleep 1; done
-    kill -9 "$pid" 2>/dev/null
+    pid_is_ours "$pidfile" "$kind" && kill -9 "$pid" 2>/dev/null
   else
     say "PID=$pid 已不属于本脚本（命令行不匹配），不动它"
+    return 1
   fi
-  rm -f "$pidfile"
+  rm -f "$pidfile" "$pidfile.starttime"
+}
+
+port_is_free() {
+  python3 - "$1" <<'PY'
+import socket, sys
+with socket.socket() as s:
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    try:
+        s.bind(('127.0.0.1', int(sys.argv[1])))
+    except OSError:
+        raise SystemExit(1)
+PY
 }
 
 start_model() {
+  port_is_free "$MODEL_PORT" || { say "模型端口仍被占用，不重复启动"; return 1; }
   say "启动 llama-server（$MODEL_PATH）"
   nohup "$LLAMA_BIN" -m "$MODEL_PATH" --alias "$MODEL_NAME" \
     --host 127.0.0.1 --port "$MODEL_PORT" \
     -ngl "${MODEL_NGL:-99}" -c "${MODEL_CTX:-16384}" -np 1 \
     -t "${MODEL_THREADS:-8}" --reasoning off \
     >> "$LOG_DIR/llama-server-$(date -u +%Y%m%d).log" 2>&1 &
-  echo $! > "$MODEL_PIDFILE"
+  remember_pid "$!" "$MODEL_PIDFILE" || return 1
   # 权重在 page cache 里时约 5 秒就绪；给足 180 秒
   for _ in $(seq 1 90); do
     model_state && { say "模型就绪"; return 0; }
@@ -134,9 +194,13 @@ start_model() {
 }
 
 start_agent() {
+  port_is_free "$AGENT_PORT" || { say "agent 端口仍被占用，不重复启动"; return 1; }
   say "启动 agent HTTP 服务（端口 $AGENT_PORT）"
-  ( cd "$KIT" && nohup python3 -B submission/agent/runtime.py serve --port "$AGENT_PORT" \
-      >> "$LOG_DIR/agent-serve-$(date -u +%Y%m%d).log" 2>&1 & echo $! > "$AGENT_PIDFILE" )
+  # Background the exec'ing subshell itself. Backgrounding `cd && python`
+  # inside another shell records the wrapper rather than the listening process.
+  ( cd "$KIT" && exec nohup "$PYTHON_BIN" -B "$RUNTIME_PATH" serve --port "$AGENT_PORT" ) \
+      >> "$LOG_DIR/agent-serve-$(date -u +%Y%m%d).log" 2>&1 &
+  remember_pid "$!" "$AGENT_PIDFILE" || return 1
   for _ in $(seq 1 30); do
     case $(agent_state; echo $?) in
       0) say "agent 就绪"; return 0 ;;
@@ -189,8 +253,11 @@ while true; do
       FAIL_MODEL=$((FAIL_MODEL+1))
       say "⚠ 模型服务无响应（连续 $FAIL_MODEL 次）"
       if [ "$FAIL_MODEL" -ge 2 ]; then
-        stop_ours "$MODEL_PIDFILE" "llama-server"
-        start_model && FAIL_MODEL=0
+        if stop_ours "$MODEL_PIDFILE" model; then
+          start_model && FAIL_MODEL=0
+        else
+          say "模型 PID 归属无法确认，不停止或另启模型"
+        fi
       fi
       ;;
   esac
@@ -214,10 +281,9 @@ while true; do
         if [ -z "$AGENT_PID" ] || ! kill -0 "$AGENT_PID" 2>/dev/null; then
           say "本脚本启动的进程已不在，重新启动"
           start_agent && FAIL_AGENT=0
-        elif pid_is_ours "$AGENT_PID" "runtime.py serve"; then
+        elif pid_is_ours "$AGENT_PIDFILE" agent; then
           say "进程 $AGENT_PID 确认为本脚本启动且无响应，重启"
-          stop_ours "$AGENT_PIDFILE" "runtime.py serve"
-          start_agent && FAIL_AGENT=0
+          stop_ours "$AGENT_PIDFILE" agent && start_agent && FAIL_AGENT=0
         else
           say "⚠ $AGENT_PORT 无响应，但占用者不是本脚本启动的，不动它"
         fi

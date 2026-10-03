@@ -19,6 +19,7 @@ import shutil
 import tempfile
 from pathlib import Path
 import unittest
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 OFFICIAL_SCORE = ROOT / "official_reference/selftest/score.py"
@@ -130,60 +131,43 @@ class HarnessWiringTests(unittest.TestCase):
 
 
 class JudgeInvocationTests(unittest.TestCase):
-    """模拟失败路径：判定出问题时必须标成环境失败，不能读到上一轮的结果。
-
-    评审指出第一版把判定输出写到可复用目录、又不检查子进程退出码，
-    本次判定失败时可能读到上次留下的 verdict.json，把旧成绩当本次成绩。
-    """
+    """Quality runs delegate to the single evidence-preserving judge adapter."""
 
     def setUp(self):
-        self.tmp = tempfile.mkdtemp(prefix="judge-invocation-")
-        self.addCleanup(shutil.rmtree, self.tmp, True)
-        self.solution = Path(self.tmp) / "solution.v"
-        self.solution.write_text("module TopModule; endmodule\n", encoding="utf-8")
-        self.real_judge = quality.JUDGE
-        self.addCleanup(lambda: setattr(quality, "JUDGE", self.real_judge))
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.solution = self.root / 'solution.v'
+        self.solution.write_text('module TopModule; endmodule\n', encoding='utf-8')
+        self.adapter = mock.Mock()
+        self.patch = mock.patch.object(quality, 'load_evaluation', return_value=self.adapter)
+        self.patch.start()
+        self.addCleanup(self.patch.stop)
 
-    def test_missing_judge_yields_tool_error(self):
-        quality.JUDGE = Path(self.tmp) / "does-not-exist.py"
-        outdir = os.path.join(self.tmp, "judge")
-        v = quality.run_judge(Path(self.tmp), self.solution, outdir)
-        self.assertIn("tool_error", v)
-        self.assertIsNone(v.get("level"))
+    def test_missing_judge_stops_the_batch_instead_of_inventing_l0(self):
+        self.adapter.judge_sample.side_effect = RuntimeError('judge produced no verdict')
+        with self.assertRaises(RuntimeError):
+            quality.run_judge(self.root, self.solution, self.root / 'judge')
 
-    def test_stale_verdict_from_a_previous_run_is_not_reused(self):
-        """核心用例：目录里已有旧 verdict.json，本次判定失败时绝不能返回它。"""
-        outdir = os.path.join(self.tmp, "judge")
-        os.makedirs(outdir, exist_ok=True)
-        stale = Path(outdir) / "verdict.json"
-        stale.write_text('{"level": 3, "coefficient": 1.0}', encoding="utf-8")
+    def test_stale_verdict_is_preserved_and_the_run_is_rejected(self):
+        outdir = self.root / 'judge'
+        outdir.mkdir()
+        stale = outdir / 'verdict.json'
+        stale.write_text('{"level":3}', encoding='utf-8')
+        with self.assertRaises(FileExistsError):
+            quality.run_judge(self.root, self.solution, outdir)
+        self.adapter.judge_sample.assert_not_called()
+        self.assertEqual(stale.read_text(), '{"level":3}')
 
-        quality.JUDGE = Path(self.tmp) / "does-not-exist.py"
-        v = quality.run_judge(Path(self.tmp), self.solution, outdir)
-        self.assertIn("tool_error", v)
-        self.assertNotEqual(v.get("level"), 3)      # 旧成绩没有被当成新成绩
-        self.assertFalse(stale.exists())            # 旧文件已被清掉
+    def test_unreadable_verdict_failure_is_not_swallowed(self):
+        self.adapter.judge_sample.side_effect = RuntimeError('unreadable verdict')
+        with self.assertRaisesRegex(RuntimeError, 'unreadable'):
+            quality.run_judge(self.root, self.solution, self.root / 'judge')
 
-    def test_unreadable_verdict_is_a_tool_error(self):
-        judge = Path(self.tmp) / "fake_judge.py"
-        judge.write_text(
-            "import argparse, pathlib\n"
-            "p = argparse.ArgumentParser()\n"
-            "p.add_argument('--task'); p.add_argument('--solution'); p.add_argument('--outdir')\n"
-            "p.add_argument('--json'); p.add_argument('--timeout')\n"
-            "a = p.parse_args()\n"
-            "pathlib.Path(a.json).write_text('{not json', encoding='utf-8')\n",
-            encoding="utf-8")
-        quality.JUDGE = judge
-        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "judge2"))
-        self.assertIn("tool_error", v)
-
-    def test_a_failing_judge_does_not_invent_a_level(self):
-        """判定失败时返回里【不能有 level】，否则官方汇总会把它当成一次真实成绩。"""
-        quality.JUDGE = Path(self.tmp) / "nope.py"
-        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "judge3"))
-        self.assertNotIn("level", v)
-        self.assertNotIn("coefficient", v)
+    def test_official_tool_error_is_returned_unchanged(self):
+        result = {'task_id': 't', 'level': 0, 'coefficient': 0, 'tool_error': 'LICENSE_ERROR'}
+        self.adapter.judge_sample.return_value = result
+        self.assertIs(quality.run_judge(self.root, self.solution, self.root / 'judge'), result)
 
 
 class CompletenessLedgerTests(unittest.TestCase):
@@ -246,55 +230,44 @@ class EnduranceAssertionTests(unittest.TestCase):
 
 
 class JudgeNonZeroExitTests(unittest.TestCase):
-    """残余二：新写出可解析的 verdict，但进程退出非零 —— 必须判为判定异常。
-
-    评审给的静态构造：新 verdict 含 level=3、coefficient=1.0 且无 tool_error，
-    随后进程退出 1。此前的接线会直接返回这个 JSON，把它计成有效 L3。
-    官方 judge 正常写出结果后返回 0，所以"有结果 + 非零退出"是异常组合。
-    """
+    """The shared adapter's failure and evidence survive the quality wrapper."""
 
     def setUp(self):
-        self.tmp = tempfile.mkdtemp(prefix="judge-nonzero-")
-        self.addCleanup(shutil.rmtree, self.tmp, True)
-        self.solution = Path(self.tmp) / "solution.v"
-        self.solution.write_text("module TopModule; endmodule\n", encoding="utf-8")
-        self.real_judge = quality.JUDGE
-        self.addCleanup(lambda: setattr(quality, "JUDGE", self.real_judge))
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.solution = self.root / 'solution.v'
+        self.solution.write_text('module TopModule; endmodule\n', encoding='utf-8')
+        self.adapter = mock.Mock()
+        patch = mock.patch.object(quality, 'load_evaluation', return_value=self.adapter)
+        patch.start()
+        self.addCleanup(patch.stop)
 
-    def _judge_that_writes_then_exits(self, payload, code):
-        judge = Path(self.tmp) / ("fake%d.py" % code)
-        judge.write_text(
-            "import argparse, pathlib, sys\n"
-            "p = argparse.ArgumentParser()\n"
-            "p.add_argument('--task'); p.add_argument('--solution'); p.add_argument('--outdir')\n"
-            "p.add_argument('--json'); p.add_argument('--timeout')\n"
-            "a = p.parse_args()\n"
-            "pathlib.Path(a.json).write_text(" + repr(payload) + ", encoding='utf-8')\n"
-            "sys.exit(" + str(code) + ")\n",
-            encoding="utf-8")
-        return judge
+    def failed_adapter(self, task, solution, dst, verdict, deadline):
+        (dst / 'judge_receipt.json').write_text('{"judge_rc":1}', encoding='utf-8')
+        (dst / 'raw.json').write_text('{"level":3}', encoding='utf-8')
+        raise RuntimeError('judge did not exit successfully')
 
-    def test_valid_verdict_with_nonzero_exit_is_a_tool_error(self):
-        quality.JUDGE = self._judge_that_writes_then_exits(
-            '{"task_id": "t", "level": 3, "coefficient": 1.0}', 1)
-        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "j1"))
-        self.assertIn("tool_error", v)
-        self.assertNotIn("level", v)          # 不能被当成有效 L3
-        self.assertNotIn("coefficient", v)
+    def test_valid_verdict_with_nonzero_exit_stops_the_batch(self):
+        self.adapter.judge_sample.side_effect = self.failed_adapter
+        with self.assertRaises(RuntimeError):
+            quality.run_judge(self.root, self.solution, self.root / 'judge')
 
-    def test_the_raw_verdict_and_exit_code_are_kept_for_diagnosis(self):
-        quality.JUDGE = self._judge_that_writes_then_exits(
-            '{"task_id": "t", "level": 3, "coefficient": 1.0}', 1)
-        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "j2"))
-        self.assertEqual(v.get("judge_returncode"), 1)
-        self.assertEqual((v.get("judge_raw_verdict") or {}).get("level"), 3)
+    def test_the_shared_raw_verdict_and_receipt_are_not_removed(self):
+        self.adapter.judge_sample.side_effect = self.failed_adapter
+        out = self.root / 'judge'
+        with self.assertRaises(RuntimeError):
+            quality.run_judge(self.root, self.solution, out)
+        self.assertEqual((out / 'judge_receipt.json').read_text(), '{"judge_rc":1}')
+        self.assertEqual((out / 'raw.json').read_text(), '{"level":3}')
 
-    def test_zero_exit_with_valid_verdict_still_works(self):
-        quality.JUDGE = self._judge_that_writes_then_exits(
-            '{"task_id": "t", "level": 3, "coefficient": 1.0}', 0)
-        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "j3"))
-        self.assertNotIn("tool_error", v)
-        self.assertEqual(v.get("level"), 3)
+    def test_zero_exit_result_is_forwarded_without_recalculation(self):
+        result = {'task_id': 't', 'level': 3, 'coefficient': 1.0}
+        self.adapter.judge_sample.return_value = result
+        out = self.root / 'judge'
+        self.assertIs(quality.run_judge(self.root, self.solution, out), result)
+        self.adapter.judge_sample.assert_called_once_with(
+            self.root, self.solution, out, out / 'verdict.json', 600)
 
 
 class CompletionVersusComparabilityTests(unittest.TestCase):
@@ -327,15 +300,38 @@ class CompletionVersusComparabilityTests(unittest.TestCase):
             summary=self._summary(8, 8, 8, 8))
         self.assertFalse(state["attempts_complete"])
 
-    def test_partial_environment_failures_stay_comparable(self):
-        # 固定评分允许排除环境失败后用其余成绩；只要每模式还有有效成绩就可比较
+    def test_partial_environment_failures_block_paired_experiment_claim(self):
+        # 官方可以汇总有效成绩，但两侧少了不同题，不能宣称配对协议完成。
         state = quality.evaluate_state(
             attempted=80, expected_cells=80, missing_tasks=[],
             summary=self._summary(6, 8, 7, 8))
         self.assertTrue(state["attempts_complete"])
+        self.assertFalse(state["comparable"])
+        self.assertEqual(quality.exit_code_for(state), 3)
+        self.assertEqual(state["scored_coverage"], {"agent": 0.75, "baseline": 0.875})
+
+    def test_one_failed_sample_blocks_complete_five_sample_claim(self):
+        summary = self._summary(8, 8, 8, 8)
+        summary["agent"]["tool_errors"] = 1
+        state = quality.evaluate_state(80, 80, [], summary)
+        self.assertTrue(state["attempts_complete"])
+        self.assertFalse(state["comparable"])
+
+    def test_same_task_count_with_wrong_identity_is_not_comparable(self):
+        summary = self._summary(1, 1, 1, 1)
+        summary["agent"]["per_task"] = [dict(task_id="A", samples=5, scored_samples=5)]
+        summary["baseline"]["per_task"] = [dict(task_id="B", samples=5, scored_samples=5)]
+        state = quality.evaluate_state(10, 10, [], summary, ["A"], 5)
+        self.assertFalse(state["comparable"])
+
+    def test_complete_paired_zero_scores_are_valid(self):
+        summary = self._summary(1, 1, 1, 1)
+        for mode in ("agent", "baseline"):
+            summary[mode].update(set_score=0.0, tool_errors=0,
+                                 per_task=[dict(task_id="A", samples=5, scored_samples=5)])
+        state = quality.evaluate_state(10, 10, [], summary, ["A"], 5)
         self.assertTrue(state["comparable"])
         self.assertEqual(quality.exit_code_for(state), 0)
-        self.assertEqual(state["scored_coverage"], {"agent": 0.75, "baseline": 0.875})
 
     def test_one_mode_without_any_score_blocks_comparison(self):
         state = quality.evaluate_state(

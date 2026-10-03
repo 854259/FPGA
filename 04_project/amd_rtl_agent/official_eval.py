@@ -19,6 +19,154 @@ import time
 ROOT = Path(__file__).resolve().parent
 OFFICIAL = ROOT / 'official_reference'
 
+# The pinned judge always runs veval-judge with --quiet. Its outer log can be
+# empty even when the real tool logs exist under <work>/w/. Preserve those logs
+# without changing pinned scoring. An L2 result is a review signal, not proof of
+# an external kill: Prob005's historical trigger was not directly witnessed.
+JUDGE_WORK_LOGS = 'judge_work_logs'
+COPY_EVIDENCE = (
+    'verdict.json',
+    'dut.sv',
+    'w/judge.log',
+    'w/synth/synth.log',
+    'w/synth/synth.json',
+    'w/synth/vivado.log',
+)
+
+
+def _keep_judge_evidence(work: Path, dst: Path) -> list:
+    """Copy bounded tool evidence from our own scratch; surface copy failures."""
+    copied = []
+    for rel in COPY_EVIDENCE:
+        src = work / rel
+        if not src.is_file():
+            continue
+        if not src.resolve().is_relative_to(work.resolve()):
+            raise ValueError('judge evidence escapes owned work directory: ' + rel)
+        out = dst / rel.replace('/', '_')
+        shutil.copyfile(src, out)
+        copied.append(out.name)
+    return copied
+
+
+def judge_sample(task: Path, solution: Path, dst: Path, verdict_path: Path,
+                 deadline: float) -> dict:
+    """Run the pinned judge and preserve evidence before deleting owned scratch.
+
+    judge.py supports SELFTEST_TMP and creates judge_<task>_<pid> below it;
+    SELFTEST_JUDGE_WORK_DIR is not a supported variable. Never locate or clean
+    shared /tmp entries. Empty answers legitimately create no tool workdir.
+    Unexpected adapter failures stop the run rather than becoming an L0 or a
+    success. The original official JSON is saved before adding metadata.
+    """
+    task, solution = Path(task).resolve(), Path(solution).resolve()
+    expected_task = json.loads((task / 'task.json').read_text(encoding='utf-8'))['task_id']
+    nonempty = bool(solution.read_text(encoding='utf-8').strip())
+    dst, verdict_path = Path(dst).resolve(), Path(verdict_path).resolve()
+    if verdict_path.exists():
+        raise FileExistsError('refusing to reuse judge verdict: ' + str(verdict_path))
+    evidence = dst / JUDGE_WORK_LOGS
+    evidence.mkdir(exist_ok=False)
+    scratch = Path(tempfile.mkdtemp(prefix='judge-scratch-', dir=dst)).resolve()
+    env = dict(os.environ, SELFTEST_KEEP_WORK='1', SELFTEST_TMP=str(scratch))
+    receipt = {'judge_rc': None, 'evidence': {}, 'errors': []}
+    work = None
+    verdict = None
+    archive_ok = True
+    try:
+        proc = subprocess.run(
+            [sys.executable, str(OFFICIAL / 'selftest/judge.py'),
+             '--task', str(task), '--solution', str(solution),
+             '--outdir', str(dst / 'judge_logs'), '--timeout', str(deadline),
+             '--json', str(verdict_path)],
+            env=env, capture_output=True, text=True, errors='replace')
+        receipt['judge_rc'] = proc.returncode
+        (evidence / 'adapter.stdout.log').write_text(proc.stdout or '', encoding='utf-8')
+        (evidence / 'adapter.stderr.log').write_text(proc.stderr or '', encoding='utf-8')
+    except Exception as exc:
+        receipt['errors'].append('judge invocation: ' + repr(exc))
+    finally:
+        # Only directories within the fresh, unique scratch belong to this call.
+        works = list(scratch.glob('judge_*'))
+        if len(works) > 1:
+            archive_ok = False
+            receipt['errors'].append('multiple judge workdirs in owned scratch')
+        elif works:
+            work = works[0]
+            if not work.is_dir() or not work.resolve().is_relative_to(scratch):
+                archive_ok = False
+                receipt['errors'].append('invalid judge workdir in owned scratch')
+            else:
+                try:
+                    _keep_judge_evidence(work, evidence)
+                except (OSError, ValueError) as exc:
+                    archive_ok = False
+                    receipt['errors'].append('evidence copy: ' + repr(exc))
+        try:
+            raw = verdict_path.read_bytes()
+            (evidence / 'adapter_verdict.json').write_bytes(raw)
+            verdict = json.loads(raw)
+            if not isinstance(verdict, dict):
+                raise ValueError('judge verdict must be an object')
+        except (OSError, ValueError) as exc:
+            receipt['errors'].append('judge verdict: ' + repr(exc))
+            verdict = None
+
+        if receipt['judge_rc'] != 0:
+            receipt['errors'].append('judge did not exit successfully')
+        if verdict is not None and str(verdict.get('tool_error', '')).startswith('判定超时'):
+            # The pinned wrapper times out only its direct veval child; EDA
+            # grandchildren can outlive it. Keep their cwd and stop the batch
+            # for owned-process inspection instead of deleting active work.
+            archive_ok = False
+            receipt['errors'].append('judge timeout; inspect owned EDA processes before cleanup')
+        # A normal nonempty candidate must have real compiler/simulator logs.
+        # Synth logs are required only when that stage was actually attempted.
+        if verdict is not None and not verdict.get('tool_error'):
+            level = verdict.get('level')
+            if (verdict.get('task_id') != expected_task or type(level) is not int
+                    or level not in (0, 1, 2, 3)
+                    or verdict.get('coefficient') != {0: 0., 1: .2, 2: .7, 3: 1.}[level]):
+                receipt['errors'].append('invalid official verdict identity or coefficient')
+            if nonempty:
+                required = ['verdict.json', 'w_judge.log']
+                if (verdict.get('stages') or {}).get('simulate'):
+                    required.append('w_synth_synth.log')
+                missing = [name for name in required
+                           if not (evidence / name).is_file() or (evidence / name).stat().st_size == 0]
+                if missing:
+                    archive_ok = False
+                    receipt['errors'].append('missing tool evidence: ' + ', '.join(missing))
+        for path in sorted(evidence.iterdir()):
+            if path.is_file():
+                raw = path.read_bytes()
+                receipt['evidence'][path.name] = {'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
+        if archive_ok:
+            try:
+                shutil.rmtree(scratch)
+            except OSError as exc:
+                receipt['errors'].append('owned scratch cleanup: ' + repr(exc))
+        receipt['scratch_retained'] = str(scratch) if scratch.exists() else None
+        (dst / 'judge_receipt.json').write_text(
+            json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    if receipt['errors']:
+        raise RuntimeError('judge evidence/adapter failure; see ' + str(dst / 'judge_receipt.json'))
+    kept = [name for name in receipt['evidence'] if name not in
+            ('adapter.stdout.log', 'adapter.stderr.log', 'adapter_verdict.json')]
+    verdict['judge_rc'] = receipt['judge_rc']
+    verdict['judge_evidence'] = kept
+    verdict['judge_log_bytes'] = sum(receipt['evidence'][name]['bytes'] for name in kept if name.endswith('.log'))
+    verdict['judge_evidence_complete'] = True
+    stages = verdict.get('stages') or {}
+    verdict['suspected_silent_degradation'] = bool(
+        not verdict.get('tool_error') and stages.get('simulate') and not stages.get('synth'))
+    # work_dir in the raw official verdict records the original location; the
+    # receipt and this metadata identify the durable copy after scratch cleanup.
+    verdict['judge_receipt'] = str(dst / 'judge_receipt.json')
+    verdict_path.write_text(json.dumps(verdict, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    return verdict
+
+
 
 def module(name, path):
     spec = importlib.util.spec_from_file_location(name, path)
@@ -43,6 +191,7 @@ def summarize(results, expected_tasks, modes, samples):
     coefficients = {0: 0., 1: .2, 2: .7, 3: 1.}
     by_mode = {}
     expected_files = set()
+    suspects = []
     for mode in modes:
         by_task = {}
         for tid in expected_tasks:
@@ -56,6 +205,16 @@ def summarize(results, expected_tasks, modes, samples):
                 if not item.get('tool_error') and (item.get('level') not in coefficients or
                         item.get('coefficient') != coefficients[item['level']]):
                     raise ValueError('official L0-L3 judgement required; legacy booleans are not scores')
+                stages = item.get('stages') or {}
+                if (not item.get('tool_error') and stages.get('simulate')
+                        and not stages.get('synth')):
+                    # 无法事后区分"综合确实失败"与"综合被中断"：原始 synth.log 是否
+                    # 保留、判定是否记录了非零返回码，决定这条记录能不能当结论用。
+                    suspects.append(dict(
+                        mode=mode, task=tid, sample=sample,
+                        judge_rc=item.get('judge_rc'),
+                        judge_log_bytes=item.get('judge_log_bytes'),
+                        evidence=item.get('judge_evidence') or []))
                 records.append(item)
             by_task[tid] = records
         by_mode[mode] = score.summarize(by_task)
@@ -65,6 +224,14 @@ def summarize(results, expected_tasks, modes, samples):
             'modes': by_mode, 'samples_requested': samples,
             'five_sample_protocol': samples == 5,
             'diagnostic_note': 'Upstream pass@5 field is best-of-available; only a five-sample run is pass@5 protocol.',
+            'silent_degradation_suspects': suspects,
+            'silent_degradation_note': (
+                'Samples listed here passed simulation but did not pass synthesis with no tool_error. '
+                'Review the preserved raw stage verdict and tool logs; L2 alone does not prove '
+                'external interruption. judge_rc is the adapter exit code, not the synthesis exit '
+                'code. For Prob005, re-judging passed 4/4 and a controlled interruption reproduced '
+                'the failure shape; the historical trigger was not directly witnessed.'
+                if suspects else 'None: no simulation-pass/synthesis-fail sample without tool_error.'),
             'formal_total_score': None,
             'limits': 'Gain threshold, cost baseline, final time budget and engineering score are not established here.'}
 
@@ -126,10 +293,8 @@ def main():
                     shutil.copyfile(path.parent/task_meta['reference'], dst/'solution.v')
                 else:
                     runtime.run_job(mode, path.parent, dst, args.deadline)
-                subprocess.run([sys.executable, str(OFFICIAL/'selftest/judge.py'),
-                                '--task', str(path.parent), '--solution', str(dst/'solution.v'),
-                                '--outdir', str(dst/'judge_logs'), '--timeout', str(args.deadline),
-                                '--json', str(results/f'{mode}.{tid}.s{sample}.json')], check=True)
+                judge_sample(path.parent, dst / 'solution.v', dst,
+                             results / f'{mode}.{tid}.s{sample}.json', args.deadline)
     report = summarize(results, ids, modes, args.samples)
     (out/'graded_summary.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     meta['complete'] = True

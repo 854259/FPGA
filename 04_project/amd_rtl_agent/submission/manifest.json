@@ -19,7 +19,9 @@
     "backend": "llama.cpp",
     "version": "0.5.0-dev c13fcbf (HIP, gfx1100)",
     "start_command": "./serve/llama.sh",
-    "port": 8000
+    "port": 8000,
+    "supervisor": "serve/serve_all.sh",
+    "supervisor_sha256": "47d24be4197dbbccf07ebb65608aea1fa05bcdd3d5126331803b4b4f49fe5556"
   },
   "endpoints": {
     "solve": "./run.sh",
@@ -44,7 +46,7 @@
   },
   "runtime": {
     "path": "agent/runtime.py",
-    "sha256": "cea6479c6364fbfce55ca8129e8cfd7bb4b9afd3b2a4c7ae2e3cd381af2968b1"
+    "sha256": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97"
   },
   "contract": {
     "health": "GET /v1/health returns ready/track/model/vram_gb; verified end to end over HTTP, including the 401 without a token",

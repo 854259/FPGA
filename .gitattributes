@@ -22,3 +22,9 @@ Dockerfile text eol=lf
 04_project/amd_rtl_agent/submission/baseline.py -text
 04_project/amd_rtl_agent/submission/*.sh text eol=lf
 04_project/amd_rtl_agent/submission/run_baseline.sh -text
+
+# Frozen experiment inputs and receipts are hashed as raw bytes, including CRLF.
+03_analysis/diagnostic_repair_pilot_20261003/input/** -text -whitespace
+03_analysis/codex_takeover_20261003/r1_runs/** -text -whitespace
+03_analysis/codex_takeover_20261003/judge_smoke/** -text -whitespace
+03_analysis/codex_takeover_20261003/deployment/** -text -whitespace
