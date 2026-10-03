@@ -133,9 +133,58 @@ def run_judge(task_dir, solution_path, outdir):
     if not os.path.isfile(jf):
         return {"tool_error": "judge produced no verdict (rc=%s)" % proc.returncode}
     try:
-        return json.loads(pathlib.Path(jf).read_text())
+        verdict = json.loads(pathlib.Path(jf).read_text())
     except ValueError as exc:
         return {"tool_error": "unreadable verdict: %s" % exc}
+    # 残余二：parseable 的新 verdict 也要看退出码。
+    # 官方 judge 正常写出结果后返回 0；非零退出搭配新结果属判定异常，不能仅凭
+    # JSON 可解析就默认成功——否则一次"写了成绩但进程失败"会被计成有效等级。
+    if proc.returncode != 0:
+        raw = verdict
+        verdict = {"tool_error": "judge wrote a verdict but exited %s" % proc.returncode}
+        # 原始 JSON 与退出码都保留，供追查，不丢失证据
+        verdict["judge_raw_verdict"] = raw
+        verdict["judge_returncode"] = proc.returncode
+    return verdict
+
+
+def evaluate_state(attempted, expected_cells, missing_tasks, summary):
+    """把「尝试完成」与「可比较」拆成两个独立状态。
+
+    只检查 attempted == expected_cells 是不够的：80 格全部环境失败时，
+    尝试是齐全的，但两个模式的 scored_tasks 都是 0，官方汇总返回的 0 只是兜底，
+    这种结果不能用来比较模型或版本。抽成纯函数是为了能直接测它，
+    而不是在测试里重写一遍布尔公式。
+    """
+    attempts_complete = bool(attempted == expected_cells and not missing_tasks)
+    coverage = {}
+    incomparable = []
+    if not attempts_complete:
+        incomparable.append("尝试不齐全")
+    for mode in ("agent", "baseline"):
+        res = summary.get(mode) or {}
+        tasks = res.get("tasks", 0)
+        scored = res.get("scored_tasks", 0)
+        coverage[mode] = round((scored / tasks) if tasks else 0.0, 4)
+        if scored == 0:
+            incomparable.append("%s 没有任何有效成绩" % mode)
+    return dict(attempts_complete=attempts_complete,
+                scored_coverage=coverage,
+                comparable=not incomparable,
+                incomparable_reasons=incomparable)
+
+
+def exit_code_for(state):
+    """退出码策略，供自动消费者区分三种状态。
+
+    0 = 尝试齐全且可比较；2 = 尝试不齐全；3 = 尝试齐全但不可比较。
+    此前只有 0/2，于是「80 格全环境失败」会得到 0，被当成可用实验。
+    """
+    if not state["attempts_complete"]:
+        return 2
+    if not state["comparable"]:
+        return 3
+    return 0
 
 
 def main():
@@ -229,10 +278,7 @@ def main():
         print("  有效判分          : %d" % ledger["graded"])
         print("  其中空答案(记 L0) : %d" % ledger["empty"])
         print("  环境失败(单列)    : %d" % ledger["tool_error"])
-        complete = (ledger["attempted"] == ledger["expected_cells"]
-                    and not ledger["missing_tasks"])
-        print("  评测完整性        : %s" % ("完整" if complete else "★ 不完整 —— 结论只能当部分结果看"))
-
+        # 残余一：把"尝试完成"与"可比较"分成两个状态（见 evaluate_state）。
         print()
         print("=== 官方 summarize() 的结果 ===")
         summary = {}
@@ -250,9 +296,26 @@ def main():
         gain, gscore = official.gain_score(a, b)
         print("  增益 = %s   增益得分(满分线 %.1f) = %.2f"
               % ("%.4f" % gain if gain is not None else "N/A", official.GAIN_FULL_MARK, gscore))
-        if summary["agent"]["scored_tasks"] == 0 or summary["baseline"]["scored_tasks"] == 0:
-            print("  ★ 有模式【没有任何有效成绩】：官方汇总此时返回 0 只是兜底，")
-            print("    不代表真实得分为零——本次结果不能用于比较。")
+
+        # 残余一：把"尝试完成"与"可比较"分成两个状态（见 evaluate_state）。
+        # 必须放在 summary 之后——它要用计分题数算覆盖比例。
+        state = evaluate_state(ledger["attempted"], ledger["expected_cells"],
+                               ledger["missing_tasks"], summary)
+        attempts_complete = state["attempts_complete"]
+        coverage = state["scored_coverage"]
+        comparable = state["comparable"]
+        incomparable = state["incomparable_reasons"]
+
+        print()
+        print("=== 状态（三个分开的标志）===")
+        print("  attempts_complete : %s" % attempts_complete)
+        print("  scored_coverage   : agent=%.2f  baseline=%.2f（有效成绩覆盖比例）"
+              % (coverage["agent"], coverage["baseline"]))
+        print("  comparable        : %s" % comparable)
+        if incomparable:
+            for r in incomparable:
+                print("    不可比较原因: %s" % r)
+            print("  ★ 尝试齐全但不可比较时，不得用本结果比较模型或版本。")
 
         # 另起名字的辅助指标：五次中是否出现过 L3
         print()
@@ -267,7 +330,11 @@ def main():
                   % (mode, anyl3, len(by_task[mode])))
 
         (args.out / "quality_official.json").write_text(
-            json.dumps(dict(summary=summary, ledger=ledger, complete=complete),
+            json.dumps(dict(summary=summary, ledger=ledger,
+                            attempts_complete=attempts_complete,
+                            scored_coverage=coverage,
+                            comparable=comparable,
+                            incomparable_reasons=incomparable),
                        indent=2, ensure_ascii=False), encoding="utf-8")
         (args.out / "by_task.json").write_text(
             json.dumps(by_task, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -278,7 +345,12 @@ def main():
         print("      只有【所有题都未计分】时，官方汇总才返回 0 作为兜底。")
         print("      关键是把「无有效成绩」标出来，而不是把兜底的 0 当成真实得分。")
         print("      这是子集评测，不是完整 1560 次协议。")
-        return 0 if complete else 2
+        # 退出码策略（供自动消费者识别三种状态）：
+        #   0 = 尝试齐全 且 可比较
+        #   2 = 尝试不齐全
+        #   3 = 尝试齐全但不可比较（例如有模式全为环境失败）
+        # 此前只有 0/2，于是"80 格全环境失败"会得到 0，被自动消费者当成可用实验。
+        return exit_code_for(state)
     finally:
         srv.terminate()
         try:

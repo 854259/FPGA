@@ -245,5 +245,110 @@ class EnduranceAssertionTests(unittest.TestCase):
         self.assertNotIn("sorted(codes)", code)
 
 
+class JudgeNonZeroExitTests(unittest.TestCase):
+    """残余二：新写出可解析的 verdict，但进程退出非零 —— 必须判为判定异常。
+
+    评审给的静态构造：新 verdict 含 level=3、coefficient=1.0 且无 tool_error，
+    随后进程退出 1。此前的接线会直接返回这个 JSON，把它计成有效 L3。
+    官方 judge 正常写出结果后返回 0，所以"有结果 + 非零退出"是异常组合。
+    """
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(prefix="judge-nonzero-")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.solution = Path(self.tmp) / "solution.v"
+        self.solution.write_text("module TopModule; endmodule\n", encoding="utf-8")
+        self.real_judge = quality.JUDGE
+        self.addCleanup(lambda: setattr(quality, "JUDGE", self.real_judge))
+
+    def _judge_that_writes_then_exits(self, payload, code):
+        judge = Path(self.tmp) / ("fake%d.py" % code)
+        judge.write_text(
+            "import argparse, pathlib, sys\n"
+            "p = argparse.ArgumentParser()\n"
+            "p.add_argument('--task'); p.add_argument('--solution'); p.add_argument('--outdir')\n"
+            "p.add_argument('--json'); p.add_argument('--timeout')\n"
+            "a = p.parse_args()\n"
+            "pathlib.Path(a.json).write_text(" + repr(payload) + ", encoding='utf-8')\n"
+            "sys.exit(" + str(code) + ")\n",
+            encoding="utf-8")
+        return judge
+
+    def test_valid_verdict_with_nonzero_exit_is_a_tool_error(self):
+        quality.JUDGE = self._judge_that_writes_then_exits(
+            '{"task_id": "t", "level": 3, "coefficient": 1.0}', 1)
+        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "j1"))
+        self.assertIn("tool_error", v)
+        self.assertNotIn("level", v)          # 不能被当成有效 L3
+        self.assertNotIn("coefficient", v)
+
+    def test_the_raw_verdict_and_exit_code_are_kept_for_diagnosis(self):
+        quality.JUDGE = self._judge_that_writes_then_exits(
+            '{"task_id": "t", "level": 3, "coefficient": 1.0}', 1)
+        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "j2"))
+        self.assertEqual(v.get("judge_returncode"), 1)
+        self.assertEqual((v.get("judge_raw_verdict") or {}).get("level"), 3)
+
+    def test_zero_exit_with_valid_verdict_still_works(self):
+        quality.JUDGE = self._judge_that_writes_then_exits(
+            '{"task_id": "t", "level": 3, "coefficient": 1.0}', 0)
+        v = quality.run_judge(Path(self.tmp), self.solution, os.path.join(self.tmp, "j3"))
+        self.assertNotIn("tool_error", v)
+        self.assertEqual(v.get("level"), 3)
+
+
+class CompletionVersusComparabilityTests(unittest.TestCase):
+    """残余一：尝试齐全 ≠ 可比较。直接测 main 用的纯函数，不重写公式。"""
+
+    def _summary(self, agent_scored, agent_tasks, base_scored, base_tasks):
+        return {"agent": {"scored_tasks": agent_scored, "tasks": agent_tasks},
+                "baseline": {"scored_tasks": base_scored, "tasks": base_tasks}}
+
+    def test_all_environment_failures_are_attempts_complete_but_not_comparable(self):
+        # 评审的静态构造：80 格全部尝试，但全部环境失败 -> 两个模式都没有有效成绩
+        state = quality.evaluate_state(
+            attempted=80, expected_cells=80, missing_tasks=[],
+            summary=self._summary(0, 8, 0, 8))
+        self.assertTrue(state["attempts_complete"])       # 尝试确实齐全
+        self.assertFalse(state["comparable"])             # 但不能用来比较
+        self.assertEqual(state["scored_coverage"], {"agent": 0.0, "baseline": 0.0})
+        self.assertEqual(quality.exit_code_for(state), 3)  # 不是 0
+
+    def test_short_attempts_are_not_complete(self):
+        state = quality.evaluate_state(
+            attempted=60, expected_cells=80, missing_tasks=[],
+            summary=self._summary(8, 8, 8, 8))
+        self.assertFalse(state["attempts_complete"])
+        self.assertEqual(quality.exit_code_for(state), 2)
+
+    def test_missing_task_is_not_complete(self):
+        state = quality.evaluate_state(
+            attempted=80, expected_cells=80, missing_tasks=["ProbNope"],
+            summary=self._summary(8, 8, 8, 8))
+        self.assertFalse(state["attempts_complete"])
+
+    def test_partial_environment_failures_stay_comparable(self):
+        # 固定评分允许排除环境失败后用其余成绩；只要每模式还有有效成绩就可比较
+        state = quality.evaluate_state(
+            attempted=80, expected_cells=80, missing_tasks=[],
+            summary=self._summary(6, 8, 7, 8))
+        self.assertTrue(state["attempts_complete"])
+        self.assertTrue(state["comparable"])
+        self.assertEqual(quality.exit_code_for(state), 0)
+        self.assertEqual(state["scored_coverage"], {"agent": 0.75, "baseline": 0.875})
+
+    def test_one_mode_without_any_score_blocks_comparison(self):
+        state = quality.evaluate_state(
+            attempted=80, expected_cells=80, missing_tasks=[],
+            summary=self._summary(8, 8, 0, 8))
+        self.assertFalse(state["comparable"])
+        self.assertIn("baseline 没有任何有效成绩", state["incomparable_reasons"])
+
+    def test_main_uses_the_shared_functions(self):
+        text = QUALITY.read_text(encoding="utf-8")
+        self.assertIn("state = evaluate_state(", text)
+        self.assertIn("return exit_code_for(state)", text)
+
+
 if __name__ == "__main__":
     unittest.main()
