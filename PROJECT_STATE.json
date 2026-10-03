@@ -6,7 +6,12 @@
     "evidence": "03_analysis/h3_l0_elab_replay_20261003/summary.json",
     "evidence_sha256": "52faecf21c33ec91eff968317afec18d4e2c8234cb66a12c114f49cbcf0a6b0d",
     "report": "03_analysis/H3_L0_ELAB_REPLAY_20261003.md",
-    "tasks": ["Prob006_vectorr", "Prob128_fsm_ps2", "Prob133_2014_q3fsm", "Prob137_fsm_serial"],
+    "tasks": [
+      "Prob006_vectorr",
+      "Prob128_fsm_ps2",
+      "Prob133_2014_q3fsm",
+      "Prob137_fsm_serial"
+    ],
     "result": "All four H3 candidates pass xvlog and fail xelab with VRFC 10-3823 or 10-3818, both standalone and in official L1 fixture context. All four archived seven-rule candidates pass standalone elaboration. Twelve checks complete, no timeout.",
     "runtime_boundary": "Standalone diagnosis used only the generated candidate, without reference code or testbench.",
     "not_proven": "No repair or score gain demonstrated; detection coverage and cost on the stable seven-rule baseline remain untested.",
@@ -1887,5 +1892,84 @@
     "required_wording": "the readiness defect was fixed and verified, and separately, there is not currently a service accepting organiser requests. Both statements are true and must not be collapsed into one.",
     "deferring_the_runtime_deploy": "correct, to protect the running comparison; after the experiment, acceptance must run from the start-up entry point through HTTP, covering recovery after abnormal exit, child process cleanup and version ownership",
     "vram_none_reading": "returning None avoids a wrong attribution, but None means not measured, not proven within the limit; final resource acceptance still needs a measured record"
+  },
+  "xelab_check_measurement_20261003": {
+    "date": "2026-10-03",
+    "status": "measured_on_stable_version_no_model_calls",
+    "why": "the four regressions in the H3 variant all failed at elaboration, not at analysis: xvlog_dut rc=0, xvlog_fixture rc=0, xelab rc=1 reporting a signal driven from more than one process. The runtime only ever runs xvlog, so this whole class passes its own check and only surfaces in the organisers' flow.",
+    "method": "xvlog -sv --nolog dut.sv, then xelab <top> -s snap --nolog -timescale 1ps/1ps, on all 156 stable submissions, without loading the reference or testbench because the agent does not have them at official runtime",
+    "results": {
+      "tasks": 156,
+      "fail_at_analysis": [
+        "Prob082_lfsr32",
+        "Prob134_2014_q3c",
+        "Prob144_conwaylife",
+        "Prob147_circuit10"
+      ],
+      "pass_analysis_fail_elaboration": [
+        "Prob156_review2015_fancytimer"
+      ],
+      "false_positives_on_L1_or_L3": 0,
+      "by_level": {
+        "L0": "6 tasks: 4 fail analysis, 1 fails elaboration, 1 passes both",
+        "L1": "38 tasks: all pass both",
+        "L3": "112 tasks: all pass both"
+      }
+    },
+    "cost": {
+      "xvlog_mean_s": 1.07,
+      "xelab_mean_s": 1.16,
+      "incremental_s_per_task": 1.16,
+      "total_extra_for_156": "about 3 minutes"
+    },
+    "what_is_claimed": [
+      "on the stable version exactly one task is caught that analysis misses, and it is a multiple-driver report",
+      "zero false positives across the 150 tasks the judge rated L1 or L3",
+      "the signal comes from the candidate code alone, so it is available at official runtime"
+    ],
+    "what_is_not_claimed": [
+      "one detection is plus 0.2 coefficient, which is plus 0.00128 on the set score, before the cost item is considered",
+      "that task is one of the four where the official reference itself never reached L3, so its ceiling is L1, not L3",
+      "detection is not repair; the repair rate needs a model slot and a fixed budget",
+      "removing one of the assignments is not the answer, since which one matches the intended behaviour still needs judgement",
+      "the four H3 regressions are not stable-version gains: all four seven-rule candidates elaborate cleanly"
+    ],
+    "evidence": [
+      "03_analysis/35_xelab展开检查_覆盖与成本实测_20261003.md",
+      "04_project/amd_rtl_agent/bench/xelab_20261003/detect.json",
+      "03_analysis/H3_L0_ELAB_REPLAY_20261003.md (reviewer, independently reproduced)"
+    ]
+  },
+  "synth_stage_probe_20261003": {
+    "date": "2026-10-03",
+    "status": "probe_only_not_a_full_measurement",
+    "why": "the official L3 stage is synth_design, which we never run either. Non-synthesizable constructs can pass analysis and elaboration and then fail synthesis.",
+    "probe": {
+      "tasks": 8,
+      "detected": 0,
+      "cost_per_task_s": 5.3,
+      "synth_portion_s": "about 3",
+      "note": "the four designs that passed analysis and elaboration all synthesized cleanly"
+    },
+    "why_stopped": "the full 156-task measurement takes about 14 minutes and was stopped so it could not perturb the runtime comparison running at the same time",
+    "must_not_claim": "eight tasks is far too small to conclude there is no synthesis-stage gap; this is a probe and the full measurement is outstanding"
+  },
+  "runtime_validation_20261003": {
+    "date": "2026-10-03",
+    "status": "running_no_conclusion_yet",
+    "single_variable": "runtime cea6479c -> 728499f4",
+    "why_one_variable_is_enough": "of the three changes in 728499f4 only the declaration-repair boundary fix is on the grading path; vram_gb returning None and the health gate are only used by health(), which the solve path never calls",
+    "the_change_under_test": "the old repair deleted the whole declaration line, so fixing q in 'reg q, state;' also discarded state and the patch was rejected on recompile; the new one removes only the named identifier",
+    "held_fixed": {
+      "generation_skill": "f4c4c8e2d97ec476",
+      "feedback_skill": "aee81f188b3717ce",
+      "baseline": "537783e39db22079",
+      "upstream": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+      "params": "samples=1 deadline=300 profile=development RTL_REPAIRS=1 RTL_MAX_TOKENS=8192 RTL_TEMPERATURE=0"
+    },
+    "control_run": "full156_declfix_20261003",
+    "acceptance_rule_written_in_advance": "adopt and keep deployed if the agent set score does not fall; if it falls, restore and record as a negative result",
+    "also_checked": "the declaration_fix trace events, to confirm the widened patch does not introduce new wrong edits",
+    "slot": "owner_runtime728, released by an exit trap which also restores the runtime"
   }
 }
