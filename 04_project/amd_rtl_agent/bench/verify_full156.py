@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
-"""H3 产物验收：逐项核对，并且**与预期值比对**，不是只打印。
+"""H3 产物验收：逐项核对并与预期比对，**成绩一律走官方汇总函数**。
 
-评审指出的六处"宣称与实现不一致"，本版逐条改掉
-------------------------------------------------
-| 宣称 | 第一版实际做法 | 本版 |
+第二版被评审否掉的原因（本版逐条改掉）
+--------------------------------------
+| 问题 | 第二版实际做法 | 本版 |
 |---|---|---|
-| 版本哈希 | 找文件打印，无比对；漏了云端实际用的 experiment.json | 读 experiment.json **并与预期比对**；另从每题 trace 的 agent_meta 取**逐样本** skill_sha256 |
-| 技能还原 | 没读还原后的 Skill | 实际读部署中的 SKILL.md 并比对 |
-| 样本完整性 | 只看两个模式各 156 条 | 严格核对**预期题目清单**与**采样编号**，缺哪题报哪题 |
-| 空答案 | 把全部 L0 都算空答案 | **读 solution.v 内容**判断，不看等级 |
-| 耗时 | 用 verdict 的 elapsed_s（那是**判定**耗时） | 从 trace 的 ts 跨度算**求解**耗时；判定耗时另列 |
-| 验收失败 | 有问题仍返回成功 | **有问题返回非 0** |
+| **成绩算错** | 自己实现汇总，且把"采样编号→verdict 的字典"当成 verdict，读不到 level/coefficient，**全部按 0 计**；环境失败也数不出来 | 转成官方要的"题目→verdict 列表"，**直接调用官方 `score.summarize()`** |
+| 技能哈希只是统计 | 打印观察到的哈希，全错/混用都不阻止通过 | **作为通过条件**：每个预期 agent 样本都必须有元数据且哈希等于预先固定的变体 |
+| 把 trace 跨度叫"真实求解耗时" | 夸大 | 改称**"已记录执行区间"**；baseline 往往只有一个带 ts 的事件，另报 `llm.sec` |
+| 不可比仍给胜负 | 只加 warning，继续打印"胜出/持平" | **不可比 → 只报共同题目变化，结论写"暂不可判定"** |
 
 数据来源
 --------
-- `full/results/<mode>.<task>.s<k>.json`  ：官方判定结果（level/coefficient/tool_error/elapsed_s=判定耗时）
-- `full/<mode>/<task>/s<k>/trace.jsonl`   ：agent_meta（skill_sha256、repairs）、llm、lint、ts
-- `full/<mode>/<task>/s<k>/solution.v`    ：提交的代码（判空答案用）
-- `full/experiment.json`                  ：upstream_commit、input_sha256、submission_sha256
+- `full/results/<mode>.<task>.s<k>.json`：官方判定结果
+- `full/<mode>/<task>/s<k>/trace.jsonl`：agent_meta（skill_sha256、repairs）、llm（含 sec）、lint、ts
+- `full/<mode>/<task>/s<k>/solution.v`：提交代码（判空答案）
+- `full/experiment.json`：upstream_commit、input_sha256、submission_sha256
 """
 import argparse
+import hashlib
+import importlib.util
 import json
 import pathlib
 import statistics
@@ -27,6 +27,39 @@ import sys
 from collections import Counter
 
 COEFF = {0: 0.0, 1: 0.2, 2: 0.7, 3: 1.0}
+KIT_CANDIDATES = [
+    pathlib.Path("/workspace/team/tasks/autodl-rtl-kit/project"),
+    pathlib.Path(__file__).resolve().parents[1],
+]
+
+
+def load_official_score():
+    """官方汇总函数。绝不自己重写统计口径。"""
+    for kit in KIT_CANDIDATES:
+        p = kit / "official_reference" / "selftest" / "score.py"
+        if p.is_file():
+            spec = importlib.util.spec_from_file_location("official_score_verify", p)
+            module = importlib.util.module_from_spec(spec)
+            try:
+                spec.loader.exec_module(module)
+            except SystemExit:
+                pass
+            if hasattr(module, "summarize"):
+                return module
+    raise RuntimeError("找不到官方 score.py 的 summarize()")
+
+
+def to_official_shape(by_idx):
+    """{task: {idx: verdict}} -> {task: [verdict, ...]}，与官方 collect() 结构一致。
+
+    这里曾经写错过一次，代价是成绩全按 0 算：
+        {task: [by_idx[i] for i in sorted(by_idx)] for task in sorted(by_idx)}
+    内层用外层键索引，于是 by_idx['ProbA'] 取回整张 {idx: verdict} 字典，
+    等于把"采样编号 -> verdict"又多包了一层，官方 summarize 读不到 level 就按 0 计。
+    正确写法是内外两层各自遍历自己的键。
+    """
+    return {task: [by_idx[task][i] for i in sorted(by_idx[task])]
+            for task in sorted(by_idx)}
 
 
 def find_run(path):
@@ -39,9 +72,9 @@ def find_run(path):
 
 
 def load_results(run):
-    """-> {mode: {task: [verdict,...] 按采样编号}}, 以及采样编号集合"""
+    """-> ({mode: {task: {idx: verdict}}}, {mode: {task: set(idx)}})"""
     out = {"agent": {}, "baseline": {}}
-    samples = {"agent": {}, "baseline": {}}
+    idxs = {"agent": {}, "baseline": {}}
     rdir = run / "full" / "results"
     if not rdir.is_dir():
         rdir = run / "results"
@@ -58,17 +91,18 @@ def load_results(run):
             continue
         idx = int(sk[1:]) if sk.startswith("s") and sk[1:].isdigit() else 0
         out[mode].setdefault(task, {})[idx] = v
-        samples[mode].setdefault(task, set()).add(idx)
-    return out, samples
+        idxs[mode].setdefault(task, set()).add(idx)
+    return out, idxs
 
 
 def read_trace(run, mode, task, idx):
-    p = run / "full" / mode / task / ("s%d" % idx) / "trace.jsonl"
-    if not p.is_file():
-        p2 = run / mode / task / ("s%d" % idx) / "trace.jsonl"
-        if not p2.is_file():
-            return None, None
-        p = p2
+    """-> (meta, recorded_window_seconds, llm_seconds, n_ts_events)"""
+    for base in (run / "full", run):
+        p = base / mode / task / ("s%d" % idx) / "trace.jsonl"
+        if p.is_file():
+            break
+    else:
+        return None, None, None, 0
     events = []
     for line in p.read_text(encoding="utf-8", errors="replace").splitlines():
         line = line.strip()
@@ -81,7 +115,9 @@ def read_trace(run, mode, task, idx):
     meta = next((e for e in events if e.get("tool") == "agent_meta"), None)
     ts = [e["ts"] for e in events if isinstance(e.get("ts"), (int, float))]
     span = (max(ts) - min(ts)) if len(ts) >= 2 else None
-    return meta, span
+    llm = [e.get("sec") for e in events
+           if e.get("tool") == "llm" and isinstance(e.get("sec"), (int, float))]
+    return meta, span, (sum(llm) if llm else None), len(ts)
 
 
 def solution_is_empty(run, mode, task, idx):
@@ -89,56 +125,39 @@ def solution_is_empty(run, mode, task, idx):
         p = base / mode / task / ("s%d" % idx) / "solution.v"
         if p.is_file():
             return not p.read_text(encoding="utf-8", errors="replace").strip()
-    return None      # 文件不在，无法判断——不猜
-
-
-def summarize(res_by_idx):
-    vals = list(res_by_idx.values())
-    good = [v for v in vals if not v.get("tool_error")]
-    bad = [v for v in vals if v.get("tool_error")]
-    if not good:
-        return dict(set_score=None, scored=0, total=len(vals), tool_errors=len(bad),
-                    levels=Counter(), empty=0)
-    coeffs = [v.get("coefficient", COEFF.get(v.get("level", 0), 0.0)) for v in good]
-    return dict(set_score=round(statistics.mean(coeffs), 4), scored=len(good),
-                total=len(vals), tool_errors=len(bad),
-                levels=Counter(v.get("level", 0) for v in good), empty=0)
+    return None
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--new", required=True)
     ap.add_argument("--old", default="/workspace/team/runs/fpga_owner/full156_declfix_20261003")
-    ap.add_argument("--tasks", default=None, help="预期题目清单文件（每行一个）；省略则用 experiment.json 的 task_ids")
+    ap.add_argument("--tasks", default=None, help="预期题目清单；省略则用 experiment.json 的 task_ids")
     ap.add_argument("--expect-runtime", default="cea6479c6364fbfc")
     ap.add_argument("--expect-generation-skill", default="f4c4c8e2d97ec476",
-                    help="实验结束后现场应有的生成技能哈希（即还原后的稳定版）")
-    ap.add_argument("--variant-skill", default="8fb63de303486c9e", help="本轮实验变体，用于说明差异")
+                    help="实验结束后现场应有的生成技能哈希（还原后的稳定版）")
+    ap.add_argument("--variant-skill", default="8fb63de303486c9e",
+                    help="本轮实验【预先固定】的变体哈希；agent 样本必须全部等于它")
     ap.add_argument("--deployed-skill-file",
                     default="/workspace/team/tasks/autodl-rtl-kit/project/submission/skill/rtl-generation/SKILL.md")
     ap.add_argument("--expect-baseline", default="537783e39db22079")
     ap.add_argument("--expect-upstream", default="afd135e7ba5f6ec4c6d77e7c927c894327537801")
     args = ap.parse_args()
 
-    import hashlib
-
-    run = find_run(args.new)
-    oldrun = find_run(args.old)
-    problems = []
-    warnings = []
+    official = load_official_score()
+    run, oldrun = find_run(args.new), find_run(args.old)
+    problems, warnings = [], []
 
     print("=" * 70)
-    print("H3 产物验收")
+    print("H3 产物验收（成绩走官方 summarize）")
     print("=" * 70)
     print("新 : %s" % run)
     print("旧 : %s" % oldrun)
     print()
 
-    new, nsamples = load_results(run)
-    old, _ = load_results(oldrun)
+    new, nidx = load_results(run)
+    old, _oidx = load_results(oldrun)
 
-    # 预期题目清单
-    tasks_path = pathlib.Path(args.tasks) if args.tasks else None
     exp_json = run / "full" / "experiment.json"
     if not exp_json.is_file():
         exp_json = run / "experiment.json"
@@ -148,107 +167,110 @@ def main():
             exp = json.loads(exp_json.read_text(encoding="utf-8"))
         except ValueError:
             exp = {}
-    if tasks_path and tasks_path.is_file():
-        expected_tasks = [l.strip() for l in tasks_path.read_text(encoding="utf-8").splitlines() if l.strip()]
-    else:
-        expected_tasks = exp.get("task_ids", [])
-    expected_samples = int(exp.get("samples", 1) or 1)
 
-    # ---------- 1. 样本完整性：严格核对题号与采样编号 ----------
+    tasks_path = pathlib.Path(args.tasks) if args.tasks else None
+    if tasks_path and tasks_path.is_file():
+        expected = [l.strip() for l in tasks_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+    else:
+        expected = exp.get("task_ids", [])
+    exp_samples = int(exp.get("samples", 1) or 1)
+
+    # ---------- 1. 完整性 ----------
     print("【1】样本完整性（严格核对题号与采样编号）")
-    print("  预期题目数 %d，每题采样 %d" % (len(expected_tasks), expected_samples))
+    print("  预期题目 %d 题，每题采样 %d" % (len(expected), exp_samples))
+    complete = {}
     for mode in ("agent", "baseline"):
-        got = set(new[mode])
-        exp_set = set(expected_tasks)
+        got, exp_set = set(new[mode]), set(expected)
         missing = sorted(exp_set - got)
         extra = sorted(got - exp_set) if exp_set else []
-        bad_idx = sorted(t for t, idxs in nsamples[mode].items()
-                         if idxs != set(range(expected_samples)))
+        bad_idx = sorted(t for t, s in nidx[mode].items() if s != set(range(exp_samples)))
         n = sum(len(v) for v in new[mode].values())
-        ok = not missing and not extra and not bad_idx and n == len(expected_tasks) * expected_samples
+        want = len(expected) * exp_samples if expected else n
+        ok = not missing and not extra and not bad_idx and n == want
+        complete[mode] = bool(ok)
         print("  %-9s 条目 %3d/%d  缺题 %d  多题 %d  采样编号异常 %d  %s"
-              % (mode, n, len(expected_tasks) * expected_samples,
-                 len(missing), len(extra), len(bad_idx), "OK" if ok else "★ 不完整"))
+              % (mode, n, want, len(missing), len(extra), len(bad_idx), "OK" if ok else "★ 不完整"))
         if missing:
-            print("      缺题: %s" % missing[:8])
-            problems.append("%s 缺 %d 题" % (mode, len(missing)))
-        if bad_idx:
-            print("      采样编号异常: %s" % bad_idx[:8])
-            problems.append("%s 采样编号异常 %d 题" % (mode, len(bad_idx)))
-        if n != len(expected_tasks) * expected_samples:
-            problems.append("%s 条目数 %d != %d" % (mode, n, len(expected_tasks) * expected_samples))
+            print("      缺: %s" % missing[:8])
+        if not ok:
+            problems.append("%s 样本不完整（缺题 %d，编号异常 %d，条目 %d/%d）"
+                            % (mode, len(missing), len(bad_idx), n, want))
 
-    # ---------- 2. 版本哈希：与预期比对 ----------
+    # ---------- 2. 版本哈希 ----------
     print()
-    print("【2】版本哈希（与预期比对，不是只打印）")
+    print("【2】版本哈希（与预期比对）")
     ss = exp.get("submission_sha256", {})
-    checks = [
-        ("agent/runtime.py", args.expect_runtime, "运行时"),
-        ("baseline.py", args.expect_baseline, "裸模型基线"),
-    ]
     up = exp.get("upstream_commit", "")
     if up == args.expect_upstream:
         print("  upstream_commit  %s  OK" % up[:16])
     else:
         print("  upstream_commit  %s  ★ 期望 %s" % (up[:16], args.expect_upstream[:16]))
         problems.append("upstream_commit 不匹配")
-    for name, want, label in checks:
+    for name, want, label in (("agent/runtime.py", args.expect_runtime, "运行时"),
+                              ("baseline.py", args.expect_baseline, "裸模型基线")):
         got = ss.get(name, "(未记录)")
-        mark = "OK" if got.startswith(want) else "★ 期望 %s" % want
-        print("  %-18s %s  %s  %s" % (name, got[:16], label, mark))
+        print("  %-18s %s  %s  %s" % (name, got[:16], label,
+                                      "OK" if got.startswith(want) else "★ 期望 %s" % want))
         if not got.startswith(want):
             problems.append("%s 哈希不匹配" % name)
     if not ss:
         problems.append("experiment.json 里没有 submission_sha256")
 
-    # ---------- 3. 逐样本技能哈希（trace 的 agent_meta） ----------
+    # ---------- 3. 逐样本技能哈希：通过条件 ----------
     print()
-    print("【3】逐样本技能哈希（来自每题 trace 的 agent_meta）")
-    seen_skills = Counter()
-    missing_trace = 0
+    print("【3】逐样本技能哈希（通过条件，不只是统计）")
+    seen = Counter()
+    n_agent_samples = sum(len(v) for v in new["agent"].values())
+    n_with_meta = n_variant = n_other = 0
+    other_examples = []
     for task in sorted(new["agent"]):
         for idx in sorted(new["agent"][task]):
-            meta, _span = read_trace(run, "agent", task, idx)
-            if not meta:
-                missing_trace += 1
+            meta, _s, _l, _n = read_trace(run, "agent", task, idx)
+            sha = str((meta or {}).get("skill_sha256", ""))[:16]
+            if not sha:
                 continue
-            seen_skills[str(meta.get("skill_sha256"))[:16]] += 1
-    if seen_skills:
-        for sha, n in seen_skills.most_common():
-            tag = ""
+            n_with_meta += 1
+            seen[sha] += 1
             if sha.startswith(args.variant_skill):
-                tag = "← 本轮变体"
-            elif sha.startswith(args.expect_generation_skill):
-                tag = "← 稳定版"
-            print("  %s  出现 %d 次  %s" % (sha, n, tag))
-        variants = [s for s in seen_skills if s.startswith(args.variant_skill)]
-        if len(seen_skills) > 1:
-            warnings.append("同一次运行里出现了 %d 种技能哈希——需确认是否中途换过技能" % len(seen_skills))
-    if missing_trace:
-        print("  ★ 有 %d 个样本读不到 trace" % missing_trace)
-        problems.append("%d 个样本缺 trace" % missing_trace)
+                n_variant += 1
+            else:
+                n_other += 1
+                if len(other_examples) < 5:
+                    other_examples.append("%s.s%d=%s" % (task, idx, sha))
+    print("  agent 样本 %d，其中有元数据 %d，等于预定变体 %s… 的 %d，其它 %d"
+          % (n_agent_samples, n_with_meta, args.variant_skill[:8], n_variant, n_other))
+    for sha, n in seen.most_common(6):
+        print("    %s  ×%d" % (sha, n))
+    if n_with_meta != n_agent_samples:
+        print("  ★ 有 %d 个 agent 样本缺元数据" % (n_agent_samples - n_with_meta))
+        problems.append("%d 个 agent 样本缺 agent_meta" % (n_agent_samples - n_with_meta))
+    if n_other:
+        print("  ★ 有 %d 个样本用了非预定技能: %s" % (n_other, other_examples))
+        problems.append("%d 个 agent 样本的生成技能不是预定变体" % n_other)
+    if n_variant != n_agent_samples:
+        print("  → 本轮的『有效对照实验』结论不成立")
 
-    # ---------- 4. 技能是否已还原 ----------
+    # ---------- 4. 技能还原 ----------
     print()
-    print("【4】技能还原（读部署中的 SKILL.md 并比对）")
+    print("【4】技能还原（读部署中的 SKILL.md）")
     skf = pathlib.Path(args.deployed_skill_file)
     if skf.is_file():
         got = hashlib.sha256(skf.read_bytes()).hexdigest()
         if got.startswith(args.expect_generation_skill):
-            print("  现场 SKILL.md = %s  OK（已还原为稳定版）" % got[:16])
+            print("  现场 SKILL.md = %s  OK（已还原）" % got[:16])
         elif got.startswith(args.variant_skill):
-            print("  现场 SKILL.md = %s  ★ 仍是本轮变体，尚未还原" % got[:16])
-            problems.append("技能未还原，仍是变体 %s" % got[:16])
+            print("  现场 SKILL.md = %s  ★ 仍是变体，未还原" % got[:16])
+            problems.append("技能未还原")
         else:
-            print("  现场 SKILL.md = %s  ★ 既不是稳定版也不是本轮变体" % got[:16])
-            problems.append("技能哈希既非稳定版也非变体: %s" % got[:16])
+            print("  现场 SKILL.md = %s  ★ 既非稳定版也非变体" % got[:16])
+            problems.append("技能哈希异常: %s" % got[:16])
     else:
-        print("  ★ 找不到部署中的 SKILL.md: %s" % skf)
+        print("  ★ 找不到 %s" % skf)
         problems.append("找不到部署中的 SKILL.md")
 
-    # ---------- 5. 空答案：读 solution.v 内容 ----------
+    # ---------- 5. 空答案 ----------
     print()
-    print("【5】空答案（读 solution.v 内容判断，不按等级推断）")
+    print("【5】空答案（读 solution.v 内容）")
     for mode in ("agent", "baseline"):
         empty = unknown = 0
         for task, by_idx in new[mode].items():
@@ -260,95 +282,117 @@ def main():
                     empty += 1
         l0 = sum(1 for by_idx in new[mode].values() for v in by_idx.values()
                  if v.get("level", 0) == 0 and not v.get("tool_error"))
-        print("  %-9s 空 solution 文件 %d 个；L0 判定 %d 个；读不到 %d 个" % (mode, empty, l0, unknown))
-        if l0 and empty != l0:
-            print("      （L0 多于空文件是正常的：代码非空但功能错也会是 L0——上一版把二者混为一谈）")
+        print("  %-9s 空 solution %d；L0 判定 %d；读不到 %d" % (mode, empty, l0, unknown))
         if unknown:
-            warnings.append("%s 有 %d 个样本读不到 solution.v，空答案数无法定论" % (mode, unknown))
+            warnings.append("%s 有 %d 个样本读不到 solution.v" % (mode, unknown))
 
-    # ---------- 6. 耗时：trace 跨度（求解）vs elapsed_s（判定） ----------
+    # ---------- 6. 时间 ----------
     print()
-    print("【6】耗时（分开报：求解耗时 vs 判定耗时）")
+    print("【6】耗时（区分已记录执行区间 / 模型请求 / 判定）")
     for mode in ("agent", "baseline"):
-        spans, judges = [], []
+        spans, llms, judges, single = [], [], [], 0
         for task, by_idx in new[mode].items():
             for idx, v in by_idx.items():
-                _meta, span = read_trace(run, mode, task, idx)
+                _m, span, llm, nts = read_trace(run, mode, task, idx)
                 if span is not None:
                     spans.append(span)
+                elif nts == 1:
+                    single += 1
+                if llm is not None:
+                    llms.append(llm)
                 if isinstance(v.get("elapsed_s"), (int, float)):
                     judges.append(v["elapsed_s"])
         if spans:
-            s = sorted(spans)
-            print("  %-9s 求解耗时 总 %.0fs 均 %.1fs 中位 %.1fs p90 %.1fs max %.1fs（来自 trace ts 跨度）"
-                  % (mode, sum(s), statistics.mean(s), statistics.median(s),
-                     s[min(len(s) - 1, int(len(s) * 0.9))], s[-1]))
+            print("  %-9s 已记录执行区间(trace 首末 ts) n=%d 均 %.1fs 中位 %.1fs max %.1fs"
+                  % (mode, len(spans), statistics.mean(spans), statistics.median(spans), max(spans)))
+        else:
+            print("  %-9s 已记录执行区间：不可得" % mode)
+        if single:
+            print("            其中 %d 个样本只有 1 个带 ts 的事件，无法求区间" % single)
+        if llms:
+            print("            模型请求耗时(llm.sec 合计) 均 %.1fs 中位 %.1fs"
+                  % (statistics.mean(llms), statistics.median(llms)))
         if judges:
-            j = sorted(judges)
-            print("  %-9s 判定耗时 总 %.0fs 均 %.1fs 中位 %.1fs（来自 verdict.elapsed_s，非求解耗时）"
-                  % (mode, sum(j), statistics.mean(j), statistics.median(j)))
+            print("            判定耗时(verdict.elapsed_s) 均 %.1fs（**非求解耗时**）"
+                  % statistics.mean(judges))
 
-    # ---------- 7. 逐题得失 ----------
+    # ---------- 7. 官方成绩 ----------
     print()
-    print("【7】逐题得失（agent）")
+    print("【7】成绩（官方 summarize）")
+    res = {m: official.summarize(to_official_shape(new[m])) for m in ("agent", "baseline")}
+    oldres = {m: official.summarize(to_official_shape(old[m])) for m in ("agent", "baseline")}
+    for mode in ("agent", "baseline"):
+        r = res[mode]
+        print("  新 %-9s set=%.4f pass@5=%.4f 计分题 %d/%d 环境失败 %d"
+              % (mode, r["set_score"], r["pass@5"], r["scored_tasks"], r["tasks"], r["tool_errors"]))
+    for mode in ("agent", "baseline"):
+        r = oldres[mode]
+        print("  旧 %-9s set=%.4f pass@5=%.4f 计分题 %d/%d 环境失败 %d"
+              % (mode, r["set_score"], r["pass@5"], r["scored_tasks"], r["tasks"], r["tool_errors"]))
+
+    # ---------- 8. 可比性门槛 ----------
+    print()
+    print("【8】可比性门槛")
+    comparable = True
+    reasons = []
+    if not all(complete.values()):
+        comparable = False
+        reasons.append("样本不完整")
+    if res["agent"]["tasks"] != oldres["agent"]["tasks"]:
+        comparable = False
+        reasons.append("两轮评测题数不同（%d vs %d）" % (res["agent"]["tasks"], oldres["agent"]["tasks"]))
+    if n_variant != n_agent_samples:
+        comparable = False
+        reasons.append("本轮 agent 样本并非全部使用预定技能")
     common = sorted(set(new["agent"]) & set(old["agent"]))
+    if len(common) != res["agent"]["tasks"]:
+        reasons.append("共同题目 %d 少于本轮题数 %d" % (len(common), res["agent"]["tasks"]))
+    if res["agent"]["scored_tasks"] != res["agent"]["tasks"] or \
+            oldres["agent"]["scored_tasks"] != oldres["agent"]["tasks"]:
+        comparable = False
+        reasons.append("有题无有效成绩（环境失败）")
+    print("  可比: %s" % ("是" if comparable else "否"))
+    for r in reasons:
+        print("    - %s" % r)
+
+    # ---------- 9. 共同题目变化 ----------
     up_list, down_list = [], []
     for t in common:
-        a = new["agent"][t].get(0, {})
-        b = old["agent"][t].get(0, {})
+        a, b = new["agent"][t].get(0, {}), old["agent"][t].get(0, {})
         ca = a.get("coefficient", COEFF.get(a.get("level", 0), 0.0))
         cb = b.get("coefficient", COEFF.get(b.get("level", 0), 0.0))
         if ca > cb:
             up_list.append((t, b.get("level"), a.get("level"), ca - cb))
         elif ca < cb:
             down_list.append((t, b.get("level"), a.get("level"), ca - cb))
-    print("  可比题 %d   上升 %d   下降 %d   持平 %d" % (len(common), len(up_list), len(down_list), len(common) - len(up_list) - len(down_list)))
+    print()
+    print("【9】共同题目上的逐题变化（%d 题）" % len(common))
+    print("  上升 %d   下降 %d   持平 %d" % (len(up_list), len(down_list),
+                                          len(common) - len(up_list) - len(down_list)))
     for t, lo, ln, d in up_list:
-        print("    ↑ %-30s L%s -> L%s  (+%.2f)" % (t, lo, ln, d))
+        print("    ↑ %-30s L%s -> L%s (+%.2f)" % (t, lo, ln, d))
     for t, lo, ln, d in down_list:
-        print("    ↓ %-30s L%s -> L%s  (%.2f)" % (t, lo, ln, d))
-    print("  agent 系数净变化 = %+.2f" % (sum(d for *_x, d in up_list) + sum(d for *_x, d in down_list)))
+        print("    ↓ %-30s L%s -> L%s (%.2f)" % (t, lo, ln, d))
+    delta_common = sum(x[3] for x in up_list) + sum(x[3] for x in down_list)
+    print("  共同题目系数净变化 = %+.2f（%d 题）" % (delta_common, len(common)))
 
     print()
-    print("【8】baseline 变化（必须与 agent 分开报告）")
-    bcommon = sorted(set(new["baseline"]) & set(old["baseline"]))
-    bup, bdown = [], []
-    for t in bcommon:
-        a = new["baseline"][t].get(0, {})
-        b = old["baseline"][t].get(0, {})
-        ca = a.get("coefficient", COEFF.get(a.get("level", 0), 0.0))
-        cb = b.get("coefficient", COEFF.get(b.get("level", 0), 0.0))
-        if ca > cb:
-            bup.append(t)
-        elif ca < cb:
-            bdown.append(t)
-    print("  可比题 %d   baseline 上升 %d  下降 %d" % (len(bcommon), len(bup), len(bdown)))
-    if bup or bdown:
-        print("  ★ 裸模型不读技能，这些变化不能归因于新增规则；也不能把比例当成固定噪声率")
-        print("     上升: %s" % bup[:8])
-        print("     下降: %s" % bdown[:8])
-
-    # ---------- 9. 成绩与判定 ----------
-    print()
-    print("【9】成绩与预定标准")
-    na, nb = summarize(new["agent"]), summarize(new["baseline"])
-    oa, ob = summarize(old["agent"]), summarize(old["baseline"])
-    print("  新 agent=%.4f baseline=%.4f" % (na["set_score"] or 0, nb["set_score"] or 0))
-    print("  旧 agent=%.4f baseline=%.4f" % (oa["set_score"] or 0, ob["set_score"] or 0))
-    d_agent = (na["set_score"] or 0) - (oa["set_score"] or 0)
-    print("  agent 变化 = %+.4f" % d_agent)
-    if na["total"] != oa["total"]:
-        print("  ★ 两轮题数不同（%d vs %d），均分不可直接比较" % (na["total"], oa["total"]))
-        warnings.append("两轮题数不同，均分比较无效")
-    if d_agent > 0:
-        print("  → 本轮胜出（agent %+.4f）" % d_agent)
-        print("     但这只说明胜出；『成为默认版本』还需重复验证收益仍在、代价与稳定性可接受")
-    elif d_agent == 0:
-        print("  → 持平，不采纳")
+    print("【10】结论")
+    if not comparable:
+        print("  ★ 暂不可判定 —— 不满足比较条件：")
+        for r in reasons:
+            print("     - %s" % r)
+        print("  共同题目上的变化可以报告，但不能据此宣布胜出或退步。")
     else:
-        print("  → 未胜出（agent %+.4f），不采纳" % d_agent)
+        d = res["agent"]["set_score"] - oldres["agent"]["set_score"]
+        print("  agent 变化 = %+.4f" % d)
+        if d > 0:
+            print("  → 本轮胜出。但这只说明胜出；『成为默认版本』还需重复验证收益仍在、代价与稳定性可接受")
+        elif d == 0:
+            print("  → 持平，不采纳")
+        else:
+            print("  → 未胜出，不采纳")
 
-    # ---------- 结论 ----------
     print()
     print("=" * 70)
     if problems:
@@ -356,24 +400,21 @@ def main():
         for p in problems:
             print("   - %s" % p)
     else:
-        print("验收通过：完整性、版本、还原、空答案、耗时均已核对")
+        print("验收通过：完整性、版本、技能、空答案、耗时均已核对")
     if warnings:
         print("注意（不构成失败，但影响解读）：")
         for w in warnings:
             print("   - %s" % w)
     print("=" * 70)
 
-    out = run / "verification.json"
     try:
-        out.write_text(json.dumps(dict(
-            problems=problems, warnings=warnings,
+        (run / "verification.json").write_text(json.dumps(dict(
+            problems=problems, warnings=warnings, comparable=comparable, reasons=reasons,
             agent_up=[list(x) for x in up_list], agent_down=[list(x) for x in down_list],
-            baseline_up=bup, baseline_down=bdown,
-            new_agent=na["set_score"], old_agent=oa["set_score"],
-            new_baseline=nb["set_score"], old_baseline=ob["set_score"],
-            delta_agent=d_agent, skills_seen=dict(seen_skills)), indent=2, ensure_ascii=False),
+            common_tasks=len(common), delta_common=delta_common,
+            new=res, old=oldres, skills_seen=dict(seen),
+            n_agent_samples=n_agent_samples, n_variant=n_variant), indent=2, ensure_ascii=False),
             encoding="utf-8")
-        print("明细已写出:", out)
     except OSError as exc:
         print("写出明细失败:", exc)
 
