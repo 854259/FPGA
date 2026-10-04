@@ -1,0 +1,27 @@
+{
+  "schema": "signedness_natural_replay_c1",
+  "status": "frozen_before_execution",
+  "base_commit": "a1ca7d6fc0ffbe58ddf8eb39b4d2193e43345293",
+  "patch_sha256": "93145c106081c158b0f968316c7327e0b7bb574124f0bccb751a3f48b8cfbfa1",
+  "selector_sha256": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+  "new_model_call_limit": 0,
+  "eda_call_limit": 0,
+  "stage_timeout_s": 300,
+  "datasets": [
+    {"id": "best156", "archive": "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full", "tasks": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval", "experiment_sha256": "c6efe4250169ef4d260d93c5737aed7c0ba02e623b7a72be394ed0ee84698b70", "task_count": 156, "candidate_count": 312},
+    {"id": "rtllm44", "archive": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/pair", "tasks": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/tasks_verified", "experiment_sha256": "0d7ce0e488034a9e844407caac0b6b76e8694169360f063d7f22874c0c23cc9d", "task_count": 44, "candidate_count": 88}
+  ],
+  "modes": ["agent", "baseline"],
+  "samples": ["s0"],
+  "known_patch_development_tasks": ["Prob115_shift18"],
+  "selection": "All archived candidates, without filtering by grade. Freeze candidate and prompt hashes before applying unchanged B2. Verify prompt bytes against the original experiment manifest.",
+  "decision": "If there are changed candidates outside patch-development tasks, freeze them for a separate semantic paired evaluation before adoption. If none, independent natural benefit is unestablished: do not broaden the selector to force coverage, regenerate the known task, run a full generation batch, or adopt the patch.",
+  "reproducibility": "Repeat every transform and apply it again for idempotence. Unchanged candidates must remain byte-identical. Source and prompt snapshots stay private. Failures are never silently skipped.",
+  "limits": [
+    "This is an applicability audit, not functional grading or a new full-set score.",
+    "These are historically observed datasets; a new replay is not a previously unseen benchmark.",
+    "Variants of Prob115 remain the same known input, irrespective of source hash or mode.",
+    "RTLLM has documented contract defects; no assumption that all 44 tasks have valid functional oracles.",
+    "Only prompt and candidate bytes enter selector and patch. Reference, testbench and grades are not read by this stage."
+  ]
+}
