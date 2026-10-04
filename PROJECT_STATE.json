@@ -3858,9 +3858,9 @@
     "cwd": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1",
     "started_at_utc": "2026-10-05T02:30:50.007845+08:00",
     "accepted_at_utc": "2026-10-05T02:30:49.933417+08:00",
-    "completed_samples": 4,
+    "completed_samples": 33,
     "expected_samples": 312,
-    "model_requests": 4,
+    "model_requests": 33,
     "sample_complete": false,
     "protocol_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
     "log_path": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1/guard/stage.log",
@@ -3869,6 +3869,26 @@
     "max_model_requests": 624,
     "max_stage_s": 86400,
     "user_full_batch_complete": false,
-    "observed_at_utc": "2026-10-05T02:32:53.70313+08:00"
+    "observed_at_utc": "2026-10-04T18:48:15.760001+00:00"
+  },
+  "paired_uncertainty_postflight_20261005": {
+    "source_archive_sha256": "e2f3895a198073e7dadc5584e895c04779e667e7905313f76626cf909d8b7026",
+    "after_tickets": [
+      25,
+      26
+    ],
+    "cleanup": "queued inputs preserved; no temporary residue",
+    "root": "/workspace/team/runs/fpga_teammate/paired_uncertainty_T1_20261005_aca7528",
+    "ticket": 27,
+    "model_calls": 0,
+    "selfcheck_cap_s": 60,
+    "monitor_pid": 3418224,
+    "next": "等待FIFO自检，失败先查因；仅在完整312行和原归属最终审计/归档通过后运行真实统计。不重跑模型、不改变采用条件。",
+    "commit": "aca75287dab766a7587abcf4d7c5cc5c5ad93321",
+    "status": "implemented_static_reviewed_execution_unverified",
+    "eda_calls": 0,
+    "queue_state": "queued",
+    "actual_experiment_child": null,
+    "reads_partial_scores": false
   }
 }
