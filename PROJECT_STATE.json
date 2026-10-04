@@ -2624,8 +2624,8 @@
     ]
   },
   "signedness_boundary_validation_20261004": {
-    "updated_at": "2026-10-04T10:03:58.7204404+08:00",
-    "status": "B1_rejected_B2_frozen",
+    "updated_at": "2026-10-04T10:06:46.2562389+08:00",
+    "status": "B1_rejected_B2_running",
     "B1": {
       "commit": "6d7c40a7b29fe5c25952f0739fe1afbacc505f65",
       "complete": true,
@@ -2640,13 +2640,15 @@
       "cleanup_verified": true
     },
     "B2": {
-      "status": "frozen_not_started",
+      "status": "running_on_amd",
       "patch_sha256": "93145c106081c158b0f968316c7327e0b7bb574124f0bccb751a3f48b8cfbfa1",
       "development_cases": 1,
       "regression_reuse_cases": 5,
       "new_constructed_cases": 7,
       "rule": "Abstain on blocking writes to the selected register",
-      "spec": "03_analysis/signedness_boundary_20261004/REVISION_SPEC.json"
+      "spec": "03_analysis/signedness_boundary_20261004/REVISION_SPEC.json",
+      "commit": "78c34bf6603a39c188b508baedea244a94b98337",
+      "run_id": "signedness_boundary_B2_20261004T020426Z_78c34bf"
     },
     "new_model_calls": 0,
     "registry": "03_analysis/EXPERIMENT_REGISTRY.md",
