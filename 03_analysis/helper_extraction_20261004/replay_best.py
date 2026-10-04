@@ -30,10 +30,18 @@ def worker(args):
         baseline.extract=extract
     expected=json.loads((args.captured/'request.json').read_text())
     response=(args.captured/'response.json').read_text()
-    used=[]
+    used=[];unserved=[]
     def captured_urlopen(request,timeout=None):
-        if request.full_url!='http://127.0.0.1:8000/v1/chat/completions' or json.loads(request.data)!=expected or used:
-            raise RuntimeError('unexpected or repeated request; network remains blocked')
+        actual=json.loads(request.data)
+        if request.full_url!='http://127.0.0.1:8000/v1/chat/completions':
+            raise RuntimeError('unexpected endpoint; network remains blocked')
+        if used:
+            assert not unserved and actual['messages'][1]['content'].startswith(expected['messages'][1]['content']+'\nPrevious candidate:\n')
+            save(args.out/'unserved_repair_request.json',actual)
+            unserved.append(dict(reason='no captured repair response; no network request sent'))
+            raise OSError('REPLAY_STOP: repair response was not captured')
+        if actual!=expected:
+            raise RuntimeError('initial request differs from captured request')
         used.append(dict(request_matches=True,timeout=timeout))
         return io.StringIO(response)
     # No real HTTP request is forwarded. This is an integration replay, not a model sample.
@@ -45,13 +53,15 @@ def worker(args):
     os.environ.update(MODEL_NAME=expected['model'],LLM_BASE_URL='http://127.0.0.1:8000/v1',RTL_TEMPERATURE='0',RTL_MAX_TOKENS='8192',RTL_REPAIRS='1')
     tick=time.monotonic();runtime.worker(task,args.out)
     events=[json.loads(line) for line in (args.out/'trace.jsonl').read_text().splitlines()]
-    assert len(used)==1 and sum(e['tool']=='llm_start' for e in events)==1
-    assert any(e['tool']=='lint' and e.get('rc')==0 for e in events)
+    assert len(used)==1 and sum(e['tool']=='llm_start' for e in events)==1+len(unserved)
+    assert unserved or any(e['tool']=='lint' and e.get('rc')==0 for e in events)
     expected_source=args.captured/('original.sv' if args.arm=='original' else 'final.sv')
     assert sha(args.out/'solution.v')==sha(expected_source)
     save(args.out/'receipt.json',dict(complete=True,valid=True,arm=args.arm,network_model_calls=0,captured_responses_replayed=1,
         original_best_runtime_sha256=sha(args.package/'agent/runtime.py'),source_matches_frozen_judged_candidate=True,
         solution_sha256=sha(args.out/'solution.v'),request_matches=True,elapsed_s=time.monotonic()-tick,
+        worker_completed_without_missing_response=not unserved,unserved_repair_requests=len(unserved),
+        final_quality_known=not unserved,
         hook='isolated process in-memory extraction hook' if args.arm!='original' else 'original extraction'))
 
 
@@ -88,7 +98,7 @@ def run(args):
                 assert owned['returncode']==0 and not owned['timeout'],owned
                 receipt=json.loads((dst/'receipt.json').read_text())
                 verdict=row['original' if arm=='original' else 'final']
-                receipt.update(task=row['task'],reused_frozen_verdict_level=verdict['level'],verdict_source='same exact solution bytes, task hash and original F1r2 receipt',supervision=owned)
+                receipt.update(task=row['task'],reused_frozen_verdict_level=verdict['level'],verdict_source='same exact artifact bytes, task hash and F1r2 receipt; not final worker quality if a repair response is missing',supervision=owned)
                 report['rows'].append(receipt)
                 print(json.dumps(dict(task=row['task'],arm=arm,level=verdict['level'],network_model_calls=0)),flush=True)
         assert all(sha(p)==h for p,h in frozen.items())
