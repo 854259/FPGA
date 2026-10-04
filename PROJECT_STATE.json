@@ -3856,7 +3856,7 @@
   "functional_full156_owner_observation_20261005": {
     "ticket": 25,
     "task_name": "functional_full156_v1",
-    "state": "completed_pending_provenance_audit",
+    "state": "completed_audited_rejected_for_promotion",
     "child": {
       "pid": 3390466,
       "starttime": "841229949"
@@ -3879,11 +3879,30 @@
     "max_model_requests": 624,
     "max_stage_s": 86400,
     "user_full_batch_complete": false,
-    "observed_at_utc": "2026-10-04T22:40:49.734850+00:00",
+    "observed_at_utc": "2026-10-04T23:04:00+00:00",
     "guard_passed": true,
     "guard_wall_s": 14725.964709594846,
     "evidence_archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
-    "final_statistics_verified": false
+    "final_statistics_verified": true,
+    "confirmed_responses": 330,
+    "unconfirmed_attempts": 3,
+    "repairs": 2,
+    "regressions": 0,
+    "functional_pass": {
+      "A": 108,
+      "C": 110
+    },
+    "quality": {
+      "A": 0.7448717948717949,
+      "C": 0.7564102564102564
+    },
+    "exploratory_functional_net_95": [
+      -0.026624997291397223,
+      0.051054471189012796
+    ],
+    "candidate_qualified_for_independent_validation": false,
+    "identical_first_pairs": 155,
+    "same_first_solve_delta_s": 43.42783487215638
   },
   "paired_uncertainty_postflight_20261005": {
     "source_archive_sha256": "e2f3895a198073e7dadc5584e895c04779e667e7905313f76626cf909d8b7026",
@@ -3897,11 +3916,11 @@
     "model_calls": 0,
     "selfcheck_cap_s": 60,
     "monitor_pid": 3418224,
-    "next": "T2通过后T3在同机串行核对原审计器来源链，再做既定配对统计；任一失败保留证据先查因，不重抽生成或改门槛。",
+    "next": "保留真实拒绝晋级结论和全部私有证据；T4对照已完成。核对既有桥接来源及预算取消/剩余移位路径；不重抽原答案，不把当前局部改进当独立泛化。",
     "commit": "aca75287dab766a7587abcf4d7c5cc5c5ad93321",
-    "status": "T1_launch_failed_T2_T3_queued",
+    "status": "T2_T3_completed_verified",
     "eda_calls": 0,
-    "queue_state": "T1_released_after_inspection",
+    "queue_state": "completed",
     "actual_experiment_child": null,
     "reads_partial_scores": false,
     "T1": {
@@ -3916,18 +3935,23 @@
     },
     "T2": {
       "ticket": 32,
-      "status": "queued",
+      "status": "completed_verified",
       "monitor_pid": 3632665,
       "commit": "b370734c45b386e66f18aafcdc924ecce0b45d5d",
       "root": "/workspace/team/runs/fpga_teammate/paired_uncertainty_T2_20261005_b370734",
       "stage_cap_s": 60,
       "model_calls": 0,
       "eda_calls": 0,
-      "source_zip_sha256": "8eceb20efb708ac4147780a589cf1d8c75054519bb12f0a35f1a158c2619177c"
+      "source_zip_sha256": "8eceb20efb708ac4147780a589cf1d8c75054519bb12f0a35f1a158c2619177c",
+      "driver_pid": 3651157,
+      "stage_pid": 3651162,
+      "guard_wall_s": 0.2512353826314211,
+      "archive_sha256": "703c2c5ce110d171277edca79300a0738f51f05efcf1975851ffa1f1bf086af6",
+      "members_verified": 9
     },
     "T3": {
       "ticket": 33,
-      "status": "queued",
+      "status": "completed_verified",
       "monitor_pid": 3642119,
       "commit": "86f6fb02ccb746ec6e40bb6624daf1190ad2acd7",
       "root": "/workspace/team/runs/fpga_teammate/paired_postflight_T3_20261005_86f6fb0",
@@ -3935,7 +3959,38 @@
       "stage_cap_s": 300,
       "model_calls": 0,
       "eda_calls": 0,
-      "requires_T2_passed": true
+      "requires_T2_passed": true,
+      "driver_pid": 3651170,
+      "stage_pid": 3651175,
+      "elapsed_s": 1.9898746982216835,
+      "guard_wall_s": 2.256382266059518,
+      "archive_sha256": "9efe5830960df0964add975a19d54d2e918359f60774dbda6164f9ae91a0b618",
+      "members_verified": 28
     }
+  },
+  "full156_comparability_T4_20261005": {
+    "status": "completed_verified",
+    "commit": "cd5623b362f02b46a24b4ec4f870e12b29ce9e9c",
+    "ticket": 34,
+    "driver_pid": 3651248,
+    "stage_pid": 3651253,
+    "elapsed_s": 0.3804328441619873,
+    "guard_wall_s": 0.7522504515945911,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "pairs": 156,
+    "input_files_same": 936,
+    "first_request_equal": 156,
+    "first_content_equal": 92,
+    "solution_equal": 97,
+    "functional_losses": 7,
+    "functional_gains": 3,
+    "grade_changed_same_solution": [],
+    "independent_tasks": 0,
+    "full_batch_complete": false,
+    "archive_sha256": "bc293a61b07f5fb8885d38f1df3c7bc4dab2d9e872564a6f5d54f81b26c7e17c",
+    "members_verified": 10,
+    "cleanup_verified": true,
+    "report": "03_analysis/helper_extraction_20261004/FULL156_COMPARABILITY_20261005.json"
   }
 }
