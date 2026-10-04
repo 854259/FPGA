@@ -4715,7 +4715,7 @@
     "source_assets": 30,
     "task_count": 156,
     "expected_samples": 312,
-    "completed_samples_at_snapshot": 3,
+    "completed_samples_at_snapshot": 70,
     "actual_requests_at_snapshot": 3,
     "samples_per_arm_per_task": 1,
     "max_actual_requests": 624,
@@ -4729,6 +4729,48 @@
     "cloud_directory": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1",
     "report": "03_analysis/functional_full156_20261005/README.md",
     "quota_used_percent": 8,
-    "quota_stop_percent": 97
+    "quota_stop_percent": 97,
+    "actual_model_requests_at_snapshot": 72,
+    "snapshot_observed_at_utc": "2026-10-04T19:11:59.337328+00:00"
+  },
+  "edge_contract_20261005": {
+    "status": "native_calibration_queued",
+    "report": "03_analysis/edge_contract_20261005/README.md",
+    "run_spec_sha256": "12ff3efc385045e14580aa41ecae64cf6d0d2ce39f1150a344c846683cf1a9ab",
+    "assets": 49,
+    "pure_tests_local_linux_passed": 6,
+    "fifo_ticket": 28,
+    "monitor_pid": 3427683,
+    "monitor_starttime": "841373844",
+    "snapshot_at_utc": "2026-10-04T19:11:59.337328+00:00",
+    "monitor_verified_alive": true,
+    "expected_native_probes": 26,
+    "expected_positive_syntheses": 6,
+    "max_model_requests": 0,
+    "native_results_audited": false,
+    "new_score": false,
+    "adoption": false,
+    "independent_natural_tasks": 0
+  },
+  "failure_triage_20261005": {
+    "status": "44_archived_A_failures_reviewed_sha_bound",
+    "report": "03_analysis/failure_triage_20261005/README.md",
+    "reviewed_A_failures": 44,
+    "native_causal_tests_this_review": 0,
+    "reference_or_tb_body_read": false,
+    "dataset_099_interface_inconsistency": true,
+    "old_verdicts_changed": false,
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "delivery_readiness_20261005": {
+    "status": "gaps_audited_not_accepted",
+    "report": "03_analysis/delivery_readiness_20261005/README.md",
+    "snapshot_at_utc": "2026-10-04T19:11:59.337328+00:00",
+    "official_image_build_verified": false,
+    "offline_verified": false,
+    "single_32gb_target_verified": false,
+    "five_independent_samples_verified": false,
+    "candidate_formal_service_promoted": false
   }
 }

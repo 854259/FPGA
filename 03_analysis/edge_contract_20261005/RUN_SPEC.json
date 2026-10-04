@@ -1,0 +1,166 @@
+{
+  "schema": "edge_contract_calibration_frozen_v1",
+  "identity": "edge_contract_20261005_v1",
+  "base_commit": "9350966",
+  "frozen_at_utc": "2026-10-04T18:50:45.806441+00:00",
+  "cloud_root": "/workspace/team/runs/fpga_owner/edge_contract_20261005_v1",
+  "kit": "/workspace/team/tasks/autodl-rtl-kit/project",
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "model_pid": 2013333,
+  "cases": [
+    {
+      "task": "edge_any5",
+      "checks": 62,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "opposite_edge": 19,
+        "combinational": 53,
+        "extra_delay": 59,
+        "wrong_direction": 36,
+        "constant_zero": 51
+      },
+      "positive_names": [
+        "positive"
+      ]
+    },
+    {
+      "task": "edge_rising3",
+      "checks": 33,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "opposite_edge": 0,
+        "combinational": 23,
+        "extra_delay": 26,
+        "wrong_direction": 26,
+        "constant_zero": 20
+      },
+      "positive_names": [
+        "positive",
+        "opposite_edge"
+      ]
+    },
+    {
+      "task": "Prob045_edgedetect2",
+      "checks": 80,
+      "archived_candidate": true,
+      "group": "known_public_development",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "opposite_edge": 25,
+        "combinational": 71,
+        "extra_delay": 77,
+        "wrong_direction": 54,
+        "constant_zero": 69
+      },
+      "positive_names": [
+        "positive"
+      ]
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "checks": 53,
+      "archived_candidate": true,
+      "group": "known_public_development",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "opposite_edge": 0,
+        "combinational": 43,
+        "extra_delay": 46,
+        "wrong_direction": 46,
+        "constant_zero": 40
+      },
+      "positive_names": [
+        "positive",
+        "opposite_edge"
+      ]
+    }
+  ],
+  "control_names": [
+    "positive",
+    "opposite_edge",
+    "combinational",
+    "extra_delay",
+    "wrong_direction",
+    "constant_zero"
+  ],
+  "expected_natural_candidates": {
+    "Prob045_edgedetect2": "fail",
+    "Prob054_edgedetect": "fail"
+  },
+  "source_hashes": {
+    "CONTROL_PREPARATION.json": "82f3ffb7493484069c0f9cd467bd7a3388e1d3c436bc77c7a8af97815f5a8349",
+    "INPUT_MANIFEST.json": "eec5693814589e38122cfa15f6066386b1bb76099a4e739e962c08c40c216619",
+    "audit.py": "4fa7b42c50600a64969879efda49676d90b473bb9dc84842b2614a8d2f5e4651",
+    "calibrate.py": "af18b6bf1c73cd937310fe5355879c4b84986a9e472930d392efbea94f8ac733",
+    "collect_evidence.py": "c866897316c559d37962ea2b6397d40d4633b9f5c79fd63fa3d9af2ac8598b49",
+    "edge_contract.py": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "prepare.py": "bf8fb49390865643941b2e6361a99e408903826215fba50bbd0331a60b237ed4",
+    "prepare_controls.py": "5a0f16736366071ba9288522d0976693171b2bfba16cfc608d7013a1270b96aa",
+    "raw_evidence/inputs/Prob045_edgedetect2/candidate.sv": "dad2b12af919ccfb709b96bae318f0d9761eac9113289f5d7bf8baddf91f029c",
+    "raw_evidence/inputs/Prob045_edgedetect2/combinational.sv": "882613855cde7685125591acf6c9313af3925285a50a19262a7c822bd7a41f13",
+    "raw_evidence/inputs/Prob045_edgedetect2/constant_zero.sv": "15e8813f06d883c065ae7cfbd5596abce85dabe28e3f3d413ffda9af7264390d",
+    "raw_evidence/inputs/Prob045_edgedetect2/contract.json": "2ed9d8d6652aaa6c9341969a0297fa212d87fe9b04ddce2fe9385149dbd1bd79",
+    "raw_evidence/inputs/Prob045_edgedetect2/extra_delay.sv": "8b8db02c11b299b12c61b45f7dfcbcfe40fc71ee2d7d88688e790cd8c6328144",
+    "raw_evidence/inputs/Prob045_edgedetect2/opposite_edge.sv": "ac1ca0dccbc95cffdc64ba42e088d41e56fc8d3bb4be8fa10d19b06988798e6f",
+    "raw_evidence/inputs/Prob045_edgedetect2/positive.sv": "42b70308e1dfe5e2470cd6bcb484d454de0e70637306373b988c92579504cc39",
+    "raw_evidence/inputs/Prob045_edgedetect2/prompt.txt": "4dbcbe3edc5cff94c797d49a77f8c45a6c749d72bb1ca3559d72ebd64a5c75f5",
+    "raw_evidence/inputs/Prob045_edgedetect2/tb.sv": "941dfb6baa688b4cac068463699edd37eaec8b38e54f8aa3685448273a9baee2",
+    "raw_evidence/inputs/Prob045_edgedetect2/wrong_direction.sv": "18d5c62c6e6d62a028c9423f40abc831ef79af0f126d43f2b95b7991701c9504",
+    "raw_evidence/inputs/Prob054_edgedetect/candidate.sv": "dca2fccdc1623ce201f275c7b94549b7e8b5af74902b86b09d1bed43a53dbe34",
+    "raw_evidence/inputs/Prob054_edgedetect/combinational.sv": "a6414af26e2a50a0e9082a1c7cce4252530f8255dae7f4bced6a78b45f2bef65",
+    "raw_evidence/inputs/Prob054_edgedetect/constant_zero.sv": "a1a9be1a9f1d7e1f0db58b44ff422e218cab0a166e84b46f09c0aed7de1ad25e",
+    "raw_evidence/inputs/Prob054_edgedetect/contract.json": "f2b2da7162385a96efad5b924d64ba21af898dbd52810c374c9f4c5450fa52be",
+    "raw_evidence/inputs/Prob054_edgedetect/extra_delay.sv": "38bf690ff2f8878fd3bdb2285db9bf456cf212780e7d08e4be6cd604b8ada278",
+    "raw_evidence/inputs/Prob054_edgedetect/opposite_edge.sv": "98809fa34531f99e635288191c250382fbdcea4d586d0d78b3ae5cf391acd151",
+    "raw_evidence/inputs/Prob054_edgedetect/positive.sv": "4a884e8adddf2f188c7d8cbef80889abfa89e58cec697544af853920773f820e",
+    "raw_evidence/inputs/Prob054_edgedetect/prompt.txt": "083aa58b986b192261ff3305a2572974ffcf9fe3143c7bdd5447f96cf1f32309",
+    "raw_evidence/inputs/Prob054_edgedetect/tb.sv": "f998c7cd8b1e54b42c300dd036a1858f2851794d1d4faa8d4964a293aa220bc6",
+    "raw_evidence/inputs/Prob054_edgedetect/wrong_direction.sv": "4522012b11a9eccb8dda9a019645c27149bb1050d8b66cf35c25dad7e81a5afe",
+    "raw_evidence/inputs/edge_any5/combinational.sv": "db516eb82b6405d6150791d71fe47080a363115e6b425f54fbbb7f760f0fecca",
+    "raw_evidence/inputs/edge_any5/constant_zero.sv": "67ba82fc8e8531e587d7df460b731fa99ee92caed809d3d9c667e5998787b8bb",
+    "raw_evidence/inputs/edge_any5/contract.json": "49c576fe3db5c46929f544d7aa6e83d7ff515e455f3de81b19aaadfe4d3a45e0",
+    "raw_evidence/inputs/edge_any5/extra_delay.sv": "23aa17b53b162afcc17c3b849ed7a0f87486f1735f0016f0347e67a1f1653053",
+    "raw_evidence/inputs/edge_any5/opposite_edge.sv": "c93a79a4e55458ff83ee73464591cad9ffdfe84aba7f9d9b23914d4bff836d89",
+    "raw_evidence/inputs/edge_any5/positive.sv": "d352dc0a4a8a7a7a514bae36e40c176798ea1913d7e05df6e096395ed336b1fd",
+    "raw_evidence/inputs/edge_any5/prompt.txt": "19fc74c66ff68e3254b3828482e794f6e4dcd5e241a7cb8dba75031b3d1dbbb3",
+    "raw_evidence/inputs/edge_any5/tb.sv": "e03093fe17e96a1a4034d6b0608ba2fb4cbfc6cfdb34bc0535254721cb43bb29",
+    "raw_evidence/inputs/edge_any5/wrong_direction.sv": "cf6b2ef6128df9c69f752c09dc36ace7c83221ff484376d675a94e0d60f8f1ec",
+    "raw_evidence/inputs/edge_rising3/combinational.sv": "1d5cf6128962a5c6d75a3dbf49c9f35d2f02ec471005752ec98bb16713f98e6a",
+    "raw_evidence/inputs/edge_rising3/constant_zero.sv": "a6c8448a020d8d2d583e9dc51494296d52ca83a569695b9659b8b5f72dfede3a",
+    "raw_evidence/inputs/edge_rising3/contract.json": "ecad144160014f4b3dcea864a5d9dae863863e52e550485344cfdf063d26946f",
+    "raw_evidence/inputs/edge_rising3/extra_delay.sv": "8b6adfd745f3ad7e2a22a939dd72ddf99b81dd46d3660a59a34efd8db51a34b2",
+    "raw_evidence/inputs/edge_rising3/opposite_edge.sv": "db8163fd4d8748e9e5a7b2f2d2e453800926ac3294d7bf0babfac5a6742dfeeb",
+    "raw_evidence/inputs/edge_rising3/positive.sv": "e87c46089c5465f206d889a78a00e3ac2aee647a9418a5881ba415fedc6d6cae",
+    "raw_evidence/inputs/edge_rising3/prompt.txt": "fd32a2a8974a354505ff22472c41fdbab43cfd0221b91b0b9944990372df3d22",
+    "raw_evidence/inputs/edge_rising3/tb.sv": "ee7ac939ca9caf0d34767dccdd747f0d7fa346e6cc6e684d727bcab4ac190128",
+    "raw_evidence/inputs/edge_rising3/wrong_direction.sv": "e5e81308f64ff886b765598fa614006b6d45577e477be6c75e3eeb1cdea6b535",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "test_edge.py": "c276033c136e31c2880de6b2186369b8f7a3e1a996aca2d6d975bd0ccf359357"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+  },
+  "timeout_s": 1140,
+  "guard_stage_timeout_s": 1200,
+  "slot_minutes": 25,
+  "max_probe_executions": 26,
+  "max_synth_executions": 6,
+  "max_model_requests": 0,
+  "acceptance": "All six control exact mismatch counts on four contracts, all positive syntheses and true archived candidate checks; complete readonly audit needed. No model/agent answer generation or deployment.",
+  "limits": [
+    "Two known archived public development tasks plus two constructed cases, not independent natural validation.",
+    "Full bounded edge-pulse prose, sampled individual/parallel transitions and holding; no reset/initial state invented; two zero samples establish normal one-cycle history.",
+    "Wrong extra-delay history remains initially unknown in software control model, including actual initial X-to-zero clock transition.",
+    "045 explicitly positive edge includes active-edge and end-cycle observations;054 omits edge and both positive/negative-edge correct controls must pass.",
+    "No official references or TB read by parser/controls; evaluation control DUTs never used as agent answers or model input.",
+    "Running full156 frozen source/teammate/shared model/formal deployment unchanged. Native stage waits its whole-task FIFO turn.",
+    "No repair/quality-cost/full score or hidden/five-sample/offline32GB claim; meaningful fresh model research only after native calibration audit."
+  ]
+}

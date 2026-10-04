@@ -1,0 +1,143 @@
+{
+  "schema": "cloud_readonly_delivery_and_progress_v1",
+  "observed_at_utc": "2026-10-04T19:11:59.337328+00:00",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "mutations": 0,
+  "processes": {
+    "2013333": {
+      "pid": 2013333,
+      "state": "S",
+      "starttime": "823869819"
+    },
+    "3390465": {
+      "pid": 3390465,
+      "state": "S",
+      "starttime": "841229941"
+    },
+    "3427683": {
+      "pid": 3427683,
+      "state": "S",
+      "starttime": "841373844"
+    }
+  },
+  "tickets": [
+    {
+      "ticket": 25,
+      "task_name": "functional_full156_v1",
+      "state": "running",
+      "accepted_at_utc": "2026-10-04T18:30:49.933417+00:00",
+      "started_at_utc": "2026-10-04T18:30:50.007845+00:00",
+      "runner": {
+        "pid": 3390465,
+        "starttime": "841229941"
+      },
+      "child": {
+        "pid": 3390466,
+        "starttime": "841229949"
+      }
+    },
+    {
+      "ticket": 26,
+      "task_name": "fpga_teammate_cvdp_rng_S2",
+      "state": "queued",
+      "accepted_at_utc": "2026-10-04T18:32:09.009533+00:00",
+      "started_at_utc": null,
+      "runner": null,
+      "child": null
+    },
+    {
+      "ticket": 27,
+      "task_name": "fpga_teammate_paired_uncertainty_T1",
+      "state": "queued",
+      "accepted_at_utc": "2026-10-04T18:48:15.752794+00:00",
+      "started_at_utc": null,
+      "runner": null,
+      "child": null
+    },
+    {
+      "ticket": 28,
+      "task_name": "edge_contract_calibration_v1",
+      "state": "queued",
+      "accepted_at_utc": "2026-10-04T18:54:48.962358+00:00",
+      "started_at_utc": null,
+      "runner": null,
+      "child": null
+    }
+  ],
+  "full156_progress": {
+    "rows": 70,
+    "complete": false,
+    "passed": false,
+    "actual_model_requests": 72,
+    "error": null,
+    "summary_bytes_sha256": "8780eebe66620cd387f117efb3c7279b423d23b360184a3c4d7fd8fee3850450",
+    "score_published": false
+  },
+  "container_tools": {
+    "docker": null,
+    "podman": null,
+    "unshare": "/usr/bin/unshare"
+  },
+  "drm_vram_entries": [
+    {
+      "path": "/sys/class/drm/card1/device/mem_info_vram_total",
+      "total_bytes": 51522830336
+    },
+    {
+      "path": "/sys/class/drm/card2/device/mem_info_vram_total",
+      "total_bytes": 51522830336
+    },
+    {
+      "path": "/sys/class/drm/card3/device/mem_info_vram_total",
+      "total_bytes": 51522830336
+    },
+    {
+      "path": "/sys/class/drm/card4/device/mem_info_vram_total",
+      "total_bytes": 51522830336
+    },
+    {
+      "path": "/sys/class/drm/card5/device/mem_info_vram_total",
+      "total_bytes": 51522830336
+    },
+    {
+      "path": "/sys/class/drm/card6/device/mem_info_vram_total",
+      "total_bytes": 51522830336
+    },
+    {
+      "path": "/sys/class/drm/card7/device/mem_info_vram_total",
+      "total_bytes": 51522830336
+    },
+    {
+      "path": "/sys/class/drm/card8/device/mem_info_vram_total",
+      "total_bytes": 51522830336
+    }
+  ],
+  "model_device_masks": {},
+  "formal_runtime_candidates": {
+    "submission/agent/runtime.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97"
+  },
+  "capture_script_sha256": "40c762d92f82a4aab8a58914b7b5638e48228a285bea72e3f3970b1efdac3c86",
+  "local_submission_dockerfile": {
+    "path": "04_project\\amd_rtl_agent\\submission\\Dockerfile",
+    "sha256": "f24081e437934695fa23c5a89bfdeb4a77a12e038211bf31a04a3873c5b81b57",
+    "base_image_lines": [
+      "#     docker build --build-arg BASE_IMAGE=<公布的名字> -t 45561-agent .",
+      "ARG BASE_IMAGE=fpgachina2026/base-gfx1100:REPLACE_WITH_ANNOUNCED_TAG",
+      "FROM ${BASE_IMAGE}"
+    ]
+  },
+  "acceptance": {
+    "official_image_build_verified": false,
+    "offline_verified": false,
+    "single_32gb_target_verified": false,
+    "five_independent_samples_verified": false,
+    "candidate_formal_service_promoted": false
+  },
+  "limits": [
+    "DRM entries and visibility masks alone do not certify target hardware or allocation.",
+    "Container CLI absence does not prove a remote build is impossible.",
+    "Local Dockerfile is archived project evidence, not a live official announcement.",
+    "Partial sample count is progress only; new score requires complete terminal audit."
+  ]
+}

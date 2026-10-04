@@ -1,0 +1,80 @@
+{
+  "cases": [
+    {
+      "task": "edge_any5",
+      "checks": 62,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "opposite_edge": 19,
+        "combinational": 53,
+        "extra_delay": 59,
+        "wrong_direction": 36,
+        "constant_zero": 51
+      },
+      "positive_names": [
+        "positive"
+      ]
+    },
+    {
+      "task": "edge_rising3",
+      "checks": 33,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "opposite_edge": 0,
+        "combinational": 23,
+        "extra_delay": 26,
+        "wrong_direction": 26,
+        "constant_zero": 20
+      },
+      "positive_names": [
+        "positive",
+        "opposite_edge"
+      ]
+    },
+    {
+      "task": "Prob045_edgedetect2",
+      "checks": 80,
+      "archived_candidate": true,
+      "group": "known_public_development",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "opposite_edge": 25,
+        "combinational": 71,
+        "extra_delay": 77,
+        "wrong_direction": 54,
+        "constant_zero": 69
+      },
+      "positive_names": [
+        "positive"
+      ]
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "checks": 53,
+      "archived_candidate": true,
+      "group": "known_public_development",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "opposite_edge": 0,
+        "combinational": 43,
+        "extra_delay": 46,
+        "wrong_direction": 46,
+        "constant_zero": 40
+      },
+      "positive_names": [
+        "positive",
+        "opposite_edge"
+      ]
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "independent_natural_tasks": 0,
+  "controls_only_not_agent_DUTs": true,
+  "oracle_per_bit_matches_expected": true,
+  "scope": "Constructed and two known archived development contracts; native control validity pending"
+}
