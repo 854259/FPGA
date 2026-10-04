@@ -25,5 +25,39 @@
   "runtime_changed": false,
   "full_batch_complete": false,
   "new_natural_validation_tasks": 0,
-  "scope": "Information-preservation engineering preflight only; no functional quality inference"
+  "scope": "Information-preservation engineering preflight only; no functional quality inference",
+  "worker_gate_Q2": {
+    "complete": true,
+    "passed": false,
+    "controls": 12,
+    "passed_controls": 11,
+    "worker_executions": 24,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "elapsed_s": 0.16359482519328594,
+    "baseline_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+    "candidate_runtime_sha256": "1b3e183e80235c9662c87e90ea91dfa1fe3759089f84295e4d4a6191fdbd0c66",
+    "formatter_sha256": "a6cc0b71dc3aad780dc3528472bed6b80b00d10ed6a42b2d4af469c50356d849",
+    "driver_sha256": "a258a869a0f0df7a13a984eec2b620be7f282f9a4078060d5a51012ada1b6432",
+    "full_batch_complete": false,
+    "deployed": false,
+    "scope": "Actual-worker control-flow test with fixed responses and compiler stubs; not real EDA or model quality"
+  },
+  "worker_gate_Q3": {
+    "complete": true,
+    "passed": true,
+    "controls": 13,
+    "passed_controls": 13,
+    "worker_executions": 26,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "elapsed_s": 0.17370588146150112,
+    "baseline_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+    "candidate_runtime_sha256": "1b3e183e80235c9662c87e90ea91dfa1fe3759089f84295e4d4a6191fdbd0c66",
+    "formatter_sha256": "a6cc0b71dc3aad780dc3528472bed6b80b00d10ed6a42b2d4af469c50356d849",
+    "driver_sha256": "6a331e15a23b2f9ab3734f12de9c71d7a69f456db8ae3a16e27f8206a2297f22",
+    "full_batch_complete": false,
+    "deployed": false,
+    "scope": "Actual-worker control-flow test with fixed responses and compiler stubs; not real EDA or model quality"
+  }
 }

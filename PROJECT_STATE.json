@@ -3560,7 +3560,8 @@
     "regressions": 0,
     "unchanged_functional": 3,
     "archive_sha256": "cbc7af7209376445e0e754941dcef287fce3a4efb9aee86372910ceee734f444",
-    "archive_remote_files_verified": 312
+    "archive_remote_files_verified": 312,
+    "archive_local_files_verified": 312
   },
   "diagnostic_feedback_Q1_20261005": {
     "status": "completed_information_gate_passed_not_quality_proven",
@@ -3624,12 +3625,20 @@
     "archive_sha256": "f523c4796697b219dd0229cb6ab8a9356f1d5cc7a3d8af86b3c9995570d84eda"
   },
   "diagnostic_compile_Q4_20261005": {
-    "status": "frozen_not_executed",
+    "status": "queued_behind_existing_ticket_14",
     "archived_cases": 30,
     "constructed_controls": 2,
     "model_calls": 0,
     "planned_eda_calls": 32,
     "timeout_s": 120,
-    "full_batch_complete": false
+    "full_batch_complete": false,
+    "ticket": 15,
+    "monitor_pid": 3354411,
+    "experiment_pid": null,
+    "source_commit": "4bbea072cae156d50f1433e3fea4f44a3c9f0d23",
+    "source_zip_sha256": "bd8b08bb3c9878c2d9574c793a7d170a0bf7919affb3f285e1e2374915df110f",
+    "amd_root": "/workspace/team/runs/fpga_teammate/diagnostic_Q4_20261005_4bbea07",
+    "submitted_utc": "2026-10-04T16:58:17.092209+00:00",
+    "next": "Follow existing FIFO ticket 15 and collect actual compiler PID, logs, result and cleanup; no duplicate submission."
   }
 }
