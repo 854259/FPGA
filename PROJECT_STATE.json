@@ -3078,7 +3078,7 @@
     "formal32gb_complete": false,
     "primary_goal": "complete competition delivery",
     "protocol": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
-    "status": "full_source_admission_inventory_prepared_after_fixture_correction",
+    "status": "full_source_static_inventory_done_contract_and_interface_admission_pending",
     "independent_natural_holdout_available": false,
     "id": "R20261004-01",
     "sample_size_and_full_budget_frozen": false,
@@ -3093,7 +3093,7 @@
     "credits_verified": false,
     "full_experiment_complete": false,
     "independent_source_discovery": {
-      "status": "fixed_source_metadata_verified_not_admitted",
+      "status": "full_static_inventory_complete_not_admitted",
       "candidates": [
         "NVlabs/cvdp_benchmark",
         "hkust-zhiyao/RTL-BenchMT"
@@ -3117,7 +3117,7 @@
       "matching_experiment_processes": 0,
       "own_slot_released": true,
       "full_experiment_running": false,
-      "checked_at": "2026-10-04T16:05:18+08:00",
+      "checked_at": "2026-10-04T16:15:05+08:00",
       "model_pid": 2013333,
       "model_healthy": true,
       "model_processing": false
@@ -3136,7 +3136,7 @@
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T16:13:09.7720238+08:00",
+  "updated_at": "2026-10-04T16:20:26.5253896+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3215,5 +3215,32 @@
     "processes_finished": true,
     "cleanup_verified": true,
     "report": "03_analysis/rtllm_contract_audit_20261002/CVDP_ENVIRONMENT_RESULT_20261004.md"
+  },
+  "cvdp_static_inventory_20261004": {
+    "independent_tasks_admitted": 0,
+    "stage_elapsed_s": 0.8823293745517731,
+    "syntax_error_records": 0,
+    "python_files": 810,
+    "signal_handle_alias_risk_records": 1,
+    "empty_prefix_maps": 23,
+    "nonempty_duplicate_prefix_groups": 12,
+    "source_commit": "8ff97887b4b2f57869e766457405097d4170bde0",
+    "interpretation": "03_analysis/rtllm_contract_audit_20261002/CVDP_STATIC_INVENTORY_INTERPRETATION_20261004.json",
+    "raw_duplicate_prefix_group_count": 13,
+    "guard_passed": true,
+    "processes_finished": true,
+    "cleanup_verified": true,
+    "records": 302,
+    "archive_verified": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "complete": true,
+    "guard_elapsed_s": 1.0031146481633186,
+    "public_result": "03_analysis/rtllm_contract_audit_20261002/CVDP_STATIC_INVENTORY_RAW_20261004.json",
+    "log_alias_only_records": 3,
+    "amd_root": "/workspace/team/runs/fpga_teammate/cvdp_inventory_20261004T081504Z_8ff9788",
+    "nonempty_duplicate_prefix_records": 24,
+    "driver_pid": 3043438,
+    "stage_pid": 3043443
   }
 }

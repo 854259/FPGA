@@ -1,0 +1,22 @@
+{
+  "schema": "cvdp_static_inventory_interpretation_v1",
+  "source_commit": "8ff97887b4b2f57869e766457405097d4170bde0",
+  "raw_public_result_sha256": "ba33cb1659d61ed6174ed14152a227dc8b7804c0389e1649448b5a409599b6c7",
+  "records": 302,
+  "static_only": true,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "empty_test_prefix_maps": 23,
+  "nonempty_test_prefix_duplicate_groups": 12,
+  "records_in_nonempty_test_prefix_duplicate_groups": 24,
+  "log_object_alias_only_records": 3,
+  "signal_handle_alias_risk_records": 1,
+  "independent_tasks_admitted": 0,
+  "limitations": [
+    "Filename-prefix grouping is not a complete declared MODULE mapping",
+    "Empty file maps must not be called duplicate test content",
+    "A handle assignment alone does not prove an incorrect assertion",
+    "Same LFSR family was used for development; dataset variant differs from the official worked example"
+  ],
+  "raw_result_preserved": true
+}
