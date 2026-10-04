@@ -1,0 +1,481 @@
+{
+  "source_commit": "04ed9f1",
+  "complete": true,
+  "valid": true,
+  "model_calls": 0,
+  "full_round_complete": false,
+  "decision": "no expansion or adoption: constructed recovery only; archived natural pairs unchanged",
+  "elapsed_s": 98.59847510140389,
+  "guard_elapsed_s": 98.81796796619892,
+  "rows": [
+    {
+      "name": "successful_repair",
+      "constructed": true,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 1.0809507304802537,
+          "solution_sha256": "5331df3f8dccdc43ffb44204474dd3377ce24eb1d68d3c7ab28b3958344b15a2",
+          "functional_pass": true,
+          "verdict": {
+            "status": "pass",
+            "failure_kind": null,
+            "checks": 4,
+            "mismatches": 0
+          }
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 1.0879553901031613,
+          "solution_sha256": "5331df3f8dccdc43ffb44204474dd3377ce24eb1d68d3c7ab28b3958344b15a2",
+          "functional_pass": true,
+          "verdict": {
+            "status": "pass",
+            "failure_kind": null,
+            "checks": 4,
+            "mismatches": 0
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "original_not_terminal_missing_module"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "correct_initial_helper",
+      "constructed": true,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 1.0833299662917852,
+          "solution_sha256": "5331df3f8dccdc43ffb44204474dd3377ce24eb1d68d3c7ab28b3958344b15a2",
+          "functional_pass": true,
+          "verdict": {
+            "status": "pass",
+            "failure_kind": null,
+            "checks": 4,
+            "mismatches": 0
+          }
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 1.0836625527590513,
+          "solution_sha256": "5331df3f8dccdc43ffb44204474dd3377ce24eb1d68d3c7ab28b3958344b15a2",
+          "functional_pass": true,
+          "verdict": {
+            "status": "pass",
+            "failure_kind": null,
+            "checks": 4,
+            "mismatches": 0
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "original_not_terminal_missing_module"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "persistent_good_helper",
+      "constructed": true,
+      "final_bytes_identical": false,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 0.0016431305557489395,
+          "solution_sha256": "bd3c2c0bdea324cc1e21b8a5a75e9745e4d1478da59f6458a56daba6ed8a7ea9",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "xelab_failed",
+            "checks": null,
+            "mismatches": null
+          }
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 4.501948545686901,
+          "solution_sha256": "df8dcea1faccac191a708533f66a09128d0601bf744e724a78fca661a84202b2",
+          "functional_pass": true,
+          "verdict": {
+            "status": "pass",
+            "failure_kind": null,
+            "checks": 4,
+            "mismatches": 0
+          },
+          "selections": [
+            {
+              "changed": true,
+              "reason": "last_reply_restored_after_exhausted_original_repair"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "persistent_wrong_helper",
+      "constructed": true,
+      "final_bytes_identical": false,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 0.0016265911981463432,
+          "solution_sha256": "bd3c2c0bdea324cc1e21b8a5a75e9745e4d1478da59f6458a56daba6ed8a7ea9",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "xelab_failed",
+            "checks": null,
+            "mismatches": null
+          }
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 4.552625463344157,
+          "solution_sha256": "283855ab2e3ab0fdebfb6f6991ac03eb669a9272d00939f8b646b0d1b2b55c27",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "semantic_mismatch",
+            "checks": 4,
+            "mismatches": 4
+          },
+          "selections": [
+            {
+              "changed": true,
+              "reason": "last_reply_restored_after_exhausted_original_repair"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ambiguous_last",
+      "constructed": true,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 0.0016499115154147148,
+          "solution_sha256": "bd3c2c0bdea324cc1e21b8a5a75e9745e4d1478da59f6458a56daba6ed8a7ea9",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "xelab_failed",
+            "checks": null,
+            "mismatches": null
+          }
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 0.004242405295372009,
+          "solution_sha256": "bd3c2c0bdea324cc1e21b8a5a75e9745e4d1478da59f6458a56daba6ed8a7ea9",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "xelab_failed",
+            "checks": null,
+            "mismatches": null
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "last_reply_not_unambiguous_hierarchy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "uncompilable_last",
+      "constructed": true,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 0.0016857897862792015,
+          "solution_sha256": "bd3c2c0bdea324cc1e21b8a5a75e9745e4d1478da59f6458a56daba6ed8a7ea9",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "xelab_failed",
+            "checks": null,
+            "mismatches": null
+          }
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 3.379124245606363,
+          "solution_sha256": "bd3c2c0bdea324cc1e21b8a5a75e9745e4d1478da59f6458a56daba6ed8a7ea9",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "xelab_failed",
+            "checks": null,
+            "mismatches": null
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "restored_elaboration_failed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "last_flat_wrong",
+      "constructed": true,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 1.078328836709261,
+          "solution_sha256": "f47b394bb04b812d231f253190191dbfc63656c589eb62c423c9a71451c6d227",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "semantic_mismatch",
+            "checks": 4,
+            "mismatches": 4
+          }
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 1.08145902864635,
+          "solution_sha256": "f47b394bb04b812d231f253190191dbfc63656c589eb62c423c9a71451c6d227",
+          "functional_pass": false,
+          "verdict": {
+            "status": "fail",
+            "failure_kind": "semantic_mismatch",
+            "checks": 4,
+            "mismatches": 4
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "original_not_terminal_missing_module"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "known16",
+      "constructed": false,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 0.0021546678617596626,
+          "solution_sha256": "24c07ebe01763d207589740631f9e55e2c627d50775200c6ef46295ce766a0e5",
+          "functional_pass": false,
+          "verdict": {
+            "level": 0,
+            "elapsed_s": 4.4,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "selections": []
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 0.004492663778364658,
+          "solution_sha256": "24c07ebe01763d207589740631f9e55e2c627d50775200c6ef46295ce766a0e5",
+          "functional_pass": false,
+          "verdict": {
+            "level": 0,
+            "elapsed_s": 4.4,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "last_reply_not_unambiguous_hierarchy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "known32",
+      "constructed": false,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 1.0835175858810544,
+          "solution_sha256": "cc3c893d7506ad82863d7931d8d8d9a0d4a92440297ca8f094805b88424452c6",
+          "functional_pass": false,
+          "verdict": {
+            "level": 1,
+            "elapsed_s": 8.0,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "selections": []
+        },
+        "postrepair_helpers": {
+          "logical_requests": 2,
+          "model_calls": 0,
+          "elapsed_s": 1.0713779460638762,
+          "solution_sha256": "cc3c893d7506ad82863d7931d8d8d9a0d4a92440297ca8f094805b88424452c6",
+          "functional_pass": false,
+          "verdict": {
+            "level": 1,
+            "elapsed_s": 8.0,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "original_not_terminal_missing_module"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "correct8",
+      "constructed": false,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 1,
+          "model_calls": 0,
+          "elapsed_s": 1.084774186834693,
+          "solution_sha256": "07575c939f850637b6bbad6346f6d9a48051672bc4ffd342ae29e7dffeaee1fe",
+          "functional_pass": true,
+          "verdict": {
+            "level": 3,
+            "elapsed_s": 28.1,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "selections": []
+        },
+        "postrepair_helpers": {
+          "logical_requests": 1,
+          "model_calls": 0,
+          "elapsed_s": 1.0842811902984977,
+          "solution_sha256": "07575c939f850637b6bbad6346f6d9a48051672bc4ffd342ae29e7dffeaee1fe",
+          "functional_pass": true,
+          "verdict": {
+            "level": 3,
+            "elapsed_s": 27.4,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "original_not_terminal_missing_module"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "correct_multi",
+      "constructed": false,
+      "final_bytes_identical": true,
+      "correct_broken": false,
+      "arms": {
+        "original": {
+          "logical_requests": 1,
+          "model_calls": 0,
+          "elapsed_s": 1.0769066018983722,
+          "solution_sha256": "22c65efc1a62da6196523009730f46f0a046b16b3b1baadce3cdff5b15e46749",
+          "functional_pass": true,
+          "verdict": {
+            "level": 3,
+            "elapsed_s": 27.4,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "selections": []
+        },
+        "postrepair_helpers": {
+          "logical_requests": 1,
+          "model_calls": 0,
+          "elapsed_s": 1.0699227219447494,
+          "solution_sha256": "22c65efc1a62da6196523009730f46f0a046b16b3b1baadce3cdff5b15e46749",
+          "functional_pass": true,
+          "verdict": {
+            "level": 3,
+            "elapsed_s": 27.7,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "selections": [
+            {
+              "changed": false,
+              "reason": "original_not_terminal_missing_module"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "guard": {
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true
+  },
+  "cleanup_verified": true,
+  "worker_elapsed_s": {
+    "original": 6.496567999012768,
+    "postrepair_helpers": 18.921092153526843
+  },
+  "logical_requests": {
+    "original": 20,
+    "postrepair_helpers": 20
+  },
+  "initial_archive_grades_valid": false,
+  "initial_grade_failure": "xvlog absent from official judge PATH; invalid L0 values retained privately",
+  "regrade": {
+    "source_commit": "32ec17b",
+    "elapsed_s": 136.18663182575256,
+    "guard_elapsed_s": 136.58464480284601,
+    "regeneration": false,
+    "frozen_outputs_unchanged": true,
+    "model_calls": 0
+  },
+  "total_experiment_elapsed_s_including_invalid_grading": 234.78510692715645
+}

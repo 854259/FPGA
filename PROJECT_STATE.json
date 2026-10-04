@@ -3137,7 +3137,7 @@
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T17:00:31.2755826+08:00",
+  "updated_at": "2026-10-04T17:18:12.9384338+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3274,5 +3274,39 @@
     "independent_admitted": 0,
     "source_commit": "95939335",
     "public_report": "03_analysis/rtllm_contract_audit_20261002/CVDP_INTERFACE_MAP_20261004.md"
+  },
+  "postrepair_K1_20261004": {
+    "status": "preflight_complete_no_expansion_no_natural_gain",
+    "source_commit": "04ed9f1",
+    "amd_root": "/workspace/team/runs/fpga_teammate/helper_K1_20261004T090611Z_04ed9f1",
+    "driver_pid": 3047306,
+    "stage_pid": 3047310,
+    "model_call_cap": 0,
+    "constructed_cases": 7,
+    "archived_pairs": 4,
+    "full_round_complete": false,
+    "environment_correction": {
+      "reason": "pinned judge missing xvlog PATH silently returns L0",
+      "invalid_grades": 8,
+      "source_commit": "32ec17b",
+      "driver_pid": 3053866,
+      "stage_pid": 3053870,
+      "amd_root": "/workspace/team/runs/fpga_teammate/helper_K1r2_20261004T091231Z_32ec17b",
+      "regenerated": false,
+      "model_calls": 0,
+      "status": "completed_verified"
+    },
+    "results": {
+      "natural_repairs": 0,
+      "natural_correct_broken": 0,
+      "natural_byte_unchanged": 4,
+      "constructed_repairs": 1,
+      "model_calls": 0,
+      "total_stage_seconds_including_invalid_grades": 234.78510692715645,
+      "source_report": "03_analysis/helper_extraction_20261004/K1_RESULT.md",
+      "archives_verified": true,
+      "cleanup_verified": true,
+      "next": "isolated judge availability guard; independent data and budget admission"
+    }
   }
 }
