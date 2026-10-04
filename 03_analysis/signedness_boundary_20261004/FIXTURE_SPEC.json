@@ -1,0 +1,36 @@
+{
+  "schema": "isolated_fixture_port_audit_E1",
+  "status": "frozen_before_eda",
+  "base_commit": "5f00b3b0b4743e139cfcedb01e4490f8dd89c667",
+  "task": "Prob099_m2014_q6c",
+  "archive": "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "adapter_sha256": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797",
+  "task_hashes": {
+    "ref.sv": "df78843a9f32266ada24afac8b88d33c2e069b1dacc2ce3cc89f5393eb5ae505",
+    "top.txt": "c50a469b80a8d65583769db47df11f71ef00810079c897ce42b2447db7ddfed7",
+    "task.json": "18e4704655320f8c487efa83f6ef15d34cbf1745cc8c9dd34fbca6e95664074b",
+    "tb.sv": "29378bb5021ae430db5ba03842155ff9f9079292825192f8d9c0710c9c59ab9e",
+    "prompt.txt": "4338c93f63dc76e9f2a453caa539fa006638380858d682011add6907a44199cd",
+    "reference/solution.sv": "05debe887f3cb3d50f08d1be2eb38c4bf08845f66a3095a2ece4bf73d6f09860"
+  },
+  "candidate_hashes": {
+    "agent": "9612c44f58a001914244310a121c6ee8bcd1235db77428dc10beb78971ea3a57",
+    "baseline": "bdb97113c282eba066282101a0e6c226329aa1ab26c14cce7b41d3c9b2959e96"
+  },
+  "order": ["old_reference", "corrected_reference", "negative_control", "archived_agent", "archived_baseline"],
+  "change": "In an isolated copied testbench only, replace the two .Y2( bindings with .Y1( and the two .Y4( bindings with .Y3(. Preserve TB variables, stimulus, clocks, comparison, reference, prompt, candidate bytes and all original files.",
+  "controls": "First reproduce original reference L0 with explicit missing-port diagnostic. Corrected reference must reach L3. Offline reference-derived negative control complements Y1 and must compile then fail semantic simulation. Only after controls score the two unchanged archived candidates.",
+  "new_model_calls": 0,
+  "max_judge_calls": 5,
+  "judge_timeout_s": 90,
+  "stage_timeout_s": 600,
+  "decision": "Retain the isolated fixture correction only if all controls are valid. Rejudgements measure evaluation correctness, never model/algorithm improvement; retain old 156 denominator and original scores. Do not update the official taskset or deploy a runtime change.",
+  "limits": [
+    "This task and its results are historical development data, not independent validation.",
+    "Matching the reference does not establish a complete proof against the natural-language specification.",
+    "All reference, TB and raw evidence remain offline and private; no model requests.",
+    "Use the existing udev compatibility library for isolated Vivado children; no installation or shared service changes.",
+    "Stop on environment, missing evidence or invalid control, preserve failed receipts, no silent retry."
+  ]
+}
