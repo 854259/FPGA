@@ -3605,7 +3605,7 @@
     "archive_sha256": "11d44d2fca1c356bb51ea93209d09b6d112bf98b73086ca991db27dcc9c8d63f"
   },
   "diagnostic_worker_Q3_20261005": {
-    "status": "frozen_not_executed",
+    "status": "completed_control_flow_gate_passed",
     "controls": 13,
     "worker_executions": 26,
     "model_calls": 0,
@@ -3613,6 +3613,23 @@
     "timeout_s": 120,
     "compiler_and_responses_are_stubs": true,
     "candidate_unchanged": true,
+    "full_batch_complete": false,
+    "source_commit": "1e0d38db96eb66d192543d849c9c888100050e74",
+    "ticket": 13,
+    "pid": 3349664,
+    "stage_pid": 3349669,
+    "passed_controls": 13,
+    "elapsed_s": 0.17370588146150112,
+    "candidate_runtime_sha256": "1b3e183e80235c9662c87e90ea91dfa1fe3759089f84295e4d4a6191fdbd0c66",
+    "archive_sha256": "f523c4796697b219dd0229cb6ab8a9356f1d5cc7a3d8af86b3c9995570d84eda"
+  },
+  "diagnostic_compile_Q4_20261005": {
+    "status": "frozen_not_executed",
+    "archived_cases": 30,
+    "constructed_controls": 2,
+    "model_calls": 0,
+    "planned_eda_calls": 32,
+    "timeout_s": 120,
     "full_batch_complete": false
   }
 }
