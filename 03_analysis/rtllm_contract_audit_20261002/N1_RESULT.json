@@ -1,0 +1,48 @@
+{
+  "schema": "gatetruth_public_fixture_preflight_v1",
+  "complete": true,
+  "source_commit": "7ffd7b589aa493411e96947b226106e207375c53",
+  "upstream": "2cdaae80ae42c211b049aa521fc2b5db1c2037af",
+  "model_calls": 0,
+  "full_experiment_complete": false,
+  "independent_tasks_admitted": 0,
+  "scope": "60 public references and empty-interface controls; no hidden tests/PPA/official score",
+  "environment_difference": "Icarus 13 / Python 3.12; upstream pins Icarus 12 / Python 3.11",
+  "error": null,
+  "cvdp_public_input": {
+    "records": 302,
+    "missing_top_in_prompt": 24,
+    "missing_top_in_full_public_input": 2,
+    "literal_token_audit_only": true,
+    "functional_admission": 0
+  },
+  "phase": "complete_public_preflight",
+  "elapsed_s": 36.64608919341117,
+  "environment": {
+    "toolchain_manifest_sha256": "b0864aea493587c3fef1ff156b4fa49d52bd2ee712e9f28f94909d9e69252818",
+    "cocotb_wheel_sha256": "ff2460fb60444bfbe28a8119aad7f7297a97b53356426f03d0cdee2b90d3bc1a",
+    "seed": 20261004
+  },
+  "reference_passes": 59,
+  "empty_detected": 60,
+  "paired_control_passes": 59,
+  "controls_total": 120,
+  "tests_reference": 175,
+  "tests_negative": 178,
+  "reference_compile_errors": 1,
+  "guard": {
+    "passed": true,
+    "elapsed_s": 36.85419092606753,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "model_idle_after": {
+      "health_status": "ok",
+      "model_name": "Qwen3.6-27B-Q4_K_M",
+      "slot_count": 1,
+      "processing_slots": 0,
+      "model_pid_owns_port": true
+    },
+    "own_slot_released": true
+  },
+  "cleanup_verified": true
+}

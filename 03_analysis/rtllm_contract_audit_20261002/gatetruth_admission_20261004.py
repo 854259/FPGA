@@ -90,7 +90,8 @@ def run(a):
     result = dict(schema='gatetruth_public_fixture_preflight_v1', complete=False,
                   source_commit=(REPO / 'DELIVERY_COMMIT').read_text().strip(), upstream=UPSTREAM,
                   model_calls=0, full_experiment_complete=False, independent_tasks_admitted=0,
-                  scope='60 public references and empty-interface controls; no hidden tests/PPA/official score',
+                  scope=('60 public references and empty-interface controls' if a.controls == 'initial'
+                         else '60 constant-zero and constant-one public fixture controls') + '; no hidden tests/PPA/official score',
                   environment_difference='Icarus 13 / Python 3.12; upstream pins Icarus 12 / Python 3.11',
                   controls=[], commands=[], error=None)
 
@@ -161,12 +162,26 @@ def run(a):
             files = {str(p.relative_to(task)): sha(p) for p in task.rglob('*') if p.is_file()}
             assert 'ref/ref.sv' in files and 'spec.md' in files
             assert not re.search(r'\$(system|fopen)\b|`include', (task / 'ref/ref.sv').read_text()), 'reference external IO'
+            controls = ['original_reference', 'empty_interface'] if a.controls == 'initial' else ['constant_zero', 'constant_one']
+            generated = {}
+            if a.controls == 'constant':
+                outputs = re.findall(r'\boutput\s+(?:logic|wire|reg)\s+(?:signed\s+)?(?:\[[^\]]+\]\s*)?([A-Za-z_]\w*)', clean)
+                assert outputs and len(outputs) == len(re.findall(r'\boutput\b', clean)), 'unparsed output'
+                assert clean.count('endmodule') == 1
+                for label, value in zip(controls, ("'0", "'1")):
+                    body = '\n'.join('assign ' + p + ' = ' + value + ';' for p in outputs)
+                    text = clean.replace('endmodule', body + '\nendmodule')
+                    path = a.out / 'generated' / task.name / (label + '.sv')
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_text(text)
+                    generated[label] = dict(path=str(path), sha256=sha(path))
             frozen.append(dict(task_id=task.name, top=names[0], files=files,
-                               controls=['original_reference', 'empty_interface'], admitted=False))
+                               controls=controls, generated=generated, admitted=False))
         save(a.out / 'PRIVATE_FROZEN_INPUTS.json', dict(tasks=frozen, seed=SEED,
              source_sha256=ZIP_SHA, interfaces_used_only_for_negative_controls=True,
              exposure='All task metadata/interfaces/test AST inspected for admission; no solver tuning. Not untouched holdout.'))
-        result['cvdp_public_input'] = cvdp_public_input(a.materials, a.out)
+        if a.controls == 'initial':
+            result['cvdp_public_input'] = cvdp_public_input(a.materials, a.out)
         publish('all_60_inputs_and_both_controls_frozen')
         site = a.out / 'python_site'
         env = dict(PATH=str(prefix / 'bin') + ':/usr/local/bin:/usr/bin:/bin',
@@ -182,7 +197,11 @@ def run(a):
             for label in record['controls']:
                 folder = a.out / 'controls' / task.name / label
                 folder.mkdir(parents=True)
-                design = task / ('ref/ref.sv' if label == 'original_reference' else 'interface.sv')
+                if record['generated']:
+                    design = Path(record['generated'][label]['path'])
+                    assert sha(design) == record['generated'][label]['sha256']
+                else:
+                    design = task / ('ref/ref.sv' if label == 'original_reference' else 'interface.sv')
                 case = folder / 'case.json'
                 save(case, dict(design=str(design), top=record['top'],
                                 test_module='test_' + task.name, test_dir=str(task / 'tb')))
@@ -195,15 +214,27 @@ def run(a):
                 passed = build_ok and bool(tests) and failures == skips == 0 and receipt['returncode'] == 0
                 item = dict(task_id=task.name, label=label, build_ok=build_ok, tests=len(tests),
                             failures=failures, skips=skips, passed=passed,
-                            negative_detected=label == 'empty_interface' and build_ok and failures > 0,
+                            negative_detected=label != 'original_reference' and build_ok and failures > 0,
                             returncode=receipt['returncode'], elapsed_s=receipt['elapsed_s'])
                 result['controls'].append(item)
                 publish('public_fixture_controls')
         result['complete'] = len(result['controls']) == 120
         result['reference_passes'] = sum(c['passed'] for c in result['controls'] if c['label'] == 'original_reference')
-        result['empty_detected'] = sum(c['negative_detected'] for c in result['controls'])
+        result['negative_detected'] = sum(c['negative_detected'] for c in result['controls'])
+        result['negative_passed_unexpectedly'] = sum(c['passed'] for c in result['controls'] if c['label'] != 'original_reference')
         result['paired_control_passes'] = sum(
-            result['controls'][2*i]['passed'] and result['controls'][2*i+1]['negative_detected'] for i in range(60))
+            (result['controls'][2*i]['passed'] if a.controls == 'initial' else result['controls'][2*i]['negative_detected'])
+            and result['controls'][2*i+1]['negative_detected'] for i in range(60))
+        if a.controls == 'constant':
+            # Compile-only diagnosis of N1's unchanged failed upstream reference; not an oracle fix.
+            folder = a.out / 'reference_compile_diagnosis'
+            folder.mkdir()
+            receipt = command('reference_vivado_compile', ['/workspace/AMD/2026.1/Vivado/bin/xvlog',
+                '-sv', root / 'tasks/t2_i2c_slave/ref/ref.sv'], folder, 60,
+                dict(env, LD_LIBRARY_PATH='/workspace/team/udev-stub',
+                     PATH='/workspace/AMD/2026.1/Vivado/bin:' + env['PATH']))
+            result['reference_vivado_compile_rc'] = receipt['returncode']
+            result['reference_diagnosis_scope'] = 'Unchanged reference; syntax compile only, not function or Icarus12 compatibility'
         publish('complete_public_preflight')
     except BaseException as exc:
         result['error'] = type(exc).__name__ + ': ' + str(exc)
@@ -219,5 +250,6 @@ if __name__ == '__main__':
     parser.add_argument('--kit', type=Path)
     parser.add_argument('--out', type=Path)
     parser.add_argument('--resource-check', type=Path)
+    parser.add_argument('--controls', choices=['initial', 'constant'], default='initial')
     args = parser.parse_args()
     worker(args) if args.case else run(args)

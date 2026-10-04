@@ -3093,7 +3093,7 @@
     "credits_verified": false,
     "full_experiment_complete": false,
     "independent_source_discovery": {
-      "status": "full_302_runner_map_complete_fair_interface_oracle_admission_pending",
+      "status": "CVDP_full_public_input_checked_GateTruth_public_controls_pending_strength_and_overlap",
       "candidates": [
         "NVlabs/cvdp_benchmark",
         "hkust-zhiyao/RTL-BenchMT"
@@ -3137,7 +3137,7 @@
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T17:28:02.0890768+08:00",
+  "updated_at": "2026-10-04T17:51:37.5952776+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3321,5 +3321,21 @@
     "processes_finished": true,
     "cleanup_verified": true,
     "public_report": "03_analysis/helper_extraction_20261004/JUDGE_ADMISSION_RESULT.md"
+  },
+  "gatetruth_admission_20261004": {
+    "status": "N1_complete_N2_frozen_not_started",
+    "upstream": "2cdaae80ae42c211b049aa521fc2b5db1c2037af",
+    "source_commit": "7ffd7b589aa493411e96947b226106e207375c53",
+    "tasks": 60,
+    "controls": 120,
+    "reference_passes": 59,
+    "reference_compile_errors": 1,
+    "empty_detected": 60,
+    "model_calls": 0,
+    "independent_admitted": 0,
+    "full_experiment_complete": false,
+    "evidence_zip_sha256": "38b41442d72658f92bf8601ee9efa790169e93683804a89ca7d4b2daef472c0a",
+    "cvdp_missing_top_full_public_input": 2,
+    "report": "03_analysis/rtllm_contract_audit_20261002/N1_RESULT.md"
   }
 }
