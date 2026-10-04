@@ -4715,8 +4715,8 @@
     "source_assets": 30,
     "task_count": 156,
     "expected_samples": 312,
-    "completed_samples_at_snapshot": 114,
-    "actual_requests_at_snapshot": 3,
+    "completed_samples_at_snapshot": 172,
+    "actual_requests_at_snapshot": 180,
     "samples_per_arm_per_task": 1,
     "max_actual_requests": 624,
     "retries": 0,
@@ -4728,10 +4728,11 @@
     "new_full_score": false,
     "cloud_directory": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1",
     "report": "03_analysis/functional_full156_20261005/README.md",
-    "quota_used_percent": 8,
+    "quota_used_percent": 10,
     "quota_stop_percent": 97,
-    "actual_model_requests_at_snapshot": 118,
-    "snapshot_observed_at_utc": "2026-10-04T19:37:19.770351+00:00"
+    "actual_model_requests_at_snapshot": 180,
+    "snapshot_observed_at_utc": "2026-10-04T20:26:53.315082+00:00",
+    "stage_error": null
   },
   "edge_contract_20261005": {
     "status": "native_calibration_queued",
@@ -4795,5 +4796,30 @@
     "independent_natural_tasks": 0,
     "protected_tasks": 156,
     "protected_input_files": 936
+  },
+  "formal_bridge_20261005": {
+    "status": "linux_integration_and_constructed_native_parity_queued",
+    "report": "03_analysis/formal_bridge_20261005/README.md",
+    "run_spec_sha256": "a9b4bb662902aba8b979fcee775960fa50c439b79b47d7808f7884b10e143aa3",
+    "assets": 28,
+    "local_tests_passed": 12,
+    "linux_worker_pure_tests_passed": 8,
+    "linux_process_tests_executed": false,
+    "fake_http_consecutive_requests": 200,
+    "fifo_ticket": 30,
+    "monitor_pid": 3529355,
+    "monitor_starttime": "841940444",
+    "snapshot_at_utc": "2026-10-04T20:29:41.217631+00:00",
+    "monitor_verified_alive": true,
+    "research_api_gaps_reproduced": 3,
+    "full_research_run_invalidated": false,
+    "planned_native_probes": 4,
+    "planned_compiles": 2,
+    "max_actual_model_requests": 0,
+    "native_results_audited": false,
+    "score_measured": false,
+    "adoption": false,
+    "independent_natural_tasks": 0,
+    "quota_used_percent_latest": 10
   }
 }

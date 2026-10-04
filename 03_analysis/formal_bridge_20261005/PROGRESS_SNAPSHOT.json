@@ -1,0 +1,46 @@
+{
+  "at_utc": "2026-10-04T20:26:53.315082+00:00",
+  "complete": false,
+  "error": null,
+  "rows": 172,
+  "actual_model_requests": 180,
+  "tickets": [
+    {
+      "ticket": 25,
+      "task_name": "functional_full156_v1",
+      "state": "running",
+      "runner": {
+        "pid": 3390465,
+        "starttime": "841229941"
+      },
+      "proc": [
+        "S",
+        "841229941"
+      ]
+    },
+    {
+      "ticket": 26,
+      "task_name": "fpga_teammate_cvdp_rng_S2",
+      "state": "queued",
+      "runner": null
+    },
+    {
+      "ticket": 27,
+      "task_name": "fpga_teammate_paired_uncertainty_T1",
+      "state": "queued",
+      "runner": null
+    },
+    {
+      "ticket": 28,
+      "task_name": "edge_contract_calibration_v1",
+      "state": "queued",
+      "runner": null
+    },
+    {
+      "ticket": 29,
+      "task_name": "fsm_contract_calibration_v1",
+      "state": "queued",
+      "runner": null
+    }
+  ]
+}

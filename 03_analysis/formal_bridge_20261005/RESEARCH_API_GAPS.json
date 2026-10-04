@@ -1,0 +1,16 @@
+{
+  "schema": "research_candidate_formal_gap_reproduction_v1",
+  "source_core_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "live_source_changed": false,
+  "full_regression_invalidated": false,
+  "unpackaged_integrity_file_failure_reproduced": true,
+  "research_map_API_child_selects_A_runtime": true,
+  "selected_child_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+  "missing_callback_nameerror_reproduced": true,
+  "limits": [
+    "Research worker injects its callback and is unaffected; this is a shipping gap, not a failed full regression.",
+    "Fake process/model/compiler reproduce routing only; no functional RTL or hardware proof."
+  ]
+}

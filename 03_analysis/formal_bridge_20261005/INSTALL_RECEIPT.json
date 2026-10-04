@@ -1,0 +1,12 @@
+{
+  "schema": "formal_bridge_linux_pure_install_v1",
+  "at_utc": "2026-10-04T20:29:14.916210+00:00",
+  "run_spec_sha256": "a9b4bb662902aba8b979fcee775960fa50c439b79b47d7808f7884b10e143aa3",
+  "assets": 28,
+  "pure_worker_tests_passed": 8,
+  "test_returncode": 0,
+  "test_output": "test_busy_or_invalid_slot_response_no_model_post (test_bridge.Worker.test_busy_or_invalid_slot_response_no_model_post) ... ok\ntest_child_dispatch_is_bridge_agent_and_untouched_baseline (test_bridge.Worker.test_child_dispatch_is_bridge_agent_and_untouched_baseline) ... ok\ntest_correct_source_byte_preserved_no_extra_call (test_bridge.Worker.test_correct_source_byte_preserved_no_extra_call) ... ok\ntest_original_successful_declaration_patch_returns_before_optional_probe (test_bridge.Worker.test_original_successful_declaration_patch_returns_before_optional_probe) ... ok\ntest_package_integrity_baseline_and_core_exact (test_bridge.Worker.test_package_integrity_baseline_and_core_exact) ... ok\ntest_persistent_mismatch_never_third_request (test_bridge.Worker.test_persistent_mismatch_never_third_request) ... ok\ntest_real_staged_worker_uses_original_repair_with_factual_feedback (test_bridge.Worker.test_real_staged_worker_uses_original_repair_with_factual_feedback) ... ok\ntest_unknown_contract_skips_probe (test_bridge.Worker.test_unknown_contract_skips_probe) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.021s\n\nOK\n",
+  "actual_model_requests": 0,
+  "actual_eda_calls": 0,
+  "linux_integration_executed": false
+}

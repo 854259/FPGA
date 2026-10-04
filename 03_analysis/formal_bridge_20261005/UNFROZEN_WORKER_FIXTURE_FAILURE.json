@@ -1,0 +1,11 @@
+{
+  "schema": "formal_bridge_unfrozen_test_failure_v1",
+  "test_source_sha256": "8326770d69dde9c1166a1619c91302214ed2ac210dd0872df940aebcc152df73",
+  "combined_tests": 12,
+  "failed_worker_fixture_tests": 4,
+  "cause": "Direct worker test did not enter isolated scratch CWD; first compile-0 persisted and collided in later tests. Actual run_job already supplies isolated cwd.",
+  "passed_http_200_same_process": true,
+  "scratch_preserved": "raw_evidence/unfrozen_worker_fixture_v1/compile-0",
+  "model_calls": 0,
+  "eda_calls": 0
+}
