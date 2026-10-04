@@ -6,6 +6,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import sys
 import tarfile
@@ -142,13 +143,18 @@ def run(a):
         private = json.loads(a.controls.read_text())
         assert private["example_id"] == row["id"]
         assert hashlib.sha256(original.encode()).hexdigest() == private["original_sha256"]
-        inverted = private["mutants"]["invert_output"]
-        zero = private["mutants"]["stuck_zero"]
+        rtl_by_label = {"original_reference": original, **private["mutants"]}
+        correction = private.get("harness_correction")
+        result["harness_correction_applied"] = correction is not None
         source_hashes = {}
-        for label, rtl in zip(spec["controls"], [original, inverted, zero]):
+        for label in spec["controls"]:
+            rtl = rtl_by_label[label]
             folder = a.out / "controls" / label
             folder.mkdir(parents=True)
             for rel, content in row["harness"]["files"].items():
+                if correction and rel == correction["path"]:
+                    assert hashlib.sha256(content.encode()).hexdigest() == correction["original_sha256"]
+                    content = correction["content"]
                 target = folder / rel
                 assert target.resolve().is_relative_to(folder.resolve())
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -168,7 +174,7 @@ def run(a):
                 VERILOG_SOURCES=str(folder / "rtl/lfsr_8bit.sv"),
                 PYTHONPATH=str(site) + ":" + str(folder / "src"))
             receipt = command(label, ["/usr/bin/python3", "-m", "pytest",
-                "-q", "-p", "no:cacheprovider", "--junitxml=" + str(folder / "pytest.xml"),
+                "-q", "-s", "-p", "no:cacheprovider", "--junitxml=" + str(folder / "pytest.xml"),
                 folder / "src/test_runner.py"], folder, 90, case_env, allow_nonzero=True)
             suites = []
             for xml in folder.rglob("*.xml"):
@@ -183,7 +189,11 @@ def run(a):
                         skipped=sum(c.find("skipped") is not None for c in cases)))
             tests = sum(x["tests"] for x in suites)
             failures = sum(x["failures"] + x["errors"] for x in suites)
-            valid = tests == 3 and sum(x["skipped"] for x in suites) == 0
+            observations = re.findall(r"CVDP_CONTRACT_RESULT resets=(\d+) transitions=(\d+)",
+                                      (a.out / (label + ".log")).read_text())
+            valid = tests == spec.get("expected_cocotb_tests", 3) and sum(x["skipped"] for x in suites) == 0
+            if correction and label == "original_reference":
+                valid = valid and observations == [("255", "65025")]
             passed = valid and receipt["returncode"] == 0 and failures == 0
             rejected = valid and receipt["returncode"] != 0 and failures > 0
             result["controls"].append(dict(label=label, complete_simulation=valid,
@@ -191,6 +201,7 @@ def run(a):
                 negative_detected=rejected if label != "original_reference" else None,
                 tests=tests, failures=failures, returncode=receipt["returncode"], suites=suites,
                 expected_met=passed if label == "original_reference" else rejected))
+            result["controls"][-1]["contract_observations"] = [list(map(int, x)) for x in observations]
             publish("observed_" + label)
         gate()
         result.update(complete=True, execution_valid=all(x["complete_simulation"] for x in result["controls"]),

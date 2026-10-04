@@ -23,12 +23,16 @@
   "controls": [
     "original_reference",
     "invert_output",
-    "stuck_zero"
+    "stuck_zero",
+    "ignore_seed",
+    "wrong_feedback"
   ],
   "expected": {
     "original_reference": "pass",
     "invert_output": "functional_fail",
-    "stuck_zero": "functional_fail"
+    "stuck_zero": "functional_fail",
+    "ignore_seed": "functional_fail",
+    "wrong_feedback": "functional_fail"
   },
   "seed": 20261004,
   "limits": [
@@ -38,8 +42,10 @@
     "Official-example oracle may be weak: handle equality and absence of nonzero state enforcement observed statically; detect with frozen controls, do not silently correct before observation.",
     "If a known-wrong control passes, preserve negative evidence and withhold dataset admission. No retries or seed selection."
   ],
-  "private_controls_sha256": "83f21777da17681a8f97050038de0f4a8bd0d4e43ae26c412cc2a6099cf69931",
+  "private_controls_sha256": "9dbd19d32ed3b1ca851dd54056a26648f463da2b4ac15c7a41d6e89eca7fd953",
   "wheels_manifest_sha256": "8c870c1e281d4dc51d4179aad8bc230b5cdc8d1af1946eb5edc4030966c07fbe",
   "reuse_toolchain_manifest_sha256": "b0864aea493587c3fef1ff156b4fa49d52bd2ee712e9f28f94909d9e69252818",
-  "revision_reason": "First attempt installed Icarus successfully but PyPI network was unreachable; same package hashes now supplied offline, same controls/seed, verified Icarus reused without rebuilding."
+  "revision_reason": "Original fixture dynamically misses stuck-zero. Correct evaluator-only copy from visible prompt; retain original false-positive evidence. Add ignored-seed and wrong-feedback negatives. Candidate unchanged.",
+  "expected_cocotb_tests": 1,
+  "corrected_control_scope": "Prompt-derived development fixture: all 255 supported nonzero seeds; asynchronous reset check, 255 exact transitions and maximal period for each seed. Zero seed excluded by prompt. Not independent quality evaluation."
 }

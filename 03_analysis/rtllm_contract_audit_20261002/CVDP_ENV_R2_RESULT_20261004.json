@@ -1,0 +1,59 @@
+{
+  "schema": "cvdp_offline_environment_and_original_fixture",
+  "source_commit": "f030d1cb9334662a8c9498fad4023289e8fc9ff5",
+  "substage_complete": true,
+  "full_experiment_complete": false,
+  "model_calls": 0,
+  "independent_tasks_admitted": 0,
+  "environment_execution_valid": true,
+  "fixture_admission_passed": false,
+  "stage_elapsed_s": 2.564504466019571,
+  "guard_elapsed_s": 2.757421159185469,
+  "controls": [
+    {
+      "label": "original_reference",
+      "complete_simulation": true,
+      "reference_passed": true,
+      "negative_detected": null,
+      "tests": 3,
+      "failures": 0,
+      "returncode": 0,
+      "expected_met": true
+    },
+    {
+      "label": "invert_output",
+      "complete_simulation": true,
+      "reference_passed": null,
+      "negative_detected": true,
+      "tests": 3,
+      "failures": 3,
+      "returncode": 1,
+      "expected_met": true
+    },
+    {
+      "label": "stuck_zero",
+      "complete_simulation": true,
+      "reference_passed": null,
+      "negative_detected": false,
+      "tests": 3,
+      "failures": 0,
+      "returncode": 0,
+      "expected_met": false
+    }
+  ],
+  "findings": [
+    "Original reference passes three tests; inverted output fails all three.",
+    "Known-wrong stuck-zero output passes all three upstream tests.",
+    "Original test compares mutable signal handles for period and does not enforce reset seed/nonzero state."
+  ],
+  "decision": "Reject this original fixture; correct only evaluator development copy before further controls. Do not infer all other CVDP fixtures are invalid.",
+  "guard_passed": true,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "control_manifest_sha256": "10cc75a5000329348d96673e9e093dd18b03013f2a4dd9dc701db92e22e725b0",
+  "toolchain_file_count": 49,
+  "python_package_count": 6,
+  "source_data_role": "official LFSR example and same-source family are development, never independent holdout"
+}
