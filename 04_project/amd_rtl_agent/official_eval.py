@@ -9,6 +9,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -62,6 +63,11 @@ def judge_sample(task: Path, solution: Path, dst: Path, verdict_path: Path,
     task, solution = Path(task).resolve(), Path(solution).resolve()
     expected_task = json.loads((task / 'task.json').read_text(encoding='utf-8'))['task_id']
     nonempty = bool(solution.read_text(encoding='utf-8').strip())
+    if nonempty:
+        missing_tools = [name for name in ('xvlog', 'xelab', 'xsim', 'vivado')
+                         if shutil.which(name) is None]
+        if missing_tools:
+            raise RuntimeError('judge environment: executable unavailable on PATH: ' + ', '.join(missing_tools))
     dst, verdict_path = Path(dst).resolve(), Path(verdict_path).resolve()
     if verdict_path.exists():
         raise FileExistsError('refusing to reuse judge verdict: ' + str(verdict_path))
@@ -141,6 +147,10 @@ def judge_sample(task: Path, solution: Path, dst: Path, verdict_path: Path,
             if path.is_file():
                 raw = path.read_bytes()
                 receipt['evidence'][path.name] = {'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
+                if path.name == 'w_judge.log' and re.search(
+                        r'^\[[^\]\r\n]+\] 可执行文件不存在[：:]\s*\S+',
+                        raw.decode('utf-8', errors='replace'), re.M):
+                    receipt['errors'].append('judge environment: tool launch failed in pinned judge')
         if archive_ok:
             try:
                 shutil.rmtree(scratch)
