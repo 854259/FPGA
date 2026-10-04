@@ -3167,7 +3167,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T00:26:32.6627830+08:00",
+  "updated_at": "2026-10-05T00:26:32.662783+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3542,18 +3542,37 @@
     "report": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.md"
   },
   "map_table_followup_20261005": {
-    "checked_at": "2026-10-05T00:26:01+08:00",
-    "status": "other_owner_running_readonly_followup",
+    "checked_at": "2026-10-05T00:40:00+08:00",
+    "status": "completed_rejected_for_expansion",
     "ticket": 10,
     "pid": 3343720,
     "stage_pid": 3343725,
-    "rows_completed": 6,
+    "rows_completed": 8,
     "rows_total": 8,
-    "actual_model_requests": 2,
+    "actual_model_requests": 3,
     "request_cap": 8,
     "source_commit": "89b830e",
     "spec_sha256": "28bf1d75e1b4e697aa9f1c6ae3cd604429f0cb4088f4a5f0ca0f3e671877baaf",
     "full_batch_complete": false,
-    "launched_by_this_task": false
+    "launched_by_this_task": false,
+    "elapsed_s": 112.59323141165078,
+    "repairs": 1,
+    "regressions": 0,
+    "unchanged_functional": 3,
+    "archive_sha256": "cbc7af7209376445e0e754941dcef287fce3a4efb9aee86372910ceee734f444",
+    "archive_remote_files_verified": 312
+  },
+  "diagnostic_feedback_Q1_20261005": {
+    "status": "frozen_not_executed",
+    "model_calls": 0,
+    "eda_calls": 0,
+    "timeout_s": 120,
+    "logs": 338,
+    "workers": 311,
+    "controls": 24,
+    "runtime_changed": false,
+    "full_batch_complete": false,
+    "driver_sha256": "a6cc0b71dc3aad780dc3528472bed6b80b00d10ed6a42b2d4af469c50356d849",
+    "report": "03_analysis/helper_extraction_20261004/DIAGNOSTIC_FEEDBACK_Q1_20261005.md"
   }
 }
