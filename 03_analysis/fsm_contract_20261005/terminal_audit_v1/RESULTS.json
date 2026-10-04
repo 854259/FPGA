@@ -1,0 +1,1051 @@
+{
+  "schema": "fsm_contract_offline_audit_v1",
+  "evidence_valid": true,
+  "controls_valid": true,
+  "archive_sha256": "5311b293bd2502eb496052051a75fd4741947257a31550849cb75916be1c4cbb",
+  "run_spec_sha256": "cce335ae31089b15fa100b95bacdff70e60185886a45e5810113dba082cdfa0a",
+  "auditor_sha256": "73e04ca1c10ec57653c63af99d4d789951797882b3e3a317fde329c3719b8776",
+  "cases": {
+    "Prob143_fsm_onehot": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 2048,
+          "mismatches": 0,
+          "first": null
+        },
+        "missing_hold": {
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 260,
+          "first": {
+            "case": 2,
+            "state": 1,
+            "inputs": {
+              "in": 0
+            },
+            "expected": 4,
+            "observed_hex": "000",
+            "output_maps": [
+              {
+                "name": "next_state",
+                "width": 10,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "out1",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "out2",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "missing_output": {
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 768,
+          "first": {
+            "case": 1024,
+            "state": 512,
+            "inputs": {
+              "in": 0
+            },
+            "expected": 7,
+            "observed_hex": "004",
+            "output_maps": [
+              {
+                "name": "next_state",
+                "width": 10,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "out1",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "out2",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "wrong_condition": {
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 1024,
+          "first": {
+            "case": 2,
+            "state": 1,
+            "inputs": {
+              "in": 0
+            },
+            "expected": 4,
+            "observed_hex": "008",
+            "output_maps": [
+              {
+                "name": "next_state",
+                "width": 10,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "out1",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "out2",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "shifted_encoding": {
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 1908,
+          "first": {
+            "case": 2,
+            "state": 1,
+            "inputs": {
+              "in": 0
+            },
+            "expected": 4,
+            "observed_hex": "007",
+            "output_maps": [
+              {
+                "name": "next_state",
+                "width": 10,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "out1",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "out2",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 2046,
+          "first": {
+            "case": 2,
+            "state": 1,
+            "inputs": {
+              "in": 0
+            },
+            "expected": 4,
+            "observed_hex": "000",
+            "output_maps": [
+              {
+                "name": "next_state",
+                "width": 10,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "out1",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "out2",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 2048,
+        "mismatches": 768,
+        "first": {
+          "case": 1024,
+          "state": 512,
+          "inputs": {
+            "in": 0
+          },
+          "expected": 7,
+          "observed_hex": "004",
+          "output_maps": [
+            {
+              "name": "next_state",
+              "width": 10,
+              "kind": "next_vector",
+              "index": null
+            },
+            {
+              "name": "out1",
+              "width": 1,
+              "kind": "moore",
+              "index": 0
+            },
+            {
+              "name": "out2",
+              "width": 1,
+              "kind": "moore",
+              "index": 1
+            }
+          ]
+        }
+      }
+    },
+    "Prob150_review2015_fsmonehot": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 80,
+          "mismatches": 0,
+          "first": null
+        },
+        "missing_hold": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 12,
+          "first": {
+            "case": 0,
+            "state": 1,
+            "inputs": {
+              "d": 0,
+              "done_counting": 0,
+              "ack": 0
+            },
+            "expected": 64,
+            "observed_hex": "00",
+            "output_maps": [
+              {
+                "name": "B3_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 7
+              },
+              {
+                "name": "S_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "S1_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 1
+              },
+              {
+                "name": "Count_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 8
+              },
+              {
+                "name": "Wait_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 9
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 2
+              },
+              {
+                "name": "counting",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              },
+              {
+                "name": "shift_ena",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              }
+            ]
+          }
+        },
+        "missing_output": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 8,
+          "first": {
+            "case": 72,
+            "state": 512,
+            "inputs": {
+              "d": 0,
+              "done_counting": 0,
+              "ack": 0
+            },
+            "expected": 12,
+            "observed_hex": "08",
+            "output_maps": [
+              {
+                "name": "B3_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 7
+              },
+              {
+                "name": "S_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "S1_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 1
+              },
+              {
+                "name": "Count_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 8
+              },
+              {
+                "name": "Wait_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 9
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 2
+              },
+              {
+                "name": "counting",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              },
+              {
+                "name": "shift_ena",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              }
+            ]
+          }
+        },
+        "wrong_condition": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 8,
+          "first": {
+            "case": 0,
+            "state": 1,
+            "inputs": {
+              "d": 0,
+              "done_counting": 0,
+              "ack": 0
+            },
+            "expected": 64,
+            "observed_hex": "20",
+            "output_maps": [
+              {
+                "name": "B3_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 7
+              },
+              {
+                "name": "S_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "S1_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 1
+              },
+              {
+                "name": "Count_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 8
+              },
+              {
+                "name": "Wait_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 9
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 2
+              },
+              {
+                "name": "counting",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              },
+              {
+                "name": "shift_ena",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              }
+            ]
+          }
+        },
+        "shifted_encoding": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 60,
+          "first": {
+            "case": 0,
+            "state": 1,
+            "inputs": {
+              "d": 0,
+              "done_counting": 0,
+              "ack": 0
+            },
+            "expected": 64,
+            "observed_hex": "0c",
+            "output_maps": [
+              {
+                "name": "B3_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 7
+              },
+              {
+                "name": "S_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "S1_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 1
+              },
+              {
+                "name": "Count_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 8
+              },
+              {
+                "name": "Wait_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 9
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 2
+              },
+              {
+                "name": "counting",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              },
+              {
+                "name": "shift_ena",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              }
+            ]
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 64,
+          "first": {
+            "case": 0,
+            "state": 1,
+            "inputs": {
+              "d": 0,
+              "done_counting": 0,
+              "ack": 0
+            },
+            "expected": 64,
+            "observed_hex": "00",
+            "output_maps": [
+              {
+                "name": "B3_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 7
+              },
+              {
+                "name": "S_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "S1_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 1
+              },
+              {
+                "name": "Count_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 8
+              },
+              {
+                "name": "Wait_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 9
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 2
+              },
+              {
+                "name": "counting",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              },
+              {
+                "name": "shift_ena",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              }
+            ]
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 80,
+        "mismatches": 8,
+        "first": {
+          "case": 64,
+          "state": 256,
+          "inputs": {
+            "d": 0,
+            "done_counting": 0,
+            "ack": 0
+          },
+          "expected": 18,
+          "observed_hex": "02",
+          "output_maps": [
+            {
+              "name": "B3_next",
+              "width": 1,
+              "kind": "next_bit",
+              "index": 7
+            },
+            {
+              "name": "S_next",
+              "width": 1,
+              "kind": "next_bit",
+              "index": 0
+            },
+            {
+              "name": "S1_next",
+              "width": 1,
+              "kind": "next_bit",
+              "index": 1
+            },
+            {
+              "name": "Count_next",
+              "width": 1,
+              "kind": "next_bit",
+              "index": 8
+            },
+            {
+              "name": "Wait_next",
+              "width": 1,
+              "kind": "next_bit",
+              "index": 9
+            },
+            {
+              "name": "done",
+              "width": 1,
+              "kind": "moore",
+              "index": 2
+            },
+            {
+              "name": "counting",
+              "width": 1,
+              "kind": "moore",
+              "index": 1
+            },
+            {
+              "name": "shift_ena",
+              "width": 1,
+              "kind": "moore",
+              "index": 0
+            }
+          ]
+        }
+      }
+    },
+    "fsm_full6": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 128,
+          "mismatches": 0,
+          "first": null
+        },
+        "missing_hold": {
+          "status": "fail",
+          "checks": 128,
+          "mismatches": 63,
+          "first": {
+            "case": 2,
+            "state": 1,
+            "inputs": {
+              "sense": 0
+            },
+            "expected": 4,
+            "observed_hex": "00",
+            "output_maps": [
+              {
+                "name": "future",
+                "width": 6,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "lit",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "ready",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "missing_output": {
+          "status": "fail",
+          "checks": 128,
+          "mismatches": 64,
+          "first": {
+            "case": 64,
+            "state": 32,
+            "inputs": {
+              "sense": 0
+            },
+            "expected": 131,
+            "observed_hex": "80",
+            "output_maps": [
+              {
+                "name": "future",
+                "width": 6,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "lit",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "ready",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "wrong_condition": {
+          "status": "fail",
+          "checks": 128,
+          "mismatches": 64,
+          "first": {
+            "case": 2,
+            "state": 1,
+            "inputs": {
+              "sense": 0
+            },
+            "expected": 4,
+            "observed_hex": "08",
+            "output_maps": [
+              {
+                "name": "future",
+                "width": 6,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "lit",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "ready",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "shifted_encoding": {
+          "status": "fail",
+          "checks": 128,
+          "mismatches": 124,
+          "first": {
+            "case": 2,
+            "state": 1,
+            "inputs": {
+              "sense": 0
+            },
+            "expected": 4,
+            "observed_hex": "83",
+            "output_maps": [
+              {
+                "name": "future",
+                "width": 6,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "lit",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "ready",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 128,
+          "mismatches": 126,
+          "first": {
+            "case": 2,
+            "state": 1,
+            "inputs": {
+              "sense": 0
+            },
+            "expected": 4,
+            "observed_hex": "00",
+            "output_maps": [
+              {
+                "name": "future",
+                "width": 6,
+                "kind": "next_vector",
+                "index": null
+              },
+              {
+                "name": "lit",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "ready",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        }
+      },
+      "candidate": null
+    },
+    "fsm_partial5": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 40,
+          "mismatches": 0,
+          "first": null
+        },
+        "missing_hold": {
+          "status": "fail",
+          "checks": 40,
+          "mismatches": 8,
+          "first": {
+            "case": 0,
+            "state": 1,
+            "inputs": {
+              "trigger": 0,
+              "finish": 0,
+              "accept": 0
+            },
+            "expected": 8,
+            "observed_hex": "0",
+            "output_maps": [
+              {
+                "name": "first_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "last_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 4
+              },
+              {
+                "name": "busy",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "missing_output": {
+          "status": "fail",
+          "checks": 40,
+          "mismatches": 8,
+          "first": {
+            "case": 32,
+            "state": 16,
+            "inputs": {
+              "trigger": 0,
+              "finish": 0,
+              "accept": 0
+            },
+            "expected": 5,
+            "observed_hex": "4",
+            "output_maps": [
+              {
+                "name": "first_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "last_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 4
+              },
+              {
+                "name": "busy",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "wrong_condition": {
+          "status": "fail",
+          "checks": 40,
+          "mismatches": 8,
+          "first": {
+            "case": 0,
+            "state": 1,
+            "inputs": {
+              "trigger": 0,
+              "finish": 0,
+              "accept": 0
+            },
+            "expected": 8,
+            "observed_hex": "0",
+            "output_maps": [
+              {
+                "name": "first_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "last_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 4
+              },
+              {
+                "name": "busy",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "shifted_encoding": {
+          "status": "fail",
+          "checks": 40,
+          "mismatches": 28,
+          "first": {
+            "case": 0,
+            "state": 1,
+            "inputs": {
+              "trigger": 0,
+              "finish": 0,
+              "accept": 0
+            },
+            "expected": 8,
+            "observed_hex": "5",
+            "output_maps": [
+              {
+                "name": "first_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "last_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 4
+              },
+              {
+                "name": "busy",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 40,
+          "mismatches": 20,
+          "first": {
+            "case": 0,
+            "state": 1,
+            "inputs": {
+              "trigger": 0,
+              "finish": 0,
+              "accept": 0
+            },
+            "expected": 8,
+            "observed_hex": "0",
+            "output_maps": [
+              {
+                "name": "first_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 0
+              },
+              {
+                "name": "last_next",
+                "width": 1,
+                "kind": "next_bit",
+                "index": 4
+              },
+              {
+                "name": "busy",
+                "width": 1,
+                "kind": "moore",
+                "index": 0
+              },
+              {
+                "name": "done",
+                "width": 1,
+                "kind": "moore",
+                "index": 1
+              }
+            ]
+          }
+        }
+      },
+      "candidate": null
+    }
+  },
+  "natural_hypothesis_matched": true,
+  "probe_executions": 26,
+  "synth_executions": 4,
+  "model_calls": 0,
+  "audit_eda_calls": 0,
+  "model_changed": false,
+  "deployment_changed": false,
+  "new_full_score": false,
+  "limits": [
+    "Known public archived replay plus constructed calibration, not independent natural task generalization",
+    "Complete bounded combinational FSM table; all vector multi-state patterns and binary input values, or only explicit valid one-hot states for partial scalar outputs; no sequential behavior invented",
+    "No model repair or production-path cost measured; next equal-budget generation/repair experiment still required",
+    "Controls are evaluation artifacts; no deterministic DUT answer generation in agent",
+    "Wrapper records actual synthesis argv; exact Tcl and native log bound; native-only calibration, no model quality score"
+  ]
+}

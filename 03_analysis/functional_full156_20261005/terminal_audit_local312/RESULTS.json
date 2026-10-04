@@ -1,0 +1,6683 @@
+{
+  "schema": "functional_full156_readonly_audit_v1",
+  "evidence_valid": true,
+  "historical_fixture_only": false,
+  "full156_evidence_valid": true,
+  "archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+  "spec_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+  "auditor_sha256": "a4fcd91ac36c54c202be841a476cac256cb56b33a125a3833744b992e9986381",
+  "expected_samples": 312,
+  "actual_model_requests": 333,
+  "provenance": [
+    {
+      "first_reply_sha256": "8968e1dd550cac348a831d52f588a268d1d6841d191b57617624780606cb8125",
+      "declaration_patches": 0,
+      "task": "Prob001_zero",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8968e1dd550cac348a831d52f588a268d1d6841d191b57617624780606cb8125",
+      "declaration_patches": 0,
+      "task": "Prob001_zero",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e7bb62ae24c5b54db87fc3d16f48fdb6ce5d6e2eee1c2cac673277299d4171f7",
+      "declaration_patches": 0,
+      "task": "Prob002_m2014_q4i",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e7bb62ae24c5b54db87fc3d16f48fdb6ce5d6e2eee1c2cac673277299d4171f7",
+      "declaration_patches": 0,
+      "task": "Prob002_m2014_q4i",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a0d064fbea5949ee6a55c996ca6cc3ed84a9cdb41a825f0b9986e025ec8a3a64",
+      "declaration_patches": 0,
+      "task": "Prob003_step_one",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a0d064fbea5949ee6a55c996ca6cc3ed84a9cdb41a825f0b9986e025ec8a3a64",
+      "declaration_patches": 0,
+      "task": "Prob003_step_one",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "80bcb77f47f09b82011ac22610450001a12d99b6705810778a3f517609ee059d",
+      "declaration_patches": 0,
+      "task": "Prob004_vector2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "80bcb77f47f09b82011ac22610450001a12d99b6705810778a3f517609ee059d",
+      "declaration_patches": 0,
+      "task": "Prob004_vector2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8b0f3a51069ca721a64620a0ebd6bd8fd32bbc8e76448ea865118068a0e894ee",
+      "declaration_patches": 0,
+      "task": "Prob005_notgate",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8b0f3a51069ca721a64620a0ebd6bd8fd32bbc8e76448ea865118068a0e894ee",
+      "declaration_patches": 0,
+      "task": "Prob005_notgate",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ec7bcb41fadc5fdfec9c7cfad68c4efece504a5b3ced56d7be9b7833897f7147",
+      "declaration_patches": 0,
+      "task": "Prob006_vectorr",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ec7bcb41fadc5fdfec9c7cfad68c4efece504a5b3ced56d7be9b7833897f7147",
+      "declaration_patches": 0,
+      "task": "Prob006_vectorr",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8f4850bbd4b03a5ff289424f6854d279f4003f8a927dfde627fe4ea0cef5c573",
+      "declaration_patches": 0,
+      "task": "Prob007_wire",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8f4850bbd4b03a5ff289424f6854d279f4003f8a927dfde627fe4ea0cef5c573",
+      "declaration_patches": 0,
+      "task": "Prob007_wire",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e114c3220090a636002ccf379443978c031d0847529f37852f19519f58b98c90",
+      "declaration_patches": 0,
+      "task": "Prob008_m2014_q4h",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e114c3220090a636002ccf379443978c031d0847529f37852f19519f58b98c90",
+      "declaration_patches": 0,
+      "task": "Prob008_m2014_q4h",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "76d2982056783991a0cacb74489faf298dae7c0e0dcc2765647fa824fd3de1d1",
+      "declaration_patches": 0,
+      "task": "Prob009_popcount3",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "76d2982056783991a0cacb74489faf298dae7c0e0dcc2765647fa824fd3de1d1",
+      "declaration_patches": 0,
+      "task": "Prob009_popcount3",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8e5c1d14acfc5f1a906039252c9cbaf79f3bd798da5a76053dd6f71ad30f5420",
+      "declaration_patches": 0,
+      "task": "Prob010_mt2015_q4a",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8e5c1d14acfc5f1a906039252c9cbaf79f3bd798da5a76053dd6f71ad30f5420",
+      "declaration_patches": 0,
+      "task": "Prob010_mt2015_q4a",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "dc44048d52a10ca70be3a54c97258fcecd703378bbde8e8b3c3014e61c881fb5",
+      "declaration_patches": 0,
+      "task": "Prob011_norgate",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "dc44048d52a10ca70be3a54c97258fcecd703378bbde8e8b3c3014e61c881fb5",
+      "declaration_patches": 0,
+      "task": "Prob011_norgate",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "dc0f8cb99facde0c8179ebef07b3a91698d12ba7ccf3fdc489040c6fe28beaba",
+      "declaration_patches": 0,
+      "task": "Prob012_xnorgate",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "dc0f8cb99facde0c8179ebef07b3a91698d12ba7ccf3fdc489040c6fe28beaba",
+      "declaration_patches": 0,
+      "task": "Prob012_xnorgate",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e89a9fb83a087d39df200c8fc285916dfd8904f2c943302ca8aac2fc337ec813",
+      "declaration_patches": 0,
+      "task": "Prob013_m2014_q4e",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e89a9fb83a087d39df200c8fc285916dfd8904f2c943302ca8aac2fc337ec813",
+      "declaration_patches": 0,
+      "task": "Prob013_m2014_q4e",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "cc518ce95503aa4cd02a589b40a7f505cf5b69477d7b3559e9198a0e366e98fd",
+      "declaration_patches": 0,
+      "task": "Prob014_andgate",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "cc518ce95503aa4cd02a589b40a7f505cf5b69477d7b3559e9198a0e366e98fd",
+      "declaration_patches": 0,
+      "task": "Prob014_andgate",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "2e1e194c212e81657887b148df4f48b90ba2622dc63d6ae8ae248b7d1d31b394",
+      "declaration_patches": 0,
+      "task": "Prob015_vector1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "2e1e194c212e81657887b148df4f48b90ba2622dc63d6ae8ae248b7d1d31b394",
+      "declaration_patches": 0,
+      "task": "Prob015_vector1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "469fd0fa7965894a22b67616d9fd64bde9111801702116329551cc9d43c27534",
+      "declaration_patches": 0,
+      "task": "Prob016_m2014_q4j",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "469fd0fa7965894a22b67616d9fd64bde9111801702116329551cc9d43c27534",
+      "declaration_patches": 0,
+      "task": "Prob016_m2014_q4j",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a28df88f694a498c0e0833654ee8a2515ff33f1bb10280c537a2eb12dd8ee09a",
+      "declaration_patches": 0,
+      "task": "Prob017_mux2to1v",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a28df88f694a498c0e0833654ee8a2515ff33f1bb10280c537a2eb12dd8ee09a",
+      "declaration_patches": 0,
+      "task": "Prob017_mux2to1v",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "2562a502f0bf1c1662accdbffb84081b9536f4b60dbe030c120fcb80b6ca8b07",
+      "declaration_patches": 0,
+      "task": "Prob018_mux256to1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "2562a502f0bf1c1662accdbffb84081b9536f4b60dbe030c120fcb80b6ca8b07",
+      "declaration_patches": 0,
+      "task": "Prob018_mux256to1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "869f7a132eb64ce25cc79bfa34af696a7a15c40dc2e2fd48f91f946dedaddbf7",
+      "declaration_patches": 0,
+      "task": "Prob019_m2014_q4f",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "869f7a132eb64ce25cc79bfa34af696a7a15c40dc2e2fd48f91f946dedaddbf7",
+      "declaration_patches": 0,
+      "task": "Prob019_m2014_q4f",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3fdd294dcfcdb9f8291e4ef224431da7c0cee723ea97472e79df03b610fb990f",
+      "declaration_patches": 0,
+      "task": "Prob020_mt2015_eq2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3fdd294dcfcdb9f8291e4ef224431da7c0cee723ea97472e79df03b610fb990f",
+      "declaration_patches": 0,
+      "task": "Prob020_mt2015_eq2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0cba5d8995ea07bde6d0662a652c73aa71cc757bae3a21d918cae704daba357e",
+      "declaration_patches": 0,
+      "task": "Prob021_mux256to1v",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0cba5d8995ea07bde6d0662a652c73aa71cc757bae3a21d918cae704daba357e",
+      "declaration_patches": 0,
+      "task": "Prob021_mux256to1v",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "737e3ca66bbb0ec46755c10b4aecc7eb6620a5c62f9646550f5d2cad06825e00",
+      "declaration_patches": 0,
+      "task": "Prob022_mux2to1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "737e3ca66bbb0ec46755c10b4aecc7eb6620a5c62f9646550f5d2cad06825e00",
+      "declaration_patches": 0,
+      "task": "Prob022_mux2to1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0b9665fd9c6206ca2927de36c59b766f0c032f0cd5d5feb7cfc524d2e0ee6102",
+      "declaration_patches": 0,
+      "task": "Prob023_vector100r",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0b9665fd9c6206ca2927de36c59b766f0c032f0cd5d5feb7cfc524d2e0ee6102",
+      "declaration_patches": 0,
+      "task": "Prob023_vector100r",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "121cf097d54c3b815ce4b4a36c0f25e25e14e99e21830a7ebb1f20b8e9fe4d58",
+      "declaration_patches": 0,
+      "task": "Prob024_hadd",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "121cf097d54c3b815ce4b4a36c0f25e25e14e99e21830a7ebb1f20b8e9fe4d58",
+      "declaration_patches": 0,
+      "task": "Prob024_hadd",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "fce969fdab0d4a64e84d0708ac9592289887424b874332f8b743e4cb82af12ff",
+      "declaration_patches": 0,
+      "task": "Prob025_reduction",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "fce969fdab0d4a64e84d0708ac9592289887424b874332f8b743e4cb82af12ff",
+      "declaration_patches": 0,
+      "task": "Prob025_reduction",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b15a516326777b7d59f105eebbab6f8aa214e075cc6efaf9ff553c848b8ed87f",
+      "declaration_patches": 1,
+      "task": "Prob026_alwaysblock1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b15a516326777b7d59f105eebbab6f8aa214e075cc6efaf9ff553c848b8ed87f",
+      "declaration_patches": 1,
+      "task": "Prob026_alwaysblock1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "75b2ed0f885effaf3fad21e3730110ede866da13274030157c1f8ad1d9ed5b84",
+      "declaration_patches": 0,
+      "task": "Prob027_fadd",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "75b2ed0f885effaf3fad21e3730110ede866da13274030157c1f8ad1d9ed5b84",
+      "declaration_patches": 0,
+      "task": "Prob027_fadd",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7407588d700225e86b9865e346ab20e929426879ee09f32ffd400fc869c9e93e",
+      "declaration_patches": 0,
+      "task": "Prob028_m2014_q4a",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7407588d700225e86b9865e346ab20e929426879ee09f32ffd400fc869c9e93e",
+      "declaration_patches": 0,
+      "task": "Prob028_m2014_q4a",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8386bbec6cf0d465d02eee57ceb7aa615f80d018bf063088cf8f77bae6ed6253",
+      "declaration_patches": 0,
+      "task": "Prob029_m2014_q4g",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8386bbec6cf0d465d02eee57ceb7aa615f80d018bf063088cf8f77bae6ed6253",
+      "declaration_patches": 0,
+      "task": "Prob029_m2014_q4g",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "6596f94f3c2021a105ef78c389aa1eed3a5f8c9b3e375f5490426d4b148e8086",
+      "declaration_patches": 0,
+      "task": "Prob030_popcount255",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "6596f94f3c2021a105ef78c389aa1eed3a5f8c9b3e375f5490426d4b148e8086",
+      "declaration_patches": 0,
+      "task": "Prob030_popcount255",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7e2e8ebdc76dfbada5a1247d657a5694fb4ce7ef25e505499eb8d99e98936edd",
+      "declaration_patches": 0,
+      "task": "Prob031_dff",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7e2e8ebdc76dfbada5a1247d657a5694fb4ce7ef25e505499eb8d99e98936edd",
+      "declaration_patches": 0,
+      "task": "Prob031_dff",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f0614fc9e4e86e25aa4fa85e0f1e0786107f7d34d858e0c9148dc91630e41c53",
+      "declaration_patches": 0,
+      "task": "Prob032_vector0",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f0614fc9e4e86e25aa4fa85e0f1e0786107f7d34d858e0c9148dc91630e41c53",
+      "declaration_patches": 0,
+      "task": "Prob032_vector0",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5d17a6d05b45677db8c3d5491ffa1541380ebc9bf91e2da67acc0d0500239122",
+      "declaration_patches": 0,
+      "task": "Prob033_ece241_2014_q1c",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5d17a6d05b45677db8c3d5491ffa1541380ebc9bf91e2da67acc0d0500239122",
+      "declaration_patches": 0,
+      "task": "Prob033_ece241_2014_q1c",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7c26eea0613433d7fc70d09cfa463f2f5339fc32c839d55bfa9a875b3770c889",
+      "declaration_patches": 0,
+      "task": "Prob034_dff8",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7c26eea0613433d7fc70d09cfa463f2f5339fc32c839d55bfa9a875b3770c889",
+      "declaration_patches": 0,
+      "task": "Prob034_dff8",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3a5a0a4573f7b5d510ff91ba373539e38d0d3d456d8ec6e43c0db7e2727dee28",
+      "declaration_patches": 0,
+      "task": "Prob035_count1to10",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3a5a0a4573f7b5d510ff91ba373539e38d0d3d456d8ec6e43c0db7e2727dee28",
+      "declaration_patches": 0,
+      "task": "Prob035_count1to10",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "58d14be1b167e447c9b3bbc86f0374847b6baf7537a2e16d0a0935c962901d47",
+      "declaration_patches": 0,
+      "task": "Prob036_ringer",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "58d14be1b167e447c9b3bbc86f0374847b6baf7537a2e16d0a0935c962901d47",
+      "declaration_patches": 0,
+      "task": "Prob036_ringer",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "aab1115fdf04bdb0e3660832fcfe6c5f4e8d801148fde36c2364de943acd4796",
+      "declaration_patches": 0,
+      "task": "Prob037_review2015_count1k",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "aab1115fdf04bdb0e3660832fcfe6c5f4e8d801148fde36c2364de943acd4796",
+      "declaration_patches": 0,
+      "task": "Prob037_review2015_count1k",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a605c4e5d3ce140c341e996bd6263a61a127182c79955a8943c617776dcad206",
+      "declaration_patches": 0,
+      "task": "Prob038_count15",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a605c4e5d3ce140c341e996bd6263a61a127182c79955a8943c617776dcad206",
+      "declaration_patches": 0,
+      "task": "Prob038_count15",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "365dc46ec1798a1bfe2dcf244a397c0d9083e3f20fd9ca5a26aa9860484e38ee",
+      "declaration_patches": 1,
+      "task": "Prob039_always_if",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "365dc46ec1798a1bfe2dcf244a397c0d9083e3f20fd9ca5a26aa9860484e38ee",
+      "declaration_patches": 1,
+      "task": "Prob039_always_if",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e559fe3457db565a8d415278613eff35c5ff8edb4f96dc3d9c93941c7043b973",
+      "declaration_patches": 0,
+      "task": "Prob040_count10",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e559fe3457db565a8d415278613eff35c5ff8edb4f96dc3d9c93941c7043b973",
+      "declaration_patches": 0,
+      "task": "Prob040_count10",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8f06878778a894014bdf5876f745f71641288c7c9e9f77eb39e104c552f86248",
+      "declaration_patches": 0,
+      "task": "Prob041_dff8r",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8f06878778a894014bdf5876f745f71641288c7c9e9f77eb39e104c552f86248",
+      "declaration_patches": 0,
+      "task": "Prob041_dff8r",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b6b570b98eb538f1b7af4af725b0727d4223092412d60d297293c016abeeeb03",
+      "declaration_patches": 0,
+      "task": "Prob042_vector4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b6b570b98eb538f1b7af4af725b0727d4223092412d60d297293c016abeeeb03",
+      "declaration_patches": 0,
+      "task": "Prob042_vector4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "2c496881ad02502053ddf6cac67709ebf4c34beb84329f466d4c981551b5495e",
+      "declaration_patches": 0,
+      "task": "Prob043_vector5",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "2c496881ad02502053ddf6cac67709ebf4c34beb84329f466d4c981551b5495e",
+      "declaration_patches": 0,
+      "task": "Prob043_vector5",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "778b5dc49291076fd8dc22000b471bfd42e56051c587e51c70ed1b824f9a8a37",
+      "declaration_patches": 0,
+      "task": "Prob044_vectorgates",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "778b5dc49291076fd8dc22000b471bfd42e56051c587e51c70ed1b824f9a8a37",
+      "declaration_patches": 0,
+      "task": "Prob044_vectorgates",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ab1c823f5d0b410170cbfc0cae9c0bf16d9ed793d0dac8f60a9ccf1d50aecf45",
+      "declaration_patches": 0,
+      "task": "Prob045_edgedetect2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ab1c823f5d0b410170cbfc0cae9c0bf16d9ed793d0dac8f60a9ccf1d50aecf45",
+      "declaration_patches": 0,
+      "task": "Prob045_edgedetect2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "64ee835673783209c572bc6719d3cb53a249ddd3c5eaa665c577d7628c2f3f8c",
+      "declaration_patches": 0,
+      "task": "Prob046_dff8p",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "64ee835673783209c572bc6719d3cb53a249ddd3c5eaa665c577d7628c2f3f8c",
+      "declaration_patches": 0,
+      "task": "Prob046_dff8p",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "6e3deba8cccf5f694cc6dcf1897aa9bbc32d109517a0a9bcff40485624fb8f45",
+      "declaration_patches": 0,
+      "task": "Prob047_dff8ar",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "6e3deba8cccf5f694cc6dcf1897aa9bbc32d109517a0a9bcff40485624fb8f45",
+      "declaration_patches": 0,
+      "task": "Prob047_dff8ar",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "798c1f9beafbe8051306e3308c154a3346968ce2cc164a73406c80ae48b9d5c1",
+      "declaration_patches": 0,
+      "task": "Prob048_m2014_q4c",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "798c1f9beafbe8051306e3308c154a3346968ce2cc164a73406c80ae48b9d5c1",
+      "declaration_patches": 0,
+      "task": "Prob048_m2014_q4c",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7ebac59303c3ea01a33cb1bbf5da49f42de334f843c0722483f29aa31f890673",
+      "declaration_patches": 0,
+      "task": "Prob049_m2014_q4b",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7ebac59303c3ea01a33cb1bbf5da49f42de334f843c0722483f29aa31f890673",
+      "declaration_patches": 0,
+      "task": "Prob049_m2014_q4b",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e3c91caea91cb4f1ed98f89bb10f0750771087fbd93a2db21f9eb5ad75e3db66",
+      "declaration_patches": 0,
+      "task": "Prob050_kmap1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e3c91caea91cb4f1ed98f89bb10f0750771087fbd93a2db21f9eb5ad75e3db66",
+      "declaration_patches": 0,
+      "task": "Prob050_kmap1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "744971e737ad775b7d16abd425198656300e1de68b5851ed0de0d8b2f8f44646",
+      "declaration_patches": 0,
+      "task": "Prob051_gates4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "744971e737ad775b7d16abd425198656300e1de68b5851ed0de0d8b2f8f44646",
+      "declaration_patches": 0,
+      "task": "Prob051_gates4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ca387efebc09a46ee686ef97d667279e960180bd1d1ec0cb3fb3f9af24d65015",
+      "declaration_patches": 0,
+      "task": "Prob052_gates100",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ca387efebc09a46ee686ef97d667279e960180bd1d1ec0cb3fb3f9af24d65015",
+      "declaration_patches": 0,
+      "task": "Prob052_gates100",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "1d603befddcb5b508e931dd60e7a0c15cf216432dee5e12475d38ec9eaa14706",
+      "declaration_patches": 0,
+      "task": "Prob053_m2014_q4d",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "1d603befddcb5b508e931dd60e7a0c15cf216432dee5e12475d38ec9eaa14706",
+      "declaration_patches": 0,
+      "task": "Prob053_m2014_q4d",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b0472e07d0add64069b33c27db6a6c63730bda9144e84a19bf9172e11056bf60",
+      "declaration_patches": 0,
+      "task": "Prob054_edgedetect",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b0472e07d0add64069b33c27db6a6c63730bda9144e84a19bf9172e11056bf60",
+      "declaration_patches": 0,
+      "task": "Prob054_edgedetect",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "815a87d802e885bf492bf47e8dfdede28da6d2b90f7b5e9d1db5fdc4ef49619f",
+      "declaration_patches": 0,
+      "task": "Prob055_conditional",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "815a87d802e885bf492bf47e8dfdede28da6d2b90f7b5e9d1db5fdc4ef49619f",
+      "declaration_patches": 0,
+      "task": "Prob055_conditional",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3fb7778ca5346cfe6ad3b9a61df8878fa11cb515e1ccab838f9a2a8fd5bab0e4",
+      "declaration_patches": 0,
+      "task": "Prob056_ece241_2013_q7",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3fb7778ca5346cfe6ad3b9a61df8878fa11cb515e1ccab838f9a2a8fd5bab0e4",
+      "declaration_patches": 0,
+      "task": "Prob056_ece241_2013_q7",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "751ea0276b1639c76f3bdaf73855e346abeb0058d7c7e194526b78f7088bf15b",
+      "declaration_patches": 0,
+      "task": "Prob057_kmap2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "751ea0276b1639c76f3bdaf73855e346abeb0058d7c7e194526b78f7088bf15b",
+      "declaration_patches": 0,
+      "task": "Prob057_kmap2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+      "declaration_patches": 1,
+      "task": "Prob058_alwaysblock2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+      "declaration_patches": 1,
+      "task": "Prob058_alwaysblock2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "aa64d4a7d9dad8a64ef9a6635474d782dc7967016365e41299fb4cbeb52fd35a",
+      "declaration_patches": 0,
+      "task": "Prob059_wire4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "aa64d4a7d9dad8a64ef9a6635474d782dc7967016365e41299fb4cbeb52fd35a",
+      "declaration_patches": 0,
+      "task": "Prob059_wire4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "77d9eee9e7dc55f3034cac25461a77f28c3bf139101ce7cbc38c04d5b28f7ee7",
+      "declaration_patches": 0,
+      "task": "Prob060_m2014_q4k",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "77d9eee9e7dc55f3034cac25461a77f28c3bf139101ce7cbc38c04d5b28f7ee7",
+      "declaration_patches": 0,
+      "task": "Prob060_m2014_q4k",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5a2f886caf22970aa4084728e9d2f3357dd8061ff93814d17615e14068ec3f45",
+      "declaration_patches": 0,
+      "task": "Prob061_2014_q4a",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5a2f886caf22970aa4084728e9d2f3357dd8061ff93814d17615e14068ec3f45",
+      "declaration_patches": 0,
+      "task": "Prob061_2014_q4a",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7e8ea70a8506efb058155dbddf1b7a03421b36df7ae91a6186d6deab9c601d44",
+      "declaration_patches": 0,
+      "task": "Prob062_bugs_mux2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7e8ea70a8506efb058155dbddf1b7a03421b36df7ae91a6186d6deab9c601d44",
+      "declaration_patches": 0,
+      "task": "Prob062_bugs_mux2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3b4a96bdff8465f4b59624c5c4575d0fa387e9bddc4e01e6b18e4ef05dfb05ca",
+      "declaration_patches": 0,
+      "task": "Prob063_review2015_shiftcount",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3b4a96bdff8465f4b59624c5c4575d0fa387e9bddc4e01e6b18e4ef05dfb05ca",
+      "declaration_patches": 0,
+      "task": "Prob063_review2015_shiftcount",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "77e4b5db1eb5e0f968f70aee7644ad8c3719476ee06ae54eed6094dfb3cde9e6",
+      "declaration_patches": 0,
+      "task": "Prob064_vector3",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "77e4b5db1eb5e0f968f70aee7644ad8c3719476ee06ae54eed6094dfb3cde9e6",
+      "declaration_patches": 0,
+      "task": "Prob064_vector3",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "41a427c1c133242d4597c0f79623ebc6233ce080f1eef5370111ab75ff0bf82c",
+      "declaration_patches": 0,
+      "task": "Prob065_7420",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "41a427c1c133242d4597c0f79623ebc6233ce080f1eef5370111ab75ff0bf82c",
+      "declaration_patches": 0,
+      "task": "Prob065_7420",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b4694b0036f639c309705bcb3c260cdf1bfbbcaac0a52de83062d0d7d2c63602",
+      "declaration_patches": 0,
+      "task": "Prob066_edgecapture",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b4694b0036f639c309705bcb3c260cdf1bfbbcaac0a52de83062d0d7d2c63602",
+      "declaration_patches": 0,
+      "task": "Prob066_edgecapture",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7c381d8aa05149423566335acd36fda2269463d466f9aaa14b1f3d1564566580",
+      "declaration_patches": 0,
+      "task": "Prob067_countslow",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7c381d8aa05149423566335acd36fda2269463d466f9aaa14b1f3d1564566580",
+      "declaration_patches": 0,
+      "task": "Prob067_countslow",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "26505f10bd766fcf790b1551fb3475dd50d6626c4e7ce7c69cf20de1a9e1c7a7",
+      "declaration_patches": 0,
+      "task": "Prob068_countbcd",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "26505f10bd766fcf790b1551fb3475dd50d6626c4e7ce7c69cf20de1a9e1c7a7",
+      "declaration_patches": 0,
+      "task": "Prob068_countbcd",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "9b908450ace9a05a230e8d59d2d4de58a912a1d9f0840851ce5da7721b59eb26",
+      "declaration_patches": 0,
+      "task": "Prob069_truthtable1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "9b908450ace9a05a230e8d59d2d4de58a912a1d9f0840851ce5da7721b59eb26",
+      "declaration_patches": 0,
+      "task": "Prob069_truthtable1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "decf928e1065a45946265bd2f06f707aa039a1ade7f730faa233123433041353",
+      "declaration_patches": 0,
+      "task": "Prob070_ece241_2013_q2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "decf928e1065a45946265bd2f06f707aa039a1ade7f730faa233123433041353",
+      "declaration_patches": 0,
+      "task": "Prob070_ece241_2013_q2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "task": "Prob071_always_casez",
+      "arm": "A",
+      "contract_status": "supported",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "task": "Prob071_always_casez",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "bdb87d795a384ba9f3db09925483205f78bcc28042cdb2604d8ff587049d71d8",
+      "declaration_patches": 0,
+      "task": "Prob072_thermostat",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "bdb87d795a384ba9f3db09925483205f78bcc28042cdb2604d8ff587049d71d8",
+      "declaration_patches": 0,
+      "task": "Prob072_thermostat",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0643f4a8afc6a870c013cecd6a95e686c273f7585ab3c740e43a2904a2f676a6",
+      "declaration_patches": 0,
+      "task": "Prob073_dff16e",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0643f4a8afc6a870c013cecd6a95e686c273f7585ab3c740e43a2904a2f676a6",
+      "declaration_patches": 0,
+      "task": "Prob073_dff16e",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a88adbc917c27be0f81847843dd659982866b801df64fd5036aeef285f22bb94",
+      "declaration_patches": 0,
+      "task": "Prob074_ece241_2014_q4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a88adbc917c27be0f81847843dd659982866b801df64fd5036aeef285f22bb94",
+      "declaration_patches": 0,
+      "task": "Prob074_ece241_2014_q4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5809a25287d3ca4db21a712bbc206f3dda7548e4e5011bfd27a98de3980f9873",
+      "declaration_patches": 0,
+      "task": "Prob075_counter_2bc",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5809a25287d3ca4db21a712bbc206f3dda7548e4e5011bfd27a98de3980f9873",
+      "declaration_patches": 0,
+      "task": "Prob075_counter_2bc",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f51a4a16948261093710330418877cb381c45cd4856481f74bdd7dc2171e15a3",
+      "declaration_patches": 0,
+      "task": "Prob076_always_case",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f51a4a16948261093710330418877cb381c45cd4856481f74bdd7dc2171e15a3",
+      "declaration_patches": 0,
+      "task": "Prob076_always_case",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "77e0ca95f240ad3d8364754b325a5f2cd79736203f26126b9dd9fb1f91112114",
+      "declaration_patches": 0,
+      "task": "Prob077_wire_decl",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "77e0ca95f240ad3d8364754b325a5f2cd79736203f26126b9dd9fb1f91112114",
+      "declaration_patches": 0,
+      "task": "Prob077_wire_decl",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "27de3cfb68dbd0f64090a6c8b348e2dfeb819c479419e362c4798e76761f4f53",
+      "declaration_patches": 0,
+      "task": "Prob078_dualedge",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "27de3cfb68dbd0f64090a6c8b348e2dfeb819c479419e362c4798e76761f4f53",
+      "declaration_patches": 0,
+      "task": "Prob078_dualedge",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "1ff7936c6fd77ca010dd7ee4bd44bf6842064604dbf065445f325e628160fc42",
+      "declaration_patches": 0,
+      "task": "Prob079_fsm3onehot",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "1ff7936c6fd77ca010dd7ee4bd44bf6842064604dbf065445f325e628160fc42",
+      "declaration_patches": 0,
+      "task": "Prob079_fsm3onehot",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "46c9066bb50a6bf10ec8ce252c4e490254539d60a568a157e5a13dbe6e27979c",
+      "declaration_patches": 0,
+      "task": "Prob080_timer",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "46c9066bb50a6bf10ec8ce252c4e490254539d60a568a157e5a13dbe6e27979c",
+      "declaration_patches": 0,
+      "task": "Prob080_timer",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "6c9c67b862d2b379e145a0f614f1aaf028aacdda13d44b7141fce83496f3bce4",
+      "declaration_patches": 0,
+      "task": "Prob081_7458",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "6c9c67b862d2b379e145a0f614f1aaf028aacdda13d44b7141fce83496f3bce4",
+      "declaration_patches": 0,
+      "task": "Prob081_7458",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "edae4da39028b959be4390450ffad5ec9cebd915a9693b0acf0cd4386b9f9cf9",
+      "declaration_patches": 0,
+      "task": "Prob082_lfsr32",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "edae4da39028b959be4390450ffad5ec9cebd915a9693b0acf0cd4386b9f9cf9",
+      "declaration_patches": 0,
+      "task": "Prob082_lfsr32",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "1ae5d2f6434fab5b785a68e4e4a887db921cde5eac32ad3db980ffe4a91c488d",
+      "declaration_patches": 0,
+      "task": "Prob083_mt2015_q4b",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "1ae5d2f6434fab5b785a68e4e4a887db921cde5eac32ad3db980ffe4a91c488d",
+      "declaration_patches": 0,
+      "task": "Prob083_mt2015_q4b",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "971554daddff91b1a9af1c027c4330bff35e49692f2e01e86f22fe9cf44e96d1",
+      "declaration_patches": 0,
+      "task": "Prob084_ece241_2013_q12",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "971554daddff91b1a9af1c027c4330bff35e49692f2e01e86f22fe9cf44e96d1",
+      "declaration_patches": 0,
+      "task": "Prob084_ece241_2013_q12",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5230f322133a18f3a90abbd9e5baf7b84f480596024a57ff61815e56c7cb325a",
+      "declaration_patches": 0,
+      "task": "Prob085_shift4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5230f322133a18f3a90abbd9e5baf7b84f480596024a57ff61815e56c7cb325a",
+      "declaration_patches": 0,
+      "task": "Prob085_shift4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "6fd4b23ce74874b54518db60ffa2df270b9312445696e704b875ee6cefdd6ebe",
+      "declaration_patches": 0,
+      "task": "Prob086_lfsr5",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "6fd4b23ce74874b54518db60ffa2df270b9312445696e704b875ee6cefdd6ebe",
+      "declaration_patches": 0,
+      "task": "Prob086_lfsr5",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a8c6bf7beecceb502c20dd59ac4b213b77786582cfb8445f170e222c0fd80cbc",
+      "declaration_patches": 0,
+      "task": "Prob087_gates",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a8c6bf7beecceb502c20dd59ac4b213b77786582cfb8445f170e222c0fd80cbc",
+      "declaration_patches": 0,
+      "task": "Prob087_gates",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ed9c6c4e327b4e3ce045c1f7f8bccc6e3bc66c3010a68012895ae1fdb7f98ea3",
+      "declaration_patches": 0,
+      "task": "Prob088_ece241_2014_q5b",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ed9c6c4e327b4e3ce045c1f7f8bccc6e3bc66c3010a68012895ae1fdb7f98ea3",
+      "declaration_patches": 0,
+      "task": "Prob088_ece241_2014_q5b",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f977a7897420acf2cecfad103e306bc2dde696c5ca6751a64d9e2a08a4e559dc",
+      "declaration_patches": 0,
+      "task": "Prob089_ece241_2014_q5a",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f977a7897420acf2cecfad103e306bc2dde696c5ca6751a64d9e2a08a4e559dc",
+      "declaration_patches": 0,
+      "task": "Prob089_ece241_2014_q5a",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0bed8a3b2adc932507a68f5d256a46e8dea96a66902e3b8afa58b29065351d2c",
+      "declaration_patches": 0,
+      "task": "Prob090_circuit1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0bed8a3b2adc932507a68f5d256a46e8dea96a66902e3b8afa58b29065351d2c",
+      "declaration_patches": 0,
+      "task": "Prob090_circuit1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "9022861c37d2666fc44cf6f48b06e4c3164673f537dc073fe68509f0568899de",
+      "declaration_patches": 0,
+      "task": "Prob091_2012_q2b",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "9022861c37d2666fc44cf6f48b06e4c3164673f537dc073fe68509f0568899de",
+      "declaration_patches": 0,
+      "task": "Prob091_2012_q2b",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "dd6816dbcd86e1c72d1db1e866133145252ec07afb8e971c0de9ba7b6cce67b5",
+      "declaration_patches": 0,
+      "task": "Prob092_gatesv100",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "dd6816dbcd86e1c72d1db1e866133145252ec07afb8e971c0de9ba7b6cce67b5",
+      "declaration_patches": 0,
+      "task": "Prob092_gatesv100",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "111adb7d2fbf43e76dbfbca730a1968e06e2abd362d0a2fbe81eacd277abfb89",
+      "declaration_patches": 0,
+      "task": "Prob093_ece241_2014_q3",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "111adb7d2fbf43e76dbfbca730a1968e06e2abd362d0a2fbe81eacd277abfb89",
+      "declaration_patches": 0,
+      "task": "Prob093_ece241_2014_q3",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e1ed6fbb7c5e9a2c87a9d8a1b2ef858b659dfafccf4e772bc69a4538c99a5119",
+      "declaration_patches": 0,
+      "task": "Prob094_gatesv",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e1ed6fbb7c5e9a2c87a9d8a1b2ef858b659dfafccf4e772bc69a4538c99a5119",
+      "declaration_patches": 0,
+      "task": "Prob094_gatesv",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b9487e15ea845e480c28e35f77b245de17e73ab052936f5120f341e8a21c36a5",
+      "declaration_patches": 0,
+      "task": "Prob095_review2015_fsmshift",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b9487e15ea845e480c28e35f77b245de17e73ab052936f5120f341e8a21c36a5",
+      "declaration_patches": 0,
+      "task": "Prob095_review2015_fsmshift",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "66f27eacd30838eeefc8b2a9c601fad8c19c05572f2f2430d910b5dcefc5d924",
+      "declaration_patches": 0,
+      "task": "Prob096_review2015_fsmseq",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "66f27eacd30838eeefc8b2a9c601fad8c19c05572f2f2430d910b5dcefc5d924",
+      "declaration_patches": 0,
+      "task": "Prob096_review2015_fsmseq",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "46adff7eeb80c51358c5b244dc12e56ebc475ac2faf17b8b1ec7708108299831",
+      "declaration_patches": 0,
+      "task": "Prob097_mux9to1v",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "46adff7eeb80c51358c5b244dc12e56ebc475ac2faf17b8b1ec7708108299831",
+      "declaration_patches": 0,
+      "task": "Prob097_mux9to1v",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "fd9796aa263a95f117ef3169a365ed2e1b4bf21e5d47ec527f19dc25a4df6c58",
+      "declaration_patches": 0,
+      "task": "Prob098_circuit7",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "fd9796aa263a95f117ef3169a365ed2e1b4bf21e5d47ec527f19dc25a4df6c58",
+      "declaration_patches": 0,
+      "task": "Prob098_circuit7",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f8d7946e433afa4361fb3eebaa786c7c935bb14c4c2beba4940015123062608f",
+      "declaration_patches": 0,
+      "task": "Prob099_m2014_q6c",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f8d7946e433afa4361fb3eebaa786c7c935bb14c4c2beba4940015123062608f",
+      "declaration_patches": 0,
+      "task": "Prob099_m2014_q6c",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "18333c63015979466c9c1d718de18d8ed9dd5bff33b1a104a82e3afa67f29995",
+      "declaration_patches": 0,
+      "task": "Prob100_fsm3comb",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "18333c63015979466c9c1d718de18d8ed9dd5bff33b1a104a82e3afa67f29995",
+      "declaration_patches": 0,
+      "task": "Prob100_fsm3comb",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "05a15e61175494a58f68e23442d1a1f8cd6a74a52c63cd6cf06927e115ba0281",
+      "declaration_patches": 0,
+      "task": "Prob101_circuit4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "05a15e61175494a58f68e23442d1a1f8cd6a74a52c63cd6cf06927e115ba0281",
+      "declaration_patches": 0,
+      "task": "Prob101_circuit4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "4c4b2e2d700d9e0e4e4f4ea7303de1cc24c63b39278b091db909f1b67ae085ac",
+      "declaration_patches": 0,
+      "task": "Prob102_circuit3",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "4c4b2e2d700d9e0e4e4f4ea7303de1cc24c63b39278b091db909f1b67ae085ac",
+      "declaration_patches": 0,
+      "task": "Prob102_circuit3",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b730a897b1f68b303615e1616e9fdea3aa708586042b137ec7ab5a986c85f174",
+      "declaration_patches": 0,
+      "task": "Prob103_circuit2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b730a897b1f68b303615e1616e9fdea3aa708586042b137ec7ab5a986c85f174",
+      "declaration_patches": 0,
+      "task": "Prob103_circuit2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "55d9b5eea7da0e3c7f8a7a04b6d6d90830600018ebb82856a868bbfed32fa44e",
+      "declaration_patches": 0,
+      "task": "Prob104_mt2015_muxdff",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "55d9b5eea7da0e3c7f8a7a04b6d6d90830600018ebb82856a868bbfed32fa44e",
+      "declaration_patches": 0,
+      "task": "Prob104_mt2015_muxdff",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8c680af1ee92da1b59951d45ee6957bdc83f9377a672aa13e78eb343ee9ccdc8",
+      "declaration_patches": 0,
+      "task": "Prob105_rotate100",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8c680af1ee92da1b59951d45ee6957bdc83f9377a672aa13e78eb343ee9ccdc8",
+      "declaration_patches": 0,
+      "task": "Prob105_rotate100",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c76cdd14093ac0bfa8f81b497db0a15735255023f633dee77946d82ba8c482e6",
+      "declaration_patches": 0,
+      "task": "Prob106_always_nolatches",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c76cdd14093ac0bfa8f81b497db0a15735255023f633dee77946d82ba8c482e6",
+      "declaration_patches": 0,
+      "task": "Prob106_always_nolatches",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "97c0891a77ffdfc7f64c59182dad83118eaaeeaae4ff41accac949c7dadca979",
+      "declaration_patches": 0,
+      "task": "Prob107_fsm1s",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "97c0891a77ffdfc7f64c59182dad83118eaaeeaae4ff41accac949c7dadca979",
+      "declaration_patches": 0,
+      "task": "Prob107_fsm1s",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "321651875c850bad674b751bf8390968428445745aeed094907012725abcc04d",
+      "declaration_patches": 0,
+      "task": "Prob108_rule90",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "321651875c850bad674b751bf8390968428445745aeed094907012725abcc04d",
+      "declaration_patches": 0,
+      "task": "Prob108_rule90",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e9c1d0e7b1563241ad87ab41e20a94bb882193867f7a29285323d48e3f435ec4",
+      "declaration_patches": 0,
+      "task": "Prob109_fsm1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "e9c1d0e7b1563241ad87ab41e20a94bb882193867f7a29285323d48e3f435ec4",
+      "declaration_patches": 0,
+      "task": "Prob109_fsm1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "638af7b59d0c74facc9e2013801ab831c2485be1ab94e1b4ae2d9d25ec5c2531",
+      "declaration_patches": 0,
+      "task": "Prob110_fsm2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "638af7b59d0c74facc9e2013801ab831c2485be1ab94e1b4ae2d9d25ec5c2531",
+      "declaration_patches": 0,
+      "task": "Prob110_fsm2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "64236a7c339b5f823dd3749f75d83562682fe6be85a83d45784ee21df2b97c27",
+      "declaration_patches": 0,
+      "task": "Prob111_fsm2s",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "64236a7c339b5f823dd3749f75d83562682fe6be85a83d45784ee21df2b97c27",
+      "declaration_patches": 0,
+      "task": "Prob111_fsm2s",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "task": "Prob112_always_case2",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "task": "Prob112_always_case2",
+      "arm": "A",
+      "contract_status": "supported",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b44525a6af5f5f80524d4534e7776f0b697d5717ee8619aa86eb2719433f3e65",
+      "declaration_patches": 0,
+      "task": "Prob113_2012_q1g",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b44525a6af5f5f80524d4534e7776f0b697d5717ee8619aa86eb2719433f3e65",
+      "declaration_patches": 0,
+      "task": "Prob113_2012_q1g",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "48a3766dd32ab0dc7be43c19bab23def2b0734eab2d7747eb29032832c328d65",
+      "declaration_patches": 0,
+      "task": "Prob114_bugs_case",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "48a3766dd32ab0dc7be43c19bab23def2b0734eab2d7747eb29032832c328d65",
+      "declaration_patches": 0,
+      "task": "Prob114_bugs_case",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "task": "Prob115_shift18",
+      "arm": "A",
+      "contract_status": "supported",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "task": "Prob115_shift18",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "3d3dc4f35b4c2c4066533bc0dfe3a4ba82aed93e613cfccdbad6528a69ffe4a9",
+      "declaration_patches": 0,
+      "task": "Prob116_m2014_q3",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3d3dc4f35b4c2c4066533bc0dfe3a4ba82aed93e613cfccdbad6528a69ffe4a9",
+      "declaration_patches": 0,
+      "task": "Prob116_m2014_q3",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "643f4e8c36e86f741d88f2c5b232cc624f5eb850827caeffee901d5e8f996ae6",
+      "declaration_patches": 0,
+      "task": "Prob117_circuit9",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "643f4e8c36e86f741d88f2c5b232cc624f5eb850827caeffee901d5e8f996ae6",
+      "declaration_patches": 0,
+      "task": "Prob117_circuit9",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "34617bdac4458f9b6f53b284dc66c211a751f5ad80d6618000c92e4373db4fd3",
+      "declaration_patches": 0,
+      "task": "Prob118_history_shift",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "34617bdac4458f9b6f53b284dc66c211a751f5ad80d6618000c92e4373db4fd3",
+      "declaration_patches": 0,
+      "task": "Prob118_history_shift",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c9565711d9be940e46dba3870129f647f41057444c58c29b3cce75a058c628bc",
+      "declaration_patches": 0,
+      "task": "Prob119_fsm3",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c9565711d9be940e46dba3870129f647f41057444c58c29b3cce75a058c628bc",
+      "declaration_patches": 0,
+      "task": "Prob119_fsm3",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0726ccd65b2270415eb6a452f00a693d682a5ee23b813b7ec6433782f44a0559",
+      "declaration_patches": 0,
+      "task": "Prob120_fsm3s",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0726ccd65b2270415eb6a452f00a693d682a5ee23b813b7ec6433782f44a0559",
+      "declaration_patches": 0,
+      "task": "Prob120_fsm3s",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c464c5e5aef2d37f5a32d71f2b7d7a0aa0ec01b7aec117b48bbc7d7bc72eb52b",
+      "declaration_patches": 0,
+      "task": "Prob121_2014_q3bfsm",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c464c5e5aef2d37f5a32d71f2b7d7a0aa0ec01b7aec117b48bbc7d7bc72eb52b",
+      "declaration_patches": 0,
+      "task": "Prob121_2014_q3bfsm",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "86aa9c27b7d7dab2162a5c858f68d4f9796850a9bd14dd0581996eceb154c0d7",
+      "declaration_patches": 0,
+      "task": "Prob122_kmap4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "86aa9c27b7d7dab2162a5c858f68d4f9796850a9bd14dd0581996eceb154c0d7",
+      "declaration_patches": 0,
+      "task": "Prob122_kmap4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "87375102c09984a16024a48dd00f45577bdd9d56f1ac0e66bf4c461cd74827d5",
+      "declaration_patches": 0,
+      "task": "Prob123_bugs_addsubz",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "87375102c09984a16024a48dd00f45577bdd9d56f1ac0e66bf4c461cd74827d5",
+      "declaration_patches": 0,
+      "task": "Prob123_bugs_addsubz",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c1f2be6cd1345f3927686b109ab49b9a22d8ffd0091ef7e102c07cb3665c4056",
+      "declaration_patches": 0,
+      "task": "Prob124_rule110",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c1f2be6cd1345f3927686b109ab49b9a22d8ffd0091ef7e102c07cb3665c4056",
+      "declaration_patches": 0,
+      "task": "Prob124_rule110",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "75509e5f9213fc3cf68d1b271df3d2f7a0101e92e756f5ac882fbc9be22eb588",
+      "declaration_patches": 0,
+      "task": "Prob125_kmap3",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "75509e5f9213fc3cf68d1b271df3d2f7a0101e92e756f5ac882fbc9be22eb588",
+      "declaration_patches": 0,
+      "task": "Prob125_kmap3",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f41006d4497812378d9c9fa66365b923e99c59b5556b258e01ad87fec8ced2c0",
+      "declaration_patches": 0,
+      "task": "Prob126_circuit6",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f41006d4497812378d9c9fa66365b923e99c59b5556b258e01ad87fec8ced2c0",
+      "declaration_patches": 0,
+      "task": "Prob126_circuit6",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a86a3c8a3cdeaacca1f079208ecb3ac06d48aa737dd1debbd6f6c5bf748e0cfb",
+      "declaration_patches": 0,
+      "task": "Prob127_lemmings1",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "a86a3c8a3cdeaacca1f079208ecb3ac06d48aa737dd1debbd6f6c5bf748e0cfb",
+      "declaration_patches": 0,
+      "task": "Prob127_lemmings1",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "155a0f4547aa7ed0e6990d4920b3fa04f5b18292008c4239c9be3815adf799e7",
+      "declaration_patches": 0,
+      "task": "Prob128_fsm_ps2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "155a0f4547aa7ed0e6990d4920b3fa04f5b18292008c4239c9be3815adf799e7",
+      "declaration_patches": 0,
+      "task": "Prob128_fsm_ps2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "cec4de1abff9926c27940ed7caba6b6ded09cb6b49ba4c66a92b976124cf574a",
+      "declaration_patches": 1,
+      "task": "Prob129_ece241_2013_q8",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "cec4de1abff9926c27940ed7caba6b6ded09cb6b49ba4c66a92b976124cf574a",
+      "declaration_patches": 1,
+      "task": "Prob129_ece241_2013_q8",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c094b7c659321f4589801c2377f444f1d0319b359ec5687bd66c93e82c534fd2",
+      "declaration_patches": 0,
+      "task": "Prob130_circuit5",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c094b7c659321f4589801c2377f444f1d0319b359ec5687bd66c93e82c534fd2",
+      "declaration_patches": 0,
+      "task": "Prob130_circuit5",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "79c947cfcb18fe00c86c3da77e1c2090d68bf16cd39494c98711654aa4a7f963",
+      "declaration_patches": 0,
+      "task": "Prob131_mt2015_q4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "79c947cfcb18fe00c86c3da77e1c2090d68bf16cd39494c98711654aa4a7f963",
+      "declaration_patches": 0,
+      "task": "Prob131_mt2015_q4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "03d49ae14f48e1ba79dba87259db5257b48943ee8ff512871fc18f3e6a7766bb",
+      "declaration_patches": 0,
+      "task": "Prob132_always_if2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "03d49ae14f48e1ba79dba87259db5257b48943ee8ff512871fc18f3e6a7766bb",
+      "declaration_patches": 0,
+      "task": "Prob132_always_if2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "d06171adca944b69d82ae6f0500f381a4db71df7abd5d3d091e2b93c4edf6e32",
+      "declaration_patches": 0,
+      "task": "Prob133_2014_q3fsm",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "d06171adca944b69d82ae6f0500f381a4db71df7abd5d3d091e2b93c4edf6e32",
+      "declaration_patches": 0,
+      "task": "Prob133_2014_q3fsm",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5bb7168fc6f0082e38fd66c642426fee20a0ffbc8921f2b4a766b3a99f56fc00",
+      "declaration_patches": 0,
+      "task": "Prob134_2014_q3c",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "5bb7168fc6f0082e38fd66c642426fee20a0ffbc8921f2b4a766b3a99f56fc00",
+      "declaration_patches": 0,
+      "task": "Prob134_2014_q3c",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "520554eea7e9e812d029631b161b7b999b66eef1c9e8f87cc8879eb4ce545c33",
+      "declaration_patches": 0,
+      "task": "Prob135_m2014_q6b",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "520554eea7e9e812d029631b161b7b999b66eef1c9e8f87cc8879eb4ce545c33",
+      "declaration_patches": 0,
+      "task": "Prob135_m2014_q6b",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "bf6f6990821b345e009ed4262de78a2b211db6956da9460f77044e53bf045632",
+      "declaration_patches": 0,
+      "task": "Prob136_m2014_q6",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "bf6f6990821b345e009ed4262de78a2b211db6956da9460f77044e53bf045632",
+      "declaration_patches": 0,
+      "task": "Prob136_m2014_q6",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "76f90062f8231e75b93185a9ad11f0b0c84b79254855429e564e93c87a3a0336",
+      "declaration_patches": 0,
+      "task": "Prob137_fsm_serial",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "76f90062f8231e75b93185a9ad11f0b0c84b79254855429e564e93c87a3a0336",
+      "declaration_patches": 0,
+      "task": "Prob137_fsm_serial",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "86dfef0cc93c241658348fc77ca44b2623254e8f381c0fd1f03a82dbfee517a4",
+      "declaration_patches": 0,
+      "task": "Prob138_2012_q2fsm",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "86dfef0cc93c241658348fc77ca44b2623254e8f381c0fd1f03a82dbfee517a4",
+      "declaration_patches": 0,
+      "task": "Prob138_2012_q2fsm",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8c1cfe7dff05eaef1ea9100d03dfdaf5e63973c9c1e385a6bbf44d1856f1ada0",
+      "declaration_patches": 0,
+      "task": "Prob139_2013_q2bfsm",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "8c1cfe7dff05eaef1ea9100d03dfdaf5e63973c9c1e385a6bbf44d1856f1ada0",
+      "declaration_patches": 0,
+      "task": "Prob139_2013_q2bfsm",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ffa964d4c6b3a0cc5f653c26af0c6e75547c7c9641b69c7736440bb93e86bc63",
+      "declaration_patches": 1,
+      "task": "Prob140_fsm_hdlc",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ffa964d4c6b3a0cc5f653c26af0c6e75547c7c9641b69c7736440bb93e86bc63",
+      "declaration_patches": 1,
+      "task": "Prob140_fsm_hdlc",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0c161caf90127d314d9d5a90b28d26b78cdd80a0daf01cb6b1c8ce56315b0d4c",
+      "declaration_patches": 0,
+      "task": "Prob141_count_clock",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "0c161caf90127d314d9d5a90b28d26b78cdd80a0daf01cb6b1c8ce56315b0d4c",
+      "declaration_patches": 0,
+      "task": "Prob141_count_clock",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "aa08ed4f9dfec6c86aa81f171b5dd5b5b5c5829a6392fc322b0854477fb427c0",
+      "declaration_patches": 0,
+      "task": "Prob142_lemmings2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "aa08ed4f9dfec6c86aa81f171b5dd5b5b5c5829a6392fc322b0854477fb427c0",
+      "declaration_patches": 0,
+      "task": "Prob142_lemmings2",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3aac30a728fc6bfd5cdcc4b373c68f83b03c64cda1441adb0e4325ec1f5748da",
+      "declaration_patches": 0,
+      "task": "Prob143_fsm_onehot",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3aac30a728fc6bfd5cdcc4b373c68f83b03c64cda1441adb0e4325ec1f5748da",
+      "declaration_patches": 0,
+      "task": "Prob143_fsm_onehot",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "435dab4a1f2cb578989e7f209edcb6feb2237769f6e4dcfb7fd853e8025b4e30",
+      "declaration_patches": 0,
+      "task": "Prob144_conwaylife",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "435dab4a1f2cb578989e7f209edcb6feb2237769f6e4dcfb7fd853e8025b4e30",
+      "declaration_patches": 0,
+      "task": "Prob144_conwaylife",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "64854cdf62d15da41b23e3f064ae3528834e5f43daba04a07165e946be61dcb5",
+      "declaration_patches": 0,
+      "task": "Prob145_circuit8",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "64854cdf62d15da41b23e3f064ae3528834e5f43daba04a07165e946be61dcb5",
+      "declaration_patches": 0,
+      "task": "Prob145_circuit8",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "085744272f0309a67b3c44b23f734ba7d07485611c70507a55f4740e10b02f73",
+      "declaration_patches": 0,
+      "task": "Prob146_fsm_serialdata",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "085744272f0309a67b3c44b23f734ba7d07485611c70507a55f4740e10b02f73",
+      "declaration_patches": 0,
+      "task": "Prob146_fsm_serialdata",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "cb7e2f248f5c322a960ffa4d984ae4a84f6a51bc28650e31e9613d63e5fde7ad",
+      "declaration_patches": 0,
+      "task": "Prob147_circuit10",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "d097d6a25ba83a27fb0deb1ffb09fa11980a1c8cabb1bf83a5e14a8298d02647",
+      "declaration_patches": 0,
+      "task": "Prob147_circuit10",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c847b085be8e1002245f724b64c24a82202b410c75042f3780c9aab2ec4570b1",
+      "declaration_patches": 0,
+      "task": "Prob148_2013_q2afsm",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c847b085be8e1002245f724b64c24a82202b410c75042f3780c9aab2ec4570b1",
+      "declaration_patches": 0,
+      "task": "Prob148_2013_q2afsm",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b582bf37f79a5c395168e13565f5682ccb32a67a70177884da9fc0c0c12841a7",
+      "declaration_patches": 0,
+      "task": "Prob149_ece241_2013_q4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "b582bf37f79a5c395168e13565f5682ccb32a67a70177884da9fc0c0c12841a7",
+      "declaration_patches": 0,
+      "task": "Prob149_ece241_2013_q4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "adf2c46aa3d5ffe3433633131fd60a54345e175a56b9258dd7f4b1174093eec6",
+      "declaration_patches": 0,
+      "task": "Prob150_review2015_fsmonehot",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "adf2c46aa3d5ffe3433633131fd60a54345e175a56b9258dd7f4b1174093eec6",
+      "declaration_patches": 0,
+      "task": "Prob150_review2015_fsmonehot",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "31606b1f392f25610153fdddf2c15adfa446d40d09f905f13fe45c31f090a4e7",
+      "declaration_patches": 0,
+      "task": "Prob151_review2015_fsm",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "31606b1f392f25610153fdddf2c15adfa446d40d09f905f13fe45c31f090a4e7",
+      "declaration_patches": 0,
+      "task": "Prob151_review2015_fsm",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "4b8353c45d139f651d562d867caf29f120beca6e44e36ea675b469e869abbc00",
+      "declaration_patches": 0,
+      "task": "Prob152_lemmings3",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "4b8353c45d139f651d562d867caf29f120beca6e44e36ea675b469e869abbc00",
+      "declaration_patches": 0,
+      "task": "Prob152_lemmings3",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "9ee830f6d526ee5b8685d2ce50e4d13cdb7bd7c4088b4e0a3466998a97f9ca34",
+      "declaration_patches": 0,
+      "task": "Prob153_gshare",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "9ee830f6d526ee5b8685d2ce50e4d13cdb7bd7c4088b4e0a3466998a97f9ca34",
+      "declaration_patches": 0,
+      "task": "Prob153_gshare",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c54edec60b870da831ae2e44db8f4857bac9eaf2105d08307fbbb5c0bf61d4e0",
+      "declaration_patches": 0,
+      "task": "Prob154_fsm_ps2data",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "c54edec60b870da831ae2e44db8f4857bac9eaf2105d08307fbbb5c0bf61d4e0",
+      "declaration_patches": 0,
+      "task": "Prob154_fsm_ps2data",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "bc23d76c25a2f7033e9d36d29c25188478ac254a1ce94596eaed874f6c371bd2",
+      "declaration_patches": 0,
+      "task": "Prob155_lemmings4",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "bc23d76c25a2f7033e9d36d29c25188478ac254a1ce94596eaed874f6c371bd2",
+      "declaration_patches": 0,
+      "task": "Prob155_lemmings4",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "620f9daf93a0f4d3a8f987cce20b90a7220592b3ab15cbe49543b8e4976efb76",
+      "declaration_patches": 0,
+      "task": "Prob156_review2015_fancytimer",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "620f9daf93a0f4d3a8f987cce20b90a7220592b3ab15cbe49543b8e4976efb76",
+      "declaration_patches": 0,
+      "task": "Prob156_review2015_fancytimer",
+      "arm": "A",
+      "contract_status": "abstain",
+      "native_checks": []
+    }
+  ],
+  "first_pairs": [
+    {
+      "task": "Prob001_zero",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob002_m2014_q4i",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob003_step_one",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob004_vector2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob005_notgate",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob006_vectorr",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob007_wire",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob008_m2014_q4h",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob009_popcount3",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob010_mt2015_q4a",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob011_norgate",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob012_xnorgate",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob013_m2014_q4e",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob014_andgate",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob015_vector1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob016_m2014_q4j",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob017_mux2to1v",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob018_mux256to1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob019_m2014_q4f",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob020_mt2015_eq2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob021_mux256to1v",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob022_mux2to1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob023_vector100r",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob024_hadd",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob025_reduction",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob026_alwaysblock1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob027_fadd",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob028_m2014_q4a",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob029_m2014_q4g",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob030_popcount255",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob031_dff",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob032_vector0",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob033_ece241_2014_q1c",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob034_dff8",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob035_count1to10",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob036_ringer",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob037_review2015_count1k",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob038_count15",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob039_always_if",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob040_count10",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob041_dff8r",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob042_vector4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob043_vector5",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob044_vectorgates",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob045_edgedetect2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob046_dff8p",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob047_dff8ar",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob048_m2014_q4c",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob049_m2014_q4b",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob050_kmap1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob051_gates4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob052_gates100",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob053_m2014_q4d",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob055_conditional",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob056_ece241_2013_q7",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob057_kmap2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob058_alwaysblock2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob059_wire4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob060_m2014_q4k",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob061_2014_q4a",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob062_bugs_mux2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob063_review2015_shiftcount",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob064_vector3",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob065_7420",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob066_edgecapture",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob067_countslow",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob068_countbcd",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob069_truthtable1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob070_ece241_2013_q2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob071_always_casez",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob072_thermostat",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob073_dff16e",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob074_ece241_2014_q4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob075_counter_2bc",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob076_always_case",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob077_wire_decl",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob078_dualedge",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob079_fsm3onehot",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob080_timer",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob081_7458",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob082_lfsr32",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob083_mt2015_q4b",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob084_ece241_2013_q12",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob085_shift4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob086_lfsr5",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob087_gates",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob088_ece241_2014_q5b",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob089_ece241_2014_q5a",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob090_circuit1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob091_2012_q2b",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob092_gatesv100",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob093_ece241_2014_q3",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob094_gatesv",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob095_review2015_fsmshift",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob096_review2015_fsmseq",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob097_mux9to1v",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob098_circuit7",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob099_m2014_q6c",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob100_fsm3comb",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob101_circuit4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob102_circuit3",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob103_circuit2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob104_mt2015_muxdff",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob105_rotate100",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob106_always_nolatches",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob107_fsm1s",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob108_rule90",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob109_fsm1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob110_fsm2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob111_fsm2s",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob112_always_case2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob113_2012_q1g",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob114_bugs_case",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob115_shift18",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob116_m2014_q3",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob117_circuit9",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob118_history_shift",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob119_fsm3",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob120_fsm3s",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob121_2014_q3bfsm",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob122_kmap4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob123_bugs_addsubz",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob124_rule110",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob125_kmap3",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob126_circuit6",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob127_lemmings1",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob128_fsm_ps2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob129_ece241_2013_q8",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob130_circuit5",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob131_mt2015_q4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob132_always_if2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob133_2014_q3fsm",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob134_2014_q3c",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob135_m2014_q6b",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob136_m2014_q6",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob137_fsm_serial",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob138_2012_q2fsm",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob139_2013_q2bfsm",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob140_fsm_hdlc",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob141_count_clock",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob142_lemmings2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob143_fsm_onehot",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob144_conwaylife",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob145_circuit8",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob146_fsm_serialdata",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob147_circuit10",
+      "first_content_identical": false
+    },
+    {
+      "task": "Prob148_2013_q2afsm",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob149_ece241_2013_q4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob150_review2015_fsmonehot",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob151_review2015_fsm",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob152_lemmings3",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob153_gshare",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob154_fsm_ps2data",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob155_lemmings4",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob156_review2015_fancytimer",
+      "first_content_identical": true
+    }
+  ],
+  "adoption": false,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "limits": [
+    "All156 known public tasks, one actual independent first generation/arm, no hidden or five-sample claim.",
+    "Parser runtime consumes prose not task IDs; static applicability only3 known public development tasks. Remaining153 preserve original flow.",
+    "Budget/original skill/extraction/once repair unchanged from audited fresh pilot. No archived reply, fixed DUT answers or per-task scripted fix.",
+    "Whole task FIFO; common guard holds own locks across312 and includes integrity overhead in both arms. Shared model/instance/formal deployment/teammate untouched.",
+    "24-hour outer safety bound is not ETA; historical full312 4h34. Hard300s solve includes generation/compilation/feedback, real deadlines graded not resampled.",
+    "Original successful declaration patch return preserved, optional functional check abstains on unknown/extra prose and system functions.",
+    "External pinned Vivado judge and score receive official references; workers see prompt/interface and generated candidate diagnostics only.",
+    "Temperature0 still permits differing first replies. Preserve identities, report paired whole set and byte-identical first-reply subset separately.",
+    "Complete execution and quality qualification separate; no partial score, retries or best-sample replacement. Unconfirmed inference drains at most120s, shared model not killed.",
+    "Full source/DUT/message/native/tool/cleanup audit required; historical six-sample audit preflight is not a full156 audit.",
+    "Current W7900 dev hardware is not target single32GB offline/protocol certificate. Fresh official baseline gain and formal API/time rules unmeasured."
+  ],
+  "official_scores": {
+    "A": {
+      "tasks": 156,
+      "scored_tasks": 156,
+      "samples_per_task": 1,
+      "set_score": 0.7449,
+      "pass@1": 0.7449,
+      "pass@5": 0.7449,
+      "level_counts": {
+        "L0": 7,
+        "L1": 41,
+        "L3": 108
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 4011.5,
+      "per_task": [
+        {
+          "task_id": "Prob001_zero",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob002_m2014_q4i",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob003_step_one",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob004_vector2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob005_notgate",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob006_vectorr",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob007_wire",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob008_m2014_q4h",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob009_popcount3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob010_mt2015_q4a",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob011_norgate",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob012_xnorgate",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob013_m2014_q4e",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob014_andgate",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob015_vector1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob016_m2014_q4j",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob017_mux2to1v",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob018_mux256to1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob019_m2014_q4f",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob020_mt2015_eq2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob021_mux256to1v",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob022_mux2to1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob023_vector100r",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob024_hadd",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob025_reduction",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob026_alwaysblock1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob027_fadd",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob028_m2014_q4a",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob029_m2014_q4g",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob030_popcount255",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob031_dff",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob032_vector0",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob033_ece241_2014_q1c",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob034_dff8",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob035_count1to10",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob036_ringer",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob037_review2015_count1k",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob038_count15",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob039_always_if",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob040_count10",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob041_dff8r",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob042_vector4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob043_vector5",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob044_vectorgates",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob045_edgedetect2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob046_dff8p",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob047_dff8ar",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob048_m2014_q4c",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob049_m2014_q4b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob050_kmap1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob051_gates4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob052_gates100",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob053_m2014_q4d",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob054_edgedetect",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob055_conditional",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob056_ece241_2013_q7",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob057_kmap2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob059_wire4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob060_m2014_q4k",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob061_2014_q4a",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob062_bugs_mux2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob063_review2015_shiftcount",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob064_vector3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob065_7420",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob066_edgecapture",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob067_countslow",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob068_countbcd",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob069_truthtable1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob070_ece241_2013_q2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob072_thermostat",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob073_dff16e",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob074_ece241_2014_q4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob075_counter_2bc",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob076_always_case",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob077_wire_decl",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob078_dualedge",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob079_fsm3onehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob080_timer",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob081_7458",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob082_lfsr32",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob083_mt2015_q4b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob084_ece241_2013_q12",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob085_shift4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob086_lfsr5",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob087_gates",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob088_ece241_2014_q5b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob089_ece241_2014_q5a",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob090_circuit1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob091_2012_q2b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob092_gatesv100",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob093_ece241_2014_q3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob094_gatesv",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob095_review2015_fsmshift",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob096_review2015_fsmseq",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob097_mux9to1v",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob098_circuit7",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob099_m2014_q6c",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob100_fsm3comb",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob101_circuit4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob102_circuit3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob103_circuit2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob104_mt2015_muxdff",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob105_rotate100",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob106_always_nolatches",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob107_fsm1s",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob108_rule90",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob109_fsm1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob110_fsm2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob111_fsm2s",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob113_2012_q1g",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob114_bugs_case",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob116_m2014_q3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob117_circuit9",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob118_history_shift",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob119_fsm3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob120_fsm3s",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob121_2014_q3bfsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob122_kmap4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob123_bugs_addsubz",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob124_rule110",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob125_kmap3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob126_circuit6",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob127_lemmings1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob128_fsm_ps2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob129_ece241_2013_q8",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob130_circuit5",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob131_mt2015_q4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob132_always_if2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob133_2014_q3fsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob134_2014_q3c",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob135_m2014_q6b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob136_m2014_q6",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob137_fsm_serial",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob138_2012_q2fsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob139_2013_q2bfsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob140_fsm_hdlc",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob141_count_clock",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob142_lemmings2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob143_fsm_onehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob144_conwaylife",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob145_circuit8",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob146_fsm_serialdata",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob147_circuit10",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob148_2013_q2afsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob149_ece241_2013_q4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob150_review2015_fsmonehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob151_review2015_fsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob152_lemmings3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob153_gshare",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob154_fsm_ps2data",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob155_lemmings4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob156_review2015_fancytimer",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        }
+      ]
+    },
+    "C": {
+      "tasks": 156,
+      "scored_tasks": 156,
+      "samples_per_task": 1,
+      "set_score": 0.7564,
+      "pass@1": 0.7564,
+      "pass@5": 0.7564,
+      "level_counts": {
+        "L0": 6,
+        "L1": 40,
+        "L3": 110
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 4071.1,
+      "per_task": [
+        {
+          "task_id": "Prob001_zero",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob002_m2014_q4i",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob003_step_one",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob004_vector2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob005_notgate",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob006_vectorr",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob007_wire",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob008_m2014_q4h",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob009_popcount3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob010_mt2015_q4a",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob011_norgate",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob012_xnorgate",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob013_m2014_q4e",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob014_andgate",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob015_vector1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob016_m2014_q4j",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob017_mux2to1v",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob018_mux256to1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob019_m2014_q4f",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob020_mt2015_eq2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob021_mux256to1v",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob022_mux2to1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob023_vector100r",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob024_hadd",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob025_reduction",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob026_alwaysblock1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob027_fadd",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob028_m2014_q4a",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob029_m2014_q4g",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob030_popcount255",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob031_dff",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob032_vector0",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob033_ece241_2014_q1c",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob034_dff8",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob035_count1to10",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob036_ringer",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob037_review2015_count1k",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob038_count15",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob039_always_if",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob040_count10",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob041_dff8r",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob042_vector4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob043_vector5",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob044_vectorgates",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob045_edgedetect2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob046_dff8p",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob047_dff8ar",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob048_m2014_q4c",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob049_m2014_q4b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob050_kmap1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob051_gates4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob052_gates100",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob053_m2014_q4d",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob054_edgedetect",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob055_conditional",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob056_ece241_2013_q7",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob057_kmap2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob059_wire4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob060_m2014_q4k",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob061_2014_q4a",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob062_bugs_mux2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob063_review2015_shiftcount",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob064_vector3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob065_7420",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob066_edgecapture",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob067_countslow",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob068_countbcd",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob069_truthtable1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob070_ece241_2013_q2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob072_thermostat",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob073_dff16e",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob074_ece241_2014_q4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob075_counter_2bc",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob076_always_case",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob077_wire_decl",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob078_dualedge",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob079_fsm3onehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob080_timer",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob081_7458",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob082_lfsr32",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob083_mt2015_q4b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob084_ece241_2013_q12",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob085_shift4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob086_lfsr5",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob087_gates",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob088_ece241_2014_q5b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob089_ece241_2014_q5a",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob090_circuit1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob091_2012_q2b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob092_gatesv100",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob093_ece241_2014_q3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob094_gatesv",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob095_review2015_fsmshift",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob096_review2015_fsmseq",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob097_mux9to1v",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob098_circuit7",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob099_m2014_q6c",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob100_fsm3comb",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob101_circuit4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob102_circuit3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob103_circuit2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob104_mt2015_muxdff",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob105_rotate100",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob106_always_nolatches",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob107_fsm1s",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob108_rule90",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob109_fsm1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob110_fsm2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob111_fsm2s",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob113_2012_q1g",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob114_bugs_case",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob116_m2014_q3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob117_circuit9",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob118_history_shift",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob119_fsm3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob120_fsm3s",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob121_2014_q3bfsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob122_kmap4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob123_bugs_addsubz",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob124_rule110",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob125_kmap3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob126_circuit6",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob127_lemmings1",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob128_fsm_ps2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob129_ece241_2013_q8",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob130_circuit5",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob131_mt2015_q4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob132_always_if2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob133_2014_q3fsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob134_2014_q3c",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob135_m2014_q6b",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob136_m2014_q6",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob137_fsm_serial",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob138_2012_q2fsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob139_2013_q2bfsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob140_fsm_hdlc",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob141_count_clock",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob142_lemmings2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob143_fsm_onehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob144_conwaylife",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        },
+        {
+          "task_id": "Prob145_circuit8",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob146_fsm_serialdata",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob147_circuit10",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob148_2013_q2afsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob149_ece241_2013_q4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob150_review2015_fsmonehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob151_review2015_fsm",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob152_lemmings3",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob153_gshare",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob154_fsm_ps2data",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob155_lemmings4",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob156_review2015_fancytimer",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        }
+      ]
+    }
+  },
+  "coefficients": {
+    "A": 0.7448717948717949,
+    "C": 0.7564102564102564
+  },
+  "repairs": [
+    "Prob112_always_case2",
+    "Prob115_shift18"
+  ],
+  "regressions": [],
+  "unconfirmed_attempts": 3,
+  "solve_deadlines": [
+    {
+      "task": "Prob070_ece241_2013_q2",
+      "arm": "C"
+    },
+    {
+      "task": "Prob070_ece241_2013_q2",
+      "arm": "A"
+    },
+    {
+      "task": "Prob147_circuit10",
+      "arm": "A"
+    }
+  ],
+  "requests_by_arm": {
+    "A": 166,
+    "C": 167
+  },
+  "solve_seconds_by_arm": {
+    "A": 3346.505632655695,
+    "C": 3183.479078486562
+  },
+  "candidate_qualified_for_independent_validation": false
+}

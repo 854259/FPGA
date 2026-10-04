@@ -1,0 +1,166 @@
+{
+  "scope": "Three actually expired sample traces; not dropped from denominator or re-generated",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "rows": [
+    {
+      "task": "Prob070_ece241_2013_q2",
+      "arm": "C",
+      "requests": [
+        {
+          "index": 0,
+          "response_received": true,
+          "request_user_chars": 715,
+          "request_system_chars": 453,
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 8192,
+            "prompt_tokens": 506,
+            "total_tokens": 8698,
+            "prompt_tokens_details": {
+              "cached_tokens": 266
+            }
+          },
+          "content_chars": 15333,
+          "reasoning_chars": 0
+        },
+        {
+          "index": 1,
+          "response_received": false,
+          "request_user_chars": 16202,
+          "request_system_chars": 888
+        }
+      ],
+      "trace_events": [
+        {
+          "tool": "agent_meta"
+        },
+        {
+          "tool": "llm_start",
+          "round": 0
+        },
+        {
+          "tool": "llm",
+          "round": 0,
+          "finish": "length"
+        },
+        {
+          "tool": "check_source",
+          "rc": 1
+        },
+        {
+          "tool": "llm_start",
+          "round": 1
+        }
+      ],
+      "final_level": 0,
+      "seconds": 300.0122354477644
+    },
+    {
+      "task": "Prob070_ece241_2013_q2",
+      "arm": "A",
+      "requests": [
+        {
+          "index": 0,
+          "response_received": true,
+          "request_user_chars": 715,
+          "request_system_chars": 453,
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 8192,
+            "prompt_tokens": 506,
+            "total_tokens": 8698,
+            "prompt_tokens_details": {
+              "cached_tokens": 266
+            }
+          },
+          "content_chars": 15333,
+          "reasoning_chars": 0
+        },
+        {
+          "index": 1,
+          "response_received": false,
+          "request_user_chars": 16202,
+          "request_system_chars": 888
+        }
+      ],
+      "trace_events": [
+        {
+          "tool": "agent_meta"
+        },
+        {
+          "tool": "llm_start",
+          "round": 0
+        },
+        {
+          "tool": "llm",
+          "round": 0,
+          "finish": "length"
+        },
+        {
+          "tool": "check_source",
+          "rc": 1
+        },
+        {
+          "tool": "llm_start",
+          "round": 1
+        }
+      ],
+      "final_level": 0,
+      "seconds": 300.01194183155894
+    },
+    {
+      "task": "Prob147_circuit10",
+      "arm": "A",
+      "requests": [
+        {
+          "index": 0,
+          "response_received": true,
+          "request_user_chars": 1761,
+          "request_system_chars": 453,
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 8192,
+            "prompt_tokens": 1253,
+            "total_tokens": 9445,
+            "prompt_tokens_details": {
+              "cached_tokens": 266
+            }
+          },
+          "content_chars": 17355,
+          "reasoning_chars": 0
+        },
+        {
+          "index": 1,
+          "response_received": false,
+          "request_user_chars": 19270,
+          "request_system_chars": 888
+        }
+      ],
+      "trace_events": [
+        {
+          "tool": "agent_meta"
+        },
+        {
+          "tool": "llm_start",
+          "round": 0
+        },
+        {
+          "tool": "llm",
+          "round": 0,
+          "finish": "length"
+        },
+        {
+          "tool": "check_source",
+          "rc": 1
+        },
+        {
+          "tool": "llm_start",
+          "round": 1
+        }
+      ],
+      "final_level": 0,
+      "seconds": 300.0121844615787
+    }
+  ]
+}

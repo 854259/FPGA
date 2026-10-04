@@ -5024,5 +5024,116 @@
     "report": "03_analysis/patch_branch_review_20261005/README.md",
     "receipt": "03_analysis/patch_branch_review_20261005/VERIFIED_COMPLETED_PREFIX_SNAPSHOT_V2.json",
     "goal_status": "active"
+  },
+  "independent_admission_20261005": {
+    "status": "readonly_original_prompt_interface_inventory",
+    "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+    "inventory_source_sha256": "aa349cce0a5231deb88b76ef917afd51c2130825142bb08d0d7eae85446f8a50",
+    "records": 302,
+    "functional_supported": 0,
+    "TopModule_mentioned": 0,
+    "input_context_required": 133,
+    "independent_tasks_admitted": 0,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "candidate_modified": false,
+    "report": "03_analysis/independent_admission_20261005/README.md",
+    "public_inventory": "03_analysis/independent_admission_20261005/PUBLIC_INVENTORY.json",
+    "goal_status": "active"
+  },
+  "functional_full156_terminal_20261005": {
+    "status": "complete312_audited_cloud_and_local_python312",
+    "archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+    "auditor_sha256": "a4fcd91ac36c54c202be841a476cac256cb56b33a125a3833744b992e9986381",
+    "samples": 312,
+    "actual_model_requests": 333,
+    "received_model_responses": 330,
+    "A_score": 0.7449,
+    "C_score": 0.7564,
+    "A_L3": 108,
+    "C_L3": 110,
+    "regressions": [],
+    "matched_native_repair_tasks": [
+      "Prob112_always_case2",
+      "Prob115_shift18"
+    ],
+    "unconfirmed_attempts": 3,
+    "solve_deadlines": [
+      {
+        "task": "Prob070_ece241_2013_q2",
+        "arm": "C"
+      },
+      {
+        "task": "Prob070_ece241_2013_q2",
+        "arm": "A"
+      },
+      {
+        "task": "Prob147_circuit10",
+        "arm": "A"
+      }
+    ],
+    "candidate_qualified_for_independent_validation": false,
+    "attribution_qualified": false,
+    "adoption": false,
+    "official_baseline_gain_measured": false,
+    "five_sample_measured": false,
+    "report": "03_analysis/functional_full156_20261005/FULL_RESULT.md",
+    "dual_audit_receipt": "03_analysis/functional_full156_20261005/TERMINAL_DUAL_AUDIT_RECEIPT.json",
+    "goal_status": "active"
+  },
+  "edge_contract_20261005_terminal": {
+    "status": "complete_native_calibration_evidence_audited",
+    "archive_sha256": "e035cfa3a12c22326ce200ffa65fa6e0dfcf7f36a17119eab9e32b9b07c45724",
+    "native_probes": 26,
+    "synthesis_commands": 6,
+    "controls_valid": true,
+    "natural_hypothesis_matched": true,
+    "model_calls": 0,
+    "model_repair_measured": false,
+    "independent_natural_tasks": 0,
+    "adoption": false
+  },
+  "fsm_contract_20261005_terminal": {
+    "status": "complete_native_calibration_evidence_audited",
+    "archive_sha256": "5311b293bd2502eb496052051a75fd4741947257a31550849cb75916be1c4cbb",
+    "native_probes": 26,
+    "synthesis_commands": 4,
+    "controls_valid": true,
+    "natural_hypothesis_matched": true,
+    "model_calls": 0,
+    "model_repair_measured": false,
+    "independent_natural_tasks": 0,
+    "adoption": false
+  },
+  "formal_bridge_20261005_terminal": {
+    "status": "actual_stage_audited",
+    "archive_sha256": "0e8839aa73ddd2ef9905358909ac87b165ac1cda7e421b6d75492776c43a6ceb",
+    "actual_execution_verified": true,
+    "details": {
+      "native_probes": 4,
+      "compile_commands": 2,
+      "model_requests": 0,
+      "fake_model_requests": 2,
+      "native_scope": "one constructed renamed 4-bit priority contract; shift and natural-task parity not measured"
+    },
+    "model_requests": 0,
+    "quality_score_measured": false,
+    "target_offline_single32gb_verified": false,
+    "adoption": false
+  },
+  "formal_bridge_v2_20261005_terminal": {
+    "status": "actual_stage_audited",
+    "archive_sha256": "46c867e1dd7dc7afb55b7da8ed0a5e2215dfbe00951f2d1226654f57f9d1fdfe",
+    "actual_execution_verified": true,
+    "details": {
+      "live_health_requests": 2,
+      "version_commands": 1,
+      "model_requests": 0,
+      "scope": "current development card instantaneous measurement; not peak, process-exclusive memory, R9700 or 32GB physical capacity certification"
+    },
+    "model_requests": 0,
+    "quality_score_measured": false,
+    "target_offline_single32gb_verified": false,
+    "adoption": false
   }
 }
