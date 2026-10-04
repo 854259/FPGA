@@ -93,7 +93,8 @@
     },
     "formal_deployment_modified": false,
     "full_set_score_updated": false,
-    "next": "Version and verify input contracts first; independent frozen validation and unresolved captured 32-bit full-flow risk before promotion. No refilling budget or resampling approved batch."
+    "next": "Version and verify input contracts first; independent frozen validation and unresolved captured 32-bit full-flow risk before promotion. No refilling budget or resampling approved batch.",
+    "adoption_decision_superseded_by": "helper_continuation_h1_20261004: reject current automatic extraction after observed level regression"
   },
   "schema_version": 1,
   "research_cycle_20261004": {
@@ -2858,13 +2859,139 @@
     }
   },
   "helper_continuation_h1_20261004": {
-    "status": "prepared_not_started",
+    "status": "completed_at_predeclared_regression_gate_archived_cleaned",
+    "updated_at": "2026-10-04T14:00:00+08:00",
     "authorization": "user_requested_next_experiment",
-    "internal_call_cap": 9,
-    "stage_timeout_s": 2700,
-    "inputs_checked": 220,
-    "plan": "03_analysis/helper_extraction_20261004/CONTINUATION_PLAN.md",
-    "models_not_restarted": true,
-    "formal_deployment_modified": false
+    "executed_commit": "e1441974daa5aeb1321e0e7dcd7b74be1494d307",
+    "amd_root": "/workspace/team/runs/fpga_teammate/helper_H1_20261004T054811Z_e144197",
+    "driver_pid": 2984332,
+    "stage_pid": 2984337,
+    "processes_finished": true,
+    "budget": {
+      "internal_seconds_cap": 2700,
+      "actual_calls": 1,
+      "retries": 0,
+      "internal_call_cap": 9,
+      "responses": 1
+    },
+    "complete": true,
+    "execution_valid": true,
+    "stage_elapsed_s": 166.7043533595279,
+    "guard_elapsed_s": 166.90000774338841,
+    "decision": "reject_automatic_extraction",
+    "stop_reason": "observed_regression_on_captured_adder_32bit",
+    "risk_pairs": 1,
+    "level_repairs": 0,
+    "level_regressions": 1,
+    "functional_repairs": 0,
+    "correct_drafts_tested": 0,
+    "correct_to_incorrect_observed": 0,
+    "fresh_pairs": 0,
+    "fresh_pairs_skipped_at_gate": 2,
+    "dataset": {
+      "module_label_changes": 23,
+      "tasks": 44,
+      "semantic_controls_passed_tasks": 2,
+      "newline_normalized_text_identical": 21,
+      "byte_identity_reporting_corrected": true,
+      "remaining_semantic_contracts_pending": 42,
+      "crlf_to_lf": 44,
+      "byte_identical": 0,
+      "original_220_files_unchanged": true
+    },
+    "controls": {
+      "adder_bcd": {
+        "positive": {
+          "level": 3,
+          "coefficient": 1.0,
+          "stages": {
+            "compile": true,
+            "simulate": true,
+            "synth": true
+          },
+          "elapsed_s": 27.3,
+          "mismatches": 0,
+          "samples": 200,
+          "tool_error": null,
+          "judge_rc": 0,
+          "judge_evidence_complete": true,
+          "suspected_silent_degradation": false
+        },
+        "negative": {
+          "level": 1,
+          "coefficient": 0.2,
+          "stages": {
+            "compile": true,
+            "simulate": false,
+            "synth": false
+          },
+          "elapsed_s": 7.9,
+          "mismatches": 200,
+          "samples": 200,
+          "tool_error": null,
+          "judge_rc": 0,
+          "judge_evidence_complete": true,
+          "suspected_silent_degradation": false
+        }
+      },
+      "barrel_shifter": {
+        "positive": {
+          "level": 3,
+          "coefficient": 1.0,
+          "stages": {
+            "compile": true,
+            "simulate": true,
+            "synth": true
+          },
+          "elapsed_s": 28.1,
+          "mismatches": 0,
+          "samples": 2048,
+          "tool_error": null,
+          "judge_rc": 0,
+          "judge_evidence_complete": true,
+          "suspected_silent_degradation": false
+        },
+        "negative": {
+          "level": 1,
+          "coefficient": 0.2,
+          "stages": {
+            "compile": true,
+            "simulate": false,
+            "synth": false
+          },
+          "elapsed_s": 7.8,
+          "mismatches": 2048,
+          "samples": 2048,
+          "tool_error": null,
+          "judge_rc": 0,
+          "judge_evidence_complete": true,
+          "suspected_silent_degradation": false
+        }
+      }
+    },
+    "evidence": {
+      "public_sha256": "0da949cf619bb06afca0b6f6a1a3e6e625c99d8ebe685a7161ee4f217e3e0145",
+      "archived_initial_public_sha256": "c7ae411952cdb4f3d0f261d503ac7f25920a18d1014386597eb8c6d54c2e72a7",
+      "byte_audit": "03_analysis/helper_extraction_20261004/PROMPT_BYTE_AUDIT.json",
+      "private_local": "05_handoff/helper_continuation_h1_20261004/H1-evidence.zip",
+      "public": "03_analysis/helper_extraction_20261004/H1_RESULT.json",
+      "plan": "03_analysis/helper_extraction_20261004/CONTINUATION_PLAN.md",
+      "report": "03_analysis/helper_extraction_20261004/CONTINUATION_RESULT.md",
+      "archive_sha256": "6e80dfa3d581dec703c94151946911a37a3b8763f9256abfcb5ab9bde1f17e26"
+    },
+    "cleanup": {
+      "local_source_transfers_removed": 1,
+      "xsim_dirs_removed": 2,
+      "own_processes_remaining": 0,
+      "verified": true,
+      "source_inputs_evidence_retained": true,
+      "model_healthy_idle_at": "2026-10-04T05:55:50.500977+00:00",
+      "slot_released": true,
+      "model_unchanged": true,
+      "remote_source_transfers_removed": 1
+    },
+    "formal_deployment_modified": false,
+    "full_set_score_updated": false,
+    "next": "Reject current automatic extractor. A future elaboration-error repair/fallback candidate requires a new frozen engineering/cost comparison, without oracle data in runtime. Remaining RTLLM contracts and independent quality evidence pending; no full-set expansion."
   }
 }

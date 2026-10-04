@@ -1,0 +1,38 @@
+{
+  "archive_sha256": "6e80dfa3d581dec703c94151946911a37a3b8763f9256abfcb5ab9bde1f17e26",
+  "public_sha256": "0da949cf619bb06afca0b6f6a1a3e6e625c99d8ebe685a7161ee4f217e3e0145",
+  "raw_summary_sha256": "96585071f9eecc793309cd35bc8f47a3afa7931fa012f0306dd821098d77da93",
+  "dataset_manifest_sha256": "90f58067ba449beb7c8d8d21dc232e6612b6a4a11ae4b5b986408dc061358d59",
+  "bytes": 336199,
+  "entries": 369,
+  "totals": {
+    "pairs": 1,
+    "fresh_pairs": 0,
+    "fresh_repairs": 0,
+    "fresh_regressions": 0,
+    "fresh_unchanged_level": 0,
+    "actual_calls": 1,
+    "responses": 1,
+    "logical_original": 2,
+    "logical_retained": 1,
+    "all_replies_stop": true
+  },
+  "rows": [
+    {
+      "task": "captured_adder_32bit",
+      "levels": {
+        "original": 1,
+        "retained_helpers": 0
+      },
+      "time_saved_s": null
+    }
+  ],
+  "elapsed_s": 166.7043533595279,
+  "guard_elapsed_s": 166.90000774338841,
+  "decision": "reject_automatic_extraction",
+  "stop_reason": "observed_regression_on_captured_adder_32bit",
+  "guard_passed": true,
+  "archived_public_sha256": "c7ae411952cdb4f3d0f261d503ac7f25920a18d1014386597eb8c6d54c2e72a7",
+  "prompt_byte_audit_sha256": "9540f07ccf58f36786f576dddb321f7bf30841237a9e2b2ed07cf26940c3c371",
+  "public_report_corrected_without_changing_experiment_or_zip": true
+}

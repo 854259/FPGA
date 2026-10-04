@@ -1,0 +1,822 @@
+{
+  "schema": "helper_contract_h1_result",
+  "executed_commit": "e1441974daa5aeb1321e0e7dcd7b74be1494d307",
+  "complete": true,
+  "execution_valid": true,
+  "error": null,
+  "stop_reason": "observed_regression_on_captured_adder_32bit",
+  "decision": "reject_automatic_extraction",
+  "elapsed_s": 166.7043533595279,
+  "guard_elapsed_s": 166.90000774338841,
+  "guard_passed": true,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "original_inputs_rechecked": true,
+  "new_inputs_rechecked": true,
+  "original_summary_sha256": "96585071f9eecc793309cd35bc8f47a3afa7931fa012f0306dd821098d77da93",
+  "dataset_manifest_sha256": "90f58067ba449beb7c8d8d21dc232e6612b6a4a11ae4b5b986408dc061358d59",
+  "dataset": {
+    "tasks": 44,
+    "prompts_changed": 23,
+    "prompts_byte_identical": 0,
+    "reference_interfaces_equal": 44,
+    "tb_named_port_static_matches": 43,
+    "static_review_case": "adder_8bit: existing parser omits b in grouped ANSI input [7:0] a,b; TB visibly connects both; no new interface defect established",
+    "qualification": "Only two default legal combinational domains exhaustively controlled; remaining 42 not semantically certified",
+    "rows": [
+      {
+        "task": "JC_counter",
+        "old_prompt_sha256": "a37a9b99dd93c9da5911dfe8fab08231ff00095a969f65890d34b5c634234cdd",
+        "new_prompt_sha256": "fb1bb810cec315b5d98a2453b26d6652b24c1b4ab871a61d7b8124a49dd5f00c",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "LFSR",
+        "old_prompt_sha256": "00cc1b38ce1a891f20e47ea5cf1abeaa998e74eb8afad72795e1814d9c486d18",
+        "new_prompt_sha256": "dfcc8f2c492cfabf0e0f800da9f6a91b608f3845d2938ce36edd7930f345f955",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "accu",
+        "old_prompt_sha256": "c697852e7fef1addc764bba1d9f9f7ec39e6aee653364663e1c34756ba18b494",
+        "new_prompt_sha256": "45c1f797552c9e2c427a7b6340822cd082edf261c060afd5891bdd71993ff3a5",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "adder_16bit",
+        "old_prompt_sha256": "1448165ef5237424e39842d24e538d684b090631fda565cb1694353bcc5aaac4",
+        "new_prompt_sha256": "39867fcb0b56390f6d5d45ebbda4e8c10ce8b2050a9b87184e8a6d94927ded6d",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "adder_32bit",
+        "old_prompt_sha256": "a79639a97d161ab29eca6efb82bf3d5f5c373866b902d6d82be41b45c4ee0cb1",
+        "new_prompt_sha256": "95285527a8553f64b30032a23b910d100f385bfdc07fe880cd1ab7cc0293d573",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "adder_8bit",
+        "old_prompt_sha256": "3ce4ba82bfa65dbc6d1ed5429057a521c62ce0448954584f4fe67d5fb7fa8d32",
+        "new_prompt_sha256": "78d924e9512dedd633d9118009e37327730c1cf5b8008c15f58ab0d6ca0d780c",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": false,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "adder_bcd",
+        "old_prompt_sha256": "a20a9655d1f16042ae532940594e52bb3d5146ad1640c51240b3b5e585e7a92f",
+        "new_prompt_sha256": "e4a3e7a8e4ec6aae15e292687ea378614c35d7cb065d8ed77cfecd2dc1a562f4",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "exhaustive_default_domain_controls_passed",
+        "checks": 200,
+        "independent_arithmetic_reference_check": true,
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "adder_pipe_64bit",
+        "old_prompt_sha256": "de9b2fbbaae98efa2ba0802e8bc24f5a6c3b48cc8127adf227e66231235d6049",
+        "new_prompt_sha256": "b8989ce0d5e1440b7a21cafd84cae7fbbfcc3d7c753fd97847cccdad2955dde3",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "barrel_shifter",
+        "old_prompt_sha256": "b7715f9d16833bcc1d155c8b81000ea4ac092f30e90f7dad0f2de1161b9deb70",
+        "new_prompt_sha256": "9e49b0f2e4858c75fd1e948b21f088b49fa60c0b3437e9c05569588082cc974f",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "exhaustive_default_domain_controls_passed",
+        "checks": 2048,
+        "independent_arithmetic_reference_check": true,
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "calendar",
+        "old_prompt_sha256": "129b4ff1d2a2ddfadcbe86d9406994ae6dd3e1a9029093a78c2aa0027dbaa128",
+        "new_prompt_sha256": "c21c1bc34872e82c296b51547050017a0c42e7845f31424123c2787aedb0fd06",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "comparator_3bit",
+        "old_prompt_sha256": "ea3064920abccb98daad2f83f4237531e52bc35980bf33ce417f1dbd4462ec6b",
+        "new_prompt_sha256": "6936b1d7581f299787e0324a2d73650a01d3fc7d1134b71c0f617eca6a7ad188",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "comparator_4bit",
+        "old_prompt_sha256": "78aaab38c551286d62440f3a06b0e91742a08f424f672d89734924f1b69371de",
+        "new_prompt_sha256": "aba59c6f8b90b665bc8f5f3d5076c167edab2cd1bdfac64e5ea7c9470c810239",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "counter_12",
+        "old_prompt_sha256": "a3e553616d7db8f5b9c54b787574f2963a08515bf1ff7dd50f3d91b9fb8f3a57",
+        "new_prompt_sha256": "2ee3571ba73ea8ee881706a0b353d4de9ec99873a80c6b366b4eee142f70080a",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "div_16bit",
+        "old_prompt_sha256": "15d01af7475eda7a118cbe4008c2647ae6bbf79d84e01ccde102aa7e83e41201",
+        "new_prompt_sha256": "b0ca884803367b40c39f38f7ee64818ff0344f5fcd1ef3d7cd1c41db41b77e72",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "edge_detect",
+        "old_prompt_sha256": "376ecc532fff4a0a5a1c86a62a61dc489457f7c54e7aa1749960aedd46d91ad6",
+        "new_prompt_sha256": "c243bb1cc34c6f93913b9499eef0b7a9c93284da5d7b8ecceef9187e2b4f8ec4",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "fixed_point_adder",
+        "old_prompt_sha256": "a0ada827b43359aa899fe291748e237f4929670db60bb2f6b47545154e06a87c",
+        "new_prompt_sha256": "e8bf49812971a0b811c5b41242e566b702d54bf7f821dbd202ea0ddcc2e4d907",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "fixed_point_substractor",
+        "old_prompt_sha256": "12efc77721ac7967830a6fba8328e11121acb182d3bac2beaefa770dbf4e2a26",
+        "new_prompt_sha256": "43a888ab19a4ffcd20718468f247bfcd7997f019faa9bc36e537ee00c74b623a",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "float_multi",
+        "old_prompt_sha256": "a348c8e7a5fa3ed1be118eed21173d69dc0432afdb5450578d71703089314127",
+        "new_prompt_sha256": "23c9fd14996167207673c9522b3f3ed02c0464d68399ce3b8d8e4b234eb99c78",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "freq_div",
+        "old_prompt_sha256": "a741e6e5c32511b3d6bdf86a0b061cc952303b5eead785ce1123731c663f5995",
+        "new_prompt_sha256": "7acb5b9f677c9401d3ee489500ddf07ff92ee71815464378d46519d7dc216e23",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "freq_divbyeven",
+        "old_prompt_sha256": "4343a5e23cdcd72182f452e8620a7f5c2433f9a8021a50d36207f17e5e4bddfc",
+        "new_prompt_sha256": "fee8010c41508d600afac44e8fc6ceb5348bfd2bb6186197c46766e8410f0a6f",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "freq_divbyfrac",
+        "old_prompt_sha256": "39c4a2d8ceb89d933b9803a378c768795b9af5127aab67f96ec827595745373c",
+        "new_prompt_sha256": "2a8109e27fc6dee1a0453d3388e47dcbaa71b56c0778d400fb22c1547c81b988",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "freq_divbyodd",
+        "old_prompt_sha256": "ef06c9dd09c11820c822668eb91eb73f6e0a9d302b44fd8e4596dbdeab59c8e1",
+        "new_prompt_sha256": "0aea506e9665d3c991a73d399e248af50d736311d1a1baab756785dd2ec79eef",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "fsm",
+        "old_prompt_sha256": "61e8931a02a0e9409072b24c863c0aad51ce48e17c923621d30192595ff54cc5",
+        "new_prompt_sha256": "5b1dcbbf4bde57f7313f5f1737e5f37c9c3be715a938e36f8b80af011c26ffb7",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "instr_reg",
+        "old_prompt_sha256": "bc04c58b50facaeb5af4c68ba271a864b037bb59fb56d063ed07e91de9658561",
+        "new_prompt_sha256": "53f301f11e2f14b1fe51bf02f89036693d9ee0ce26f23bd8cf8198aeae793576",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "multi_16bit",
+        "old_prompt_sha256": "597c08cdb7143f40cc7befd5f71ec2ea120f2e7e8e21ee8b31a2eba2e127f60b",
+        "new_prompt_sha256": "c2ba53cb5c9891eca889fc9dcca8fc3bf5a34da91d21d1f98aad80ecee1bda9c",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "multi_8bit",
+        "old_prompt_sha256": "2bec85ce2dac07e4edc0002ef086f2aeb6391b5438191a3f3d3f7bfbe8146b5e",
+        "new_prompt_sha256": "1c21de61ded060608cadb440d7c406f7db772d850507ebe7baf68ac9d6eddf29",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "multi_booth_8bit",
+        "old_prompt_sha256": "da6ba4b0e423b6042a823734ba61c03e17bf3e4f9c23e2baa7810e2aa29eaff6",
+        "new_prompt_sha256": "6b1ef671aef0bed18b21311c23026e3ba4166ddbbb7574ff428abf96b1a3bd4d",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "multi_pipe_4bit",
+        "old_prompt_sha256": "3c21f3562a0bc5c802fd6ad399936b821a32d52ba0194b7b4c637b917ce6f2b3",
+        "new_prompt_sha256": "4dd889f6bf95a63e98825b58a77fc35936c9fd2facfa367bd25f58bf0dc82f9c",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "multi_pipe_8bit",
+        "old_prompt_sha256": "b46bf9cb3183b514345d5a752574945ab857e321d7948547fd1cb3782a8b215d",
+        "new_prompt_sha256": "15cbffb29ef404f7b5ae689bd33d4695300a4c79fdb4925b374d2ca62ab56269",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "parallel2serial",
+        "old_prompt_sha256": "3d0cdb03265d3c6d3b7a9966743c6ba8e3ffbf76023869f9a1f205992af27ed5",
+        "new_prompt_sha256": "1834ae6576c35f48a068fb4c549d5a771174963c75bc2332cf73f0c050250f20",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "pe",
+        "old_prompt_sha256": "2171590926e6d21269ec96d8b1aa61e9c391aac2f1d559b3eeaf6ee5973405c9",
+        "new_prompt_sha256": "02f45f731168ef4c2fa16064669a61ceb661e10d78b833ab19861ee9e9fa7167",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "pulse_detect",
+        "old_prompt_sha256": "c8540bf508328c619e17a83b5371b761c735ba41bc1f5fde037138feebbb2f3c",
+        "new_prompt_sha256": "350625e04f0ef706aa1c06c983bb491bb254ebc3d92f4f9f89e41ee8827ccdb5",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "radix2_div",
+        "old_prompt_sha256": "e57a48d55260f217b6cd75ee4d68c44bf4c80da348d2bfb1a84a0f92d54357b5",
+        "new_prompt_sha256": "86cad9254a7742fedac71cfcae9bcff2cf2afb347477601b161ba21a93d224f5",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "right_shifter",
+        "old_prompt_sha256": "670014a863f25106efe34537ad2a31b4ec21b4c68a49b815126d23a4ba90ae46",
+        "new_prompt_sha256": "9022054b62a249230357957d309991918cfc788f45b7a09ec024e96fe1f28588",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "ring_counter",
+        "old_prompt_sha256": "1c734b6f6bf08434b55e868d9908be943c9b73a8f3e6789894b2f9df804f690c",
+        "new_prompt_sha256": "d4d089c8f4dc7ac6778146f271d220f8e171fe3f6083c43d079792efbd9d0a93",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "sequence_detector",
+        "old_prompt_sha256": "509aded88efeb2d40680ad7718949da9c49803ee93e30f2024362e09709632ce",
+        "new_prompt_sha256": "81092db41f4a083c352e6524fdd7144747350feba3cd0e7658ee3b39058ad169",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "serial2parallel",
+        "old_prompt_sha256": "ab4b3d5e0eebb9195e3fed8bfecb87fa402a7cdfe5d6052c474be21c1aceea99",
+        "new_prompt_sha256": "3fe8a33766749971f8b1a1c75bd580a6142efe1be19d378babe78e9b1d5c004e",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "signal_generator",
+        "old_prompt_sha256": "c9eb14e20190195dc538c257380463e53e26894c21c8ae6f27aea94143eb2fe1",
+        "new_prompt_sha256": "03b0a817f1713d94b05c6635b9609e2e2cc1f2951eb504a5e1b67a4c5a046c38",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "square_wave",
+        "old_prompt_sha256": "dc4ef25c3d0cf1529c3558a35444071e33877fbe883fcf4ab424800f625155da",
+        "new_prompt_sha256": "178d22ebc8efb726c6c8515fc993ae5cbb44fe86f6ce203954d01e5c9f55d1f7",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "sub_64bit",
+        "old_prompt_sha256": "3057a2be7c69d1b9d9aadf659346fbedc1ac286ab882ab3d0742481a89b24c4a",
+        "new_prompt_sha256": "b090f00a010af29754d2b37ed84f92828ef8c3eb79b16c952e89b1540fe38aac",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "synchronizer",
+        "old_prompt_sha256": "b27ea5a5d15a1a1c419a7b46e7d5100f25b0e5e246a734e8fbe1476aebd3e9a9",
+        "new_prompt_sha256": "4f9e5d04b19c46342e23f32d79cbaa47486c1d0a4fb84fe9cf4ab2fab65d1e56",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "traffic_light",
+        "old_prompt_sha256": "e02805af9ca338838abc7fcfa1aef73772a84dcee3e99d43911a1a68423f46f1",
+        "new_prompt_sha256": "16c41b8440a06789dfcdea864e1bd3c10592016ffe876d7bef368b0d7e8235b8",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "up_down_counter",
+        "old_prompt_sha256": "fd981d5597e9c20e6913dedfbbb8e22d0a15c57f9e0ff5f63549357975636b65",
+        "new_prompt_sha256": "8e42d0eb8259380f1211d305acb6404bb9683cc8754b9afd6fadbecc74c82ba9",
+        "prompt_changed": false,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      },
+      {
+        "task": "width_8to16",
+        "old_prompt_sha256": "0f0f7cabf4c94932f2ca04904702987a540ee84f6e27c3fbd86d401849245ee0",
+        "new_prompt_sha256": "6314fc8adc402c98137594e98631c57e09a9f0f61a2730c53a784f28baa1dd77",
+        "prompt_changed": true,
+        "labels": [
+          "TopModule"
+        ],
+        "reference_interfaces_match": true,
+        "tb_named_ports_match": true,
+        "semantic_contract_status": "not_fully_audited",
+        "prompt_bytes_changed": true
+      }
+    ],
+    "prompts_newline_normalized_text_identical": 21,
+    "prompt_line_endings_normalized": 44,
+    "prompts_changed_definition": "23 changed after universal-newline decoding; all 44 file bytes changed due to CRLF->LF"
+  },
+  "controls": {
+    "adder_bcd": {
+      "positive": {
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "elapsed_s": 27.3,
+        "mismatches": 0,
+        "samples": 200,
+        "tool_error": null,
+        "judge_rc": 0,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false
+      },
+      "negative": {
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "elapsed_s": 7.9,
+        "mismatches": 200,
+        "samples": 200,
+        "tool_error": null,
+        "judge_rc": 0,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false
+      }
+    },
+    "barrel_shifter": {
+      "positive": {
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "elapsed_s": 28.1,
+        "mismatches": 0,
+        "samples": 2048,
+        "tool_error": null,
+        "judge_rc": 0,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false
+      },
+      "negative": {
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "elapsed_s": 7.8,
+        "mismatches": 2048,
+        "samples": 2048,
+        "tool_error": null,
+        "judge_rc": 0,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false
+      }
+    }
+  },
+  "rows": [
+    {
+      "task": "captured_adder_32bit",
+      "captured_initial": true,
+      "repair": false,
+      "regression": true,
+      "unchanged_level": false,
+      "arms": {
+        "original": {
+          "actual_model_calls": 1,
+          "responses": 1,
+          "logical_worker_requests": 2,
+          "elapsed_s": 80.93001541215926,
+          "solution_sha256": "cc3c893d7506ad82863d7931d8d8d9a0d4a92440297ca8f094805b88424452c6",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "selections": [],
+          "verdict": {
+            "level": 1,
+            "coefficient": 0.2,
+            "stages": {
+              "compile": true,
+              "simulate": false,
+              "synth": false
+            },
+            "elapsed_s": 7.9,
+            "mismatches": 400,
+            "samples": 200,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "request_elapsed_s": [
+            7.000844925642014e-05,
+            79.84219461586326
+          ],
+          "finish_reasons": [
+            "stop",
+            "stop"
+          ]
+        },
+        "retained_helpers": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 1,
+          "elapsed_s": 1.0813222667202353,
+          "solution_sha256": "5b5127e3da687dc40068fb8566c2f0ca7816dd375bf4a17f34a9da0a1395d07f",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "selections": [
+            {
+              "changed": true,
+              "reason": "complete_fenced_hierarchy",
+              "modules": [
+                "TopModule",
+                "cla_16bit"
+              ],
+              "restored_dependencies": [
+                "cla_16bit"
+              ]
+            }
+          ],
+          "verdict": {
+            "level": 0,
+            "coefficient": 0.0,
+            "stages": {
+              "compile": false,
+              "simulate": false,
+              "synth": false
+            },
+            "elapsed_s": 4.4,
+            "mismatches": null,
+            "samples": null,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true,
+            "suspected_silent_degradation": false
+          },
+          "request_elapsed_s": [
+            6.680004298686981e-05
+          ],
+          "finish_reasons": [
+            "stop"
+          ]
+        }
+      },
+      "final_bytes_identical": false,
+      "initial_content_sha256": "a8a44a6165d1bbf4e3220d00390c886e26592bbebb05621c3d3b7c8f12d905ac",
+      "timing_scope": "captured checkpoint continuation; historical first generation excluded in both arms"
+    }
+  ],
+  "totals": {
+    "pairs": 1,
+    "fresh_pairs": 0,
+    "fresh_repairs": 0,
+    "fresh_regressions": 0,
+    "fresh_unchanged_level": 0,
+    "actual_calls": 1,
+    "responses": 1,
+    "logical_original": 2,
+    "logical_retained": 1,
+    "all_replies_stop": true
+  },
+  "request_audit": [
+    {
+      "task": "captured_adder_32bit",
+      "arm": "original",
+      "round": 0,
+      "sha256": "dacb2d411a6df20c9a5b7e3427cbdb3cfeef7bb5e99db2f25c3b02fb1ba3ad87",
+      "prompt_skill_verified": true
+    },
+    {
+      "task": "captured_adder_32bit",
+      "arm": "original",
+      "round": 1,
+      "sha256": "fb03fe4cec3e044dc1052f9c965eee42361eaf35097a53aa5c763e163ad7ef9c",
+      "prompt_skill_verified": true
+    },
+    {
+      "task": "captured_adder_32bit",
+      "arm": "retained_helpers",
+      "round": 0,
+      "sha256": "dacb2d411a6df20c9a5b7e3427cbdb3cfeef7bb5e99db2f25c3b02fb1ba3ad87",
+      "prompt_skill_verified": true
+    }
+  ],
+  "formal_deployment_modified": false,
+  "full_set_score": false,
+  "limits": [
+    "Both fresh tasks have historical exposure; not a blind holdout.",
+    "BCD controls cover only legal 0-9 operands and 1-bit carry; shifter controls cover 8-bit logical right shifts; architectural requirements are not proven by functional comparisons.",
+    "Captured 32-bit pair retains old naming-conflicted prompt; it tests exact captured-checkpoint risk, not corrected-prompt generalization.",
+    "Replayed initial latency is restored for fresh paired timing, historical initial latency excluded from checkpoint timing.",
+    "One observed level regression rejects current automatic extraction; both arms fail functionality, and this batch contains no fresh-task or correct-draft protection evidence."
+  ],
+  "report_correction": {
+    "kind": "postrun_byte_identity_audit",
+    "initial_public_sha256": "c7ae411952cdb4f3d0f261d503ac7f25920a18d1014386597eb8c6d54c2e72a7",
+    "initial_public_retained_in_evidence_zip": true,
+    "audit": "PROMPT_BYTE_AUDIT.json",
+    "experiment_rerun": false,
+    "frozen_raw_summary_and_manifest_unchanged": true
+  }
+}
