@@ -57,7 +57,7 @@ def run(args):
     try:
         case = next(c for c in json.loads((HERE / "cases.json").read_text())["cases"] if c["id"] == "compensated_add9")
         family, tb, positive, negative = boundary.materials(case)
-        folder = args.out / "inputs/compensated_add9"
+        folder = args.out / "inputs" / family
         folder.mkdir(parents=True)
         for name, data in (("candidate.sv",case["source"]),("prompt.txt",case["prompt"]),("tb.sv",tb),("positive.sv",positive),("negative.sv",negative)):
             (folder / name).write_text(data, encoding="utf-8")

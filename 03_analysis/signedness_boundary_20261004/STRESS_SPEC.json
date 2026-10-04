@@ -1,7 +1,7 @@
 {
   "schema": "correct_candidate_real_review_D1",
   "status": "frozen_before_model_calls",
-  "base_commit": "5a90874d63a1cf5854805eb08c7cc0a9ab1c5ccf",
+  "base_commit": "71a152393ed1a458941c28e1bd84f93b3e7b832b",
   "new_model_call_limit": 4,
   "previously_observed_concurrent_round_calls": 18,
   "combined_calls_after_planned_completion": 22,
@@ -74,6 +74,7 @@
     "03_analysis/selective_runtime_integration_20261003/resource_guard.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
     "03_analysis/signedness_boundary_20261004/boundary_validation.py": "5ae227788d210f335a9761483d792187f1f6bf56b7208a7599a9dedbf54a3175",
     "03_analysis/signedness_boundary_20261004/cases.json": "72cf8b4751d1305c82fb526bff0d6b319de795de61c610653383a360388d071d",
-    "03_analysis/signedness_boundary_20261004/review_stress.py": "8d57602a9f7b6ef90edf46f9985b38aa6d58a8732cf4f8d7e84e9257dc6c9a1c"
-  }
+    "03_analysis/signedness_boundary_20261004/review_stress.py": "dad61ee624016285fe445a3c523b81d88f626a24908f27e61439599a7c44c370"
+  },
+  "preparation_failure": "First source 71a1523 stopped before EDA/model calls: the inherited oracle resolves ROOT/task/tb.sv, but generated material folder used subject id instead of family task id. New revision changes only that folder path; all prompts, candidates, oracle bytes, modes, call limits and expectations stay frozen. Failed run preserved."
 }
