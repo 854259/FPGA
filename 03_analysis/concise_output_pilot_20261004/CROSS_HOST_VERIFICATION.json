@@ -1,0 +1,22 @@
+{
+  "schema": "pilot_cross_host_verification_v1",
+  "archive_sha256": "3116cb02255fd9aa99eb6a2d6a823b96fa2296cedaf6b93a4abab8f6a6011587",
+  "local_result_sha256": "91ca1e57600693f0aa8dfaa8ea4bc4984e1042989a2fdc95f3ce71ae55414c67",
+  "cloud_result_sha256": "66386f3630dfa273d9cec13316741d965f449de1a7edcc3cd27a411e8d34b6e0",
+  "scores_rows_requests_decision_identical": true,
+  "differences": [
+    {
+      "path": "/totals/A/judge_s",
+      "local": 308.70000000000005,
+      "cloud": 308.7
+    },
+    {
+      "path": "/totals/C/judge_s",
+      "local": 296.00000000000006,
+      "cloud": 296.0
+    }
+  ],
+  "difference_scope": "floating-point cumulative judge elapsed last digits only; no altered run evidence or judgments",
+  "model_calls": 0,
+  "eda_calls": 0
+}

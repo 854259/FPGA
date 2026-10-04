@@ -1,0 +1,10 @@
+{
+  "schema": "readonly_audit_failure_v1",
+  "stage": "positive_synthesis_command_receipt",
+  "error": "KeyError: argv",
+  "reason": "Inherited owned_command receipt contains log/status/time but no argv; v1 incorrectly required argv. No EDA or experiment result changed.",
+  "auditor_sha256": "65ad8c8db9a71baf64b79e44b25c79a89db942f6a681e87fb7c7ba1cfa2138ca",
+  "archive_sha256": "1e40ef93e4a0b914c55479bcf5d5de193bfd065c1f93650069276c6c7771b5b8",
+  "model_calls": 0,
+  "eda_calls": 0
+}

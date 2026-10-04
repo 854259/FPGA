@@ -1,0 +1,542 @@
+{
+  "schema": "prompt_map_offline_audit_v2",
+  "evidence_valid": true,
+  "controls_valid": true,
+  "archive_sha256": "1e40ef93e4a0b914c55479bcf5d5de193bfd065c1f93650069276c6c7771b5b8",
+  "run_spec_sha256": "b0d0006c5c5d8f803d5e114fb6aa2ad92bd43d4a935d3d47d0372d0468b0467f",
+  "auditor_sha256": "e074bde9a5a89c05e1a0fa341b8e4e410212f4f3bf2e214836dd667fc74b2d55",
+  "cases": {
+    "mapped_care4": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 14,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 14,
+          "mismatches": 7,
+          "first": {
+            "inputs": {
+              "j": 0,
+              "k": 0,
+              "l": 0,
+              "n": 1
+            },
+            "output": "result",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_one": {
+          "status": "fail",
+          "checks": 14,
+          "mismatches": 7,
+          "first": {
+            "inputs": {
+              "j": 0,
+              "k": 0,
+              "l": 1,
+              "n": 0
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "1"
+          }
+        },
+        "inverted": {
+          "status": "fail",
+          "checks": 14,
+          "mismatches": 14,
+          "first": {
+            "inputs": {
+              "j": 0,
+              "k": 0,
+              "l": 0,
+              "n": 1
+            },
+            "output": "result",
+            "expected": 1,
+            "observed": "0"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "mapped_pairs4": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 7,
+          "first": {
+            "inputs": {
+              "p": 0,
+              "q": 0,
+              "r": 1,
+              "s": 1
+            },
+            "output": "result",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_one": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 9,
+          "first": {
+            "inputs": {
+              "p": 0,
+              "q": 0,
+              "r": 0,
+              "s": 0
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "1"
+          }
+        },
+        "inverted": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 16,
+          "first": {
+            "inputs": {
+              "p": 0,
+              "q": 0,
+              "r": 0,
+              "s": 0
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "mapped_parity3": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 8,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 4,
+          "first": {
+            "inputs": {
+              "u": 0,
+              "v": 0,
+              "w": 1
+            },
+            "output": "result",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_one": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 4,
+          "first": {
+            "inputs": {
+              "u": 0,
+              "v": 0,
+              "w": 0
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "1"
+          }
+        },
+        "inverted": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 8,
+          "first": {
+            "inputs": {
+              "u": 0,
+              "v": 0,
+              "w": 0
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "mapped_xor2": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 4,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 4,
+          "mismatches": 2,
+          "first": {
+            "inputs": {
+              "x": 0,
+              "y": 1
+            },
+            "output": "result",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_one": {
+          "status": "fail",
+          "checks": 4,
+          "mismatches": 2,
+          "first": {
+            "inputs": {
+              "x": 0,
+              "y": 0
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "1"
+          }
+        },
+        "inverted": {
+          "status": "fail",
+          "checks": 4,
+          "mismatches": 4,
+          "first": {
+            "inputs": {
+              "x": 0,
+              "y": 0
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "Prob050_kmap1": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 8,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 7,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 1
+            },
+            "output": "out",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_one": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 1,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0
+            },
+            "output": "out",
+            "expected": 0,
+            "observed": "1"
+          }
+        },
+        "inverted": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 8,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0
+            },
+            "output": "out",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 8,
+        "mismatches": 2,
+        "first": {
+          "inputs": {
+            "a": 0,
+            "b": 0,
+            "c": 1
+          },
+          "output": "out",
+          "expected": 1,
+          "observed": "0"
+        }
+      }
+    },
+    "Prob057_kmap2": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 10,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0,
+              "d": 0
+            },
+            "output": "out",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_one": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 6,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 1,
+              "d": 1
+            },
+            "output": "out",
+            "expected": 0,
+            "observed": "1"
+          }
+        },
+        "inverted": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 16,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0,
+              "d": 0
+            },
+            "output": "out",
+            "expected": 1,
+            "observed": "0"
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 16,
+        "mismatches": 6,
+        "first": {
+          "inputs": {
+            "a": 0,
+            "b": 1,
+            "c": 0,
+            "d": 0
+          },
+          "output": "out",
+          "expected": 1,
+          "observed": "0"
+        }
+      }
+    },
+    "Prob122_kmap4": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 8,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0,
+              "d": 1
+            },
+            "output": "out",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_one": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 8,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0,
+              "d": 0
+            },
+            "output": "out",
+            "expected": 0,
+            "observed": "1"
+          }
+        },
+        "inverted": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 16,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0,
+              "d": 0
+            },
+            "output": "out",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": {
+        "status": "pass",
+        "checks": 16,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "Prob125_kmap3": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 13,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 13,
+          "mismatches": 8,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 1,
+              "d": 0
+            },
+            "output": "out",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_one": {
+          "status": "fail",
+          "checks": 13,
+          "mismatches": 5,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0,
+              "d": 0
+            },
+            "output": "out",
+            "expected": 0,
+            "observed": "1"
+          }
+        },
+        "inverted": {
+          "status": "fail",
+          "checks": 13,
+          "mismatches": 13,
+          "first": {
+            "inputs": {
+              "a": 0,
+              "b": 0,
+              "c": 0,
+              "d": 0
+            },
+            "output": "out",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 13,
+        "mismatches": 6,
+        "first": {
+          "inputs": {
+            "a": 0,
+            "b": 1,
+            "c": 1,
+            "d": 0
+          },
+          "output": "out",
+          "expected": 0,
+          "observed": "1"
+        }
+      }
+    }
+  },
+  "natural_hypothesis_matched": true,
+  "probe_executions": 36,
+  "synth_executions": 8,
+  "model_calls": 0,
+  "audit_eda_calls": 0,
+  "model_changed": false,
+  "deployment_changed": false,
+  "new_full_score": false,
+  "limits": [
+    "Known public archived replay plus constructed calibration, not independent natural task generalization",
+    "Complete scalar textual maps only; partial/diagram/timing/inversion specs abstain",
+    "No model repair or production-path cost measured; next equal-budget generation/repair experiment still required",
+    "Controls are evaluation artifacts; no deterministic DUT answer generation in agent",
+    "Synthesis argv absent from inherited receipt; invocation identity bound by frozen source and exact Tcl plus native log, not independent argv observation"
+  ]
+}
