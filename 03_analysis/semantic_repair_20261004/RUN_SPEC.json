@@ -1,0 +1,32 @@
+{
+  "status": "frozen_before_eda",
+  "date": "2026-10-04",
+  "scope": "One interrupted fixed-candidate oracle recovery, then deterministic signed self-shift patch mechanism study and broader natural-error inventory",
+  "base_commit": "eae7ba595a590915e41745bec27a629135a5d3ea",
+  "protected_runtime": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
+  "selector_sha256": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+  "real_model_call_budget": 0,
+  "recovery": {
+    "task": "Prob016_m2014_q4j",
+    "label": "C0",
+    "solution_sha256": "4d448bfd0a7cae29d2c4c213d800b4e2dc12059809503eedb118055b3f359362",
+    "oracle_attempts": 1,
+    "new_generation": false,
+    "old_results_preserved": true
+  },
+  "patch": {
+    "inputs": ["prompt", "candidate_source"],
+    "action": "Wrap only selector-confirmed bare unsigned RHS operands in $signed; preserve all other bytes",
+    "development_targets": ["Known115Wrong", "Arithmetic11BoundaryWrong", "Arithmetic17BoundaryWrong"],
+    "regression_targets": ["Arithmetic11BoundaryCorrect", "Arithmetic17BoundaryCorrect", "Prob033_ece241_2014_q1c", "Prob016_m2014_q4j", "Prob009_popcount3", "Prob085_shift4", "Prob123_bugs_addsubz"],
+    "additional_existing_boundary_cases": "All 12 frozen R2b fixtures, including unsupported real errors; report abstention",
+    "acceptance": "Every supported development error passes its unchanged independent oracle after an exact local edit; every correct/unsupported candidate remains byte-identical; no environment error; input hashes and owned cleanup verified",
+    "progression": "Successful mechanism only authorizes further isolated validation; no runtime integration or deployment adoption"
+  },
+  "limits": [
+    "Only one natural development target; 11/17-bit materials and R2b cases are constructed and already observed",
+    "No full-set gain, independent competition generalization or end-to-end cost claim",
+    "Correct-candidate bypass does not prove an unrestricted model review is safe",
+    "No shared-model modification, service restart, instance shutdown or original evidence overwrite"
+  ]
+}

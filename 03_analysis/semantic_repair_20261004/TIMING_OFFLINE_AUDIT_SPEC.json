@@ -1,0 +1,15 @@
+{
+  "status": "frozen_after_http_stop_before_any_generated_grading",
+  "reason": "Preregistered pilot stopped on its 13th HTTP attempt after 120 seconds; 12 responses are complete and preserved, 4 planned outcomes are missing",
+  "input_selection": "Every completed response before the first timeout, without choosing by code or grade",
+  "expected_completed_rows": 12,
+  "expected_tasks": ["Prob045_edgedetect2", "Prob054_edgedetect", "Prob129_ece241_2013_q8"],
+  "labels_per_task": ["D0", "C0", "C1", "D1"],
+  "new_model_calls": 0,
+  "new_generation_or_retries": false,
+  "planned_checks": "12 independent prompt probes, 12 generated official grades, and 3 original official grades",
+  "scope": "Descriptive diagnostic audit of an interrupted pilot; excluded from full 16-response acceptance",
+  "acceptance": "Original roles and hashes verified; all available outputs graded without environment failure; source/oracle/official files and shared model unchanged; owned processes cleaned and slot released",
+  "missing": "No completed response for the Moore HDLC guard; no conclusion about that guard or the complete preregistered pilot",
+  "deployment_approved": false
+}

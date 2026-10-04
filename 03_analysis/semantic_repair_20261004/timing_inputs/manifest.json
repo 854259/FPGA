@@ -1,0 +1,61 @@
+{
+  "schema": "clocked_output_timing_pilot_v1",
+  "status": "frozen_before_model_calls",
+  "provenance": "seven-rule full156 archive, 2026-10-02; not the best eight-rule score archive",
+  "tasks": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect",
+    "Prob129_ece241_2013_q8",
+    "Prob140_fsm_hdlc"
+  ],
+  "real_model_call_budget": 16,
+  "arms": [
+    "C_plain_review",
+    "D_timing_contract_review"
+  ],
+  "order": [
+    "D0",
+    "C0",
+    "C1",
+    "D1"
+  ],
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 8192,
+  "trials_per_task_per_arm": 2,
+  "retries": 0,
+  "selection_scope": "two known natural errors and two known correct guards",
+  "acceptance": "validated positive/semantic-negative controls, verified original checkpoints, no guard regression; pilot evidence only",
+  "model_inputs": "public prompt, frozen candidate, generic feedback skill and arm instruction only",
+  "official_grading": "only after all sixteen outputs are frozen",
+  "files": {
+    "Prob045_edgedetect2/candidate.sv": "dad2b12af919ccfb709b96bae318f0d9761eac9113289f5d7bf8baddf91f029c",
+    "Prob045_edgedetect2/contract.json": "f2d0cd4289fdde2f1dfe916b6a4f55d011876dc3af8501060fa59900834bb5d8",
+    "Prob045_edgedetect2/negative.sv": "8ad6bf4b497d9a3e24e2b3054f622f00a7f9c6dd194dc929cf25aeaf3d44c2aa",
+    "Prob045_edgedetect2/positive.sv": "f948c413f29baa7ba3788830d8b16645b394c732ecd4e2cf945802f4df81020e",
+    "Prob045_edgedetect2/prompt.txt": "a324f434e49d6794fda35448ea1674d2090797c71c0734c8796d468789efb98a",
+    "Prob045_edgedetect2/tb.sv": "9d7e4c4642a1d89d73a6ae16859df8689b026a30c588a782d2554dba2caf797f",
+    "Prob054_edgedetect/candidate.sv": "dca2fccdc1623ce201f275c7b94549b7e8b5af74902b86b09d1bed43a53dbe34",
+    "Prob054_edgedetect/contract.json": "2888da4ce9733a4cbd2f92edb037c82b8213cc50c9ecf93659e3953fcae91354",
+    "Prob054_edgedetect/negative.sv": "a6fe45c7887a9f4c0261acefaabdd5fef663e58a7f5a4a42fc5b511b7049cb05",
+    "Prob054_edgedetect/positive.sv": "2642f36740bbf327e4cc85d7d0111b07704fb8d9f2a6073d44aad92002bb4cf7",
+    "Prob054_edgedetect/prompt.txt": "5dc6018c5561c7b133bae95f59d43407306592620b2816e7ca4c8a259c82c6f8",
+    "Prob054_edgedetect/tb.sv": "7db6c3a1962cd71965c0117b8ea9e214dd0e6ed97f5f5da85d40c945f68f9ef5",
+    "Prob129_ece241_2013_q8/candidate.sv": "01cd6e4b413a6cfb20d7927611b98601224b4a735df3bd8bcf0b4fd04ffbf605",
+    "Prob129_ece241_2013_q8/contract.json": "1f0de4ac8b58e008d26487ef9a98e211b1ce88e2c4ec4e42e6d9a66fdb46ac77",
+    "Prob129_ece241_2013_q8/negative.sv": "95c2b7c0e33218d981ca0aea52865580fb509b43bf4a8208546770f5aad4d4af",
+    "Prob129_ece241_2013_q8/positive.sv": "cacb17e6b167573b0285d2eac86a7b7b7efc7a68d52a6e990ff46d03567e6d03",
+    "Prob129_ece241_2013_q8/prompt.txt": "84b421b6b8b363ad0046d586dc5c5460a8d21e5e3994a78b2f0cdcdc9ee0d7c7",
+    "Prob129_ece241_2013_q8/tb.sv": "09186bdaa3d829206873f03cd62630edfa4c468149dbdc54c7975f58e3534f00",
+    "Prob140_fsm_hdlc/candidate.sv": "eb0410a977f7d0f8e5b785c231a4693620ae0dc2c9bd7cf5d438b5a77823c040",
+    "Prob140_fsm_hdlc/contract.json": "720ec435fa0a30fb86c5b1f45f076514727a805232f34ed25cb79b2e17fb05e2",
+    "Prob140_fsm_hdlc/negative.sv": "4d74eef990c5741576e0e0f71c93053fc0f55b25030def692349386ca7398634",
+    "Prob140_fsm_hdlc/positive.sv": "d2e1e3bc9bc0f466fac2534c3fec4fe1a588912073da1d225c06b494be696b57",
+    "Prob140_fsm_hdlc/prompt.txt": "8cccb78555aa84398c381d96b7385e3eee9b34333b7bc5807e6afc38c216eead",
+    "Prob140_fsm_hdlc/tb.sv": "babad2cd6422e294ed1b52b2d8a63c1b07841ec5fa12fd83403d78a26f3cb7a0"
+  },
+  "limits": [
+    "tiny known development set; no held-out, full-set, initial-generation or end-to-end claim",
+    "no runtime adoption without broader independent evaluation"
+  ]
+}

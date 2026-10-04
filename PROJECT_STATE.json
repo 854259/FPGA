@@ -1,5 +1,97 @@
 {
   "schema_version": 1,
+  "research_cycle_20261004": {
+    "status": "bounded_cycle_completed_with_stopped_model_pilot_and_completed_offline_audit",
+    "source": "direct_user_request_to_start",
+    "branch": "research/semantic-repair-20261004",
+    "base_commit": "eae7ba595a590915e41745bec27a629135a5d3ea",
+    "result": "03_analysis/semantic_repair_20261004/RESULTS.json",
+    "inventory": "03_analysis/semantic_repair_20261004/ERROR_INVENTORY.json",
+    "real_model_client_attempts": 13,
+    "observed_responses": 12,
+    "new_calls_in_offline_recovery_or_audits": 0,
+    "formal_runtime_changed": false,
+    "baseline_changed": false,
+    "deployment_changed": false,
+    "new_fullset_score": false,
+    "signed_cast": {
+      "status": "narrow_development_mechanism_validated",
+      "cases": 22,
+      "real_probes": 27,
+      "repaired_supported_errors": 5,
+      "natural_error_tasks": 1,
+      "correct_candidates_byte_identical": 14,
+      "unsupported_errors_preserved": 3
+    },
+    "timing": {
+      "status": "stopped_on_13th_attempt_http_timeout",
+      "planned_calls": 16,
+      "completed_responses": 12,
+      "complete_original_pilot": false,
+      "missing_moore_guard": true,
+      "offline_audit_verified": true,
+      "control_repairs": 0,
+      "timing_instruction_repairs": 0,
+      "mealy_guard_regressions": 0,
+      "decision": "do_not_adopt_this_review_wording"
+    },
+    "extraction": {
+      "status": "research_only_compilation_recovery",
+      "changed_responses": 2,
+      "level_change": "L0_to_L1",
+      "functional_repairs": 0,
+      "remaining_responses_unchanged": 10,
+      "runtime_integrated": false
+    },
+    "recovery": {
+      "interrupted_oracle": "Prob016_C0",
+      "checks": 256,
+      "mismatches": 0,
+      "old_results_preserved": true,
+      "paired_control_repairs": 2,
+      "paired_checklist_repairs": 2
+    },
+    "environment": {
+      "first_offline_audit": "owned_synthesis_process_missing_existing_compatibility_library; preserved_segmentation_failure",
+      "same_candidate_recovered": "Prob129_L3_440_checks_0_mismatch",
+      "owned_cleanup_verified": true,
+      "own_slots_released": true,
+      "model_identity_unchanged": true
+    },
+    "tests": {
+      "research_local_tests": 12,
+      "passed": 12,
+      "formal_package_not_modified": true
+    },
+    "next_actions": [
+      "Broaden independent syntax and guard coverage for deterministic signed self-shift patch before isolated runtime integration",
+      "Replace ineffective generic timing review with executable local timing constraints or prompt-derived minimal counterexamples; zero-model validation first",
+      "Validate public truth-table/state-transition/neighbor-boundary mechanisms; preserve unclassified startup cases"
+    ],
+    "remaining_horizon": "about_one_month_user_reported",
+    "phase_allocation": "research_first_then_about_one_week_for_final_validation_delivery",
+    "automation_created": false
+  },
+  "cloud_snapshot_20261004": {
+    "utc": "2026-10-04T01:10:56.556622+00:00",
+    "model_health": {
+      "status": "ok"
+    },
+    "model_identity_unchanged": true,
+    "slots_processing": 0,
+    "ports": {
+      "8000": true,
+      "7860": false,
+      "7867": false
+    },
+    "own_slot_released": true,
+    "shared_slot_present": false,
+    "workspace_disk_free_gib": 10.16,
+    "cloud_instance_shutdown_or_model_restart": false,
+    "source": "direct_read_only_postflight_after_owned_experiments",
+    "formal_http_ready": false,
+    "package_integrity_verified_by_resource_guard": true
+  },
   "conversation_handoff_20261003": {
     "source": "user_requested_github_sync",
     "document": "05_handoff/CONVERSATION_HANDOFF_20261003.md",

@@ -1,0 +1,324 @@
+{
+  "schema": "natural_error_development_inventory_v1",
+  "date": "2026-10-04",
+  "tasks": 38,
+  "manual_mechanism_notes": 9,
+  "candidate_provenance": "seven-rule full156 archive 2026-10-02; hashes identify material, not current best-score samples",
+  "selection_provenance": "historical l1_forensics task membership only; official mismatch hints excluded from diagnoses and model prompts",
+  "rows": [
+    {
+      "task": "Prob034_dff8",
+      "prompt_sha256": "af4a3759be65a9c2ab59af1cd4b207a64bdf9528cc79953c96c8694ec46432d8",
+      "candidate_sha256": "26885ee6a660bfc65426fc72488d45b5348dfae4d58cea62fb151fd662754bd2",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob045_edgedetect2",
+      "prompt_sha256": "a324f434e49d6794fda35448ea1674d2090797c71c0734c8796d468789efb98a",
+      "candidate_sha256": "dad2b12af919ccfb709b96bae318f0d9761eac9113289f5d7bf8baddf91f029c",
+      "family": "clocked_output_pulse",
+      "observation": "The specification requires a whole-cycle change pulse; the archived assign expression depends directly on live in.",
+      "status": "prompt_probe_confirmed; completed_response_subset_plain_and_timing_review_both_no_functional_repairs"
+    },
+    {
+      "task": "Prob050_kmap1",
+      "prompt_sha256": "e32c77b94e20cf4bba3c5e32d8ef2c95406b84bc3c46679f93061b1ebcdde4b6",
+      "candidate_sha256": "d37c85265b82cd8cd5d6e6be1d4735ec4accace9ce39c08fefef9129fec4fbd9",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob053_m2014_q4d",
+      "prompt_sha256": "156b0927a00b17a96fef04c7bf2c331b5f8028aac9243115acad3a4473a4b6ef",
+      "candidate_sha256": "22482d6b9efa572f954c1664a67548e65787bc796b169bd357b56673fe19ed1d",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "prompt_sha256": "5dc6018c5561c7b133bae95f59d43407306592620b2816e7ca4c8a259c82c6f8",
+      "candidate_sha256": "dca2fccdc1623ce201f275c7b94549b7e8b5af74902b86b09d1bed43a53dbe34",
+      "family": "clocked_output_pulse",
+      "observation": "The specification requires a sampled rising-edge pulse; the archived assign expression depends directly on live in.",
+      "status": "prompt_probe_confirmed; completed_response_subset_plain_and_timing_review_both_no_functional_repairs"
+    },
+    {
+      "task": "Prob057_kmap2",
+      "prompt_sha256": "f29262adfbad53bce65307895f5843672ad59e916f0b78bc417317526eb0f7f6",
+      "candidate_sha256": "50049d5fd7db0cf687d3b79e8485b43293011f7937855ee2d0b9feb631a2f49d",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob062_bugs_mux2",
+      "prompt_sha256": "66ab950ad70efc33e0599cf07644a4fabd6cf4fc2b90c91099ce229ec85c0415",
+      "candidate_sha256": "d455933dbc77211fe4ff1995398cfd00b19488cf4982a71ab72b2a8f6ba71578",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob064_vector3",
+      "prompt_sha256": "ff98e7fba9109a1736b495bc5a2b9fe1c5e8f058e97fe511ecf1cb330c5b1da9",
+      "candidate_sha256": "2c24a16fc7d3b7f96ac594220d4d01a14eb25d7456416ca7773f34098cc8e18f",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob066_edgecapture",
+      "prompt_sha256": "b1898b09d8af0c9d7c2340e756eb24cfd24ff4d2987e69ed7d8843943d966464",
+      "candidate_sha256": "620c9f9ff778a87621edcf798b8d768d384c7d95a48293bc60b82f0b35097162",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob074_ece241_2014_q4",
+      "prompt_sha256": "0657a3b595a3caa3a20be1d59d028a757ab823cc4acc059f9a7543f687bc1346",
+      "candidate_sha256": "9e8f3a6debe1580b9b015b44070abf7a0fd236465b90ff094c41bba8832b41c8",
+      "family": "explicit_initial_condition",
+      "observation": "The prompt explicitly assumes flip-flops initially zero; archived q1/q2/q3 have no initialization.",
+      "status": "static_contradiction_needs_probe"
+    },
+    {
+      "task": "Prob078_dualedge",
+      "prompt_sha256": "7af1e9009de3c8b5433bf3dcfa3dca917f3a0dbc710d4b9d2a17840e8fc2896c",
+      "candidate_sha256": "f3d4cc5d25f3ede2902d2b9c1b1ae7a18cafabeaf4284bf298a46bfda93ca0f8",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob083_mt2015_q4b",
+      "prompt_sha256": "a510057c5c343e7e48708a60c3d0d8f861656c7be4c04628e5375d848eab0c69",
+      "candidate_sha256": "592aa23183f805e6adcd690e5c9dfb7a8e227004c1ea55d27ea476781654e6e4",
+      "family": "waveform_truth_table",
+      "observation": "All four input combinations appear in the prompt waveform, including 00 -> 1; archived x & y contradicts 00.",
+      "status": "static_contradiction_needs_probe"
+    },
+    {
+      "task": "Prob086_lfsr5",
+      "prompt_sha256": "161662a2c4c0b507de98adbbf7d186a5f6239342610cc024b4f1cb8c80904860",
+      "candidate_sha256": "e4446e9268ab1f6113e48a39ae8706c2e3263a56e287bac3132c0eb0042b0949",
+      "family": "state_neighbor_boundary",
+      "observation": "Independent historical prompt probe confirmed a highest-bit boundary error; generic state checklist left every candidate unchanged.",
+      "status": "previous_r3_negative_do_not_repeat_same_prompt"
+    },
+    {
+      "task": "Prob093_ece241_2014_q3",
+      "prompt_sha256": "bbc91388dace538e695edce9fa7b388e25b8ed803d0a2aed8a18c557c9e54a6f",
+      "candidate_sha256": "8d81f94c4b2cb7247238b2369ecd60db86fe5ad9980ba20644841379b7aac1a2",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob097_mux9to1v",
+      "prompt_sha256": "24e339d9938b94a16b94cfb4c90aa0bb9b7ae1263a9d8d038e2d1c67e6b609d7",
+      "candidate_sha256": "4321cb6ccefeb0fc464dcce6c7c1a639b75373ba44dc0dc7f0d495305411cd65",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob101_circuit4",
+      "prompt_sha256": "408ee7f610fb2735ab0df8eea70ecb83de5edcff971ff3dd0038015753401ab4",
+      "candidate_sha256": "e1c86dbb51483f731a5b8475b257866d6c7637f046a231bb13720a77da1b5419",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob104_mt2015_muxdff",
+      "prompt_sha256": "1827a64a8a8125705bece7354b0b1d0c736a08d1e4459d85a84db47d8db91325",
+      "candidate_sha256": "b1cc2ddbacc7828241d05139d6ddb4ca73595e288d0e32bc660bd947375512e4",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob108_rule90",
+      "prompt_sha256": "4630998fdc4009e15dcac0712ac56392621eb01a24ef5de09417f99fcf9b1508",
+      "candidate_sha256": "ce86d1344ffdb51f87926216dc3516588b788fba8310ba12739d690905b7b5d6",
+      "family": "neighbor_slice_boundary",
+      "observation": "Two neighbours and zero boundary are specified; archived right-shift concatenation repeats [510:0] rather than [511:1].",
+      "status": "static_contradiction_needs_probe"
+    },
+    {
+      "task": "Prob112_always_case2",
+      "prompt_sha256": "6a17eb818d48dab63be542a115dee4223fb7bd480ea9a2161ca8724aab15cc82",
+      "candidate_sha256": "39c728d07efbdae95ce6b40472a6c44e5f356867c2316a2fcf238faec64ee384",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob113_2012_q1g",
+      "prompt_sha256": "e9ac7787a9eb802b78b21b7b79b90df2aa137e9ccab9c11e7175eae7e010d234",
+      "candidate_sha256": "5532d50ef2f5c7f82d321e9988195eafe33adb4b0c4630c31b18c8c91cc99537",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob115_shift18",
+      "prompt_sha256": "2b1406045f6a92c759dc6b0de75ce7ffe7b44028c84e49534c9f4a2ce346566b",
+      "candidate_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+      "family": "signed_arithmetic_self_shift",
+      "observation": "Unsigned bare operand of >>> despite signed-fill specification; narrow deterministic cast validated separately.",
+      "status": "known_development_error_current_mechanism_validated"
+    },
+    {
+      "task": "Prob116_m2014_q3",
+      "prompt_sha256": "9c40c9be5f741d9678898b4e27c58737aed85873059f258eb3027706515f46ed",
+      "candidate_sha256": "d38bc8fc635784de5144abfdd0ea6bee85c9b48eeaf43563228fcfdcf76a4085",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob117_circuit9",
+      "prompt_sha256": "6a375fa69e8a987a777692d207c46e6c11b398f69b55a0e93408209e6719cb35",
+      "candidate_sha256": "1292022dd6ed39e5905675c742715949f3e914d73e5956e0278399932181032c",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob125_kmap3",
+      "prompt_sha256": "37401df28b4e3504067fb0115b58cc6986570ff453017a91733bcf57e3acee6b",
+      "candidate_sha256": "f0ebd044f6e813ae1d3d566dc54b30650daf19f4d299b6dcb828571c5d9dc42e",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob126_circuit6",
+      "prompt_sha256": "6e97111f20c9e8e87baaa2a0582eaff80e27e5d937088db91fef2aa358c78fc5",
+      "candidate_sha256": "fc8dd760cb2cc28df8e21d38816c9b204cbb320785b9257fc5a5adb6d96e7a9b",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob133_2014_q3fsm",
+      "prompt_sha256": "b78ad94474c88f937088cdf4fb5a2c1aa83fcd065e20de3d3ed84f77f625bfbf",
+      "candidate_sha256": "5acb621337ff31c45a9c882406513e7b35342fe448fce4538e23bca4c767330f",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob135_m2014_q6b",
+      "prompt_sha256": "02da5df3fa54157b706f445bb1e6a0d078c9c90b7af01218e0567187bb4d9d2d",
+      "candidate_sha256": "4eee6ce2dd1e6c2115d60d0dc1a6ec6c6494a943630eca373c2bd8e56f1011a9",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob137_fsm_serial",
+      "prompt_sha256": "fe3610ac99739ba5073e7eee30fcf190dea64cfbd7d564398b45deadd987b826",
+      "candidate_sha256": "ea07ad8430c73d446008d0854955d44a0d805b7f01a7c16361abd8609db5fc9d",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob139_2013_q2bfsm",
+      "prompt_sha256": "fd660ca7619ae0a5d8ebf262aadb5cb44555d509b453cf5d630204618d0a9bba",
+      "candidate_sha256": "9163aad02c8f408a6ba87abd40e289d00bc7f06b682b6905b33ab66574ee73d4",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob141_count_clock",
+      "prompt_sha256": "8202ef18eb77a58fb576ee9ecc5829e634fd5824fb521658c96f0d29dcccf661",
+      "candidate_sha256": "3bcf4a54a4339ef32b80a63a79f5b4bd5bb97d05af8b599a796a26195d1b360c",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob142_lemmings2",
+      "prompt_sha256": "dff9caac89ffa86372042cda54ca68f8388a2ca4f33f20092c3ef1db904bf466",
+      "candidate_sha256": "fae2b1a7f3f87809479f871dec41a32434e66c430cc4e7ffb0d2c9450d801e61",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob146_fsm_serialdata",
+      "prompt_sha256": "937a83f95389e73c9561b40f1305963b474e058b18f41949b3a7a54aae7b8395",
+      "candidate_sha256": "e310849bd3281cdb4e33630739d2a7443ffd71f824712440a769232fd0bfebde",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob149_ece241_2013_q4",
+      "prompt_sha256": "93563fc3ecec7a35eec28f4a4ed1e09393cf21ab8ae3c57cd0de1219bf1f0e8d",
+      "candidate_sha256": "1fe0f17712609a0e789e03aeb7f5c68d16785acafbd830543b2ed0ca1e1a7bb2",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob150_review2015_fsmonehot",
+      "prompt_sha256": "9c02d1cfaafd494a2696d041d713358e9df12ef080c8de0c352cee109417a1ad",
+      "candidate_sha256": "381ed5f9b1bfc0734b22d1ad075602ef429a573d10a1a9ee626b11ba639134a0",
+      "family": "transition_table_completeness",
+      "observation": "Explicit Count and Wait self-loops are absent from their archived next-state expressions.",
+      "status": "static_contradiction_needs_probe"
+    },
+    {
+      "task": "Prob152_lemmings3",
+      "prompt_sha256": "8f47979618d25d96a265a5ec368909605af99622c5a363b684972c80f1242273",
+      "candidate_sha256": "dac8ac571c2a6888f8d3521a107ee63731426f2fbf7c0e3ffd8635b2346763a2",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob153_gshare",
+      "prompt_sha256": "dfac7601e96bdcfacd43944bfcdd5c5677a4d9a68f56532a0608b525f54c36b4",
+      "candidate_sha256": "be689ede974a4a70c7f43b873a7dd37ab26146c677105b913e11de16625bbc3d",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    },
+    {
+      "task": "Prob154_fsm_ps2data",
+      "prompt_sha256": "4e1014fdeac229691b0bc294092df6c773209fe9378874af8180f58dc14453d8",
+      "candidate_sha256": "49341c2588ca226ae4cd4ea2682436bfddb78a78bcb162b4c7ae5b4505b503bb",
+      "family": "back_to_back_packet_timing",
+      "observation": "Archived completion-state transition appears to discard the next packet start; verify consecutive messages against the full public specification.",
+      "status": "hypothesis_needs_probe"
+    },
+    {
+      "task": "Prob155_lemmings4",
+      "prompt_sha256": "3b560fffdae139661d7ea2c5b8ae8264096aa939c433aac0b3ef7fa2e5fc62b9",
+      "candidate_sha256": "0cea42b89d5998fa14dceea658647b4296ee683e62a8838a10e0b7f52c6a0f1b",
+      "family": "unclassified",
+      "observation": "No current-cycle semantic diagnosis; do not invent one from first-mismatch time.",
+      "status": "unclassified"
+    }
+  ],
+  "next_queue": [
+    "Broaden independent syntax and guard coverage for deterministic signed self-shift patch before isolated runtime integration",
+    "Replace ineffective generic timing review with executable local timing constraints or prompt-derived minimal counterexamples; zero-model validation first",
+    "Validate public truth-table/state-transition/neighbor-boundary mechanisms; preserve unclassified startup cases"
+  ],
+  "limits": [
+    "38-task membership and candidate archive have separate provenance; not a new 38-task grade",
+    "Static contradictions are not simulation or official-score evidence",
+    "First-sample mismatches without specified initialization remain ambiguous"
+  ]
+}

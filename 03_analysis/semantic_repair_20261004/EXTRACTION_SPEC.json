@@ -1,0 +1,14 @@
+{
+  "status": "frozen_after_format_diagnosis_before_generated_official_grades",
+  "scope": "Exploratory extraction comparison on every 12 saved completed timing response",
+  "observation": "Two change-pulse replies put a partial always block before their only complete module; current shared baseline extraction takes that first fragment",
+  "inputs": "Raw response text only; no task ID, prompt, oracle, hidden reference or grade enters the alternative extractor",
+  "policy": "Use one unambiguous complete TopModule in supported fences; preserve official extraction on ambiguity, multiple modules, malformed code or plain output",
+  "old_extractor": "Untouched official baseline.py; no source or baseline deployment modification",
+  "new_model_calls": 0,
+  "selection": "All 12 available replies, not chosen by outcome; alternative outputs frozen before grading",
+  "environment_recovery": "Restore existing /workspace/team/udev-stub loader setting for owned synthesis processes; preserve first audit's segfault L2 evidence; reuse its two valid original L1 verdicts",
+  "checks": "Independent prompt probes and pinned official grading; reuse identical output verdicts; retain before/after grades",
+  "acceptance": "Only a development mechanism result; no complete 16-response pilot or Moore guard conclusion; no deployment or full-set score claim",
+  "runtime_integrated": false
+}
