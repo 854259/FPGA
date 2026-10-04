@@ -1,0 +1,161 @@
+{
+  "schema": "full156_independent_readonly_review_v1",
+  "updated_at": "2026-10-04T23:15:00+08:00",
+  "scope": "existing owner full156 known-regression substage; not comprehensive full batch",
+  "run_id": "full156_bundle_20261004_v1",
+  "source_commit_from_launch": "42da31d",
+  "source_spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+  "evidence_archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+  "audit_sha256": "f6e53edad6357cc8dcaabd86ed40f455c9e8cd45a2e6267da7005bb75911cdcf",
+  "auditor_sha256": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+  "verified_archive_files": 13098,
+  "archive_members": 13099,
+  "source_queue_complete": true,
+  "source_queue_completed_samples": 312,
+  "source_queue_process_state": "Z; finished, not running",
+  "started_at_utc": "2026-10-04T18:12:02.033928+08:00",
+  "finished_at_utc": "2026-10-04T22:46:23.59589+08:00",
+  "comprehensive_batch_complete": false,
+  "model": "Qwen3.6-27B-Q4_K_M; same shared local process",
+  "baseline_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+  "scores": {
+    "A": {
+      "tasks": 156,
+      "scored_tasks": 156,
+      "samples_per_task": 1,
+      "set_score": 0.7692,
+      "level_counts": {
+        "L0": 4,
+        "L1": 40,
+        "L3": 112
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 4157.9
+    },
+    "C": {
+      "tasks": 156,
+      "scored_tasks": 156,
+      "samples_per_task": 1,
+      "set_score": 0.7641,
+      "level_counts": {
+        "L0": 4,
+        "L1": 41,
+        "L3": 111
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 4125.5
+    }
+  },
+  "totals": {
+    "A": {
+      "samples": 156,
+      "request_attempts": 163,
+      "confirmed_responses": 163,
+      "unconfirmed_attempts": 0,
+      "deadlines": 0,
+      "solve_s": 3073.5725302742794,
+      "judge_s": 4157.9
+    },
+    "C": {
+      "samples": 156,
+      "request_attempts": 164,
+      "confirmed_responses": 163,
+      "unconfirmed_attempts": 1,
+      "deadlines": 1,
+      "solve_s": 3234.5669785831124,
+      "judge_s": 4125.5
+    }
+  },
+  "pair_counts": {
+    "tasks": 156,
+    "same_first_request": 156,
+    "same_first_reply": 153,
+    "C_accepted_helper_tasks": 0,
+    "C_accepted_extractions": 0,
+    "functional_repairs": 0,
+    "functional_regressions": 1,
+    "equal_level": 154,
+    "same_final_bytes": 151,
+    "repair_bypass_signals": 0
+  },
+  "extraction_decisions": {
+    "unchanged": 163
+  },
+  "changed_pairs": [
+    {
+      "task": "Prob086_lfsr5",
+      "A_level": 3,
+      "C_level": 0,
+      "same_first_request": true,
+      "same_first_reply_content": false,
+      "same_first_raw_response": false,
+      "C_accepted_helper": false,
+      "A_requests": 1,
+      "C_requests": 2,
+      "original_repair_bypass_signal": false,
+      "A_L3_C_regression": true
+    },
+    {
+      "task": "Prob153_gshare",
+      "A_level": 0,
+      "C_level": 1,
+      "same_first_request": true,
+      "same_first_reply_content": true,
+      "same_first_raw_response": false,
+      "C_accepted_helper": false,
+      "A_requests": 2,
+      "C_requests": 2,
+      "original_repair_bypass_signal": false,
+      "A_L3_C_regression": false
+    }
+  ],
+  "paired_quality_delta": -0.005128205128205128,
+  "descriptive_task_iid_normal95_ci": [
+    -0.017957013031939507,
+    0.00770060277552925
+  ],
+  "uncertainty_limit": "Exploratory paired normal interval assumes independent task differences; known public family overlap, only two discordances, no population/generalization guarantee.",
+  "nominal_task_ids": 156,
+  "independent_unseen_tasks": 0,
+  "effective_independent_design_families": null,
+  "queue_wall_seconds": 16461.561962,
+  "per_row_guard_seconds": 14751.56048950646,
+  "costs_scope": "Queue wall includes generation, judging, guards and between-row waits; preparation and postflight not included. 327 journal attempts, 326 received responses; one attempt actual POST unconfirmed.",
+  "diagnostic_conclusions": [
+    "No helper accepted in 163 C extraction decisions; functional gain 0, observed paired functional loss 1, mechanism attribution unsupported.",
+    "Prob086 C first reply length=8192 tokens in 281.155813s; original A stop=3670 tokens in126.948105s; C repair had no confirmed response before300s deadline.",
+    "Prob153 A L0 to C L1 is compile-only improvement, not functional repair; first replies match but repair requests differ in A/C diagnostic paths; identical after arm-path normalization.",
+    "No observed bypass signal here does not refute earlier J1 risk: accepted-helper path was never exercised."
+  ],
+  "decision": "do_not_promote_current_candidate",
+  "formal_deployment_changed": false,
+  "read_only_review_new_model_calls": 0,
+  "read_only_review_new_eda_calls": 0,
+  "next_existing_task": {
+    "id": "concise_output_pilot_20261004_v1",
+    "pid": 3305179,
+    "observed_at_utc": "2026-10-04T15:18:29.660045+00:00",
+    "completed_samples": 18,
+    "expected_samples": 24,
+    "spec_sha256": "105d05a41f304be3e5e029949c6bdf352d4dfc919c0aab8f7fa3922274d20398",
+    "scope": "known12-task paired engineering pilot only",
+    "helper_append_enabled": false
+  },
+  "next_actions": [
+    "Follow existing pilot; do not start a duplicate or change its frozen rule.",
+    "Evaluate prespecified quality, token, end-to-end solve cost, deadline and response completeness thresholds after complete.",
+    "If retained, freeze a new full candidate and independent-material/budget admission before comprehensive validation; pilot is not generalized gain.",
+    "Require path-invariant paired repair input controls before attributing future small repair gains; do not retrofit current evidence.",
+    "Keep N3 automatic aggregation deferred while existing serial AMD queue is active."
+  ],
+  "missing_for_comprehensive": [
+    "new matched official baseline",
+    "audited RTLLM model pairing",
+    "independent natural validation",
+    "important-candidate five samples",
+    "full budget/credits",
+    "formal32GB and final interface/offline/recovery checks"
+  ]
+}

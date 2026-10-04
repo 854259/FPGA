@@ -3114,14 +3114,20 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-04T18:18:32+08:00",
+      "checked_at": "2026-10-04T23:18:29+08:00",
       "own_live_processes": 0,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
       "full_experiment_running": false,
       "other_task_queue_running": true,
-      "other_task_queue_pid": 3061569,
-      "slot_must_not_be_cleared": true
+      "other_task_queue_pid": 3305179,
+      "other_task_queue_id": "concise_output_pilot_20261004_v1",
+      "other_task_completed_samples": 18,
+      "other_task_expected_samples": 24,
+      "progress_checked_at": "2026-10-04T23:18:29+08:00",
+      "slot_must_not_be_cleared": true,
+      "receipt": "05_handoff/independent_validation_20261004/full156_postflight/LATEST_LIVE_CHECK.json",
+      "slot_lock_present": true
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3136,11 +3142,11 @@
       "credits_verified": false,
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     },
-    "full156_started_scope": "R20261004-01 only; separate existing owner full156 regression queue is active",
+    "full156_started_scope": "R20261004-01 only; separate owner full156 regression completed312/312, candidate rejected",
     "other_task_full156_observation": {
       "id": "full156_bundle_20261004_v1",
       "queue_pid": 3061569,
-      "observed_completed_samples": 8,
+      "observed_completed_samples": 312,
       "expected_samples": 312,
       "arms": [
         "A",
@@ -3153,10 +3159,15 @@
       "run_source_commit_from_launch": "42da31d",
       "mutated": false,
       "scope": "known full156 paired regression substage; not the comprehensive batch",
-      "risk": "Static extraction gate can still bypass original successful repair; J1 not executed against this new candidate"
+      "risk": "Accepted-helper branch never exercised (0/163); no safety proof against J1 bypass; new causal attribution limited by response variation and diagnostic paths.",
+      "complete": true,
+      "queue_running": false,
+      "queue_process_state": "Z",
+      "decision": "do_not_promote_current_candidate",
+      "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T18:20:00+08:00",
+  "updated_at": "2026-10-04T23:18:29+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3405,7 +3416,47 @@
         "mutated": false,
         "scope": "known full156 paired regression substage; not the comprehensive batch",
         "risk": "Static extraction gate can still bypass original successful repair; J1 not executed against this new candidate"
+      },
+      "other_task_observation_scope": "historical initial18:18 snapshot; completed312/312 and rejected, see full156_readonly_review_20261004",
+      "current_serial_blocker": {
+        "id": "concise_output_pilot_20261004_v1",
+        "pid": 3305179,
+        "checked_at": "2026-10-04T23:18:29+08:00",
+        "completed_samples": 18,
+        "expected_samples": 24
       }
     }
+  },
+  "full156_readonly_review_20261004": {
+    "updated_at": "2026-10-04T23:15:00+08:00",
+    "status": "completed_existing_full156_regression_candidate_not_promoted",
+    "report": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.md",
+    "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json",
+    "private_local": "05_handoff/independent_validation_20261004/full156_postflight",
+    "source_spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+    "archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+    "samples": 312,
+    "task_ids": 156,
+    "independent_unseen_tasks": 0,
+    "effective_independent_design_families": null,
+    "A_weighted_score": 0.7692,
+    "C_weighted_score": 0.7641,
+    "A_L3": 112,
+    "C_L3": 111,
+    "functional_repairs": 0,
+    "functional_regressions": 1,
+    "accepted_helpers": 0,
+    "confirmed_model_responses": 326,
+    "unconfirmed_journal_attempts": 1,
+    "wall_s": 16461.561962,
+    "candidate_adopted": false,
+    "full_comprehensive_batch_complete": false,
+    "review_new_model_calls": 0,
+    "review_new_eda_calls": 0,
+    "next_existing_pilot_id": "concise_output_pilot_20261004_v1",
+    "next_pilot_pid": 3305179,
+    "observation_at": "2026-10-04T23:18:29+08:00",
+    "pilot_completed_samples": 18,
+    "pilot_expected_samples": 24
   }
 }
