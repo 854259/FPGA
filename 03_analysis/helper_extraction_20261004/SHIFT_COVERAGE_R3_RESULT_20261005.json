@@ -1,0 +1,39 @@
+{
+  "complete": true,
+  "passed": true,
+  "scope": "All frozen public156 prompts; applicability only, no fresh score",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "counts": {
+    "skip": 155,
+    "supported": 1
+  },
+  "supported": [
+    {
+      "task": "Prob115_shift18",
+      "prompt_sha256": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386",
+      "status": "supported",
+      "reason": null,
+      "width": 64,
+      "archived_original_level": 1,
+      "prior_signedness_development_task": true
+    }
+  ],
+  "supported_original_L3": 0,
+  "supported_outside_prior_signedness": 0,
+  "independent_natural_tasks": 0,
+  "full_batch_complete": false,
+  "candidate_sha256": "a1ce1552754c7c72d9c33b0f596937959bc392d305c3e956c266c5a4b2188157",
+  "archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+  "selector_only_sha256": "ede3fab5e15077b4cf0d58bef1f0bf632ecaa81c07cd17228bb8bf8c222b8766",
+  "elapsed_s": 0.14878829941153526,
+  "deployed": false,
+  "commit": "3650921d30c9ecd3662209c9853bc6f508ed0be0",
+  "ticket": 22,
+  "pid": 3384236,
+  "stage_pid": 3384241,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "own_slot_released": true,
+  "owned_cleanup_verified": true
+}

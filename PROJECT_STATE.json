@@ -3735,7 +3735,8 @@
     "stage_s": 6.12780055962503,
     "archive": "320b54dec2799b017213364df2c0f64dffae05e0fc0fa5fdcac21ee9ff002ac8",
     "members": 44,
-    "cleanup_verified": true
+    "cleanup_verified": true,
+    "next_decision": "R3 confirmed only the already-developed Prob115; retain component, no repeated model test or full-batch promotion"
   },
   "shift_coverage_R3_20261005": {
     "independent_natural_tasks": 0,
@@ -3744,8 +3745,22 @@
     "full_batch_complete": false,
     "selection_before_scores": true,
     "stage_limit_s": 60,
-    "status": "frozen_unrun",
+    "status": "completed_coverage_insufficient_for_new_model_expansion",
     "archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
-    "model_calls": 0
+    "model_calls": 0,
+    "source_commit": "3650921d30c9ecd3662209c9853bc6f508ed0be0",
+    "ticket": 22,
+    "pid": 3384236,
+    "stage_pid": 3384241,
+    "supported": 1,
+    "skipped": 155,
+    "supported_task": "Prob115_shift18",
+    "outside_prior_signedness": 0,
+    "original_correct_guards": 0,
+    "stage_s": 0.14878829941153526,
+    "archive": "e0630c586369ec1bd8cf7f359e621efe05de84111e2049dcab0c6e1be333cb72",
+    "members": 8,
+    "cleanup_verified": true,
+    "expand_model_calls": false
   }
 }
