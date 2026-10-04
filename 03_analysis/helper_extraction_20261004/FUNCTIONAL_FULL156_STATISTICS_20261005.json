@@ -1,0 +1,225 @@
+{
+  "complete": true,
+  "analysis_only": true,
+  "promotion_decision_changed": false,
+  "analysis_source_sha256": "7363e62aafc0868997222232a04a22c13dd63dbf1ca7994fd83c289ec6100245",
+  "inputs": {
+    "summary": "f187f33c9fe13dbb75184368b256a1a1fc5e7443727fa02658bc14eaa31a0c12",
+    "audit": "f7dc03028ea35fbe4ba0265b3b06f499fe5114a6bf6a33422632522702332a34",
+    "guard": "258e5df64225fd4d5815214d18873a61ad4d0c41f832a12d9f9093041583d31f",
+    "spec": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7"
+  },
+  "archived_evidence_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+  "primary": {
+    "tasks": 156,
+    "L3": {
+      "paired_tasks": 156,
+      "A_pass": 108,
+      "C_pass": 110,
+      "repairs": 2,
+      "harms": 0,
+      "unchanged": 154,
+      "net_delta": 0.01282051282051282,
+      "exploratory_net_95_interval": [
+        -0.026624997291397223,
+        0.051054471189012796
+      ],
+      "repair_rate_97_5_interval": [
+        0.0010740636202711262,
+        0.051054471189012796
+      ],
+      "harm_rate_97_5_interval": [
+        0.0,
+        0.02769906091166835
+      ],
+      "exact_mcnemar_p": 0.5,
+      "discordant_tasks": 2,
+      "inferential_assumptions": "Independent identically distributed task pairs; unverified for these development tasks",
+      "zero_discordance_is_not_equivalence": true
+    },
+    "simulation_pass": {
+      "paired_tasks": 156,
+      "A_pass": 108,
+      "C_pass": 110,
+      "repairs": 2,
+      "harms": 0,
+      "unchanged": 154,
+      "net_delta": 0.01282051282051282,
+      "exploratory_net_95_interval": [
+        -0.026624997291397223,
+        0.051054471189012796
+      ],
+      "repair_rate_97_5_interval": [
+        0.0010740636202711262,
+        0.051054471189012796
+      ],
+      "harm_rate_97_5_interval": [
+        0.0,
+        0.02769906091166835
+      ],
+      "exact_mcnemar_p": 0.5,
+      "discordant_tasks": 2,
+      "inferential_assumptions": "Independent identically distributed task pairs; unverified for these development tasks",
+      "zero_discordance_is_not_equivalence": true
+    },
+    "official_quality_mean": {
+      "A": 0.7448717948717949,
+      "C": 0.7564102564102564
+    },
+    "official_quality_delta": 0.011538461538461539,
+    "exploratory_weighted_95_hoeffding": [
+      -0.20593182685697436,
+      0.22900874993389742
+    ],
+    "weighted_interval_assumptions": "Independent task pairs in [-1,1]; unverified, conservative, not a generalization certificate",
+    "weighted_improvements": 3,
+    "weighted_regressions": 0,
+    "solve_seconds": {
+      "A": 3346.505632655695,
+      "C": 3183.479078486562
+    },
+    "judge_seconds": {
+      "A": 4011.5,
+      "C": 4071.1
+    },
+    "solve_seconds_delta": -163.0265541691333,
+    "paired_solve_delta_median_s": 9.129568934440613e-05,
+    "confirmed_responses": {
+      "A": 164,
+      "C": 166
+    },
+    "attempted_requests": {
+      "A": 166,
+      "C": 167
+    }
+  },
+  "identical_first_response_descriptive": {
+    "tasks": 155,
+    "L3": {
+      "paired_tasks": 155,
+      "A_pass": 108,
+      "C_pass": 110,
+      "repairs": 2,
+      "harms": 0,
+      "unchanged": 153,
+      "net_delta": 0.012903225806451613,
+      "exploratory_net_95_interval": [
+        -0.02679423862449415,
+        0.05137735553759798
+      ],
+      "repair_rate_97_5_interval": [
+        0.0010810118060641805,
+        0.05137735553759798
+      ],
+      "harm_rate_97_5_interval": [
+        0.0,
+        0.02787525043055833
+      ],
+      "exact_mcnemar_p": 0.5,
+      "discordant_tasks": 2,
+      "inferential_assumptions": "Independent identically distributed task pairs; unverified for these development tasks",
+      "zero_discordance_is_not_equivalence": true
+    },
+    "simulation_pass": {
+      "paired_tasks": 155,
+      "A_pass": 108,
+      "C_pass": 110,
+      "repairs": 2,
+      "harms": 0,
+      "unchanged": 153,
+      "net_delta": 0.012903225806451613,
+      "exploratory_net_95_interval": [
+        -0.02679423862449415,
+        0.05137735553759798
+      ],
+      "repair_rate_97_5_interval": [
+        0.0010810118060641805,
+        0.05137735553759798
+      ],
+      "harm_rate_97_5_interval": [
+        0.0,
+        0.02787525043055833
+      ],
+      "exact_mcnemar_p": 0.5,
+      "discordant_tasks": 2,
+      "inferential_assumptions": "Independent identically distributed task pairs; unverified for these development tasks",
+      "zero_discordance_is_not_equivalence": true
+    },
+    "official_quality_mean": {
+      "A": 0.7496774193548388,
+      "C": 0.76
+    },
+    "official_quality_delta": 0.01032258064516129,
+    "exploratory_weighted_95_hoeffding": [
+      -0.2078480969657681,
+      0.22849325825609065
+    ],
+    "weighted_interval_assumptions": "Independent task pairs in [-1,1]; unverified, conservative, not a generalization certificate",
+    "weighted_improvements": 2,
+    "weighted_regressions": 0,
+    "solve_seconds": {
+      "A": 3046.4934481941164,
+      "C": 3089.9212830662727
+    },
+    "judge_seconds": {
+      "A": 4009.4,
+      "C": 4063.2
+    },
+    "solve_seconds_delta": 43.42783487215638,
+    "paired_solve_delta_median_s": 0.0002936162054538727,
+    "confirmed_responses": {
+      "A": 163,
+      "C": 165
+    },
+    "attempted_requests": {
+      "A": 164,
+      "C": 166
+    }
+  },
+  "subset_is_not_primary_or_randomized": true,
+  "named_development_tasks": 156,
+  "independent_unseen_tasks": 0,
+  "effective_independent_families": null,
+  "guard_wall_seconds": 14725.964709594846,
+  "reported_stage_wall_seconds": 14725.56925216131,
+  "full_delivery_end_to_end_seconds": null,
+  "inference_cost_includes_generation_compile_and_runtime_feedback": true,
+  "full_competition_score_computed": false,
+  "new_official_baseline": false,
+  "five_samples": false,
+  "formal32GB_verified": false,
+  "full_batch_complete": false,
+  "limits": [
+    "Exploratory task-IID uncertainty; family correlation is unknown.",
+    "No universality, equivalence or zero-harm claim, including zero discordances.",
+    "L3 and simulation pass are separate; weighted quality is not binary correctness.",
+    "No resampling, stopping, runtime changes or automatic promotion."
+  ],
+  "resource_check_sha256": "3fbb5f577b8cc2f8a040ffc1513fe8c9264258b24ff12bad5184a9ec90b4c285",
+  "audited_gate": {
+    "evidence_valid": true,
+    "full156_evidence_valid": true,
+    "repairs": [
+      "Prob112_always_case2",
+      "Prob115_shift18"
+    ],
+    "regressions": [],
+    "unconfirmed_attempts": 3,
+    "solve_deadlines": [
+      {
+        "task": "Prob070_ece241_2013_q2",
+        "arm": "C"
+      },
+      {
+        "task": "Prob070_ece241_2013_q2",
+        "arm": "A"
+      },
+      {
+        "task": "Prob147_circuit10",
+        "arm": "A"
+      }
+    ],
+    "candidate_qualified_for_independent_validation": false
+  },
+  "audit_sha256": "f7dc03028ea35fbe4ba0265b3b06f499fe5114a6bf6a33422632522702332a34"
+}
