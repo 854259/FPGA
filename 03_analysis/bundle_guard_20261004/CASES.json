@@ -1,0 +1,146 @@
+[
+  {
+    "id": "flat_correct",
+    "task": "adder_8bit",
+    "answer": "inputs/flat_correct/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "pass",
+      "B": "pass",
+      "C": "pass"
+    },
+    "C_decision": "unchanged"
+  },
+  {
+    "id": "helper_after",
+    "task": "adder_8bit",
+    "answer": "inputs/helper_after/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "fail",
+      "B": "pass",
+      "C": "pass"
+    },
+    "C_decision": "candidate_accepted"
+  },
+  {
+    "id": "helper_first_fence",
+    "task": "adder_8bit",
+    "answer": "inputs/helper_first_fence/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "fail",
+      "B": "pass",
+      "C": "pass"
+    },
+    "C_decision": "candidate_accepted"
+  },
+  {
+    "id": "comment_source_switch",
+    "task": "adder_8bit",
+    "answer": "inputs/comment_source_switch/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "pass",
+      "B": "fail",
+      "C": "pass"
+    },
+    "C_decision": "original_top_not_prefix"
+  },
+  {
+    "id": "inactive_bad_helper",
+    "task": "adder_8bit",
+    "answer": "inputs/inactive_bad_helper/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "pass",
+      "B": "fail",
+      "C": "pass"
+    },
+    "C_decision": "candidate_source_error"
+  },
+  {
+    "id": "inactive_valid_helper",
+    "task": "adder_8bit",
+    "answer": "inputs/inactive_valid_helper/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "pass",
+      "B": "pass",
+      "C": "pass"
+    },
+    "C_decision": "candidate_accepted"
+  },
+  {
+    "id": "unused_helper",
+    "task": "adder_8bit",
+    "answer": "inputs/unused_helper/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "pass",
+      "B": "pass",
+      "C": "pass"
+    },
+    "C_decision": "unchanged"
+  },
+  {
+    "id": "duplicate_top",
+    "task": "adder_8bit",
+    "answer": "inputs/duplicate_top/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "pass",
+      "B": "pass",
+      "C": "pass"
+    },
+    "C_decision": "unchanged"
+  },
+  {
+    "id": "semantic_bad_helper",
+    "task": "adder_8bit",
+    "answer": "inputs/semantic_bad_helper/answer.txt",
+    "kind": "constructed_development",
+    "expected": {
+      "A": "fail",
+      "B": "fail",
+      "C": "fail"
+    },
+    "C_decision": "candidate_accepted"
+  },
+  {
+    "id": "natural16",
+    "task": "adder_16bit",
+    "answer": "inputs/natural16/answer.txt",
+    "kind": "known_natural_development_replay",
+    "expected": {
+      "A": "fail",
+      "B": "pass",
+      "C": "pass"
+    },
+    "C_decision": "candidate_accepted"
+  },
+  {
+    "id": "natural32",
+    "task": "adder_32bit",
+    "answer": "inputs/natural32/answer.txt",
+    "kind": "known_natural_development_replay",
+    "expected": {
+      "A": "fail",
+      "B": "fail",
+      "C": "fail"
+    },
+    "C_decision": "candidate_bounds_warning"
+  },
+  {
+    "id": "natural8",
+    "task": "adder_8bit",
+    "answer": "inputs/natural8/answer.txt",
+    "kind": "known_natural_development_replay",
+    "expected": {
+      "A": "fail",
+      "B": "fail",
+      "C": "fail"
+    },
+    "C_decision": "candidate_source_error"
+  }
+]

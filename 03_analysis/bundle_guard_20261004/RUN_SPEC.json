@@ -1,0 +1,210 @@
+{
+  "schema": "bundle_guard_challenge_v1",
+  "status": "frozen_before_any_new_cloud_eda",
+  "frozen_at_utc": "2026-10-04T07:12:15.582820+00:00",
+  "base_commit": "de2a47b52855613cf46aaf301811378d43eda33f",
+  "model_calls": 0,
+  "stage_timeout_s": 900,
+  "outer_timeout_s": 1200,
+  "checks": {
+    "adder_8bit": 131072,
+    "adder_16bit": 270978,
+    "adder_32bit": 135908
+  },
+  "source_hashes": {
+    ".gitattributes": "0b542705ce08819884d6340e2169e27d5e2de8ffabfd51b1e72100d6c931d1c1",
+    ".gitignore": "45b281657e8e72a5848eb6063200196e44fbb77143ab942980f096f83ac2aea7",
+    "CASES.json": "0bd3d5fe850a047ee145db03c7b16fd4b8d47f2a3f9e3a8ee02bb4c392cd7794",
+    "extract_bundle.py": "8a7ab290e1e15d4248fd166b9c587b5fea7fb2958265853aeffe50e335de6414",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "guarded_bundle.py": "99e61efea4648a5e8f660dffc4de4fde1ca823569a490d10c0667b94401414a1",
+    "inputs/adder_16bit/negative.sv": "3d0e5fa7732f858c8172875a59f3a955d95cffb2acd285f4775c0d12b7293568",
+    "inputs/adder_16bit/positive.sv": "ff727c4d189d3f12dfb162c2276cf2c93460ee8f4fcd754f1232158f580a7781",
+    "inputs/adder_16bit/tb.sv": "8da17e0fb4d8ceefa2586a433d6753f589a540d051bb36a2a31ced20b4f82fa4",
+    "inputs/adder_32bit/negative.sv": "b258d028d39aed11511ff4083d5e501783d48048a7dcdc58ad0496bcdde91ebe",
+    "inputs/adder_32bit/positive.sv": "2f49d0a9354fcf2545f9f84964dfbc30273b9708b509e5bef4cb8a55c7d6e471",
+    "inputs/adder_32bit/tb.sv": "a206b914fa184cd6c6996f39e395d6a413e7563590801b85df3469b300dc84f6",
+    "inputs/adder_8bit/negative.sv": "10686abc2553a1677352a813566f22a82e2c5473b7bb989a401c2ca419f33822",
+    "inputs/adder_8bit/positive.sv": "6ed53c5e612a97e1be343ffab41194d720f78fec83b5fdb16c3bbe4cc3382145",
+    "inputs/adder_8bit/tb.sv": "d42f850d2e0137a67d348267eb165a8be58f80f45caf9cb02067021df0b4277c",
+    "inputs/comment_source_switch/answer.txt": "e54f4383fd18df2d4a3c6c36d960e1e130d014ef754b372822ebb27adc6672c3",
+    "inputs/duplicate_top/answer.txt": "3ffb69582dbee20ef856d21779db4154c4387d1f55b51d7d9ef8f5303b00df14",
+    "inputs/flat_correct/answer.txt": "200bf5f9d2702eb3de372c57c0951f3fc8c9b32f16c869d51e8f731324864ff4",
+    "inputs/helper_after/answer.txt": "c55c77b768b2724df28b1e2c54d1c35d9ee1926f3a55c3c209ff0ce077ac8c13",
+    "inputs/helper_first_fence/answer.txt": "1360ad7230cc93d2e9b6a3e845a982c7e28962b8b1b14acf78f914385b5a0b0a",
+    "inputs/inactive_bad_helper/answer.txt": "5cd7c158efa767db17bb9d08a5e68af222f2e12ed583c5d8debfbb599ff50a9d",
+    "inputs/inactive_valid_helper/answer.txt": "9a4b121207b8f73aaa3220a1044aecd470f99e4754c2a8b39bb85efd4d4f66ec",
+    "inputs/natural16/answer.txt": "d70d2f87a049ad8046f5dfa8873df74d15da39d6797ecfcc7bb81a908358d87f",
+    "inputs/natural32/answer.txt": "4381c49d46699cd1fef5593493bc7737024a9d546121effb08597c2412a05d84",
+    "inputs/natural8/answer.txt": "8eeb34b4d3c0fd5e029f31eac27bec9bb9f5eeaa6c50b33151184c6e9c396b6d",
+    "inputs/semantic_bad_helper/answer.txt": "5d31ebd5d258e098fb9443fb4b30f7fe6dd0f6059d9d9f536a40b9d0aeaf07bb",
+    "inputs/unused_helper/answer.txt": "9a6d87f39be359bc1bb50b4b6127d47cecf11bce8d854f95be6fe387da289c3c",
+    "lexical_mask.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "LOCAL_PREFLIGHT.json": "83db3410c8609f25e38bb6d7fe7ac20b6c22a62d1c6560712e06fc05f2c1c860",
+    "pilot.py": "c125c3a6438218ffdfad69e8c6d257bc7165b6c19f5788bcac292083a676cc9c"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "baseline_extract.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51"
+  },
+  "cases": [
+    {
+      "id": "flat_correct",
+      "task": "adder_8bit",
+      "answer": "inputs/flat_correct/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "pass",
+        "B": "pass",
+        "C": "pass"
+      },
+      "C_decision": "unchanged"
+    },
+    {
+      "id": "helper_after",
+      "task": "adder_8bit",
+      "answer": "inputs/helper_after/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "C_decision": "candidate_accepted"
+    },
+    {
+      "id": "helper_first_fence",
+      "task": "adder_8bit",
+      "answer": "inputs/helper_first_fence/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "C_decision": "candidate_accepted"
+    },
+    {
+      "id": "comment_source_switch",
+      "task": "adder_8bit",
+      "answer": "inputs/comment_source_switch/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "pass",
+        "B": "fail",
+        "C": "pass"
+      },
+      "C_decision": "original_top_not_prefix"
+    },
+    {
+      "id": "inactive_bad_helper",
+      "task": "adder_8bit",
+      "answer": "inputs/inactive_bad_helper/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "pass",
+        "B": "fail",
+        "C": "pass"
+      },
+      "C_decision": "candidate_source_error"
+    },
+    {
+      "id": "inactive_valid_helper",
+      "task": "adder_8bit",
+      "answer": "inputs/inactive_valid_helper/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "pass",
+        "B": "pass",
+        "C": "pass"
+      },
+      "C_decision": "candidate_accepted"
+    },
+    {
+      "id": "unused_helper",
+      "task": "adder_8bit",
+      "answer": "inputs/unused_helper/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "pass",
+        "B": "pass",
+        "C": "pass"
+      },
+      "C_decision": "unchanged"
+    },
+    {
+      "id": "duplicate_top",
+      "task": "adder_8bit",
+      "answer": "inputs/duplicate_top/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "pass",
+        "B": "pass",
+        "C": "pass"
+      },
+      "C_decision": "unchanged"
+    },
+    {
+      "id": "semantic_bad_helper",
+      "task": "adder_8bit",
+      "answer": "inputs/semantic_bad_helper/answer.txt",
+      "kind": "constructed_development",
+      "expected": {
+        "A": "fail",
+        "B": "fail",
+        "C": "fail"
+      },
+      "C_decision": "candidate_accepted"
+    },
+    {
+      "id": "natural16",
+      "task": "adder_16bit",
+      "answer": "inputs/natural16/answer.txt",
+      "kind": "known_natural_development_replay",
+      "expected": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "C_decision": "candidate_accepted"
+    },
+    {
+      "id": "natural32",
+      "task": "adder_32bit",
+      "answer": "inputs/natural32/answer.txt",
+      "kind": "known_natural_development_replay",
+      "expected": {
+        "A": "fail",
+        "B": "fail",
+        "C": "fail"
+      },
+      "C_decision": "candidate_bounds_warning"
+    },
+    {
+      "id": "natural8",
+      "task": "adder_8bit",
+      "answer": "inputs/natural8/answer.txt",
+      "kind": "known_natural_development_replay",
+      "expected": {
+        "A": "fail",
+        "B": "fail",
+        "C": "fail"
+      },
+      "C_decision": "candidate_source_error"
+    }
+  ],
+  "part": "xczu3eg-sbva484-1-e",
+  "acceptance": "All controls valid and 12 predeclared A/B/C outcomes and decisions hold. Only authorizes later full-flow validation, not adoption.",
+  "limits": [
+    "9 constructed development challenges, not independent natural protection evidence.",
+    "3 old natural replies are development replays, no new sampling or new score.",
+    "C preserves originally selected TopModule bytes when present, adds only reply-existing helpers, and rejects actual candidate-only source errors or VRFC10-3705 warnings.",
+    "Compile success is not functional proof; semantic_bad_helper explicitly remains failing after C.",
+    "Environment/supervision/unclassified error stops stage; no conversion into source failure.",
+    "A/B/C probes never enter extraction/gate; gate is decided before the case is graded.",
+    "No synthesis here; existing natural16 synthesis stays earlier evidence only.",
+    "Dual shared locks, independent directory; no formal runtime/baseline/judge/model/instance changes."
+  ]
+}

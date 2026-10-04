@@ -1,5 +1,282 @@
 {
   "schema_version": 1,
+  "bundle_guard_20261004": {
+    "schema": "bundle_guard_audit_v1",
+    "status": "complete_verified",
+    "model_calls": 0,
+    "controls_valid": 6,
+    "actual_probes": 42,
+    "candidate_gate_commands": 15,
+    "synthesis_calls": 0,
+    "groups": {
+      "constructed_development": {
+        "count": 9,
+        "passes": {
+          "A": 6,
+          "B": 6,
+          "C": 8
+        },
+        "B_regressions": 2,
+        "C_regressions": 0,
+        "original_passes_with_raw_changes": 3
+      },
+      "known_natural_development_replay": {
+        "count": 3,
+        "passes": {
+          "A": 0,
+          "B": 1,
+          "C": 1
+        },
+        "B_regressions": 0,
+        "C_regressions": 0,
+        "original_passes_with_raw_changes": 0
+      }
+    },
+    "rows": [
+      {
+        "id": "flat_correct",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "pass",
+        "B": "pass",
+        "C": "pass",
+        "decision": "unchanged",
+        "A_mismatches": 0,
+        "B_mismatches": 0,
+        "C_mismatches": 0,
+        "A_B_changed": false,
+        "A_C_changed": false,
+        "gate_commands": 0
+      },
+      {
+        "id": "helper_after",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "fail",
+        "B": "pass",
+        "C": "pass",
+        "decision": "candidate_accepted",
+        "A_mismatches": null,
+        "B_mismatches": 0,
+        "C_mismatches": 0,
+        "A_B_changed": true,
+        "A_C_changed": true,
+        "gate_commands": 2
+      },
+      {
+        "id": "helper_first_fence",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "fail",
+        "B": "pass",
+        "C": "pass",
+        "decision": "candidate_accepted",
+        "A_mismatches": null,
+        "B_mismatches": 0,
+        "C_mismatches": 0,
+        "A_B_changed": true,
+        "A_C_changed": true,
+        "gate_commands": 2
+      },
+      {
+        "id": "comment_source_switch",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "pass",
+        "B": "fail",
+        "C": "pass",
+        "decision": "original_top_not_prefix",
+        "A_mismatches": 0,
+        "B_mismatches": 124511,
+        "C_mismatches": 0,
+        "A_B_changed": true,
+        "A_C_changed": false,
+        "gate_commands": 0
+      },
+      {
+        "id": "inactive_bad_helper",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "pass",
+        "B": "fail",
+        "C": "pass",
+        "decision": "candidate_source_error",
+        "A_mismatches": 0,
+        "B_mismatches": null,
+        "C_mismatches": 0,
+        "A_B_changed": true,
+        "A_C_changed": false,
+        "gate_commands": 1
+      },
+      {
+        "id": "inactive_valid_helper",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "pass",
+        "B": "pass",
+        "C": "pass",
+        "decision": "candidate_accepted",
+        "A_mismatches": 0,
+        "B_mismatches": 0,
+        "C_mismatches": 0,
+        "A_B_changed": true,
+        "A_C_changed": true,
+        "gate_commands": 2
+      },
+      {
+        "id": "unused_helper",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "pass",
+        "B": "pass",
+        "C": "pass",
+        "decision": "unchanged",
+        "A_mismatches": 0,
+        "B_mismatches": 0,
+        "C_mismatches": 0,
+        "A_B_changed": false,
+        "A_C_changed": false,
+        "gate_commands": 0
+      },
+      {
+        "id": "duplicate_top",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "pass",
+        "B": "pass",
+        "C": "pass",
+        "decision": "unchanged",
+        "A_mismatches": 0,
+        "B_mismatches": 0,
+        "C_mismatches": 0,
+        "A_B_changed": false,
+        "A_C_changed": false,
+        "gate_commands": 0
+      },
+      {
+        "id": "semantic_bad_helper",
+        "task": "adder_8bit",
+        "kind": "constructed_development",
+        "A": "fail",
+        "B": "fail",
+        "C": "fail",
+        "decision": "candidate_accepted",
+        "A_mismatches": null,
+        "B_mismatches": 124511,
+        "C_mismatches": 124511,
+        "A_B_changed": true,
+        "A_C_changed": true,
+        "gate_commands": 2
+      },
+      {
+        "id": "natural16",
+        "task": "adder_16bit",
+        "kind": "known_natural_development_replay",
+        "A": "fail",
+        "B": "pass",
+        "C": "pass",
+        "decision": "candidate_accepted",
+        "A_mismatches": null,
+        "B_mismatches": 0,
+        "C_mismatches": 0,
+        "A_B_changed": true,
+        "A_C_changed": true,
+        "gate_commands": 2
+      },
+      {
+        "id": "natural32",
+        "task": "adder_32bit",
+        "kind": "known_natural_development_replay",
+        "A": "fail",
+        "B": "fail",
+        "C": "fail",
+        "decision": "candidate_bounds_warning",
+        "A_mismatches": null,
+        "B_mismatches": 135908,
+        "C_mismatches": null,
+        "A_B_changed": true,
+        "A_C_changed": false,
+        "gate_commands": 2
+      },
+      {
+        "id": "natural8",
+        "task": "adder_8bit",
+        "kind": "known_natural_development_replay",
+        "A": "fail",
+        "B": "fail",
+        "C": "fail",
+        "decision": "candidate_source_error",
+        "A_mismatches": null,
+        "B_mismatches": null,
+        "C_mismatches": null,
+        "A_B_changed": true,
+        "A_C_changed": false,
+        "gate_commands": 2
+      }
+    ],
+    "elapsed_s": 226.08834266662598,
+    "guard": {
+      "started_at_utc": "2026-10-04T07:13:23.144397+00:00",
+      "finished_at_utc": "2026-10-04T07:17:09.499041+00:00",
+      "elapsed_s": 226.24009061325341,
+      "stage_rc": 0,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "model_idle_after": {
+        "health_status": "ok",
+        "model_name": "Qwen3.6-27B-Q4_K_M",
+        "slot_count": 1,
+        "processing_slots": 0,
+        "model_pid_owns_port": true
+      }
+    },
+    "evidence": {
+      "sha256": "78094a0717d7e0be6e9c48e4263203996ed531eaafaa7ee39d6c12acbe4137aa",
+      "manifest_files": 396,
+      "all_hashes_verified": true
+    },
+    "postflight": {
+      "utc": "2026-10-04T07:17:56.564761+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": false,
+      "slot_owner": null,
+      "own_slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "workspace_free_gib": 10.020393371582031,
+      "model_pid": 2013333,
+      "instance_shutdown_or_model_restart": false
+    },
+    "adoption": false,
+    "new_score": false,
+    "independent_natural_correct_guard_count": 0,
+    "full_flow_or_cost_benefit_verified": false,
+    "limits": [
+      "9 constructed development challenges, not independent natural protection evidence.",
+      "3 old natural replies are development replays, no new sampling or new score.",
+      "C preserves originally selected TopModule bytes when present, adds only reply-existing helpers, and rejects actual candidate-only source errors or VRFC10-3705 warnings.",
+      "Compile success is not functional proof; semantic_bad_helper explicitly remains failing after C.",
+      "Environment/supervision/unclassified error stops stage; no conversion into source failure.",
+      "A/B/C probes never enter extraction/gate; gate is decided before the case is graded.",
+      "No synthesis here; existing natural16 synthesis stays earlier evidence only.",
+      "Dual shared locks, independent directory; no formal runtime/baseline/judge/model/instance changes."
+    ],
+    "candidate_gate_elapsed_s": 17.38920272514224,
+    "report": "03_analysis/bundle_guard_20261004/README.md",
+    "result": "03_analysis/bundle_guard_20261004/RESULTS.json",
+    "next_plan": "03_analysis/bundle_guard_20261004/NEXT.md",
+    "branch": "codex/autonomous-rtl-20261004",
+    "formal_runtime_integrated": false,
+    "quota_stop_used_percent": 97,
+    "collection_note": "03_analysis/bundle_guard_20261004/COLLECTION_NOTE.json"
+  },
   "helper_contracts_20261004": {
     "schema": "helper_three_contract_audit_v1",
     "status": "complete_verified",
@@ -241,7 +518,7 @@
     "workspace": "E:\\26qiansai\\worktrees\\autonomous-rtl-20261004",
     "formal_runtime_integrated": false,
     "quota_stop_used_percent": 97,
-    "next_step": "Correct-source regression challenges and original TopModule byte preservation, changed-only candidate compilation/bounds-warning rejection; then full-flow paired cost validation. No deployment."
+    "next_step": "Correct-source development guard challenge completed; raw8a regresses2/6 original-correct constructed cases, guardedC0/6. Next full-flow paired cost validation; no integration."
   },
   "compiler_inventory_20261004": {
     "status": "complete_verified_readonly_inventory",
@@ -1234,7 +1511,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-04T14:30:00+08:00",
+  "last_updated": "2026-10-04T15:21:43+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",

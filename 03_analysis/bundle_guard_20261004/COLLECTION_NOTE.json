@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-04T07:18:59.360290+00:00",
+  "phase": "local_collection_before_offline_audit",
+  "error": "Initial local ZIP read attempted before scp session 59799 completed; PermissionError, then ARCHIVE.json absent. No extraction or audit ran.",
+  "correction": "Waited for existing transfer exit0; exact ZIP SHA verified before safe extraction.",
+  "experiment_input_or_result_changed": false,
+  "extra_eda_or_model_calls": 0,
+  "offline_audit_initial_failure": {
+    "error": "AssertionError comparing replay executable path; Windows Path produced backslashes, raw Linux argv has forward slashes.",
+    "initial_auditor": "failure_evidence/summarize.initial.py",
+    "correction": "Normalize only replay executable separators, preserve exact remaining argv and result/log identities.",
+    "frozen_execution_source_changed": false,
+    "initial_auditor_sha256": "bc0f5def95eca63a8c025692aa7e7d25c7b48460b2c12061aff0e619d16fcd63"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "utc": "2026-10-04T07:12:15.575820+00:00",
+  "syntax_checked": true,
+  "rows": [
+    {
+      "id": "flat_correct",
+      "proposal_decision": "unchanged",
+      "compile_required": false
+    },
+    {
+      "id": "helper_after",
+      "proposal_decision": "candidate_pending",
+      "compile_required": true
+    },
+    {
+      "id": "helper_first_fence",
+      "proposal_decision": "candidate_pending",
+      "compile_required": true
+    },
+    {
+      "id": "comment_source_switch",
+      "proposal_decision": "original_top_not_prefix",
+      "compile_required": false
+    },
+    {
+      "id": "inactive_bad_helper",
+      "proposal_decision": "candidate_pending",
+      "compile_required": true
+    },
+    {
+      "id": "inactive_valid_helper",
+      "proposal_decision": "candidate_pending",
+      "compile_required": true
+    },
+    {
+      "id": "unused_helper",
+      "proposal_decision": "unchanged",
+      "compile_required": false
+    },
+    {
+      "id": "duplicate_top",
+      "proposal_decision": "unchanged",
+      "compile_required": false
+    },
+    {
+      "id": "semantic_bad_helper",
+      "proposal_decision": "candidate_pending",
+      "compile_required": true
+    },
+    {
+      "id": "natural16",
+      "proposal_decision": "candidate_pending",
+      "compile_required": true
+    },
+    {
+      "id": "natural32",
+      "proposal_decision": "candidate_pending",
+      "compile_required": true
+    },
+    {
+      "id": "natural8",
+      "proposal_decision": "candidate_pending",
+      "compile_required": true
+    }
+  ],
+  "real_tool_calls": 0,
+  "model_calls": 0
+}
