@@ -5186,7 +5186,7 @@
     "own_failed_ticket_released": true
   },
   "repair_context_pilot_v2_20261005": {
-    "status": "frozen32_local_linux31_actual_environment_verified_not_submitted",
+    "status": "actual_fifo39_running_first_original_judge_completed",
     "spec_sha256": "f05cef4e81bc3b47453073678b3dd9f79c5d6ec31cd289be91812bc6ee26422b",
     "assets": 32,
     "local_tests_passed": 31,
@@ -5200,6 +5200,13 @@
     "prior_failed_trial_samples_reused": 0,
     "adoption": false,
     "report": "03_analysis/repair_context_pilot_v2_20261005/README.md",
-    "goal_status": "active"
+    "goal_status": "active",
+    "ticket": 39,
+    "monitor_pid": 3659716,
+    "monitor_starttime": "843151149",
+    "queued_at_utc": "2026-10-04T23:51:02.014005+00:00",
+    "observed_samples": 1,
+    "observed_model_requests": 1,
+    "final_score_available": false
   }
 }
