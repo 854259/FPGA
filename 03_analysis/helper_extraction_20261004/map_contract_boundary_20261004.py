@@ -63,11 +63,14 @@ def main():
     ap.add_argument("--parser-sha256", required=True)
     ap.add_argument("--resource-check", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--regression-manifest", type=Path)
+    ap.add_argument("--regression-manifest-sha256")
     args = ap.parse_args()
     assert sys.platform == "linux"
     sys.dont_write_bytecode = True
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
     assert sha(args.parser) == args.parser_sha256
+    assert bool(args.regression_manifest) == bool(args.regression_manifest_sha256)
     resource = json.loads(args.resource_check.read_text())
     assert resource["resource_idle"] is True
     assert sha(Path(resource["slot_lock_path"])) == resource["slot_lock_sha256"]
@@ -95,6 +98,20 @@ def main():
                 prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(),
                 expected="abstain", actual_status=got["status"],
                 passed=got["status"] == "abstain", reason=got.get("reason")))
+    if args.regression_manifest:
+        assert sha(args.regression_manifest) == args.regression_manifest_sha256
+        manifest = json.loads(args.regression_manifest.read_text())
+        assert len(manifest) == 8
+        for entry in manifest:
+            prompt_path, contract_path = Path(entry["prompt"]), Path(entry["contract"])
+            assert sha(prompt_path) == entry["prompt_sha256"]
+            assert sha(contract_path) == entry["contract_sha256"]
+            got = module.parse(prompt_path.read_text())
+            expected = json.loads(contract_path.read_text())
+            rows.append(dict(kind="existing_calibrated_contract_regression",
+                prompt_sha256=entry["prompt_sha256"], expected="unchanged_supported_contract",
+                actual_status=got["status"], passed=got == expected,
+                reason=got.get("reason")))
     assert sha(args.parser) == args.parser_sha256
     assert time.monotonic() - tick < 30
     args.out.mkdir(exist_ok=False, parents=True)
@@ -103,6 +120,8 @@ def main():
         script_sha256=sha(Path(__file__)), tests=len(rows),
         supported_cases=sum(r["kind"].startswith("supported") for r in rows),
         semantic_abstention_cases=sum(r["kind"].startswith("additional") for r in rows),
+        calibrated_contract_regressions=sum(r["kind"].startswith("existing") for r in rows),
+        regression_manifest_sha256=args.regression_manifest_sha256,
         failures=sum(not r["passed"] for r in rows),
         false_accepts=sum(r["expected"] == "abstain" and r["actual_status"] == "supported" for r in rows),
         candidate_admitted=all(r["passed"] for r in rows),

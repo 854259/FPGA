@@ -3167,7 +3167,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T23:45:00+08:00",
+  "updated_at": "2026-10-05T00:02:30.0695498+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3471,5 +3471,37 @@
     "report": "03_analysis/helper_extraction_20261004/CONCISE_OBSERVATION_20261004.md",
     "next": "O1 constructed parser boundary audit; zero model/EDA",
     "private_archive_sha256": "3116cb02255fd9aa99eb6a2d6a823b96fa2296cedaf6b93a4abab8f6a6011587"
+  },
+  "map_boundary_review_20261004": {
+    "updated_at": "2026-10-05T00:02:29.9055670+08:00",
+    "status": "O1_failed_O2_frozen_pending_execution",
+    "full_batch_complete": false,
+    "O1": {
+      "source_commit": "44a80d6a3dc462232322d3adbd909e4adc55ac8e",
+      "ticket": 6,
+      "pid": 3343530,
+      "stage_pid": 3343535,
+      "completed": true,
+      "tests": 420,
+      "correct_mapping_cases": 384,
+      "semantic_abstention_cases": 36,
+      "false_accepts": 30,
+      "candidate_admitted": false,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "elapsed_s": 0.05075470730662346,
+      "archive_sha256": "763c28bafcd59366e6bd504d116e5870dc6efef25f8ef9428893a8bb2bf0f5d9"
+    },
+    "O2": {
+      "scope": "Whole preamble grammar, isolated parser copy, no shared deployment",
+      "tests": 428,
+      "original_boundary_tests": 420,
+      "calibrated_contract_regressions": 8,
+      "model_calls_cap": 0,
+      "eda_calls_cap": 0,
+      "timeout_s": 120,
+      "next": "Freeze commit, verify private regression hashes and serialize AMD execution"
+    },
+    "independent_natural_tasks": 0
   }
 }
