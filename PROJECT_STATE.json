@@ -4456,11 +4456,11 @@
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
-    "G3": "Map-feedback forms rejected; priority contract calibration ticket14; compiler-diagnostic experiments left to teammate",
+    "G3": "Priority single-known-error checkpoint repaired and audited; not cross-task generalization/full regression; next second explicit functional contract and fresh generation",
     "G4": "not_admitted_independent_natural_validation",
     "G5": "not_final_delivery_certified",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 7
+    "quota_latest_observed_used_percent": 8
   },
   "concise_output_pilot_20261004": {
     "status": "completed_audited_rejected",
@@ -4597,11 +4597,11 @@
     "next": "Stop this care-feedback form; calibrate explicit priority/sign/selector mechanisms"
   },
   "priority_contract_20261005": {
-    "status": "submitted_fifo_ticket14",
+    "status": "complete_audited",
     "source_spec_sha256": "c9cd43adf84bcf4828ca86d9350badcbeed1808115d1c4d8b70303505eadae12",
     "source_assets": 46,
     "local_linux_tests_passed": 7,
-    "report": "03_analysis/priority_contract_20261005/README.md",
+    "report": "03_analysis/priority_contract_20261005/RESULT.md",
     "fifo_ticket": 14,
     "monitor_pid": 3349703,
     "known_public_archived_candidates": 2,
@@ -4610,7 +4610,43 @@
     "planned_native_probes": 22,
     "planned_synth": 5,
     "max_model_calls": 0,
-    "full_audit_executed": false,
-    "adoption": false
+    "full_audit_executed": true,
+    "adoption": false,
+    "audit": "03_analysis/priority_contract_20261005/calibration_audit/RESULTS.json",
+    "actual_probes": 22,
+    "actual_synth": 5,
+    "actual_model_calls": 0,
+    "elapsed_s": 228.11691656149924,
+    "archive_sha256": "fa8a5ca5cbef8726bff51ba710565531e0a0c9b95ed81c405dcff5816ed81533",
+    "correct071_checks": 256,
+    "wrong112_mismatches": 11,
+    "natural_hypothesis_matched": true
+  },
+  "priority_feedback_20261005": {
+    "status": "complete_audited_checkpoint_gate_passed",
+    "source_spec_sha256": "cb6c05a9b7d7813a87c750be2772af71b19f84f02a3a4e83eaa9a3f0000ee61e",
+    "report": "03_analysis/priority_feedback_20261005/RESULT.md",
+    "source_assets": 27,
+    "local_linux_boundary_checks_passed": 6,
+    "fifo_ticket": 16,
+    "monitor_pid": 3360902,
+    "known_public_archived_tasks": 2,
+    "first_generation_replayed": true,
+    "max_actual_model_requests": 4,
+    "full_audit_executed": true,
+    "adoption": false,
+    "audit": "03_analysis/priority_feedback_20261005/checkpoint_audit/RESULTS.json",
+    "actual_model_requests": 1,
+    "repaired_known_wrong": [
+      "Prob112_always_case2"
+    ],
+    "regressions": [],
+    "correct_guard_bytes_preserved": true,
+    "elapsed_post_generation_s": 52.42429812066257,
+    "archive_sha256": "5f8a35e52034a7cd33393b0aaea6a588801b27c44393ae8fb50bf877bfb53140",
+    "candidate_qualified_for_fresh_generation": true,
+    "new_full_score": false,
+    "first_generation_cost_measured": false,
+    "next": "Add second explicit functional contract; fresh-generation same-budget tests, then full regression/independent/five-sample delivery"
   }
 }

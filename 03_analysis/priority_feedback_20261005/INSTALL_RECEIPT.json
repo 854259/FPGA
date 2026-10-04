@@ -1,0 +1,12 @@
+{
+  "schema": "priority_checkpoint_install_v1",
+  "at_utc": "2026-10-04T17:05:20.161600+00:00",
+  "run_spec_sha256": "cb6c05a9b7d7813a87c750be2772af71b19f84f02a3a4e83eaa9a3f0000ee61e",
+  "frozen_assets_verified": 27,
+  "tests_passed": 6,
+  "test_returncode": 0,
+  "test_output": "test_A_compiled_wrong_keeps_original_no_review (test_boundary.Boundary.test_A_compiled_wrong_keeps_original_no_review) ... ok\ntest_C_correct_draft_no_review (test_boundary.Boundary.test_C_correct_draft_no_review) ... ok\ntest_C_real_counterexample_one_repair (test_boundary.Boundary.test_C_real_counterexample_one_repair) ... ok\ntest_C_unsupported_keeps_original_flow (test_boundary.Boundary.test_C_unsupported_keeps_original_flow) ... ok\ntest_compile_error_consumes_existing_repair (test_boundary.Boundary.test_compile_error_consumes_existing_repair) ... ok\ntest_second_failure_does_not_start_third_request (test_boundary.Boundary.test_second_failure_does_not_start_third_request) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.080s\n\nOK\n",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "dependencies_verified": true
+}

@@ -1,0 +1,28 @@
+{
+  "commit": "17b0dd8",
+  "cause": "Git index reused earlier normalized text after attributes changed; explicit renormalize required",
+  "differences": [
+    {
+      "path": "audit.py",
+      "expected_archive_sha256": "c1e1fbec56f6bfbb0b529516069a752b5010cf9c7af150b484e83d1b46a853ee",
+      "git_blob_sha256": "29dcd907b99bc865ccafc9d6d8125ed1dc4d259b3b0cf0b9ed663529110c1c7f"
+    },
+    {
+      "path": "calibrate.py",
+      "expected_archive_sha256": "983ccac7c298e31925f0b81d97d3d2821136d729358efff53b0ec3b51e16fc33",
+      "git_blob_sha256": "c538c69c15adec46525fb4de59870fadf45e7517f3f1a9fbc24e5a2156492861"
+    },
+    {
+      "path": "collect_evidence.py",
+      "expected_archive_sha256": "1cac459d56910644cbec92e23ca5abf5e4926a617300cccff393ba14a6229ac8",
+      "git_blob_sha256": "d6c94d1bff549dd2191fa30549df36a334b5f78baab2880d85eff8e6ae7def56"
+    },
+    {
+      "path": "RUN_SPEC.json",
+      "expected_archive_sha256": "c9cd43adf84bcf4828ca86d9350badcbeed1808115d1c4d8b70303505eadae12",
+      "git_blob_sha256": "65bdefdb236621e2b57eee0ba1e5cafae118584bb784e40972053ef39b26c4dd"
+    }
+  ],
+  "cloud_execution_or_frozen_asset_changed": false,
+  "repair": "New commit restores original frozen bytes; published history preserved"
+}
