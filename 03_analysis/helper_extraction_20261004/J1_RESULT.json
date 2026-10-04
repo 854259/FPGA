@@ -1,0 +1,127 @@
+{
+  "complete": true,
+  "valid": true,
+  "model_calls": 0,
+  "scope": "constructed causal development probe; not independent natural designs",
+  "full_batch_complete": false,
+  "elapsed_s": 59.73337527178228,
+  "counterexample_reproduced": true,
+  "causal_correct_helper_passes": true,
+  "frozen_source_sha256": "4be07c252ec3d8c647666a9551c5031bc39bc3cdcc07a3b646e4d44626a9d046",
+  "source_commit": "27cc717",
+  "candidate": "unchanged I1 d82ed684",
+  "decision": "reject I1 full-round admission: successful original repair bypassed",
+  "guard_elapsed_s": 59.948961107991636,
+  "controls": {
+    "positive": {
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 4,
+      "mismatches": 0
+    },
+    "negative": {
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 4,
+      "mismatches": 4
+    }
+  },
+  "guard": {
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true
+  },
+  "cleanup_verified": true,
+  "rows": [
+    {
+      "name": "wrong_first",
+      "regression": true,
+      "arms": {
+        "original": {
+          "requests": 2,
+          "model_calls": 0,
+          "worker_elapsed_s": 1.0771810607984662,
+          "status": "pass",
+          "checks": 4,
+          "mismatches": 0,
+          "solution_sha256": "5331df3f8dccdc43ffb44204474dd3377ce24eb1d68d3c7ab28b3958344b15a2",
+          "gate_accepted": []
+        },
+        "I1": {
+          "requests": 1,
+          "model_calls": 0,
+          "worker_elapsed_s": 3.3798430869355798,
+          "status": "fail",
+          "checks": 4,
+          "mismatches": 4,
+          "solution_sha256": "283855ab2e3ab0fdebfb6f6991ac03eb669a9272d00939f8b646b0d1b2b55c27",
+          "gate_accepted": [
+            true
+          ]
+        }
+      },
+      "initial_request_sha256": "8a063e95124d4aef688351a126769282894d4a014d0ad630eabff98f8005c86d",
+      "initial_response_sha256": "d9526a61405599d8543f37103601101eb4b50c538c554d62fe232f75d404825b"
+    },
+    {
+      "name": "correct_first",
+      "regression": false,
+      "arms": {
+        "original": {
+          "requests": 2,
+          "model_calls": 0,
+          "worker_elapsed_s": 1.0790106123313308,
+          "status": "pass",
+          "checks": 4,
+          "mismatches": 0,
+          "solution_sha256": "5331df3f8dccdc43ffb44204474dd3377ce24eb1d68d3c7ab28b3958344b15a2",
+          "gate_accepted": []
+        },
+        "I1": {
+          "requests": 1,
+          "model_calls": 0,
+          "worker_elapsed_s": 3.3774702725932,
+          "status": "pass",
+          "checks": 4,
+          "mismatches": 0,
+          "solution_sha256": "df8dcea1faccac191a708533f66a09128d0601bf744e724a78fca661a84202b2",
+          "gate_accepted": [
+            true
+          ]
+        }
+      },
+      "initial_request_sha256": "8a063e95124d4aef688351a126769282894d4a014d0ad630eabff98f8005c86d",
+      "initial_response_sha256": "d8a90618aeebd453ab3434d3aefabe1cc312aa67feb188dc1a2675a98a37c057"
+    },
+    {
+      "name": "wrong_repeat",
+      "regression": true,
+      "arms": {
+        "original": {
+          "requests": 2,
+          "model_calls": 0,
+          "worker_elapsed_s": 1.0863365856930614,
+          "status": "pass",
+          "checks": 4,
+          "mismatches": 0,
+          "solution_sha256": "5331df3f8dccdc43ffb44204474dd3377ce24eb1d68d3c7ab28b3958344b15a2",
+          "gate_accepted": []
+        },
+        "I1": {
+          "requests": 1,
+          "model_calls": 0,
+          "worker_elapsed_s": 3.370506172068417,
+          "status": "fail",
+          "checks": 4,
+          "mismatches": 4,
+          "solution_sha256": "283855ab2e3ab0fdebfb6f6991ac03eb669a9272d00939f8b646b0d1b2b55c27",
+          "gate_accepted": [
+            true
+          ]
+        }
+      },
+      "initial_request_sha256": "8a063e95124d4aef688351a126769282894d4a014d0ad630eabff98f8005c86d",
+      "initial_response_sha256": "d9526a61405599d8543f37103601101eb4b50c538c554d62fe232f75d404825b"
+    }
+  ]
+}

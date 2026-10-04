@@ -3137,7 +3137,7 @@
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T16:23:04.9678493+08:00",
+  "updated_at": "2026-10-04T17:00:31.2755826+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3245,5 +3245,34 @@
     "nonempty_duplicate_prefix_records": 24,
     "driver_pid": 3043438,
     "stage_pid": 3043443
+  },
+  "repair_bypass_J1_20261004": {
+    "status": "completed_I1_rejected_full_round_not_entered",
+    "source_commit": "27cc717",
+    "driver_pid": 3043545,
+    "stage_pid": 3043549,
+    "amd_root": "/workspace/team/runs/fpga_teammate/helper_J1r2_20261004T085453Z_27cc717",
+    "model_call_cap": 0,
+    "full_round_complete": false,
+    "result": {
+      "counterexample_mechanisms": 1,
+      "counterexample_replays": 2,
+      "causal_control_passed": true,
+      "model_calls": 0,
+      "stage_elapsed_s": 59.73337527178228,
+      "decision": "reject I1; investigate post-original-failure recovery",
+      "public_report": "03_analysis/helper_extraction_20261004/J1_RESULT.md",
+      "cleanup_verified": true
+    }
+  },
+  "cvdp_interface_map_20261004": {
+    "status": "static_map_verified_not_admitted",
+    "records": 302,
+    "unmentioned_top_names": 24,
+    "duplicate_test_groups": 13,
+    "duplicate_test_records": 26,
+    "independent_admitted": 0,
+    "source_commit": "95939335",
+    "public_report": "03_analysis/rtllm_contract_audit_20261002/CVDP_INTERFACE_MAP_20261004.md"
   }
 }
