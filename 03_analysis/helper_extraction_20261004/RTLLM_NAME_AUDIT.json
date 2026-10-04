@@ -1,0 +1,565 @@
+{
+  "schema": "rtllm_frozen_prompt_module_name_static_audit",
+  "checked_utc": "2026-10-04T05:33:36.656816+00:00",
+  "tasks": 44,
+  "conflicting_labels": 23,
+  "label_differs_from_evaluator": 23,
+  "label_not_found": 0,
+  "rows": [
+    {
+      "task": "JC_counter",
+      "prompt_sha256": "a37a9b99dd93c9da5911dfe8fab08231ff00095a969f65890d34b5c634234cdd",
+      "task_sha256": "f2d7b5d310057fc94ccd92c76ec43aaba712d376a47ee4d214035dc00d06499c",
+      "module_name_labels": [
+        "TopModule",
+        "JC_counter"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "LFSR",
+      "prompt_sha256": "00cc1b38ce1a891f20e47ea5cf1abeaa998e74eb8afad72795e1814d9c486d18",
+      "task_sha256": "4b57595aed87c6d419fa2c2fbd8d62dd18332eaf726ce61cdc891c642e45405b",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "accu",
+      "prompt_sha256": "c697852e7fef1addc764bba1d9f9f7ec39e6aee653364663e1c34756ba18b494",
+      "task_sha256": "edc0ffd2df1ba433a52e8215f3ce5e1a914fd1e2c9bc8a7e46269d483f76b158",
+      "module_name_labels": [
+        "TopModule",
+        "accu"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "adder_16bit",
+      "prompt_sha256": "1448165ef5237424e39842d24e538d684b090631fda565cb1694353bcc5aaac4",
+      "task_sha256": "3f1dc94447c0ceaf430d9a0679ed91bc0e4a358086125b676bcdd93849ad448b",
+      "module_name_labels": [
+        "TopModule",
+        "adder_16bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "adder_32bit",
+      "prompt_sha256": "a79639a97d161ab29eca6efb82bf3d5f5c373866b902d6d82be41b45c4ee0cb1",
+      "task_sha256": "fda9ac62e2bcc83eabc5c7648e6f3355f8f8999e956a8cd57844b1e42cc2e4cc",
+      "module_name_labels": [
+        "TopModule",
+        "adder_32bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "adder_8bit",
+      "prompt_sha256": "3ce4ba82bfa65dbc6d1ed5429057a521c62ce0448954584f4fe67d5fb7fa8d32",
+      "task_sha256": "0e3ceb913b0d051282d841690d5cacb00ae3a517e8c872ee7952f35db7834764",
+      "module_name_labels": [
+        "TopModule",
+        "adder_8bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "adder_bcd",
+      "prompt_sha256": "a20a9655d1f16042ae532940594e52bb3d5146ad1640c51240b3b5e585e7a92f",
+      "task_sha256": "dcaf5edf8f374ace144281909c0371ae44f6a2445ce82f6ea4e9b918fd8ec68c",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "adder_pipe_64bit",
+      "prompt_sha256": "de9b2fbbaae98efa2ba0802e8bc24f5a6c3b48cc8127adf227e66231235d6049",
+      "task_sha256": "de84209a269d12d443dc63ebb55583f9930fed81b72540fdd8a5cab61b2c5c9e",
+      "module_name_labels": [
+        "TopModule",
+        "adder_pipe_64bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "barrel_shifter",
+      "prompt_sha256": "b7715f9d16833bcc1d155c8b81000ea4ac092f30e90f7dad0f2de1161b9deb70",
+      "task_sha256": "869d1020cd03a477c8c267743bdd89103b8b787ef2af0279c0bd4a64752467bc",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "calendar",
+      "prompt_sha256": "129b4ff1d2a2ddfadcbe86d9406994ae6dd3e1a9029093a78c2aa0027dbaa128",
+      "task_sha256": "003210be32f2c06a5ec8c41bb5c5caaacb42f2167148d2d40460dfc1f531adf2",
+      "module_name_labels": [
+        "TopModule",
+        "calendar"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "comparator_3bit",
+      "prompt_sha256": "ea3064920abccb98daad2f83f4237531e52bc35980bf33ce417f1dbd4462ec6b",
+      "task_sha256": "aeb87615647af7be03cedb17839394d726ffe85eb471b9f81577bffb10d3488c",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "comparator_4bit",
+      "prompt_sha256": "78aaab38c551286d62440f3a06b0e91742a08f424f672d89734924f1b69371de",
+      "task_sha256": "35f9d071d06cc65d1188670162d9f8a03aa5a8d73388e7675999b579cb000988",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "counter_12",
+      "prompt_sha256": "a3e553616d7db8f5b9c54b787574f2963a08515bf1ff7dd50f3d91b9fb8f3a57",
+      "task_sha256": "e013a071b68eb0312d00a2fca487b622797d75ee5ae0e2b9835adf573d64aceb",
+      "module_name_labels": [
+        "TopModule",
+        "counter_12"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "div_16bit",
+      "prompt_sha256": "15d01af7475eda7a118cbe4008c2647ae6bbf79d84e01ccde102aa7e83e41201",
+      "task_sha256": "9e270379550ef9ca4c4262bf8a128418cb24ac2b4b7ceedc8bf13ffd40a4cfc8",
+      "module_name_labels": [
+        "TopModule",
+        "div_16bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "edge_detect",
+      "prompt_sha256": "376ecc532fff4a0a5a1c86a62a61dc489457f7c54e7aa1749960aedd46d91ad6",
+      "task_sha256": "8f3b64633911fe32f6a07043fdf9032b0ec6a0de05279edb8503d5fc017dc0f6",
+      "module_name_labels": [
+        "TopModule",
+        "edge_detect"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "fixed_point_adder",
+      "prompt_sha256": "a0ada827b43359aa899fe291748e237f4929670db60bb2f6b47545154e06a87c",
+      "task_sha256": "23502abb6d6e89c8f81500ee81eff2fbad7328a49a3443f0b4cdf7f952db7a1b",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "fixed_point_substractor",
+      "prompt_sha256": "12efc77721ac7967830a6fba8328e11121acb182d3bac2beaefa770dbf4e2a26",
+      "task_sha256": "ffaf38327547a1c640d195f84386a5dc2403beae88e8d27c8ece719ef36ab988",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "float_multi",
+      "prompt_sha256": "a348c8e7a5fa3ed1be118eed21173d69dc0432afdb5450578d71703089314127",
+      "task_sha256": "15f01cccafb1c2463f714f60a7fd5fd02abe4b49ad658a0c2b838e06d31e8677",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "freq_div",
+      "prompt_sha256": "a741e6e5c32511b3d6bdf86a0b061cc952303b5eead785ce1123731c663f5995",
+      "task_sha256": "bbe577afb078ad69614adf0130f00d0c630056da385373ca74f87540824fe762",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "freq_divbyeven",
+      "prompt_sha256": "4343a5e23cdcd72182f452e8620a7f5c2433f9a8021a50d36207f17e5e4bddfc",
+      "task_sha256": "0a9d506fff66fb2b177eb354085dddae4b765bf18338c009697fd390390a6a83",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "freq_divbyfrac",
+      "prompt_sha256": "39c4a2d8ceb89d933b9803a378c768795b9af5127aab67f96ec827595745373c",
+      "task_sha256": "7dc45b70019d9773896864c31ffb4ba26901b709b6a8773658e8ce2df533dbb4",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "freq_divbyodd",
+      "prompt_sha256": "ef06c9dd09c11820c822668eb91eb73f6e0a9d302b44fd8e4596dbdeab59c8e1",
+      "task_sha256": "06c065bdc69668bf1315e107ca0f108709dc2621e7272e33bc75222af45eee2f",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "fsm",
+      "prompt_sha256": "61e8931a02a0e9409072b24c863c0aad51ce48e17c923621d30192595ff54cc5",
+      "task_sha256": "e0ae9b0eb9c9a4232e776441ba88502c28ea6556495f0008270ba90663327537",
+      "module_name_labels": [
+        "TopModule",
+        "fsm"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "instr_reg",
+      "prompt_sha256": "bc04c58b50facaeb5af4c68ba271a864b037bb59fb56d063ed07e91de9658561",
+      "task_sha256": "17ad3d66a7f30979063d954f6c65726efca01cdd7ea16f40282a4f7d13ff3cf8",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "multi_16bit",
+      "prompt_sha256": "597c08cdb7143f40cc7befd5f71ec2ea120f2e7e8e21ee8b31a2eba2e127f60b",
+      "task_sha256": "2ca22fb3c98e8f83595152352171cfcdaf22c286327491d665edc067cfb23c63",
+      "module_name_labels": [
+        "TopModule",
+        "multi_16bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "multi_8bit",
+      "prompt_sha256": "2bec85ce2dac07e4edc0002ef086f2aeb6391b5438191a3f3d3f7bfbe8146b5e",
+      "task_sha256": "c7abb136bbbf13e1fa77298b20634b9a6e92e37155ae099f07c4af61cfc9fad6",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "multi_booth_8bit",
+      "prompt_sha256": "da6ba4b0e423b6042a823734ba61c03e17bf3e4f9c23e2baa7810e2aa29eaff6",
+      "task_sha256": "cfc7fbc45fbb6c0b73d9ef577fa8a83c4442e7344f031ba52bcf70df38653e10",
+      "module_name_labels": [
+        "TopModule",
+        "multi_booth_8bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "multi_pipe_4bit",
+      "prompt_sha256": "3c21f3562a0bc5c802fd6ad399936b821a32d52ba0194b7b4c637b917ce6f2b3",
+      "task_sha256": "33775659f38ee1b69d758f01de56ff1baaa1078f868f707847e47a4443528aa2",
+      "module_name_labels": [
+        "TopModule",
+        "multi_pipe_4bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "multi_pipe_8bit",
+      "prompt_sha256": "b46bf9cb3183b514345d5a752574945ab857e321d7948547fd1cb3782a8b215d",
+      "task_sha256": "678daa0461ee76be2e145527dd5673513bfc4516176dd4ea75505a70a310989b",
+      "module_name_labels": [
+        "TopModule",
+        "multi_pipe_8bit"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "parallel2serial",
+      "prompt_sha256": "3d0cdb03265d3c6d3b7a9966743c6ba8e3ffbf76023869f9a1f205992af27ed5",
+      "task_sha256": "be7ac8af54b7e5788a660d541b4d0d6130294b08a22bbe66b2c0120692aeeb22",
+      "module_name_labels": [
+        "TopModule",
+        "parallel2serial"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "pe",
+      "prompt_sha256": "2171590926e6d21269ec96d8b1aa61e9c391aac2f1d559b3eeaf6ee5973405c9",
+      "task_sha256": "76cfe717a4ca0bb9134fc6ab2aaead5bcabdb0a0c4f258bdfb28d500ff42ba77",
+      "module_name_labels": [
+        "TopModule",
+        "pe"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "pulse_detect",
+      "prompt_sha256": "c8540bf508328c619e17a83b5371b761c735ba41bc1f5fde037138feebbb2f3c",
+      "task_sha256": "3b125e84471cc03d9b0712564c275b9d24fdbebdb83728a1c08c39221646398b",
+      "module_name_labels": [
+        "TopModule",
+        "pulse_detect"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "radix2_div",
+      "prompt_sha256": "e57a48d55260f217b6cd75ee4d68c44bf4c80da348d2bfb1a84a0f92d54357b5",
+      "task_sha256": "769bd3d0f22d0f27af94277e95e22fab8734b4798db0f74a7d1fc96f3de7004b",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "right_shifter",
+      "prompt_sha256": "670014a863f25106efe34537ad2a31b4ec21b4c68a49b815126d23a4ba90ae46",
+      "task_sha256": "eabb560e57dcd2abfa905d098dca32344ad50be07d7f2731ef1bd782f30a8536",
+      "module_name_labels": [
+        "TopModule",
+        "right_shifter"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "ring_counter",
+      "prompt_sha256": "1c734b6f6bf08434b55e868d9908be943c9b73a8f3e6789894b2f9df804f690c",
+      "task_sha256": "0ff04b15c6527cf9aa03b83faf55debb25dfb23679433c67759605e291692c67",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "sequence_detector",
+      "prompt_sha256": "509aded88efeb2d40680ad7718949da9c49803ee93e30f2024362e09709632ce",
+      "task_sha256": "c1207db84f900c1598ba099fe10a2daa145b870bff96a15848912818fdd0ccf9",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "serial2parallel",
+      "prompt_sha256": "ab4b3d5e0eebb9195e3fed8bfecb87fa402a7cdfe5d6052c474be21c1aceea99",
+      "task_sha256": "81206f28665aec60fce9a139eafff8b8d200f99e426281ba2d54ee93110e1381",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "signal_generator",
+      "prompt_sha256": "c9eb14e20190195dc538c257380463e53e26894c21c8ae6f27aea94143eb2fe1",
+      "task_sha256": "26aa29dbf1d31f5fa44a2537da4850840f282358261e42cf1fe769208f01b524",
+      "module_name_labels": [
+        "TopModule",
+        "signal_generator"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "square_wave",
+      "prompt_sha256": "dc4ef25c3d0cf1529c3558a35444071e33877fbe883fcf4ab424800f625155da",
+      "task_sha256": "4245655c71ef544da727d613476c49219f011a2d88e97536cb292e82378dffa1",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "sub_64bit",
+      "prompt_sha256": "3057a2be7c69d1b9d9aadf659346fbedc1ac286ab882ab3d0742481a89b24c4a",
+      "task_sha256": "cfaa333974bab71a04edadfc19f3c7eea42ef4bd02e23a258316263e798a00ae",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "synchronizer",
+      "prompt_sha256": "b27ea5a5d15a1a1c419a7b46e7d5100f25b0e5e246a734e8fbe1476aebd3e9a9",
+      "task_sha256": "c6a620b4b186e9e6f0571c8de4f14b58fe9c35fe7120a198673816b062433172",
+      "module_name_labels": [
+        "TopModule",
+        "synchronizer"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "traffic_light",
+      "prompt_sha256": "e02805af9ca338838abc7fcfa1aef73772a84dcee3e99d43911a1a68423f46f1",
+      "task_sha256": "d99cf715d212b04e2636469f3109034cccbc977c6c9645c56dedfb2d69eb6a56",
+      "module_name_labels": [
+        "TopModule",
+        "traffic_light"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    },
+    {
+      "task": "up_down_counter",
+      "prompt_sha256": "fd981d5597e9c20e6913dedfbbb8e22d0a15c57f9e0ff5f63549357975636b65",
+      "task_sha256": "b51f731af228dd4581359fb57b7c9077bee7de7b9698d22921f48506fcd28d3d",
+      "module_name_labels": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": false,
+      "label_differs_from_evaluator": false,
+      "label_not_found": false
+    },
+    {
+      "task": "width_8to16",
+      "prompt_sha256": "0f0f7cabf4c94932f2ca04904702987a540ee84f6e27c3fbd86d401849245ee0",
+      "task_sha256": "4a3b53ebc89c42f7711066debcf5086cc1d2adba92a29ad8b8501dc5796f5250",
+      "module_name_labels": [
+        "TopModule",
+        "width_8to16"
+      ],
+      "evaluator_top": "TopModule",
+      "conflicting_labels": true,
+      "label_differs_from_evaluator": true,
+      "label_not_found": false
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "inputs_modified": false,
+  "limits": "Only Module name labels and evaluator top are compared. Matching labels do not prove prompt, interfaces, architecture, references, or tests are valid. No data repaired or results rescored."
+}

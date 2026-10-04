@@ -1,0 +1,50 @@
+{
+  "archive_sha256": "7b28b35c33ee8b02b66d368007e4d94c2856efc6d85b347273260fa5e1dc5937",
+  "public_sha256": "3a4885d7ed5194abdbeadb3fef206f381a3ffe25c59a10a9a055ef943acefd0e",
+  "original_summary_sha256": "ed65f38f6b684db23a8f7d24059713ff33a237e2fef06bd3dd49fc84325367ca",
+  "archive_bytes": 383796,
+  "entries": 417,
+  "totals": {
+    "pairs": 8,
+    "repairs": 5,
+    "regressions": 0,
+    "unchanged_level": 3,
+    "final_bytes_identical": 3,
+    "actual_calls": 15,
+    "actual_responses": 15,
+    "original_logical_requests": 14,
+    "retained_logical_requests": 9,
+    "original_solve_s": 193.8431310215965,
+    "retained_solve_s_with_shared_initial": 134.77687233500183,
+    "judge_s": 275.5,
+    "trace_errors": 0,
+    "all_recorded_finish_reasons_stop": true
+  },
+  "groups": {
+    "known_development_repetition": {
+      "pairs": 5,
+      "distinct_initial_contents": 1,
+      "distinct_final_original_artifacts": 1,
+      "distinct_final_retained_artifacts": 1,
+      "repairs": 5,
+      "regressions": 0,
+      "unchanged_level": 0,
+      "original_l3": 0,
+      "retained_l3": 5
+    },
+    "cross_task_not_used_to_tune_extractor_not_blind": {
+      "pairs": 3,
+      "distinct_initial_contents": 3,
+      "distinct_final_original_artifacts": 3,
+      "distinct_final_retained_artifacts": 3,
+      "repairs": 0,
+      "regressions": 0,
+      "unchanged_level": 3,
+      "original_l3": 2,
+      "retained_l3": 2
+    }
+  },
+  "guard_passed": true,
+  "elapsed_s": 502.23985378909856,
+  "guard_elapsed_s": 502.4497449118644
+}

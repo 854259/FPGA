@@ -1,0 +1,50 @@
+{
+  "schema": "post_run_input_contract_audit",
+  "detected_utc": "2026-10-04T05:29:43.808762+00:00",
+  "reason": "multi_pipe_4bit generated a complete module under the contradictory original name in both initial and repair replies",
+  "rows": [
+    {
+      "task": "adder_8bit",
+      "prompt_sha256": "3ce4ba82bfa65dbc6d1ed5429057a521c62ce0448954584f4fe67d5fb7fa8d32",
+      "module_names": [
+        "TopModule",
+        "adder_8bit"
+      ],
+      "evaluator_top": "TopModule",
+      "contradictory_module_names": true
+    },
+    {
+      "task": "adder_16bit",
+      "prompt_sha256": "1448165ef5237424e39842d24e538d684b090631fda565cb1694353bcc5aaac4",
+      "module_names": [
+        "TopModule",
+        "adder_16bit"
+      ],
+      "evaluator_top": "TopModule",
+      "contradictory_module_names": true
+    },
+    {
+      "task": "multi_8bit",
+      "prompt_sha256": "2bec85ce2dac07e4edc0002ef086f2aeb6391b5438191a3f3d3f7bfbe8146b5e",
+      "module_names": [
+        "TopModule"
+      ],
+      "evaluator_top": "TopModule",
+      "contradictory_module_names": false
+    },
+    {
+      "task": "multi_pipe_4bit",
+      "prompt_sha256": "3c21f3562a0bc5c802fd6ad399936b821a32d52ba0194b7b4c637b917ce6f2b3",
+      "module_names": [
+        "TopModule",
+        "multi_pipe_4bit"
+      ],
+      "evaluator_top": "TopModule",
+      "contradictory_module_names": true
+    }
+  ],
+  "applied_to_all_successes_and_failures": true,
+  "inputs_modified": false,
+  "replacements_or_resamples": 0,
+  "policy": "Preserve all 8 paired results; never claim this batch as clean independent quality validation. Mechanism observations remain conditional on frozen inputs."
+}

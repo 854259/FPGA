@@ -1,84 +1,99 @@
 {
   "helper_extraction_20261004": {
-    "status": "approved_batch_queued_on_existing_gpu_lock",
-    "updated_at": "2026-10-04T13:21:00+08:00",
-    "source": {
-      "root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf",
-      "commit": "3576ccf0444cd362bf03a93b66a18f3c39177618",
-      "sourcehash": "9ea0138e83ad59e7f1f6cf4c0d3fc0e145ababacbedcb45adb597069647c4d5d"
-    },
+    "status": "approved_batch_completed_and_archived_research_only",
+    "updated_at": "2026-10-04T13:34:00+08:00",
+    "executed_commit": "3576ccf0444cd362bf03a93b66a18f3c39177618",
+    "amd_root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf",
+    "driver_pid": 2972068,
+    "stage_pid": 2974507,
+    "stage_started_utc": "2026-10-04T05:21:52.627746+00:00",
     "budget": {
-      "additional_model_calls": 24,
-      "stage_timeout_s": 3600,
-      "authorization": "批准追加 24 次／60 分钟，整批连续执行",
-      "calls_used_this_batch": 0,
-      "prior_conservative_calls": 24
+      "approved_additional_calls": 24,
+      "approved_seconds": 3600,
+      "used_calls": 15,
+      "responses": 15,
+      "unused_calls": 9,
+      "implicit_extension": false
     },
-    "prior_results": {
-      "F1": "21 guards and 400 unchanged archive artifacts; two real replies; initial artifacts one repair, zero regression; not complete-worker gain",
-      "F2": "Exact best runtime already requests missing-helper model repair; original final verdict unknown without that reply",
-      "preflight": "three cross-task references L3; zero calls"
+    "execution_valid": true,
+    "clean_independent_quality_validation": false,
+    "totals": {
+      "pairs": 8,
+      "repairs": 5,
+      "regressions": 0,
+      "unchanged_level": 3,
+      "final_bytes_identical": 3,
+      "actual_calls": 15,
+      "actual_responses": 15,
+      "original_logical_requests": 14,
+      "retained_logical_requests": 9,
+      "original_solve_s": 193.8431310215965,
+      "retained_solve_s_with_shared_initial": 134.77687233500183,
+      "judge_s": 275.5,
+      "trace_errors": 0,
+      "all_recorded_finish_reasons_stop": true
     },
-    "coordination": {
-      "owner": "fpga_owner_module_bundle_20261004",
-      "stage_pid": 2963147,
-      "scope": "same-response initial extraction using a different prototype; not the approved best-worker complete-flow comparison",
-      "action": "wait without modifying the running task"
+    "groups": {
+      "known_development_repetition": {
+        "pairs": 5,
+        "distinct_initial_contents": 1,
+        "distinct_final_original_artifacts": 1,
+        "distinct_final_retained_artifacts": 1,
+        "repairs": 5,
+        "regressions": 0,
+        "unchanged_level": 0,
+        "original_l3": 0,
+        "retained_l3": 5
+      },
+      "cross_task_not_used_to_tune_extractor_not_blind": {
+        "pairs": 3,
+        "distinct_initial_contents": 3,
+        "distinct_final_original_artifacts": 3,
+        "distinct_final_retained_artifacts": 3,
+        "repairs": 0,
+        "regressions": 0,
+        "unchanged_level": 3,
+        "original_l3": 2,
+        "retained_l3": 2
+      }
+    },
+    "stage_elapsed_s": 502.23985378909856,
+    "guard_elapsed_s": 502.4497449118644,
+    "decision": "retain_narrow_extraction_as_research_candidate_no_formal_integration",
+    "reason": "five repairs are repeated identical answers to one known task; no cross-task gain; prompt naming conflicts limit quality interpretation",
+    "prompt_contract_audit": {
+      "batch_conflicting_tasks": [
+        "adder_8bit",
+        "adder_16bit",
+        "multi_pipe_4bit"
+      ],
+      "only_unambiguous_batch_task": "multi_8bit",
+      "all44_scanned": 44,
+      "conflicting_module_name_labels": 23,
+      "other_contract_aspects_unverified": true,
+      "inputs_modified": false
+    },
+    "evidence": {
+      "report": "03_analysis/helper_extraction_20261004/RESULT.md",
+      "public": "03_analysis/helper_extraction_20261004/G1_RESULT.json",
+      "private_local": "05_handoff/helper_extraction_20261004/G1-evidence.zip",
+      "archive_sha256": "7b28b35c33ee8b02b66d368007e4d94c2856efc6d85b347273260fa5e1dc5937",
+      "raw_summary_sha256": "ed65f38f6b684db23a8f7d24059713ff33a237e2fef06bd3dd49fc84325367ca"
+    },
+    "cleanup": {
+      "verified": true,
+      "own_processes_remaining": 0,
+      "model_unchanged": true,
+      "model_healthy_idle_at": "2026-10-04T05:32:23.619076+00:00",
+      "slot_released": true,
+      "xsim_directories_removed_all_helper_stages": 25,
+      "remote_source_transfers_removed": 7,
+      "local_obsolete_transfers_removed": 8,
+      "source_and_valid_evidence_retained": true
     },
     "formal_deployment_modified": false,
     "full_set_score_updated": false,
-    "launch": {
-      "root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf",
-      "commit": "3576ccf0444cd362bf03a93b66a18f3c39177618",
-      "driver_pid": 2972068,
-      "driver_log": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/driver.log",
-      "queued_utc": "2026-10-04T05:20:37.590294+00:00",
-      "nohup": true,
-      "new_session": true,
-      "model_call_limit": 24,
-      "stage_timeout_s": 3600,
-      "queue_timeout_s": 2100,
-      "queue_excluded_from_experiment_time": true,
-      "command": [
-        "nohup",
-        "flock",
-        "--exclusive",
-        "--timeout",
-        "2100",
-        "/workspace/team/.gpu.lock",
-        "python3",
-        "-B",
-        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/source/03_analysis/selective_runtime_integration_20261003/resource_guard.py",
-        "--kit",
-        "/workspace/team/tasks/autodl-rtl-kit/project",
-        "--model-pid",
-        "2013333",
-        "--model-name",
-        "Qwen3.6-27B-Q4_K_M",
-        "--owner",
-        "helper_G1_20261004T052000Z_3576ccf",
-        "--guard-out",
-        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/guard",
-        "--slot-minutes",
-        "65",
-        "--stage-timeout-s",
-        "3600",
-        "--",
-        "python3",
-        "-B",
-        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/source/03_analysis/helper_extraction_20261004/full_pair.py",
-        "run",
-        "--kit",
-        "/workspace/team/tasks/autodl-rtl-kit/project",
-        "--resource-check",
-        "{resource_check}",
-        "--best-tar",
-        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/best-runtime-source.tar",
-        "--out",
-        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/results",
-        "--enable-generation"
-      ]
-    }
+    "next": "Version and verify input contracts first; independent frozen validation and unresolved captured 32-bit full-flow risk before promotion. No refilling budget or resampling approved batch."
   },
   "schema_version": 1,
   "research_cycle_20261004": {
