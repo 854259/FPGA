@@ -3093,7 +3093,7 @@
     "credits_verified": false,
     "full_experiment_complete": false,
     "independent_source_discovery": {
-      "status": "CVDP_full_public_input_checked_GateTruth_public_controls_pending_strength_and_overlap",
+      "status": "GateTruth_minimum_controls_58_of_60_only_semantics_family_and_oracle_scope_pending",
       "candidates": [
         "NVlabs/cvdp_benchmark",
         "hkust-zhiyao/RTL-BenchMT"
@@ -3114,14 +3114,14 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
+      "checked_at": "2026-10-04T17:58:37+08:00",
       "own_live_processes": 0,
       "model_healthy": true,
-      "full_experiment_running": false,
-      "gpu_flock_free": true,
-      "slot_lock_present": false,
       "model_pid": 2013333,
-      "checked_at": "2026-10-04T17:28:02.0884035+08:00",
-      "model_identity_unchanged": true
+      "model_identity_unchanged": true,
+      "slot_lock_present": false,
+      "full_experiment_running": false,
+      "workspace_free_bytes": 10557681664
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3137,7 +3137,7 @@
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T17:51:37.5952776+08:00",
+  "updated_at": "2026-10-04T18:00:19.2798456+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3323,7 +3323,7 @@
     "public_report": "03_analysis/helper_extraction_20261004/JUDGE_ADMISSION_RESULT.md"
   },
   "gatetruth_admission_20261004": {
-    "status": "N1_complete_N2_frozen_not_started",
+    "status": "N1_N2_complete_public_suite_not_admitted_semantics_and_overlap_pending",
     "upstream": "2cdaae80ae42c211b049aa521fc2b5db1c2037af",
     "source_commit": "7ffd7b589aa493411e96947b226106e207375c53",
     "tasks": 60,
@@ -3336,6 +3336,17 @@
     "full_experiment_complete": false,
     "evidence_zip_sha256": "38b41442d72658f92bf8601ee9efa790169e93683804a89ca7d4b2daef472c0a",
     "cvdp_missing_top_full_public_input": 2,
-    "report": "03_analysis/rtllm_contract_audit_20261002/N1_RESULT.md"
+    "report": "03_analysis/rtllm_contract_audit_20261002/N2_RESULT.md",
+    "N2_commit": "fe006faa5ca596b41fa37a7ea480d479b3a10942",
+    "N2_controls": 120,
+    "N2_negative_detected": 119,
+    "N2_invalid_passes": 1,
+    "minimum_four_control_tasks": 58,
+    "semantic_review_pending": 60,
+    "public_test_functions": 178,
+    "N2_evidence_zip_sha256": "1eee95e9dc3606487decc06ae63c02e4989c674441d4f4826293724678337303",
+    "coverage_ledger_sha256": "7966d96f633c8f477c8be605685075f07ffbb58b39e84de948b6ae69812e88ab",
+    "N2_stage_s": 37.366542492993176,
+    "cleanup_verified": true
   }
 }
