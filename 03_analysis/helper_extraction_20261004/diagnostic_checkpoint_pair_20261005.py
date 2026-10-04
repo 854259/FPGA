@@ -171,6 +171,12 @@ def run(a):
     tool_dir = '/workspace/AMD/2026.1/Vivado/bin'
     os.environ['VIVADO_BIN'] = tool_dir
     os.environ['PATH'] = tool_dir + os.pathsep + os.environ['PATH']
+    # Established process-local EDA setup; Q5's frozen first run omitted it.
+    # Keep this future-launch correction separate from that run's immutable evidence.
+    assert sha('/workspace/team/udev-stub/libudev.so.1') == '3a2d6266ccf18909d3ebccbf21e8125ce985359319fecc6c8172aeabf13ecf87'
+    os.environ.update(LD_LIBRARY_PATH='/workspace/team/udev-stub',
+                      XILINX_VIVADO='/workspace/AMD/2026.1/Vivado',
+                      XILINXD_LICENSE_FILE='/workspace/team/Xilinx.lic')
     for tool in ('xvlog', 'xelab', 'xsim', 'vivado'):
         assert Path(shutil.which(tool)).resolve() == (Path(tool_dir) / tool).resolve()
     a.out.mkdir(parents=True, exist_ok=False)

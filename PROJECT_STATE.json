@@ -3651,7 +3651,7 @@
     "model_and_protected_files_unchanged": true
   },
   "diagnostic_checkpoint_Q5_20261005": {
-    "status": "generation_complete_grading_environment_failure_preserved_recovery_frozen",
+    "status": "complete_rejected_for_expansion",
     "pairs": 7,
     "new_model_call_cap": 14,
     "stage_timeout_s": 3600,
@@ -3673,6 +3673,32 @@
     "actual_responses": 14,
     "regrade_new_model_calls": 0,
     "regrade_stage_timeout_s": 1800,
-    "failure_archive_sha256": "fab25587d83593aabd1597505ef19b25a72219a69290052f290c8fcee1367ee9"
+    "failure_archive_sha256": "fab25587d83593aabd1597505ef19b25a72219a69290052f290c8fcee1367ee9",
+    "regrade_ticket": 19,
+    "regrade_monitor_pid": 3366936,
+    "regrade_child_pid": 3374391,
+    "regrade_commit": "05f44247b54868cfee1a0165e82b9081d6fe96a1",
+    "regrade_remote_root": "/workspace/team/runs/fpga_teammate/diagnostic_Q5_regrade_20261005_05f4424",
+    "regrade_stage_pid": 3374396,
+    "generation_complete": true,
+    "grading_complete": true,
+    "repairs": 0,
+    "regressions": 0,
+    "paired_unchanged": 7,
+    "L3_A": 3,
+    "L3_C": 3,
+    "reconstructed_cost_ratio": 0.9318109682719752,
+    "total_stage_s": 471.6524815056473,
+    "candidate_adopted": false,
+    "new_independent_tasks": 0,
+    "archives": {
+      "all_members_verified": true,
+      "generation": "088fb4ea1dc302a35ff790ce273602cdebf2a242d964bd9b2a843a32221ea8c1",
+      "failure": "fab25587d83593aabd1597505ef19b25a72219a69290052f290c8fcee1367ee9",
+      "regrade": "6a67fb5d3e7fe06e0dd7d670116fa9a7e94a40ffd83c4bb60ded747e459fe722"
+    },
+    "cleanup_verified": true,
+    "public_result": "03_analysis/helper_extraction_20261004/DIAGNOSTIC_Q5_RESULT_20261005.json",
+    "next": "Zero-model lexical admission audit of existing strict shift contract parser before any review expansion; no deployment or new full batch claim"
   }
 }

@@ -1,0 +1,195 @@
+{
+  "complete": true,
+  "valid": true,
+  "repairs": 0,
+  "regressions": 0,
+  "unchanged_functional": 7,
+  "actual_attempts": 14,
+  "actual_responses": 14,
+  "regrade_new_model_calls": 0,
+  "continuation_worker_s": {
+    "A": 109.87542700022459,
+    "C": 94.81395136937499
+  },
+  "archived_initial_model_s": 111.00284695625305,
+  "reconstructed_worker_s": {
+    "A": 220.87827395647764,
+    "C": 205.81679832562804
+  },
+  "reconstructed_cost_ratio": 0.9318109682719752,
+  "generation_stage_elapsed_s": 218.81144604831934,
+  "grading_recovery_elapsed_s": 252.84103545732796,
+  "combined_stage_elapsed_s": 471.6524815056473,
+  "protocol_sha256": "0e4e3999b283e01b3593aff469c2599c5472472f28643ae08d5372aeea9f0473",
+  "driver_sha256": "92beb946fc6c56cf400aaac6bcc7599800576620a706f4ce0ae61737669c3b31",
+  "regrade_driver_sha256": "5e951ee3d82f031d2bd5fc4c96fa07573788e9598ca8e7314bab2848c04b3cdd",
+  "frozen_input_manifest_sha256": "e3a015d69271445e28ac01b2b4f3247ae93e6fb6746dc1a7eee1b902c92afb01",
+  "all_frozen_inputs_unchanged": true,
+  "candidate_eligible_for_further_research": false,
+  "deployed": false,
+  "full_batch_complete": false,
+  "independent_natural_tasks": 0,
+  "generation_commit": "865876ad2e88206f2052d489b65f83d78e67e444",
+  "regrade_commit": "05f44247b54868cfee1a0165e82b9081d6fe96a1",
+  "decision": "Do not expand/adopt this quality-improvement candidate: zero L3 repairs; retain isolated engineering evidence.",
+  "unique_seen_tasks": 7,
+  "effective_independent_families": null,
+  "paired_discordant_L3": 0,
+  "paired_sign_test_p": 1.0,
+  "uncertainty": "Seven selected seen compile-repair checkpoints; zero discordances does not establish equivalence or universal safety. No validated independent sampling frame; no generalization confidence interval claimed. Three A-final L3 guards; not forced review of initially correct unselected answers.",
+  "time_limit": "Reconstructed total includes archived initial inference shared by both arms; not a fresh-generation end-to-end measurement. Single trial with differing prefix-cache reuse; no stable speedup claim. Combined stage excludes development, queue, transfer and archival.",
+  "rows": [
+    {
+      "task": "Prob021_mux256to1v",
+      "same_output_bytes": true,
+      "paired_requests_verified": true,
+      "A": {
+        "level": 3,
+        "mismatches": 0,
+        "samples": 2000,
+        "continuation_worker_s": 5.028000829741359,
+        "judge_elapsed_s": 28.5
+      },
+      "C": {
+        "level": 3,
+        "mismatches": 0,
+        "samples": 2000,
+        "continuation_worker_s": 4.878539061173797,
+        "judge_elapsed_s": 28.4
+      }
+    },
+    {
+      "task": "Prob053_m2014_q4d",
+      "same_output_bytes": true,
+      "paired_requests_verified": true,
+      "A": {
+        "level": 1,
+        "mismatches": 1,
+        "samples": 100,
+        "continuation_worker_s": 4.913509041070938,
+        "judge_elapsed_s": 7.7
+      },
+      "C": {
+        "level": 1,
+        "mismatches": 1,
+        "samples": 100,
+        "continuation_worker_s": 4.728160288184881,
+        "judge_elapsed_s": 7.7
+      }
+    },
+    {
+      "task": "Prob078_dualedge",
+      "same_output_bytes": false,
+      "paired_requests_verified": true,
+      "A": {
+        "level": 1,
+        "mismatches": 93,
+        "samples": 224,
+        "continuation_worker_s": 9.232415275648236,
+        "judge_elapsed_s": 7.9
+      },
+      "C": {
+        "level": 1,
+        "mismatches": 93,
+        "samples": 224,
+        "continuation_worker_s": 8.276597082614899,
+        "judge_elapsed_s": 7.8
+      }
+    },
+    {
+      "task": "Prob118_history_shift",
+      "same_output_bytes": true,
+      "paired_requests_verified": true,
+      "A": {
+        "level": 3,
+        "mismatches": 0,
+        "samples": 2055,
+        "continuation_worker_s": 11.644641119986773,
+        "judge_elapsed_s": 44.2
+      },
+      "C": {
+        "level": 3,
+        "mismatches": 0,
+        "samples": 2055,
+        "continuation_worker_s": 12.794402109459043,
+        "judge_elapsed_s": 44.3
+      }
+    },
+    {
+      "task": "Prob130_circuit5",
+      "same_output_bytes": true,
+      "paired_requests_verified": true,
+      "A": {
+        "level": 3,
+        "mismatches": 0,
+        "samples": 141,
+        "continuation_worker_s": 8.92166543751955,
+        "judge_elapsed_s": 27.2
+      },
+      "C": {
+        "level": 3,
+        "mismatches": 0,
+        "samples": 141,
+        "continuation_worker_s": 7.701320542022586,
+        "judge_elapsed_s": 27.5
+      }
+    },
+    {
+      "task": "Prob134_2014_q3c",
+      "same_output_bytes": true,
+      "paired_requests_verified": true,
+      "A": {
+        "level": 0,
+        "mismatches": null,
+        "samples": null,
+        "continuation_worker_s": 21.674944914877415,
+        "judge_elapsed_s": 2.2
+      },
+      "C": {
+        "level": 0,
+        "mismatches": null,
+        "samples": null,
+        "continuation_worker_s": 22.759583869948983,
+        "judge_elapsed_s": 2.2
+      }
+    },
+    {
+      "task": "Prob153_gshare",
+      "same_output_bytes": false,
+      "paired_requests_verified": true,
+      "A": {
+        "level": 1,
+        "mismatches": 527,
+        "samples": 1083,
+        "continuation_worker_s": 48.46025038138032,
+        "judge_elapsed_s": 8.0
+      },
+      "C": {
+        "level": 1,
+        "mismatches": 527,
+        "samples": 1083,
+        "continuation_worker_s": 33.6753484159708,
+        "judge_elapsed_s": 8.0
+      }
+    }
+  ],
+  "tokens": {
+    "A": {
+      "prompt": 11834,
+      "completion": 2432,
+      "cached": 4652
+    },
+    "C": {
+      "prompt": 10359,
+      "completion": 2052,
+      "cached": 4731
+    }
+  },
+  "guard": {
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true,
+    "finished_at_utc": "2026-10-04T17:40:13.084507+00:00",
+    "cleanup_verified": true
+  }
+}
