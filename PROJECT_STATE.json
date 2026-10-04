@@ -4018,11 +4018,25 @@
     "cleanup_verified": true
   },
   "bridge_transport_T6_20261005": {
-    "status": "frozen_not_started",
-    "max_fake_calls": 7,
+    "status": "completed_verified_engineering_only",
+    "updated_at": "2026-10-05T07:33:00+08:00",
+    "commit": "066bf73f309c2394b7799b0dbcaa54e64c671b25",
+    "ticket": 36,
+    "driver_pid": 3659540,
+    "stage_pid": 3659545,
+    "amd_root": "/workspace/team/runs/fpga_teammate/bridge_transport_T6_20261005_066bf73",
+    "plan_sha256": "bf7f4e7f827328e5cc1bd1a6816fc7d27de3cab8d5c2afc66bcfdbeda5f42eb6",
+    "http_controls": 6,
+    "fake_calls": 7,
     "actual_model_calls": 0,
     "eda_calls": 0,
-    "stage_timeout_s": 120,
-    "full_batch_complete": false
+    "elapsed_s": 8.856882916763425,
+    "guard_elapsed_s": 10.028952077031136,
+    "archive_sha256": "861ffc2e2f85e7617ea09913a331cc4c4bc4896322caf8cff1fcc60f9bd84e16",
+    "members_verified": 69,
+    "cleanup_verified": true,
+    "independent_tasks": 0,
+    "full_batch_complete": false,
+    "next": "Freeze evaluator-only common module-name conversion on constructed controls, then audit eligibility without model outputs; retain full156 nonpromotion"
   }
 }

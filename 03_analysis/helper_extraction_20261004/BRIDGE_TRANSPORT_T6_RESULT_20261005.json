@@ -1,0 +1,43 @@
+{
+  "complete": true,
+  "passed": true,
+  "actual_model_requests": 0,
+  "actual_eda_commands": 0,
+  "fake_model_requests": 7,
+  "rows": [
+    {
+      "case": "first_headers",
+      "passed": true,
+      "elapsed_s": 2.7214670721441507,
+      "recovery_s": 0.11832521110773087,
+      "backend_peer_closed": true,
+      "owned_worker_gone": true,
+      "implicit_retry": false
+    },
+    {
+      "case": "first_body",
+      "passed": true,
+      "elapsed_s": 2.7061303574591875,
+      "recovery_s": 0.11844579875469208,
+      "backend_peer_closed": true,
+      "owned_worker_gone": true,
+      "implicit_retry": false
+    },
+    {
+      "case": "repair_headers",
+      "passed": true,
+      "elapsed_s": 2.7058390974998474,
+      "recovery_s": 0.11792326159775257,
+      "backend_peer_closed": true,
+      "owned_worker_gone": true,
+      "implicit_retry": false
+    }
+  ],
+  "independent_tasks": 0,
+  "full_batch_complete": false,
+  "elapsed_s": 8.856882916763425,
+  "archive_sha256": "861ffc2e2f85e7617ea09913a331cc4c4bc4896322caf8cff1fcc60f9bd84e16",
+  "members_verified": 69,
+  "guard_elapsed_s": 10.028952077031136,
+  "cleanup_verified": true
+}
