@@ -1,0 +1,219 @@
+{
+  "schema": "selective_runtime_paired_inputs_v1",
+  "status": "UNRUN",
+  "source_commit": "773d4ce7d142fd04a0592caa86d3bdc6d46786c9",
+  "runtime_sha256": "318672f841430a864cd99fae4de712942258d0dcda7a1ad6b0567c71610f52c8",
+  "package_files": {
+    "03_analysis/selective_runtime_integration_20261003/package/agent/runtime.py": "318672f841430a864cd99fae4de712942258d0dcda7a1ad6b0567c71610f52c8",
+    "03_analysis/selective_runtime_integration_20261003/package/agent/signedness_selector.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "03_analysis/selective_runtime_integration_20261003/package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "03_analysis/selective_runtime_integration_20261003/package/run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+    "03_analysis/selective_runtime_integration_20261003/package/upstream.json": "cd9f2bebfb5aae8fb645f61951623a0c1928b2fa654b0366d954966fdf20f61d",
+    "03_analysis/selective_runtime_integration_20261003/package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "03_analysis/selective_runtime_integration_20261003/package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+  },
+  "files": {
+    "03_analysis/selective_runtime_integration_20261003/package/agent/runtime.py": "318672f841430a864cd99fae4de712942258d0dcda7a1ad6b0567c71610f52c8",
+    "03_analysis/selective_runtime_integration_20261003/package/agent/signedness_selector.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "03_analysis/selective_runtime_integration_20261003/package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "03_analysis/selective_runtime_integration_20261003/package/run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+    "03_analysis/selective_runtime_integration_20261003/package/upstream.json": "cd9f2bebfb5aae8fb645f61951623a0c1928b2fa654b0366d954966fdf20f61d",
+    "03_analysis/selective_runtime_integration_20261003/package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "03_analysis/selective_runtime_integration_20261003/package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "03_analysis/r2_signedness_20261003/probes/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "03_analysis/r2_signedness_20261003/input/Prob115_shift18/prompt.txt": "2b1406045f6a92c759dc6b0de75ce7ffe7b44028c84e49534c9f4a2ce346566b",
+    "03_analysis/r2_signedness_20261003/input/Prob115_shift18/candidate.sv": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+    "03_analysis/r2_signedness_20261003/probes/Prob115_shift18/tb.sv": "616079f1fafa63fae52bfda00639809adf986c57474532572abf44c2dd0d1935",
+    "03_analysis/r2_signedness_20261003/probes/Prob115_shift18/positive.sv": "b5cfeb3df59609b6343c0a7b6801b6eb83a5d5ceb81bfcf7c081c64888d20930",
+    "03_analysis/r2_signedness_20261003/probes/Prob115_shift18/negative.sv": "092f744dc82402ee901e7214e3cd10f878e974a6ce5d8ba3362c41fc1d1787d6",
+    "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/prompt.txt": "d15e01d44228cef9753c4f592176873c9bb1e89b322d7f06b36290baee5e891e",
+    "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/prompt.txt": "bdc58ca32db81e53addd16cc5cd671c2d1f839591317ebe7174fb16b9ec23dc5",
+    "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/prompt.txt": "e0af17e9255b0a9cc227c1fc506c6def2c13a044e9422a1eae329c766772f68b",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/prompt.txt": "3a52419d4e26618db46f28eac7b6a9d72a42aa7d7bb74c390ad0dfa86a0301af",
+    "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/prompt.txt": "104c8b48752ca525a21220ee6fb2bfad62c6a9b42bf9d1aed3b8810106b089cb",
+    "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/candidate.sv": "e9fd4eaa043c02d5d9d719903d275904922f01a46dcdb3c4d96f6fc422b3e2fc",
+    "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/candidate.sv": "4d448bfd0a7cae29d2c4c213d800b4e2dc12059809503eedb118055b3f359362",
+    "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/candidate.sv": "31b2592943f7054ba094462981758143cf01abb435bebe09e2d5820516c7adfa",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/candidate.sv": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+    "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/candidate.sv": "59c89e8e0036e8629a5c2a22acb8ba811eb23e15d27b6fdc94a80755e4f486a1",
+    "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/tb.sv": "25747c1464c759ee3ea56bf8749b6a46681dc5cc71e8550f76a11ac86f5c0e94",
+    "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/tb.sv": "8274f255f79c2da8db6fb612c3f72a766c235db65685bb1cee2a0cb725693162",
+    "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/tb.sv": "3ecc18c85cdc0ee47ae27ec0371ebd54be702dd1f32b8cf82eb6cd0a3b203014",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/tb.sv": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+    "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/tb.sv": "eb739e2b90574b2ffdbd1f8badf87831c790734d3fe92821610a0dbc0fc76323",
+    "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/positive.sv": "7651a0b51f1d534555928ee197dc5626a530339f65b0c012d541708ca537c659",
+    "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/positive.sv": "8f663dbd2b78c3426d78e5478a35e54dc9fc1fb0cc86be72dae3a9156930180a",
+    "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/positive.sv": "a6d97a38e359b1ce02680b55b39608a8098beb50f3cc974adf36ed240024a012",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/positive.sv": "cdf9638b51bde16d3760a6fbe4a48ea015736942b7decbc1f86ff31d78807e1a",
+    "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/positive.sv": "38ff79cbf2d1c123359f607fb7d4326daa0f6044ef73eda9803f5d17566ac5a5",
+    "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/negative.sv": "389056e62b83d49633fdae07ea2854889913244f3db44df6aacdcf3aa11ce6da",
+    "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/negative.sv": "e8dfeebfd1787162e21a3580a5c7e1f14cc68bf9c7fea451eef183e4db568c7b",
+    "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/negative.sv": "d63ecb38a216faacc1e1c535e0152ff0b672ca640cb47c52f0ca31151079e03c",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/negative.sv": "4ffffa115e054410d4f4f7045620a817e1935856a27074aa60d4509596b362d3",
+    "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/negative.sv": "1e030cc483c56dc3b985be19ac05779e58ba76d13c09fcfca5bf88b847574cc7",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/negative.sv": "c6a3ad8ae68acf87a795aeb19d4478c600641e6379c89348961520f88fa61f0c",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/positive.sv": "cd74ee7ba6694940393acf0241b26246893d06b7aa11cc578c2f3b230764dd6c",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/prompt.txt": "48fc6e7974974b0ce686e4ff356bd98d6e7248d9dcfc57e22abb65ccea241705",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/tb.sv": "472f13455deaf9cb7206df0f57b00ccd618d54a81dd3838a592d646a1d066a78",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/negative.sv": "ae5f1c7ae2ea1bff834becfe8cc58e22cd15a29b1c5cf242bee50972c297702f",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/positive.sv": "f39850b4e3b7a47ca502f627fc08caf680ebce18da16f1de662c6ddc2e04b583",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/prompt.txt": "2930de1cffc2c3b1b847636f149eb6a18b8ef2fff5845bdecb5510472755a72d",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/tb.sv": "1bbf13fda4b84561e5e3c4e3556ff30b1aaab0adb049e8d725800d15ea737443",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/README.md": "9692f91adc270fb95d2c2ca4973bfea0f1c681f5a68d4da8555eff00db9ef0de"
+  },
+  "tasks": [
+    {
+      "task": "Prob115_shift18",
+      "checks": 31,
+      "tb": "03_analysis/r2_signedness_20261003/probes/Prob115_shift18/tb.sv",
+      "positive": "03_analysis/r2_signedness_20261003/probes/Prob115_shift18/positive.sv",
+      "negative": "03_analysis/r2_signedness_20261003/probes/Prob115_shift18/negative.sv"
+    },
+    {
+      "task": "Arithmetic11Boundary",
+      "checks": 431,
+      "tb": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/tb.sv",
+      "positive": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/positive.sv",
+      "negative": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/negative.sv"
+    },
+    {
+      "task": "Arithmetic17Boundary",
+      "checks": 431,
+      "tb": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/tb.sv",
+      "positive": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/positive.sv",
+      "negative": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/negative.sv"
+    },
+    {
+      "task": "Prob033_ece241_2014_q1c",
+      "checks": 65536,
+      "tb": "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/tb.sv",
+      "positive": "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/positive.sv",
+      "negative": "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/negative.sv"
+    },
+    {
+      "task": "Prob016_m2014_q4j",
+      "checks": 256,
+      "tb": "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/tb.sv",
+      "positive": "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/positive.sv",
+      "negative": "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/negative.sv"
+    },
+    {
+      "task": "Prob009_popcount3",
+      "checks": 8,
+      "tb": "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/tb.sv",
+      "positive": "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/positive.sv",
+      "negative": "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/negative.sv"
+    },
+    {
+      "task": "Prob085_shift4",
+      "checks": 209,
+      "tb": "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/tb.sv",
+      "positive": "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/positive.sv",
+      "negative": "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/negative.sv"
+    },
+    {
+      "task": "Prob123_bugs_addsubz",
+      "checks": 131072,
+      "tb": "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/tb.sv",
+      "positive": "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/positive.sv",
+      "negative": "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/negative.sv"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "Known115Wrong",
+      "task": "Prob115_shift18",
+      "family": "known_development_error",
+      "prompt": "03_analysis/r2_signedness_20261003/input/Prob115_shift18/prompt.txt",
+      "candidate": "03_analysis/r2_signedness_20261003/input/Prob115_shift18/candidate.sv"
+    },
+    {
+      "id": "Arithmetic11BoundaryWrong",
+      "task": "Arithmetic11Boundary",
+      "family": "constructed_mechanism_error",
+      "prompt": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/prompt.txt",
+      "candidate": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/negative.sv"
+    },
+    {
+      "id": "Arithmetic11BoundaryCorrect",
+      "task": "Arithmetic11Boundary",
+      "family": "constructed_correct_checkpoint",
+      "prompt": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/prompt.txt",
+      "candidate": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic11Boundary/positive.sv"
+    },
+    {
+      "id": "Arithmetic17BoundaryWrong",
+      "task": "Arithmetic17Boundary",
+      "family": "constructed_mechanism_error",
+      "prompt": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/prompt.txt",
+      "candidate": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/negative.sv"
+    },
+    {
+      "id": "Arithmetic17BoundaryCorrect",
+      "task": "Arithmetic17Boundary",
+      "family": "constructed_correct_checkpoint",
+      "prompt": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/prompt.txt",
+      "candidate": "03_analysis/selective_runtime_integration_20261003/paired_next/Arithmetic17Boundary/positive.sv"
+    },
+    {
+      "id": "Prob033_ece241_2014_q1c",
+      "task": "Prob033_ece241_2014_q1c",
+      "family": "existing_development_guard",
+      "prompt": "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/prompt.txt",
+      "candidate": "03_analysis/r2_selectivity_20261003/guards/Prob033_ece241_2014_q1c/candidate.sv"
+    },
+    {
+      "id": "Prob016_m2014_q4j",
+      "task": "Prob016_m2014_q4j",
+      "family": "existing_development_guard",
+      "prompt": "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/prompt.txt",
+      "candidate": "03_analysis/r2_selectivity_20261003/guards/Prob016_m2014_q4j/candidate.sv"
+    },
+    {
+      "id": "Prob009_popcount3",
+      "task": "Prob009_popcount3",
+      "family": "existing_development_guard",
+      "prompt": "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/prompt.txt",
+      "candidate": "03_analysis/r2_selectivity_20261003/guards/Prob009_popcount3/candidate.sv"
+    },
+    {
+      "id": "Prob085_shift4",
+      "task": "Prob085_shift4",
+      "family": "existing_development_guard",
+      "prompt": "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/prompt.txt",
+      "candidate": "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/candidate.sv"
+    },
+    {
+      "id": "Prob123_bugs_addsubz",
+      "task": "Prob123_bugs_addsubz",
+      "family": "existing_development_guard",
+      "prompt": "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/prompt.txt",
+      "candidate": "03_analysis/r2_selectivity_20261003/guards/Prob123_bugs_addsubz/candidate.sv"
+    }
+  ],
+  "rows": 60,
+  "oracle_controls": 16,
+  "optional_review_attempt_cap": 12,
+  "order": [
+    "O0",
+    "D0",
+    "C0",
+    "C1",
+    "D1",
+    "O1"
+  ],
+  "review_budget": {
+    "llm_cap_s": 20,
+    "compile_cap_s": 5,
+    "cleanup_reserve_s": 6,
+    "admission_s": 31
+  },
+  "checkpoint_review_deadline_s": 60,
+  "initial_compile_cap_s": 5,
+  "first_generation": "excluded",
+  "scope": "constructed mechanism transfer plus known development checkpoints; not independent competition generalization",
+  "grading": "independent offline functional oracles only; no official grade",
+  "no_resampling": true,
+  "force_selection": false
+}
