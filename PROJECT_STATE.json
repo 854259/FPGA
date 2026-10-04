@@ -3651,7 +3651,7 @@
     "model_and_protected_files_unchanged": true
   },
   "diagnostic_checkpoint_Q5_20261005": {
-    "status": "frozen_not_executed",
+    "status": "running",
     "pairs": 7,
     "new_model_call_cap": 14,
     "stage_timeout_s": 3600,
@@ -3663,6 +3663,11 @@
     "original_exhausted_compile_errors": 2,
     "new_independent_natural_tasks": 0,
     "full_batch_complete": false,
-    "spec": "03_analysis/helper_extraction_20261004/DIAGNOSTIC_Q5_SPEC.json"
+    "spec": "03_analysis/helper_extraction_20261004/DIAGNOSTIC_Q5_SPEC.json",
+    "ticket": 17,
+    "experiment_pid": 3363656,
+    "source_commit": "865876ad2e88206f2052d489b65f83d78e67e444",
+    "amd_root": "/workspace/team/runs/fpga_teammate/diagnostic_Q5_20261005_865876a",
+    "started_at_utc": "2026-10-04T17:20:55.301796+00:00"
   }
 }
