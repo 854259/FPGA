@@ -1,5 +1,54 @@
 {
   "schema_version": 1,
+  "ross_expert_assessment_20261004": {
+    "status": "isolated_xsim_verdict_gates_verified",
+    "report": "03_analysis/ross_expert_check_20261004/README.md",
+    "result": "03_analysis/ross_expert_check_20261004/RESULTS.json",
+    "scope": "Hand-adapted official RTL simulation workflow; KB structure assessed, not queried",
+    "upstream_commit": "2cdc9eef1b6b5b17fa45f5e4d468e5483a1c92de",
+    "vivado_version": "2026.1",
+    "sessions": 2,
+    "tool_calls": 22,
+    "elapsed_s": 37.26947467960417,
+    "correct_checks_passed": 5,
+    "incorrect_detected_at_ns": 1,
+    "both_tcl_return_codes": 0,
+    "model_calls": 0,
+    "full_skill_model_execution": false,
+    "model_repair_benefit_measured": false,
+    "knowledge_base_deployed": false,
+    "knowledge_base_retrieval_tested": false,
+    "timing_ip_hls_runtime_tested": false,
+    "evidence": {
+      "archive_sha256": "1a35e0fcd70f7c9c846f7ec80db0cb3abf234d17647be4de10fd2a9be05cee18",
+      "manifest_files": 84,
+      "hashes_verified": true,
+      "expert_sources_verified": 8
+    },
+    "postflight": {
+      "utc": "2026-10-04T02:46:04.043356+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "workspace_free_gib": 10.127643585205078,
+      "model_pid": 2013333,
+      "instance_shutdown_or_model_restart": false
+    },
+    "owned_cleanup_verified": true,
+    "remaining_owned_processes": 0,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "formal_runtime_integrated": false,
+    "new_score": false,
+    "next_step": "Paired repair experiment on real functional errors and correct guards; select official docs by actual diagnostic need"
+  },
   "ross_mcp_research_20261004": {
     "status": "isolated_real_mcp_execution_verified_lint_calibration_failed",
     "branch": "research/ross-mcp-20261004",
@@ -46,7 +95,8 @@
       "vivado_sessions_closed": 6,
       "lint_calls": 6,
       "synthesis_calls": 2,
-      "model_calls": 0
+      "model_calls": 0,
+      "scope": "Earlier lint/synthesis probe only; excludes later ross_expert_check_20261004 simulation sessions"
     },
     "failed_attempts": [
       {
@@ -500,7 +550,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-03T17:01:28+08:00",
+  "last_updated": "2026-10-04T10:52:07+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",

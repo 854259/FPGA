@@ -1,0 +1,158 @@
+{
+  "schema": "ross_expert_assessment_v1",
+  "status": "isolated_xsim_verdict_gates_verified",
+  "upstream_commit": "2cdc9eef1b6b5b17fa45f5e4d468e5483a1c92de",
+  "frozen_spec": "RUN_SPEC.json",
+  "cloud_root": "/workspace/team/runs/fpga_owner/ross_expert_check_20261004_v1",
+  "simulation_probe": {
+    "complete": true,
+    "passed": true,
+    "model_calls": 0,
+    "rows": [
+      {
+        "case": "correct",
+        "expected_verdict": "PASS",
+        "verdict": "PASS",
+        "launch_tcl_exit_code": 0,
+        "run_tcl_exit_code": 0,
+        "pass_markers": [
+          "5"
+        ],
+        "first_failure": null,
+        "transcript_path": "results/correct/project/sim_probe.sim/sim_1/behav/xsim/simulate.log",
+        "transcript_sha256": "e21e10ce1470a386ade6ea89b5ba8aedc5ffbc832f5d41be9dddb4425f0d411e",
+        "vcd_sha256": "28ce705b6036c2261d47c516968ac468655cb7b7296589bff348095fd4aca5ff",
+        "vcd_bytes": 514,
+        "vcd_header_verified": true,
+        "source_sha256": "3fdeeb7e55a84541ab2c90de7f64b6586445da37da2d76d139aa51f107f676d1"
+      },
+      {
+        "case": "incorrect",
+        "expected_verdict": "FAIL",
+        "verdict": "FAIL",
+        "launch_tcl_exit_code": 0,
+        "run_tcl_exit_code": 0,
+        "pass_markers": [],
+        "first_failure": "TEST_FAIL time=1000 a=1 b=1 expected=2 observed=0",
+        "transcript_path": "results/incorrect/project/sim_probe.sim/sim_1/behav/xsim/simulate.log",
+        "transcript_sha256": "a4f9f2e51fe68872292ade59e321d9c3e9e96146a6219dd70c5e7c5f1869c8c7",
+        "vcd_sha256": "92e2e7d0427153db8a9a876af6256298490b9cdf0d216d8af4d8752baba91dc7",
+        "vcd_bytes": 340,
+        "vcd_header_verified": true,
+        "source_sha256": "bc5752e3e4b8255b0c8fcbb29c2178032dc86cee08af093827a1a0bf00f4adad"
+      }
+    ],
+    "closed_sessions": [
+      "vivado-20261004-023935-429f8f95",
+      "vivado-20261004-023954-7bc00471"
+    ],
+    "full_skill_model_execution": false,
+    "server_exit_code": 0,
+    "elapsed_s": 37.26947467960417,
+    "tool_calls": 22
+  },
+  "transcript_snapshot_audit": [
+    {
+      "case": "correct",
+      "observed_prefix_bytes": 165,
+      "observed_prefix_sha256": "e21e10ce1470a386ade6ea89b5ba8aedc5ffbc832f5d41be9dddb4425f0d411e",
+      "final_file_bytes": 265,
+      "final_file_sha256": "565edfbfad8c2b5fc33e70e2d867820ffb9c3eb5257ea6b9a406eb102679b15e",
+      "appended_at_close": "xsimkernel memory/CPU usage statistics"
+    },
+    {
+      "case": "incorrect",
+      "observed_prefix_bytes": 281,
+      "observed_prefix_sha256": "a4f9f2e51fe68872292ade59e321d9c3e9e96146a6219dd70c5e7c5f1869c8c7",
+      "final_file_bytes": 381,
+      "final_file_sha256": "10c14140eb826bc756f8ccedb0802fbb3720a4d30c0ca6477ae38268b32f1c9d",
+      "appended_at_close": "xsimkernel memory/CPU usage statistics"
+    }
+  ],
+  "guard": {
+    "started_at_utc": "2026-10-04T02:39:35.547204+00:00",
+    "finished_at_utc": "2026-10-04T02:40:13.148713+00:00",
+    "elapsed_s": 37.50090397335589,
+    "stage_rc": 0,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "model_idle_after": {
+      "health_status": "ok",
+      "model_name": "Qwen3.6-27B-Q4_K_M",
+      "slot_count": 1,
+      "processing_slots": 0,
+      "model_pid_owns_port": true
+    },
+    "own_slot_released": true
+  },
+  "owned_cleanup_verified": true,
+  "remaining_owned_processes": 0,
+  "postflight": {
+    "utc": "2026-10-04T02:46:04.043356+00:00",
+    "model_health": {
+      "status": "ok"
+    },
+    "processing_slots": 0,
+    "slot_exists": false,
+    "ports": {
+      "8000": true,
+      "7860": false,
+      "7867": false
+    },
+    "workspace_free_gib": 10.127643585205078,
+    "model_pid": 2013333,
+    "instance_shutdown_or_model_restart": false
+  },
+  "evidence": {
+    "archive_sha256": "1a35e0fcd70f7c9c846f7ec80db0cb3abf234d17647be4de10fd2a9be05cee18",
+    "manifest_files": 84,
+    "hashes_verified": true,
+    "expert_sources_verified": 8
+  },
+  "assessment": {
+    "rtl_simulation": {
+      "priority": "high",
+      "observed_use": "Complete transcript plus explicit PASS/check-count gates distinguish correct and faulty RTL despite Tcl return code zero",
+      "model_repair_benefit_measured": false
+    },
+    "knowledge_base": {
+      "priority": "selective_document_lookup",
+      "runtime_tested": false,
+      "deployed": false,
+      "doc_search_is_separate_mcp": true,
+      "official_local_stack": [
+        "Weaviate",
+        "llama.cpp embedding",
+        "amd-doc-search MCP"
+      ],
+      "official_document_download_gb": [
+        3.1,
+        4.4
+      ],
+      "contest_offline_compatibility_verified": false
+    },
+    "timing_methodology": {
+      "priority": "later_if_constraints_or_timing_needed",
+      "runtime_tested": false,
+      "functional_spec_equivalence": false
+    },
+    "ip_hls_hardware_vitis_ai": {
+      "priority": "low_for_current_rtl_track",
+      "runtime_tested": false
+    }
+  },
+  "formal_runtime_integrated": false,
+  "formal_package_changed": false,
+  "new_score": false,
+  "limitations": [
+    "No hidden or official TB/reference",
+    "No third-party EDA; XSim only",
+    "No runtime/score/weights changes",
+    "No full knowledge-base deployment or hosted retrieval queries",
+    "Header checking is not a full waveform/value comparison",
+    "Hand-adapted official workflow; no full model-selected skill execution",
+    "Two synthetic candidates for one tiny contract, not independent competition problems",
+    "Existing project already has verdict gates; no comparative detection or score gain established",
+    "No candidate repair, KB retrieval, timing-methodology execution, or KB latency/resource measurement"
+  ]
+}

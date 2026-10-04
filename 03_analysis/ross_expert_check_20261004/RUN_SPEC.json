@@ -1,0 +1,37 @@
+{
+  "schema": "ross_simulation_skill_gate_probe_v1",
+  "status": "frozen_before_cloud_run",
+  "scope": "Adapted XSim/MCP workflow and verdict gates; no local-model skill execution or repair",
+  "part": "xczu3eg-sbva484-1-e",
+  "binary_sha256": "2d1ac42f2628dab2db37bd214b4ad45d2275e541fe6eb71e879ac6ea123bb8bc",
+  "model_calls": 0,
+  "contract": "8-bit combinational sum = (a+b) modulo 256; five fixed legal pairs; correct candidate must pass all five, XOR mutation must fail the first 1+1 pair; watchdog at 15ns, MCP run bounded to 20ns",
+  "cases": [
+    {
+      "name": "correct",
+      "source": "inputs/correct.sv",
+      "expected_verdict": "PASS"
+    },
+    {
+      "name": "incorrect",
+      "source": "inputs/incorrect.sv",
+      "expected_verdict": "FAIL"
+    }
+  ],
+  "source_hashes": {
+    "mcp_client.py": "b277f8288064ff601acccd8434c5b2e43e547854a7f268216e0e8df1dec2b7b8",
+    "simulation_probe.py": "024f05f709827c61ceaacecfa650c5505c6e1646966c73b0e0416b6e246e2d54",
+    "inputs/correct.sv": "3fdeeb7e55a84541ab2c90de7f64b6586445da37da2d76d139aa51f107f676d1",
+    "inputs/incorrect.sv": "bc5752e3e4b8255b0c8fcbb29c2178032dc86cee08af093827a1a0bf00f4adad",
+    "inputs/tb.sv": "109f7bb3baeb23d8b97d859b1c1d128a51807d767591608c605bce7250b89934"
+  },
+  "resource_guard_commit": "bde08582f99d70dc16581afe837e9457a1a92e64",
+  "resource_guard_sha256": "59c4212cb77971406255690c0efab0593cb5c100b21cf9d22622a9917be5e66d",
+  "limits": [
+    "No hidden or official TB/reference",
+    "No third-party EDA; XSim only",
+    "No runtime/score/weights changes",
+    "No full knowledge-base deployment or hosted retrieval queries",
+    "Header checking is not a full waveform/value comparison"
+  ]
+}
