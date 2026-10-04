@@ -1,0 +1,47 @@
+{
+  "schema": "cvdp_runner_rng_S2",
+  "complete": true,
+  "source_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "records": 302,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "independent_tasks_admitted": 0,
+  "full_batch_complete": false,
+  "scope": "Runner plan replay with simulator stub; not RTL or grading",
+  "profiles": [
+    [
+      "env_only_11",
+      11,
+      null
+    ],
+    [
+      "env_only_22",
+      22,
+      null
+    ],
+    [
+      "fixed_11",
+      11,
+      20261005
+    ],
+    [
+      "fixed_22",
+      22,
+      20261005
+    ]
+  ],
+  "previous_valid_not_repeated": 21,
+  "previous_sha256": "2aeafda7c51ebbc71e0f6f433f324f89037cb54ee302bf58446c2a751cc17c62",
+  "error": null,
+  "cohort_sha256": "7974c58ff5296eaa709fce5c3eb78d886696406c6732531adc2c4bb2a106f5b6",
+  "elapsed_s": 31.793367009609938,
+  "counts": {
+    "runners_with_rng": 45,
+    "dynamic_eligible": 24,
+    "capture_valid": 24,
+    "env_only_varies": 24,
+    "fixed_wrapper_identical": 24
+  },
+  "blocked_calls": {},
+  "private_result_sha256": "54afbea3fe71b634b8e81d14bf88cab6b15fbe0ee8827a50941aedf9cac8c13c"
+}

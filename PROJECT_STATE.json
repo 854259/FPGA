@@ -3764,10 +3764,10 @@
     "expand_model_calls": false
   },
   "cvdp_rng_admission_20261005": {
-    "next": "跟进票25全156回归，票26自动串行补齐剩余24入口；不重复提交或干预前序冻结配置。完成后归档/清理与更新报告，再按准入继续。",
+    "next": "保留导入前固定外层RNG并核对完整参数计划的工程措施；不重复45入口。先收尾现有全156证据；独立材料仍需公平接口、真值与家族等准入。",
     "S2": {
-      "status": "queued_unexecuted",
-      "actual_experiment_child": null,
+      "status": "completed_verified",
+      "actual_experiment_child": 3628250,
       "commit": "8a62e2f436f75af60fb9ec6dca7fd6ce7bc3736e",
       "monitor_pid": 3392861,
       "stage_cap_s": 900,
@@ -3776,10 +3776,19 @@
       "eda_calls": 0,
       "model_calls": 0,
       "root": "/workspace/team/runs/fpga_teammate/cvdp_rng_S2_20261005_8a62e2f",
-      "after_ticket": 25
+      "after_ticket": 25,
+      "stage_pid": 3628255,
+      "valid_captures": 24,
+      "env_only_varies": 24,
+      "fixed_plan_equal": 24,
+      "elapsed_s": 31.793367009609938,
+      "guard_wall_s": 32.0863777436316,
+      "archive_sha256": "85a04835f0c88d4679f4fdd2905b3fba25dab229b335c3850471522bae0479e6",
+      "members_verified": 490,
+      "cleanup_verified": true
     },
     "independent_admitted": 0,
-    "updated_at": "2026-10-05T02:33:00+08:00",
+    "updated_at": "2026-10-05T06:50:00+08:00",
     "full_batch_complete": false,
     "S1": {
       "rng_runners": 45,
@@ -3797,7 +3806,8 @@
       "members_verified": 349,
       "driver_pid": 3390330,
       "archive_sha256": "2ed31e6aeb4d7e89ee77feae5d91f54aec6ff41873734ff8a5b4151b98b6b83b"
-    }
+    },
+    "total_rng_runners_verified": 45
   },
   "functional_fresh_owner_observation_20261005": {
     "scope": "Read-only observation of other owner pilot; no new inference or duplicated experiment",
@@ -3846,7 +3856,7 @@
   "functional_full156_owner_observation_20261005": {
     "ticket": 25,
     "task_name": "functional_full156_v1",
-    "state": "running",
+    "state": "completed_pending_provenance_audit",
     "child": {
       "pid": 3390466,
       "starttime": "841229949"
@@ -3858,10 +3868,10 @@
     "cwd": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1",
     "started_at_utc": "2026-10-05T02:30:50.007845+08:00",
     "accepted_at_utc": "2026-10-05T02:30:49.933417+08:00",
-    "completed_samples": 33,
+    "completed_samples": 312,
     "expected_samples": 312,
-    "model_requests": 33,
-    "sample_complete": false,
+    "model_requests": 333,
+    "sample_complete": true,
     "protocol_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
     "log_path": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1/guard/stage.log",
     "summary_path": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1/results/summary.json",
@@ -3869,7 +3879,11 @@
     "max_model_requests": 624,
     "max_stage_s": 86400,
     "user_full_batch_complete": false,
-    "observed_at_utc": "2026-10-04T18:48:15.760001+00:00"
+    "observed_at_utc": "2026-10-04T22:40:49.734850+00:00",
+    "guard_passed": true,
+    "guard_wall_s": 14725.964709594846,
+    "evidence_archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+    "final_statistics_verified": false
   },
   "paired_uncertainty_postflight_20261005": {
     "source_archive_sha256": "e2f3895a198073e7dadc5584e895c04779e667e7905313f76626cf909d8b7026",
@@ -3883,12 +3897,45 @@
     "model_calls": 0,
     "selfcheck_cap_s": 60,
     "monitor_pid": 3418224,
-    "next": "等待FIFO自检，失败先查因；仅在完整312行和原归属最终审计/归档通过后运行真实统计。不重跑模型、不改变采用条件。",
+    "next": "T2通过后T3在同机串行核对原审计器来源链，再做既定配对统计；任一失败保留证据先查因，不重抽生成或改门槛。",
     "commit": "aca75287dab766a7587abcf4d7c5cc5c5ad93321",
-    "status": "implemented_static_reviewed_execution_unverified",
+    "status": "T1_launch_failed_T2_T3_queued",
     "eda_calls": 0,
-    "queue_state": "queued",
+    "queue_state": "T1_released_after_inspection",
     "actual_experiment_child": null,
-    "reads_partial_scores": false
+    "reads_partial_scores": false,
+    "T1": {
+      "ticket": 27,
+      "status": "failed_before_stage",
+      "error": "Missing literal resource_check argument",
+      "stage_executed": false,
+      "model_calls": 0,
+      "archive_sha256": "e2897f74a577b1df5e2a51d848f462859e0583cabbb1776f69544445cc0b6008",
+      "members_verified": 10,
+      "cleanup_verified": true
+    },
+    "T2": {
+      "ticket": 32,
+      "status": "queued",
+      "monitor_pid": 3632665,
+      "commit": "b370734c45b386e66f18aafcdc924ecce0b45d5d",
+      "root": "/workspace/team/runs/fpga_teammate/paired_uncertainty_T2_20261005_b370734",
+      "stage_cap_s": 60,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "source_zip_sha256": "8eceb20efb708ac4147780a589cf1d8c75054519bb12f0a35f1a158c2619177c"
+    },
+    "T3": {
+      "ticket": 33,
+      "status": "queued",
+      "monitor_pid": 3642119,
+      "commit": "86f6fb02ccb746ec6e40bb6624daf1190ad2acd7",
+      "root": "/workspace/team/runs/fpga_teammate/paired_postflight_T3_20261005_86f6fb0",
+      "plan_sha256": "370874c6775e1d9dd187ae9e2e8162fd5ebbae09fdf80f3b8b975143a449bbb3",
+      "stage_cap_s": 300,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "requires_T2_passed": true
+    }
   }
 }
