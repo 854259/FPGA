@@ -3879,7 +3879,7 @@
     "max_model_requests": 624,
     "max_stage_s": 86400,
     "user_full_batch_complete": false,
-    "observed_at_utc": "2026-10-04T23:04:00+00:00",
+    "observed_at_utc": "2026-10-05T07:04:00+08:00",
     "guard_passed": true,
     "guard_wall_s": 14725.964709594846,
     "evidence_archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
@@ -3992,5 +3992,37 @@
     "members_verified": 10,
     "cleanup_verified": true,
     "report": "03_analysis/helper_extraction_20261004/FULL156_COMPARABILITY_20261005.json"
+  },
+  "bridge_shift_T5_20261005": {
+    "status": "completed_verified_engineering_only",
+    "updated_at": "2026-10-05T07:28:00+08:00",
+    "commit": "7836041757bf89c12475cc3cd350eca2eff5c27b",
+    "ticket": 35,
+    "driver_pid": 3651329,
+    "stage_pid": 3651334,
+    "amd_root": "/workspace/team/runs/fpga_teammate/bridge_shift_T5_20261005_7836041",
+    "plan_sha256": "2b8e7f70f5f56fa17c9f64ea1f06e6846e31535b26edcb9cf7aa48eb7ddf5c48",
+    "max_actual_model_requests": 0,
+    "max_fake_model_requests": 15,
+    "native_probes": 21,
+    "extra_lint": 15,
+    "stage_timeout_s": 900,
+    "full_batch_complete": false,
+    "http_controls": 9,
+    "fake_calls": 15,
+    "actual_model_calls": 0,
+    "elapsed_s": 157.00434893369675,
+    "guard_elapsed_s": 158.09220485202968,
+    "archive_sha256": "137826f9d3099fee84c2b9f89b1931704b49ec009e5cf89b85636418b4a65c80",
+    "members_verified": 763,
+    "cleanup_verified": true
+  },
+  "bridge_transport_T6_20261005": {
+    "status": "frozen_not_started",
+    "max_fake_calls": 7,
+    "actual_model_calls": 0,
+    "eda_calls": 0,
+    "stage_timeout_s": 120,
+    "full_batch_complete": false
   }
 }

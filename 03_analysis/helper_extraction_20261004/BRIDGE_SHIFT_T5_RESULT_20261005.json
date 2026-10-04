@@ -1,0 +1,89 @@
+{
+  "complete": true,
+  "passed": true,
+  "actual_model_requests": 0,
+  "fake_model_requests": 15,
+  "actual_native_probes": 21,
+  "actual_compile_commands": 15,
+  "actual_synthesis_commands": 0,
+  "widths": [
+    8,
+    17,
+    64
+  ],
+  "rows": [
+    {
+      "width": 8,
+      "case": "correct",
+      "passed": true,
+      "calls": 1,
+      "checks": 335
+    },
+    {
+      "width": 8,
+      "case": "repair",
+      "passed": true,
+      "calls": 2,
+      "checks": 335
+    },
+    {
+      "width": 8,
+      "case": "persistent",
+      "passed": true,
+      "calls": 2,
+      "checks": 335
+    },
+    {
+      "width": 17,
+      "case": "correct",
+      "passed": true,
+      "calls": 1,
+      "checks": 335
+    },
+    {
+      "width": 17,
+      "case": "repair",
+      "passed": true,
+      "calls": 2,
+      "checks": 335
+    },
+    {
+      "width": 17,
+      "case": "persistent",
+      "passed": true,
+      "calls": 2,
+      "checks": 335
+    },
+    {
+      "width": 64,
+      "case": "correct",
+      "passed": true,
+      "calls": 1,
+      "checks": 335
+    },
+    {
+      "width": 64,
+      "case": "repair",
+      "passed": true,
+      "calls": 2,
+      "checks": 335
+    },
+    {
+      "width": 64,
+      "case": "persistent",
+      "passed": true,
+      "calls": 2,
+      "checks": 335
+    }
+  ],
+  "independent_tasks": 0,
+  "full_batch_complete": false,
+  "scope": "Constructed shift HTTP-worker/legacy native parity only",
+  "fake_model_requests_observed": 15,
+  "completed_native_receipts_observed": 21,
+  "elapsed_s": 157.00434893369675,
+  "archive_sha256": "137826f9d3099fee84c2b9f89b1931704b49ec009e5cf89b85636418b4a65c80",
+  "members_verified": 763,
+  "guard_elapsed_s": 158.09220485202968,
+  "cleanup_verified": true
+}
