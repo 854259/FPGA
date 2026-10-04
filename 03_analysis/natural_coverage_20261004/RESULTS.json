@@ -1,0 +1,97 @@
+{
+  "schema": "b2_natural_archive_coverage_v1",
+  "status": "complete_verified",
+  "rows": 1024,
+  "unique_prompt_source_pairs": 511,
+  "unique_task_identities": 200,
+  "changed": 4,
+  "changed_tasks": [
+    "Prob115_shift18"
+  ],
+  "independent_task_changes": [],
+  "datasets": {
+    "seven_rule": {
+      "rows": 312,
+      "changed": 1,
+      "decisions": {
+        "skip": 311,
+        "review": 1
+      }
+    },
+    "archived_best": {
+      "rows": 312,
+      "changed": 1,
+      "decisions": {
+        "skip": 311,
+        "review": 1
+      }
+    },
+    "runtime728": {
+      "rows": 312,
+      "changed": 2,
+      "decisions": {
+        "skip": 310,
+        "review": 2
+      }
+    },
+    "rtllm_g2": {
+      "rows": 88,
+      "changed": 0,
+      "decisions": {
+        "skip": 88
+      }
+    }
+  },
+  "model_calls": 0,
+  "eda_calls": 0,
+  "functional_validation": false,
+  "new_score": false,
+  "repeat_and_idempotence_verified": true,
+  "pair_manifest_sha256": "d4235afb4c65222a49c942cf793ad60b22a9b3e75805f8ec54d3dad643e89dac",
+  "run_spec_sha256": "ffd9c68efb891d1f95995526571d582ce22d04d626f3a7ca33afc6b032c0c690",
+  "limits": [
+    "All records are archived natural generations; repeated task/source records are not independent new tasks.",
+    "Coverage scan only; no grades or reference/TB enter selector/patch, no functional benefit claimed.",
+    "Known Prob115 task is development data even if another archived source changes.",
+    "RTLLM prompts retain historical conversion defects; no new reliable RTLLM score or blind validation claimed.",
+    "No production runtime, baseline, shared model or source archive mutation; zero new model/EDA calls."
+  ],
+  "changed_rows": [
+    {
+      "dataset": "seven_rule",
+      "side": "agent",
+      "task": "Prob115_shift18",
+      "source_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+      "output_sha256": "4aad640cfceee2d8b0b5ea9c6a00a483827fd6fc114bed09ffeabac2ff63a72b",
+      "reason": "explicit_signed_cast_only",
+      "known_development_task": true
+    },
+    {
+      "dataset": "archived_best",
+      "side": "agent",
+      "task": "Prob115_shift18",
+      "source_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+      "output_sha256": "4aad640cfceee2d8b0b5ea9c6a00a483827fd6fc114bed09ffeabac2ff63a72b",
+      "reason": "explicit_signed_cast_only",
+      "known_development_task": true
+    },
+    {
+      "dataset": "runtime728",
+      "side": "agent",
+      "task": "Prob115_shift18",
+      "source_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+      "output_sha256": "4aad640cfceee2d8b0b5ea9c6a00a483827fd6fc114bed09ffeabac2ff63a72b",
+      "reason": "explicit_signed_cast_only",
+      "known_development_task": true
+    },
+    {
+      "dataset": "runtime728",
+      "side": "baseline",
+      "task": "Prob115_shift18",
+      "source_sha256": "17fc8b2b7526d8d49b0a575e06029aea5e14cbf940a39a7fab594ac9d8044e74",
+      "output_sha256": "7419512ac4905c9e2d43764bfd8a93be4ee13b74009c2ae8f213b14d2c877577",
+      "reason": "explicit_signed_cast_only",
+      "known_development_task": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "b2_natural_coverage_spec_v1",
+  "base_commit": "a27c6e8af59ac00527fb613de97f487e0cf78469",
+  "source_hashes": {
+    "coverage.py": "7f671ea5db69ef27e8bf999cb23f33223b48f207b2fc37876ccebff535327729",
+    "signedness_selector.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "signed_shift_patch.py": "93145c106081c158b0f968316c7327e0b7bb574124f0bccb751a3f48b8cfbfa1"
+  },
+  "known_development_tasks": [
+    "Prob115_shift18"
+  ],
+  "datasets": [
+    {
+      "id": "seven_rule",
+      "family": "VerilogEval",
+      "archive": "/workspace/team/runs/fpga_owner/skillfix_full156_20261001T235258Z/full156",
+      "tasks": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval",
+      "expected_tasks": 156
+    },
+    {
+      "id": "archived_best",
+      "family": "VerilogEval",
+      "archive": "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full",
+      "tasks": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval",
+      "expected_tasks": 156
+    },
+    {
+      "id": "runtime728",
+      "family": "VerilogEval",
+      "archive": "/workspace/team/runs/fpga_owner/full156_runtime728_20261003/full",
+      "tasks": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval",
+      "expected_tasks": 156
+    },
+    {
+      "id": "rtllm_g2",
+      "family": "RTLLM",
+      "archive": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/pair",
+      "tasks": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/tasks_verified",
+      "expected_tasks": 44
+    }
+  ],
+  "limits": [
+    "All records are archived natural generations; repeated task/source records are not independent new tasks.",
+    "Coverage scan only; no grades or reference/TB enter selector/patch, no functional benefit claimed.",
+    "Known Prob115 task is development data even if another archived source changes.",
+    "RTLLM prompts retain historical conversion defects; no new reliable RTLLM score or blind validation claimed.",
+    "No production runtime, baseline, shared model or source archive mutation; zero new model/EDA calls."
+  ]
+}

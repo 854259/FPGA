@@ -1,5 +1,25 @@
 {
   "schema_version": 1,
+  "b2_natural_coverage_20261004": {
+    "status": "complete_verified_no_independent_task_triggers",
+    "report": "03_analysis/natural_coverage_20261004/README.md",
+    "result": "03_analysis/natural_coverage_20261004/RESULTS.json",
+    "rows": 1024,
+    "unique_prompt_source_pairs": 511,
+    "unique_task_identities": 200,
+    "changed_rows": 4,
+    "changed_tasks": [
+      "Prob115_shift18"
+    ],
+    "independent_task_changes": 0,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_score": false,
+    "formal_runtime_integrated": false,
+    "source_archive_unchanged": true,
+    "quota_stop_used_percent": 97,
+    "next_step": "Build frozen reliable cross-source combinational contracts before new evaluation"
+  },
   "local_bit_contract_20261004": {
     "status": "complete_verified_no_repair_benefit",
     "report": "03_analysis/local_bit_contract_20261004/README.md",
