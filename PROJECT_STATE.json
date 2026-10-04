@@ -5135,5 +5135,25 @@
     "quality_score_measured": false,
     "target_offline_single32gb_verified": false,
     "adoption": false
+  },
+  "repair_context_20261005": {
+    "status": "local_linux_pure_preflight19_archived_exposure21_complete",
+    "tests_passed": 19,
+    "historical_second_requests": 21,
+    "historical_changed_copies": 4,
+    "natural_exposure_tasks": [
+      "Prob070_ece241_2013_q2",
+      "Prob153_gshare"
+    ],
+    "macro_abstention_task": "Prob147_circuit10",
+    "actual_trial_frozen": false,
+    "actual_trial_submitted": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "adoption": false,
+    "report": "03_analysis/repair_context_20261005/README.md",
+    "goal_status": "active",
+    "linux_tests_passed": 19,
+    "tools_spec_sha256": "266ed962caea53fbefaa2f0d56960da1d4a574e0d9a12223aade0d23ca710dbe"
   }
 }
