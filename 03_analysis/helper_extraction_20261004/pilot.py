@@ -34,8 +34,8 @@ def save(path, value):
 
 
 def materials():
-    top = 'module TopModule(input a, output y); H h(.a(a), .y(y)); endmodule\n'
-    helper = 'module H(input a, output y); assign y=~a; endmodule\n'
+    top = 'module TopModule(input a, output y);\nH h(.a(a), .y(y));\nendmodule\n'
+    helper = 'module H(input a, output y);\nassign y=~a;\nendmodule\n'
     flat = 'module TopModule(input a, output y); assign y=~a; endmodule\n'
     wrong = helper.replace('~a', 'a')
     fence = lambda s: '```verilog\n' + s + '```\n'
@@ -53,13 +53,14 @@ def materials():
         ('unclosed_fence', '```verilog\n'+top+helper, False, None),
         ('macro_context', fence('`define SOME_MACRO 1\n'+top+helper), False, None),
         ('package_context', fence('package P; endpackage\n'+top+helper), False, None),
-        ('fake_endmodule_comment', fence(top.replace(' H h', ' /* endmodule */ H h')+helper), False, None),
+        ('fake_endmodule_comment', fence(top.replace('H h', '/* endmodule */ H h')+helper), False, None),
         ('missing_transitive_helper', fence(top+helper.replace('assign y=~a;', 'G g(.a(a), .y(y));')), False, None),
         ('unused_helper_guard', fence(flat+helper), False, True),
         ('endmodule_label', fence(top.replace('endmodule', 'endmodule : TopModule')+helper), False, None),
         ('plain_unfenced', top+helper, False, None),
         ('unsupported_language', fence(top+helper).replace('```verilog', '```cpp'), False, None),
         ('positional_instantiation', fence(top.replace('.a(a), .y(y)', 'a, y')+helper), False, None),
+        ('one_line_instantiation_abstains', fence(top.replace('\n', ' ')+helper), False, None),
     ]
     tb = '''`timescale 1ns/1ps
 module R2Probe;
