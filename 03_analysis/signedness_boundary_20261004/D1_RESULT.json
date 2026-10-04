@@ -1,0 +1,324 @@
+{
+  "schema": "correct_review_stress_d1",
+  "complete": true,
+  "valid": true,
+  "model_calls": 4,
+  "responses": 4,
+  "retries": 0,
+  "runtime_integrated": false,
+  "deployment_approved": false,
+  "error": null,
+  "spec_sha256": "c51c316275d8e74852b63caa37a444cdd8fea2db296bade9717eb5527a47cafa",
+  "source_hashes": {
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/candidate.sv": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/negative.sv": "4ffffa115e054410d4f4f7045620a817e1935856a27074aa60d4509596b362d3",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/positive.sv": "cdf9638b51bde16d3760a6fbe4a48ea015736942b7decbc1f86ff31d78807e1a",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/prompt.txt": "3a52419d4e26618db46f28eac7b6a9d72a42aa7d7bb74c390ad0dfa86a0301af",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/tb.sv": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+    "03_analysis/r2_signedness_20261003/probes/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "03_analysis/selective_runtime_integration_20261003/package/agent/runtime.py": "318672f841430a864cd99fae4de712942258d0dcda7a1ad6b0567c71610f52c8",
+    "03_analysis/selective_runtime_integration_20261003/package/agent/signedness_selector.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "03_analysis/selective_runtime_integration_20261003/package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "03_analysis/selective_runtime_integration_20261003/package/run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+    "03_analysis/selective_runtime_integration_20261003/package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "03_analysis/selective_runtime_integration_20261003/package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "03_analysis/selective_runtime_integration_20261003/package/upstream.json": "cd9f2bebfb5aae8fb645f61951623a0c1928b2fa654b0366d954966fdf20f61d",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "03_analysis/selective_runtime_integration_20261003/resource_guard.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "03_analysis/signedness_boundary_20261004/boundary_validation.py": "5ae227788d210f335a9761483d792187f1f6bf56b7208a7599a9dedbf54a3175",
+    "03_analysis/signedness_boundary_20261004/cases.json": "72cf8b4751d1305c82fb526bff0d6b319de795de61c610653383a360388d071d",
+    "03_analysis/signedness_boundary_20261004/review_stress.py": "dad61ee624016285fe445a3c523b81d88f626a24908f27e61439599a7c44c370"
+  },
+  "elapsed_s": 99.8555836705491,
+  "arms": {
+    "C": {
+      "rows": 2,
+      "repairs": 0,
+      "regressions": 0,
+      "byte_identical": 1,
+      "review_elapsed_s": 9.66883035376668
+    },
+    "D": {
+      "rows": 2,
+      "repairs": 0,
+      "regressions": 0,
+      "byte_identical": 1,
+      "review_elapsed_s": 11.685573222115636
+    }
+  },
+  "decision": "bounded_guards_passed_no_new_repair_benefit_no_deployment",
+  "source_commit": "dc523cdbf8fa964f8fad70e12b2428bb644d9432",
+  "summary_sha256": "7bd9d5fd94911e7c046bfdb92367bba9b74b34aefe8a179d8f73c7b073aff7d3",
+  "guard_sha256": "ea1db30ea5d2ceed751785222f71455904bd66d0193a1b3f0217f2e85fe2c7eb",
+  "rows": [
+    {
+      "subject": "compensated_add9",
+      "arm": "D",
+      "forced": false,
+      "normal_selection": {
+        "decision": "review",
+        "reasons": [
+          "explicit_contract_with_unsigned_self_shift"
+        ],
+        "findings": [
+          {
+            "operand": "q",
+            "line": 7,
+            "width": 9,
+            "shift_amount": 1,
+            "evidence": "bare_unsigned_register",
+            "risk": true
+          }
+        ]
+      },
+      "attempts": 1,
+      "response_received": true,
+      "elapsed_s": 6.326234017498791,
+      "regression": false,
+      "repair": false,
+      "byte_identical": false,
+      "original_sha256": "40d0a56804b2da7748e2758df17c49fad62f1cd93af703f87b1101c468bce08b",
+      "candidate_sha256": "655965be23cbdb4241bfb124c690e73d58482d30d5dd77c4eb59ef7ffbec549e",
+      "final_sha256": "655965be23cbdb4241bfb124c690e73d58482d30d5dd77c4eb59ef7ffbec549e",
+      "commit": {
+        "status": "accepted",
+        "reason": "static_and_compile_gates_only",
+        "model_calls": 1
+      },
+      "candidate_probe": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 48,
+        "mismatches": 0,
+        "solution_sha256": "655965be23cbdb4241bfb124c690e73d58482d30d5dd77c4eb59ef7ffbec549e",
+        "tb_sha256": "a1fd5197ff0e869173f869d93d6399d473125161fe661bdd3fdfd60381547888"
+      },
+      "final_probe": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 48,
+        "mismatches": 0,
+        "solution_sha256": "655965be23cbdb4241bfb124c690e73d58482d30d5dd77c4eb59ef7ffbec549e",
+        "tb_sha256": "a1fd5197ff0e869173f869d93d6399d473125161fe661bdd3fdfd60381547888"
+      },
+      "request_sha256": "1204839f0ab4bf521475b019b6ea9b97c56f0d601aac80342850c2a3e380341b",
+      "response_sha256": "09c3f154657e0e82da3f52fc8a5b550b55d1cc4c085458fd1080da1b28e9a9c6",
+      "request_contains_only_frozen_prompt_candidate_skills_and_review_template": true
+    },
+    {
+      "subject": "compensated_add9",
+      "arm": "C",
+      "forced": false,
+      "normal_selection": {
+        "decision": "review",
+        "reasons": [
+          "explicit_contract_with_unsigned_self_shift"
+        ],
+        "findings": [
+          {
+            "operand": "q",
+            "line": 7,
+            "width": 9,
+            "shift_amount": 1,
+            "evidence": "bare_unsigned_register",
+            "risk": true
+          }
+        ]
+      },
+      "attempts": 1,
+      "response_received": true,
+      "elapsed_s": 4.283380168490112,
+      "regression": false,
+      "repair": false,
+      "byte_identical": false,
+      "original_sha256": "40d0a56804b2da7748e2758df17c49fad62f1cd93af703f87b1101c468bce08b",
+      "candidate_sha256": "dba1fdc492867eba3ddffdb58bbc2f1926263352abfb52c1620386f31502ea69",
+      "final_sha256": "dba1fdc492867eba3ddffdb58bbc2f1926263352abfb52c1620386f31502ea69",
+      "commit": {
+        "status": "accepted",
+        "reason": "static_and_compile_gates_only",
+        "model_calls": 1
+      },
+      "candidate_probe": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 48,
+        "mismatches": 0,
+        "solution_sha256": "dba1fdc492867eba3ddffdb58bbc2f1926263352abfb52c1620386f31502ea69",
+        "tb_sha256": "a1fd5197ff0e869173f869d93d6399d473125161fe661bdd3fdfd60381547888"
+      },
+      "final_probe": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 48,
+        "mismatches": 0,
+        "solution_sha256": "dba1fdc492867eba3ddffdb58bbc2f1926263352abfb52c1620386f31502ea69",
+        "tb_sha256": "a1fd5197ff0e869173f869d93d6399d473125161fe661bdd3fdfd60381547888"
+      },
+      "request_sha256": "865dc568f9417b65e87f3ea3498968447328b60c6efa7736ab2ee08d9c3dc782",
+      "response_sha256": "39e7420e1f4e7e7511d2a4fc2749bbae6dbd2919c0e0f17f811a673313dcb13b",
+      "request_contains_only_frozen_prompt_candidate_skills_and_review_template": true
+    },
+    {
+      "subject": "Prob085_shift4",
+      "arm": "C",
+      "forced": true,
+      "normal_selection": {
+        "decision": "skip",
+        "reasons": [
+          "no_actual_triple_right_shift"
+        ],
+        "findings": []
+      },
+      "attempts": 1,
+      "response_received": true,
+      "elapsed_s": 5.385450185276568,
+      "regression": false,
+      "repair": false,
+      "byte_identical": true,
+      "original_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+      "candidate_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+      "final_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+      "commit": {
+        "status": "unchanged",
+        "reason": "identical_source",
+        "model_calls": 1
+      },
+      "candidate_probe": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72"
+      },
+      "final_probe": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72"
+      },
+      "request_sha256": "5960257ec185490a0d285f332ed6c3c218e8e888be640a9ecaeea01728d0e28b",
+      "response_sha256": "f2a6dd61311d069de938e676f0de68d2bc9f637bf459e3d35fb0a00ac7b49c14",
+      "request_contains_only_frozen_prompt_candidate_skills_and_review_template": true
+    },
+    {
+      "subject": "Prob085_shift4",
+      "arm": "D",
+      "forced": true,
+      "normal_selection": {
+        "decision": "skip",
+        "reasons": [
+          "no_actual_triple_right_shift"
+        ],
+        "findings": []
+      },
+      "attempts": 1,
+      "response_received": true,
+      "elapsed_s": 5.359339204616845,
+      "regression": false,
+      "repair": false,
+      "byte_identical": true,
+      "original_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+      "candidate_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+      "final_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+      "commit": {
+        "status": "unchanged",
+        "reason": "identical_source",
+        "model_calls": 1
+      },
+      "candidate_probe": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72"
+      },
+      "final_probe": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72"
+      },
+      "request_sha256": "a77b23f0629894e86b80009d570605e946e61ff7e342623eddd0a3ef5cd51d18",
+      "response_sha256": "049587ac0f5b661f23422adfd5039369315beb34afcf6a9f943308a6bd6e53a1",
+      "request_contains_only_frozen_prompt_candidate_skills_and_review_template": true
+    }
+  ],
+  "controls": {
+    "compensated_add9": {
+      "positive": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 48,
+        "mismatches": 0,
+        "solution_sha256": "eda5d541d3809c4395fa3f26664a636940e16dba0f102539590dacd2f904dd7f",
+        "tb_sha256": "a1fd5197ff0e869173f869d93d6399d473125161fe661bdd3fdfd60381547888"
+      },
+      "negative": {
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 48,
+        "mismatches": 24,
+        "solution_sha256": "261156c35e890e7fdc1cafddca95a4d41bcc4da2569adc6c659a96fc01bce3bf",
+        "tb_sha256": "a1fd5197ff0e869173f869d93d6399d473125161fe661bdd3fdfd60381547888"
+      },
+      "valid": true
+    },
+    "Prob085_shift4": {
+      "positive": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 209,
+        "mismatches": 0,
+        "solution_sha256": "cdf9638b51bde16d3760a6fbe4a48ea015736942b7decbc1f86ff31d78807e1a",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72"
+      },
+      "negative": {
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 209,
+        "mismatches": 40,
+        "solution_sha256": "4ffffa115e054410d4f4f7045620a817e1935856a27074aa60d4509596b362d3",
+        "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72"
+      },
+      "valid": true
+    }
+  },
+  "originals": {
+    "compensated_add9": {
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 48,
+      "mismatches": 0,
+      "solution_sha256": "40d0a56804b2da7748e2758df17c49fad62f1cd93af703f87b1101c468bce08b",
+      "tb_sha256": "a1fd5197ff0e869173f869d93d6399d473125161fe661bdd3fdfd60381547888"
+    },
+    "Prob085_shift4": {
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 209,
+      "mismatches": 0,
+      "solution_sha256": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+      "tb_sha256": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72"
+    }
+  },
+  "guard": {
+    "complete": true,
+    "passed": true,
+    "stage_rc": 0,
+    "elapsed_s": 100.11015711259097,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true,
+    "owned_cleanup_verified": true
+  },
+  "combined_observed_calls": 22,
+  "failure_fallbacks": 0,
+  "note": "Two previously seen correct development guards, one normal-trigger constructed subject and one forced natural subject. Not an independent generalization score or normal-run regression probability."
+}

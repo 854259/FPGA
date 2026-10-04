@@ -1,0 +1,17 @@
+{
+  "source_commit": "71a152393ed1a458941c28e1bd84f93b3e7b832b",
+  "stage_rc": 1,
+  "model_calls": 0,
+  "responses": 0,
+  "eda_calls": 0,
+  "failure": "Inherited probe resolves ROOT/task/tb.sv, but generated folder was the subject id rather than W9_S1.",
+  "fixed_by": "dc523cdbf8fa964f8fad70e12b2428bb644d9432",
+  "change": "one generated folder path only; frozen prompts/candidates/oracle bytes/call limits unchanged",
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "summary_sha256": "2065297036852726bccf6b96fa68073f9fec98cc320b1b7beae0dce976eb1199",
+  "guard_elapsed_s": 0.2512882146984339,
+  "result": "pre-model preparation failure, not model correctness failure"
+}
