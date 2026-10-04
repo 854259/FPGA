@@ -1,0 +1,77 @@
+{
+  "schema": "elaboration_fallback_i1",
+  "internal_new_model_call_cap": 6,
+  "stage_timeout_s": 2700,
+  "max_pair_start_s": 1700,
+  "gate_timeout_s": 20,
+  "retries": 0,
+  "captured": [
+    {
+      "label": "known16",
+      "root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/results/samples/1_adder_16bit",
+      "task": "adder_16bit",
+      "files": {
+        "original/request_0.json": "f9e234ada872a0a283212aa589cbb285345ec5e4eb2bf657d6defea2de2c9dc7",
+        "original/request_1.json": "42fe967d6474e5db145d9f0ceec3e92918d2126a862d4c5b03326b0cfa16b3ed",
+        "original/response_0.json": "6844ade71eb0a0f01ebbfa8ee1d235de045ae7d1fd5e585e27f61a854dc23669",
+        "original/response_1.json": "35dc9c54b555925d913df4c5b00ce105f6698f1648e45df7e8c5b7a767160e22",
+        "original/solution.v": "24c07ebe01763d207589740631f9e55e2c627d50775200c6ef46295ce766a0e5",
+        "original/worker_receipt.json": "f1258333a43204c0615c6a5e5e6d45436e7423aa9487df62c9ee661b6ae287b8",
+        "request.json": "89df68feda8c66c22ed30524caa6f67a8dbe7f5bdf84d0e479846e7576e41bbd"
+      }
+    },
+    {
+      "label": "known32",
+      "root": "/workspace/team/runs/fpga_teammate/helper_H1_20261004T054811Z_e144197/results/pairs/captured_adder_32bit",
+      "task": "adder_32bit",
+      "files": {
+        "original/request_0.json": "dacb2d411a6df20c9a5b7e3427cbdb3cfeef7bb5e99db2f25c3b02fb1ba3ad87",
+        "original/request_1.json": "fb03fe4cec3e044dc1052f9c965eee42361eaf35097a53aa5c763e163ad7ef9c",
+        "original/response_0.json": "6043720555f5312d0236f987b41b0e1c62a4dd196a7f8192d11f39ef1db83fcc",
+        "original/response_1.json": "97f717f224bc9d0061c2881dc529734e7031bcab57291edffcf8d75c48b499e3",
+        "original/solution.v": "cc3c893d7506ad82863d7931d8d8d9a0d4a92440297ca8f094805b88424452c6",
+        "original/worker_receipt.json": "31ffdb004268014042088adbad9e52f0eff315f490fb444e62092fca8845e373",
+        "request.json": "248e325a0b160590b1d88b55554242ca0e705d537ef72c2d734db85cf0f2f0ed"
+      }
+    },
+    {
+      "label": "correct8",
+      "root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/results/samples/0_adder_8bit",
+      "task": "adder_8bit",
+      "files": {
+        "original/request_0.json": "f36bb04a574e82d173e1889e7bd2a0772301fa790edcd629c649c81729964b88",
+        "original/response_0.json": "34fcf6d6b2f966e7881bf0ede754bcf0ec9ccf6a522c725ad9bd75a761b0922b",
+        "original/solution.v": "07575c939f850637b6bbad6346f6d9a48051672bc4ffd342ae29e7dffeaee1fe",
+        "original/worker_receipt.json": "3e85e767a07d5a2b51fe1076d320cd861e22bd4d1457fa26439dcf4d8895d685",
+        "request.json": "03ce390e0214aec72542e0e0227a4c4a3f862e3e6ffff8f2338c483e9a9a409c"
+      }
+    },
+    {
+      "label": "correct_multi",
+      "root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/results/samples/2_multi_8bit",
+      "task": "multi_8bit",
+      "files": {
+        "original/request_0.json": "6c241d73e2537dcf29d4e0a46bb7c53b989a79ba4be2887125b690574ee4fa78",
+        "original/response_0.json": "c7aef93a59a2733c05b166925a4ec61afbcd7758a815a5f139b607feee357f35",
+        "original/solution.v": "22c65efc1a62da6196523009730f46f0a046b16b3b1baadce3cdff5b15e46749",
+        "original/worker_receipt.json": "1993f699a89d63cc9832364265026d56b5a86a80ce9853164e0d0926952acb61",
+        "request.json": "db2b2b2c1072580032b4c75971a077d512a4f2d21096f726bdcb1a0e9b0fb232"
+      }
+    }
+  ],
+  "h1_root": "/workspace/team/runs/fpga_teammate/helper_H1_20261004T054811Z_e144197",
+  "h1_manifest_sha256": "90f58067ba449beb7c8d8d21dc232e6612b6a4a11ae4b5b986408dc061358d59",
+  "fresh_order": [
+    "adder_bcd",
+    "barrel_shifter"
+  ],
+  "user_authorization": "细化计划并开始下一批；之后按证据形成结论、同步GitHub并连续推进",
+  "conditions": [
+    "25 frozen extraction/structure controls plus missing-tool/timeout control before any model call",
+    "Four captured full-worker pairs with exact-request replay; no new samples claimed",
+    "Known16 gain retained, known32 and two correct guards byte-preserved; any level regression stops generation",
+    "Only then two fresh historical-task pairs; each worker retains one repair and model/settings unchanged",
+    "Six new-call ceiling; transport, truncation, resource or environment errors stop without retry",
+    "Real elaboration is not a functional proof; no oracle inputs in workers; no formal integration"
+  ]
+}

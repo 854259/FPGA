@@ -4,6 +4,7 @@ import ctypes
 import io
 import json
 import os
+import re
 import shutil
 import sys
 import tarfile
@@ -15,17 +16,56 @@ from pilot import REPO, load, save, sha
 from replay_best import BEST
 
 
+def elaboration_gate(code, out, runtime, paired, seconds=20):
+    """Candidate-only analysis/elaboration; no testbench, reference or simulation."""
+    out.mkdir(parents=True, exist_ok=False)
+    started=time.monotonic(); stages=[]
+    record=dict(accepted=False,reason=None,stages=stages)
+    try:
+        if re.search(r'`include|\$(?:readmem\w*|fopen|system)\b',code):
+            record['reason']='source_access_rejected'; return record
+        tools={name:runtime.vivado_tool(name) for name in ('xvlog','xelab')}
+        if not all(tools.values()):
+            record['reason']='tool_unavailable'; return record
+        (out/'candidate.sv').write_text(code)
+        commands=[('xvlog',[tools['xvlog'],'--sv','candidate.sv']),
+                  ('xelab',[tools['xelab'],'TopModule','-s','helper_gate','--mt','1'])]
+        for name,cmd in commands:
+            remaining=seconds-(time.monotonic()-started)
+            if remaining<=0:
+                record['reason']='timeout'; return record
+            result=paired.owned_command(cmd,out,out/(name+'.log'),remaining)
+            stages.append(dict(tool=name,**result))
+            if result['timeout'] or result['launch_error']:
+                record['reason']='timeout' if result['timeout'] else 'tool_launch_error'; return record
+            if result['returncode']!=0:
+                record['reason']=name+'_failed'; return record
+        record.update(accepted=True,reason='elaboration_passed'); return record
+    finally:
+        record['elapsed_s']=time.monotonic()-started
+        save(out/'gate.json',record)
+
+
 def worker(args):
     runtime=load('full_pair_runtime',args.package/'agent/runtime.py')
     baseline=load('baseline',args.package/'baseline.py');sys.modules['baseline']=baseline
     original=baseline.extract;selections=[]
-    if args.arm=='retained_helpers':
+    if args.arm in ('retained_helpers','elaborated_helpers'):
         extension=load('full_pair_extension',REPO/'03_analysis/semantic_repair_20261004/complete_module_extract.py')
         lexer=load('full_pair_lexer',REPO/'03_analysis/selective_runtime_integration_20261003/package/agent/signedness_selector.py')
         detector=load('full_pair_detector',args.kit/'submission/agent/runtime.py')
+        paired=load('full_pair_owned',REPO/'03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py')
         def extract(text,track):
             if track!='rtl':return original(text,track)
             result,record=extension.extract_hierarchy(text,SimpleNamespace(extract=original),lexer._strip_noncode,detector.undefined_submodules)
+            if args.arm=='elaborated_helpers' and record['changed']:
+                record['gate']=elaboration_gate(result,args.out/('gate-'+str(len(selections))),runtime,paired)
+                if not record['gate']['accepted']:
+                    result=original(text,track)
+                    record.update(changed=False,reason='gate_rejected_original_preserved')
+                    if record['gate']['reason'] in ('timeout','tool_unavailable','tool_launch_error'):
+                        selections.append(record)
+                        raise RuntimeError('elaboration environment failure; stop batch without model retry')
             selections.append(record);return result
         baseline.extract=extract
     args.out.mkdir(parents=True,exist_ok=False)
@@ -39,10 +79,17 @@ def worker(args):
         assert body['model']==expected['model'] and body['temperature']==0 and body['top_p']==1 and body['max_tokens']==8192
         if round_index==0:assert body==expected
         else:assert body['messages'][1]['content'].startswith(expected['messages'][1]['content']+'\nPrevious candidate:\n')
-        record=dict(round=round_index,reused_initial=(args.arm=='retained_helpers' or getattr(args,'replay_initial',False)) and round_index==0)
+        replay=getattr(args,'replay_worker',None)
+        record=dict(round=round_index,reused_initial=(args.arm!='original' or getattr(args,'replay_initial',False)) and round_index==0,reused_worker=bool(replay))
         requests.append(record);save(args.out/('request_'+str(round_index)+'.json'),body)
         tick=time.monotonic()
-        if record['reused_initial']:
+        if replay:
+            # Recorded replies may be reused only for an exactly identical request.
+            assert body==json.loads((replay/('request_'+str(round_index)+'.json')).read_text())
+            payload=json.loads((replay/('response_'+str(round_index)+'.json')).read_text())
+            source_receipt=json.loads((replay/'worker_receipt.json').read_text())
+            record['source_request_elapsed_s']=source_receipt['requests'][round_index]['elapsed_s']
+        elif record['reused_initial']:
             payload=json.loads((args.input/'response_0.json').read_text())
         else:
             actual_calls+=1
@@ -132,5 +179,5 @@ def run(args):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('mode',choices=['run','worker']);p.add_argument('--kit',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
-    p.add_argument('--resource-check',type=Path);p.add_argument('--best-tar',type=Path);p.add_argument('--package',type=Path);p.add_argument('--input',type=Path);p.add_argument('--arm',choices=['original','retained_helpers']);p.add_argument('--enable-generation',action='store_true');p.add_argument('--replay-initial',action='store_true')
+    p.add_argument('--resource-check',type=Path);p.add_argument('--best-tar',type=Path);p.add_argument('--package',type=Path);p.add_argument('--input',type=Path);p.add_argument('--arm',choices=['original','retained_helpers','elaborated_helpers']);p.add_argument('--enable-generation',action='store_true');p.add_argument('--replay-initial',action='store_true');p.add_argument('--replay-worker',type=Path)
     a=p.parse_args();worker(a) if a.mode=='worker' else run(a)
