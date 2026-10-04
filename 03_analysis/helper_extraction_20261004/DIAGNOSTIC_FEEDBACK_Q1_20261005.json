@@ -59,5 +59,21 @@
     "full_batch_complete": false,
     "deployed": false,
     "scope": "Actual-worker control-flow test with fixed responses and compiler stubs; not real EDA or model quality"
+  },
+  "real_compiler_Q4": {
+    "complete": true,
+    "passed": true,
+    "model_calls": 0,
+    "eda_calls": 32,
+    "archived_cases": 30,
+    "constructed_controls": 2,
+    "full_batch_complete": false,
+    "new_natural_validation_tasks": 0,
+    "driver_sha256": "6358b547af97c2d278914dad13c6299ae1ada9362c5b4ca53a644065a3be7a9f",
+    "formatter_sha256": "a6cc0b71dc3aad780dc3528472bed6b80b00d10ed6a42b2d4af469c50356d849",
+    "tool_sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2",
+    "scope": "Real xvlog replay and feedback preservation only; no worker/model quality score",
+    "passed_cases": 32,
+    "elapsed_s": 34.48013324663043
   }
 }
