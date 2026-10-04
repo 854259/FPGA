@@ -63,6 +63,7 @@ def run(args):
     protected.update({str(args.package/k):v for k,v in spec['package_hashes'].items()})
     assert all(sha(p)==h for p,h in protected.items())
     paired = load('bypass_owned', REPO/'03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py')
+    paired.check_resource(args.resource_check, args.kit, first=True)
     args.out.mkdir(parents=True, exist_ok=False)
     package = args.out/'package'; shutil.copytree(args.package, package)
     cases, positive, negative, tb = materials()
@@ -85,6 +86,7 @@ def run(args):
             save(sample/'constructed_replies.json', [variants[variant], '```verilog\n'+positive+'```\n'])
             row = dict(name=name, variant=variant, arms={}); report['rows'].append(row)
             for arm in ('original','I1'):
+                paired.check_resource(args.resource_check, args.kit)
                 out = sample/arm
                 if arm == 'original':
                     cmd = [sys.executable,'-B',str(Path(__file__).resolve()),'worker']
@@ -121,6 +123,7 @@ def run(args):
             print(json.dumps(dict(name=row['name'], regression=row['regression'],
                  requests={k:v['receipt']['logical_worker_requests'] for k,v in row['arms'].items()})),flush=True)
         assert all(sha(p)==h for p,h in protected.items())
+        paired.check_resource(args.resource_check, args.kit)
         report.update(complete=True,valid=True,protected_unchanged=True,
                       counterexample_reproduced=report['rows'][0]['regression'] and report['rows'][2]['regression'],
                       causal_correct_helper_passes=all(v['verdict']['status']=='pass' for v in report['rows'][1]['arms'].values()))
@@ -136,4 +139,5 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(); p.add_argument('mode',choices=['run','worker'])
     for name in ('kit','package','out'): p.add_argument('--'+name,type=Path,required=True)
     p.add_argument('--input',type=Path)
+    p.add_argument('--resource-check',type=Path)
     a=p.parse_args(); original_worker(a) if a.mode=='worker' else run(a)
