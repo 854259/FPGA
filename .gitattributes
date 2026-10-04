@@ -42,3 +42,5 @@ Dockerfile text eol=lf
 
 # Isolated runtime, local test receipts and frozen provenance.
 03_analysis/selective_runtime_integration_20261003/** -text -whitespace
+# Preserve frozen research asset bytes so Git checkout matches RUN_SPEC hashes.
+03_analysis/priority_contract_20261005/** -text

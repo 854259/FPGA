@@ -1,0 +1,96 @@
+{
+  "schema": "full312_prompt_dut_manual_triage_v1",
+  "observed_at_utc": "2026-10-04T16:57:56.381337+00:00",
+  "archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+  "rows": [
+    {
+      "task": "Prob034_dff8",
+      "prompt_member": "kit/bench/tasks_veval/Prob034_dff8/prompt.txt",
+      "prompt_sha256": "c1e3936021706dfcebead97b2d9075399e738d9d62d10db6eafd1615d8d5f94b",
+      "candidate_member": "run/samples/A/Prob034_dff8/worker/solution.v",
+      "candidate_sha256": "26885ee6a660bfc65426fc72488d45b5348dfae4d58cea62fb151fd662754bd2",
+      "attribution_status": "unlocalized",
+      "finding": "仅要求8位上升沿DFF且未声明初始化/复位，归档稿q<=d；无法从题面与DUT确认功能错误。不得补造reset或初值。",
+      "causal_native_test_executed_this_review": false
+    },
+    {
+      "task": "Prob045_edgedetect2",
+      "prompt_member": "kit/bench/tasks_veval/Prob045_edgedetect2/prompt.txt",
+      "prompt_sha256": "4dbcbe3edc5cff94c797d49a77f8c45a6c749d72bb1ca3559d72ebd64a5c75f5",
+      "candidate_member": "run/samples/A/Prob045_edgedetect2/worker/solution.v",
+      "candidate_sha256": "dad2b12af919ccfb709b96bae318f0d9761eac9113289f5d7bf8baddf91f029c",
+      "attribution_status": "candidate_mechanism_needs_native_check",
+      "finding": "prev在同一posedge更新后，组合in^prev变零；题面要求逐拍any-edge输出。疑似输出未寄存，需题面逐拍正负控制确认。",
+      "causal_native_test_executed_this_review": false
+    },
+    {
+      "task": "Prob062_bugs_mux2",
+      "prompt_member": "kit/bench/tasks_veval/Prob062_bugs_mux2/prompt.txt",
+      "prompt_sha256": "2be3eebba4aea325c3e1650030a20b2c5725cb10709499f392a223a84db84e34",
+      "candidate_member": "run/samples/A/Prob062_bugs_mux2/worker/solution.v",
+      "candidate_sha256": "d455933dbc77211fe4ff1995398cfd00b19488cf4982a71ab72b2a8f6ba71578",
+      "attribution_status": "interface_intent_needs_review",
+      "finding": "归档稿8位sel?b:a与文字8位mux一致；题面原例含标量out bug，是否接口判定问题尚未证明。",
+      "causal_native_test_executed_this_review": false
+    },
+    {
+      "task": "Prob064_vector3",
+      "prompt_member": "kit/bench/tasks_veval/Prob064_vector3/prompt.txt",
+      "prompt_sha256": "76e9cc108d109fe1527ffec220401614279423f3abcb034926e7a5b2da421a54",
+      "candidate_member": "run/samples/A/Prob064_vector3/worker/solution.v",
+      "candidate_sha256": "2c24a16fc7d3b7f96ac594220d4d01a14eb25d7456416ca7773f34098cc8e18f",
+      "attribution_status": "ordering_assumption_needs_review",
+      "finding": "归档切片w取最低8位、z取最高8位；需确认文字拆分顺序，不能只凭习惯生成答案或认定根因。",
+      "causal_native_test_executed_this_review": false
+    },
+    {
+      "task": "Prob097_mux9to1v",
+      "prompt_member": "kit/bench/tasks_veval/Prob097_mux9to1v/prompt.txt",
+      "prompt_sha256": "7e4f32af08e2da6eaf53882e368898144421fb90f35518eeec9781e1c036effd",
+      "candidate_member": "run/samples/A/Prob097_mux9to1v/worker/solution.v",
+      "candidate_sha256": "4321cb6ccefeb0fc464dcce6c7c1a639b75373ba44dc0dc7f0d495305411cd65",
+      "attribution_status": "explicit_semantic_hypothesis",
+      "finding": "题面sel0..8对应a..i且9..15为全1；归档稿右移量16*(4-sel)与9路排列不符。下一步提示词契约控制/native确认，不直接改DUT。",
+      "causal_native_test_executed_this_review": false
+    },
+    {
+      "task": "Prob112_always_case2",
+      "prompt_member": "kit/bench/tasks_veval/Prob112_always_case2/prompt.txt",
+      "prompt_sha256": "ae25e77bd3e4c274ecec6cea5af6d432379967aba0228435794b3bb83d9637b5",
+      "candidate_member": "run/samples/A/Prob112_always_case2/worker/solution.v",
+      "candidate_sha256": "e61a4ac247147e4a67d96fc306133a1024011c2abca5cefa6de9323e44680159",
+      "attribution_status": "explicit_semantic_hypothesis",
+      "finding": "多置位例子8b10010000->3d4明确低位优先，4位归档稿从in[3]向in[0]选择。与071正确稿一起优先校准。",
+      "causal_native_test_executed_this_review": false
+    },
+    {
+      "task": "Prob115_shift18",
+      "prompt_member": "kit/bench/tasks_veval/Prob115_shift18/prompt.txt",
+      "prompt_sha256": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386",
+      "candidate_member": "run/samples/A/Prob115_shift18/worker/solution.v",
+      "candidate_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+      "attribution_status": "explicit_semantic_hypothesis",
+      "finding": "题面64位算术右移1或8位，归档q_reg声明无符号而直接>>>；负数路径疑似零填充。需原生逐拍符号/保持/load控制，不采用宽泛signed源码补丁。",
+      "causal_native_test_executed_this_review": false
+    },
+    {
+      "task": "Prob137_fsm_serial",
+      "prompt_member": "kit/bench/tasks_veval/Prob137_fsm_serial/prompt.txt",
+      "prompt_sha256": "cb55ab0cc6209081616113e0591afc3061c6c7c5b0f61960a815f4d8bec903b7",
+      "candidate_member": "run/samples/A/Prob137_fsm_serial/worker/solution.v",
+      "candidate_sha256": "ce57cb31d16534aa6b7a75cf2ab7983b10c6606ba5acfb098c381d1ffd5b2309",
+      "attribution_status": "candidate_mechanism_needs_native_check",
+      "finding": "done_reg在组合与时序块都赋值；协议计数及done时序需完整逐拍契约验证，不能从多驱动标签直接宣称根因。",
+      "causal_native_test_executed_this_review": false
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "official_reference_or_tb_read_by_this_review": false,
+  "limits": [
+    "Only eight A failures reviewed, not all 44 manually attributed",
+    "Explicit hypotheses are prompt/DUT review, not proven by native causal controls yet",
+    "Teammate P1 category tags overlap and are not causal labels; Q1-Q3 target compiler diagnostic information, separate scope",
+    "No task IDs or fixed answer scripts used in agent; priorities determine research order only"
+  ]
+}

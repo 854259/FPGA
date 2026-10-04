@@ -1,0 +1,12 @@
+{
+  "schema": "priority_contract_install_v1",
+  "at_utc": "2026-10-04T16:53:05.893261+00:00",
+  "run_spec_sha256": "c9cd43adf84bcf4828ca86d9350badcbeed1808115d1c4d8b70303505eadae12",
+  "frozen_assets_verified": 46,
+  "tests_passed": 7,
+  "test_returncode": 0,
+  "test_output": "test_all_domain_matches_independent_bit_scan (test_priority.Priority.test_all_domain_matches_independent_bit_scan) ... ok\ntest_counterexample_matches_full_domain_and_rejects_spoof (test_priority.Priority.test_counterexample_matches_full_domain_and_rejects_spoof) ... ok\ntest_extra_prose_abstains_at_any_location (test_priority.Priority.test_extra_prose_abstains_at_any_location) ... ok\ntest_names_and_complete_single_interface (test_priority.Priority.test_names_and_complete_single_interface) ... ok\ntest_non_priority_is_skip (test_priority.Priority.test_non_priority_is_skip) ... ok\ntest_testbench_only_and_exhaustive_count (test_priority.Priority.test_testbench_only_and_exhaustive_count) ... ok\ntest_wrong_width_and_ambiguous_example_rejected (test_priority.Priority.test_wrong_width_and_ambiguous_example_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.004s\n\nOK\n",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "dependencies_verified": true
+}

@@ -1,0 +1,38 @@
+{
+  "cases": [
+    {
+      "task": "priority3",
+      "checks": 8,
+      "archived_candidate": false,
+      "group": "constructed_calibration"
+    },
+    {
+      "task": "priority5",
+      "checks": 32,
+      "archived_candidate": false,
+      "group": "constructed_calibration"
+    },
+    {
+      "task": "priority6",
+      "checks": 64,
+      "archived_candidate": false,
+      "group": "constructed_calibration"
+    },
+    {
+      "task": "Prob071_always_casez",
+      "checks": 256,
+      "archived_candidate": true,
+      "group": "known_public_development"
+    },
+    {
+      "task": "Prob112_always_case2",
+      "checks": 16,
+      "archived_candidate": true,
+      "group": "known_public_development"
+    }
+  ],
+  "controls_only_not_agent_DUTs": true,
+  "independent_bit_scan_matches_all_expected_rows": true,
+  "model_calls": 0,
+  "eda_calls": 0
+}

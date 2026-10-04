@@ -1,0 +1,155 @@
+{
+  "schema": "priority_contract_calibration_frozen_v1",
+  "frozen_at_utc": "2026-10-04T16:52:05.230269+00:00",
+  "base_commit": "9553a34d01357987e9773de6cfa5f58385e1ce70",
+  "cloud_root": "/workspace/team/runs/fpga_owner/priority_contract_20261005_v1",
+  "cases": [
+    {
+      "task": "priority3",
+      "checks": 8,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "files": {
+        "constant_max.sv": "fbee06dc8a91a7374eed21d2f51a9d1b344d5586b68fdea7b69eae7f0833224b",
+        "constant_zero.sv": "32aa778e774dbdd22735c66634a7cb6844dc5406c60b8348ee6d6e49adfbdeb6",
+        "contract.json": "4d19a73529698fcde54aa91e23f49a9f3f8d971fabffa46851d6b73b92106326",
+        "msb_priority.sv": "c49ea58f0a0dab721dfff32efc2477656d8a057e784cbe3aec7fc8e536ee3656",
+        "positive.sv": "9f4a067f056363fd0ca1cfb34c46a29c6393625700399d756f9d3453ed1416c7",
+        "prompt.txt": "57467ba03aa35c805691072920332dbfa5b3c74d4b8aac96ccbed62874201e34",
+        "tb.sv": "4fc117e6fa42eedae94163fa036b3e8ad4e4be4d3b0f385b21a32c542b022754"
+      }
+    },
+    {
+      "task": "priority5",
+      "checks": 32,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "files": {
+        "constant_max.sv": "6b8afeadcf5c43232483a4081cb268c8d5fd45fd923042a35049c64adff948de",
+        "constant_zero.sv": "097f57258345199a47ef968b6b94773fdc5be4caea8be316c8ac27d8cad8cfa0",
+        "contract.json": "6c7319818554a85c51b5a11f5040f5a111c495e5892db72b5e480899074e1ece",
+        "msb_priority.sv": "5467c3bc5fa4366c44baaba2a881747ac0b34324b5dafa22067e7f54807dfca5",
+        "positive.sv": "7d2eb9a49644c934657e108ac0e93f6838db2953c1ed50e61aa0b7ffc34828da",
+        "prompt.txt": "ce4832121c09326e5165daf4be6538f710da30666dd8933ccb8d6354201a19c5",
+        "tb.sv": "cc7cdcdcea2af8f74e7716ef2773380831d27d173fb3226b3a3092f66c7f32c8"
+      }
+    },
+    {
+      "task": "priority6",
+      "checks": 64,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "files": {
+        "constant_max.sv": "b0d149dac745a76bf4982c6fc97d6b532cb9308858de209758ffdda7beb8b301",
+        "constant_zero.sv": "0682365044301b97b4f631878610f618e37c374219c245700559c3f94ddd1f3e",
+        "contract.json": "e8682bb31ddf37899f6c1522e02429e4f36c37d180c4e6345e45196896655393",
+        "msb_priority.sv": "8983ce775ac89934b4d0d71bea042c20578a53c062d87b7bf17e60456625a22c",
+        "positive.sv": "71af283520843dc5d5688abce453033c2fe97cf43ee3cfc1c3c2eda8eb18a6f0",
+        "prompt.txt": "e195481ec6eb149baf000b811adf21c5388198a9b96c4ac31ac768f53705948d",
+        "tb.sv": "1c6b35859fbd40108cbf5ee4c753f43ec726646aa0d76470a4d25886b55609ba"
+      }
+    },
+    {
+      "task": "Prob071_always_casez",
+      "checks": 256,
+      "archived_candidate": true,
+      "group": "known_public_development",
+      "files": {
+        "candidate.sv": "21bd60a9f054ec7cc43ffade5f8409d9c5491800fb08333876fa3de01b1041ca",
+        "constant_max.sv": "54b7ef7f560ae6cd8896668303fe6e4076e173ba2f734ea9f8c5d549361eaa1a",
+        "constant_zero.sv": "8a1250edc6aadb42e20d975e6557a0c1463541bd88ad9b6a135adc66fdf6ec42",
+        "contract.json": "c2319e2427d5ce00e1c1939dcc91faa38ed9822025364cd19b069c1d7e31c444",
+        "msb_priority.sv": "63c8117d1bd4f2fd33a29a92fe192541e0d0235fc97661bf4d9bce9b542b1afe",
+        "positive.sv": "4c18ce80841f3fd3d444b89f9dd12c14128174dea08dc97395d340b50e23c151",
+        "prompt.txt": "a0f1bef8205db2b5dd182f74d3abed73203f5d78c653b33d0de8f575b8d901ce",
+        "tb.sv": "1beb8a954ae7b6583d23c0fc889a111490bac1bf12639495f7df52a51729ca3f"
+      }
+    },
+    {
+      "task": "Prob112_always_case2",
+      "checks": 16,
+      "archived_candidate": true,
+      "group": "known_public_development",
+      "files": {
+        "candidate.sv": "e61a4ac247147e4a67d96fc306133a1024011c2abca5cefa6de9323e44680159",
+        "constant_max.sv": "fa70d0591ad223d6b355fe0f174657a5175a6bb2ae4e143b8f98d471c7f088bd",
+        "constant_zero.sv": "f5158229c5b121d05f0de7c5a4b721f57efde2766ad39f6f3724672c20a60c39",
+        "contract.json": "ce82be9e0b8e7dbe659b85db3c33f97027e196a8cf5ba5e831f747ccb6c4bce2",
+        "msb_priority.sv": "911e67b4e378087c9fc5d51bd9cfef9a69936124d97d1f9696faa1760058cfcb",
+        "positive.sv": "ef018b5bd2f06c58b533fbd60c7575a1d965b22f0e6ea8733319d91650126e19",
+        "prompt.txt": "ae25e77bd3e4c274ecec6cea5af6d432379967aba0228435794b3bb83d9637b5",
+        "tb.sv": "ab020538bb476bd5c4088152acc14dd3a9683ae0343b1ab08dd70fc1e46cb35c"
+      }
+    }
+  ],
+  "expected_natural_candidates": {
+    "Prob071_always_casez": "pass",
+    "Prob112_always_case2": "fail"
+  },
+  "source_hashes": {
+    "audit.py": "c1e1fbec56f6bfbb0b529516069a752b5010cf9c7af150b484e83d1b46a853ee",
+    "calibrate.py": "983ccac7c298e31925f0b81d97d3d2821136d729358efff53b0ec3b51e16fc33",
+    "collect_evidence.py": "1cac459d56910644cbec92e23ca5abf5e4926a617300cccff393ba14a6229ac8",
+    "CONTROL_PREPARATION.json": "945e543aba138d6c9c3052274efc31f635f3188f6e6a3568ed251ecb2dbc3052",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "INPUT_MANIFEST.json": "e5fdf45f5f42ecf090e89444adc6a9c630c83c9256b6aa81d35ab51699efd340",
+    "prepare_controls.py": "0a8a15f0a51455114d0aa00eed1f5648e171aaa4c8f0a579867b4d7b175832fb",
+    "priority_contract.py": "dcd1b5f7a71bae39986ba5b299c0223b027194cc4e13bc47097d8364d4515984",
+    "raw_evidence/inputs/priority3/constant_max.sv": "fbee06dc8a91a7374eed21d2f51a9d1b344d5586b68fdea7b69eae7f0833224b",
+    "raw_evidence/inputs/priority3/constant_zero.sv": "32aa778e774dbdd22735c66634a7cb6844dc5406c60b8348ee6d6e49adfbdeb6",
+    "raw_evidence/inputs/priority3/contract.json": "4d19a73529698fcde54aa91e23f49a9f3f8d971fabffa46851d6b73b92106326",
+    "raw_evidence/inputs/priority3/msb_priority.sv": "c49ea58f0a0dab721dfff32efc2477656d8a057e784cbe3aec7fc8e536ee3656",
+    "raw_evidence/inputs/priority3/positive.sv": "9f4a067f056363fd0ca1cfb34c46a29c6393625700399d756f9d3453ed1416c7",
+    "raw_evidence/inputs/priority3/prompt.txt": "57467ba03aa35c805691072920332dbfa5b3c74d4b8aac96ccbed62874201e34",
+    "raw_evidence/inputs/priority3/tb.sv": "4fc117e6fa42eedae94163fa036b3e8ad4e4be4d3b0f385b21a32c542b022754",
+    "raw_evidence/inputs/priority5/constant_max.sv": "6b8afeadcf5c43232483a4081cb268c8d5fd45fd923042a35049c64adff948de",
+    "raw_evidence/inputs/priority5/constant_zero.sv": "097f57258345199a47ef968b6b94773fdc5be4caea8be316c8ac27d8cad8cfa0",
+    "raw_evidence/inputs/priority5/contract.json": "6c7319818554a85c51b5a11f5040f5a111c495e5892db72b5e480899074e1ece",
+    "raw_evidence/inputs/priority5/msb_priority.sv": "5467c3bc5fa4366c44baaba2a881747ac0b34324b5dafa22067e7f54807dfca5",
+    "raw_evidence/inputs/priority5/positive.sv": "7d2eb9a49644c934657e108ac0e93f6838db2953c1ed50e61aa0b7ffc34828da",
+    "raw_evidence/inputs/priority5/prompt.txt": "ce4832121c09326e5165daf4be6538f710da30666dd8933ccb8d6354201a19c5",
+    "raw_evidence/inputs/priority5/tb.sv": "cc7cdcdcea2af8f74e7716ef2773380831d27d173fb3226b3a3092f66c7f32c8",
+    "raw_evidence/inputs/priority6/constant_max.sv": "b0d149dac745a76bf4982c6fc97d6b532cb9308858de209758ffdda7beb8b301",
+    "raw_evidence/inputs/priority6/constant_zero.sv": "0682365044301b97b4f631878610f618e37c374219c245700559c3f94ddd1f3e",
+    "raw_evidence/inputs/priority6/contract.json": "e8682bb31ddf37899f6c1522e02429e4f36c37d180c4e6345e45196896655393",
+    "raw_evidence/inputs/priority6/msb_priority.sv": "8983ce775ac89934b4d0d71bea042c20578a53c062d87b7bf17e60456625a22c",
+    "raw_evidence/inputs/priority6/positive.sv": "71af283520843dc5d5688abce453033c2fe97cf43ee3cfc1c3c2eda8eb18a6f0",
+    "raw_evidence/inputs/priority6/prompt.txt": "e195481ec6eb149baf000b811adf21c5388198a9b96c4ac31ac768f53705948d",
+    "raw_evidence/inputs/priority6/tb.sv": "1c6b35859fbd40108cbf5ee4c753f43ec726646aa0d76470a4d25886b55609ba",
+    "raw_evidence/inputs/Prob071_always_casez/candidate.sv": "21bd60a9f054ec7cc43ffade5f8409d9c5491800fb08333876fa3de01b1041ca",
+    "raw_evidence/inputs/Prob071_always_casez/constant_max.sv": "54b7ef7f560ae6cd8896668303fe6e4076e173ba2f734ea9f8c5d549361eaa1a",
+    "raw_evidence/inputs/Prob071_always_casez/constant_zero.sv": "8a1250edc6aadb42e20d975e6557a0c1463541bd88ad9b6a135adc66fdf6ec42",
+    "raw_evidence/inputs/Prob071_always_casez/contract.json": "c2319e2427d5ce00e1c1939dcc91faa38ed9822025364cd19b069c1d7e31c444",
+    "raw_evidence/inputs/Prob071_always_casez/msb_priority.sv": "63c8117d1bd4f2fd33a29a92fe192541e0d0235fc97661bf4d9bce9b542b1afe",
+    "raw_evidence/inputs/Prob071_always_casez/positive.sv": "4c18ce80841f3fd3d444b89f9dd12c14128174dea08dc97395d340b50e23c151",
+    "raw_evidence/inputs/Prob071_always_casez/prompt.txt": "a0f1bef8205db2b5dd182f74d3abed73203f5d78c653b33d0de8f575b8d901ce",
+    "raw_evidence/inputs/Prob071_always_casez/tb.sv": "1beb8a954ae7b6583d23c0fc889a111490bac1bf12639495f7df52a51729ca3f",
+    "raw_evidence/inputs/Prob112_always_case2/candidate.sv": "e61a4ac247147e4a67d96fc306133a1024011c2abca5cefa6de9323e44680159",
+    "raw_evidence/inputs/Prob112_always_case2/constant_max.sv": "fa70d0591ad223d6b355fe0f174657a5175a6bb2ae4e143b8f98d471c7f088bd",
+    "raw_evidence/inputs/Prob112_always_case2/constant_zero.sv": "f5158229c5b121d05f0de7c5a4b721f57efde2766ad39f6f3724672c20a60c39",
+    "raw_evidence/inputs/Prob112_always_case2/contract.json": "ce82be9e0b8e7dbe659b85db3c33f97027e196a8cf5ba5e831f747ccb6c4bce2",
+    "raw_evidence/inputs/Prob112_always_case2/msb_priority.sv": "911e67b4e378087c9fc5d51bd9cfef9a69936124d97d1f9696faa1760058cfcb",
+    "raw_evidence/inputs/Prob112_always_case2/positive.sv": "ef018b5bd2f06c58b533fbd60c7575a1d965b22f0e6ea8733319d91650126e19",
+    "raw_evidence/inputs/Prob112_always_case2/prompt.txt": "ae25e77bd3e4c274ecec6cea5af6d432379967aba0228435794b3bb83d9637b5",
+    "raw_evidence/inputs/Prob112_always_case2/tb.sv": "ab020538bb476bd5c4088152acc14dd3a9683ae0343b1ab08dd70fc1e46cb35c",
+    "test_priority.py": "696e42b7dc5e34f2d3eba776392b7d11a9780189f8a13789fe6352ce234ec258"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+  },
+  "timeout_s": 840,
+  "guard_stage_timeout_s": 900,
+  "slot_minutes": 20,
+  "max_probe_executions": 22,
+  "max_synth_executions": 5,
+  "max_model_requests": 0,
+  "acceptance": "Every positive/zero/highest-index/MSB-priority control must match exact exhaustive counts, all five positive syntheses pass, public071 preserved and112 actual mismatch verified. Only then prepare equal-budget model repair; controls are not independent natural-task validation.",
+  "limits": [
+    "Parser uses complete bounded prose and exact interface; extra/unknown semantics abstain",
+    "No official reference/TB read by parser or calibration input generation",
+    "No model/agent/skill/deployment changes; controls never emitted as agent answers",
+    "2 known public archived candidates plus 3 constructed controls, no fresh generation/full grade/five-sample claim"
+  ]
+}

@@ -4455,8 +4455,8 @@
     "linux_boundary_tests_passed": 12,
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
-    "G2": "descriptive_inventory_complete_manual_contract_attribution_ongoing",
-    "G3": "parser_O3_reconciled_semantics_preserved_full_care_feedback_ticket10",
+    "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
+    "G3": "Map-feedback forms rejected; priority contract calibration ticket14; compiler-diagnostic experiments left to teammate",
     "G4": "not_admitted_independent_natural_validation",
     "G5": "not_final_delivery_certified",
     "goal_complete": false,
@@ -4576,9 +4576,9 @@
     "independent_natural_tasks": 0
   },
   "prompt_map_table_feedback_20261005": {
-    "status": "submitted_fifo_ticket10",
+    "status": "complete_audited_gate_failed",
     "source_spec_sha256": "28bf1d75e1b4e697aa9f1c6ae3cd604429f0cb4088f4a5f0ca0f3e671877baaf",
-    "report": "03_analysis/prompt_map_table_feedback_20261005/README.md",
+    "report": "03_analysis/prompt_map_table_feedback_20261005/RESULT.md",
     "fifo_ticket": 10,
     "monitor_pid": 3343719,
     "source_assets": 42,
@@ -4586,8 +4586,31 @@
     "first_generation_replayed": true,
     "max_actual_model_requests": 8,
     "known_public_archived_tasks": 4,
-    "full_audit_executed": false,
+    "full_audit_executed": true,
     "adoption": false,
-    "next_if_gate_passes": "fresh first generation and original-correct guards then full same-budget regression"
+    "next_if_gate_passes": null,
+    "audit": "03_analysis/prompt_map_table_feedback_20261005/checkpoint_audit/RESULTS.json",
+    "actual_model_requests": 3,
+    "repaired_known_wrong": 1,
+    "correct_guard_bytes_preserved": true,
+    "archive_sha256": "cbc7af7209376445e0e754941dcef287fce3a4efb9aee86372910ceee734f444",
+    "next": "Stop this care-feedback form; calibrate explicit priority/sign/selector mechanisms"
+  },
+  "priority_contract_20261005": {
+    "status": "submitted_fifo_ticket14",
+    "source_spec_sha256": "c9cd43adf84bcf4828ca86d9350badcbeed1808115d1c4d8b70303505eadae12",
+    "source_assets": 46,
+    "local_linux_tests_passed": 7,
+    "report": "03_analysis/priority_contract_20261005/README.md",
+    "fifo_ticket": 14,
+    "monitor_pid": 3349703,
+    "known_public_archived_candidates": 2,
+    "constructed_controls": 3,
+    "independent_natural_tasks": 0,
+    "planned_native_probes": 22,
+    "planned_synth": 5,
+    "max_model_calls": 0,
+    "full_audit_executed": false,
+    "adoption": false
   }
 }
