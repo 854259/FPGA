@@ -1,5 +1,207 @@
 {
   "schema_version": 1,
+  "bundle_fullflow_20261004": {
+    "schema": "bundle_fullflow_audit_v1",
+    "status": "complete_verified",
+    "groups": {
+      "A": {
+        "passes": 0,
+        "actual_model_requests": 3,
+        "worker_elapsed_s": 64.87819149065763,
+        "model_request_elapsed_s": 63.7890618480742
+      },
+      "C": {
+        "passes": 1,
+        "actual_model_requests": 2,
+        "worker_elapsed_s": 63.71629566885531,
+        "model_request_elapsed_s": 50.78466812055558
+      }
+    },
+    "regressions": 0,
+    "fixes": 1,
+    "acceptance_met": true,
+    "adoption": false,
+    "new_score": false,
+    "actual_model_requests": 5,
+    "replayed_initial_responses": 6,
+    "unique_initial_responses": 3,
+    "live_unique_answer_texts": 3,
+    "live_request_pairs_identical": [
+      "adder_8bit",
+      "adder_32bit"
+    ],
+    "live_response_content_pairs_identical": [
+      "adder_8bit",
+      "adder_32bit"
+    ],
+    "original_final_correct_guard_count": 0,
+    "actual_probes": 12,
+    "controls_valid": 6,
+    "candidate_gate_commands": 8,
+    "candidate_gate_elapsed_s": 9.681527554988861,
+    "synthesis_calls": 0,
+    "rows": [
+      {
+        "task": "adder_16bit",
+        "arm": "A",
+        "status": "fail",
+        "failure_kind": "xelab_failed",
+        "checks": null,
+        "mismatches": null,
+        "actual_model_requests": 1,
+        "replayed_requests": 1,
+        "worker_elapsed_s": 13.15065529383719,
+        "model_request_elapsed_s": 13.147734971717,
+        "final_sha256": "518a9e0a4c6fab77ded6bf4c44c778312a9f411f596f3adfb4c4d3dfbea501c8",
+        "extraction_decisions": [
+          "original_baseline",
+          "original_baseline"
+        ]
+      },
+      {
+        "task": "adder_16bit",
+        "arm": "C",
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 270978,
+        "mismatches": 0,
+        "actual_model_requests": 0,
+        "replayed_requests": 1,
+        "worker_elapsed_s": 3.376294108107686,
+        "model_request_elapsed_s": 0.0,
+        "final_sha256": "94cf0fee98f88114880fa56891b40b40a992b0fd1b242a9a078fc0ba28e1f00c",
+        "extraction_decisions": [
+          "candidate_accepted"
+        ]
+      },
+      {
+        "task": "adder_32bit",
+        "arm": "C",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 135908,
+        "mismatches": 18138,
+        "actual_model_requests": 1,
+        "replayed_requests": 1,
+        "worker_elapsed_s": 50.8021275550127,
+        "model_request_elapsed_s": 44.57425889838487,
+        "final_sha256": "acb22d72424a0d9f4625629bf95ff482c0fe4317d8a6fae3bcce6f26ea027ed7",
+        "extraction_decisions": [
+          "candidate_bounds_warning",
+          "candidate_accepted"
+        ]
+      },
+      {
+        "task": "adder_32bit",
+        "arm": "A",
+        "status": "fail",
+        "failure_kind": "xelab_failed",
+        "checks": null,
+        "mismatches": null,
+        "actual_model_requests": 1,
+        "replayed_requests": 1,
+        "worker_elapsed_s": 43.97792734391987,
+        "model_request_elapsed_s": 43.974944330751896,
+        "final_sha256": "42aeeeaab34d2871bf74ec2d75a8ddaef654235801d5149dc6bbae05813bdf0c",
+        "extraction_decisions": [
+          "original_baseline",
+          "original_baseline"
+        ]
+      },
+      {
+        "task": "adder_8bit",
+        "arm": "A",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 131072,
+        "mismatches": 131072,
+        "actual_model_requests": 1,
+        "replayed_requests": 1,
+        "worker_elapsed_s": 7.749608852900565,
+        "model_request_elapsed_s": 6.666382545605302,
+        "final_sha256": "c606261c7848158bc06306a006d2ae9630ea5d4e352095dcec93ad65af72f658",
+        "extraction_decisions": [
+          "original_baseline",
+          "original_baseline"
+        ]
+      },
+      {
+        "task": "adder_8bit",
+        "arm": "C",
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 131072,
+        "mismatches": 131072,
+        "actual_model_requests": 1,
+        "replayed_requests": 1,
+        "worker_elapsed_s": 9.53787400573492,
+        "model_request_elapsed_s": 6.210409222170711,
+        "final_sha256": "c606261c7848158bc06306a006d2ae9630ea5d4e352095dcec93ad65af72f658",
+        "extraction_decisions": [
+          "candidate_source_error",
+          "unchanged"
+        ]
+      }
+    ],
+    "elapsed_s": 193.99409807194024,
+    "independent_natural_validation": false,
+    "production_initial_generation_measured": false,
+    "guard": {
+      "started_at_utc": "2026-10-04T07:39:49.687919+00:00",
+      "finished_at_utc": "2026-10-04T07:43:04.159169+00:00",
+      "elapsed_s": 194.36638068500906,
+      "stage_rc": 0,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "model_idle_after": {
+        "health_status": "ok",
+        "model_name": "Qwen3.6-27B-Q4_K_M",
+        "slot_count": 1,
+        "processing_slots": 0,
+        "model_pid_owns_port": true
+      }
+    },
+    "evidence": {
+      "sha256": "7a86abaf0fcf3ac0022f4fca20d48536c0b81015dc8941087382f23e7d28b538",
+      "files": 219,
+      "all_hashes_verified": true
+    },
+    "postflight": {
+      "utc": "2026-10-04T07:43:59.188696+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": false,
+      "slot_owner": null,
+      "own_slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "workspace_free_gib": 9.93924331665039,
+      "model_pid": 2013333,
+      "instance_shutdown_or_model_restart": false
+    },
+    "limits": [
+      "All three initial replies are known development replays originally generated under baseline SYS, injected despite the agent-generation system request; not new agent production distribution.",
+      "Original best archived runtime22e322 and both skills are byte-identical. Only in-memory extraction hook and request observation/replay occur in isolated child processes.",
+      "First response replay costs no model call; initial generation and service transport time excluded. Worker plus candidate compile/gate and repair time measured, not complete production request latency.",
+      "Both arms retain original one-repair budget; live repair requests use exact runtime messages, 8192/temp0/top_p1. Experiment caps HTTP at120s versus runtime300s.",
+      "Functional probes/controls never enter request or extraction decision; all workers complete before experimental candidate grades.",
+      "No synthesis or official grade; big adder domains remain partial. No weighted/full score or pass@5.",
+      "Guarded C applies to every runtime extraction, not only round0. Candidate-only diagnostics may affect flow only via accept/fallback, no new prompt diagnostic injection.",
+      "Both shared locks and separate owned directories; official files, deployed runtime, model and instance untouched."
+    ],
+    "report": "03_analysis/bundle_fullflow_20261004/README.md",
+    "result": "03_analysis/bundle_fullflow_20261004/RESULTS.json",
+    "next_plan": "03_analysis/bundle_fullflow_20261004/NEXT.md",
+    "formal_runtime_integrated": false,
+    "branch": "codex/autonomous-rtl-20261004",
+    "quota_stop_used_percent": 97
+  },
   "bundle_guard_20261004": {
     "schema": "bundle_guard_audit_v1",
     "status": "complete_verified",
@@ -275,7 +477,8 @@
     "branch": "codex/autonomous-rtl-20261004",
     "formal_runtime_integrated": false,
     "quota_stop_used_percent": 97,
-    "collection_note": "03_analysis/bundle_guard_20261004/COLLECTION_NOTE.json"
+    "collection_note": "03_analysis/bundle_guard_20261004/COLLECTION_NOTE.json",
+    "next_step": "Best archived worker full-flow development replay complete, A0/3 C1/3; next actual agent-generation initial replies, see bundle_fullflow_20261004. No integration."
   },
   "helper_contracts_20261004": {
     "schema": "helper_three_contract_audit_v1",
@@ -1511,7 +1714,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-04T15:21:43+08:00",
+  "last_updated": "2026-10-04T15:48:34+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
