@@ -1,5 +1,30 @@
 {
   "schema_version": 1,
+  "full156_bundle_20261004": {
+    "status": "prepared_frozen_before_launch",
+    "task_count": 156,
+    "samples_per_arm": 156,
+    "arms": [
+      "A",
+      "C"
+    ],
+    "solve_deadline_s": 300,
+    "judge_timeout_s": 300,
+    "actual_model_requests": 0,
+    "new_score": false,
+    "adoption": false,
+    "quota_used_percent_at_resume": 4,
+    "source_spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+    "input_files": 936,
+    "old_input_tree_exact_match": true,
+    "offline_boundary_tests_passed": 6,
+    "offline_linux_tests_passed": true,
+    "cloud_directory": "/workspace/team/runs/fpga_owner/full156_bundle_20261004_v1",
+    "report": "03_analysis/full156_bundle_20261004/README.md",
+    "teammate_branch_reviewed": "fe006faa5ca596b41fa37a7ea480d479b3a10942",
+    "shared_deployment_unchanged": true,
+    "cooperative_per_sample_release": true
+  },
   "quota_closeout_20261004": {
     "status": "pause_requested_at_user_threshold",
     "used_percent": 97,

@@ -1,0 +1,21 @@
+{
+  "model_calls": 0,
+  "eda_calls": 0,
+  "execution_launched": false,
+  "initial_prepare_path_error": "Upstream manifest names are relative to kit root; corrected only integrity lookup before freezing.",
+  "offline_test_fixture_adjustments": [
+    "Added Windows .bat fake tool suffix to fake tool fixture",
+    "Used multiline named instantiation to exercise original anchored missing-helper detector",
+    "Corrected duplicate-Top fixture fence closure"
+  ],
+  "offline_tests": 6,
+  "offline_tests_passed": true,
+  "offline_models_and_tools_are_fake": true,
+  "preparation_v1_not_executed": true,
+  "preparation_v1_archive": "raw_evidence/preparation_v1",
+  "final_prelaunch_corrections": [
+    "Guard output directory must be created exclusively by guard itself",
+    "Boundary stop checked only between samples, never interrupts model drain",
+    "Assert all312 samples before marking queue complete"
+  ]
+}
