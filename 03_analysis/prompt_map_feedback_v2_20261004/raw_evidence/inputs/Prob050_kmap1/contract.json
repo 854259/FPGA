@@ -1,0 +1,78 @@
+{
+  "status": "supported",
+  "prompt_sha256": "aa50560c2a518e130e6f2d650168fb9457f92ec2d460caac0c18febbbb47a03f",
+  "inputs": [
+    "a",
+    "b",
+    "c"
+  ],
+  "output": "out",
+  "checks": 8,
+  "cases": [
+    {
+      "inputs": {
+        "a": 0,
+        "b": 0,
+        "c": 0
+      },
+      "expected": 0
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 0,
+        "c": 1
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 1,
+        "c": 0
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 1,
+        "c": 1
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 0,
+        "c": 0
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 0,
+        "c": 1
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 1,
+        "c": 0
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 1,
+        "c": 1
+      },
+      "expected": 1
+    }
+  ],
+  "scope": "Complete explicitly labelled ASCII map, scalar 2-4 inputs; two-state combinational care cells only"
+}

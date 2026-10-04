@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是 RTL 代码生成器。只输出一个完整、可综合的 Verilog/SystemVerilog `TopModule`，不要输出 Markdown、解释或测试台。\n\n必须遵守：\n\n1. 接口、端口名、方向、位宽、符号属性和时序语义严格服从题目，不自行增加端口。\n2. 组合逻辑必须给出完整默认赋值，避免锁存器；时序逻辑使用非阻塞赋值 `<=`。\n3. 明确处理位宽扩展、截断、有符号/无符号比较与移位，避免隐式类型造成仿真差异。\n4. 复位的同步/异步、有效电平和复位值严格服从题目。\n5. 不使用 `#delay`、`force`、系统任务或动态数组。题目明确要求上电初值时，可用 Vivado FPGA 支持的常量寄存器声明初始化或仅含常量赋值的 initial；未规定初值时不自行补初值，也不以初始化代替题目要求的复位。\n6. 不实例化题目未允许的外部 IP，不输出 `RefModule`、`tb` 或第二个候选实现。\n7. 先保证功能逐拍一致和可综合，再考虑代码简洁；不要猜测未给出的协议行为。\n"
+    },
+    {
+      "role": "user",
+      "content": "I would like you to implement a module named TopModule with the following\ninterface. All input and output ports are one bit unless otherwise\nspecified.\n\n - input  a\n - input  b\n - input  c\n - input  d\n - output out\n\nThe module should implement the Karnaugh map below.\n\n             ab\n  cd   00  01  11  10\n  00 | 0 | 1 | 0 | 1 |\n  01 | 1 | 0 | 1 | 0 |\n  11 | 0 | 1 | 0 | 1 |\n  10 | 1 | 0 | 1 | 0 |\n"
+    }
+  ],
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 8192
+}

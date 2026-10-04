@@ -1,0 +1,15 @@
+{
+  "schema": "map_checkpoint_v1_failure_v1",
+  "archive_sha256": "b67ea94c956f8175aa8f1e6159949b7a1e45b7a062a1ad3e48c49c4bab9baf02",
+  "files": 79,
+  "actual_model_requests": 0,
+  "stage_rc": 1,
+  "cleanup_verified": true,
+  "remaining": [],
+  "model_unchanged": true,
+  "own_slot_released": true,
+  "reason": "Inherited runner expects ROOT/task/tb.sv; dynamically rendered TB folder omitted task subdirectory; FileNotFoundError before first live repair. Preserve 38 frozen assets, do not edit or resume failed run.",
+  "completed_workers": 1,
+  "complete_final_probes": 1,
+  "new_model_resampling": false
+}

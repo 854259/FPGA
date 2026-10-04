@@ -4456,7 +4456,7 @@
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_manual_contract_attribution_ongoing",
-    "G3": "concise_candidate_rejected_map_calibration_valid_next_equal_budget_repair",
+    "G3": "concise_rejected_map_calibration_valid_map_feedback_v2_running_ticket5",
     "G4": "not_admitted_independent_natural_validation",
     "G5": "not_final_delivery_certified",
     "goal_complete": false
@@ -4517,5 +4517,31 @@
     "receipt": "03_analysis/full156_postflight_20261004/FOLLOWUP_OBSERVER_LAUNCH.json",
     "tests_local_linux": 2,
     "scope": "owned calls and calibration progress only, no bodies or all-server claim"
+  },
+  "prompt_map_feedback_20261004": {
+    "status": "v1_failed_before_live_model_v2_fifo_ticket5_running",
+    "v1": {
+      "ticket": 4,
+      "source_spec_sha256": "bdf958d87646557b12231095829635bfb81887e9a9b0edfbbe18eb4730d8c672",
+      "real_model_requests": 0,
+      "failure_receipt": "03_analysis/prompt_map_feedback_20261004/FAILURE_RECEIPT.json",
+      "cleanup_verified": true,
+      "failure_archive_local_sha_verified": true,
+      "source_modified_after_execution": false
+    },
+    "v2": {
+      "ticket": 5,
+      "monitor_pid": 3337680,
+      "source_spec_sha256": "f38a40e64072f2b1005c1fe9deaae73f68496c9431e82408ce28479cbe80f08d",
+      "local_linux_boundary_tests_passed": 6,
+      "source_assets": 38,
+      "known_archived_public_tasks": 4,
+      "max_actual_model_requests": 8,
+      "first_generation_replay": true,
+      "first_generation_cost_measured": false,
+      "full_audit_executed": false,
+      "adoption": false,
+      "report": "03_analysis/prompt_map_feedback_v2_20261004/README.md"
+    }
   }
 }

@@ -1,0 +1,159 @@
+{
+  "status": "supported",
+  "prompt_sha256": "7619670501d7d0ea6a2581009db0465e1b2a3e20285c8cd1390c2ed7a75c3529",
+  "inputs": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "output": "out",
+  "checks": 13,
+  "cases": [
+    {
+      "inputs": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "expected": 0
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 1
+      },
+      "expected": 0
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 0,
+        "c": 1,
+        "d": 0
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 0,
+        "c": 1,
+        "d": 1
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 1,
+        "c": 0,
+        "d": 0
+      },
+      "expected": null
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 1,
+        "c": 0,
+        "d": 1
+      },
+      "expected": 0
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 1,
+        "c": 1,
+        "d": 0
+      },
+      "expected": 0
+    },
+    {
+      "inputs": {
+        "a": 0,
+        "b": 1,
+        "c": 1,
+        "d": 1
+      },
+      "expected": 0
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 0,
+        "c": 0,
+        "d": 0
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 0,
+        "c": 0,
+        "d": 1
+      },
+      "expected": null
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 0,
+        "c": 1,
+        "d": 0
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 0,
+        "c": 1,
+        "d": 1
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 1,
+        "c": 0,
+        "d": 0
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 1,
+        "c": 0,
+        "d": 1
+      },
+      "expected": null
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": 0
+      },
+      "expected": 1
+    },
+    {
+      "inputs": {
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": 1
+      },
+      "expected": 1
+    }
+  ],
+  "scope": "Complete explicitly labelled ASCII map, scalar 2-4 inputs; two-state combinational care cells only"
+}
