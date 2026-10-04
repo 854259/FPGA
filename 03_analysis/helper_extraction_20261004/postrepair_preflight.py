@@ -2,12 +2,70 @@
 import argparse
 import ctypes
 import json
+import os
+import re
 import shutil
 import sys
 import time
 from pathlib import Path
 from pilot import REPO, load, materials, save, sha
 from elaboration_batch import OLD
+
+
+def regrade(a):
+    """Regrade frozen K1 outputs after a verified judge PATH failure; no workers."""
+    assert sys.platform=='linux' and ctypes.CDLL(None,use_errno=True).prctl(36,1,0,0,0)==0
+    source=a.regrade_existing.resolve()
+    manifest=json.loads((source.parent/'K1_MANIFEST.json').read_text())
+    assert sha(source.parent/'K1_EVIDENCE.zip')=='19f52bd7014230c5dd7f0bf3a4fbb0bab6ec2231b3bc42809470112e375df0dc'
+    for name,h in manifest['files'].items():
+        assert sha(source.parent/name)==h, name
+    spec=json.loads((Path(__file__).parent/'CONTINUATION_SPEC.json').read_text())
+    assert all(sha(a.kit/p)==h for p,h in spec['kit_hashes'].items())
+    assert sha(OLD/'taskset_manifest.json')==spec['input_manifest_sha256']
+    frozen=json.loads((OLD/'taskset_manifest.json').read_text())['task_sha256']
+    assert all(sha(OLD/'tasks_verified'/p)==h for p,h in frozen.items())
+    paired=load('k1_regrade_owned',REPO/'03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py')
+    judge=load('k1_regrade_judge',a.kit/'official_eval.py');assert judge.verify_upstream()==spec['upstream_commit']
+    paired.check_resource(a.resource_check,a.kit,first=True)
+    # Explicit local EDA directory; do not infer judge availability from VIVADO_BIN alone.
+    tools=Path(os.environ['VIVADO_BIN']).resolve()
+    os.environ['PATH']=str(tools)+os.pathsep+os.environ['PATH']
+    for name in ('xvlog','xelab','xsim','vivado'):
+        assert Path(shutil.which(name)).resolve()==(tools/name).resolve(),name
+    a.out.mkdir(parents=True,exist_ok=False)
+    prior=json.loads((source/'summary.json').read_text());rows=[]
+    report=dict(complete=False,valid=False,model_calls=0,regeneration=False,rows=rows,error=None,
+                invalid_previous_grades=8,reason='judge executable missing PATH was mislabeled L0',
+                candidate_commit='04ed9f1',full_round_complete=False)
+    tick=time.monotonic()
+    try:
+        for case in json.loads((Path(__file__).parent/'ELABORATION_SPEC.json').read_text())['captured']:
+            sample=source/'pairs'/case['label'];dest=a.out/'pairs'/case['label'];dest.mkdir(parents=True)
+            task=dest/'judge_task';shutil.copytree(OLD/'tasks_verified'/case['task'],task)
+            row=dict(name=case['label'],arms={});rows.append(row)
+            for arm in ('original','postrepair_helpers'):
+                paired.check_resource(a.resource_check,a.kit)
+                grade=dest/arm;grade.mkdir()
+                solution=sample/arm/'solution.v'
+                assert sha(solution)==case['files']['original/solution.v']
+                v=judge.judge_sample(task,solution,grade,grade/'verdict.json',90)
+                assert not v.get('tool_error') and not v.get('suspected_silent_degradation'),v
+                text='\n'.join(p.read_text(errors='replace') for p in grade.rglob('*.log'))
+                if re.search(r'可执行文件不存在|command not found|No such file or directory|license checkout failed',text,re.I):
+                    raise RuntimeError('judge infrastructure failure; invalidate rather than score L0')
+                assert re.search(r'(?:INFO|ERROR): \[VRFC ',text), 'no actual Vivado compiler evidence'
+                row['arms'][arm]=dict(verdict=v,solution_sha256=sha(solution))
+            assert row['arms']['original']['verdict']['level']==row['arms']['postrepair_helpers']['verdict']['level']
+            if case['label'] in ('correct8','correct_multi'):
+                assert row['arms']['original']['verdict']['level']==3, 'known positive anchor failed'
+            save(dest/'pair.json',row);print(json.dumps(dict(name=case['label'],levels={k:v['verdict']['level'] for k,v in row['arms'].items()})),flush=True)
+        assert all(sha(source.parent/name)==h for name,h in manifest['files'].items())
+        report.update(complete=True,valid=True,frozen_outputs_unchanged=True)
+    except BaseException as exc:
+        report['error']=type(exc).__name__+': '+str(exc);raise
+    finally:
+        report['elapsed_s']=time.monotonic()-tick;save(a.out/'summary.json',report)
 
 
 def run(a):
@@ -109,4 +167,5 @@ def run(a):
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     for name in ('kit','package','out','resource-check'):p.add_argument('--'+name,type=Path,required=True)
-    run(p.parse_args())
+    p.add_argument('--regrade-existing',type=Path)
+    a=p.parse_args();regrade(a) if a.regrade_existing else run(a)
