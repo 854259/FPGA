@@ -3118,20 +3118,16 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-04T23:18:29+08:00",
+      "checked_at": "2026-10-04T23:40:48+08:00",
       "own_live_processes": 0,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
       "full_experiment_running": false,
-      "other_task_queue_running": true,
-      "other_task_queue_pid": 3305179,
-      "other_task_queue_id": "concise_output_pilot_20261004_v1",
-      "other_task_completed_samples": 18,
-      "other_task_expected_samples": 24,
-      "progress_checked_at": "2026-10-04T23:18:29+08:00",
-      "slot_must_not_be_cleared": true,
-      "receipt": "05_handoff/independent_validation_20261004/full156_postflight/LATEST_LIVE_CHECK.json",
-      "slot_lock_present": true
+      "other_task_queue_running": false,
+      "latest_own_stage": "N3",
+      "latest_own_stage_complete": true,
+      "slot_lock_present": false,
+      "receipt": "05_handoff/independent_validation_20261004/gatetruth_N3/N3_EXECUTION_EVIDENCE.zip"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3171,7 +3167,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T23:18:29+08:00",
+  "updated_at": "2026-10-04T23:45:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3383,15 +3379,15 @@
     "N2_stage_s": 37.366542492993176,
     "cleanup_verified": true,
     "N3": {
-      "status": "manual_review_complete_aggregation_blocked_before_launch",
+      "status": "manual_review_and_frozen_aggregation_completed",
       "source_commit": "5512d2ed814e4a586d583a178d3868440dd1bddc",
       "upstream": "2cdaae80ae42c211b049aa521fc2b5db1c2037af",
       "manual_review_entries": 60,
       "public_test_functions_reviewed": 178,
-      "script_executed": false,
-      "script_functionally_verified": false,
-      "stage_pid": null,
-      "stage_seconds": null,
+      "script_executed": true,
+      "script_functionally_verified": true,
+      "stage_pid": 3337075,
+      "stage_seconds": 0.06866303272545338,
       "new_model_calls": 0,
       "new_eda_calls": 0,
       "formal_proofs_executed": 0,
@@ -3422,13 +3418,10 @@
         "risk": "Static extraction gate can still bypass original successful repair; J1 not executed against this new candidate"
       },
       "other_task_observation_scope": "historical initial18:18 snapshot; completed312/312 and rejected, see full156_readonly_review_20261004",
-      "current_serial_blocker": {
-        "id": "concise_output_pilot_20261004_v1",
-        "pid": 3305179,
-        "checked_at": "2026-10-04T23:18:29+08:00",
-        "completed_samples": 18,
-        "expected_samples": 24
-      }
+      "current_serial_blocker": null,
+      "guard_seconds": 0.25129242800176144,
+      "execution_evidence_zip_sha256": "133867155d6c39341b9b7e107e748bbb3ce1161b21d9faeab7ff8249b40bed2f",
+      "execution_archive_files": 13
     }
   },
   "full156_readonly_review_20261004": {
@@ -3462,5 +3455,21 @@
     "observation_at": "2026-10-04T23:18:29+08:00",
     "pilot_completed_samples": 18,
     "pilot_expected_samples": 24
+  },
+  "concise_output_review_20261004": {
+    "complete": true,
+    "full_batch_complete": false,
+    "observed_samples": 24,
+    "A_L3": 8,
+    "C_L3": 7,
+    "functional_repairs": 1,
+    "functional_regressions": 2,
+    "decision": "do_not_expand_this_candidate",
+    "confirmed_responses": 28,
+    "unconfirmed_attempts": 2,
+    "queue_wall_s": 2350.452341,
+    "report": "03_analysis/helper_extraction_20261004/CONCISE_OBSERVATION_20261004.md",
+    "next": "O1 constructed parser boundary audit; zero model/EDA",
+    "private_archive_sha256": "3116cb02255fd9aa99eb6a2d6a823b96fa2296cedaf6b93a4abab8f6a6011587"
   }
 }

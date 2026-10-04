@@ -1,0 +1,441 @@
+{
+  "map": {
+    "schema": "prompt_map_calibration_v1",
+    "complete": true,
+    "passed": true,
+    "model_calls": 0,
+    "scope": "4 known public archived candidates plus 4 constructed controls; no new generation/full score/independent natural task claim",
+    "run_spec_sha256": "b0d0006c5c5d8f803d5e114fb6aa2ad92bd43d4a935d3d47d0372d0468b0467f",
+    "probe_executions": 36,
+    "synth_executions": 8,
+    "natural_hypothesis_matched": true,
+    "elapsed_s": 364.94364213198423,
+    "archive_files": 392,
+    "archive_sha256": "1e40ef93e4a0b914c55479bcf5d5de193bfd065c1f93650069276c6c7771b5b8"
+  },
+  "map_cases": {
+    "mapped_care4": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "failure_kind": null,
+          "checks": 14,
+          "mismatches": 0
+        },
+        "constant_zero": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 14,
+          "mismatches": 7
+        },
+        "constant_one": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 14,
+          "mismatches": 7
+        },
+        "inverted": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 14,
+          "mismatches": 14
+        }
+      },
+      "candidate": {},
+      "positive_synth_rc": 0
+    },
+    "mapped_pairs4": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "failure_kind": null,
+          "checks": 16,
+          "mismatches": 0
+        },
+        "constant_zero": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 7
+        },
+        "constant_one": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 9
+        },
+        "inverted": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 16
+        }
+      },
+      "candidate": {},
+      "positive_synth_rc": 0
+    },
+    "mapped_parity3": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "failure_kind": null,
+          "checks": 8,
+          "mismatches": 0
+        },
+        "constant_zero": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 8,
+          "mismatches": 4
+        },
+        "constant_one": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 8,
+          "mismatches": 4
+        },
+        "inverted": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 8,
+          "mismatches": 8
+        }
+      },
+      "candidate": {},
+      "positive_synth_rc": 0
+    },
+    "mapped_xor2": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "failure_kind": null,
+          "checks": 4,
+          "mismatches": 0
+        },
+        "constant_zero": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 4,
+          "mismatches": 2
+        },
+        "constant_one": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 4,
+          "mismatches": 2
+        },
+        "inverted": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 4,
+          "mismatches": 4
+        }
+      },
+      "candidate": {},
+      "positive_synth_rc": 0
+    },
+    "Prob050_kmap1": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "failure_kind": null,
+          "checks": 8,
+          "mismatches": 0
+        },
+        "constant_zero": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 8,
+          "mismatches": 7
+        },
+        "constant_one": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 8,
+          "mismatches": 1
+        },
+        "inverted": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 8,
+          "mismatches": 8
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 8,
+        "mismatches": 2
+      },
+      "positive_synth_rc": 0
+    },
+    "Prob057_kmap2": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "failure_kind": null,
+          "checks": 16,
+          "mismatches": 0
+        },
+        "constant_zero": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 10
+        },
+        "constant_one": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 6
+        },
+        "inverted": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 16
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 16,
+        "mismatches": 6
+      },
+      "positive_synth_rc": 0
+    },
+    "Prob122_kmap4": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "failure_kind": null,
+          "checks": 16,
+          "mismatches": 0
+        },
+        "constant_zero": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 8
+        },
+        "constant_one": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 8
+        },
+        "inverted": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 16,
+          "mismatches": 16
+        }
+      },
+      "candidate": {
+        "status": "pass",
+        "failure_kind": null,
+        "checks": 16,
+        "mismatches": 0
+      },
+      "positive_synth_rc": 0
+    },
+    "Prob125_kmap3": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "failure_kind": null,
+          "checks": 13,
+          "mismatches": 0
+        },
+        "constant_zero": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 13,
+          "mismatches": 8
+        },
+        "constant_one": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 13,
+          "mismatches": 5
+        },
+        "inverted": {
+          "status": "fail",
+          "failure_kind": "semantic_mismatch",
+          "checks": 13,
+          "mismatches": 13
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "failure_kind": "semantic_mismatch",
+        "checks": 13,
+        "mismatches": 6
+      },
+      "positive_synth_rc": 0
+    }
+  },
+  "pilot": {
+    "schema": "concise_output_pilot_audit_v1",
+    "evidence_valid": true,
+    "full_round_complete": false,
+    "pilot_complete": true,
+    "snapshot_samples": 24,
+    "source_spec_sha256": "105d05a41f304be3e5e029949c6bdf352d4dfc919c0aab8f7fa3922274d20398",
+    "totals": {
+      "A": {
+        "samples": 12,
+        "request_attempts": 15,
+        "confirmed_responses": 13,
+        "unconfirmed_attempts": 2,
+        "deadlines": 2,
+        "completion_tokens": 29559,
+        "solve_s": 1074.9337962158024,
+        "judge_s": 308.7
+      },
+      "C": {
+        "samples": 12,
+        "request_attempts": 15,
+        "confirmed_responses": 15,
+        "unconfirmed_attempts": 0,
+        "deadlines": 0,
+        "completion_tokens": 13205,
+        "solve_s": 490.7254837844521,
+        "judge_s": 296
+      }
+    },
+    "paired_tasks": 12,
+    "decision": "do_not_expand_this_candidate",
+    "deployment_changed": false,
+    "new_official_baseline": false,
+    "limitations": [
+      "Known public regression, not unseen-task validation",
+      "A/C fresh generation differences may include inference variation",
+      "Unconfirmed timeout journal entries are not certified actual POST counts",
+      "Twelve selected known public tasks, one sample per arm, not full156/five-sample/independent validation",
+      "External official solve ingress/exclusive timing/32GB final delivery not certified"
+    ],
+    "archive_sha256": "3116cb02255fd9aa99eb6a2d6a823b96fa2296cedaf6b93a4abab8f6a6011587",
+    "auditor_sha256": "29f99a2dcd5676e1984caaf4f70a540ec2678685bb9bda51e51d455335259630",
+    "scores": {
+      "A": {
+        "tasks": 12,
+        "scored_tasks": 12,
+        "samples_per_task": 1,
+        "set_score": 0.7,
+        "level_counts": {
+          "L0": 2,
+          "L1": 2,
+          "L3": 8
+        },
+        "tool_errors": 0,
+        "excluded": [],
+        "judge_elapsed_s": 308.7
+      },
+      "C": {
+        "tasks": 12,
+        "scored_tasks": 12,
+        "samples_per_task": 1,
+        "set_score": 0.65,
+        "level_counts": {
+          "L0": 1,
+          "L1": 4,
+          "L3": 7
+        },
+        "tool_errors": 0,
+        "excluded": [],
+        "judge_elapsed_s": 296
+      }
+    },
+    "changed_pairs": [
+      {
+        "task": "Prob070_ece241_2013_q2",
+        "A_level": 3,
+        "C_level": 1,
+        "same_first_request": false,
+        "same_first_reply_content": false,
+        "same_first_raw_response": false,
+        "C_accepted_helper": false,
+        "A_requests": 1,
+        "C_requests": 1,
+        "original_repair_bypass_signal": false,
+        "A_L3_C_regression": true
+      },
+      {
+        "task": "Prob086_lfsr5",
+        "A_level": 0,
+        "C_level": 3,
+        "same_first_request": false,
+        "same_first_reply_content": false,
+        "same_first_raw_response": false,
+        "C_accepted_helper": false,
+        "A_requests": 2,
+        "C_requests": 1,
+        "original_repair_bypass_signal": false,
+        "A_L3_C_regression": false
+      },
+      {
+        "task": "Prob124_rule110",
+        "A_level": 3,
+        "C_level": 1,
+        "same_first_request": false,
+        "same_first_reply_content": false,
+        "same_first_raw_response": false,
+        "C_accepted_helper": false,
+        "A_requests": 1,
+        "C_requests": 2,
+        "original_repair_bypass_signal": false,
+        "A_L3_C_regression": true
+      }
+    ],
+    "wall_s": 2350.452341,
+    "tokens_reduction": 0.5532663486586149,
+    "solve_reduction": 0.5434830633179435,
+    "audit_sha256": "66386f3630dfa273d9cec13316741d965f449de1a7edcc3cd27a411e8d34b6e0",
+    "functional_repairs": 1,
+    "functional_regressions": 2,
+    "functionally_unchanged": 9,
+    "received_response_tokens_only": true,
+    "diag_findings": [
+      "Prob070 final POS expression violates declared care minterms; score mismatch3/107. The model still wrote6544 tokens despite concise instruction.",
+      "Prob124 final candidate accesses extended_q[i-1] at i=0, outside [513:0]; syntax repair returned rc0 but official simulation mismatched6220/6283. No blanket short-output adoption.",
+      "Bounded single-sample evidence does not establish prompt-independent root cause or a population regression rate."
+    ],
+    "archive_files": 1966
+  },
+  "n3_top": [
+    "N3_PREPARATION_EVIDENCE.zip",
+    "MANIFEST.json",
+    "PRIVATE_REVIEW_NOTES.json",
+    "source",
+    "FINAL_LIVE_CHECK.json",
+    "owner_observation",
+    "CLEANUP.json",
+    "PRELAUNCH_BLOCKED.json"
+  ],
+  "n3_guard_files": [
+    "owner_observation/guarded_bundle.py",
+    "source/03_analysis/selective_runtime_integration_20261003/resource_guard.py"
+  ],
+  "readonly_review_new_model_calls": 0,
+  "readonly_review_new_eda_calls": 0,
+  "next_stage": {
+    "id": "O1",
+    "scope": "384 constructed scalar2-4 input axis/interface permutations and36 additional-semantics abstention cases; frozen before executing",
+    "script": "map_contract_boundary_20261004.py",
+    "dependency_sha256": "63cbdeaa67cb9deda4173ccd57fde755657b7b1f986706fecaf9881c6048ce1d",
+    "model_call_cap": 0,
+    "eda_call_cap": 0,
+    "stage_timeout_s": 120,
+    "requirement": "Every complete table maps exactly; all extra semantic clauses abstain; any false accept blocks model-repair integration",
+    "natural_independent_tasks": 0
+  }
+}

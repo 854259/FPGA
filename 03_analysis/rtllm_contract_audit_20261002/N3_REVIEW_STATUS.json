@@ -1,13 +1,13 @@
 {
-  "status": "manual_review_complete_aggregation_blocked_before_launch",
+  "status": "manual_review_and_frozen_aggregation_completed",
   "source_commit": "5512d2ed814e4a586d583a178d3868440dd1bddc",
   "upstream": "2cdaae80ae42c211b049aa521fc2b5db1c2037af",
   "manual_review_entries": 60,
   "public_test_functions_reviewed": 178,
-  "script_executed": false,
-  "script_functionally_verified": false,
-  "stage_pid": null,
-  "stage_seconds": null,
+  "script_executed": true,
+  "script_functionally_verified": true,
+  "stage_pid": 3337075,
+  "stage_seconds": 0.06866303272545338,
   "new_model_calls": 0,
   "new_eda_calls": 0,
   "formal_proofs_executed": 0,
@@ -36,5 +36,10 @@
     "mutated": false,
     "scope": "known full156 paired regression substage; not the comprehensive batch",
     "risk": "Static extraction gate can still bypass original successful repair; J1 not executed against this new candidate"
-  }
+  },
+  "guard_seconds": 0.25129242800176144,
+  "execution_evidence_zip_sha256": "133867155d6c39341b9b7e107e748bbb3ce1161b21d9faeab7ff8249b40bed2f",
+  "execution_archive_files": 13,
+  "updated_at": "2026-10-04T23:45:00+08:00",
+  "other_task_scope": "Historical18:18 snapshot; full156 and concise pilot are now complete; see their new reports"
 }
