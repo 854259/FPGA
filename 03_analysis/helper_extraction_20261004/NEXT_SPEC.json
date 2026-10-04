@@ -90,7 +90,8 @@
     "multi_pipe_4bit"
   ],
   "max_pre_request_elapsed_s": 2700,
-  "budget_status": "PENDING: additional 24 calls and 60 minutes require user approval; only zero-model preflight completed",
+  "budget_status": "APPROVED by direct user reply: additional maximum 24 model calls and 60 minutes, continuous full batch",
   "entrypoint": "full_pair.py run --enable-generation; requires explicit additional budget approval",
-  "supersedes": "Earlier 8-call initial-response-only proposal was never launched. Exact best-worker replay revealed an existing conditional repair request, so full-worker comparison is required."
+  "supersedes": "Earlier 8-call initial-response-only proposal was never launched. Exact best-worker replay revealed an existing conditional repair request, so full-worker comparison is required.",
+  "authorization": "批准追加 24 次／60 分钟，整批连续执行"
 }
