@@ -85,7 +85,10 @@ def main():
         ('tool_unavailable', [], None, 1, False, None, True, good, 1, 0),
         ('first_model_timeout', [], None, 1, False, 0, False, good, 1, 0),
         ('repair_model_timeout', [1], None, 1, False, 1, False, good, 2, 1),
-        ('source_boundary', [0], None, 1, False, None, False, '`include "external.v"\n' + good, 2, 0),
+        # The untouched baseline extractor removes text outside TopModule.
+        # Q2's expectation of two calls here was wrong; preserve the input as a regression.
+        ('source_boundary', [0], None, 1, False, None, False, '`include "external.v"\n' + good, 1, 0),
+        ('inside_source_boundary', [0], None, 1, False, None, False, good.replace('assign y = a;', '`include "external.v"\nassign y = a;'), 2, 0),
         ('unknown_diagnostic_format', [1, 0], None, 1, False, None, False, good, 2, 1),
     ]
     records = []
