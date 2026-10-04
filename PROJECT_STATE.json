@@ -4038,5 +4038,50 @@
     "independent_tasks": 0,
     "full_batch_complete": false,
     "next": "Freeze evaluator-only common module-name conversion on constructed controls, then audit eligibility without model outputs; retain full156 nonpromotion"
+  },
+  "cvdp_name_binding_20261005": {
+    "updated_at": "2026-10-05T07:54:00+08:00",
+    "independent_admitted": 0,
+    "full_batch_complete": false,
+    "S3": {
+      "status": "failed_at_constructed_original_simulation_preserved",
+      "commit": "c285394936d9f97d73523b1fef0e14c36cb9220b",
+      "ticket": 38,
+      "driver_pid": 3659668,
+      "stage_pid": 3659673,
+      "actual_compile": 1,
+      "actual_sim": 1,
+      "actual_model": 0,
+      "corpus_application_started": false,
+      "guard_elapsed_s": 0.2512272708117962,
+      "archive_sha256": "76f5f4e7178405647cc0a8a6ed8568c6313b94563ddfb267206e7c608bae459e",
+      "members_verified": 20,
+      "cleanup_verified": true,
+      "root_cause": "Input event hypothesis pending reproduction"
+    },
+    "S4": {
+      "status": "queued_not_executed",
+      "commit": "330f9cc2cef1674d92c73cfd027a2ee3c934cffb",
+      "ticket": 40,
+      "monitor_pid": 3660638,
+      "stage_pid": null,
+      "amd_root": "/workspace/team/runs/fpga_teammate/cvdp_name_S4_20261005_330f9cc",
+      "plan_sha256": "ba43ad75b7e70bf9bad2d6f28650d5a4edfcbc6210708515354ee4b44eaf1116",
+      "actual_model_max": 0,
+      "actual_compile_max": 17,
+      "actual_sim_max": 17,
+      "dataset_eda_max": 0,
+      "stage_timeout_s": 300,
+      "mapping_functions_unchanged": true
+    },
+    "existing_queue39": {
+      "status": "running_observed",
+      "owner": "other_existing_owner",
+      "task_name": "repair_context_fresh_C_D_v2",
+      "driver_pid": 3659717,
+      "stage_pid": 3659722,
+      "max_actual_model_requests": 32,
+      "not_dispatched_or_modified_by_this_task": true
+    }
   }
 }
