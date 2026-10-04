@@ -3055,7 +3055,17 @@
     "interval_minutes": 30,
     "thread_id": "01a0ee6c-0a6c-7452-9e12-2a535485647e",
     "authorized": true,
-    "default_batch_limits_scope": "historical small-stage caps only, not full experiment authorization or budget"
+    "default_batch_limits_scope": "historical small-stage caps only, not full experiment authorization or budget",
+    "autonomous_degradation_response": {
+      "authorized": true,
+      "policy": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
+      "diagnose_before_change": true,
+      "preserve_all_failures": true,
+      "no_score_based_optional_stopping": true,
+      "used_holdouts_become_development": true,
+      "new_candidate_requires_frozen_protocol": true,
+      "no_need_for_routine_user_prompt": true
+    }
   },
   "comprehensive_cycle_20261004": {
     "complete": false,
@@ -3090,7 +3100,17 @@
       ],
       "overlap_and_prior_exposure_verified": false,
       "external_models_used": false
+    },
+    "latest_live_check": {
+      "checked_at": "2026-10-04T14:35:15+08:00",
+      "matching_experiment_processes": 0,
+      "model_pid": 2013333,
+      "model_healthy": true,
+      "model_processing": false,
+      "gpu_util_percent": 0,
+      "slot_lock_present": false,
+      "full_experiment_running": false
     }
   },
-  "updated_at": "2026-10-04T14:28:34.5457730+08:00"
+  "updated_at": "2026-10-04T14:36:16.6935273+08:00"
 }
