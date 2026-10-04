@@ -1,0 +1,124 @@
+{
+  "schema": "public_fixture_audit_E1",
+  "executed_commit": "3e8179f5f8e8eff0f437e1109676f19e7030bdaf",
+  "complete": true,
+  "valid": true,
+  "model_calls": 0,
+  "judge_calls": 5,
+  "task": "Prob099_m2014_q6c",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "elapsed_s": 95.01585954148322,
+  "guard_elapsed_s": 95.15260227024555,
+  "rows": {
+    "old_reference": {
+      "level": 0,
+      "coefficient": 0.0,
+      "stages": {
+        "compile": false,
+        "simulate": false,
+        "synth": false
+      },
+      "tool_error": null,
+      "elapsed_s": 4.4,
+      "judge_log_bytes": 3521,
+      "judge_evidence_complete": true,
+      "suspected_silent_degradation": false
+    },
+    "corrected_reference": {
+      "level": 3,
+      "coefficient": 1.0,
+      "stages": {
+        "compile": true,
+        "simulate": true,
+        "synth": true
+      },
+      "tool_error": null,
+      "elapsed_s": 27.4,
+      "mismatches": 0,
+      "samples": 200,
+      "judge_log_bytes": 32989,
+      "judge_evidence_complete": true,
+      "suspected_silent_degradation": false
+    },
+    "negative_control": {
+      "level": 1,
+      "coefficient": 0.2,
+      "stages": {
+        "compile": true,
+        "simulate": false,
+        "synth": false
+      },
+      "tool_error": null,
+      "elapsed_s": 7.8,
+      "mismatches": 199,
+      "samples": 200,
+      "judge_log_bytes": 4424,
+      "judge_evidence_complete": true,
+      "suspected_silent_degradation": false
+    },
+    "archived_agent": {
+      "level": 3,
+      "coefficient": 1.0,
+      "stages": {
+        "compile": true,
+        "simulate": true,
+        "synth": true
+      },
+      "tool_error": null,
+      "elapsed_s": 27.2,
+      "mismatches": 0,
+      "samples": 200,
+      "judge_log_bytes": 32929,
+      "judge_evidence_complete": true,
+      "suspected_silent_degradation": false
+    },
+    "archived_baseline": {
+      "level": 3,
+      "coefficient": 1.0,
+      "stages": {
+        "compile": true,
+        "simulate": true,
+        "synth": true
+      },
+      "tool_error": null,
+      "elapsed_s": 27.7,
+      "mismatches": 0,
+      "samples": 200,
+      "judge_log_bytes": 32965,
+      "judge_evidence_complete": true,
+      "suspected_silent_degradation": false
+    }
+  },
+  "original_hashes": {
+    "ref.sv_0": "df78843a9f32266ada24afac8b88d33c2e069b1dacc2ce3cc89f5393eb5ae505",
+    "top.txt_1": "c50a469b80a8d65583769db47df11f71ef00810079c897ce42b2447db7ddfed7",
+    "task.json_2": "18e4704655320f8c487efa83f6ef15d34cbf1745cc8c9dd34fbca6e95664074b",
+    "tb.sv_3": "29378bb5021ae430db5ba03842155ff9f9079292825192f8d9c0710c9c59ab9e",
+    "prompt.txt_4": "4338c93f63dc76e9f2a453caa539fa006638380858d682011add6907a44199cd",
+    "solution.sv_5": "05debe887f3cb3d50f08d1be2eb38c4bf08845f66a3095a2ece4bf73d6f09860",
+    "solution.v_6": "9612c44f58a001914244310a121c6ee8bcd1235db77428dc10beb78971ea3a57",
+    "solution.v_7": "bdb97113c282eba066282101a0e6c226329aa1ab26c14cce7b41d3c9b2959e96",
+    "official_eval.py_8": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797"
+  },
+  "original_tb_sha256": "29378bb5021ae430db5ba03842155ff9f9079292825192f8d9c0710c9c59ab9e",
+  "corrected_tb_sha256": "b49d1a80b4322cf2398eff4baadb23f9ddb0b928a27b0fda6bab4a45d4a92b55",
+  "binding_replacements": {
+    ".Y2(": "2 occurrences changed to .Y1(",
+    ".Y4(": "2 occurrences changed to .Y3("
+  },
+  "diagnostics": [
+    "ERROR: [VRFC 10-3180] cannot find port 'Y4' on this module",
+    "ERROR: [VRFC 10-3180] cannot find port 'Y2' on this module",
+    "ERROR: [VRFC 10-3180] cannot find port 'Y4' on this module",
+    "ERROR: [VRFC 10-3180] cannot find port 'Y2' on this module"
+  ],
+  "inputs_unchanged": true,
+  "formal_inputs_modified": false,
+  "new_full_score": false,
+  "decision": "retain_isolated_port_contract_correction_not_model_or_algorithm_gain",
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "original_summary_sha256": "08311f3e70ce8808eab243211500d9722442079883b16be30278f06e05e5ae14"
+}
