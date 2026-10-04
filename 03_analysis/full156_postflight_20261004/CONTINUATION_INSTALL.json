@@ -1,0 +1,24 @@
+{
+  "schema": "owned_continuation_install_v1",
+  "installed_at_utc": "2026-10-04T14:19:23.887999+00:00",
+  "archive_sha256": "b0854343aa5eeab51ec1ab9c1731b6e57eae0d5a5e5d488a391b82ffa9cb5b9a",
+  "files": 29,
+  "linux_tests": {
+    "pilot": {
+      "returncode": 0,
+      "log_sha256": "6ca3e6fb72d9930d343d9bdece9701ec8e83f7b235fc8339882af697549f8170",
+      "tests": 6
+    },
+    "continuation": {
+      "returncode": 0,
+      "log_sha256": "d89da017b527a8f0b21daad86262480edecb59f01a2d8f0003d0c183d1065a72",
+      "tests": 6
+    }
+  },
+  "model_calls": 0,
+  "eda_calls": 0,
+  "frozen_full_sources_unchanged": true,
+  "pilot_spec_sha256": "105d05a41f304be3e5e029949c6bdf352d4dfc919c0aab8f7fa3922274d20398",
+  "controller_sha256": "f2dfffced91ba41287be72e74321bcc24eaea58072d3f17f6d3ad0236d84982a",
+  "source_git_commit": "0f96bd9"
+}

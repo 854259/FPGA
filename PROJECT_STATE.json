@@ -52,7 +52,11 @@
     "teammate_branch_reviewed": "fe006faa5ca596b41fa37a7ea480d479b3a10942",
     "shared_deployment_unchanged": true,
     "cooperative_per_sample_release": true,
-    "whole_task_fifo_reservation": true
+    "whole_task_fifo_reservation": true,
+    "continuation_snapshot": "03_analysis/full156_postflight_20261004/continuation_status.json",
+    "continuation_snapshot_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_SNAPSHOT_RECEIPT.json",
+    "continuation_completed_samples": 293,
+    "quota_used_percent_latest": 6
   },
   "shared_task_fifo_activity_20261004": {
     "status": "installed_and_observing_own_run",
@@ -2102,7 +2106,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-04T22:11:04.085819+08:00",
+  "last_updated": "2026-10-04T22:23:29.958536+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -4427,10 +4431,15 @@
     ],
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
-    "formal_deployment_changed": false
+    "formal_deployment_changed": false,
+    "continuation_status": "armed_waiting_for_full156",
+    "controller_pid": 3292932,
+    "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
+    "linux_boundary_tests_passed": 12,
+    "quota_used_percent_at_authorization": 6
   },
   "concise_output_pilot_20261004": {
-    "status": "prepared_frozen_not_launched",
+    "status": "cloud_installed_waiting_for_prior_full_audit",
     "report": "03_analysis/concise_output_pilot_20261004/README.md",
     "source_spec_sha256": "105d05a41f304be3e5e029949c6bdf352d4dfc919c0aab8f7fa3922274d20398",
     "selected_known_public_tasks": 12,
@@ -4441,6 +4450,9 @@
     "eda_calls": 0,
     "helper_append_enabled": false,
     "full_pilot_audit_executed": false,
-    "adoption": false
+    "adoption": false,
+    "cloud_directory": "/workspace/team/runs/fpga_owner/concise_output_pilot_20261004_v1",
+    "automatic_fifo_admission_after_full_audit": true,
+    "linux_boundary_tests_passed": 6
   }
 }

@@ -15,3 +15,5 @@
 启动采用同目录evaluate_batch.py queue，继承正确的MODEL_NAME、LLM_BASE_URL、VIVADO_BIN、RTL_REPAIRS=1环境；先核验RUN_SPEC及前置全量审计，再通过服务器task_fifo.py submit登记独立任务，completion-json指向queue_status.json，slot-owner-prefix为fpga_owner_concise_output_。保留内层双锁、不更改共享模型，自己的STOP_AFTER_CURRENT仅在样本间停止。
 
 结束用本目录collect_evidence.py采集新ZIP，再运行audit.py；所有SHA和原始请求／响应／编译／判定绑定。审计仅输出12题诊断均值，full_round_complete恒为false，不与旧156分或baseline拼接。原始ZIP不入Git，只留自己的云目录及本地raw_evidence。
+
+云端状态补充：29文件精确安装后，6项worker边界检查及6项接续控制器检查在Linux通过。接续已启动等待原全量；目前未提交本pilot、不记实际模型调用。原全量审计与本pilot结束审计由控制器按顺序执行，见`../full156_postflight_20261004/CONTINUATION_LAUNCH.json`。
