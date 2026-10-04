@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "task": "Prob115_shift18",
+      "checks": 335,
+      "archived_candidate": true,
+      "group": "known_public_development",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "negative_edge_positive": 0,
+        "logical_right": 32,
+        "enable_priority": 111,
+        "asynchronous_load": 52,
+        "constant_zero": 272
+      }
+    },
+    {
+      "task": "shift16",
+      "checks": 335,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "negative_edge_positive": 0,
+        "logical_right": 32,
+        "enable_priority": 107,
+        "asynchronous_load": 51,
+        "constant_zero": 260
+      }
+    },
+    {
+      "task": "shift8",
+      "checks": 335,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "negative_edge_positive": 0,
+        "logical_right": 32,
+        "enable_priority": 107,
+        "asynchronous_load": 51,
+        "constant_zero": 248
+      }
+    }
+  ],
+  "controls_only_not_agent_DUTs": true,
+  "independent_bit_state_matches_all_expected_rows": true,
+  "model_calls": 0,
+  "eda_calls": 0
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "fresh_v3_cloud_install",
+  "at_utc": "2026-10-04T18:09:37.398960+00:00",
+  "spec_sha256": "6fd6fe78ec9b6b8ef52d43f3ae6ee15dd26066db818781647c5ff841f71c3d05",
+  "assets": 23,
+  "tests_passed": 7,
+  "test_returncode": 0,
+  "test_output": "test_A_uses_actual_first_generation_and_no_functional_review (test_fresh.Fresh.test_A_uses_actual_first_generation_and_no_functional_review) ... ok\ntest_C_priority_real_feedback_uses_only_one_original_repair (test_fresh.Fresh.test_C_priority_real_feedback_uses_only_one_original_repair) ... ok\ntest_C_shift_feedback_keeps_stimulus_and_phase (test_fresh.Fresh.test_C_shift_feedback_keeps_stimulus_and_phase) ... ok\ntest_correct_draft_has_no_extra_model_call (test_fresh.Fresh.test_correct_draft_has_no_extra_model_call) ... ok\ntest_native_compile_error_keeps_existing_repair (test_fresh.Fresh.test_native_compile_error_keeps_existing_repair) ... ok\ntest_persistent_mismatch_never_starts_third_call (test_fresh.Fresh.test_persistent_mismatch_never_starts_third_call) ... ok\ntest_unknown_prose_abstains (test_fresh.Fresh.test_unknown_prose_abstains) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.096s\n\nOK\n",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "inputs_and_dependencies_verified": true
+}

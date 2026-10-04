@@ -1,0 +1,154 @@
+{
+  "schema": "shift_contract_calibration_frozen_v1",
+  "frozen_at_utc": "2026-10-04T17:25:51.374823+00:00",
+  "base_commit": "fecf9f21ca3292065131cba799de75b8eb534dc8",
+  "cloud_root": "/workspace/team/runs/fpga_owner/shift_contract_20261005_v1",
+  "cases": [
+    {
+      "task": "Prob115_shift18",
+      "checks": 335,
+      "archived_candidate": true,
+      "group": "known_public_development",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "negative_edge_positive": 0,
+        "logical_right": 32,
+        "enable_priority": 111,
+        "asynchronous_load": 52,
+        "constant_zero": 272
+      },
+      "files": {
+        "asynchronous_load.sv": "01a61243f219645ca779aa3ec7cedfd707341d2e406396a7e2a9506b8380cb30",
+        "candidate.sv": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+        "constant_zero.sv": "aefee502cb487c70bd401c3d84e295c3dc98be8aae171f51157381870c55ec28",
+        "contract.json": "19d3c19da9835194298732e5b64c71af03e8dcac17bb3b62c5ab303f8ae3c9f6",
+        "enable_priority.sv": "dde28237ec565c2ed04aee7a1e20daf845c9b10ad3b8693d96a3ad5461c2ea6c",
+        "logical_right.sv": "1572f418f5d90fb5bdfc0082109abee3117db833cdaaff9edfd86a7ea1d2a6b2",
+        "negative_edge_positive.sv": "e358a98d51b5b1953180773635b1257f133f07ca2e3d33a6d4e823983af13ec6",
+        "positive.sv": "efed8721cd724453a901cadd9b4769f7e43cd093d8ec6ac7d84e6e63de2051df",
+        "prompt.txt": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386",
+        "tb.sv": "0c05f6ae1e84a3c1bbd93b8ab4a4ade6d4e297feae2784ddc7958814f1a42fe1"
+      }
+    },
+    {
+      "task": "shift16",
+      "checks": 335,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "negative_edge_positive": 0,
+        "logical_right": 32,
+        "enable_priority": 107,
+        "asynchronous_load": 51,
+        "constant_zero": 260
+      },
+      "files": {
+        "asynchronous_load.sv": "44ea249d7e67061cb9ecfe99971bd24005dd01f072dc8a24c5c475b355b87634",
+        "constant_zero.sv": "4b64e34b35f2def64963730814272d5d69aa36470f0c88f856c2c6a6ae4eb051",
+        "contract.json": "a74bb4786566a626efefc0cc2b03382ce505516c5f3c64ad27fcaa88224bd526",
+        "enable_priority.sv": "ad4368b4b8784d79323a59cdd6f9ac135abddde6a2ecc1d5e43e2a9592813037",
+        "logical_right.sv": "58dda602b570cca5e8555aa616f11c834d189d9e875b9e801dde6d5043280f47",
+        "negative_edge_positive.sv": "2788b0bb6f82e53fd441c0c501d1060de3317601082629fafe07fa162d270fc5",
+        "positive.sv": "8371e3625c61984f806559b9da2bdf44c7eaa621bc8c487633657bc370a69be0",
+        "prompt.txt": "6232106668a348ac6f0b5973c21a45cc58dc22cb869471eca86b4e781d988f76",
+        "tb.sv": "f029673d5cf2a8ec92dee4a2880e976e05d873a13488e7dae9fb3199383cd806"
+      }
+    },
+    {
+      "task": "shift8",
+      "checks": 335,
+      "archived_candidate": false,
+      "group": "constructed_calibration",
+      "expected_control_mismatches": {
+        "positive": 0,
+        "negative_edge_positive": 0,
+        "logical_right": 32,
+        "enable_priority": 107,
+        "asynchronous_load": 51,
+        "constant_zero": 248
+      },
+      "files": {
+        "asynchronous_load.sv": "b584705f87cf8e517a6f17fbdbb18327cd992e0db35439361b7d7feaebcb25e3",
+        "constant_zero.sv": "201a5b1733137d2cdfc0529d2befd9df5b8b4fc318b17a8693bf628a77bd502a",
+        "contract.json": "009b768f7935f5731ded81bf1dd9bcceb1353715485018f6f50cad00feee35d9",
+        "enable_priority.sv": "0c6769f3c8bfbd3e9b046234d482dcc2ccc37d510263f33660919e26f6b5e117",
+        "logical_right.sv": "2e1dd95ac6c624cfc722e33527bc7d35a33aee705e7ab341354bc4974187765a",
+        "negative_edge_positive.sv": "0b464da6cbfef76551ec599a98d0393907fef72eec15464ece7462d2ce62a326",
+        "positive.sv": "2e77d7d5ad17f73299d231780e05513b7dad47db27dd5c5fee2aa8370bd20335",
+        "prompt.txt": "99e49cadc0d559ee107f596a572002d00d6eba306d849ce06789231259311bf9",
+        "tb.sv": "5414baafaf35127d91ee485c993df30a55f84984f115102672c6667828c12f3e"
+      }
+    }
+  ],
+  "control_names": [
+    "positive",
+    "negative_edge_positive",
+    "logical_right",
+    "enable_priority",
+    "asynchronous_load",
+    "constant_zero"
+  ],
+  "expected_natural_candidates": {
+    "Prob115_shift18": "fail"
+  },
+  "source_hashes": {
+    "audit.py": "8c2b369d54df62b20ef1b3cd1af6dbaf9c687bb75e5a1f259814fb9dd8e327b2",
+    "calibrate.py": "d6b2137af18e04035ee7f517a5576f2e73dfd184c42510242e0bde69a0b1e1b5",
+    "collect_evidence.py": "da60b0dae576e34e2c36aa5f90a992efe565a6100cb1494aa829f5361cf0d368",
+    "CONTROL_PREPARATION.json": "b17c4fca384f4f8bc746698984abdd4f66e97033a4b6c83db0eb3b43986ac92c",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "INPUT_MANIFEST.json": "eec5693814589e38122cfa15f6066386b1bb76099a4e739e962c08c40c216619",
+    "prepare_controls.py": "182f4079a4f333c8489024305948dcff74bd7bef00d8038b5baff20c7868bb42",
+    "raw_evidence/inputs/Prob115_shift18/asynchronous_load.sv": "01a61243f219645ca779aa3ec7cedfd707341d2e406396a7e2a9506b8380cb30",
+    "raw_evidence/inputs/Prob115_shift18/candidate.sv": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+    "raw_evidence/inputs/Prob115_shift18/constant_zero.sv": "aefee502cb487c70bd401c3d84e295c3dc98be8aae171f51157381870c55ec28",
+    "raw_evidence/inputs/Prob115_shift18/contract.json": "19d3c19da9835194298732e5b64c71af03e8dcac17bb3b62c5ab303f8ae3c9f6",
+    "raw_evidence/inputs/Prob115_shift18/enable_priority.sv": "dde28237ec565c2ed04aee7a1e20daf845c9b10ad3b8693d96a3ad5461c2ea6c",
+    "raw_evidence/inputs/Prob115_shift18/logical_right.sv": "1572f418f5d90fb5bdfc0082109abee3117db833cdaaff9edfd86a7ea1d2a6b2",
+    "raw_evidence/inputs/Prob115_shift18/negative_edge_positive.sv": "e358a98d51b5b1953180773635b1257f133f07ca2e3d33a6d4e823983af13ec6",
+    "raw_evidence/inputs/Prob115_shift18/positive.sv": "efed8721cd724453a901cadd9b4769f7e43cd093d8ec6ac7d84e6e63de2051df",
+    "raw_evidence/inputs/Prob115_shift18/prompt.txt": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386",
+    "raw_evidence/inputs/Prob115_shift18/tb.sv": "0c05f6ae1e84a3c1bbd93b8ab4a4ade6d4e297feae2784ddc7958814f1a42fe1",
+    "raw_evidence/inputs/shift16/asynchronous_load.sv": "44ea249d7e67061cb9ecfe99971bd24005dd01f072dc8a24c5c475b355b87634",
+    "raw_evidence/inputs/shift16/constant_zero.sv": "4b64e34b35f2def64963730814272d5d69aa36470f0c88f856c2c6a6ae4eb051",
+    "raw_evidence/inputs/shift16/contract.json": "a74bb4786566a626efefc0cc2b03382ce505516c5f3c64ad27fcaa88224bd526",
+    "raw_evidence/inputs/shift16/enable_priority.sv": "ad4368b4b8784d79323a59cdd6f9ac135abddde6a2ecc1d5e43e2a9592813037",
+    "raw_evidence/inputs/shift16/logical_right.sv": "58dda602b570cca5e8555aa616f11c834d189d9e875b9e801dde6d5043280f47",
+    "raw_evidence/inputs/shift16/negative_edge_positive.sv": "2788b0bb6f82e53fd441c0c501d1060de3317601082629fafe07fa162d270fc5",
+    "raw_evidence/inputs/shift16/positive.sv": "8371e3625c61984f806559b9da2bdf44c7eaa621bc8c487633657bc370a69be0",
+    "raw_evidence/inputs/shift16/prompt.txt": "6232106668a348ac6f0b5973c21a45cc58dc22cb869471eca86b4e781d988f76",
+    "raw_evidence/inputs/shift16/tb.sv": "f029673d5cf2a8ec92dee4a2880e976e05d873a13488e7dae9fb3199383cd806",
+    "raw_evidence/inputs/shift8/asynchronous_load.sv": "b584705f87cf8e517a6f17fbdbb18327cd992e0db35439361b7d7feaebcb25e3",
+    "raw_evidence/inputs/shift8/constant_zero.sv": "201a5b1733137d2cdfc0529d2befd9df5b8b4fc318b17a8693bf628a77bd502a",
+    "raw_evidence/inputs/shift8/contract.json": "009b768f7935f5731ded81bf1dd9bcceb1353715485018f6f50cad00feee35d9",
+    "raw_evidence/inputs/shift8/enable_priority.sv": "0c6769f3c8bfbd3e9b046234d482dcc2ccc37d510263f33660919e26f6b5e117",
+    "raw_evidence/inputs/shift8/logical_right.sv": "2e1dd95ac6c624cfc722e33527bc7d35a33aee705e7ab341354bc4974187765a",
+    "raw_evidence/inputs/shift8/negative_edge_positive.sv": "0b464da6cbfef76551ec599a98d0393907fef72eec15464ece7462d2ce62a326",
+    "raw_evidence/inputs/shift8/positive.sv": "2e77d7d5ad17f73299d231780e05513b7dad47db27dd5c5fee2aa8370bd20335",
+    "raw_evidence/inputs/shift8/prompt.txt": "99e49cadc0d559ee107f596a572002d00d6eba306d849ce06789231259311bf9",
+    "raw_evidence/inputs/shift8/tb.sv": "5414baafaf35127d91ee485c993df30a55f84984f115102672c6667828c12f3e",
+    "shift_contract.py": "de93b416bd436b7caacc529b4894761131c6fbd108cd11d07679c6b561f35863",
+    "test_shift.py": "f72ce775d7e03cb7ba35e97e125177cd5f37818a1405d0ad859caad17d2f83ef"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+  },
+  "timeout_s": 840,
+  "guard_stage_timeout_s": 900,
+  "slot_minutes": 20,
+  "max_probe_executions": 19,
+  "max_synth_executions": 6,
+  "max_model_requests": 0,
+  "acceptance": "Exact sampled control counts for both edge positives and four wrong controls, six positive syntheses; known115 actual mismatch confirms hypothesis. Only permits same-budget model/new-generation research after complete evidence audit.",
+  "limits": [
+    "1 known public archived candidate plus 2 constructed cases, not independent natural tasks",
+    "Only sampled boundary-state/load/enable/hold/sign paths; not exhaustive 64-bit state/input proof",
+    "Text omits clock edge; full-cycle endpoints accept either one-edge polarity and stable-clock checks reject asynchronous state changes; no edge polarity invented",
+    "No official reference/TB read by parser or controls; no model/agent/deployment changes",
+    "Evaluation control DUTs never used as agent answers or model input",
+    "Unknown/extra timing/interface semantics abstain; complete bounded prose grammar, not general language support"
+  ]
+}

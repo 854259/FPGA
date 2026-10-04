@@ -1,0 +1,12 @@
+{
+  "schema": "shift_contract_install_v1",
+  "at_utc": "2026-10-04T17:27:48.743862+00:00",
+  "run_spec_sha256": "34d8aa720111c5e0e8c32a00083964660346d2b919eb901dcdbc00e57f0fbf85",
+  "frozen_assets_verified": 37,
+  "tests_passed": 7,
+  "test_returncode": 0,
+  "test_output": "test_counterexample_binds_state_and_rejects_fake_points (test_shift.Shift.test_counterexample_binds_state_and_rejects_fake_points) ... ok\ntest_exact_roles_and_widths (test_shift.Shift.test_exact_roles_and_widths) ... ok\ntest_independent_bit_state_matches_every_sampled_observation (test_shift.Shift.test_independent_bit_state_matches_every_sampled_observation) ... ok\ntest_load_enable_hold_and_both_signs_are_present (test_shift.Shift.test_load_enable_hold_and_both_signs_are_present) ... ok\ntest_non_shift_skips (test_shift.Shift.test_non_shift_skips) ... ok\ntest_tb_full_cycles_stable_checks_no_edge_polarity_assumption (test_shift.Shift.test_tb_full_cycles_stable_checks_no_edge_polarity_assumption) ... ok\ntest_unknown_or_contradictory_semantics_abstain (test_shift.Shift.test_unknown_or_contradictory_semantics_abstain) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.013s\n\nOK\n",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "dependencies_verified": true
+}

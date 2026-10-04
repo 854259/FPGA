@@ -1,0 +1,10 @@
+{
+  "source_spec_sha256": "37c66d046023e442d6881715e0ebfb642d395721c5e79e347a84bc9df2c74d72",
+  "source_assets": 19,
+  "stage": "prepared_rejected_before_cloud_install",
+  "reason": "Pure tests depended on neighboring local directory names absent in cloud layout; frozen runtime untouched, no live stage executed",
+  "cloud_model_calls": 0,
+  "cloud_eda_calls": 0,
+  "cloud_tests_executed": 0,
+  "replacement": "functional_fresh_pilot_v2_20261005 with two frozen prompt-only test fixtures; inference and judge code unchanged"
+}

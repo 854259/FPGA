@@ -1,0 +1,77 @@
+{
+  "schema": "functional_fresh_pilot_frozen_v1",
+  "identity": "functional_fresh_20261005_v1",
+  "frozen_at_utc": "2026-10-04T17:46:32.952864+00:00",
+  "base_commit": "fecf9f21ca3292065131cba799de75b8eb534dc8",
+  "cloud_root": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v1",
+  "kit": "/workspace/team/tasks/autodl-rtl-kit/project",
+  "task_ids": [
+    "Prob071_always_casez",
+    "Prob112_always_case2",
+    "Prob115_shift18"
+  ],
+  "target_tasks": [
+    "Prob112_always_case2",
+    "Prob115_shift18"
+  ],
+  "correct_guard": "Prob071_always_casez",
+  "samples_per_arm_per_task": 1,
+  "arms": [
+    "A",
+    "C"
+  ],
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "model_pid": 2013333,
+  "source_hashes": {
+    "audit.py": "ef4706e5c7ba4e9838cc4a9bf27954b5f6d5db8263ab4c3bd9b7dfb4e732c495",
+    "collect_evidence.py": "d906f10f8ab3a26cf7c577fdebab0ccb0c2314d9793ba5b3c6f7f0a795e8a25a",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "INPUT_MANIFEST.json": "817ebfc6df996f00ec123c4ea71f47a09918511dade2643d79ee4bfc70feba40",
+    "official_eval_guarded.py": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c",
+    "package/agent/map_runtime.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+    "package/agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+    "package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "pilot.py": "f2c09d7f82e1e4d61952b54527ab62af67605d141500271d21b5af7e67c8a409",
+    "point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+    "PRIORITY_CALIBRATION_AUDIT.json": "672fc82865ddafbd4b9e8a094db5e234d6feddc6d9e5a50b0d3c75eac6029749",
+    "priority_contract.py": "dcd1b5f7a71bae39986ba5b299c0223b027194cc4e13bc47097d8364d4515984",
+    "prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+    "SHIFT_CALIBRATION_AUDIT.json": "df03b880d4c383c073218306f90d68c5e01317827ed918e31925939c205c9efa",
+    "shift_contract.py": "de93b416bd436b7caacc529b4894761131c6fbd108cd11d07679c6b561f35863",
+    "test_fresh.py": "b2ebd36bfbc9fbd9672a4930bf09995c58563b24e767dbf653b252337a118238",
+    "worker.py": "679f01384e78944beb87916d0e02cc5aa9c545bab00557b1496647d7e87c8069"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+  },
+  "solve_deadline_s": 300,
+  "judge_timeout_s": 300,
+  "judge_supervisor_timeout_s": 360,
+  "stage_timeout_s": 5400,
+  "slot_minutes": 95,
+  "max_actual_model_requests": 12,
+  "max_worker_requests_per_arm": 2,
+  "first_generation_replayed": false,
+  "retries": 0,
+  "max_functional_probe_executions": 12,
+  "prerequisite_full312_archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+  "prerequisite_priority_calibration_archive_sha256": "fa8a5ca5cbef8726bff51ba710565531e0a0c9b95ed81c405dcff5816ed81533",
+  "prerequisite_shift_calibration_archive_sha256": "67e0188c27694066c7f8e7968d8fcf412f41f5b12deeaa738957b20cc429ee6a",
+  "acceptance": "All six actual fresh samples graded with pinned external official judge; no tools/unconfirmed/deadlines, both C target tasks L3, both arms correct071 L3, no coefficient regression and positive mean coefficient net gain. Only allows complete regression, not deployment.",
+  "runtime_change": "A original runtime/skills/extract/max1repair; C only true compile-success bounded prompt-derived priority or arithmetic-shifter native check, factual first mismatch within same original repair budget. All first generations are real calls; no archived replies or fixed answers.",
+  "limits": [
+    "3 known public development tasks selected from observed failures plus correct guard; not independent natural validation",
+    "One fresh sample per arm/task, no full156/five-sample or hidden-task claim; cohort mean is not updated full score",
+    "A/C first payloads identical but replies may vary even at temperature0; disclose first-reply identity and do not overclaim unique causality",
+    "Native source checking/feedback only; no deterministic DUT/answer generation or calibration designs in runtime/model input",
+    "Official reference/TB/grades enter external judge only; worker sees prompt/interface and original skills plus current candidate factual diagnostics",
+    "Shifter grammar full but samples state boundaries, not exhaustive64-bit proof; no invented clock-edge polarity",
+    "Unknown/extra semantics abstain and retain original flow; built-in original compile repair behavior preserved",
+    "First generation costs measured this stage; formal total score, same-round official baseline gain and offline32GB not certified",
+    "Archive/auditor scope must pass before full regression; no automatic deployment"
+  ]
+}

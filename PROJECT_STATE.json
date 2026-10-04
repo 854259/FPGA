@@ -4648,5 +4648,48 @@
     "new_full_score": false,
     "first_generation_cost_measured": false,
     "next": "Add second explicit functional contract; fresh-generation same-budget tests, then full regression/independent/five-sample delivery"
+  },
+  "shift_contract_20261005": {
+    "status": "complete_native_calibration_audited",
+    "model_calls": 0,
+    "native_probes": 19,
+    "positive_syntheses": 6,
+    "elapsed_s": 249.11119592934847,
+    "natural_mismatches": 32,
+    "natural_checks": 335,
+    "archive_sha256": "67e0188c27694066c7f8e7968d8fcf412f41f5b12deeaa738957b20cc429ee6a",
+    "evidence_valid": true,
+    "adoption": false
+  },
+  "functional_contract_boundary_20261005": {
+    "status": "complete_readonly_reconciliation_passed",
+    "old_false_accepts": 4047,
+    "original_grid": 4275,
+    "additional_keyword_cases": 6944,
+    "calibrated_contracts_preserved": 8,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "covered_public_tasks": [
+      "Prob071_always_casez",
+      "Prob112_always_case2",
+      "Prob115_shift18"
+    ],
+    "independent_natural_tasks": 0,
+    "report": "03_analysis/functional_contract_boundary_20261005/RESULTS.json"
+  },
+  "functional_fresh_pilot_v3_20261005": {
+    "status": "running_confirmed_pid_identity",
+    "fifo_ticket": 23,
+    "monitor_pid": 3384278,
+    "monitor_starttime": "841102692",
+    "spec_sha256": "6fd6fe78ec9b6b8ef52d43f3ae6ee15dd26066db818781647c5ff841f71c3d05",
+    "source_assets": 23,
+    "expected_samples": 6,
+    "actual_first_generations": true,
+    "max_requests": 12,
+    "retries": 0,
+    "report": "03_analysis/functional_fresh_pilot_v3_20261005/README.md",
+    "adoption": false,
+    "new_full_score": false
   }
 }

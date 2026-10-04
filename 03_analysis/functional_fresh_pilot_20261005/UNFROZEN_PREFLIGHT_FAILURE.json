@@ -1,0 +1,9 @@
+{
+  "stage": "unfrozen_local_pure_tests",
+  "cause": "Windows fake compiler fixture lacked xvlog.bat; C returned tool unavailable before callback",
+  "tests_failed": 5,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "repair": "Added platform-neutral fake tool names; strengthened every case to require compiler invocation",
+  "after_tests_passed": 7
+}
