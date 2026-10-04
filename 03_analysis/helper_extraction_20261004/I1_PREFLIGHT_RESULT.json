@@ -1,0 +1,662 @@
+{
+  "schema": "i1_preflight_public",
+  "source_commit": "d82ed68410deadc563b118461ea30575f22c5214",
+  "preflight_complete": true,
+  "full_experiment_complete": false,
+  "comprehensive_cycle": "R20261004-01",
+  "model_calls": 0,
+  "elapsed_s": 259.86023900844157,
+  "guard_elapsed_s": 260.10327380523086,
+  "engineering_cases": [
+    {
+      "name": "helper_after",
+      "accepted": true,
+      "expected_accept": true,
+      "original_preserved": false,
+      "gate": {
+        "accepted": true,
+        "reason": "elaboration_passed",
+        "elapsed_s": 2.2947395956143737
+      }
+    },
+    {
+      "name": "helper_before",
+      "accepted": true,
+      "expected_accept": true,
+      "original_preserved": false,
+      "gate": {
+        "accepted": true,
+        "reason": "elaboration_passed",
+        "elapsed_s": 2.2943467563018203
+      }
+    },
+    {
+      "name": "nested_helpers",
+      "accepted": true,
+      "expected_accept": true,
+      "original_preserved": false,
+      "gate": {
+        "accepted": true,
+        "reason": "elaboration_passed",
+        "elapsed_s": 2.2944224439561367
+      }
+    },
+    {
+      "name": "wrong_helper_preserved",
+      "accepted": true,
+      "expected_accept": true,
+      "original_preserved": false,
+      "gate": {
+        "accepted": true,
+        "reason": "elaboration_passed",
+        "elapsed_s": 2.294155513867736
+      }
+    },
+    {
+      "name": "correct_flat_guard",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "missing_helper",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "truncated_helper",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "duplicate_top",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "duplicate_helper",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "alternative_fences",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "unclosed_fence",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "macro_context",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "package_context",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "fake_endmodule_comment",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "missing_transitive_helper",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "unused_helper_guard",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "endmodule_label",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "plain_unfenced",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "unsupported_language",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "positional_instantiation",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "one_line_instantiation_abstains",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": null
+    },
+    {
+      "name": "parameterized_helper",
+      "accepted": true,
+      "expected_accept": true,
+      "original_preserved": false,
+      "gate": {
+        "accepted": true,
+        "reason": "elaboration_passed",
+        "elapsed_s": 2.294277101755142
+      }
+    },
+    {
+      "name": "multiple_drivers",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": {
+        "accepted": false,
+        "reason": "xelab_failed",
+        "elapsed_s": 2.244267174974084
+      }
+    },
+    {
+      "name": "syntax_error_helper",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": {
+        "accepted": false,
+        "reason": "xvlog_failed",
+        "elapsed_s": 1.1225913790985942
+      }
+    },
+    {
+      "name": "file_access_helper",
+      "accepted": false,
+      "expected_accept": false,
+      "original_preserved": true,
+      "gate": {
+        "accepted": false,
+        "reason": "source_access_rejected",
+        "elapsed_s": 4.170462489128113e-06
+      }
+    }
+  ],
+  "missing_tool": {
+    "accepted": false,
+    "reason": "tool_unavailable",
+    "elapsed_s": 5.059875547885895e-06
+  },
+  "timeout": {
+    "accepted": false,
+    "reason": "timeout",
+    "elapsed_s": 0.25824033096432686
+  },
+  "timeout_cleanup_verified": true,
+  "semantic_safety_proven": false,
+  "wrong_function_passes_structure": true,
+  "rows": [
+    {
+      "task": "known16",
+      "captured": true,
+      "functional_repair": true,
+      "correct_broken": false,
+      "level_regression": false,
+      "unchanged_level": false,
+      "final_bytes_identical": false,
+      "arms": {
+        "original": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 2,
+          "elapsed_s": 0.002077876590192318,
+          "solution_sha256": "24c07ebe01763d207589740631f9e55e2c627d50775200c6ef46295ce766a0e5",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "requests": [
+            {
+              "round": 0,
+              "reused_initial": false,
+              "reused_worker": true,
+              "source_request_elapsed_s": 10.498130270279944,
+              "elapsed_s": 0.00013912934809923172
+            },
+            {
+              "round": 1,
+              "reused_initial": false,
+              "reused_worker": true,
+              "source_request_elapsed_s": 12.744559676386416,
+              "elapsed_s": 0.00013194046914577484
+            }
+          ],
+          "selections": [],
+          "verdict": {
+            "level": 0,
+            "coefficient": 0.0,
+            "stages": {
+              "compile": false,
+              "simulate": false,
+              "synth": false
+            },
+            "elapsed_s": 4.4,
+            "mismatches": null,
+            "samples": null,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true
+          }
+        },
+        "elaborated_helpers": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 1,
+          "elapsed_s": 3.36528523825109,
+          "solution_sha256": "a57e027917e2adee38957bfa79b0186b78da174f4e47ec4fdbd8bc2fdab3a7d0",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "requests": [
+            {
+              "round": 0,
+              "reused_initial": true,
+              "reused_worker": true,
+              "source_request_elapsed_s": 10.498130270279944,
+              "elapsed_s": 0.000136558897793293
+            }
+          ],
+          "selections": [
+            {
+              "changed": true,
+              "reason": "complete_fenced_hierarchy",
+              "modules": [
+                "adder_8bit",
+                "TopModule"
+              ],
+              "restored_dependencies": [
+                "adder_8bit"
+              ],
+              "gate": {
+                "accepted": true,
+                "reason": "elaboration_passed",
+                "elapsed_s": 2.294766345061362
+              }
+            }
+          ],
+          "verdict": {
+            "level": 3,
+            "coefficient": 1.0,
+            "stages": {
+              "compile": true,
+              "simulate": true,
+              "synth": true
+            },
+            "elapsed_s": 28.4,
+            "mismatches": 0,
+            "samples": 200,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true
+          }
+        }
+      }
+    },
+    {
+      "task": "known32",
+      "captured": true,
+      "functional_repair": false,
+      "correct_broken": false,
+      "level_regression": false,
+      "unchanged_level": true,
+      "final_bytes_identical": true,
+      "arms": {
+        "original": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 2,
+          "elapsed_s": 1.0831583896651864,
+          "solution_sha256": "cc3c893d7506ad82863d7931d8d8d9a0d4a92440297ca8f094805b88424452c6",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "requests": [
+            {
+              "round": 0,
+              "reused_initial": false,
+              "reused_worker": true,
+              "source_request_elapsed_s": 7.000844925642014e-05,
+              "elapsed_s": 0.0001459689810872078
+            },
+            {
+              "round": 1,
+              "reused_initial": false,
+              "reused_worker": true,
+              "source_request_elapsed_s": 79.84219461586326,
+              "elapsed_s": 0.00016716867685317993
+            }
+          ],
+          "selections": [],
+          "verdict": {
+            "level": 1,
+            "coefficient": 0.2,
+            "stages": {
+              "compile": true,
+              "simulate": false,
+              "synth": false
+            },
+            "elapsed_s": 7.9,
+            "mismatches": 400,
+            "samples": 200,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true
+          }
+        },
+        "elaborated_helpers": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 2,
+          "elapsed_s": 3.3303863713517785,
+          "solution_sha256": "cc3c893d7506ad82863d7931d8d8d9a0d4a92440297ca8f094805b88424452c6",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "requests": [
+            {
+              "round": 0,
+              "reused_initial": true,
+              "reused_worker": true,
+              "source_request_elapsed_s": 7.000844925642014e-05,
+              "elapsed_s": 0.00015119928866624832
+            },
+            {
+              "round": 1,
+              "reused_initial": false,
+              "reused_worker": true,
+              "source_request_elapsed_s": 79.84219461586326,
+              "elapsed_s": 0.00017846934497356415
+            }
+          ],
+          "selections": [
+            {
+              "changed": false,
+              "reason": "gate_rejected_original_preserved",
+              "modules": [
+                "TopModule",
+                "cla_16bit"
+              ],
+              "restored_dependencies": [
+                "cla_16bit"
+              ],
+              "gate": {
+                "accepted": false,
+                "reason": "xelab_failed",
+                "elapsed_s": 2.2454556431621313
+              }
+            },
+            {
+              "changed": false,
+              "reason": "not_one_closed_fence"
+            }
+          ],
+          "verdict": {
+            "level": 1,
+            "coefficient": 0.2,
+            "stages": {
+              "compile": true,
+              "simulate": false,
+              "synth": false
+            },
+            "elapsed_s": 7.9,
+            "mismatches": 400,
+            "samples": 200,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true
+          }
+        }
+      }
+    },
+    {
+      "task": "correct8",
+      "captured": true,
+      "functional_repair": false,
+      "correct_broken": false,
+      "level_regression": false,
+      "unchanged_level": true,
+      "final_bytes_identical": true,
+      "arms": {
+        "original": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 1,
+          "elapsed_s": 1.0777251860126853,
+          "solution_sha256": "07575c939f850637b6bbad6346f6d9a48051672bc4ffd342ae29e7dffeaee1fe",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "requests": [
+            {
+              "round": 0,
+              "reused_initial": false,
+              "reused_worker": true,
+              "source_request_elapsed_s": 8.803796268068254,
+              "elapsed_s": 0.00013116933405399323
+            }
+          ],
+          "selections": [],
+          "verdict": {
+            "level": 3,
+            "coefficient": 1.0,
+            "stages": {
+              "compile": true,
+              "simulate": true,
+              "synth": true
+            },
+            "elapsed_s": 27.7,
+            "mismatches": 0,
+            "samples": 200,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true
+          }
+        },
+        "elaborated_helpers": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 1,
+          "elapsed_s": 1.064675223082304,
+          "solution_sha256": "07575c939f850637b6bbad6346f6d9a48051672bc4ffd342ae29e7dffeaee1fe",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "requests": [
+            {
+              "round": 0,
+              "reused_initial": true,
+              "reused_worker": true,
+              "source_request_elapsed_s": 8.803796268068254,
+              "elapsed_s": 0.0001320885494351387
+            }
+          ],
+          "selections": [
+            {
+              "changed": false,
+              "reason": "not_complete_hierarchy"
+            }
+          ],
+          "verdict": {
+            "level": 3,
+            "coefficient": 1.0,
+            "stages": {
+              "compile": true,
+              "simulate": true,
+              "synth": true
+            },
+            "elapsed_s": 27.6,
+            "mismatches": 0,
+            "samples": 200,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true
+          }
+        }
+      }
+    },
+    {
+      "task": "correct_multi",
+      "captured": true,
+      "functional_repair": false,
+      "correct_broken": false,
+      "level_regression": false,
+      "unchanged_level": true,
+      "final_bytes_identical": true,
+      "arms": {
+        "original": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 1,
+          "elapsed_s": 1.070352436043322,
+          "solution_sha256": "22c65efc1a62da6196523009730f46f0a046b16b3b1baadce3cdff5b15e46749",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "requests": [
+            {
+              "round": 0,
+              "reused_initial": false,
+              "reused_worker": true,
+              "source_request_elapsed_s": 20.194007659330964,
+              "elapsed_s": 0.0001361491158604622
+            }
+          ],
+          "selections": [],
+          "verdict": {
+            "level": 3,
+            "coefficient": 1.0,
+            "stages": {
+              "compile": true,
+              "simulate": true,
+              "synth": true
+            },
+            "elapsed_s": 27.6,
+            "mismatches": 0,
+            "samples": 200,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true
+          }
+        },
+        "elaborated_helpers": {
+          "actual_model_calls": 0,
+          "responses": 0,
+          "logical_worker_requests": 1,
+          "elapsed_s": 1.0869049886241555,
+          "solution_sha256": "22c65efc1a62da6196523009730f46f0a046b16b3b1baadce3cdff5b15e46749",
+          "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+          "requests": [
+            {
+              "round": 0,
+              "reused_initial": true,
+              "reused_worker": true,
+              "source_request_elapsed_s": 20.194007659330964,
+              "elapsed_s": 0.0001374790444970131
+            }
+          ],
+          "selections": [
+            {
+              "changed": false,
+              "reason": "not_complete_hierarchy"
+            }
+          ],
+          "verdict": {
+            "level": 3,
+            "coefficient": 1.0,
+            "stages": {
+              "compile": true,
+              "simulate": true,
+              "synth": true
+            },
+            "elapsed_s": 27.5,
+            "mismatches": 0,
+            "samples": 200,
+            "tool_error": null,
+            "judge_rc": 0,
+            "judge_evidence_complete": true
+          }
+        }
+      }
+    }
+  ],
+  "controls": {
+    "adder_bcd": {
+      "positive": {
+        "level": 3,
+        "coefficient": 1.0,
+        "mismatches": 0,
+        "samples": 200,
+        "tool_error": null,
+        "judge_rc": 0
+      },
+      "negative": {
+        "level": 1,
+        "coefficient": 0.2,
+        "mismatches": 200,
+        "samples": 200,
+        "tool_error": null,
+        "judge_rc": 0
+      }
+    },
+    "barrel_shifter": {
+      "positive": {
+        "level": 3,
+        "coefficient": 1.0,
+        "mismatches": 0,
+        "samples": 2048,
+        "tool_error": null,
+        "judge_rc": 0
+      },
+      "negative": {
+        "level": 1,
+        "coefficient": 0.2,
+        "mismatches": 2048,
+        "samples": 2048,
+        "tool_error": null,
+        "judge_rc": 0
+      }
+    }
+  },
+  "decision": "engineering_preflight_passed_only_no_full_validation_or_adoption",
+  "guard_passed": true,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "source_and_input_hashes_unchanged": true,
+  "limits": [
+    "All four pairs are exact-request replays of known material, not independent generation or generalization.",
+    "No fresh generation after user redefined a batch as a complete large validation cycle.",
+    "Reference/TB controls verify stated finite domains; no architecture/universal functional proof.",
+    "Checkpoint elapsed times exclude prior model time; source_request_elapsed_s is historical, not new inference."
+  ]
+}

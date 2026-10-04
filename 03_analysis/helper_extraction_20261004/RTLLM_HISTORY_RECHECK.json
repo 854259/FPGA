@@ -1,0 +1,241 @@
+{
+  "checked_utc": "2026-10-04T06:17:45.457799+00:00",
+  "runs": [
+    {
+      "run": "rtllm_contract_pilot_20261002T113602Z",
+      "manifest_sha256": "d09c74d9f193a7561cf0f0b683cb69da26b64472b22a13975e138027ca28af76",
+      "projection_manifest_matches": true,
+      "summary_sha256": "6749bd832358009ed5f6faefa2fe564d6bbd8821b1e5795828f9fe7eecca2a0a",
+      "complete": true,
+      "selected": [
+        "adder_bcd",
+        "instr_reg"
+      ],
+      "checks": {
+        "immutable_sha256": {
+          "total": 1880,
+          "mismatch_count": 0,
+          "missing_count": 0,
+          "missing_first": [],
+          "mismatch_first": [],
+          "base": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z"
+        },
+        "prepared_sha256": {
+          "total": 19,
+          "mismatch_count": 0,
+          "missing_count": 0,
+          "missing_first": [],
+          "mismatch_first": []
+        }
+      },
+      "reported_hash_mismatches": null,
+      "rows": [
+        {
+          "task": "adder_bcd",
+          "side": "agent",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "adder_bcd",
+          "side": "baseline",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "instr_reg",
+          "side": "agent",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "instr_reg",
+          "side": "baseline",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 200,
+          "tool_error": null
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "run": "rtllm_contract_pilot2_v2_20261002T115303Z",
+      "manifest_sha256": "14f4495a67fa51311dcfc115830725f17b585560e768614d76acd63ac11a7aec",
+      "projection_manifest_matches": true,
+      "summary_sha256": "d4bd8324e012ddd06c4e089e627a419c2c96339f460fef298acbfc46d1b1cd41",
+      "complete": true,
+      "selected": [
+        "freq_div",
+        "up_down_counter"
+      ],
+      "checks": {
+        "immutable_sha256": {
+          "total": 1880,
+          "mismatch_count": 0,
+          "missing_count": 0,
+          "missing_first": [],
+          "mismatch_first": [],
+          "base": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z"
+        },
+        "prepared_sha256": {
+          "total": 22,
+          "mismatch_count": 0,
+          "missing_count": 0,
+          "missing_first": [],
+          "mismatch_first": []
+        }
+      },
+      "reported_hash_mismatches": null,
+      "rows": [
+        {
+          "task": "freq_div",
+          "side": "agent",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 1200,
+          "tool_error": null
+        },
+        {
+          "task": "freq_div",
+          "side": "baseline",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 1200,
+          "tool_error": null
+        },
+        {
+          "task": "up_down_counter",
+          "side": "agent",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "up_down_counter",
+          "side": "baseline",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 200,
+          "tool_error": null
+        }
+      ],
+      "blocked": []
+    },
+    {
+      "run": "rtllm_contract_pilot3_v3_20261002T121353Z",
+      "manifest_sha256": "af0f039807ea7a26e3379bc4d6f6b7014492baac8334a5e97a7443641eb500f9",
+      "projection_manifest_matches": true,
+      "summary_sha256": "800bd287ea476d902ac4be6533d77ab1137e1e781f3a5286ad2d1e1b55591b82",
+      "complete": true,
+      "selected": [
+        "accu",
+        "fsm",
+        "serial2parallel",
+        "synchronizer"
+      ],
+      "checks": {
+        "immutable_sha256": {
+          "total": 1884,
+          "mismatch_count": 0,
+          "missing_count": 0,
+          "missing_first": [],
+          "mismatch_first": [],
+          "base": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z"
+        },
+        "prepared_sha256": {
+          "total": 43,
+          "mismatch_count": 0,
+          "missing_count": 0,
+          "missing_first": [],
+          "mismatch_first": []
+        }
+      },
+      "reported_hash_mismatches": 0,
+      "rows": [
+        {
+          "task": "accu",
+          "side": "agent",
+          "new_level": 1,
+          "mismatches": 31,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "accu",
+          "side": "baseline",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "fsm",
+          "side": "agent",
+          "new_level": 1,
+          "mismatches": 55,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "fsm",
+          "side": "baseline",
+          "new_level": 0,
+          "mismatches": null,
+          "samples": null,
+          "tool_error": null
+        },
+        {
+          "task": "serial2parallel",
+          "side": "agent",
+          "new_level": 1,
+          "mismatches": 49,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "serial2parallel",
+          "side": "baseline",
+          "new_level": 1,
+          "mismatches": 49,
+          "samples": 200,
+          "tool_error": null
+        },
+        {
+          "task": "synchronizer",
+          "side": "agent",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 400,
+          "tool_error": null
+        },
+        {
+          "task": "synchronizer",
+          "side": "baseline",
+          "new_level": 3,
+          "mismatches": 0,
+          "samples": 400,
+          "tool_error": null
+        }
+      ],
+      "blocked": [
+        {
+          "task": "div_16bit",
+          "reason": "strict-greater/otherwise quotient-bit wording conflicts with quotient/remainder equality case; zero-divisor behavior unspecified; no convention silently selected"
+        }
+      ]
+    }
+  ],
+  "new_model_calls": 0,
+  "new_eda": 0,
+  "classification": "read_only_history_reconciliation_not_new_experiment",
+  "old_results_not_rescored": true,
+  "path_resolution_note": "immutable_sha256 keys resolved against OLD in the original rejudge_driver.py; prepared keys resolved against each pilot directory"
+}

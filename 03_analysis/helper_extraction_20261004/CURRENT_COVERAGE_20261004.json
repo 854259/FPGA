@@ -1,0 +1,482 @@
+{
+  "schema": 1,
+  "updated_at": "2026-10-04T14:26:22.7746546+08:00",
+  "cycle": "R20261004-01",
+  "full_experiment_complete": false,
+  "source_csv_sha256": "ef031e8998260406b858169b07028522c4950c135ef66b1fc12aa42cc952be58",
+  "historical_evidence_rechecked": true,
+  "history_receipt": "RTLLM_HISTORY_RECHECK.json",
+  "original_denominator": 44,
+  "finite_default_domain_evidence": 9,
+  "coverage_pending": 23,
+  "specification_blocked": 12,
+  "independent_unseen_tasks": 0,
+  "score_aggregation_permitted": false,
+  "limits": [
+    "Finite functional domains do not certify architecture, all parameters, or all temporal behavior.",
+    "Old fixtures and newly normalized prompts require a separately hashed integrated version.",
+    "Blocked tasks remain visible in original denominator; exclusions must be frozen before candidate scoring.",
+    "The old 42 pending count described H1 alone, not all historical work."
+  ],
+  "tasks": [
+    {
+      "task": "accu",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "已确认契约问题",
+      "evidence": [
+        "rtllm_contract_pilot3_v3_20261002T121353Z"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立四有效样本scoreboard；核对valid脉冲并只在有效时判数据",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "adder_16bit",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "数学oracle、进位链定向样本；将结构要求独立静态验收",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "adder_32bit",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立加法oracle、进位定向样本及结构检查",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "adder_8bit",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "加法oracle与结构分开；确认完整多模块打包链",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "adder_bcd",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "已确认契约问题",
+      "evidence": [
+        "rtllm_contract_pilot_20261002T113602Z",
+        "H1 e1441974 / I1 d82ed684"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "穷举10×10×2=200个合法组合；独立十进制oracle",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "adder_pipe_64bit",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "交易队列判有效和顺序；需明确延迟或合法延迟范围，否则预排除",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "barrel_shifter",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [
+        "H1 e1441974 / I1 d82ed684"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "穷举2048组合数学移位oracle，另验结构/完整打包",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "calendar",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "足够长的独立计数scoreboard及中途reset/跨层回卷",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "comparator_3bit",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "穷举64组合独立比较oracle",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "comparator_4bit",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "穷举256组合独立比较oracle，结构另验",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "counter_12",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立mod12计数，暂停、11回卷、中途reset",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "div_16bit",
+      "status": "specification_blocked",
+      "historical_classification": "已确认契约问题",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "非零域数学除法oracle，定向A=B/小于B/极值；零域先不判",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "edge_detect",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "澄清脉冲与保持优先级；缓慢/连续边沿定向测相位",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "fixed_point_adder",
+      "status": "coverage_pending",
+      "historical_classification": "已确认契约问题",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "显式#(.N(32),.Q(15))绑定双方；独立明确编码/零/溢出oracle",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "fixed_point_substractor",
+      "status": "coverage_pending",
+      "historical_classification": "已确认契约问题",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "先同绑定32/15；独立验证零规则；澄清符号编码/算术，不自动改成二补码减法",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "float_multi",
+      "status": "coverage_pending",
+      "historical_classification": "已确认契约问题",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "预排除；先独立IEEE oracle，明确舍入/NaN比较及输入保持、输出时刻",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "freq_div",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "已确认契约问题",
+      "evidence": [
+        "rtllm_contract_pilot2_v2_20261002T115303Z"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "输入周期10ns；双边沿测比率、周期和reset",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "freq_divbyeven",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "显式绑定双方NUM_DIV；覆盖合法偶数，边沿波形oracle",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "freq_divbyfrac",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "双边沿独立7半步波形oracle；不要误把正沿支路4/3间隔当合成输出",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "freq_divbyodd",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "绑定默认5；双边沿波形oracle；扩参数域前确认计数宽度/支持范围",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "fsm",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "已确认契约问题",
+      "evidence": [
+        "rtllm_contract_pilot3_v3_20261002T121353Z"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "驱动后、采样posedge前检查Mealy输出并检查reset/定向重叠",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "instr_reg",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "已确认契约问题",
+      "evidence": [
+        "rtllm_contract_pilot_20261002T113602Z"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "改低有效reset序列；逐种fetch及保持独立scoreboard；不强行加未给异步要求",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "JC_counter",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立移位scoreboard，自reset首拍检查和128状态回卷",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "LFSR",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立15状态/反馈轨迹，reset采样相位明确后扩测",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "multi_16bit",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "reset隔离完整交易，持续start、判最终数学乘积/done；逐拍实现要求另报，重启/abort先澄清",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "multi_8bit",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立数学乘积及高位/全1定向；算法结构另验",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "multi_booth_8bit",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "选择最终signed乘积+rdy子合同，或先公布逐拍算法优先级；不可直接删除中间检查后称原全合同通过",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "multi_pipe_4bit",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "显式size=4；两级数学流水scoreboard，穷举256输入组合与连续流",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "multi_pipe_8bit",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "澄清enable与数据对齐延迟；独立交易oracle，同时保留invalid=0检查；补reset评测",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "parallel2serial",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "首位valid定位四位scoreboard及首帧/reset；明确reset起始计数相位若新要求",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "pe",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立mod2^32 MAC、零/极值/累加溢出、中途reset",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "pulse_detect",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "明确尾位采样前/后相位；定向01010及重叠；预排除有冲突全合同",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "radix2_div",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "一笔交易、sign稳定、等待res_valid并验持有/消费；除零/溢出/busy/reset极性需澄清",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "right_shifter",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "t=0及首8拍独立shift scoreboard",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "ring_counter",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "首8拍onehot/方向/回卷scoreboard；reset相位以原可见合同为界",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "sequence_detector",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "明确1001001等重叠政策；独立序列scoreboard，普通非重叠子域先判",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "serial2parallel",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "已确认契约问题",
+      "evidence": [
+        "rtllm_contract_pilot3_v3_20261002T121353Z"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立计数八有效位；输出拍不接收；只valid时判parallel，测间隙/连续",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "signal_generator",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立64拍轨迹/端点保持、首拍与中途reset",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "square_wave",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "先澄清上电/初值/变频生效；非零稳定频率测周期而非隐藏相位",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "sub_64bit",
+      "status": "coverage_pending",
+      "historical_classification": "未发现明确冲突但覆盖有限",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立64位差与符号oracle，定向极值",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "synchronizer",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "已确认契约问题",
+      "evidence": [
+        "rtllm_contract_pilot3_v3_20261002T121353Z"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "交易刺激遵守稳定/间隔；独立时钟域scoreboard，两个reset分别测",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "traffic_light",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "预排除；先统一时长/过渡初态/count观察/按钮策略，再独立scoreboard",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "up_down_counter",
+      "status": "finite_default_domain_evidence",
+      "historical_classification": "已确认契约问题",
+      "evidence": [
+        "rtllm_contract_pilot2_v2_20261002T115303Z"
+      ],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "独立同步reset计数，中拍assert后在posedge前后观察；定向回卷",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    },
+    {
+      "task": "width_8to16",
+      "status": "specification_blocked",
+      "historical_classification": "规格歧义",
+      "evidence": [],
+      "prior_exposure": "historical_public_development_not_unseen",
+      "minimum_remaining_check": "澄清第二/下一边沿；有效交易拼接oracle，invalid只验已明示控制",
+      "universal_contract_certified": false,
+      "new_normalized_dataset_controls_integrated": false
+    }
+  ]
+}

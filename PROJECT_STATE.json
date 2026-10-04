@@ -2995,17 +2995,17 @@
     "next": "Reject current automatic extractor. A future elaboration-error repair/fallback candidate requires a new frozen engineering/cost comparison, without oracle data in runtime. Remaining RTLLM contracts and independent quality evidence pending; no full-set expansion."
   },
   "elaboration_fallback_i1_20261004": {
-    "fresh_pairs": 2,
+    "fresh_pairs": 0,
     "stage_timeout_s": 2700,
     "plan": "03_analysis/helper_extraction_20261004/ELABORATION_PLAN.md",
     "formal_deployment_modified": false,
     "gate_timeout_s": 20,
     "captured_worker_pairs": 4,
-    "model_call_cap": 6,
-    "status": "initial_harness_argument_failure_revision_preparing",
-    "executed_commit": "7354dd084be96df45f67e8d83ebfeec03f9df4f7",
-    "amd_root": "/workspace/team/runs/fpga_teammate/helper_I1_20261004T060833Z_7354dd0",
-    "driver_pid": 2987975,
+    "model_call_cap": 0,
+    "status": "preflight_passed_full_experiment_incomplete",
+    "executed_commit": "d82ed68410deadc563b118461ea30575f22c5214",
+    "amd_root": "/workspace/team/runs/fpga_teammate/helper_I1r2_20261004T061455Z_d82ed68",
+    "driver_pid": 2994206,
     "initial_failure": {
       "model_unchanged": true,
       "source": "7354dd084be96df45f67e8d83ebfeec03f9df4f7",
@@ -3017,7 +3017,31 @@
       "cause": "XSIM 43-3260 invalid --mt 1; correct to off"
     },
     "role": "engineering_preflight_only_not_full_experiment",
-    "revision_new_model_call_cap": 0
+    "revision_new_model_call_cap": 0,
+    "stage_pid": 2994211,
+    "preflight_complete": true,
+    "full_experiment_complete": false,
+    "original_planned_fresh_pairs": 2,
+    "original_model_call_cap": 6,
+    "model_calls": 0,
+    "processes_finished": true,
+    "stage_elapsed_s": 259.86023900844157,
+    "guard_elapsed_s": 260.10327380523086,
+    "functional_repairs_known": 1,
+    "correct_broken_observed": 0,
+    "independent_natural_samples": 0,
+    "evidence_manifest": "03_analysis/helper_extraction_20261004/I1_PREFLIGHT_MANIFEST.json",
+    "decision": "retain_isolated_candidate_no_deployment_or_generalization_claim",
+    "cleanup_verified": true,
+    "cleanup": {
+      "regenerable_dirs_removed": 16,
+      "remote_source_tar_removed": true,
+      "local_source_tar_removed": true,
+      "source_inputs_logs_retained": true,
+      "model_unchanged": true,
+      "own_processes_remaining": 0,
+      "slot_released": true
+    }
   },
   "continuous_experiment_loop": {
     "automation_id": "amd-rtl",
@@ -3035,7 +3059,7 @@
   },
   "comprehensive_cycle_20261004": {
     "complete": false,
-    "rtllm_semantic_tasks_pending": 42,
+    "rtllm_semantic_tasks_pending": 35,
     "full156_started": false,
     "first_constraints": [
       "avoid overfitting",
@@ -3044,10 +3068,29 @@
     "formal32gb_complete": false,
     "primary_goal": "complete competition delivery",
     "protocol": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
-    "status": "preparing_preflight_not_full_experiment",
+    "status": "preflight_passed_preparing_full_dataset_and_budget",
     "independent_natural_holdout_available": false,
     "id": "R20261004-01",
     "sample_size_and_full_budget_frozen": false,
-    "five_sample_complete": false
-  }
+    "five_sample_complete": false,
+    "rtllm_finite_default_domain_evidence": 9,
+    "rtllm_coverage_pending": 23,
+    "rtllm_specification_blocked": 12,
+    "rtllm_coverage_ledger": "03_analysis/helper_extraction_20261004/CURRENT_COVERAGE_20261004.json",
+    "physical_vram_bytes": 51522830336,
+    "observed_vram_used_bytes": 20341764096,
+    "observed_workspace_free_bytes": 10774462464,
+    "credits_verified": false,
+    "full_experiment_complete": false,
+    "independent_source_discovery": {
+      "status": "metadata_only_not_admitted",
+      "candidates": [
+        "NVlabs/cvdp_benchmark",
+        "hkust-zhiyao/RTL-BenchMT"
+      ],
+      "overlap_and_prior_exposure_verified": false,
+      "external_models_used": false
+    }
+  },
+  "updated_at": "2026-10-04T14:28:34.5457730+08:00"
 }
