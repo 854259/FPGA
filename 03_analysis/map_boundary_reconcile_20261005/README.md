@@ -1,0 +1,9 @@
+# 队友严格题面解析边界：只读对齐完成
+
+前轮原解析器63cbdeaa额外前文语义误接受已复现，不能推广。队友O2报告4个契约对象不相同，队友O3仅修正原测试的UTF-8字节读取，解析器fb5c1c6a保持。
+
+本机只读获取O3来源21文件ZIP SHA `239e3bed4cdb293b3ab8755f3adb94cad5ba4c05e93e5f0f479aae0b01838a1f`，逐成员SHA通过。reconcile.py重新生成384表格排列（独立位图真值）、36额外语义弃权、8已校准完整契约及原TB逐字节相同，自己的10误接受现在都弃权，0模型/EDA。O2四差异仅prompt_sha256因CRLF→LF不同，输入／输出／care真值／计数／TB保持；不是四个功能回归。
+
+解析器作为新研究实验冻结依赖复用，完整未知前文拒绝；未改队友源、分支或进程，不声称自然语言全覆盖、独立自然RTL任务、正式集成或32GB认证。构造排列不是384未见自然任务。原4清楚文字题结果保持，不能把过去广泛弃权未证实改为当时已安全。
+
+源码借自队友O3 `b6e5dcee7b79288ec6c30b112247502273bb7d36`，parser SHA `fb5c1c6a951f7f3d492bc2fcc2d512bf1d1f481fdfafd4f71afd582972fb5a0c`；factory SHA `073c532da2954e3ead3f208e155c322952fed1f36026debd86108ab00b007f15`。证据RESULTS.json，原文／语料留raw_evidence不入当前Git。脚本重现要先下载来源快照并按manifest复原team_snapshot和原calibration私有输入；不从task编号生成答案。

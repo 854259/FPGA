@@ -4456,10 +4456,11 @@
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_manual_contract_attribution_ongoing",
-    "G3": "single_counterexample_below_threshold_parser_boundary_must_be_resolved_before_next_feedback_factor",
+    "G3": "parser_O3_reconciled_semantics_preserved_full_care_feedback_ticket10",
     "G4": "not_admitted_independent_natural_validation",
     "G5": "not_final_delivery_certified",
-    "goal_complete": false
+    "goal_complete": false,
+    "quota_latest_observed_used_percent": 7
   },
   "concise_output_pilot_20261004": {
     "status": "completed_audited_rejected",
@@ -4559,5 +4560,34 @@
       "teammate_O2_reported_contract_object_mismatches": 4,
       "teammate_O2_actual_truth_table_regression": "unknown_not_independently_checked"
     }
+  },
+  "map_boundary_reconcile_20261005": {
+    "status": "complete_readonly_local_reproduction",
+    "source_parser_sha256": "fb5c1c6a951f7f3d492bc2fcc2d512bf1d1f481fdfafd4f71afd582972fb5a0c",
+    "report": "03_analysis/map_boundary_reconcile_20261005/RESULTS.json",
+    "supported_constructed_cases": 384,
+    "semantic_abstention_cases": 36,
+    "calibrated_contracts_preserved": 8,
+    "own_constructed_old_false_accepts_now_abstained": 10,
+    "O2_differences": "only prompt_sha256 under CRLF normalization; no truth/interface/count/TB regression",
+    "teammate_files_changed": false,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "independent_natural_tasks": 0
+  },
+  "prompt_map_table_feedback_20261005": {
+    "status": "submitted_fifo_ticket10",
+    "source_spec_sha256": "28bf1d75e1b4e697aa9f1c6ae3cd604429f0cb4088f4a5f0ca0f3e671877baaf",
+    "report": "03_analysis/prompt_map_table_feedback_20261005/README.md",
+    "fifo_ticket": 10,
+    "monitor_pid": 3343719,
+    "source_assets": 42,
+    "local_linux_checks_passed": 17,
+    "first_generation_replayed": true,
+    "max_actual_model_requests": 8,
+    "known_public_archived_tasks": 4,
+    "full_audit_executed": false,
+    "adoption": false,
+    "next_if_gate_passes": "fresh first generation and original-correct guards then full same-budget regression"
   }
 }

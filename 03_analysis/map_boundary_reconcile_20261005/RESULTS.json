@@ -1,0 +1,106 @@
+{
+  "schema": "map_boundary_local_reconciliation_v1",
+  "complete": true,
+  "passed": true,
+  "parser_sha256": "fb5c1c6a951f7f3d492bc2fcc2d512bf1d1f481fdfafd4f71afd582972fb5a0c",
+  "reproducer_sha256": "3d5f13c7bfeed838c803add8ffa4e14dac382fe5fb39a22a2e9512f28a84e89d",
+  "source_snapshot_sha256": "239e3bed4cdb293b3ab8755f3adb94cad5ba4c05e93e5f0f479aae0b01838a1f",
+  "supported_constructed_cases": 384,
+  "additional_semantic_abstention_cases": 36,
+  "calibrated_contracts_preserved": 8,
+  "own_previous_false_accepts_now_abstained": 10,
+  "false_accepts": 0,
+  "regression": [
+    {
+      "case": "mapped_care4",
+      "prompt_sha256": "b6d394a1fc5c33df754658fbd1290a7a9da9b171c0628f0ffad86e8489d89f50",
+      "complete_contract_equal": true,
+      "truth_and_testbench_bytes_equal": true,
+      "newline_normalized_difference_fields": []
+    },
+    {
+      "case": "mapped_pairs4",
+      "prompt_sha256": "269b403736b660c1ceb9abda86024f7ba8353cbb532fe056603b600db5396ec6",
+      "complete_contract_equal": true,
+      "truth_and_testbench_bytes_equal": true,
+      "newline_normalized_difference_fields": []
+    },
+    {
+      "case": "mapped_parity3",
+      "prompt_sha256": "b70c625e6ddb4bb9b124b069539467404a53823fb84a49294f6085431a72e8f9",
+      "complete_contract_equal": true,
+      "truth_and_testbench_bytes_equal": true,
+      "newline_normalized_difference_fields": []
+    },
+    {
+      "case": "mapped_xor2",
+      "prompt_sha256": "1fcb9be70ed526c49ac4f6edc3a4c1a677484abd85eb1d3b914ace626f4e4f71",
+      "complete_contract_equal": true,
+      "truth_and_testbench_bytes_equal": true,
+      "newline_normalized_difference_fields": []
+    },
+    {
+      "case": "Prob050_kmap1",
+      "prompt_sha256": "aa50560c2a518e130e6f2d650168fb9457f92ec2d460caac0c18febbbb47a03f",
+      "complete_contract_equal": true,
+      "truth_and_testbench_bytes_equal": true,
+      "newline_normalized_difference_fields": [
+        "prompt_sha256"
+      ]
+    },
+    {
+      "case": "Prob057_kmap2",
+      "prompt_sha256": "bdd6d4c116e79abd65a18b1461171091035fa8f12c4fc242e174055141ec6bd4",
+      "complete_contract_equal": true,
+      "truth_and_testbench_bytes_equal": true,
+      "newline_normalized_difference_fields": [
+        "prompt_sha256"
+      ]
+    },
+    {
+      "case": "Prob122_kmap4",
+      "prompt_sha256": "58609ff895fd306d2f5ff536e7e43a29630382babdf1cbb3faa0347bdfa7ef74",
+      "complete_contract_equal": true,
+      "truth_and_testbench_bytes_equal": true,
+      "newline_normalized_difference_fields": [
+        "prompt_sha256"
+      ]
+    },
+    {
+      "case": "Prob125_kmap3",
+      "prompt_sha256": "7619670501d7d0ea6a2581009db0465e1b2a3e20285c8cd1390c2ed7a75c3529",
+      "complete_contract_equal": true,
+      "truth_and_testbench_bytes_equal": true,
+      "newline_normalized_difference_fields": [
+        "prompt_sha256"
+      ]
+    }
+  ],
+  "elapsed_s": 0.06299999999828287,
+  "O2_four_mismatch_reason": "CRLF normalization changes prompt_sha256 only; truth rows, interface, care counts and rendered TB unchanged",
+  "team_O3_original_summary": {
+    "complete": true,
+    "parser_sha256": "fb5c1c6a951f7f3d492bc2fcc2d512bf1d1f481fdfafd4f71afd582972fb5a0c",
+    "script_sha256": "073c532da2954e3ead3f208e155c322952fed1f36026debd86108ab00b007f15",
+    "tests": 428,
+    "supported_cases": 384,
+    "semantic_abstention_cases": 36,
+    "calibrated_contract_regressions": 8,
+    "regression_manifest_sha256": "81b0f10b1d40132be1f3493d502befe77d79e8780afaf3475a171f31ccaf3d5c",
+    "failures": 0,
+    "false_accepts": 0,
+    "candidate_admitted": true,
+    "elapsed_s": 0.06192398443818092,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "independent_natural_tasks": 0,
+    "full_batch_complete": false,
+    "scope": "Constructed development grammar controls; not new natural holdout or RTL functional certification"
+  },
+  "model_calls": 0,
+  "eda_calls": 0,
+  "teammate_sources_changed": false,
+  "deployment_changed": false,
+  "scope": "Constructed grammar controls and eight known calibration contracts, not independent natural RTL tasks",
+  "admission": "Strict parser eligible as frozen research dependency; not deployment or unrestricted prose support"
+}
