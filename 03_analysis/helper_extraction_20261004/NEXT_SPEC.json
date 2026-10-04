@@ -1,5 +1,5 @@
 {
-  "schema": "helper_extraction_next_g1_budget_proposal",
+  "schema": "helper_extraction_complete_worker_batch_g1_budget_proposal",
   "purpose": "Test loss of complete helper modules at extraction without synthesizing design logic",
   "historical_raw_responses_available": false,
   "historical_extractor_dropping_cannot_be_attributed_to_specific_old_reply": true,
@@ -14,14 +14,14 @@
     "adder_16bit"
   ],
   "model": "Qwen3.6-27B-Q4_K_M",
-  "max_new_model_calls": 8,
+  "max_new_model_calls": 24,
   "prior_conservative_calls": 24,
-  "total_call_ceiling": 32,
-  "stage_timeout_s": 1800,
+  "total_call_ceiling": 48,
+  "stage_timeout_s": 3600,
   "generation_timeout_s": 300,
   "retries": 0,
   "best_archived_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
-  "scope": "Three cross-task prompts not used to adjust the extractor, one generation each; five independent requests on the known 16-bit development prompt. Historical prompts are not a blind holdout. Temperature 0 unchanged; repeated samples assess repeatability, not unbiased pass@5.",
+  "scope": "Eight complete worker pairs on exact archived best runtime. Three tasks not used for extractor tuning, plus five known 16-bit development samples. Within each pair the initial real response is shared; each arm keeps the original one-repair budget. Maximum three real model calls per pair. Historical prompts are not a blind holdout; temperature 0 is unchanged.",
   "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
   "kit_hashes": {
     "submission/agent/runtime.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
@@ -79,7 +79,7 @@
     "environment/evidence error",
     "functional regression"
   ],
-  "promotion": "Must have benefit on a different task and no regression; otherwise retain engineering-only or reject. No full-set score or deployment from this batch.",
+  "promotion": "Compare final worker artifacts, not initial extracts: report quality repairs/regressions and actual/logical calls. Reused initial latency is reported separately, never counted as zero-cost generation. Require cross-task support and no regression before further validation; no formal deployment or whole-set score.",
   "decisions": [
     "keep if raw response uniquely contains needed complete helpers and restored candidate passes real semantics",
     "discard unsupported/ambiguous extraction; preserve baseline byte for byte"
@@ -89,6 +89,8 @@
     "multi_8bit",
     "multi_pipe_4bit"
   ],
-  "max_pre_request_elapsed_s": 1300,
-  "budget_status": "requires_user_approval_for_generation_only_preflight_zero_calls_authorized"
+  "max_pre_request_elapsed_s": 2700,
+  "budget_status": "PENDING: additional 24 calls and 60 minutes require user approval; only zero-model preflight completed",
+  "entrypoint": "full_pair.py run --enable-generation; requires explicit additional budget approval",
+  "supersedes": "Earlier 8-call initial-response-only proposal was never launched. Exact best-worker replay revealed an existing conditional repair request, so full-worker comparison is required."
 }
