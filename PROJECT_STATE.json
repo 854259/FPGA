@@ -3764,16 +3764,22 @@
     "expand_model_calls": false
   },
   "cvdp_rng_admission_20261005": {
-    "next": "S2剩余24入口，不重复S1；之后处理合同/正负控/公平输入，工程结果不能替代功能验收",
+    "next": "跟进票25全156回归，票26自动串行补齐剩余24入口；不重复提交或干预前序冻结配置。完成后归档/清理与更新报告，再按准入继续。",
     "S2": {
-      "remaining_runners": 24,
+      "status": "queued_unexecuted",
+      "actual_experiment_child": null,
+      "commit": "8a62e2f436f75af60fb9ec6dca7fd6ce7bc3736e",
+      "monitor_pid": 3392861,
       "stage_cap_s": 900,
+      "ticket": 26,
+      "remaining_runners": 24,
       "eda_calls": 0,
-      "status": "prepared_unexecuted",
-      "model_calls": 0
+      "model_calls": 0,
+      "root": "/workspace/team/runs/fpga_teammate/cvdp_rng_S2_20261005_8a62e2f",
+      "after_ticket": 25
     },
     "independent_admitted": 0,
-    "updated_at": "2026-10-05T02:30:00+08:00",
+    "updated_at": "2026-10-05T02:33:00+08:00",
     "full_batch_complete": false,
     "S1": {
       "rng_runners": 45,
@@ -3836,5 +3842,33 @@
     "limits": [
       "Each known task once per arm; not generalization or full score. Original owner retains raw evidence and responsibility."
     ]
+  },
+  "functional_full156_owner_observation_20261005": {
+    "ticket": 25,
+    "task_name": "functional_full156_v1",
+    "state": "running",
+    "child": {
+      "pid": 3390466,
+      "starttime": "841229949"
+    },
+    "runner": {
+      "pid": 3390465,
+      "starttime": "841229941"
+    },
+    "cwd": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1",
+    "started_at_utc": "2026-10-05T02:30:50.007845+08:00",
+    "accepted_at_utc": "2026-10-05T02:30:49.933417+08:00",
+    "completed_samples": 4,
+    "expected_samples": 312,
+    "model_requests": 4,
+    "sample_complete": false,
+    "protocol_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+    "log_path": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1/guard/stage.log",
+    "summary_path": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1/results/summary.json",
+    "scope": "All public156 tasks, 1 fresh sample/arm, no independent hidden or five-sample claim",
+    "max_model_requests": 624,
+    "max_stage_s": 86400,
+    "user_full_batch_complete": false,
+    "observed_at_utc": "2026-10-05T02:32:53.70313+08:00"
   }
 }
