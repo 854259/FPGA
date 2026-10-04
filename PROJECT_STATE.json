@@ -3015,11 +3015,13 @@
       "owned_cleanup_verified": true,
       "stage_elapsed_s": 2.210509154945612,
       "cause": "XSIM 43-3260 invalid --mt 1; correct to off"
-    }
+    },
+    "role": "engineering_preflight_only_not_full_experiment",
+    "revision_new_model_call_cap": 0
   },
   "continuous_experiment_loop": {
     "automation_id": "amd-rtl",
-    "cycle": "terminal evidence, conclusion, next hypothesis and decision gates, GitHub sync, next frozen batch",
+    "cycle": "comprehensive full experiment with protocol and sample adequacy; small stages are preflights, not completed rounds",
     "no_formal_switch_or_instance_shutdown": true,
     "default_batch_limits": {
       "calls": 24,
@@ -3028,6 +3030,24 @@
     "no_duplicate_runs": true,
     "interval_minutes": 30,
     "thread_id": "01a0ee6c-0a6c-7452-9e12-2a535485647e",
-    "authorized": true
+    "authorized": true,
+    "default_batch_limits_scope": "historical small-stage caps only, not full experiment authorization or budget"
+  },
+  "comprehensive_cycle_20261004": {
+    "complete": false,
+    "rtllm_semantic_tasks_pending": 42,
+    "full156_started": false,
+    "first_constraints": [
+      "avoid overfitting",
+      "preserve generality"
+    ],
+    "formal32gb_complete": false,
+    "primary_goal": "complete competition delivery",
+    "protocol": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
+    "status": "preparing_preflight_not_full_experiment",
+    "independent_natural_holdout_available": false,
+    "id": "R20261004-01",
+    "sample_size_and_full_budget_frozen": false,
+    "five_sample_complete": false
   }
 }
