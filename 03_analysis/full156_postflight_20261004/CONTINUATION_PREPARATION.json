@@ -1,0 +1,19 @@
+{
+  "schema": "owned_continuation_preparation_v1",
+  "observed_at_utc": "2026-10-04T14:17:45.560543+00:00",
+  "tests_passed": 6,
+  "tests_model_calls": 0,
+  "tests_eda_calls": 0,
+  "quota_used_percent": 6,
+  "quota_stop_percent": 97,
+  "controller_max_full_wait_s": 7200,
+  "controller_max_pilot_observation_s": 14400,
+  "pilot_max_actual_request_attempts": 48,
+  "formal_deployment_changed": false,
+  "model_or_instance_managed": false,
+  "source_hashes": {
+    "postflight_then_pilot.py": "f2dfffced91ba41287be72e74321bcc24eaea58072d3f17f6d3ad0236d84982a",
+    "test_continuation.py": "25eb3e7191e174d1be6bfc617aa2b40fa7a6f529b7a6e5a9c8265c069deeb8cc",
+    "failure_inventory.py": "79e97e6d1aaac631a6f053f642b34a3751fd8232893d3840b7fc207f130944a9"
+  }
+}

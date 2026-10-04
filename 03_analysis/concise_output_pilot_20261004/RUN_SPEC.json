@@ -1,0 +1,95 @@
+{
+  "schema": "concise_output_single_factor_pilot_v1",
+  "status": "frozen_before_any_model_or_eda",
+  "frozen_at_utc": "2026-10-04T14:09:05.015852+00:00",
+  "base_commit": "6060def4d7e8df2a80217ea11c64de1e7f8b043b",
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "kit": "/workspace/team/tasks/autodl-rtl-kit/project",
+  "samples_per_task_per_arm": 1,
+  "arms": [
+    "A",
+    "C"
+  ],
+  "arm_order": "Task indices even A,C; odd C,A, sorted task IDs",
+  "initial_generation": "Independent actual original generation request in each arm; no first-answer replay or resampling",
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "model_pid": 2013333,
+  "solve_deadline_s": 300,
+  "judge_timeout_s": 300,
+  "stage_timeout_s": 900,
+  "slot_minutes": 20,
+  "queue_deadline_s": 10800,
+  "max_actual_model_requests": 48,
+  "retries": 0,
+  "cooperative_interval_s": 5,
+  "preflight_task": "Prob001_zero",
+  "preflight_expected": {
+    "positive": 3,
+    "syntax_negative": 0
+  },
+  "evaluator_source_commit": "c85f4f6",
+  "evaluator_copy_sha256": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c",
+  "scoring": "Pinned official selftest/score.py summarize; task->one verdict per arm, same 156-task denominator; tool errors stop, no scores from partial data",
+  "preparation_revision": 2,
+  "task_ids": [
+    "Prob017_mux2to1v",
+    "Prob033_ece241_2014_q1c",
+    "Prob070_ece241_2013_q2",
+    "Prob078_dualedge",
+    "Prob082_lfsr32",
+    "Prob085_shift4",
+    "Prob086_lfsr5",
+    "Prob093_ece241_2014_q3",
+    "Prob095_review2015_fsmshift",
+    "Prob123_bugs_addsubz",
+    "Prob124_rule110",
+    "Prob129_ece241_2013_q8"
+  ],
+  "targets": [
+    "Prob070_ece241_2013_q2",
+    "Prob078_dualedge",
+    "Prob082_lfsr32",
+    "Prob086_lfsr5",
+    "Prob093_ece241_2014_q3",
+    "Prob095_review2015_fsmshift",
+    "Prob124_rule110",
+    "Prob129_ece241_2013_q8"
+  ],
+  "guards": [
+    "Prob017_mux2to1v",
+    "Prob033_ece241_2014_q1c",
+    "Prob085_shift4",
+    "Prob123_bugs_addsubz"
+  ],
+  "selection_inventory_sha256": "38e2f4aa39110b73388c7617e1356c5fab3690013014085c64993259822c30ee",
+  "factor": "C adds one English output-only/no-comments instruction to original generation skill; A unchanged. Original extraction and repair preserved in both.",
+  "acceptance": "No A-L3/C-below-L3 pair; no unconfirmed attempts or tool errors; C mean coefficient at least A; <=A confirmed requests and >=20% less total confirmed completion tokens AND >=10% less solve time. Only qualifies for full regression, not deployment.",
+  "limits": [
+    "Twelve selected known public development tasks; no unseen/independent claim",
+    "Fresh generation each arm, one sample, inference variation and cache/order confounding remain",
+    "No token cap, model template, runtime, functional checklist, extractor or repair budget change",
+    "Both arms ordinary original extraction, helper append disabled",
+    "No full score/baseline/gain/stability claims",
+    "Must complete and audit prior full156 before FIFO submission"
+  ],
+  "source_hashes": {
+    ".gitattributes": "308a40fa1d89ae5ea4390b4c9b46a0108b09f171f07898f25d451fa0c69c4e9f",
+    ".gitignore": "c186c9c263a5e5b122b01fe433288ac8d886a7855f4278c1786941968fbba48a",
+    "CONCISE_GENERATION.md": "edd3d1d2cd67c7a2238153ffbe4c0c82c1919d5db6c7027a19e50e92b26e327e",
+    "evaluate_batch.py": "eda03429daf3f40ad049a5b13025785ecd4b6ca1fe8cbee267b2604ceac9d6ff",
+    "extract_bundle.py": "8a7ab290e1e15d4248fd166b9c587b5fea7fb2958265853aeffe50e335de6414",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "guarded_bundle.py": "99e61efea4648a5e8f660dffc4de4fde1ca823569a490d10c0667b94401414a1",
+    "INPUT_MANIFEST.json": "af74910ac6384fb5a82fff7292186fd3ef215a172326dd5e29470be5bdcdbd06",
+    "lexical_mask.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "official_eval_guarded.py": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c",
+    "package/agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+    "package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "test_boundary.py": "85acaed9f581e3d83483b177128d62fdbe3724f63e167eacfa0049d776b05f5d"
+  }
+}

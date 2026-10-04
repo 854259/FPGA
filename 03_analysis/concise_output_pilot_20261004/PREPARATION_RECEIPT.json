@@ -1,0 +1,20 @@
+{
+  "schema": "concise_output_preparation_v1",
+  "source_spec_sha256": "105d05a41f304be3e5e029949c6bdf352d4dfc919c0aab8f7fa3922274d20398",
+  "assets": 15,
+  "tasks": 12,
+  "samples": 24,
+  "max_request_attempts": 48,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "stage": "prepared_not_launched",
+  "auditor_full_pilot_branch_not_yet_executed": true,
+  "postflight_hashes": {
+    "audit.py": "29f99a2dcd5676e1984caaf4f70a540ec2678685bb9bda51e51d455335259630",
+    "collect_evidence.py": "2709763d7b0291971a0072a395e5dd4e9b0447d7d1799dd4642048028f285040"
+  },
+  "local_boundary_tests_passed": 6,
+  "wrong_experiment_archive_rejected": true,
+  "syntax_valid": true,
+  "frozen_assets_rechecked": true
+}
