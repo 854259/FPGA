@@ -4715,8 +4715,8 @@
     "source_assets": 30,
     "task_count": 156,
     "expected_samples": 312,
-    "completed_samples_at_snapshot": 200,
-    "actual_requests_at_snapshot": 208,
+    "completed_samples_at_snapshot": 238,
+    "actual_requests_at_snapshot": 250,
     "samples_per_arm_per_task": 1,
     "max_actual_requests": 624,
     "retries": 0,
@@ -4730,8 +4730,8 @@
     "report": "03_analysis/functional_full156_20261005/README.md",
     "quota_used_percent": 11,
     "quota_stop_percent": 97,
-    "actual_model_requests_at_snapshot": 208,
-    "snapshot_observed_at_utc": "2026-10-04T20:51:03.156016+00:00",
+    "actual_model_requests_at_snapshot": 250,
+    "snapshot_observed_at_utc": "2026-10-04T21:15:15.183988+00:00",
     "stage_error": null
   },
   "edge_contract_20261005": {
@@ -4848,5 +4848,21 @@
     "adoption": false,
     "target_offline_single32gb_verified": false,
     "quota_used_percent_latest": 11
+  },
+  "formal_bridge_audit_20261005": {
+    "status": "readonly_tools_frozen_installed_pure_preflight_only",
+    "report": "03_analysis/formal_bridge_audit_20261005/README.md",
+    "tool_spec_sha256": "ca1b50b1e656021645f881ce3621c8edb196ecc2bdbbf135b2ef40154862b3e0",
+    "source_and_dependency_assets": 72,
+    "local_linux_synthetic_tests_passed": 10,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "actual_shipping_evidence_audited": false,
+    "actual_execution_verified": false,
+    "production_runs_changed": false,
+    "queue_changed": false,
+    "failure_archives_not_admitted": true,
+    "synthetic_default_not_admitted": true,
+    "adoption": false
   }
 }

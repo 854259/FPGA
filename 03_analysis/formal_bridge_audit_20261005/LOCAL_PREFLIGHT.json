@@ -1,0 +1,9 @@
+{
+  "at_utc": "2026-10-04T21:11:21.652951+00:00",
+  "tests_passed": 10,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "actual_shipping_evidence_audited": false,
+  "output": "test_extra_production_module_is_recorded_and_rejected (test_audit.Audit.test_extra_production_module_is_recorded_and_rejected) ... ok\ntest_guard_release_and_cleanup_failure_are_rejected (test_audit.Audit.test_guard_release_and_cleanup_failure_are_rejected) ... ok\ntest_modified_feedback_in_actual_second_request_is_rejected (test_audit.Audit.test_modified_feedback_in_actual_second_request_is_rejected) ... ok\ntest_synthetic_cannot_be_admitted_by_production_cli (test_audit.Audit.test_synthetic_cannot_be_admitted_by_production_cli) ... ok\ntest_synthetic_v1_reconstruction_and_v2_nested_dependency_pass_no_execution_claim (test_audit.Audit.test_synthetic_v1_reconstruction_and_v2_nested_dependency_pass_no_execution_claim) ... ok\ntest_tb_changes_cannot_hide_behind_rehashed_probe_receipt (test_audit.Audit.test_tb_changes_cannot_hide_behind_rehashed_probe_receipt) ... ok\ntest_terminal_failure_can_be_collected_but_cannot_be_accepted (test_audit.Audit.test_terminal_failure_can_be_collected_but_cannot_be_accepted) ... ok\ntest_terminal_json_with_live_recorded_owned_process_cannot_be_collected (test_audit.Audit.test_terminal_json_with_live_recorded_owned_process_cannot_be_collected) ... ok\ntest_v2_32gib_boundary_and_attribution_inconsistent_counters_are_rejected (test_audit.Audit.test_v2_32gib_boundary_and_attribution_inconsistent_counters_are_rejected) ... ok\ntest_wrong_negative_count_is_rejected_even_with_updated_native_receipt_binding (test_audit.Audit.test_wrong_negative_count_is_rejected_even_with_updated_native_receipt_binding) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 3.847s\n\nOK\n",
+  "audit_tool_spec_sha256": "ca1b50b1e656021645f881ce3621c8edb196ecc2bdbbf135b2ef40154862b3e0"
+}
