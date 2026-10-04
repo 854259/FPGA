@@ -1,0 +1,295 @@
+{
+  "schema": "bundle_producer_audit_v1",
+  "status": "complete_verified",
+  "groups": {
+    "A": {
+      "passes": 1,
+      "actual_repair_requests": 1,
+      "actual_model_requests": 1,
+      "initial_requests_for_one_production_run": 3,
+      "production_model_requests": 4,
+      "worker_elapsed_s": 15.065820354036987,
+      "supervisor_elapsed_s": 15.337095775641501,
+      "repair_request_elapsed_s": 12.910554057918489,
+      "shared_initial_generation_elapsed_s": 97.27744976337999,
+      "production_elapsed_estimate_s": 112.34327011741698,
+      "production_supervisor_elapsed_estimate_s": 112.61454553902149
+    },
+    "C": {
+      "passes": 2,
+      "actual_repair_requests": 0,
+      "actual_model_requests": 0,
+      "initial_requests_for_one_production_run": 3,
+      "production_model_requests": 3,
+      "worker_elapsed_s": 5.58001839928329,
+      "supervisor_elapsed_s": 5.871216742321849,
+      "repair_request_elapsed_s": 0.0,
+      "shared_initial_generation_elapsed_s": 97.27744976337999,
+      "production_elapsed_estimate_s": 102.85746816266328,
+      "production_supervisor_elapsed_estimate_s": 103.14866650570184
+    }
+  },
+  "regressions": 0,
+  "fixes": 1,
+  "acceptance_met": true,
+  "adoption": false,
+  "new_score": false,
+  "acceptance_scope": "Further validation only; no timing-only acceptance, adoption, score or independent-task claim.",
+  "actual_initial_requests": 3,
+  "actual_repair_requests": 1,
+  "actual_model_requests": 4,
+  "replayed_initial_responses": 6,
+  "unique_initial_response_ids": 3,
+  "unique_initial_answer_texts": 3,
+  "initial_content_seen_before_count": 0,
+  "initial_content_seen_same_task_count": 0,
+  "initial_rows": [
+    {
+      "task": "adder_16bit",
+      "response_id": "chatcmpl-PqdaXE0KvCNDKtuiZYQr3WD0ZmxLTvkv",
+      "response_sha256": "20d5b1e9d3ad6afbcb7c7e68685553dd5f131a3d72b87cb87d267575732d1714",
+      "content_sha256": "7318d1391792ab7810bc92e9e4ecf35581cd90c14ce149c44b4a432b3ef1bb0d",
+      "elapsed_s": 11.97936674579978,
+      "seen_content_records": [],
+      "seen_same_task_records": []
+    },
+    {
+      "task": "adder_32bit",
+      "response_id": "chatcmpl-JO1Tc2yoIVdxLmOBG059NHYdRY0tHbiy",
+      "response_sha256": "3ad082aa6fc6190c9536fd849cfbd38f71e03f3668db8c9aaac4d2217a38e6ae",
+      "content_sha256": "4244360e38a62943ad130f3dfbe699bbbbfeb415c4279c2d77b91ed1e8c537af",
+      "elapsed_s": 76.59456424042583,
+      "seen_content_records": [],
+      "seen_same_task_records": []
+    },
+    {
+      "task": "adder_8bit",
+      "response_id": "chatcmpl-Jrla4op5LB9n6nbhsx94rUM0Gc53Z2xG",
+      "response_sha256": "6181579d6e5ec7b148bc83e94ab09650d59a77d8041ddbc9e30bd347587109f7",
+      "content_sha256": "315071e9a320fd011bb8f070df239ea31ee9a40b424140a9d21ea1d819d76e1c",
+      "elapsed_s": 8.703518777154386,
+      "seen_content_records": [],
+      "seen_same_task_records": []
+    }
+  ],
+  "live_unique_answer_texts": 1,
+  "live_request_pairs_identical": [],
+  "live_response_content_pairs_identical": [],
+  "original_final_correct_guard_count": 1,
+  "original_final_correct_C_gate_entered_count": 0,
+  "original_final_correct_C_accepted_change_count": 0,
+  "original_final_correct_final_source_changed_count": 0,
+  "original_final_correct_C_no_accepted_change_count": 1,
+  "correct_guard_tasks": {
+    "original": [
+      "adder_8bit"
+    ],
+    "C_gate_entered": [],
+    "C_accepted_change": [],
+    "final_source_changed": []
+  },
+  "actual_probes": 12,
+  "controls_valid": 6,
+  "candidate_gate_commands": 2,
+  "candidate_gate_elapsed_s": 2.2951065925881267,
+  "original_lint_calls": 5,
+  "original_lint_elapsed_s": 5.421215678565204,
+  "synthesis_calls": 0,
+  "rows": [
+    {
+      "task": "adder_16bit",
+      "arm": "A",
+      "status": "fail",
+      "failure_kind": "xelab_failed",
+      "checks": null,
+      "mismatches": null,
+      "actual_repair_requests": 1,
+      "actual_model_requests": 1,
+      "replayed_requests": 1,
+      "worker_elapsed_s": 12.913520030677319,
+      "supervisor_elapsed_s": 12.990176320075989,
+      "repair_request_elapsed_s": 12.910554057918489,
+      "model_request_elapsed_s": 12.910554057918489,
+      "initial_generation_elapsed_s": 11.97936674579978,
+      "final_sha256": "a3688ce1fcd1ea6ae04d033a174200b1237961042c1ea36d66c5050a716b6aca",
+      "extraction_decisions": [
+        "original_baseline",
+        "original_baseline"
+      ],
+      "candidate_gate_entered": false,
+      "candidate_accepted": false
+    },
+    {
+      "task": "adder_16bit",
+      "arm": "C",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 270978,
+      "mismatches": 0,
+      "actual_repair_requests": 0,
+      "actual_model_requests": 0,
+      "replayed_requests": 1,
+      "worker_elapsed_s": 3.378767983056605,
+      "supervisor_elapsed_s": 3.475995155982673,
+      "repair_request_elapsed_s": 0.0,
+      "model_request_elapsed_s": 0.0,
+      "initial_generation_elapsed_s": 11.97936674579978,
+      "final_sha256": "29f836fce811dcd72ff5058fbb0c42a02896c5ec78ea9a2024fe8e6fe169efbe",
+      "extraction_decisions": [
+        "candidate_accepted"
+      ],
+      "candidate_gate_entered": true,
+      "candidate_accepted": true
+    },
+    {
+      "task": "adder_32bit",
+      "arm": "C",
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 135908,
+      "mismatches": 135908,
+      "actual_repair_requests": 0,
+      "actual_model_requests": 0,
+      "replayed_requests": 1,
+      "worker_elapsed_s": 1.12348279543221,
+      "supervisor_elapsed_s": 1.2224899986758828,
+      "repair_request_elapsed_s": 0.0,
+      "model_request_elapsed_s": 0.0,
+      "initial_generation_elapsed_s": 76.59456424042583,
+      "final_sha256": "2593b737e2647a9bd84f88f9d6093e871e1f3c7e55dd82b96288b9521ed9b19b",
+      "extraction_decisions": [
+        "unchanged"
+      ],
+      "candidate_gate_entered": false,
+      "candidate_accepted": false
+    },
+    {
+      "task": "adder_32bit",
+      "arm": "A",
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 135908,
+      "mismatches": 135908,
+      "actual_repair_requests": 0,
+      "actual_model_requests": 0,
+      "replayed_requests": 1,
+      "worker_elapsed_s": 1.0766008598729968,
+      "supervisor_elapsed_s": 1.1744596380740404,
+      "repair_request_elapsed_s": 0.0,
+      "model_request_elapsed_s": 0.0,
+      "initial_generation_elapsed_s": 76.59456424042583,
+      "final_sha256": "2593b737e2647a9bd84f88f9d6093e871e1f3c7e55dd82b96288b9521ed9b19b",
+      "extraction_decisions": [
+        "original_baseline"
+      ],
+      "candidate_gate_entered": false,
+      "candidate_accepted": false
+    },
+    {
+      "task": "adder_8bit",
+      "arm": "A",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 131072,
+      "mismatches": 0,
+      "actual_repair_requests": 0,
+      "actual_model_requests": 0,
+      "replayed_requests": 1,
+      "worker_elapsed_s": 1.0756994634866714,
+      "supervisor_elapsed_s": 1.1724598174914718,
+      "repair_request_elapsed_s": 0.0,
+      "model_request_elapsed_s": 0.0,
+      "initial_generation_elapsed_s": 8.703518777154386,
+      "final_sha256": "6a044f2a824660dd9d1bf68f41fc9d23c97379981957787659b89b20b8acc9c0",
+      "extraction_decisions": [
+        "original_baseline"
+      ],
+      "candidate_gate_entered": false,
+      "candidate_accepted": false
+    },
+    {
+      "task": "adder_8bit",
+      "arm": "C",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 131072,
+      "mismatches": 0,
+      "actual_repair_requests": 0,
+      "actual_model_requests": 0,
+      "replayed_requests": 1,
+      "worker_elapsed_s": 1.077767620794475,
+      "supervisor_elapsed_s": 1.1727315876632929,
+      "repair_request_elapsed_s": 0.0,
+      "model_request_elapsed_s": 0.0,
+      "initial_generation_elapsed_s": 8.703518777154386,
+      "final_sha256": "6a044f2a824660dd9d1bf68f41fc9d23c97379981957787659b89b20b8acc9c0",
+      "extraction_decisions": [
+        "unchanged"
+      ],
+      "candidate_gate_entered": false,
+      "candidate_accepted": false
+    }
+  ],
+  "elapsed_s": 186.25497317686677,
+  "shared_initial_generation_elapsed_s": 97.27744976337999,
+  "phase_event_count": 35,
+  "phase_sequence_and_hashes_verified": true,
+  "full_requests_and_runtime_lint_evidence_verified": true,
+  "independent_natural_validation": false,
+  "production_initial_generation_measured": true,
+  "production_initial_generation_scope": "Exact original runtime generation-skill request schema dispatched once per known development task; worker first requests and full response bytes match. Production HTTP solve/lock transport is not measured.",
+  "timing_scope": "Observed single-run generation/repair/worker/supervisor costs include adapter and diagnostic journaling overhead; repair request journals include admission/idle checks. Production estimates add shared initial generation once per arm, retain replay overhead, and exclude HTTP solve transport. Cache/order effects are uncontrolled; elapsed time is observational only.",
+  "guard": {
+    "started_at_utc": "2026-10-04T07:57:35.709070+00:00",
+    "finished_at_utc": "2026-10-04T08:00:42.354701+00:00",
+    "elapsed_s": 186.5392675306648,
+    "stage_rc": 0,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true,
+    "model_idle_after": {
+      "health_status": "ok",
+      "model_name": "Qwen3.6-27B-Q4_K_M",
+      "slot_count": 1,
+      "processing_slots": 0,
+      "model_pid_owns_port": true
+    }
+  },
+  "evidence": {
+    "sha256": "2f392a7ae1e4982a5edc2f4e7863c5aeb5f75b941ba2b60c606609e30d4fbb3e",
+    "files": 233,
+    "all_hashes_verified": true,
+    "zip_members_bound_to_extracted_evidence": true
+  },
+  "postflight": {
+    "utc": "2026-10-04T08:01:50.508480+00:00",
+    "model_health": {
+      "status": "ok"
+    },
+    "processing_slots": 0,
+    "slot_exists": false,
+    "slot_owner": null,
+    "own_slot_exists": false,
+    "ports": {
+      "8000": true,
+      "7860": false,
+      "7867": false
+    },
+    "workspace_free_gib": 9.914772033691406,
+    "model_pid": 2013333,
+    "instance_shutdown_or_model_restart": false
+  },
+  "limits": [
+    "Three previously developed helper tasks, actual original-agent generation SYS. Fresh requests are producer-transfer development evidence, not unseen-task blind validation.",
+    "Exactly one initial request per task; all initial replies and full request payloads fixed before paired workers. No resampling even if identical to old text or no C trigger.",
+    "Both workers replay the exact actual initial response once; their entire initial request object must equal real generation request. Replays are not real model calls.",
+    "Original runtime22e322 and skills byte-identical. Private process only hooks extraction/request observation and captures ordinary xvlog stdout/source without changing return behavior. No shared service/production files modified.",
+    "Live repairs preserve original one-repair budget and prompts. Experiment caps HTTP at120s versus original300; actual max3 initial+6 repairs=9, stage1800/outer2100/lease2400 seconds.",
+    "Controls calibrate first; all six workers finish before experimental final grades. TB/ref/grades never enter model requests or C decisions. Events bind response/source/manifest hashes and phase order.",
+    "C only keeps reply-existing helper modules and exact original Top bytes, candidate-only source diagnostics/warning fallback; compilation is not semantic proof.",
+    "Adder16/32 finite domains remain partial; no architecture/four-state/hidden test certification or weighted official score. No new synthesis/MCP.",
+    "Report common initial model elapsed once per inferred arm path plus supervised worker time; actual experiment wallclock only generates initial replies once. HTTP service ingress/serialization cost not measured; shared prefix cache/order variance not controlled.",
+    "Separate A-final-correct/C-changed guards from A-final-correct/C-unchanged. Zero regression without changed-correct natural denominator cannot support deployment.",
+    "Dual cooperative shared locks and owned directories; do not touch foreign locks/processes or restart shared model/instance."
+  ]
+}

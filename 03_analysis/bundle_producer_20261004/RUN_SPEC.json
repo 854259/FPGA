@@ -1,0 +1,100 @@
+{
+  "schema": "bundle_producer_development_v1",
+  "status": "frozen_before_new_cloud_eda_or_model",
+  "base_commit": "c07174837e3853e8f63c46a3c41265a92518714b",
+  "frozen_at_utc": "2026-10-04T07:56:19.923269+00:00",
+  "source_hashes": {
+    ".gitattributes": "0b542705ce08819884d6340e2169e27d5e2de8ffabfd51b1e72100d6c931d1c1",
+    ".gitignore": "45b281657e8e72a5848eb6063200196e44fbb77143ab942980f096f83ac2aea7",
+    "extract_bundle.py": "8a7ab290e1e15d4248fd166b9c587b5fea7fb2958265853aeffe50e335de6414",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "guarded_bundle.py": "99e61efea4648a5e8f660dffc4de4fde1ca823569a490d10c0667b94401414a1",
+    "IDENTITY.json": "c0c50d12a140255d484cd898e6f500f49230c9398f0b150f9fe55ec7c329794c",
+    "inputs/adder_16bit/negative.sv": "3d0e5fa7732f858c8172875a59f3a955d95cffb2acd285f4775c0d12b7293568",
+    "inputs/adder_16bit/positive.sv": "ff727c4d189d3f12dfb162c2276cf2c93460ee8f4fcd754f1232158f580a7781",
+    "inputs/adder_16bit/prompt.txt": "f8261acbc35c485e93beff2e74734738cd6b01b7b316fc1daeaae50ffe00f25e",
+    "inputs/adder_16bit/tb.sv": "8da17e0fb4d8ceefa2586a433d6753f589a540d051bb36a2a31ced20b4f82fa4",
+    "inputs/adder_32bit/negative.sv": "b258d028d39aed11511ff4083d5e501783d48048a7dcdc58ad0496bcdde91ebe",
+    "inputs/adder_32bit/positive.sv": "2f49d0a9354fcf2545f9f84964dfbc30273b9708b509e5bef4cb8a55c7d6e471",
+    "inputs/adder_32bit/prompt.txt": "24914542f8c3bef010b108e5c3d8b85619d84cd4568c85c8061085bca99b9b0b",
+    "inputs/adder_32bit/tb.sv": "a206b914fa184cd6c6996f39e395d6a413e7563590801b85df3469b300dc84f6",
+    "inputs/adder_8bit/negative.sv": "10686abc2553a1677352a813566f22a82e2c5473b7bb989a401c2ca419f33822",
+    "inputs/adder_8bit/positive.sv": "6ed53c5e612a97e1be343ffab41194d720f78fec83b5fdb16c3bbe4cc3382145",
+    "inputs/adder_8bit/prompt.txt": "21018ae5b871f2bbd252ac9175ad16dd910b02eee3eb35cb8ebe48d0bebaf255",
+    "inputs/adder_8bit/tb.sv": "d42f850d2e0137a67d348267eb165a8be58f80f45caf9cb02067021df0b4277c",
+    "lexical_mask.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "OLD_CONTENT_IDENTITIES.json": "f82f323cd7c5a55a70065e58d116eab0cd555f2e1619287e4f94b17ae5a58fea",
+    "package/agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+    "package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "pilot.py": "0c45ce4dde4c218ce8ef7d11781ff8fd23876cc87c3da9a86ed8b26b29cce2fc",
+    "worker_adapter.py": "f46b7d23049206aa0c64a958870c4b2ac927d03f61711470a3b73d17ba0e7aee"
+  },
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "baseline_extract.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "stage_timeout_s": 1800,
+  "outer_timeout_s": 2100,
+  "slot_minutes": 40,
+  "worker_timeout_s": 300,
+  "request_timeout_s": 120,
+  "max_initial_requests": 3,
+  "max_repair_requests": 6,
+  "max_actual_model_requests": 9,
+  "retries": 0,
+  "checks": {
+    "adder_8bit": 131072,
+    "adder_16bit": 270978,
+    "adder_32bit": 135908
+  },
+  "generation_order": [
+    "adder_16bit",
+    "adder_32bit",
+    "adder_8bit"
+  ],
+  "order": [
+    [
+      "adder_16bit",
+      "A"
+    ],
+    [
+      "adder_16bit",
+      "C"
+    ],
+    [
+      "adder_32bit",
+      "C"
+    ],
+    [
+      "adder_32bit",
+      "A"
+    ],
+    [
+      "adder_8bit",
+      "A"
+    ],
+    [
+      "adder_8bit",
+      "C"
+    ]
+  ],
+  "acceptance": "No final A-pass/C-fail pairs and either more final C passes or equal passes plus fewer C live repair requests. Elapsed is observational, not a robust speed gate. Only qualifies for independent task/changed-correct-candidate validation, not adoption.",
+  "limits": [
+    "Three previously developed helper tasks, actual original-agent generation SYS. Fresh requests are producer-transfer development evidence, not unseen-task blind validation.",
+    "Exactly one initial request per task; all initial replies and full request payloads fixed before paired workers. No resampling even if identical to old text or no C trigger.",
+    "Both workers replay the exact actual initial response once; their entire initial request object must equal real generation request. Replays are not real model calls.",
+    "Original runtime22e322 and skills byte-identical. Private process only hooks extraction/request observation and captures ordinary xvlog stdout/source without changing return behavior. No shared service/production files modified.",
+    "Live repairs preserve original one-repair budget and prompts. Experiment caps HTTP at120s versus original300; actual max3 initial+6 repairs=9, stage1800/outer2100/lease2400 seconds.",
+    "Controls calibrate first; all six workers finish before experimental final grades. TB/ref/grades never enter model requests or C decisions. Events bind response/source/manifest hashes and phase order.",
+    "C only keeps reply-existing helper modules and exact original Top bytes, candidate-only source diagnostics/warning fallback; compilation is not semantic proof.",
+    "Adder16/32 finite domains remain partial; no architecture/four-state/hidden test certification or weighted official score. No new synthesis/MCP.",
+    "Report common initial model elapsed once per inferred arm path plus supervised worker time; actual experiment wallclock only generates initial replies once. HTTP service ingress/serialization cost not measured; shared prefix cache/order variance not controlled.",
+    "Separate A-final-correct/C-changed guards from A-final-correct/C-unchanged. Zero regression without changed-correct natural denominator cannot support deployment.",
+    "Dual cooperative shared locks and owned directories; do not touch foreign locks/processes or restart shared model/instance."
+  ]
+}
