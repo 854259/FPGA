@@ -3,6 +3,58 @@ import hashlib
 import re
 
 
+def extract_hierarchy(text, baseline, strip_noncode, missing_modules):
+    """Retain complete helper definitions in one unambiguous fenced response.
+
+    No RTL is invented or rewritten. Unsupported structure preserves the original
+    extractor output. This is a research candidate, not the official extractor.
+    """
+    original = baseline.extract(text, "rtl")
+    record = dict(changed=False, reason="baseline_preserved")
+    if text.count("```") != 2:
+        record["reason"] = "not_one_closed_fence"
+        return original, record
+    match = re.search(r"```([^\r\n`]*)\r?\n(.*?)```", text, re.S)
+    if not match or match[1].strip().lower() not in ("", "verilog", "systemverilog", "sv"):
+        record["reason"] = "unsupported_fence"
+        return original, record
+    block = match[2]
+    code, closed = strip_noncode(block)
+    if not closed or "`" in code or "\\" in code:
+        record["reason"] = "unsupported_lexical_context"
+        return original, record
+    tokens = list(re.finditer(r"\b(?:module|endmodule)\b", code))
+    if len(tokens) < 4 or len(tokens) % 2:
+        record["reason"] = "not_complete_hierarchy"
+        return original, record
+    names, spans, cursor = [], [], 0
+    for start, end in zip(tokens[::2], tokens[1::2]):
+        if start[0] != "module" or end[0] != "endmodule" or code[cursor:start.start()].strip():
+            record["reason"] = "unsupported_compilation_unit"
+            return original, record
+        name = re.match(r"module\s+([A-Za-z_][A-Za-z0-9_$]*)\s*(?=[(#;])", code[start.start():])
+        if not name or name[1] in names:
+            record["reason"] = "ambiguous_module_declaration"
+            return original, record
+        names.append(name[1])
+        spans.append(block[start.start():end.end()].strip() + "\n")
+        cursor = end.end()
+    if code[cursor:].strip() or names.count("TopModule") != 1:
+        record["reason"] = "unsupported_compilation_unit"
+        return original, record
+    if spans[names.index("TopModule")] != original:
+        record["reason"] = "top_extraction_not_exact"
+        return original, record
+    missing = missing_modules(original)
+    if not missing or any(name not in names for name in missing) or missing_modules(block):
+        record["reason"] = "no_complete_missing_dependency"
+        return original, record
+    chosen = block.strip() + "\n"
+    record.update(changed=chosen != original, reason="complete_fenced_hierarchy", modules=names,
+                  restored_dependencies=missing)
+    return chosen, record
+
+
 def extract_complete(text, baseline, strip_noncode):
     original = baseline.extract(text, "rtl")
     record = dict(changed=False, reason="baseline_preserved", original_sha256=hashlib.sha256(original.encode()).hexdigest())

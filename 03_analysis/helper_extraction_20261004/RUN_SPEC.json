@@ -1,0 +1,67 @@
+{
+  "schema": "helper_extraction_f1_frozen",
+  "purpose": "Test loss of complete helper modules at extraction without synthesizing design logic",
+  "historical_raw_responses_available": false,
+  "historical_extractor_dropping_cannot_be_attributed_to_specific_old_reply": true,
+  "order": [
+    "adder_16bit",
+    "adder_32bit"
+  ],
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "max_new_model_calls": 2,
+  "prior_conservative_calls": 22,
+  "total_call_ceiling": 24,
+  "stage_timeout_s": 1200,
+  "generation_timeout_s": 300,
+  "retries": 0,
+  "best_archived_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+  "scope": "Initial-response paired extraction only; same best-archive generation skill and settings, no full-runtime repair-loop or independent benchmark claim.",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "kit_hashes": {
+    "submission/agent/runtime.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
+    "submission/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "submission/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "official_eval.py": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797"
+  },
+  "tasks_root": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/tasks_verified",
+  "task_hashes": {
+    "adder_16bit": {
+      "ref.sv": "07781123c743a34081f310a0749e320ec4add45dc9cdca7f98f81aea49bf9414",
+      "task.json": "3f1dc94447c0ceaf430d9a0679ed91bc0e4a358086125b676bcdd93849ad448b",
+      "tb.sv": "48ba86c6a8dafeb7a70c6ba03f599d58c34e07487512541baaa27d00a485cac1",
+      "prompt.txt": "1448165ef5237424e39842d24e538d684b090631fda565cb1694353bcc5aaac4",
+      "reference/solution.sv": "92c60b0b504a714e1a06c0bbc3fdfac6cba6d89a9dcfb0a54f044c099be9bc9c"
+    },
+    "adder_32bit": {
+      "ref.sv": "6145b6bc4e89729297760705b7de819e098f73ccec0116ec533dca3aa675c72b",
+      "task.json": "fda9ac62e2bcc83eabc5c7648e6f3355f8f8999e956a8cd57844b1e42cc2e4cc",
+      "tb.sv": "8b7f21082cdb668adfd6786bca15cedd78c411b4030effa18ead0cc8f63f45c0",
+      "prompt.txt": "a79639a97d161ab29eca6efb82bf3d5f5c373866b902d6d82be41b45c4ee0cb1",
+      "reference/solution.sv": "beb678b5df45f347c881a3dcb94865a84077c85c8f962cdd13e6d6a5c8b1e464"
+    }
+  },
+  "archives": [
+    "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full/agent",
+    "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full/baseline",
+    "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/pair/agent",
+    "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/pair/baseline"
+  ],
+  "expected_archive_counts": [
+    156,
+    156,
+    44,
+    44
+  ],
+  "selection": "Two preselected development hierarchy prompts explicitly requiring helper blocks; not unseen validation. No grading information in generation.",
+  "stop_rules": [
+    "failed guard or reference control",
+    "model timeout or incomplete response, no retry",
+    "environment/evidence error",
+    "functional regression"
+  ],
+  "promotion": "No formal promotion from two development samples. Require preserved guards, repeatability, then best-runtime integration and independent paired validation.",
+  "decisions": [
+    "keep if raw response uniquely contains needed complete helpers and restored candidate passes real semantics",
+    "discard unsupported/ambiguous extraction; preserve baseline byte for byte"
+  ]
+}
