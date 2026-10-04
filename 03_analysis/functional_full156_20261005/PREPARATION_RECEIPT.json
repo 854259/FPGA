@@ -1,0 +1,14 @@
+{
+  "schema": "functional_full156_preparation_v1",
+  "run_spec_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+  "sources": 30,
+  "task_count": 156,
+  "expected_samples": 312,
+  "local_tests_passed": 12,
+  "local_test_output": "test_full312_order_and_156_denominator (test_full.Full.test_full312_order_and_156_denominator) ... ok\ntest_partial_duplicate_or_ordered_subset_never_scores (test_full.Full.test_partial_duplicate_or_ordered_subset_never_scores) ... ok\ntest_real_stage_schedules_all312_beyond_small_pilot_budget (test_full.Full.test_real_stage_schedules_all312_beyond_small_pilot_budget) ... ok\ntest_tools_deadlines_and_unconfirmed_never_promote (test_full.Full.test_tools_deadlines_and_unconfirmed_never_promote) ... ok\ntest_two_real_functional_improvements_allow_only_next_gate (test_full.Full.test_two_real_functional_improvements_allow_only_next_gate) ... ok\ntest_A_uses_actual_first_generation_and_no_functional_review (test_fresh.Fresh.test_A_uses_actual_first_generation_and_no_functional_review) ... ok\ntest_C_priority_real_feedback_uses_only_one_original_repair (test_fresh.Fresh.test_C_priority_real_feedback_uses_only_one_original_repair) ... ok\ntest_C_shift_feedback_keeps_stimulus_and_phase (test_fresh.Fresh.test_C_shift_feedback_keeps_stimulus_and_phase) ... ok\ntest_correct_draft_has_no_extra_model_call (test_fresh.Fresh.test_correct_draft_has_no_extra_model_call) ... ok\ntest_native_compile_error_keeps_existing_repair (test_fresh.Fresh.test_native_compile_error_keeps_existing_repair) ... ok\ntest_persistent_mismatch_never_starts_third_call (test_fresh.Fresh.test_persistent_mismatch_never_starts_third_call) ... ok\ntest_unknown_prose_abstains (test_fresh.Fresh.test_unknown_prose_abstains) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 3.505s\n\nOK\n",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "inference_assets_identical_to_audited_pilot": 21,
+  "historical_audit_preflight_valid": true,
+  "full_stage_audit_not_executed": true
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "functional_contract_identifier_boundary_v1",
+  "passed": true,
+  "team_snapshot_sha256": "3afbf0962e4066a81368e5bb2434a61bbd4e0ee7aef7e9f3c0d11bcecb159db8",
+  "source_commit": "38099a60798ef35babd9504c658d5b1b91403bb6",
+  "old_false_accepts_reproduced": 4047,
+  "team_cases_reproduced": 4275,
+  "fixed_grid_false_accepts": 0,
+  "fixed_grid_false_abstains": 0,
+  "valid_contracts_and_TB_preserved": 114,
+  "additional_keyword_and_uppercase_cases": 6944,
+  "canonical_keyword_count": 248,
+  "calibrated_contracts_preserved": [
+    "priority3",
+    "priority5",
+    "priority6",
+    "Prob071_always_casez",
+    "Prob112_always_case2",
+    "Prob115_shift18",
+    "shift16",
+    "shift8"
+  ],
+  "source_hashes": {
+    "priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+    "shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "reconcile.py": "c5d1a8b6caacf0b418bd4b684fe6e7b7ecd38eb5bd0f21f55968d733d5fd5836"
+  },
+  "native_compiler_witnesses_checked": 16,
+  "local_model_calls": 0,
+  "local_eda_calls": 0,
+  "teammate_mutations": 0,
+  "limits": [
+    "Lexical boundary grid and native old syntax witnesses, not independent natural validation or functional repair score",
+    "New supported contracts/TBs identical on eight real calibration cases; no new EDA claim",
+    "ASCII identifiers and complete bounded prose only; extended/escaped syntax abstains",
+    "Keywords identified from primary language-name tables; no external compiler used for evaluation"
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "schema": "functional_full156_readonly_audit_v1",
+  "evidence_valid": true,
+  "historical_fixture_only": true,
+  "full156_evidence_valid": false,
+  "archive_sha256": "f85211565b0fd890cf648b8758e670a31a3417ede569066d981e42c287d70c8d",
+  "spec_sha256": "6fd6fe78ec9b6b8ef52d43f3ae6ee15dd26066db818781647c5ff841f71c3d05",
+  "auditor_sha256": "a4fcd91ac36c54c202be841a476cac256cb56b33a125a3833744b992e9986381",
+  "expected_samples": 6,
+  "actual_model_requests": 8,
+  "provenance": [
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "task": "Prob071_always_casez",
+      "arm": "A",
+      "contract_status": "supported",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "task": "Prob071_always_casez",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "task": "Prob112_always_case2",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "task": "Prob112_always_case2",
+      "arm": "A",
+      "contract_status": "supported",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "task": "Prob115_shift18",
+      "arm": "A",
+      "contract_status": "supported",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "task": "Prob115_shift18",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32
+        }
+      ]
+    }
+  ],
+  "first_pairs": [
+    {
+      "task": "Prob071_always_casez",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob112_always_case2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob115_shift18",
+      "first_content_identical": true
+    }
+  ],
+  "adoption": false,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "limits": [
+    "3 known public development tasks selected from observed failures plus correct guard; not independent natural validation",
+    "One fresh sample per arm/task, no full156/five-sample or hidden-task claim; cohort mean is not updated full score",
+    "A/C first payloads identical but replies may vary even at temperature0; disclose first-reply identity and do not overclaim unique causality",
+    "Native source checking/feedback only; no deterministic DUT/answer generation or calibration designs in runtime/model input",
+    "Official reference/TB/grades enter external judge only; worker sees prompt/interface and original skills plus current candidate factual diagnostics",
+    "Shifter grammar full but samples state boundaries, not exhaustive64-bit proof; no invented clock-edge polarity",
+    "Unknown/extra semantics abstain and retain original flow; built-in original compile repair behavior preserved",
+    "First generation costs measured this stage; formal total score, same-round official baseline gain and offline32GB not certified",
+    "Archive/auditor scope must pass before full regression; no automatic deployment"
+  ],
+  "official_scores": {
+    "A": {
+      "tasks": 3,
+      "scored_tasks": 3,
+      "samples_per_task": 1,
+      "set_score": 0.4667,
+      "pass@1": 0.4667,
+      "pass@5": 0.4667,
+      "level_counts": {
+        "L1": 2,
+        "L3": 1
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 42.9,
+      "per_task": [
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        }
+      ]
+    },
+    "C": {
+      "tasks": 3,
+      "scored_tasks": 3,
+      "samples_per_task": 1,
+      "set_score": 1.0,
+      "pass@1": 1.0,
+      "pass@5": 1.0,
+      "level_counts": {
+        "L3": 3
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 100.0,
+      "per_task": [
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        }
+      ]
+    }
+  },
+  "coefficients": {
+    "A": 0.4666666666666666,
+    "C": 1.0
+  },
+  "repairs": [
+    "Prob112_always_case2",
+    "Prob115_shift18"
+  ],
+  "regressions": [],
+  "unconfirmed_attempts": 0,
+  "solve_deadlines": [],
+  "requests_by_arm": {
+    "A": 3,
+    "C": 5
+  },
+  "solve_seconds_by_arm": {
+    "A": 22.096136949956417,
+    "C": 61.4505786690861
+  },
+  "candidate_qualified_for_independent_validation": true
+}

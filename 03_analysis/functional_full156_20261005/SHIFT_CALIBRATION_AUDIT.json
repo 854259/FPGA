@@ -1,0 +1,325 @@
+{
+  "schema": "shift_contract_offline_audit_v1",
+  "evidence_valid": true,
+  "controls_valid": true,
+  "archive_sha256": "67e0188c27694066c7f8e7968d8fcf412f41f5b12deeaa738957b20cc429ee6a",
+  "run_spec_sha256": "34d8aa720111c5e0e8c32a00083964660346d2b919eb901dcdbc00e57f0fbf85",
+  "auditor_sha256": "8c2b369d54df62b20ef1b3cd1af6dbaf9c687bb75e5a1f259814fb9dd8e327b2",
+  "cases": {
+    "Prob115_shift18": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 335,
+          "mismatches": 0,
+          "first": null
+        },
+        "negative_edge_positive": {
+          "status": "pass",
+          "checks": 335,
+          "mismatches": 0,
+          "first": null
+        },
+        "logical_right": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32,
+          "first": {
+            "step": 104,
+            "phase": "cycle",
+            "inputs": {
+              "load": 0,
+              "ena": 1,
+              "amount": 2,
+              "data": 9223372036854775807
+            },
+            "previous": 9223372036854775808,
+            "output": "q",
+            "expected": 13835058055282163712,
+            "observed_hex": "4000000000000000"
+          }
+        },
+        "enable_priority": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 111,
+          "first": {
+            "step": 4,
+            "phase": "cycle",
+            "inputs": {
+              "load": 1,
+              "ena": 1,
+              "amount": 0,
+              "data": 18446744073709551615
+            },
+            "previous": 0,
+            "output": "q",
+            "expected": 18446744073709551615,
+            "observed_hex": "0000000000000000"
+          }
+        },
+        "asynchronous_load": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 52,
+          "first": {
+            "step": 4,
+            "phase": "stable",
+            "inputs": {
+              "load": 1,
+              "ena": 1,
+              "amount": 0,
+              "data": 18446744073709551615
+            },
+            "previous": 0,
+            "output": "q",
+            "expected": 0,
+            "observed_hex": "ffffffffffffffff"
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 272,
+          "first": {
+            "step": 4,
+            "phase": "cycle",
+            "inputs": {
+              "load": 1,
+              "ena": 1,
+              "amount": 0,
+              "data": 18446744073709551615
+            },
+            "previous": 0,
+            "output": "q",
+            "expected": 18446744073709551615,
+            "observed_hex": "0000000000000000"
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 335,
+        "mismatches": 32,
+        "first": {
+          "step": 104,
+          "phase": "cycle",
+          "inputs": {
+            "load": 0,
+            "ena": 1,
+            "amount": 2,
+            "data": 9223372036854775807
+          },
+          "previous": 9223372036854775808,
+          "output": "q",
+          "expected": 13835058055282163712,
+          "observed_hex": "4000000000000000"
+        }
+      }
+    },
+    "shift16": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 335,
+          "mismatches": 0,
+          "first": null
+        },
+        "negative_edge_positive": {
+          "status": "pass",
+          "checks": 335,
+          "mismatches": 0,
+          "first": null
+        },
+        "logical_right": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32,
+          "first": {
+            "step": 104,
+            "phase": "cycle",
+            "inputs": {
+              "load": 0,
+              "ena": 1,
+              "amount": 2,
+              "data": 32767
+            },
+            "previous": 32768,
+            "output": "q",
+            "expected": 49152,
+            "observed_hex": "4000"
+          }
+        },
+        "enable_priority": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 107,
+          "first": {
+            "step": 4,
+            "phase": "cycle",
+            "inputs": {
+              "load": 1,
+              "ena": 1,
+              "amount": 0,
+              "data": 65535
+            },
+            "previous": 0,
+            "output": "q",
+            "expected": 65535,
+            "observed_hex": "0000"
+          }
+        },
+        "asynchronous_load": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 51,
+          "first": {
+            "step": 4,
+            "phase": "stable",
+            "inputs": {
+              "load": 1,
+              "ena": 1,
+              "amount": 0,
+              "data": 65535
+            },
+            "previous": 0,
+            "output": "q",
+            "expected": 0,
+            "observed_hex": "ffff"
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 260,
+          "first": {
+            "step": 4,
+            "phase": "cycle",
+            "inputs": {
+              "load": 1,
+              "ena": 1,
+              "amount": 0,
+              "data": 65535
+            },
+            "previous": 0,
+            "output": "q",
+            "expected": 65535,
+            "observed_hex": "0000"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "shift8": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 335,
+          "mismatches": 0,
+          "first": null
+        },
+        "negative_edge_positive": {
+          "status": "pass",
+          "checks": 335,
+          "mismatches": 0,
+          "first": null
+        },
+        "logical_right": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32,
+          "first": {
+            "step": 104,
+            "phase": "cycle",
+            "inputs": {
+              "capture": 0,
+              "run": 1,
+              "mode": 2,
+              "payload": 127
+            },
+            "previous": 128,
+            "output": "state",
+            "expected": 192,
+            "observed_hex": "40"
+          }
+        },
+        "enable_priority": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 107,
+          "first": {
+            "step": 4,
+            "phase": "cycle",
+            "inputs": {
+              "capture": 1,
+              "run": 1,
+              "mode": 0,
+              "payload": 255
+            },
+            "previous": 0,
+            "output": "state",
+            "expected": 255,
+            "observed_hex": "00"
+          }
+        },
+        "asynchronous_load": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 51,
+          "first": {
+            "step": 4,
+            "phase": "stable",
+            "inputs": {
+              "capture": 1,
+              "run": 1,
+              "mode": 0,
+              "payload": 255
+            },
+            "previous": 0,
+            "output": "state",
+            "expected": 0,
+            "observed_hex": "ff"
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 248,
+          "first": {
+            "step": 4,
+            "phase": "cycle",
+            "inputs": {
+              "capture": 1,
+              "run": 1,
+              "mode": 0,
+              "payload": 255
+            },
+            "previous": 0,
+            "output": "state",
+            "expected": 255,
+            "observed_hex": "00"
+          }
+        }
+      },
+      "candidate": null
+    }
+  },
+  "natural_hypothesis_matched": true,
+  "probe_executions": 19,
+  "synth_executions": 6,
+  "model_calls": 0,
+  "audit_eda_calls": 0,
+  "model_changed": false,
+  "deployment_changed": false,
+  "new_full_score": false,
+  "limits": [
+    "Known public archived replay plus constructed calibration, not independent natural task generalization",
+    "Complete bounded shifter grammar; sampled boundary-state/load/enable/sign paths, not exhaustive state proof; extra semantics abstain; edge polarity not asserted",
+    "No model repair or production-path cost measured; next equal-budget generation/repair experiment still required",
+    "Controls are evaluation artifacts; no deterministic DUT answer generation in agent",
+    "Synthesis argv absent from inherited receipt; invocation identity bound by frozen source and exact Tcl plus native log, not independent argv observation"
+  ]
+}

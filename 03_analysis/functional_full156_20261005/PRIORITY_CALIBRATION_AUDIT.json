@@ -1,0 +1,297 @@
+{
+  "schema": "priority_contract_offline_audit_v1",
+  "evidence_valid": true,
+  "controls_valid": true,
+  "archive_sha256": "fa8a5ca5cbef8726bff51ba710565531e0a0c9b95ed81c405dcff5816ed81533",
+  "run_spec_sha256": "c9cd43adf84bcf4828ca86d9350badcbeed1808115d1c4d8b70303505eadae12",
+  "auditor_sha256": "c1e1fbec56f6bfbb0b529516069a752b5010cf9c7af150b484e83d1b46a853ee",
+  "cases": {
+    "priority3": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 8,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 3,
+          "first": {
+            "inputs": {
+              "vector": 2
+            },
+            "output": "position",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_max": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 7,
+          "first": {
+            "inputs": {
+              "vector": 0
+            },
+            "output": "position",
+            "expected": 0,
+            "observed": "2"
+          }
+        },
+        "msb_priority": {
+          "status": "fail",
+          "checks": 8,
+          "mismatches": 4,
+          "first": {
+            "inputs": {
+              "vector": 3
+            },
+            "output": "position",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "priority5": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 32,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 32,
+          "mismatches": 15,
+          "first": {
+            "inputs": {
+              "bits": 2
+            },
+            "output": "index",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_max": {
+          "status": "fail",
+          "checks": 32,
+          "mismatches": 31,
+          "first": {
+            "inputs": {
+              "bits": 0
+            },
+            "output": "index",
+            "expected": 0,
+            "observed": "4"
+          }
+        },
+        "msb_priority": {
+          "status": "fail",
+          "checks": 32,
+          "mismatches": 26,
+          "first": {
+            "inputs": {
+              "bits": 3
+            },
+            "output": "index",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "priority6": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 64,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 64,
+          "mismatches": 31,
+          "first": {
+            "inputs": {
+              "data": 2
+            },
+            "output": "result",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_max": {
+          "status": "fail",
+          "checks": 64,
+          "mismatches": 63,
+          "first": {
+            "inputs": {
+              "data": 0
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "5"
+          }
+        },
+        "msb_priority": {
+          "status": "fail",
+          "checks": 64,
+          "mismatches": 57,
+          "first": {
+            "inputs": {
+              "data": 3
+            },
+            "output": "result",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "Prob071_always_casez": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 256,
+          "mismatches": 127,
+          "first": {
+            "inputs": {
+              "in": 2
+            },
+            "output": "pos",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_max": {
+          "status": "fail",
+          "checks": 256,
+          "mismatches": 255,
+          "first": {
+            "inputs": {
+              "in": 0
+            },
+            "output": "pos",
+            "expected": 0,
+            "observed": "7"
+          }
+        },
+        "msb_priority": {
+          "status": "fail",
+          "checks": 256,
+          "mismatches": 247,
+          "first": {
+            "inputs": {
+              "in": 3
+            },
+            "output": "pos",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": {
+        "status": "pass",
+        "checks": 256,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "Prob112_always_case2": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0,
+          "first": null
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 7,
+          "first": {
+            "inputs": {
+              "in": 2
+            },
+            "output": "pos",
+            "expected": 1,
+            "observed": "0"
+          }
+        },
+        "constant_max": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 15,
+          "first": {
+            "inputs": {
+              "in": 0
+            },
+            "output": "pos",
+            "expected": 0,
+            "observed": "3"
+          }
+        },
+        "msb_priority": {
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11,
+          "first": {
+            "inputs": {
+              "in": 3
+            },
+            "output": "pos",
+            "expected": 0,
+            "observed": "1"
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 16,
+        "mismatches": 11,
+        "first": {
+          "inputs": {
+            "in": 3
+          },
+          "output": "pos",
+          "expected": 0,
+          "observed": "1"
+        }
+      }
+    }
+  },
+  "natural_hypothesis_matched": true,
+  "probe_executions": 22,
+  "synth_executions": 5,
+  "model_calls": 0,
+  "audit_eda_calls": 0,
+  "model_changed": false,
+  "deployment_changed": false,
+  "new_full_score": false,
+  "limits": [
+    "Known public archived replay plus constructed calibration, not independent natural task generalization",
+    "Complete bounded textual LSB-priority grammar, exact vector widths, all 2-state inputs; unknown/ambiguous prose abstains",
+    "No model repair or production-path cost measured; next equal-budget generation/repair experiment still required",
+    "Controls are evaluation artifacts; no deterministic DUT answer generation in agent",
+    "Synthesis argv absent from inherited receipt; invocation identity bound by frozen source and exact Tcl plus native log, not independent argv observation"
+  ]
+}

@@ -4704,5 +4704,31 @@
     "candidate_qualified_for_full_regression": true,
     "archive_sha256": "f85211565b0fd890cf648b8758e670a31a3417ede569066d981e42c287d70c8d",
     "next": "prepare_full156_same_budget_new_generation"
+  },
+  "functional_full156_20261005": {
+    "status": "running_verified_process_identity",
+    "fifo_ticket": 25,
+    "monitor_pid": 3390465,
+    "monitor_starttime": "841229941",
+    "started_at_utc": "2026-10-04T18:30:50.007845+00:00",
+    "source_spec_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+    "source_assets": 30,
+    "task_count": 156,
+    "expected_samples": 312,
+    "completed_samples_at_snapshot": 3,
+    "actual_requests_at_snapshot": 3,
+    "samples_per_arm_per_task": 1,
+    "max_actual_requests": 624,
+    "retries": 0,
+    "first_generation_replayed": false,
+    "local_linux_tests_passed": 12,
+    "historical_audit_preflight_full156": false,
+    "full_postflight_executed": false,
+    "adoption": false,
+    "new_full_score": false,
+    "cloud_directory": "/workspace/team/runs/fpga_owner/functional_full156_20261005_v1",
+    "report": "03_analysis/functional_full156_20261005/README.md",
+    "quota_used_percent": 8,
+    "quota_stop_percent": 97
   }
 }
