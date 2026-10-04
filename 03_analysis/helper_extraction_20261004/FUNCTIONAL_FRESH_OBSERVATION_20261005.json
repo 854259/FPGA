@@ -1,0 +1,44 @@
+{
+  "scope": "Read-only observation of other owner pilot; no new inference or duplicated experiment",
+  "owner": "fpga_owner",
+  "ticket": 23,
+  "driver_pid": 3384279,
+  "stage_pid": 3384284,
+  "spec_sha256": "6fd6fe78ec9b6b8ef52d43f3ae6ee15dd26066db818781647c5ff841f71c3d05",
+  "summary_sha256": "dae8953e5763a41ae4be9ff9fb72292c36e40a4a7af8f5984f15f18dc4172282",
+  "model_calls": 8,
+  "repairs": [
+    "Prob112_always_case2",
+    "Prob115_shift18"
+  ],
+  "regressions": [],
+  "observed_known_tasks": 3,
+  "independent_new_tasks": 0,
+  "elapsed_s": 228.52992941066623,
+  "solve_elapsed_s": {
+    "A": 22.096136949956417,
+    "C": 61.4505786690861
+  },
+  "first_pair_comparisons": [
+    {
+      "task": "Prob071_always_casez",
+      "first_payload_identical": true,
+      "first_reply_text_identical": true
+    },
+    {
+      "task": "Prob112_always_case2",
+      "first_payload_identical": true,
+      "first_reply_text_identical": true
+    },
+    {
+      "task": "Prob115_shift18",
+      "first_payload_identical": true,
+      "first_reply_text_identical": true
+    }
+  ],
+  "full_batch_complete": false,
+  "adopted": false,
+  "limits": [
+    "Each known task once per arm; not generalization or full score. Original owner retains raw evidence and responsibility."
+  ]
+}

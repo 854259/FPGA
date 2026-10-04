@@ -1,0 +1,58 @@
+{
+  "schema": "cvdp_runner_rng_S1",
+  "complete": true,
+  "source_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "records": 302,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "independent_tasks_admitted": 0,
+  "full_batch_complete": false,
+  "scope": "Runner plan replay with simulator stub; not RTL or grading",
+  "profiles": [
+    [
+      "env_only_11",
+      11,
+      null
+    ],
+    [
+      "env_only_22",
+      22,
+      null
+    ],
+    [
+      "fixed_11",
+      11,
+      20261005
+    ],
+    [
+      "fixed_22",
+      22,
+      20261005
+    ]
+  ],
+  "error": null,
+  "cohort_sha256": "58e32082eb8221e9d8ddd98f363c8074950e470f8ce4dd07f7b23c3058e2fcdf",
+  "elapsed_s": 25.494794176891446,
+  "counts": {
+    "runners_with_rng": 45,
+    "dynamic_eligible": 21,
+    "capture_valid": 21,
+    "env_only_varies": 21,
+    "fixed_wrapper_identical": 21
+  },
+  "blocked_calls": {
+    "call:?.strftime": 8,
+    "call:datetime.datetime.now": 8,
+    "import:datetime": 8,
+    "import:harness_library": 8,
+    "import:cocotb": 13,
+    "import:pickle": 1,
+    "call:math.ceil": 2,
+    "call:math.log2": 2,
+    "call:harness_library.convert_2d_to_flat": 3,
+    "call:harness_library.populate_matrix": 3,
+    "call:math.gcd": 2,
+    "call:n_rom.bit_length": 1
+  },
+  "private_result_sha256": "2aeafda7c51ebbc71e0f6f433f324f89037cb54ee302bf58446c2a751cc17c62"
+}
