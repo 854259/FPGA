@@ -46,6 +46,55 @@ def elaboration_gate(code, out, runtime, paired, seconds=20):
         save(out/'gate.json',record)
 
 
+def post_repair_restore(args, runtime, baseline, replies):
+    """Research-only recovery after the unmodified worker exhausts its repair.
+
+    Never replace a successful original result or choose an earlier reply.
+    Missing-module diagnostics are checked against real elaboration, not treated
+    as a semantic correctness oracle.
+    """
+    record=dict(changed=False,reason='original_final_preserved')
+    events=[json.loads(line) for line in (args.out/'trace.jsonl').read_text().splitlines()]
+    if not events or events[-1].get('tool')!='check_submodules' or events[-1].get('rc')!=1:
+        record['reason']='original_not_terminal_missing_module'; return record
+    if len(replies)!=2 or any(p['choices'][0].get('finish_reason')!='stop' for p in replies):
+        record['reason']='incomplete_original_repair'; return record
+    original=(args.out/'solution.v').read_text()
+    reply=replies[-1]['choices'][0]['message']['content']
+    if original!=baseline.extract(reply,'rtl'):
+        record['reason']='original_final_not_exact_last_extraction'; return record
+    extension=load('post_repair_extension',REPO/'03_analysis/semantic_repair_20261004/complete_module_extract.py')
+    lexer=load('post_repair_lexer',REPO/'03_analysis/selective_runtime_integration_20261003/package/agent/signedness_selector.py')
+    candidate,selection=extension.extract_hierarchy(reply,baseline,lexer._strip_noncode,runtime.undefined_submodules)
+    record['selection']=selection
+    if not selection['changed']:
+        record['reason']='last_reply_not_unambiguous_hierarchy'; return record
+    paired=load('post_repair_owned',REPO/'03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py')
+    before=elaboration_gate(original,args.out/'post_original_gate',runtime,paired)
+    record['original_gate']=before
+    if before['reason'] in ('timeout','tool_unavailable','tool_launch_error'):
+        raise RuntimeError('post-original elaboration environment failure')
+    if before['reason']!='xelab_failed':
+        record['reason']='original_invalidity_not_confirmed'; return record
+    diagnostic=(args.out/'post_original_gate/xelab.log').read_text(errors='replace')
+    errors=[line for line in diagnostic.splitlines() if line.startswith('ERROR:')]
+    missing=set(re.findall(r'ERROR: \[VRFC 10-2063\] Module <([^>]+)> not found',diagnostic))
+    if (not missing or not missing.issubset(set(selection['restored_dependencies']))
+            or any(not re.match(r'ERROR: \[(?:VRFC 10-2063|XSIM 43-3322)\]',line) for line in errors)):
+        record['reason']='unclassified_original_diagnostic'; return record
+    after=elaboration_gate(candidate,args.out/'post_restored_gate',runtime,paired)
+    record['restored_gate']=after
+    if after['reason'] in ('timeout','tool_unavailable','tool_launch_error'):
+        raise RuntimeError('post-restored elaboration environment failure')
+    if not after['accepted']:
+        record['reason']='restored_elaboration_failed'; return record
+    (args.out/'original_final.v').write_text(original)
+    (args.out/'solution.v').write_text(candidate)
+    record.update(changed=True,reason='last_reply_restored_after_exhausted_original_repair',
+                  original_sha256=sha(args.out/'original_final.v'),final_sha256=sha(args.out/'solution.v'))
+    return record
+
+
 def worker(args):
     runtime=load('full_pair_runtime',args.package/'agent/runtime.py')
     baseline=load('baseline',args.package/'baseline.py');sys.modules['baseline']=baseline
@@ -71,7 +120,7 @@ def worker(args):
     args.out.mkdir(parents=True,exist_ok=False)
     expected=json.loads((args.input/'request.json').read_text())
     task=args.out/'prompt_only_task';task.mkdir();(task/'prompt.txt').write_text(expected['messages'][1]['content'])
-    real_urlopen=urllib.request.urlopen;requests=[];actual_calls=0;response_count=0
+    real_urlopen=urllib.request.urlopen;requests=[];actual_calls=0;response_count=0;replies=[]
     def controlled_urlopen(request,timeout=None):
         nonlocal actual_calls,response_count
         body=json.loads(request.data);round_index=len(requests)
@@ -101,12 +150,15 @@ def worker(args):
         save(args.out/('response_'+str(round_index)+'.json'),payload)
         if payload['choices'][0].get('finish_reason')!='stop':
             raise RuntimeError('incomplete model response; stop without retry')
+        replies.append(payload)
         return io.StringIO(json.dumps(payload))
     runtime.urllib.request.urlopen=controlled_urlopen
     os.environ.update(MODEL_NAME=expected['model'],LLM_BASE_URL='http://127.0.0.1:8000/v1',RTL_REPAIRS='1',RTL_TEMPERATURE='0',RTL_MAX_TOKENS='8192')
     os.chdir(args.out);tick=time.monotonic()
     try:
         runtime.worker(task,args.out)
+        if args.arm=='postrepair_helpers':
+            selections.append(post_repair_restore(args,runtime,baseline,replies))
     finally:
         save(args.out/'worker_receipt.json',dict(actual_model_calls=actual_calls,responses=response_count,logical_worker_requests=len(requests),requests=requests,selections=selections,elapsed_s=time.monotonic()-tick,
             solution_sha256=sha(args.out/'solution.v') if (args.out/'solution.v').exists() else None,best_runtime_sha256=sha(args.package/'agent/runtime.py')))
@@ -179,5 +231,5 @@ def run(args):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('mode',choices=['run','worker']);p.add_argument('--kit',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
-    p.add_argument('--resource-check',type=Path);p.add_argument('--best-tar',type=Path);p.add_argument('--package',type=Path);p.add_argument('--input',type=Path);p.add_argument('--arm',choices=['original','retained_helpers','elaborated_helpers']);p.add_argument('--enable-generation',action='store_true');p.add_argument('--replay-initial',action='store_true');p.add_argument('--replay-worker',type=Path)
+    p.add_argument('--resource-check',type=Path);p.add_argument('--best-tar',type=Path);p.add_argument('--package',type=Path);p.add_argument('--input',type=Path);p.add_argument('--arm',choices=['original','retained_helpers','elaborated_helpers','postrepair_helpers']);p.add_argument('--enable-generation',action='store_true');p.add_argument('--replay-initial',action='store_true');p.add_argument('--replay-worker',type=Path)
     a=p.parse_args();worker(a) if a.mode=='worker' else run(a)
