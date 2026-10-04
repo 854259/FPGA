@@ -1,0 +1,69 @@
+{
+  "schema": "helper_extraction_f1",
+  "complete": true,
+  "valid": true,
+  "model_calls": 0,
+  "responses": 0,
+  "retries": 0,
+  "elapsed_s": 99.88449538499117,
+  "decision": "reference_preflight_only_no_generation_authorized_by_this_run",
+  "inputs_unchanged": true,
+  "executed_commit": "c8025f74080e50b2d5e883436ac9c58fd1a00faa",
+  "guard_passed": true,
+  "guard_elapsed_s": 100.18422276247293,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "error": null,
+  "original_summary_sha256": "3fc408fe68581dceb7493a69a02ebabe0b43ed46a0f2dc289a544b3fdfbe4d9a",
+  "guards": [],
+  "live": [],
+  "references": {
+    "adder_8bit": {
+      "level": 3,
+      "coefficient": 1.0,
+      "stages": {
+        "compile": true,
+        "simulate": true,
+        "synth": true
+      },
+      "mismatches": 0,
+      "samples": 200,
+      "tool_error": null,
+      "elapsed_s": 27.8,
+      "judge_evidence_complete": true,
+      "suspected_silent_degradation": false
+    },
+    "multi_8bit": {
+      "level": 3,
+      "coefficient": 1.0,
+      "stages": {
+        "compile": true,
+        "simulate": true,
+        "synth": true
+      },
+      "mismatches": 0,
+      "samples": 200,
+      "tool_error": null,
+      "elapsed_s": 27.8,
+      "judge_evidence_complete": true,
+      "suspected_silent_degradation": false
+    },
+    "multi_pipe_4bit": {
+      "level": 3,
+      "coefficient": 1.0,
+      "stages": {
+        "compile": true,
+        "simulate": true,
+        "synth": true
+      },
+      "mismatches": 0,
+      "samples": 200,
+      "tool_error": null,
+      "elapsed_s": 44.1,
+      "judge_evidence_complete": true,
+      "suspected_silent_degradation": false
+    }
+  }
+}

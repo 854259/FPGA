@@ -1,0 +1,29 @@
+{
+  "executed_commit": "958da13e5f8746c80981393d7d78711bb8ac54cb",
+  "complete": false,
+  "valid": false,
+  "model_calls": 0,
+  "error": "AssertionError: ('helper_after', {'changed': False, 'reason': 'no_complete_missing_dependency'})",
+  "elapsed_s": 11.311044353991747,
+  "guard_elapsed_s": 11.536146770231426,
+  "controls": {
+    "positive": {
+      "status": "pass",
+      "checks": 4,
+      "mismatches": 0,
+      "failure_kind": null
+    },
+    "negative": {
+      "status": "fail",
+      "checks": 4,
+      "mismatches": 4,
+      "failure_kind": "semantic_mismatch"
+    }
+  },
+  "guards_completed": 0,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "correction": "Only support fixtures reflowed to independent instantiation lines; one-line form remains an explicit abstention guard. Extractor unchanged."
+}

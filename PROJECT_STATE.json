@@ -1,37 +1,85 @@
 {
   "helper_extraction_20261004": {
-  "status": "running_guards_then_two_captured_replies_then_paired_judges",
-  "updated_at": "2026-10-04T12:57:00+08:00",
-  "source": {
-    "root": "/workspace/team/runs/fpga_teammate/helper_F1r2_20261004T045633Z_829a00d",
-    "commit": "829a00dce9a03160422935e0a212d3be04366158",
-    "source_archive_sha256": "bbaa7513399e1c2f7ac9838861aefb204c8bc2bb8cd2d9b060568768013abdfe"
+    "status": "approved_batch_queued_on_existing_gpu_lock",
+    "updated_at": "2026-10-04T13:21:00+08:00",
+    "source": {
+      "root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf",
+      "commit": "3576ccf0444cd362bf03a93b66a18f3c39177618",
+      "sourcehash": "9ea0138e83ad59e7f1f6cf4c0d3fc0e145ababacbedcb45adb597069647c4d5d"
+    },
+    "budget": {
+      "additional_model_calls": 24,
+      "stage_timeout_s": 3600,
+      "authorization": "批准追加 24 次／60 分钟，整批连续执行",
+      "calls_used_this_batch": 0,
+      "prior_conservative_calls": 24
+    },
+    "prior_results": {
+      "F1": "21 guards and 400 unchanged archive artifacts; two real replies; initial artifacts one repair, zero regression; not complete-worker gain",
+      "F2": "Exact best runtime already requests missing-helper model repair; original final verdict unknown without that reply",
+      "preflight": "three cross-task references L3; zero calls"
+    },
+    "coordination": {
+      "owner": "fpga_owner_module_bundle_20261004",
+      "stage_pid": 2963147,
+      "scope": "same-response initial extraction using a different prototype; not the approved best-worker complete-flow comparison",
+      "action": "wait without modifying the running task"
+    },
+    "formal_deployment_modified": false,
+    "full_set_score_updated": false,
+    "launch": {
+      "root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf",
+      "commit": "3576ccf0444cd362bf03a93b66a18f3c39177618",
+      "driver_pid": 2972068,
+      "driver_log": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/driver.log",
+      "queued_utc": "2026-10-04T05:20:37.590294+00:00",
+      "nohup": true,
+      "new_session": true,
+      "model_call_limit": 24,
+      "stage_timeout_s": 3600,
+      "queue_timeout_s": 2100,
+      "queue_excluded_from_experiment_time": true,
+      "command": [
+        "nohup",
+        "flock",
+        "--exclusive",
+        "--timeout",
+        "2100",
+        "/workspace/team/.gpu.lock",
+        "python3",
+        "-B",
+        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/source/03_analysis/selective_runtime_integration_20261003/resource_guard.py",
+        "--kit",
+        "/workspace/team/tasks/autodl-rtl-kit/project",
+        "--model-pid",
+        "2013333",
+        "--model-name",
+        "Qwen3.6-27B-Q4_K_M",
+        "--owner",
+        "helper_G1_20261004T052000Z_3576ccf",
+        "--guard-out",
+        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/guard",
+        "--slot-minutes",
+        "65",
+        "--stage-timeout-s",
+        "3600",
+        "--",
+        "python3",
+        "-B",
+        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/source/03_analysis/helper_extraction_20261004/full_pair.py",
+        "run",
+        "--kit",
+        "/workspace/team/tasks/autodl-rtl-kit/project",
+        "--resource-check",
+        "{resource_check}",
+        "--best-tar",
+        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/best-runtime-source.tar",
+        "--out",
+        "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf/results",
+        "--enable-generation"
+      ]
+    }
   },
-  "launch": {
-    "root": "/workspace/team/runs/fpga_teammate/helper_F1r2_20261004T045633Z_829a00d",
-    "commit": "829a00dce9a03160422935e0a212d3be04366158",
-    "driver_pid": 2954015,
-    "driver_log": "/workspace/team/runs/fpga_teammate/helper_F1r2_20261004T045633Z_829a00d/driver.log",
-    "started_utc": "2026-10-04T04:57:15.793838+00:00",
-    "nohup": true,
-    "new_session": true,
-    "model_call_limit": 2,
-    "combined_call_ceiling": 24,
-    "judge_call_limit": 6
-  },
-  "initial_failure": {
-    "root": "/workspace/team/runs/fpga_teammate/helper_F1_20261004T045406Z_958da13",
-    "commit": "958da13e5f8746c80981393d7d78711bb8ac54cb",
-    "source_archive_sha256": "77640c65b7d3dfc5932f440ee873e31fb049778e9f47035af3dec21ad76e33ca",
-    "model_calls": 0,
-    "error": "one-line fixture outside line-anchored detector support",
-    "evidence_preserved": true
-  },
-  "max_new_model_calls": 2,
-  "prior_conservative_calls": 22,
-  "combined_call_ceiling": 24,
-  "formal_deployment_changed": false
-},
   "schema_version": 1,
   "research_cycle_20261004": {
     "status": "bounded_cycle_completed_with_stopped_model_pilot_and_completed_offline_audit",

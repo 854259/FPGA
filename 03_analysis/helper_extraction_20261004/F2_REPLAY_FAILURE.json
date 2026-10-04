@@ -1,0 +1,18 @@
+{
+  "complete": false,
+  "valid": false,
+  "model_calls": 0,
+  "elapsed_s": 0.14086051937192678,
+  "best_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+  "scope": "exact worker with captured HTTP response, unchanged repair budget; in-memory extraction hook; not service acceptance",
+  "executed_commit": "6ad58d1996801e03a5fe0d3f231596f85674f03c",
+  "guard_passed": false,
+  "guard_elapsed_s": 0.5021022967994213,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "error": "AssertionError: {'timeout': False, 'launch_error': None, 'returncode': 1, 'group_signals': [], 'elapsed_s': 0.07060261350125074, 'remaining_live_group': [], 'log': '[private_path]', 'log_sha256': 'c4031c685b25d7467fe09cb1457125db9d2f7e2d872af468fdb062e6e114fc0d', 'log_bytes': 1133}",
+  "original_summary_sha256": "07e783c3bd0c287bc13083fdc4521f35d976e13f62b7fceab27aa3959f5bc7b4",
+  "rows": []
+}
