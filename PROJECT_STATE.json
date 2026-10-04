@@ -2681,5 +2681,27 @@
     "deployment_modified": false,
     "model_review_budget_used": 0,
     "next": "Freeze independent natural candidates and verify benefit without retuning on these now-seen constructed cases; preserve coverage-loss and negative results."
-  }
+  },
+  "natural_replay_review_20261004": {
+  "updated_at": "2026-10-04T12:25:00+08:00",
+  "status": "C1_complete_no_independent_changes_D1_frozen_not_started",
+  "C1": {
+    "commit": "5a90874d63a1cf5854805eb08c7cc0a9ab1c5ccf",
+    "summary_sha256": "c14c48071a8394b5d75bd1583bf59c59f2ffd7c3185f4838502880233fc9dbad",
+    "changed": 1,
+    "independent_task_changes": 0,
+    "candidates": 400,
+    "eda_calls": 0,
+    "new_model_calls": 0
+  },
+  "D1": {
+    "status": "frozen_not_started",
+    "previous_other_round_calls": 18,
+    "max_new_calls": 4,
+    "combined_ceiling": 24,
+    "combined_planned_calls": 22
+  },
+  "formal_deployment_modified": false,
+  "full_score_updated": false
+}
 }

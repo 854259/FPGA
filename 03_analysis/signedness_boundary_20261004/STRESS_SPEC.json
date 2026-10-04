@@ -1,0 +1,79 @@
+{
+  "schema": "correct_candidate_real_review_D1",
+  "status": "frozen_before_model_calls",
+  "base_commit": "5a90874d63a1cf5854805eb08c7cc0a9ab1c5ccf",
+  "new_model_call_limit": 4,
+  "previously_observed_concurrent_round_calls": 18,
+  "combined_calls_after_planned_completion": 22,
+  "combined_call_ceiling": 24,
+  "previous_round_elapsed_s": 364.98391168937087,
+  "stage_timeout_s": 900,
+  "combined_experiment_time_ceiling_s": 1800,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "runtime_sha256": "318672f841430a864cd99fae4de712942258d0dcda7a1ad6b0567c71610f52c8",
+  "order": [
+    [
+      "compensated_add9",
+      "D"
+    ],
+    [
+      "compensated_add9",
+      "C"
+    ],
+    [
+      "Prob085_shift4",
+      "C"
+    ],
+    [
+      "Prob085_shift4",
+      "D"
+    ]
+  ],
+  "subjects": [
+    {
+      "forced": false,
+      "cohort": "known_constructed_correct_guard_normal_selector",
+      "id": "compensated_add9",
+      "expected_before": "pass",
+      "checks": 48
+    },
+    {
+      "forced": true,
+      "cohort": "known_natural_correct_guard_forced_stress",
+      "id": "Prob085_shift4",
+      "expected_before": "pass",
+      "checks": 209
+    }
+  ],
+  "purpose": "Fill missing real-model correct-candidate stress evidence. Existing wrong-candidate C/D replies are reused as historical evidence, not regenerated or merged into this denominator.",
+  "adoption": "Any actual accepted regression rejects adoption. Zero observed regression in these two known guards is insufficient for general safety or promotion; no new repair target or full score is measured.",
+  "controls": "Frozen positive and negative controls plus original candidate pass before any model calls. Prompt, candidate and frozen skills only enter model messages; evaluator reference/TB/results never enter requests.",
+  "failure": "One request per row; no hidden retries. Incomplete HTTP response or environment/control/identity failure stops calls. Preserve original bytes on fallback and stop for diagnosis; do not treat environment failure as model failure.",
+  "limits": [
+    "Original, C and D paired within each subject; all subjects previously observed development data.",
+    "Normal-trigger constructed guard and forced natural guard report separately. Forced data is not normal-run regression probability.",
+    "Current independent-natural coverage audit found only known Prob115 changes; no deterministic deployment or new full generation batch.",
+    "Review checkpoint elapsed time excludes initial answer generation. Full study wall time includes controls and scoring.",
+    "Only the isolated research runtime is loaded. Shared runtime, official baseline, model and instance are unchanged."
+  ],
+  "files": {
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/candidate.sv": "f7caac1fa0fea137545df455937798de74ecd4372df8e6cd00a8188bec602ea3",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/negative.sv": "4ffffa115e054410d4f4f7045620a817e1935856a27074aa60d4509596b362d3",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/positive.sv": "cdf9638b51bde16d3760a6fbe4a48ea015736942b7decbc1f86ff31d78807e1a",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/prompt.txt": "3a52419d4e26618db46f28eac7b6a9d72a42aa7d7bb74c390ad0dfa86a0301af",
+    "03_analysis/r2_selectivity_20261003/guards/Prob085_shift4/tb.sv": "c0967cfc39b3bc01576d0dd354d4ce24eb76012dc810cb014de7c95fe51c3b72",
+    "03_analysis/r2_signedness_20261003/probes/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "03_analysis/selective_runtime_integration_20261003/package/agent/runtime.py": "318672f841430a864cd99fae4de712942258d0dcda7a1ad6b0567c71610f52c8",
+    "03_analysis/selective_runtime_integration_20261003/package/agent/signedness_selector.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "03_analysis/selective_runtime_integration_20261003/package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "03_analysis/selective_runtime_integration_20261003/package/run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+    "03_analysis/selective_runtime_integration_20261003/package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "03_analysis/selective_runtime_integration_20261003/package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "03_analysis/selective_runtime_integration_20261003/package/upstream.json": "cd9f2bebfb5aae8fb645f61951623a0c1928b2fa654b0366d954966fdf20f61d",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "03_analysis/selective_runtime_integration_20261003/resource_guard.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "03_analysis/signedness_boundary_20261004/boundary_validation.py": "5ae227788d210f335a9761483d792187f1f6bf56b7208a7599a9dedbf54a3175",
+    "03_analysis/signedness_boundary_20261004/cases.json": "72cf8b4751d1305c82fb526bff0d6b319de795de61c610653383a360388d071d",
+    "03_analysis/signedness_boundary_20261004/review_stress.py": "8d57602a9f7b6ef90edf46f9985b38aa6d58a8732cf4f8d7e84e9257dc6c9a1c"
+  }
+}
