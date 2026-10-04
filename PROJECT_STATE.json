@@ -3167,7 +3167,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T00:16:09.8236430+08:00",
+  "updated_at": "2026-10-05T00:23:07.4795670+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3518,6 +3518,27 @@
       "elapsed_s": 0.06192398443818092,
       "archive_sha256": "f17b1ffd471b98032356e83e2d084d06bcf37ab15021e168e2a9e210d77ba2b6"
     },
-    "next": "P1 frozen complete 312-row metadata inventory; reuse original analyzer, 0 model/EDA and 120 seconds."
+    "next": "Reconcile four final baseline L0 logs with known I1/J1/K1 failures and prompt/judge interface records. No model candidate yet promoted, no retry of known validation to pick scores."
+  },
+  "full_failure_inventory_20261005": {
+    "completed": true,
+    "source_commit": "0f77c348d339491588813fa0d43101894f35dd70",
+    "ticket": 9,
+    "pid": 3343681,
+    "stage_pid": 3343686,
+    "samples": 312,
+    "previous_inventory_samples": 278,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "elapsed_s": 0.14630590565502644,
+    "full_batch_complete": false,
+    "A_failures": 44,
+    "A_L1": 40,
+    "A_L0": 4,
+    "A_failure_length": 0,
+    "A_failure_deadline": 0,
+    "A_failure_unconfirmed": 0,
+    "archive_sha256": "1f06f31d6cd581c72b130e488ea6157eadc7903b64366d4df8bf55dab88bb48b",
+    "report": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.md"
   }
 }

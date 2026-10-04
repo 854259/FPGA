@@ -136,7 +136,7 @@
   "next_existing_task": {
     "id": "concise_output_pilot_20261004_v1",
     "pid": 3305179,
-    "observed_at_utc": "2026-10-04T15:18:29.660045+00:00",
+    "observed_at_utc": "2026-10-04T23:18:29.660045+08:00",
     "completed_samples": 18,
     "expected_samples": 24,
     "spec_sha256": "105d05a41f304be3e5e029949c6bdf352d4dfc919c0aab8f7fa3922274d20398",
@@ -157,5 +157,62 @@
     "important-candidate five samples",
     "full budget/credits",
     "formal32GB and final interface/offline/recovery checks"
-  ]
+  ],
+  "final_failure_inventory": {
+    "complete": true,
+    "passed": true,
+    "samples": 312,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "elapsed_s": 0.14630590565502644,
+    "arms": {
+      "A": {
+        "samples": 156,
+        "failures": 44,
+        "failed_levels": {
+          "1": 40,
+          "0": 4
+        },
+        "failure_tags": {
+          "sequential": 28,
+          "table_or_map": 6,
+          "reset": 18,
+          "index_or_selection": 9,
+          "diagram": 3
+        },
+        "failed_with_length_response": 0,
+        "failed_with_deadline": 0,
+        "failed_with_unconfirmed": 0
+      },
+      "C": {
+        "samples": 156,
+        "failures": 45,
+        "failed_levels": {
+          "1": 41,
+          "0": 4
+        },
+        "failure_tags": {
+          "sequential": 29,
+          "table_or_map": 6,
+          "reset": 19,
+          "index_or_selection": 10,
+          "diagram": 3
+        },
+        "failed_with_length_response": 1,
+        "failed_with_deadline": 1,
+        "failed_with_unconfirmed": 1
+      }
+    },
+    "input_hashes": {
+      "failure_inventory.py": "79e97e6d1aaac631a6f053f642b34a3751fd8232893d3840b7fc207f130944a9",
+      "full312.zip": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+      "full312_audit/RESULTS.json": "f6e53edad6357cc8dcaabd86ed40f455c9e8cd45a2e6267da7005bb75911cdcf"
+    },
+    "driver_sha256": "46c86a988a1d939fd8e5f84add74df7708ab863501474408df6ef8ba1ac98585",
+    "full_batch_complete": false,
+    "independent_natural_tasks": 0,
+    "runtime_changes": false,
+    "scope": "Complete existing known-regression inventory; tags overlap and do not establish causes"
+  },
+  "inventory_evidence_archive_sha256": "1f06f31d6cd581c72b130e488ea6157eadc7903b64366d4df8bf55dab88bb48b"
 }
