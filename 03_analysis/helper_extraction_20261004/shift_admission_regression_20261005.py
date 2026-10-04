@@ -26,7 +26,7 @@ def run(a):
     sys.dont_write_bytecode=True
     assert sha(a.candidate)=='a1ce1552754c7c72d9c33b0f596937959bc392d305c3e956c266c5a4b2188157'
     words_path=a.candidate.with_name('SV_KEYWORDS_V12_0.json')
-    assert sha(words_path)=='e11e4e031407aececed40d0e170b1a58e8ab78b76f20d66778d2ad9f86b8ab85'
+    assert sha(words_path)=='d9eb8f6bd2423e27f51206e169c8de095529079b96bc595b4e9231635f33e70c'
     assert sha(a.paired)=='78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c'
     paired=load('r2_supervisor',a.paired);paired.check_resource(a.resource_check,a.kit,first=True)
     old_source=a.r1/'results/sources/shift_contract.py';fixture_source=a.r1/'results/sources/test_shift.py'
