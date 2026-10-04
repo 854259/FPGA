@@ -3167,7 +3167,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T00:23:07.4795670+08:00",
+  "updated_at": "2026-10-05T00:26:32.6627830+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3540,5 +3540,20 @@
     "A_failure_unconfirmed": 0,
     "archive_sha256": "1f06f31d6cd581c72b130e488ea6157eadc7903b64366d4df8bf55dab88bb48b",
     "report": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.md"
+  },
+  "map_table_followup_20261005": {
+    "checked_at": "2026-10-05T00:26:01+08:00",
+    "status": "other_owner_running_readonly_followup",
+    "ticket": 10,
+    "pid": 3343720,
+    "stage_pid": 3343725,
+    "rows_completed": 6,
+    "rows_total": 8,
+    "actual_model_requests": 2,
+    "request_cap": 8,
+    "source_commit": "89b830e",
+    "spec_sha256": "28bf1d75e1b4e697aa9f1c6ae3cd604429f0cb4088f4a5f0ca0f3e671877baaf",
+    "full_batch_complete": false,
+    "launched_by_this_task": false
   }
 }
