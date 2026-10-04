@@ -3002,7 +3002,20 @@
     "gate_timeout_s": 20,
     "captured_worker_pairs": 4,
     "model_call_cap": 6,
-    "status": "prepared_not_started"
+    "status": "initial_harness_argument_failure_revision_preparing",
+    "executed_commit": "7354dd084be96df45f67e8d83ebfeec03f9df4f7",
+    "amd_root": "/workspace/team/runs/fpga_teammate/helper_I1_20261004T060833Z_7354dd0",
+    "driver_pid": 2987975,
+    "initial_failure": {
+      "model_unchanged": true,
+      "source": "7354dd084be96df45f67e8d83ebfeec03f9df4f7",
+      "guard_elapsed_s": 2.508393820375204,
+      "model_calls": 0,
+      "slot_released": true,
+      "owned_cleanup_verified": true,
+      "stage_elapsed_s": 2.210509154945612,
+      "cause": "XSIM 43-3260 invalid --mt 1; correct to off"
+    }
   },
   "continuous_experiment_loop": {
     "automation_id": "amd-rtl",

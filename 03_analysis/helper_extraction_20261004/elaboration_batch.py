@@ -169,13 +169,15 @@ def run(a):
                     v=grade(tasks/name,src,a.out/'controls'/name/label);group[label]=v
                     assert v['samples']==checks and (v['level']==3 and v['mismatches']==0 if label=='positive' else v['level']==1 and v['mismatches']==checks)
                 report['controls'][name]=group;publish('controls_'+name)
-            for name in spec['fresh_order']:
-                row=pair(name,tasks/name)
-                if row['level_regression']:
-                    report['stop_reason']='fresh_regression_'+name;break
+            if not a.preflight_only:
+                for name in spec['fresh_order']:
+                    row=pair(name,tasks/name)
+                    if row['level_regression']:
+                        report['stop_reason']='fresh_regression_'+name;break
         gate()
         report.update(complete=True,execution_valid=True,inputs_unchanged=True,
-                      decision='reject_if_regression_otherwise_assess_cost_and_independent_gain')
+                      preflight_only=a.preflight_only,full_experiment_complete=False,
+                      decision='preflight_only_no_adoption_or_full_experiment_claim' if a.preflight_only else 'reject_if_regression_otherwise_assess_cost_and_independent_gain')
         publish('completed')
     except BaseException as e:
         report['error']=type(e).__name__+': '+str(e);raise
@@ -185,4 +187,5 @@ def run(a):
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     for n in ['kit','out','resource-check']:p.add_argument('--'+n,type=Path,required=True)
+    p.add_argument('--preflight-only',action='store_true')
     run(p.parse_args())

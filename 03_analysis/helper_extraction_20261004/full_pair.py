@@ -29,7 +29,7 @@ def elaboration_gate(code, out, runtime, paired, seconds=20):
             record['reason']='tool_unavailable'; return record
         (out/'candidate.sv').write_text(code)
         commands=[('xvlog',[tools['xvlog'],'--sv','candidate.sv']),
-                  ('xelab',[tools['xelab'],'TopModule','-s','helper_gate','--mt','1'])]
+                  ('xelab',[tools['xelab'],'TopModule','-s','helper_gate','--mt','off'])]
         for name,cmd in commands:
             remaining=seconds-(time.monotonic()-started)
             if remaining<=0:
