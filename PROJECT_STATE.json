@@ -2624,37 +2624,62 @@
     ]
   },
   "signedness_boundary_validation_20261004": {
-    "updated_at": "2026-10-04T10:06:46.2562389+08:00",
-    "status": "B1_rejected_B2_running",
+    "updated_at": "2026-10-04T10:14:00+08:00",
+    "status": "B1_rejected_B2_retained_for_further_validation_not_deployed",
     "B1": {
       "commit": "6d7c40a7b29fe5c25952f0739fe1afbacc505f65",
       "complete": true,
       "evidence_valid": true,
-      "adoption_accepted": false,
+      "decision": "reject_current_auto_patch",
+      "development_cases": 1,
       "development_repairs": 1,
       "new_constructed_cases": 28,
       "new_repairs": 11,
       "new_regressions": 2,
+      "new_preserved": 15,
       "elapsed_s": 485.9389690393582,
       "summary_sha256": "1a1a2e7a84965df4b038c38a0c5291b4dedb9912b0e5de01fdfbbcca25d9b7b3",
       "cleanup_verified": true
     },
     "B2": {
-      "status": "running_on_amd",
-      "patch_sha256": "93145c106081c158b0f968316c7327e0b7bb574124f0bccb751a3f48b8cfbfa1",
-      "development_cases": 1,
-      "regression_reuse_cases": 5,
-      "new_constructed_cases": 7,
-      "rule": "Abstain on blocking writes to the selected register",
-      "spec": "03_analysis/signedness_boundary_20261004/REVISION_SPEC.json",
       "commit": "78c34bf6603a39c188b508baedea244a94b98337",
-      "run_id": "signedness_boundary_B2_20261004T020426Z_78c34bf"
+      "complete": true,
+      "evidence_valid": true,
+      "decision": "retain_for_further_validation",
+      "matrix_acceptance_is_not_deployment_approval": true,
+      "patch_sha256": "93145c106081c158b0f968316c7327e0b7bb574124f0bccb751a3f48b8cfbfa1",
+      "rule": "Abstain on any blocking write to the selected register, including slices",
+      "development": {
+        "preserved": 0,
+        "regressions": 0,
+        "cases": 1,
+        "repairs": 1
+      },
+      "regression_reuse": {
+        "preserved": 3,
+        "regressions": 0,
+        "cases": 5,
+        "repairs": 2
+      },
+      "new_constructed": {
+        "preserved": 5,
+        "regressions": 0,
+        "cases": 7,
+        "abstained_actual_errors": 2,
+        "repairs": 2
+      },
+      "elapsed_s": 216.94503804761916,
+      "summary_sha256": "57a649d7dd1b361c00473b0ddbc8e9c9b7d2e2ac586adfc5b65746d70d62eb71",
+      "cleanup_verified": true
     },
     "new_model_calls": 0,
+    "total_guard_elapsed_s": 703.4214029796422,
     "registry": "03_analysis/EXPERIMENT_REGISTRY.md",
     "report": "03_analysis/signedness_boundary_20261004/RESULT.md",
     "best_archive_scores_inherited": false,
+    "full156_score_updated": false,
     "deployment_modified": false,
-    "next": "Validate the narrower scope on AMD; record coverage loss and keep new validation separate from reused regressions."
+    "model_review_budget_used": 0,
+    "next": "Freeze independent natural candidates and verify benefit without retuning on these now-seen constructed cases; preserve coverage-loss and negative results."
   }
 }
