@@ -5155,5 +5155,26 @@
     "goal_status": "active",
     "linux_tests_passed": 19,
     "tools_spec_sha256": "266ed962caea53fbefaa2f0d56960da1d4a574e0d9a12223aade0d23ca710dbe"
+  },
+  "repair_context_pilot_20261005": {
+    "status": "frozen31_local_linux27_prepared_not_submitted",
+    "spec_sha256": "fd50bc30b4a18284313760bf267780bc25b3f06f55392d7adb229e69a2de03a3",
+    "assets": 31,
+    "local_tests_passed": 27,
+    "linux_tests_passed": 27,
+    "expected_samples": 16,
+    "max_actual_model_requests": 32,
+    "arms": [
+      "C",
+      "D"
+    ],
+    "solve_deadline_s": 300,
+    "stage_safety_bound_s": 14400,
+    "model_calls_preflight": 0,
+    "eda_calls_preflight": 0,
+    "old_full_gate_unchanged": true,
+    "adoption": false,
+    "report": "03_analysis/repair_context_pilot_20261005/README.md",
+    "goal_status": "active"
   }
 }
