@@ -45,7 +45,7 @@ def process_record(pid):
         fields = (Path('/proc') / str(pid) / 'stat').read_text().rsplit(')', 1)[1].split()
         return dict(pid=pid, starttime=fields[19], state=fields[0],
                     ppid=int(fields[1]), pgid=int(fields[2]), sid=int(fields[3]))
-    except FileNotFoundError:
+    except (FileNotFoundError, ProcessLookupError):
         return None
 
 
@@ -55,12 +55,12 @@ def descendants(pid):
         parent = todo.pop()
         try:
             threads = list((Path('/proc') / str(parent) / 'task').iterdir())
-        except FileNotFoundError:
+        except (FileNotFoundError, ProcessLookupError):
             continue
         for thread in threads:
             try:
                 children = (thread / 'children').read_text().split()
-            except FileNotFoundError:
+            except (FileNotFoundError, ProcessLookupError):
                 continue
             for child in map(int, children):
                 row = process_record(child)
@@ -194,7 +194,7 @@ def require_idle(exclude):
             arg_names = {Path(a.decode(errors='replace')).name for a in command if a}
             if name in tool_names or arg_names.intersection(job_names):
                 busy.append(dict(pid=int(root.name), name=name))
-        except FileNotFoundError:
+        except (FileNotFoundError, ProcessLookupError):
             continue
         except PermissionError as exc:
             raise RuntimeError('cannot inspect process ownership; idle is unknown') from exc
@@ -265,7 +265,7 @@ def main():
         if acquired_bytes.decode().splitlines()[0] != args.owner:
             raise RuntimeError('slot ownership mismatch after acquire')
         lock_bytes = acquired_bytes
-        # Recheck after the atomic cooperative acquire, before any work starts.
+        # Recheck cooperative ownership before work; slot.sh is not an OS lock.
         idle = require_idle({os.getpid(), os.getppid()})
         model_telemetry = model_idle(args.llm_base_url, args.model_name, args.model_pid)
         if identity(args.model_pid) != model_before or protected(args.kit) != before:
