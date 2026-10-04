@@ -1,0 +1,42 @@
+{
+  "schema": "cvdp_environment_controls_20261004",
+  "role": "engineering_and_fixture_audit_substage",
+  "model_calls": 0,
+  "stage_timeout_s": 2700,
+  "stop_new_work_after_s": 2400,
+  "minimum_free_gib": 3,
+  "build_jobs": 2,
+  "cvdp_tool_commit": "8e894cf74414ab1eaea1e2b4e80a02f123df07b6",
+  "iverilog_commit": "30a7d1a11b7586aa0fc868e509f04f514effc0ad",
+  "files": {
+    "flex_2.6.4-8.2build1_amd64.deb": "c5604f55827b50e3f568b4731b7799f86b147454c867be02bc141d9d8ce561ff",
+    "bison_3.8.2+dfsg-1ubuntu0.24.04.1_amd64.deb": "9d75084d1293f68f3c1a2ee677dea5baa4e010bac2d4c455d8e23177e97aa353",
+    "gperf_3.1-1build1_amd64.deb": "f6701027304592fe819d219a5ee00d8b56ba4b2a05a7623dd923f1884d595042",
+    "libfl2_2.6.4-8.2build1_amd64.deb": "098db71e672ded6e8194eec7132a2ca31dee49022848c7b0f77ce912d99cb445",
+    "libfl-dev_2.6.4-8.2build1_amd64.deb": "5d3438b7a8bd82c8e5859dbf2fefd7523a204eff8ed5f5736fe732047e938be0",
+    "cvdp_tooling_8e894cf.zip": "632b2602206db3eda090bc2c4390d83b2cb09f1dc214bae98a9f37871a463590",
+    "iverilog_v13_0_30a7d1a.tar.gz": "54d3cef9a8b815f658b82d441655b8204b26ac231ea3e63457c35b8bf78e76ac"
+  },
+  "requirements_sha256": "4994cea401fc4d755be8c18856b83662831ca97447177d14b3663a2a1156f8f4",
+  "example_file": "example_dataset/cvdp_v1.1.0_example_nonagentic_code_generation_no_commercial_with_solutions.jsonl",
+  "example_role": "development_engineering_not_holdout",
+  "controls": [
+    "original_reference",
+    "invert_output",
+    "stuck_zero"
+  ],
+  "expected": {
+    "original_reference": "pass",
+    "invert_output": "functional_fail",
+    "stuck_zero": "functional_fail"
+  },
+  "seed": 20261004,
+  "limits": [
+    "No candidate inference or candidate source changes.",
+    "Do not install or replace system packages. Unpack fixed .deb build tools under this run only; isolated Python --target.",
+    "This Icarus subset is not the full official Docker environment or full CVDP validation.",
+    "Official-example oracle may be weak: handle equality and absence of nonzero state enforcement observed statically; detect with frozen controls, do not silently correct before observation.",
+    "If a known-wrong control passes, preserve negative evidence and withhold dataset admission. No retries or seed selection."
+  ],
+  "private_controls_sha256": "83f21777da17681a8f97050038de0f4a8bd0d4e43ae26c412cc2a6099cf69931"
+}
