@@ -5157,7 +5157,7 @@
     "tools_spec_sha256": "266ed962caea53fbefaa2f0d56960da1d4a574e0d9a12223aade0d23ca710dbe"
   },
   "repair_context_pilot_20261005": {
-    "status": "frozen31_local_linux27_prepared_not_submitted",
+    "status": "v1_environment_failed_archived52_no_quality_result",
     "spec_sha256": "fd50bc30b4a18284313760bf267780bc25b3f06f55392d7adb229e69a2de03a3",
     "assets": 31,
     "local_tests_passed": 27,
@@ -5175,6 +5175,31 @@
     "old_full_gate_unchanged": true,
     "adoption": false,
     "report": "03_analysis/repair_context_pilot_20261005/README.md",
+    "goal_status": "active",
+    "ticket": 37,
+    "actual_model_requests": 1,
+    "responses_received": 1,
+    "eda_commands": 0,
+    "accepted_samples": 0,
+    "score_available": false,
+    "failed_archive_sha256": "322ad3bbdf16eda49499f1f07dda8f7b08a182d45eb01e0d959fb09a4579fb20",
+    "own_failed_ticket_released": true
+  },
+  "repair_context_pilot_v2_20261005": {
+    "status": "frozen32_local_linux31_actual_environment_verified_not_submitted",
+    "spec_sha256": "f05cef4e81bc3b47453073678b3dd9f79c5d6ec31cd289be91812bc6ee26422b",
+    "assets": 32,
+    "local_tests_passed": 31,
+    "linux_tests_passed": 31,
+    "expected_samples": 16,
+    "max_actual_model_requests": 32,
+    "input_files_protected": 936,
+    "official_files_protected": 35,
+    "new_model_calls_preflight": 0,
+    "new_eda_calls_preflight": 0,
+    "prior_failed_trial_samples_reused": 0,
+    "adoption": false,
+    "report": "03_analysis/repair_context_pilot_v2_20261005/README.md",
     "goal_status": "active"
   }
 }

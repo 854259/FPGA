@@ -1,0 +1,39 @@
+{
+  "python_version": "3.12.3",
+  "run_spec_sha256": "f05cef4e81bc3b47453073678b3dd9f79c5d6ec31cd289be91812bc6ee26422b",
+  "assets": 32,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_comment_delimiters_and_quotes_in_comment_are_not_code (test_context.Context.test_comment_delimiters_and_quotes_in_comment_are_not_code) ... ok\ntest_crlf_and_inline_comments_remain_exact (test_context.Context.test_crlf_and_inline_comments_remain_exact) ... ok\ntest_directives_and_incomplete_lexical_units_abstain (test_context.Context.test_directives_and_incomplete_lexical_units_abstain) ... ok\ntest_large_comments_preserve_exact_code_and_line_positions (test_context.Context.test_large_comments_preserve_exact_code_and_line_positions) ... ok\ntest_literal_and_escaped_identifier_markers_remain (test_context.Context.test_literal_and_escaped_identifier_markers_remain) ... ok\ntest_random_compositions_keep_projection_and_idempotence (test_context.Context.test_random_compositions_keep_projection_and_idempotence) ... ok\ntest_short_or_code_dominant_comments_are_retained (test_context.Context.test_short_or_code_dominant_comments_are_retained) ... ok\ntest_compiler_failure_changes_only_second_prompt_copy (test_integration.Integration.test_compiler_failure_changes_only_second_prompt_copy) ... ok\ntest_correct_first_candidate_and_actual_native_source_untouched (test_integration.Integration.test_correct_first_candidate_and_actual_native_source_untouched) ... ok\ntest_directive_abstention_is_identical_to_control (test_integration.Integration.test_directive_abstention_is_identical_to_control) ... ok\ntest_incomplete_candidate_check_keeps_original_diagnostic (test_integration.Integration.test_incomplete_candidate_check_keeps_original_diagnostic) ... ok\ntest_original_functional_feedback_is_retained (test_integration.Integration.test_original_functional_feedback_is_retained) ... ok\ntest_A_uses_actual_first_generation_and_no_functional_review (test_fresh.Fresh.test_A_uses_actual_first_generation_and_no_functional_review) ... ok\ntest_C_priority_real_feedback_uses_only_one_original_repair (test_fresh.Fresh.test_C_priority_real_feedback_uses_only_one_original_repair) ... ok\ntest_C_shift_feedback_keeps_stimulus_and_phase (test_fresh.Fresh.test_C_shift_feedback_keeps_stimulus_and_phase) ... ok\ntest_correct_draft_has_no_extra_model_call (test_fresh.Fresh.test_correct_draft_has_no_extra_model_call) ... ok\ntest_native_compile_error_keeps_existing_repair (test_fresh.Fresh.test_native_compile_error_keeps_existing_repair) ... ok\ntest_persistent_mismatch_never_starts_third_call (test_fresh.Fresh.test_persistent_mismatch_never_starts_third_call) ... ok\ntest_unknown_prose_abstains (test_fresh.Fresh.test_unknown_prose_abstains) ... ok\ntest_control_deadline_remains_in_denominator_candidate_clean_required (test_metrics.Metrics.test_control_deadline_remains_in_denominator_candidate_clean_required) ... ok\ntest_fixed16_all8_denominator_and_no_partial_or_reordering (test_metrics.Metrics.test_fixed16_all8_denominator_and_no_partial_or_reordering) ... ok\ntest_guard_regression_or_candidate_unconfirmed_rejects_positive_mean (test_metrics.Metrics.test_guard_regression_or_candidate_unconfirmed_rejects_positive_mean) ... ok\ntest_no_gain_no_trigger_single_trigger_or_different_first_never_qualifies (test_metrics.Metrics.test_no_gain_no_trigger_single_trigger_or_different_first_never_qualifies) ... ok\ntest_actual_first_candidate_and_compressed_copy_separately_bound (test_replay.Replay.test_actual_first_candidate_and_compressed_copy_separately_bound) ... ok\ntest_tampered_copy_diagnostics_metadata_or_actual_DUT_rejected (test_replay.Replay.test_tampered_copy_diagnostics_metadata_or_actual_DUT_rejected) ... ok\ntest_D_worker_selection_executes_real_original_functional_path (test_stage.Stage.test_D_worker_selection_executes_real_original_functional_path) ... ok\ntest_whole_job_schedules16_new_workers_and16_original_judges (test_stage.Stage.test_whole_job_schedules16_new_workers_and16_original_judges) ... ok\ntest_available_pinned_environment_checked_without_tool_execution (test_environment.Environment.test_available_pinned_environment_checked_without_tool_execution) ... ok\ntest_each_missing_tool_rejected_before_model_call (test_environment.Environment.test_each_missing_tool_rejected_before_model_call) ... ok\ntest_missing_scoped_library_path_rejected (test_environment.Environment.test_missing_scoped_library_path_rejected) ... ok\ntest_wrong_tool_resolution_rejected (test_environment.Environment.test_wrong_tool_resolution_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 31 tests in 0.580s\n\nOK\n",
+  "tests_passed": 31,
+  "environment": {
+    "verified": true,
+    "tools": {
+      "xvlog": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xelab": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xsim": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+        "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+      },
+      "vivado": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/vivado",
+        "sha256": "121b8c468f96f7ee750fc8f7d2386c54d047b204a5b8b7a5dada85f04997302d"
+      }
+    },
+    "vivado_bin": "/workspace/AMD/2026.1/Vivado/bin",
+    "udev_stub": "/workspace/team/udev-stub",
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "input_files_verified": 936,
+  "official_files_verified": 35,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "real_experiment_submitted": false
+}
