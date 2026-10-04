@@ -4456,7 +4456,7 @@
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_manual_contract_attribution_ongoing",
-    "G3": "concise_rejected_map_calibration_valid_map_feedback_v2_running_ticket5",
+    "G3": "concise_rejected_map_single_counterexample_below_threshold_next_feedback_factor_not_frozen",
     "G4": "not_admitted_independent_natural_validation",
     "G5": "not_final_delivery_certified",
     "goal_complete": false
@@ -4519,7 +4519,7 @@
     "scope": "owned calls and calibration progress only, no bodies or all-server claim"
   },
   "prompt_map_feedback_20261004": {
-    "status": "v1_failed_before_live_model_v2_fifo_ticket5_running",
+    "status": "v1_failure_preserved_v2_complete_audited_below_threshold",
     "v1": {
       "ticket": 4,
       "source_spec_sha256": "bdf958d87646557b12231095829635bfb81887e9a9b0edfbbe18eb4730d8c672",
@@ -4539,9 +4539,18 @@
       "max_actual_model_requests": 8,
       "first_generation_replay": true,
       "first_generation_cost_measured": false,
-      "full_audit_executed": false,
+      "full_audit_executed": true,
       "adoption": false,
-      "report": "03_analysis/prompt_map_feedback_v2_20261004/README.md"
+      "report": "03_analysis/prompt_map_feedback_v2_20261004/RESULT.md",
+      "status": "complete_audited_do_not_expand_current_single_counterexample",
+      "actual_model_requests": 3,
+      "archived_errors_fixed": 1,
+      "regressions": 0,
+      "correct_guard_unchanged": true,
+      "candidate_qualified_for_fresh_generation": false,
+      "next": "03_analysis/prompt_map_feedback_v2_20261004/NEXT.md",
+      "archive_sha256": "5ee34b1df0e9f938f4d13970d33a7b51f13fd1228ebc7316358f921a0c8e18cf",
+      "owned_cleanup_verified": true
     }
   }
 }

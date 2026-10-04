@@ -9,3 +9,5 @@
 执行前门槛：8完整、无工具／未确认、至少修复3错稿中的2个、无正确稿回归、122字节保持。仅允许下一项真实新生成与正确稿守卫；完整证据审计、156回归、独立自然任务、五样本、断网／最终32GB验收仍需完成。原始代码路径、CALIBRATION_AUDIT前置、全部身份与限制见RUN_SPEC。自己的实时STATUS/calls/changes/conclusions同步，整任务FIFO与原双锁保持，正式部署／模型／队友工作不改。
 
 完成后用本目录collect_evidence.py --root RUN --guard RUN/guard --archive NEW.zip，本机audit.py --archive ZIP --out NEW --spec-sha上述SHA；完整真实审计分支尚未运行。失败保存原件不重抽。源码已冻结且记录在Git，不修改运行中资产。
+
+最新：真实阶段已正常完成，完整离线审计通过，1/3错稿修好、0正确退化、3真实模型调用，未达到预定≥2门槛，不扩大当前单反例形式。见RESULT.md。执行后请用audit_utf8.py，原审计编码失败保留，不动冻结源码／结果。

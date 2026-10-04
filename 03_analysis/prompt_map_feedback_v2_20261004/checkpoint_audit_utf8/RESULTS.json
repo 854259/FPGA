@@ -1,0 +1,84 @@
+{
+  "evidence_valid": true,
+  "archive_sha256": "5ee34b1df0e9f938f4d13970d33a7b51f13fd1228ebc7316358f921a0c8e18cf",
+  "spec_sha256": "f38a40e64072f2b1005c1fe9deaae73f68496c9431e82408ce28479cbe80f08d",
+  "auditor_sha256": "76dbcc25cd457841289d3dc710910813f6da120dff38dcb26a93908297d40dba",
+  "rows": [
+    {
+      "task": "Prob050_kmap1",
+      "arm": "A",
+      "status": "fail",
+      "mismatches": 2,
+      "actual_model_requests": 0
+    },
+    {
+      "task": "Prob050_kmap1",
+      "arm": "C",
+      "status": "pass",
+      "mismatches": 0,
+      "actual_model_requests": 1
+    },
+    {
+      "task": "Prob057_kmap2",
+      "arm": "C",
+      "status": "fail",
+      "mismatches": 6,
+      "actual_model_requests": 1
+    },
+    {
+      "task": "Prob057_kmap2",
+      "arm": "A",
+      "status": "fail",
+      "mismatches": 6,
+      "actual_model_requests": 0
+    },
+    {
+      "task": "Prob122_kmap4",
+      "arm": "A",
+      "status": "pass",
+      "mismatches": 0,
+      "actual_model_requests": 0
+    },
+    {
+      "task": "Prob122_kmap4",
+      "arm": "C",
+      "status": "pass",
+      "mismatches": 0,
+      "actual_model_requests": 0
+    },
+    {
+      "task": "Prob125_kmap3",
+      "arm": "C",
+      "status": "fail",
+      "mismatches": 4,
+      "actual_model_requests": 1
+    },
+    {
+      "task": "Prob125_kmap3",
+      "arm": "A",
+      "status": "fail",
+      "mismatches": 6,
+      "actual_model_requests": 0
+    }
+  ],
+  "repairs": [
+    "Prob050_kmap1"
+  ],
+  "regressions": [],
+  "actual_model_requests": 3,
+  "candidate_qualified_for_fresh_generation": false,
+  "adoption": false,
+  "new_full_score": false,
+  "first_generation_cost_measured": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "limits": [
+    "4 known public archived checkpoints, not independent natural validation",
+    "First generation is exact archive replay, historical generation latency not remeasured or included; not production solve timing",
+    "No new official grade/full156/five-sample result",
+    "TB generator never outputs DUT; controls/calibration report are outside worker model inputs",
+    "Complete scalar textual maps only; natural-language ambiguity not exhaustively proven",
+    "Actual repair may consume more calls than compile-only A, within same original maximum budget",
+    "Audit runs locally using pinned full312 archive helper; no automatic deployment"
+  ]
+}
