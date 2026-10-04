@@ -1,0 +1,88 @@
+{
+  "schema": "rtllm_four_math_contracts_v1",
+  "status": "frozen_before_eda",
+  "base_commit": "bf790578e1fce4ad481c8a2ba18eb0d65ef835c9",
+  "contracts": [
+    {
+      "task": "comparator_3bit",
+      "checks": 64,
+      "scope": "All two-state unsigned operand pairs, packed greater/equal/less output; no X/Z semantics claim",
+      "prompt_changed": false,
+      "change": "none"
+    },
+    {
+      "task": "comparator_4bit",
+      "checks": 256,
+      "scope": "All two-state unsigned operand pairs, packed greater/equal/less output; no X/Z semantics claim",
+      "prompt_changed": false,
+      "change": "none"
+    },
+    {
+      "task": "adder_8bit",
+      "checks": 131072,
+      "scope": "All 8-bit unsigned operands and both carry-in values, checks all 9 output bits; full-adder positive vs integer-add oracle",
+      "prompt_changed": true,
+      "change": "Only duplicate/conflicting module-name declaration corrected"
+    },
+    {
+      "task": "multi_8bit",
+      "checks": 65536,
+      "scope": "All two-state 8-bit unsigned operand pairs, full 16-bit product; shift/add positive vs integer-product oracle",
+      "prompt_changed": false,
+      "change": "none"
+    }
+  ],
+  "source_hashes": {
+    "pilot.py": "ad0a7bdcd34936ce9ff352a7a92a819cd532c871aba89ac367d774cc09f8249a",
+    "prepare.py": "4d39943513ddb47f2bfe35907e921a40bf23aa5d7833498ef264db6ec3d3b379",
+    "inputs/adder_8bit/agent.sv": "07575c939f850637b6bbad6346f6d9a48051672bc4ffd342ae29e7dffeaee1fe",
+    "inputs/adder_8bit/baseline.sv": "b0e1fb46b0851ec75186a3a192bd43f7f2befc38d0951137b0c21613c03de205",
+    "inputs/adder_8bit/negative.sv": "3de354f56b7e93bb33a2680096ab30744cd6f5bf7ce7fc640bfc20e4b6e985a7",
+    "inputs/adder_8bit/positive.sv": "6ed53c5e612a97e1be343ffab41194d720f78fec83b5fdb16c3bbe4cc3382145",
+    "inputs/adder_8bit/prompt.original.txt": "3ce4ba82bfa65dbc6d1ed5429057a521c62ce0448954584f4fe67d5fb7fa8d32",
+    "inputs/adder_8bit/prompt.txt": "21018ae5b871f2bbd252ac9175ad16dd910b02eee3eb35cb8ebe48d0bebaf255",
+    "inputs/adder_8bit/tb.sv": "d42f850d2e0137a67d348267eb165a8be58f80f45caf9cb02067021df0b4277c",
+    "inputs/comparator_3bit/agent.sv": "38b1c4e797bdf963f47aa3571f143f5ebb8c9c9865d03437dd659b3cc86e42ee",
+    "inputs/comparator_3bit/baseline.sv": "26b3ca7ddd00831f528068f5ae7f18ca5f83af7291674b5ceac06a815a4614b0",
+    "inputs/comparator_3bit/negative.sv": "f16790bb69ea9a6b125d1cb19c93d2a54696504984b3a24e86454cf61e3f68c9",
+    "inputs/comparator_3bit/positive.sv": "8ad6ed658edcc0e7021588ab1289dd8a455a0557ff61be425655241a878f3f30",
+    "inputs/comparator_3bit/prompt.original.txt": "ea3064920abccb98daad2f83f4237531e52bc35980bf33ce417f1dbd4462ec6b",
+    "inputs/comparator_3bit/prompt.txt": "6936b1d7581f299787e0324a2d73650a01d3fc7d1134b71c0f617eca6a7ad188",
+    "inputs/comparator_3bit/tb.sv": "c53322c763b15f37604b91d8c90182859b577c7f386a95726e8a1a3cc525e5e9",
+    "inputs/comparator_4bit/agent.sv": "5663bc297c6c56fe027cd7f041b6a3e0e673163ee6294fee621ef48ec273aa69",
+    "inputs/comparator_4bit/baseline.sv": "6b14c01d2d0ed00d55939bbb1c7fccf26bbd2a7971bc6b2d79426e2d1d9c2392",
+    "inputs/comparator_4bit/negative.sv": "86f42d0993e23fd0a12a24a772b352be474e0236d190c5baee4d637c52088d1e",
+    "inputs/comparator_4bit/positive.sv": "2d06a944b10817c3d5af1e66f910cb7d666dff6be4c7bf64df99e9ed6875a698",
+    "inputs/comparator_4bit/prompt.original.txt": "78aaab38c551286d62440f3a06b0e91742a08f424f672d89734924f1b69371de",
+    "inputs/comparator_4bit/prompt.txt": "aba59c6f8b90b665bc8f5f3d5076c167edab2cd1bdfac64e5ea7c9470c810239",
+    "inputs/comparator_4bit/tb.sv": "8d27f8c6c3117e8cda06c05153f1b3a6c45596fb3bdea3319209dc2e9ba55b06",
+    "inputs/multi_8bit/agent.sv": "52a2d1b74a05d9ca147497b5223e265101b0082363d919bf60a0158476d380a8",
+    "inputs/multi_8bit/baseline.sv": "c8e8219fb6ea937e534d967312df60ca5508c131f4cd92b0ea4611cec5cc7664",
+    "inputs/multi_8bit/negative.sv": "92e356168bec1f2f3ba86c8d964dee5e0151c98bcb5114925ab9774f74fde837",
+    "inputs/multi_8bit/positive.sv": "a7e0fb97db6c74c524a5c5e6dd353b7148c67ed4acc23853a867824063e42085",
+    "inputs/multi_8bit/prompt.original.txt": "2bec85ce2dac07e4edc0002ef086f2aeb6391b5438191a3f3d3f7bfbe8146b5e",
+    "inputs/multi_8bit/prompt.txt": "1c21de61ded060608cadb440d7c406f7db772d850507ebe7baf68ac9d6eddf29",
+    "inputs/multi_8bit/tb.sv": "84c5016497bcedb87c0582240a0d9b658cd1c0238250f81a682e30184ed70752",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9"
+  },
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "source_archive_sha256": "c35e8c7e8a1c699aea6028cf3774f7b1797d52015a553440a49eb7d90cf8cfcc",
+  "resource_guard_sha256": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+  "model_calls": 0,
+  "part": "xczu3eg-sbva484-1-e",
+  "timeout_s": 1200,
+  "acceptance": "Each positive completes exact exhaustive checks without mismatch and synthesizes; each task-specific negative fails semantically. All original 8 candidate results reported, no filtering or reprompting. Guard gates pass.",
+  "limits": [
+    "This is a small cross-source reliable contract substrate, not a new whole RTLLM score or independent natural validation of B2.",
+    "Tasks are known public RTLLM tasks; old 8 candidates remain byte-identical, adder prompt correction cannot be retroactively attributed to those generations.",
+    "Unsigned two-state finite combinational domain only; implementation algorithm not formally proven from simulation; X/Z and timing/resource quality unmeasured.",
+    "No reference/TB/grades sent to a model; zero new inference. Historical reference/TB and aggregates unchanged."
+  ],
+  "pre_execution_adjustment": "Normalize Windows path separators in manifest; prior upload validation failed before any EDA or model call; input bytes and budget unchanged",
+  "resource_guard_commit": "6d7c40a7b29fe5c25952f0739fe1afbacc505f65",
+  "environment_revision": "Use already tracked guard with ProcessLookupError treated as exited process; original v1 evidence preserved; same task/source/TB/budget, zero inference"
+}

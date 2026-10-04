@@ -1,5 +1,72 @@
 {
   "schema_version": 1,
+  "rtllm_math_contracts_20261004": {
+    "status": "complete_verified_four_finite_math_contracts",
+    "report": "03_analysis/rtllm_math_contracts_20261004/README.md",
+    "result": "03_analysis/rtllm_math_contracts_20261004/RESULTS.json",
+    "workspace": "E:\\26qiansai\\worktrees\\autonomous-rtl-20261004",
+    "branch": "codex/autonomous-rtl-20261004",
+    "reliable_contract_tasks": 4,
+    "controls_valid": 8,
+    "positive_synthesized": 4,
+    "archived_candidates": 8,
+    "candidate_passes": 7,
+    "candidate_failures": 1,
+    "model_calls": 0,
+    "new_score": false,
+    "formal_runtime_integrated": false,
+    "elapsed_s": 167.7832390703261,
+    "guard": {
+      "started_at_utc": "2026-10-04T04:50:53.193829+00:00",
+      "finished_at_utc": "2026-10-04T04:53:41.417079+00:00",
+      "elapsed_s": 168.1172852795571,
+      "stage_rc": 0,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "model_idle_after": {
+        "health_status": "ok",
+        "model_name": "Qwen3.6-27B-Q4_K_M",
+        "slot_count": 1,
+        "processing_slots": 0,
+        "model_pid_owns_port": true
+      }
+    },
+    "evidence": {
+      "archive_sha256": "bab8fee296bd857a8501b37ad2336ec7b407e6b791ef7a3929d12476cc223cdf",
+      "manifest_files": 169,
+      "all_hashes_verified": true
+    },
+    "postflight": {
+      "utc": "2026-10-04T04:56:01.529558+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "workspace_free_gib": 10.081180572509766,
+      "model_pid": 2013333,
+      "instance_shutdown_or_model_restart": false
+    },
+    "prior_guard_failure": {
+      "error": "ProcessLookupError: [Errno 3] No such process",
+      "stage_elapsed_s": 91.73968119826168,
+      "archive_sha256": "a16108138b8552744e281cc57e260665bf7cb1cae42db50a2b17464dfa917ccf",
+      "manifest_files": 117,
+      "owned_cleanup_verified": true,
+      "own_slot_released": true,
+      "model_calls": 0,
+      "input_bytes_unchanged": true
+    },
+    "coordination": "Nonblocking existing .gpu.lock plus original SLOT.lock resource guard",
+    "next_step": "Conservative complete helper-module extraction research; freeze tests before 8-new-reply same-response comparison; see NEXT.md",
+    "quota_stop_used_percent": 97
+  },
   "b2_natural_coverage_20261004": {
     "status": "complete_verified_no_independent_task_triggers",
     "report": "03_analysis/natural_coverage_20261004/README.md",

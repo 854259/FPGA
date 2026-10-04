@@ -1,0 +1,241 @@
+{
+  "schema": "rtllm_four_math_contracts_audit_v1",
+  "status": "complete_verified",
+  "reliable_contract_tasks": 4,
+  "controls_valid": 8,
+  "positive_synthesized": 4,
+  "archived_candidates": 8,
+  "candidate_passes": 7,
+  "candidate_failures": 1,
+  "rows": [
+    {
+      "task": "comparator_3bit",
+      "source": "positive",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 64,
+      "mismatches": 0,
+      "solution_sha256": "8ad6ed658edcc0e7021588ab1289dd8a455a0557ff61be425655241a878f3f30",
+      "tb_sha256": "c53322c763b15f37604b91d8c90182859b577c7f386a95726e8a1a3cc525e5e9"
+    },
+    {
+      "task": "comparator_3bit",
+      "source": "negative",
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 64,
+      "mismatches": 20,
+      "solution_sha256": "f16790bb69ea9a6b125d1cb19c93d2a54696504984b3a24e86454cf61e3f68c9",
+      "tb_sha256": "c53322c763b15f37604b91d8c90182859b577c7f386a95726e8a1a3cc525e5e9"
+    },
+    {
+      "task": "comparator_3bit",
+      "source": "agent",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 64,
+      "mismatches": 0,
+      "solution_sha256": "38b1c4e797bdf963f47aa3571f143f5ebb8c9c9865d03437dd659b3cc86e42ee",
+      "tb_sha256": "c53322c763b15f37604b91d8c90182859b577c7f386a95726e8a1a3cc525e5e9"
+    },
+    {
+      "task": "comparator_3bit",
+      "source": "baseline",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 64,
+      "mismatches": 0,
+      "solution_sha256": "26b3ca7ddd00831f528068f5ae7f18ca5f83af7291674b5ceac06a815a4614b0",
+      "tb_sha256": "c53322c763b15f37604b91d8c90182859b577c7f386a95726e8a1a3cc525e5e9"
+    },
+    {
+      "task": "comparator_4bit",
+      "source": "positive",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 256,
+      "mismatches": 0,
+      "solution_sha256": "2d06a944b10817c3d5af1e66f910cb7d666dff6be4c7bf64df99e9ed6875a698",
+      "tb_sha256": "8d27f8c6c3117e8cda06c05153f1b3a6c45596fb3bdea3319209dc2e9ba55b06"
+    },
+    {
+      "task": "comparator_4bit",
+      "source": "negative",
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 256,
+      "mismatches": 72,
+      "solution_sha256": "86f42d0993e23fd0a12a24a772b352be474e0236d190c5baee4d637c52088d1e",
+      "tb_sha256": "8d27f8c6c3117e8cda06c05153f1b3a6c45596fb3bdea3319209dc2e9ba55b06"
+    },
+    {
+      "task": "comparator_4bit",
+      "source": "agent",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 256,
+      "mismatches": 0,
+      "solution_sha256": "5663bc297c6c56fe027cd7f041b6a3e0e673163ee6294fee621ef48ec273aa69",
+      "tb_sha256": "8d27f8c6c3117e8cda06c05153f1b3a6c45596fb3bdea3319209dc2e9ba55b06"
+    },
+    {
+      "task": "comparator_4bit",
+      "source": "baseline",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 256,
+      "mismatches": 0,
+      "solution_sha256": "6b14c01d2d0ed00d55939bbb1c7fccf26bbd2a7971bc6b2d79426e2d1d9c2392",
+      "tb_sha256": "8d27f8c6c3117e8cda06c05153f1b3a6c45596fb3bdea3319209dc2e9ba55b06"
+    },
+    {
+      "task": "adder_8bit",
+      "source": "positive",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 131072,
+      "mismatches": 0,
+      "solution_sha256": "6ed53c5e612a97e1be343ffab41194d720f78fec83b5fdb16c3bbe4cc3382145",
+      "tb_sha256": "d42f850d2e0137a67d348267eb165a8be58f80f45caf9cb02067021df0b4277c"
+    },
+    {
+      "task": "adder_8bit",
+      "source": "negative",
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 131072,
+      "mismatches": 65536,
+      "solution_sha256": "3de354f56b7e93bb33a2680096ab30744cd6f5bf7ce7fc640bfc20e4b6e985a7",
+      "tb_sha256": "d42f850d2e0137a67d348267eb165a8be58f80f45caf9cb02067021df0b4277c"
+    },
+    {
+      "task": "adder_8bit",
+      "source": "agent",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 131072,
+      "mismatches": 0,
+      "solution_sha256": "07575c939f850637b6bbad6346f6d9a48051672bc4ffd342ae29e7dffeaee1fe",
+      "tb_sha256": "d42f850d2e0137a67d348267eb165a8be58f80f45caf9cb02067021df0b4277c"
+    },
+    {
+      "task": "adder_8bit",
+      "source": "baseline",
+      "status": "fail",
+      "failure_kind": "xelab_failed",
+      "checks": null,
+      "mismatches": null,
+      "solution_sha256": "b0e1fb46b0851ec75186a3a192bd43f7f2befc38d0951137b0c21613c03de205",
+      "tb_sha256": "d42f850d2e0137a67d348267eb165a8be58f80f45caf9cb02067021df0b4277c"
+    },
+    {
+      "task": "multi_8bit",
+      "source": "positive",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 65536,
+      "mismatches": 0,
+      "solution_sha256": "a7e0fb97db6c74c524a5c5e6dd353b7148c67ed4acc23853a867824063e42085",
+      "tb_sha256": "84c5016497bcedb87c0582240a0d9b658cd1c0238250f81a682e30184ed70752"
+    },
+    {
+      "task": "multi_8bit",
+      "source": "negative",
+      "status": "fail",
+      "failure_kind": "semantic_mismatch",
+      "checks": 65536,
+      "mismatches": 63568,
+      "solution_sha256": "92e356168bec1f2f3ba86c8d964dee5e0151c98bcb5114925ab9774f74fde837",
+      "tb_sha256": "84c5016497bcedb87c0582240a0d9b658cd1c0238250f81a682e30184ed70752"
+    },
+    {
+      "task": "multi_8bit",
+      "source": "agent",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 65536,
+      "mismatches": 0,
+      "solution_sha256": "52a2d1b74a05d9ca147497b5223e265101b0082363d919bf60a0158476d380a8",
+      "tb_sha256": "84c5016497bcedb87c0582240a0d9b658cd1c0238250f81a682e30184ed70752"
+    },
+    {
+      "task": "multi_8bit",
+      "source": "baseline",
+      "status": "pass",
+      "failure_kind": null,
+      "checks": 65536,
+      "mismatches": 0,
+      "solution_sha256": "c8e8219fb6ea937e534d967312df60ca5508c131f4cd92b0ea4611cec5cc7664",
+      "tb_sha256": "84c5016497bcedb87c0582240a0d9b658cd1c0238250f81a682e30184ed70752"
+    }
+  ],
+  "checks_per_complete_four_task_set": 196928,
+  "elapsed_s": 167.7832390703261,
+  "model_calls": 0,
+  "new_score": false,
+  "formal_runtime_integrated": false,
+  "guard": {
+    "started_at_utc": "2026-10-04T04:50:53.193829+00:00",
+    "finished_at_utc": "2026-10-04T04:53:41.417079+00:00",
+    "elapsed_s": 168.1172852795571,
+    "stage_rc": 0,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true,
+    "model_idle_after": {
+      "health_status": "ok",
+      "model_name": "Qwen3.6-27B-Q4_K_M",
+      "slot_count": 1,
+      "processing_slots": 0,
+      "model_pid_owns_port": true
+    }
+  },
+  "owned_cleanup_verified": true,
+  "remaining_owned_processes": 0,
+  "evidence": {
+    "archive_sha256": "bab8fee296bd857a8501b37ad2336ec7b407e6b791ef7a3929d12476cc223cdf",
+    "manifest_files": 169,
+    "all_hashes_verified": true
+  },
+  "postflight": {
+    "utc": "2026-10-04T04:56:01.529558+00:00",
+    "model_health": {
+      "status": "ok"
+    },
+    "processing_slots": 0,
+    "slot_exists": false,
+    "ports": {
+      "8000": true,
+      "7860": false,
+      "7867": false
+    },
+    "workspace_free_gib": 10.081180572509766,
+    "model_pid": 2013333,
+    "instance_shutdown_or_model_restart": false
+  },
+  "pre_execution_failure": {
+    "reason": "Windows separators in source manifest; launch verification FileNotFoundError before process creation",
+    "eda_calls": 0,
+    "model_calls": 0,
+    "guard_started": false,
+    "inputs_changed": false
+  },
+  "prior_guard_failure": {
+    "error": "ProcessLookupError: [Errno 3] No such process",
+    "stage_elapsed_s": 91.73968119826168,
+    "archive_sha256": "a16108138b8552744e281cc57e260665bf7cb1cae42db50a2b17464dfa917ccf",
+    "manifest_files": 117,
+    "owned_cleanup_verified": true,
+    "own_slot_released": true,
+    "model_calls": 0,
+    "input_bytes_unchanged": true
+  },
+  "branch": "codex/autonomous-rtl-20261004",
+  "coordination": "Nonblocking existing .gpu.lock plus original SLOT.lock resource guard",
+  "limits": [
+    "This is a small cross-source reliable contract substrate, not a new whole RTLLM score or independent natural validation of B2.",
+    "Tasks are known public RTLLM tasks; old 8 candidates remain byte-identical, adder prompt correction cannot be retroactively attributed to those generations.",
+    "Unsigned two-state finite combinational domain only; implementation algorithm not formally proven from simulation; X/Z and timing/resource quality unmeasured.",
+    "No reference/TB/grades sent to a model; zero new inference. Historical reference/TB and aggregates unchanged."
+  ]
+}

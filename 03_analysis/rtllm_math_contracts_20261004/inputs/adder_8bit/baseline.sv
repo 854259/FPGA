@@ -1,0 +1,25 @@
+module TopModule (
+    input  logic [7:0] a,
+    input  logic [7:0] b,
+    input  logic       cin,
+    output logic [7:0] sum,
+    output logic       cout
+);
+
+    logic [7:0] carry;
+
+    assign carry[0] = cin;
+
+    for (genvar i = 0; i < 8; i++) begin : gen_adder
+        full_adder fa_inst (
+            .a     (a[i]),
+            .b     (b[i]),
+            .cin   (carry[i]),
+            .sum   (sum[i]),
+            .cout  (carry[i+1])
+        );
+    end
+
+    assign cout = carry[8];
+
+endmodule
