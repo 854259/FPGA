@@ -1,0 +1,11 @@
+# CVDP complete runner/interface map
+
+2026-10-04, frozen source95939335b98e4f5634c0f89aa6a5a16a87f8aed1. AMD driver3043491/stage3043496 completed; static mapping1.405981s, guard1.503581s; zero model/EDA/test-code execution. Public receipt: `CVDP_INTERFACE_MAP_RESULT_20261004.json`.
+
+All302 runner test modules, HDL tops and declared source paths resolved under the limited AST mapping. All302 use non-TopModule tops;24 such names do not occur as exact tokens in their prompts. There are167 no-input/single-output records across139 name families, including16 with an undisclosed exact top name. Excluding three name-only RTLLM collisions would leave166/138; this is not an admitted or frozen validation set. Naming alone does not establish semantic independence.
+
+Following actual runner entrypoints yields13 nonempty duplicate test-source groups/26 records, all within name families. The earlier filename-prefix method yielded12/24 after empty maps were excluded; its original evidence is retained. All810 Python files parse; this is not an import, runtime or functional certification. References remain empty. Independent admitted designs remain zero. Fair interfaces for all three arms and validated oracles are unresolved; do not change the candidate to fit this dataset.
+
+Private archive INTERFACE_EVIDENCE.zip SHA179897cfc120b2dc4c98caed061526bc0080c75b66db194085633bfef713b0d8 and11 internal files verified locally; public projection SHAcb33381404f80e6b90887bfb5ffd9a362a4510ae05d953885317d0c08d91d3a0. Raw private inventory stays outside GitHub. Transfer cleanup to be recorded after final verification.
+
+Sample-adequacy planning, not an adoption threshold or observed result: with zero harms among N independent originally-correct designs, the exact one-sided95% upper bound is 1-0.05^(1/N): N139 gives2.1321%, N178 gives1.6689%; at least299 would be needed for below1%. Repeated generations do not supply independent designs. These total source-family counts are not counts of eligible correct designs. Quality deltas and paired uncertainty must still be reported without treating finite zero-harm observations as safety proof.
