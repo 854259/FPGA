@@ -3725,9 +3725,27 @@
     "regression": 4275,
     "stage_cap_s": 180,
     "deployed": false,
-    "status": "frozen_unrun",
+    "status": "complete_passed_engineering_only",
     "candidate_sha256": "a1ce1552754c7c72d9c33b0f596937959bc392d305c3e956c266c5a4b2188157",
     "eda_cap": 4,
+    "model_calls": 0,
+    "ticket": 21,
+    "pid": 3383822,
+    "source_commit": "ee7d1c25c5eac9416a16c59741379bd0ad0eda97",
+    "stage_s": 6.12780055962503,
+    "archive": "320b54dec2799b017213364df2c0f64dffae05e0fc0fa5fdcac21ee9ff002ac8",
+    "members": 44,
+    "cleanup_verified": true
+  },
+  "shift_coverage_R3_20261005": {
+    "independent_natural_tasks": 0,
+    "eda_calls": 0,
+    "all_prompts": 156,
+    "full_batch_complete": false,
+    "selection_before_scores": true,
+    "stage_limit_s": 60,
+    "status": "frozen_unrun",
+    "archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
     "model_calls": 0
   }
 }

@@ -1,0 +1,35 @@
+{
+  "complete": true,
+  "passed": true,
+  "model_calls": 0,
+  "eda_calls": 4,
+  "error": null,
+  "candidate_sha256": "a1ce1552754c7c72d9c33b0f596937959bc392d305c3e956c266c5a4b2188157",
+  "keyword_sha256": "d9eb8f6bd2423e27f51206e169c8de095529079b96bc595b4e9231635f33e70c",
+  "input_manifest_sha256": "755dc7fd4f561b0fd2b3ca07bbb79ccf6354db54fe3f8c928414d531f271ee35",
+  "independent_natural_tasks": 0,
+  "full_batch_complete": false,
+  "legacy_tests": {
+    "run": 7,
+    "passed": true
+  },
+  "independent_bit_oracle_widths": 57,
+  "counts": {
+    "regression/total": 4275,
+    "new_lexical_boundary/total": 4980,
+    "new_case_boundary/total": 171
+  },
+  "supported_semantics_unchanged": true,
+  "renderer_and_counterexample_ast_unchanged": true,
+  "elapsed_s": 6.12780055962503,
+  "commit": "ee7d1c25c5eac9416a16c59741379bd0ad0eda97",
+  "ticket": 21,
+  "pid": 3383822,
+  "stage_pid": 3383827,
+  "decision": "Retain isolated lexical fix as engineering component only; first audit full archived applicability and overlap with prior development before model calls",
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "own_slot_released": true,
+  "owned_cleanup_verified": true,
+  "deployed": false
+}
