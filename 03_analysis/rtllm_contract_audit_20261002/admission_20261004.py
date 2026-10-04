@@ -218,4 +218,3 @@ if __name__=="__main__":
     for name in ("kit","out","resource-check","controls"):
         parser.add_argument("--"+name,type=Path,required=True)
     run(parser.parse_args())
-

@@ -1,0 +1,680 @@
+{
+  "schema": "rtllm_whole_inventory_admission_public",
+  "source_commit": "d3714dbec5799c2c656b474dce47145ee3ec4f4a",
+  "checked_utc": "2026-10-04T06:53:31.379905+00:00",
+  "admission_substage_complete": true,
+  "full_experiment_complete": false,
+  "new_model_calls": 0,
+  "new_reference_positive_controls": 20,
+  "new_negative_controls": 20,
+  "new_controls_passed": 20,
+  "reused_finite_domain_tasks": 9,
+  "finite_domain_tasks_total": 29,
+  "blocked_tasks": 15,
+  "original_inventory_denominator": 44,
+  "new_candidate_scores": 0,
+  "new_independent_natural_tasks": 0,
+  "elapsed_s": 234.84088382776827,
+  "guard_elapsed_s": 234.99349879007787,
+  "guard_passed": true,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup": {
+    "verified": true,
+    "method": "owned_tree_all_threads_subreaper",
+    "remaining": []
+  },
+  "own_slot_released": true,
+  "rows": [
+    {
+      "task": "adder_8bit",
+      "scope": "All 131072 binary inputs; arithmetic only, full-adder architecture requires separate evidence.",
+      "minimum_checks": 131072,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 131072,
+          "reason": "completed",
+          "source_sha256": "9cee41359cd34290d21ab9ed88f9c9d0d6ab9454db389a87cd8ff8789a142822",
+          "tb_sha256": "b36ae103efa9ddec0423f309b7b3d9d480cf74f11076e3cf983d92ec7dc1e8e2"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 131072,
+          "samples": 131072,
+          "reason": "completed",
+          "source_sha256": "1c8f8a19347e32a10d302c86e8c1e948716fd7ab5b6861e5caf9cd7f8afeaf76",
+          "tb_sha256": "b36ae103efa9ddec0423f309b7b3d9d480cf74f11076e3cf983d92ec7dc1e8e2"
+        }
+      }
+    },
+    {
+      "task": "adder_16bit",
+      "scope": "Carry chains at every bit plus 4096 fixed pseudorandom pairs; hierarchy architecture not certified.",
+      "minimum_checks": 4130,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 4130,
+          "reason": "completed",
+          "source_sha256": "92c60b0b504a714e1a06c0bbc3fdfac6cba6d89a9dcfb0a54f044c099be9bc9c",
+          "tb_sha256": "49485986f24e52bc703c8c8de3af7cc0dd0ce02fc23b6afad1d0e98aea5683ad"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 4130,
+          "samples": 4130,
+          "reason": "completed",
+          "source_sha256": "f335592d8dde3522dc4e0341dd473e40d723f074f367f60d3a3ae46df8e170c3",
+          "tb_sha256": "49485986f24e52bc703c8c8de3af7cc0dd0ce02fc23b6afad1d0e98aea5683ad"
+        }
+      }
+    },
+    {
+      "task": "adder_32bit",
+      "scope": "Carry chains at every bit plus 4096 fixed pseudorandom pairs; CLA architecture not certified.",
+      "minimum_checks": 4162,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 4162,
+          "reason": "completed",
+          "source_sha256": "beb678b5df45f347c881a3dcb94865a84077c85c8f962cdd13e6d6a5c8b1e464",
+          "tb_sha256": "eb00ea9b076a40e15de9e325aa70606c278b6bc116d257081b101f14a1b75cc9"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 4162,
+          "samples": 4162,
+          "reason": "completed",
+          "source_sha256": "09af0635eefce44c75aa6761b2e62fe0e439a354376194e43db1e0f19015836c",
+          "tb_sha256": "eb00ea9b076a40e15de9e325aa70606c278b6bc116d257081b101f14a1b75cc9"
+        }
+      }
+    },
+    {
+      "task": "comparator_3bit",
+      "scope": "All 64 inputs; arithmetic comparison, architecture not certified.",
+      "minimum_checks": 64,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 64,
+          "reason": "completed",
+          "source_sha256": "738336a563fd87f1c61fffd72c5fd0d77445952b8145aa23593fffef21906d36",
+          "tb_sha256": "d01016f215bc27b5e88230c1af968040573782ebcae6343951105ebc0aaeee90"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 64,
+          "samples": 64,
+          "reason": "completed",
+          "source_sha256": "d1daa4fa7909f5ee23787ff5742850382bd9ff1dd7f7a4971853726caff81458",
+          "tb_sha256": "d01016f215bc27b5e88230c1af968040573782ebcae6343951105ebc0aaeee90"
+        }
+      }
+    },
+    {
+      "task": "comparator_4bit",
+      "scope": "All 256 inputs; arithmetic comparison, architecture not certified.",
+      "minimum_checks": 256,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 256,
+          "reason": "completed",
+          "source_sha256": "d118e3b6eb85675dc121ba550c3d819ededb4025de5d63ada369f14bd5043646",
+          "tb_sha256": "d11c6d8b9b10cd05553601249883435164853538c71b6f3d742c8efdbcfce408"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 256,
+          "samples": 256,
+          "reason": "completed",
+          "source_sha256": "ead73605ec6a9c3885ffb47873b79b908e0e0aa13bdd496216172a6460ef055a",
+          "tb_sha256": "d11c6d8b9b10cd05553601249883435164853538c71b6f3d742c8efdbcfce408"
+        }
+      }
+    },
+    {
+      "task": "multi_8bit",
+      "scope": "All 65536 products including high bits; shift-add architecture not certified.",
+      "minimum_checks": 65536,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 65536,
+          "reason": "completed",
+          "source_sha256": "f6538ca31c697e885ad6281620e107c2b271839c8124afacac167b253452fa93",
+          "tb_sha256": "81be3686514527ce90b7cc9cfe3026decd244e096257e10a0bc7f5c6ce3dfd19"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 65536,
+          "samples": 65536,
+          "reason": "completed",
+          "source_sha256": "aa3caf187ded7433ca448ec3959d34bff6a644fa59096bd7a9309a7c02e476ed",
+          "tb_sha256": "81be3686514527ce90b7cc9cfe3026decd244e096257e10a0bc7f5c6ce3dfd19"
+        }
+      }
+    },
+    {
+      "task": "sub_64bit",
+      "scope": "49 signed boundary combinations and 4096 deterministic 64-bit pairs.",
+      "minimum_checks": 4145,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 4145,
+          "reason": "completed",
+          "source_sha256": "98899fe429dfd2fa5c7110eff7cc47793ef8de9c857f5f50f8d3865db515ddd3",
+          "tb_sha256": "d6690fb5986cc3083f793cf31d451e5ae261ee32e9e0016270762989c063e0b2"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 4145,
+          "samples": 4145,
+          "reason": "completed",
+          "source_sha256": "3c1e8b10df5509d0f11d50e489ef3a778df784e87f86590a5b292cc925fab106",
+          "tb_sha256": "d6690fb5986cc3083f793cf31d451e5ae261ee32e9e0016270762989c063e0b2"
+        }
+      }
+    },
+    {
+      "task": "calendar",
+      "scope": "86410 clock transitions covering complete day wrap plus asynchronous reset; three-always structural requirement not certified.",
+      "minimum_checks": 86412,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 86412,
+          "reason": "completed",
+          "source_sha256": "f8bb5d283c7a6e3dd3e74c8c348841c52fbdbf4a71f4c5f0f284cc24c834a7e7",
+          "tb_sha256": "2addc1b7556cb8a3417a59946d08ca368bbfe968f64db8a85b971f239d8eeeda"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 86412,
+          "samples": 86412,
+          "reason": "completed",
+          "source_sha256": "22ae67be96e9c502322b39d3d70565fd7fcfacfbc023f0c282e3cedf3c8f56a7",
+          "tb_sha256": "2addc1b7556cb8a3417a59946d08ca368bbfe968f64db8a85b971f239d8eeeda"
+        }
+      }
+    },
+    {
+      "task": "counter_12",
+      "scope": "512 cycles of pause, enable and wrap; reset checked at clock edge without adding unspecified asynchronous semantics.",
+      "minimum_checks": 514,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 514,
+          "reason": "completed",
+          "source_sha256": "3ee5b5e472c2eedd10f7a717a3afe517caacb85d4967bc12a6cbe3c1f046f56d",
+          "tb_sha256": "a2e777a4cd3dfdd8966a7cdfa73328b7f9f6094643089f5c3bea67a42cea518e"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 514,
+          "samples": 514,
+          "reason": "completed",
+          "source_sha256": "adf641899ac7b88c926d487b638c4fd99424eb1125a2a6e4b9d9993d9f01afa2",
+          "tb_sha256": "a2e777a4cd3dfdd8966a7cdfa73328b7f9f6094643089f5c3bea67a42cea518e"
+        }
+      }
+    },
+    {
+      "task": "JC_counter",
+      "scope": "Two complete 128-state Johnson periods and asynchronous reset.",
+      "minimum_checks": 262,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 262,
+          "reason": "completed",
+          "source_sha256": "7ac5a72997b1da4467938d463ee33547c239ac6d8b845d0cf5184c27d8d09d05",
+          "tb_sha256": "c702aa390afae30e7d0b682eb22fd3a9c4e07400ebdbd95cb34a3b0b3666b169"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 262,
+          "samples": 262,
+          "reason": "completed",
+          "source_sha256": "8e917268e432c3215141c201e66542cc811e7cf1762b29a2981f6701bc57d121",
+          "tb_sha256": "c702aa390afae30e7d0b682eb22fd3a9c4e07400ebdbd95cb34a3b0b3666b169"
+        }
+      }
+    },
+    {
+      "task": "LFSR",
+      "scope": "Four complete 15-state periods; reset only at specified rising edge.",
+      "minimum_checks": 62,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 62,
+          "reason": "completed",
+          "source_sha256": "c126d0a1648a32ccffdeeb4088acc963a459fca89f01122814a81f57ada8455c",
+          "tb_sha256": "12d4f1740ef5a1723fef280a090872f33be88026229239c93a070e5dc8aedbd8"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 62,
+          "samples": 62,
+          "reason": "completed",
+          "source_sha256": "aebbd7f6076b10d3a9f8f1e25f0fed2f609df24fd2ef6b2d606cea4a90a398cb",
+          "tb_sha256": "12d4f1740ef5a1723fef280a090872f33be88026229239c93a070e5dc8aedbd8"
+        }
+      }
+    },
+    {
+      "task": "right_shifter",
+      "scope": "Initial zero and 2048 serial shifts spanning all 8-bit patterns.",
+      "minimum_checks": 2049,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 2049,
+          "reason": "completed",
+          "source_sha256": "797c395dd24ebf9f6c78bb61ee3c9acdb6aee8d3f27f9603ef6527c2ee36327d",
+          "tb_sha256": "a9e7b881dbe26e22d210dae94f0db0f44414e94001f524dcec115f6020a20a89"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 2049,
+          "samples": 2049,
+          "reason": "completed",
+          "source_sha256": "e6a634111bb4e68dad24964450cb1185bc1023ad39195a0a4b8d681ec67f890e",
+          "tb_sha256": "a9e7b881dbe26e22d210dae94f0db0f44414e94001f524dcec115f6020a20a89"
+        }
+      }
+    },
+    {
+      "task": "ring_counter",
+      "scope": "Four complete one-hot periods and edge-observed reset; no extra asynchronous reset rule.",
+      "minimum_checks": 34,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 34,
+          "reason": "completed",
+          "source_sha256": "e80bc06b90718275092f924be656c27dc5cdc7f50c0efee23f27852b583484de",
+          "tb_sha256": "67d633d2e3ee7135514f358b390ccb679b4c798c016f9e043317b975a104168e"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 34,
+          "samples": 34,
+          "reason": "completed",
+          "source_sha256": "1529c5db89eb45be006c15d3fd9e896a0c59cce879ad8ca1142e2d3eac03097d",
+          "tb_sha256": "67d633d2e3ee7135514f358b390ccb679b4c798c016f9e043317b975a104168e"
+        }
+      }
+    },
+    {
+      "task": "signal_generator",
+      "scope": "Four 64-cycle triangle periods including both endpoint holds, plus asynchronous reset.",
+      "minimum_checks": 262,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 262,
+          "reason": "completed",
+          "source_sha256": "61e74b880ad7d2923380af92d2c26254c7c2fe3d2308bf88ce60e0a19e9b0ac7",
+          "tb_sha256": "5cbcdc8210d686f395cdac1d8fdb83a794bc85c6657ad8a6ebeecc88f1cbfca1"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 262,
+          "samples": 262,
+          "reason": "completed",
+          "source_sha256": "d2733f305bb33ba7a1a3ac23a112a430951b808fa5cd5eec4d14ac6644029c9a",
+          "tb_sha256": "5cbcdc8210d686f395cdac1d8fdb83a794bc85c6657ad8a6ebeecc88f1cbfca1"
+        }
+      }
+    },
+    {
+      "task": "pe",
+      "scope": "512 MAC cycles with modulo-2^32 overflow, signed/unsigned lower-word equivalence, asynchronous reset.",
+      "minimum_checks": 514,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 514,
+          "reason": "completed",
+          "source_sha256": "84e03bc12898e7354017b1529c34569811cde63f99022fcf7c8df46e5313fe2e",
+          "tb_sha256": "69ec35d6569dee4902a6f9a18939206448714c3b6ce8a9098a71e06d0ca32784"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 514,
+          "samples": 514,
+          "reason": "completed",
+          "source_sha256": "e4b8bf7784b08ead9d32a6a8d9d238164f44dfaae8508b522bf90f295b85ab54",
+          "tb_sha256": "69ec35d6569dee4902a6f9a18939206448714c3b6ce8a9098a71e06d0ca32784"
+        }
+      }
+    },
+    {
+      "task": "multi_pipe_4bit",
+      "scope": "Default size=4, all 256 operand pairs under two-register latency and reset; other sizes/architecture excluded.",
+      "minimum_checks": 260,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 260,
+          "reason": "completed",
+          "source_sha256": "37515a1dd8d20df0d0ec2b5338f2e992cf2c898620087cc6a9c7fe9dd3a21df3",
+          "tb_sha256": "e8d499c080afb23316b7e722ec99ac2d65cad4cf7b0a8c61620f61b00da7739d"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 260,
+          "samples": 260,
+          "reason": "completed",
+          "source_sha256": "2774c7a1778ac922bbf33393d3c73da8bd8fbad4096e0e4278c31646d9afe1c6",
+          "tb_sha256": "e8d499c080afb23316b7e722ec99ac2d65cad4cf7b0a8c61620f61b00da7739d"
+        }
+      }
+    },
+    {
+      "task": "parallel2serial",
+      "scope": "Frame-relative MSB-first order with changing inputs, period4 after first frame; permits any first phase within four cycles. Initial serial bit/reset edge semantics remain uncertified.",
+      "minimum_checks": 500,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 1425,
+          "reason": "completed",
+          "source_sha256": "ac4fa9657715eff4d8ce360ea83f715e5192ce034707c1baadcc89c4e249a1d3",
+          "tb_sha256": "5b581f98139f2002edf079eeb20ff462b96c84e50603bccb27e2264e37c5aed1"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 649,
+          "samples": 1171,
+          "reason": "completed",
+          "source_sha256": "92f8362ae3a999c66ca6f1b2ea457ffb8b99da0cf7595ecb7642db3b7f2759b3",
+          "tb_sha256": "5b581f98139f2002edf079eeb20ff462b96c84e50603bccb27e2264e37c5aed1"
+        }
+      }
+    },
+    {
+      "task": "freq_divbyeven",
+      "scope": "All specified even divisors2..32, 1024 cycles and asynchronous reset.",
+      "minimum_checks": 17442,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 17442,
+          "reason": "completed",
+          "source_sha256": "4391979cd01a55be6983682f6d37cdcb1a64fca5d0aea8793a367f60d3b6a5a8",
+          "tb_sha256": "bca90a64ed0af97ded8697634ea3f4bf98cae11ef1c341e02ba6c6f633af04e4"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 17442,
+          "samples": 17442,
+          "reason": "completed",
+          "source_sha256": "51fe0a142d611cffee1d25366ae026cbcfd81656d2af4aa86b4c3781b1a55975",
+          "tb_sha256": "bca90a64ed0af97ded8697634ea3f4bf98cae11ef1c341e02ba6c6f633af04e4"
+        }
+      }
+    },
+    {
+      "task": "freq_divbyfrac",
+      "scope": "Steady-state pulse widths 3/4 half-cycles and asynchronous reset, phase after startup not certified; default parameter domain only.",
+      "minimum_checks": 1100,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 1288,
+          "reason": "completed",
+          "source_sha256": "56a716339844b4e23edb6fdc4e06337baa7a739aa5763b0aa80c526e7facac8f",
+          "tb_sha256": "eca6f3c084469f39f2e7a0efe3290a2ef396d2f4db3db1f932759bf158a5ceb9"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 286,
+          "samples": 1287,
+          "reason": "completed",
+          "source_sha256": "768a9fadc9a5c7a919614ae5568bedd833437a12e0869eb8ee2ea23929a2e6e3",
+          "tb_sha256": "eca6f3c084469f39f2e7a0efe3290a2ef396d2f4db3db1f932759bf158a5ceb9"
+        }
+      }
+    },
+    {
+      "task": "freq_divbyodd",
+      "scope": "Steady-state pulse widths 5/5 half-cycles and asynchronous reset, phase after startup not certified; default parameter domain only.",
+      "minimum_checks": 1100,
+      "passed": true,
+      "arms": {
+        "positive": {
+          "valid": true,
+          "errors": 0,
+          "samples": 1201,
+          "reason": "completed",
+          "source_sha256": "e505ce656da4b76f488917edb25196be091fa8171049e66dc36160d0fd792860",
+          "tb_sha256": "bd0a2b78ce54ff9be6255ee689643a21dcb9f465916be45dfc6a5d35e41e6754"
+        },
+        "negative": {
+          "valid": true,
+          "errors": 2,
+          "samples": 1202,
+          "reason": "completed",
+          "source_sha256": "aa6d0e123697d35261adbb432cd1b7a4ba6fc3936d2324e33b6d439f0bcca2da",
+          "tb_sha256": "bd0a2b78ce54ff9be6255ee689643a21dcb9f465916be45dfc6a5d35e41e6754"
+        }
+      }
+    }
+  ],
+  "blocked": [
+    {
+      "task": "adder_pipe_64bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "edge_detect",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "multi_16bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "multi_booth_8bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "multi_pipe_8bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "pulse_detect",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "radix2_div",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "sequence_detector",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "square_wave",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "traffic_light",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "width_8to16",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "div_16bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "fixed_point_adder",
+      "reason": "Sign-magnitude sign/operand comparisons and overflow handling do not uniquely specify behavior; do not silently choose two's-complement or saturation."
+    },
+    {
+      "task": "fixed_point_substractor",
+      "reason": "Same-sign and opposite-sign subtraction sign rules conflict with arithmetic; no unique reference-independent contract."
+    },
+    {
+      "task": "float_multi",
+      "reason": "No uniquely specified transaction/output latency and special-value rounding contract; reference cycle sequence must not become a hidden requirement."
+    }
+  ],
+  "reused": [
+    {
+      "task": "adder_bcd",
+      "source_run": "rtllm_contract_pilot_20261002T113602Z",
+      "files": {
+        "ref.sv": "9573acb2da13824c5a3c634278a2fca6b139d2bee2617fc43d3ec81759589c87",
+        "tb.sv": "b103d5d63806bddac0c316463d95762ebd82b0cc5fd28c47d1df95c7c9c67d84",
+        "reference/solution.sv": "0a926dab3df46462f59290c16b2fd130801d756cb44827966c99125692f36092",
+        "task.json": "dcaf5edf8f374ace144281909c0371ae44f6a2445ce82f6ea4e9b918fd8ec68c"
+      },
+      "scope": "historically verified finite domain; no new model or EDA; not universal contract proof"
+    },
+    {
+      "task": "instr_reg",
+      "source_run": "rtllm_contract_pilot_20261002T113602Z",
+      "files": {
+        "ref.sv": "6db0f0924bd2d289cdb4a9d2e24ae8628431dfc6d1842d1c3024ecb23b1b5f73",
+        "tb.sv": "412e3e0c2c005918c84adaad5049c4800c27808ee12cdd22a2d48a716b035b7e",
+        "reference/solution.sv": "a1c9050c6bd72392f95c23c09509c33510be47468d12cb7cb5426561da741e34",
+        "task.json": "17ad3d66a7f30979063d954f6c65726efca01cdd7ea16f40282a4f7d13ff3cf8"
+      },
+      "scope": "historically verified finite domain; no new model or EDA; not universal contract proof"
+    },
+    {
+      "task": "freq_div",
+      "source_run": "rtllm_contract_pilot2_v2_20261002T115303Z",
+      "files": {
+        "ref.sv": "0c87482f0b589e74dae874487de5bb6c667e7fd0a27863092aca7169ad050b6d",
+        "tb.sv": "870b7f8aeae10c9225f5e205db7aba5bb7fc4c3b6a25c9e92638f706cf27750f",
+        "reference/solution.sv": "7c47da0fb70f90b5bf1defd33e5019f6655384d19b64cc59d0919c270212854c",
+        "task.json": "bbe577afb078ad69614adf0130f00d0c630056da385373ca74f87540824fe762"
+      },
+      "scope": "historically verified finite domain; no new model or EDA; not universal contract proof"
+    },
+    {
+      "task": "up_down_counter",
+      "source_run": "rtllm_contract_pilot2_v2_20261002T115303Z",
+      "files": {
+        "ref.sv": "5d5a9c39133c368a8501bef99f2baa041393ef53981901cedb551a0f9da520fe",
+        "tb.sv": "d53ee4792fb15a3c31f9310483e7fa03748de0654ee4966305e98146851a3888",
+        "reference/solution.sv": "d923f67fcf1dd5d05852c886d0322b771acbbd5a18363b50d087e50154d53e3f",
+        "task.json": "b51f731af228dd4581359fb57b7c9077bee7de7b9698d22921f48506fcd28d3d"
+      },
+      "scope": "historically verified finite domain; no new model or EDA; not universal contract proof"
+    },
+    {
+      "task": "accu",
+      "source_run": "rtllm_contract_pilot3_v3_20261002T121353Z",
+      "files": {
+        "ref.sv": "10bf05fc1d081d7f1d05318b023f647b91b3384504488a2785cbea992204e75b",
+        "tb.sv": "0bad9bb2aa82bff6bc5b3ee826ff7b71bafd3eed53f7d265e10899217bac6adf",
+        "reference/solution.sv": "74e3f9609c13a4be70976ec03738bd99cac08e427dd27a8477ebb503cee5760e",
+        "task.json": "edc0ffd2df1ba433a52e8215f3ce5e1a914fd1e2c9bc8a7e46269d483f76b158"
+      },
+      "scope": "historically verified finite domain; no new model or EDA; not universal contract proof"
+    },
+    {
+      "task": "fsm",
+      "source_run": "rtllm_contract_pilot3_v3_20261002T121353Z",
+      "files": {
+        "ref.sv": "bc4725eb227e07b9089ad55f7105a54dc9121df28f4acdafd050fd27710f5a25",
+        "tb.sv": "4e76b72f281a302ddbf9e86db53d70fb22d8678c0e2d1a803690245d7e4ee105",
+        "reference/solution.sv": "5f54da42d1de1f9e5c746ab037ddad6ceec9ae21ee487e8d296e8ed382ad413c",
+        "task.json": "e0ae9b0eb9c9a4232e776441ba88502c28ea6556495f0008270ba90663327537"
+      },
+      "scope": "historically verified finite domain; no new model or EDA; not universal contract proof"
+    },
+    {
+      "task": "serial2parallel",
+      "source_run": "rtllm_contract_pilot3_v3_20261002T121353Z",
+      "files": {
+        "ref.sv": "5594824321cb07bb045aac10fa1616399003287911b9b840bfaef32e06eeac8c",
+        "tb.sv": "a07468977a10c3945b80b13faf0d097fcd11a3b184cfccafce58350590f17654",
+        "reference/solution.sv": "03fc92bae2153844366deb48d2b049723d128bbbbd5255c84b81007f99390a87",
+        "task.json": "81206f28665aec60fce9a139eafff8b8d200f99e426281ba2d54ee93110e1381"
+      },
+      "scope": "historically verified finite domain; no new model or EDA; not universal contract proof"
+    },
+    {
+      "task": "synchronizer",
+      "source_run": "rtllm_contract_pilot3_v3_20261002T121353Z",
+      "files": {
+        "ref.sv": "50e66f87fd614307802d878b98c86cc3f889fa0821be345fad687418b4a87d3f",
+        "tb.sv": "f1e4bce765d9c6ad8c98443780e2e0a133cbb7f86c305575c4e33dae3d97c931",
+        "reference/solution.sv": "9be1b79a685b92763c7be6e5f95a47a9be9e0a67e062bb793f4dccfb48907cca",
+        "task.json": "c6a620b4b186e9e6f0571c8de4f14b58fe9c35fe7120a198673816b062433172"
+      },
+      "scope": "historically verified finite domain; no new model or EDA; not universal contract proof"
+    },
+    {
+      "task": "barrel_shifter",
+      "source_run": "helper_H1_20261004T054811Z_e144197",
+      "scope": "H1 exhaustive 2048 default inputs; no rerun",
+      "files": {
+        "ref.sv": "43a831eef3fe8d084acbfa19095e9679b4df32dfa4ad03834534bafe674c798d",
+        "tb.sv": "7f9d64b1ae11534cd365cce639fbb547bef257ed4344bfab6dff6a67ad3120a0",
+        "reference/solution.sv": "38e6e446301209a205b76490df92a418227ad24c64c0f8f5a6d2cf1e6c83d0ff",
+        "task.json": "869d1020cd03a477c8c267743bdd89103b8b787ef2af0279c0bd4a64752467bc"
+      }
+    }
+  ],
+  "limitations": [
+    "Functional finite domains only; not universal contracts or architecture certification.",
+    "Zero candidate scoring: no quality gain or new full-set score.",
+    "All sources are prior public development material; independent holdout still pending.",
+    "Original 44 denominator retained; 15 blocked records remain visible."
+  ],
+  "projection": "Omit raw process inventory; archived original preserved"
+}

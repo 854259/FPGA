@@ -1,22 +1,22 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-04T14:26:22.7746546+08:00",
+  "updated_at": "2026-10-04T15:05:11.9469321+08:00",
   "cycle": "R20261004-01",
   "full_experiment_complete": false,
   "source_csv_sha256": "ef031e8998260406b858169b07028522c4950c135ef66b1fc12aa42cc952be58",
   "historical_evidence_rechecked": true,
   "history_receipt": "RTLLM_HISTORY_RECHECK.json",
   "original_denominator": 44,
-  "finite_default_domain_evidence": 9,
-  "coverage_pending": 23,
-  "specification_blocked": 12,
+  "finite_default_domain_evidence": 29,
+  "coverage_pending": 0,
+  "specification_blocked": 15,
   "independent_unseen_tasks": 0,
   "score_aggregation_permitted": false,
   "limits": [
-    "Finite functional domains do not certify architecture, all parameters, or all temporal behavior.",
-    "Old fixtures and newly normalized prompts require a separately hashed integrated version.",
-    "Blocked tasks remain visible in original denominator; exclusions must be frozen before candidate scoring.",
-    "The old 42 pending count described H1 alone, not all historical work."
+    "29 tasks have evidence only in the declared finite functional domains; architecture, all parameters and complete temporal contracts are not certified.",
+    "All old and new fixtures are integrated in tasks_admission_v2 with per-file SHA256 manifest.",
+    "15 blocked tasks remain visible in the original 44-task denominator; exclusions predate new candidate scoring.",
+    "All 44 tasks are historical public development data, not independent unseen validation."
   ],
   "tasks": [
     {
@@ -29,37 +29,53 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "独立四有效样本scoreboard；核对valid脉冲并只在有效时判数据",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "adder_16bit",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "数学oracle、进位链定向样本；将结构要求独立静态验收",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Carry chains at every bit plus 4096 fixed pseudorandom pairs; hierarchy architecture not certified.",
+      "positive_checks": 4130,
+      "negative_detected": 4130
     },
     {
       "task": "adder_32bit",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "独立加法oracle、进位定向样本及结构检查",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Carry chains at every bit plus 4096 fixed pseudorandom pairs; CLA architecture not certified.",
+      "positive_checks": 4162,
+      "negative_detected": 4162
     },
     {
       "task": "adder_8bit",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "加法oracle与结构分开；确认完整多模块打包链",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "All 131072 binary inputs; arithmetic only, full-adder architecture requires separate evidence.",
+      "positive_checks": 131072,
+      "negative_detected": 131072
     },
     {
       "task": "adder_bcd",
@@ -72,7 +88,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "穷举10×10×2=200个合法组合；独立十进制oracle",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "adder_pipe_64bit",
@@ -82,7 +99,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "交易队列判有效和顺序；需明确延迟或合法延迟范围，否则预排除",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "barrel_shifter",
@@ -94,47 +112,68 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "穷举2048组合数学移位oracle，另验结构/完整打包",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "calendar",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "足够长的独立计数scoreboard及中途reset/跨层回卷",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "86410 clock transitions covering complete day wrap plus asynchronous reset; three-always structural requirement not certified.",
+      "positive_checks": 86412,
+      "negative_detected": 86412
     },
     {
       "task": "comparator_3bit",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "穷举64组合独立比较oracle",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "All 64 inputs; arithmetic comparison, architecture not certified.",
+      "positive_checks": 64,
+      "negative_detected": 64
     },
     {
       "task": "comparator_4bit",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "穷举256组合独立比较oracle，结构另验",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "All 256 inputs; arithmetic comparison, architecture not certified.",
+      "positive_checks": 256,
+      "negative_detected": 256
     },
     {
       "task": "counter_12",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "独立mod12计数，暂停、11回卷、中途reset",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "512 cycles of pause, enable and wrap; reset checked at clock edge without adding unspecified asynchronous semantics.",
+      "positive_checks": 514,
+      "negative_detected": 514
     },
     {
       "task": "div_16bit",
@@ -144,7 +183,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "非零域数学除法oracle，定向A=B/小于B/极值；零域先不判",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "edge_detect",
@@ -154,37 +194,41 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "澄清脉冲与保持优先级；缓慢/连续边沿定向测相位",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "fixed_point_adder",
-      "status": "coverage_pending",
+      "status": "specification_blocked",
       "historical_classification": "已确认契约问题",
       "evidence": [],
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "显式#(.N(32),.Q(15))绑定双方；独立明确编码/零/溢出oracle",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Sign-magnitude sign/operand comparisons and overflow handling do not uniquely specify behavior; do not silently choose two's-complement or saturation."
     },
     {
       "task": "fixed_point_substractor",
-      "status": "coverage_pending",
+      "status": "specification_blocked",
       "historical_classification": "已确认契约问题",
       "evidence": [],
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "先同绑定32/15；独立验证零规则；澄清符号编码/算术，不自动改成二补码减法",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Same-sign and opposite-sign subtraction sign rules conflict with arithmetic; no unique reference-independent contract."
     },
     {
       "task": "float_multi",
-      "status": "coverage_pending",
+      "status": "specification_blocked",
       "historical_classification": "已确认契约问题",
       "evidence": [],
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "预排除；先独立IEEE oracle，明确舍入/NaN比较及输入保持、输出时刻",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "No uniquely specified transaction/output latency and special-value rounding contract; reference cycle sequence must not become a hidden requirement."
     },
     {
       "task": "freq_div",
@@ -196,37 +240,53 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "输入周期10ns；双边沿测比率、周期和reset",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "freq_divbyeven",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "显式绑定双方NUM_DIV；覆盖合法偶数，边沿波形oracle",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "All specified even divisors2..32, 1024 cycles and asynchronous reset.",
+      "positive_checks": 17442,
+      "negative_detected": 17442
     },
     {
       "task": "freq_divbyfrac",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "双边沿独立7半步波形oracle；不要误把正沿支路4/3间隔当合成输出",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Steady-state pulse widths 3/4 half-cycles and asynchronous reset, phase after startup not certified; default parameter domain only.",
+      "positive_checks": 1288,
+      "negative_detected": 286
     },
     {
       "task": "freq_divbyodd",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "绑定默认5；双边沿波形oracle；扩参数域前确认计数宽度/支持范围",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Steady-state pulse widths 5/5 half-cycles and asynchronous reset, phase after startup not certified; default parameter domain only.",
+      "positive_checks": 1201,
+      "negative_detected": 2
     },
     {
       "task": "fsm",
@@ -238,7 +298,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "驱动后、采样posedge前检查Mealy输出并检查reset/定向重叠",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "instr_reg",
@@ -250,27 +311,38 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "改低有效reset序列；逐种fetch及保持独立scoreboard；不强行加未给异步要求",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "JC_counter",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "独立移位scoreboard，自reset首拍检查和128状态回卷",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Two complete 128-state Johnson periods and asynchronous reset.",
+      "positive_checks": 262,
+      "negative_detected": 262
     },
     {
       "task": "LFSR",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "独立15状态/反馈轨迹，reset采样相位明确后扩测",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Four complete 15-state periods; reset only at specified rising edge.",
+      "positive_checks": 62,
+      "negative_detected": 62
     },
     {
       "task": "multi_16bit",
@@ -280,17 +352,23 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "reset隔离完整交易，持续start、判最终数学乘积/done；逐拍实现要求另报，重启/abort先澄清",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "multi_8bit",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "独立数学乘积及高位/全1定向；算法结构另验",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "All 65536 products including high bits; shift-add architecture not certified.",
+      "positive_checks": 65536,
+      "negative_detected": 65536
     },
     {
       "task": "multi_booth_8bit",
@@ -300,17 +378,23 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "选择最终signed乘积+rdy子合同，或先公布逐拍算法优先级；不可直接删除中间检查后称原全合同通过",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "multi_pipe_4bit",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "显式size=4；两级数学流水scoreboard，穷举256输入组合与连续流",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Default size=4, all 256 operand pairs under two-register latency and reset; other sizes/architecture excluded.",
+      "positive_checks": 260,
+      "negative_detected": 260
     },
     {
       "task": "multi_pipe_8bit",
@@ -320,27 +404,38 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "澄清enable与数据对齐延迟；独立交易oracle，同时保留invalid=0检查；补reset评测",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "parallel2serial",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "首位valid定位四位scoreboard及首帧/reset；明确reset起始计数相位若新要求",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Frame-relative MSB-first order with changing inputs, period4 after first frame; permits any first phase within four cycles. Initial serial bit/reset edge semantics remain uncertified.",
+      "positive_checks": 1425,
+      "negative_detected": 649
     },
     {
       "task": "pe",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "独立mod2^32 MAC、零/极值/累加溢出、中途reset",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "512 MAC cycles with modulo-2^32 overflow, signed/unsigned lower-word equivalence, asynchronous reset.",
+      "positive_checks": 514,
+      "negative_detected": 514
     },
     {
       "task": "pulse_detect",
@@ -350,7 +445,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "明确尾位采样前/后相位；定向01010及重叠；预排除有冲突全合同",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "radix2_div",
@@ -360,27 +456,38 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "一笔交易、sign稳定、等待res_valid并验持有/消费；除零/溢出/busy/reset极性需澄清",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "right_shifter",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "t=0及首8拍独立shift scoreboard",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Initial zero and 2048 serial shifts spanning all 8-bit patterns.",
+      "positive_checks": 2049,
+      "negative_detected": 2049
     },
     {
       "task": "ring_counter",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "首8拍onehot/方向/回卷scoreboard；reset相位以原可见合同为界",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Four complete one-hot periods and edge-observed reset; no extra asynchronous reset rule.",
+      "positive_checks": 34,
+      "negative_detected": 34
     },
     {
       "task": "sequence_detector",
@@ -390,7 +497,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "明确1001001等重叠政策；独立序列scoreboard，普通非重叠子域先判",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "serial2parallel",
@@ -402,17 +510,23 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "独立计数八有效位；输出拍不接收；只valid时判parallel，测间隙/连续",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "signal_generator",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "独立64拍轨迹/端点保持、首拍与中途reset",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Four 64-cycle triangle periods including both endpoint holds, plus asynchronous reset.",
+      "positive_checks": 262,
+      "negative_detected": 262
     },
     {
       "task": "square_wave",
@@ -422,17 +536,23 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "先澄清上电/初值/变频生效；非零稳定频率测周期而非隐藏相位",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "sub_64bit",
-      "status": "coverage_pending",
+      "status": "finite_default_domain_evidence",
       "historical_classification": "未发现明确冲突但覆盖有限",
-      "evidence": [],
+      "evidence": [
+        "RTLLM admission d3714db / ADMISSION_RESULT_20261004.json"
+      ],
       "prior_exposure": "historical_public_development_not_unseen",
-      "minimum_remaining_check": "独立64位差与符号oracle，定向极值",
+      "minimum_remaining_check": "Only the recorded finite scope is verified; retain architecture, unlisted parameters and unspecified timing as limitations.",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "49 signed boundary combinations and 4096 deterministic 64-bit pairs.",
+      "positive_checks": 4145,
+      "negative_detected": 4145
     },
     {
       "task": "synchronizer",
@@ -444,7 +564,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "交易刺激遵守稳定/间隔；独立时钟域scoreboard，两个reset分别测",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "traffic_light",
@@ -454,7 +575,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "预排除；先统一时长/过渡初态/count观察/按钮策略，再独立scoreboard",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     },
     {
       "task": "up_down_counter",
@@ -466,7 +588,8 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "独立同步reset计数，中拍assert后在posedge前后观察；定向回卷",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": true,
+      "current_verified_scope": "Historical finite scope, source hashes rechecked and integrated; no new EDA in this substage."
     },
     {
       "task": "width_8to16",
@@ -476,7 +599,10 @@
       "prior_exposure": "historical_public_development_not_unseen",
       "minimum_remaining_check": "澄清第二/下一边沿；有效交易拼接oracle，invalid只验已明示控制",
       "universal_contract_certified": false,
-      "new_normalized_dataset_controls_integrated": false
+      "new_normalized_dataset_controls_integrated": false,
+      "current_block_reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
     }
-  ]
+  ],
+  "current_admission_report": "../rtllm_contract_audit_20261002/ADMISSION_RESULT_20261004.md",
+  "current_dataset_manifest_sha256": "eae6c4cc03ea4d5b32318b49bb26bbb127e1b62cf12db8f35c8c84691b1428fa"
 }

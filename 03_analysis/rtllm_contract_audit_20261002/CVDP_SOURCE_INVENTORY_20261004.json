@@ -1,0 +1,91 @@
+{
+  "schema": "cvdp_source_metadata_inventory_v1",
+  "checked_utc": "2026-10-04T07:04:12.264795+00:00",
+  "status": "not_admitted_no_inference",
+  "source_revision": "5b807d945f6a99aa645f7e43a64a2115e281b4bf",
+  "source_url": "https://huggingface.co/datasets/nvidia/cvdp-benchmark-dataset/tree/5b807d945f6a99aa645f7e43a64a2115e281b4bf",
+  "files": [
+    {
+      "name": "cvdp_v1.1.0_nonagentic_code_generation_no_commercial.jsonl",
+      "size": 4913773,
+      "sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857"
+    },
+    {
+      "name": "LICENSE",
+      "size": 11873,
+      "sha256": "cedcd612607018ad841d87d7f1c877630778a50c71692610fe76acdc22700719"
+    },
+    {
+      "name": "NOTICE",
+      "size": 6813,
+      "sha256": "3d8753e57eab52910ccb61a1ee09113c43e9382ccd98d5860b5621aff8d932dd"
+    }
+  ],
+  "records": 302,
+  "unique_ids": 302,
+  "family_rule": "remove cvdp_copilot_ prefix and terminal four-digit variant suffix; provisional, not a semantic duplicate audit",
+  "named_families": 178,
+  "category_counts": {
+    "cid003": 78,
+    "cid016": 35,
+    "cid002": 94,
+    "cid004": 55,
+    "cid007": 40
+  },
+  "nonempty_reference_solutions": 0,
+  "input_empty_single_output_records": 167,
+  "input_empty_single_output_named_families": 139,
+  "input_empty_single_output_categories": {
+    "cid003": 77,
+    "cid002": 90
+  },
+  "distinct_input_hashes": 302,
+  "sim_modes": {
+    "icarus": 297,
+    "unspecified": 5
+  },
+  "rtllm_exact_normalized_name_collisions": [
+    [
+      "barrel_shifter",
+      "barrel_shifter"
+    ],
+    [
+      "lfsr",
+      "LFSR"
+    ],
+    [
+      "radix2_div",
+      "radix2_div"
+    ]
+  ],
+  "collisions_are_not_proof_of_semantic_duplication": true,
+  "independent_natural_tasks_admitted": 0,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "harnesses_executed": 0,
+  "dependencies_installed": false,
+  "tools_on_current_path": {
+    "docker": null,
+    "iverilog": null,
+    "vvp": null,
+    "verilator": null,
+    "yosys": null,
+    "pytest": null
+  },
+  "current_python_packages": {
+    "cocotb": false,
+    "pytest": false,
+    "cocotb_test": false
+  },
+  "admission_gaps": [
+    "All 302 published output contexts are empty; no full-set positive reference controls are available in this file.",
+    "Required evaluator tools not found on current PATH and current Python. Dedicated dependencies and reproducible seed policy are not installed or frozen.",
+    "Original file/module interfaces are not TopModule; candidate/baseline-visible transformation must be separately audited without changing DUT semantics.",
+    "167 empty-input single-output rows are a structural inventory only, not selected by difficulty or results; family grouping, category meaning and full interface remain to audit.",
+    "Source-family and prior team exposure audit incomplete. Distinct input hashes do not establish independence.",
+    "NOTICE contains upstream-specific licensing information requiring per-source review before public redistribution.",
+    "No candidate results have been generated; opening future scores must follow a frozen protocol."
+  ],
+  "exposure": "Metadata, file paths and one generic harness runner inspected. No DUT solution body exists in this release; no candidate generated or scoring result opened. Any material used to tune the candidate must be marked development.",
+  "raw_metadata_sha256": "b30f66d728ce448b5193b34bb5a885720b43ef2c30329f4072615bd246886fab"
+}

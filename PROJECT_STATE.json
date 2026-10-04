@@ -6,7 +6,7 @@
     "amd_root": "/workspace/team/runs/fpga_teammate/helper_G1_20261004T052000Z_3576ccf",
     "driver_pid": 2972068,
     "stage_pid": 2974507,
-    "stage_started_utc": "2026-10-04T05:21:52.627746+00:00",
+    "stage_started_utc": "2026-10-04T13:21:52.627746+08:00",
     "budget": {
       "approved_additional_calls": 24,
       "approved_seconds": 3600,
@@ -84,7 +84,7 @@
       "verified": true,
       "own_processes_remaining": 0,
       "model_unchanged": true,
-      "model_healthy_idle_at": "2026-10-04T05:32:23.619076+00:00",
+      "model_healthy_idle_at": "2026-10-04T13:32:23.619076+08:00",
       "slot_released": true,
       "xsim_directories_removed_all_helper_stages": 25,
       "remote_source_transfers_removed": 7,
@@ -170,7 +170,7 @@
     "automation_created": false
   },
   "cloud_snapshot_20261004": {
-    "utc": "2026-10-04T01:10:56.556622+00:00",
+    "utc": "2026-10-04T09:10:56.556622+08:00",
     "model_health": {
       "status": "ok"
     },
@@ -284,7 +284,7 @@
     "date": "2026-10-02",
     "status": "complete_as_reported_by_execution_task",
     "run_id": "rtllm_contract_pilot2_v2_20261002T115303Z",
-    "finished_utc": "2026-10-02T11:56:07.303530+00:00",
+    "finished_utc": "2026-10-02T19:56:07.30353+08:00",
     "source": "03_analysis/rtllm_contract_audit_20261002/pilot2_summary_projection.json",
     "evidence_type": "sanitized_summary_projection_not_verbatim_original_json",
     "cloud_executed": false,
@@ -402,7 +402,7 @@
     "pilot": {
       "run_id": "rtllm_contract_pilot_20261002T113602Z",
       "status": "complete_as_reported_by_execution_task",
-      "finished_utc": "2026-10-02T11:39:18.525375+00:00",
+      "finished_utc": "2026-10-02T19:39:18.525375+08:00",
       "fixed_denominator": 2,
       "candidates": 4,
       "tool_errors": 0,
@@ -1504,7 +1504,7 @@
   "amd_full156_completed_20261001": {
     "status": "completed_official_l0_l3_full_pair",
     "date": "2026-10-01",
-    "finished_utc": "2026-10-01T13:27:31+00:00",
+    "finished_utc": "2026-10-01T21:27:31+08:00",
     "run_dir_cloud": "/workspace/team/runs/fpga_owner/amd156_20261001T075230Z",
     "evidence_local": "E:/26qiansai/AMD-test-20260930/amd156-20261001/amd156_full.tgz",
     "evidence_bytes": 298085,
@@ -1587,7 +1587,7 @@
   "icoder27b_comparison_20261002": {
     "status": "completed_single_variable_model_comparison",
     "date": "2026-10-02",
-    "finished_utc": "2026-10-01T19:13:19+00:00",
+    "finished_utc": "2026-10-02T03:13:19+08:00",
     "conclusion": "iCoder-27B is the stronger base model but scores LOWER under this contest's rules; do not switch",
     "run_dir_cloud": "/workspace/team/runs/fpga_owner/icoder_full156_20261001T141649Z",
     "evidence_local": "E:/26qiansai/AMD-test-20260930/icoder-20261002/icoder_full.tgz",
@@ -1658,7 +1658,7 @@
   "skill_simplification_20261002": {
     "status": "validated_net_improvement",
     "date": "2026-10-02",
-    "finished_utc": "2026-10-02T03:36:48+00:00",
+    "finished_utc": "2026-10-02T11:36:48+08:00",
     "change": "removed skill rules 8-11 (the internal-check block); kept the rule-5 initialization clarification",
     "skill_old_sha256": "e0eba7ae86a9844eb4fb92068a7dc14d45666e04b9cf57ba01049e1280731ba0",
     "skill_old_bytes": 1979,
@@ -2985,7 +2985,7 @@
       "own_processes_remaining": 0,
       "verified": true,
       "source_inputs_evidence_retained": true,
-      "model_healthy_idle_at": "2026-10-04T05:55:50.500977+00:00",
+      "model_healthy_idle_at": "2026-10-04T13:55:50.500977+08:00",
       "slot_released": true,
       "model_unchanged": true,
       "remote_source_transfers_removed": 1
@@ -3069,7 +3069,7 @@
   },
   "comprehensive_cycle_20261004": {
     "complete": false,
-    "rtllm_semantic_tasks_pending": 35,
+    "rtllm_semantic_tasks_pending": 15,
     "full156_started": false,
     "first_constraints": [
       "avoid overfitting",
@@ -3078,39 +3078,89 @@
     "formal32gb_complete": false,
     "primary_goal": "complete competition delivery",
     "protocol": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
-    "status": "preflight_passed_preparing_full_dataset_and_budget",
+    "status": "preparing_independent_admission_and_full_budget",
     "independent_natural_holdout_available": false,
     "id": "R20261004-01",
     "sample_size_and_full_budget_frozen": false,
     "five_sample_complete": false,
-    "rtllm_finite_default_domain_evidence": 9,
-    "rtllm_coverage_pending": 23,
-    "rtllm_specification_blocked": 12,
+    "rtllm_finite_default_domain_evidence": 29,
+    "rtllm_coverage_pending": 0,
+    "rtllm_specification_blocked": 15,
     "rtllm_coverage_ledger": "03_analysis/helper_extraction_20261004/CURRENT_COVERAGE_20261004.json",
     "physical_vram_bytes": 51522830336,
     "observed_vram_used_bytes": 20341764096,
-    "observed_workspace_free_bytes": 10774462464,
+    "observed_workspace_free_bytes": 10766823424,
     "credits_verified": false,
     "full_experiment_complete": false,
     "independent_source_discovery": {
-      "status": "metadata_only_not_admitted",
+      "status": "fixed_source_metadata_verified_not_admitted",
       "candidates": [
         "NVlabs/cvdp_benchmark",
         "hkust-zhiyao/RTL-BenchMT"
       ],
+      "cvdp_revision": "5b807d945f6a99aa645f7e43a64a2115e281b4bf",
+      "records": 302,
+      "provisional_named_families": 178,
+      "no_input_single_output_records": 167,
+      "no_input_single_output_named_families": 139,
+      "nonempty_reference_solutions": 0,
+      "source_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+      "inventory": "03_analysis/rtllm_contract_audit_20261002/CVDP_SOURCE_INVENTORY_20261004.json",
+      "next_plan": "03_analysis/rtllm_contract_audit_20261002/CVDP_ADMISSION_NEXT_20261004.md",
+      "independent_tasks_admitted": 0,
       "overlap_and_prior_exposure_verified": false,
-      "external_models_used": false
+      "external_models_used": false,
+      "dependencies_installed": false
     },
     "latest_live_check": {
-      "checked_at": "2026-10-04T14:35:15+08:00",
+      "checked_at": "2026-10-04T15:06:51+08:00",
       "matching_experiment_processes": 0,
       "model_pid": 2013333,
       "model_healthy": true,
       "model_processing": false,
-      "gpu_util_percent": 0,
       "slot_lock_present": false,
+      "gpu_flock_free": true,
       "full_experiment_running": false
+    },
+    "rtllm_full_contracts_certified": false,
+    "capacity_estimate": {
+      "hypothetical_tasks": 185,
+      "arms": 3,
+      "samples": 5,
+      "outputs": 2775,
+      "request_cap": 4625,
+      "historical_component_hours": 33.299241232545114,
+      "independent_tasks_included": false,
+      "final_budget_frozen": false,
+      "credits_verified": false,
+      "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T14:36:16.6935273+08:00"
+  "updated_at": "2026-10-04T15:07:44.8619423+08:00",
+  "rtllm_admission_20261004": {
+    "role": "dataset_admission_substage_not_full_model_experiment",
+    "status": "complete_limited_functional_domain_not_full_experiment",
+    "complete": true,
+    "source_commit": "d3714dbec5799c2c656b474dce47145ee3ec4f4a",
+    "amd_root": "/workspace/team/runs/fpga_teammate/rtllm_admission_20261004T064650Z_d3714db",
+    "driver_pid": 3004140,
+    "stage_pid": 3004145,
+    "model_call_cap": 0,
+    "new_controls": 20,
+    "reused_finite_domain_tasks": 9,
+    "blocked_tasks": 15,
+    "stage_timeout_s": 3600,
+    "full_experiment_complete": false,
+    "new_controls_passed": 20,
+    "report": "03_analysis/rtllm_contract_audit_20261002/ADMISSION_RESULT_20261004.md",
+    "new_candidate_scores": 0,
+    "processes_finished": true,
+    "evidence_manifest": "03_analysis/rtllm_contract_audit_20261002/ADMISSION_MANIFEST_20261004.json",
+    "finite_domain_tasks": 29,
+    "cleanup_verified": true,
+    "stage_elapsed_s": 234.84088382776827,
+    "dataset_manifest_sha256": "eae6c4cc03ea4d5b32318b49bb26bbb127e1b62cf12db8f35c8c84691b1428fa",
+    "new_model_calls": 0,
+    "guard_elapsed_s": 234.99349879007787
+  }
 }

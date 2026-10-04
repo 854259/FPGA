@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "source_archive": "full156_declfix_20261003",
+  "source_experiment_sha256": "c6efe4250169ef4d260d93c5737aed7c0ba02e623b7a72be394ed0ee84698b70",
+  "source_graded_summary_sha256": "297350c1d89e9acd1692c0383c4c1b077338e2427bb073b3271a9116114b0e55",
+  "trace_files": 312,
+  "traces_canonical_sha256": "60e073cdef24775c0f124aafe506cb6f07e3b6e1e2245a7ba39d52a236d57b05",
+  "observed": {
+    "agent": {
+      "tasks": 156,
+      "calls_observed": 166,
+      "replies_observed": 165,
+      "observed_llm_response_seconds": 2893.069662809372,
+      "first_event": 1790965176.0418384,
+      "last_event": 1790978555.7079532
+    },
+    "baseline": {
+      "tasks": 156,
+      "calls_observed": 156,
+      "replies_observed": 156,
+      "observed_llm_response_seconds": 2592.2,
+      "first_event": 1790965206.057,
+      "last_event": 1790978560.221
+    }
+  },
+  "judge_seconds": {
+    "agent": 4100.4,
+    "baseline": 3638.0
+  },
+  "observed_first_to_last_trace_seconds": 13384.179161548615,
+  "estimated_three_arms_one_sample_156_component_seconds": 20217.139325618744,
+  "estimated_three_arms_five_samples_185_component_hours": 33.299241232545114,
+  "hypothetical_185_reason": "156 plus 29 finite-domain RTLLM tasks; RTLLM final qualification and independent set not frozen",
+  "hypothetical_185_outputs": 2775,
+  "hypothetical_185_request_cap": 4625,
+  "not_budget_frozen": true,
+  "not_job_started": true,
+  "limits": [
+    "Response-only sums exclude one agent start without llm completion event, failures, tool overhead, gate cost and final judging tail.",
+    "First-to-last event span is not exact full-run wall time.",
+    "RTLLM cost is extrapolated from VerilogEval; it may differ substantially.",
+    "Independent source tasks and their cost are excluded; no quota sufficiency claim.",
+    "This is capacity planning, not authorization to purchase resources or a completed full experiment."
+  ]
+}
