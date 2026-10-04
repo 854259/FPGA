@@ -3167,7 +3167,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T00:02:30.0695498+08:00",
+  "updated_at": "2026-10-05T00:16:09.8236430+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3473,8 +3473,8 @@
     "private_archive_sha256": "3116cb02255fd9aa99eb6a2d6a823b96fa2296cedaf6b93a4abab8f6a6011587"
   },
   "map_boundary_review_20261004": {
-    "updated_at": "2026-10-05T00:02:29.9055670+08:00",
-    "status": "O1_failed_O2_frozen_pending_execution",
+    "updated_at": "2026-10-05T00:16:09.8227038+08:00",
+    "status": "O3_engineering_pass_runtime_candidate_rejected",
     "full_batch_complete": false,
     "O1": {
       "source_commit": "44a80d6a3dc462232322d3adbd909e4adc55ac8e",
@@ -3500,8 +3500,24 @@
       "model_calls_cap": 0,
       "eda_calls_cap": 0,
       "timeout_s": 120,
-      "next": "Freeze commit, verify private regression hashes and serialize AMD execution"
+      "next": "Completed; 4 CRLF identity mismatches diagnosed and fixed in O3 test reader; parser unchanged."
     },
-    "independent_natural_tasks": 0
+    "independent_natural_tasks": 0,
+    "O3": {
+      "source_commit": "b6e5dcee7b79288ec6c30b112247502273bb7d36",
+      "ticket": 8,
+      "pid": 3343624,
+      "stage_pid": 3343629,
+      "tests": 428,
+      "failures": 0,
+      "false_accepts": 0,
+      "parser_stage_admitted": true,
+      "runtime_candidate_admitted": false,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "elapsed_s": 0.06192398443818092,
+      "archive_sha256": "f17b1ffd471b98032356e83e2d084d06bcf37ab15021e168e2a9e210d77ba2b6"
+    },
+    "next": "P1 frozen complete 312-row metadata inventory; reuse original analyzer, 0 model/EDA and 120 seconds."
   }
 }
