@@ -1,0 +1,198 @@
+{
+  "schema": "helper_three_contract_same_response_v1",
+  "status": "frozen_before_cloud_eda_or_model_calls",
+  "base_commit": "4dedc94b9da0bb845d3b6ff129f0ebc4293a8678",
+  "source_hashes": {
+    "CONTRACTS.json": "49fc943fad66da2b8a10a23b08f712c1295e5f876c9e1108dda8dc7d8a60f2de",
+    "extract_bundle.py": "8a7ab290e1e15d4248fd166b9c587b5fea7fb2958265853aeffe50e335de6414",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "inputs/adder_16bit/drop_carry.sv": "3d0e5fa7732f858c8172875a59f3a955d95cffb2acd285f4775c0d12b7293568",
+    "inputs/adder_16bit/ignore_cin.sv": "7f744a363ec4b0afb48c1f25d9f74f943647d590fce75ff179444c428fd374ba",
+    "inputs/adder_16bit/positive.sv": "ff727c4d189d3f12dfb162c2276cf2c93460ee8f4fcd754f1232158f580a7781",
+    "inputs/adder_16bit/prompt.original.txt": "1448165ef5237424e39842d24e538d684b090631fda565cb1694353bcc5aaac4",
+    "inputs/adder_16bit/prompt.txt": "f8261acbc35c485e93beff2e74734738cd6b01b7b316fc1daeaae50ffe00f25e",
+    "inputs/adder_16bit/tb.sv": "8da17e0fb4d8ceefa2586a433d6753f589a540d051bb36a2a31ced20b4f82fa4",
+    "inputs/adder_32bit/drop_carry.sv": "b258d028d39aed11511ff4083d5e501783d48048a7dcdc58ad0496bcdde91ebe",
+    "inputs/adder_32bit/positive.sv": "2f49d0a9354fcf2545f9f84964dfbc30273b9708b509e5bef4cb8a55c7d6e471",
+    "inputs/adder_32bit/prompt.original.txt": "a79639a97d161ab29eca6efb82bf3d5f5c373866b902d6d82be41b45c4ee0cb1",
+    "inputs/adder_32bit/prompt.txt": "24914542f8c3bef010b108e5c3d8b85619d84cd4568c85c8061085bca99b9b0b",
+    "inputs/adder_32bit/subtract.sv": "0acfaf4be2b2b63f1c638b70e02414f3e7d5e8ccb8eb8210720172c623fc3740",
+    "inputs/adder_32bit/tb.sv": "a206b914fa184cd6c6996f39e395d6a413e7563590801b85df3469b300dc84f6",
+    "inputs/barrel_shifter/left_shift.sv": "5eb4f53503cd233be100bc966812f93c3ee4ad181a641095cabddc58daaded3b",
+    "inputs/barrel_shifter/positive.sv": "29f7d7372234ed5c30286b1f771f86066e3054c8b0e2db300babbec06ba6a7d6",
+    "inputs/barrel_shifter/prompt.original.txt": "b7715f9d16833bcc1d155c8b81000ea4ac092f30e90f7dad0f2de1161b9deb70",
+    "inputs/barrel_shifter/prompt.txt": "b7715f9d16833bcc1d155c8b81000ea4ac092f30e90f7dad0f2de1161b9deb70",
+    "inputs/barrel_shifter/rotate.sv": "b5496afdc162abe52c4fd3f722884ac4b6a251b1901e5d38431b0cb8a39a1ed8",
+    "inputs/barrel_shifter/tb.sv": "e4aa4db2d9ef79513cfe5528347f2166def8738ba5f8094708d9e759bb954793",
+    "lexical_mask.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "pilot.py": "c02f49e04d01846d321d3e927d35955cdb9c2fbed80f7206f28218b3aaccad4e",
+    "prepare.py": "a8bd347bfa27e3ce935fa01fb9ab1ff306a43f688f5b3d6f502cb56790ca1cef"
+  },
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "baseline_extract.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "resource_guard_sha256": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+  "extractor_sha256": "8a7ab290e1e15d4248fd166b9c587b5fea7fb2958265853aeffe50e335de6414",
+  "contracts": [
+    {
+      "task": "adder_16bit",
+      "checks": 270978,
+      "negative_controls": [
+        "ignore_cin",
+        "drop_carry"
+      ],
+      "domain": {
+        "checks": 270978,
+        "boundary_values": [
+          0,
+          1,
+          2,
+          3,
+          127,
+          128,
+          255,
+          256,
+          21845,
+          32767,
+          32768,
+          32769,
+          43690,
+          65024,
+          65280,
+          65534,
+          65535
+        ],
+        "boundaries": 578,
+        "exhaustive_low_byte_and_repeated_byte_subdomains": 262144,
+        "carry_chain_cases": 64,
+        "pseudo_random_pairs": 4096,
+        "pseudo_random_checks": 8192,
+        "seed_hex": "1badb002",
+        "full_input_domain_exhaustive": false,
+        "duplicate_vectors_across_phases_possible": true,
+        "expected_output_bits": 17
+      }
+    },
+    {
+      "task": "adder_32bit",
+      "checks": 135908,
+      "negative_controls": [
+        "drop_carry",
+        "subtract"
+      ],
+      "domain": {
+        "checks": 135908,
+        "boundary_values": [
+          0,
+          1,
+          2,
+          3,
+          127,
+          128,
+          255,
+          256,
+          32767,
+          32768,
+          65535,
+          65536,
+          16777215,
+          16777216,
+          1431655765,
+          2147483647,
+          2147483648,
+          2147483649,
+          2863311530,
+          4261412864,
+          4278190080,
+          4294836224,
+          4294901760,
+          4294967040,
+          4294967294,
+          4294967295
+        ],
+        "boundaries": 676,
+        "exhaustive_low_byte_and_repeated_byte_subdomains": 131072,
+        "carry_chain_cases": 64,
+        "pseudo_random_pairs": 4096,
+        "pseudo_random_checks": 4096,
+        "seed_hex": "c001d00d",
+        "full_input_domain_exhaustive": false,
+        "duplicate_vectors_across_phases_possible": true,
+        "expected_output_bits": 33
+      }
+    },
+    {
+      "task": "barrel_shifter",
+      "checks": 2048,
+      "negative_controls": [
+        "left_shift",
+        "rotate"
+      ],
+      "domain": {
+        "checks": 2048,
+        "full_input_domain_exhaustive": true,
+        "expected_output_bits": 8,
+        "duplicate_vectors_across_phases_possible": false
+      }
+    }
+  ],
+  "prompt_provenance": {
+    "adder_16bit": {
+      "original_prompt_sha256": "1448165ef5237424e39842d24e538d684b090631fda565cb1694353bcc5aaac4",
+      "corrected_prompt_sha256": "f8261acbc35c485e93beff2e74734738cd6b01b7b316fc1daeaae50ffe00f25e",
+      "normalization": "collapse_two_Module_name_headers_to_TopModule",
+      "all_non_header_text_retained": true
+    },
+    "adder_32bit": {
+      "original_prompt_sha256": "a79639a97d161ab29eca6efb82bf3d5f5c373866b902d6d82be41b45c4ee0cb1",
+      "corrected_prompt_sha256": "24914542f8c3bef010b108e5c3d8b85619d84cd4568c85c8061085bca99b9b0b",
+      "normalization": "collapse_two_Module_name_headers_to_TopModule",
+      "all_non_header_text_retained": true
+    },
+    "barrel_shifter": {
+      "original_prompt_sha256": "b7715f9d16833bcc1d155c8b81000ea4ac092f30e90f7dad0f2de1161b9deb70",
+      "corrected_prompt_sha256": "b7715f9d16833bcc1d155c8b81000ea4ac092f30e90f7dad0f2de1161b9deb70",
+      "normalization": "unchanged",
+      "all_non_header_text_retained": true
+    }
+  },
+  "generation_order": [
+    [
+      "adder_16bit",
+      0
+    ],
+    [
+      "adder_32bit",
+      0
+    ],
+    [
+      "barrel_shifter",
+      0
+    ]
+  ],
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "model_pid": 2013333,
+  "model_call_budget": 3,
+  "max_tokens": 8192,
+  "request_timeout_s": 120,
+  "stage_timeout_s": 900,
+  "outer_timeout_s": 1200,
+  "part": "xczu3eg-sbva484-1-e",
+  "retries": 0,
+  "acceptance": "All 9 controls and positive synth valid; 3 constructed format A failures with byte-identical tested B; 3 complete new replies, 6 paired functional probes; at least one A failure fixed, no A pass regressed, every B pass synthesize, all resource/identity/cleanup gates pass. Positive permits further independent full-flow validation only, never production adoption.",
+  "limits": [
+    "Targeted three tasks chosen from historical missing-helper hints, not blind/random validation; no weighted or official score.",
+    "Adder16/32 domains are pre-frozen partial input sets including duplicated checks; only barrel shifter exhausts its two-state finite input domain.",
+    "Pure math checks do not certify implementation architecture, four-state behavior or hidden official tests.",
+    "Public prompts only collapse duplicate Module name headers; complete original text preserved. Official baseline SYS and extraction unchanged.",
+    "One new response per task; same response A/B isolates extraction. No resampling, diagnostic feedback, reference or TB in generation; all replies saved before grades.",
+    "Extraction remains frozen prior 8a7ab290. Existing helper modules only; no invented helper or functional repair.",
+    "Correct/negative controls and format recovery are constructed, not natural gains. Synth receipts reuse only exact identical source bytes.",
+    "Runtime may otherwise review missing-helper candidates. Changed extraction can bypass that review; initial extraction success does not prove complete agent benefit. Later full-flow/cost/regression validation required.",
+    "Shared cache not cleared. Measured stage excludes earlier generation, human contract preparation and development costs.",
+    "Independent branch plus legacy GPU flock and SLOT guard. No formal runtime/package, baseline, model restart or instance action."
+  ]
+}

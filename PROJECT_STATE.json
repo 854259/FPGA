@@ -1,5 +1,248 @@
 {
   "schema_version": 1,
+  "helper_contracts_20261004": {
+    "schema": "helper_three_contract_audit_v1",
+    "status": "complete_verified",
+    "model_requests": 3,
+    "complete_responses": 3,
+    "retries": 0,
+    "paired_generated_probes": 6,
+    "A_passes": 0,
+    "B_passes": 1,
+    "fixes": 1,
+    "regressions": 0,
+    "changed_responses": 2,
+    "acceptance_met": true,
+    "adoption": false,
+    "new_score": false,
+    "controls_valid": 9,
+    "positive_synthesized": 3,
+    "constructed_format_controls": 3,
+    "unique_answer_texts": 3,
+    "counts": {
+      "probes": 18,
+      "synthesis": 4,
+      "synthesis_reuses": 0,
+      "format_positive_probe_reuses": 3
+    },
+    "rows": [
+      {
+        "task": "adder_16bit",
+        "trial": 0,
+        "A": "fail",
+        "B": "pass",
+        "A_failure": "xelab_failed",
+        "B_failure": null,
+        "checks": 270978,
+        "full_input_domain_exhaustive": false,
+        "changed": true,
+        "reason": "unique_complete_linked_bundle",
+        "modules": [
+          "TopModule",
+          "adder_8bit"
+        ],
+        "A_sha256": "518a9e0a4c6fab77ded6bf4c44c778312a9f411f596f3adfb4c4d3dfbea501c8",
+        "B_sha256": "94cf0fee98f88114880fa56891b40b40a992b0fd1b242a9a078fc0ba28e1f00c",
+        "request_elapsed_s": 12.987939062528312,
+        "A_checks": null,
+        "A_mismatches": null,
+        "B_checks": 270978,
+        "B_mismatches": 0,
+        "B_bounds_warning_count": 0
+      },
+      {
+        "task": "adder_32bit",
+        "trial": 0,
+        "A": "fail",
+        "B": "fail",
+        "A_failure": "xelab_failed",
+        "B_failure": "semantic_mismatch",
+        "checks": 135908,
+        "full_input_domain_exhaustive": false,
+        "changed": true,
+        "reason": "unique_complete_linked_bundle",
+        "modules": [
+          "TopModule",
+          "cla_16bit"
+        ],
+        "A_sha256": "42aeeeaab34d2871bf74ec2d75a8ddaef654235801d5149dc6bbae05813bdf0c",
+        "B_sha256": "ff9486a2f2772ab7f0fcb7ba9622ea796b27014b36f603183e1639d5f4d485c5",
+        "request_elapsed_s": 36.54916355200112,
+        "A_checks": null,
+        "A_mismatches": null,
+        "B_checks": 135908,
+        "B_mismatches": 135908,
+        "B_bounds_warning_count": 2
+      },
+      {
+        "task": "barrel_shifter",
+        "trial": 0,
+        "A": "fail",
+        "B": "fail",
+        "A_failure": "semantic_mismatch",
+        "B_failure": "semantic_mismatch",
+        "checks": 2048,
+        "full_input_domain_exhaustive": true,
+        "changed": false,
+        "reason": "single_top_baseline_preserved",
+        "modules": [
+          "TopModule"
+        ],
+        "A_sha256": "aef0c2dee62b005240437a3c35b3332c1caefef3ca0dc78d997850b2f9bf6465",
+        "B_sha256": "aef0c2dee62b005240437a3c35b3332c1caefef3ca0dc78d997850b2f9bf6465",
+        "request_elapsed_s": 25.84407791029662,
+        "A_checks": 2048,
+        "A_mismatches": 1919,
+        "B_checks": 2048,
+        "B_mismatches": 1919,
+        "B_bounds_warning_count": 0
+      }
+    ],
+    "domains": {
+      "adder_16bit": {
+        "checks": 270978,
+        "boundary_values": [
+          0,
+          1,
+          2,
+          3,
+          127,
+          128,
+          255,
+          256,
+          21845,
+          32767,
+          32768,
+          32769,
+          43690,
+          65024,
+          65280,
+          65534,
+          65535
+        ],
+        "boundaries": 578,
+        "exhaustive_low_byte_and_repeated_byte_subdomains": 262144,
+        "carry_chain_cases": 64,
+        "pseudo_random_pairs": 4096,
+        "pseudo_random_checks": 8192,
+        "seed_hex": "1badb002",
+        "full_input_domain_exhaustive": false,
+        "duplicate_vectors_across_phases_possible": true,
+        "expected_output_bits": 17
+      },
+      "adder_32bit": {
+        "checks": 135908,
+        "boundary_values": [
+          0,
+          1,
+          2,
+          3,
+          127,
+          128,
+          255,
+          256,
+          32767,
+          32768,
+          65535,
+          65536,
+          16777215,
+          16777216,
+          1431655765,
+          2147483647,
+          2147483648,
+          2147483649,
+          2863311530,
+          4261412864,
+          4278190080,
+          4294836224,
+          4294901760,
+          4294967040,
+          4294967294,
+          4294967295
+        ],
+        "boundaries": 676,
+        "exhaustive_low_byte_and_repeated_byte_subdomains": 131072,
+        "carry_chain_cases": 64,
+        "pseudo_random_pairs": 4096,
+        "pseudo_random_checks": 4096,
+        "seed_hex": "c001d00d",
+        "full_input_domain_exhaustive": false,
+        "duplicate_vectors_across_phases_possible": true,
+        "expected_output_bits": 33
+      },
+      "barrel_shifter": {
+        "checks": 2048,
+        "full_input_domain_exhaustive": true,
+        "expected_output_bits": 8,
+        "duplicate_vectors_across_phases_possible": false
+      }
+    },
+    "elapsed_s": 243.81518348678946,
+    "model_request_elapsed_s": 75.38118052482605,
+    "guard": {
+      "started_at_utc": "2026-10-04T06:11:11.272524+00:00",
+      "finished_at_utc": "2026-10-04T06:15:15.460572+00:00",
+      "elapsed_s": 244.08241514023393,
+      "stage_rc": 0,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "model_idle_after": {
+        "health_status": "ok",
+        "model_name": "Qwen3.6-27B-Q4_K_M",
+        "slot_count": 1,
+        "processing_slots": 0,
+        "model_pid_owns_port": true
+      }
+    },
+    "owned_cleanup_verified": true,
+    "remaining_owned_processes": 0,
+    "evidence": {
+      "archive_sha256": "a5571c7d4b5b7de046e44a5d2b3229f0ce920a3670deb6ac27b9ea78eff929b6",
+      "manifest_files": 200,
+      "all_hashes_verified": true
+    },
+    "postflight": {
+      "utc": "2026-10-04T06:19:45.724460+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": true,
+      "slot_owner": "helper_I1r2_20261004T061455Z_d82ed68",
+      "own_slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "workspace_free_gib": 10.033916473388672,
+      "model_pid": 2013333,
+      "instance_shutdown_or_model_restart": false
+    },
+    "branch": "codex/autonomous-rtl-20261004",
+    "limits": [
+      "Targeted three tasks chosen from historical missing-helper hints, not blind/random validation; no weighted or official score.",
+      "Adder16/32 domains are pre-frozen partial input sets including duplicated checks; only barrel shifter exhausts its two-state finite input domain.",
+      "Pure math checks do not certify implementation architecture, four-state behavior or hidden official tests.",
+      "Public prompts only collapse duplicate Module name headers; complete original text preserved. Official baseline SYS and extraction unchanged.",
+      "One new response per task; same response A/B isolates extraction. No resampling, diagnostic feedback, reference or TB in generation; all replies saved before grades.",
+      "Extraction remains frozen prior 8a7ab290. Existing helper modules only; no invented helper or functional repair.",
+      "Correct/negative controls and format recovery are constructed, not natural gains. Synth receipts reuse only exact identical source bytes.",
+      "Runtime may otherwise review missing-helper candidates. Changed extraction can bypass that review; initial extraction success does not prove complete agent benefit. Later full-flow/cost/regression validation required.",
+      "Shared cache not cleared. Measured stage excludes earlier generation, human contract preparation and development costs.",
+      "Independent branch plus legacy GPU flock and SLOT guard. No formal runtime/package, baseline, model restart or instance action."
+    ],
+    "natural_A_pass_guard_count": 0,
+    "zero_regressions_does_not_validate_correct_candidate_protection": true,
+    "report": "03_analysis/helper_contracts_20261004/README.md",
+    "result": "03_analysis/helper_contracts_20261004/RESULTS.json",
+    "next_plan": "03_analysis/helper_contracts_20261004/NEXT.md",
+    "workspace": "E:\\26qiansai\\worktrees\\autonomous-rtl-20261004",
+    "formal_runtime_integrated": false,
+    "quota_stop_used_percent": 97,
+    "next_step": "Correct-source regression challenges and original TopModule byte preservation, changed-only candidate compilation/bounds-warning rejection; then full-flow paired cost validation. No deployment."
+  },
   "compiler_inventory_20261004": {
     "status": "complete_verified_readonly_inventory",
     "records": 1024,
@@ -45,7 +288,7 @@
       "Prob156_review2015_fancytimer"
     ],
     "branch": "codex/autonomous-rtl-20261004",
-    "next_step": "Calibrate adder_16bit/adder_32bit/barrel_shifter mathematical controls, then unchanged bundle extraction on new same-response pairs; no EDA/model job during foreign slot ownership.",
+    "next_step": "Three planned helper math contracts and same-response stage completed; see helper_contracts_20261004. Next: correct-source regression protection before any full-flow integration.",
     "next_plan": "03_analysis/compiler_inventory_20261004/NEXT.md",
     "coordination_recheck": {
       "utc": "2026-10-04T05:54:10.585151+00:00",
@@ -991,7 +1234,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-04",
+  "last_updated": "2026-10-04T14:30:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",

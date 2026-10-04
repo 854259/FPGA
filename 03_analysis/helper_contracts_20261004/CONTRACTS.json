@@ -1,0 +1,125 @@
+{
+  "contracts": [
+    {
+      "task": "adder_16bit",
+      "checks": 270978,
+      "negative_controls": [
+        "ignore_cin",
+        "drop_carry"
+      ],
+      "domain": {
+        "checks": 270978,
+        "boundary_values": [
+          0,
+          1,
+          2,
+          3,
+          127,
+          128,
+          255,
+          256,
+          21845,
+          32767,
+          32768,
+          32769,
+          43690,
+          65024,
+          65280,
+          65534,
+          65535
+        ],
+        "boundaries": 578,
+        "exhaustive_low_byte_and_repeated_byte_subdomains": 262144,
+        "carry_chain_cases": 64,
+        "pseudo_random_pairs": 4096,
+        "pseudo_random_checks": 8192,
+        "seed_hex": "1badb002",
+        "full_input_domain_exhaustive": false,
+        "duplicate_vectors_across_phases_possible": true,
+        "expected_output_bits": 17
+      }
+    },
+    {
+      "task": "adder_32bit",
+      "checks": 135908,
+      "negative_controls": [
+        "drop_carry",
+        "subtract"
+      ],
+      "domain": {
+        "checks": 135908,
+        "boundary_values": [
+          0,
+          1,
+          2,
+          3,
+          127,
+          128,
+          255,
+          256,
+          32767,
+          32768,
+          65535,
+          65536,
+          16777215,
+          16777216,
+          1431655765,
+          2147483647,
+          2147483648,
+          2147483649,
+          2863311530,
+          4261412864,
+          4278190080,
+          4294836224,
+          4294901760,
+          4294967040,
+          4294967294,
+          4294967295
+        ],
+        "boundaries": 676,
+        "exhaustive_low_byte_and_repeated_byte_subdomains": 131072,
+        "carry_chain_cases": 64,
+        "pseudo_random_pairs": 4096,
+        "pseudo_random_checks": 4096,
+        "seed_hex": "c001d00d",
+        "full_input_domain_exhaustive": false,
+        "duplicate_vectors_across_phases_possible": true,
+        "expected_output_bits": 33
+      }
+    },
+    {
+      "task": "barrel_shifter",
+      "checks": 2048,
+      "negative_controls": [
+        "left_shift",
+        "rotate"
+      ],
+      "domain": {
+        "checks": 2048,
+        "full_input_domain_exhaustive": true,
+        "expected_output_bits": 8,
+        "duplicate_vectors_across_phases_possible": false
+      }
+    }
+  ],
+  "prompt_provenance": {
+    "adder_16bit": {
+      "original_prompt_sha256": "1448165ef5237424e39842d24e538d684b090631fda565cb1694353bcc5aaac4",
+      "corrected_prompt_sha256": "f8261acbc35c485e93beff2e74734738cd6b01b7b316fc1daeaae50ffe00f25e",
+      "normalization": "collapse_two_Module_name_headers_to_TopModule",
+      "all_non_header_text_retained": true
+    },
+    "adder_32bit": {
+      "original_prompt_sha256": "a79639a97d161ab29eca6efb82bf3d5f5c373866b902d6d82be41b45c4ee0cb1",
+      "corrected_prompt_sha256": "24914542f8c3bef010b108e5c3d8b85619d84cd4568c85c8061085bca99b9b0b",
+      "normalization": "collapse_two_Module_name_headers_to_TopModule",
+      "all_non_header_text_retained": true
+    },
+    "barrel_shifter": {
+      "original_prompt_sha256": "b7715f9d16833bcc1d155c8b81000ea4ac092f30e90f7dad0f2de1161b9deb70",
+      "corrected_prompt_sha256": "b7715f9d16833bcc1d155c8b81000ea4ac092f30e90f7dad0f2de1161b9deb70",
+      "normalization": "unchanged",
+      "all_non_header_text_retained": true
+    }
+  }
+}
