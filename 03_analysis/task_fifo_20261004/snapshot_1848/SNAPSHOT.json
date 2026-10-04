@@ -1,0 +1,22 @@
+{
+  "schema": "team_activity_snapshot_v1",
+  "observed_at_utc": "2026-10-04T10:48:35.345747+00:00",
+  "run_root": "/workspace/team/runs/fpga_owner/full156_bundle_20261004_v1",
+  "experiment": "full156_bundle_20261004",
+  "state": "running",
+  "complete": false,
+  "completed_samples": 57,
+  "expected_samples": 312,
+  "calls_received": 60,
+  "current_task": "Prob029_m2014_q4g",
+  "current_arm": "C",
+  "fifo": [
+    {
+      "ticket": 1,
+      "task": "full156_bundle_20261004",
+      "state": "adopted_running"
+    }
+  ],
+  "source_spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+  "final_score_audited": false
+}

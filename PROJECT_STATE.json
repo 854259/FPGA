@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "full156_bundle_20261004": {
-    "status": "prepared_frozen_before_launch",
+    "status": "running_frozen_full_regression",
     "task_count": 156,
     "samples_per_arm": 156,
     "arms": [
@@ -10,7 +10,13 @@
     ],
     "solve_deadline_s": 300,
     "judge_timeout_s": 300,
-    "actual_model_requests": 0,
+    "calls_received_at_snapshot": 46,
+    "completed_samples_at_snapshot": 43,
+    "snapshot_observed_at_utc": "2026-10-04T10:39:35.077182+00:00",
+    "progress_snapshot": "03_analysis/full156_bundle_20261004/PROGRESS_SNAPSHOT.json",
+    "launch_receipt": "03_analysis/full156_bundle_20261004/LAUNCH.json",
+    "queue_pid": 3061569,
+    "fifo_ticket": 1,
     "new_score": false,
     "adoption": false,
     "quota_used_percent_at_resume": 4,
@@ -23,7 +29,27 @@
     "report": "03_analysis/full156_bundle_20261004/README.md",
     "teammate_branch_reviewed": "fe006faa5ca596b41fa37a7ea480d479b3a10942",
     "shared_deployment_unchanged": true,
-    "cooperative_per_sample_release": true
+    "cooperative_per_sample_release": true,
+    "whole_task_fifo_reservation": true
+  },
+  "shared_task_fifo_activity_20261004": {
+    "status": "installed_and_observing_own_run",
+    "report": "03_analysis/task_fifo_20261004/README.md",
+    "receipts": "03_analysis/task_fifo_20261004/INSTALL_RECEIPTS.json",
+    "cloud_team_index": "/workspace/team/TEAM_ACTIVITY.md",
+    "cloud_status": "/workspace/team/activity/fpga_owner/STATUS.md",
+    "cloud_fifo_guide": "/workspace/team/TASK_FIFO.md",
+    "fifo_tests_passed": 4,
+    "activity_tests_passed": 2,
+    "tests_model_calls": 0,
+    "tests_eda_calls": 0,
+    "observer_interval_s": 30,
+    "fifo_scope": "only whole tasks submitted through the new entry; legacy direct entry points still bypass it",
+    "log_scope": "own full156 run only; not all server calls",
+    "formal_deployment_changed": false,
+    "teammate_scripts_changed": false,
+    "existing_evaluation_restarted": false,
+    "shared_model_restarted": false
   },
   "quota_closeout_20261004": {
     "status": "pause_requested_at_user_threshold",

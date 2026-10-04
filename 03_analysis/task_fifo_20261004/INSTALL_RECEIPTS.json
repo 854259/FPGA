@@ -1,0 +1,139 @@
+{
+  "activity_test": {
+    "schema": "team_activity_test_v1",
+    "utc": "2026-10-04T10:39:35.040559+00:00",
+    "passed": true,
+    "tests": 2,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "source_hashes": {
+      "activity.py": "c5209d3a56376cc0aa7eb95c94127cedb17f19043fdc687c0c457175d65126de",
+      "test_activity.py": "f02ae95912d277ce33263e62ba3c2e03653423cdcdbf9978471167e8faf1bd82"
+    },
+    "verified": [
+      "repeat sync produces one call event, private prompt/solution text excluded",
+      "changes and conclusions separated, deduplicated by immutable event ID"
+    ]
+  },
+  "activity_launch": {
+    "pid": 3099460,
+    "source_hashes": {
+      "activity.py": "c5209d3a56376cc0aa7eb95c94127cedb17f19043fdc687c0c457175d65126de",
+      "test_activity.py": "f02ae95912d277ce33263e62ba3c2e03653423cdcdbf9978471167e8faf1bd82"
+    },
+    "run_root": "/workspace/team/runs/fpga_owner/full156_bundle_20261004_v1",
+    "ledger_root": "/workspace/team/activity/fpga_owner",
+    "interval_s": 30,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "experiment_sources_unchanged": true,
+    "stops_at_run_complete_or_failure": true
+  },
+  "snapshot": {
+    "schema": "team_activity_snapshot_v1",
+    "observed_at_utc": "2026-10-04T10:39:35.077182+00:00",
+    "run_root": "/workspace/team/runs/fpga_owner/full156_bundle_20261004_v1",
+    "experiment": "full156_bundle_20261004",
+    "state": "running",
+    "complete": false,
+    "completed_samples": 43,
+    "expected_samples": 312,
+    "calls_received": 46,
+    "current_task": "Prob022_mux2to1",
+    "current_arm": "A",
+    "fifo": [
+      {
+        "ticket": 1,
+        "task": "full156_bundle_20261004",
+        "state": "adopted_running"
+      }
+    ],
+    "source_spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+    "final_score_audited": false
+  },
+  "fifo_test": {
+    "schema": "whole_task_fifo_test_v1",
+    "utc": "2026-10-04T10:29:45.654395+00:00",
+    "passed": true,
+    "tests": 4,
+    "source_hashes": {
+      "task_fifo.py": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
+      "test_fifo.py": "74093bac8198cea4ab3e18c8a8c90c34963741e77ade7a55850d7c1d6d3330c0"
+    },
+    "model_calls": 0,
+    "eda_calls": 0,
+    "shared_queue_used": false,
+    "real_cpu_subprocesses": true,
+    "verified": [
+      "whole-task FIFO with reversed monitor startup order",
+      "failed task retains head and blocks later task",
+      "cancelled queued task never launches",
+      "adopt observes existing PID without restart/interrupt"
+    ]
+  },
+  "adoption": {
+    "ticket": 1,
+    "task_name": "full156_bundle_20261004",
+    "monitor_pid": 3087597,
+    "accepted_at_utc": "2026-10-04T10:30:49.593737+00:00",
+    "code_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
+    "adopted_pid": 3061569,
+    "source_spec_unchanged": true,
+    "model_pid": 2013333,
+    "model_starttime_unchanged": true,
+    "existing_task_restarted": false,
+    "existing_resource_locks_modified": false,
+    "scope": "whole-task FIFO for submissions through this entry; legacy direct launches unchanged"
+  },
+  "ticket": {
+    "schema": "whole_task_fifo_v1",
+    "ticket": 1,
+    "task_name": "full156_bundle_20261004",
+    "accepted_at_utc": "2026-10-04T10:30:49.593737+00:00",
+    "state": "adopted_running",
+    "command": [],
+    "cwd": "/workspace/team/runs/fpga_owner/full156_bundle_20261004_v1",
+    "completion_json": "/workspace/team/runs/fpga_owner/full156_bundle_20261004_v1/queue_status.json",
+    "slot_owner_prefix": "fpga_owner_full156_bundle_",
+    "adopted_process": {
+      "pid": 3061569,
+      "starttime": "838237144"
+    },
+    "started_at_utc": "2026-10-04T10:30:49.636364+00:00",
+    "runner": {
+      "pid": 3087597,
+      "starttime": "838349907"
+    },
+    "task_fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f"
+  },
+  "full_launch": {
+    "schema": "full156_bundle_launch_v1",
+    "started_at_utc": "2026-10-04T10:12:01.968042+00:00",
+    "pid": 3061569,
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/runs/fpga_owner/full156_bundle_20261004_v1/evaluate_batch.py",
+      "queue"
+    ],
+    "spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+    "source_git_commit": "42da31d",
+    "instance_and_model_managed": false,
+    "cooperative_locks_per_sample": true
+  },
+  "snapshot_archive_sha256": "a97d74e63e5d1e1daba44b0aeeccc9ae6666d9d4c79d66a0fcc8d89b61b6308e",
+  "guide_update_and_snapshot_receipt": {
+    "captured_at_utc": "2026-10-04T10:48:47.514176+00:00",
+    "guide_sha256": "a6d2c81be18200ecee9799a3d09135f53863ce9e066aa8072387486e679ef249",
+    "frozen_assets_unchanged": 15,
+    "observer_alive": true,
+    "files": {
+      "SNAPSHOT.json": "8c4947a51b417532599502930b51bdc71ca396664bcfc2ca071a66194785e72c",
+      "STATUS.md": "95c2d648ad2be985bfd75372e21d083c101347869c5ab3f161e43bbbd56bc560",
+      "TEAM_ACTIVITY.md": "18a106a3cdc0f0d0eebff764c06d87e91fc5f4fe3ddfbc350ab916b6e2deb38e",
+      "calls.jsonl": "b2b369f224dbb586da4b5a561063fa6c0cc6e61c90a7cc77d8bec1d18108aff9",
+      "changes.jsonl": "e6557f1bc88325e5f691735f216e5e4b53cb5082e296747445b63d759292c28c",
+      "conclusions.jsonl": "c7c06f9fc16b410a6a68cd218dc3c97acb59a1233da8768e9bcb4fa8a28f9daf"
+    }
+  }
+}
