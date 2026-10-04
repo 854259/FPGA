@@ -1,0 +1,41 @@
+{
+  "schema": "helper_contract_continuation_h1",
+  "user_authorization": "既然你已经有下一步的安排，那就细化你的计划，然后开始下一步的实验。",
+  "internal_new_model_call_cap": 9,
+  "stage_timeout_s": 2700,
+  "max_model_phase_start_s": 1500,
+  "retries": 0,
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "input_manifest_sha256": "8349801dee5bdf6a90449d3dc5b3a65b87e50ac5d40c05cf2ca02a3657a9f341",
+  "capture_request_sha256": "248e325a0b160590b1d88b55554242ca0e705d537ef72c2d734db85cf0f2f0ed",
+  "capture_response_sha256": "6043720555f5312d0236f987b41b0e1c62a4dd196a7f8192d11f39ef1db83fcc",
+  "kit_hashes": {
+    "submission/agent/runtime.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
+    "submission/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "submission/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "official_eval.py": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797"
+  },
+  "package_hashes": {
+    "agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+  },
+  "order": [
+    "freeze_44_prompt_only_normalizations",
+    "exhaustive_adder_bcd_positive_and_negative_200",
+    "exhaustive_barrel_shifter_positive_and_negative_2048",
+    "captured_adder_32bit_complete_worker_pair",
+    "conditional_adder_bcd_pair",
+    "conditional_barrel_shifter_pair"
+  ],
+  "conditions": [
+    "No generation before independent arithmetic reference controls and negative controls pass",
+    "Retain old captured prompt for the 32-bit risk pair; do not combine prompt fix and extractor change",
+    "Observed quality regression stops remaining new pairs and rejects automatic adoption",
+    "Budget reserve, incomplete response, transport, environment or evidence error stops without retry",
+    "No full-set score; historical tasks not a blind holdout; formal package and shared model unchanged"
+  ],
+  "meaning": "Dataset reliability, known full-worker downside risk, then two cross-task paired observations. Only default legal BCD and 8-bit shift domains receive exhaustive semantic contract checks; all 44 are not certified."
+}

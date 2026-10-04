@@ -39,7 +39,7 @@ def worker(args):
         assert body['model']==expected['model'] and body['temperature']==0 and body['top_p']==1 and body['max_tokens']==8192
         if round_index==0:assert body==expected
         else:assert body['messages'][1]['content'].startswith(expected['messages'][1]['content']+'\nPrevious candidate:\n')
-        record=dict(round=round_index,reused_initial=args.arm=='retained_helpers' and round_index==0)
+        record=dict(round=round_index,reused_initial=(args.arm=='retained_helpers' or getattr(args,'replay_initial',False)) and round_index==0)
         requests.append(record);save(args.out/('request_'+str(round_index)+'.json'),body)
         tick=time.monotonic()
         if record['reused_initial']:
@@ -52,6 +52,8 @@ def worker(args):
             response_count+=1
         record['elapsed_s']=time.monotonic()-tick
         save(args.out/('response_'+str(round_index)+'.json'),payload)
+        if payload['choices'][0].get('finish_reason')!='stop':
+            raise RuntimeError('incomplete model response; stop without retry')
         return io.StringIO(json.dumps(payload))
     runtime.urllib.request.urlopen=controlled_urlopen
     os.environ.update(MODEL_NAME=expected['model'],LLM_BASE_URL='http://127.0.0.1:8000/v1',RTL_REPAIRS='1',RTL_TEMPERATURE='0',RTL_MAX_TOKENS='8192')
@@ -130,5 +132,5 @@ def run(args):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('mode',choices=['run','worker']);p.add_argument('--kit',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
-    p.add_argument('--resource-check',type=Path);p.add_argument('--best-tar',type=Path);p.add_argument('--package',type=Path);p.add_argument('--input',type=Path);p.add_argument('--arm',choices=['original','retained_helpers']);p.add_argument('--enable-generation',action='store_true')
+    p.add_argument('--resource-check',type=Path);p.add_argument('--best-tar',type=Path);p.add_argument('--package',type=Path);p.add_argument('--input',type=Path);p.add_argument('--arm',choices=['original','retained_helpers']);p.add_argument('--enable-generation',action='store_true');p.add_argument('--replay-initial',action='store_true')
     a=p.parse_args();worker(a) if a.mode=='worker' else run(a)
