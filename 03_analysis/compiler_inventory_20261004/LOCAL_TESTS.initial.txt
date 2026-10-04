@@ -1,0 +1,43 @@
+test_ascending_range (test_literal_bounds.BoundsTests.test_ascending_range) ... ok
+test_comments_and_strings_are_not_selects (test_literal_bounds.BoundsTests.test_comments_and_strings_are_not_selects) ... ok
+test_direct_high_select (test_literal_bounds.BoundsTests.test_direct_high_select) ... ok
+test_directives_refused (test_literal_bounds.BoundsTests.test_directives_refused) ... ok
+test_duplicate_names_are_ambiguous (test_literal_bounds.BoundsTests.test_duplicate_names_are_ambiguous) ... FAIL
+test_dynamic_and_part_selects_unsupported (test_literal_bounds.BoundsTests.test_dynamic_and_part_selects_unsupported) ... ok
+test_hierarchical_reference_is_not_local (test_literal_bounds.BoundsTests.test_hierarchical_reference_is_not_local) ... ok
+test_multiple_modules_keep_separate_ranges (test_literal_bounds.BoundsTests.test_multiple_modules_keep_separate_ranges) ... ok
+test_negative_range (test_literal_bounds.BoundsTests.test_negative_range) ... ok
+test_nested_function_scope_skipped (test_literal_bounds.BoundsTests.test_nested_function_scope_skipped) ... ok
+test_parameterized_range_unsupported (test_literal_bounds.BoundsTests.test_parameterized_range_unsupported) ... ok
+test_ports_are_not_internal_declarations (test_literal_bounds.BoundsTests.test_ports_are_not_internal_declarations) ... ok
+test_signed_internal_vector (test_literal_bounds.BoundsTests.test_signed_internal_vector) ... ok
+test_unclosed_comment_refused (test_literal_bounds.BoundsTests.test_unclosed_comment_refused) ... ok
+test_unpaired_module_refused (test_literal_bounds.BoundsTests.test_unpaired_module_refused) ... ok
+test_valid_extremes (test_literal_bounds.BoundsTests.test_valid_extremes) ... ok
+
+======================================================================
+FAIL: test_duplicate_names_are_ambiguous (test_literal_bounds.BoundsTests.test_duplicate_names_are_ambiguous)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\compiler_inventory_20261004\test_literal_bounds.py", line 42, in test_duplicate_names_are_ambiguous
+    self.assertEqual(check("wire [1:0] q;\nbegin wire [9:0] q; end\nassign y=q[5];")["hints"], [])
+AssertionError: Lists differ: [{'module': 'TopModule', 'signal': 'q', 'i[149 chars]lse}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'module': 'TopModule', 'signal': 'q', 'index': 5, 'range_low': 0, 'range_high': 1, 'line': 4, 'kind': 'literal_internal_vector_select_outside_declared_range', 'confirmed_compiler_error': False}
+
++ []
+- [{'confirmed_compiler_error': False,
+-   'index': 5,
+-   'kind': 'literal_internal_vector_select_outside_declared_range',
+-   'line': 4,
+-   'module': 'TopModule',
+-   'range_high': 1,
+-   'range_low': 0,
+-   'signal': 'q'}]
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.002s
+
+FAILED (failures=1)

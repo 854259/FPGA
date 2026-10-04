@@ -1,0 +1,31 @@
+{
+  "schema": "compiler_inventory_interpretation_v1",
+  "scan_sha256": "361205a40d195f1d809982a54a1c6eb82c021cd4722b249f91d06fbc04bcd94a",
+  "results_sha256": "ece81b07d33a4ed71fdcc9369505300516afd954d8f9b3d62f629d5fb335687d",
+  "current_bounds_scanner_other_task_hints": 0,
+  "historical_compile_gap_unique_sources": 4,
+  "historical_gap_tasks_already_studied": [
+    "Prob099_m2014_q6c",
+    "Prob156_review2015_fancytimer"
+  ],
+  "prior_evidence": [
+    {
+      "path": "03_analysis/09_新版156题离线复盘_20260921.md",
+      "sha256": "214cec955798e616669d84692363f2b43ae1045c39b44473d010fdcd9b2d57bd",
+      "interpretation": "Prob099 known public/reference versus TB port mismatch; prior reference self-check failed"
+    },
+    {
+      "path": "03_analysis/35_xelab展开检查_覆盖与成本实测_20261003.md",
+      "sha256": "588367257d3b5dbb60e4b2d354f89b0864434568aa99280ea6b1ec1e9822e15e",
+      "interpretation": "Prior candidate-only 156-source EDA already found Prob156 multi-driver failure"
+    },
+    {
+      "path": "03_analysis/codex_takeover_20261003/R1_RESULT.md",
+      "sha256": "c43f1e797223ad670928093472afddc26fbbbfc6cfdbadb42a557b723e59fe04",
+      "interpretation": "Prior fixed Prob156 diagnostic versus control six-call study: both 0/3 elaboration passes, rejected"
+    }
+  ],
+  "new_compiler_or_functional_evidence": false,
+  "known_development_task_field_scope": "Only the frozen RUN_SPEC list for this bounds scanner, not project-wide novelty.",
+  "decision": "Do not widen vectors or repeat old Prob099/Prob156 studies. Calibrate mathematical contracts for other helper-dependent tasks, then compare unchanged bundle extraction on new complete responses; no adoption."
+}

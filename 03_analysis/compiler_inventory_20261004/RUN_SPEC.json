@@ -1,0 +1,68 @@
+{
+  "schema": "compiler_inventory_readonly_spec_v1",
+  "base_commit": "0e4c69e9d667186ed43b1967d49cc206cffe4748",
+  "corpus_archive_sha256": "c35e8c7e8a1c699aea6028cf3774f7b1797d52015a553440a49eb7d90cf8cfcc",
+  "pair_manifest_sha256": "d4235afb4c65222a49c942cf793ad60b22a9b3e75805f8ec54d3dad643e89dac",
+  "source_hashes": {
+    "collect_metadata.py": "3b4997ea5b1889eda4742094b596dca3d1a1a69c915ca64e117ef9ac712174dc",
+    "lexical_mask.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "literal_bounds.initial.py": "0fa0121d3b4582dbdea2378eec8c78719f39c9c596b1d5ff2249c17c1da5eebc",
+    "literal_bounds.py": "237551ab45edc60f957316842ed9aa5c2d7a8e3ec3a0fed367b612096ccc969e",
+    "LOCAL_TESTS.initial.txt": "4bdcf4e1cfc09b3b3e04a8181174c083b6784daacaab4f0e7100e9f81751cfec",
+    "LOCAL_TESTS.txt": "52a3ca2d1b4046bba5a8f63fb3bddbbd4368c56357df85216270cbfbce29e751",
+    "runtime_snapshot.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
+    "scan.py": "e219f06610da5a59fa1a9978bb62dc2fff72c164d66609afcf29be48470fa3e7",
+    "test_literal_bounds.py": "a87c1d9e2baa0d7f2a93062ed6b046ba7787e1e575a873488d4a671e3807043f"
+  },
+  "datasets": [
+    {
+      "id": "seven_rule",
+      "family": "VerilogEval",
+      "archive": "/workspace/team/runs/fpga_owner/skillfix_full156_20261001T235258Z/full156",
+      "tasks": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval",
+      "expected_tasks": 156
+    },
+    {
+      "id": "archived_best",
+      "family": "VerilogEval",
+      "archive": "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full",
+      "tasks": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval",
+      "expected_tasks": 156
+    },
+    {
+      "id": "runtime728",
+      "family": "VerilogEval",
+      "archive": "/workspace/team/runs/fpga_owner/full156_runtime728_20261003/full",
+      "tasks": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval",
+      "expected_tasks": 156
+    },
+    {
+      "id": "rtllm_g2",
+      "family": "RTLLM",
+      "archive": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/pair",
+      "tasks": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/tasks_verified",
+      "expected_tasks": 44
+    }
+  ],
+  "expected_records": 1024,
+  "known_development_tasks": [
+    "adder_8bit",
+    "comparator_3bit",
+    "comparator_4bit",
+    "multi_8bit",
+    "Prob115_shift18",
+    "Prob108_rule90",
+    "Prob083_rule110"
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "cloud_root": "/workspace/team/runs/fpga_owner/compiler_inventory_20261004_v1",
+  "limits": [
+    "All observations are historical artifacts and new static source hints; no new EDA confirmation, functional grade or competition score.",
+    "Archive verdicts and worker traces do not bind candidate source hashes at generation. Present source identity and archived coverage snapshots match; traces remain context only.",
+    "Literal detector covers only simple numeric internal packed declarations and direct decimal bit selects. No parameter/generate expansion, ports, part-selects, complex scopes or SV parser proof. Missing hints never prove correctness.",
+    "Missing-submodule hints are produced by unchanged development runtime; named maps only. No new rules, runtime adoption or automatic repair.",
+    "Other task hints are cross-task discovery material, not blind independent validation or repair benefit. Same task/source across archives is deduplicated.",
+    "Zero model/EDA calls. Read archived files and write only this owned collection directory; no SLOT/GPU lock changes, no model or instance actions."
+  ]
+}
