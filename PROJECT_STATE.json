@@ -1,4 +1,37 @@
 {
+  "helper_extraction_20261004": {
+  "status": "running_guards_then_two_captured_replies_then_paired_judges",
+  "updated_at": "2026-10-04T12:57:00+08:00",
+  "source": {
+    "root": "/workspace/team/runs/fpga_teammate/helper_F1r2_20261004T045633Z_829a00d",
+    "commit": "829a00dce9a03160422935e0a212d3be04366158",
+    "source_archive_sha256": "bbaa7513399e1c2f7ac9838861aefb204c8bc2bb8cd2d9b060568768013abdfe"
+  },
+  "launch": {
+    "root": "/workspace/team/runs/fpga_teammate/helper_F1r2_20261004T045633Z_829a00d",
+    "commit": "829a00dce9a03160422935e0a212d3be04366158",
+    "driver_pid": 2954015,
+    "driver_log": "/workspace/team/runs/fpga_teammate/helper_F1r2_20261004T045633Z_829a00d/driver.log",
+    "started_utc": "2026-10-04T04:57:15.793838+00:00",
+    "nohup": true,
+    "new_session": true,
+    "model_call_limit": 2,
+    "combined_call_ceiling": 24,
+    "judge_call_limit": 6
+  },
+  "initial_failure": {
+    "root": "/workspace/team/runs/fpga_teammate/helper_F1_20261004T045406Z_958da13",
+    "commit": "958da13e5f8746c80981393d7d78711bb8ac54cb",
+    "source_archive_sha256": "77640c65b7d3dfc5932f440ee873e31fb049778e9f47035af3dec21ad76e33ca",
+    "model_calls": 0,
+    "error": "one-line fixture outside line-anchored detector support",
+    "evidence_preserved": true
+  },
+  "max_new_model_calls": 2,
+  "prior_conservative_calls": 22,
+  "combined_call_ceiling": 24,
+  "formal_deployment_changed": false
+},
   "schema_version": 1,
   "research_cycle_20261004": {
     "status": "bounded_cycle_completed_with_stopped_model_pilot_and_completed_offline_audit",
