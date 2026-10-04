@@ -1,0 +1,39 @@
+{
+  "complete": true,
+  "valid": true,
+  "model_calls": 0,
+  "full_round_complete": false,
+  "elapsed_s": 29.865752244368196,
+  "original_evaluator_sha256": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797",
+  "isolated_evaluator_sha256": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c",
+  "formal_evaluator_unchanged": true,
+  "decision": "retain isolated evidence guard; no solver quality claim",
+  "source_commit": "c85f4f6",
+  "guard_elapsed_s": 30.128934348002076,
+  "rows": [
+    {
+      "name": "missing_preflight",
+      "blocked_as_environment": true
+    },
+    {
+      "name": "missing_after_preflight_injection",
+      "blocked_as_environment": true
+    },
+    {
+      "name": "real_positive",
+      "level": 3,
+      "tool_error": null
+    },
+    {
+      "name": "real_syntax_error",
+      "level": 0,
+      "tool_error": null
+    }
+  ],
+  "cleanup_verified": true,
+  "guard": {
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true
+  }
+}

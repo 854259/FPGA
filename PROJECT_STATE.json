@@ -3002,7 +3002,7 @@
     "gate_timeout_s": 20,
     "captured_worker_pairs": 4,
     "model_call_cap": 0,
-    "status": "preflight_passed_full_experiment_incomplete",
+    "status": "historical_preflight_pass_superseded_by_J1_regression",
     "executed_commit": "d82ed68410deadc563b118461ea30575f22c5214",
     "amd_root": "/workspace/team/runs/fpga_teammate/helper_I1r2_20261004T061455Z_d82ed68",
     "driver_pid": 2994206,
@@ -3031,7 +3031,7 @@
     "correct_broken_observed": 0,
     "independent_natural_samples": 0,
     "evidence_manifest": "03_analysis/helper_extraction_20261004/I1_PREFLIGHT_MANIFEST.json",
-    "decision": "retain_isolated_candidate_no_deployment_or_generalization_claim",
+    "decision": "rejected_after_J1_successful_original_repair_bypass; retain earlier evidence",
     "cleanup_verified": true,
     "cleanup": {
       "regenerable_dirs_removed": 16,
@@ -3078,7 +3078,7 @@
     "formal32gb_complete": false,
     "primary_goal": "complete competition delivery",
     "protocol": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
-    "status": "full_source_static_inventory_done_contract_and_interface_admission_pending",
+    "status": "stopped_at_preflight_I1_rejected_K1_not_promoted_next_full_round_unfrozen",
     "independent_natural_holdout_available": false,
     "id": "R20261004-01",
     "sample_size_and_full_budget_frozen": false,
@@ -3093,7 +3093,7 @@
     "credits_verified": false,
     "full_experiment_complete": false,
     "independent_source_discovery": {
-      "status": "full_static_inventory_complete_not_admitted",
+      "status": "full_302_runner_map_complete_fair_interface_oracle_admission_pending",
       "candidates": [
         "NVlabs/cvdp_benchmark",
         "hkust-zhiyao/RTL-BenchMT"
@@ -3120,7 +3120,7 @@
       "gpu_flock_free": true,
       "slot_lock_present": false,
       "model_pid": 2013333,
-      "checked_at": "2026-10-04T16:21:43+08:00",
+      "checked_at": "2026-10-04T17:28:02.0884035+08:00",
       "model_identity_unchanged": true
     },
     "rtllm_full_contracts_certified": false,
@@ -3137,7 +3137,7 @@
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T17:18:12.9384338+08:00",
+  "updated_at": "2026-10-04T17:28:02.0890768+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3308,5 +3308,18 @@
       "cleanup_verified": true,
       "next": "isolated judge availability guard; independent data and budget admission"
     }
+  },
+  "judge_admission_M1_20261004": {
+    "status": "isolated_guard_verified_not_formally_deployed",
+    "source_commit": "c85f4f6",
+    "evaluator_sha256": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c",
+    "formal_evaluator_sha256": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797",
+    "model_calls": 0,
+    "controls_passed": 4,
+    "stage_seconds": 29.865752244368196,
+    "amd_root": "/workspace/team/runs/fpga_teammate/judge_M1r2_20261004T092312Z_c85f4f6",
+    "processes_finished": true,
+    "cleanup_verified": true,
+    "public_report": "03_analysis/helper_extraction_20261004/JUDGE_ADMISSION_RESULT.md"
   }
 }
