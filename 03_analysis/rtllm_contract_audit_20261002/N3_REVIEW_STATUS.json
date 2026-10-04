@@ -1,0 +1,40 @@
+{
+  "status": "manual_review_complete_aggregation_blocked_before_launch",
+  "source_commit": "5512d2ed814e4a586d583a178d3868440dd1bddc",
+  "upstream": "2cdaae80ae42c211b049aa521fc2b5db1c2037af",
+  "manual_review_entries": 60,
+  "public_test_functions_reviewed": 178,
+  "script_executed": false,
+  "script_functionally_verified": false,
+  "stage_pid": null,
+  "stage_seconds": null,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "formal_proofs_executed": 0,
+  "reference_behavior_certified": 0,
+  "independent_admitted": 0,
+  "full_experiment_complete": false,
+  "decision": "retain finite engineering controls; park original public suite as standalone independent full-quality benchmark",
+  "notes_sha256": "8a6a19e01609f1fe78de594b0c6c9b957dfb90d6fd0d1646c8a563d392c2c6ba",
+  "evidence_zip_sha256": "1542970868cf1bafb4879669248dbc0d592655f9a9e34220e3528fc8dae8c153",
+  "archive_files": 14,
+  "own_transfer_cleanup_verified": true,
+  "other_task": {
+    "id": "full156_bundle_20261004_v1",
+    "queue_pid": 3061569,
+    "observed_completed_samples": 8,
+    "expected_samples": 312,
+    "arms": [
+      "A",
+      "C"
+    ],
+    "samples_per_arm_per_task": 1,
+    "max_requests": 624,
+    "queue_deadline_s": 86400,
+    "spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+    "run_source_commit_from_launch": "42da31d",
+    "mutated": false,
+    "scope": "known full156 paired regression substage; not the comprehensive batch",
+    "risk": "Static extraction gate can still bypass original successful repair; J1 not executed against this new candidate"
+  }
+}

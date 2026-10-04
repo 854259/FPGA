@@ -3093,7 +3093,7 @@
     "credits_verified": false,
     "full_experiment_complete": false,
     "independent_source_discovery": {
-      "status": "GateTruth_minimum_controls_58_of_60_only_semantics_family_and_oracle_scope_pending",
+      "status": "public_suite_parked_as_independent_main_benchmark_finite_controls_retained",
       "candidates": [
         "NVlabs/cvdp_benchmark",
         "hkust-zhiyao/RTL-BenchMT"
@@ -3114,14 +3114,14 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-04T17:58:37+08:00",
+      "checked_at": "2026-10-04T18:18:32+08:00",
       "own_live_processes": 0,
-      "model_healthy": true,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
-      "slot_lock_present": false,
       "full_experiment_running": false,
-      "workspace_free_bytes": 10557681664
+      "other_task_queue_running": true,
+      "other_task_queue_pid": 3061569,
+      "slot_must_not_be_cleared": true
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3135,9 +3135,28 @@
       "final_budget_frozen": false,
       "credits_verified": false,
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
+    },
+    "full156_started_scope": "R20261004-01 only; separate existing owner full156 regression queue is active",
+    "other_task_full156_observation": {
+      "id": "full156_bundle_20261004_v1",
+      "queue_pid": 3061569,
+      "observed_completed_samples": 8,
+      "expected_samples": 312,
+      "arms": [
+        "A",
+        "C"
+      ],
+      "samples_per_arm_per_task": 1,
+      "max_requests": 624,
+      "queue_deadline_s": 86400,
+      "spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+      "run_source_commit_from_launch": "42da31d",
+      "mutated": false,
+      "scope": "known full156 paired regression substage; not the comprehensive batch",
+      "risk": "Static extraction gate can still bypass original successful repair; J1 not executed against this new candidate"
     }
   },
-  "updated_at": "2026-10-04T18:00:19.2798456+08:00",
+  "updated_at": "2026-10-04T18:20:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3323,7 +3342,7 @@
     "public_report": "03_analysis/helper_extraction_20261004/JUDGE_ADMISSION_RESULT.md"
   },
   "gatetruth_admission_20261004": {
-    "status": "N1_N2_complete_public_suite_not_admitted_semantics_and_overlap_pending",
+    "status": "manual_scope_review_complete_aggregation_blocked_before_launch_public_suite_not_independently_admitted",
     "upstream": "2cdaae80ae42c211b049aa521fc2b5db1c2037af",
     "source_commit": "7ffd7b589aa493411e96947b226106e207375c53",
     "tasks": 60,
@@ -3336,7 +3355,7 @@
     "full_experiment_complete": false,
     "evidence_zip_sha256": "38b41442d72658f92bf8601ee9efa790169e93683804a89ca7d4b2daef472c0a",
     "cvdp_missing_top_full_public_input": 2,
-    "report": "03_analysis/rtllm_contract_audit_20261002/N2_RESULT.md",
+    "report": "03_analysis/rtllm_contract_audit_20261002/N3_REVIEW_STATUS.md",
     "N2_commit": "fe006faa5ca596b41fa37a7ea480d479b3a10942",
     "N2_controls": 120,
     "N2_negative_detected": 119,
@@ -3347,6 +3366,46 @@
     "N2_evidence_zip_sha256": "1eee95e9dc3606487decc06ae63c02e4989c674441d4f4826293724678337303",
     "coverage_ledger_sha256": "7966d96f633c8f477c8be605685075f07ffbb58b39e84de948b6ae69812e88ab",
     "N2_stage_s": 37.366542492993176,
-    "cleanup_verified": true
+    "cleanup_verified": true,
+    "N3": {
+      "status": "manual_review_complete_aggregation_blocked_before_launch",
+      "source_commit": "5512d2ed814e4a586d583a178d3868440dd1bddc",
+      "upstream": "2cdaae80ae42c211b049aa521fc2b5db1c2037af",
+      "manual_review_entries": 60,
+      "public_test_functions_reviewed": 178,
+      "script_executed": false,
+      "script_functionally_verified": false,
+      "stage_pid": null,
+      "stage_seconds": null,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "formal_proofs_executed": 0,
+      "reference_behavior_certified": 0,
+      "independent_admitted": 0,
+      "full_experiment_complete": false,
+      "decision": "retain finite engineering controls; park original public suite as standalone independent full-quality benchmark",
+      "notes_sha256": "8a6a19e01609f1fe78de594b0c6c9b957dfb90d6fd0d1646c8a563d392c2c6ba",
+      "evidence_zip_sha256": "1542970868cf1bafb4879669248dbc0d592655f9a9e34220e3528fc8dae8c153",
+      "archive_files": 14,
+      "own_transfer_cleanup_verified": true,
+      "other_task": {
+        "id": "full156_bundle_20261004_v1",
+        "queue_pid": 3061569,
+        "observed_completed_samples": 8,
+        "expected_samples": 312,
+        "arms": [
+          "A",
+          "C"
+        ],
+        "samples_per_arm_per_task": 1,
+        "max_requests": 624,
+        "queue_deadline_s": 86400,
+        "spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+        "run_source_commit_from_launch": "42da31d",
+        "mutated": false,
+        "scope": "known full156 paired regression substage; not the comprehensive batch",
+        "risk": "Static extraction gate can still bypass original successful repair; J1 not executed against this new candidate"
+      }
+    }
   }
 }
