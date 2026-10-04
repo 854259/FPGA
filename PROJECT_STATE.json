@@ -3641,7 +3641,7 @@
     "submitted_utc": "2026-10-05T00:58:17.092209+08:00",
     "next": "Freeze complete eligible compile-repair checkpoint inventory and paired budget before model testing; all archived inputs remain development, independent/full-batch gates still open.",
     "stage_pid": 3357886,
-    "completed_utc": "2026-10-04T17:00:32.183501+00:00",
+    "completed_utc": "2026-10-05T01:00:32.183501+08:00",
     "eda_calls": 32,
     "passed_cases": 32,
     "elapsed_s": 34.48013324663043,
@@ -3649,5 +3649,20 @@
     "archive_members_verified": 205,
     "owned_cache_directories_removed": 32,
     "model_and_protected_files_unchanged": true
+  },
+  "diagnostic_checkpoint_Q5_20261005": {
+    "status": "frozen_not_executed",
+    "pairs": 7,
+    "new_model_call_cap": 14,
+    "stage_timeout_s": 3600,
+    "worker_timeout_s": 150,
+    "retries": 0,
+    "archive_rows_audited": 312,
+    "original_model_repair_checkpoints": 7,
+    "original_deterministic_successes": 7,
+    "original_exhausted_compile_errors": 2,
+    "new_independent_natural_tasks": 0,
+    "full_batch_complete": false,
+    "spec": "03_analysis/helper_extraction_20261004/DIAGNOSTIC_Q5_SPEC.json"
   }
 }
