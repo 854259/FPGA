@@ -71,18 +71,20 @@ def run(a):
     try:
         publish("source_hashes_verified")
         build_tools = a.out / "build_tools"
-        build_tools.mkdir()
+        if not a.reuse_toolchain:
+            build_tools.mkdir()
         for name in spec["files"]:
-            if name.endswith(".deb"):
+            if not a.reuse_toolchain and name.endswith(".deb"):
                 command("unpack_" + name.split("_")[0],
                         ["dpkg-deb", "-x", a.materials / name, build_tools], a.out, 30)
         source = a.out / "source"
         source.mkdir()
-        with tarfile.open(a.materials / "iverilog_v13_0_30a7d1a.tar.gz") as archive:
-            for member in archive:
-                if not (source / member.name).resolve().is_relative_to(source.resolve()):
-                    raise RuntimeError("unsafe tar path")
-            archive.extractall(source, filter="data")
+        if not a.reuse_toolchain:
+            with tarfile.open(a.materials / "iverilog_v13_0_30a7d1a.tar.gz") as archive:
+                for member in archive:
+                    if not (source / member.name).resolve().is_relative_to(source.resolve()):
+                        raise RuntimeError("unsafe tar path")
+                archive.extractall(source, filter="data")
         with zipfile.ZipFile(a.materials / "cvdp_tooling_8e894cf.zip") as archive:
             for name in archive.namelist():
                 if not (source / name).resolve().is_relative_to(source.resolve()):
@@ -98,15 +100,30 @@ def run(a):
             "CPPFLAGS": "-I" + str(build_tools / "usr/include"),
             "LDFLAGS": "-L" + str(build_tools / "usr/lib/x86_64-linux-gnu"),
         }
-        command("autoconf", ["sh", "autoconf.sh"], icarus, 120, build_env)
-        command("configure", ["sh", "configure", "--prefix=" + str(prefix)], icarus, 180, build_env)
-        command("build", ["make", "-j" + str(spec["build_jobs"])], icarus, 1500, build_env)
-        command("install_prefix", ["make", "install"], icarus, 120, build_env)
+        if a.reuse_toolchain:
+            assert sha(a.reuse_toolchain) == spec["reuse_toolchain_manifest_sha256"]
+            installed = json.loads(a.reuse_toolchain.read_text())
+            prefix = Path(installed["prefix"])
+            assert prefix.is_absolute() and prefix.is_dir()
+            assert {str(p.relative_to(prefix)): sha(p) for p in prefix.rglob("*") if p.is_file()} == installed["files"]
+            result["reused_verified_toolchain"] = str(prefix)
+            publish("reused_fixed_icarus_no_rebuild")
+        else:
+            command("autoconf", ["sh", "autoconf.sh"], icarus, 120, build_env)
+            command("configure", ["sh", "configure", "--prefix=" + str(prefix)], icarus, 180, build_env)
+            command("build", ["make", "-j" + str(spec["build_jobs"])], icarus, 1500, build_env)
+            command("install_prefix", ["make", "install"], icarus, 120, build_env)
         site = a.out / "python_site"
+        wheel_manifest = a.materials / "wheels/WHEELS_MANIFEST.json"
+        assert sha(wheel_manifest) == spec["wheels_manifest_sha256"]
+        wheel_files = json.loads(wheel_manifest.read_text())["wheels"]
+        assert len(wheel_files) == 6
+        for wheel in wheel_files:
+            assert sha(wheel_manifest.parent / wheel["filename"]) == wheel["sha256"]
         command("python_dependencies", [
             "/usr/bin/python3", "-m", "pip", "install", "--target", site,
             "--no-deps", "--no-cache-dir", "--only-binary=:all:", "--require-hashes",
-            "--index-url", "https://pypi.org/simple", "-r", requirements], a.out, 300)
+            "--no-index", "--find-links", wheel_manifest.parent, "-r", requirements], a.out, 90)
         env = {
             "PATH": str(prefix / "bin") + ":" + os.environ["PATH"],
             "PYTHONPATH": str(site),
@@ -183,6 +200,8 @@ def run(a):
             tool_files={str(p.relative_to(prefix)):sha(p) for p in prefix.rglob("*") if p.is_file()},
             package_metadata={p.parent.name:sha(p) for p in site.glob("*.dist-info/METADATA")})
         assert all(sha(a.materials / n) == h for n,h in spec["files"].items())
+        if a.reuse_toolchain:
+            assert {str(p.relative_to(prefix)): sha(p) for p in prefix.rglob("*") if p.is_file()} == installed["files"]
         assert all(sha(a.out/"controls"/label/rel) == h for label,files in source_hashes.items()
                    for rel,h in files.items())
         publish("completed_no_dataset_admission")
@@ -197,4 +216,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     for name in ["kit", "out", "resource-check", "materials", "controls"]:
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--reuse-toolchain", type=Path)
     run(parser.parse_args())
