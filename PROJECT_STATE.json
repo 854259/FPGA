@@ -4456,7 +4456,7 @@
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_manual_contract_attribution_ongoing",
-    "G3": "concise_rejected_map_single_counterexample_below_threshold_next_feedback_factor_not_frozen",
+    "G3": "single_counterexample_below_threshold_parser_boundary_must_be_resolved_before_next_feedback_factor",
     "G4": "not_admitted_independent_natural_validation",
     "G5": "not_final_delivery_certified",
     "goal_complete": false
@@ -4550,7 +4550,14 @@
       "candidate_qualified_for_fresh_generation": false,
       "next": "03_analysis/prompt_map_feedback_v2_20261004/NEXT.md",
       "archive_sha256": "5ee34b1df0e9f938f4d13970d33a7b51f13fd1228ebc7316358f921a0c8e18cf",
-      "owned_cleanup_verified": true
+      "owned_cleanup_verified": true,
+      "parser_transfer_admitted": false,
+      "local_constructed_semantic_false_accepts": 10,
+      "teammate_O1_same_parser_sha_confirmed": true,
+      "teammate_O1_reported_false_accepts": 30,
+      "teammate_O2_reported_false_accepts": 0,
+      "teammate_O2_reported_contract_object_mismatches": 4,
+      "teammate_O2_actual_truth_table_regression": "unknown_not_independently_checked"
     }
   }
 }

@@ -1,0 +1,389 @@
+{
+  "scope": "read-only team evidence review; no teammate source/process changes, no independent re-audit yet",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "items": [
+    {
+      "root": "/workspace/team/runs/fpga_teammate/map_boundary_O1_20261004_44a80d6",
+      "summary_sha256": "a4cf8cd5111b9c1ae758e6fc7cc1908fb3d0394961cb19027daae716a892ffc5",
+      "cases_sha256": "2d15a65aaa353270c4da632e154868a3e9e0b5cc0c666f2d91edf1f4c714dd23",
+      "summary": {
+        "complete": true,
+        "parser_sha256": "63cbdeaa67cb9deda4173ccd57fde755657b7b1f986706fecaf9881c6048ce1d",
+        "script_sha256": "def52a63bab8336f56baa646f89c6ac56ceb70ce17bbe750815505044ad095e2",
+        "tests": 420,
+        "supported_cases": 384,
+        "semantic_abstention_cases": 36,
+        "failures": 30,
+        "false_accepts": 30,
+        "candidate_admitted": false,
+        "elapsed_s": 0.05075470730662346,
+        "model_calls": 0,
+        "eda_calls": 0,
+        "independent_natural_tasks": 0,
+        "full_batch_complete": false,
+        "scope": "Constructed development grammar controls; not new natural holdout or RTL functional certification"
+      },
+      "failed_cases": [
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "Output y must equal the map result XOR p.",
+          "prompt_sha256": "03a1dab580e3450174c9e2695226cdcc0cb11e45e8d951121028cc769629bb6e",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "Use a flip-flop on y.",
+          "prompt_sha256": "b1f8c1c923a7b15a0c9bb1199b63c95cf7142bd64b16fc74d2a63e50d76b9c1f",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "Hold y when p is zero.",
+          "prompt_sha256": "04ecd36cfa92b96f9227cd71afff6a0189feb5b1e6f651e9839a56b701d417e1",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "The output follows the table after two cycles.",
+          "prompt_sha256": "21c9446a58c2d48c83520df93f0986b6fb46684de8f8934e902bf59534cb9ee1",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "The table gives an intermediate function t; y is t OR p.",
+          "prompt_sha256": "afcaf7eedbffa904023b7ff40b77672d045326ef18e04f100c40159ebee0c321",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "Output y is delayed by one cycle.",
+          "prompt_sha256": "89e0c55b12af1427a8b491705a839161c359e72e8f1aace05c6050cab141b557",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "Output y must be negated.",
+          "prompt_sha256": "2582bf3702142e58bb92732f5398ea606256e5f6fc1e43666ed9e3c986228380",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "Output y is 1 only when q is 1, regardless of the map.",
+          "prompt_sha256": "15923386f541e930bcc5f393583f2f28e5bbbca96d37d3b13e1fbf4beeeffda7",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "Swap p and q before reading the table.",
+          "prompt_sha256": "ff777394199d6c072b27c23eb146c00ce4035a1ce4a648b6442de8a61bd98200",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 2,
+          "extra": "Output y equals the opposite of each table entry.",
+          "prompt_sha256": "8ba0e16885702a2b5de45599d8b4e399d555dbc8a3c2d76a6682a12ab62d978f",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "Output y must equal the map result XOR p.",
+          "prompt_sha256": "46818c59726660c96e5168a76a3ca0102e557101e1215a1f14a5f0bacc3eb40c",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "Use a flip-flop on y.",
+          "prompt_sha256": "96ace0791a8cff06aa0d2fc5e7c030df6f15a928ebdccdd1341dbb696e3b27a2",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "Hold y when p is zero.",
+          "prompt_sha256": "d1fc5d79620322e2af83bea4f491153273c460c8fe118a07aefa3f816fb75bd9",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "The output follows the table after two cycles.",
+          "prompt_sha256": "c82a5022a4a4ae33fb18644b915d88a05360fb34f029610b327afb42eadff972",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "The table gives an intermediate function t; y is t OR p.",
+          "prompt_sha256": "8663f85485bed5c8117ef20184a1086e843d7dc6893e146ff02db15889f66c03",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "Output y is delayed by one cycle.",
+          "prompt_sha256": "6d758bf3da828b0a75282c484bba3479fed5536f3b8ae8c2d8130042f18495c7",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "Output y must be negated.",
+          "prompt_sha256": "c886b1d578760eb316099cfa2453e73c4d07085dad3af35b9d5fddab1e5cf97e",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "Output y is 1 only when q is 1, regardless of the map.",
+          "prompt_sha256": "350cd8298f9fe56e93dcc1ebfdcf3f04c561c6260796a156c72db533545b20a3",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "Swap p and q before reading the table.",
+          "prompt_sha256": "98c313ae8513d60583c5fbdaebb98a518a2e945806b0eb933efb31b1197b1c95",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 3,
+          "extra": "Output y equals the opposite of each table entry.",
+          "prompt_sha256": "83de1278dad6a8de666d73a54ca2751fce331d7016bd0dd26ed402d70f3ec773",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "Output y must equal the map result XOR p.",
+          "prompt_sha256": "0cde8c036f54a298df544a0ab26c390d02dde03e68f75c89091fa06c86bbdbc4",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "Use a flip-flop on y.",
+          "prompt_sha256": "d5bae9686f6b2d76fcca4086c922cd5521983fcf3e1ae151151989cf432ad305",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "Hold y when p is zero.",
+          "prompt_sha256": "13fd2e8f989b63e573d7b9a9d33a2e410ccfa90fd95c76dc232913fd8c4e2c72",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "The output follows the table after two cycles.",
+          "prompt_sha256": "3efbffe38274a5284edb1964146529c66c7997e20e3343b485c0b55d3a7c0e71",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "The table gives an intermediate function t; y is t OR p.",
+          "prompt_sha256": "7ea05109ed404f40edad80b7352447d5a79d04ba510e23b4b37ab8e175e6d14f",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "Output y is delayed by one cycle.",
+          "prompt_sha256": "e8a10dcb1b23bdb50e7bebd9d45bc29382d122cc4063f5d79b76bcd617f8800c",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "Output y must be negated.",
+          "prompt_sha256": "6b91b9b5a0a8e8848729ba5a13f40f24c248815ac876f4ed1753eff4d28dbe86",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "Output y is 1 only when q is 1, regardless of the map.",
+          "prompt_sha256": "a260c1e7212a42af7a7c00fcf8ff2fb664703bfb9918cc3c3daa20b473c69db2",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "Swap p and q before reading the table.",
+          "prompt_sha256": "0e1abe0c5fbb145ab01f922e8778f16943a36bf6de034467e7908758157318a3",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "additional_semantic_requirement",
+          "n": 4,
+          "extra": "Output y equals the opposite of each table entry.",
+          "prompt_sha256": "88be28daa3ec3abec42a9f180d1c5e8094310b61a59738ecd78eb56c0f9ebfdb",
+          "expected": "abstain",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "root": "/workspace/team/runs/fpga_teammate/map_boundary_O2_20261005_11666ba",
+      "summary_sha256": "202a1e60bf55c376b5a0a7db2eccf6271d3be081d9a56806c4d4948caf59f969",
+      "cases_sha256": "adb3ef0de69b94ce01aed4e46fec141c51251323a4a87930d21a1dc84c2b3809",
+      "summary": {
+        "complete": true,
+        "parser_sha256": "fb5c1c6a951f7f3d492bc2fcc2d512bf1d1f481fdfafd4f71afd582972fb5a0c",
+        "script_sha256": "f5b4846efaf74888e096a8433ca3c38afc7f63fcdfa20b41967e6a85da78f332",
+        "tests": 428,
+        "supported_cases": 384,
+        "semantic_abstention_cases": 36,
+        "calibrated_contract_regressions": 8,
+        "regression_manifest_sha256": "2e0e2d11c7ed652b62140086e6dd0491e16d873e0ee76dbd469545f5ad49efbd",
+        "failures": 4,
+        "false_accepts": 0,
+        "candidate_admitted": false,
+        "elapsed_s": 0.06084572896361351,
+        "model_calls": 0,
+        "eda_calls": 0,
+        "independent_natural_tasks": 0,
+        "full_batch_complete": false,
+        "scope": "Constructed development grammar controls; not new natural holdout or RTL functional certification"
+      },
+      "failed_cases": [
+        {
+          "kind": "existing_calibrated_contract_regression",
+          "prompt_sha256": "aa50560c2a518e130e6f2d650168fb9457f92ec2d460caac0c18febbbb47a03f",
+          "expected": "unchanged_supported_contract",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "existing_calibrated_contract_regression",
+          "prompt_sha256": "bdd6d4c116e79abd65a18b1461171091035fa8f12c4fc242e174055141ec6bd4",
+          "expected": "unchanged_supported_contract",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "existing_calibrated_contract_regression",
+          "prompt_sha256": "58609ff895fd306d2f5ff536e7e43a29630382babdf1cbb3faa0347bdfa7ef74",
+          "expected": "unchanged_supported_contract",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        },
+        {
+          "kind": "existing_calibrated_contract_regression",
+          "prompt_sha256": "7619670501d7d0ea6a2581009db0465e1b2a3e20285c8cd1390c2ed7a75c3529",
+          "expected": "unchanged_supported_contract",
+          "actual_status": "supported",
+          "passed": false,
+          "reason": null
+        }
+      ]
+    }
+  ]
+}

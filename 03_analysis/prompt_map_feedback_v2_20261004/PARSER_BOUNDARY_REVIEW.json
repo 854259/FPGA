@@ -1,0 +1,92 @@
+{
+  "schema": "readonly_parser_semantic_boundary_review_v1",
+  "parser_sha256": "63cbdeaa67cb9deda4173ccd57fde755657b7b1f986706fecaf9881c6048ce1d",
+  "scope": "Constructed prefix semantic requirements on one known public prompt; not natural independent tasks or RTL probe",
+  "rows": [
+    {
+      "extra": "Output out must equal the map result XOR a.",
+      "prompt_sha256": "ab269799b7e2e4a6c466cee58b9b3a158752c3ff887d9ce85b0e3cd963f568fc",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "Use a flip-flop on out.",
+      "prompt_sha256": "a05f6656649706ef1e53a55f9c129274897e74952000216bc8f59f699cc4f6bf",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "Hold out when a is zero.",
+      "prompt_sha256": "f1e137154d19d84e950865077da00f4a0dc4b50cbe8bccc108f1e00141cfa636",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "The output follows the table after two cycles.",
+      "prompt_sha256": "988c27f54f8c697ce7c3e4d7e0d7d13f57115e76cd02170f7bb33b0d3715c290",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "The table gives an intermediate function t; out is t OR a.",
+      "prompt_sha256": "0b4d7953a96e82f77448b3dafe4ad6747b3d053f20cd40e5137ac8aa8b50f27a",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "Output out is delayed by one cycle.",
+      "prompt_sha256": "8c54c26717d0f9234d09c51b0cf2584d2793d0110b951d1f43ba71a89e8b9042",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "Output out must be negated.",
+      "prompt_sha256": "d6b93a49550c8a72ebbe97a64fe08ac37e8cfba05c63c1586a59b392957ba9d2",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "Output out is 1 only when b is 1, regardless of the map.",
+      "prompt_sha256": "6553a6c4ec8b205b0859302ce0105a89fa6bd25723478bca100c829c387df7c4",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "Swap a and b before reading the table.",
+      "prompt_sha256": "cf0e26f587d031e2c429418879d297e2bbb9c46dcd3533c3fe4c794074bf2b26",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    },
+    {
+      "extra": "Output out equals the opposite of each table entry.",
+      "prompt_sha256": "9be7e86da0f5d94a4fbdd8fac2d01d5e2f7faba89b22054ba8b8c3d31d529f49",
+      "expected": "abstain",
+      "actual_status": "supported",
+      "reason": null,
+      "false_accept": true
+    }
+  ],
+  "false_accepts": 10,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "not_change_prior_four_clear_prompt_results": true,
+  "transfer_admitted": false
+}
