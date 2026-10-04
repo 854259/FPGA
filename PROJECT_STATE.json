@@ -1,5 +1,100 @@
 {
   "schema_version": 1,
+  "local_bit_contract_20261004": {
+    "status": "complete_verified_no_repair_benefit",
+    "report": "03_analysis/local_bit_contract_20261004/README.md",
+    "result": "03_analysis/local_bit_contract_20261004/RESULTS.json",
+    "branch": "research/ross-mcp-20261004",
+    "base_commit": "b6e31532492f7bf7d7c3e96d4120fb886e8a4c65",
+    "new_model_requests": 18,
+    "responses": 18,
+    "retries": 0,
+    "natural_error_tasks": 1,
+    "correct_guards": 2,
+    "trials_per_subject_per_arm": 2,
+    "arms": {
+      "A": {
+        "rows": 6,
+        "error_reviews": 2,
+        "repairs": 0,
+        "guard_reviews": 4,
+        "guard_regressions": 0,
+        "request_elapsed_s": 41.495252788066864,
+        "byte_identical": 6
+      },
+      "B": {
+        "rows": 6,
+        "error_reviews": 2,
+        "repairs": 0,
+        "guard_reviews": 4,
+        "guard_regressions": 0,
+        "request_elapsed_s": 40.11250773631036,
+        "byte_identical": 6
+      },
+      "C": {
+        "rows": 6,
+        "error_reviews": 2,
+        "repairs": 0,
+        "guard_reviews": 4,
+        "guard_regressions": 0,
+        "request_elapsed_s": 40.287877175956964,
+        "byte_identical": 6
+      }
+    },
+    "all_18_sources_byte_identical": true,
+    "elapsed_s": 364.98391168937087,
+    "qualifies_for_independent_validation": false,
+    "production_end_to_end_benefit_measured": false,
+    "manual_testbench_creation_cost_measured": false,
+    "formal_runtime_integrated": false,
+    "formal_package_changed": false,
+    "new_score": false,
+    "full_skill_model_execution": false,
+    "mcp_sessions": 0,
+    "evidence": {
+      "archive_sha256": "d38e724fdd2af52f21729a821a88bfceb1b9a258b45d40fbbd77f6ad1000255c",
+      "manifest_files": 309,
+      "all_hashes_verified": true,
+      "all_requests_exactly_reconstructed": true,
+      "all_extractions_and_grades_verified": true,
+      "unique_response_ids": 18
+    },
+    "postflight": {
+      "utc": "2026-10-04T04:14:25.068022+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "workspace_free_gib": 10.113410949707031,
+      "model_pid": 2013333,
+      "instance_shutdown_or_model_restart": false
+    },
+    "guard": {
+      "started_at_utc": "2026-10-04T04:07:37.803227+00:00",
+      "finished_at_utc": "2026-10-04T04:13:43.220146+00:00",
+      "elapsed_s": 365.30678142700344,
+      "stage_rc": 0,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "model_idle_after": {
+        "health_status": "ok",
+        "model_name": "Qwen3.6-27B-Q4_K_M",
+        "slot_count": 1,
+        "processing_slots": 0,
+        "model_pid_owns_port": true
+      }
+    },
+    "owned_cleanup_verified": true,
+    "remaining_owned_processes": 0,
+    "next_step": "Do not repeat these prompts on the same seen error; freeze independent natural candidates for B2 narrow repair. Comment bias or candidate anchoring remain untested hypotheses"
+  },
   "ross_diagnostic_repair_20261004": {
     "status": "complete_verified_no_extra_repair_benefit",
     "report": "03_analysis/ross_diagnostic_repair_20261004/README.md",
@@ -100,7 +195,7 @@
     },
     "owned_cleanup_verified": true,
     "remaining_owned_processes": 0,
-    "next_step": "Research why actual failure evidence still returns unchanged code; freeze short local semantic constraints and independent cases before further calls; keep B2 natural-candidate validation pending"
+    "next_step": "Short-feedback/local-bit follow-up completed with no repairs; see local_bit_contract_20261004. B2 independent-natural validation remains pending"
   },
   "ross_expert_assessment_20261004": {
     "status": "isolated_xsim_verdict_gates_verified",
