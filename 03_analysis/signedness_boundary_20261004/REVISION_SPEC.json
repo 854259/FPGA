@@ -1,0 +1,28 @@
+{
+  "schema": "signedness_boundary_revision_v2",
+  "status": "frozen_before_amd_execution",
+  "base_commit": "ada766c11f22ac50f4362042b3fff846d84f84a5",
+  "selector_sha256": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+  "patch_sha256": "93145c106081c158b0f968316c7327e0b7bb574124f0bccb751a3f48b8cfbfa1",
+  "new_model_call_limit": 0,
+  "stage_timeout_s": 1200,
+  "repeat_transformations": 2,
+  "development_cases": [
+    "Known115Wrong"
+  ],
+  "new_cases": 7,
+  "oracle": "Frozen bit-index reference with explicit sign-fill, 12 input bit patterns x (load + 3 shifts) = 48 checks per constructed case; known natural case uses unchanged 31-check independent probe.",
+  "controls": "One positive and one inverted-sign-fill negative control for every distinct constructed width/shift contract; reused only for byte-identical TB.",
+  "acceptance": "Known supported errors reproduce; newly supported cases repair; no correct-candidate functional regression; unsupported cases remain byte-identical. Any guard regression rejects adoption and stops expansion; finish only this already frozen matrix for diagnosis, no retries or new cases.",
+  "error_policy": "Environment/protocol/control errors stop the stage and remain separate. Observed regressions are valid negative results, not environment errors. No tuning after results within this round.",
+  "limits": [
+    "New cases are constructed mechanism validation, not unseen natural competition tasks or score gains.",
+    "All inspected cases become development data after this round; a revision must report regression reuse separately.",
+    "Only prompt and candidate source enter selector/patch. Expected output and testbench are exclusively evaluator inputs.",
+    "Protected package, official baseline, shared model and instance remain unchanged."
+  ],
+  "regression_reuse_cases": 5,
+  "rule_change": "Abstain if the selected register has any blocking write; retain all source bytes. No selector change.",
+  "prior_round_decision": "B1 rejected: two correct candidates became wrong, 18/48 mismatches each. All B1 cases are now development data.",
+  "coverage_cost": "Known real errors with blocking or mixed blocking/nonblocking writes must now abstain even when a cast might repair them."
+}

@@ -25,6 +25,12 @@ def patch(prompt: str, source: str, selector) -> tuple[str, dict]:
     edits = []
     for finding in risks:
         operand = finding["operand"]
+        # Blocking writes can expose a deliberately zero-filled intermediate to
+        # a later sign-bit compensation step. The narrow patch has no dataflow
+        # proof for that context; preserve the complete candidate unchanged.
+        if re.search(rf"\b{re.escape(operand)}\s*(?:\[[^]]*\]\s*)?=(?!=)", code):
+            record["reason"] = "blocking_write_context_not_supported"
+            return source, record
         # Locate the same complete self-assignment recognized by the selector.
         # Restrict the replacement to the bare RHS identifier, leaving every
         # other byte (including comments, declarations and control flow) intact.

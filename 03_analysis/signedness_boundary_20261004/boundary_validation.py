@@ -86,19 +86,19 @@ def run(args):
     if ctypes.CDLL(None, use_errno=True).prctl(36, 1, 0, 0, 0) != 0:
         raise RuntimeError("cannot enable owned-child subreaper")
     paired = load("boundary_oracle_adapter", REPO / "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py")
-    spec = json.loads((HERE / "RUN_SPEC.json").read_text())
+    spec = json.loads(args.spec.read_text())
     selector_path = REPO / "04_project/amd_rtl_agent/bench/signedness_selector.py"
     patch_path = REPO / "03_analysis/semantic_repair_20261004/signed_shift_patch.py"
     if sha(selector_path) != spec["selector_sha256"] or sha(patch_path) != spec["patch_sha256"]:
         raise RuntimeError("frozen selector/patch identity changed")
     selector, patcher = load("boundary_selector", selector_path), load("boundary_patch", patch_path)
-    cases = json.loads((HERE / "cases.json").read_text())["cases"]
+    cases = json.loads(args.cases.read_text())["cases"]
     known = REPO / "03_analysis/r2_signedness_20261003"
     cases.insert(0, dict(id="Known115Wrong", cohort="development_reproduction",
                          prompt=(known / "input/Prob115_shift18/prompt.txt").read_text(),
                          source=(known / "input/Prob115_shift18/candidate.sv").read_text(),
                          expected_before="fail", expected_action="change"))
-    assets = [HERE / name for name in ("RUN_SPEC.json", "cases.json", "boundary_validation.py")]
+    assets = [args.spec.resolve(), args.cases.resolve(), Path(__file__).resolve()]
     assets += [selector_path, patch_path, Path(paired.__file__), paired.INHERITED_ORACLE,
                known / "input/Prob115_shift18/prompt.txt", known / "input/Prob115_shift18/candidate.sv"]
     assets += [known / "probes/Prob115_shift18" / name for name in ("tb.sv", "positive.sv", "negative.sv")]
@@ -162,6 +162,8 @@ def run(args):
             row["before"]=paired.oracle(task,folder/"before.sv",args.out/"grades"/row["id"]/"before")
             if row["before"]["status"]=="environment_error":
                 raise RuntimeError("before_environment_error: "+row["id"])
+            if row["before"]["status"]=="fail" and row["before"]["failure_kind"]!="semantic_mismatch":
+                raise RuntimeError("before_not_a_semantic_result: "+row["id"])
             if row["byte_identical"]:
                 row["after"]=dict(row["before"])
                 row["after_reuses_identical_before_receipt"]=True
@@ -169,6 +171,8 @@ def run(args):
                 row["after"]=paired.oracle(task,folder/"after.sv",args.out/"grades"/row["id"]/"after")
             if row["after"]["status"]=="environment_error":
                 raise RuntimeError("after_environment_error: "+row["id"])
+            if row["after"]["status"]=="fail" and row["after"]["failure_kind"]!="semantic_mismatch":
+                raise RuntimeError("after_not_a_semantic_result: "+row["id"])
             statuses=(row["before"]["status"],row["after"]["status"])
             row.update(repair=statuses==("fail","pass"),regression=statuses==("pass","fail"),
                        oracle_expected_before=row["before"]["status"]==row["expected_before"],
@@ -194,7 +198,7 @@ def run(args):
                     regressions=sum(r.get("regression",False) for r in rows),
                     changed=sum(r["transformation"]["changed"] for r in rows),
                     preserved=sum(r["byte_identical"] for r in rows))
-              for cohort in ("development_reproduction","new_constructed_validation")
+              for cohort in sorted({r["cohort"] for r in report["rows"]})
               for rows in [[r for r in report["rows"] if r["cohort"]==cohort]]}
         report["decision"]=("retain_for_further_validation" if report["adoption_accepted"]
                             else "reject_current_auto_patch" if report["evidence_valid"] else "inconclusive")
@@ -207,6 +211,8 @@ if __name__=="__main__":
     p=argparse.ArgumentParser(description=__doc__)
     for name in ("out","resource-check","kit"):
         p.add_argument("--"+name,type=Path,required=True)
+    p.add_argument("--spec",type=Path,default=HERE/"RUN_SPEC.json")
+    p.add_argument("--cases",type=Path,default=HERE/"cases.json")
     args=p.parse_args()
     def cancelled(sig,frame):
         raise InterruptedError("owned boundary stage cancelled")

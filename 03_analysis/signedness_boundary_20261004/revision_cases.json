@@ -1,0 +1,149 @@
+{
+  "schema": "boundary_revision_cases_v1",
+  "cases": [
+    {
+      "id": "u9_s1",
+      "cohort": "regression_reuse",
+      "width": 9,
+      "shift": 1,
+      "variant": "bare",
+      "prompt": "Implement a 9-bit arithmetic shift register with synchronous load. On each rising clock edge, load=1 loads data into q; otherwise perform an arithmetic right shift by 1 positions. Preserve the sign bit in vacated positions. The output width is 9 bits. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [8:0] data, output reg [8:0] q);\nalways @(posedge clk) begin\n if (load) q <= data;\n else q <= q >>> 1;\nend\nendmodule\n",
+      "expected_before": "fail",
+      "expected_action": "change",
+      "variable_amount": false
+    },
+    {
+      "id": "direct_alias9",
+      "cohort": "regression_reuse",
+      "width": 9,
+      "shift": 1,
+      "variant": "alias",
+      "prompt": "Implement a 9-bit arithmetic shift register with synchronous load. On each rising clock edge, load=1 loads data into q; otherwise perform an arithmetic right shift by 1 positions. Preserve the sign bit in vacated positions. The output width is 9 bits. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [8:0] data, output [8:0] q);\nreg [8:0] state;\nalways @(posedge clk) begin\n if (load) state <= data;\n else state <= state >>> 1;\nend\nassign q = state;\nendmodule\n",
+      "expected_before": "fail",
+      "expected_action": "change",
+      "variable_amount": false
+    },
+    {
+      "id": "signed9",
+      "cohort": "regression_reuse",
+      "width": 9,
+      "shift": 1,
+      "variant": "signed_decl",
+      "prompt": "Implement a 9-bit arithmetic shift register with synchronous load. On each rising clock edge, load=1 loads data into q; otherwise perform an arithmetic right shift by 1 positions. Preserve the sign bit in vacated positions. The output width is 9 bits. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [8:0] data, output reg signed [8:0] q);\nalways @(posedge clk) begin\n if (load) q <= data;\n else q <= q >>> 1;\nend\nendmodule\n",
+      "expected_before": "pass",
+      "expected_action": "preserve",
+      "variable_amount": false
+    },
+    {
+      "id": "compensated_add9",
+      "cohort": "regression_reuse",
+      "width": 9,
+      "shift": 1,
+      "variant": "blocking_compensated",
+      "prompt": "Implement a 9-bit arithmetic shift register with synchronous load. On each rising clock edge, load=1 loads data into q; otherwise perform an arithmetic right shift by 1 positions. Preserve the sign bit in vacated positions. The output width is 9 bits. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [8:0] data, output reg [8:0] q);\nreg old_sign;\nalways @(posedge clk) begin\n if (load) q = data;\n else begin\n old_sign = q[8];\n q = q >>> 1;\n q = q + ({{8{1'b0}}, old_sign} << 8);\nend\nend\nendmodule\n",
+      "expected_before": "pass",
+      "expected_action": "preserve",
+      "variable_amount": false
+    },
+    {
+      "id": "compensated_xor9",
+      "cohort": "regression_reuse",
+      "width": 9,
+      "shift": 1,
+      "variant": "blocking_compensated_xor",
+      "prompt": "Implement a 9-bit arithmetic shift register with synchronous load. On each rising clock edge, load=1 loads data into q; otherwise perform an arithmetic right shift by 1 positions. Preserve the sign bit in vacated positions. The output width is 9 bits. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [8:0] data, output reg [8:0] q);\nreg old_sign;\nalways @(posedge clk) begin\n if (load) q = data;\n else begin\n old_sign = q[8];\n q = q >>> 1;\n q = q ^ ({{8{1'b0}}, old_sign} << 8);\nend\nend\nendmodule\n",
+      "expected_before": "pass",
+      "expected_action": "preserve",
+      "variable_amount": false
+    },
+    {
+      "id": "new_u7_s2",
+      "cohort": "new_revision_validation",
+      "width": 7,
+      "shift": 2,
+      "variant": "bare",
+      "variable_amount": false,
+      "expected_action": "change",
+      "expected_before": "fail",
+      "prompt": "Implement a 7-bit arithmetic shift register with synchronous load. On every rising clock edge load=1 loads data into q; otherwise perform an arithmetic right shift by 2 positions, copying the original sign bit into vacated positions. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [6:0] data, output reg [6:0] q);\nalways @(posedge clk) begin\n if(load) q <= data;\n else q <= q >>> 2;\nend\nendmodule\n"
+    },
+    {
+      "id": "new_u31_s30",
+      "cohort": "new_revision_validation",
+      "width": 31,
+      "shift": 30,
+      "variant": "bare",
+      "variable_amount": false,
+      "expected_action": "change",
+      "expected_before": "fail",
+      "prompt": "Implement a 31-bit arithmetic shift register with synchronous load. On every rising clock edge load=1 loads data into q; otherwise perform an arithmetic right shift by 30 positions, copying the original sign bit into vacated positions. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [30:0] data, output reg [30:0] q);\nalways @(posedge clk) begin\n if(load) q <= data;\n else q <= q >>> 30;\nend\nendmodule\n"
+    },
+    {
+      "id": "new_comp_add7_s2",
+      "cohort": "new_revision_validation",
+      "width": 7,
+      "shift": 2,
+      "variant": "compensated_add",
+      "variable_amount": false,
+      "expected_action": "preserve",
+      "expected_before": "pass",
+      "prompt": "Implement a 7-bit arithmetic shift register with synchronous load. On every rising clock edge load=1 loads data into q; otherwise perform an arithmetic right shift by 2 positions, copying the original sign bit into vacated positions. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [6:0] data, output reg [6:0] q);\nreg old_sign;\nalways @(posedge clk) begin\n if(load) q = data;\n else begin\n old_sign = q[6];\n q = q >>> 2;\n q = q + {{2{old_sign}}, {5{1'b0}}};\nend\nend\nendmodule\n"
+    },
+    {
+      "id": "new_comp_xor13_s3",
+      "cohort": "new_revision_validation",
+      "width": 13,
+      "shift": 3,
+      "variant": "compensated_xor",
+      "variable_amount": false,
+      "expected_action": "preserve",
+      "expected_before": "pass",
+      "prompt": "Implement a 13-bit arithmetic shift register with synchronous load. On every rising clock edge load=1 loads data into q; otherwise perform an arithmetic right shift by 3 positions, copying the original sign bit into vacated positions. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [12:0] data, output reg [12:0] q);\nreg old_sign;\nalways @(posedge clk) begin\n if(load) q = data;\n else begin\n old_sign = q[12];\n q = q >>> 3;\n q = q ^ {{3{old_sign}}, {10{1'b0}}};\nend\nend\nendmodule\n"
+    },
+    {
+      "id": "new_comp_or7_s2",
+      "cohort": "new_revision_validation",
+      "width": 7,
+      "shift": 2,
+      "variant": "compensated_or",
+      "variable_amount": false,
+      "expected_action": "preserve",
+      "expected_before": "pass",
+      "prompt": "Implement a 7-bit arithmetic shift register with synchronous load. On every rising clock edge load=1 loads data into q; otherwise perform an arithmetic right shift by 2 positions, copying the original sign bit into vacated positions. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [6:0] data, output reg [6:0] q);\nreg old_sign;\nalways @(posedge clk) begin\n if(load) q = data;\n else begin\n old_sign = q[6];\n q = q >>> 2;\n q = q | {{2{old_sign}}, {5{1'b0}}};\nend\nend\nendmodule\n"
+    },
+    {
+      "id": "new_blocking_error7",
+      "cohort": "new_revision_validation",
+      "width": 7,
+      "shift": 2,
+      "variant": "blocking_error",
+      "variable_amount": false,
+      "expected_action": "preserve",
+      "expected_before": "fail",
+      "prompt": "Implement a 7-bit arithmetic shift register with synchronous load. On every rising clock edge load=1 loads data into q; otherwise perform an arithmetic right shift by 2 positions, copying the original sign bit into vacated positions. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [6:0] data, output reg [6:0] q);\nalways @(posedge clk) begin\n if(load) q = data;\n else q = q >>> 2;\nend\nendmodule\n"
+    },
+    {
+      "id": "new_mixed_load13",
+      "cohort": "new_revision_validation",
+      "width": 13,
+      "shift": 3,
+      "variant": "mixed_load",
+      "variable_amount": false,
+      "expected_action": "preserve",
+      "expected_before": "fail",
+      "prompt": "Implement a 13-bit arithmetic shift register with synchronous load. On every rising clock edge load=1 loads data into q; otherwise perform an arithmetic right shift by 3 positions, copying the original sign bit into vacated positions. Initial contents are unspecified.",
+      "source": "module TopModule(input clk, input load, input [12:0] data, output reg [12:0] q);\nalways @(posedge clk) begin\n if(load) q = data;\n else q <= q >>> 3;\nend\nendmodule\n"
+    }
+  ]
+}
