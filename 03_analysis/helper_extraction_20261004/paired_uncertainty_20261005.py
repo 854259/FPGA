@@ -1,6 +1,7 @@
 """AMD-only postflight supplement. Does not select, stop, retry or promote a run."""
 import argparse
 import hashlib
+import importlib.util
 import json
 import math
 from pathlib import Path
@@ -185,9 +186,18 @@ def run(a):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--self-check',action='store_true')
     for n in ['spec','summary','audit','guard','archive','out']:p.add_argument('--'+n,type=Path)
+    for n in ['resource-check','paired','kit']:p.add_argument('--'+n,type=Path,required=True)
     a=p.parse_args()
     assert sys.platform=='linux', 'All project execution stays on authorized AMD'
+    if sha(a.paired)!='78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c':
+        raise ValueError('Unfrozen resource-check implementation')
+    resource_spec=importlib.util.spec_from_file_location('paired_resource',a.paired)
+    resource_module=importlib.util.module_from_spec(resource_spec)
+    resource_spec.loader.exec_module(resource_module)
+    resource_module.check_resource(a.resource_check,a.kit,first=True)
     result=selfcheck() if a.self_check else run(a)
+    resource_module.check_resource(a.resource_check,a.kit)
+    result['resource_check_sha256']=sha(a.resource_check)
     if not a.out or a.out.exists():raise ValueError('New output file required')
     a.out.parent.mkdir(parents=True,exist_ok=True)
     a.out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
