@@ -1,0 +1,230 @@
+{
+  "schema": "rtllm_whole_inventory_admission_20261004",
+  "purpose": "R20261004-01 dataset admission substage; not a completed comprehensive model experiment",
+  "new_model_call_cap": 0,
+  "stage_timeout_s": 3600,
+  "stop_new_work_after_s": 3000,
+  "h1_manifest_sha256": "90f58067ba449beb7c8d8d21dc232e6612b6a4a11ae4b5b986408dc061358d59",
+  "private_controls_sha256": "6b8941658af1d5a4ff494497ddd0ad53018e1e564094dd6d8c7c4b511f330090",
+  "historical": [
+    {
+      "run": "rtllm_contract_pilot_20261002T113602Z",
+      "manifest_sha256": "d09c74d9f193a7561cf0f0b683cb69da26b64472b22a13975e138027ca28af76",
+      "tasks": [
+        "adder_bcd",
+        "instr_reg"
+      ]
+    },
+    {
+      "run": "rtllm_contract_pilot2_v2_20261002T115303Z",
+      "manifest_sha256": "14f4495a67fa51311dcfc115830725f17b585560e768614d76acd63ac11a7aec",
+      "tasks": [
+        "freq_div",
+        "up_down_counter"
+      ]
+    },
+    {
+      "run": "rtllm_contract_pilot3_v3_20261002T121353Z",
+      "manifest_sha256": "af0f039807ea7a26e3379bc4d6f6b7014492baac8334a5e97a7443641eb500f9",
+      "tasks": [
+        "accu",
+        "fsm",
+        "serial2parallel",
+        "synchronizer"
+      ]
+    }
+  ],
+  "new_control_tasks": [
+    "adder_8bit",
+    "adder_16bit",
+    "adder_32bit",
+    "comparator_3bit",
+    "comparator_4bit",
+    "multi_8bit",
+    "sub_64bit",
+    "calendar",
+    "counter_12",
+    "JC_counter",
+    "LFSR",
+    "right_shifter",
+    "ring_counter",
+    "signal_generator",
+    "pe",
+    "multi_pipe_4bit",
+    "parallel2serial",
+    "freq_divbyeven",
+    "freq_divbyfrac",
+    "freq_divbyodd"
+  ],
+  "scopes": [
+    {
+      "task": "adder_8bit",
+      "scope": "All 131072 binary inputs; arithmetic only, full-adder architecture requires separate evidence.",
+      "minimum_checks": 131072
+    },
+    {
+      "task": "adder_16bit",
+      "scope": "Carry chains at every bit plus 4096 fixed pseudorandom pairs; hierarchy architecture not certified.",
+      "minimum_checks": 4130
+    },
+    {
+      "task": "adder_32bit",
+      "scope": "Carry chains at every bit plus 4096 fixed pseudorandom pairs; CLA architecture not certified.",
+      "minimum_checks": 4162
+    },
+    {
+      "task": "comparator_3bit",
+      "scope": "All 64 inputs; arithmetic comparison, architecture not certified.",
+      "minimum_checks": 64
+    },
+    {
+      "task": "comparator_4bit",
+      "scope": "All 256 inputs; arithmetic comparison, architecture not certified.",
+      "minimum_checks": 256
+    },
+    {
+      "task": "multi_8bit",
+      "scope": "All 65536 products including high bits; shift-add architecture not certified.",
+      "minimum_checks": 65536
+    },
+    {
+      "task": "sub_64bit",
+      "scope": "49 signed boundary combinations and 4096 deterministic 64-bit pairs.",
+      "minimum_checks": 4145
+    },
+    {
+      "task": "calendar",
+      "scope": "86410 clock transitions covering complete day wrap plus asynchronous reset; three-always structural requirement not certified.",
+      "minimum_checks": 86412
+    },
+    {
+      "task": "counter_12",
+      "scope": "512 cycles of pause, enable and wrap; reset checked at clock edge without adding unspecified asynchronous semantics.",
+      "minimum_checks": 514
+    },
+    {
+      "task": "JC_counter",
+      "scope": "Two complete 128-state Johnson periods and asynchronous reset.",
+      "minimum_checks": 262
+    },
+    {
+      "task": "LFSR",
+      "scope": "Four complete 15-state periods; reset only at specified rising edge.",
+      "minimum_checks": 62
+    },
+    {
+      "task": "right_shifter",
+      "scope": "Initial zero and 2048 serial shifts spanning all 8-bit patterns.",
+      "minimum_checks": 2049
+    },
+    {
+      "task": "ring_counter",
+      "scope": "Four complete one-hot periods and edge-observed reset; no extra asynchronous reset rule.",
+      "minimum_checks": 34
+    },
+    {
+      "task": "signal_generator",
+      "scope": "Four 64-cycle triangle periods including both endpoint holds, plus asynchronous reset.",
+      "minimum_checks": 262
+    },
+    {
+      "task": "pe",
+      "scope": "512 MAC cycles with modulo-2^32 overflow, signed/unsigned lower-word equivalence, asynchronous reset.",
+      "minimum_checks": 514
+    },
+    {
+      "task": "multi_pipe_4bit",
+      "scope": "Default size=4, all 256 operand pairs under two-register latency and reset; other sizes/architecture excluded.",
+      "minimum_checks": 260
+    },
+    {
+      "task": "parallel2serial",
+      "scope": "Frame-relative MSB-first order with changing inputs, period4 after first frame; permits any first phase within four cycles. Initial serial bit/reset edge semantics remain uncertified.",
+      "minimum_checks": 500
+    },
+    {
+      "task": "freq_divbyeven",
+      "scope": "All specified even divisors2..32, 1024 cycles and asynchronous reset.",
+      "minimum_checks": 17442
+    },
+    {
+      "task": "freq_divbyfrac",
+      "scope": "Steady-state pulse widths 3/4 half-cycles and asynchronous reset, phase after startup not certified; default parameter domain only.",
+      "minimum_checks": 1100
+    },
+    {
+      "task": "freq_divbyodd",
+      "scope": "Steady-state pulse widths 5/5 half-cycles and asynchronous reset, phase after startup not certified; default parameter domain only.",
+      "minimum_checks": 1100
+    }
+  ],
+  "blocked": [
+    {
+      "task": "adder_pipe_64bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "edge_detect",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "multi_16bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "multi_booth_8bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "multi_pipe_8bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "pulse_detect",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "radix2_div",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "sequence_detector",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "square_wave",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "traffic_light",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "width_8to16",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "div_16bit",
+      "reason": "Existing declared contract ambiguity; retain original audit and pilot3 div_16bit finding."
+    },
+    {
+      "task": "fixed_point_adder",
+      "reason": "Sign-magnitude sign/operand comparisons and overflow handling do not uniquely specify behavior; do not silently choose two's-complement or saturation."
+    },
+    {
+      "task": "fixed_point_substractor",
+      "reason": "Same-sign and opposite-sign subtraction sign rules conflict with arithmetic; no unique reference-independent contract."
+    },
+    {
+      "task": "float_multi",
+      "reason": "No uniquely specified transaction/output latency and special-value rounding contract; reference cycle sequence must not become a hidden requirement."
+    }
+  ],
+  "controls_rule": "Freeze all 20 oracle bodies before dynamic observation. Positive original reference must have zero mismatches and adequate samples; fixed output-inversion negative must be detected. Compile/oracle failures remain admission failures, not model failures. Preserve every task, continue inventory for ordinary fixture failures, stop on environment/cleanup/budget failure.",
+  "limitations": [
+    "Public historical development material, not unseen generalization.",
+    "Checks concern declared finite functional domains. Architecture, unspecified reset timing and unlisted parameter configurations are not certified.",
+    "No candidate scoring, generation or score aggregation in this stage.",
+    "Private oracle bodies, testbenches, reference sources and raw simulator artifacts stay outside public GitHub and solver input."
+  ]
+}
