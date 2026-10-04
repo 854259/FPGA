@@ -1,0 +1,94 @@
+{
+  "schema": "helper_extraction_next_g1_budget_proposal",
+  "purpose": "Test loss of complete helper modules at extraction without synthesizing design logic",
+  "historical_raw_responses_available": false,
+  "historical_extractor_dropping_cannot_be_attributed_to_specific_old_reply": true,
+  "order": [
+    "adder_8bit",
+    "adder_16bit",
+    "multi_8bit",
+    "adder_16bit",
+    "multi_pipe_4bit",
+    "adder_16bit",
+    "adder_16bit",
+    "adder_16bit"
+  ],
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "max_new_model_calls": 8,
+  "prior_conservative_calls": 24,
+  "total_call_ceiling": 32,
+  "stage_timeout_s": 1800,
+  "generation_timeout_s": 300,
+  "retries": 0,
+  "best_archived_runtime_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+  "scope": "Three cross-task prompts not used to adjust the extractor, one generation each; five independent requests on the known 16-bit development prompt. Historical prompts are not a blind holdout. Temperature 0 unchanged; repeated samples assess repeatability, not unbiased pass@5.",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "kit_hashes": {
+    "submission/agent/runtime.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
+    "submission/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "submission/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "official_eval.py": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797"
+  },
+  "tasks_root": "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/tasks_verified",
+  "task_hashes": {
+    "adder_16bit": {
+      "ref.sv": "07781123c743a34081f310a0749e320ec4add45dc9cdca7f98f81aea49bf9414",
+      "task.json": "3f1dc94447c0ceaf430d9a0679ed91bc0e4a358086125b676bcdd93849ad448b",
+      "tb.sv": "48ba86c6a8dafeb7a70c6ba03f599d58c34e07487512541baaa27d00a485cac1",
+      "prompt.txt": "1448165ef5237424e39842d24e538d684b090631fda565cb1694353bcc5aaac4",
+      "reference/solution.sv": "92c60b0b504a714e1a06c0bbc3fdfac6cba6d89a9dcfb0a54f044c099be9bc9c"
+    },
+    "adder_8bit": {
+      "ref.sv": "cf0abd74f2309a12f993ab1ba7d763a9594dc741527c1dab686201bbe144824d",
+      "task.json": "0e3ceb913b0d051282d841690d5cacb00ae3a517e8c872ee7952f35db7834764",
+      "tb.sv": "8ef87404300d008c3cd07d8e794a66bf95dd31ce223a439a0263578e545b5ee4",
+      "prompt.txt": "3ce4ba82bfa65dbc6d1ed5429057a521c62ce0448954584f4fe67d5fb7fa8d32",
+      "reference/solution.sv": "9cee41359cd34290d21ab9ed88f9c9d0d6ab9454db389a87cd8ff8789a142822"
+    },
+    "multi_8bit": {
+      "ref.sv": "d40713b3178b65b2f7db6e90114d40a1a7a4062207e7e85b4f48a54b9c4222ec",
+      "task.json": "c7abb136bbbf13e1fa77298b20634b9a6e92e37155ae099f07c4af61cfc9fad6",
+      "tb.sv": "8b3d6a0ecfe266eebe20cb7083d9add738570870742fdeba07487d52450e5cdb",
+      "prompt.txt": "2bec85ce2dac07e4edc0002ef086f2aeb6391b5438191a3f3d3f7bfbe8146b5e",
+      "reference/solution.sv": "f6538ca31c697e885ad6281620e107c2b271839c8124afacac167b253452fa93"
+    },
+    "multi_pipe_4bit": {
+      "ref.sv": "911aecfce00f4e95b9794b89a7906af1a16d6dbbbc6d6cff599805afea4b0bbb",
+      "task.json": "33775659f38ee1b69d758f01de56ff1baaa1078f868f707847e47a4443528aa2",
+      "tb.sv": "b1fdac293c11757d91ebd6c918b08c1ef1d4df381f86ee0661009c61a5c6fa87",
+      "prompt.txt": "3c21f3562a0bc5c802fd6ad399936b821a32d52ba0194b7b4c637b917ce6f2b3",
+      "reference/solution.sv": "37515a1dd8d20df0d0ec2b5338f2e992cf2c898620087cc6a9c7fe9dd3a21df3"
+    }
+  },
+  "archives": [
+    "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full/agent",
+    "/workspace/team/runs/fpga_owner/full156_declfix_20261003/full/baseline",
+    "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/pair/agent",
+    "/workspace/team/runs/fpga_teammate/rtllm_pair_20261002T074340Z/pair/baseline"
+  ],
+  "expected_archive_counts": [
+    156,
+    156,
+    44,
+    44
+  ],
+  "selection": "Frozen complete batch, no per-task tuning or replacement of failures. Excludes historically ambiguous multi_16bit and adder_pipe_64bit contracts.",
+  "stop_rules": [
+    "failed guard or reference control",
+    "model timeout or incomplete response, no retry",
+    "environment/evidence error",
+    "functional regression"
+  ],
+  "promotion": "Must have benefit on a different task and no regression; otherwise retain engineering-only or reject. No full-set score or deployment from this batch.",
+  "decisions": [
+    "keep if raw response uniquely contains needed complete helpers and restored candidate passes real semantics",
+    "discard unsupported/ambiguous extraction; preserve baseline byte for byte"
+  ],
+  "preflight_tasks": [
+    "adder_8bit",
+    "multi_8bit",
+    "multi_pipe_4bit"
+  ],
+  "max_pre_request_elapsed_s": 1300,
+  "budget_status": "requires_user_approval_for_generation_only_preflight_zero_calls_authorized"
+}

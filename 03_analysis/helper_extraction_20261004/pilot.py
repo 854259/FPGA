@@ -82,7 +82,7 @@ endmodule
 def run(args):
     if sys.platform != 'linux' or ctypes.CDLL(None, use_errno=True).prctl(36, 1, 0, 0, 0):
         raise RuntimeError('AMD Linux subreaper required')
-    spec = json.loads((HERE/'RUN_SPEC.json').read_text())
+    spec = json.loads(args.spec.read_text())
     originals = {str(args.kit/k):v for k,v in spec['kit_hashes'].items()}
     tasks_root = Path(spec['tasks_root'])
     for name, files in spec['task_hashes'].items():
@@ -103,6 +103,19 @@ def run(args):
                   retries=0, guards=[], live=[], error=None, original_hashes=originals, formal_runtime_modified=False)
     extract = lambda text: extraction.extract_hierarchy(text, baseline, selector._strip_noncode, runtime.undefined_submodules)
     try:
+        if args.preflight_only:
+            report['references']={}
+            for name in spec['preflight_tasks']:
+                paired.check_resource(args.resource_check,args.kit)
+                task_copy=args.out/'preflight'/name/'task';shutil.copytree(tasks_root/name,task_copy)
+                dst=args.out/'preflight'/name/'grade';dst.mkdir(parents=True)
+                verdict=evaluator.judge_sample(task_copy,task_copy/'reference/solution.sv',dst,dst/'verdict.json',90)
+                report['references'][name]=verdict
+                assert verdict['level']==3 and not verdict.get('tool_error') and not verdict.get('suspected_silent_degradation'),(name,verdict)
+                print(json.dumps(dict(phase='reference_preflight',task=name,level=verdict['level'])),flush=True)
+            assert all(sha(p)==h for p,h in originals.items())
+            report.update(complete=True,valid=True,inputs_unchanged=True,decision='reference_preflight_only_no_generation_authorized_by_this_run')
+            return
         cases, positive, negative, tb = materials()
         folder = args.out/'inputs/HelperGate'; folder.mkdir(parents=True)
         for name, value in [('positive.sv', positive), ('negative.sv', negative), ('tb.sv',tb)]:
@@ -147,16 +160,17 @@ def run(args):
             report['archive_preservation'][archive]=dict(candidates=len(rows),changed=0)
             save(args.out/('archive_'+str(len(report['archive_preservation']))+'.json'),rows)
         save(args.out/'precall.json',report)
-        for name in spec['order']:
+        for sample_index,name in enumerate(spec['order']):
             paired.check_resource(args.resource_check,args.kit)
             paired.model_idle('http://127.0.0.1:8000/v1',spec['model'])
-            if report['model_calls']>=2 or time.monotonic()-started>1000:
+            if report['model_calls']>=spec['max_new_model_calls'] or time.monotonic()-started>spec.get('max_pre_request_elapsed_s',1000):
                 raise RuntimeError('call/time ceiling before request')
             assert all(sha(p)==h for p,h in originals.items())
             prompt=(tasks_root/name/'prompt.txt').read_text()
             skill=(args.kit/'submission/skill/rtl-generation/SKILL.md').read_text()
             body=dict(model=spec['model'],messages=[dict(role='system',content=skill),dict(role='user',content=prompt)],temperature=0,top_p=1.0,max_tokens=8192)
-            d=args.out/'live'/name;d.mkdir(parents=True)
+            sample_key=name if spec['order'].count(name)==1 else name+'_'+str(sample_index)
+            d=args.out/'live'/sample_key;d.mkdir(parents=True)
             save(d/'request.json',body)
             report['model_calls']+=1
             save(d/'attempt_started.json',dict(number=report['model_calls'],request_sha256=sha(d/'request.json')))
@@ -169,7 +183,7 @@ def run(args):
             paired.model_idle('http://127.0.0.1:8000/v1',spec['model'])
             old=baseline.extract(raw,'rtl');new,record=extract(raw)
             (d/'original.sv').write_text(old);(d/'final.sv').write_text(new)
-            row=dict(task=name,generation_s=time.monotonic()-tick,finish=choice.get('finish_reason'),usage=payload.get('usage'),selection=record,
+            row=dict(task=name,sample_key=sample_key,generation_s=time.monotonic()-tick,finish=choice.get('finish_reason'),usage=payload.get('usage'),selection=record,
                      raw_sha256=sha(d/'raw.txt'),original_sha256=sha(d/'original.sv'),final_sha256=sha(d/'final.sv'),request_sha256=sha(d/'request.json'))
             report['live'].append(row)
             if not raw or choice.get('finish_reason')!='stop':
@@ -204,4 +218,5 @@ def run(args):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--kit',type=Path,required=True);p.add_argument('--resource-check',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
+    p.add_argument('--spec',type=Path,default=HERE/'RUN_SPEC.json');p.add_argument('--preflight-only',action='store_true')
     run(p.parse_args())
