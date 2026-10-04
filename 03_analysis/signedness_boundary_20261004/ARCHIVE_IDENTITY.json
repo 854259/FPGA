@@ -1,0 +1,53 @@
+{
+  "archive": "full156_declfix_20261003",
+  "experiment_sha256": "c6efe4250169ef4d260d93c5737aed7c0ba02e623b7a72be394ed0ee84698b70",
+  "graded_summary_sha256": "297350c1d89e9acd1692c0383c4c1b077338e2427bb073b3271a9116114b0e55",
+  "upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "samples_per_task": 1,
+  "task_count": 156,
+  "local_deadline_s": 300,
+  "model_alias": "Qwen3.6-27B-Q4_K_M",
+  "input_manifest_entries": 936,
+  "input_manifest_canonical_sha256": "8e6cf76f653723f11f65cec426163cf45738a6f49a8efe7667608055b28ce0bb",
+  "relevant_source_sha256": {
+    "agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+    "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01"
+  },
+  "scoring_source": "pinned official selftest/score.py summarize()",
+  "five_sample_protocol": false,
+  "formal_total_score": null,
+  "modes": {
+    "agent": {
+      "tasks": 156,
+      "samples_per_task": 1,
+      "set_score": 0.7667,
+      "level_counts": {
+        "L0": 6,
+        "L1": 38,
+        "L3": 112
+      },
+      "tool_errors": 0,
+      "judge_elapsed_s": 4100.4
+    },
+    "baseline": {
+      "tasks": 156,
+      "samples_per_task": 1,
+      "set_score": 0.6744,
+      "level_counts": {
+        "L0": 22,
+        "L1": 36,
+        "L3": 98
+      },
+      "tool_errors": 0,
+      "judge_elapsed_s": 3638
+    }
+  },
+  "limits": [
+    "Archived model alias does not itself attest full weight bytes or current server identity.",
+    "Historical one-sample quality only; no new full-set score or pass@5 claim.",
+    "Runtime fingerprint is a file SHA256, not a Git commit."
+  ]
+}

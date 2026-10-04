@@ -2622,5 +2622,22 @@
       "Constructed 11/17-bit families are mechanism transfer, not independent competition generalization",
       "Existing local SSH task is the authorized AMD execution channel"
     ]
+  },
+  "signedness_boundary_validation_20261004": {
+    "updated_at": "2026-10-04T09:54:03.1923410+08:00",
+    "status": "running_on_authorized_amd",
+    "source_commit": "6d7c40a7b29fe5c25952f0739fe1afbacc505f65",
+    "run_id": "signedness_boundary_20261004T015149Z_6d7c40a",
+    "model": "Qwen3.6-27B-Q4_K_M",
+    "new_model_calls": 0,
+    "stage_timeout_s": 1200,
+    "development_reproductions": 1,
+    "new_constructed_validation_cases": 28,
+    "frozen_input": "03_analysis/signedness_boundary_20261004/cases.json",
+    "rules": "03_analysis/signedness_boundary_20261004/RUN_SPEC.json",
+    "registry": "03_analysis/EXPERIMENT_REGISTRY.md",
+    "best_archive_scores_inherited": false,
+    "deployment_modified": false,
+    "next": "Finish the frozen matrix, distinguish environment faults, and decide keep/shrink/reject from evidence."
   }
 }
