@@ -3563,7 +3563,7 @@
     "archive_remote_files_verified": 312
   },
   "diagnostic_feedback_Q1_20261005": {
-    "status": "frozen_not_executed",
+    "status": "completed_information_gate_passed_not_quality_proven",
     "model_calls": 0,
     "eda_calls": 0,
     "timeout_s": 120,
@@ -3573,6 +3573,27 @@
     "runtime_changed": false,
     "full_batch_complete": false,
     "driver_sha256": "a6cc0b71dc3aad780dc3528472bed6b80b00d10ed6a42b2d4af469c50356d849",
+    "report": "03_analysis/helper_extraction_20261004/DIAGNOSTIC_FEEDBACK_Q1_20261005.md",
+    "source_commit": "391df3b76dbd6c1ecb9f8ca4b3fdf030a820efc0",
+    "ticket": 11,
+    "pid": 3349603,
+    "stage_pid": 3349608,
+    "elapsed_s": 0.08276649005711079,
+    "old_missing_errors": 11,
+    "new_missing_errors": 0,
+    "cascade_messages": 7,
+    "substantive_error_occurrences": 4,
+    "archive_sha256": "5e7c4cf238a9ec80657fce2122b5abac5ea4e6901152461d32ab2d9e25443a53"
+  },
+  "diagnostic_worker_Q2_20261005": {
+    "status": "frozen_not_executed",
+    "controls": 12,
+    "worker_executions": 24,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "timeout_s": 120,
+    "compiler_and_responses_are_stubs": true,
+    "full_batch_complete": false,
     "report": "03_analysis/helper_extraction_20261004/DIAGNOSTIC_FEEDBACK_Q1_20261005.md"
   }
 }
