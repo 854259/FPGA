@@ -106,11 +106,18 @@ def main():
             prompt_path, contract_path = Path(entry["prompt"]), Path(entry["contract"])
             assert sha(prompt_path) == entry["prompt_sha256"]
             assert sha(contract_path) == entry["contract_sha256"]
-            got = module.parse(prompt_path.read_text())
+            # Keep the exact UTF-8 input used by the frozen calibration. Text
+            # mode silently normalizes CRLF and changes the identity digest.
+            got = module.parse(prompt_path.read_bytes().decode("utf-8"))
+            normalized = module.parse(prompt_path.read_text())
             expected = json.loads(contract_path.read_text())
             rows.append(dict(kind="existing_calibrated_contract_regression",
                 prompt_sha256=entry["prompt_sha256"], expected="unchanged_supported_contract",
                 actual_status=got["status"], passed=got == expected,
+                differing_contract_fields=sorted(k for k in got.keys() | expected.keys()
+                                                 if got.get(k) != expected.get(k)),
+                text_mode_difference_fields=sorted(k for k in got.keys() | normalized.keys()
+                                                   if got.get(k) != normalized.get(k)),
                 reason=got.get("reason")))
     assert sha(args.parser) == args.parser_sha256
     assert time.monotonic() - tick < 30
