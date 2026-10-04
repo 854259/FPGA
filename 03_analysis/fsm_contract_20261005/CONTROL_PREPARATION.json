@@ -1,0 +1,89 @@
+{
+  "cases": [
+    {
+      "task": "Prob143_fsm_onehot",
+      "checks": 2048,
+      "group": "known_public_development",
+      "archived_candidate": true,
+      "source_binding": {
+        "prompt_member": "kit/bench/tasks_veval/Prob143_fsm_onehot/prompt.txt",
+        "prompt_sha256": "0fa8e035e723efd2da2c248a78628bbbfe13124a6066a7b806d44a9b3863019d",
+        "candidate_member": "run/samples/A/Prob143_fsm_onehot/worker/solution.v",
+        "candidate_sha256": "bfb31bb6cd4dfd7e873db2b52958519ad66910b5dd9a518eea4d0b227b87b122"
+      },
+      "positive_names": [
+        "positive"
+      ],
+      "expected_control_mismatches": {
+        "positive": 0,
+        "missing_hold": 260,
+        "missing_output": 768,
+        "wrong_condition": 1024,
+        "shifted_encoding": 1908,
+        "constant_zero": 2046
+      }
+    },
+    {
+      "task": "Prob150_review2015_fsmonehot",
+      "checks": 80,
+      "group": "known_public_development",
+      "archived_candidate": true,
+      "source_binding": {
+        "prompt_member": "kit/bench/tasks_veval/Prob150_review2015_fsmonehot/prompt.txt",
+        "prompt_sha256": "5a04b3506a40ec24e55760d979110a318216c5d49e778afad6f1e7b686e5e690",
+        "candidate_member": "run/samples/A/Prob150_review2015_fsmonehot/worker/solution.v",
+        "candidate_sha256": "381ed5f9b1bfc0734b22d1ad075602ef429a573d10a1a9ee626b11ba639134a0"
+      },
+      "positive_names": [
+        "positive"
+      ],
+      "expected_control_mismatches": {
+        "positive": 0,
+        "missing_hold": 12,
+        "missing_output": 8,
+        "wrong_condition": 8,
+        "shifted_encoding": 60,
+        "constant_zero": 64
+      }
+    },
+    {
+      "task": "fsm_full6",
+      "checks": 128,
+      "group": "constructed_calibration",
+      "archived_candidate": false,
+      "source_binding": null,
+      "positive_names": [
+        "positive"
+      ],
+      "expected_control_mismatches": {
+        "positive": 0,
+        "missing_hold": 63,
+        "missing_output": 64,
+        "wrong_condition": 64,
+        "shifted_encoding": 124,
+        "constant_zero": 126
+      }
+    },
+    {
+      "task": "fsm_partial5",
+      "checks": 40,
+      "group": "constructed_calibration",
+      "archived_candidate": false,
+      "source_binding": null,
+      "positive_names": [
+        "positive"
+      ],
+      "expected_control_mismatches": {
+        "positive": 0,
+        "missing_hold": 8,
+        "missing_output": 8,
+        "wrong_condition": 8,
+        "shifted_encoding": 28,
+        "constant_zero": 20
+      }
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "control_duts_are_evaluation_only": true
+}

@@ -11,3 +11,5 @@
 完成后只读归档核对所有原始文件、DUT/TB、原生工具实际argv、综合日志、冻结源码、资源守卫与清理收据。执行成功、控制有效、旧错稿错误机制相符分别报告。通过后才准备原一次修复预算的真实模型研究；尚无修复、收益、部署或新全量分结论。两个已知题加两个构造不算独立自然验证。
 
 入口：RUN_SPEC.json、PREPARATION_RECEIPT.json、INSTALL_RECEIPT.json、SUBMISSION.json；原始输入/控制稿/测试/ZIP在被Git忽略的raw_evidence中留存。
+
+追加元数据说明：冻结INPUT_MANIFEST的task_ids沿用旧移位题标签115；实际input_sha256仍保护全部156题/936文件，阶段用spec.cases选择045/054与两个构造，并未用旧标签。冻结文件不改，终态审计须核对实际选择与完整保护范围；见METADATA_SCOPE_NOTE.json。

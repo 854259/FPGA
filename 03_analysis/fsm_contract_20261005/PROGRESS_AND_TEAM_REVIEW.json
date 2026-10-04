@@ -1,0 +1,145 @@
+{
+  "at_utc": "2026-10-04T19:37:19.770351+00:00",
+  "model_calls_this_inspection": 0,
+  "eda_calls_this_inspection": 0,
+  "mutations": 0,
+  "2013333": {
+    "state": "S",
+    "starttime": "823869819"
+  },
+  "3390465": {
+    "state": "S",
+    "starttime": "841229941"
+  },
+  "3427683": {
+    "state": "S",
+    "starttime": "841373844"
+  },
+  "3479704": {
+    "state": "S",
+    "starttime": "841614864"
+  },
+  "tickets": [
+    {
+      "ticket": 25,
+      "state": "running",
+      "task_name": "functional_full156_v1",
+      "runner": {
+        "pid": 3390465,
+        "starttime": "841229941"
+      },
+      "accepted_at_utc": "2026-10-04T18:30:49.933417+00:00"
+    },
+    {
+      "ticket": 26,
+      "state": "queued",
+      "task_name": "fpga_teammate_cvdp_rng_S2",
+      "runner": null,
+      "accepted_at_utc": "2026-10-04T18:32:09.009533+00:00"
+    },
+    {
+      "ticket": 27,
+      "state": "queued",
+      "task_name": "fpga_teammate_paired_uncertainty_T1",
+      "runner": null,
+      "accepted_at_utc": "2026-10-04T18:48:15.752794+00:00"
+    },
+    {
+      "ticket": 28,
+      "state": "queued",
+      "task_name": "edge_contract_calibration_v1",
+      "runner": null,
+      "accepted_at_utc": "2026-10-04T18:54:48.962358+00:00"
+    },
+    {
+      "ticket": 29,
+      "state": "queued",
+      "task_name": "fsm_contract_calibration_v1",
+      "runner": null,
+      "accepted_at_utc": "2026-10-04T19:34:59.163175+00:00"
+    }
+  ],
+  "full_progress": {
+    "rows": 114,
+    "actual_requests": 118,
+    "complete": false,
+    "error": null,
+    "source_summary_sha256": "596055ded5289b8391ad1d9a36241b4f8d57a6a0983f167f6ae0d893400937ae",
+    "new_score_published": false
+  },
+  "functional_full156_20261005_v1": {
+    "run_spec_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+    "assets": 30,
+    "unchanged": true
+  },
+  "edge_contract_20261005_v1": {
+    "run_spec_sha256": "12ff3efc385045e14580aa41ecae64cf6d0d2ce39f1150a344c846683cf1a9ab",
+    "assets": 49,
+    "unchanged": true
+  },
+  "fsm_contract_20261005_v1": {
+    "run_spec_sha256": "cce335ae31089b15fa100b95bacdff70e60185886a45e5810113dba082cdfa0a",
+    "assets": 51,
+    "unchanged": true
+  },
+  "cvdp_rng_S1_20261005_74b74f3/results/PUBLIC_RESULT.json": {
+    "source_sha256": "51f80d7198c9a4ab739dd4f0bb165887f36cdd4121b6eb26062405bfa8f67e8c",
+    "report": {
+      "schema": "cvdp_runner_rng_S1",
+      "complete": true,
+      "source_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+      "model_calls": 0,
+      "eda_calls": 0,
+      "independent_tasks_admitted": 0,
+      "full_batch_complete": false,
+      "scope": "Runner plan replay with simulator stub; not RTL or grading",
+      "profiles": [
+        [
+          "env_only_11",
+          11,
+          null
+        ],
+        [
+          "env_only_22",
+          22,
+          null
+        ],
+        [
+          "fixed_11",
+          11,
+          20261005
+        ],
+        [
+          "fixed_22",
+          22,
+          20261005
+        ]
+      ],
+      "counts": {
+        "runners_with_rng": 45,
+        "dynamic_eligible": 21,
+        "capture_valid": 21,
+        "env_only_varies": 21,
+        "fixed_wrapper_identical": 21
+      },
+      "private_result_sha256": "2aeafda7c51ebbc71e0f6f433f324f89037cb54ee302bf58446c2a751cc17c62"
+    }
+  },
+  "diagnostic_Q5_20261005_865876a/results/summary.json": {
+    "source_sha256": "db9fc77935d4f7aeccd1697ca7a2f91ed037dbf65136ed5b9d8a286e9d6dd3d2",
+    "report": {
+      "complete": false,
+      "valid": false,
+      "error": "AssertionError: ",
+      "actual_attempts": 14,
+      "actual_responses": 14,
+      "call_cap": 14,
+      "full_batch_complete": false,
+      "independent_natural_tasks": 0,
+      "retries": 0,
+      "scope": "All seven known original-arm compile-repair checkpoints; paired continuation, not fresh full-score evidence",
+      "protocol_sha256": "0e4e3999b283e01b3593aff469c2599c5472472f28643ae08d5372aeea9f0473",
+      "driver_sha256": "92beb946fc6c56cf400aaac6bcc7599800576620a706f4ce0ae61737669c3b31"
+    }
+  }
+}

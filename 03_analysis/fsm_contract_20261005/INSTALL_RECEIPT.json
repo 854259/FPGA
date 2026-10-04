@@ -1,0 +1,13 @@
+{
+  "schema": "fsm_contract_linux_install_v1",
+  "at_utc": "2026-10-04T19:34:59.117221+00:00",
+  "run_spec_sha256": "cce335ae31089b15fa100b95bacdff70e60185886a45e5810113dba082cdfa0a",
+  "assets": 51,
+  "tests_passed": 10,
+  "test_returncode": 0,
+  "test_output": "{\"task\": \"Prob143_fsm_onehot\", \"controls_valid\": true, \"candidate\": \"fail\"}\n{\"task\": \"Prob150_review2015_fsmonehot\", \"controls_valid\": true, \"candidate\": \"fail\"}\n{\"task\": \"fsm_full6\", \"controls_valid\": true, \"candidate\": null}\n{\"task\": \"fsm_partial5\", \"controls_valid\": true, \"candidate\": null}\ntest_constructed_rename_width_not_task_number (test_fsm.FSM.test_constructed_rename_width_not_task_number) ... ok\ntest_control_independent_predictions_and_expected_modes (test_fsm.FSM.test_control_independent_predictions_and_expected_modes) ... ok\ntest_factual_counterexample_and_reject_fake (test_fsm.FSM.test_factual_counterexample_and_reject_fake) ... ok\ntest_full_domain_independent_truth_all_widths (test_fsm.FSM.test_full_domain_independent_truth_all_widths) ... ok\ntest_missing_duplicate_overlapping_and_ambiguous_table (test_fsm.FSM.test_missing_duplicate_overlapping_and_ambiguous_table) ... ok\ntest_partial_domain_independent_truth_and_encoding (test_fsm.FSM.test_partial_domain_independent_truth_and_encoding) ... ok\ntest_reserved_port_and_legal_uppercase_case_sensitive_roles (test_fsm.FSM.test_reserved_port_and_legal_uppercase_case_sensitive_roles) ... ok\ntest_unknown_semantics_and_interface_abstain (test_fsm.FSM.test_unknown_semantics_and_interface_abstain) ... ok\ntest_actual_stage_26_fake_probes_4_fake_synth_no_model (test_schedule.Schedule.test_actual_stage_26_fake_probes_4_fake_synth_no_model) ... ok\ntest_frozen_tamper_rejected_before_first_fake_tool (test_schedule.Schedule.test_frozen_tamper_rejected_before_first_fake_tool) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.426s\n\nOK\n",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "inputs_and_dependencies_verified": true,
+  "fake_native_tests_not_real_eda": true
+}

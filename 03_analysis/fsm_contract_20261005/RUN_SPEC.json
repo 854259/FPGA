@@ -1,0 +1,180 @@
+{
+  "schema": "fsm_contract_calibration_frozen_v1",
+  "identity": "fsm_contract_20261005_v1",
+  "base_commit": "485e91d",
+  "frozen_at_utc": "2026-10-04T19:31:55.724436+00:00",
+  "cloud_root": "/workspace/team/runs/fpga_owner/fsm_contract_20261005_v1",
+  "kit": "/workspace/team/tasks/autodl-rtl-kit/project",
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "model_pid": 2013333,
+  "cases": [
+    {
+      "task": "Prob143_fsm_onehot",
+      "checks": 2048,
+      "group": "known_public_development",
+      "archived_candidate": true,
+      "source_binding": {
+        "prompt_member": "kit/bench/tasks_veval/Prob143_fsm_onehot/prompt.txt",
+        "prompt_sha256": "0fa8e035e723efd2da2c248a78628bbbfe13124a6066a7b806d44a9b3863019d",
+        "candidate_member": "run/samples/A/Prob143_fsm_onehot/worker/solution.v",
+        "candidate_sha256": "bfb31bb6cd4dfd7e873db2b52958519ad66910b5dd9a518eea4d0b227b87b122"
+      },
+      "positive_names": [
+        "positive"
+      ],
+      "expected_control_mismatches": {
+        "positive": 0,
+        "missing_hold": 260,
+        "missing_output": 768,
+        "wrong_condition": 1024,
+        "shifted_encoding": 1908,
+        "constant_zero": 2046
+      }
+    },
+    {
+      "task": "Prob150_review2015_fsmonehot",
+      "checks": 80,
+      "group": "known_public_development",
+      "archived_candidate": true,
+      "source_binding": {
+        "prompt_member": "kit/bench/tasks_veval/Prob150_review2015_fsmonehot/prompt.txt",
+        "prompt_sha256": "5a04b3506a40ec24e55760d979110a318216c5d49e778afad6f1e7b686e5e690",
+        "candidate_member": "run/samples/A/Prob150_review2015_fsmonehot/worker/solution.v",
+        "candidate_sha256": "381ed5f9b1bfc0734b22d1ad075602ef429a573d10a1a9ee626b11ba639134a0"
+      },
+      "positive_names": [
+        "positive"
+      ],
+      "expected_control_mismatches": {
+        "positive": 0,
+        "missing_hold": 12,
+        "missing_output": 8,
+        "wrong_condition": 8,
+        "shifted_encoding": 60,
+        "constant_zero": 64
+      }
+    },
+    {
+      "task": "fsm_full6",
+      "checks": 128,
+      "group": "constructed_calibration",
+      "archived_candidate": false,
+      "source_binding": null,
+      "positive_names": [
+        "positive"
+      ],
+      "expected_control_mismatches": {
+        "positive": 0,
+        "missing_hold": 63,
+        "missing_output": 64,
+        "wrong_condition": 64,
+        "shifted_encoding": 124,
+        "constant_zero": 126
+      }
+    },
+    {
+      "task": "fsm_partial5",
+      "checks": 40,
+      "group": "constructed_calibration",
+      "archived_candidate": false,
+      "source_binding": null,
+      "positive_names": [
+        "positive"
+      ],
+      "expected_control_mismatches": {
+        "positive": 0,
+        "missing_hold": 8,
+        "missing_output": 8,
+        "wrong_condition": 8,
+        "shifted_encoding": 28,
+        "constant_zero": 20
+      }
+    }
+  ],
+  "control_names": [
+    "positive",
+    "missing_hold",
+    "missing_output",
+    "wrong_condition",
+    "shifted_encoding",
+    "constant_zero"
+  ],
+  "expected_natural_candidates": {
+    "Prob143_fsm_onehot": "fail",
+    "Prob150_review2015_fsmonehot": "fail"
+  },
+  "source_hashes": {
+    "CONTROL_PREPARATION.json": "95390d004e93f4cad334a33ffd13870259455cbf556bba3282190d566678d125",
+    "INPUT_MANIFEST.json": "6578d120e2ddbbbbaab832d943aeeba03262c17b459e83ddf80736e81bb93368",
+    "audit.py": "73e04ca1c10ec57653c63af99d4d789951797882b3e3a317fde329c3719b8776",
+    "calibrate.py": "796f0a7c26627bac688292fc626e56613f112dc99694b1d8e031a7095a843cb0",
+    "collect_evidence.py": "00abffa84bd977341acc60934932d11d15f752a86bfa74146310810bdbe9e876",
+    "fsm_contract.py": "79840b283036341242c9319ade53e3889dbd5bf3eddc37d419baf298136224ec",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "prepare.py": "8a6eb5150d34a69aa0243f8d1e2d132fbe1f3be4a01d72070131a22ab3419e99",
+    "prepare_controls.py": "8ecb8120fa5e44aa6dd328423808fbdab39eac53295eb1924f501b0e9345528f",
+    "raw_evidence/inputs/Prob143_fsm_onehot/candidate.sv": "bfb31bb6cd4dfd7e873db2b52958519ad66910b5dd9a518eea4d0b227b87b122",
+    "raw_evidence/inputs/Prob143_fsm_onehot/constant_zero.sv": "5a87b0bcdb012ea55492681b700e2b5d66603586fe344731905a9969ad92033c",
+    "raw_evidence/inputs/Prob143_fsm_onehot/contract.json": "c509d66f83c7630c03023633f90e51a325df5151fead49c0fe2d03ba8fefa314",
+    "raw_evidence/inputs/Prob143_fsm_onehot/missing_hold.sv": "4e530fe960108667101fb204d7b8fb445b530f1301e632cb2a80d93d2caa8dad",
+    "raw_evidence/inputs/Prob143_fsm_onehot/missing_output.sv": "42674710c53661669a288cf61d6d045d58f30d678dc234714ae66b1f194f7997",
+    "raw_evidence/inputs/Prob143_fsm_onehot/positive.sv": "d385fc2d0402723451aaa791cbbf11a64178380ab183c95f203023852b265208",
+    "raw_evidence/inputs/Prob143_fsm_onehot/prompt.txt": "0fa8e035e723efd2da2c248a78628bbbfe13124a6066a7b806d44a9b3863019d",
+    "raw_evidence/inputs/Prob143_fsm_onehot/shifted_encoding.sv": "2199ff54ee26d6bc7e91bd9037b014a433a4942e328210c4a890004e2edf1ebb",
+    "raw_evidence/inputs/Prob143_fsm_onehot/tb.sv": "6d243b9aa64efef27a79cd5eff03a2013d2357912ef8a445add7325f0ab19d83",
+    "raw_evidence/inputs/Prob143_fsm_onehot/wrong_condition.sv": "8c37c85c2c9810444c4c1f18197c9c66c2d6a397849a7c1322b781b62501b0e1",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/candidate.sv": "381ed5f9b1bfc0734b22d1ad075602ef429a573d10a1a9ee626b11ba639134a0",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/constant_zero.sv": "1606fc2b984b1a3c57b70635a597a086130f147e71ca4bd63a678cc814e5e93e",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/contract.json": "ed35e3f76a8dd79f6c2d1ae0a458d483689b71e0225e187dd320e871c9afe77c",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/missing_hold.sv": "ef92b977f188d85e71302016e4f63bcb34d11798ac0e3ca4b0882ce5e2769ad1",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/missing_output.sv": "3a1b60d3ea081127565f259460b6071b247a88da7f2f2843545eb80a6dd6264e",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/positive.sv": "a7f27921e1801068832b11bedcce3322a3123502447fa6f2538d43fc78595d8f",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/prompt.txt": "5a04b3506a40ec24e55760d979110a318216c5d49e778afad6f1e7b686e5e690",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/shifted_encoding.sv": "f261f21b1b55e7296359debbacafb0e052c7c33e3bca8aec1e1eece89757546c",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/tb.sv": "57e97a4c54882bba44ce417d5f9c63baa557a8877fa6ae2bf30d1b956d1e3a0c",
+    "raw_evidence/inputs/Prob150_review2015_fsmonehot/wrong_condition.sv": "bc1eac78cfa4dc15899c05002285ef04de28c1a6e9c394fee885a4942a2fae47",
+    "raw_evidence/inputs/fsm_full6/constant_zero.sv": "76c68f6c3819ba7cf421628eb26424c584203c8b26a299dbaf7aee91119e3936",
+    "raw_evidence/inputs/fsm_full6/contract.json": "ea51c8150e838bd316ab0f65fd7974ad65980ba8a48ee1879c3d085d03b6918d",
+    "raw_evidence/inputs/fsm_full6/missing_hold.sv": "b7766fa03b55ec577e659d9398931b81241370ed3154f3662cc7098258b533b8",
+    "raw_evidence/inputs/fsm_full6/missing_output.sv": "35293ad8a482fddee1728c46e8dd99ce1d360eaf107ae4d747e729dd1895cc8d",
+    "raw_evidence/inputs/fsm_full6/positive.sv": "20cae3ef0f09f64814caeb6e032d1bb587f304378e02cfaf322d10b99f8e669e",
+    "raw_evidence/inputs/fsm_full6/prompt.txt": "d13f446d5042cce8a5ab25215bcc072dad93cccc68ba334db413c289a274e575",
+    "raw_evidence/inputs/fsm_full6/shifted_encoding.sv": "85bf4d687b1ddf5ed306bb77cbbe63d8b7eae8c6867ab17f7d077c429d4b771a",
+    "raw_evidence/inputs/fsm_full6/tb.sv": "9b36b96987f95b44b076dd8c58322117516e0ecfe7686ade303f5ead7801e2e4",
+    "raw_evidence/inputs/fsm_full6/wrong_condition.sv": "9544ff5342476c9fab21fb5dbc41f361acf690d900ded796a60c3ab3e63df01a",
+    "raw_evidence/inputs/fsm_partial5/constant_zero.sv": "88384ae22884fae121e7e89ed708f2692fe37cb430d82bb49039eaebd326050c",
+    "raw_evidence/inputs/fsm_partial5/contract.json": "ed26b7510cf0f859e88c3c26337eacaef38a75e113c838e63a382c3ae238ea2d",
+    "raw_evidence/inputs/fsm_partial5/missing_hold.sv": "d179b8d4f808440ecadf8ad82d3a14b348478ff7c084f6a35502e7a8b33ee7c5",
+    "raw_evidence/inputs/fsm_partial5/missing_output.sv": "bd958d7b032685cb32bacd40f8d8cbf97766367eb4c0acb55c0b05c957310744",
+    "raw_evidence/inputs/fsm_partial5/positive.sv": "06554c4fa9045835a2602b1c63eb4f1afc47b5d133affaf3cd6157cefc01ac4a",
+    "raw_evidence/inputs/fsm_partial5/prompt.txt": "816a337f8e832558e28a615d37fed3e857bb38d14e39b7ad9facbd20f7006caf",
+    "raw_evidence/inputs/fsm_partial5/shifted_encoding.sv": "04e372f49a19f871743b4b2741574c395f385f30304ef25492457104a624fdd5",
+    "raw_evidence/inputs/fsm_partial5/tb.sv": "06c1ac7ef5a68523e7b3f65ef4505444f96c4a2fb66fdf014c42a93f733166a7",
+    "raw_evidence/inputs/fsm_partial5/wrong_condition.sv": "a0fc717b65a22a7b099e01d2ab6e9ca788014dfe7db00cbbe163d992a06412ee",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "templates.py": "f2899b26e3c82fd875629895bc945d98f07ee0948ca8f6dd6ad370634c558d37",
+    "test_fsm.py": "653eea44b74411abe49b114995e3efb63a46edc3266f54acd150f9794f870520",
+    "test_schedule.py": "283dba93e0562a3089adb2dfebda4ab4633b7e49583f9c6a56a21f531a7fbfd9"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+  },
+  "timeout_s": 1140,
+  "guard_stage_timeout_s": 1200,
+  "slot_minutes": 25,
+  "max_probe_executions": 26,
+  "max_synth_executions": 4,
+  "max_model_requests": 0,
+  "acceptance": "All six control exact mismatch counts on four contracts, all positive syntheses and true archived candidate checks; complete readonly audit needed. No model/agent answer generation or deployment.",
+  "limits": [
+    "Two known public archived candidates plus two constructed cases, not independent natural validation.",
+    "Complete bounded combinational one-hot table prose; renamed roles, changed width, condition coverage and reserved/case boundaries; no task ID selection in parser.",
+    "Vector form explicitly permits multiple active states: enumerate every state bit pattern and scalar input. Partial scalar form only enumerates valid one-hot states and all scalar inputs.",
+    "Evaluation control DUTs never used as model input or production answers; parser only produces TB and observed failure facts.",
+    "No model/EDA in ten pure tests including actual stage with 26 fake probes and four fake syntheses; fake native results are not evidence of RTL correctness.",
+    "Running full156 and frozen edge assets, teammate/shared model/formal deployment unchanged; native stage waits whole-task FIFO.",
+    "No repair/full score/hidden/five-sample/offline32GB proof; only complete real native audit can admit original-budget model research."
+  ]
+}

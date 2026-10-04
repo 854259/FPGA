@@ -4715,7 +4715,7 @@
     "source_assets": 30,
     "task_count": 156,
     "expected_samples": 312,
-    "completed_samples_at_snapshot": 70,
+    "completed_samples_at_snapshot": 114,
     "actual_requests_at_snapshot": 3,
     "samples_per_arm_per_task": 1,
     "max_actual_requests": 624,
@@ -4730,8 +4730,8 @@
     "report": "03_analysis/functional_full156_20261005/README.md",
     "quota_used_percent": 8,
     "quota_stop_percent": 97,
-    "actual_model_requests_at_snapshot": 72,
-    "snapshot_observed_at_utc": "2026-10-04T19:11:59.337328+00:00"
+    "actual_model_requests_at_snapshot": 118,
+    "snapshot_observed_at_utc": "2026-10-04T19:37:19.770351+00:00"
   },
   "edge_contract_20261005": {
     "status": "native_calibration_queued",
@@ -4750,7 +4750,8 @@
     "native_results_audited": false,
     "new_score": false,
     "adoption": false,
-    "independent_natural_tasks": 0
+    "independent_natural_tasks": 0,
+    "metadata_scope_note": "03_analysis/edge_contract_20261005/METADATA_SCOPE_NOTE.json"
   },
   "failure_triage_20261005": {
     "status": "44_archived_A_failures_reviewed_sha_bound",
@@ -4772,5 +4773,27 @@
     "single_32gb_target_verified": false,
     "five_independent_samples_verified": false,
     "candidate_formal_service_promoted": false
+  },
+  "fsm_contract_20261005": {
+    "status": "native_calibration_queued",
+    "report": "03_analysis/fsm_contract_20261005/README.md",
+    "run_spec_sha256": "cce335ae31089b15fa100b95bacdff70e60185886a45e5810113dba082cdfa0a",
+    "assets": 51,
+    "pure_tests_local_linux_passed": 10,
+    "fifo_ticket": 29,
+    "monitor_pid": 3479704,
+    "monitor_starttime": "841614864",
+    "monitor_verified_alive": true,
+    "snapshot_observed_at_utc": "2026-10-04T19:37:19.770351+00:00",
+    "expected_native_probes": 26,
+    "expected_positive_syntheses": 4,
+    "max_model_requests": 0,
+    "native_results_audited": false,
+    "new_score": false,
+    "adoption": false,
+    "supported_public_tasks": 2,
+    "independent_natural_tasks": 0,
+    "protected_tasks": 156,
+    "protected_input_files": 936
   }
 }

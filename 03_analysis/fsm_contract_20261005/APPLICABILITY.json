@@ -1,0 +1,1266 @@
+{
+  "schema": "fsm_public_prompt_applicability_v1",
+  "parser_sha256": "79840b283036341242c9319ade53e3889dbd5bf3eddc37d419baf298136224ec",
+  "run_spec_sha256": "cce335ae31089b15fa100b95bacdff70e60185886a45e5810113dba082cdfa0a",
+  "source_archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+  "public_tasks": 156,
+  "supported_tasks": [
+    "Prob143_fsm_onehot",
+    "Prob150_review2015_fsmonehot"
+  ],
+  "independent_natural_tasks": 0,
+  "reference_or_tb_body_read": false,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "new_score": false,
+  "rows": [
+    {
+      "task": "Prob001_zero",
+      "prompt_sha256": "f50f92e06bc0faa6dc3e0169fb237e6e500b2dc09cd8aa30276e6e182eeadcd8",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob002_m2014_q4i",
+      "prompt_sha256": "4ab040a1812d522899ad5ebb170f0359485b6efa34652e20699a1d34f033cc3a",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob003_step_one",
+      "prompt_sha256": "1b6befda56b8cb027b7da5490481249bdeb7eda17bbebbcd32f3249e43551584",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob004_vector2",
+      "prompt_sha256": "da0196227e1d6e7d1af7028bc38cf7470668a5beadfa385e54f7b53c9983f5ed",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob005_notgate",
+      "prompt_sha256": "25f7c1f423c103a1252d9a9e0b552204064a07f3fefd426a708c89b786ec6c36",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob006_vectorr",
+      "prompt_sha256": "1734297c51f389329436cc1ab440b69733ca28accba64f2911b7390738c27fe8",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob007_wire",
+      "prompt_sha256": "a01e8440d56e5a7d9d82ab118e4f386a231672740f01b1ee6a8c753e31465a29",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob008_m2014_q4h",
+      "prompt_sha256": "46d7850ff4676d6b59ed044029ddc2c38bc8a4384ac481d769955bcea978dd59",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob009_popcount3",
+      "prompt_sha256": "cdf3697721a384eb59ab9cec4d907985cb013fa0b18518f34468d9375549f822",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob010_mt2015_q4a",
+      "prompt_sha256": "0771a87a1b063bddd10d42bdb39ffadbc27a67884bd0464a56b79b8584256a84",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob011_norgate",
+      "prompt_sha256": "032a5853b4d2c06e94c295fc80df1d89b1d58a9085503a2c14af8684f22916e9",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob012_xnorgate",
+      "prompt_sha256": "dcb6e60fe3621be212e5cd562a3837a2d703677d1cdecd7572c645d7d10bf01b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob013_m2014_q4e",
+      "prompt_sha256": "6cfeba9c88af75743460f83e86b313ff285f27ef9438dee040e9b217a893da8c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob014_andgate",
+      "prompt_sha256": "115bb452d08fcf5eb013ee6f595e26ce38dc54a795ae4dee31c7ce28d074c18f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob015_vector1",
+      "prompt_sha256": "81b7c31a614f522e52b52302372594642cc090bbf5de8d0b9ed327b2f9419f8d",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob016_m2014_q4j",
+      "prompt_sha256": "118f04b756069c1c585aab7bcb96955f91cdf1abe85a73663b34ddc8083c37d3",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob017_mux2to1v",
+      "prompt_sha256": "4689de864f6441c0c5fef7bee694da59f7982a5fff22bde0a83f15481f913f4d",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob018_mux256to1",
+      "prompt_sha256": "44ea6f1f91464b6f5d32c62f08c8222266c340b21fe4238085566af0e7f2597a",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob019_m2014_q4f",
+      "prompt_sha256": "d7bbd52729d1d9917dd1296ff28088bf333e5ebbac30911ce43574e56e79ca0c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob020_mt2015_eq2",
+      "prompt_sha256": "1262740345fff6e22f35e68059d12dfe638c5bf70b27ff4ec1aface178b70371",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob021_mux256to1v",
+      "prompt_sha256": "118a3874153fe5afbb75ee43f383fda85f2b41404cb60e51b38f72abc6dbaeb8",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob022_mux2to1",
+      "prompt_sha256": "45aa9767aea0213b130cfec75dfd5fdace903f2cd61b59c6a0b9f4daf692701c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob023_vector100r",
+      "prompt_sha256": "ccc4ab7245c258623db64dedd8cbb27af09eef38b22e1e0f0467beb7e581304e",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob024_hadd",
+      "prompt_sha256": "4827ffbd774cebeaa83a546b7e99eb711dc8405d17273b92b5bb03412162a8bf",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob025_reduction",
+      "prompt_sha256": "8bde3d2942821440391ad577cfed52772281f374327e92e2957d228be75779fa",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob026_alwaysblock1",
+      "prompt_sha256": "a1eab4a8a1eed0dc9d7a3cc898a7116afb055cf71cff0dbf69336fc5424a1216",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob027_fadd",
+      "prompt_sha256": "24de9ac3563dd23c5285b1f86474545eb51f3ea5997eff60dbc8b09599d1b667",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob028_m2014_q4a",
+      "prompt_sha256": "fae47bedcded7fa604c892998d2ac2779fc7947a40931b3dd9ad57141b72195a",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob029_m2014_q4g",
+      "prompt_sha256": "c6c7af37d0226457da8c73f3a70a860de074782505a56704e8af8176d2033b31",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob030_popcount255",
+      "prompt_sha256": "2d98fd60c7bd3539ef982a1f55f6828f9001ec70a9fd6443d1d45c93c1ee5e8a",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob031_dff",
+      "prompt_sha256": "1249bc7d17f5c40ac84c670b9eac06526e5f6bf9fbd7943f3915b6fa246a66c5",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob032_vector0",
+      "prompt_sha256": "0bdac107a067787f2abdaadf277e47678bd912d29126f5b98380583c50352f92",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob033_ece241_2014_q1c",
+      "prompt_sha256": "3faf81c7cc124de63ce4044f7b3c0802fb7e481121c1b0a10886cfbbf9386813",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob034_dff8",
+      "prompt_sha256": "c1e3936021706dfcebead97b2d9075399e738d9d62d10db6eafd1615d8d5f94b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob035_count1to10",
+      "prompt_sha256": "7f5c9ba2a045cc594d15794f1e6223ef323069ad7d3a7d8762ac8579bf7750a0",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob036_ringer",
+      "prompt_sha256": "2734624f290a2809844ed4ba18c4489b166b62b0919631603cc8dc0c9bcba15b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob037_review2015_count1k",
+      "prompt_sha256": "72679e4f33255466d9a6674a378b1378fe3d97339cdc86bcc8b19d2514120896",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob038_count15",
+      "prompt_sha256": "d59ad6c2ce5bad54b479484bcb482fa598d5387535ec896a9da189ae620897a5",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob039_always_if",
+      "prompt_sha256": "e86ab354264ffaf1dc1f27e0e3f641c423432772931abf83f6c0b3f64b4ed9ff",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob040_count10",
+      "prompt_sha256": "c226dc87e0cc085bfdb7d62cdacf088d15dd12ffe364f6b7d1b8b1eb56199263",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob041_dff8r",
+      "prompt_sha256": "b12e89d35822d4061c1df323325a1e816ecd3d70a4ee19d563128643163b103b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob042_vector4",
+      "prompt_sha256": "fd9224b3470ffa833e6acd82720a95c281c0b236c4409f91b8bff6ed683fa79b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob043_vector5",
+      "prompt_sha256": "d0ade82defefb9b5c5505c4b49c991821bb1bb717b3fd162a177f4c6e8b70225",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob044_vectorgates",
+      "prompt_sha256": "a6834cf5b2a1bb666aa12170d49e2eee79d1e019bfdda07b81d6f027321a0545",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob045_edgedetect2",
+      "prompt_sha256": "4dbcbe3edc5cff94c797d49a77f8c45a6c749d72bb1ca3559d72ebd64a5c75f5",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob046_dff8p",
+      "prompt_sha256": "e53d2f8eed8a969ceacbb3ba4abd88ea93d6d4b3df5b07e4ac5c600206bc2881",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob047_dff8ar",
+      "prompt_sha256": "7f6d4e44a46d915df25b5400a7fdb94e3a7b250c3b01f8a1cbf01415f640a26e",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob048_m2014_q4c",
+      "prompt_sha256": "35a79789d45069bad4f41371eae75fd4988b6da5845cf7b3bdb910652e31156f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob049_m2014_q4b",
+      "prompt_sha256": "8d7014f7256a91665c29c1c6d88435779437bdcd889857b84eafd2133dee438f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob050_kmap1",
+      "prompt_sha256": "aa50560c2a518e130e6f2d650168fb9457f92ec2d460caac0c18febbbb47a03f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob051_gates4",
+      "prompt_sha256": "698a674e25ebe18be189c2a068bec90c15c33b6156a1a60e09dd1d45237df16e",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob052_gates100",
+      "prompt_sha256": "c5f826c9262b26e7b4187140d91fb8bff63982e9c1d274f540628aa8eab8705f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob053_m2014_q4d",
+      "prompt_sha256": "472e26fe093024126644aeec5b7779070f1d624c93044d24fdb765a8afb8ae07",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "prompt_sha256": "083aa58b986b192261ff3305a2572974ffcf9fe3143c7bdd5447f96cf1f32309",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob055_conditional",
+      "prompt_sha256": "400ad0bd690760aa75008dc3f9f728af273b507ae0a5512650a6ef9fae43ce61",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob056_ece241_2013_q7",
+      "prompt_sha256": "628bc55dd0a983bfba0104d9685e602bf2bf4b23d679422c44901f29f28f117e",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob057_kmap2",
+      "prompt_sha256": "bdd6d4c116e79abd65a18b1461171091035fa8f12c4fc242e174055141ec6bd4",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob058_alwaysblock2",
+      "prompt_sha256": "07e984ee20f1a91b0dd44a66b7a50f421178efa583626a14198f9ddceb48cf50",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob059_wire4",
+      "prompt_sha256": "11655a6295f895f59369a549d267d1bb5db26b4c66fab17931c4769dcdea154b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob060_m2014_q4k",
+      "prompt_sha256": "1c6b1db38ab713d3ee0ece0e075644164836cd3f4b43423fdf487f7a204d210d",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob061_2014_q4a",
+      "prompt_sha256": "c8f12e44a090f8c5188b887f282ccff5f6bbc14074acb72cddf28ac6ff0657cd",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob062_bugs_mux2",
+      "prompt_sha256": "2be3eebba4aea325c3e1650030a20b2c5725cb10709499f392a223a84db84e34",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob063_review2015_shiftcount",
+      "prompt_sha256": "906325e2d904a233c69dd51ed5cb12817fb35f406786bcea9f028caa0b063b3c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob064_vector3",
+      "prompt_sha256": "76e9cc108d109fe1527ffec220401614279423f3abcb034926e7a5b2da421a54",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob065_7420",
+      "prompt_sha256": "8095aeadb6b17b7c40efa059d443fc80f37f1e4b70c97a9a095a348a5d013273",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob066_edgecapture",
+      "prompt_sha256": "799584b65c3d8048b10f0bbc3c288dc278ecab34fc7b1d12daef56dec742a968",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob067_countslow",
+      "prompt_sha256": "cee16c25563b23cfe54d50fb4cc15debc412403df486fd91da5bb5bef61af296",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob068_countbcd",
+      "prompt_sha256": "166d3638db16172c044583c5b5314d5e7c980561c5d0df183d8d7bc55e41a047",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob069_truthtable1",
+      "prompt_sha256": "aa7a41a1eb93636e1c04c7888f3c7810f614ebd14a67273602e9e32bfc004290",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob070_ece241_2013_q2",
+      "prompt_sha256": "7d1d6c64e90623590b20f5f1b1bda317637781a319a267fed9a696315f2413f4",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob071_always_casez",
+      "prompt_sha256": "a0f1bef8205db2b5dd182f74d3abed73203f5d78c653b33d0de8f575b8d901ce",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob072_thermostat",
+      "prompt_sha256": "99c41cd24b26de27c816d1f5defd42f9f34989af7a8dcfc1d44242e2985986af",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob073_dff16e",
+      "prompt_sha256": "a44e369ada4e613378da55556914e3253cda745d4877bba4884852af45f35262",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob074_ece241_2014_q4",
+      "prompt_sha256": "65b8d15a8b47d1192a7b3597edb54adb06b5eea4e141b24499005bb91ca840e0",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob075_counter_2bc",
+      "prompt_sha256": "726fcb0960811028cf9834ed23c6cfa5d691220591e44203451f147f4a8a56f3",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob076_always_case",
+      "prompt_sha256": "c18028340667c3d55ce7ab5f50471994aa02db131777a152b20a57fedf2e9ed0",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob077_wire_decl",
+      "prompt_sha256": "5d0c46699bccf8cf6dccfd4e927739e3e02536bbaa3c7bd40195d9749ee90fc1",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob078_dualedge",
+      "prompt_sha256": "91a92414102754076643ce942574dc1c8c6ba7a3b20df3805bec67a847314837",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob079_fsm3onehot",
+      "prompt_sha256": "4e95a8bfb97778a97edf9baac0ec65919a03dd7b33ed90b5f5bc848a27e884a5",
+      "status": "abstain",
+      "reason": "complete_full_prefix",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob080_timer",
+      "prompt_sha256": "34c221e05853c4745cd0154e0211dd5ce5d1e58489667b44d49d854888842e5b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob081_7458",
+      "prompt_sha256": "6f01d2889445cf7688cb11ee5dd6c931112db81ba3cd971ba96ba523ebd3b8bd",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob082_lfsr32",
+      "prompt_sha256": "9cca270a68f657e6f352dcaaf244a43cf253bc1f7c139f95272787482aa8bb4a",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob083_mt2015_q4b",
+      "prompt_sha256": "0da1d72a3b98ab5bf6a0dd7b8493e0cc5cb0efe2674eeb28ce6663d2d34606d9",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob084_ece241_2013_q12",
+      "prompt_sha256": "aaa14c75cd784174a64c8722cd64fabdc0798090778bd73b8199e154ced331ec",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob085_shift4",
+      "prompt_sha256": "77c08da3ab5c2fc3743f8fc35e1aa62b69d04301777c9e5410dbe8edcf47083f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob086_lfsr5",
+      "prompt_sha256": "44730b58537401adf5306665858960f943d9f6a8de77ffd32377b69949a00ab6",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob087_gates",
+      "prompt_sha256": "dcbff80caa2139182bf7b10fdc391ba97032a1f2ac69a5f9bb764c71bafb9071",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob088_ece241_2014_q5b",
+      "prompt_sha256": "7fd835808383f7fc65354b320bdf6713c4a97c8c93db3e36abe26c9ec00ebf57",
+      "status": "abstain",
+      "reason": "bounded_roles_or_width",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob089_ece241_2014_q5a",
+      "prompt_sha256": "098dfddb5503f61144413658a4f78a6503c7602d8a37e8a819004388600f9bcd",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob090_circuit1",
+      "prompt_sha256": "ac7b70fce57f33eb12a99a56a45824b58023b3b93f8d191449aa4e4fb2739d61",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob091_2012_q2b",
+      "prompt_sha256": "41eb700b50ab6c1f6633d05f72195bc54ba52910b4d6278b77b4c0f73d747162",
+      "status": "abstain",
+      "reason": "complete_partial_prose",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob092_gatesv100",
+      "prompt_sha256": "a7e9f7503ec827d3649025a99ea682cb11500d5c05af618b5870fa20e2fad801",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob093_ece241_2014_q3",
+      "prompt_sha256": "8a12283b7215d8d4f1e22ba39b93e0716540e5cb74535824bb65ac28d19448bb",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob094_gatesv",
+      "prompt_sha256": "2c446c20fd92b5cdaf1edf93a4d2a7c6797688e8a012b25f0d97c8819f472c95",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob095_review2015_fsmshift",
+      "prompt_sha256": "47c232f4083a5b3d22d7c89825a33ea37a0b20bd7ad037e8e670ad4c412708fa",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob096_review2015_fsmseq",
+      "prompt_sha256": "b3ccd4a39fb3de65050925a9705aca1d48011ff0ac2458f2022104f0cded9a84",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob097_mux9to1v",
+      "prompt_sha256": "7e4f32af08e2da6eaf53882e368898144421fb90f35518eeec9781e1c036effd",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob098_circuit7",
+      "prompt_sha256": "9b7457ecba8a30b5bf87f284d6d5a52c350864deed38005842398bc2db163ae5",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob099_m2014_q6c",
+      "prompt_sha256": "4338c93f63dc76e9f2a453caa539fa006638380858d682011add6907a44199cd",
+      "status": "abstain",
+      "reason": "complete_partial_prose",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob100_fsm3comb",
+      "prompt_sha256": "b7be8bc059b0e2cee27525960f9d20143a2e3a796cea43940f20cfbcda4d001c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob101_circuit4",
+      "prompt_sha256": "0f2ff89e82d5c1906b49fd2c614085edaca1b27b91c4e6a28f43046a4ee596b3",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob102_circuit3",
+      "prompt_sha256": "39f9ad5cc2f1a88250a8df3b83e61992ee296c3bf6e7bb788e76d9ea0e7b9d10",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob103_circuit2",
+      "prompt_sha256": "b4bc07d94b1ad8f896ea42ee8ecad77a29f008fc6dc2f71ae7099de24ddb3d67",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob104_mt2015_muxdff",
+      "prompt_sha256": "26c973bb9acce82394cad0ac9cab11c23f0bc923cf6e5fb4394578e8147c5659",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob105_rotate100",
+      "prompt_sha256": "5d4c1061ecb33515bc7c732f2abd0d37e85ee64222d690493ff70e948ab8b105",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob106_always_nolatches",
+      "prompt_sha256": "cbe32b2855a2bd074d927c9175644fd9504d37e9881132f5b6789491a4d19a1c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob107_fsm1s",
+      "prompt_sha256": "2df3f4fffaed540973c2a56f75ff0568a2779f6dd38c59d139db296581ee11a5",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob108_rule90",
+      "prompt_sha256": "ecbe064747496af3741721ce5958a5f9f898604f830f31429bea4b0eca4f5cbc",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob109_fsm1",
+      "prompt_sha256": "b1f219a7ab967db313def5ecc1e7b64fd121444aeb35e8a1caad20b2f3cc07f0",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob110_fsm2",
+      "prompt_sha256": "da26e2a9dda1aa8573a66ad1e2dd5c17b6b643ec67d68d9d2e19d102a111d95f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob111_fsm2s",
+      "prompt_sha256": "e048cd8e3f02777f938e968ed677d1f802bd4874bd99cdc699b99d55e1f628ed",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob112_always_case2",
+      "prompt_sha256": "ae25e77bd3e4c274ecec6cea5af6d432379967aba0228435794b3bb83d9637b5",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob113_2012_q1g",
+      "prompt_sha256": "28d4acec2c779d694df44c0de315546cd5276d77d0bf8ae568beef34f570935a",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob114_bugs_case",
+      "prompt_sha256": "ec8e7b77723d101ae8110b968421d1611f1c930d344c7204173a4532891e2d0f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob115_shift18",
+      "prompt_sha256": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob116_m2014_q3",
+      "prompt_sha256": "9dd3943b739752b7d6cef1a19bc10734691578e7803800690bb2b481aa692d27",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob117_circuit9",
+      "prompt_sha256": "16fee3debe521ecb8d54337f6f60fbbf3234d85c61213d15baed7d7db56aa19b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob118_history_shift",
+      "prompt_sha256": "9529c5bc3b4c38e20789beb9a4a9b2e8d3986e657f41362a094c6bcb5b505638",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob119_fsm3",
+      "prompt_sha256": "f497d1f080bac7e41d41e1ad2f4ef97d70deda503980201db65458dcd722a93e",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob120_fsm3s",
+      "prompt_sha256": "478294fbd9924c1db06d1c5c425e60d33b23f94bb781967febb200013dac323e",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob121_2014_q3bfsm",
+      "prompt_sha256": "5c70c2d5084e8f21b4e2f777df494d9fe561e778db317d63795495e73e70199e",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob122_kmap4",
+      "prompt_sha256": "58609ff895fd306d2f5ff536e7e43a29630382babdf1cbb3faa0347bdfa7ef74",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob123_bugs_addsubz",
+      "prompt_sha256": "6ebc1bd728f0df810dac936aef4b14aedc451c320a8504281f466976b899bf33",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob124_rule110",
+      "prompt_sha256": "bd6fb5a346cafe3c19462f07fe449107ea62cd3873199dca40a831288fac821f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob125_kmap3",
+      "prompt_sha256": "7619670501d7d0ea6a2581009db0465e1b2a3e20285c8cd1390c2ed7a75c3529",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob126_circuit6",
+      "prompt_sha256": "6041cce9c3c2a2ef6807849203533ddd8e42f5c552a51e1ad289b6cfa284d30d",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob127_lemmings1",
+      "prompt_sha256": "919cdcd7f0e136616a0641235c5ce56a3b30a3db24c6c24676d6115ee5c25b64",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob128_fsm_ps2",
+      "prompt_sha256": "d640f3004470b59b2826004b1d207a1374805efbee213760c5207a5a3b8499d7",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob129_ece241_2013_q8",
+      "prompt_sha256": "3877ecddd880e7c400663a2a1a6b9a6dc3120d0749c6237d8e9ebaf2c190009c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob130_circuit5",
+      "prompt_sha256": "243b400e1f92917d1e3eab5e957d2bc61429d71a1def80ae9dbcae344e9bb2ea",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob131_mt2015_q4",
+      "prompt_sha256": "eda6262da4ec4ecf40dcb2a6c0dd8395d05194369a99733443136b965f9d681d",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob132_always_if2",
+      "prompt_sha256": "39752f802b00fc5a2d3f1d682ef5d6f162d3b97b2f0defe383e5cc267177e7fd",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob133_2014_q3fsm",
+      "prompt_sha256": "17021716dfdf268d2f82a388751e920d35e7f35fe7f1f74945a4106b545cdf0f",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob134_2014_q3c",
+      "prompt_sha256": "1c048b7ccb1aac71e7bb5077c5d482c0442c90c00bba04421c958f723ceca8ce",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob135_m2014_q6b",
+      "prompt_sha256": "e788ac0654b82243f745cdbe2ac14abff0d5a22b068372b6da80a47a9593c2d9",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob136_m2014_q6",
+      "prompt_sha256": "f048fd8c41320bb339904ddd1aaef1516a8b558c347884cc065dfd518b861e80",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob137_fsm_serial",
+      "prompt_sha256": "cb55ab0cc6209081616113e0591afc3061c6c7c5b0f61960a815f4d8bec903b7",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob138_2012_q2fsm",
+      "prompt_sha256": "608a916cc663adf9481c7a598ae49a4d2a5184881b1761a265103880cf6be0f6",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob139_2013_q2bfsm",
+      "prompt_sha256": "02b026a06dfce51409618cf674b3c221f7030232944f01eebc2d7e1ab0e5341b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob140_fsm_hdlc",
+      "prompt_sha256": "5e5772e81c2558971bf852be0ad287f9c75263148a4f2fd6e57eabab26a26a0d",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob141_count_clock",
+      "prompt_sha256": "67371f44babdeef0ff708333f28c155401a244ad833641ab0d9e80b421e2c1e9",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob142_lemmings2",
+      "prompt_sha256": "cb3939d17066809761e969e9093780b4edca92e35cc4dd40b64459bcc86f3687",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob143_fsm_onehot",
+      "prompt_sha256": "0fa8e035e723efd2da2c248a78628bbbfe13124a6066a7b806d44a9b3863019d",
+      "status": "supported",
+      "reason": null,
+      "family": "full_vector_multistate",
+      "checks": 2048
+    },
+    {
+      "task": "Prob144_conwaylife",
+      "prompt_sha256": "bc5fda7713cf5f8a009e33fbb7e4bc0a84173c4fb65b82e1f27069430da4866c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob145_circuit8",
+      "prompt_sha256": "7504503ea9d27ae67b6591f56c17ad3813bbf3594dd7ebffe701cbdc01e58f37",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob146_fsm_serialdata",
+      "prompt_sha256": "33ff27d3f8b20958bc0c82e7f53219a497dbef09ec808f269661fb2bc95fd4a1",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob147_circuit10",
+      "prompt_sha256": "d8eb255b565aa72aba2ca191784f1a5a3dac8c3bf3fcf6e030f0a7770e80e3a2",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob148_2013_q2afsm",
+      "prompt_sha256": "a643af9e96515a1a7ba0a34ff6494c2b9ed570f75c45f000739eb56d769541ec",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob149_ece241_2013_q4",
+      "prompt_sha256": "0e51c2680ec76f974ea89eaaf2b3e45ddfb59943397e0023350e86d1c626b03b",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob150_review2015_fsmonehot",
+      "prompt_sha256": "5a04b3506a40ec24e55760d979110a318216c5d49e778afad6f1e7b686e5e690",
+      "status": "supported",
+      "reason": null,
+      "family": "partial_scalar_onehot",
+      "checks": 80
+    },
+    {
+      "task": "Prob151_review2015_fsm",
+      "prompt_sha256": "49663e26b374c90a2011de1b386fb76587581fe4a0bbed3a8c452f082270801c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob152_lemmings3",
+      "prompt_sha256": "b35e9888952abba73ee3da0faa3466dfd014908d8ca5fcf9e56706bcb735db5c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob153_gshare",
+      "prompt_sha256": "6c16f3045a46656214ef7b8cf6483aa5b5cecc97464274fc3997c1795f92eaac",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob154_fsm_ps2data",
+      "prompt_sha256": "d731a5b1ea4db27d8a28c7094477b02089ef722f71279c3c0fd3756704fcc239",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob155_lemmings4",
+      "prompt_sha256": "535dbaa5d4bb8285958b113656c132ccd71937cc83e55138160b74b39acb531c",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    },
+    {
+      "task": "Prob156_review2015_fancytimer",
+      "prompt_sha256": "262f49e7ee666f52dd73fcc4077f172b7c50b549c9657e54cfc0849d419bd9f9",
+      "status": "skip",
+      "reason": "no_onehot_fsm",
+      "family": null,
+      "checks": null
+    }
+  ]
+}

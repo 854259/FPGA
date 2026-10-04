@@ -1,0 +1,19 @@
+{
+  "schema": "frozen_edge_metadata_scope_note_v1",
+  "run_spec_sha256": "12ff3efc385045e14580aa41ecae64cf6d0d2ce39f1150a344c846683cf1a9ab",
+  "input_manifest_sha256": "eec5693814589e38122cfa15f6066386b1bb76099a4e739e962c08c40c216619",
+  "legacy_task_ids_metadata": [
+    "Prob115_shift18"
+  ],
+  "actual_protected_tasks": 156,
+  "actual_protected_input_files": 936,
+  "selected_candidates_from_spec": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect"
+  ],
+  "stage_uses_legacy_task_ids_metadata": false,
+  "frozen_assets_changed": false,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "limits": "task_ids legacy metadata is not used to select cases or protect inputs; spec.cases and full input_sha256 maps govern actual stage. Verify this scope in terminal audit, do not overwrite frozen manifest."
+}
