@@ -1,0 +1,61 @@
+{
+  "at_utc": "2026-10-04T21:48:18Z",
+  "rows": 271,
+  "recorded_requests": 285,
+  "complete": false,
+  "error": null,
+  "frozen_sources_exact": {
+    "functional_full156_20261005_v1": 30,
+    "edge_contract_20261005_v1": 49,
+    "fsm_contract_20261005_v1": 51,
+    "formal_bridge_20261005_v1": 28,
+    "formal_bridge_v2_20261005_v1": 34
+  },
+  "processes": {
+    "2013333": {
+      "state": "S",
+      "starttime": "823869819"
+    },
+    "3390465": {
+      "state": "S",
+      "starttime": "841229941"
+    }
+  },
+  "tickets": [
+    {
+      "ticket": 25,
+      "task_name": "functional_full156_v1",
+      "state": "running"
+    },
+    {
+      "ticket": 26,
+      "task_name": "fpga_teammate_cvdp_rng_S2",
+      "state": "queued"
+    },
+    {
+      "ticket": 27,
+      "task_name": "fpga_teammate_paired_uncertainty_T1",
+      "state": "queued"
+    },
+    {
+      "ticket": 28,
+      "task_name": "edge_contract_calibration_v1",
+      "state": "queued"
+    },
+    {
+      "ticket": 29,
+      "task_name": "fsm_contract_calibration_v1",
+      "state": "queued"
+    },
+    {
+      "ticket": 30,
+      "task_name": "formal_bridge_integration_v1",
+      "state": "queued"
+    },
+    {
+      "ticket": 31,
+      "task_name": "formal_bridge_v2_health_integration_v1",
+      "state": "queued"
+    }
+  ]
+}

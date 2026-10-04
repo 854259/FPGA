@@ -1,0 +1,25 @@
+{
+  "schema": "full156_complete_attribution_tools_frozen_v1",
+  "frozen_at_utc": "2026-10-04T21:46:31.847634+00:00",
+  "base_commit": "db35a03191c990e37b36304cb5b1c4486f57e6f6",
+  "cloud_root": "/workspace/team/runs/fpga_owner/full156_decision_tools_20261005_v1",
+  "source_hashes": {
+    "source/03_analysis/full156_decision_20261005/decision.py": "f2f981e5cb6b2c3635f9451266647e93d10839a593c59f26986fb8dc19c2a2e9",
+    "source/03_analysis/full156_decision_20261005/prepare.py": "7b05948149e8009f7b7b753f8a1ccab7b727f12aa748e031704e92da86b3d50e",
+    "source/03_analysis/full156_decision_20261005/test_decision.py": "7d545a3c95abd877d4971b1c4ec80d6757eb0a07c86a13c2ee26e3f178a59b2b",
+    "source/03_analysis/functional_full156_20261005/RUN_SPEC.json": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+    "source/03_analysis/functional_full156_20261005/audit.py": "a4fcd91ac36c54c202be841a476cac256cb56b33a125a3833744b992e9986381"
+  },
+  "supported_run_spec_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+  "pure_tests": 9,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "actual_full_result_processed": false,
+  "adoption": false,
+  "limits": [
+    "Only accepts completed full156 audit and matching raw archive; no score filtering, new model or EDA calls.",
+    "Adds observed matched-draft native repair requirement and anomaly investigation to frozen quality gate; never relaxes regression/deadline/unconfirmed limits.",
+    "Synthetic parser fixtures are explicitly marked and rejected by production CLI.",
+    "No statistical interval computation, teammate T1 duplication, independent natural or five-sample certification."
+  ]
+}

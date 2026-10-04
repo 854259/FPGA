@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-04T21:47:39Z",
+  "cloud_root": "/workspace/team/runs/fpga_owner/full156_decision_tools_20261005_v1",
+  "assets_verified": 5,
+  "spec_sha256": "4fb25b0a7560d230180fe394027db76cf13da0cef7ad98524f937c3f4c4cf752",
+  "linux_pure_tests_passed": 9,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "actual_full_result_processed": false,
+  "output": "test_complete_archive_parser_and_synthetic_production_rejection (test_decision.Decision.test_complete_archive_parser_and_synthetic_production_rejection) ... ok\ntest_frozen_regression_gate_is_never_relaxed (test_decision.Decision.test_frozen_regression_gate_is_never_relaxed) ... ok\ntest_historical_or_partial_audit_cannot_enter_processor (test_decision.Decision.test_historical_or_partial_audit_cannot_enter_processor) ... ok\ntest_matched_native_chain_preserves_all156_mean_and_no_deployment (test_decision.Decision.test_matched_native_chain_preserves_all156_mean_and_no_deployment) ... ok\ntest_non_native_positive_score_is_not_sufficient (test_decision.Decision.test_non_native_positive_score_is_not_sufficient) ... ok\ntest_partial_and_duplicate_denominator_rejected (test_decision.Decision.test_partial_and_duplicate_denominator_rejected) ... ok\ntest_same_dut_judgment_change_and_unchanged_flow_anomaly_are_separate (test_decision.Decision.test_same_dut_judgment_change_and_unchanged_flow_anomaly_are_separate) ... ok\ntest_synthetic_and_deadline_never_expand_independent_validation (test_decision.Decision.test_synthetic_and_deadline_never_expand_independent_validation) ... ok\ntest_unmatched_initial_or_failed_compile_or_no_fact_does_not_claim_repair (test_decision.Decision.test_unmatched_initial_or_failed_compile_or_no_fact_does_not_claim_repair) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.096s\n\nOK\n"
+}
