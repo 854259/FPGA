@@ -1,5 +1,136 @@
 {
   "schema_version": 1,
+  "ross_mcp_research_20261004": {
+    "status": "isolated_real_mcp_execution_verified_lint_calibration_failed",
+    "branch": "research/ross-mcp-20261004",
+    "base_commit": "a1ca7d6fc0ffbe58ddf8eb39b4d2193e43345293",
+    "result": "03_analysis/ross_probe_20261004/MCP_RESULTS.json",
+    "report": "03_analysis/ross_probe_20261004/README.md",
+    "direct_stage_result": "03_analysis/ross_probe_20261004/RESULTS.json",
+    "binary": {
+      "path": "E:\\26qiansai\\vivado-mcp-server-linux-amd64-2026.9.1",
+      "bytes": 23998648,
+      "md5": "d62b050db4316889a051da4c38661bd3",
+      "sha256": "2d1ac42f2628dab2db37bd214b4ad45d2275e541fe6eb71e879ac6ea123bb8bc",
+      "is_linux_elf": true
+    },
+    "upstream_skill_commit": "2cdc9eef1b6b5b17fa45f5e4d468e5483a1c92de",
+    "transport_verified": true,
+    "session_execution_verified": true,
+    "diagnostic_engine_verified": false,
+    "automated_lint_repair_enabled": false,
+    "formal_runtime_integrated": false,
+    "formal_package_changed": false,
+    "baseline_changed": false,
+    "official_judge_changed": false,
+    "model_restarted": false,
+    "instance_shutdown": false,
+    "model_calls": 0,
+    "new_score": false,
+    "final_fresh_stage": {
+      "tool_calls": 64,
+      "sessions": 4,
+      "lint_calls": 3,
+      "synthesis_calls": 1,
+      "elapsed_s": 71.5940665109083,
+      "all_sessions_closed": true,
+      "positive_lint_counts": [
+        0,
+        0
+      ],
+      "negative_lint_count": 0
+    },
+    "all_mcp_stages": {
+      "tool_calls": 112,
+      "vivado_sessions_started": 6,
+      "vivado_sessions_closed": 6,
+      "lint_calls": 6,
+      "synthesis_calls": 2,
+      "model_calls": 0
+    },
+    "failed_attempts": [
+      {
+        "type": "admission_refused",
+        "stage_started": false,
+        "error": "RuntimeError: shared slot occupied; retain it and retry later after its owner releases",
+        "other_slot_preserved": true
+      },
+      {
+        "type": "runner_log_path_error",
+        "stage_started": true,
+        "vivado_start_succeeded": true,
+        "lint_calls": 0,
+        "error": "FileNotFoundError: [Errno 2] No such file or directory: '/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v1/live/work/vivado.log'",
+        "cleanup": {
+          "complete": true,
+          "passed": false,
+          "model_unchanged": true,
+          "protected_files_unchanged": true,
+          "own_slot_released": true,
+          "owned_cleanup_verified": true,
+          "remaining_owned_processes": 0,
+          "started_at_utc": "2026-10-04T02:02:13.605267+00:00",
+          "finished_at_utc": "2026-10-04T02:02:23.280981+00:00"
+        }
+      },
+      {
+        "type": "second_admission_refused",
+        "stage_started": false,
+        "error": "RuntimeError: shared slot occupied; retain it and retry later after its owner releases",
+        "other_slot_preserved": true
+      }
+    ],
+    "hot_session_limit": {
+      "tool_calls": 37,
+      "elapsed_s": 44.86054821033031,
+      "lint_counts": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "source_isolation_verified": false,
+      "limitation": "Repeated TopModule definitions caused Synth 8-9873 across close_project/create_project in same Vivado process; not accepted as isolated diagnostics",
+      "all_owned_sessions_closed": true
+    },
+    "state_directory_limitation": "--state-dir isolates port/session state, but this build also writes command history under /root/.vivado-ai/data; no HOME or global client config changes",
+    "tests": {
+      "research_diagnostic_tests": 10,
+      "passed": 10,
+      "raw_mcp_manifest_files": 217,
+      "raw_hashes_verified": true
+    },
+    "postflight": {
+      "utc": "2026-10-04T02:16:55.612121+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "model_identity_unchanged": true,
+      "protected_files_unchanged": true,
+      "owned_sessions_closed": 4,
+      "instance_shutdown_or_model_restart": false,
+      "workspace_free_gib": 10.129112243652344
+    },
+    "remaining": [
+      "Resolve lint-positive controls on this installed Vivado build without fabricating findings",
+      "Audit binary redistribution terms and offline container reproducibility before final inclusion",
+      "Measure local-model tool selection, bounded repair benefit and total cost on independent guards"
+    ],
+    "global_client_config_changed": false,
+    "automation_created": false
+  },
   "research_cycle_20261004": {
     "status": "bounded_cycle_completed_with_stopped_model_pilot_and_completed_offline_audit",
     "source": "direct_user_request_to_start",

@@ -1,0 +1,66 @@
+{
+  "schema": "ross_vivado_lint_probe_v1",
+  "date": "2026-10-04",
+  "status": "frozen_before_eda",
+  "upstream_commit": "2cdc9eef1b6b5b17fa45f5e4d468e5483a1c92de",
+  "scope": "Underlying Vivado command and report verification, not ROSS MCP integration",
+  "part": "xczu3eg-sbva484-1-e",
+  "model_calls": 0,
+  "lint_runs": 8,
+  "synthesis_runs": 1,
+  "timeout_s_per_run": 90,
+  "configurations": [
+    "archived_default",
+    "official_csv_option"
+  ],
+  "csv_option": "set_param synth.elaboration.rodinMoreOptions \"rt::set_parameter linterCsvFile true\"",
+  "inputs": {
+    "official_faults": {
+      "file": "inputs/official_faults/candidate.sv",
+      "top": "lint_violation_top",
+      "sha256": "d5a7bd1ecd90c6f9c9c67fb1489b9dc1c346cea8372c07a649a2fb53853b2e3e",
+      "bytes": 5466,
+      "description": "AMD multi-violation source, unchanged; target part adapted to the competition part",
+      "role": "diagnostic_positive"
+    },
+    "old_faults": {
+      "file": "inputs/old_faults/candidate.sv",
+      "top": "TopModule",
+      "sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "bytes": 258,
+      "description": "Reconstructs the three defect mechanisms in the archived old control",
+      "role": "diagnostic_positive"
+    },
+    "clean_guard": {
+      "file": "inputs/clean_guard/candidate.sv",
+      "top": "TopModule",
+      "sha256": "2731171ac9a990a45311bd597f8f34e94984a035fdbe9f2d165fcfbda53615b2",
+      "bytes": 161,
+      "description": "Fully assigned combinational mux and XOR; no expected lint violations",
+      "role": "diagnostic_negative"
+    },
+    "modulo_guard": {
+      "file": "inputs/modulo_guard/candidate.sv",
+      "top": "TopModule",
+      "sha256": "18a3cd82c612b59230e8cfe76647a0b80a5acb354544170f5322d064fd4fcc65",
+      "bytes": 171,
+      "description": "Intended modulo-256 arithmetic: an overflow warning is not permission to widen the port",
+      "role": "semantic_guard"
+    }
+  },
+  "acceptance": {
+    "tool_validity": "All commands finish without tool/environment errors; reports and inputs are traceable",
+    "lint_engine": "At least the AMD fault control must produce a nonzero linter count with a consistent parse; clean guard should remain zero",
+    "zero_count": "Zero on diagnostic-positive controls means the diagnostic mechanism is unverified, not that the design is correct",
+    "semantic_guard": "No code is changed; warnings on specified modulo arithmetic do not establish a functional bug"
+  },
+  "limitations": [
+    "No model repair or gain measurement",
+    "No official MCP binary installed or called",
+    "The sample README's exact expected count uses a different device; we report differences rather than assert equivalence",
+    "No hidden reference or official testbench provided to any model",
+    "Protected package, baseline, official judge and shared model remain unchanged"
+  ],
+  "runner_sha256": "c77c65159cbe42cc213091b2a270f5cccc2244749f11dca749015787b20ccb54",
+  "resource_guard_sha256": "59c4212cb77971406255690c0efab0593cb5c100b21cf9d22622a9917be5e66d"
+}

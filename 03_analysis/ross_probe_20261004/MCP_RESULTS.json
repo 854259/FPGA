@@ -1,0 +1,288 @@
+{
+  "schema": "ross_mcp_evidence_v1",
+  "date": "2026-10-04",
+  "complete": true,
+  "binary": {
+    "path": "E:\\26qiansai\\vivado-mcp-server-linux-amd64-2026.9.1",
+    "bytes": 23998648,
+    "md5": "d62b050db4316889a051da4c38661bd3",
+    "sha256": "2d1ac42f2628dab2db37bd214b4ad45d2275e541fe6eb71e879ac6ea123bb8bc",
+    "is_linux_elf": true
+  },
+  "spec_sha256": "66fb0aef8727c830b701949e71b57f347808119b2ebf70c5417dd5eb98d8abfa",
+  "evidence_zip_sha256": "80bf97b3653e4b428a9c8d27090e2fd9db7e368e9b94fb6da4228151895513f3",
+  "cloud_root": "/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1",
+  "transport_verified": true,
+  "session_execution_verified": true,
+  "actual_vivado_version": "2026.1",
+  "part": "xczu3eg-sbva484-1-e",
+  "model_calls": 0,
+  "new_score": false,
+  "functional_repair_measured": false,
+  "formal_runtime_integrated": false,
+  "successful_stage_tool_calls": 64,
+  "successful_stage_elapsed_s": 71.5940665109083,
+  "successful_stage_sessions_started": 4,
+  "successful_stage_sessions_closed": 4,
+  "session_start_elapsed_s": 5.044440665282309,
+  "successful_stage_lint_calls": 3,
+  "successful_stage_synthesis_calls": 1,
+  "diagnostic_engine_verified": false,
+  "rows": [
+    {
+      "case": "official_faults",
+      "mode": "lint",
+      "source_sha256": "d5a7bd1ecd90c6f9c9c67fb1489b9dc1c346cea8372c07a649a2fb53853b2e3e",
+      "elapsed_s": 5.825602700933814,
+      "linter_counts": [
+        0
+      ],
+      "messages": [
+        "WARNING: [Synth 8-151] case item 4'b0000 is unreachable [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/official_faults__lint/candidate.sv:75]",
+        "WARNING: [Synth 8-7137] Register reg_b_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/official_faults__lint/candidate.sv:131]",
+        "WARNING: [Synth 8-7137] Register reg_c_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/official_faults__lint/candidate.sv:132]",
+        "WARNING: [Synth 8-7137] Register reg_b_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/official_faults__lint/candidate.sv:131]",
+        "WARNING: [Synth 8-7137] Register reg_c_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/official_faults__lint/candidate.sv:132]",
+        "WARNING: [Synth 8-3848] Net phantom_sig in module/entity lint_violation_top does not have driver. [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/official_faults__lint/candidate.sv:59]"
+      ],
+      "log_sha256": "1ce8b63fe58f6e23a8bb7542a7546cc912c38ff35a6790585e465de3bcf6e092",
+      "report_bytes": 0,
+      "report_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tool_execution_valid": true,
+      "report_inspection": {
+        "format": "empty_headerless_csv",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      }
+    },
+    {
+      "case": "old_faults",
+      "mode": "lint",
+      "source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "elapsed_s": 5.880322919227183,
+      "linter_counts": [
+        0
+      ],
+      "messages": [
+        "WARNING: [Synth 8-3848] Net undriven_out in module/entity TopModule does not have driver. [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/old_faults__lint/candidate.sv:3]"
+      ],
+      "log_sha256": "ca87a9351a3a9f7fa7bba91f528a9ce217304301fef8d4b83c0dadf494114850",
+      "report_bytes": 0,
+      "report_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tool_execution_valid": true,
+      "report_inspection": {
+        "format": "empty_headerless_csv",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      }
+    },
+    {
+      "case": "clean_guard",
+      "mode": "lint",
+      "source_sha256": "2731171ac9a990a45311bd597f8f34e94984a035fdbe9f2d165fcfbda53615b2",
+      "elapsed_s": 5.862553110346198,
+      "linter_counts": [
+        0
+      ],
+      "messages": [],
+      "log_sha256": "574296fc37372d3b5c317e319d0c0df511675cc4ffb8d2afc519ae078785cc98",
+      "report_bytes": 0,
+      "report_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tool_execution_valid": true,
+      "report_inspection": {
+        "format": "empty_headerless_csv",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      }
+    },
+    {
+      "case": "old_faults",
+      "mode": "synthesis",
+      "source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "elapsed_s": 14.640483848750591,
+      "linter_counts": [],
+      "messages": [
+        "WARNING: [Synth 8-3848] Net undriven_out in module/entity TopModule does not have driver. [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/old_faults__synthesis/candidate.sv:3]",
+        "WARNING: [Synth 8-7129] Port undriven_out[7] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[6] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[5] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[4] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[3] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[2] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[1] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[0] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-327] inferring latch for variable 'y_reg' [/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v3/live/work/old_faults__synthesis/candidate.sv:5]",
+        "WARNING: [Synth 8-7129] Port undriven_out[7] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[6] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[5] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[4] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[3] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[2] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[1] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[0] in module TopModule is either unconnected or has no load"
+      ],
+      "log_sha256": "02040a71affcaa9f17246d1ddaedf20b216638caa5ffb54f0165f440bf63f705",
+      "report_bytes": null,
+      "report_sha256": null,
+      "tool_execution_valid": true
+    }
+  ],
+  "handshake": {
+    "server_version": "2026.9.1",
+    "protocol_version": "2025-11-25",
+    "tool_names": [
+      "vivado_cleanup",
+      "vivado_client_info",
+      "vivado_connect",
+      "vivado_display",
+      "vivado_execute",
+      "vivado_history",
+      "vivado_list_sessions",
+      "vivado_log_messages",
+      "vivado_start",
+      "vivado_status",
+      "vivado_stop",
+      "vivado_todos"
+    ]
+  },
+  "guards": [
+    {
+      "complete": true,
+      "passed": true,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "owned_cleanup_verified": true,
+      "remaining_owned_processes": 0,
+      "started_at_utc": "2026-10-04T01:51:48.513913+00:00",
+      "finished_at_utc": "2026-10-04T01:51:48.865501+00:00"
+    },
+    {
+      "complete": true,
+      "passed": false,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "owned_cleanup_verified": true,
+      "remaining_owned_processes": 0,
+      "started_at_utc": "2026-10-04T02:02:13.605267+00:00",
+      "finished_at_utc": "2026-10-04T02:02:23.280981+00:00"
+    },
+    {
+      "complete": true,
+      "passed": true,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "owned_cleanup_verified": true,
+      "remaining_owned_processes": 0,
+      "started_at_utc": "2026-10-04T02:10:26.577710+00:00",
+      "finished_at_utc": "2026-10-04T02:11:11.745464+00:00"
+    },
+    {
+      "complete": true,
+      "passed": true,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "owned_cleanup_verified": true,
+      "remaining_owned_processes": 0,
+      "started_at_utc": "2026-10-04T02:14:08.787099+00:00",
+      "finished_at_utc": "2026-10-04T02:15:20.639253+00:00"
+    }
+  ],
+  "resource_guard_source": {
+    "commit": "bde08582f99d70dc16581afe837e9457a1a92e64",
+    "path": "03_analysis/selective_runtime_integration_20261003/resource_guard.py",
+    "sha256": "59c4212cb77971406255690c0efab0593cb5c100b21cf9d22622a9917be5e66d"
+  },
+  "all_mcp_stages": {
+    "tool_calls": 112,
+    "vivado_sessions_started": 6,
+    "vivado_sessions_closed": 6,
+    "lint_calls": 6,
+    "synthesis_calls": 2,
+    "model_calls": 0
+  },
+  "failed_attempts": [
+    {
+      "type": "admission_refused",
+      "stage_started": false,
+      "error": "RuntimeError: shared slot occupied; retain it and retry later after its owner releases",
+      "other_slot_preserved": true
+    },
+    {
+      "type": "runner_log_path_error",
+      "stage_started": true,
+      "vivado_start_succeeded": true,
+      "lint_calls": 0,
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: '/workspace/team/runs/fpga_owner/ross_mcp_20261004_v1/live_source_v1/live/work/vivado.log'",
+      "cleanup": {
+        "complete": true,
+        "passed": false,
+        "model_unchanged": true,
+        "protected_files_unchanged": true,
+        "own_slot_released": true,
+        "owned_cleanup_verified": true,
+        "remaining_owned_processes": 0,
+        "started_at_utc": "2026-10-04T02:02:13.605267+00:00",
+        "finished_at_utc": "2026-10-04T02:02:23.280981+00:00"
+      }
+    },
+    {
+      "type": "second_admission_refused",
+      "stage_started": false,
+      "error": "RuntimeError: shared slot occupied; retain it and retry later after its owner releases",
+      "other_slot_preserved": true
+    }
+  ],
+  "exploratory_hot_session": {
+    "tool_calls": 37,
+    "elapsed_s": 44.86054821033031,
+    "lint_counts": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "source_isolation_verified": false,
+    "limitation": "Repeated TopModule definitions caused Synth 8-9873 across close_project/create_project in same Vivado process; not accepted as isolated diagnostics",
+    "all_owned_sessions_closed": true
+  },
+  "state_directory_limitation": "--state-dir isolates port/session state, but this build also writes command history under /root/.vivado-ai/data; no HOME or global client config changes",
+  "postflight": {
+    "utc": "2026-10-04T02:16:55.612121+00:00",
+    "model_health": {
+      "status": "ok"
+    },
+    "processing_slots": 0,
+    "slot_exists": false,
+    "ports": {
+      "8000": true,
+      "7860": false,
+      "7867": false
+    },
+    "model_identity_unchanged": true,
+    "protected_files_unchanged": true,
+    "owned_sessions_closed": 4,
+    "instance_shutdown_or_model_restart": false,
+    "workspace_free_gib": 10.129112243652344
+  },
+  "decision": "MCP connection is available for isolated development; automated lint repair remains disabled until diagnostic calibration and repair controls pass",
+  "remaining": [
+    "Resolve lint-positive controls on this installed Vivado build without fabricating findings",
+    "Audit binary redistribution terms and offline container reproducibility before final inclusion",
+    "Measure local-model tool selection, bounded repair benefit and total cost on independent guards"
+  ]
+}

@@ -1,0 +1,1072 @@
+{
+  "schema": "ross_diagnostic_research_v1",
+  "date": "2026-10-04",
+  "complete": true,
+  "scope": "Underlying Vivado command and report verification, not ROSS MCP integration",
+  "upstream_commit": "2cdc9eef1b6b5b17fa45f5e4d468e5483a1c92de",
+  "cloud_root": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1",
+  "evidence_zip_sha256": "f573e1263753ebca9f12229ade82a8708ad05455851dedac86ee817576718531",
+  "spec_sha256": "397d5137c3afc3b4a8a7fea3918ce0ae85417e5f05aa008ec0415d82f15b2bd6",
+  "model_calls": 0,
+  "real_lint_calls": 8,
+  "real_synthesis_calls": 1,
+  "lint_average_s": 12.005023955600336,
+  "calibrations": {
+    "archived_default": {
+      "verified": false,
+      "configuration": "archived_default",
+      "positive_counts": {
+        "official_faults": [
+          0
+        ],
+        "old_faults": [
+          0
+        ]
+      },
+      "negative_counts": {
+        "clean_guard": [
+          0
+        ]
+      },
+      "reason": "diagnostic mechanism not established by both positive controls and clean guard"
+    },
+    "official_csv_option": {
+      "verified": false,
+      "configuration": "official_csv_option",
+      "positive_counts": {
+        "official_faults": [
+          0
+        ],
+        "old_faults": [
+          0
+        ]
+      },
+      "negative_counts": {
+        "clean_guard": [
+          0
+        ]
+      },
+      "reason": "diagnostic mechanism not established by both positive controls and clean guard"
+    }
+  },
+  "diagnostic_engine_verified": false,
+  "report_format_effect": "Default report is an ASCII table despite .csv extension; the official option changes it to an empty headerless CSV at zero count, but both fault controls still produce zero lint counts",
+  "rows": [
+    {
+      "case": "official_faults",
+      "role": "diagnostic_positive",
+      "configuration": "archived_default",
+      "mode": "lint",
+      "source_sha256": "d5a7bd1ecd90c6f9c9c67fb1489b9dc1c346cea8372c07a649a2fb53853b2e3e",
+      "run_source_sha256": "d5a7bd1ecd90c6f9c9c67fb1489b9dc1c346cea8372c07a649a2fb53853b2e3e",
+      "tcl_sha256": "4ea7d76f2708d8a93aa8b2321bb599f61bc818fd3d9dcd5067cda8a3be42635e",
+      "log_sha256": "a128ee07005adec9c0c2d7eb74a7c66690a150244145fe05dfbb7566735cc872",
+      "rc": 0,
+      "elapsed_s": 12.179820728488266,
+      "marker_complete": true,
+      "linter_counts": [
+        0
+      ],
+      "tool_messages": [
+        "WARNING: [Synth 8-151] case item 4'b0000 is unreachable [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:75]",
+        "WARNING: [Synth 8-7137] Register reg_b_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:131]",
+        "WARNING: [Synth 8-7137] Register reg_c_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:132]",
+        "WARNING: [Synth 8-7137] Register reg_b_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:131]",
+        "WARNING: [Synth 8-7137] Register reg_c_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:132]",
+        "WARNING: [Synth 8-3848] Net phantom_sig in module/entity lint_violation_top does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:59]"
+      ],
+      "report_exists": true,
+      "report_bytes": 1405,
+      "report_sha256": "bbdf863969b10135ecc59c5f60d013057234723f587786d6ef978227aa831495",
+      "tool_execution_valid": true,
+      "report_parse_verified": true,
+      "report_format": "ascii_table",
+      "report_inspection": {
+        "format": "ascii_table",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      },
+      "diagnostics": {
+        "case": "official_faults",
+        "configuration": "archived_default",
+        "mode": "lint",
+        "status": "lint_unverified",
+        "lint_engine_verified": false,
+        "messages": [
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-151",
+            "message": "case item 4'b0000 is unreachable [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:75]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv",
+            "source_line": 75,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 73,
+                "text": "    // ========================================================="
+              },
+              {
+                "line": 74,
+                "text": "    always @(*) begin"
+              },
+              {
+                "line": 75,
+                "text": "        case (mode)"
+              },
+              {
+                "line": 76,
+                "text": "            4'b0000: case_out = 8'h01;"
+              },
+              {
+                "line": 77,
+                "text": "            4'b0001: case_out = 8'h02;"
+              }
+            ],
+            "occurrences": 1,
+            "log_lines": [
+              32
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7137",
+            "message": "Register reg_b_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:131]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv",
+            "source_line": 131,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 129,
+                "text": "        end else begin"
+              },
+              {
+                "line": 130,
+                "text": "            reg_a <= data_a;"
+              },
+              {
+                "line": 131,
+                "text": "            reg_b <= data_b;"
+              },
+              {
+                "line": 132,
+                "text": "            reg_c <= reg_a + reg_b;"
+              },
+              {
+                "line": 133,
+                "text": "        end"
+              }
+            ],
+            "occurrences": 2,
+            "log_lines": [
+              34,
+              36
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7137",
+            "message": "Register reg_c_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:132]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv",
+            "source_line": 132,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 130,
+                "text": "            reg_a <= data_a;"
+              },
+              {
+                "line": 131,
+                "text": "            reg_b <= data_b;"
+              },
+              {
+                "line": 132,
+                "text": "            reg_c <= reg_a + reg_b;"
+              },
+              {
+                "line": 133,
+                "text": "        end"
+              },
+              {
+                "line": 134,
+                "text": "    end"
+              }
+            ],
+            "occurrences": 2,
+            "log_lines": [
+              35,
+              37
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-3848",
+            "message": "Net phantom_sig in module/entity lint_violation_top does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv:59]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__archived_default__lint/candidate.sv",
+            "source_line": 59,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 57,
+                "text": "    // phantom_sig is declared and used but never driven"
+              },
+              {
+                "line": 58,
+                "text": "    // ========================================================="
+              },
+              {
+                "line": 59,
+                "text": "    wire [7:0] phantom_sig;"
+              },
+              {
+                "line": 60,
+                "text": "    wire [7:0] phantom_use;"
+              },
+              {
+                "line": 61,
+                "text": "    assign phantom_use = phantom_sig ^ data_a;  // phantom_sig has no driver"
+              }
+            ],
+            "occurrences": 1,
+            "log_lines": [
+              38
+            ]
+          }
+        ],
+        "unique_messages": 4,
+        "raw_message_occurrences": 6,
+        "bound_unique_messages": 4,
+        "source_sha256": "d5a7bd1ecd90c6f9c9c67fb1489b9dc1c346cea8372c07a649a2fb53853b2e3e",
+        "log_sha256": "a128ee07005adec9c0c2d7eb74a7c66690a150244145fe05dfbb7566735cc872",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    },
+    {
+      "case": "old_faults",
+      "role": "diagnostic_positive",
+      "configuration": "archived_default",
+      "mode": "lint",
+      "source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "run_source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "tcl_sha256": "1cbda7f9173bfd48eaed430ca47a566cc6b6ccf03281e7ff8371034211dcf41a",
+      "log_sha256": "587fb442ae6ebb7ba3121f2fa41415b3b6b4e0df2b31f381d112c1e1c2834f08",
+      "rc": 0,
+      "elapsed_s": 11.829306917265058,
+      "marker_complete": true,
+      "linter_counts": [
+        0
+      ],
+      "tool_messages": [
+        "WARNING: [Synth 8-3848] Net undriven_out in module/entity TopModule does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__lint/candidate.sv:3]"
+      ],
+      "report_exists": true,
+      "report_bytes": 1405,
+      "report_sha256": "f5c96e4f3d83c6d972b29bed5ac0c46fb0438f642f5800c125621ce81a5c1c8d",
+      "tool_execution_valid": true,
+      "report_parse_verified": true,
+      "report_format": "ascii_table",
+      "report_inspection": {
+        "format": "ascii_table",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      },
+      "diagnostics": {
+        "case": "old_faults",
+        "configuration": "archived_default",
+        "mode": "lint",
+        "status": "lint_unverified",
+        "lint_engine_verified": false,
+        "messages": [
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-3848",
+            "message": "Net undriven_out in module/entity TopModule does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__lint/candidate.sv:3]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__lint/candidate.sv",
+            "source_line": 3,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 1,
+                "text": "module TopModule ("
+              },
+              {
+                "line": 2,
+                "text": " input wire clk, input wire [3:0] sel, input wire [7:0] a,"
+              },
+              {
+                "line": 3,
+                "text": " output reg [7:0] y, output wire [7:0] undriven_out, output reg [7:0] ovf"
+              },
+              {
+                "line": 4,
+                "text": ");"
+              },
+              {
+                "line": 5,
+                "text": "always @(*) begin if (sel == 1) y = a; end"
+              }
+            ],
+            "occurrences": 1,
+            "log_lines": [
+              32
+            ]
+          }
+        ],
+        "unique_messages": 1,
+        "raw_message_occurrences": 1,
+        "bound_unique_messages": 1,
+        "source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+        "log_sha256": "587fb442ae6ebb7ba3121f2fa41415b3b6b4e0df2b31f381d112c1e1c2834f08",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    },
+    {
+      "case": "clean_guard",
+      "role": "diagnostic_negative",
+      "configuration": "archived_default",
+      "mode": "lint",
+      "source_sha256": "2731171ac9a990a45311bd597f8f34e94984a035fdbe9f2d165fcfbda53615b2",
+      "run_source_sha256": "2731171ac9a990a45311bd597f8f34e94984a035fdbe9f2d165fcfbda53615b2",
+      "tcl_sha256": "1cbda7f9173bfd48eaed430ca47a566cc6b6ccf03281e7ff8371034211dcf41a",
+      "log_sha256": "60c17cc8eb5886b132b081d4042bfb174ab93d28e8246c90eb196f8b73442a2f",
+      "rc": 0,
+      "elapsed_s": 11.778732655569911,
+      "marker_complete": true,
+      "linter_counts": [
+        0
+      ],
+      "tool_messages": [],
+      "report_exists": true,
+      "report_bytes": 1405,
+      "report_sha256": "e59f03378ca68b34068a9f257d2ce65a29c0f181a60f0399b3407d9856bb991a",
+      "tool_execution_valid": true,
+      "report_parse_verified": true,
+      "report_format": "ascii_table",
+      "report_inspection": {
+        "format": "ascii_table",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      },
+      "diagnostics": {
+        "case": "clean_guard",
+        "configuration": "archived_default",
+        "mode": "lint",
+        "status": "lint_unverified",
+        "lint_engine_verified": false,
+        "messages": [],
+        "unique_messages": 0,
+        "raw_message_occurrences": 0,
+        "bound_unique_messages": 0,
+        "source_sha256": "2731171ac9a990a45311bd597f8f34e94984a035fdbe9f2d165fcfbda53615b2",
+        "log_sha256": "60c17cc8eb5886b132b081d4042bfb174ab93d28e8246c90eb196f8b73442a2f",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    },
+    {
+      "case": "modulo_guard",
+      "role": "semantic_guard",
+      "configuration": "archived_default",
+      "mode": "lint",
+      "source_sha256": "18a3cd82c612b59230e8cfe76647a0b80a5acb354544170f5322d064fd4fcc65",
+      "run_source_sha256": "18a3cd82c612b59230e8cfe76647a0b80a5acb354544170f5322d064fd4fcc65",
+      "tcl_sha256": "1cbda7f9173bfd48eaed430ca47a566cc6b6ccf03281e7ff8371034211dcf41a",
+      "log_sha256": "6c29d7c392588e3a11e7d74dda05dc1916ebfd0556649d79921cbb796128c175",
+      "rc": 0,
+      "elapsed_s": 12.079527693800628,
+      "marker_complete": true,
+      "linter_counts": [
+        0
+      ],
+      "tool_messages": [],
+      "report_exists": true,
+      "report_bytes": 1405,
+      "report_sha256": "354b30eeb7db0b0300ee2c9a3048606fb163adfa6d9c1942f7b298d067373228",
+      "tool_execution_valid": true,
+      "report_parse_verified": true,
+      "report_format": "ascii_table",
+      "report_inspection": {
+        "format": "ascii_table",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      },
+      "diagnostics": {
+        "case": "modulo_guard",
+        "configuration": "archived_default",
+        "mode": "lint",
+        "status": "lint_unverified",
+        "lint_engine_verified": false,
+        "messages": [],
+        "unique_messages": 0,
+        "raw_message_occurrences": 0,
+        "bound_unique_messages": 0,
+        "source_sha256": "18a3cd82c612b59230e8cfe76647a0b80a5acb354544170f5322d064fd4fcc65",
+        "log_sha256": "6c29d7c392588e3a11e7d74dda05dc1916ebfd0556649d79921cbb796128c175",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    },
+    {
+      "case": "official_faults",
+      "role": "diagnostic_positive",
+      "configuration": "official_csv_option",
+      "mode": "lint",
+      "source_sha256": "d5a7bd1ecd90c6f9c9c67fb1489b9dc1c346cea8372c07a649a2fb53853b2e3e",
+      "run_source_sha256": "d5a7bd1ecd90c6f9c9c67fb1489b9dc1c346cea8372c07a649a2fb53853b2e3e",
+      "tcl_sha256": "408df7d264981c5a78822c6e7228ead9996aff62fb31dfee7affb9fc6a935c1a",
+      "log_sha256": "7d7f242a704d9deff15be9a1b52b723a6ca036e6441f1cdbc6c2a6bbded379d1",
+      "rc": 0,
+      "elapsed_s": 12.079776889644563,
+      "marker_complete": true,
+      "linter_counts": [
+        0
+      ],
+      "tool_messages": [
+        "WARNING: [Synth 8-151] case item 4'b0000 is unreachable [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:75]",
+        "WARNING: [Synth 8-7137] Register reg_b_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:131]",
+        "WARNING: [Synth 8-7137] Register reg_c_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:132]",
+        "WARNING: [Synth 8-7137] Register reg_b_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:131]",
+        "WARNING: [Synth 8-7137] Register reg_c_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:132]",
+        "WARNING: [Synth 8-3848] Net phantom_sig in module/entity lint_violation_top does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:59]"
+      ],
+      "report_exists": true,
+      "report_bytes": 0,
+      "report_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tool_execution_valid": true,
+      "report_parse_verified": true,
+      "report_format": "empty_headerless_csv",
+      "report_inspection": {
+        "format": "empty_headerless_csv",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      },
+      "diagnostics": {
+        "case": "official_faults",
+        "configuration": "official_csv_option",
+        "mode": "lint",
+        "status": "lint_unverified",
+        "lint_engine_verified": false,
+        "messages": [
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-151",
+            "message": "case item 4'b0000 is unreachable [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:75]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv",
+            "source_line": 75,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 73,
+                "text": "    // ========================================================="
+              },
+              {
+                "line": 74,
+                "text": "    always @(*) begin"
+              },
+              {
+                "line": 75,
+                "text": "        case (mode)"
+              },
+              {
+                "line": 76,
+                "text": "            4'b0000: case_out = 8'h01;"
+              },
+              {
+                "line": 77,
+                "text": "            4'b0001: case_out = 8'h02;"
+              }
+            ],
+            "occurrences": 1,
+            "log_lines": [
+              33
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7137",
+            "message": "Register reg_b_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:131]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv",
+            "source_line": 131,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 129,
+                "text": "        end else begin"
+              },
+              {
+                "line": 130,
+                "text": "            reg_a <= data_a;"
+              },
+              {
+                "line": 131,
+                "text": "            reg_b <= data_b;"
+              },
+              {
+                "line": 132,
+                "text": "            reg_c <= reg_a + reg_b;"
+              },
+              {
+                "line": 133,
+                "text": "        end"
+              }
+            ],
+            "occurrences": 2,
+            "log_lines": [
+              35,
+              37
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7137",
+            "message": "Register reg_c_reg in module lint_violation_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:132]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv",
+            "source_line": 132,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 130,
+                "text": "            reg_a <= data_a;"
+              },
+              {
+                "line": 131,
+                "text": "            reg_b <= data_b;"
+              },
+              {
+                "line": 132,
+                "text": "            reg_c <= reg_a + reg_b;"
+              },
+              {
+                "line": 133,
+                "text": "        end"
+              },
+              {
+                "line": 134,
+                "text": "    end"
+              }
+            ],
+            "occurrences": 2,
+            "log_lines": [
+              36,
+              38
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-3848",
+            "message": "Net phantom_sig in module/entity lint_violation_top does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv:59]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/official_faults__official_csv_option__lint/candidate.sv",
+            "source_line": 59,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 57,
+                "text": "    // phantom_sig is declared and used but never driven"
+              },
+              {
+                "line": 58,
+                "text": "    // ========================================================="
+              },
+              {
+                "line": 59,
+                "text": "    wire [7:0] phantom_sig;"
+              },
+              {
+                "line": 60,
+                "text": "    wire [7:0] phantom_use;"
+              },
+              {
+                "line": 61,
+                "text": "    assign phantom_use = phantom_sig ^ data_a;  // phantom_sig has no driver"
+              }
+            ],
+            "occurrences": 1,
+            "log_lines": [
+              39
+            ]
+          }
+        ],
+        "unique_messages": 4,
+        "raw_message_occurrences": 6,
+        "bound_unique_messages": 4,
+        "source_sha256": "d5a7bd1ecd90c6f9c9c67fb1489b9dc1c346cea8372c07a649a2fb53853b2e3e",
+        "log_sha256": "7d7f242a704d9deff15be9a1b52b723a6ca036e6441f1cdbc6c2a6bbded379d1",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    },
+    {
+      "case": "old_faults",
+      "role": "diagnostic_positive",
+      "configuration": "official_csv_option",
+      "mode": "lint",
+      "source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "run_source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "tcl_sha256": "47b8b58d0033270b2fe2c721f83b5a056864492f7b7635cb8df277853698d411",
+      "log_sha256": "9206d3d82cd9a77c7ce1dd8f7e7e791c188d16dc47163961fd1502e690869e63",
+      "rc": 0,
+      "elapsed_s": 12.181061655282974,
+      "marker_complete": true,
+      "linter_counts": [
+        0
+      ],
+      "tool_messages": [
+        "WARNING: [Synth 8-3848] Net undriven_out in module/entity TopModule does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__official_csv_option__lint/candidate.sv:3]"
+      ],
+      "report_exists": true,
+      "report_bytes": 0,
+      "report_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tool_execution_valid": true,
+      "report_parse_verified": true,
+      "report_format": "empty_headerless_csv",
+      "report_inspection": {
+        "format": "empty_headerless_csv",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      },
+      "diagnostics": {
+        "case": "old_faults",
+        "configuration": "official_csv_option",
+        "mode": "lint",
+        "status": "lint_unverified",
+        "lint_engine_verified": false,
+        "messages": [
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-3848",
+            "message": "Net undriven_out in module/entity TopModule does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__official_csv_option__lint/candidate.sv:3]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__official_csv_option__lint/candidate.sv",
+            "source_line": 3,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 1,
+                "text": "module TopModule ("
+              },
+              {
+                "line": 2,
+                "text": " input wire clk, input wire [3:0] sel, input wire [7:0] a,"
+              },
+              {
+                "line": 3,
+                "text": " output reg [7:0] y, output wire [7:0] undriven_out, output reg [7:0] ovf"
+              },
+              {
+                "line": 4,
+                "text": ");"
+              },
+              {
+                "line": 5,
+                "text": "always @(*) begin if (sel == 1) y = a; end"
+              }
+            ],
+            "occurrences": 1,
+            "log_lines": [
+              33
+            ]
+          }
+        ],
+        "unique_messages": 1,
+        "raw_message_occurrences": 1,
+        "bound_unique_messages": 1,
+        "source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+        "log_sha256": "9206d3d82cd9a77c7ce1dd8f7e7e791c188d16dc47163961fd1502e690869e63",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    },
+    {
+      "case": "clean_guard",
+      "role": "diagnostic_negative",
+      "configuration": "official_csv_option",
+      "mode": "lint",
+      "source_sha256": "2731171ac9a990a45311bd597f8f34e94984a035fdbe9f2d165fcfbda53615b2",
+      "run_source_sha256": "2731171ac9a990a45311bd597f8f34e94984a035fdbe9f2d165fcfbda53615b2",
+      "tcl_sha256": "47b8b58d0033270b2fe2c721f83b5a056864492f7b7635cb8df277853698d411",
+      "log_sha256": "ed2caa3873c4bf154cc036ade77e1ebf5a9800333c816d330fc2e34325a14392",
+      "rc": 0,
+      "elapsed_s": 11.830902142450213,
+      "marker_complete": true,
+      "linter_counts": [
+        0
+      ],
+      "tool_messages": [],
+      "report_exists": true,
+      "report_bytes": 0,
+      "report_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tool_execution_valid": true,
+      "report_parse_verified": true,
+      "report_format": "empty_headerless_csv",
+      "report_inspection": {
+        "format": "empty_headerless_csv",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      },
+      "diagnostics": {
+        "case": "clean_guard",
+        "configuration": "official_csv_option",
+        "mode": "lint",
+        "status": "lint_unverified",
+        "lint_engine_verified": false,
+        "messages": [],
+        "unique_messages": 0,
+        "raw_message_occurrences": 0,
+        "bound_unique_messages": 0,
+        "source_sha256": "2731171ac9a990a45311bd597f8f34e94984a035fdbe9f2d165fcfbda53615b2",
+        "log_sha256": "ed2caa3873c4bf154cc036ade77e1ebf5a9800333c816d330fc2e34325a14392",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    },
+    {
+      "case": "modulo_guard",
+      "role": "semantic_guard",
+      "configuration": "official_csv_option",
+      "mode": "lint",
+      "source_sha256": "18a3cd82c612b59230e8cfe76647a0b80a5acb354544170f5322d064fd4fcc65",
+      "run_source_sha256": "18a3cd82c612b59230e8cfe76647a0b80a5acb354544170f5322d064fd4fcc65",
+      "tcl_sha256": "47b8b58d0033270b2fe2c721f83b5a056864492f7b7635cb8df277853698d411",
+      "log_sha256": "de14e4fa837ccf537cf88b01f0efc15132c21a00589c446f491ad468a06be692",
+      "rc": 0,
+      "elapsed_s": 12.081062962301075,
+      "marker_complete": true,
+      "linter_counts": [
+        0
+      ],
+      "tool_messages": [],
+      "report_exists": true,
+      "report_bytes": 0,
+      "report_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tool_execution_valid": true,
+      "report_parse_verified": true,
+      "report_format": "empty_headerless_csv",
+      "report_inspection": {
+        "format": "empty_headerless_csv",
+        "verified": true,
+        "parsed_count": 0,
+        "rows": [],
+        "error": null
+      },
+      "diagnostics": {
+        "case": "modulo_guard",
+        "configuration": "official_csv_option",
+        "mode": "lint",
+        "status": "lint_unverified",
+        "lint_engine_verified": false,
+        "messages": [],
+        "unique_messages": 0,
+        "raw_message_occurrences": 0,
+        "bound_unique_messages": 0,
+        "source_sha256": "18a3cd82c612b59230e8cfe76647a0b80a5acb354544170f5322d064fd4fcc65",
+        "log_sha256": "de14e4fa837ccf537cf88b01f0efc15132c21a00589c446f491ad468a06be692",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    },
+    {
+      "case": "old_faults",
+      "role": "diagnostic_positive",
+      "configuration": "archived_default",
+      "mode": "synthesis",
+      "source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "run_source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+      "tcl_sha256": "cd8860c6cab8145e0ff6d49fa7a6fb3bf652820ef1ae2cac43b4f5d261d2a0ef",
+      "log_sha256": "f71cdd760194d4806ad11875bc763719ea034a5188a283e24d9355c85569f008",
+      "rc": 0,
+      "elapsed_s": 21.092082954011858,
+      "marker_complete": true,
+      "linter_counts": [],
+      "tool_messages": [
+        "WARNING: [Synth 8-3848] Net undriven_out in module/entity TopModule does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__synthesis/candidate.sv:3]",
+        "WARNING: [Synth 8-7129] Port undriven_out[7] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[6] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[5] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[4] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[3] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[2] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[1] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[0] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-327] inferring latch for variable 'y_reg' [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__synthesis/candidate.sv:5]",
+        "WARNING: [Synth 8-7129] Port undriven_out[7] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[6] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[5] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[4] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[3] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[2] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[1] in module TopModule is either unconnected or has no load",
+        "WARNING: [Synth 8-7129] Port undriven_out[0] in module TopModule is either unconnected or has no load"
+      ],
+      "report_exists": false,
+      "report_bytes": 0,
+      "report_sha256": null,
+      "tool_execution_valid": true,
+      "diagnostics": {
+        "case": "old_faults",
+        "configuration": "archived_default",
+        "mode": "synthesis",
+        "status": "synthesis_diagnostics_only",
+        "lint_engine_verified": false,
+        "messages": [
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-3848",
+            "message": "Net undriven_out in module/entity TopModule does not have driver. [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__synthesis/candidate.sv:3]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__synthesis/candidate.sv",
+            "source_line": 3,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 1,
+                "text": "module TopModule ("
+              },
+              {
+                "line": 2,
+                "text": " input wire clk, input wire [3:0] sel, input wire [7:0] a,"
+              },
+              {
+                "line": 3,
+                "text": " output reg [7:0] y, output wire [7:0] undriven_out, output reg [7:0] ovf"
+              },
+              {
+                "line": 4,
+                "text": ");"
+              },
+              {
+                "line": 5,
+                "text": "always @(*) begin if (sel == 1) y = a; end"
+              }
+            ],
+            "occurrences": 1,
+            "log_lines": [
+              32
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7129",
+            "message": "Port undriven_out[7] in module TopModule is either unconnected or has no load",
+            "source_path": null,
+            "source_line": null,
+            "source_location_verified": false,
+            "context": null,
+            "occurrences": 2,
+            "log_lines": [
+              33,
+              87
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7129",
+            "message": "Port undriven_out[6] in module TopModule is either unconnected or has no load",
+            "source_path": null,
+            "source_line": null,
+            "source_location_verified": false,
+            "context": null,
+            "occurrences": 2,
+            "log_lines": [
+              34,
+              88
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7129",
+            "message": "Port undriven_out[5] in module TopModule is either unconnected or has no load",
+            "source_path": null,
+            "source_line": null,
+            "source_location_verified": false,
+            "context": null,
+            "occurrences": 2,
+            "log_lines": [
+              35,
+              89
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7129",
+            "message": "Port undriven_out[4] in module TopModule is either unconnected or has no load",
+            "source_path": null,
+            "source_line": null,
+            "source_location_verified": false,
+            "context": null,
+            "occurrences": 2,
+            "log_lines": [
+              36,
+              90
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7129",
+            "message": "Port undriven_out[3] in module TopModule is either unconnected or has no load",
+            "source_path": null,
+            "source_line": null,
+            "source_location_verified": false,
+            "context": null,
+            "occurrences": 2,
+            "log_lines": [
+              37,
+              91
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7129",
+            "message": "Port undriven_out[2] in module TopModule is either unconnected or has no load",
+            "source_path": null,
+            "source_line": null,
+            "source_location_verified": false,
+            "context": null,
+            "occurrences": 2,
+            "log_lines": [
+              38,
+              92
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7129",
+            "message": "Port undriven_out[1] in module TopModule is either unconnected or has no load",
+            "source_path": null,
+            "source_line": null,
+            "source_location_verified": false,
+            "context": null,
+            "occurrences": 2,
+            "log_lines": [
+              39,
+              93
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-7129",
+            "message": "Port undriven_out[0] in module TopModule is either unconnected or has no load",
+            "source_path": null,
+            "source_line": null,
+            "source_location_verified": false,
+            "context": null,
+            "occurrences": 2,
+            "log_lines": [
+              40,
+              94
+            ]
+          },
+          {
+            "severity": "WARNING",
+            "code": "Synth 8-327",
+            "message": "inferring latch for variable 'y_reg' [/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__synthesis/candidate.sv:5]",
+            "source_path": "/workspace/team/runs/fpga_owner/ross_probe_20261004_v1/results/old_faults__archived_default__synthesis/candidate.sv",
+            "source_line": 5,
+            "source_location_verified": true,
+            "context": [
+              {
+                "line": 3,
+                "text": " output reg [7:0] y, output wire [7:0] undriven_out, output reg [7:0] ovf"
+              },
+              {
+                "line": 4,
+                "text": ");"
+              },
+              {
+                "line": 5,
+                "text": "always @(*) begin if (sel == 1) y = a; end"
+              },
+              {
+                "line": 6,
+                "text": "always @(posedge clk) begin ovf <= a + 8'hFF; end"
+              },
+              {
+                "line": 7,
+                "text": "endmodule"
+              }
+            ],
+            "occurrences": 1,
+            "log_lines": [
+              56
+            ]
+          }
+        ],
+        "unique_messages": 10,
+        "raw_message_occurrences": 18,
+        "bound_unique_messages": 2,
+        "source_sha256": "da4107897dd12ae246e483feaf6c8d6b48ea7e3f751367f56d43d559795ff04f",
+        "log_sha256": "f71cdd760194d4806ad11875bc763719ea034a5188a283e24d9355c85569f008",
+        "automatic_repair_authorized": false,
+        "functional_correctness": "unknown"
+      }
+    }
+  ],
+  "resource_guard": {
+    "schema_version": 1,
+    "complete": true,
+    "passed": true,
+    "phase": "resource_guard",
+    "model_managed": false,
+    "instance_managed": false,
+    "started_at_utc": "2026-10-04T01:35:55.193663+00:00",
+    "stage_pid": 2876737,
+    "stage_rc": 0,
+    "elapsed_s": 117.42057221662253,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "model_idle_after": {
+      "health_status": "ok",
+      "model_name": "Qwen3.6-27B-Q4_K_M",
+      "slot_count": 1,
+      "processing_slots": 0,
+      "model_pid_owns_port": true
+    },
+    "own_slot_released": true,
+    "finished_at_utc": "2026-10-04T01:37:52.715575+00:00"
+  },
+  "owned_cleanup": {
+    "verified": true,
+    "remaining": [],
+    "recorded_process_count": 103
+  },
+  "postflight": {
+    "utc": "2026-10-04T01:38:45.758895+00:00",
+    "instance_managed": false,
+    "mcp_binary_invoked": false,
+    "slot_exists": false,
+    "model_health": {
+      "status": "ok"
+    },
+    "processing_slots": 0
+  },
+  "limits": [
+    "No model repair or gain measurement",
+    "No official MCP binary installed or called",
+    "The sample README's exact expected count uses a different device; we report differences rather than assert equivalence",
+    "No hidden reference or official testbench provided to any model",
+    "Protected package, baseline, official judge and shared model remain unchanged"
+  ],
+  "integration_decision": "Do not enable automated ROSS lint repair; retain ordinary diagnostics as factual evidence for later isolated repair studies",
+  "integration_state": {
+    "is_historical_stage_snapshot": true,
+    "later_mcp_results": "MCP_RESULTS.json",
+    "formal_package_changed": false,
+    "mcp_installed": false,
+    "mcp_invoked": false,
+    "functional_repair_measured": false,
+    "new_score": false,
+    "download_dependency": "At this earlier direct-command stage the Linux binary had not been supplied; later real MCP evidence is separate in MCP_RESULTS.json"
+  }
+}

@@ -4,6 +4,7 @@
 
 | 实验 | 代码、输入与模型身份 | 结果与决定 |
 |---|---|---|
+| ROSS官方MCP与lint校准 | 专用分支 `research/ross-mcp-20261004`；官方技能 `2cdc9eef`、二进制2026.9.1核验、Vivado2026.1与比赛器件；冻结 `ross_probe_20261004/RUN_SPEC.json`、`MCP_SPEC.json`，0模型 | 最终4独立会话64调用，3lint+1综合71.59秒全部退出；正控制仍0lint，自动lint修复关闭，无新成绩。失败与同进程探索保留；累计6会话112调用已关闭，217证据文件SHA一致，结果 `ross_probe_20261004/MCP_RESULTS.json` |
 | 归档较好全量 | `full156_declfix_20261003`；实际求解runtime文件SHA `22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7`；Qwen3.6-27B-Q4_K_M，156题、每题1样本、300秒；官方upstream `afd135e7ba5f6ec4c6d77e7c927c894327537801` | agent 0.7667 / baseline 0.6744；已只读核对原experiment与graded_summary的哈希、936项输入指纹及技能/基线SHA，见 `signedness_boundary_20261004/ARCHIVE_IDENTITY.json`。这是官方加权质量分；不是新全量成绩或五样本通过，也不能仅凭模型别名证明权重字节一致 |
 | runtime728 开发对照 | runtime SHA `728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97`；312样本单轮记录 | agent 0.7468，低于原门槛；不继承归档成绩、不作为提分胜出 |
 | PR6 O/C/D | 原准备 `4e504818`、工程修订 `eae7ba59`；10检查点×2重复×3组；Qwen3.6-27B-Q4_K_M；原冻结判据及20/5/6秒预算 | 60行=46通过+14失败，40配对；C/D各修复2份，0改坏。仅小样本机制；强制正确稿复查确认功能退化，拒绝部署。报告 `selective_runtime_integration_20261003/AMD_EXECUTION_RESULT_20261003.md` |
