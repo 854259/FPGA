@@ -1,5 +1,13 @@
 > **脱敏副本。** 原件含实例地址与端口，放在实例上 `/workspace/team/STATUS_LATEST.md` 和 `/workspace/team/runs/fpga_teammate/STATUS_LATEST.md`。
 
+## 2026-10-05 06:10 隔离网络能力实测未通过
+
+自有unshare user+network namespace探测实际返回Operation not permitted/rc1；docker/podman/ip/strace未找到。源码a1b4a010与原始argv/输出绑定，自有新进程组清理确认、父namespace保持，0模型EDA/宿主网络修改。当前本实例不能用此方法完成OS断网验收，不把回环端口/标准库/模拟求解当断网证明；其他环境与方法尚未验证，不推断全不可用。
+
+06:13现场复查：全量293/312、310请求、complete=false、error=null，guard未终态；模型2013333/start823869819及评测3390465/start841229941实际身份仍有效。一次SSH观察建连超时后复查同PID成功，不据此重跑或终止任务。完整分仍待终态审计。
+
+下一步在有隔离权限的验证环境复验，再对冻结模型/工具/接口实测；基础镜像tag/digest/构建、目标单卡32GB峰值与五样本仍未闭合。自己全量/原生接入队列继续，不改模型/实例/队友，goal active。入口03_analysis/offline_boundary_20261005/README.md。
+
 ## 2026-10-05 06:02 正式接口五样本预检工具；全量288/312
 
 26源资产冻结，cd668071；本机/Linux各7纯检查通过，包括原HTTP Handler30次假求解、产物trace绑定、五次平均/不择优、预算技能事实篡改拒绝与CPython请求观察。生产v2 package17文件原字节，0真实模型EDA，未生成真实五样本、未创建真实RUN_SPEC/未提交FIFO；后续3已知题×2模式×5，最多45 POST/30外判，并非全156/独立任务证书。

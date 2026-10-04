@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-04T22:07:54Z",
+  "host_netns": "net:[4026538806]",
+  "uid": 0,
+  "tools": {
+    "unshare": "/usr/bin/unshare",
+    "ip": null,
+    "docker": null,
+    "podman": null,
+    "strace": null
+  },
+  "model_calls": 0,
+  "eda_calls": 0,
+  "host_network_changed": false,
+  "namespace_probe": {
+    "argv": [
+      "unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "/usr/bin/python3",
+      "-c",
+      "import os,json; print(json.dumps({'own_netns':os.readlink('/proc/self/ns/net'),'uid':os.getuid()}))"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "unshare: unshare failed: Operation not permitted\n"
+  }
+}

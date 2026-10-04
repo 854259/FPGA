@@ -923,3 +923,11 @@ FIFO25、monitor3390465/starttime841229941实际/proc身份确认，02:30:50开�
 真实执行须全量及归因门槛通过、票30/31实际终态guard与完整只读审计通过；bind工具绑定四份收据SHA再冻结新run。不把模拟调用算质量收益；仅观察请求尝试、回复依原trace，未记录原始模型回复。健康瞬时开发卡不是32GB目标峰值/断网证书，不替换正式部署。
 
 06:02 full288/312、304请求、complete=false、error=null，实际模型/评测PID/start有效，30/49/51/28/34冻结源保持。G3/G4/G5继续未完成，goal active，额度11%/97%停止线；自己的日志/Git/共享台账继续同步，队友/模型/实例保持。入口03_analysis/formal_five_pilot_20261005/README.md。
+
+## 2026-10-05 06:10 隔离网络能力实测未通过
+
+自有unshare user+network namespace探测实际返回Operation not permitted/rc1；docker/podman/ip/strace未找到。源码a1b4a010与原始argv/输出绑定，自有新进程组清理确认、父namespace保持，0模型EDA/宿主网络修改。当前本实例不能用此方法完成OS断网验收，不把回环端口/标准库/模拟求解当断网证明；其他环境与方法尚未验证，不推断全不可用。
+
+06:13现场复查：全量293/312、310请求、complete=false、error=null，guard未终态；模型2013333/start823869819及评测3390465/start841229941实际身份仍有效。一次SSH观察建连超时后复查同PID成功，不据此重跑或终止任务。完整分仍待终态审计。
+
+下一步在有隔离权限的验证环境复验，再对冻结模型/工具/接口实测；基础镜像tag/digest/构建、目标单卡32GB峰值与五样本仍未闭合。自己全量/原生接入队列继续，不改模型/实例/队友，goal active。入口03_analysis/offline_boundary_20261005/README.md。

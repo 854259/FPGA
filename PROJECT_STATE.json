@@ -4969,5 +4969,42 @@
       "error": null
     },
     "goal_status": "active"
+  },
+  "offline_boundary_20261005": {
+    "status": "actual_namespace_capability_probe_denied",
+    "source_sha256": "a1b4a01011de044cb1a90ef876c1f329b29182e68e5e49eab10fc6c7152ec158",
+    "namespace_created": false,
+    "returncode": 1,
+    "owned_group_gone": true,
+    "host_network_changed": false,
+    "actual_model_requests": 0,
+    "actual_eda_calls": 0,
+    "offline_verified": false,
+    "single32gb_target_verified": false,
+    "report": "03_analysis/offline_boundary_20261005/README.md",
+    "snapshot": "03_analysis/offline_boundary_20261005/VERIFIED_CAPABILITY_SNAPSHOT.json",
+    "goal_status": "active",
+    "full_snapshot": {
+      "at_utc": "2026-10-04T22:13:10Z",
+      "rows": 293,
+      "requests": 310,
+      "complete": false,
+      "passed": false,
+      "error": null,
+      "guard_complete": false,
+      "guard_passed": false,
+      "processes": {
+        "2013333": {
+          "state": "R",
+          "start": "823869819",
+          "expected_identity_live": true
+        },
+        "3390465": {
+          "state": "S",
+          "start": "841229941",
+          "expected_identity_live": true
+        }
+      }
+    }
   }
 }
