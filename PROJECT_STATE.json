@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "full156_postflight_20261004": {
-    "status": "partial_snapshot_audited_full_run_still_pending",
+    "status": "complete_full312_audited_both_hosts",
     "report": "03_analysis/full156_postflight_20261004/README.md",
     "receipt": "03_analysis/full156_postflight_20261004/PREPARATION_RECEIPT.json",
     "audited_snapshot_samples": 278,
@@ -15,15 +15,26 @@
     "model_calls": 0,
     "eda_calls": 0,
     "running_frozen_assets_changed": false,
-    "full312_postflight_executed": false,
-    "new_full_score": false,
+    "full312_postflight_executed": true,
+    "new_full_score": true,
     "hard_deadline_branch_audited": true,
     "unconfirmed_attempts": 1,
     "snapshot_2_archive_sha256": "80066ae755e1e6f0691d82720296e5f92475d2b732c76e57a8c7072b226cf5f0",
-    "failure_inventory": "03_analysis/full156_postflight_20261004/snapshot_2_inventory/RESULTS.json"
+    "failure_inventory": "03_analysis/full156_postflight_20261004/snapshot_2_inventory/RESULTS.json",
+    "full_audit": "03_analysis/full156_postflight_20261004/full312_audit/RESULTS.json",
+    "full_report": "03_analysis/full156_postflight_20261004/FULL_RESULT.md",
+    "archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+    "A_score": 0.7692,
+    "C_score": 0.7641,
+    "C_changed_full_samples": 0,
+    "same_first_reply_content_full_pairs": 153,
+    "paired_full_tasks": 156,
+    "full_tool_errors": 0,
+    "decision": "do_not_promote_current_candidate",
+    "full_failure_inventory": "03_analysis/full156_postflight_20261004/full312_inventory/RESULTS.json"
   },
   "full156_bundle_20261004": {
-    "status": "running_frozen_full_regression",
+    "status": "complete_full_regression_audited",
     "task_count": 156,
     "samples_per_arm": 156,
     "arms": [
@@ -39,7 +50,7 @@
     "launch_receipt": "03_analysis/full156_bundle_20261004/LAUNCH.json",
     "queue_pid": 3061569,
     "fifo_ticket": 1,
-    "new_score": false,
+    "new_score": true,
     "adoption": false,
     "quota_used_percent_at_resume": 4,
     "source_spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
@@ -56,7 +67,13 @@
     "continuation_snapshot": "03_analysis/full156_postflight_20261004/continuation_status.json",
     "continuation_snapshot_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_SNAPSHOT_RECEIPT.json",
     "continuation_completed_samples": 293,
-    "quota_used_percent_latest": 6
+    "quota_used_percent_latest": 6,
+    "full_samples": 312,
+    "A_score": 0.7692,
+    "C_score": 0.7641,
+    "A_L3": 112,
+    "C_L3": 111,
+    "full_tool_errors": 0
   },
   "shared_task_fifo_activity_20261004": {
     "status": "installed_and_observing_own_run",
@@ -2106,7 +2123,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-04T22:23:29.958536+08:00",
+  "last_updated": "2026-10-04T23:08:48.175993+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -4432,14 +4449,20 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "armed_waiting_for_full156",
+    "continuation_status": "observing_pilot",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
-    "quota_used_percent_at_authorization": 6
+    "quota_used_percent_at_authorization": 6,
+    "G1": "complete_full312_audited",
+    "G2": "descriptive_inventory_complete_manual_contract_attribution_ongoing",
+    "G3": "concise_output_ticket2_running_prompt_map_ticket3_queued",
+    "G4": "not_admitted_independent_natural_validation",
+    "G5": "not_final_delivery_certified",
+    "goal_complete": false
   },
   "concise_output_pilot_20261004": {
-    "status": "cloud_installed_waiting_for_prior_full_audit",
+    "status": "running_fifo_ticket2",
     "report": "03_analysis/concise_output_pilot_20261004/README.md",
     "source_spec_sha256": "105d05a41f304be3e5e029949c6bdf352d4dfc919c0aab8f7fa3922274d20398",
     "selected_known_public_tasks": 12,
@@ -4453,6 +4476,26 @@
     "adoption": false,
     "cloud_directory": "/workspace/team/runs/fpga_owner/concise_output_pilot_20261004_v1",
     "automatic_fifo_admission_after_full_audit": true,
-    "linux_boundary_tests_passed": 6
+    "linux_boundary_tests_passed": 6,
+    "fifo_ticket": 2,
+    "queue_pid": 3305179,
+    "observed_progress_samples": 10
+  },
+  "prompt_map_contract_20261004": {
+    "status": "calibration_queued_fifo_ticket3",
+    "report": "03_analysis/prompt_map_contract_20261004/README.md",
+    "source_spec_sha256": "b0d0006c5c5d8f803d5e114fb6aa2ad92bd43d4a935d3d47d0372d0468b0467f",
+    "parser_tests_passed": 10,
+    "linux_parser_tests_passed": 10,
+    "known_public_archived_candidates": 4,
+    "constructed_calibration_cases": 4,
+    "max_probe_executions": 36,
+    "max_synth_executions": 8,
+    "max_model_calls": 0,
+    "calibration_executed": false,
+    "full_calibration_audit_executed": false,
+    "independent_natural_tasks_admitted": 0,
+    "adoption": false,
+    "formal_deployment_changed": false
   }
 }

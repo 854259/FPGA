@@ -1,0 +1,45 @@
+{
+  "schema": "full156_difference_diagnosis_v1",
+  "archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+  "result_sha256": "4cce7232fb6b73c98a69319b41a213c1f296161722c42dc1553b945453390650",
+  "C_helper_changed_samples": 0,
+  "same_first_reply_content_pairs": 153,
+  "grade_differences": [
+    {
+      "task": "Prob086_lfsr5",
+      "A_level": 3,
+      "C_level": 0,
+      "same_first_request": true,
+      "same_first_reply_content": false,
+      "same_first_raw_response": false,
+      "C_accepted_helper": false,
+      "A_requests": 1,
+      "C_requests": 2,
+      "original_repair_bypass_signal": false,
+      "A_L3_C_regression": true
+    },
+    {
+      "task": "Prob153_gshare",
+      "A_level": 0,
+      "C_level": 1,
+      "same_first_request": true,
+      "same_first_reply_content": true,
+      "same_first_raw_response": false,
+      "C_accepted_helper": false,
+      "A_requests": 2,
+      "C_requests": 2,
+      "original_repair_bypass_signal": false,
+      "A_L3_C_regression": false
+    }
+  ],
+  "gshare_second_payload_equal_after_only_candidate_path_normalization": true,
+  "canonical_gshare_request_sha256": "1b45b0601575e50e45026fe69db81dad83adc88b4ab574fd9745950c809e4fe5",
+  "causal_helper_gain_or_regression_proven": false,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "limitations": [
+    "086 fresh-reply variation, length and hard deadline; helper extraction unchanged",
+    "153 repair input paths differ; normalized equality does not prove paths caused answer changes",
+    "No fresh official baseline/five independent samples; old baseline must not be combined"
+  ]
+}

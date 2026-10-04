@@ -38,3 +38,7 @@ python -B audit.py --archive <已核验下载ZIP> --out <全新审计输出目�
 ## 自动接续已启动
 
 22:20北京时间控制器PID3292932等待293/312，严格前置完整审计后才提交下一项FIFO；后段结束自动审计并写台账。模型／实例不由控制器管理。12项边界检查本地和Linux通过，错误源码、失败全量／审计及停止标记阻止后续提交，失败pilot不重试。控制器完整真实链路尚待自然完成；receipt和日志路径见CONTINUATION_INSTALL／LAUNCH／SNAPSHOT_RECEIPT，当前快照非实时。STOP_AUTONOMOUS停止自身后续；已启动pilot仅在样本间停止。
+
+## 完整收尾
+
+22:46:23已完整312，双端审计通过；最终A0.7692/C0.7641、C改变0、不采用。本文前述partial是历史准备时点，最新权威入口FULL_RESULT.md／full312_audit／CROSS_HOST_VERIFICATION。两处等级差异与二轮路径混杂见DIFFERENCE_DIAGNOSIS，未混算旧baseline／新增益或五样本。票2已接续，表格校准票3独立排队。
