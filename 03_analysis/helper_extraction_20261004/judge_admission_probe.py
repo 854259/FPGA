@@ -24,7 +24,8 @@ def run(a):
     paired=load('admission_owned',REPO/'03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py')
     paired.check_resource(a.resource_check,a.kit,first=True)
     fixed=load('isolated_fixed_judge',REPO/'04_project/amd_rtl_agent/official_eval.py')
-    fixed.OFFICIAL=a.kit/'official_reference';assert fixed.verify_upstream()==spec['upstream_commit']
+    fixed.ROOT=a.kit;fixed.OFFICIAL=a.kit/'official_reference'
+    assert fixed.verify_upstream()==spec['upstream_commit']
     a.out.mkdir(parents=True,exist_ok=False);task=a.out/'judge_task';shutil.copytree(OLD/'tasks_verified'/case['task'],task)
     solution=a.out/'positive.v';shutil.copyfile(src,solution)
     syntax=a.out/'syntax.v';syntax.write_text('module TopModule(input a, output y); assign y = ; endmodule\n')
