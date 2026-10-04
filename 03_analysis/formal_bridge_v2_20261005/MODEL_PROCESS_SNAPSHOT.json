@@ -1,0 +1,96 @@
+{
+  "schema": "readonly_model_process_gpu_observation_v1",
+  "at_utc": "2026-10-04T20:08:18.142911+00:00",
+  "pid": 2013333,
+  "starttime": "823869819",
+  "exe": "llama-server",
+  "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1",
+  "selected_public_flags": {
+    "-m": "Qwen3.6-27B-Q4_K_M.gguf",
+    "-ngl": "99",
+    "-c": "16384",
+    "-np": "1"
+  },
+  "render_fds": [
+    {
+      "fd": 7,
+      "node": "renderD133",
+      "selected_fdinfo": {
+        "drm-client-id": "985585",
+        "drm-pdev": "0000:a3:00.0",
+        "drm-total-cpu": "86284 KiB",
+        "drm-shared-cpu": "0",
+        "drm-resident-cpu": "0",
+        "drm-total-gtt": "8272 KiB",
+        "drm-shared-gtt": "0",
+        "drm-resident-gtt": "8260 KiB",
+        "drm-total-vram": "19649696 KiB",
+        "drm-shared-vram": "0",
+        "drm-resident-vram": "19649696 KiB",
+        "drm-total-gds": "0",
+        "drm-shared-gds": "0",
+        "drm-resident-gds": "0",
+        "drm-total-gws": "0",
+        "drm-shared-gws": "0",
+        "drm-resident-gws": "0",
+        "drm-total-oa": "0",
+        "drm-shared-oa": "0",
+        "drm-resident-oa": "0",
+        "drm-total-doorbell": "0",
+        "drm-shared-doorbell": "0",
+        "drm-resident-doorbell": "0",
+        "drm-total-mmioremap": "0",
+        "drm-shared-mmioremap": "0",
+        "drm-resident-mmioremap": "0",
+        "drm-memory-vram": "19649696 KiB",
+        "drm-memory-gtt": "8260 KiB",
+        "drm-memory-cpu": "0 KiB"
+      }
+    }
+  ],
+  "vram_counters": [
+    {
+      "card": "card1",
+      "used_bytes": 17467924480,
+      "total_bytes": 51522830336
+    },
+    {
+      "card": "card2",
+      "used_bytes": 17133985792,
+      "total_bytes": 51522830336
+    },
+    {
+      "card": "card3",
+      "used_bytes": 28028928,
+      "total_bytes": 51522830336
+    },
+    {
+      "card": "card4",
+      "used_bytes": 4952580096,
+      "total_bytes": 51522830336
+    },
+    {
+      "card": "card5",
+      "used_bytes": 28004352,
+      "total_bytes": 51522830336
+    },
+    {
+      "card": "card6",
+      "used_bytes": 20333875200,
+      "total_bytes": 51522830336
+    },
+    {
+      "card": "card7",
+      "used_bytes": 30373756928,
+      "total_bytes": 51522830336
+    },
+    {
+      "card": "card8",
+      "used_bytes": 22344757248,
+      "total_bytes": 51522830336
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "single_32gb_target_verified": false
+}

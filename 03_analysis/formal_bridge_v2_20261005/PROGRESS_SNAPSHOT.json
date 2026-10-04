@@ -1,0 +1,53 @@
+{
+  "at_utc": "2026-10-04T20:51:03.156016+00:00",
+  "full": {
+    "rows": 200,
+    "recorded_requests": 208,
+    "complete": false,
+    "error": null,
+    "pid": 3390465,
+    "process_state": "S",
+    "process_starttime": "841229941"
+  },
+  "tickets": [
+    {
+      "ticket": 25,
+      "task_name": "functional_full156_v1",
+      "state": "running",
+      "runner": {
+        "pid": 3390465,
+        "starttime": "841229941"
+      }
+    },
+    {
+      "ticket": 26,
+      "task_name": "fpga_teammate_cvdp_rng_S2",
+      "state": "queued",
+      "runner": null
+    },
+    {
+      "ticket": 27,
+      "task_name": "fpga_teammate_paired_uncertainty_T1",
+      "state": "queued",
+      "runner": null
+    },
+    {
+      "ticket": 28,
+      "task_name": "edge_contract_calibration_v1",
+      "state": "queued",
+      "runner": null
+    },
+    {
+      "ticket": 29,
+      "task_name": "fsm_contract_calibration_v1",
+      "state": "queued",
+      "runner": null
+    },
+    {
+      "ticket": 30,
+      "task_name": "formal_bridge_integration_v1",
+      "state": "queued",
+      "runner": null
+    }
+  ]
+}

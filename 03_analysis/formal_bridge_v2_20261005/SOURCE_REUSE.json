@@ -1,0 +1,60 @@
+{
+  "schema": "formal_bridge_source_reuse_v1",
+  "source_full_spec_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+  "files": {
+    "agent/core.py": {
+      "source": "03_analysis\\functional_full156_20261005\\package\\agent\\map_runtime.py",
+      "sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba"
+    },
+    "baseline.py": {
+      "source": "03_analysis\\functional_full156_20261005\\package\\baseline.py",
+      "sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51"
+    },
+    "skill/rtl-generation/SKILL.md": {
+      "source": "03_analysis\\functional_full156_20261005\\package\\skill\\rtl-generation\\SKILL.md",
+      "sha256": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01"
+    },
+    "skill/rtl-feedback-repair/SKILL.md": {
+      "source": "03_analysis\\functional_full156_20261005\\package\\skill\\rtl-feedback-repair\\SKILL.md",
+      "sha256": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+    },
+    "agent/prompt_map.py": {
+      "source": "03_analysis\\functional_full156_20261005\\prompt_map.py",
+      "sha256": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953"
+    },
+    "agent/point_feedback.py": {
+      "source": "03_analysis\\functional_full156_20261005\\point_feedback.py",
+      "sha256": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c"
+    },
+    "agent/priority_contract.py": {
+      "source": "03_analysis\\functional_full156_20261005\\priority_contract.py",
+      "sha256": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516"
+    },
+    "agent/shift_contract.py": {
+      "source": "03_analysis\\functional_full156_20261005\\shift_contract.py",
+      "sha256": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca"
+    },
+    "agent/reserved_keywords.py": {
+      "source": "03_analysis\\functional_full156_20261005\\reserved_keywords.py",
+      "sha256": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e"
+    },
+    "upstream.json": {
+      "source": "04_project/amd_rtl_agent/submission/upstream.json",
+      "sha256": "a7263b0f0a8a8842133f053efc0b89a90fabfaf8095b226277c9a0c08e940aa7"
+    },
+    "run_baseline.sh": {
+      "source": "04_project/amd_rtl_agent/submission/run_baseline.sh",
+      "sha256": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75"
+    },
+    "run.sh": {
+      "source": "04_project/amd_rtl_agent/submission/run.sh",
+      "sha256": "a8f298273b470947dd36a36675c2dc0098a001896cf037ca96c4972dc94f2a90"
+    },
+    "agent/probe_runner.py": {
+      "source": "03_analysis\\ross_diagnostic_repair_20261004\\probe_runner.py",
+      "sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+    }
+  },
+  "deployment": false,
+  "native_bridge_pipeline_parity_verified": false
+}

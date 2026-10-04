@@ -1,0 +1,12 @@
+{
+  "schema": "formal_bridge_v2_linux_pure_install_v1",
+  "at_utc": "2026-10-04T20:51:58.686947+00:00",
+  "run_spec_sha256": "b98742b9694454c2dc41654a8bcb3668b7c2ee2066bb8dc85fa6009cc3e2eee3",
+  "assets": 34,
+  "pure_worker_and_health_tests_passed": 14,
+  "test_returncode": 0,
+  "test_output": "test_busy_or_invalid_slot_response_no_model_post (test_bridge.Worker.test_busy_or_invalid_slot_response_no_model_post) ... ok\ntest_child_dispatch_is_bridge_agent_and_untouched_baseline (test_bridge.Worker.test_child_dispatch_is_bridge_agent_and_untouched_baseline) ... ok\ntest_correct_source_byte_preserved_no_extra_call (test_bridge.Worker.test_correct_source_byte_preserved_no_extra_call) ... ok\ntest_original_successful_declaration_patch_returns_before_optional_probe (test_bridge.Worker.test_original_successful_declaration_patch_returns_before_optional_probe) ... ok\ntest_package_integrity_baseline_and_core_exact (test_bridge.Worker.test_package_integrity_baseline_and_core_exact) ... ok\ntest_persistent_mismatch_never_third_request (test_bridge.Worker.test_persistent_mismatch_never_third_request) ... ok\ntest_real_staged_worker_uses_original_repair_with_factual_feedback (test_bridge.Worker.test_real_staged_worker_uses_original_repair_with_factual_feedback) ... ok\ntest_unknown_contract_skips_probe (test_bridge.Worker.test_unknown_contract_skips_probe) ... ok\ntest_ambiguous_multiple_gpu_missing_nonamd_and_dead_owner_are_unknown (test_health.Health.test_ambiguous_multiple_gpu_missing_nonamd_and_dead_owner_are_unknown) ... ok\ntest_authenticated_http_health_exact_fields_and_recovery (test_health.Health.test_authenticated_http_health_exact_fields_and_recovery) ... ok\ntest_ipv6_and_address_binding_no_remote_or_wrong_address_attribution (test_health.Health.test_ipv6_and_address_binding_no_remote_or_wrong_address_attribution) ... ok\ntest_raw_32gib_boundary_unknown_and_package_integrity_gates (test_health.Health.test_raw_32gib_boundary_unknown_and_package_integrity_gates) ... ok\ntest_unique_endpoint_one_card_deduplicates_descriptors_and_excludes_others (test_health.Health.test_unique_endpoint_one_card_deduplicates_descriptors_and_excludes_others) ... ok\ntest_version_lowercase_uppercase_and_transient_failure_recovers (test_health.Health.test_version_lowercase_uppercase_and_transient_failure_recovers) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.565s\n\nOK\n",
+  "actual_model_requests": 0,
+  "actual_eda_calls": 0,
+  "linux_integration_executed": false
+}

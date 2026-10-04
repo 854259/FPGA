@@ -1,0 +1,54 @@
+{
+  "schema": "formal_bridge_v2_health_delta_v1",
+  "source_v1_spec_sha256": "a9b4bb662902aba8b979fcee775960fa50c439b79b47d7808f7884b10e143aa3",
+  "original_package_sha256": {
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "INTEGRITY.json": "33b0743650a13949b7ed6c537208a4a4b71390c1594dab39b83c3ea1dc6f5ccd",
+    "run.sh": "a8f298273b470947dd36a36675c2dc0098a001896cf037ca96c4972dc94f2a90",
+    "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+    "upstream.json": "a7263b0f0a8a8842133f053efc0b89a90fabfaf8095b226277c9a0c08e940aa7",
+    "agent/core.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+    "agent/native_contract.py": "cd388a25e105f1155c9ee0ca9b91e3852ace8e27343374d9bf525c6e80767bfb",
+    "agent/point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+    "agent/priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+    "agent/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+    "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "agent/runtime.py": "1cab0ae7d98e9f7f294a1ee035e244f9200188511f9c1859f4b9f1c9f3e031ff",
+    "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+    "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01"
+  },
+  "new_package_sha256": {
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "INTEGRITY.json": "5319b9543c102a7a29c291348fc1a60ad43ed828864b3a6ba9f56b0dfa27b3ef",
+    "run.sh": "a8f298273b470947dd36a36675c2dc0098a001896cf037ca96c4972dc94f2a90",
+    "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+    "upstream.json": "a7263b0f0a8a8842133f053efc0b89a90fabfaf8095b226277c9a0c08e940aa7",
+    "agent/core.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+    "agent/health_probe.py": "0329745ed966140c2f4b41dd0f4a0e98497a8d89fb61d02f9459b61b60df0b2c",
+    "agent/native_contract.py": "cd388a25e105f1155c9ee0ca9b91e3852ace8e27343374d9bf525c6e80767bfb",
+    "agent/point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+    "agent/priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+    "agent/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+    "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "agent/runtime.py": "23d2ca6211e7cd920d5c3097e3f3b967ca0cf794c8f960c0de0768cf42a39166",
+    "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+    "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01"
+  },
+  "changed": [
+    "INTEGRITY.json",
+    "agent/runtime.py"
+  ],
+  "added": [
+    "agent/health_probe.py"
+  ],
+  "runtime_diff": "--- frozen_v1_runtime\n+++ staged_v2_runtime\n@@ -13,8 +13,11 @@\n spec=importlib.util.spec_from_file_location('formal_candidate_core',ROOT/'core.py')\n core=importlib.util.module_from_spec(spec);spec.loader.exec_module(core)\n import native_contract\n+import health_probe\n native_contract.CORE=core\n core.map_feedback=native_contract.feedback\n+core.vivado_version=health_probe.vivado_version\n+core.vram_gb=lambda:health_probe.vram_gb(core.endpoint())\n \n def verify_package():\n     manifest=json.loads((ROOT.parent/'INTEGRITY.json').read_text(encoding='utf-8'))\n@@ -71,6 +74,13 @@\n _worker=core.worker\n core.worker=worker\n core.run_job=run_job\n+_health=core.health\n+def health():\n+    try:verify_package()\n+    except (OSError,ValueError,KeyError):\n+        return dict(ready=False,track='rtl',model=os.environ.get('MODEL_NAME',''),vram_gb=None)\n+    return _health()\n+core.health=health\n \n if __name__=='__main__':\n     verify_package()\n",
+  "solver_core_changed": false,
+  "native_adapter_changed": false,
+  "parser_skills_baseline_changed": false,
+  "queued_v1_changed": false,
+  "quality_score_transferred": false
+}
