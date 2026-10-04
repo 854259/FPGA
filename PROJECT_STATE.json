@@ -1,5 +1,23 @@
 {
   "schema_version": 1,
+  "full156_postflight_20261004": {
+    "status": "partial_snapshot_audited_full_run_still_pending",
+    "report": "03_analysis/full156_postflight_20261004/README.md",
+    "receipt": "03_analysis/full156_postflight_20261004/PREPARATION_RECEIPT.json",
+    "audited_snapshot_samples": 83,
+    "paired_tasks": 41,
+    "same_first_reply_content_pairs": 41,
+    "C_changed_snapshot_samples": 0,
+    "adversarial_integrity_tests_passed": 8,
+    "current_C_repair_bypass_control_flow_reproduced_with_fake_tools": true,
+    "real_rtl_functional_regression_demonstrated_this_stage": false,
+    "automatic_integration_blocked_pending_original_success_preservation": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "running_frozen_assets_changed": false,
+    "full312_postflight_executed": false,
+    "new_full_score": false
+  },
   "full156_bundle_20261004": {
     "status": "running_frozen_full_regression",
     "task_count": 156,

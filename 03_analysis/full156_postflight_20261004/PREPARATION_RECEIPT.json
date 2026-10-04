@@ -1,0 +1,34 @@
+{
+  "schema": "full156_postflight_preparation_v1",
+  "observed_at_utc": "2026-10-04T11:15:46.988380+00:00",
+  "source_spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+  "snapshot_archive_sha256": "dd3cc497a3f05aabdde789b0f76437549e3857b9c0e7a19a61bf3ebe0dc89dd3",
+  "snapshot_samples": 83,
+  "paired_tasks": 41,
+  "same_initial_reply_pairs": 41,
+  "C_changed_samples": 0,
+  "full_round_complete": false,
+  "new_full_score": false,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "initial_audit_failure": {
+    "stage": "offline audit development, not evaluation execution",
+    "source_sha256": "99039508827c3bc34cb7d42be747196bc8c3f06c5ff9cc68cc31212edcb7b8a1",
+    "archive_sha256": "dd3cc497a3f05aabdde789b0f76437549e3857b9c0e7a19a61bf3ebe0dc89dd3",
+    "error": "Judge evaluated different source",
+    "cause": "Pinned official judge reads text and writes normalized LF; CRLF positive reference has different raw DUT bytes",
+    "model_calls": 0,
+    "eda_calls": 0,
+    "frozen_run_changed": false,
+    "observed_at_utc": "2026-10-04T11:11:44.137192+00:00"
+  },
+  "source_hashes": {
+    "collect_evidence.py": "7b59d5ac6d503370aa11fbee65f33d03dc9c4f8408477780874a4c44841e6ece",
+    "audit.py": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+    "test_audit.py": "99e10e94dd2be8b865594887d0ab16b17b98883c2419524d721d1820333885a2",
+    "repair_bypass_probe.py": "4c1e1ea818fd4fcd39c4a2abaf115133265151973b0ee3b1ba8dca55b4095f91"
+  },
+  "audit_result_sha256": "13a2ad2d52eadec46131c64d68519e1f12a1e7a44f3d45d734f0c4cc45c4adb9",
+  "bypass_probe_result_sha256": "144b09f8228fd97831df98029059a0002a8ee351fb9c82176d5777b18afae811",
+  "full312_postflight_not_yet_executed": true
+}

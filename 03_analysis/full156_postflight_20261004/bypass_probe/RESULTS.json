@@ -1,0 +1,141 @@
+{
+  "schema": "current_C_repair_bypass_control_probe_v1",
+  "observed_at_utc": "2026-10-04T11:13:55.527997+00:00",
+  "complete": true,
+  "control_flow_risk_reproduced": true,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "scope": "Constructed local fake transport and compiler; actual frozen runtime and C extraction executed",
+  "source_spec_sha256": "200ec12684229812029466ae5ffd1c63f461b9afa494a51e389d6377ee710e0b",
+  "rows": {
+    "A": {
+      "fake_response_requests": 2,
+      "extractions": [
+        {
+          "decision": "original_baseline"
+        },
+        {
+          "decision": "original_baseline"
+        }
+      ],
+      "tools": [
+        "agent_meta",
+        "llm_start",
+        "llm",
+        "check_submodules",
+        "llm_start",
+        "llm",
+        "lint_start",
+        "lint"
+      ],
+      "fake_tools": [
+        {
+          "scope": "fake native xvlog",
+          "source_sha256": "45b81f697c400089c55b58a90943dfbe330f2ce34f6747511b170cd9f185cbd0"
+        }
+      ],
+      "first_request_sha256": "0b96c541e576b83bbacd84d1031a475e2e70b48b59388e2155fc7b97ee0164eb",
+      "final_source_sha256": "45b81f697c400089c55b58a90943dfbe330f2ce34f6747511b170cd9f185cbd0"
+    },
+    "C": {
+      "fake_response_requests": 1,
+      "extractions": [
+        {
+          "raw": {
+            "changed": true,
+            "reason": "unique_complete_linked_bundle",
+            "original_sha256": "6f97b6e4dc1bd460ecf38326054111bfd9f55aef2c177741e0a0697ed1835988",
+            "final_sha256": "20bae07989fa88a3c4e6cf21a7d15a7fa39235315aa5702efbeabaa94f2b9173",
+            "modules": [
+              "TopModule",
+              "helper_gate"
+            ],
+            "functional_improvement": "unverified",
+            "dependency_edges": {
+              "TopModule": [
+                "helper_gate"
+              ],
+              "helper_gate": []
+            }
+          },
+          "original_sha256": "6f97b6e4dc1bd460ecf38326054111bfd9f55aef2c177741e0a0697ed1835988",
+          "proposed_sha256": "20bae07989fa88a3c4e6cf21a7d15a7fa39235315aa5702efbeabaa94f2b9173",
+          "final_sha256": "20bae07989fa88a3c4e6cf21a7d15a7fa39235315aa5702efbeabaa94f2b9173",
+          "compile_required": true,
+          "decision": "candidate_accepted",
+          "stages": [
+            {
+              "timeout": false,
+              "launch_error": null,
+              "returncode": 0,
+              "remaining_live_group": [],
+              "elapsed_s": 0.0,
+              "log": "C:\\Users\\66561\\AppData\\Local\\Temp\\current-C-bypass-ohtrtzzi\\C\\out\\gate_0\\xvlog.log",
+              "log_sha256": "8d77e855158f753cc5dc45da3b56c7aec238de8a8cd5bdfb4bd8ad33012d87be",
+              "log_bytes": 53,
+              "group_signals": [],
+              "name": "xvlog",
+              "argv": [
+                "C:\\Users\\66561\\AppData\\Local\\Temp\\current-C-bypass-ohtrtzzi\\bin\\xvlog",
+                "-sv",
+                "--nolog",
+                "dut.sv"
+              ]
+            },
+            {
+              "timeout": false,
+              "launch_error": null,
+              "returncode": 0,
+              "remaining_live_group": [],
+              "elapsed_s": 0.0,
+              "log": "C:\\Users\\66561\\AppData\\Local\\Temp\\current-C-bypass-ohtrtzzi\\C\\out\\gate_0\\xelab.log",
+              "log_sha256": "8d77e855158f753cc5dc45da3b56c7aec238de8a8cd5bdfb4bd8ad33012d87be",
+              "log_bytes": 53,
+              "group_signals": [],
+              "name": "xelab",
+              "argv": [
+                "C:\\Users\\66561\\AppData\\Local\\Temp\\current-C-bypass-ohtrtzzi\\bin\\xelab",
+                "TopModule",
+                "-s",
+                "bundle_gate",
+                "--nolog",
+                "-timescale",
+                "1ns/1ps"
+              ]
+            }
+          ]
+        }
+      ],
+      "tools": [
+        "agent_meta",
+        "llm_start",
+        "llm",
+        "lint_start",
+        "lint"
+      ],
+      "fake_tools": [
+        {
+          "scope": "fake C gate",
+          "tool": "xvlog"
+        },
+        {
+          "scope": "fake C gate",
+          "tool": "xelab"
+        },
+        {
+          "scope": "fake native xvlog",
+          "source_sha256": "20bae07989fa88a3c4e6cf21a7d15a7fa39235315aa5702efbeabaa94f2b9173"
+        }
+      ],
+      "first_request_sha256": "0b96c541e576b83bbacd84d1031a475e2e70b48b59388e2155fc7b97ee0164eb",
+      "final_source_sha256": "20bae07989fa88a3c4e6cf21a7d15a7fa39235315aa5702efbeabaa94f2b9173"
+    }
+  },
+  "boolean_expressions_differ_on": 3,
+  "boolean_domain_inputs": 4,
+  "actual_rtl_functional_judgement": false,
+  "conclusion": "Appending an unchanged top plus wrong-but-compilable helper can bypass original successful repair. Top preservation and compile gate do not preserve original final behavior.",
+  "action": "No automatic promotion from full156 score alone; need explicit preservation or revised placement before integration.",
+  "frozen_cloud_run_modified": false,
+  "probe_sha256": "4c1e1ea818fd4fcd39c4a2abaf115133265151973b0ee3b1ba8dca55b4095f91"
+}
