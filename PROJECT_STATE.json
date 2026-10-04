@@ -4678,7 +4678,7 @@
     "report": "03_analysis/functional_contract_boundary_20261005/RESULTS.json"
   },
   "functional_fresh_pilot_v3_20261005": {
-    "status": "running_confirmed_pid_identity",
+    "status": "complete_fresh6_full_audit_passed",
     "fifo_ticket": 23,
     "monitor_pid": 3384278,
     "monitor_starttime": "841102692",
@@ -4688,8 +4688,21 @@
     "actual_first_generations": true,
     "max_requests": 12,
     "retries": 0,
-    "report": "03_analysis/functional_fresh_pilot_v3_20261005/README.md",
+    "report": "03_analysis/functional_fresh_pilot_v3_20261005/RESULT.md",
     "adoption": false,
-    "new_full_score": false
+    "new_full_score": false,
+    "completed_samples": 6,
+    "actual_model_requests": 8,
+    "native_functional_probes": 4,
+    "unconfirmed_attempts": 0,
+    "tool_errors": 0,
+    "solve_deadlines": 0,
+    "elapsed_s": 228.52992941066623,
+    "first_reply_content_identical_pairs": 3,
+    "A_cohort_coefficient": 0.4666666666666666,
+    "C_cohort_coefficient": 1.0,
+    "candidate_qualified_for_full_regression": true,
+    "archive_sha256": "f85211565b0fd890cf648b8758e670a31a3417ede569066d981e42c287d70c8d",
+    "next": "prepare_full156_same_budget_new_generation"
   }
 }

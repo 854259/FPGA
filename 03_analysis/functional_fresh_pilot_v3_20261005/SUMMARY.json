@@ -1,0 +1,253 @@
+{
+  "schema": "functional_fresh_pilot_v1",
+  "complete": true,
+  "passed": true,
+  "spec_sha256": "6fd6fe78ec9b6b8ef52d43f3ae6ee15dd26066db818781647c5ff841f71c3d05",
+  "rows": [
+    {
+      "task": "Prob071_always_casez",
+      "arm": "A",
+      "solve_deadline_reached": false,
+      "solve_elapsed_s": 7.482278507202864,
+      "actual_model_requests": 1,
+      "received_model_responses": 1,
+      "solution_sha256": "21bd60a9f054ec7cc43ffade5f8409d9c5491800fb08333876fa3de01b1041ca",
+      "verdict_sha256": "3fdfc88ddd14647d76ca1fc970fa781f70cdb5f886406b0aa90de833e35cdda5",
+      "verdict": {
+        "task_id": "Prob071_always_casez",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.4,
+        "mismatches": 0,
+        "samples": 346,
+        "work_dir": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/A/Prob071_always_casez/judge/judge-scratch-two9snzc/judge_Prob071_always_casez_3384380",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 32695,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/A/Prob071_always_casez/judge/judge_receipt.json"
+      }
+    },
+    {
+      "task": "Prob071_always_casez",
+      "arm": "C",
+      "solve_deadline_reached": false,
+      "solve_elapsed_s": 12.889184026047587,
+      "actual_model_requests": 1,
+      "received_model_responses": 1,
+      "solution_sha256": "21bd60a9f054ec7cc43ffade5f8409d9c5491800fb08333876fa3de01b1041ca",
+      "verdict_sha256": "dd669aeb4640bb6e91ffc75804ef41e2d420977a90263ad21f9aac513f08f948",
+      "verdict": {
+        "task_id": "Prob071_always_casez",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.8,
+        "mismatches": 0,
+        "samples": 346,
+        "work_dir": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/C/Prob071_always_casez/judge/judge-scratch-z_0foyro/judge_Prob071_always_casez_3385531",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 32695,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/C/Prob071_always_casez/judge/judge_receipt.json"
+      }
+    },
+    {
+      "task": "Prob112_always_case2",
+      "arm": "C",
+      "solve_deadline_reached": false,
+      "solve_elapsed_s": 22.7523010969162,
+      "actual_model_requests": 2,
+      "received_model_responses": 2,
+      "solution_sha256": "07058002adf81cfc78975768864c81b37f8c55a899f53af33dc60ac09921a2e0",
+      "verdict_sha256": "642816ba1696d311cc95515411e5f9a497c3ad90c82769df0889c4a602881c61",
+      "verdict": {
+        "task_id": "Prob112_always_case2",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 27.4,
+        "mismatches": 0,
+        "samples": 94,
+        "work_dir": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/C/Prob112_always_case2/judge/judge-scratch-7xz5ayvh/judge_Prob112_always_case2_3387084",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 32673,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/C/Prob112_always_case2/judge/judge_receipt.json"
+      }
+    },
+    {
+      "task": "Prob112_always_case2",
+      "arm": "A",
+      "solve_deadline_reached": false,
+      "solve_elapsed_s": 5.379491116851568,
+      "actual_model_requests": 1,
+      "received_model_responses": 1,
+      "solution_sha256": "39c728d07efbdae95ce6b40472a6c44e5f356867c2316a2fcf238faec64ee384",
+      "verdict_sha256": "f2e583d6abda30e4ca3ca6b838a2e6ecb8f0afd8677d2f913b011f5dcee20fe8",
+      "verdict": {
+        "task_id": "Prob112_always_case2",
+        "top": "TopModule",
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 7.8,
+        "mismatches": 57,
+        "samples": 94,
+        "work_dir": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/A/Prob112_always_case2/judge/judge-scratch-te2nrzsh/judge_Prob112_always_case2_3387905",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4355,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/A/Prob112_always_case2/judge/judge_receipt.json"
+      }
+    },
+    {
+      "task": "Prob115_shift18",
+      "arm": "A",
+      "solve_deadline_reached": false,
+      "solve_elapsed_s": 9.234367325901985,
+      "actual_model_requests": 1,
+      "received_model_responses": 1,
+      "solution_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+      "verdict_sha256": "aaba0881af3dfd2ff813b9ad3d33539fb4688b01cee9cc15abd5f48f1b4c5cb5",
+      "verdict": {
+        "task_id": "Prob115_shift18",
+        "top": "TopModule",
+        "level": 1,
+        "coefficient": 0.2,
+        "stages": {
+          "compile": true,
+          "simulate": false,
+          "synth": false
+        },
+        "tool_error": null,
+        "elapsed_s": 7.7,
+        "mismatches": 1614,
+        "samples": 4041,
+        "work_dir": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/A/Prob115_shift18/judge/judge-scratch-542eylqj/judge_Prob115_shift18_3388507",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log"
+        ],
+        "judge_log_bytes": 4323,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/A/Prob115_shift18/judge/judge_receipt.json"
+      }
+    },
+    {
+      "task": "Prob115_shift18",
+      "arm": "C",
+      "solve_deadline_reached": false,
+      "solve_elapsed_s": 25.809093546122313,
+      "actual_model_requests": 2,
+      "received_model_responses": 2,
+      "solution_sha256": "4aad640cfceee2d8b0b5ea9c6a00a483827fd6fc114bed09ffeabac2ff63a72b",
+      "verdict_sha256": "cbde7c4421b67ae092b9f932765d2aac5dcf589482a0900609ae40c68e9da79f",
+      "verdict": {
+        "task_id": "Prob115_shift18",
+        "top": "TopModule",
+        "level": 3,
+        "coefficient": 1.0,
+        "stages": {
+          "compile": true,
+          "simulate": true,
+          "synth": true
+        },
+        "tool_error": null,
+        "elapsed_s": 44.8,
+        "mismatches": 0,
+        "samples": 4041,
+        "work_dir": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/C/Prob115_shift18/judge/judge-scratch-uwnhe17m/judge_Prob115_shift18_3389524",
+        "judge_rc": 0,
+        "judge_evidence": [
+          "dut.sv",
+          "verdict.json",
+          "w_judge.log",
+          "w_synth_synth.json",
+          "w_synth_synth.log",
+          "w_synth_vivado.log"
+        ],
+        "judge_log_bytes": 33592,
+        "judge_evidence_complete": true,
+        "suspected_silent_degradation": false,
+        "judge_receipt": "/workspace/team/runs/fpga_owner/functional_fresh_pilot_20261005_v3/results/samples/C/Prob115_shift18/judge/judge_receipt.json"
+      }
+    }
+  ],
+  "actual_model_requests": 8,
+  "first_generation_replayed": false,
+  "adoption": false,
+  "new_full_score": false,
+  "scope": "3 known public development tasks, 1 fresh sample/arm, not independent natural validation",
+  "coefficients": {
+    "A": 0.4666666666666666,
+    "C": 1.0
+  },
+  "repairs": [
+    "Prob112_always_case2",
+    "Prob115_shift18"
+  ],
+  "regressions": [],
+  "unconfirmed_attempts": 0,
+  "candidate_qualified_for_full_regression": true,
+  "elapsed_s": 228.52992941066623
+}
