@@ -3114,13 +3114,14 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "matching_experiment_processes": 0,
-      "own_slot_released": true,
-      "full_experiment_running": false,
-      "checked_at": "2026-10-04T16:15:05+08:00",
-      "model_pid": 2013333,
+      "own_live_processes": 0,
       "model_healthy": true,
-      "model_processing": false
+      "full_experiment_running": false,
+      "gpu_flock_free": true,
+      "slot_lock_present": false,
+      "model_pid": 2013333,
+      "checked_at": "2026-10-04T16:21:43+08:00",
+      "model_identity_unchanged": true
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3136,7 +3137,7 @@
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T16:20:26.5253896+08:00",
+  "updated_at": "2026-10-04T16:23:04.9678493+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3214,7 +3215,9 @@
     "complete": true,
     "processes_finished": true,
     "cleanup_verified": true,
-    "report": "03_analysis/rtllm_contract_audit_20261002/CVDP_ENVIRONMENT_RESULT_20261004.md"
+    "report": "03_analysis/rtllm_contract_audit_20261002/CVDP_ENVIRONMENT_RESULT_20261004.md",
+    "python_bytecode_cache_dirs_removed": 38,
+    "cache_dirs_remaining": 0
   },
   "cvdp_static_inventory_20261004": {
     "independent_tasks_admitted": 0,
