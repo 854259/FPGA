@@ -3700,5 +3700,34 @@
     "cleanup_verified": true,
     "public_result": "03_analysis/helper_extraction_20261004/DIAGNOSTIC_Q5_RESULT_20261005.json",
     "next": "Zero-model lexical admission audit of existing strict shift contract parser before any review expansion; no deployment or new full batch claim"
+  },
+  "shift_admission_R1_20261005": {
+    "ticket": 20,
+    "false_accept": 4047,
+    "eda_calls": 16,
+    "model_review_expansion_blocked": true,
+    "model_calls": 0,
+    "original_source_unchanged": true,
+    "stage_s": 19.81233537569642,
+    "pid": 3382279,
+    "full_batch_complete": false,
+    "cleanup_verified": true,
+    "archive": "55a439c15ae0f18cae98f9e34120165b91bde6d48fafd363d4f0e9b0826c71ca",
+    "members": 110,
+    "false_abstain": 0,
+    "fault_classes": 2,
+    "status": "completed_admission_rejected",
+    "cases": 4275,
+    "source_sha256": "de93b416bd436b7caacc529b4894761131c6fbd108cd11d07679c6b561f35863"
+  },
+  "shift_admission_R2_20261005": {
+    "new_constructed": 5151,
+    "regression": 4275,
+    "stage_cap_s": 180,
+    "deployed": false,
+    "status": "frozen_unrun",
+    "candidate_sha256": "a1ce1552754c7c72d9c33b0f596937959bc392d305c3e956c266c5a4b2188157",
+    "eda_cap": 4,
+    "model_calls": 0
   }
 }

@@ -1,0 +1,38 @@
+{
+  "complete": true,
+  "admission_passed": false,
+  "model_calls": 0,
+  "eda_calls": 16,
+  "natural_independent_tasks": 0,
+  "full_batch_complete": false,
+  "source_hashes": {
+    "shift_contract.py": "de93b416bd436b7caacc529b4894761131c6fbd108cd11d07679c6b561f35863",
+    "test_shift.py": "f72ce775d7e03cb7ba35e97e125177cd5f37818a1405d0ad859caad17d2f83ef"
+  },
+  "input_manifest_sha256": "4c67f6faf1148def93634cfba846a37cd3ef1e186d4b44489b9c921e54d3e83b",
+  "driver_sha256": "16cc1f6910de458f95c6b802c6a2076c07cd02722a21801cb361b1ead1178443",
+  "error": null,
+  "counts": {
+    "valid/total": 114,
+    "reserved_word/total": 3990,
+    "false_accept": 4047,
+    "case_ambiguity/total": 171
+  },
+  "existing_source_unchanged": true,
+  "elapsed_s": 19.81233537569642,
+  "commit": "38099a60798ef35babd9504c658d5b1b91403bb6",
+  "ticket": 20,
+  "pid": 3382279,
+  "stage_pid": 3382284,
+  "compiler_expectations_passed": 16,
+  "false_accept_groups": {
+    "reserved_word": 3990,
+    "case_ambiguity": 57
+  },
+  "false_abstain": 0,
+  "decision": "Block original parser admission to model review; isolated guard repair required, no production change",
+  "limits": "Constructed combinations, two lexical fault classes, not 4047 independent bugs or natural failure rate; no functional score",
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true
+}
