@@ -1,0 +1,267 @@
+{
+  "schema": "module_bundle_same_response_audit_v1",
+  "status": "complete_verified",
+  "model_requests": 8,
+  "complete_responses": 8,
+  "retries": 0,
+  "paired_generated_probes": 16,
+  "A_passes": 6,
+  "B_passes": 6,
+  "fixes": 0,
+  "regressions": 0,
+  "changed_responses": 2,
+  "acceptance_met": false,
+  "adoption": false,
+  "new_score": false,
+  "controls_valid": 8,
+  "format_controls": [
+    {
+      "id": "helper_after_top",
+      "A": "fail",
+      "B": "pass",
+      "changed": true
+    },
+    {
+      "id": "helper_before_top_fences",
+      "A": "fail",
+      "B": "pass",
+      "changed": true
+    },
+    {
+      "id": "wrong_helper_body",
+      "A": "fail",
+      "B": "fail",
+      "changed": true
+    },
+    {
+      "id": "correct_single_top",
+      "A": "pass",
+      "B": "pass",
+      "changed": false
+    }
+  ],
+  "counts": {
+    "probes": 32,
+    "synthesis": 9,
+    "synthesis_reuses": 6
+  },
+  "rows": [
+    {
+      "task": "comparator_3bit",
+      "trial": 0,
+      "A": "pass",
+      "B": "pass",
+      "A_failure": null,
+      "B_failure": null,
+      "changed": false,
+      "reason": "single_top_baseline_preserved",
+      "modules": [
+        "TopModule"
+      ],
+      "A_sha256": "26b3ca7ddd00831f528068f5ae7f18ca5f83af7291674b5ceac06a815a4614b0",
+      "B_sha256": "26b3ca7ddd00831f528068f5ae7f18ca5f83af7291674b5ceac06a815a4614b0",
+      "request_elapsed_s": 5.018479206599295
+    },
+    {
+      "task": "comparator_4bit",
+      "trial": 0,
+      "A": "pass",
+      "B": "pass",
+      "A_failure": null,
+      "B_failure": null,
+      "changed": false,
+      "reason": "single_top_baseline_preserved",
+      "modules": [
+        "TopModule"
+      ],
+      "A_sha256": "357b549a8884b2f1d2581a8a70b579506e8bd23124842c4c4ed1b01abd0b6495",
+      "B_sha256": "357b549a8884b2f1d2581a8a70b579506e8bd23124842c4c4ed1b01abd0b6495",
+      "request_elapsed_s": 16.93767987843603
+    },
+    {
+      "task": "adder_8bit",
+      "trial": 0,
+      "A": "fail",
+      "B": "fail",
+      "A_failure": "xelab_failed",
+      "B_failure": "xelab_failed",
+      "changed": true,
+      "reason": "unique_complete_linked_bundle",
+      "modules": [
+        "TopModule",
+        "full_adder"
+      ],
+      "A_sha256": "68697d76101cc72de71db39a6e69ff6a1ce82be12c356defdad73125446b1e9d",
+      "B_sha256": "3a966058eb62bcb46836e2c6e6d3dfdd2c232ef183ecffbd9b537e04da46def7",
+      "request_elapsed_s": 9.031141419894993
+    },
+    {
+      "task": "multi_8bit",
+      "trial": 0,
+      "A": "pass",
+      "B": "pass",
+      "A_failure": null,
+      "B_failure": null,
+      "changed": false,
+      "reason": "single_top_baseline_preserved",
+      "modules": [
+        "TopModule"
+      ],
+      "A_sha256": "c8e8219fb6ea937e534d967312df60ca5508c131f4cd92b0ea4611cec5cc7664",
+      "B_sha256": "c8e8219fb6ea937e534d967312df60ca5508c131f4cd92b0ea4611cec5cc7664",
+      "request_elapsed_s": 6.594196259044111
+    },
+    {
+      "task": "comparator_3bit",
+      "trial": 1,
+      "A": "pass",
+      "B": "pass",
+      "A_failure": null,
+      "B_failure": null,
+      "changed": false,
+      "reason": "single_top_baseline_preserved",
+      "modules": [
+        "TopModule"
+      ],
+      "A_sha256": "26b3ca7ddd00831f528068f5ae7f18ca5f83af7291674b5ceac06a815a4614b0",
+      "B_sha256": "26b3ca7ddd00831f528068f5ae7f18ca5f83af7291674b5ceac06a815a4614b0",
+      "request_elapsed_s": 3.6846038745716214
+    },
+    {
+      "task": "comparator_4bit",
+      "trial": 1,
+      "A": "pass",
+      "B": "pass",
+      "A_failure": null,
+      "B_failure": null,
+      "changed": false,
+      "reason": "single_top_baseline_preserved",
+      "modules": [
+        "TopModule"
+      ],
+      "A_sha256": "357b549a8884b2f1d2581a8a70b579506e8bd23124842c4c4ed1b01abd0b6495",
+      "B_sha256": "357b549a8884b2f1d2581a8a70b579506e8bd23124842c4c4ed1b01abd0b6495",
+      "request_elapsed_s": 15.175478334538639
+    },
+    {
+      "task": "adder_8bit",
+      "trial": 1,
+      "A": "fail",
+      "B": "fail",
+      "A_failure": "xelab_failed",
+      "B_failure": "xelab_failed",
+      "changed": true,
+      "reason": "unique_complete_linked_bundle",
+      "modules": [
+        "TopModule",
+        "full_adder"
+      ],
+      "A_sha256": "68697d76101cc72de71db39a6e69ff6a1ce82be12c356defdad73125446b1e9d",
+      "B_sha256": "3a966058eb62bcb46836e2c6e6d3dfdd2c232ef183ecffbd9b537e04da46def7",
+      "request_elapsed_s": 8.991616621613503
+    },
+    {
+      "task": "multi_8bit",
+      "trial": 1,
+      "A": "pass",
+      "B": "pass",
+      "A_failure": null,
+      "B_failure": null,
+      "changed": false,
+      "reason": "single_top_baseline_preserved",
+      "modules": [
+        "TopModule"
+      ],
+      "A_sha256": "c8e8219fb6ea937e534d967312df60ca5508c131f4cd92b0ea4611cec5cc7664",
+      "B_sha256": "c8e8219fb6ea937e534d967312df60ca5508c131f4cd92b0ea4611cec5cc7664",
+      "request_elapsed_s": 6.731112986803055
+    }
+  ],
+  "elapsed_s": 410.02087437547743,
+  "model_request_elapsed_s": 72.16430858150125,
+  "guard": {
+    "started_at_utc": "2026-10-04T05:15:01.890055+00:00",
+    "finished_at_utc": "2026-10-04T05:21:52.356071+00:00",
+    "elapsed_s": 410.3507121708244,
+    "stage_rc": 0,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true,
+    "model_idle_after": {
+      "health_status": "ok",
+      "model_name": "Qwen3.6-27B-Q4_K_M",
+      "slot_count": 1,
+      "processing_slots": 0,
+      "model_pid_owns_port": true
+    }
+  },
+  "owned_cleanup_verified": true,
+  "remaining_owned_processes": 0,
+  "evidence": {
+    "archive_sha256": "499c1821179f2ff6b4173403dc385ed621c20fdf76030cb7a986aba33a508c67",
+    "manifest_files": 348,
+    "all_hashes_verified": true
+  },
+  "postflight": {
+    "utc": "2026-10-04T05:24:40.563332+00:00",
+    "model_health": {
+      "status": "ok"
+    },
+    "processing_slots": 0,
+    "slot_exists": true,
+    "slot_owner": "helper_G1_20261004T052000Z_3576ccf",
+    "own_slot_exists": false,
+    "ports": {
+      "8000": true,
+      "7860": false,
+      "7867": false
+    },
+    "workspace_free_gib": 10.068222045898438,
+    "model_pid": 2013333,
+    "instance_shutdown_or_model_restart": false
+  },
+  "branch": "codex/autonomous-rtl-20261004",
+  "limits": [
+    "Same new response for A/B: this isolates extraction, not agent-versus-official-baseline generation or weighted score.",
+    "4 known RTLLM tasks, 2 same-task repeats each; not blind independent natural tasks or pass@5.",
+    "Public corrected prompts only enter requests, frozen official baseline.SYS; no reference/TB/grade feedback.",
+    "Controls are constructed replies; successful control recovery alone is not natural model improvement.",
+    "Reuse synth only for identical A/B bytes; independent probes always run for both.",
+    "No macro/package/ambiguous reply recovery; no newly invented helper or functional edit.",
+    "Shared cache not cleared; timing excludes earlier initial-generation and human fixture costs.",
+    "Independent branch and legacy .gpu.lock flock plus SLOT guard; no formal package, baseline, model restart or instance lifecycle changes."
+  ],
+  "unique_answer_texts": 4,
+  "unique_A_B_source_pairs": 4,
+  "diagnostic_changes": [
+    {
+      "task": "adder_8bit",
+      "trial": 0,
+      "A": "missing_full_adder",
+      "B": "carry_index_8_out_of_bounds",
+      "A_log_sha256": "f38ea0b53bb8c13070b37d0714f2c8f0e1db90afb68ccff4db5624f1d9a448a9",
+      "B_log_sha256": "99fd753eb6a7163e726973d74726c061bc1c08ca862f1b12081d193694f7830a",
+      "simulation_reached": false
+    },
+    {
+      "task": "adder_8bit",
+      "trial": 1,
+      "A": "missing_full_adder",
+      "B": "carry_index_8_out_of_bounds",
+      "A_log_sha256": "14dbdbcaeeeae84cd4254d0ba0a3913160da97ae06c5da3bb8535340e5988bb7",
+      "B_log_sha256": "cb0a63aa5f96f97104c2a4b2b756fea1f9bb04b1a35a297a3f64b9326a59b7d3",
+      "simulation_reached": false
+    }
+  ],
+  "archive_collection_retry": {
+    "recorded_at_utc": "2026-10-04T05:24:25.081757+00:00",
+    "phase": "archive_collection_after_completed_run",
+    "first_collector_error": "AssertionError: required healthy, idle model and no SLOT.lock; the assertion failed",
+    "first_collector_sha256": "0bdb84ef3e60c54e7cf2950c1acc952ec020379066684bf35b52b9125ca4de3e",
+    "followup_observation": "At 2026-10-04T05:23:26.659126+00:00 healthy model, processing=0, foreign slot owner helper_G1_20261004T052000Z_3576ccf observed",
+    "run_inputs_or_results_changed": false,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "foreign_slot_modified": false
+  }
+}

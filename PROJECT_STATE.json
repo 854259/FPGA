@@ -1,5 +1,105 @@
 {
   "schema_version": 1,
+  "module_bundle_20261004": {
+    "status": "complete_verified",
+    "model_requests": 8,
+    "complete_responses": 8,
+    "retries": 0,
+    "A_passes": 6,
+    "B_passes": 6,
+    "fixes": 0,
+    "regressions": 0,
+    "changed_responses": 2,
+    "acceptance_met": false,
+    "adoption": false,
+    "new_score": false,
+    "controls_valid": 8,
+    "counts": {
+      "probes": 32,
+      "synthesis": 9,
+      "synthesis_reuses": 6
+    },
+    "elapsed_s": 410.02087437547743,
+    "model_request_elapsed_s": 72.16430858150125,
+    "guard": {
+      "started_at_utc": "2026-10-04T05:15:01.890055+00:00",
+      "finished_at_utc": "2026-10-04T05:21:52.356071+00:00",
+      "elapsed_s": 410.3507121708244,
+      "stage_rc": 0,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "model_idle_after": {
+        "health_status": "ok",
+        "model_name": "Qwen3.6-27B-Q4_K_M",
+        "slot_count": 1,
+        "processing_slots": 0,
+        "model_pid_owns_port": true
+      }
+    },
+    "evidence": {
+      "archive_sha256": "499c1821179f2ff6b4173403dc385ed621c20fdf76030cb7a986aba33a508c67",
+      "manifest_files": 348,
+      "all_hashes_verified": true
+    },
+    "postflight": {
+      "utc": "2026-10-04T05:24:40.563332+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": true,
+      "slot_owner": "helper_G1_20261004T052000Z_3576ccf",
+      "own_slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "workspace_free_gib": 10.068222045898438,
+      "model_pid": 2013333,
+      "instance_shutdown_or_model_restart": false
+    },
+    "branch": "codex/autonomous-rtl-20261004",
+    "unique_answer_texts": 4,
+    "unique_A_B_source_pairs": 4,
+    "diagnostic_changes": [
+      {
+        "task": "adder_8bit",
+        "trial": 0,
+        "A": "missing_full_adder",
+        "B": "carry_index_8_out_of_bounds",
+        "A_log_sha256": "f38ea0b53bb8c13070b37d0714f2c8f0e1db90afb68ccff4db5624f1d9a448a9",
+        "B_log_sha256": "99fd753eb6a7163e726973d74726c061bc1c08ca862f1b12081d193694f7830a",
+        "simulation_reached": false
+      },
+      {
+        "task": "adder_8bit",
+        "trial": 1,
+        "A": "missing_full_adder",
+        "B": "carry_index_8_out_of_bounds",
+        "A_log_sha256": "14dbdbcaeeeae84cd4254d0ba0a3913160da97ae06c5da3bb8535340e5988bb7",
+        "B_log_sha256": "cb0a63aa5f96f97104c2a4b2b756fea1f9bb04b1a35a297a3f64b9326a59b7d3",
+        "simulation_reached": false
+      }
+    ],
+    "report": "03_analysis/module_bundle_20261004/README.md",
+    "result": "03_analysis/module_bundle_20261004/RESULTS.json",
+    "workspace": "E:\\26qiansai\\worktrees\\autonomous-rtl-20261004",
+    "formal_runtime_integrated": false,
+    "archive_collection_retry": {
+      "recorded_at_utc": "2026-10-04T05:24:25.081757+00:00",
+      "phase": "archive_collection_after_completed_run",
+      "first_collector_error": "AssertionError: required healthy, idle model and no SLOT.lock; the assertion failed",
+      "first_collector_sha256": "0bdb84ef3e60c54e7cf2950c1acc952ec020379066684bf35b52b9125ca4de3e",
+      "followup_observation": "At 2026-10-04T05:23:26.659126+00:00 healthy model, processing=0, foreign slot owner helper_G1_20261004T052000Z_3576ccf observed",
+      "run_inputs_or_results_changed": false,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "foreign_slot_modified": false
+    },
+    "next_step": "Local read-only cross-task natural reply/compiler diagnostic inventory while foreign cloud slot is occupied; no task-name patch or repeated deterministic samples."
+  },
   "rtllm_math_contracts_20261004": {
     "status": "complete_verified_four_finite_math_contracts",
     "report": "03_analysis/rtllm_math_contracts_20261004/README.md",
@@ -834,7 +934,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-04T11:27:53+08:00",
+  "last_updated": "2026-10-04",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",

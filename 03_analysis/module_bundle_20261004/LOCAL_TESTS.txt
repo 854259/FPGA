@@ -1,0 +1,24 @@
+test_automatic_module_abstains (test_extract_bundle.BundleTests.test_automatic_module_abstains) ... ok
+test_comment_keywords_do_not_create_modules (test_extract_bundle.BundleTests.test_comment_keywords_do_not_create_modules) ... ok
+test_duplicate_helper_abstains (test_extract_bundle.BundleTests.test_duplicate_helper_abstains) ... ok
+test_duplicate_top_abstains (test_extract_bundle.BundleTests.test_duplicate_top_abstains) ... ok
+test_fragment_in_another_fence_abstains (test_extract_bundle.BundleTests.test_fragment_in_another_fence_abstains) ... ok
+test_incomplete_module_abstains (test_extract_bundle.BundleTests.test_incomplete_module_abstains) ... ok
+test_macro_scope_abstains (test_extract_bundle.BundleTests.test_macro_scope_abstains) ... ok
+test_nested_module_abstains (test_extract_bundle.BundleTests.test_nested_module_abstains) ... ok
+test_nested_parameter_expression_and_instance_array (test_extract_bundle.BundleTests.test_nested_parameter_expression_and_instance_array) ... ok
+test_other_language_fence_abstains (test_extract_bundle.BundleTests.test_other_language_fence_abstains) ... ok
+test_recursive_bundle_abstains (test_extract_bundle.BundleTests.test_recursive_bundle_abstains) ... ok
+test_separate_fences_helper_first (test_extract_bundle.BundleTests.test_separate_fences_helper_first) ... ok
+test_single_top_byte_behavior_unchanged (test_extract_bundle.BundleTests.test_single_top_byte_behavior_unchanged) ... ok
+test_string_keywords_do_not_create_modules (test_extract_bundle.BundleTests.test_string_keywords_do_not_create_modules) ... ok
+test_unclosed_comment_abstains (test_extract_bundle.BundleTests.test_unclosed_comment_abstains) ... ok
+test_unclosed_fence_abstains (test_extract_bundle.BundleTests.test_unclosed_fence_abstains) ... ok
+test_unclosed_string_abstains (test_extract_bundle.BundleTests.test_unclosed_string_abstains) ... ok
+test_unfenced_helpers_preserved (test_extract_bundle.BundleTests.test_unfenced_helpers_preserved) ... ok
+test_unlinked_module_abstains (test_extract_bundle.BundleTests.test_unlinked_module_abstains) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.002s
+
+OK

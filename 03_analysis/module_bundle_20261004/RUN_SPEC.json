@@ -1,0 +1,138 @@
+{
+  "schema": "module_bundle_same_response_v1",
+  "status": "frozen_before_cloud_eda_and_model_calls",
+  "base_commit": "4ca876cdda9fea7415de7d923b6355e416fe7a2d",
+  "source_hashes": {
+    "extract_bundle.py": "8a7ab290e1e15d4248fd166b9c587b5fea7fb2958265853aeffe50e335de6414",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "lexical_mask.py": "a13fbdb8528a9e1a7309364aa6d145f959d8bcbf94bb383a635510cb7a81547b",
+    "pilot.py": "653ef06089ced6ee4c418e89cc4ce4f73bbf9c5820de40eb24a1a1dc6d062b9d",
+    "test_extract_bundle.py": "02591695cd373cb1d0528e5a265a05d03fa2fbf578855844188a999f3dca1c10",
+    "format_inputs/correct_single_top.txt": "6ed53c5e612a97e1be343ffab41194d720f78fec83b5fdb16c3bbe4cc3382145",
+    "format_inputs/helper_after_top.txt": "fd14faa94ffda48d98d09b3ce41260794c463b248192fa30704be799dec7ed59",
+    "format_inputs/helper_before_top_fences.txt": "1e0d16ff55d796a3c0fa2b9d97f4366ad70a56fb1d18b85e04faec1e901d2763",
+    "format_inputs/wrong_helper_body.txt": "d05203ca52e7a688be1e55c16f81e071cc9652d747c96a088252db6fc0019fb2",
+    "inputs/adder_8bit/negative.sv": "3de354f56b7e93bb33a2680096ab30744cd6f5bf7ce7fc640bfc20e4b6e985a7",
+    "inputs/adder_8bit/positive.sv": "6ed53c5e612a97e1be343ffab41194d720f78fec83b5fdb16c3bbe4cc3382145",
+    "inputs/adder_8bit/prompt.txt": "21018ae5b871f2bbd252ac9175ad16dd910b02eee3eb35cb8ebe48d0bebaf255",
+    "inputs/adder_8bit/tb.sv": "d42f850d2e0137a67d348267eb165a8be58f80f45caf9cb02067021df0b4277c",
+    "inputs/comparator_3bit/negative.sv": "f16790bb69ea9a6b125d1cb19c93d2a54696504984b3a24e86454cf61e3f68c9",
+    "inputs/comparator_3bit/positive.sv": "8ad6ed658edcc0e7021588ab1289dd8a455a0557ff61be425655241a878f3f30",
+    "inputs/comparator_3bit/prompt.txt": "6936b1d7581f299787e0324a2d73650a01d3fc7d1134b71c0f617eca6a7ad188",
+    "inputs/comparator_3bit/tb.sv": "c53322c763b15f37604b91d8c90182859b577c7f386a95726e8a1a3cc525e5e9",
+    "inputs/comparator_4bit/negative.sv": "86f42d0993e23fd0a12a24a772b352be474e0236d190c5baee4d637c52088d1e",
+    "inputs/comparator_4bit/positive.sv": "2d06a944b10817c3d5af1e66f910cb7d666dff6be4c7bf64df99e9ed6875a698",
+    "inputs/comparator_4bit/prompt.txt": "aba59c6f8b90b665bc8f5f3d5076c167edab2cd1bdfac64e5ea7c9470c810239",
+    "inputs/comparator_4bit/tb.sv": "8d27f8c6c3117e8cda06c05153f1b3a6c45596fb3bdea3319209dc2e9ba55b06",
+    "inputs/multi_8bit/negative.sv": "92e356168bec1f2f3ba86c8d964dee5e0151c98bcb5114925ab9774f74fde837",
+    "inputs/multi_8bit/positive.sv": "a7e0fb97db6c74c524a5c5e6dd353b7148c67ed4acc23853a867824063e42085",
+    "inputs/multi_8bit/prompt.txt": "1c21de61ded060608cadb440d7c406f7db772d850507ebe7baf68ac9d6eddf29",
+    "inputs/multi_8bit/tb.sv": "84c5016497bcedb87c0582240a0d9b658cd1c0238250f81a682e30184ed70752"
+  },
+  "dependency_hashes": {
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "baseline_extract.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51"
+  },
+  "dependencies_cloud": "/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1",
+  "resource_guard_sha256": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+  "contracts": [
+    {
+      "task": "comparator_3bit",
+      "checks": 64
+    },
+    {
+      "task": "comparator_4bit",
+      "checks": 256
+    },
+    {
+      "task": "adder_8bit",
+      "checks": 131072
+    },
+    {
+      "task": "multi_8bit",
+      "checks": 65536
+    }
+  ],
+  "format_controls": [
+    {
+      "id": "helper_after_top",
+      "reply": "format_inputs/helper_after_top.txt",
+      "expected_A": "fail",
+      "expected_B": "pass"
+    },
+    {
+      "id": "helper_before_top_fences",
+      "reply": "format_inputs/helper_before_top_fences.txt",
+      "expected_A": "fail",
+      "expected_B": "pass"
+    },
+    {
+      "id": "wrong_helper_body",
+      "reply": "format_inputs/wrong_helper_body.txt",
+      "expected_A": "fail",
+      "expected_B": "fail",
+      "expected_B_failure_kind": "semantic_mismatch"
+    },
+    {
+      "id": "correct_single_top",
+      "reply": "format_inputs/correct_single_top.txt",
+      "expected_A": "pass",
+      "expected_B": "pass"
+    }
+  ],
+  "generation_order": [
+    [
+      "comparator_3bit",
+      0
+    ],
+    [
+      "comparator_4bit",
+      0
+    ],
+    [
+      "adder_8bit",
+      0
+    ],
+    [
+      "multi_8bit",
+      0
+    ],
+    [
+      "comparator_3bit",
+      1
+    ],
+    [
+      "comparator_4bit",
+      1
+    ],
+    [
+      "adder_8bit",
+      1
+    ],
+    [
+      "multi_8bit",
+      1
+    ]
+  ],
+  "model": "Qwen3.6-27B-Q4_K_M",
+  "model_pid": 2013333,
+  "model_call_budget": 8,
+  "max_tokens": 8192,
+  "request_timeout_s": 120,
+  "stage_timeout_s": 1740,
+  "outer_timeout_s": 1800,
+  "part": "xczu3eg-sbva484-1-e",
+  "retries": 0,
+  "acceptance": "All preflight controls valid, 8 complete responses and 16 paired probes; B must fix at least one A failure, never regress an A pass, and every B pass synthesize; all source/resource/cleanup gates pass. Positive only permits independent validation, never production adoption.",
+  "limits": [
+    "Same new response for A/B: this isolates extraction, not agent-versus-official-baseline generation or weighted score.",
+    "4 known RTLLM tasks, 2 same-task repeats each; not blind independent natural tasks or pass@5.",
+    "Public corrected prompts only enter requests, frozen official baseline.SYS; no reference/TB/grade feedback.",
+    "Controls are constructed replies; successful control recovery alone is not natural model improvement.",
+    "Reuse synth only for identical A/B bytes; independent probes always run for both.",
+    "No macro/package/ambiguous reply recovery; no newly invented helper or functional edit.",
+    "Shared cache not cleared; timing excludes earlier initial-generation and human fixture costs.",
+    "Independent branch and legacy .gpu.lock flock plus SLOT guard; no formal package, baseline, model restart or instance lifecycle changes."
+  ]
+}

@@ -1,0 +1,105 @@
+test_automatic_module_abstains (test_extract_bundle.BundleTests.test_automatic_module_abstains) ... FAIL
+test_comment_keywords_do_not_create_modules (test_extract_bundle.BundleTests.test_comment_keywords_do_not_create_modules) ... ok
+test_duplicate_helper_abstains (test_extract_bundle.BundleTests.test_duplicate_helper_abstains) ... FAIL
+test_duplicate_top_abstains (test_extract_bundle.BundleTests.test_duplicate_top_abstains) ... FAIL
+test_fragment_in_another_fence_abstains (test_extract_bundle.BundleTests.test_fragment_in_another_fence_abstains) ... ok
+test_incomplete_module_abstains (test_extract_bundle.BundleTests.test_incomplete_module_abstains) ... ok
+test_macro_scope_abstains (test_extract_bundle.BundleTests.test_macro_scope_abstains) ... ok
+test_nested_module_abstains (test_extract_bundle.BundleTests.test_nested_module_abstains) ... ok
+test_nested_parameter_expression_and_instance_array (test_extract_bundle.BundleTests.test_nested_parameter_expression_and_instance_array) ... FAIL
+test_other_language_fence_abstains (test_extract_bundle.BundleTests.test_other_language_fence_abstains) ... ok
+test_recursive_bundle_abstains (test_extract_bundle.BundleTests.test_recursive_bundle_abstains) ... FAIL
+test_separate_fences_helper_first (test_extract_bundle.BundleTests.test_separate_fences_helper_first) ... ok
+test_single_top_byte_behavior_unchanged (test_extract_bundle.BundleTests.test_single_top_byte_behavior_unchanged) ... ok
+test_string_keywords_do_not_create_modules (test_extract_bundle.BundleTests.test_string_keywords_do_not_create_modules) ... FAIL
+test_unclosed_comment_abstains (test_extract_bundle.BundleTests.test_unclosed_comment_abstains) ... ok
+test_unclosed_fence_abstains (test_extract_bundle.BundleTests.test_unclosed_fence_abstains) ... ok
+test_unclosed_string_abstains (test_extract_bundle.BundleTests.test_unclosed_string_abstains) ... ok
+test_unfenced_helpers_preserved (test_extract_bundle.BundleTests.test_unfenced_helpers_preserved) ... ok
+test_unlinked_module_abstains (test_extract_bundle.BundleTests.test_unlinked_module_abstains) ... FAIL
+
+======================================================================
+FAIL: test_automatic_module_abstains (test_extract_bundle.BundleTests.test_automatic_module_abstains)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 103, in test_automatic_module_abstains
+    self.refused(TOP + "module automatic Helper(input a,output y);assign y=a;endmodule", "unsupported_module_declaration")
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 31, in refused
+    self.assertEqual(receipt["reason"], reason)
+AssertionError: 'single_top_baseline_preserved' != 'unsupported_module_declaration'
+- single_top_baseline_preserved
++ unsupported_module_declaration
+
+
+======================================================================
+FAIL: test_duplicate_helper_abstains (test_extract_bundle.BundleTests.test_duplicate_helper_abstains)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 69, in test_duplicate_helper_abstains
+    self.refused(TOP + HELPER + HELPER, "duplicate_helper_name")
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 31, in refused
+    self.assertEqual(receipt["reason"], reason)
+AssertionError: 'single_top_baseline_preserved' != 'duplicate_helper_name'
+- single_top_baseline_preserved
++ duplicate_helper_name
+
+
+======================================================================
+FAIL: test_duplicate_top_abstains (test_extract_bundle.BundleTests.test_duplicate_top_abstains)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 66, in test_duplicate_top_abstains
+    self.refused(TOP + TOP + HELPER, "top_module_not_unique")
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 31, in refused
+    self.assertEqual(receipt["reason"], reason)
+AssertionError: 'single_top_baseline_preserved' != 'top_module_not_unique'
+- single_top_baseline_preserved
++ top_module_not_unique
+
+
+======================================================================
+FAIL: test_nested_parameter_expression_and_instance_array (test_extract_bundle.BundleTests.test_nested_parameter_expression_and_instance_array)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 49, in test_nested_parameter_expression_and_instance_array
+    self.assertIn(helper, source)
+AssertionError: 'module Helper #(parameter W=2)(input a,output y);assign y=a;endmodule' not found in 'module TopModule(input a,output y); Helper #(.W((1+1))) h[0:0](.a(a),.y(y)); endmodule\n'
+
+======================================================================
+FAIL: test_recursive_bundle_abstains (test_extract_bundle.BundleTests.test_recursive_bundle_abstains)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 76, in test_recursive_bundle_abstains
+    self.refused(TOP + helper, "recursive_module_bundle")
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 31, in refused
+    self.assertEqual(receipt["reason"], reason)
+AssertionError: 'single_top_baseline_preserved' != 'recursive_module_bundle'
+- single_top_baseline_preserved
++ recursive_module_bundle
+
+
+======================================================================
+FAIL: test_string_keywords_do_not_create_modules (test_extract_bundle.BundleTests.test_string_keywords_do_not_create_modules)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 59, in test_string_keywords_do_not_create_modules
+    self.assertTrue(self.run_reply(TOP + helper)[1]["changed"])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_unlinked_module_abstains (test_extract_bundle.BundleTests.test_unlinked_module_abstains)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 72, in test_unlinked_module_abstains
+    self.refused(TOP + HELPER + "module Alternative();endmodule", "unreferenced_helper_or_alternative")
+  File "E:\26qiansai\worktrees\autonomous-rtl-20261004\03_analysis\module_bundle_20261004\test_extract_bundle.py", line 31, in refused
+    self.assertEqual(receipt["reason"], reason)
+AssertionError: 'single_top_baseline_preserved' != 'unreferenced_helper_or_alternative'
+- single_top_baseline_preserved
++ unreferenced_helper_or_alternative
+
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.003s
+
+FAILED (failures=7)
