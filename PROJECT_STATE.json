@@ -4939,5 +4939,35 @@
     "official_baseline_gain_measured": false,
     "five_sample_measured": false,
     "quota_used_percent": 11
+  },
+  "formal_five_pilot_20261005": {
+    "status": "harness_frozen_local_linux_preflight_only",
+    "tools_spec_sha256": "cd668071ad7d30cb97b030c82ec04b683da16c66077cd9d513f238818b8802fc",
+    "source_assets": 26,
+    "production_package_files_unchanged": 17,
+    "pure_tests_each_host": 7,
+    "actual_model_requests": 0,
+    "actual_eda_calls": 0,
+    "actual_five_samples_generated": false,
+    "fifo_submitted": false,
+    "planned_samples": 30,
+    "max_planned_model_posts": 45,
+    "task_ids": [
+      "Prob112_always_case2",
+      "Prob115_shift18",
+      "Prob122_kmap4"
+    ],
+    "full156_five_sample_measured": false,
+    "independent_natural_tasks": 0,
+    "adoption": false,
+    "report": "03_analysis/formal_five_pilot_20261005/README.md",
+    "install": "03_analysis/formal_five_pilot_20261005/INSTALL_RECEIPT.json",
+    "snapshot": {
+      "rows": 288,
+      "requests": 304,
+      "complete": false,
+      "error": null
+    },
+    "goal_status": "active"
   }
 }
