@@ -1,5 +1,107 @@
 {
   "schema_version": 1,
+  "ross_diagnostic_repair_20261004": {
+    "status": "complete_verified_no_extra_repair_benefit",
+    "report": "03_analysis/ross_diagnostic_repair_20261004/README.md",
+    "result": "03_analysis/ross_diagnostic_repair_20261004/RESULTS.json",
+    "branch": "research/ross-mcp-20261004",
+    "base_commit": "99d01bcbc17037f516a6099020a4a8402ff1a9bd",
+    "new_model_requests": 16,
+    "responses": 16,
+    "retries": 0,
+    "natural_error_tasks": 2,
+    "correct_guards": 2,
+    "trials_per_task_per_arm": 2,
+    "arms": {
+      "C": {
+        "rows": 8,
+        "error_reviews": 4,
+        "repairs": 2,
+        "guard_reviews": 4,
+        "guard_regressions": 0,
+        "request_elapsed_s": 97.60200249776244
+      },
+      "D": {
+        "rows": 8,
+        "error_reviews": 4,
+        "repairs": 2,
+        "guard_reviews": 4,
+        "guard_regressions": 0,
+        "request_elapsed_s": 120.49180940538645
+      }
+    },
+    "mcp_tool_calls": 32,
+    "mcp_sessions_closed": 4,
+    "elapsed_s": 722.6995609654114,
+    "mcp_diagnostic_elapsed_s": 70.62876534461975,
+    "qualifies_for_independent_validation": false,
+    "neighbor_error_returned_byte_identical": true,
+    "production_end_to_end_benefit_measured": false,
+    "manual_testbench_creation_cost_measured": false,
+    "formal_runtime_integrated": false,
+    "formal_package_changed": false,
+    "new_score": false,
+    "full_skill_model_execution": false,
+    "evidence": {
+      "archive_sha256": "2eb44fce4460cef8a10975b67b65aac6c2bafbd9cf176ed9a54d91a48bf0d779",
+      "manifest_files": 619,
+      "all_hashes_verified": true,
+      "all_requests_exactly_reconstructed": true,
+      "all_extractions_and_grades_verified": true
+    },
+    "pre_model_failures": [
+      {
+        "stage_started": false,
+        "model_calls": 0,
+        "reason": "guard output directory precreated; wrapper requires fresh directory",
+        "source_inputs_or_budget_changed": false,
+        "original_launch_preserved": true
+      },
+      {
+        "reason": "FileNotFoundError: [Errno 2] No such file or directory: '/workspace/team/runs/fpga_owner/ross_diagnostic_repair_20261004_v1/paired_checkpoint.py'",
+        "model_calls": 0,
+        "mcp_calls": 0,
+        "owned_cleanup_verified": true,
+        "source_or_test_inputs_changed": false,
+        "adjustment": "Add byte-identical canonical filename alias; preserve initial spec and failed evidence"
+      }
+    ],
+    "postflight": {
+      "utc": "2026-10-04T03:24:10.758278+00:00",
+      "model_health": {
+        "status": "ok"
+      },
+      "processing_slots": 0,
+      "slot_exists": false,
+      "ports": {
+        "8000": true,
+        "7860": false,
+        "7867": false
+      },
+      "workspace_free_gib": 10.119464874267578,
+      "model_pid": 2013333,
+      "instance_shutdown_or_model_restart": false
+    },
+    "guard": {
+      "started_at_utc": "2026-10-04T03:10:13.818848+00:00",
+      "finished_at_utc": "2026-10-04T03:22:17.063355+00:00",
+      "elapsed_s": 723.0839343015105,
+      "stage_rc": 0,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "model_idle_after": {
+        "health_status": "ok",
+        "model_name": "Qwen3.6-27B-Q4_K_M",
+        "slot_count": 1,
+        "processing_slots": 0,
+        "model_pid_owns_port": true
+      }
+    },
+    "owned_cleanup_verified": true,
+    "remaining_owned_processes": 0,
+    "next_step": "Research why actual failure evidence still returns unchanged code; freeze short local semantic constraints and independent cases before further calls; keep B2 natural-candidate validation pending"
+  },
   "ross_expert_assessment_20261004": {
     "status": "isolated_xsim_verdict_gates_verified",
     "report": "03_analysis/ross_expert_check_20261004/README.md",
@@ -550,7 +652,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-04T10:52:07+08:00",
+  "last_updated": "2026-10-04T11:27:53+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",

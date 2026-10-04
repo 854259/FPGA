@@ -1,0 +1,34 @@
+{
+  "Prob083_mt2015_q4b": {
+    "candidate_source": "/workspace/team/runs/fpga_owner/skillfix_full156_20261001T235258Z/full156/agent/Prob083_mt2015_q4b/s0/solution.v",
+    "candidate_sha256": "592aa23183f805e6adcd690e5c9dfb7a8e227004c1ea55d27ea476781654e6e4",
+    "prompt_source": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob083_mt2015_q4b/prompt.txt",
+    "prompt_sha256": "0da1d72a3b98ab5bf6a0dd7b8493e0cc5cb0efe2674eeb28ce6663d2d34606d9",
+    "role": "known_natural_error",
+    "official_tb_or_reference_accessed": false
+  },
+  "Prob108_rule90": {
+    "candidate_source": "/workspace/team/runs/fpga_owner/skillfix_full156_20261001T235258Z/full156/agent/Prob108_rule90/s0/solution.v",
+    "candidate_sha256": "ce86d1344ffdb51f87926216dc3516588b788fba8310ba12739d690905b7b5d6",
+    "prompt_source": "/workspace/team/tasks/autodl-rtl-kit/project/bench/tasks_veval/Prob108_rule90/prompt.txt",
+    "prompt_sha256": "ecbe064747496af3741721ce5958a5f9f898604f830f31429bea4b0eca4f5cbc",
+    "role": "known_natural_error",
+    "official_tb_or_reference_accessed": false
+  },
+  "Prob009_popcount3": {
+    "local_source": "03_analysis\\r2_selectivity_20261003\\guards\\Prob009_popcount3",
+    "candidate_sha256": "e9fd4eaa043c02d5d9d719903d275904922f01a46dcdb3c4d96f6fc422b3e2fc",
+    "prompt_sha256": "d15e01d44228cef9753c4f592176873c9bb1e89b322d7f06b36290baee5e891e",
+    "role": "known_natural_correct_guard",
+    "guard_previously_reviewed": true,
+    "official_tb_or_reference_accessed": false
+  },
+  "Prob129_ece241_2013_q8": {
+    "local_source": "03_analysis\\semantic_repair_20261004\\timing_inputs\\Prob129_ece241_2013_q8",
+    "candidate_sha256": "01cd6e4b413a6cfb20d7927611b98601224b4a735df3bd8bcf0b4fd04ffbf605",
+    "prompt_sha256": "84b421b6b8b363ad0046d586dc5c5460a8d21e5e3994a78b2f0cdcdc9ee0d7c7",
+    "role": "known_natural_correct_guard",
+    "guard_previously_reviewed": true,
+    "official_tb_or_reference_accessed": false
+  }
+}

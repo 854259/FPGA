@@ -37,3 +37,5 @@
 云端原始根目录 `/workspace/team/runs/fpga_owner/ross_expert_check_20261004_v1`。持有忽略目录 `raw_evidence/`、`evidence.zip` 及上级ROSS目录 `expert_sources/` 时，在仓库根运行 `python 03_analysis/ross_expert_check_20261004/summarize.py` 复核并重建公开结果；该脚本不会连接云端或调用模型／Vivado。只有原始工具阶段需要通过既有协作slot与冻结资源守卫，不能直接裸跑研究脚本。
 
 下一步应在冻结的真实功能错误和正确稿守卫上，比较“题面检查＋真实诊断修复”与现有重试，记录净修复、回归和时间；本轮2稿不计为2道比赛题。不启用此前未校准的自动lint修复，也不将本轮研究接入正式包。
+
+后续对照已完成，见 `../ross_diagnostic_repair_20261004/README.md`／`RESULTS.json`。16模型请求全部判定，C普通复查与D真实诊断各修复2/4错误复查、0/4正确稿回归；D无更多修复，模型请求更慢，按冻结门槛不晋级。本目录的小契约门槛验证仍有效，但不能据此推断自动修复收益。

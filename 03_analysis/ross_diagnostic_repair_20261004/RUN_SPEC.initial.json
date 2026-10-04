@@ -1,0 +1,93 @@
+{
+  "schema": "ross_diagnostic_feedback_paired_pilot_v1",
+  "status": "frozen_before_cloud_eda_and_model_calls",
+  "base_commit": "99d01bcbc17037f516a6099020a4a8402ff1a9bd",
+  "source_hashes": {
+    "baseline_extract.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "inputs/Prob009_popcount3/candidate.sv": "e9fd4eaa043c02d5d9d719903d275904922f01a46dcdb3c4d96f6fc422b3e2fc",
+    "inputs/Prob009_popcount3/negative.sv": "389056e62b83d49633fdae07ea2854889913244f3db44df6aacdcf3aa11ce6da",
+    "inputs/Prob009_popcount3/positive.sv": "7651a0b51f1d534555928ee197dc5626a530339f65b0c012d541708ca537c659",
+    "inputs/Prob009_popcount3/prompt.txt": "d15e01d44228cef9753c4f592176873c9bb1e89b322d7f06b36290baee5e891e",
+    "inputs/Prob009_popcount3/tb.sv": "25747c1464c759ee3ea56bf8749b6a46681dc5cc71e8550f76a11ac86f5c0e94",
+    "inputs/Prob083_mt2015_q4b/candidate.sv": "592aa23183f805e6adcd690e5c9dfb7a8e227004c1ea55d27ea476781654e6e4",
+    "inputs/Prob083_mt2015_q4b/negative.sv": "a2684ac3ec0d05a3d974f2a6930768e3c46c0be05b7cee0d157422f52e904185",
+    "inputs/Prob083_mt2015_q4b/positive.sv": "b43c482aacfc9f610ae3c2adfcb01baa31a276ca54b7568c4e323291e4675919",
+    "inputs/Prob083_mt2015_q4b/prompt.txt": "0da1d72a3b98ab5bf6a0dd7b8493e0cc5cb0efe2674eeb28ce6663d2d34606d9",
+    "inputs/Prob083_mt2015_q4b/tb.sv": "e8fc019fa7d228281bdd7e22bde1fb2070251741b6175c16a8208907a1b6165d",
+    "inputs/Prob108_rule90/candidate.sv": "ce86d1344ffdb51f87926216dc3516588b788fba8310ba12739d690905b7b5d6",
+    "inputs/Prob108_rule90/negative.sv": "d41b994e678bf6651f3ca4b782f3b5ab180e47f6edf6af923c06211950dc0566",
+    "inputs/Prob108_rule90/positive.sv": "aa91662cba85cb75d6889867397a1472e670a75809638f851358e778d09d145b",
+    "inputs/Prob108_rule90/prompt.txt": "ecbe064747496af3741721ce5958a5f9f898604f830f31429bea4b0eca4f5cbc",
+    "inputs/Prob108_rule90/tb.sv": "e05743e5e17b4f828afe77396722bead018a1ff209d61d70ab913d4a44fd909e",
+    "inputs/Prob129_ece241_2013_q8/candidate.sv": "01cd6e4b413a6cfb20d7927611b98601224b4a735df3bd8bcf0b4fd04ffbf605",
+    "inputs/Prob129_ece241_2013_q8/negative.sv": "95c2b7c0e33218d981ca0aea52865580fb509b43bf4a8208546770f5aad4d4af",
+    "inputs/Prob129_ece241_2013_q8/positive.sv": "cacb17e6b167573b0285d2eac86a7b7b7efc7a68d52a6e990ff46d03567e6d03",
+    "inputs/Prob129_ece241_2013_q8/prompt.txt": "84b421b6b8b363ad0046d586dc5c5460a8d21e5e3994a78b2f0cdcdc9ee0d7c7",
+    "inputs/Prob129_ece241_2013_q8/tb.sv": "09186bdaa3d829206873f03cd62630edfa4c468149dbdc54c7975f58e3534f00",
+    "inputs/provenance.json": "149a56f97c6def64353eee832a5e44f7dd3b8e0a20cbfe589951c52e78a059a0",
+    "mcp_client.py": "b277f8288064ff601acccd8434c5b2e43e547854a7f268216e0e8df1dec2b7b8",
+    "owned_adapter.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+    "repair_pilot.py": "2a891e5f79fae3206d95af166386e78e97335b6d53f80da0c1b21fc38d409662"
+  },
+  "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "judge_adapter_sha256": "53d1d4ff661ca6c3e27bc1d20a2328815dc39e281abc3a93757099b6e60bf797",
+  "binary_sha256": "2d1ac42f2628dab2db37bd214b4ad45d2275e541fe6eb71e879ac6ea123bb8bc",
+  "resource_guard_commit": "bde08582f99d70dc16581afe837e9457a1a92e64",
+  "resource_guard_sha256": "59c4212cb77971406255690c0efab0593cb5c100b21cf9d22622a9917be5e66d",
+  "part": "xczu3eg-sbva484-1-e",
+  "tasks": {
+    "Prob083_mt2015_q4b": {
+      "role": "development_error",
+      "checks": 64,
+      "scope": "Four public waveform truth rows repeated 16 times"
+    },
+    "Prob108_rule90": {
+      "role": "development_error",
+      "checks": 1085440,
+      "scope": "All 512 one-hot seeds, 3 transitions each; 8 dense seeds, 8 transitions each; check all 512 bits after specified load"
+    },
+    "Prob009_popcount3": {
+      "role": "correct_guard",
+      "checks": 8,
+      "scope": "All 3-bit combinations; previously used guard"
+    },
+    "Prob129_ece241_2013_q8": {
+      "role": "correct_guard",
+      "checks": 642,
+      "scope": "Public-spec Mealy/reset trace; previously used guard"
+    }
+  },
+  "arms": [
+    "C_plain_review",
+    "D_same_review_plus_actual_prompt_derived_XSim_diagnostic"
+  ],
+  "order": [
+    "D0",
+    "C0",
+    "C1",
+    "D1"
+  ],
+  "trials_per_task_per_arm": 2,
+  "model_call_budget": 16,
+  "model_alias": "Qwen3.6-27B-Q4_K_M",
+  "model_pid": 2013333,
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 4096,
+  "request_timeout_s": 120,
+  "max_stage_elapsed_s": 1740,
+  "retries": 0,
+  "extraction": "Unmodified official baseline.extract; no outcome-selected alternate extraction",
+  "feedback_rule": "Only completed public-spec self-check counts and first actual counterexample; no TB code/reference/official verdict or test hints in requests",
+  "control_admission": "All positive controls pass and negative controls semantic-fail; original role confirmed by independent self-check and pinned official judge before calls",
+  "acceptance": "Complete 16 responses and grades; D must fix more of four error-review samples than C, both D guards preserved functionally, no environment errors, resource/frozen/cleanup gates pass; any positive outcome authorizes independent validation only",
+  "limits": [
+    "Known development tasks, selected for explicit contradictory mechanisms; not blind or new competition problems",
+    "Two deterministic repetitions per arm, not independent new problems or pass@5",
+    "D includes a manually authored public-spec test, so TB construction time and human effort are not an automatic-model result",
+    "MCP creates original feedback; candidate evaluation uses direct XSim and pinned official judge, not full autonomous official skill",
+    "Shared cache is not cleared; alternating order and usage/timings recorded",
+    "No formal runtime, model, baseline, judge or instance changes; no KB deployment; no full-set score"
+  ]
+}
