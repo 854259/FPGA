@@ -5006,5 +5006,23 @@
         }
       }
     }
+  },
+  "patch_branch_review_20261005": {
+    "status": "completed_prefix_scope_review_only",
+    "capture_source_sha256": "cab9c16eb1d6b3c850188f1f23b8362fbbd0d24c69b203325b9a9c6d4081230d",
+    "completed_prefix_samples": 301,
+    "full_terminal": false,
+    "matched_patched_dut_pairs": 5,
+    "patched_contracts_all_abstain": true,
+    "selected_rows": 6,
+    "selected_patch_events": 0,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_score": false,
+    "candidate_adopted": false,
+    "original_success_patch_branch_modified": false,
+    "report": "03_analysis/patch_branch_review_20261005/README.md",
+    "receipt": "03_analysis/patch_branch_review_20261005/VERIFIED_COMPLETED_PREFIX_SNAPSHOT_V2.json",
+    "goal_status": "active"
   }
 }

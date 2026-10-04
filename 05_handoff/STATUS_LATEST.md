@@ -1,5 +1,11 @@
 > **脱敏副本。** 原件含实例地址与端口，放在实例上 `/workspace/team/STATUS_LATEST.md` 和 `/workspace/team/runs/fpga_teammate/STATUS_LATEST.md`。
 
+## 2026-10-05 06:20 原成功编译补丁返回路径复核；全量301/312
+
+已完成前缀只读复核：026/039/058/129/140五对A/C均成功声明补丁，最终DUT SHA分别相同，首请求经冻结两类解析器全部abstain；三适用题071/112/115六份均未触发声明补丁。当前原补丁成功返回路径保留，当前因素无此路径的已观察暴露，不为未暴露假设新增模型/源码因素；未来扩规则仍须原生控制和正确稿保护。旧helper旁路否定不撤销。
+
+capture cab9c16e与实际收据绑定，301不是完整312；0模型EDA、未公开原prompt/参考/TB、未发布新分/提分/部署。此前读错元数据字段的失败已保留，按真实spec修正，初始源码/快照均另留。原完整审计/G3净收益/G4独立/G5五样本镜像断网目标32GB仍待验收，goal active。入口03_analysis/patch_branch_review_20261005/README.md。
+
 ## 2026-10-05 06:10 隔离网络能力实测未通过
 
 自有unshare user+network namespace探测实际返回Operation not permitted/rc1；docker/podman/ip/strace未找到。源码a1b4a010与原始argv/输出绑定，自有新进程组清理确认、父namespace保持，0模型EDA/宿主网络修改。当前本实例不能用此方法完成OS断网验收，不把回环端口/标准库/模拟求解当断网证明；其他环境与方法尚未验证，不推断全不可用。

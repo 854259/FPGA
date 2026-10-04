@@ -1,0 +1,129 @@
+{
+  "at_utc": "2026-10-04T22:18:05Z",
+  "completed_prefix_samples": 298,
+  "full_terminal": false,
+  "source_spec_sha256": "43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7",
+  "declared_functional_tasks": [
+    "Prob112_always_case2",
+    "Prob115_shift18",
+    "Prob071_always_casez"
+  ],
+  "success_patch_rows": [
+    {
+      "task": "Prob026_alwaysblock1",
+      "arm": "C",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "491fbf4de70333081649e0b65331381faf8e8bea1b01fcd374f4fd5a1ee8aeb5"
+    },
+    {
+      "task": "Prob026_alwaysblock1",
+      "arm": "A",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "491fbf4de70333081649e0b65331381faf8e8bea1b01fcd374f4fd5a1ee8aeb5"
+    },
+    {
+      "task": "Prob039_always_if",
+      "arm": "A",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "47387c49c8a99759c46bcab34f30b8d6a261bcb376de43e6efc0d6344f09566f"
+    },
+    {
+      "task": "Prob039_always_if",
+      "arm": "C",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "47387c49c8a99759c46bcab34f30b8d6a261bcb376de43e6efc0d6344f09566f"
+    },
+    {
+      "task": "Prob058_alwaysblock2",
+      "arm": "C",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "25bad84d49096aa19fb6059ad6c79b063a1f459e3086abaec31560662b048f4a"
+    },
+    {
+      "task": "Prob058_alwaysblock2",
+      "arm": "A",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "25bad84d49096aa19fb6059ad6c79b063a1f459e3086abaec31560662b048f4a"
+    },
+    {
+      "task": "Prob129_ece241_2013_q8",
+      "arm": "A",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "db6767c85a89f282e1ead626fd9960121e41211b9671d7595fc3600394204807"
+    },
+    {
+      "task": "Prob129_ece241_2013_q8",
+      "arm": "C",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "db6767c85a89f282e1ead626fd9960121e41211b9671d7595fc3600394204807"
+    },
+    {
+      "task": "Prob140_fsm_hdlc",
+      "arm": "C",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "3e56d88358f330eae7af4617c9c5380d8de489105915ddc9708dbf9703000e26"
+    },
+    {
+      "task": "Prob140_fsm_hdlc",
+      "arm": "A",
+      "success_patch_events": 1,
+      "map_check_present": false,
+      "solution_sha256": "3e56d88358f330eae7af4617c9c5380d8de489105915ddc9708dbf9703000e26"
+    }
+  ],
+  "selected_rows": [
+    {
+      "task": "Prob071_always_casez",
+      "arm": "A",
+      "success_patch_events": 0,
+      "native_receipts": 0,
+      "model_requests": 1
+    },
+    {
+      "task": "Prob071_always_casez",
+      "arm": "C",
+      "success_patch_events": 0,
+      "native_receipts": 1,
+      "model_requests": 1
+    },
+    {
+      "task": "Prob112_always_case2",
+      "arm": "C",
+      "success_patch_events": 0,
+      "native_receipts": 2,
+      "model_requests": 2
+    },
+    {
+      "task": "Prob112_always_case2",
+      "arm": "A",
+      "success_patch_events": 0,
+      "native_receipts": 0,
+      "model_requests": 1
+    },
+    {
+      "task": "Prob115_shift18",
+      "arm": "A",
+      "success_patch_events": 0,
+      "native_receipts": 0,
+      "model_requests": 1
+    },
+    {
+      "task": "Prob115_shift18",
+      "arm": "C",
+      "success_patch_events": 0,
+      "native_receipts": 1,
+      "model_requests": 2
+    }
+  ],
+  "score_measured_or_published": false,
+  "limits": "Completed-prefix control-flow exposure only; final full evidence audit remains required. No raw prompt/reply/reference/TB content."
+}
