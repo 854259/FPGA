@@ -1,0 +1,141 @@
+{
+  "schema": "cvdp_environment_controls_v1",
+  "source_commit": "b76b6076157e8275eb65b1f8806816bfd3ee82c8",
+  "complete": true,
+  "model_calls": 0,
+  "full_experiment_complete": false,
+  "independent_tasks_admitted": 0,
+  "controls": [
+    {
+      "label": "original_reference",
+      "complete_simulation": true,
+      "reference_passed": true,
+      "negative_detected": null,
+      "tests": 1,
+      "failures": 0,
+      "returncode": 0,
+      "suites": [
+        {
+          "path": "sim_build/test_runner.result.xml",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "expected_met": true,
+      "contract_observations": [
+        [
+          255,
+          65025
+        ]
+      ]
+    },
+    {
+      "label": "invert_output",
+      "complete_simulation": true,
+      "reference_passed": null,
+      "negative_detected": true,
+      "tests": 1,
+      "failures": 1,
+      "returncode": 1,
+      "suites": [
+        {
+          "path": "sim_build/test_runner.result.xml",
+          "tests": 1,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "expected_met": true,
+      "contract_observations": []
+    },
+    {
+      "label": "stuck_zero",
+      "complete_simulation": true,
+      "reference_passed": null,
+      "negative_detected": true,
+      "tests": 1,
+      "failures": 1,
+      "returncode": 1,
+      "suites": [
+        {
+          "path": "sim_build/test_runner.result.xml",
+          "tests": 1,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "expected_met": true,
+      "contract_observations": []
+    },
+    {
+      "label": "ignore_seed",
+      "complete_simulation": true,
+      "reference_passed": null,
+      "negative_detected": true,
+      "tests": 1,
+      "failures": 1,
+      "returncode": 1,
+      "suites": [
+        {
+          "path": "sim_build/test_runner.result.xml",
+          "tests": 1,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "expected_met": true,
+      "contract_observations": []
+    },
+    {
+      "label": "wrong_feedback",
+      "complete_simulation": true,
+      "reference_passed": null,
+      "negative_detected": true,
+      "tests": 1,
+      "failures": 1,
+      "returncode": 1,
+      "suites": [
+        {
+          "path": "sim_build/test_runner.result.xml",
+          "tests": 1,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "expected_met": true,
+      "contract_observations": []
+    }
+  ],
+  "elapsed_s": 6.106441575102508,
+  "harness_correction_applied": true,
+  "execution_valid": true,
+  "fixture_admission_passed": true,
+  "installed_scope": "isolated Icarus and six pinned Python dependencies, not full official Docker image",
+  "example_family_role": "development_not_holdout",
+  "guard_elapsed_s": 6.268272941932082,
+  "guard_passed": true,
+  "owned_cleanup_verified": true,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "own_slot_released": true,
+  "source_archive_sha256": "1cb4df0457c7676c36e11dcfc33d89ad2b824239edb811a91d67d803f5425eef",
+  "control_manifest_sha256": "24e6be27d2d82caded531a566630944a6f175c9885283bd498524076f10b87d6",
+  "private_controls_sha256": "9dbd19d32ed3b1ca851dd54056a26648f463da2b4ac15c7a41d6e89eca7fd953",
+  "negative_failure_types": {
+    "invert_output": "functional AssertionError",
+    "stuck_zero": "functional AssertionError",
+    "ignore_seed": "functional AssertionError",
+    "wrong_feedback": "functional AssertionError"
+  },
+  "public_limitations": [
+    "One development fixture; no independent model evaluation",
+    "Icarus subset only, not full official Docker",
+    "No 32GB or full-cycle acceptance"
+  ]
+}

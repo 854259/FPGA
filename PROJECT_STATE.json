@@ -3078,7 +3078,7 @@
     "formal32gb_complete": false,
     "primary_goal": "complete competition delivery",
     "protocol": "05_handoff/CONTINUOUS_RESEARCH_PLAN.md",
-    "status": "preparing_independent_admission_and_full_budget",
+    "status": "full_source_admission_inventory_prepared_after_fixture_correction",
     "independent_natural_holdout_available": false,
     "id": "R20261004-01",
     "sample_size_and_full_budget_frozen": false,
@@ -3089,7 +3089,7 @@
     "rtllm_coverage_ledger": "03_analysis/helper_extraction_20261004/CURRENT_COVERAGE_20261004.json",
     "physical_vram_bytes": 51522830336,
     "observed_vram_used_bytes": 20341764096,
-    "observed_workspace_free_bytes": 10766823424,
+    "observed_workspace_free_bytes": 10623512576,
     "credits_verified": false,
     "full_experiment_complete": false,
     "independent_source_discovery": {
@@ -3110,17 +3110,17 @@
       "independent_tasks_admitted": 0,
       "overlap_and_prior_exposure_verified": false,
       "external_models_used": false,
-      "dependencies_installed": false
+      "dependencies_installed": true,
+      "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-04T15:06:51+08:00",
       "matching_experiment_processes": 0,
+      "own_slot_released": true,
+      "full_experiment_running": false,
+      "checked_at": "2026-10-04T16:05:18+08:00",
       "model_pid": 2013333,
       "model_healthy": true,
-      "model_processing": false,
-      "slot_lock_present": false,
-      "gpu_flock_free": true,
-      "full_experiment_running": false
+      "model_processing": false
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3136,7 +3136,7 @@
       "receipt": "03_analysis/rtllm_contract_audit_20261002/COST_PLANNING_20261004.json"
     }
   },
-  "updated_at": "2026-10-04T15:07:44.8619423+08:00",
+  "updated_at": "2026-10-04T16:13:09.7720238+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -3162,5 +3162,58 @@
     "dataset_manifest_sha256": "eae6c4cc03ea4d5b32318b49bb26bbb127e1b62cf12db8f35c8c84691b1428fa",
     "new_model_calls": 0,
     "guard_elapsed_s": 234.99349879007787
+  },
+  "cvdp_environment_20261004": {
+    "status": "complete_environment_ready_corrected_development_fixture_passed",
+    "role": "engineering_fixture_control_substage",
+    "source_commit": "b76b6076157e8275eb65b1f8806816bfd3ee82c8",
+    "amd_root": "/workspace/team/runs/fpga_teammate/cvdp_fixture_r3_20261004T080511Z_b76b607",
+    "full_experiment_complete": false,
+    "model_call_cap": 0,
+    "stage_timeout_s": 2700,
+    "shared_model_restart": false,
+    "original_example_role": "development_not_holdout",
+    "hypothesis": "original fixture false positive confirmed; corrected development contract passed all frozen controls",
+    "driver_pid": 3043338,
+    "stage_pid": 3043343,
+    "launched_at": "2026-10-04T16:05:11+08:00",
+    "attempts": [
+      {
+        "source_commit": "c2a6f18",
+        "ended": true,
+        "status": "network_failure",
+        "controls": 0,
+        "model_calls": 0,
+        "elapsed_s": 300.7109187543392
+      },
+      {
+        "source_commit": "f030d1c",
+        "ended": true,
+        "status": "environment_valid_fixture_false_positive",
+        "controls": 3,
+        "model_calls": 0,
+        "elapsed_s": 2.564504466019571,
+        "reference_tests_passed": 3,
+        "inverted_tests_detected": 3,
+        "stuck_zero_tests_detected": 0
+      },
+      {
+        "ended": true,
+        "transitions": 65025,
+        "seeds": 255,
+        "source_commit": "b76b607",
+        "negative_controls_detected": 4,
+        "model_calls": 0,
+        "controls": 5,
+        "status": "corrected_development_fixture_passed",
+        "elapsed_s": 6.106441575102508
+      }
+    ],
+    "corrected_fixture_started": true,
+    "independent_tasks_admitted": 0,
+    "complete": true,
+    "processes_finished": true,
+    "cleanup_verified": true,
+    "report": "03_analysis/rtllm_contract_audit_20261002/CVDP_ENVIRONMENT_RESULT_20261004.md"
   }
 }
