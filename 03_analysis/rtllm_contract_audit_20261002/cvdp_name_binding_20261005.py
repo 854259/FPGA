@@ -60,7 +60,7 @@ def bind_source(source,old,new,keywords):
     return source[:lo]+new+source[hi:]
 
 
-def controls(out,tools,keywords):
+def controls(out,tools,keywords,diagnostic_source):
     positives=0;negatives=0;native=[]
     templates=['Implement module NAME with the stated ports.',
                'Implement a module named `NAME` with the stated ports.',
@@ -95,6 +95,27 @@ def controls(out,tools,keywords):
         try:bind_source(text,'TopModule','Unit7',keywords)
         except ValueError:negatives+=1
         else:raise AssertionError('Source guard accepted unsupported control')
+    # Reproduce the preserved S3 DUT's zero-time no-input-event, then trigger it.
+    diagnostic=out/'initialization_diagnostic';diagnostic.mkdir()
+    (diagnostic/'dut.sv').write_bytes(diagnostic_source.read_bytes())
+    (diagnostic/'tb.sv').write_text('''module diag;
+reg clk=0,d=0; wire q; Unit_1_0 dut(.clk(clk),.d(d),.q(q));
+initial begin
+#1; if(q !== 1'bx) $fatal(1,"Expected original no-event unknown");
+$display("NO_INPUT_EVENT q=%b",q);
+d=1; #1; if(q !== 1'b0) $fatal(1,"Changed input failed");
+d=0; #1; if(q !== 1'b1) $fatal(1,"First vector after event failed");
+$display("EXPLICIT_INPUT_EVENTS PASS"); $finish; end endmodule
+''')
+    diagnostic_commands=[]
+    for i,argv in enumerate([[str(tools/'bin/iverilog'),'-g2012','-s','diag','-o','simulation.vvp','dut.sv','tb.sv'],
+                             [str(tools/'bin/vvp'),'simulation.vvp']]):
+        r=subprocess.run(argv,cwd=diagnostic,capture_output=True,text=True,timeout=15)
+        (diagnostic/f'command_{i}.log').write_text(r.stdout+r.stderr)
+        diagnostic_commands.append(dict(argv=argv,rc=r.returncode,log_sha256=sha(diagnostic/f'command_{i}.log')))
+        save(diagnostic/'commands.json',diagnostic_commands)
+        assert r.returncode==0,'Initialization hypothesis not reproduced'
+    assert 'NO_INPUT_EVENT q=x' in r.stdout and 'EXPLICIT_INPUT_EVENTS PASS' in r.stdout
     for width in [1,8,17,64]:
         mask=(1<<width)-1
         for sequential in [False,True]:
@@ -111,8 +132,8 @@ def controls(out,tools,keywords):
             values=[0,1,mask,mask>>1,1<<(width-1)]
             for label,top,source in [('original',old,original),('canonical','TopModule',changed)]:
                 run=folder/label;run.mkdir();(run/'dut.sv').write_text(source)
-                tb=[f'module tb; reg clk=0; reg [{width-1}:0] d=0; wire [{width-1}:0] q;',
-                    f'{top} dut(.clk(clk),.d(d),.q(q)); initial begin']
+                tb=[f'module tb; reg clk=0; reg [{width-1}:0] d; wire [{width-1}:0] q;',
+                    f'{top} dut(.clk(clk),.d(d),.q(q)); initial begin #1;']
                 for val in values:
                     tb.append(f"clk=0; d={width}'h{val:x}; #1; clk=1; #1; if(q !== {width}'h{val^mask:x}) $fatal(1,\"VALUE\"); clk=0; #1;")
                 tb+=['$display("CHECKS=5 PASS"); $finish; end endmodule\n']
@@ -133,19 +154,21 @@ def controls(out,tools,keywords):
             assert logs[0]==logs[1],'Port behavior or preserved string differs'
             native.append(dict(width=width,sequential=sequential,passed=True,checks_per_mode=5))
     return dict(prompt_roundtrip_controls=positives,rejection_controls=negatives,
-                native_pairs=native,actual_compile_commands=16,actual_sim_commands=16)
+                native_pairs=native,initialization_diagnostic_passed=True,
+                actual_compile_commands=17,actual_sim_commands=17)
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser()
-    for name in ['data','inventory','toolchain-manifest','keywords','paired','kit','resource-check','out']:
+    for name in ['data','inventory','toolchain-manifest','keywords','paired','kit','resource-check','out','diagnostic-source']:
         p.add_argument('--'+name,required=True,type=Path)
     a=p.parse_args();assert sys.platform=='linux'
     pins={a.data:'cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857',
         a.inventory:'6676ea45ecce71a158379a56b74c1b731437c17a2e86f0694fe7c7aa27b55a1b',
         a.toolchain_manifest:'b0864aea493587c3fef1ff156b4fa49d52bd2ee712e9f28f94909d9e69252818',
         a.keywords:'3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e',
-        a.paired:'78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c'}
+        a.paired:'78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c',
+        a.diagnostic_source:'44fc85bcdbacae77ca2b90eccb986d9aaf1ae55cad798437d01112d2d2e02a68'}
     for path,digest in pins.items():assert sha(path)==digest,path.name
     sp=importlib.util.spec_from_file_location('name_resource',a.paired)
     resource=importlib.util.module_from_spec(sp);sp.loader.exec_module(resource)
@@ -159,7 +182,7 @@ if __name__=='__main__':
     report=dict(complete=False,passed=False,actual_model_requests=0,independent_tasks_admitted=0,
                 full_batch_complete=False,dataset_eda_calls=0,source_sha256=pins[a.data])
     try:
-        report['controls']=controls(a.out/'controls',tools,names.KEYWORDS)
+        report['controls']=controls(a.out/'controls',tools,names.KEYWORDS,a.diagnostic_source)
         save(a.out/'CONSTRUCTED_CONTROLS.json',report['controls'])
         # Only after constructed rules pass: apply once to all predeclared eligible rows.
         records=[json.loads(line) for line in a.data.read_text().splitlines()]
