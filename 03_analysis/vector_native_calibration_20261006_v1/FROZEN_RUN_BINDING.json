@@ -1,0 +1,184 @@
+{
+  "schema": "vector_native_public_frozen_run_binding_v1",
+  "identity": "vector_native_calibration_20261006_v1",
+  "snapshot_at_epoch": 1791229748.681063,
+  "snapshot_scope": "source_freeze_before_native_queue; later queue or runtime events require separate receipts",
+  "binding_only": true,
+  "runnable_run_spec": false,
+  "full_private_run_spec_included": false,
+  "private_run_spec_schema": "vector_native_calibration_frozen_v1",
+  "private_run_spec_sha256": "0e583dcc393c2cafd14055bd5873d38d1a0329a6f9e8990993475720a6f5824f",
+  "private_source_inventory_file_count": 140,
+  "private_source_inventory_map_sha256": "c6b06ed7f4d906f46dc0b166e91cfa622b4af1c7f9655c30a38b33715bfdce97",
+  "source_inventory_canonicalization": "SHA256 of UTF8 compact JSON with ordinal sorted ASCII path keys and string SHA256 values; separators comma/colon; no trailing newline",
+  "selected_private_source_key_sha256": {
+    "SOURCE_LEDGER.json": "41bc2f5de5fd3d967e5048ff4053c6e5f522bf878a9e6ce5ecb93cefa80cca45",
+    "CASE_PLAN.json": "092288966cd79c3818d124d39c9dd2c65a43eda3e0086cda4bedbaa51938579c",
+    "sources/calibration.py": "fa4c7d39ee0cf0503567148eb508d805b11009ce2b8444141293b12815d12bd0",
+    "sources/stage.py": "dbb82a10f891864a3bab51c0c1e0aa1e539a78e82a2039571a8dda6c679f3f40",
+    "sources/prepare.py": "fa03dc9f70f35074eeead6ba992bfb68a6a8bb16d97bdf66c576da466ef1c77c",
+    "sources/audit.py": "15db8f8baccc327a1cc2f0be2f2b2da41e13b2239362457446bfd2f82204ca8b",
+    "sources/vector_recipe.py": "8342a068af93c13efabfa69a2d566256a385b7b2b7d330c52124671acf535326",
+    "sources/supervisor_probe.py": "6c7c57045d99f008499c2cd6ce8ef7be67fc61a895382727bc02c7ff7b4ef75f",
+    "sources/test_calibration.py": "103433d06cacbe03478f9c4f7faf97fae3c2c890e0b3141903aa2a197cec72f3",
+    "sources/test_vector_recipe.py": "16bf2f38c369d2799a2db46753dc9a5fc916da7afe0028a0bc03b6f0121702cc",
+    "sources/test_audit.py": "ca3edc4f3b2cd44c28f29bc6ea05b2b14196744ec7d1185df04103a578cb57c1",
+    "sources/README.md": "750d84dc73948f5c6ad61ca4d06c2d1dbf6849882810b9bdc1eb494dddb4122c",
+    "inputs/synthesis.py": "4728bed2d669dbca94dfe7b6f6b12e17aa2eca5015b9fb0f6a5eea11eb503c8f",
+    "inputs/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "inputs/test_synthesis.py": "b2bc3825ab44dbea2b40bd5a72349abbb572b8c7b04b28f9db5fb1c32b71f46e",
+    "inputs/AUDIT_INPUTS.json": "2b05ac463d90f18a4e2fff39ecb85b9e71e3762aa1a799c01edb6b2ba415bae0",
+    "inputs/NATIVE_VALIDATION_OBLIGATIONS.json": "4ff95077105fbe37f9ce7e64dc36cad7e48ab2c34e20c8df17b3467205bfc6a4",
+    "inputs/PREPARATION_DRAFT.json": "882abfb5351dde5f9cd5e8d8a6ee2d53cfe695d01baea59a92f7dc29226c25d3",
+    "dependencies/paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "dependencies/protected_sources.py": "53507373aa69e54ccd083a6452fb7acaa0cdbc144d2bdf0e01710b21cfd5ed1a",
+    "raw_evidence/ENVIRONMENT_CAPTURE.json": "8c360a174934710a233798465e21e5db0c242b75830e1029116dee36c4034308",
+    "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "32d443ee538ed856288670dc8c54a3c091fd04f0daf9f5406131f1d2dcf13360"
+  },
+  "selected_hashes_are_not_the_complete_private_file_map": true,
+  "budget_caps": {
+    "stage_timeout_s": 2400,
+    "native_command_timeout_s": 30,
+    "supervisor_probe_timeout_s": 0.8,
+    "outer_guard_timeout_s": 2600,
+    "fifo_slot_minutes": 45,
+    "model_requests_max": 0
+  },
+  "planned_native_calibration": {
+    "total_controls": 27,
+    "producer_positives": 5,
+    "sentinel_positives": 2,
+    "semantic_negatives": 11,
+    "transport_refusals": 5,
+    "eda_failures": 2,
+    "owned_supervisor_probes": 2,
+    "native_commands": 72,
+    "native_by_tool": {
+      "xvlog": 25,
+      "xelab": 24,
+      "xsim": 23
+    },
+    "owned_supervisor_commands": 2,
+    "owned_commands": 74,
+    "guard_receipts": 150,
+    "native_trace_observations": 7943,
+    "binary_native_observations": 3993,
+    "four_state_data_native_observations": 3950,
+    "model_requests": 0
+  },
+  "evidence_binding": {
+    "private_source_ledger_sha256": "41bc2f5de5fd3d967e5048ff4053c6e5f522bf878a9e6ce5ecb93cefa80cca45",
+    "private_static_review_sha256": "128f87ac92772772aa68154b09f1125a815efa2b211edf6b0ce38265c635caf9",
+    "installer_helper_sha256": "d251332c80021f65673494546c44db295e35511e5bb81854d0725ffa5d02e370",
+    "root_freeze_helper_sha256": "8257881bfd628684a304f58e2aec1176face8a9782ae7e762c7a75f46c1c1832",
+    "amd_preparation_receipt_sha256": "5d1fcbcd524ea08c3fe9ddeb3d8048a6d213a5964303c6f0184b6d7bbdb8794a",
+    "root_physical_readback_sha256": "19a4b4bbf327b9bd544c9997b9d944a7c1461977c2d3878a0840e5d0031ffd37",
+    "source_freeze_receipt_sha256": "5aacaccdfb34bbb4163ed2cc1843fcf442262651773bdd6fdf9d841924fac23d",
+    "case_plan_sha256": "092288966cd79c3818d124d39c9dd2c65a43eda3e0086cda4bedbaa51938579c"
+  },
+  "artifact_hash_scope": {
+    "source_freeze_receipt_sha256": "immutable ROOT local private transport-copy bytes without trailing newline; not the AMD same-named file physical SHA256, whose saved bytes include a trailing newline",
+    "root_physical_readback_sha256": "ROOT-generated immutable local physical-readback receipt bytes",
+    "amd_preparation_receipt_sha256": "independently verified AMD physical file bytes; matching immutable ROOT local transport copy",
+    "private_run_spec_sha256": "directly verified AMD physical RUN_SPEC.json file bytes"
+  },
+  "validated_environment": {
+    "environment_capture_sha256": "8c360a174934710a233798465e21e5db0c242b75830e1029116dee36c4034308",
+    "protected_capture_sha256": "32d443ee538ed856288670dc8c54a3c091fd04f0daf9f5406131f1d2dcf13360",
+    "python_runtime": {
+      "path": "/usr/bin/python3",
+      "sha256": "8295ee25cfdb239f3e165afceda7f46de73e2b606ff0e2e3d8623e3facd30acc"
+    },
+    "compiler_tools": {
+      "vivado": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/vivado",
+        "sha256": "121b8c468f96f7ee750fc8f7d2386c54d047b204a5b8b7a5dada85f04997302d"
+      },
+      "xelab": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xsim": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+        "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+      },
+      "xvlog": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      }
+    },
+    "compiler_env": {
+      "LD_LIBRARY_PATH": "/workspace/team/udev-stub",
+      "PATH": "/workspace/AMD/2026.1/Vivado/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "VIVADO_BIN": "/workspace/AMD/2026.1/Vivado/bin"
+    },
+    "udev_files": {
+      "libudev.so.1": "3a2d6266ccf18909d3ebccbf21e8125ce985359319fecc6c8172aeabf13ecf87"
+    },
+    "validation_is_not_native_execution": true
+  },
+  "strict_preparation_and_freeze_gates": {
+    "root_raw_physical_receipts_verified": true,
+    "all_four_processes_returncode_0": true,
+    "no_timeout_or_remaining_live_group": true,
+    "exact_52_unique_method_results": true,
+    "exact_27_controls_81_assets_and_7943_literals_replayed": true,
+    "source_and_shared_model_identity_unchanged": true,
+    "frozen_admission_validated_on_amd": true,
+    "compiler_environment_validated_on_amd": true,
+    "private_source_inventory_exact_140": true,
+    "prior_protected_group_count": 18,
+    "prior_protected_source_assets": 930,
+    "all_18_prior_frozen_groups_unchanged": true,
+    "future_native_requires_owned_fifo_and_resource_admission": true,
+    "stage_summary_alone_not_final_native_qualification": true,
+    "terminal_independent_archive_audit_required": true,
+    "unexpected_environment_tool_supervision_or_unconfirmed_evidence_refuses_qualification": true
+  },
+  "frozen": true,
+  "qualification": "native_unexecuted",
+  "queued": false,
+  "native_stage_executed": false,
+  "native_qualified": false,
+  "score_measured": false,
+  "quality_gain_verified": false,
+  "adoption": false,
+  "merge_does_not_deploy": true,
+  "future_fixed_c_p_pilot": {
+    "fixed_tasks": 6,
+    "fixed_c_p_rows": 12,
+    "prepared": false,
+    "frozen": false,
+    "queued": false,
+    "executed": false,
+    "original_token_budget": 8192,
+    "max_model_requests_per_row": 2,
+    "max_original_repairs": 1,
+    "absolute_deadline_s": 300,
+    "minimum_target_l3_net_gain": 1,
+    "no_current_correct_regression_required": true,
+    "no_call_cost_increase_required": true,
+    "full_156_only_after_complete_pilot_gate": true
+  },
+  "bounded_scope": {
+    "selector_domain": "binary_complete_only_this_bounded_calibration",
+    "payload_stimuli": "finite_fixed_corpus",
+    "data_xz_domain": "four_state_bit_transfer_under_binary_selector",
+    "selector_xz_expectations": "none_defined_by_this_calibration",
+    "original_judge_selector_xz_scope": "unknown_unmodified",
+    "full_original_judge_must_remain_unchanged": true,
+    "native_qualification_does_not_establish_original_score": true
+  },
+  "visibility": {
+    "metadata_only": true,
+    "private_parser_source_included": false,
+    "private_recipe_included": false,
+    "private_prompt_or_interface_included": false,
+    "private_rtl_or_tb_included": false,
+    "private_expected_bitstrings_included": false,
+    "private_raw_output_streams_included": false,
+    "private_full_source_file_map_included": false,
+    "full_private_run_spec_included": false
+  },
+  "private_artifact_requirement": "All exact private frozen assets and later actual owned FIFO/resource admission remain required; this public binding cannot run or reconstruct the experiment."
+}

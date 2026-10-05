@@ -1,3 +1,7 @@
+## 2026-10-06 向量原生校准：实际准备与独立证据
+
+`03_analysis/vector_native_calibration_20261006_v1/README.md`、`AMD_PUBLIC_PREPARATION.json`及`FROZEN_RUN_BINDING.json`：AMD52必要纯检查、81准备资产、140源封存与独立实际process回读；27/72+2/150/7943为尚未执行的原生计划。`PREPARATION_DELIVERY.json`绑定实际三日志与GitHub提醒、失败恢复边界；所有private body仍排除公开。`EXECUTION_PLAN.md`记录原生审计后才做未来6题12CP的单因素/原预算门，尚无提分。
+
 ## 2026-10-06 FSM84实际入队与向量AMD14准备已共享
 
 PR10@2032cc6 已审查合并至 b6f458b，23份公开Git增量实际同步并逐字回读；原生FSM38控制实际接受为FIFO84，排在80/81/82/83后。旧自有155470已核身份结束，新唯一248714已启动、首次卡回读通过，持续观察80/83/84；原primary、基础协调工具、共享模型及17组921封存源保持。零模型/EDA准备；未原生合格、未提分/部署。实际回执03_analysis/fsm_native_calibration_20261006/ACTUAL_DELIVERY_RECEIPT.json；GitHub提醒 https://github.com/854259/FPGA/issues/7#issuecomment-6000932554 ，ACK pending。
