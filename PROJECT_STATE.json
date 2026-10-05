@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05T13:14:00+08:00",
+  "last_updated": "2026-10-05T13:38:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3118,16 +3118,23 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T13:13:00+08:00",
+      "checked_at": "2026-10-05T05:34:55.302127+00:00",
       "own_live_processes": 0,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
       "full_experiment_running": false,
-      "other_task_queue_running": false,
-      "latest_own_stage": "U5",
+      "full_experiment_running_scope": "comprehensive all-inclusive batch",
+      "known_full156_regression_running": true,
+      "other_task_queue_running": true,
+      "other_task_ticket": 61,
+      "other_task_driver_pid": 3761322,
+      "other_task_stage_pid": 3761327,
+      "other_task_completed_samples": 37,
+      "other_task_expected_samples": 312,
+      "latest_own_stage": "U6",
       "latest_own_stage_complete": true,
       "own_slot_lock_present": false,
-      "receipt": "05_handoff/independent_validation_20261004/natural_valid_U5/LOCAL_EVIDENCE_CHECK.json"
+      "receipt": "05_handoff/independent_validation_20261004/phase_evidence_U6/LOCAL_EVIDENCE_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3167,7 +3174,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T13:14:00+08:00",
+  "updated_at": "2026-10-05T13:38:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -4722,5 +4729,80 @@
     "cleanup_complete": true,
     "next": "Inspect completed ticket58 phase feedback fresh pilot terminal and frozen gates; no duplicate generation.",
     "updated_at": "2026-10-05T13:14:00+08:00"
+  },
+  "phase_evidence_U6_20261005": {
+    "status": "completed_alignment_existing_full156_running",
+    "updated_at": "2026-10-05T13:38:00+08:00",
+    "existing_auditor_result_reused": true,
+    "auditor_reexecuted": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "pilot": {
+      "known_development_tasks": 8,
+      "independent_natural_tasks": 0,
+      "historical_model_requests": 22,
+      "l3": {
+        "C": 6,
+        "P": 8
+      },
+      "repairs": 2,
+      "observed_harms": 0,
+      "unchanged": 6,
+      "matched_first_pairs": 8,
+      "verified_repair_chains": 2,
+      "solve_seconds": {
+        "C": 153.7615176141262,
+        "P": 190.0558357015252
+      },
+      "qualified_for_known_full156_regression": true,
+      "adoption": false
+    },
+    "audit_sha256": "7ba6f2083f00e34c0d9c85f958cf877f34a2e73e99922b432c0948c2ace0b999",
+    "dual_verified_files": 7,
+    "nested_pilot_verified_files": 815,
+    "archive_sha256": "175e2b96051926e2a79e570526879a20b56d2b0447be17e38a7a4a5a5fa8723b",
+    "cleanup_complete": true,
+    "existing_full156": {
+      "checked_at": "2026-10-05T05:34:55.302127+00:00",
+      "ticket": 61,
+      "state": "running",
+      "driver_pid": 3761322,
+      "stage_pid": 3761327,
+      "completed_samples": 37,
+      "expected_samples": 312,
+      "actual_requests_confirmed_in_completed_rows": 37,
+      "completed_rows_deadlines": 0,
+      "completed_rows_unconfirmed": 0,
+      "completed_rows_tool_errors": 0,
+      "complete": false,
+      "full_batch_complete": false,
+      "summary_sha256_at_snapshot": "529c77866444156e6bc6567b0594a8f8c5edecc09ed199bf90827fa644b2b173",
+      "workspace_free_bytes": 9973972992,
+      "model_pid": 2013333,
+      "model_cmdline_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1",
+      "model_service": {
+        "health": {
+          "status": "ok"
+        },
+        "slots": {
+          "slots": 1,
+          "processing": 0
+        }
+      },
+      "source_commit": "f50c02728e1af1683d3d74882fd4232c37bb2d21",
+      "spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+      "physical_vram_bytes": 51522830336,
+      "observed_vram_used_bytes": 20333301760,
+      "observed_gpu_use_percent": 10,
+      "service_snapshot_is_not_utilization_average": true,
+      "source_commit_exists_on_origin": true,
+      "max_requests": 624,
+      "stage_limit_seconds": 86400,
+      "limits_are_not_runtime_or_credit_guarantees": true,
+      "full_batch": false
+    },
+    "comprehensive_batch_complete": false,
+    "public_result": "03_analysis/helper_extraction_20261004/U6_PHASE_EVIDENCE_20261005.json",
+    "next": "Follow existing ticket61 until terminal. Do not rerun pilot or duplicate full156. Audit complete312 and full costs/deadlines/cleanup, then decide against frozen gate. Independent data, original official baseline, full5 samples and formal32GB remain separate missing admission."
   }
 }

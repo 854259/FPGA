@@ -1,0 +1,140 @@
+{
+  "checked_at": "2026-10-05T05:33:48.128894+00:00",
+  "stage": "U6_existing_phase_evidence_reconciliation",
+  "existing_auditor_result_reused": true,
+  "auditor_reexecuted": false,
+  "duplicate_audit_not_started": true,
+  "pure_file_binding_checks": true,
+  "pilot_archive_files": 815,
+  "verified_request_response_pairs": 22,
+  "matched_first_pairs": 8,
+  "verified_edge_chains": [
+    {
+      "task": "Prob045_edgedetect2",
+      "native": [
+        {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 71
+        },
+        {
+          "status": "pass",
+          "checks": 80,
+          "mismatches": 0
+        }
+      ],
+      "feedback_bound": true,
+      "final_official_level": 3
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "native": [
+        {
+          "status": "fail",
+          "checks": 53,
+          "mismatches": 43
+        },
+        {
+          "status": "pass",
+          "checks": 53,
+          "mismatches": 0
+        }
+      ],
+      "feedback_bound": true,
+      "final_official_level": 3
+    }
+  ],
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "original_pilot_stage_elapsed_s": 884.9627848807722,
+  "pilot_judge_seconds": {
+    "C": 231.2,
+    "P": 304.5
+  },
+  "audit_sha256": "7ba6f2083f00e34c0d9c85f958cf877f34a2e73e99922b432c0948c2ace0b999",
+  "pilot_zip_sha256": "56e16ddd32c2e17357d89a13bcf6b61f1eeb84f8b52638288d4e31047b98160a",
+  "full_spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+  "full_applicability": {
+    "schema": "full_prompt_only_dispatch_v1",
+    "input_files": 936,
+    "official_files": 35,
+    "tasks": 156,
+    "newly_supported": 2,
+    "remaining_dispatch_identical": 154,
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "scope": "Existing pilot audit reused plus direct immutable file/payload/native binding checks; no fresh EDA or model. Existing full156 continues unchanged, not the comprehensive full batch.",
+  "existing_pilot_result": {
+    "known_development_tasks": 8,
+    "independent_natural_tasks": 0,
+    "l3": {
+      "C": 6,
+      "P": 8
+    },
+    "repairs": 2,
+    "observed_harms": 0,
+    "unchanged": 6,
+    "historical_model_requests": {
+      "C": 10,
+      "P": 12
+    },
+    "solve_seconds": {
+      "C": 153.7615176141262,
+      "P": 190.0558357015252
+    },
+    "qualified_for_known_full156_regression": true,
+    "adoption": false,
+    "official_baseline_gain_measured": false,
+    "five_sample_measured": false
+  },
+  "live_full156": {
+    "checked_at": "2026-10-05T05:34:55.302127+00:00",
+    "ticket": 61,
+    "state": "running",
+    "driver_pid": 3761322,
+    "stage_pid": 3761327,
+    "completed_samples": 37,
+    "expected_samples": 312,
+    "actual_requests_confirmed_in_completed_rows": 37,
+    "completed_rows_deadlines": 0,
+    "completed_rows_unconfirmed": 0,
+    "completed_rows_tool_errors": 0,
+    "complete": false,
+    "full_batch_complete": false,
+    "summary_sha256_at_snapshot": "529c77866444156e6bc6567b0594a8f8c5edecc09ed199bf90827fa644b2b173",
+    "workspace_free_bytes": 9973972992,
+    "model_pid": 2013333,
+    "model_cmdline_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1",
+    "model_service": {
+      "health": {
+        "status": "ok"
+      },
+      "slots": {
+        "slots": 1,
+        "processing": 0
+      }
+    },
+    "source_commit": "f50c02728e1af1683d3d74882fd4232c37bb2d21",
+    "spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+    "physical_vram_bytes": 51522830336,
+    "observed_vram_used_bytes": 20333301760,
+    "observed_gpu_use_percent": 10,
+    "service_snapshot_is_not_utilization_average": true,
+    "source_commit_exists_on_origin": true
+  },
+  "comprehensive_batch_complete": false,
+  "archive": {
+    "archive_sha256": "175e2b96051926e2a79e570526879a20b56d2b0447be17e38a7a4a5a5fa8723b",
+    "files": 7,
+    "nested_pilot_files": 815
+  },
+  "dual_end_verified_files": 7,
+  "nested_pilot_verified_files": 815,
+  "cleanup": {
+    "redundant_private_zip_removed": true,
+    "unneeded_residuals": 0,
+    "owner_files_untouched": true
+  },
+  "next": "Follow existing ticket61 until terminal. Do not rerun pilot or duplicate full156. Audit complete312 and full costs/deadlines/cleanup, then decide against frozen gate. Independent data, original official baseline, full5 samples and formal32GB remain separate missing admission."
+}
