@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "phase58_qualified_new_full_only;prepare_CP_all156_same_source_budget",
+    "continuation_status": "phase58_terminal_qualified;full_CP156_frozen_both_hosts_waiting_FIFO",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -5485,5 +5485,27 @@
     "qualified_for_new_full_regression": true,
     "independent_validation_qualified": false,
     "stage_elapsed_s": 884.9627848807722
+  },
+  "phase_full156_20261005": {
+    "status": "frozen_both_hosts_preflight_passed_not_submitted",
+    "spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+    "archive_sha256": "4faa93ab70e4e3b02e988279d9518e07f8eb5438cd3171f18f12d23c003343d5",
+    "assets": 44,
+    "identical_pilot_assets": 35,
+    "task_count": 156,
+    "expected_samples": 312,
+    "max_actual_model_requests": 624,
+    "first_generation_replayed": false,
+    "local_checks": 39,
+    "linux_checks": 39,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "disk_free_bytes_at_preflight": 9989259264,
+    "disk_reserve_bytes": 2147483648,
+    "actual_fifo_submitted": false,
+    "adoption": false,
+    "independent_validation_qualified": false,
+    "five_sample_qualified": false,
+    "report": "03_analysis/phase_full156_20261005/README.md"
   }
 }
