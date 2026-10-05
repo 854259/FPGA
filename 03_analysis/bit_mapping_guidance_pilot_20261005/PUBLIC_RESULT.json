@@ -1,0 +1,75 @@
+{
+  "schema": "bit_mapping_guidance_pilot_readonly_audit_v1",
+  "evidence_valid": true,
+  "archive_sha256": "7305d74ae419902b8e63144abef59ef358b9c95175ba500a142b960d7c21b22a",
+  "spec_sha256": "5b4485eaf9822d5b879c844b74e4c3b2059b5a55d5844b40b8226621a9ed3eec",
+  "auditor_sha256": "9c44cb1b4865448988f7260e569e9a8575b952b7db2f57af9d01a27e8ffe07e7",
+  "expected_samples": 20,
+  "actual_model_requests": 29,
+  "coefficients": {
+    "C": 0.74,
+    "P": 0.6599999999999999
+  },
+  "requests_by_arm": {
+    "C": 15,
+    "P": 14
+  },
+  "solve_seconds_by_arm": {
+    "C": 387.498706324026,
+    "P": 260.5139096919447
+  },
+  "repairs": [
+    "Prob086_lfsr5"
+  ],
+  "improvements": [
+    "Prob082_lfsr32",
+    "Prob086_lfsr5"
+  ],
+  "improved_target_tasks": [
+    "Prob082_lfsr32",
+    "Prob086_lfsr5"
+  ],
+  "regressions": [
+    "Prob115_shift18",
+    "Prob124_rule110"
+  ],
+  "solve_deadlines": [],
+  "unconfirmed_by_arm": {
+    "C": 0,
+    "P": 0
+  },
+  "unconfirmed_attempts": 0,
+  "guard_pass": false,
+  "unchanged_task_request_cost": true,
+  "screening_eligible": false,
+  "qualified_for_new_full_regression": false,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false,
+  "adoption": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "exact_skill_messages_bound": true,
+  "first_reply_equality_required": false,
+  "ticket": 76,
+  "actual_model_responses": 29,
+  "exact_audit_result_sha256": "efdfa9ecd909eb307ec8fda1f7d14acc4d57d53166eb47263c1c401f8c27aeaa",
+  "level_counts": {
+    "C": {
+      "L0": 1,
+      "L1": 2,
+      "L3": 7
+    },
+    "P": {
+      "L0": 1,
+      "L1": 3,
+      "L3": 6
+    }
+  },
+  "decision": "net_score_regression_rejected",
+  "actual_independent_model_samples": 0,
+  "actual_five_sample_runs": 0,
+  "formal_deployment_changed": false,
+  "scope": "10 known development tasks,one fresh eacharm; P exact390byte suffix in first andrepair; replies neednotmatch"
+}

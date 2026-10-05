@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "Bit FIFO76 actualrunning; isolated compile diagnostic16 dual37 ready; current39L1 review supports8 semantic-edge targets,28fresh draft only",
+    "continuation_status": "User10min longcloudlaunch priority: bit76 regression rejected; diag77running; semantic28 dual59 ready; faithful approvedphaseP longstability preparing",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -4460,7 +4460,7 @@
     "G4": "302 public ABI/context prepared; bounded native reset support1/302. New runtime17 sources e2462368 frozen, local177 (3 platform skips)/Linux177 (0 skips),76 fake HTTP subchecks and four actual owned Python controls. No actual model/EDA/quality/production300s/OS include sandbox admission. New272work+24cleanup+4receipt factor cannot inherit old ANSI/C/P; original harness exposures/exclusions and full156 terminal gates unchanged. Independent actual model tasks0; adoptionfalse.",
     "G5": "Formal bridge engineering prepared; official baseline/five samples/target32GB remain pending. User deferred offline verification; correctness and score prioritized.",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 31,
+    "quota_latest_observed_used_percent": 33,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
     "previous_goal_turn_classification": "progress",
     "last_actual_shared_sync_commit": "f26ea36551dc9446ec905a8e99a7805e241dce04",
@@ -6125,7 +6125,7 @@
     "report": "03_analysis/latest_score_failure_priority_20261005/README.md"
   },
   "bit_mapping_guidance_pilot_20261005": {
-    "status": "actual_whole_task_FIFO76_running_terminal_audit_pending",
+    "status": "actual_FIFO76_audited_net_score_regression_rejected",
     "spec_sha256": "5b4485eaf9822d5b879c844b74e4c3b2059b5a55d5844b40b8226621a9ed3eec",
     "assets": 61,
     "local_checks": 53,
@@ -6135,23 +6135,49 @@
     "fifo_submitted": true,
     "protected_groups": 10,
     "protected_source_assets": 330,
-    "score_gain_measured": false,
+    "score_gain_measured": true,
     "adoption": false,
     "only_policy_factor": "390 byte generation skill suffix in initial and repair system messages",
-    "report": "03_analysis/bit_mapping_guidance_pilot_20261005/STATUS.md",
+    "report": "03_analysis/bit_mapping_guidance_pilot_20261005/FINAL_RESULT.md",
     "ticket": 76,
     "monitor_pid": 4060295,
     "monitor_starttime": "847583945",
-    "completed_samples_observed": 14,
+    "completed_samples_observed": 20,
     "observed_at_epoch": 1791202999.0870492,
     "reported_requests_from_completed_workers": 19,
     "journaled_request_attempts_observed": 20,
     "confirmed_model_responses_observed": 20,
-    "actual_model_calls_terminal_audit_pending": true,
+    "actual_model_calls_terminal_audit_pending": false,
     "preflight_actual_model_calls": 0,
     "preflight_actual_eda_calls": 0,
     "source_unchanged": true,
-    "latest_launch_commit": "17aee8e5d4e0db5f41f9f2e95757f8e80f1d8ea6"
+    "latest_launch_commit": "17aee8e5d4e0db5f41f9f2e95757f8e80f1d8ea6",
+    "actual_model_calls": 29,
+    "actual_model_responses": 29,
+    "archive_sha256": "7305d74ae419902b8e63144abef59ef358b9c95175ba500a142b960d7c21b22a",
+    "exact_audit_result_sha256": "efdfa9ecd909eb307ec8fda1f7d14acc4d57d53166eb47263c1c401f8c27aeaa",
+    "evidence_valid": true,
+    "coefficients": {
+      "C": 0.74,
+      "P": 0.6599999999999999
+    },
+    "requests_by_arm": {
+      "C": 15,
+      "P": 14
+    },
+    "solve_seconds_by_arm": {
+      "C": 387.498706324026,
+      "P": 260.5139096919447
+    },
+    "improvements": [
+      "Prob082_lfsr32",
+      "Prob086_lfsr5"
+    ],
+    "regressions": [
+      "Prob115_shift18",
+      "Prob124_rule110"
+    ],
+    "qualified_for_new_full_regression": false
   },
   "compile_diagnostic_priority_pilot_20261005": {
     "status": "actual_whole_task_FIFO77_queued_behind_current_bit_trial",
@@ -6203,5 +6229,22 @@
     "new_eda_calls": 0,
     "score_gain_measured": false,
     "report": "03_analysis/latest_semantic_improvement_review_20261005/README.md"
+  },
+  "semantic_edge_guidance_pilot_20261005": {
+    "status": "frozen_dual_environment_59_pass_ready_for_whole_task_fifo",
+    "spec_sha256": "f36257ba3b7c9c30d92b4ddd825b2dbf0dda56d3bb2a87af77d0d91c93ff6b1e",
+    "assets": 64,
+    "local_checks": 59,
+    "linux_checks": 59,
+    "expected_samples": 28,
+    "max_model_calls": 56,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "fifo_submitted": false,
+    "protected_groups": 12,
+    "protected_source_assets": 445,
+    "score_gain_measured": false,
+    "adoption": false,
+    "report": "03_analysis/semantic_edge_guidance_pilot_20261005/STATUS.md"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "schema": "semantic_edge_motivation_metadata_binding_v1",
+  "semantic_review_sha256": "f81c5183008126bf17f0253f0b71aa18f2e175186b34fdf12f00006a652a5b9c",
+  "semantic_review_binding_sha256": "ffebd2c25c65bacfd2cc5b97a5c2ba965f022a334c834b62143fb8733b274993",
+  "semantic_support_sha256": "f206cbb1f31d01ea8ba807817968146abee0a9609fb4e2c712173122d265dc2f",
+  "semantic_authentication_sha256": "66661f5f669bd507a8d37f0a3f33fa80a2ab31b39f89fdbf4cbe9133bcd24811",
+  "targets": [
+    "Prob089_ece241_2014_q5a",
+    "Prob111_fsm2s",
+    "Prob133_2014_q3fsm",
+    "Prob139_2013_q2bfsm",
+    "Prob146_fsm_serialdata",
+    "Prob149_ece241_2013_q4",
+    "Prob150_review2015_fsmonehot",
+    "Prob154_fsm_ps2data"
+  ],
+  "metadata_only": true,
+  "model_input": false,
+  "original_review_gate_is_proposal_only": true,
+  "actual_gate_authority": "Root latest: >=3 target gains, guard P calls do not increase; no extra cross-family/equal-call gate."
+}
