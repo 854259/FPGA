@@ -6125,21 +6125,32 @@
     "report": "03_analysis/latest_score_failure_priority_20261005/README.md"
   },
   "bit_mapping_guidance_pilot_20261005": {
-    "status": "frozen_dual_environment_53_pass_ready_for_whole_task_fifo",
+    "status": "actual_whole_task_FIFO76_running_terminal_audit_pending",
     "spec_sha256": "5b4485eaf9822d5b879c844b74e4c3b2059b5a55d5844b40b8226621a9ed3eec",
     "assets": 61,
     "local_checks": 53,
     "linux_checks": 53,
     "expected_samples": 20,
     "max_model_calls": 40,
-    "fifo_submitted": false,
-    "actual_model_calls": 0,
-    "actual_eda_calls": 0,
+    "fifo_submitted": true,
     "protected_groups": 10,
     "protected_source_assets": 330,
     "score_gain_measured": false,
     "adoption": false,
     "only_policy_factor": "390 byte generation skill suffix in initial and repair system messages",
-    "report": "03_analysis/bit_mapping_guidance_pilot_20261005/STATUS.md"
+    "report": "03_analysis/bit_mapping_guidance_pilot_20261005/STATUS.md",
+    "ticket": 76,
+    "monitor_pid": 4060295,
+    "monitor_starttime": "847583945",
+    "completed_samples_observed": 1,
+    "observed_at_epoch": 1791202276.8843172,
+    "reported_requests_from_completed_workers": 2,
+    "journaled_request_attempts_observed": 4,
+    "confirmed_model_responses_observed": 4,
+    "actual_model_calls_terminal_audit_pending": true,
+    "preflight_actual_model_calls": 0,
+    "preflight_actual_eda_calls": 0,
+    "source_unchanged": true,
+    "latest_launch_commit": "17aee8e5d4e0db5f41f9f2e95757f8e80f1d8ea6"
   }
 }
