@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "phase_original_review_complete;fresh_CP16_frozen_both_hosts_waiting_FIFO",
+    "continuation_status": "fresh_CP16_FIFO58_running;terminal_audit_pending",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -5441,7 +5441,7 @@
     "adoption": false
   },
   "phase_feedback_pilot_20261005": {
-    "status": "frozen_preflight_both_hosts_not_submitted",
+    "status": "running_fresh_CP_FIFO58",
     "spec_sha256": "2539dcbc8ac9144a33b1d9a207361f0e695725c1788add314a653c8d71484ae5",
     "archive_sha256": "5c68183580c760bd5acdc08cdd5d456b590b650937eacf8f5b498752d4988a21",
     "assets": 41,
@@ -5451,10 +5451,19 @@
     "linux_checks": 36,
     "first_generation_replayed": false,
     "model_calls": 0,
-    "actual_fifo_submitted": false,
+    "actual_fifo_submitted": true,
     "adoption": false,
     "independent_model_tasks": 0,
     "qualified_for_full": false,
-    "report": "03_analysis/phase_feedback_pilot_20261005/README.md"
+    "report": "03_analysis/phase_feedback_pilot_20261005/README.md",
+    "ticket": 58,
+    "monitor_pid": 3743547,
+    "monitor_starttime": "844902351",
+    "completed_samples_observed": 1,
+    "actual_model_requests_observed": 1,
+    "model_identity_unchanged": true,
+    "source_unchanged": true,
+    "stage_error": null,
+    "terminal_audit_pending": true
   }
 }

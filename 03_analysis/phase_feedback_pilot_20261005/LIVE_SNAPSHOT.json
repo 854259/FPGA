@@ -1,0 +1,113 @@
+{
+  "observed_at_epoch": 1791175436.547573,
+  "ticket": {
+    "schema": "whole_task_fifo_v1",
+    "ticket": 58,
+    "task_name": "phase_feedback_fresh_C_P_v1",
+    "accepted_at_utc": "2026-10-05T04:42:54.034225+00:00",
+    "state": "running",
+    "command": [
+      "/usr/bin/env",
+      "PATH=/workspace/AMD/2026.1/Vivado/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "LD_LIBRARY_PATH=/workspace/team/udev-stub",
+      "VIVADO_BIN=/workspace/AMD/2026.1/Vivado/bin",
+      "PYTHONUTF8=1",
+      "MODEL_NAME=Qwen3.6-27B-Q4_K_M",
+      "RTL_REPAIRS=1",
+      "RTL_MAX_TOKENS=8192",
+      "RTL_TEMPERATURE=0",
+      "LLM_BASE_URL=http://127.0.0.1:8000/v1",
+      "/usr/bin/flock",
+      "-n",
+      "/workspace/team/.gpu.lock",
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/runs/fpga_owner/phase_feedback_pilot_20261005_v1/guard_wrapper.py",
+      "--kit",
+      "/workspace/team/tasks/autodl-rtl-kit/project",
+      "--model-pid",
+      "2013333",
+      "--model-name",
+      "Qwen3.6-27B-Q4_K_M",
+      "--owner",
+      "codex_phase_feedback_pilot_20261005_v1",
+      "--guard-out",
+      "/workspace/team/runs/fpga_owner/phase_feedback_pilot_20261005_v1/guard",
+      "--slot-minutes",
+      "250",
+      "--stage-timeout-s",
+      "14600",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/runs/fpga_owner/phase_feedback_pilot_20261005_v1/pilot.py",
+      "stage",
+      "--kit",
+      "/workspace/team/tasks/autodl-rtl-kit/project",
+      "--resource-check",
+      "{resource_check}"
+    ],
+    "cwd": "/workspace/team/runs/fpga_owner/phase_feedback_pilot_20261005_v1",
+    "completion_json": "/workspace/team/runs/fpga_owner/phase_feedback_pilot_20261005_v1/results/summary.json",
+    "slot_owner_prefix": "codex_phase_feedback_pilot_20261005_v1",
+    "adopted_process": null,
+    "started_at_utc": "2026-10-05T04:42:54.114077+00:00",
+    "runner": {
+      "pid": 3743547,
+      "starttime": "844902351"
+    },
+    "task_fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
+    "child": {
+      "pid": 3743548,
+      "starttime": "844902359"
+    }
+  },
+  "source_assets": 41,
+  "source_unchanged": true,
+  "model": {
+    "pid": 2013333,
+    "state": "S",
+    "start": "823869819",
+    "live": true
+  },
+  "monitor": {
+    "pid": 3743547,
+    "state": "S",
+    "start": "844902351",
+    "live": true
+  },
+  "child": {
+    "pid": 3743548,
+    "state": "S",
+    "start": "844902359",
+    "live": true
+  },
+  "stage": {
+    "pid": 3743553,
+    "state": "S",
+    "start": "844902385",
+    "live": true
+  },
+  "guard": {
+    "schema_version": 1,
+    "complete": false,
+    "passed": false,
+    "phase": "resource_guard",
+    "model_managed": false,
+    "instance_managed": false,
+    "started_at_utc": "2026-10-05T04:42:54.373904+00:00",
+    "stage_pid": 3743553
+  },
+  "completed_samples": 1,
+  "summary": {
+    "schema": "phase_feedback_pilot_v1",
+    "complete": false,
+    "passed": false,
+    "spec_sha256": "2539dcbc8ac9144a33b1d9a207361f0e695725c1788add314a653c8d71484ae5",
+    "actual_model_requests": 1,
+    "first_generation_replayed": false,
+    "adoption": false,
+    "new_full_score": false,
+    "scope": "8 known development/guard tasks, one fresh C/E sample each, no independent/full156/five-sample claim"
+  }
+}
