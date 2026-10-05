@@ -1,0 +1,61 @@
+{
+  "schema": "fifo71_failure_propagation_read_only_review_v1",
+  "source_evidence": {
+    "RUN_SPEC.json": {
+      "sha256": "cc1abf90fc1e38fbfcaf51df53eab0b47572c532dd8bcc91a334ed4cbfde9d74",
+      "bytes": 116467
+    },
+    "audit.py": {
+      "sha256": "be7c8784dcc8254f7dc2b9ccaf0d9c37962097edd702a2cd91e3385b93935050",
+      "bytes": 14489
+    },
+    "raw_evidence/terminal_v1.zip": {
+      "sha256": "af3cc0110d0370ff326df3e7946aec8f2d25a933dcef24b0037a3ef3c9cee121",
+      "bytes": 589739
+    },
+    "raw_evidence/terminal_audit_v1/RESULTS.json": {
+      "sha256": "526f4def25193ff88e2102506464e8b2628889fb0b2fe3cab3f960e9610e043b",
+      "bytes": 6189
+    }
+  },
+  "archive_members": 443,
+  "verified_manifest_members": 442,
+  "frozen_sources_unchanged": 68,
+  "historical_actual_native_commands": 75,
+  "historical_actual_by_tool": {
+    "xvlog": 25,
+    "xelab": 25,
+    "xsim": 25
+  },
+  "historical_model_calls": 0,
+  "matched_controls": 20,
+  "controls": 25,
+  "semantic_negatives_detected": 15,
+  "false_acceptances": 0,
+  "single_cell_exact_one_mismatch": 5,
+  "sentinel_complete_observations": 5,
+  "sentinel_fatal_log_observed": 5,
+  "sentinel_direct_physical_rc_zero": 5,
+  "sentinel_checks": [
+    8,
+    16,
+    16,
+    16,
+    13
+  ],
+  "guard_complete_cleanup_release_protected_model_verified": true,
+  "qualified_for_generated_control_discrimination": false,
+  "original_harness": false,
+  "score_gain_measured": false,
+  "independent_model_qualification": false,
+  "adoption": false,
+  "archived_generated_xsim_tcl": false,
+  "separate_inner_kernel_physical_exit_observed": false,
+  "new_actual_model_calls": 0,
+  "new_actual_eda_calls": 0,
+  "new_actual_native_commands": 0,
+  "new_actual_ssh_calls": 0,
+  "new_actual_fifo_calls": 0,
+  "new_git_operations": 0,
+  "scope": "existing actual archive inspection only; no rerun of frozen auditor or tools"
+}

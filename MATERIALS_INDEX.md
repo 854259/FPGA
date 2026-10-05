@@ -1,3 +1,7 @@
+## 2026-10-05 表格反馈准备与实际失败复查
+
+`03_analysis/prompt_table_feedback_20261005/README.md`：20项FAKE检查、0原生/模型、未准入。`03_analysis/prompt_table_failure_propagation_review_20261005/ANALYSIS.md`：75实际收据只读复绑、5真实sentinel rc0、旧门槛失败保持。
+
 ## 2026-10-05 表格原生终审
 
 `03_analysis/prompt_table_calibration_20261005/FINAL_RESULT.md` / `PUBLIC_RESULT.json`：75实际命令，20/25匹配，15语义错误全检出但5 sentinel真实xsim0，资格false、0实际模型。原失败/完整日志保留。

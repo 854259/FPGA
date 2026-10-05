@@ -5960,5 +5960,43 @@
     "archive_sha256": "af3cc0110d0370ff326df3e7946aec8f2d25a933dcef24b0037a3ef3c9cee121",
     "actual_audit_result_sha256": "526f4def25193ff88e2102506464e8b2628889fb0b2fe3cab3f960e9610e043b",
     "auditor_sha256": "be7c8784dcc8254f7dc2b9ccaf0d9c37962097edd702a2cd91e3385b93935050"
+  },
+  "prompt_table_feedback_20261005": {
+    "status": "pure_preparation_only_not_native_qualified",
+    "local_fake_methods": 20,
+    "source_hashes": {
+      "contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+      "render.py": "2893c870e5cd5cba4b88de3cbca3f1f447cbc74836669f0f78e940dd34d9d817",
+      "feedback.py": "1b7691b0c20b0269a249c5d672e745701b15bf92675965f351e4532fd17435d3",
+      "test_feedback.py": "fdc92eeb747a009bc2e38af8c6cb44c4974163dc871e49cf6abd0bf630aa41fc",
+      "README.md": "ded331e13f115538588a1e2f3db0224c297b40608ee8607c7b539f74f35563b2"
+    },
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "run_spec_created": false,
+    "worker_integrated": false,
+    "score_gain_measured": false,
+    "report": "03_analysis/prompt_table_feedback_20261005/README.md"
+  },
+  "prompt_table_failure_propagation_review_20261005": {
+    "status": "actual75_read_only_review_complete_old_qualification_false",
+    "actual_reviewed_commands": 75,
+    "source_hashes": {
+      "ANALYSIS.md": "62503f0d077517512a392a5dcb731a5434518786cb307f8edb4ef8473f5a6824",
+      "REVIEW.json": "27e401ecf9ab8c27f6f4bc8ae874fcd4716f836ec12a51fa09370feff2e02a54",
+      "SOURCE_SEAL.json": "f4d747753b65145dc28b2193c308c65a83fb3dc35e2d5c58c56e81ce1eb4a5a1"
+    },
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "true_sentinel_xsim_rcs": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "root_cause_established": false,
+    "proposed_factor_executed": false,
+    "report": "03_analysis/prompt_table_failure_propagation_review_20261005/ANALYSIS.md"
   }
 }
