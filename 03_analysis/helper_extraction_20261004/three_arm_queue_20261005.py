@@ -95,13 +95,19 @@ def build_plan(tasks, samples, sources, official_entry, kit, call_budget, wall_s
                            use=task['use'], task_dir=task['task_dir'], input_hashes=task['hashes'],
                            sample=sample, arm=arm, reserved_calls=MAX_CALLS[arm])
                 row['key'] = digest([row[k] for k in ['dataset', 'task', 'sample', 'arm']])
+                if 'evaluator_dir' in task:
+                    row.update(evaluator_dir=task['evaluator_dir'], evaluator_hashes=task['evaluator_hashes'])
                 rows.append(row)
     return dict(schema='three_arm_queue_v1', rows=rows, samples=samples, sources=sources,
                 official_entry=str(Path(official_entry).resolve()), kit=str(Path(kit).resolve()),
                 entry_sha256=official.sha(official_entry), scheduler_sha256=official.sha(__file__),
                 official_files=official.OFFICIAL, model=official.MODEL,
                 max_calls=call_budget, required_reserved_calls=sum(x['reserved_calls'] for x in rows),
+                execution_files={str(Path(official_entry).with_name(name).resolve()): official.sha(Path(official_entry).with_name(name))
+                                 for name in ['official_baseline_arm_20261005.py','official_baseline_observed_20261005.py','official_baseline_scoring_20261005.py']},
+                resource_module_sha256=official.PAIRED_SHA,
                 wall_seconds=wall_seconds, solve_deadline_s=300,
+                solve_supervisor_s=310, judge_supervisor_s=360, row_reservation_s=670,
                 unique_tasks=len(seen), known_families=len({(x['dataset'], x['family']) for x in tasks}),
                 # Family labels alone do not establish statistical independence.
                 independent_tasks_verified=None, comprehensive_admitted=False,
@@ -114,6 +120,13 @@ def validate(plan):
     assert plan['model'] == official.MODEL and plan['retries'] == 0
     assert plan['official_files'] == official.OFFICIAL
     assert plan['solve_deadline_s'] == 300
+    assert (plan['solve_supervisor_s'],plan['judge_supervisor_s'],plan['row_reservation_s']) == (310,360,670)
+    assert plan['resource_module_sha256'] == official.PAIRED_SHA == official.sha(official.PAIRED)
+    expected_execution = {str(Path(plan['official_entry']).with_name(name).resolve()) for name in
+                          ['official_baseline_arm_20261005.py','official_baseline_observed_20261005.py','official_baseline_scoring_20261005.py']}
+    assert set(plan['execution_files']) == expected_execution
+    for path, expected in plan['execution_files'].items():
+        assert official.sha(path) == expected, 'Execution dependency drift: '+path
     for path, expected in plan['sources']['files'].items():
         assert official.sha(path) == expected, path
     for name, expected in official.OFFICIAL.items():
@@ -129,6 +142,11 @@ def validate(plan):
         for name, expected in row['input_hashes'].items():
             assert name in ['prompt.txt', 'interface.txt']
             assert official.sha(Path(row['task_dir'])/name) == expected
+        if 'evaluator_dir' in row:
+            evaluator = Path(row['evaluator_dir']).resolve()
+            assert {'task.json','prompt.txt'} <= set(row['evaluator_hashes'])
+            assert {p.name:official.sha(p) for p in evaluator.iterdir() if p.is_file()} == row['evaluator_hashes']
+            assert {n:row['evaluator_hashes'][n] for n in row['input_hashes']} == row['input_hashes']
     for group in groups.values():
         assert {(x['sample'], x['arm']) for x in group} == {
             (sample, arm) for sample in range(plan['samples']) for arm in MAX_CALLS}, 'Incomplete paired matrix'
@@ -145,7 +163,8 @@ def launch_args(plan, row, folder, resource_check):
     common = ['--kit', plan['kit'], '--resource-check', str(resource_check), '--out', str(folder/'solve')]
     if row['arm'] == 'B':
         return argv+[plan['official_entry']]+common+['--task', str(prompt)]
-    return ['/usr/bin/env', 'PAIRED_TASK_DIR='+str(prompt)]+argv+[
+    return ['/usr/bin/env', 'PAIRED_TASK_DIR='+str(prompt), 'LLM_BASE_URL=http://127.0.0.1:8000/v1',
+            'MODEL_NAME='+plan['model'], 'RTL_REPAIRS=1', 'RTL_TEMPERATURE=0', 'RTL_MAX_TOKENS=8192']+argv+[
         str(Path(plan['sources']['root'])/'worker.py')]+common+['--task', row['task'], '--arm', row['arm']]
 
 
@@ -153,8 +172,8 @@ def advance(plan, out, resource_check, execute):
     """execute receives the frozen argv; tests substitute a process probe.
 
     A real runner must enforce admission before calling this function. This
-    module intentionally has no production CLI while judging, B POST receipts,
-    real cancellation and the full admission contract remain incomplete.
+    module intentionally has no production CLI while real cancellation and the
+    full data/resource/budget admission contract remain incomplete.
     """
     out = Path(out).resolve()
     assert out.is_relative_to(Path(plan['sources']['root']).resolve()), 'Native probes require owned source root'
@@ -196,7 +215,7 @@ def advance(plan, out, resource_check, execute):
         if next_row is None:
             return dict(complete=True, rows=len(plan['rows']), reserved_calls=reserved, full_batch=False)
         row, folder = next_row
-        assert elapsed+plan['solve_deadline_s'] <= plan['wall_seconds'], 'Wall budget cannot cover next row'
+        assert elapsed+plan['row_reservation_s'] <= plan['wall_seconds'], 'Wall budget cannot cover next solve and judge'
         assert reserved+row['reserved_calls'] <= plan['max_calls'], 'Call reservation budget exhausted'
         folder.mkdir()
         argv = launch_args(plan, row, folder, resource_check)
@@ -211,3 +230,58 @@ def advance(plan, out, resource_check, execute):
         validate(plan)
         assert {p.name: official.sha(p) for p in prompt.iterdir()} == row['input_hashes']
         return dict(complete=False, executed_key=row['key'], reserved_calls=reserved+row['reserved_calls'])
+
+
+def execute_row(plan, argv, row, folder, resource_check):
+    """Run the frozen solver, then an external judge; never retry or grade failures.
+
+    Caller owns admission and the FIFO lease. No evaluator path is passed to the
+    solver. Actual_calls is the legacy queue field for client attempts, not a
+    claim of server receipt; the entire maximum reservation remains consumed.
+    """
+    import official_baseline_scoring_20261005 as scoring
+    folder = Path(folder).resolve()
+    assert argv == launch_args(plan,row,folder,resource_check)
+    assert 'evaluator_dir' in row
+    validate(plan)
+    resource = official.resource_module()
+    resource.check_resource(resource_check,Path(plan['kit']))
+    started = time.monotonic()
+    receipt = dict(complete=False,actual_calls=None,unconfirmed_calls=None,full_batch=False,
+                   call_count_definition='durable client attempts; server receipt unknown',server_received_count=None)
+    try:
+        command = resource.owned_command(argv,folder,folder/'solve.log',plan['solve_supervisor_s'])
+        save(folder/'SOLVE_COMMAND.json',command)
+        assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Solver supervision failure'
+        solve = folder/'solve'; evaluator = Path(row['evaluator_dir'])
+        original = scoring.eligible(solve,evaluator,row['arm'])
+        assert original['input_sha256'] == row['input_hashes']
+        receipt.update(actual_calls=original['client_request_attempts'],unconfirmed_calls=0)
+        assert 1 <= receipt['actual_calls'] <= row['reserved_calls']
+        save(folder/'SOLVE_BOUND.json',original)
+        validate(plan)
+        resource.check_resource(resource_check,Path(plan['kit']))
+        judge_argv = ['/usr/bin/python3','-B',str(Path(scoring.__file__).resolve()),
+            '--kit',plan['kit'],'--solve',str(solve),'--task',str(evaluator),'--arm',row['arm'],
+            '--out',str(folder/'judge'),'--resource-check',str(resource_check)]
+        command = resource.owned_command(judge_argv,folder,folder/'judge.log',plan['judge_supervisor_s'])
+        save(folder/'JUDGE_COMMAND.json',command)
+        assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Judge supervision/environment failure'
+        bound = json.loads((folder/'judge/BOUND_VERDICT.json').read_text())
+        assert bound['arm'] == row['arm'] and bound['solution_sha256'] == original['solution_sha256']
+        assert bound['solve_result_sha256'] == official.sha(solve/original['result_relative'])
+        assert bound['task_files'] == row['evaluator_hashes']
+        assert bound['verdict_sha256'] == official.sha(folder/'judge/verdict.json')
+        assert bound['client_request_attempts'] == receipt['actual_calls']
+        assert scoring.eligible(solve,evaluator,row['arm']) == original
+        validate(plan)
+        resource.check_resource(resource_check,Path(plan['kit']))
+        receipt.update(complete=True,level=bound['verdict']['level'],coefficient=bound['verdict']['coefficient'],
+                       solve_elapsed_s=json.loads((folder/'SOLVE_COMMAND.json').read_text())['elapsed_s'],
+                       judge_elapsed_s=command['elapsed_s'])
+    except Exception as error:
+        receipt.update(error_type=type(error).__name__,error=str(error))
+    receipt['end_to_end_s'] = time.monotonic()-started
+    receipt['files'] = {str(p.relative_to(folder)):official.sha(p) for p in folder.rglob('*')
+                        if p.is_file() and p.name != 'TERMINAL.json'}
+    return receipt
