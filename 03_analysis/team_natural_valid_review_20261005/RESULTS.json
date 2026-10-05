@@ -1,0 +1,116 @@
+{
+  "schema": "owner_natural_valid_peer_readonly_review_v1",
+  "evidence_valid": true,
+  "review_sha256": "cefadcd05feb5add80d1695f40b3ef0bf39d348bd16e753f9d5793ff95d29dbe",
+  "archive_sha256": "65bc05bf81cbd77c95610487dfdecb6310b4ea6f94f4e158f2eacec67122c9a9",
+  "spec_sha256": "5fe49dd3f3bb03ebb92f19fa785b5515ed11d2e6dc1a48f7a906d28519a5e56f",
+  "peer_auditor_sha256": "c8ac286af7222bf3cba62e7007a13fee9cefc1c3d6992caa71aa8bc0b0b554e8",
+  "manifest_files": 339,
+  "original_owner_manifest_files": 613,
+  "original_owner_result_equal_peer59": true,
+  "original_test_sha256": "6cbaca22add7d1e367d4f2969d3b0953c691e5fb28de2095f1cf4e7465ea78ef",
+  "corrected_test_sha256": "bc5d1ec610d403ae9727bca6a8927822274e03263f7f6cb5dd4148cd5f3273ee",
+  "added_assertions": 1,
+  "original_harness_admitted": false,
+  "original_harness_exclusion_preserved": true,
+  "corrected_evaluation_only_controls": [
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "positive",
+      "passed": true,
+      "failed": false,
+      "native_trials": 5,
+      "original_harness": false,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "constant_zero",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": false,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "constant_one",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": false,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "identity",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": false,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "valid_zero",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": false,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "failure_propagation",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": false,
+      "false_acceptance": false
+    }
+  ],
+  "native_compile_commands": 30,
+  "native_simulation_commands": 30,
+  "parameter_flags_per_control": [
+    [
+      "-Pgray_to_binary.DEBUG_MODE=0",
+      "-Pgray_to_binary.WIDTH=4"
+    ],
+    [
+      "-Pgray_to_binary.DEBUG_MODE=0",
+      "-Pgray_to_binary.WIDTH=4"
+    ],
+    [
+      "-Pgray_to_binary.DEBUG_MODE=1",
+      "-Pgray_to_binary.WIDTH=4"
+    ],
+    [
+      "-Pgray_to_binary.DEBUG_MODE=0",
+      "-Pgray_to_binary.WIDTH=5"
+    ],
+    [
+      "-Pgray_to_binary.DEBUG_MODE=1",
+      "-Pgray_to_binary.WIDTH=5"
+    ]
+  ],
+  "review_model_calls": 0,
+  "review_eda_calls": 0,
+  "peer_model_calls": 0,
+  "independent_model_tasks": 0,
+  "eligible_for_independent_models": false,
+  "official_score": false,
+  "adoption": false,
+  "inherited_metadata": {
+    "identity": "natural_harness_calibration_20261005_v1",
+    "frozen_at_utc": "2026-10-05T04:06:24.035664+00:00",
+    "controls_upper_bound": 16,
+    "compile_upper_bound": 50
+  },
+  "limits": [
+    "A single assertion improves this isolated research test; original dataset/test bytes and exclusion remain unchanged.",
+    "Six controls each five runs cover four distinct configurations, including a repeated default; no exhaustive specification or new independent solver evidence.",
+    "Peer spec retains owner identity/time and 16/50 conservative bounds; exact current root/spec SHA, actual six controls and 30 compile/simulation receipts disambiguate the new run.",
+    "Archive external tool/dependency observations are historical, not fresh offline/R9700/32GB certification.",
+    "Peer57 is an original FSM report/diagnosis read-only cross-reference, not another model optimization experiment."
+  ]
+}

@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full_CP156_FIFO61_running;readonly_peer59_60_review_and_faithful_interface_preparation",
+    "continuation_status": "full_CP156_FIFO61_running;peer59_60_valid_evidence_reviewed;faithful_natural_ABI_preparation_next",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -4457,10 +4457,11 @@
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
     "G3": "Fresh C/P16 two real repair chains audited; same-source full156 C/P312 FIFO61 actually running. Strict complete audit/no per-task regression/no deadline/unconfirmed/tool error/cost and two actual causal chains required. No independent/five/adoption qualification yet.",
-    "G4": "Natural original-harness55: two finite calibrations pass; gray_to_binary valid=0 false acceptance version-excluded alongside S7 convolutional encoder. 0 independent model comparisons; exact ABI/exposure/full qualification still required.",
+    "G4": "Original natural calibration two finite records pass, gray valid false acceptance remains excluded. Peer research corrected test 30 native controls read-only audited; does not admit original harness or yield model/official score. Real independent model tasks0; faithful ABI/context/exposure/full qualification pending.",
     "G5": "Formal bridge engineering controls audited; official baseline/five samples/offline/target32GB not certified.",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 16
+    "quota_latest_observed_used_percent": 16,
+    "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md"
   },
   "concise_output_pilot_20261004": {
     "status": "completed_audited_rejected",
@@ -5520,14 +5521,33 @@
       "start": "845096388",
       "live": true
     },
-    "completed_samples_observed": 12,
-    "actual_model_requests_observed": 12,
-    "observed_at_epoch": 1791177703.3655272,
+    "completed_samples_observed": 28,
+    "actual_model_requests_observed": 28,
+    "observed_at_epoch": 1791178183.5468187,
     "stage_error": null,
     "source_unchanged": true,
     "model_identity_unchanged": true,
     "terminal_audit_pending": true,
     "preflight_model_calls": 0,
-    "preflight_eda_calls": 0
+    "preflight_eda_calls": 0,
+    "latest_shared_commit": "0e8bf14643d2f52d010ca6bf8705aa17ed73e871",
+    "primary_status_preserved": true
+  },
+  "team_natural_valid_review_20261005": {
+    "evidence_valid": true,
+    "review_sha256": "cefadcd05feb5add80d1695f40b3ef0bf39d348bd16e753f9d5793ff95d29dbe",
+    "archive_sha256": "65bc05bf81cbd77c95610487dfdecb6310b4ea6f94f4e158f2eacec67122c9a9",
+    "spec_sha256": "5fe49dd3f3bb03ebb92f19fa785b5515ed11d2e6dc1a48f7a906d28519a5e56f",
+    "manifest_files": 339,
+    "native_compile_commands": 30,
+    "native_simulation_commands": 30,
+    "original_harness_exclusion_preserved": true,
+    "review_model_calls": 0,
+    "review_eda_calls": 0,
+    "independent_model_tasks": 0,
+    "eligible_for_independent_models": false,
+    "adoption": false,
+    "status": "original_peer_valid_research_harness_evidence_reviewed",
+    "report": "03_analysis/team_natural_valid_review_20261005/README.md"
   }
 }
