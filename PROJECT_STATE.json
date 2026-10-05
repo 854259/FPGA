@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05T18:07:00+08:00",
+  "last_updated": "2026-10-05T18:27:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3118,27 +3118,30 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T10:06:06+00:00",
+      "checked_at": "2026-10-05T10:26:15.949605+00:00",
       "own_live_processes": 0,
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
-      "exited_fifo_monitor_zombies": [
-        4017621,
-        4017623
-      ],
       "model_pid": 2013333,
+      "processing_slots": 0,
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
       "known_full156_regression_completed_ticket": 61,
-      "latest_own_stage": "U9_original_calibration_terminal_audits",
+      "latest_own_stage": "U11_official_baseline_CLI_preflight",
       "latest_own_stage_complete": true,
-      "latest_own_stage_status": "complete_audited_not_independent_admission",
-      "other_task_ticket": 65,
-      "other_task_status": "completed",
-      "other_task_scope": "8 known-task elaboration pretest; summary no gain, original postflight pending",
-      "next_own_stage": "U10_elaboration_original_terminal_audit",
-      "next_own_stage_status": "prepared_not_executed",
-      "receipt": "05_handoff/independent_validation_20261004/natural_terminal_U9/TERMINAL_CHECK.json"
+      "latest_own_stage_status": "complete_engineering_only",
+      "completed_tickets": [
+        66,
+        67,
+        68,
+        69
+      ],
+      "active_queue_tasks": 0,
+      "historical_completed_tickets": 60,
+      "historical_failed_released_tickets": 9,
+      "next_own_stage": "A_P_B_paired_manifest_and_routing",
+      "next_own_stage_status": "planned_not_launched",
+      "receipt": "05_handoff/independent_validation_20261004/official_baseline_U11/TERMINAL_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3178,7 +3181,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T18:07:00+08:00",
+  "updated_at": "2026-10-05T18:27:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -5021,5 +5024,125 @@
       "process_note": "Stages and drivers exited; two FIFO monitors remain exited Z under PID1, no live work or locks. Initial archive existence-only check corrected after reading process state; no experiment rerun or process signal."
     },
     "next": "U10 original elaboration terminal audit, no new model/EDA; then official baseline paired CLI engineering gap. Do not expand rejected no-gain candidate."
+  },
+  "elaboration_terminal_U10_20261005": {
+    "status": "complete_audited_no_gain_reject_expansion",
+    "cleanup_verified": true,
+    "terminal": {
+      "at": "2026-10-05T18:16:23.13026+08:00",
+      "complete": true,
+      "status": "audited_no_gain_reject_expansion",
+      "ticket": 68,
+      "driver_pid": 4024805,
+      "stage_pid": 4024810,
+      "audit_elapsed_s": 0.2741501033306122,
+      "guard_elapsed_s": 0.5018114540725946,
+      "audit_result_sha256": "bba977409a0b05ca3fe42697ae954074b38e4b407e8511126b23f92b31bca5a9",
+      "audit_model_calls": 0,
+      "audit_eda_calls": 0,
+      "original_requests": 25,
+      "original_samples": 16,
+      "same_first_pairs": 8,
+      "coefficients": {
+        "C": 0.775,
+        "P": 0.775
+      },
+      "requests_by_arm": {
+        "C": 12,
+        "P": 13
+      },
+      "solve_seconds_by_arm": {
+        "C": 207.45111947134137,
+        "P": 267.14288679882884
+      },
+      "judge_seconds_by_arm": {
+        "C": 242.8,
+        "P": 240.4
+      },
+      "levels": {
+        "C": {
+          "L0": 1,
+          "L1": 1,
+          "L3": 6
+        },
+        "P": {
+          "L0": 1,
+          "L1": 1,
+          "L3": 6
+        }
+      },
+      "repairs": 0,
+      "regressions": 0,
+      "improvements": 0,
+      "unchanged_pairs": 8,
+      "unconfirmed": 0,
+      "qualified_for_new_full_regression": false,
+      "target_chains": [
+        {
+          "task": "Prob133_2014_q3fsm",
+          "same_first": true,
+          "levels": [
+            1,
+            1
+          ],
+          "check_outcomes": [],
+          "valid_repair_chain": false
+        },
+        {
+          "task": "Prob156_review2015_fancytimer",
+          "same_first": true,
+          "levels": [
+            0,
+            0
+          ],
+          "check_outcomes": [
+            "fail",
+            "fail"
+          ],
+          "valid_repair_chain": false
+        }
+      ],
+      "decision": "Reject elaboration addition for expansion; extra diagnostic and original repair did not fix invalid multiple procedural drivers. Retain prior U8 phase candidate only. No prompt tuning or resampling of these known tasks.",
+      "full_batch": false,
+      "independent_tasks": 0,
+      "adoption": false,
+      "total_solve_plus_judge_s": {
+        "C": 450.2511194713414,
+        "P": 507.5428867988288
+      },
+      "evidence": {
+        "archive_sha256": "394b6e5dc1ba3bcae856c5076ea40cc674fb0a35208cf141ba9e01ec590a978b",
+        "outer_files": 15,
+        "original_files": 944,
+        "dual_verified": true
+      }
+    },
+    "public_result": "03_analysis/helper_extraction_20261004/U10_ELABORATION_TERMINAL_20261005.json"
+  },
+  "official_baseline_U11_20261005": {
+    "status": "complete_engineering_preflight_passed",
+    "next": "Integrate pinned A/P/B paired manifest and routing; no full scheduler/quality/independent/five32GB claim.",
+    "terminal": {
+      "ticket": 69,
+      "driver_pid": 4024860,
+      "stage_pid": 4024865,
+      "result_sha256": "c83fb817eb0a6cfa9ee40552fe0d53e3d3776660754cba8a68677cccf0049d75",
+      "controls_passed": 7,
+      "fake_posts": 7,
+      "real_model_calls": 0,
+      "eda_calls": 0,
+      "guard_elapsed_s": 3.0085221845656633,
+      "hanging_body_cleanup_s": 1.5130786262452602,
+      "subsequent_recovery_s": 0.07317516580224037,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "evidence_sha256": "ad9e8291c6eb8f65521d80fcec70058723c398bc68e1e7fcb33ed2c5f728dd50",
+      "dual_verified_files": 110,
+      "first_prelaunch_failure_preserved": true,
+      "cleanup_verified": true,
+      "decision": "Retain official B CLI engineering implementation only. Pair scheduling, real27B accounting/cancellation, independent data and formal32GB/full-five remain unverified."
+    },
+    "public_result": "03_analysis/helper_extraction_20261004/U11_OFFICIAL_BASELINE_20261005.json"
   }
 }

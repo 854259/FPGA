@@ -1,6 +1,6 @@
 {
   "schema": "official_baseline_U11_frozen_v1",
-  "status": "prepared_not_executed",
+  "status": "complete_engineering_preflight_passed",
   "reason": "A/P/B full comparison lacks a verified direct unchanged official baseline entry; prior C/P controls are not B. Implement direct upstream CLI and failure accounting before a real full batch.",
   "source_hashes": {
     "official_baseline_arm_20261005.py": "fe46b1bf761c0875a87c80ba7ffab522f7e47b81ea11ae2dddb27ef1048248b2",
@@ -45,5 +45,27 @@
     "model_calls": 0,
     "prior_commit": "0639df5",
     "stage_started": false
+  },
+  "execution_source_commit": "5675554",
+  "terminal": {
+    "ticket": 69,
+    "driver_pid": 4024860,
+    "stage_pid": 4024865,
+    "result_sha256": "c83fb817eb0a6cfa9ee40552fe0d53e3d3776660754cba8a68677cccf0049d75",
+    "controls_passed": 7,
+    "fake_posts": 7,
+    "real_model_calls": 0,
+    "eda_calls": 0,
+    "guard_elapsed_s": 3.0085221845656633,
+    "hanging_body_cleanup_s": 1.5130786262452602,
+    "subsequent_recovery_s": 0.07317516580224037,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true,
+    "evidence_sha256": "ad9e8291c6eb8f65521d80fcec70058723c398bc68e1e7fcb33ed2c5f728dd50",
+    "dual_verified_files": 110,
+    "first_prelaunch_failure_preserved": true,
+    "cleanup_verified": true,
+    "decision": "Retain official B CLI engineering implementation only. Pair scheduling, real27B accounting/cancellation, independent data and formal32GB/full-five remain unverified."
   }
 }
