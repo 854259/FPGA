@@ -1,0 +1,124 @@
+{
+  "schema": "triple_arm_identity_preparation_v1",
+  "checked_at": "2026-10-05T06:07:07.663853+00:00",
+  "source_git_commit": "375e6d18a2a1ba31bc96cc5a6989d2cec1d3d7c9",
+  "source_zip_sha256": "553768ef657053f7f212a0b65be3057e35523821b76a0cef1524f0d0e34e6acf",
+  "files": [
+    {
+      "file": "agent/runtime.py",
+      "sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+      "byte_identical": true
+    },
+    {
+      "file": "baseline.py",
+      "sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "byte_identical": true
+    },
+    {
+      "file": "skill/rtl-feedback-repair/SKILL.md",
+      "sha256": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+      "byte_identical": true
+    },
+    {
+      "file": "skill/rtl-generation/SKILL.md",
+      "sha256": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "byte_identical": true
+    },
+    {
+      "file": "upstream.json",
+      "git_sha256": "a7263b0f0a8a8842133f053efc0b89a90fabfaf8095b226277c9a0c08e940aa7",
+      "server_sha256": "cd9f2bebfb5aae8fb645f61951623a0c1928b2fa654b0366d954966fdf20f61d",
+      "byte_identical": false,
+      "parsed_fields_identical": true,
+      "formatting_only": true
+    }
+  ],
+  "official_upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+  "official_files_verified": {
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75"
+  },
+  "first_alignment_failure_retained": true,
+  "formatting_correction_scope": "Lock JSON fields compared semantically after byte mismatch; actual solver, baseline, skills and upstream file hashes remain byte-exact requirements. Neither manifest nor active source modified.",
+  "active_candidate_commit": "f50c02728e1af1683d3d74882fd4232c37bb2d21",
+  "active_spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+  "frozen_source_files_verified": 44,
+  "runtime_control_difference": {
+    "only_added_lines": 4,
+    "other_runtime_bytes_unchanged": true,
+    "branch": "after successful unpatched compiler return; declaration-fix early return preserved",
+    "A": "archived original worker, without map_feedback calls",
+    "C": "map_runtime with existing prompt_map and point_feedback",
+    "P": "same map_runtime with edge_dispatch and phase_feedback",
+    "C_is_archived_best": false,
+    "P_is_phase_only_change_from_A": false
+  },
+  "baseline": {
+    "script_unchanged": true,
+    "requests_per_solve": 1,
+    "skills": false,
+    "tools": false,
+    "invocation": [
+      "python3",
+      "baseline.py",
+      "<prompt_only>",
+      "<output>",
+      "rtl"
+    ],
+    "invocation_is_source_review_only": true
+  },
+  "prospective_primary_comparison": [
+    "archived_A",
+    "candidate_P",
+    "official_baseline_B"
+  ],
+  "current_full156_comparison": [
+    "C",
+    "P"
+  ],
+  "score_inheritance_permitted": false,
+  "current_candidate_adopted": false,
+  "full_batch_launched": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "no_solver_or_running_files_changed": true,
+  "completed_scope": "4 Git solver/baseline/skill files byte-exact plus identical parsed upstream lock fields; immutable A/B source archive prepared. Current C/P scope identified from exact4-line runtime delta and current worker. Not an executed three-arm runner or certified full protocol.",
+  "remaining": [
+    "terminal C/P gate and provenance",
+    "fresh unique candidate and fair three-arm wrapper freeze",
+    "independent family/contact admission",
+    "185-task finite-domain planning is not independent validation",
+    "actual full five samples budget and credits",
+    "formal32GB and delivery checks"
+  ],
+  "live": {
+    "checked_at": "2026-10-05T06:07:07.663853+00:00",
+    "ticket": 61,
+    "state": "running",
+    "driver_pid": 3761322,
+    "stage_pid": 3761327,
+    "driver_alive": true,
+    "stage_alive": true,
+    "completed_samples": 85,
+    "expected_samples": 312,
+    "confirmed_requests_in_completed_rows": 87,
+    "requests_in_completed_rows": 87,
+    "deadlines": 0,
+    "unconfirmed": 0,
+    "tool_errors": 0,
+    "summary_sha256": "ff6be9da7b2614ae4efec611b0fb8bea163fcfde973be102a7ae6246f1e6bc1a",
+    "free_bytes": 9961816064,
+    "model_pid": 2013333,
+    "model_cmd_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1",
+    "complete": false
+  },
+  "evidence": {
+    "archive_sha256": "cbfa3d4910a2cb1984b1964d23449d9d2d2498c0a8b123b0b28601b2170cb4ad",
+    "verified_members": 7,
+    "nested_source_files": 5,
+    "local_and_remote_verified": true,
+    "duplicate_transfer_zip_removed": true,
+    "unneeded_residuals": 0
+  },
+  "decision": "Retain verified source identity bundle for prospective A/P/B comparison; do not replace current C/P control, inherit historical scores, start duplicate jobs, or claim the comprehensive batch is admitted."
+}

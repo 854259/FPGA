@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05T13:38:00+08:00",
+  "last_updated": "2026-10-05T14:09:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T05:34:55.302127+00:00",
+      "checked_at": "2026-10-05T06:07:07.663853+00:00",
       "own_live_processes": 0,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
@@ -3129,12 +3129,12 @@
       "other_task_ticket": 61,
       "other_task_driver_pid": 3761322,
       "other_task_stage_pid": 3761327,
-      "other_task_completed_samples": 37,
+      "other_task_completed_samples": 85,
       "other_task_expected_samples": 312,
-      "latest_own_stage": "U6",
+      "latest_own_stage": "U7_source_identity_preparation",
       "latest_own_stage_complete": true,
       "own_slot_lock_present": false,
-      "receipt": "05_handoff/independent_validation_20261004/phase_evidence_U6/LOCAL_EVIDENCE_CHECK.json"
+      "receipt": "05_handoff/independent_validation_20261004/three_arm_identity_U7/LOCAL_EVIDENCE_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3174,7 +3174,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T13:38:00+08:00",
+  "updated_at": "2026-10-05T14:09:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -4804,5 +4804,52 @@
     "comprehensive_batch_complete": false,
     "public_result": "03_analysis/helper_extraction_20261004/U6_PHASE_EVIDENCE_20261005.json",
     "next": "Follow existing ticket61 until terminal. Do not rerun pilot or duplicate full156. Audit complete312 and full costs/deadlines/cleanup, then decide against frozen gate. Independent data, original official baseline, full5 samples and formal32GB remain separate missing admission."
+  },
+  "three_arm_identity_U7_20261005": {
+    "status": "source_identity_preparation_complete_existing_regression_running",
+    "updated_at": "2026-10-05T14:09:00+08:00",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "source_commit": "375e6d18a2a1ba31bc96cc5a6989d2cec1d3d7c9",
+    "official_upstream_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+    "byte_identical_source_files": 4,
+    "lock_json_fields_identical": true,
+    "lock_json_bytes_identical": false,
+    "first_alignment_failure_preserved": true,
+    "current_C_is_archived_A": false,
+    "prospective_comparison": [
+      "archived_A",
+      "candidate_P",
+      "official_baseline_B"
+    ],
+    "frozen_source_files_verified": 44,
+    "live_full156": {
+      "checked_at": "2026-10-05T06:07:07.663853+00:00",
+      "ticket": 61,
+      "state": "running",
+      "driver_pid": 3761322,
+      "stage_pid": 3761327,
+      "driver_alive": true,
+      "stage_alive": true,
+      "completed_samples": 85,
+      "expected_samples": 312,
+      "confirmed_requests_in_completed_rows": 87,
+      "requests_in_completed_rows": 87,
+      "deadlines": 0,
+      "unconfirmed": 0,
+      "tool_errors": 0,
+      "summary_sha256": "ff6be9da7b2614ae4efec611b0fb8bea163fcfde973be102a7ae6246f1e6bc1a",
+      "free_bytes": 9961816064,
+      "model_pid": 2013333,
+      "model_cmd_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1",
+      "complete": false
+    },
+    "archive_sha256": "cbfa3d4910a2cb1984b1964d23449d9d2d2498c0a8b123b0b28601b2170cb4ad",
+    "dual_verified_members": 7,
+    "nested_source_files": 5,
+    "cleanup_complete": true,
+    "full_batch_complete": false,
+    "public_result": "03_analysis/helper_extraction_20261004/U7_TRIPLE_ARM_IDENTITY_20261005.json",
+    "next": "Follow frozen ticket61 to terminal and audit original acceptance. Retain A/B source bundle for a later admitted A/P/B comparison; no duplicate job or score inheritance. Independent data, budget/credits and formal32GB still missing."
   }
 }
