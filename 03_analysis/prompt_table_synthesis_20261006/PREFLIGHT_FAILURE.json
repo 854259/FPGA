@@ -1,0 +1,15 @@
+{
+  "schema": "table_synthesis_v1_failed_linux_pure_v1",
+  "status": "preflight_failed_not_submitted",
+  "spec_sha256": "540eef5cba79c532405d7009e8478e18acde6849e02d2ed38dab751ae1ec541e",
+  "source_assets": 88,
+  "local_tests_passed": 55,
+  "linux_tests_run": 55,
+  "linux_test_errors": 1,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "failure": "test fixture used Windows sibling dirname; Linux actual historical directory has _v1 suffix",
+  "error_log_sha256": "3cea0a3cce70cf7b18fc30c8fd02c516958eb35d97dac6589adc40862fe7efff",
+  "original_sources_and_gate_preserved": true,
+  "quality_gain_measured": false
+}

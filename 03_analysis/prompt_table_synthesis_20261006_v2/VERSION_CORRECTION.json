@@ -1,0 +1,13 @@
+{
+  "schema": "table_synthesis_v2_test_fixture_correction_v1",
+  "v1_spec_sha256": "540eef5cba79c532405d7009e8478e18acde6849e02d2ed38dab751ae1ec541e",
+  "old_test_sha256": "9c969838adb6cc5bf4cea2be52e0c15b8b57d94df975c2e6452a77c544296ba9",
+  "new_test_sha256": "eea9718ba6a6b952d660f2706f8cc6412e2b5d2265952dd7e1fdd4e418b2f549",
+  "only_test_change": "Use bundled exact upstream/worker.py instead of platform-specific sibling name",
+  "generation_worker_stage_metrics_and_common_phase_sources_unchanged": true,
+  "original_quality_gates_unchanged": true,
+  "audit_change": "Bind exact new capture/spec counts 15 groups and 653 assets, recompute total, and require the same exact counts in all 57 protected-source receipts. Add one FAKE-only adversarial method exercising this full receipt gate; total pure checks 56.",
+  "added_protected_group": "v1 preflight-failed immutable 88-asset source; 15 groups/653 assets",
+  "model_calls": 0,
+  "eda_calls": 0
+}

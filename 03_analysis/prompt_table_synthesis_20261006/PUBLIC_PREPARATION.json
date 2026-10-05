@@ -1,0 +1,35 @@
+{
+  "schema": "prompt_table_synthesis_public_preparation_v1",
+  "status": "preflight_failed_not_submitted",
+  "spec_sha256": "540eef5cba79c532405d7009e8478e18acde6849e02d2ed38dab751ae1ec541e",
+  "source_assets": 88,
+  "public_source_assets": 86,
+  "protected_group_count": 14,
+  "protected_source_assets": 565,
+  "archive": {
+    "spec_sha256": "540eef5cba79c532405d7009e8478e18acde6849e02d2ed38dab751ae1ec541e",
+    "archive_sha256": "1c555370c831ffccf3ebb8837aae3ce88b426ce1c41a2306474447e90c21858b",
+    "bytes": 407918,
+    "files": 90
+  },
+  "model_calls": 0,
+  "eda_calls": 0,
+  "execution_pending": true,
+  "quality_gain_measured": false,
+  "adoption": false,
+  "controls": "Original audited full156 phase-P worker; P only adds strict prompt-table generation. All abstentions use the same phase-P.",
+  "output_budget": 8192,
+  "max_requests": 2,
+  "absolute_solve_deadline_s": 300,
+  "git_scope": "All source/binding assets except two private raw environment/protected captures; hashes remain in RUN_SPEC, full bytes installed in private cloud packet.",
+  "limits": [
+    "Known development tasks, no hidden/independent result.",
+    "Deterministic table emissions are not model responses.",
+    "No score or rollout qualification until exact terminal audit."
+  ],
+  "local_tests_passed": 55,
+  "linux_tests_run": 55,
+  "linux_errors": 1,
+  "failure_receipt_sha256": "25839cebc8ab24c14f3da10145611c28079774bc8b4367dcba147d74af0256b6",
+  "linux_failure": "Platform-specific fixture sibling path; v1 source unchanged and never queued."
+}

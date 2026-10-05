@@ -1,0 +1,22 @@
+{
+  "schema": "prompt_table_baseline_worker_exact_copy_v1",
+  "draft": true,
+  "original_path": "03_analysis/phase_full156_20261005/worker.py",
+  "original_sha256": "70ceb331104094df9762c09c97b644b7fd4e587059cc544e70d97b1f4d222375",
+  "original_bytes": 9135,
+  "copied_path": "baseline_worker.py",
+  "copied_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+  "copied_bytes": 9124,
+  "replacement_count": 1,
+  "only_replacement": {
+    "from": "candidate=args.arm == 'P'",
+    "to": "candidate=True"
+  },
+  "inverse_transform_matches_original": true,
+  "common_policy": "Both actual C/P arms use original phase_full156 P feedback. Runtime, skills, compiler and model transport otherwise exact original source.",
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_cloud_calls": 0,
+  "new_git_operations": 0,
+  "frozen": false
+}
