@@ -1,7 +1,7 @@
 {
   "schema": "natural_terminal_U9_frozen_v1",
   "at": "2026-10-05T09:46:27.464448+00:00",
-  "status": "prepared_not_submitted",
+  "status": "queued_not_executed",
   "action": "Readonly original archive audits; no native trial repetition or model requests",
   "entries": [
     {
@@ -37,5 +37,27 @@
     "slot_minutes": 5
   },
   "queue_rule": "Use existing FIFO after active ticket65; recheck same-spec results and avoid duplicates before submit. No interrupt, source/input rewrite or model restart.",
-  "acceptance": "Each original pinned audit must bind full archive/native receipts/guard and reproduce original qualification. Retain false acceptance, do not convert evidence completeness into model/independent quality admission. Generated reset controls are not original harness or unseen samples."
+  "acceptance": "Each original pinned audit must bind full archive/native receipts/guard and reproduce original qualification. Retain false acceptance, do not convert evidence completeness into model/independent quality admission. Generated reset controls are not original harness or unseen samples.",
+  "frozen_public_commit": "e9f4b2e",
+  "submissions": [
+    {
+      "ticket": 66,
+      "task_name": "natural_terminal_U9_edge_original_audit",
+      "monitor_pid": 4017621,
+      "accepted_at_utc": "2026-10-05T09:50:59.718874+00:00",
+      "alias": "edge"
+    },
+    {
+      "ticket": 67,
+      "task_name": "natural_terminal_U9_reset_original_audit",
+      "monitor_pid": 4017623,
+      "accepted_at_utc": "2026-10-05T09:50:59.772038+00:00",
+      "alias": "reset"
+    }
+  ],
+  "initial_status_at": "2026-10-05T09:51:57.250420+00:00",
+  "prepared_evidence_sha256": "521e8700e6bb03189c232757833ed9692556475d8b3e83eaeff0d267f3835f9e",
+  "prepared_files_dual_verified": 13,
+  "original_nested_files_dual_verified": 413,
+  "pending_inputs_retained": true
 }
