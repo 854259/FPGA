@@ -1,0 +1,229 @@
+{
+  "stage": "U4_original_natural_harness_audit",
+  "execution_commit": "bfaa08808c0785fd2b1f0f5c5a88f95b2ddce2ce",
+  "ticket": 59,
+  "driver_pid": 3760972,
+  "archive_sha256": "300406c03ccd4a62840b070d6271863a4f7c9b380a828dfcfb5e4e22ecd07e0e",
+  "file_count": 14,
+  "nested_source_files": 613,
+  "diagnosis": {
+    "record_id": "cvdp_copilot_gray_to_binary_0001",
+    "original_prompt_sha256": "c0a38a273cd64e18db54f104e7fcbebe2a23a26d435e67f095e4f9383b534ffa",
+    "original_test_sha256": "6cbaca22add7d1e367d4f2969d3b0953c691e5fb28de2095f1cf4e7465ea78ef",
+    "dut_attributes_referenced": [
+      "DEBUG_MODE",
+      "WIDTH",
+      "_log",
+      "binary_out",
+      "debug_mask",
+      "gray_in",
+      "parity"
+    ],
+    "valid_referenced": false,
+    "wrong_control_diff": "Only valid is forced low; data conversion, parity and debug remain correct.",
+    "original_trials_passed": 5,
+    "unique_parameter_configurations": 4,
+    "duplicate_default_configuration_runs": 2,
+    "failure_propagation_trials_detected": 5,
+    "root_cause": "Original test never reads or asserts valid, despite the public specification requiring it asserted after combinational computation.",
+    "original_harness_admitted": false,
+    "independent_model_tasks": 0,
+    "future_minimal_fix": "Evaluation-only isolated test copy: assert valid == 1 after the existing settle delay. Preserve original files and full output contract; check all existing6 gray controls over original5 runs (4 distinct configurations).",
+    "new_model_calls": 0,
+    "new_eda_calls": 0
+  },
+  "audit_result": {
+    "schema": "natural_harness_calibration_readonly_audit_v1",
+    "evidence_valid": true,
+    "archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+    "spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
+    "auditor_sha256": "e3992c2791b53dea5ec4b3391e7792c9c2dd7c5f4c71f220f81740bc4379359d",
+    "manifest_files": 613,
+    "model_calls": 0,
+    "audit_model_calls": 0,
+    "audit_eda_calls": 0,
+    "native_compile_commands": 50,
+    "native_simulation_commands": 50,
+    "original_harness_calibration": {
+      "cvdp_copilot_reverse_bits_0001": true,
+      "cvdp_copilot_binary_to_gray_0001": true,
+      "cvdp_copilot_gray_to_binary_0001": false
+    },
+    "controls": [
+      {
+        "record_id": "cvdp_copilot_reverse_bits_0001",
+        "label": "positive",
+        "passed": true,
+        "failed": false,
+        "native_trials": 1,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_reverse_bits_0001",
+        "label": "constant_zero",
+        "passed": false,
+        "failed": true,
+        "native_trials": 1,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_reverse_bits_0001",
+        "label": "constant_one",
+        "passed": false,
+        "failed": true,
+        "native_trials": 1,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_reverse_bits_0001",
+        "label": "identity",
+        "passed": false,
+        "failed": true,
+        "native_trials": 1,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_reverse_bits_0001",
+        "label": "failure_propagation",
+        "passed": false,
+        "failed": true,
+        "native_trials": 1,
+        "original_harness": false,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_binary_to_gray_0001",
+        "label": "positive",
+        "passed": true,
+        "failed": false,
+        "native_trials": 3,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_binary_to_gray_0001",
+        "label": "constant_zero",
+        "passed": false,
+        "failed": true,
+        "native_trials": 3,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_binary_to_gray_0001",
+        "label": "constant_one",
+        "passed": false,
+        "failed": true,
+        "native_trials": 3,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_binary_to_gray_0001",
+        "label": "identity",
+        "passed": false,
+        "failed": true,
+        "native_trials": 3,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_binary_to_gray_0001",
+        "label": "failure_propagation",
+        "passed": false,
+        "failed": true,
+        "native_trials": 3,
+        "original_harness": false,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "positive",
+        "passed": true,
+        "failed": false,
+        "native_trials": 5,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "constant_zero",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "constant_one",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "identity",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": true,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "valid_zero",
+        "passed": true,
+        "failed": false,
+        "native_trials": 5,
+        "original_harness": true,
+        "false_acceptance": true
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "failure_propagation",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": false,
+        "false_acceptance": false
+      }
+    ],
+    "false_acceptances": [
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "valid_zero",
+        "passed": true,
+        "failed": false,
+        "native_trials": 5,
+        "original_harness": true,
+        "false_acceptance": true
+      }
+    ],
+    "independent_model_tasks": 0,
+    "eligible_for_independent_models": false,
+    "adoption": false,
+    "limits": [
+      "Original public natural prompts exposed only for evaluation calibration; not unseen or training-independence certification.",
+      "Known specification controls are evaluation artifacts and never model inputs. This is original-harness discrimination, not solver scores or official Vivado L3.",
+      "Parameter/input coverage limited to original harness; no claim of exhaustive full specification proof. All false acceptances retained, no narrowing of ports/domain to pass.",
+      "Package/toolchain hash verification at original run and guard checks are historical observations; archive lacks all external installed binaries, no fresh offline32GB certification.",
+      "Full156 qualification, faithful ABI/model integration and exposure review remain necessary before natural model comparison."
+    ]
+  },
+  "guard": {
+    "elapsed_s": 0.5019591338932514,
+    "stage_pid": 3760977,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true
+  },
+  "audit_elapsed_s": 0.17346847243607044,
+  "dual_end_verified": true
+}

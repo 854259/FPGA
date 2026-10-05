@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05T12:48:00+08:00",
+  "last_updated": "2026-10-05T13:10:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3169,7 +3169,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T12:48:00+08:00",
+  "updated_at": "2026-10-05T13:10:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -4644,5 +4644,49 @@
     "next": "Audit existing natural_original_harness_controls_v1 ticket55 false acceptance before admitting independent models; do not rerun FSM pilot. Other-owner ticket58 running at12:46; follow without mutation.",
     "public_result": "03_analysis/helper_extraction_20261004/FSM_TERMINAL_REVIEW_20261005.json",
     "updated_at": "2026-10-05T12:48:00+08:00"
+  },
+  "natural_harness_U4_20261005": {
+    "status": "audit_complete_original_harness_rejected",
+    "execution_commit": "bfaa08808c0785fd2b1f0f5c5a88f95b2ddce2ce",
+    "ticket": 59,
+    "driver_pid": 3760972,
+    "stage_pid": 3760977,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "original_files": 613,
+    "historical_compiles": 50,
+    "historical_simulations": 50,
+    "diagnosis": {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "original_prompt_sha256": "c0a38a273cd64e18db54f104e7fcbebe2a23a26d435e67f095e4f9383b534ffa",
+      "original_test_sha256": "6cbaca22add7d1e367d4f2969d3b0953c691e5fb28de2095f1cf4e7465ea78ef",
+      "dut_attributes_referenced": [
+        "DEBUG_MODE",
+        "WIDTH",
+        "_log",
+        "binary_out",
+        "debug_mask",
+        "gray_in",
+        "parity"
+      ],
+      "valid_referenced": false,
+      "wrong_control_diff": "Only valid is forced low; data conversion, parity and debug remain correct.",
+      "original_trials_passed": 5,
+      "unique_parameter_configurations": 4,
+      "duplicate_default_configuration_runs": 2,
+      "failure_propagation_trials_detected": 5,
+      "root_cause": "Original test never reads or asserts valid, despite the public specification requiring it asserted after combinational computation.",
+      "original_harness_admitted": false,
+      "independent_model_tasks": 0,
+      "future_minimal_fix": "Evaluation-only isolated test copy: assert valid == 1 after the existing settle delay. Preserve original files and full output contract; check all existing6 gray controls over original5 runs (4 distinct configurations).",
+      "new_model_calls": 0,
+      "new_eda_calls": 0
+    },
+    "dual_verified_files": 14,
+    "archive_sha256": "300406c03ccd4a62840b070d6271863a4f7c9b380a828dfcfb5e4e22ecd07e0e",
+    "cleanup_complete": true,
+    "full_batch_complete": false,
+    "next": "U5 evaluation-only valid assertion regression frozen:6 existing controls x5 runs,0 model,30 compiles/30 simulations; source prepared before execution. Then inspect completed owner ticket58 terminal evidence.",
+    "updated_at": "2026-10-05T13:10:00+08:00"
   }
 }
