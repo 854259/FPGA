@@ -1,0 +1,113 @@
+{
+  "complete": true,
+  "valid": true,
+  "scope": "Six already-seen requests, four cache-path calls each; not a full batch, five independent solves or a quality comparison. No server restart or baseline change.",
+  "source_commit": "3088f6ea8ab57dc2c70786cc31566c450f3493ad",
+  "spec_sha256": "a6d37a8146ff1aa5cc85a31c44fc25b3a7fc553dcd7933edf893ad0d61bb81c1",
+  "actual_model_requests": 24,
+  "received_responses": 24,
+  "task_comparisons": [
+    {
+      "index": 0,
+      "task": "Prob038_count15",
+      "cold_repeat_equal": false,
+      "warm_repeat_equal": false,
+      "cross_path_equal_first": true,
+      "cross_path_equal_second": true
+    },
+    {
+      "index": 1,
+      "task": "Prob076_always_case",
+      "cold_repeat_equal": true,
+      "warm_repeat_equal": true,
+      "cross_path_equal_first": true,
+      "cross_path_equal_second": true
+    },
+    {
+      "index": 2,
+      "task": "Prob041_dff8r",
+      "cold_repeat_equal": true,
+      "warm_repeat_equal": true,
+      "cross_path_equal_first": true,
+      "cross_path_equal_second": true
+    },
+    {
+      "index": 3,
+      "task": "Prob022_mux2to1",
+      "cold_repeat_equal": true,
+      "warm_repeat_equal": true,
+      "cross_path_equal_first": true,
+      "cross_path_equal_second": true
+    },
+    {
+      "index": 4,
+      "task": "Prob074_ece241_2014_q4",
+      "cold_repeat_equal": true,
+      "warm_repeat_equal": true,
+      "cross_path_equal_first": true,
+      "cross_path_equal_second": true
+    },
+    {
+      "index": 5,
+      "task": "Prob125_kmap3",
+      "cold_repeat_equal": true,
+      "warm_repeat_equal": true,
+      "cross_path_equal_first": true,
+      "cross_path_equal_second": true
+    }
+  ],
+  "eda_calls": 0,
+  "full_batch_complete": false,
+  "independent_tasks": 0,
+  "elapsed_s": 105.67938452586532,
+  "audit": {
+    "all24_chains_passed": true,
+    "actual_calls": 24,
+    "confirmed_responses": 24,
+    "implicit_retries": 0,
+    "cold_zero_cache_count": 12,
+    "warm_positive_cache_count": 12,
+    "cold_repeat_equal": 5,
+    "warm_repeat_equal": 5,
+    "same_cold_warm_pairs": 12,
+    "decision": "Do not adopt cache_prompt=false as a reproducibility fix: a cold repeat still drifted, and every paired cold/warm content matched in this bounded test."
+  },
+  "group_totals": {
+    "C": {
+      "elapsed_s": 53.679275104776025,
+      "prompt_ms": 8157.406,
+      "generation_ms": 44299.207,
+      "completion_tokens": 1323,
+      "cached_tokens": 0
+    },
+    "W": {
+      "elapsed_s": 46.49964243918657,
+      "prompt_ms": 1942.978,
+      "generation_ms": 44305.432,
+      "completion_tokens": 1323,
+      "cached_tokens": 4964
+    }
+  },
+  "source_binding": {
+    "source_archive_sha256": "3233591576fa0d6527ab92b0c40f55a5e02e1bc167a50d61bfe23c290b4be84b",
+    "archive_prefix": "ggml-org-llama.cpp-c13fcbf",
+    "archive_file_count": 3619,
+    "matching_files": 3619,
+    "missing": [],
+    "mismatch": [],
+    "elapsed_s": 1.1150367185473442,
+    "limits": "Content match to a local source archive plus CMake commit flag is source consistency evidence; no claim of authenticated upstream delivery or bit-reproducible rebuild.",
+    "extra_files": 0,
+    "git_parent_lookup_corrected": true
+  },
+  "ticket": 50,
+  "driver_pid": 3742741,
+  "stage_pid": 3742746,
+  "guard_elapsed_s": 106.02437037602067,
+  "archive_sha256": "0a044fe222657aa52d132b1b598b55b6b5ef99ebf8b5fa4181e21200389be08a",
+  "archive_files_dual_verified": 136,
+  "correction_archive_sha256": "7405e34fd2edcaadff021c33c76718fcf19c0c00f883c705edbb992f93ad82d8",
+  "correction_files_dual_verified": 2,
+  "cache_remaining": 0,
+  "decision": "Reject disabling prompt cache as a sufficient reproducibility fix; no quality claim or scoring performed."
+}

@@ -4460,5 +4460,32 @@
     "archive_sha256": "fd75a4e19b725c8bf9cf487ade2870be76aa9ad0f3e14cd3a9800b50a902ead2",
     "content_equal": 92,
     "full_batch_complete": false
+  },
+  "cache_history_T11_20261005": {
+    "status": "completed_verified_not_adopted",
+    "source_commit": "3088f6ea8ab57dc2c70786cc31566c450f3493ad",
+    "ticket": 50,
+    "driver_pid": 3742741,
+    "stage_pid": 3742746,
+    "calls": 24,
+    "responses": 24,
+    "eda_calls": 0,
+    "scoring_calls": 0,
+    "stage_elapsed_s": 105.67938452586532,
+    "cold_warm_identical_pairs": 12,
+    "cold_repetition_equal_tasks": 5,
+    "warm_repetition_equal_tasks": 5,
+    "tasks": 6,
+    "independent_tasks": 0,
+    "full_batch_complete": false,
+    "decision": "Do not disable prompt cache as a reproducibility fix; no quality claim",
+    "source_archive_match_files": 3619,
+    "git_parent_lookup_corrected": true,
+    "archive_files_dual_verified": 136,
+    "correction_files_dual_verified": 2,
+    "cache_remaining": 0,
+    "current_model_job_running": false,
+    "next": "No additional cache probes; freeze new full comparison only after candidate, independent triggering material and complete budget are eligible.",
+    "updated_at": "2026-10-05T11:28:41.1688656+08:00"
   }
 }
