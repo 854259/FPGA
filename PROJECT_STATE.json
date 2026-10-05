@@ -6471,18 +6471,19 @@
     "shared_receipt": "03_analysis/team_coordination_20261005/SCORE_GOAL_SHARED_RECEIPT.json",
     "peer_acknowledgment": "pending",
     "latest_actual_longtest_observation": {
-      "completed": 467,
+      "completed": 532,
       "expected": 780,
       "complete": false,
       "error": null,
-      "actual_model_requests": 505,
-      "responses": 505,
+      "actual_model_requests": 574,
+      "responses": 574,
       "repeat_counts": {
         "1": 156,
         "2": 156,
-        "3": 155
+        "3": 156,
+        "4": 64
       },
-      "observed_at_epoch": 1791229498.2183096,
+      "observed_at_epoch": 1791231928.5521703,
       "terminal": false
     }
   },
@@ -6620,7 +6621,7 @@
     "followup_metadata_not_yet_cloud_synced": true
   },
   "vector_native_calibration_20261006_v1": {
-    "status": "amd52_prepared81_frozen140_pending_fifo",
+    "status": "queued_fifo85_actual_public12_shared_native_audit_pending",
     "report": "03_analysis/vector_native_calibration_20261006_v1/README.md",
     "public_receipt": "03_analysis/vector_native_calibration_20261006_v1/AMD_PUBLIC_PREPARATION.json",
     "public_binding": "03_analysis/vector_native_calibration_20261006_v1/FROZEN_RUN_BINDING.json",
@@ -6650,7 +6651,7 @@
     "prior_protected_source_assets": 930,
     "model_calls": 0,
     "eda_calls": 0,
-    "queued": false,
+    "queued": true,
     "native_qualified": false,
     "quality_gain_verified": false,
     "score_measured": false,
@@ -6662,8 +6663,29 @@
     "cp_prepared": false,
     "cp_queued": false,
     "actual_shared_logs": true,
-    "github_reminder": "https://github.com/854259/FPGA/issues/7#issuecomment-6001893083",
+    "github_reminder": "https://github.com/854259/FPGA/issues/7#issuecomment-6002271619",
     "peer_acknowledgment": "pending",
-    "new_public_git_delta_shared": false
+    "new_public_git_delta_shared": false,
+    "ticket": 85,
+    "public_delivery_receipt": "03_analysis/vector_native_calibration_20261006_v1/ACTUAL_DELIVERY_RECEIPT.json",
+    "queue_observed_at_epoch": 1791231428.2247841,
+    "queue_snapshot_state": "queued",
+    "monitor_pid": 337129,
+    "monitor_starttime": "850507761",
+    "monitor_command_sha256": "13f18807bf253ddd78d0483b964ca70086c1bb32545f1198462c3ccf1c7f95c9",
+    "preparation_pr_url": "https://github.com/854259/FPGA/pull/12",
+    "preparation_reviewed_head": "1dc137c9d5ba4f879c27c5cfb196e01bf0a0fc19",
+    "preparation_merge_sha": "ae2835410996b3710c241a790ae57ceef11cf1b7",
+    "preparation_public_git_delta_shared": true,
+    "preparation_public_git_delta_files": 12,
+    "public_git_sync_commit": "1dc137c9d5ba4f879c27c5cfb196e01bf0a0fc19",
+    "shared_delivery_logs_verified": 3,
+    "post_submission_receipt_not_yet_cloud_synced": true,
+    "current_protected_group_count": 19,
+    "current_protected_source_assets": 1070,
+    "last_source_and_process_observation_epoch": 1791231928.5521703,
+    "verified_live_process_count": 6,
+    "model_calls_scope": "preparation_and_submission_helpers_only; native stage model maximum0",
+    "eda_calls_scope": "preparation_and_submission_helpers_only; queued native stage not executed at submission snapshot"
   }
 }
