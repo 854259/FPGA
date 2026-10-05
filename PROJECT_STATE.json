@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T21:08:48.677388+08:00",
+      "checked_at": "2026-10-05T21:22:27.134195+08:00",
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
       "model_pid": 2013333,
@@ -3127,11 +3127,11 @@
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
       "known_full156_regression_completed_ticket": 61,
-      "latest_own_stage": "U15_sealed_receipts_preflight",
+      "latest_own_stage": "U16 RTLLM phaseP binding preflight (U15 also pending)",
       "latest_own_stage_complete": false,
       "latest_own_stage_status": "queued_not_executed",
-      "latest_own_ticket": 79,
-      "own_monitor_pid": 4095586,
+      "latest_own_ticket": 81,
+      "own_monitor_pid": 4117004,
       "other_active_tickets": [
         {
           "ticket": 78,
@@ -3144,8 +3144,8 @@
           "task_name": "phaseP_stability156x5_fresh_P_v1"
         }
       ],
-      "next_own_stage": "U15 terminal audit then RTLLM finite-domain execution binding",
-      "receipt": "Peer sync in existing registry/report; AMD read-only snapshot and exact asset comparison 2026-10-05T13:08:48Z"
+      "next_own_stage": "Audit pending U15 and U16 terminals, then finite-domain native judge/receipt normalization; follow existing P-only stability run",
+      "receipt": "05_handoff/independent_validation_20261004/rtllm_phaseP_binding_U16/LAUNCH_PREPARATION_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5371,5 +5371,34 @@
     "new_eda_calls": 0,
     "adoption": false,
     "full_batch_completed": false
+  },
+  "rtllm_phaseP_binding_U16_20261005": {
+    "updated_at": "2026-10-05T21:24:00+08:00",
+    "status": "queued_not_executed",
+    "source_commit": "237dfaa028eba5219cb752f81982e63107de1b50",
+    "ticket": 81,
+    "monitor_pid": 4117004,
+    "monitor_verified": true,
+    "new_model_calls_budget": 0,
+    "eda_calls_budget": 0,
+    "stage_timeout_s": 120,
+    "slot_minutes": 5,
+    "tested": false,
+    "fixture_files": 220,
+    "finite_tasks": 29,
+    "blocked_unscored": 15,
+    "planned_rows": 435,
+    "capacity_requests_not_approved": 725,
+    "legacy_controls_expected": 18,
+    "phaseP_controls_expected": 18,
+    "check_groups_expected": 12,
+    "dual_verified_source_files": 7,
+    "redundant_preparation_zip_removed_both_sides": true,
+    "private_receipt": "05_handoff/independent_validation_20261004/rtllm_phaseP_binding_U16/LAUNCH_PREPARATION_CHECK.json",
+    "private_receipt_sha256": "edb5b1e2e0eb8bcebf27601cf1a485d7e97f3097d964e1f0baa61898891040f5",
+    "execution_ready": false,
+    "finite_judge_bound": false,
+    "full_batch": false,
+    "next": "Audit U15/U16 then bind isolated finite native judge and actual receipt normalization; retain unscored15 and never reuse official L0-L3 as RTLLM score."
   }
 }

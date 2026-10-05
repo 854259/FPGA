@@ -1,6 +1,6 @@
 {
   "schema": "rtllm_phaseP_binding_U16_frozen_v1",
-  "status": "prepared_not_executed",
+  "status": "queued_not_executed",
   "purpose": "Bind unchanged RTLLM finite-domain inputs and source identities to A/P/B; keep historical C separate",
   "source_hashes": {
     "03_analysis/helper_extraction_20261004/three_arm_queue_20261005.py": "de7d4df53461843503760047f03affa4ea682cc2aa9559e91c80db06d40f44e7",
@@ -41,5 +41,19 @@
     "Future finite native judge and receipt normalization remain unimplemented; no official L0-L3 substitution",
     "435 rows and725 reservations describe capacity, not an approved inference budget",
     "No new independent tasks or full44 contract certification"
-  ]
+  ],
+  "execution_source_commit": "237dfaa028eba5219cb752f81982e63107de1b50",
+  "launch": {
+    "ticket": 81,
+    "monitor_pid": 4117004,
+    "monitor_verified": true,
+    "checked_at": "2026-10-05T21:22:27.134195+08:00",
+    "stage_started": false,
+    "preceding_tickets": [
+      78,
+      79,
+      80
+    ],
+    "log": "/workspace/team/task_fifo/runner_00000081.log"
+  }
 }
