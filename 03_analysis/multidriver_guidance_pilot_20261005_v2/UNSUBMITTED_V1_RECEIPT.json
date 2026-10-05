@@ -1,0 +1,21 @@
+{
+  "schema": "unsubmitted_guidance_v1_preflight_failure_v1",
+  "spec_sha256": "7ad2716d6b1b433ac6820706baeae5b7654eac48ffdcf8cb5d4bf030ce4616c3",
+  "archive_sha256": "77ea308fe9285e7fe30e8e7f94f985315108352edfee06fb5ba4aec6c8e6d51e",
+  "source_assets": 49,
+  "old_local_and_cloud_source_unchanged": true,
+  "linux_test_methods": 77,
+  "linux_test_passed": 76,
+  "linux_test_errors": 1,
+  "failed_method": "test_root_actual_eight_group_binding_matches_local_frozen_sources",
+  "failure": "Test-only local-directory mapping omitted cloud version suffix; missing cloud phase_full156_20261005/RUN_SPEC.json.",
+  "actual_failed_preflight_process_sha256": "7a0b73fbec25757d496093cae5ab686d6b136de236200d442a99aee7eccd99d0",
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "fifo_submitted": false,
+  "new_version_changed_source_files": [
+    "prepare.py",
+    "test_policy.py"
+  ],
+  "production_worker_audit_metrics_unchanged": true
+}

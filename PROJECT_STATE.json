@@ -6030,5 +6030,59 @@
     "run_spec_created": false,
     "score_gain_measured": false,
     "report": "03_analysis/bit_mapping_guidance_20261005/README.md"
+  },
+  "multidriver_guidance_pilot_20261005": {
+    "status": "unsubmitted_v1_frozen_linux_test_fixture_path_failure",
+    "spec_sha256": "7ad2716d6b1b433ac6820706baeae5b7654eac48ffdcf8cb5d4bf030ce4616c3",
+    "assets": 49,
+    "local_checks": 77,
+    "linux_checks_passed": 76,
+    "linux_check_errors": 1,
+    "source_unchanged": true,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "fifo_submitted": false,
+    "failure_receipt": "03_analysis/multidriver_guidance_pilot_20261005_v2/UNSUBMITTED_V1_RECEIPT.json"
+  },
+  "multidriver_guidance_pilot_20261005_v2": {
+    "status": "frozen_dual_environment_77_pass_ready_for_whole_task_fifo",
+    "spec_sha256": "bd7a55881b4599d856e5dac1a285fbe6456b14eec3c5485f4a6878f817ec7580",
+    "assets": 49,
+    "local_checks": 77,
+    "linux_checks": 77,
+    "expected_samples": 16,
+    "max_model_calls": 32,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "fifo_submitted": false,
+    "production_worker_audit_metrics_same_as_v1": true,
+    "stage_protected_groups": 8,
+    "stage_protected_source_assets": 232,
+    "preflight_protected_groups": 9,
+    "preflight_protected_source_assets": 281,
+    "prior_elaboration_factor_rejected": true,
+    "score_gain_measured": false,
+    "adoption": false,
+    "report": "03_analysis/multidriver_guidance_pilot_20261005_v2/STATUS.md"
+  },
+  "latest_score_failure_priority_20261005": {
+    "status": "latest_P_failed43_actual_read_only_priority_review_complete",
+    "failure_denominator": 43,
+    "level_counts": {
+      "3": 113,
+      "1": 39,
+      "0": 4
+    },
+    "first_only": 36,
+    "with_repair": 7,
+    "source_hashes": {
+      "README.md": "d00a798047f2536f9a0dcb92a7f7a85fb86e22f128eea50558a9fcf5f2adef42",
+      "REVIEW.json": "477bbf6c989fd9d9fab0d00989b4967b273eabfe061a07270c747930b0bfb8cc",
+      "BINDING.json": "0e47af03a0e4de6770f34421d9421e1f814e10fd40cd18f96a1a996682e2e2b2"
+    },
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "score_gain_measured": false,
+    "report": "03_analysis/latest_score_failure_priority_20261005/README.md"
   }
 }

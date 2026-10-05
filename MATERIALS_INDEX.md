@@ -1,3 +1,7 @@
+## 2026-10-05 实际预检与最新错题优先级
+
+`03_analysis/multidriver_guidance_pilot_20261005_v2/STATUS.md`：49冻结源，双环境77纯检查、0模型/EDA、待整任务FIFO；v1未提交路径fixture失败保留。`03_analysis/latest_score_failure_priority_20261005/README.md` / `REVIEW.json` / `BINDING.json`：最新43完整分母复查、两个独立候选、0新调用，非实际收益。
+
 ## 2026-10-05 新提分候选
 
 `03_analysis/compile_diagnostic_priority_20261005/README.md` / `EVIDENCE_META.json`：8纯检查、单历史诊断适用、0新模型/EDA，scope合并边界保留。`03_analysis/bit_mapping_guidance_20261005/README.md`：通用位映射技能后缀，仅准备，鲜样本收益待测。

@@ -1,0 +1,222 @@
+{
+  "schema": "latest_P_score_failure_priority_review_v1",
+  "latest_full_evidence": {
+    "schema": "latest_P_full156_binding_v1",
+    "evidence": {
+      "RUN_SPEC.json": {
+        "sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+        "bytes": 13105
+      },
+      "audit.py": {
+        "sha256": "681b46a55166caf319a03b48988d83cb923692c8a9424760d7ea7a5edfaea1ab",
+        "bytes": 12789
+      },
+      "raw_evidence/terminal_v1.zip": {
+        "sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+        "bytes": 8400448
+      },
+      "raw_evidence/terminal_audit_v1/RESULTS.json": {
+        "sha256": "3be06a7939895221aa194dfd5ff6814fe1ac84dcdee5ff2215b1b347bea05652",
+        "bytes": 209155
+      }
+    },
+    "archive_members": 10786,
+    "manifest_members": 10785,
+    "frozen_sources_unchanged": 44,
+    "full_samples": 312,
+    "P_tasks": 156,
+    "P_level_counts": {
+      "3": 113,
+      "1": 39,
+      "0": 4
+    },
+    "P_not_fully_correct": 43,
+    "actual_model_requests_historical": 338,
+    "P_coefficient": 0.7743589743589744,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_ssh_calls": 0,
+    "new_fifo_calls": 0,
+    "new_git_operations": 0,
+    "official_oracle_body_used_for_candidate": false,
+    "frozen_auditor_rerun": false
+  },
+  "current_failed_denominator": 43,
+  "current_L1": 39,
+  "current_L0": 4,
+  "current_L3": 113,
+  "failure_first_only": 36,
+  "failure_with_repair": 7,
+  "original_L1_coefficient": 0.2,
+  "all_failure_first_max_tokens": 8192,
+  "all_failure_first_finish_reason": "stop",
+  "legitimate_long_reply_guard": {
+    "task": "Prob147_circuit10",
+    "completion_tokens": 7785,
+    "finish_reason": "stop",
+    "compile_passed": true,
+    "actual_metadata": {
+      "task": "Prob147_circuit10",
+      "level": 1,
+      "mismatches": 229,
+      "samples": 232,
+      "stages": {
+        "compile": true,
+        "simulate": false,
+        "synth": false
+      },
+      "actual_requests": 1,
+      "solve_elapsed_s": 269.7183649558574,
+      "first_finish_reason": "stop",
+      "first_usage": {
+        "completion_tokens": 7785,
+        "prompt_tokens": 1253,
+        "total_tokens": 9038,
+        "prompt_tokens_details": {
+          "cached_tokens": 1249
+        }
+      },
+      "first_max_tokens": 8192,
+      "prompt_sha256": "d8eb255b565aa72aba2ca191784f1a5a3dac8c3bf3fcf6e030f0a7770e80e3a2",
+      "first_response_sha256": "ee1fcbab666592869b23dd2e3324f7163a0bbb4acd8d7332d970ae487bea4896",
+      "final_solution_sha256": "feb1a8b96e07483d821f0c798e8d521d7bedb855024d7e514e0a9f7088c3d11d"
+    }
+  },
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "name": "compile_error_priority_and_same_file_message_deduplication",
+      "status": "root_prepared_only; new_model_gain_unmeasured",
+      "support_current_tasks": [
+        "Prob134_2014_q3c"
+      ],
+      "direct_support_count": 1,
+      "support_strength": "single direct weak motivation; not two-task evidence",
+      "counterexamples": [
+        "Prob144_conwaylife",
+        "Prob082_lfsr32"
+      ],
+      "runtime_inputs": "original prompt plus confirmed failed candidate compile stdout",
+      "prompt_only": false,
+      "requires_oracle": false,
+      "first_system_message_changed": false,
+      "same_first_binding_needed_for_causal_chain": true,
+      "new_diagnostic_advice": false,
+      "source_snapshot": {
+        "sha256": "9c820ad49aec9d2525093d1350ebf80c44b2671a5ea349f34faed5a5257d4edd",
+        "bytes": 1659,
+        "private_snapshot": "raw_evidence/source_context/compile_diagnostic_priority_20261005/priority.py"
+      },
+      "actual_feedback_binding_sha256": "12060647ffbcf21aad12de771146821f8b227b1e11559d229bfe28e9f764da25",
+      "estimated_failed_coverage_fraction": 0.023255813953488372,
+      "optimistic_weighted_gain_upper_bound_if_all_evidence_tasks_L3": 0.00641025641025641,
+      "gain_is_measured": false,
+      "minimum_experiment_suggestion": {
+        "fresh_tasks": 8,
+        "arms": 2,
+        "planned_samples": 16,
+        "max_model_requests": 32,
+        "max_tokens_per_request": 8192,
+        "max_model_repairs_per_sample": 1,
+        "solve_absolute_seconds": 300,
+        "target": "latest134 sole direct crowd-out;144/082 counterexamples plus five certified currentL3 guards",
+        "changes": "only confirmed-failed compile stdout presentation; original 2048 cap/skills/mechanical declaration repair/function feedback/judge",
+        "conclusion_limit": "one successful target is one observation; a cross-task efficacy claim requires independent natural evidence"
+      }
+    },
+    {
+      "name": "numeric_source_to_destination_bit_mapping_generation_skill_appendix",
+      "status": "root_prepared_only; real20fresh pilot not executed by review",
+      "support_current_tasks": [
+        "Prob082_lfsr32",
+        "Prob086_lfsr5",
+        "Prob097_mux9to1v",
+        "Prob124_rule110"
+      ],
+      "direct_support_count": 4,
+      "support_strength": "four current source/prompt numeric contradictions; residual causes remain possible",
+      "private_support_sha256": "77a8a0bcd2fb1e649f4da1efe03ec0ec1a4ebc63bf413af628bd70cdcfdbbb2b",
+      "source_arithmetic_sha256": "03101188cd46ed85f4b023cea069b736fab121947819ea2a74ef5e816de32c8d",
+      "runtime_inputs": "original prompt/model candidate; no reference implementation or official test bench",
+      "prompt_only": true,
+      "requires_oracle": false,
+      "first_system_message_changed": true,
+      "repair_system_message_changed": true,
+      "first_only": false,
+      "same_first_requirement": false,
+      "source_snapshot": {
+        "sha256": "518a93fef56513e39467b67be1031c23fd1bf37ed9bcc1a672aa050e82dc6bce",
+        "bytes": 390,
+        "private_snapshot": "raw_evidence/source_context/bit_mapping_guidance_20261005/APPENDIX.txt"
+      },
+      "estimated_failed_coverage_fraction": 0.09302325581395349,
+      "optimistic_weighted_gain_upper_bound_if_all_evidence_tasks_L3": 0.020512820512820513,
+      "gain_is_measured": false,
+      "082_boundary": "reset is explicitly synchronous active-high 32h1; evidence here is comment-index versus literal-bit inconsistency, not an invented initial-state/tap oracle",
+      "minimum_experiment_suggestion": {
+        "planned_samples": 20,
+        "arms": 2,
+        "target_tasks": [
+          "Prob082_lfsr32",
+          "Prob086_lfsr5",
+          "Prob097_mux9to1v",
+          "Prob124_rule110"
+        ],
+        "original_correct_guards": 6,
+        "max_model_requests": 40,
+        "max_tokens_per_request": 8192,
+        "max_model_repairs_per_sample": 1,
+        "solve_absolute_seconds": 300,
+        "changes": "only same appendix on original generation skill for first and repair; shared phase-fullP runtime retained",
+        "full_regression_admission": "at least two real target improvements, overall net gain, no guard regression/deadline/unconfirmed; not independent/five-sample certificate"
+      }
+    }
+  ],
+  "unique_evidence_tasks": 5,
+  "estimated_unique_failure_coverage": 0.11627906976744186,
+  "optimistic_combined_weighted_gain_upper_bound": 0.026923076923076925,
+  "remaining_failure_tasks_not_covered_by_these_evidence_cases": 38,
+  "whole43_mathematical_gain_to_allL3": 0.22564102564102567,
+  "estimates_are_not_measured_gains": true,
+  "other_current_observations_not_new_factors": [
+    {
+      "tasks": [
+        "Prob111_fsm2s",
+        "Prob135_m2014_q6b",
+        "Prob150_review2015_fsmonehot"
+      ],
+      "note": "current-state output phase vs next-state and self-loop incoming coverage; no new FSM factor or experiment added"
+    },
+    {
+      "tasks": [
+        "Prob099_m2014_q6c",
+        "Prob116_m2014_q3"
+      ],
+      "note": "prompt internal interface/index conflict; both retained in43 denominator; no oracle-derived correction"
+    },
+    {
+      "task": "Prob064_vector3",
+      "note": "output splitting order looks inconsistent; prompt lacks equally explicit numerical destination relation, so not included in four direct targets"
+    },
+    {
+      "task": "Prob143_fsm_onehot",
+      "note": "latestP isL3; old failed143 is not a current failure example"
+    }
+  ],
+  "prior_failed_factors": {
+    "complete_care_feedback": "old050 fixed,057 still wrong,125 mismatch6to7; not qualified",
+    "FSM_native_feedback": "old150 fixed but143 still wrong;1of2 planned chains not qualified",
+    "concise_output": "old0.70to0.65 with070/124 regressions; token reduction not efficacy",
+    "ordinary_elaboration_feedback": "FIFO65 zero gain;156 repair still multiple drivers; rejected",
+    "driver_guidance": "separate root factor currently being advanced; not a new recommendation here"
+  },
+  "current_score_unchanged": true,
+  "adoption": false,
+  "new_actual_model_calls": 0,
+  "new_actual_eda_calls": 0,
+  "new_actual_ssh_calls": 0,
+  "new_actual_fifo_calls": 0,
+  "new_git_operations": 0,
+  "frozen_auditor_rerun": false,
+  "oracle_body_used_for_candidate": false
+}
