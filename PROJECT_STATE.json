@@ -3118,12 +3118,12 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T20:45:14.699141+08:00",
+      "checked_at": "2026-10-05T21:08:48.677388+08:00",
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
-      "processing_slots": 0,
+      "processing_slots": null,
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
       "known_full156_regression_completed_ticket": 61,
@@ -3134,18 +3134,18 @@
       "own_monitor_pid": 4095586,
       "other_active_tickets": [
         {
-          "ticket": 77,
-          "state": "held_for_inspection",
-          "task_name": "compile_diagnostic_priority_fresh_C_P_v1"
+          "ticket": 78,
+          "state": "running",
+          "task_name": "semantic_edge_guidance_fresh_C_P_v1"
         },
         {
-          "ticket": 78,
+          "ticket": 80,
           "state": "queued",
-          "task_name": "semantic_edge_guidance_fresh_C_P_v1"
+          "task_name": "phaseP_stability156x5_fresh_P_v1"
         }
       ],
       "next_own_stage": "U15 terminal audit then RTLLM finite-domain execution binding",
-      "receipt": "05_handoff/independent_validation_20261004/sealed_receipts_U15/LAUNCH_PREPARATION_CHECK.json"
+      "receipt": "Peer sync in existing registry/report; AMD read-only snapshot and exact asset comparison 2026-10-05T13:08:48Z"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5302,7 +5302,7 @@
     "result_sha256": "6e4b0e4390ea3cd516b4420a9ad0574db748615408104c27fa7f7c8253a3982b"
   },
   "sealed_receipts_U15_20261005": {
-    "updated_at": "2026-10-05 20:47:44 +08:00",
+    "updated_at": "2026-10-05 21:10 +08:00",
     "status": "queued_not_executed",
     "source_commit": "326f829a2ed6c10afa565cad55973ce5f0051082",
     "ticket": 79,
@@ -5317,10 +5317,10 @@
     "expected_controls": 16,
     "public_spec": "03_analysis/helper_extraction_20261004/U15_SEALED_RECEIPTS_20261005.json",
     "private_receipt": "05_handoff/independent_validation_20261004/sealed_receipts_U15/LAUNCH_PREPARATION_CHECK.json",
-    "preceding_task_state": "Ticket77 held_for_inspection: stage_rc1, summary AssertionError, owned cleanup verified, shared model/protected unchanged. Another owner; no release or retry performed.",
+    "preceding_task_state": "Ticket77 owner-inspected task-name mismatch, failed_released_after_inspection; ticket78 running. U15 ticket79 queued, no result yet.",
     "tested": false,
     "full_batch": false,
-    "next": "Await preceding owner inspection/FIFO, verify actual U15 terminal and archive. Then RTLLM finite-domain binding; no new model batch admitted."
+    "next": "Inspect U15 terminal then RTLLM finite-domain binding. Follow existing P-only ticket80; do not duplicate or call it an A/P/B comprehensive batch."
   },
   "public_exposure_reconciliation_20261005": {
     "checked_at": "2026-10-05 20:34:21 +08:00",
@@ -5345,5 +5345,31 @@
     "next": "Keep repository public as explicitly requested. No visibility change or history rewrite. Continue AMD research; publish only reviewed source and public aggregate reports, retaining raw evidence privately. Historical exposure remains unresolved.",
     "user_visibility_decision": "Keep repository public; user explicitly declined making it private.",
     "user_visibility_decision_at": "2026-10-05 20:36:38 +08:00"
+  },
+  "peer_result_assimilation_20261005": {
+    "updated_at": "2026-10-05T21:10:00+08:00",
+    "source_branch": "codex/autonomous-rtl-20261004",
+    "source_commit": "89b4f391448a438f814c96023136519da766fb60",
+    "scope": "public terminal review, current AMD queue and exact U8/P-stability source comparison; no new model/EDA",
+    "retained_candidate": "original phaseP ticket61; U8 audited; weighted0.774359 L3 113/156",
+    "own_solver_binding": "three_arm_queue_20261005.py PARENT_SPEC 3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+    "rejected_factors": [
+      "ticket73 multidriver guidance: no gain 0.775/0.775, previous65P common substrate",
+      "ticket76 bit mapping: 0.74/0.66, 2 regressions, do not merge"
+    ],
+    "preparation_failure": "ticket77 wrong frozen task directory; partial14/16, not scored; existing own validate checks every input before any launch",
+    "source_files_compared_on_amd": 44,
+    "source_mismatches": 0,
+    "task_order_equal": true,
+    "stability_ticket": 80,
+    "stability_state": "queued",
+    "stability_spec_sha256": "589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15",
+    "stability_scope": "P only, known development156x5,780 outputs,max1560 calls,12h stage safety cap; not a paired three-arm or final official result",
+    "next": "Reuse completed compatible stability evidence after terminal audit; do not duplicate P-only work or splice later A/B into falsely contemporaneous pairs. Continue own U15/RTLLM binding.",
+    "private_archives_reaudited_this_sync": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "adoption": false,
+    "full_batch_completed": false
   }
 }
