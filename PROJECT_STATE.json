@@ -3118,27 +3118,28 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T19:14:06.962700+08:00",
-      "own_live_processes": 0,
+      "checked_at": "2026-10-05T19:41:49.173092+08:00",
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
+      "own_queue_monitor_pid": 4039034,
+      "own_queue_monitor_live": true,
       "model_pid": 2013333,
       "processing_slots": 0,
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
       "known_full156_regression_completed_ticket": 61,
-      "latest_own_stage": "U13_baseline_transport_scoring_preflight",
-      "latest_own_stage_complete": true,
-      "latest_own_stage_status": "complete_engineering_only",
-      "completed_tickets": [
-        72
-      ],
-      "active_queue_tasks": 0,
+      "latest_own_stage": "U14_three_arm_execution_preflight",
+      "latest_own_stage_complete": false,
+      "latest_own_stage_status": "queued_not_executed",
+      "latest_own_ticket": 74,
+      "active_queue_tasks": 2,
       "historical_completed_tickets": 63,
       "historical_failed_released_tickets": 9,
-      "next_own_stage": "actual_A_P_B_dispatch_receipts_and_scoring_in_queue",
-      "next_own_stage_status": "planned_not_launched",
-      "receipt": "05_handoff/independent_validation_20261004/baseline_receipts_U13/TERMINAL_CHECK.json"
+      "preceding_ticket": 73,
+      "preceding_ticket_status": "running",
+      "next_own_stage": "follow_U14_then_comprehensive_admission_manifest",
+      "next_own_stage_status": "wait_for_existing_queue_entry_no_duplicate",
+      "receipt": "05_handoff/independent_validation_20261004/three_arm_execution_U14/LAUNCH_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5220,5 +5221,32 @@
     },
     "next": "Bind these source-pinned receipt and scoring interfaces with actual A/P/B dispatch in the durable row queue; no candidate-policy change or real call without data/resource/budget admission.",
     "public_result": "03_analysis/helper_extraction_20261004/U13_BASELINE_RECEIPTS_20261005.json"
+  },
+  "three_arm_execution_U14_20261005": {
+    "status": "queued_source_verified_not_executed",
+    "source_commit": "9c828f298d06d1aee5f77f69cfd8a90d220f0f6d",
+    "ticket": 74,
+    "monitor_pid": 4039034,
+    "driver_pid": null,
+    "stage_pid": null,
+    "accepted_at": "2026-10-05T19:39:52.711444+08:00",
+    "remote_root": "/workspace/team/runs/fpga_teammate/three_arm_execution_U14_20261005_9c828f2",
+    "source_hashes": {
+      "three_arm_queue_20261005.py": "34d8d3dd306720bc340957f869cf489b70be9a519d156db3f5a3967034456603",
+      "three_arm_execution_preflight_20261005.py": "f9517dc8ef3756ecb88e43c6a9ed94615c74bf7f5a996f91cc91ad4f03f4a001",
+      "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422",
+      "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+      "official_baseline_scoring_20261005.py": "a6bf0420bdb89a2fd38f9e3ac3c951cc4b27f9a90204e4cc3073d7154a1f8983"
+    },
+    "planned_real_model_calls": 0,
+    "planned_fake_http_posts": 9,
+    "planned_solver_child_invocations": 7,
+    "planned_official_judgements": 6,
+    "slot_minutes": 30,
+    "stage_timeout_s": 1500,
+    "whole_row_reservation_s": 670,
+    "full_batch": false,
+    "cleanup": "preparation_sources_required_by_queued_run_retained_no_cache_or_pending",
+    "next": "Follow existing ticket74; preserve any failure, diagnose before re-freeze; archive and assess. Close complete admission gaps before natural model batch."
   }
 }
