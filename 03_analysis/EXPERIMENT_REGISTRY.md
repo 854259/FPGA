@@ -1,3 +1,9 @@
+## 2026-10-06 局部邻域 v2 AMD61 准备及真实源封存
+
+授权AMD四步骤实际rc0，61项纯检查通过，87校准文件/92准备资产和151封存源已核验；冻结准入和工具环境通过。模型/EDA均0，原生、C/P、得分与入队未建立。旧v1初始化rc5/Ran0及40资产保持，已提醒Issue7#6004207090；首次freeze连接超时保留，只读确认无写入后以独立运输版本完成，未重复测试。说明见03_analysis/local_neighborhood_native_calibration_20261006_v2/README.md。
+
+旧21组1274源及共享模型保持，80/peer81/82/83/84/85/唯一observer不变。先真实原生完整档案审计，后原8192/max2/一次repair/300/完整judge小试，净收益/原正确不退步/P成本不升后才全156。当前完整113/77.4359，目标至少120/80 active，97%停止线；新9公开文件PR/实际共享仍pending，ACK pending。80终态复用peer8ed既有统计及原审计。
+
 ## 2026-10-06 局部邻域单因素 AMD14 纯准备完成，尚无新分数
 
 私有独立因素 local_neighborhood_pure_20261006_v1 在 AMD 实际通过14项纯检查，并对完整156题做接纳检查：3生成、153弃权。163份源/164份输入包、真实unit/intake进程rc0、无超时/剩余组/正常完成后组信号，前后源/Python及原19组1070源和模型身份保持；本轮模型/EDA均0。生成器仅从完整题面与接口推导，不读取task ID、缓存答案或规则标签作答案。公开仅计数/哈希/范围，原题面、解析源码、RTL/TB和raw保持私有。详见03_analysis/local_neighborhood_generation_20261006_v1/README.md及AMD_PUBLIC_PREPARATION.json。
