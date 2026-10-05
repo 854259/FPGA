@@ -1,0 +1,32 @@
+{
+  "schema": "unintended_raw_commit_correction_v1",
+  "affected_commit": "05ef08c",
+  "introduced_raw_paths": [
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/INSTALL_PROCESS.json",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/RECENT_TICKETS.json",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/install_local.py",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/install_remote.py",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/preparation_v1.zip",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/test_fixtures/phase_observation.json",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/test_fixtures/priority.txt",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/test_fixtures/score.py",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/test_fixtures/shift.txt",
+    "03_analysis/phase_feedback_pilot_20261005/raw_evidence/update_frozen_docs.py",
+    "03_analysis/team_phase_repair_review_20261005/raw_evidence/45_EVIDENCE.zip",
+    "03_analysis/team_phase_repair_review_20261005/raw_evidence/45_PREPARATION.zip",
+    "03_analysis/team_phase_repair_review_20261005/raw_evidence/46_EVIDENCE.zip",
+    "03_analysis/team_phase_repair_review_20261005/raw_evidence/46_PREPARATION.zip",
+    "03_analysis/team_phase_repair_review_20261005/raw_evidence/47_EVIDENCE.zip",
+    "03_analysis/team_phase_repair_review_20261005/raw_evidence/ORIGINAL_INVENTORY.json",
+    "03_analysis/team_phase_repair_review_20261005/raw_evidence/build_fresh_candidate.py",
+    "03_analysis/team_phase_repair_review_20261005/raw_evidence/download_originals.py"
+  ],
+  "corrective_action": "Remove raw paths from current Git index, retain local/cloud archives, add global raw-evidence ignore and explicit frozen byte attributes.",
+  "historical_commit_still_contains_raw": true,
+  "credential_pattern_scan_findings": [],
+  "scanned_text_entries": 2227,
+  "model_request_schema_checked": 56,
+  "limits": "Pattern scan and closed request schemas do not prove absence of every possible secret. Archived content is benchmark prompts, evaluator assets, model replies and logs; no known live credential identified. Pushed history not rewritten.",
+  "model_calls": 0,
+  "eda_calls": 0
+}
