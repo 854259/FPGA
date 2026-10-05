@@ -1106,3 +1106,11 @@ G1完成，G2完整312描述盘点已出、手工题面根因核对仍在做。�
 - 智能体优化、skill、156 题报告及续跑测试已推送至 fix/reliable-evaluation；已核对远端代码提交 6abfdd96d2550d24ff347bc9a5d0637a9a34fbdd。
 - 合入 origin/main 的 d5753b4，保留用户已确认改报 AMD RTL 的最新状态；主分支未被覆盖。
 - 当前自动测试 39 项通过，本轮没有新增真实云端/GPU 成绩。原文中“未发布”为当时状态，本条记录为最新同步结果。
+
+## 2026-10-06 FSM v2 已在 AMD 纯预检并封存
+
+新校准 AMD 实际 33 项纯检查通过、114 准备资产生成，179 源封存；计划 38 控制/105 原生命令+2 监督/216 守护，实际模型/EDA 0，尚未入队、原生合格或提分。公开八份经隐私复核的新校准源码及 SHA 元数据；原题面和五份生成器源码继续私有。新观察 v1 的 AMD14 ERROR 保留，v2 夹具更名后 AMD14 全通过，生产 wrapper 不变、此时未启动。来源见 03_analysis/fsm_native_calibration_20261006/NATIVE_EXECUTION_PLAN.md 与 NATIVE_PUBLIC_PREPARATION.json；观察回执见 03_analysis/fsm_coordination_extension_20261006_v2/AMD_PREFLIGHT.json。
+
+最新实际只读 checkpoint 为 395/780、425 请求/回复、阶段无错误，80 running、81/82/83 queued；17 组 921 封存源与共享模型/唯一自有观察器保持，队友最新 8ed26b0 无新改动。此快照不是最终评分。完整仍 77.44%/113，目标至少 80%/120 且原正确不退步继续 active。
+
+下一步整任务 FIFO 原生校准→原始档案审计→独立 8 题 C/P；向量因素继续独立准备。原判定完整不变；未明确 x/z 语义不能解释为原判定不测 x/z。所有公开改动经 PR、必要 AMD 验证和审查后交付，合并不部署。已实际共享版本仍 e5c2d99/14 文件，当前新增量尚未同步，队友确认 pending。

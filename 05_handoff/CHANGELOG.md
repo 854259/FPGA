@@ -1,3 +1,11 @@
+## 2026-10-06 FSM v2 已在 AMD 纯预检并封存
+
+新校准 AMD 实际 33 项纯检查通过、114 准备资产生成，179 源封存；计划 38 控制/105 原生命令+2 监督/216 守护，实际模型/EDA 0，尚未入队、原生合格或提分。公开八份经隐私复核的新校准源码及 SHA 元数据；原题面和五份生成器源码继续私有。新观察 v1 的 AMD14 ERROR 保留，v2 夹具更名后 AMD14 全通过，生产 wrapper 不变、此时未启动。来源见 03_analysis/fsm_native_calibration_20261006/NATIVE_EXECUTION_PLAN.md 与 NATIVE_PUBLIC_PREPARATION.json；观察回执见 03_analysis/fsm_coordination_extension_20261006_v2/AMD_PREFLIGHT.json。
+
+最新实际只读 checkpoint 为 395/780、425 请求/回复、阶段无错误，80 running、81/82/83 queued；17 组 921 封存源与共享模型/唯一自有观察器保持，队友最新 8ed26b0 无新改动。此快照不是最终评分。完整仍 77.44%/113，目标至少 80%/120 且原正确不退步继续 active。
+
+下一步整任务 FIFO 原生校准→原始档案审计→独立 8 题 C/P；向量因素继续独立准备。原判定完整不变；未明确 x/z 语义不能解释为原判定不测 x/z。所有公开改动经 PR、必要 AMD 验证和审查后交付，合并不部署。已实际共享版本仍 e5c2d99/14 文件，当前新增量尚未同步，队友确认 pending。
+
 ## 2026-10-06 独立 FSM 生成器 AMD 纯准备完成
 
 隔离分支准备PR，仅公开私有文件名/哈希绑定和实际AMD纯检查/共享回执；审查发现源码解析规则可还原题面，五份源码保留私有，自己独占尚无PR的初始branch提交修正后交付，不公开原prompt及原始日志。AMD14通过、45私有准备保持、零模型/EDA，历史156纯接纳2单列，未得新分/原生合格/集成。审查发现原fixture缺FALL/DIG复位，新38控制校准尚草稿，未封存或入队。实际共享日志与GitHub提醒 https://github.com/854259/FPGA/issues/7#issuecomment-5999930676 ，ACK pending；公开Git同步仍962f201。fresh319/780/344请求回复，16组742源与模型/队友任务保持；目标80%/120继续active。所有后续公开改动PR、实际项目执行AMD。

@@ -1,0 +1,33 @@
+{
+  "schema": "fsm_observer_actual_amd_preflight_v2",
+  "cloud_root": "/workspace/team/tools/fsm-coordination-extension-20261006_v2",
+  "source_hashes": {
+    "fsm_coordination_wrapper.py": "79726cd9695856d5e4bda7c1e8d5e2d6a4f8dcf156c432009978190a99683636",
+    "test_fsm_coordination_wrapper.py": "edd1e8353d3b9a9c895a333872bc8ba0292292498be536f7276f65ca632c5457",
+    "README.md": "09c2e414954a79ab3dd73a33d81d19b5670815cf889bd9eeda2266769e41303b"
+  },
+  "actual_amd_pure_checks": 14,
+  "process_sha256": "88e1065c6d5f585085418617dbda9ac67ab2804468de564f830f208b7160f96b",
+  "packet_sha256": "ce46e33796f102646af421aeb4b01d45e0ff65b9c9006de0672deb8ea76918a1",
+  "pinned_table_wrapper": "/workspace/team/tools/table-coordination-extension-20261006_v1/table_coordination_wrapper.py",
+  "pinned_table_wrapper_sha256": "012370da40913ba32b26fc129e03dd524a419d803f7b43e02b88bc72ae6775db",
+  "pinned_base_tool": "/workspace/team/tools/team-coordination-20261005_v1/team_coordination.py",
+  "pinned_base_tool_sha256": "71c6c8490c201a37ded586d2c3a898d3651b2aec917babaf8ef8b062a5449b30",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "observer_started": false,
+  "old_sources_unchanged": true,
+  "at_epoch": 1791225430.0356143,
+  "historical_v1": {
+    "actual_amd_tests": 14,
+    "errors": 14,
+    "reason": "TestCase.run fixture collision",
+    "failed_sources_and_process_preserved": true
+  },
+  "v2_fix": "self.run fixture renamed to self.run_card; production wrapper unchanged",
+  "pure_checks_location": "authorized_AMD_only",
+  "native_qualified": false,
+  "quality_gain_verified": false,
+  "production_deployment": false,
+  "independent_static_review_passed": true
+}
