@@ -4040,7 +4040,7 @@
     "next": "Freeze evaluator-only common module-name conversion on constructed controls, then audit eligibility without model outputs; retain full156 nonpromotion"
   },
   "cvdp_name_binding_20261005": {
-    "updated_at": "2026-10-05T08:26:00+08:00",
+    "updated_at": "2026-10-05T08:33:00+08:00",
     "independent_admitted": 0,
     "full_batch_complete": false,
     "S3": {
@@ -4125,12 +4125,23 @@
     },
     "S6": {
       "independent_admitted": 0,
+      "active_fifo_tickets": [],
       "solver_unchanged": true,
-      "actual_model_max": 0,
-      "status": "contract_review_planned",
-      "actual_eda_max": 0,
+      "actual_model": 0,
+      "complete": false,
+      "reviewed_records": 6,
+      "private_ledger_sha256": "0c4bebe5b5a34c5aaf57b989d28b19938db3d99131eb7362170e4c278687dbde",
+      "reviewed_exposure": "development_regression_not_blind",
+      "order": "lexicographic id",
+      "amd_root": "/workspace/team/runs/fpga_teammate/cvdp_contract_S6_20261005_455746c",
+      "pending_records": 48,
+      "status": "static_contract_review_in_progress",
+      "checkpoint_files_verified": 3,
+      "actual_eda": 0,
+      "next": "Continue fixed seventh record; no model/EDA or score filtering",
       "fixed_records": 54,
-      "order": "lexicographic id"
+      "checkpoint_sha256": "818c3e475d173db5264ad61dc05ca2cb81c4be87c26df79acc2a3b96dc457cdb",
+      "reviewed_named_families": 5
     }
   }
 }

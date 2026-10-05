@@ -1,0 +1,23 @@
+{
+  "plan_commit": "455746c",
+  "source_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "binding_sha256": "475a7033956a4e2485845d999e3e5831490cfb86bc963861d72bb134418ee8b3",
+  "total_source_records": 302,
+  "fixed_review_records": 54,
+  "reviewed_records": 6,
+  "pending_records": 48,
+  "reviewed_named_families": 5,
+  "complete": false,
+  "actual_model_requests": 0,
+  "actual_eda_calls": 0,
+  "independent_admitted": 0,
+  "full_batch": false,
+  "private_ledger_sha256": "0c4bebe5b5a34c5aaf57b989d28b19938db3d99131eb7362170e4c278687dbde",
+  "conclusions": [
+    "Old mapping counterexample closed by S5; no new solver changes",
+    "Static review has identified missing failure assertions and contract/test assumptions; no model scoring started",
+    "First six full sources reviewed in fixed order; remaining48 not reviewed; full cohort not certified",
+    "Reviewed families are development/regression, not blind independent validation"
+  ],
+  "next": "Continue lexicographic review at seventh record; do not change source fixtures, solve code or name binding to fit review results"
+}
