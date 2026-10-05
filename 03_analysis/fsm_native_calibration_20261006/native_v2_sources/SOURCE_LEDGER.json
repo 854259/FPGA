@@ -1,0 +1,322 @@
+{
+  "schema": "fsm_native_calibration_draft_static_source_ledger_v1",
+  "status": "prepared_only_static_code_unfrozen",
+  "created_at_utc": "2026-10-05T18:13:01.3755894Z",
+  "planned": {
+    "total_controls": 38,
+    "semantic_variants": 24,
+    "walking_semantic": 10,
+    "digging_semantic": 14,
+    "transport_variants": 10,
+    "eda_failure_variants": 2,
+    "supervisor_probes": 2,
+    "native_commands": 105,
+    "actual_native_by_tool_planned": {
+      "xvlog": 36,
+      "xelab": 35,
+      "xsim": 34
+    },
+    "owned_supervisor_commands": 2,
+    "guard_receipts": 216,
+    "walking_checks_per_variant": 55,
+    "digging_checks_per_variant": 115,
+    "semantic_observations": 2160,
+    "transport_observations": 850,
+    "full_trace_observations": 3010
+  },
+  "this_draft_actual": {
+    "project_execution_local": 0,
+    "project_import_local": 0,
+    "tests_or_mocks_local": 0,
+    "model_requests": 0,
+    "EDA_commands": 0,
+    "supervisor_commands": 0,
+    "native_qualified": false,
+    "evidence_complete": false,
+    "score_gain_measured": false,
+    "frozen": false,
+    "queued": false,
+    "pure_methods_written": 33,
+    "pure_methods_run": 0,
+    "v2_assets_materialized": false
+  },
+  "source_files": {
+    "calibration.py": {
+      "sha256": "32e8b5ca359b523ac1b0fecfbd0d46fe589b6ce392f6a56be161525a0b815345",
+      "bytes": 33555
+    },
+    "prepare.py": {
+      "sha256": "4bc121dcef25f6768172256dbf01caf590b1d2871e9bf46727cfc95c74a6db17",
+      "bytes": 1614
+    },
+    "stage.py": {
+      "sha256": "1a12f422f4407af7bf5e33f97a3dac17e2216e8a59e3a5999d6ed2c5830fba65",
+      "bytes": 20998
+    },
+    "audit.py": {
+      "sha256": "46089a156f6e600fae1d9d9dcbe5456f8feeefc95299ef068178e2e213a2deef",
+      "bytes": 21163
+    },
+    "supervisor_probe.py": {
+      "sha256": "6c7c57045d99f008499c2cd6ce8ef7be67fc61a895382727bc02c7ff7b4ef75f",
+      "bytes": 1696
+    },
+    "test_calibration.py": {
+      "sha256": "7dc38feb5007b37a942ad154f3fbebaf58d1549ec4219e534efa36d03ce048f3",
+      "bytes": 24737
+    },
+    "CALIBRATION_DESIGN.md": {
+      "sha256": "1b4c5dc4fe0d82ee5c39407b9f30603364d904a80ba2fc255e5cacfec8fa785d",
+      "bytes": 8020
+    }
+  },
+  "old_preparation": {
+    "binding_sha256": "fc1de2ebb005880e229d1076c7200b4faeef1fdc6e66426d5d161801ec1f1a9b",
+    "expected_binding_sha256": "fc1de2ebb005880e229d1076c7200b4faeef1fdc6e66426d5d161801ec1f1a9b",
+    "bound_files": 44,
+    "physical_files_including_binding": 45,
+    "read_only_file_sha_check_all_match": true,
+    "checks": [
+      {
+        "path": "ALL156_PURE_ADMISSION.json",
+        "sha256": "c01d7c485a62114ae141b3cf9d09c370750c2ea91c52c658932f7dd00673483b",
+        "matches_binding": true
+      },
+      {
+        "path": "FIXTURE_INPUT_BINDING.json",
+        "sha256": "5ce50c40eb400992cb40994bb9f91e75ec9ced33e3aa08961cce02dfb61a9aee",
+        "matches_binding": true
+      },
+      {
+        "path": "fixtures/Prob111_fsm2s.prompt.txt",
+        "sha256": "e048cd8e3f02777f938e968ed677d1f802bd4874bd99cdc699b99d55e1f628ed",
+        "matches_binding": true
+      },
+      {
+        "path": "fixtures/Prob127_lemmings1.prompt.txt",
+        "sha256": "919cdcd7f0e136616a0641235c5ce56a3b30a3db24c6c24676d6115ee5c25b64",
+        "matches_binding": true
+      },
+      {
+        "path": "fixtures/Prob142_lemmings2.prompt.txt",
+        "sha256": "cb3939d17066809761e969e9093780b4edca92e35cc4dd40b64459bcc86f3687",
+        "matches_binding": true
+      },
+      {
+        "path": "fixtures/Prob152_lemmings3.prompt.txt",
+        "sha256": "b35e9888952abba73ee3da0faa3466dfd014908d8ca5fcf9e56706bcb735db5c",
+        "matches_binding": true
+      },
+      {
+        "path": "fixtures/Prob155_lemmings4.prompt.txt",
+        "sha256": "535dbaa5d4bb8285958b113656c132ccd71937cc83e55138160b74b39acb531c",
+        "matches_binding": true
+      },
+      {
+        "path": "FUTURE_SCREENING_METADATA_DRAFT.json",
+        "sha256": "6b979f3b624fd8e59223dee04c7f7a7df78cce76ce83334ad41e497751674750",
+        "matches_binding": true
+      },
+      {
+        "path": "narrative_keywords.py",
+        "sha256": "b2d174387bd14c9c9e59432331ae52c66de5f6bf00fb6c417a31f8e2d60cd6f2",
+        "matches_binding": true
+      },
+      {
+        "path": "narrative_spec.py",
+        "sha256": "648f550d72c89f5997be322660ef17e7ae59261b2a388df36ff8e9d68d6c9898",
+        "matches_binding": true
+      },
+      {
+        "path": "NATIVE_CONTROL_PLAN.md",
+        "sha256": "8c688049a2951ecb1706e8327cc8506b4e254004de4a96c49d86f75b78e4cb5d",
+        "matches_binding": true
+      },
+      {
+        "path": "native_fixtures.py",
+        "sha256": "826cd483d0f417f0a36399c45ec3a076836cea1388106264c5161334c6081650",
+        "matches_binding": true
+      },
+      {
+        "path": "PREPARATION_RESULT.json",
+        "sha256": "c194e9bb19c906b6dfc3166ade06b54b56b3d8b4b46b9053c8f53e58e6852f89",
+        "matches_binding": true
+      },
+      {
+        "path": "prepare_evidence.py",
+        "sha256": "040a945989a1927679bd1d4aee396e40097d0799cc6d42787c71e079735d6624",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/native_control_preparation.json",
+        "sha256": "5ecc756d85da63b4de58acaf0137b8ec4bc61e24337f0da14396cdb0b54cf549",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/native_fixture.prepared.sv",
+        "sha256": "b789bfae446decc78f35db78353a3cae2150e61937da1c2757eb7e6e81805ce2",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/sentinel_landing_bump.prepared.sv",
+        "sha256": "e443aba044265725b38e8632d8dc28589b17c84d0a54fdf9fb14efd57601b8b7",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/sentinel_lost_fall_direction.prepared.sv",
+        "sha256": "0e2b5ba1d0bb651bf785b89ccefbf902b8401ee8b4fd2e574e13cc2e8ac46d32",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/sentinel_negative_clock_edge.prepared.sv",
+        "sha256": "3cf91c012d9b4b19b764bfd338335203bd195b6f4548b94004984c5cdba6580f",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/sentinel_positive.prepared.sv",
+        "sha256": "322f52463a50800d3d05336e20924d774ce54f9e02c6faf47818efacfb6f385c",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/sentinel_stuck_zero.prepared.sv",
+        "sha256": "2e327cab181e2d35dcf2558c13ebe3c6aadd3cc51c3115088f79d05cab1f0114",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/sentinel_synchronous_reset.prepared.sv",
+        "sha256": "5e66f5258411865ca5af281748e04289f1bf17b0bcf5851b61f4c0797e12fadb",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/sentinel_wrong_front_bump.prepared.sv",
+        "sha256": "d44bcc60e4cb5ec8a519ae0b871dd78dd17cff4bf69a0b7ecb9b657075557931",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/solution.prepared.sv",
+        "sha256": "fc415935d1ed2709a91c4e6d4f87cec23a3322f6d341a3ea9665a82ee548afee",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling/synthesis_receipt.json",
+        "sha256": "621f837a16e20b71a6e90089ee0d1a5daa01e7e42c0ec7af816ad7878c8486ce",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/native_control_preparation.json",
+        "sha256": "0d70a3c30d55dce1133c26ebe773ea3b45ae793e46428b2891d5debdcb05a42d",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/native_fixture.prepared.sv",
+        "sha256": "ce2b933b9e9d9f84cf735236619bc1cdfd59f766f9ef2179281395ed3baf7f88",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_bump_before_dig.prepared.sv",
+        "sha256": "4ceadcaa8dab42e86e85931109f4f63669990a04ee3102d305c0b4f399fcea90",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_dig_not_sticky.prepared.sv",
+        "sha256": "a5c6757c92a488812556d1f8370c0e89c5b6dda8a6d9b2102be6eff86a70ed60",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_landing_bump.prepared.sv",
+        "sha256": "c230fe28d1269cd213f670331f0c81222c10d5bbf8e1c74594dd141c4213657c",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_lost_fall_direction.prepared.sv",
+        "sha256": "61e22a96ba0e69040908f559dfaa1557ff916b5c06c688158bd55a8df0f5455b",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_negative_clock_edge.prepared.sv",
+        "sha256": "530fd4c22b6b9e0aad9d6ee6bceb642edc8d83ffe27656be767eede73cb5e3cf",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_positive.prepared.sv",
+        "sha256": "cce885f33169da8f36427331e4c673baa8794fa587d140a7b3b65451ad3dbe45",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_stuck_zero.prepared.sv",
+        "sha256": "b67183395d4c8ce76f6c55f94b60c99783f8085bfb9d6cf0b53c16263d49240d",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_synchronous_reset.prepared.sv",
+        "sha256": "0e19173bf52f16efa4b9157623b052c2d942866b219b8b7473996711307b7e70",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/sentinel_wrong_front_bump.prepared.sv",
+        "sha256": "a167285b2e4d152a84edb0536348c9d34e7438de403ded21c0d36dd3c7a8e9a1",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/solution.prepared.sv",
+        "sha256": "75413a469da05854f878092c03f8660b8dce6231caac20c1b9618876e874b9b5",
+        "matches_binding": true
+      },
+      {
+        "path": "prepared/walking_falling_digging/synthesis_receipt.json",
+        "sha256": "15ed084d5504003b18e0d3520c986a0cb646cbab6f1e2433f9746229835f5ab0",
+        "matches_binding": true
+      },
+      {
+        "path": "PURE_TEST_ATTEMPT_01.log",
+        "sha256": "b67198a0fd81ea5702f962908ebab92f8619babe4301fab4b2e67c3bfd334d8c",
+        "matches_binding": true
+      },
+      {
+        "path": "PURE_TEST_ATTEMPT_01_BINDING.json",
+        "sha256": "5f86d73b2be2034ac578763b8fa8bdf67b9d23cca389d1d82a3c4b48f6edc1fc",
+        "matches_binding": true
+      },
+      {
+        "path": "PURE_TEST_ATTEMPT_02.log",
+        "sha256": "bbbde9f5bad3a815b3dbffcdaf13d70083a3676cd608ceb30a4a8323cb92f8a4",
+        "matches_binding": true
+      },
+      {
+        "path": "PURE_TEST_ATTEMPT_02_BINDING.json",
+        "sha256": "bfef2e01ad87fe754ffb4872278ab007c071efa2cef0246126dbb64f45733602",
+        "matches_binding": true
+      },
+      {
+        "path": "synthesis.py",
+        "sha256": "0bddeb3480e260bcd9f23e68e215510c9894e4d56e1ae3cb99662312b7b2160d",
+        "matches_binding": true
+      },
+      {
+        "path": "test_synthesis.py",
+        "sha256": "f262abd99a41f76de9a7f5952007514f195aaef0c9a770575a9ad761083d69a3",
+        "matches_binding": true
+      }
+    ]
+  },
+  "protected_capture": {
+    "requested_groups": 16,
+    "requested_assets": 742,
+    "basis": "latest_root_report_only_capture_not_collected_by_this_subagent",
+    "contains_FIFO83_assets": 89,
+    "stage_and_audit_bind_spec_to_actual_capture_counts": true
+  },
+  "review": {
+    "reviewer": "/root/diagnostic_partial_assess",
+    "kind": "read_only_static_no_execution",
+    "latest_findings": "no_new_blocker_after_clock_stage_freeze_and_malformed_PID_cleanup_fixes",
+    "AMD_pure_required_before_freeze": true,
+    "AMD_native_required_for_native_qualification": true
+  },
+  "legacy_native71": {
+    "gate_failure_preserved": true,
+    "assertion_kind": "policy_reference_only_not_reaudit",
+    "spec_sha256": "cc1abf90fc1e38fbfcaf51df53eab0b47572c532dd8bcc91a334ed4cbfde9d74"
+  },
+  "note": "Old44+binding are read-only. No RUN_SPEC exists for this draft. Six Python sources plus design are ready for root AMD precheck/prepare, then separate PR/review/freeze/FIFO. FAKE33 pure methods exercise metadata gates only, not RTL capability."
+}

@@ -24,7 +24,7 @@
     "historical_local_all156_pure_admissions": 2,
     "historical_local_all156_pure_abstentions": 154,
     "original_native_reset_coverage_gap": "FALL_and_DIG_async_reset_not_exercised",
-    "new_native_calibration_status": "draft_not_frozen_or_queued",
+    "new_native_calibration_status": "amd_pure33_frozen_not_queued",
     "planned_controls": 38,
     "planned_native_commands": 105,
     "planned_supervisor_commands": 2,
@@ -49,7 +49,8 @@
     "initial_owned_branch_corrected_before_pr": true,
     "delivery_pr_url": "https://github.com/854259/FPGA/pull/9",
     "historical_local_execution_compliance_claimed": false,
-    "preparation_qualification_based_on": "actual_AMD_pure14_only"
+    "preparation_qualification_based_on": "actual_AMD_pure14_only",
+    "current_native_preparation_receipt": "03_analysis/fsm_native_calibration_20261006/NATIVE_PUBLIC_PREPARATION.json"
   },
   "schema_version": 1,
   "full156_postflight_20261004": {
@@ -6538,5 +6539,33 @@
       "New observer started; first-card polling used None.get before first watch publication."
     ],
     "recovery": "Read-back verified existing200 files and exact sole live watcher; no duplicate publication, watcher or model run."
+  },
+  "fsm_native_calibration_v2_20261006": {
+    "status": "amd_pure33_frozen_not_queued",
+    "report": "03_analysis/fsm_native_calibration_20261006/NATIVE_EXECUTION_PLAN.md",
+    "receipt": "03_analysis/fsm_native_calibration_20261006/NATIVE_PUBLIC_PREPARATION.json",
+    "spec_sha256": "9311d5e0d21948e50dcd7ec59ffa56c2c29ea99d801837821bef615811bd7b4e",
+    "actual_amd_pure_checks": 33,
+    "prepared_assets": 114,
+    "frozen_source_assets": 179,
+    "planned_controls": 38,
+    "planned_native_commands": 105,
+    "planned_supervisor_commands": 2,
+    "planned_guard_receipts": 216,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "frozen": true,
+    "queued": false,
+    "native_qualified": false,
+    "quality_gain_verified": false,
+    "production_integration": false,
+    "public_calibration_source_files": 8,
+    "original_generator_source_files_private": 5,
+    "observer_v1_tests_errors": 14,
+    "observer_v2_actual_amd_pure_checks": 14,
+    "observer_v2_started": false,
+    "public_git_sync_commit": "e5c2d9906da52354e64afa46af9c4ac5f4cd2794",
+    "new_public_git_delta_synced": false,
+    "peer_acknowledgment": "pending"
   }
 }
