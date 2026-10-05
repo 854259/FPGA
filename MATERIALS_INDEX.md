@@ -1,3 +1,9 @@
+## 2026-10-06 局部邻域单因素 AMD14 纯准备元数据
+
+本轮 AMD 纯结果实际共享提醒 https://github.com/854259/FPGA/issues/7#issuecomment-6003156294，14/156/3/153及3日志已回读，ACK pending；本次公开Git8文件交付尚待PR。
+
+`03_analysis/local_neighborhood_generation_20261006_v1/README.md`及`AMD_PUBLIC_PREPARATION.json`：AMD实际14纯检查、完整156题接纳3生成/153弃权，163源/164包逐SHA绑定，模型/EDA0；私有29控制原生设计仅静态草稿，未实现/prepare/冻结/运行/C/P/入队/提分。历史124方向错误、144常量索引编译错误与108原L3守护只作选择依据，不把生成当修复或新L3；原judge/预算及80%/120 active目标保持。新pure共享、8文件准备PR/交付pending；初始Issue7#6002549689 ACKpending。原PR13@bff9ad85及公开6c169008的向量后补同步另有真实回执，不冒充本轮交付。
+
 ## 2026-10-06 向量FIFO85与公开Git实际共享回执
 
 `03_analysis/vector_native_calibration_20261006_v1/ACTUAL_DELIVERY_RECEIPT.json`：PR12实际合并、FIFO85接受/monitor、12公开Git逐SHA共享回读/3日志/Issue7提醒，以及19组1070源与模型/唯一观察器保护；后补回执本身尚未云同步。原准备两JSON保留冻结前快照，入队不等于原生资格或提分。
