@@ -4463,8 +4463,8 @@
     "quota_latest_observed_used_percent": 25,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
     "previous_goal_turn_classification": "progress_complete312_audit_net_score_gain_and_actual_failure_analysis_new_score_factors_preparing",
-    "last_actual_shared_sync_commit": "e83c8a6dbee53de879ff05563b5a6da9d6639c5f",
-    "last_actual_shared_sync_public_files": 38
+    "last_actual_shared_sync_commit": "ea37f9ff226fa273c1726a59b0af0fac5f5809f7",
+    "last_actual_shared_sync_public_files": 82
   },
   "concise_output_pilot_20261004": {
     "status": "completed_audited_rejected",
@@ -5529,7 +5529,7 @@
     "terminal_audit_pending": false,
     "preflight_model_calls": 0,
     "preflight_eda_calls": 0,
-    "latest_shared_commit": "0e8bf14643d2f52d010ca6bf8705aa17ed73e871",
+    "latest_shared_commit": "ea37f9ff226fa273c1726a59b0af0fac5f5809f7",
     "primary_status_preserved": true,
     "terminal_archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
     "actual_model_responses": 338,
@@ -5845,7 +5845,10 @@
     "actual_native_control_commands": 4,
     "actual_model_calls_observed_completed_samples": 0,
     "completed_samples_observed": 0,
-    "partial_scores_published": false
+    "partial_scores_published": false,
+    "latest_actual_shared_commit": "ea37f9ff226fa273c1726a59b0af0fac5f5809f7",
+    "shared_sync_public_files": 82,
+    "shared_sync_receipt": "03_analysis/elaboration_feedback_pilot_20261005/SHARED_SYNC_RECEIPT.json"
   },
   "prompt_table_contract_20261005": {
     "status": "strict_prompt_parser_preparation_only",
@@ -5860,5 +5863,19 @@
     "native_calibration_completed": false,
     "score_gain_measured": false,
     "next_scope": "explicit Kmap cared observations first; no waveform hidden-state assumption"
+  },
+  "prompt_table_native_20261005": {
+    "status": "explicit_Kmap_native_render_preparation_only",
+    "methods": 20,
+    "subchecks": 112,
+    "old156_Kmap_TBs_prepared": 5,
+    "native_executions": 0,
+    "new_model_calls": 0,
+    "source_seal_sha256": "7b53c8028b7728fffc6aab1d31cdae7648bd1f4247227455a667887b0fbeb4fa",
+    "receipt_sha256": "f04d233370cc7c73f927ed685e36f1d66ba54f12473aa9c286d9ca065f9b38de",
+    "parser_unchanged": true,
+    "full_and_first_same_complete_raw_observations": true,
+    "score_gain_measured": false,
+    "report": "03_analysis/prompt_table_native_20261005/README.md"
   }
 }

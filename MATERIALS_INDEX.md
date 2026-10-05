@@ -1,3 +1,7 @@
+## 2026-10-05 完整Kmap观测准备
+
+`03_analysis/prompt_table_native_20261005/README.md`：原parser字节保持；20方法112子检查、5个显式Kmap研究TB仅生成，0实际编译/模型/EDA。first/full必须同完整真实care格日志，尚无提分资格。
+
 ## 2026-10-05 完整提分结果与新候选
 
 - `03_analysis/phase_full156_20261005/FINAL_RESULT.md` / `PUBLIC_RESULT.json`：312实际新样本原冻结审计，C/P .7576923/.7743590，0回退/截止/未确认；两条相同首稿边沿修复链，独立准入非已完成独立验证。
