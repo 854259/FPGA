@@ -1,6 +1,8 @@
+实际入队、23份公开文件同步及观察器进程回执见 [ACTUAL_DELIVERY_RECEIPT.json](ACTUAL_DELIVERY_RECEIPT.json)。本次新增回执尚需独立PR及实际共享。
+
 ## 当前校准状态（2026-10-06）
 
-新原生校准已完成 AMD33 纯检查、114 资产准备和179源封存，仍未入队/原生合格/提分；新观察扩展 v2 AMD14 已通过但尚未启动。实际规格、创建时与执行时元数据及下一步以 [NATIVE_EXECUTION_PLAN.md](NATIVE_EXECUTION_PLAN.md) 和 NATIVE_PUBLIC_PREPARATION.json 为准。下面保留 PR9 的准备阶段正文及其当时快照，不把其中“草稿/未封存/319行”解释为当前状态。
+新原生校准已完成 AMD33 纯检查、114 资产准备和179源封存，已实际接受为 FIFO84，仍未原生合格/提分；新观察扩展 v2 AMD14 已通过，新唯一自有观察器248714已启动并回读。实际规格、创建时与执行时元数据及下一步以 [NATIVE_EXECUTION_PLAN.md](NATIVE_EXECUTION_PLAN.md) 和 NATIVE_PUBLIC_PREPARATION.json 为准。下面保留 PR9 的准备阶段正文及其当时快照，不把其中“草稿/未封存/319行”解释为当前状态。
 
 # 严格叙述状态机生成：准备阶段
 

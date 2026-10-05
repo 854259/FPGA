@@ -1,3 +1,11 @@
+## 2026-10-06 FSM84实际入队与向量AMD14准备已共享
+
+PR10@2032cc6 已审查合并至 b6f458b，23份公开Git增量实际同步并逐字回读；原生FSM38控制实际接受为FIFO84，排在80/81/82/83后。旧自有155470已核身份结束，新唯一248714已启动、首次卡回读通过，持续观察80/83/84；原primary、基础协调工具、共享模型及17组921封存源保持。零模型/EDA准备；未原生合格、未提分/部署。实际回执03_analysis/fsm_native_calibration_20261006/ACTUAL_DELIVERY_RECEIPT.json；GitHub提醒 https://github.com/854259/FPGA/issues/7#issuecomment-6000932554 ，ACK pending。
+
+独立向量v2 AMD实际14纯检查通过，六份prompt/interface准入3生成/3弃权，零模型/EDA；源码/原题面/RTL及raw日志继续私有。公开哈希回执与下一步见03_analysis/vector_dataflow_preparation_20261006_v2；未native/模型小试/提分。已写三日志/问题登记/待阅读与提醒 https://github.com/854259/FPGA/issues/7#issuecomment-6001022663 。原judge完整不变，binary本native门不意味着原judge不查x/z。
+
+最新实际快照417/780、447请求/回复、无阶段错误；80 running、81/82/83/84 queued。只证明实时进展，不是完整成绩或预计完成时刻。完整仍77.44%/113，目标80%/120且原全对不退步active；额度44%/97%停止线，无重置。本次回执PR不冒充新元数据已云同步，当前共享Git指针仍2032cc6。
+
 ## 2026-10-06 FSM v2 已在 AMD 纯预检并封存
 
 新校准 AMD 实际 33 项纯检查通过、114 准备资产生成，179 源封存；计划 38 控制/105 原生命令+2 监督/216 守护，实际模型/EDA 0，尚未入队、原生合格或提分。公开八份经隐私复核的新校准源码及 SHA 元数据；原题面和五份生成器源码继续私有。新观察 v1 的 AMD14 ERROR 保留，v2 夹具更名后 AMD14 全通过，生产 wrapper 不变、此时未启动。来源见 03_analysis/fsm_native_calibration_20261006/NATIVE_EXECUTION_PLAN.md 与 NATIVE_PUBLIC_PREPARATION.json；观察回执见 03_analysis/fsm_coordination_extension_20261006_v2/AMD_PREFLIGHT.json。
