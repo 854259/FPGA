@@ -4040,7 +4040,7 @@
     "next": "Freeze evaluator-only common module-name conversion on constructed controls, then audit eligibility without model outputs; retain full156 nonpromotion"
   },
   "cvdp_name_binding_20261005": {
-    "updated_at": "2026-10-05T08:33:00+08:00",
+    "updated_at": "2026-10-05T09:02:00+08:00",
     "independent_admitted": 0,
     "full_batch_complete": false,
     "S3": {
@@ -4124,24 +4124,28 @@
       "amd_root": "/workspace/team/runs/fpga_teammate/cvdp_name_S5_20261005_b069853"
     },
     "S6": {
+      "status": "completed_static_review_reject_unchanged_independent_admission",
+      "complete": true,
+      "completion_scope": "fixed54 static contract review only",
+      "fixed_records": 54,
+      "reviewed_records": 54,
+      "pending_records": 0,
+      "reviewed_named_families": 51,
+      "blocking_static_findings": 21,
+      "other_control_or_coverage_gaps": 33,
       "independent_admitted": 0,
-      "active_fifo_tickets": [],
-      "solver_unchanged": true,
       "actual_model": 0,
-      "complete": false,
-      "reviewed_records": 6,
-      "private_ledger_sha256": "0c4bebe5b5a34c5aaf57b989d28b19938db3d99131eb7362170e4c278687dbde",
+      "actual_eda": 0,
+      "solver_unchanged": true,
       "reviewed_exposure": "development_regression_not_blind",
       "order": "lexicographic id",
       "amd_root": "/workspace/team/runs/fpga_teammate/cvdp_contract_S6_20261005_455746c",
-      "pending_records": 48,
-      "status": "static_contract_review_in_progress",
+      "private_ledger_sha256": "305510bd30114d86398da3a10d6a3423e441fb63538d0c6b6ef8d7dbb43fe2a0",
+      "checkpoint_sha256": "e58409222284b990ff616880cab2e831b488eadd30f6687e1625769dd5d7a5aa",
       "checkpoint_files_verified": 3,
-      "actual_eda": 0,
-      "next": "Continue fixed seventh record; no model/EDA or score filtering",
-      "fixed_records": 54,
-      "checkpoint_sha256": "818c3e475d173db5264ad61dc05ca2cb81c4be87c26df79acc2a3b96dc457cdb",
-      "reviewed_named_families": 5
+      "cleanup_verified": true,
+      "active_fifo_tickets": [],
+      "next": "Freeze bounded known-wrong output false-acceptance and failure propagation controls; no independent model scoring"
     }
   }
 }

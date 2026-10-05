@@ -4,20 +4,25 @@
   "binding_sha256": "475a7033956a4e2485845d999e3e5831490cfb86bc963861d72bb134418ee8b3",
   "total_source_records": 302,
   "fixed_review_records": 54,
-  "reviewed_records": 6,
-  "pending_records": 48,
-  "reviewed_named_families": 5,
-  "complete": false,
+  "reviewed_records": 54,
+  "pending_records": 0,
+  "reviewed_named_families": 51,
+  "complete": true,
   "actual_model_requests": 0,
   "actual_eda_calls": 0,
   "independent_admitted": 0,
   "full_batch": false,
-  "private_ledger_sha256": "0c4bebe5b5a34c5aaf57b989d28b19938db3d99131eb7362170e4c278687dbde",
+  "updated_at_utc": "2026-10-05T00:58:13.528917+00:00",
+  "completion_scope": "fixed54 static contract review only; no runtime admission or complete experimental batch",
+  "private_ledger_sha256": "305510bd30114d86398da3a10d6a3423e441fb63538d0c6b6ef8d7dbb43fe2a0",
+  "blocking_static_findings": 21,
+  "remaining_control_or_coverage_gaps": 33,
+  "clear_finite_math_but_controls_missing": 7,
   "conclusions": [
-    "Old mapping counterexample closed by S5; no new solver changes",
-    "Static review has identified missing failure assertions and contract/test assumptions; no model scoring started",
-    "First six full sources reviewed in fixed order; remaining48 not reviewed; full cohort not certified",
-    "Reviewed families are development/regression, not blind independent validation"
+    "All fixed54 original prompts and harnesses reviewed; no static review item pending.",
+    "21 records have blocking contract/oracle findings; the other33 still lack executed trustworthy controls and/or complete contracts/coverage. These counts are not measured model failures.",
+    "No independent source references supplied; all51 reviewed named families are development/regression. Semantic family independence remains unaudited, so51 is not an effective independent sample count.",
+    "Package must not be admitted unchanged as a primary independent benchmark. Solver and official deployment unchanged; no new accuracy, repair or harm score."
   ],
-  "next": "Continue lexicographic review at seventh record; do not change source fixtures, solve code or name binding to fit review results"
+  "next": "Freeze a bounded evaluator-only false-acceptance reproduction with known-wrong constant encoders and failure-propagation control. Do not expand corpus or run model scoring to fill the loop."
 }
