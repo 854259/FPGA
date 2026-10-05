@@ -1,0 +1,166 @@
+{
+  "complete": true,
+  "analysis_only": true,
+  "source_commit": "b4360afb1427c5a5252cff85635e6a9d213abb71",
+  "source_sha256": "5d9e01a09d7aae948834cad015672f4b27be97923b08b191d8c1cf9c31bc6817",
+  "inputs": {
+    "historical": "11aca0da9719de519d503ca307e7a03c39bd6dfa80c1abcc2efc3803f47f1e7e",
+    "statistics": "34ff19999901c52ed4996ec932034f4623c12abf4b1a288a75d5d7e06dcbec87",
+    "rules": "559d828ce7b167ab78410d773295c90e4e7b679e013cbb430ef097330638fdb2",
+    "old_archive": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+    "new_archive": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+    "paired": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c"
+  },
+  "model_calls": 0,
+  "eda_calls": 0,
+  "observed_three_arm_component_proxy_seconds": 20842.784711142256,
+  "historical_baseline_is_response_plus_judging_only": true,
+  "historical_snapshots_are_not_same_run": true,
+  "archive_observations": [
+    {
+      "archive_sha256": "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+      "completed_outputs": 312,
+      "sample_file_count": 10825,
+      "sample_expanded_bytes": 16813012,
+      "sample_compressed_payload_bytes": 5340403,
+      "sample_cache_files": 0,
+      "separate_control_files": 31,
+      "separate_control_expanded_bytes": 44325,
+      "archive_total_bytes": 21787344
+    },
+    {
+      "archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+      "completed_outputs": 312,
+      "sample_file_count": 9582,
+      "sample_expanded_bytes": 15707397,
+      "sample_compressed_payload_bytes": 4817654,
+      "sample_cache_files": 0,
+      "separate_control_files": 0,
+      "separate_control_expanded_bytes": 0,
+      "archive_total_bytes": 8169859
+    }
+  ],
+  "scenarios": [
+    {
+      "tasks": 156,
+      "note": "VerilogEval only: lacks RTLLM and independent validation",
+      "arms": 3,
+      "samples_per_task": 5,
+      "outputs": 2340,
+      "request_cap_assuming_one_repair_per_agent": 3900,
+      "independent_tasks_included": 0,
+      "mixed_historical_components_hours": 28.94831209880869,
+      "paired_wall_plus_baseline_components_hours": 29.105235072446263,
+      "planning_sensitivity_hours": {
+        "1.0": 28.94831209880869,
+        "1.25": 36.185390123510864,
+        "1.5": 43.422468148213035,
+        "2.0": 57.89662419761738
+      },
+      "sum_of_row_caps_hours": 312,
+      "projected_retained_raw_bytes": 126097590,
+      "projected_zip_payload_bytes": 40053022,
+      "projected_raw_plus_two_zip_payloads_bytes": 206203635,
+      "quota_sufficiency": null,
+      "launch_eligible": false
+    },
+    {
+      "tasks": 185,
+      "note": "156 plus 29 RTLLM finite domains: preserve all44 ledger with15 blocked; not full44 qualification",
+      "arms": 3,
+      "samples_per_task": 5,
+      "outputs": 2775,
+      "request_cap_assuming_one_repair_per_agent": 4625,
+      "independent_tasks_included": 0,
+      "mixed_historical_components_hours": 34.329729091535945,
+      "paired_wall_plus_baseline_components_hours": 34.51582364360614,
+      "planning_sensitivity_hours": {
+        "1.0": 34.329729091535945,
+        "1.25": 42.91216136441993,
+        "1.5": 51.49459363730392,
+        "2.0": 68.65945818307189
+      },
+      "sum_of_row_caps_hours": 370,
+      "projected_retained_raw_bytes": 149538809,
+      "projected_zip_payload_bytes": 47498777,
+      "projected_raw_plus_two_zip_payloads_bytes": 244536362,
+      "quota_sufficiency": null,
+      "launch_eligible": false
+    },
+    {
+      "tasks": 200,
+      "note": "156 plus44 nominal tasks: currently15 RTLLM contracts blocked; not executable admission",
+      "arms": 3,
+      "samples_per_task": 5,
+      "outputs": 3000,
+      "request_cap_assuming_one_repair_per_agent": 5000,
+      "independent_tasks_included": 0,
+      "mixed_historical_components_hours": 37.11322063949832,
+      "paired_wall_plus_baseline_components_hours": 37.314403939033674,
+      "planning_sensitivity_hours": {
+        "1.0": 37.11322063949832,
+        "1.25": 46.3915257993729,
+        "1.5": 55.669830959247484,
+        "2.0": 74.22644127899665
+      },
+      "sum_of_row_caps_hours": 400,
+      "projected_retained_raw_bytes": 161663577,
+      "projected_zip_payload_bytes": 51350029,
+      "projected_raw_plus_two_zip_payloads_bytes": 264363635,
+      "quota_sufficiency": null,
+      "launch_eligible": false
+    }
+  ],
+  "current_disk_free_bytes": 10027163648,
+  "quota_status": "Unknown: current Edge AMD developer portal is logged out; no credentials requested or login submitted.",
+  "full_batch_complete": false,
+  "budget_frozen": false,
+  "job_started": false,
+  "blockers": [
+    "No new candidate qualified for independent validation",
+    "No admitted independent triggering natural tasks",
+    "15 of44 RTLLM contracts unresolved;29 limited to audited finite domains",
+    "Compute credit hours and expiry not available from logged-out console",
+    "Official wall limits/base image and formal32GB delivery remain unverified"
+  ],
+  "storage_limits": [
+    "Both archives have zero retained xsim.dir entries: estimates omit transient compiler cache peaks.",
+    "ZIP payload omits ZIP directory headers; immutable sources, models, extra independent tasks and future log growth excluded.",
+    "Current disk headroom cannot certify a complete unattended run; reserve and per-row disk-stop policy must be frozen."
+  ],
+  "timing_limits": [
+    "Mixed historical compute components are estimates, not measured three-arm wall time or a confidence interval.",
+    "1.25/1.5/2 multipliers are sensitivity scenarios, not probabilistic guarantees.",
+    "Row-cap sums omit setup/cleanup/archive overhead and do not authorize that many hours.",
+    "Historical300-second solve and180-second judge caps are development limits, not final official limits.",
+    "Each additional independent task adds15 outputs and at most25 requests under this plan; time/space costs are unknown."
+  ],
+  "checked_at_utc": "2026-10-05T03:45:21.099232+00:00",
+  "elapsed_s": 0.1626010201871395,
+  "ticket": 53,
+  "driver_pid": 3742901,
+  "stage_pid": 3742906,
+  "guard_elapsed_s": 0.5020903740078211,
+  "archive_sha256": "4d8d358d607fb80b2ff380d8bbd965e85077e6a83be8fa651f4f719738cf6e6b",
+  "archive_files_dual_verified": 10,
+  "preserved_failed_attempts": [
+    {
+      "ticket": 51,
+      "source_commit": "8f89db7",
+      "reason": "One extra archived engineering control counted as a paired sample; corpus selector corrected.",
+      "actual_model_calls": 0,
+      "eda_calls": 0,
+      "archive_sha256": "28b8e859b1e5843bac54ea104ab54e7ae4ae4f15e91bcb274d3f9b9bccf3fe7a",
+      "files_dual_verified": 9
+    },
+    {
+      "ticket": 52,
+      "source_commit": "b4360af",
+      "reason": "Overlapping launcher path substitutions; analysis script never executed; fixed literal prefix substitution and prechecked file paths.",
+      "actual_model_calls": 0,
+      "eda_calls": 0,
+      "archive_sha256": "6271c106f328267291017f72c0c318ffe580f81e2a57e5a3598634ce1838cd1b",
+      "files_dual_verified": 9
+    }
+  ]
+}

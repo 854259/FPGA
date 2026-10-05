@@ -4487,5 +4487,98 @@
     "current_model_job_running": false,
     "next": "No additional cache probes; freeze new full comparison only after candidate, independent triggering material and complete budget are eligible.",
     "updated_at": "2026-10-05T11:28:41.1688656+08:00"
+  },
+  "full_capacity_U1_20261005": {
+    "status": "capacity_analysis_completed_not_launch_admission",
+    "source_commit": "b4360afb1427c5a5252cff85635e6a9d213abb71",
+    "ticket": 53,
+    "driver_pid": 3742901,
+    "stage_pid": 3742906,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "full_batch_complete": false,
+    "budget_frozen": false,
+    "job_started": false,
+    "scenarios": [
+      {
+        "tasks": 156,
+        "note": "VerilogEval only: lacks RTLLM and independent validation",
+        "arms": 3,
+        "samples_per_task": 5,
+        "outputs": 2340,
+        "request_cap_assuming_one_repair_per_agent": 3900,
+        "independent_tasks_included": 0,
+        "mixed_historical_components_hours": 28.94831209880869,
+        "paired_wall_plus_baseline_components_hours": 29.105235072446263,
+        "planning_sensitivity_hours": {
+          "1.0": 28.94831209880869,
+          "1.25": 36.185390123510864,
+          "1.5": 43.422468148213035,
+          "2.0": 57.89662419761738
+        },
+        "sum_of_row_caps_hours": 312,
+        "projected_retained_raw_bytes": 126097590,
+        "projected_zip_payload_bytes": 40053022,
+        "projected_raw_plus_two_zip_payloads_bytes": 206203635,
+        "quota_sufficiency": null,
+        "launch_eligible": false
+      },
+      {
+        "tasks": 185,
+        "note": "156 plus 29 RTLLM finite domains: preserve all44 ledger with15 blocked; not full44 qualification",
+        "arms": 3,
+        "samples_per_task": 5,
+        "outputs": 2775,
+        "request_cap_assuming_one_repair_per_agent": 4625,
+        "independent_tasks_included": 0,
+        "mixed_historical_components_hours": 34.329729091535945,
+        "paired_wall_plus_baseline_components_hours": 34.51582364360614,
+        "planning_sensitivity_hours": {
+          "1.0": 34.329729091535945,
+          "1.25": 42.91216136441993,
+          "1.5": 51.49459363730392,
+          "2.0": 68.65945818307189
+        },
+        "sum_of_row_caps_hours": 370,
+        "projected_retained_raw_bytes": 149538809,
+        "projected_zip_payload_bytes": 47498777,
+        "projected_raw_plus_two_zip_payloads_bytes": 244536362,
+        "quota_sufficiency": null,
+        "launch_eligible": false
+      },
+      {
+        "tasks": 200,
+        "note": "156 plus44 nominal tasks: currently15 RTLLM contracts blocked; not executable admission",
+        "arms": 3,
+        "samples_per_task": 5,
+        "outputs": 3000,
+        "request_cap_assuming_one_repair_per_agent": 5000,
+        "independent_tasks_included": 0,
+        "mixed_historical_components_hours": 37.11322063949832,
+        "paired_wall_plus_baseline_components_hours": 37.314403939033674,
+        "planning_sensitivity_hours": {
+          "1.0": 37.11322063949832,
+          "1.25": 46.3915257993729,
+          "1.5": 55.669830959247484,
+          "2.0": 74.22644127899665
+        },
+        "sum_of_row_caps_hours": 400,
+        "projected_retained_raw_bytes": 161663577,
+        "projected_zip_payload_bytes": 51350029,
+        "projected_raw_plus_two_zip_payloads_bytes": 264363635,
+        "quota_sufficiency": null,
+        "launch_eligible": false
+      }
+    ],
+    "quota_status": "logged_out_user_login_or_credit_hours_and_expiry_pending",
+    "workspace_free_bytes": 10027163648,
+    "verified_archive_files": [
+      9,
+      9,
+      10
+    ],
+    "own_cache_remaining": 0,
+    "next": "Freeze RTLLM44 reporting contract and check hashes before enabling finite-domain aggregation; preserve15 blocked and no independent admission; await quota info.",
+    "updated_at": "2026-10-05T11:51:01.7963277+08:00"
   }
 }
