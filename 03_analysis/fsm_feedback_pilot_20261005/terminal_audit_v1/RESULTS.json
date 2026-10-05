@@ -1,0 +1,551 @@
+{
+  "schema": "fsm_feedback_pilot_readonly_audit_v1",
+  "evidence_valid": true,
+  "historical_fixture_only": false,
+  "full156_evidence_valid": false,
+  "archive_sha256": "e47a1406b6d56bf355342c0236847e0c75a1deff2532f4590cf663d9ac304914",
+  "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
+  "auditor_sha256": "f5ec7199716c9bdd9a0dc8e39a45fb941c0a9fe19d93c27b2e9c51d563988284",
+  "expected_samples": 16,
+  "actual_model_requests": 22,
+  "provenance": [
+    {
+      "first_reply_sha256": "ab1c823f5d0b410170cbfc0cae9c0bf16d9ed793d0dac8f60a9ccf1d50aecf45",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob045_edgedetect2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ab1c823f5d0b410170cbfc0cae9c0bf16d9ed793d0dac8f60a9ccf1d50aecf45",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob045_edgedetect2",
+      "arm": "F",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+      "declaration_patches": 1,
+      "original_repair_feedback_bound": true,
+      "task": "Prob058_alwaysblock2",
+      "arm": "F",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+      "declaration_patches": 1,
+      "original_repair_feedback_bound": true,
+      "task": "Prob058_alwaysblock2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob071_always_casez",
+      "arm": "C",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob071_always_casez",
+      "arm": "F",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob112_always_case2",
+      "arm": "F",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob112_always_case2",
+      "arm": "C",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob115_shift18",
+      "arm": "C",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob115_shift18",
+      "arm": "F",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "7145c36455718227e28fa293935c3ed070c3d31dd42eb75c6f48defe53db891c",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob124_rule110",
+      "arm": "F",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7145c36455718227e28fa293935c3ed070c3d31dd42eb75c6f48defe53db891c",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob124_rule110",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3aac30a728fc6bfd5cdcc4b373c68f83b03c64cda1441adb0e4325ec1f5748da",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob143_fsm_onehot",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3aac30a728fc6bfd5cdcc4b373c68f83b03c64cda1441adb0e4325ec1f5748da",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob143_fsm_onehot",
+      "arm": "F",
+      "contract_status": "supported",
+      "contract_family": "full_vector_multistate",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 768
+        },
+        {
+          "index": "map_check_1",
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 768
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "adf2c46aa3d5ffe3433633131fd60a54345e175a56b9258dd7f4b1174093eec6",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob150_review2015_fsmonehot",
+      "arm": "F",
+      "contract_status": "supported",
+      "contract_family": "partial_scalar_onehot",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 8
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 80,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "adf2c46aa3d5ffe3433633131fd60a54345e175a56b9258dd7f4b1174093eec6",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob150_review2015_fsmonehot",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    }
+  ],
+  "first_pairs": [
+    {
+      "task": "Prob045_edgedetect2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob058_alwaysblock2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob071_always_casez",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob112_always_case2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob115_shift18",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob124_rule110",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob143_fsm_onehot",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob150_review2015_fsmonehot",
+      "first_content_identical": true
+    }
+  ],
+  "adoption": false,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "limits": [
+    "8 known public development/guard tasks, one actual fresh first generation per arm, original all8 denominator. No full156/independent/five-sample claim.",
+    "All extra repair requests, tool checks and elapsed time retained. Same maximum budgets; no replay, resampling, retries or best-of selection.",
+    "Temperature0 does not guarantee identical replies. Two distinct actual matched FSM repair chains required; differing first replies do not prove causal gains.",
+    "Control and candidate share byte-identical original runtime and skills; successful declaration patch still returns on its original branch.",
+    "Only prompt/interface/own candidate/native facts enter workers; references and official TB remain in external original judge.",
+    "Existing native FSM calibration reused exactly; legal one-hot domain only for partial outputs and explicitly admitted multistate domain for full vector; no register/reset obligation invented.",
+    "Official L3 and native probe pass separately recorded; persistent mismatch cannot qualify as a successful FSM repair even if official grade is L3.",
+    "Frozen auditor independently binds actual requests, replies, extraction, compiler receipts, counterexample feedback and original judge; original full failed gate unchanged.",
+    "Whole-task FIFO and original inner locks/resource cleanup; never manage teammate, shared model, instance or formal deployment.",
+    "Outer14400s and250-minute slot are safety bounds, not expected duration. Hard300s includes model/compiler/native feedback.",
+    "No automatic adoption; new full regression, independent natural tasks, official baseline/five samples, offline and target32GB remain required."
+  ],
+  "official_scores": {
+    "C": {
+      "tasks": 8,
+      "scored_tasks": 8,
+      "samples_per_task": 1,
+      "set_score": 0.7,
+      "pass@1": 0.7,
+      "pass@5": 0.7,
+      "level_counts": {
+        "L1": 3,
+        "L3": 5
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 210.7,
+      "per_task": [
+        {
+          "task_id": "Prob045_edgedetect2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob124_rule110",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob143_fsm_onehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob150_review2015_fsmonehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        }
+      ]
+    },
+    "F": {
+      "tasks": 8,
+      "scored_tasks": 8,
+      "samples_per_task": 1,
+      "set_score": 0.8,
+      "pass@1": 0.8,
+      "pass@5": 0.8,
+      "level_counts": {
+        "L1": 2,
+        "L3": 6
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 230.0,
+      "per_task": [
+        {
+          "task_id": "Prob045_edgedetect2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob124_rule110",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob143_fsm_onehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob150_review2015_fsmonehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        }
+      ]
+    }
+  },
+  "coefficients": {
+    "C": 0.7,
+    "F": 0.8
+  },
+  "requests_by_arm": {
+    "C": 10,
+    "F": 12
+  },
+  "solve_seconds_by_arm": {
+    "C": 225.4219735842198,
+    "F": 318.65703631192446
+  },
+  "repairs": [
+    "Prob150_review2015_fsmonehot"
+  ],
+  "regressions": [],
+  "solve_deadlines": [],
+  "unconfirmed_by_arm": {
+    "C": 0,
+    "F": 0
+  },
+  "unconfirmed_attempts": 0,
+  "guard_pass": true,
+  "unknown_guard_pass": true,
+  "unchanged_task_request_cost": true,
+  "screening_eligible": true,
+  "matched_native_repair_tasks": [
+    "Prob150_review2015_fsmonehot"
+  ],
+  "qualified_for_new_full_regression": false,
+  "qualification_scope": "New full156 experiment only; not independent/five/adoption.",
+  "previous_full_gate_still_failed": true,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false
+}

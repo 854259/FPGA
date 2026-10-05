@@ -1,0 +1,72 @@
+{
+  "task": "Prob143_fsm_onehot",
+  "native_checks_each": 2048,
+  "mismatches_before": 768,
+  "mismatches_after": 768,
+  "official_level_before": 1,
+  "official_level_after": 1,
+  "points": [
+    {
+      "path": "run/results/samples/F/Prob143_fsm_onehot/worker/map_check_0/counterexample.json",
+      "case": 1024,
+      "state": 512,
+      "inputs": {
+        "in": 0
+      },
+      "packed_expected": 7,
+      "packed_observed": "004",
+      "fields": [
+        {
+          "name": "next_state",
+          "width": 10,
+          "expected": 1,
+          "observed": 1
+        },
+        {
+          "name": "out1",
+          "width": 1,
+          "expected": 1,
+          "observed": 0
+        },
+        {
+          "name": "out2",
+          "width": 1,
+          "expected": 1,
+          "observed": 0
+        }
+      ]
+    },
+    {
+      "path": "run/results/samples/F/Prob143_fsm_onehot/worker/map_check_1/counterexample.json",
+      "case": 1024,
+      "state": 512,
+      "inputs": {
+        "in": 0
+      },
+      "packed_expected": 7,
+      "packed_observed": "004",
+      "fields": [
+        {
+          "name": "next_state",
+          "width": 10,
+          "expected": 1,
+          "observed": 1
+        },
+        {
+          "name": "out1",
+          "width": 1,
+          "expected": 1,
+          "observed": 0
+        },
+        {
+          "name": "out2",
+          "width": 1,
+          "expected": 1,
+          "observed": 0
+        }
+      ]
+    }
+  ],
+  "inference": "实际原生首点显示next_state正确，但两个Moore输出仍错误；仅一个打包数值反馈未使本次修复消除错误。下一候选可通用逐端口解码同一真实观察，收益尚未验证。",
+  "intervention": "本轮冻结源/消息/判定不改、不补第三请求或重抽；两道匹配实际修复预定门槛保持未通过。"
+}

@@ -1,11 +1,11 @@
 {
-  "at_epoch": 1791164249.456189,
+  "at_epoch": 1791164975.1002412,
   "ticket": {
     "schema": "whole_task_fifo_v1",
     "ticket": 44,
     "task_name": "fsm_feedback_fresh_C_F_v1",
     "accepted_at_utc": "2026-10-05T01:29:06.026304+00:00",
-    "state": "running",
+    "state": "completed",
     "command": [
       "/usr/bin/env",
       "PATH=/workspace/AMD/2026.1/Vivado/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
@@ -60,7 +60,10 @@
     "child": {
       "pid": 3692078,
       "starttime": "843739558"
-    }
+    },
+    "finished_at_utc": "2026-10-05T01:45:36.803964+00:00",
+    "returncode": 0,
+    "completion_sha256": "da59a245b69a643a929ac72f4ccbf726c31d777c92cbb20e15be46ef73561f4f"
   },
   "queue": [
     {
@@ -146,74 +149,75 @@
         "pid": 3659668,
         "starttime": "843128432"
       }
-    },
-    {
-      "ticket": 44,
-      "task_name": "fsm_feedback_fresh_C_F_v1",
-      "state": "running",
-      "cwd": "/workspace/team/runs/fpga_owner/fsm_feedback_pilot_20261005_v1",
-      "runner": {
-        "pid": 3692077,
-        "starttime": "843739550"
-      },
-      "child": {
-        "pid": 3692078,
-        "starttime": "843739558"
-      }
-    },
-    {
-      "ticket": 45,
-      "task_name": "edge_phase_context_T7",
-      "state": "queued",
-      "cwd": "/workspace/team/runs/fpga_teammate/edge_phase_T7_20261005_744847d",
-      "runner": null,
-      "child": null
     }
   ],
   "source_assets": 40,
   "source_unchanged": true,
   "model": {
     "pid": 2013333,
-    "state": "R",
+    "state": "S",
     "start": "823869819",
     "live": true
   },
   "monitor": {
     "pid": 3692077,
-    "state": "S",
+    "state": "Z",
     "start": "843739550",
-    "live": true
+    "live": false
   },
   "runner": {
     "pid": 3692077,
-    "state": "S",
+    "state": "Z",
     "start": "843739550",
-    "live": true
+    "live": false
   },
   "child": {
     "pid": 3692078,
-    "state": "S",
-    "start": "843739558",
-    "live": true
+    "live": false
   },
   "stage": {
     "pid": 3692083,
-    "state": "S",
-    "start": "843739584",
-    "live": true
+    "live": false
   },
   "summary": {
     "schema": "fsm_feedback_pilot_v1",
-    "complete": false,
-    "passed": false,
+    "complete": true,
+    "passed": true,
     "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
-    "actual_model_requests": 14,
+    "actual_model_requests": 22,
     "first_generation_replayed": false,
     "adoption": false,
     "new_full_score": false,
-    "scope": "8 known development/guard tasks, one fresh C/F sample each, no independent/full156/five-sample claim"
+    "scope": "8 known development/guard tasks, one fresh C/F sample each, no independent/full156/five-sample claim",
+    "coefficients": {
+      "C": 0.7,
+      "F": 0.8
+    },
+    "requests_by_arm": {
+      "C": 10,
+      "F": 12
+    },
+    "solve_seconds_by_arm": {
+      "C": 225.4219735842198,
+      "F": 318.65703631192446
+    },
+    "repairs": [
+      "Prob150_review2015_fsmonehot"
+    ],
+    "regressions": [],
+    "solve_deadlines": [],
+    "unconfirmed_by_arm": {
+      "C": 0,
+      "F": 0
+    },
+    "unconfirmed_attempts": 0,
+    "guard_pass": true,
+    "unknown_guard_pass": true,
+    "unchanged_task_request_cost": true,
+    "screening_eligible": true,
+    "elapsed_s": 990.05968827568
   },
-  "completed_samples": 10,
+  "completed_samples": 16,
   "python_packages": {
     "cocotb": false,
     "cocotb_tools": false,

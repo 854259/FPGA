@@ -4449,14 +4449,14 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "FSM_FIFO44_actual_running_2of16",
+    "continuation_status": "FSM_terminal_one_chain_failed_gate",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
-    "G3": "Full156/repair-context/edge previous failed gates retained; new FSM C/F16 FIFO44 running. Require two actual matched native repairs/guard/cost/full regression before independent or adoption.",
+    "G3": "Full156 three deadlines; repair-context no trigger; edge045 only; FSM150 only. All old gates unchanged. Next potential single factor decoded per-port actual FSM observation, not yet measured.",
     "G4": "S4/S5 mechanical54 not functional admission; S7 original one harness accepted two wrong designs, record version-excluded after readonly review. Natural original harness positive/multiple negative/propagation calibration and exposure audit remain;0 admitted models.",
     "G5": "Formal bridge engineering controls audited; official baseline/five samples/offline/target32GB not certified.",
     "goal_complete": false,
@@ -5327,9 +5327,9 @@
     "goal_status": "active"
   },
   "fsm_feedback_pilot_20261005": {
-    "status": "actual_FIFO44_running",
+    "status": "complete_original_audit_one_of_two_repairs_not_qualified",
     "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
-    "archive_sha256": "88092bc3eff34922825be561da6a452139cdb98153dbdc546f62bf9ea954656d",
+    "archive_sha256": "e47a1406b6d56bf355342c0236847e0c75a1deff2532f4590cf663d9ac304914",
     "assets": 40,
     "local_tests_passed": 33,
     "linux_tests_passed": 33,
@@ -5342,15 +5342,27 @@
     "adoption": false,
     "old_full_gate_unchanged": true,
     "goal_status": "active",
-    "report": "03_analysis/fsm_feedback_pilot_20261005/README.md",
+    "report": "03_analysis/fsm_feedback_pilot_20261005/FINAL_RESULT.md",
     "ticket": 44,
     "monitor_pid": 3692077,
     "monitor_starttime": "843739550",
     "queued_at_utc": "2026-10-05T01:29:06.026304+00:00",
-    "observed_samples": 10,
-    "observed_model_requests": 14,
+    "observed_samples": 16,
+    "observed_model_requests": 22,
     "last_observed_at_epoch": 1791164249.456189,
-    "final_score_available": false
+    "final_score_available": true,
+    "actual_model_responses": 22,
+    "coefficients": {
+      "C": 0.7,
+      "F": 0.8
+    },
+    "matched_native_repair_tasks": [
+      "Prob150_review2015_fsmonehot"
+    ],
+    "qualified_for_new_full_regression": false,
+    "auditor_sha256": "f5ec7199716c9bdd9a0dc8e39a45fb941c0a9fe19d93c27b2e9c51d563988284",
+    "extra_model_requests": 2,
+    "extra_solve_seconds": 93.23506272770466
   },
   "team_cvdp_false_acceptance_review_20261005": {
     "status": "complete_readonly_original_evidence_review",
