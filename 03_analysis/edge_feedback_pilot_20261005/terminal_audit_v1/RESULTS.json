@@ -1,0 +1,551 @@
+{
+  "schema": "edge_feedback_pilot_readonly_audit_v1",
+  "evidence_valid": true,
+  "historical_fixture_only": false,
+  "full156_evidence_valid": false,
+  "archive_sha256": "15b5332797abeab1edf0f65918ee94f1d7be189ac028da95a7d0ddf483f6c275",
+  "spec_sha256": "bce903e984fd0f1b92bd11759b0ecc3bdf77783f384bca74cde0b9cf09beacf6",
+  "auditor_sha256": "bae5bcf33197245094b2b230ceef65bfd0a3a8461738b1d159ca3b2f2e8464cf",
+  "expected_samples": 16,
+  "actual_model_requests": 22,
+  "provenance": [
+    {
+      "first_reply_sha256": "ab1c823f5d0b410170cbfc0cae9c0bf16d9ed793d0dac8f60a9ccf1d50aecf45",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob045_edgedetect2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "ab1c823f5d0b410170cbfc0cae9c0bf16d9ed793d0dac8f60a9ccf1d50aecf45",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob045_edgedetect2",
+      "arm": "E",
+      "contract_status": "supported",
+      "contract_family": "edge",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 71
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 80,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "b0472e07d0add64069b33c27db6a6c63730bda9144e84a19bf9172e11056bf60",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob054_edgedetect",
+      "arm": "E",
+      "contract_status": "supported",
+      "contract_family": "edge",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 53,
+          "mismatches": 43
+        },
+        {
+          "index": "map_check_1",
+          "status": "fail",
+          "checks": 53,
+          "mismatches": 41
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "b0472e07d0add64069b33c27db6a6c63730bda9144e84a19bf9172e11056bf60",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob054_edgedetect",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+      "declaration_patches": 1,
+      "original_repair_feedback_bound": true,
+      "task": "Prob058_alwaysblock2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+      "declaration_patches": 1,
+      "original_repair_feedback_bound": true,
+      "task": "Prob058_alwaysblock2",
+      "arm": "E",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob071_always_casez",
+      "arm": "E",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob071_always_casez",
+      "arm": "C",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob112_always_case2",
+      "arm": "C",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob112_always_case2",
+      "arm": "E",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob115_shift18",
+      "arm": "E",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob115_shift18",
+      "arm": "C",
+      "contract_status": "supported",
+      "contract_family": null,
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "7145c36455718227e28fa293935c3ed070c3d31dd42eb75c6f48defe53db891c",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob124_rule110",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "7145c36455718227e28fa293935c3ed070c3d31dd42eb75c6f48defe53db891c",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob124_rule110",
+      "arm": "E",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3aac30a728fc6bfd5cdcc4b373c68f83b03c64cda1441adb0e4325ec1f5748da",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob143_fsm_onehot",
+      "arm": "E",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "3aac30a728fc6bfd5cdcc4b373c68f83b03c64cda1441adb0e4325ec1f5748da",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob143_fsm_onehot",
+      "arm": "C",
+      "contract_status": "abstain",
+      "contract_family": null,
+      "native_checks": []
+    }
+  ],
+  "first_pairs": [
+    {
+      "task": "Prob045_edgedetect2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob058_alwaysblock2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob071_always_casez",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob112_always_case2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob115_shift18",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob124_rule110",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob143_fsm_onehot",
+      "first_content_identical": true
+    }
+  ],
+  "adoption": false,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "limits": [
+    "8 known public development/guard tasks, one actual fresh first generation per arm, original all8 denominator. No full156/independent/five-sample claim.",
+    "All extra repair requests, tool checks and elapsed time retained. Same maximum budgets; no replay, resampling, retries or best-of selection.",
+    "Temperature0 does not guarantee identical replies. Two distinct actual matched edge repair chains required; differing first replies do not prove causal gains.",
+    "Control and candidate share byte-identical original runtime and skills; successful declaration patch still returns on its original branch.",
+    "Only prompt/interface/own candidate/native facts enter workers; references and official TB remain in external original judge.",
+    "Existing native edge calibration reused exactly; no manufactured reset/initial-state/omitted-edge obligation.",
+    "Official L3 and native probe pass separately recorded; persistent mismatch cannot qualify as a successful edge repair even if official grade is L3.",
+    "Frozen auditor independently binds actual requests, replies, extraction, compiler receipts, counterexample feedback and original judge; original full failed gate unchanged.",
+    "Whole-task FIFO and original inner locks/resource cleanup; never manage teammate, shared model, instance or formal deployment.",
+    "Outer14400s and250-minute slot are safety bounds, not expected duration. Hard300s includes model/compiler/native feedback.",
+    "No automatic adoption; new full regression, independent natural tasks, official baseline/five samples, offline and target32GB remain required."
+  ],
+  "official_scores": {
+    "C": {
+      "tasks": 8,
+      "scored_tasks": 8,
+      "samples_per_task": 1,
+      "set_score": 0.7,
+      "pass@1": 0.7,
+      "pass@5": 0.7,
+      "level_counts": {
+        "L1": 3,
+        "L3": 5
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 209.5,
+      "per_task": [
+        {
+          "task_id": "Prob045_edgedetect2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob054_edgedetect",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob124_rule110",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob143_fsm_onehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        }
+      ]
+    },
+    "E": {
+      "tasks": 8,
+      "scored_tasks": 8,
+      "samples_per_task": 1,
+      "set_score": 0.8,
+      "pass@1": 0.8,
+      "pass@5": 0.8,
+      "level_counts": {
+        "L1": 2,
+        "L3": 6
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 247.3,
+      "per_task": [
+        {
+          "task_id": "Prob045_edgedetect2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob054_edgedetect",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob124_rule110",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob143_fsm_onehot",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        }
+      ]
+    }
+  },
+  "coefficients": {
+    "C": 0.7,
+    "E": 0.8
+  },
+  "requests_by_arm": {
+    "C": 10,
+    "E": 12
+  },
+  "solve_seconds_by_arm": {
+    "C": 201.8315281327814,
+    "E": 235.62853755056858
+  },
+  "repairs": [
+    "Prob045_edgedetect2"
+  ],
+  "regressions": [],
+  "solve_deadlines": [],
+  "unconfirmed_by_arm": {
+    "C": 0,
+    "E": 0
+  },
+  "unconfirmed_attempts": 0,
+  "guard_pass": true,
+  "unknown_guard_pass": true,
+  "unchanged_task_request_cost": true,
+  "screening_eligible": true,
+  "matched_native_repair_tasks": [
+    "Prob045_edgedetect2"
+  ],
+  "qualified_for_new_full_regression": false,
+  "qualification_scope": "New full156 experiment only; not independent/five/adoption.",
+  "previous_full_gate_still_failed": true,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false
+}

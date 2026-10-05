@@ -2123,7 +2123,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-04T23:08:48.175993+08:00",
+  "last_updated": "2026-10-05",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -4449,16 +4449,16 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full_and_pilot_audited",
+    "continuation_status": "edge_terminal_audited_one_chain_failed_two_chain_gate",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
-    "G3": "Priority single-known-error checkpoint repaired and audited; not cross-task generalization/full regression; next second explicit functional contract and fresh generation",
-    "G4": "not_admitted_independent_natural_validation",
-    "G5": "not_final_delivery_certified",
+    "G3": "Full156 A0.7449/C0.7564 but three deadlines; repair-context16 no trigger; edge16 one of two native repairs, neither new full experiment qualified. Next single factor complete FSM table feedback.",
+    "G4": "S4/S5 interface evidence reviewed;54 mechanical reversible,0 natural harness-admitted/model cases. Faithful original harness calibration remains.",
+    "G5": "Formal bridge engineering controls audited; official baseline/five samples/offline/target32GB not certified.",
     "goal_complete": false,
     "quota_latest_observed_used_percent": 8
   },
@@ -5266,7 +5266,7 @@
     "report": "03_analysis/edge_feedback_20261005/README.md"
   },
   "edge_feedback_pilot_20261005": {
-    "status": "actual_fifo42_running_first_original_judge_completed",
+    "status": "complete_original_evidence_audited_one_of_two_repairs_not_qualified",
     "spec_sha256": "bce903e984fd0f1b92bd11759b0ecc3bdf77783f384bca74cde0b9cf09beacf6",
     "assets": 36,
     "local_tests_passed": 33,
@@ -5277,7 +5277,7 @@
     "preflight_model_calls": 0,
     "preflight_eda_calls": 0,
     "actual_fifo_submitted": true,
-    "report": "03_analysis/edge_feedback_pilot_20261005/README.md",
+    "report": "03_analysis/edge_feedback_pilot_20261005/FINAL_RESULT.md",
     "old_full_gate_unchanged": true,
     "adoption": false,
     "goal_status": "active",
@@ -5285,10 +5285,26 @@
     "monitor_pid": 3675146,
     "monitor_starttime": "843503275",
     "queued_at_utc": "2026-10-05T00:49:43.273723+00:00",
-    "observed_samples": 10,
-    "observed_model_requests": 14,
-    "final_score_available": false,
-    "last_observed_at_epoch": 1791161821.0013242
+    "observed_samples": 16,
+    "observed_model_requests": 22,
+    "final_score_available": true,
+    "last_observed_at_epoch": 1791161821.0013242,
+    "actual_model_responses": 22,
+    "coefficients": {
+      "C": 0.7,
+      "E": 0.8
+    },
+    "matched_native_repair_tasks": [
+      "Prob045_edgedetect2"
+    ],
+    "qualified_for_new_full_regression": false,
+    "stage_elapsed_s": 899.8651705589145,
+    "archive_sha256": "15b5332797abeab1edf0f65918ee94f1d7be189ac028da95a7d0ddf483f6c275",
+    "auditor_sha256": "bae5bcf33197245094b2b230ceef65bfd0a3a8461738b1d159ca3b2f2e8464cf",
+    "extra_model_requests": 2,
+    "extra_solve_seconds": 33.79700941778718,
+    "independent_validation_qualified": false,
+    "five_sample_qualified": false
   },
   "team_cvdp_interface_review_20261005": {
     "status": "readonly_S4_S5_archived255_files_verified",
