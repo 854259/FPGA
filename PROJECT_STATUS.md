@@ -1,3 +1,7 @@
+## 2026-10-05 原生契约/忠实worker/原测试校准共享同步完成
+
+Git285c280相对上次实际共享38061d8的56个公开文件逐Git blob/SHA同步至共享artifacts/285c280，并追加调用/修改/结论三台账；44全量+11校准+5契约+5worker冻结源及模型身份核验保持，FIFO61 running、62 queued，primary STATUS/SNAPSHOT未覆盖且同步期间未变。原始题面/回复/RTL/工具档案不进入本次公开包。实际收据见03_analysis/natural_worker_20261005/SHARED_SYNC_RECEIPT.json；本次后续收据记录提交不冒充已共享的新提交。
+
 ## 2026-10-05 自然多文件worker工程原型双环境52检查完成；全量140/312
 
 五源TOOLS_SPEC10734654冻结，本机3.12.14/Linux3.12.3各52项FAKE纯工程检查，原adapter9b41ef3a逐字节保持。完整公开context/所有输出、原名、路径/链接、两请求8192/300秒预算协议、部分证据及回调参数突变/收尾超时检查通过；Windows两个junction/Linux两个symlink实际文件控制分别保留。不是实际求解器：原ANSI/native功能反馈、真实HTTP/编译器/硬取消和隔离未集成，0真实模型/EDA/FIFO/质量准入，不称官方baseline或同源合格P。
