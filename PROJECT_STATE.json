@@ -4040,7 +4040,7 @@
     "next": "Freeze evaluator-only common module-name conversion on constructed controls, then audit eligibility without model outputs; retain full156 nonpromotion"
   },
   "cvdp_name_binding_20261005": {
-    "updated_at": "2026-10-05T08:20:00+08:00",
+    "updated_at": "2026-10-05T08:26:00+08:00",
     "independent_admitted": 0,
     "full_batch_complete": false,
     "S3": {
@@ -4086,23 +4086,51 @@
       "driver_pid": 3674778
     },
     "existing_queue39": {
-      "status": "completed_observed_20261005_0817",
+      "status": "completed_observed_only_no_adoption",
       "owner": "other_existing_owner",
       "task_name": "repair_context_fresh_C_D_v2",
       "driver_pid": 3659717,
       "stage_pid": 3659722,
       "max_actual_model_requests": 32,
-      "not_dispatched_or_modified_by_this_task": true
+      "not_dispatched_or_modified_by_this_task": true,
+      "candidate_L3": 6,
+      "regressions": 0,
+      "actual_model_requests": 22,
+      "elapsed_s": 1508.2031811717898,
+      "repairs": 0,
+      "original_L3": 6,
+      "tasks": 8
     },
     "S5": {
-      "actual_model_max": 0,
-      "status": "frozen_not_started",
-      "stage_timeout_s": 300,
+      "archive_sha256": "17b28d710dbe42bc41c4648c222dc195ab7e199bc99b92fb4a27fa402076997e",
+      "stage_pid": 3674929,
+      "status": "completed_verified_engineering_only",
+      "plan_sha256": "79bacaf52b0938a7cf076bc1b86da7d07cab31eeaca73f5b4e1880dac12b9c5c",
+      "guard_elapsed_s": 0.7524862717837095,
+      "dataset_eda": 0,
+      "ticket": 41,
+      "driver_pid": 3674924,
+      "abstain": 113,
+      "actual_sim": 19,
+      "mechanically_reversible": 54,
+      "driver_sha256": "9846de2dd7802ee3d693e7179cac0ae510fafeac3b6916373570aa3a3f1e077a",
       "commit": "b069853d3bac35ab74fdd2cf472553b88dfbb09a",
-      "reason": "Constructed quoted literal semantic counterexample frozen before S4 corpus results were read",
-      "dataset_eda_max": 0,
-      "actual_compile_max": 19,
-      "actual_sim_max": 19
+      "cleanup_verified": true,
+      "actual_compile": 19,
+      "stage_elapsed_s": 0.3460937477648258,
+      "verified_archive_files": 135,
+      "old_semantic_mapping_counterexample_confirmed": true,
+      "actual_model": 0,
+      "amd_root": "/workspace/team/runs/fpga_teammate/cvdp_name_S5_20261005_b069853"
+    },
+    "S6": {
+      "independent_admitted": 0,
+      "solver_unchanged": true,
+      "actual_model_max": 0,
+      "status": "contract_review_planned",
+      "actual_eda_max": 0,
+      "fixed_records": 54,
+      "order": "lexicographic id"
     }
   }
 }

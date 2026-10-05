@@ -1,0 +1,95 @@
+{
+  "complete": true,
+  "passed": true,
+  "actual_model_requests": 0,
+  "independent_tasks_admitted": 0,
+  "full_batch_complete": false,
+  "dataset_eda_calls": 0,
+  "source_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "controls": {
+    "prompt_roundtrip_controls": 12,
+    "rejection_controls": 24,
+    "native_pairs": [
+      {
+        "width": 1,
+        "sequential": false,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 1,
+        "sequential": true,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 8,
+        "sequential": false,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 8,
+        "sequential": true,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 17,
+        "sequential": false,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 17,
+        "sequential": true,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 64,
+        "sequential": false,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 64,
+        "sequential": true,
+        "passed": true,
+        "checks_per_mode": 5
+      }
+    ],
+    "initialization_diagnostic_passed": true,
+    "old_quoted_literal_counterexample_confirmed": true,
+    "actual_compile_commands": 19,
+    "actual_sim_commands": 19
+  },
+  "total_source_records": 302,
+  "structural_records": 167,
+  "status_counts": {
+    "mechanically_reversible_needs_contract_review": 54,
+    "abstain": 113
+  },
+  "abstention_reasons": {
+    "name_occurrence_outside_explicit_module_slot": 95,
+    "original_name_absent": 16,
+    "unbalanced_double_quote": 2
+  },
+  "private_binding_sha256": "475a7033956a4e2485845d999e3e5831490cfb86bc963861d72bb134418ee8b3",
+  "limitations": [
+    "Reversibility is not semantic/oracle validity or source independence",
+    "Rule frozen before corpus application; no exclusions by model score",
+    "All published references empty; natural positive/negative oracle controls remain unresolved",
+    "Do not use converted prompts for model evaluation before contract and exposure admission"
+  ],
+  "elapsed_s": 0.3460937477648258,
+  "executed_commit": "b069853d3bac35ab74fdd2cf472553b88dfbb09a",
+  "stage_pid": 3674929,
+  "guard_elapsed_s": 0.7524862717837095,
+  "cleanup_verified": true,
+  "verified_archive_files": 135,
+  "driver_pid": 3674924,
+  "ticket": 41,
+  "decision": "Reject old semantic mapping; retain narrower engineering-only rule pending item contracts and oracle controls",
+  "archive_sha256": "17b28d710dbe42bc41c4648c222dc195ab7e199bc99b92fb4a27fa402076997e"
+}
