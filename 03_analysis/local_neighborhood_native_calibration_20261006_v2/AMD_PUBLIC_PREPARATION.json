@@ -1,0 +1,106 @@
+{
+  "schema": "local_neighborhood_native_amd_public_preparation_v2",
+  "identity": "local_neighborhood_native_calibration_20261006_v2",
+  "status": "actual_amd_pure_prepared_frozen_native_unexecuted",
+  "metadata_only": true,
+  "execution_host": "authorized_AMD_only",
+  "actual": {
+    "amd_pure_checks_passed": 61,
+    "pure_suite_counts": [
+      14,
+      21,
+      26
+    ],
+    "prepared_case_files": 87,
+    "prepared_assets": 92,
+    "source_assets": 151,
+    "frozen": true,
+    "frozen_admission_validated_on_amd": true,
+    "compiler_environment_validated_on_amd": true,
+    "protected_groups": 21,
+    "protected_source_assets": 1274,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "native_calls": 0,
+    "source_python_and_protected_unchanged": true,
+    "shared_model_identity_unchanged": true
+  },
+  "planned_native": {
+    "controls": 29,
+    "native_commands": 78,
+    "native_by_tool": {
+      "xvlog": 27,
+      "xelab": 26,
+      "xsim": 25
+    },
+    "supervisor_commands": 2,
+    "guard_receipts": 162,
+    "independent_observations": 10827,
+    "domains": {
+      "binary": 10347,
+      "four_state_load": 192,
+      "explicit_four_state_xor": 288
+    },
+    "stage_timeout_s": 2400,
+    "native_command_timeout_s": 30,
+    "supervisor_probe_timeout_s": 0.8,
+    "outer_guard_timeout_s": 2600,
+    "slot_timeout_minutes": 45
+  },
+  "evidence_binding": {
+    "amd_preflight_sha256": "f56047ed2e8fc8489d02f031d5d2c06244eae3d2282cfc2d02e93748b258bb19",
+    "verified_preparation_sha256": "6a77fc9487ed89122b33c042f3feb725ed49165e48d6b01d9fed3ae4f9fee53e",
+    "independent_physical_review_sha256": "f0286373de83d3a4ce8c9cce78f15bd5b232fa1854de1db7478264eb09e6caa3",
+    "frozen_run_spec_sha256": "917348629e616661a2bf962fed1f0af815c7bea5e7d8baa9e2fea518056b446b",
+    "actual_freeze_receipt_sha256": "706b504f5d215d4ca20bc19929dec83c89f38abcc63d1fbb00b3ab55ea890b45",
+    "original_input_manifest_sha256": "96fdf604daceaa2d6b8f08c32c08254e8cb44850461bacf3aff19de8144ed479",
+    "historical_failed_v1_preflight_sha256": "1329059c7377813b207d77274c4aa73271a4788c9aa99f00f6b140d3f6ef3de5",
+    "historical_failed_v1_binding_sha256": "7d241deaebbc93ab326800478b35e8f583f8132f5fb6c568687bd26a1143bb99",
+    "frozen_source_filemap_sha256": "fe32ccdf927b4fc8fa68d08b63fb736a3603ed0540c18349954b773851d4cd2a"
+  },
+  "generated_expected_observations_are_actual_DUT_observations": false,
+  "prepared_92_scope": "Remote physical byte/hash readback; not local replay of private RTL/TB/oracle.",
+  "queued": false,
+  "native_qualified": false,
+  "score_measured": false,
+  "quality_gain_verified": false,
+  "original_judge_executed": false,
+  "adoption": false,
+  "production_deployment": false,
+  "failed_v1": {
+    "actual_recipe_returncode": 5,
+    "actual_pure_methods_executed": 0,
+    "later_steps_executed": false,
+    "immutable_physical_assets": 40,
+    "cause": "Strict strip geometry parser omitted an explicit article; corrected only in separate v2.",
+    "actual_shared_notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6004207090",
+    "peer_acknowledgment": "pending"
+  },
+  "freeze_connection_failure": {
+    "returncode": 255,
+    "stdout_bytes": 0,
+    "stderr_bytes": 70,
+    "connection_established": false,
+    "recovery": "Original connection failure preserved; readonly confirmed absent spec/receipt before separately reviewed transport revision. No pure checks repeated."
+  },
+  "unchanged_score_goal": {
+    "status": "active",
+    "baseline_weighted_percent": 77.4358974359,
+    "baseline_fully_correct": 113,
+    "target_weighted_percent": 80,
+    "target_fully_correct": 120,
+    "total": 156
+  },
+  "validation_gate": "All fixed native controls and original physical archive audit; then fixed same-budget C/P net gain/no original-correct regression/no P request cost rise before full156.",
+  "original_budget": {
+    "max_tokens": 8192,
+    "max_requests": 2,
+    "repairs": 1,
+    "deadline_s": 300,
+    "judge": "Full original judge unchanged, including x/z"
+  },
+  "public_source_bodies_included": false,
+  "private_prompt_RTL_TB_or_raw_published": false,
+  "public_git_delivery": "pending PR review/merge/actual shared delivery",
+  "peer_acknowledgment": "pending"
+}
