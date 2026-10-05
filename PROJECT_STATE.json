@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "prompt_only_table_pilot83_queued_after80_81_82; observer_extension_double_preflight_passed_pending_activation; no_new_scores",
+    "continuation_status": "table83_queued_actual_shared; observer_live; next_strict_fsm_pure_preparation; stability80_running; no_new_scores",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -4462,7 +4462,7 @@
     "goal_complete": false,
     "quota_latest_observed_used_percent": 38,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
-    "previous_goal_turn_classification": "progress_strict_prompt_only_generation_pilot_double_preflight; v1_failure_preserved",
+    "previous_goal_turn_classification": "progress_table83_real_fifo_and_shared_receipts; autonomous_next_factor_pure_preparation",
     "last_actual_shared_sync_commit": "5edaf6708aab4b934a1a9a1daf1c21451a4e2c52",
     "last_actual_shared_sync_public_files": 7,
     "offline_deferred_by_user": true,
@@ -6406,7 +6406,7 @@
     "peer_acknowledgment": "pending"
   },
   "prompt_table_synthesis_pilot_20261006": {
-    "status": "queued_whole_task_fifo83",
+    "status": "queued_fifo83_actual_shared_observer_live",
     "version": "v2",
     "spec_sha256": "06c2abe4643f40ba193672375219551f0bcaa1274b8443d8333d51a70fde7adb",
     "source_assets": 89,
@@ -6438,10 +6438,16 @@
     "monitor_command_sha256": "d985b4bfc16f9f41df738fe179c1e64e1e68da66752d2422611d26d34f51b4ec",
     "submission": "03_analysis/prompt_table_synthesis_20261006_v2/SUBMISSION.json",
     "queue_order": "80 then earlier peer81/82 then83",
-    "actual_model_calls_at_submission": 0
+    "actual_model_calls_at_submission": 0,
+    "last_actual_shared_sync_commit": "962f2013e47abbe95e9d9d55e3afdf40639df71c",
+    "last_actual_shared_sync_scope": "200_public_git_delta_files; private source packet installed separately",
+    "shared_artifact": "/workspace/team/activity/fpga_owner/artifacts/962f201",
+    "github_comment_url": "https://github.com/854259/FPGA/issues/7#issuecomment-5999387603",
+    "shared_receipt": "03_analysis/prompt_table_synthesis_20261006_v2/SHARED_SYNC_AND_OBSERVER_RECEIPT.json",
+    "peer_acknowledgment": "pending"
   },
   "table_coordination_extension_20261006": {
-    "status": "double_preflight_passed_pending_actual_observer_activation",
+    "status": "actual_activated_readback_verified",
     "spec_sha256": "0e16fb3e6a602bb9eb864bf81cdfccd610d3738a9690354ee9aeb9251c860f44",
     "cloud_root": "/workspace/team/tools/table-coordination-extension-20261006_v1",
     "source_assets": 3,
@@ -6449,12 +6455,23 @@
     "linux_pure_checks": 18,
     "original_tool_unchanged": true,
     "own_old_watcher_pid": 47838,
-    "new_watcher_started": false,
+    "new_watcher_started": true,
     "stop_ticket": 83,
     "observation": "Completion rows and actual calls separately; quality pending even on terminal",
     "peer_acknowledgment": "pending",
     "primary_status_written": false,
     "model_calls": 0,
-    "eda_calls": 0
+    "eda_calls": 0,
+    "old_owned_watcher_stopped": true,
+    "watcher_pid": 155470,
+    "watcher_starttime": "849393502",
+    "watcher_command_sha256": "4667628188ad4eca8fc725d73077e3676cd7f5086f17b861dcbe2beb53b2f8e6",
+    "only_one_new_owned_card_writer": true,
+    "interval_s": 60,
+    "activation_failure_history": [
+      "Old observer retired; polling raced with its emptied cmdline before zombie state.",
+      "New observer started; first-card polling used None.get before first watch publication."
+    ],
+    "recovery": "Read-back verified existing200 files and exact sole live watcher; no duplicate publication, watcher or model run."
   }
 }

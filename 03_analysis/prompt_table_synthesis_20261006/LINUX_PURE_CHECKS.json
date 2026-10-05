@@ -1,0 +1,19 @@
+{
+  "schema": "prompt_table_synthesis_linux_pure_v1",
+  "complete": true,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_all_column_and_row_label_permutations (test_synthesis.SynthesisControls.test_all_column_and_row_label_permutations) ... ok\ntest_all_declaration_permutations_bind_case_bits (test_synthesis.SynthesisControls.test_all_declaration_permutations_bind_case_bits) ... ok\ntest_explicit_combinational_complete_waveform_and_repeat (test_synthesis.SynthesisControls.test_explicit_combinational_complete_waveform_and_repeat) ... ok\ntest_explicit_dontcare_only_is_selected_zero (test_synthesis.SynthesisControls.test_explicit_dontcare_only_is_selected_zero) ... ok\ntest_extra_output_input_and_duplicate_names_abstain (test_synthesis.SynthesisControls.test_extra_output_input_and_duplicate_names_abstain) ... ok\ntest_incomplete_conflicting_or_unconsumed_waveform_abstains (test_synthesis.SynthesisControls.test_incomplete_conflicting_or_unconsumed_waveform_abstains) ... ok\ntest_missing_duplicate_overlapping_and_out_of_range_axes_abstain (test_synthesis.SynthesisControls.test_missing_duplicate_overlapping_and_out_of_range_axes_abstain) ... ok\ntest_nonbinary_care_and_unknown_waveform_abstain (test_synthesis.SynthesisControls.test_nonbinary_care_and_unknown_waveform_abstain) ... ok\ntest_observation_only_waveform_abstains_despite_parser_admission (test_synthesis.SynthesisControls.test_observation_only_waveform_abstains_despite_parser_admission) ... ok\ntest_output_declaration_position_not_lost (test_synthesis.SynthesisControls.test_output_declaration_position_not_lost) ... ok\ntest_public_entry_has_no_oracle_parameters_or_external_operations (test_synthesis.SynthesisControls.test_public_entry_has_no_oracle_parameters_or_external_operations) ... ok\ntest_raw_prompt_and_interface_hashes_bind_emit_and_abstention (test_synthesis.SynthesisControls.test_raw_prompt_and_interface_hashes_bind_emit_and_abstention) ... ok\ntest_reserved_names_and_separate_interface_abstain (test_synthesis.SynthesisControls.test_reserved_names_and_separate_interface_abstain) ... ok\ntest_vector_bit_order_and_ansi_width_exact (test_synthesis.SynthesisControls.test_vector_bit_order_and_ansi_width_exact) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.143s\n\nOK\n",
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "elapsed_s": 0.21053222194314003,
+  "source_hashes": {
+    "contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "synthesis.py": "a18ac21891dc229b3252df9ac3122517874a08bb8d269e5763d9146eae1279e5",
+    "test_synthesis.py": "1c5fa810478b87b0b81e82ab32d73cd2cda3f4d7aefe7fd1dac51654949d6890",
+    "README.md": "cb812ef2452a72c4f0ee7fc92a794fab68a7c2b02d300f9ad576cb0310dd5cab"
+  },
+  "cloud_root": "/workspace/team/runs/fpga_owner/prompt_table_synthesis_20261006_pure_v1",
+  "model_calls": 0,
+  "eda_calls": 0
+}
