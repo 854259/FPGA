@@ -5264,5 +5264,22 @@
     "adoption": false,
     "goal_status": "active",
     "report": "03_analysis/edge_feedback_20261005/README.md"
+  },
+  "edge_feedback_pilot_20261005": {
+    "status": "frozen36_local_linux33_preflight_no_fifo_yet",
+    "spec_sha256": "bce903e984fd0f1b92bd11759b0ecc3bdf77783f384bca74cde0b9cf09beacf6",
+    "assets": 36,
+    "local_tests_passed": 33,
+    "linux_tests_passed": 33,
+    "expected_samples": 16,
+    "max_actual_model_requests": 32,
+    "solve_deadline_s": 300,
+    "preflight_model_calls": 0,
+    "preflight_eda_calls": 0,
+    "actual_fifo_submitted": false,
+    "report": "03_analysis/edge_feedback_pilot_20261005/README.md",
+    "old_full_gate_unchanged": true,
+    "adoption": false,
+    "goal_status": "active"
   }
 }

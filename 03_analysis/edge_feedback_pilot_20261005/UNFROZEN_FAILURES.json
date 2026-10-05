@@ -1,0 +1,21 @@
+{
+  "failure": "Replay integrity fixture omitted original extractor trailing newline",
+  "initial_fixture_sha256": "f8106fda92456276332d4fc0f962ca4884208f1eb07ebdcb62d8ed33b850150a",
+  "fixture_corrected_using_original_baseline_extract": true,
+  "original_extractor_modified": false,
+  "original_replay_predicate_relaxed": false,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "passed_after_fix": 33,
+  "initial_preparation_failure": {
+    "reason": "Stage-specific failure metadata differs from copied tool history",
+    "initial_prepare_sha256": "0d34df4329e51ae06448b4a646469403eb3cd5407ffb501a76462af5c4174e80",
+    "allowed_difference_only_metadata": [
+      "COPY_RECEIPT.json",
+      "UNFROZEN_FAILURES.json"
+    ],
+    "frozen_model_source_change": false,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0
+  }
+}
