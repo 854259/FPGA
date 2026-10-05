@@ -4449,18 +4449,18 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "fresh_CP16_FIFO58_running;terminal_audit_pending",
+    "continuation_status": "phase58_qualified_new_full_only;prepare_CP_all156_same_source_budget",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
-    "G3": "Fresh C/P16 frozen after original teammate phase review; all old full156 three-deadline and edge/FSM one-chain gates preserved. Requires two matched native+L3 repairs, all guards and cost conditions before another full156.",
+    "G3": "Fresh C/P16 verified two matched edge repair chains, all guards/cost pass; new full156 permitted. Original A/C full156 three deadlines and earlier edge/FSM rejections preserved. No new full or independent/five/adoption qualification yet.",
     "G4": "Natural original-harness55: two finite calibrations pass; gray_to_binary valid=0 false acceptance version-excluded alongside S7 convolutional encoder. 0 independent model comparisons; exact ABI/exposure/full qualification still required.",
     "G5": "Formal bridge engineering controls audited; official baseline/five samples/offline/target32GB not certified.",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 15
+    "quota_latest_observed_used_percent": 16
   },
   "concise_output_pilot_20261004": {
     "status": "completed_audited_rejected",
@@ -5441,9 +5441,9 @@
     "adoption": false
   },
   "phase_feedback_pilot_20261005": {
-    "status": "running_fresh_CP_FIFO58",
+    "status": "complete_original_evidence_audited_two_chains_qualified_new_full_only",
     "spec_sha256": "2539dcbc8ac9144a33b1d9a207361f0e695725c1788add314a653c8d71484ae5",
-    "archive_sha256": "5c68183580c760bd5acdc08cdd5d456b590b650937eacf8f5b498752d4988a21",
+    "archive_sha256": "56e16ddd32c2e17357d89a13bcf6b61f1eeb84f8b52638288d4e31047b98160a",
     "assets": 41,
     "task_count": 8,
     "expected_samples": 16,
@@ -5454,8 +5454,8 @@
     "actual_fifo_submitted": true,
     "adoption": false,
     "independent_model_tasks": 0,
-    "qualified_for_full": false,
-    "report": "03_analysis/phase_feedback_pilot_20261005/README.md",
+    "qualified_for_full": true,
+    "report": "03_analysis/phase_feedback_pilot_20261005/FINAL_RESULT.md",
     "ticket": 58,
     "monitor_pid": 3743547,
     "monitor_starttime": "844902351",
@@ -5464,9 +5464,26 @@
     "model_identity_unchanged": true,
     "source_unchanged": true,
     "stage_error": null,
-    "terminal_audit_pending": true,
+    "terminal_audit_pending": false,
     "observed_at_epoch": 1791175609.1487858,
     "latest_shared_commit": "e50827618dafff665ea9cbf226b31156c2e43770",
-    "primary_status_preserved": true
+    "primary_status_preserved": true,
+    "completed_samples": 16,
+    "actual_model_requests": 22,
+    "actual_model_responses": 22,
+    "observed_samples": 16,
+    "evidence_valid": true,
+    "coefficients": {
+      "C": 0.8,
+      "P": 1.0
+    },
+    "auditor_sha256": "a75a163f50e079c73a980c56f41755e598f70f94beb98066c428a2c22de6fdb3",
+    "matched_native_repair_tasks": [
+      "Prob045_edgedetect2",
+      "Prob054_edgedetect"
+    ],
+    "qualified_for_new_full_regression": true,
+    "independent_validation_qualified": false,
+    "stage_elapsed_s": 884.9627848807722
   }
 }

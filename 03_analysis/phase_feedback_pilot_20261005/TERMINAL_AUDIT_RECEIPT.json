@@ -1,0 +1,28 @@
+{
+  "schema": "phase_terminal_original_audit_v1",
+  "ticket": 58,
+  "source_assets": 41,
+  "archive_sha256": "56e16ddd32c2e17357d89a13bcf6b61f1eeb84f8b52638288d4e31047b98160a",
+  "spec_sha256": "2539dcbc8ac9144a33b1d9a207361f0e695725c1788add314a653c8d71484ae5",
+  "auditor_sha256": "a75a163f50e079c73a980c56f41755e598f70f94beb98066c428a2c22de6fdb3",
+  "python": "3.12.14",
+  "manifest_files": 815,
+  "evidence_valid": true,
+  "samples": 16,
+  "model_requests": 22,
+  "model_responses": 22,
+  "stage_elapsed_s": 884.9627848807722,
+  "guard_elapsed_s": 885.356215255335,
+  "extra_model_requests": 2,
+  "extra_solve_seconds": 36.294318087399006,
+  "matched_native_repair_tasks": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect"
+  ],
+  "qualified_for_new_full_regression": true,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false,
+  "adoption": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0
+}
