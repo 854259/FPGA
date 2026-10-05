@@ -1,0 +1,41 @@
+{
+  "schema": "natural_terminal_U9_frozen_v1",
+  "at": "2026-10-05T09:46:27.464448+00:00",
+  "status": "prepared_not_submitted",
+  "action": "Readonly original archive audits; no native trial repetition or model requests",
+  "entries": [
+    {
+      "alias": "edge",
+      "spec_sha256": "e68dff0e4bab1a708a9617552776e3ed86adcb6d7d53aa6c004c49728707fa65",
+      "archive_sha256": "d4f104f378b90fa25841603092879cb9d3dca0fc2265ad7efc489cfbc4405ce6",
+      "archive_manifest_files": 162,
+      "source_hashes": {
+        "audit.py": "df76ed6037a058d7869c7d01ce14c14e1e11b20a221ccbe9c3e080ca1e10caf1"
+      },
+      "auditor_sha256": "df76ed6037a058d7869c7d01ce14c14e1e11b20a221ccbe9c3e080ca1e10caf1",
+      "bridge_sha256": "cbcced341b10845b68dfc18c5b3c40b9057cccd736bc9499e553f93b7d5e5695"
+    },
+    {
+      "alias": "reset",
+      "spec_sha256": "f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3",
+      "archive_sha256": "1dec4736126e0de6472836a2fc5572e495d0a4febe1fc96e5ba43c9b3760de92",
+      "archive_manifest_files": 251,
+      "source_hashes": {
+        "audit.py": "084cbce2b1d32234c429f4fe4a1cc50baa9a829347cb1146259298b99a3226b0",
+        "calibration.py": "5a979e3098ad4e5c0b2214667c91548b28d551b39be9caf1f579802155c3e899",
+        "native_reset_contract.py": "94bcb3b86b7bf1209c5a2348f9d3da5e9c74136e15f77cbdeeedc838ee5fa43d"
+      },
+      "auditor_sha256": "084cbce2b1d32234c429f4fe4a1cc50baa9a829347cb1146259298b99a3226b0",
+      "bridge_sha256": "cbcced341b10845b68dfc18c5b3c40b9057cccd736bc9499e553f93b7d5e5695"
+    }
+  ],
+  "budgets_each": {
+    "model_calls": 0,
+    "eda_calls": 0,
+    "child_timeout_s": 100,
+    "guard_timeout_s": 120,
+    "slot_minutes": 5
+  },
+  "queue_rule": "Use existing FIFO after active ticket65; recheck same-spec results and avoid duplicates before submit. No interrupt, source/input rewrite or model restart.",
+  "acceptance": "Each original pinned audit must bind full archive/native receipts/guard and reproduce original qualification. Retain false acceptance, do not convert evidence completeness into model/independent quality admission. Generated reset controls are not original harness or unseen samples."
+}

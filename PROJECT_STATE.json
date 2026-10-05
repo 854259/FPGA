@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05T16:01:07+08:00",
+  "last_updated": "2026-10-05T17:47:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3118,59 +3118,28 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T08:01:07.224134+00:00",
+      "checked_at": "2026-10-05T09:44:00.851482+00:00",
       "own_live_processes": 0,
       "model_pid": 2013333,
-      "model_identity_unchanged": true,
+      "model_identity_unchanged_at_last_guard": true,
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
-      "known_full156_regression_running": true,
-      "other_task_queue_running": true,
-      "other_task_ticket": 61,
-      "other_task_driver_pid": 3761322,
-      "other_task_stage_pid": 3761327,
-      "other_task_completed_samples": 239,
-      "other_task_expected_samples": 312,
-      "completed_row_request_attempts": 255,
-      "completed_row_responses": 255,
-      "completed_row_deadlines": 0,
-      "completed_row_unconfirmed": 0,
-      "completed_row_tool_errors": 0,
-      "driver_holds_gpu_lock": true,
-      "frozen_sources_last_verified_at": "2026-10-05T07:09:18.260562+00:00",
-      "frozen_sources_last_verified_count": 44,
-      "queued_tasks": [
-        {
-          "ticket": 62,
-          "state": "queued",
-          "task": "natural_edge_original_harness_controls_v1",
-          "spec_sha256": "e68dff0e4bab1a708a9617552776e3ed86adcb6d7d53aa6c004c49728707fa65",
-          "model_calls_max": 0,
-          "compile_max": 7,
-          "simulations_max": 7,
-          "has_results": false,
-          "independent_model_admission": false
-        },
-        {
-          "ticket": 63,
-          "state": "queued",
-          "task": "native_reset_generated_research_controls_v1",
-          "source_files_verified": 44,
-          "spec_sha256": "f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3",
-          "model_calls_max": 0,
-          "compile_max": 14,
-          "simulations_max": 14,
-          "generated_research_test": true,
-          "original_harness": false,
-          "independent_model_admission": false
-        }
-      ],
-      "latest_own_stage": "U8_terminal_audit_preparation",
+      "known_full156_regression_running": false,
+      "known_full156_regression_completed_ticket": 61,
+      "known_full156_samples": 312,
+      "latest_own_stage": "U8_original_terminal_audit",
       "latest_own_stage_complete": true,
-      "terminal_audit_executed": false,
-      "receipt": "05_handoff/independent_validation_20261004/phase_terminal_U8/LIVE_FOLLOWUP_20261005T0801Z.json",
-      "receipt_sha256": "64847b3eb161be86ad045d43e4e95cd38a89046b71626731f09cff6566b5f895",
-      "workspace_free_bytes": 9908449280
+      "terminal_audit_executed": true,
+      "terminal_audit_ticket": 64,
+      "other_task_queue_running": true,
+      "other_task_ticket": 65,
+      "other_task_driver_pid": 4004756,
+      "other_task_stage_pid": 4004761,
+      "other_task_expected_samples": 16,
+      "other_task_scope": "known eight-task elaboration feedback pretest, not a complete batch",
+      "next_own_stage": "U9_original_calibration_terminal_audits",
+      "next_own_stage_status": "prepared_not_submitted",
+      "receipt": "05_handoff/independent_validation_20261004/phase_terminal_U8/TERMINAL_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3210,7 +3179,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T16:01:07+08:00",
+  "updated_at": "2026-10-05T17:47:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -4889,8 +4858,8 @@
     "next": "Follow frozen ticket61 to terminal and audit original acceptance. Retain A/B source bundle for a later admitted A/P/B comparison; no duplicate job or score inheritance. Independent data, budget/credits and formal32GB still missing."
   },
   "terminal_audit_preparation_U8_20261005": {
-    "status": "prepared_not_executed",
-    "updated_at": "2026-10-05T14:37:00+08:00",
+    "status": "prepared_then_executed_original_audit_valid",
+    "updated_at": "2026-10-05T17:47:00+08:00",
     "new_model_calls": 0,
     "new_eda_calls": 0,
     "problem": "Frozen terminal auditor expects an absent sibling helper path; an existing byte-identical helper is available.",
@@ -4928,8 +4897,8 @@
     },
     "active_source_commit": "f50c02728e1af1683d3d74882fd4232c37bb2d21",
     "active_spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
-    "auditor_executed": false,
-    "terminal_archive_present": false,
+    "auditor_executed": true,
+    "terminal_archive_present": true,
     "dependency_layout_prepared": true,
     "original_owner_files_unchanged": true,
     "duplicate_audit_prevention": "Reuse any complete same-spec audit first. Only use prepared bundle if missing after terminal and FIFO/resource check permits.",
@@ -4979,6 +4948,32 @@
     },
     "full_batch_complete": false,
     "private_receipt": "05_handoff/independent_validation_20261004/phase_terminal_U8/LOCAL_EVIDENCE_CHECK.json",
-    "next": "Existing ticket61 continues. On terminal check original summary, guard, immutable archive and existing audit; reuse or audit once. Apply unchanged full156 gate, diagnose invalid execution separately, no resampling."
+    "next": "Execution completed and original audit valid; see phase_full156_terminal_U8_20261005. Do not repeat this audit. Retain candidate without adoption and follow independent validation admission."
+  },
+  "phase_full156_terminal_U8_20261005": {
+    "status": "complete_original_audit_valid_candidate_not_adopted",
+    "updated_at": "2026-10-05T17:47:00+08:00",
+    "public_result": "03_analysis/helper_extraction_20261004/U8_PHASE_FULL156_TERMINAL_20261005.json",
+    "ticket": 64,
+    "main_source_commit": "f50c02728e1af1683d3d74882fd4232c37bb2d21",
+    "run_spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+    "outputs": 312,
+    "model_requests": 338,
+    "L3": {
+      "C": 110,
+      "P": 113
+    },
+    "functional_repairs": 3,
+    "observed_functional_regressions": 0,
+    "causally_supported_native_repairs": 2,
+    "independent_new_tasks": 0,
+    "candidate_permitted_to_attempt_independent_validation": true,
+    "adoption": false,
+    "complete_comprehensive_batch": false,
+    "archive_sha256": "62974b8c1691e7a5c5cee2e2fbdf73afd88fdcd5b64c02702321ae5cc7c68371",
+    "evidence_files_verified": 26,
+    "nested_original_files_verified": 10785,
+    "cleanup_verified": true,
+    "next": "U9 frozen original calibration audits; current unrelated ticket65 proceeds unchanged."
   }
 }

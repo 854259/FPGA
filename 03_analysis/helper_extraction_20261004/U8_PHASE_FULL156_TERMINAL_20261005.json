@@ -1,0 +1,151 @@
+{
+  "schema": "phase_full156_terminal_analysis_U8_v1",
+  "at": "2026-10-05T09:39:32.873608+00:00",
+  "run_source_commit": "f50c02728e1af1683d3d74882fd4232c37bb2d21",
+  "spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+  "original_archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+  "original_manifest_files": 10785,
+  "auditor_sha256": "681b46a55166caf319a03b48988d83cb923692c8a9424760d7ea7a5edfaea1ab",
+  "audit_result_sha256": "90ed63c1536470279e181ea1a7c5956cfbb366de46b027d5eaf1bf3d647e6516",
+  "audit_seconds": 1.6258050091564655,
+  "audit_new_model_calls": 0,
+  "audit_new_eda_calls": 0,
+  "tasks": 156,
+  "outputs": 312,
+  "generations_per_task_arm": 1,
+  "independent_unseen_tasks": 0,
+  "level_counts": {
+    "C": {
+      "0": 5,
+      "1": 41,
+      "3": 110
+    },
+    "P": {
+      "0": 4,
+      "1": 39,
+      "3": 113
+    }
+  },
+  "functional_repairs": 3,
+  "functional_regressions": 0,
+  "coefficient_improvements": 4,
+  "coefficient_unchanged": 152,
+  "coefficient_regressions": 0,
+  "changes": [
+    {
+      "task": "Prob045_edgedetect2",
+      "C_level": 1,
+      "P_level": 3,
+      "coefficient_change": 0.8,
+      "first_reply_identical": true,
+      "C_contract": "abstain",
+      "P_contract": "supported",
+      "native_repair_mechanism_verified": true
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "C_level": 1,
+      "P_level": 3,
+      "coefficient_change": 0.8,
+      "first_reply_identical": true,
+      "C_contract": "abstain",
+      "P_contract": "supported",
+      "native_repair_mechanism_verified": true
+    },
+    {
+      "task": "Prob082_lfsr32",
+      "C_level": 0,
+      "P_level": 1,
+      "coefficient_change": 0.2,
+      "first_reply_identical": false,
+      "C_contract": "abstain",
+      "P_contract": "abstain",
+      "native_repair_mechanism_verified": false
+    },
+    {
+      "task": "Prob140_fsm_hdlc",
+      "C_level": 1,
+      "P_level": 3,
+      "coefficient_change": 0.8,
+      "first_reply_identical": false,
+      "C_contract": "abstain",
+      "P_contract": "abstain",
+      "native_repair_mechanism_verified": false
+    }
+  ],
+  "same_first_reply_pairs": 154,
+  "different_first_reply_tasks": [
+    "Prob082_lfsr32",
+    "Prob140_fsm_hdlc"
+  ],
+  "matched_native_repairs": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect"
+  ],
+  "coefficients": {
+    "C": 0.7576923076923077,
+    "P": 0.7743589743589744
+  },
+  "coefficient_difference": 0.016666666666666666,
+  "paired_quality_mean_95pct_normal_approximation": [
+    -0.000783245196377267,
+    0.0341165785297106
+  ],
+  "l3_discordant_exact_two_sided_p": 0.25,
+  "weighted_direction_exact_two_sided_p": 0.125,
+  "uncertainty_scope": "Exploratory task-paired statistics on already seen public regression tasks, not independent-generalisation inference. Normal interval is an approximation with only four changed pairs; related design families may invalidate iid assumptions. Exact tests assume independent exchangeable discordant pairs. No universal safety or stability proof.",
+  "requests_by_arm": {
+    "C": 168,
+    "P": 170
+  },
+  "requests_total": 338,
+  "confirmed_responses": 338,
+  "deadlines": 0,
+  "tool_errors": 0,
+  "solve_seconds_by_arm": {
+    "C": 3247.1750146392733,
+    "P": 3251.8217146396637
+  },
+  "judge_seconds_by_arm": {
+    "C": 4065,
+    "P": 4175.9
+  },
+  "solve_plus_judge_seconds_by_arm": {
+    "C": 7312.175014639273,
+    "P": 7427.721714639663
+  },
+  "component_time_difference_s": 115.54670000039005,
+  "component_time_relative_difference": 0.01580196039742776,
+  "run_stage_seconds": 14844.210395013914,
+  "run_guard_seconds": 14844.41729860194,
+  "guard_model_unchanged": true,
+  "guard_protected_files_unchanged": true,
+  "guard_owned_cleanup_verified": true,
+  "screening_eligible": true,
+  "candidate_qualified_to_attempt_independent_validation": true,
+  "independent_validation_measured": false,
+  "official_baseline_gain_measured": false,
+  "archived_best_A_gain_measured": false,
+  "actual_five_sample_measured": false,
+  "adoption": false,
+  "scope_corrections": [
+    "Summary candidate_qualified=false is intentionally provisional; original full audit applies the final decision after provenance validation.",
+    "Two same-first edge repairs are causally supported. Third functional rescue has different first replies with both contracts abstaining; do not attribute it to the candidate mechanism.",
+    "C is the prior functional policy, not archived best A nor untouched official baseline.",
+    "Inherited all8/14400s text is stale; actual fixed orchestration is all156 with 86400s stage/86600s guard/1470min slot.",
+    "Official summary pass@5 is not five actual samples when samples_per_task=1."
+  ],
+  "own_audit_ticket": 64,
+  "own_audit_driver_pid": 4004706,
+  "own_audit_stage_pid": 4004711,
+  "terminal_evidence_sha256": "62974b8c1691e7a5c5cee2e2fbdf73afd88fdcd5b64c02702321ae5cc7c68371",
+  "own_evidence_files_verified": 26,
+  "original_evidence_files_verified": 10785,
+  "cleanup": {
+    "owned_duplicate_input_removed": true,
+    "original_owner_archive_retained": true,
+    "cache_dirs_remaining": 0,
+    "empty_dirs_remaining": 0
+  },
+  "next": "Retain frozen P only as a candidate permitted to attempt independent validation. Audit original edge and generated-reset calibration archives without new model/EDA calls; close three-arm/data/budget/hardware gates before any comprehensive batch."
+}
