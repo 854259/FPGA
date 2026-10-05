@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "Cloud long test actually FIFO80 queued independently; own failed diagnostic77 preserved and safely released, semantic78 running; score work retained for return",
+    "continuation_status": "semantic78_original_audit_rejected; stability80_live; next_factors_readonly_analysis",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -4460,9 +4460,9 @@
     "G4": "302 public ABI/context prepared; bounded native reset support1/302. New runtime17 sources e2462368 frozen, local177 (3 platform skips)/Linux177 (0 skips),76 fake HTTP subchecks and four actual owned Python controls. No actual model/EDA/quality/production300s/OS include sandbox admission. New272work+24cleanup+4receipt factor cannot inherit old ANSI/C/P; original harness exposures/exclusions and full156 terminal gates unchanged. Independent actual model tasks0; adoptionfalse.",
     "G5": "Formal bridge engineering prepared; official baseline/five samples/target32GB remain pending. User deferred offline verification; correctness and score prioritized.",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 33,
+    "quota_latest_observed_used_percent": 35,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
-    "previous_goal_turn_classification": "progress",
+    "previous_goal_turn_classification": "progress_original_terminal_audit_closed_and_candidate_rejected",
     "last_actual_shared_sync_commit": "4ba6d9a0b9f1eddd530512326918bf0c5c0938ff",
     "last_actual_shared_sync_public_files": 19,
     "offline_deferred_by_user": true
@@ -6242,7 +6242,7 @@
     "report": "03_analysis/latest_semantic_improvement_review_20261005/README.md"
   },
   "semantic_edge_guidance_pilot_20261005": {
-    "status": "actual_whole_task_FIFO78_complete_terminal_audit_pending",
+    "status": "completed_original_audit_valid_rejected_quality_regressions",
     "spec_sha256": "f36257ba3b7c9c30d92b4ddd825b2dbf0dda56d3bb2a87af77d0d91c93ff6b1e",
     "assets": 64,
     "local_checks": 59,
@@ -6254,7 +6254,7 @@
     "protected_source_assets": 445,
     "score_gain_measured": false,
     "adoption": false,
-    "report": "03_analysis/semantic_edge_guidance_pilot_20261005/STATUS.md",
+    "report": "03_analysis/semantic_edge_guidance_pilot_20261005/FINAL_RESULT.md",
     "ticket": 78,
     "monitor_pid": 4091002,
     "monitor_starttime": "847751923",
@@ -6268,7 +6268,42 @@
     "measurement_error": null,
     "all_original_task_prompt_names_and_bytes_verified": true,
     "guard_complete": true,
-    "guard_passed": true
+    "guard_passed": true,
+    "terminal_audit_pending": false,
+    "evidence_valid": true,
+    "qualified_for_new_full_regression": false,
+    "formal_deployment_changed": false,
+    "actual_model_requests_observed": 36,
+    "actual_model_responses": 36,
+    "coefficients": {
+      "C": 0.6,
+      "P": 0.5857142857142856
+    },
+    "level_counts": {
+      "C": {
+        "L1": 7,
+        "L3": 7
+      },
+      "P": {
+        "L0": 1,
+        "L1": 6,
+        "L3": 7
+      }
+    },
+    "quality_guard_passed": false,
+    "resource_guard_passed": true,
+    "improvements": [
+      "Prob133_2014_q3fsm"
+    ],
+    "regressions": [
+      "Prob071_always_casez",
+      "Prob146_fsm_serialdata"
+    ],
+    "unconfirmed_attempts": 0,
+    "solve_deadlines": [],
+    "terminal_archive_sha256": "c5e0c277a71591f793021c5f356f6bdfd897e7c1acd52355bc62cb7b8c5ca3bf",
+    "exact_original_audit_result_sha256": "a230404597d201e8465b61a64f4409977c095ee893e671eaa8670853a53178b4",
+    "public_result": "03_analysis/semantic_edge_guidance_pilot_20261005/PUBLIC_RESULT.json"
   },
   "phase_P_stability156x5_20261005": {
     "status": "actual_whole_task_FIFO80_running",

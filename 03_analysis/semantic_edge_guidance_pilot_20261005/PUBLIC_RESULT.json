@@ -1,0 +1,63 @@
+{
+  "schema": "semantic_edge_guidance_public_original_audit_v1",
+  "evidence_valid": true,
+  "expected_samples": 28,
+  "actual_model_requests": 36,
+  "archive_sha256": "c5e0c277a71591f793021c5f356f6bdfd897e7c1acd52355bc62cb7b8c5ca3bf",
+  "spec_sha256": "f36257ba3b7c9c30d92b4ddd825b2dbf0dda56d3bb2a87af77d0d91c93ff6b1e",
+  "auditor_sha256": "cc157b5d958df1d1b2d23c222a59047a70fda43e39335250ee50f9f4535e7c85",
+  "coefficients": {
+    "C": 0.6,
+    "P": 0.5857142857142856
+  },
+  "requests_by_arm": {
+    "C": 18,
+    "P": 18
+  },
+  "solve_seconds_by_arm": {
+    "C": 549.3723526112735,
+    "P": 589.0346786994487
+  },
+  "improvements": [
+    "Prob133_2014_q3fsm"
+  ],
+  "regressions": [
+    "Prob071_always_casez",
+    "Prob146_fsm_serialdata"
+  ],
+  "solve_deadlines": [],
+  "unconfirmed_attempts": 0,
+  "guard_pass": false,
+  "unchanged_task_request_cost": true,
+  "screening_eligible": false,
+  "qualified_for_new_full_regression": false,
+  "adoption": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "exact_original_audit_result_sha256": "a230404597d201e8465b61a64f4409977c095ee893e671eaa8670853a53178b4",
+  "terminal_audit_receipt_sha256": "182fd1954ebbfb0e0bceb4cc7c546eace1792db4a7a3b6c690e86bf1c806591b",
+  "actual_model_responses": 36,
+  "resource_guard_passed": true,
+  "source_assets": 64,
+  "level_counts": {
+    "C": {
+      "L1": 7,
+      "L3": 7
+    },
+    "P": {
+      "L0": 1,
+      "L1": 6,
+      "L3": 7
+    }
+  },
+  "identical_first_reply_pairs": 3,
+  "decision": "reject_candidate_no_new_full_regression",
+  "formal_deployment_changed": false,
+  "full156_baseline_unchanged": true,
+  "limits": [
+    "Known 14 development tasks, one fresh sample per arm. No resample/best-of.",
+    "Generic suffix changes generation and repair messages; differing first replies do not establish matched-repair causality.",
+    "Resource guard passed, quality guard failed. These are separate checks.",
+    "No new full156 score, independent generalization, official baseline or formal five-sample proof."
+  ]
+}
