@@ -1,5 +1,5 @@
 {
-  "at_epoch": 1791163795.2533736,
+  "at_epoch": 1791164249.456189,
   "ticket": {
     "schema": "whole_task_fifo_v1",
     "ticket": 44,
@@ -160,13 +160,21 @@
         "pid": 3692078,
         "starttime": "843739558"
       }
+    },
+    {
+      "ticket": 45,
+      "task_name": "edge_phase_context_T7",
+      "state": "queued",
+      "cwd": "/workspace/team/runs/fpga_teammate/edge_phase_T7_20261005_744847d",
+      "runner": null,
+      "child": null
     }
   ],
   "source_assets": 40,
   "source_unchanged": true,
   "model": {
     "pid": 2013333,
-    "state": "S",
+    "state": "R",
     "start": "823869819",
     "live": true
   },
@@ -199,13 +207,13 @@
     "complete": false,
     "passed": false,
     "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
-    "actual_model_requests": 2,
+    "actual_model_requests": 14,
     "first_generation_replayed": false,
     "adoption": false,
     "new_full_score": false,
     "scope": "8 known development/guard tasks, one fresh C/F sample each, no independent/full156/five-sample claim"
   },
-  "completed_samples": 2,
+  "completed_samples": 10,
   "python_packages": {
     "cocotb": false,
     "cocotb_tools": false,

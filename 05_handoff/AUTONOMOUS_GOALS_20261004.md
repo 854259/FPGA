@@ -1,3 +1,11 @@
+## 2026-10-05 队友S7原判定器复核：一条自然记录两个误通过，禁止计独立成绩
+
+档案296359d8/46文件、SOURCE_TRANSFER/driver a120da36/私有freeze710a97e4/原S5数据与记录和harness字节核验。原convolutional_encoder_0010测试仅观察不比较，两个恒0/恒1错误设计各330ns、27输出观察、1测试0失败rc0；末尾单故意断言控制330ns/1失败rc1及marker/XML/log匹配，失败传播正常。冻结记录排除，不改题库/判定器/队友，不泛化为全部CVDP无效。
+
+复核ccf263cf只读AST/XML/原始SHA，0新模型/EDA；编译产物与原driver/runner/定时日志支持原3次build/test，但缺完整逐native argv/rc收据，不宣称独立重建全部编译命令。档案外安装文件和原guard现场观察只由freeze/driver/log约束，无新硬件/断网认证。54机械回转仍0自然功能准入。后续自然原harness正/多负/失败传播控制与曝光审查保持。
+
+FSM44最新10/16、14已计请求，actual model/monitor/child/stage身份存活，complete=false、无阶段error、40冻结源保持，完整审计前不发收益。共享额度最新15%/普通调用可用，97%停止线、reset credits未使用。G3/G4/G5继续active，入口03_analysis/team_cvdp_false_acceptance_review_20261005/README.md。
+
 ## 2026-10-05 09:29 FSM实际实验FIFO44已运行
 
 整任务44已接受，monitor3692077/start843739550、child3692078/start843739558、guard stage3692083/start843739584实际存活，共享模型2013333/start823869819保持。现场2/16已完成、2已计请求，complete=false，无阶段error；40冻结源保持。队友43已结束，没有被抢占或修改；历史已释放失败票不当当前阻塞。

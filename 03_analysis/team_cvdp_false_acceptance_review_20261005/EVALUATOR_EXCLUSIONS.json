@@ -1,0 +1,17 @@
+{
+  "schema": "versioned_natural_evaluator_exclusions_v1",
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "excluded": [
+    {
+      "record_id": "cvdp_copilot_convolutional_encoder_0010",
+      "record_sha256": "c44cc5494c80f09613ccb26418af91a623a7c893248f17a2398747cac35de996",
+      "test_sha256": "603ebe13fb1c617e1016b7160ba8aadf082626087f2651f514a208b9893d319a",
+      "reason": "Original harness accepts both constant-zero and constant-one outputs, while deliberate failing assertion propagates correctly",
+      "evidence_archive_sha256": "296359d8abfec37ea8f545f8630ca564cbd28964975ce9ab62e877e448b9e4bf",
+      "result": "RESULTS.json"
+    }
+  ],
+  "all_other_records_admitted": false,
+  "dataset_modified": false,
+  "production_deployed": false
+}

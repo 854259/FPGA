@@ -1,0 +1,64 @@
+{
+  "schema": "cvdp_S7_original_evidence_readonly_review_v1",
+  "evidence_archive_valid": true,
+  "archive_sha256": "296359d8abfec37ea8f545f8630ca564cbd28964975ce9ab62e877e448b9e4bf",
+  "manifest_files": 46,
+  "source_commit": "fe234c9c8d6b7ab3cc710b68e2151b831c002ef9",
+  "driver_sha256": "a120da36f5228fff08c393a675830e81631bdae07b8eb6cf1c67c852ba535cc5",
+  "private_freeze_sha256": "710a97e43c19600c4793659897b7d60d834dc940d025d6ed414d415120c74651",
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "record_id": "cvdp_copilot_convolutional_encoder_0010",
+  "record_sha256": "c44cc5494c80f09613ccb26418af91a623a7c893248f17a2398747cac35de996",
+  "controls": [
+    {
+      "label": "failure_propagation",
+      "tests": 1,
+      "failures": 1,
+      "returncode": 1,
+      "sim_time_ns": 330.0,
+      "original_harness": false,
+      "log_sha256": "90f8e40ca2602103f4de610b10334226653c5f6353f8a72da7c2b8e50309ee20",
+      "compiled_blob_sha256": "dd2a35b7263b82b962d785a6cfb91cc39643722c51862d83e80b72c399be4c6c",
+      "known_wrong_accepted": false
+    },
+    {
+      "label": "constant_zero",
+      "tests": 1,
+      "failures": 0,
+      "returncode": 0,
+      "sim_time_ns": 330.0,
+      "original_harness": true,
+      "log_sha256": "b48f75007d218231827c24faf4392fe81fb93c28355db1117e4f8fe1dca9166c",
+      "compiled_blob_sha256": "84b258ceb484ae091794f340e214100c760e5dc4b8e191942ec79523417b4a11",
+      "known_wrong_accepted": true
+    },
+    {
+      "label": "constant_one",
+      "tests": 1,
+      "failures": 0,
+      "returncode": 0,
+      "sim_time_ns": 330.0,
+      "original_harness": true,
+      "log_sha256": "c9d1303bf9b8759b4d30b02d8fc94c319201a21fcbcc182bbea22a3d89e1ea4b",
+      "compiled_blob_sha256": "4185374d00455e66403029b212005668278d7274d30db7becc9901bdad5d9fc3",
+      "known_wrong_accepted": true
+    }
+  ],
+  "record_excluded_from_independent_validation": true,
+  "false_acceptances": 2,
+  "original_harness_asserts": 0,
+  "original_harness_raises": 0,
+  "review_model_calls": 0,
+  "review_eda_calls": 0,
+  "independent_tasks_admitted": 0,
+  "adoption": false,
+  "limits": [
+    "Only this record and original harness excluded; no assertion that every CVDP test is invalid.",
+    "Original source, dataset, controls, harness bytes, timed cocotb XML/logs and compiled artifacts bound. No archived Python/test/driver code executed by review.",
+    "Three recorded build/test executions supported by exact driver, runner, artifacts and timed logs; complete per-native-command argv/return-code receipts are absent, so no claim of independently verified compiler command sequence.",
+    "Installed Python/toolchain files outside archive are bound by historical driver/freeze/logs, not independently rehashed or reexecuted here.",
+    "Historical guard/model/protected/cleanup observations bound to original records, not fresh hardware/offline32GB certification.",
+    "Failure-propagation control deliberately adds one assertion only; never replace original dataset harness or count it as solver quality."
+  ],
+  "reviewer_sha256": "ccf263cffb85f639e7bf35a6f9dd91a23c11bdaf06698d91e5d8399b6c61b566"
+}

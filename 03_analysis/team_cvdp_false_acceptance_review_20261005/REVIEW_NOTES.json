@@ -1,0 +1,12 @@
+{
+  "schema": "cvdp_S7_readonly_review_notes_v1",
+  "pre_success_failures": [
+    "Download hash succeeded, initial reader assumed ARCHIVE_MANIFEST.json; actual S7 EVIDENCE_MANIFEST.json wraps files. No validated-file or success claim was emitted.",
+    "Source transfer contained directory members; initial strict source comparison attempted reading a directory. Later comparison safely validates directory names and compares file members.",
+    "Pre-run observation count corrected from 26 to actual 27 by original input sequences and logs; no DUT/test/summary altered."
+  ],
+  "review_model_calls": 0,
+  "review_eda_calls": 0,
+  "archived_code_executed": false,
+  "teammate_modified": false
+}
