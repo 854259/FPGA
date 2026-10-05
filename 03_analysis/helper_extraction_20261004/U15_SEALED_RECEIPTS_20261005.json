@@ -1,6 +1,6 @@
 {
   "schema": "three_arm_seal_U15_frozen_v1",
-  "status": "queued_not_executed",
+  "status": "completed_verified_engineering_only",
   "purpose": "Preserve verifiable completed rows across owned cache cleanup without replaying model requests",
   "source_hashes": {
     "three_arm_queue_20261005.py": "de7d4df53461843503760047f03affa4ea682cc2aa9559e91c80db06d40f44e7",
@@ -41,5 +41,20 @@
     "stage_started": false,
     "log": "/workspace/team/task_fifo/runner_00000079.log",
     "checked_at": "2026-10-05T20:45:14.699141+08:00"
+  },
+  "result": {
+    "stage_pid": 4121705,
+    "control_count": 16,
+    "historical_rows_verified": 6,
+    "real_model_calls": 0,
+    "eda_calls": 0,
+    "stage_elapsed_s": 0.3836532887071371,
+    "guard_elapsed_s": 0.7882395889610052,
+    "archive_sha256": "b18029b9898bcc211614cc61c1431e609db46aab8067b33de8e1458c3c5708fe",
+    "dual_verified_files": 334,
+    "removed_empty_dirs": 10,
+    "temporary_residue": 0,
+    "algorithm_adoption": false,
+    "private_postflight": "05_handoff/independent_validation_20261004/sealed_receipts_U15/POSTFLIGHT.json"
   }
 }

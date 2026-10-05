@@ -102,6 +102,53 @@ def bind_phase_p(contract, arm_sources):
     return bound
 
 
+def normalize_queue_row(folder, row, plan, contract, run):
+    """Normalize a verified terminal receipt, including sealed recovery.
+
+    The caller must bind run/source/model identities in the plan before freeze.
+    Request and solution eligibility is checked by the isolated judge; the
+    original row manifest then binds its result. Synthetic execution stays
+    explicitly synthetic and is never accepted as a model observation here.
+    """
+    import three_arm_queue_20261005 as queue
+    folder = Path(folder)
+    require(plan['reporting_run'] == run, 'unfrozen reporting run')
+    require(run['observation_kind'] == 'real_model', 'non-model run cannot become model scores')
+    serialized = (json.dumps(contract, indent=2, ensure_ascii=False)+'\n').encode()
+    require(plan['reporting_contract_sha256'] == digest(serialized), 'report contract drift')
+    require(contract['arm_sources'] == run['arm_sources'], 'run source drift')
+    require(row in plan['rows'], 'row outside plan')
+    receipt = queue.verify_terminal(folder, row, queue.digest(plan))
+    require(receipt.get('synthetic') is not True and receipt.get('real_model_calls') != 0,
+            'synthetic observations cannot become model scores')
+    require(type(receipt.get('finite_pass')) is bool, 'not a finite-domain receipt')
+    name = 'judge/BOUND_VERDICT.json'
+    require(name in receipt['files'], 'unbound judge result')
+    if (folder/name).is_file():
+        raw = (folder/name).read_bytes()
+    else:
+        with zipfile.ZipFile(folder/'EVIDENCE.zip') as archive:
+            raw = archive.read(name)
+    require(digest(raw) == receipt['files'][name], 'judge receipt drift')
+    bound = json.loads(raw)
+    finite = plan['finite_judge']
+    require(bound['schema'] == 'rtllm_finite_verdict_v1' and
+            bound['arm'] == row['arm'] and bound['task'] == row['task'], 'judge identity')
+    require(bound['contract_sha256'] == finite['contract_sha256'] and
+            bound['evaluator_sha256'] == finite['entry_sha256'], 'judge source drift')
+    require(bound['task_files'] == row['evaluator_hashes'] and
+            bound['input_sha256'] == row['input_hashes']['prompt.txt'], 'judge inputs')
+    require(bound['client_request_attempts'] == bound['confirmed_model_responses'] ==
+            receipt['actual_calls'] and receipt['unconfirmed_calls'] == 0, 'unconfirmed responses')
+    require(bound['verdict']['passed'] == receipt['finite_pass'], 'outcome drift')
+    return dict(task=row['task'], arm=row['arm'], sample=row['sample'],
+        passed=receipt['finite_pass'], status='completed', input_sha256=bound['input_sha256'],
+        judge_sha256=bound['judge_sha256'], run_id=run['run_id'],
+        model_config_sha256=run['model_config_sha256'], arm_source_sha256=run['arm_sources'][row['arm']],
+        call_attempts=receipt['actual_calls'], call_confirmed=bound['confirmed_model_responses'],
+        solve_s=receipt['solve_elapsed_s'], judge_s=receipt['judge_elapsed_s'])
+
+
 def summarize(rows, contract, run):
     """Accept a complete normalized finite-domain result only; never select/retry rows.
 

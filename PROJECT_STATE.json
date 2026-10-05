@@ -3118,35 +3118,33 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T21:22:27.134195+08:00",
-      "own_running_stage_processes": 0,
-      "own_model_or_eda_processes": 0,
-      "model_pid": 2013333,
-      "model_identity_unchanged": true,
-      "processing_slots": null,
-      "full_experiment_running": false,
-      "full_experiment_running_scope": "comprehensive all-inclusive batch",
-      "known_full156_regression_completed_ticket": 61,
-      "latest_own_stage": "U16 RTLLM phaseP binding preflight (U15 also pending)",
-      "latest_own_stage_complete": false,
-      "latest_own_stage_status": "queued_not_executed",
-      "latest_own_ticket": 81,
-      "own_monitor_pid": 4117004,
-      "other_active_tickets": [
-        {
-          "ticket": 78,
-          "state": "running",
-          "task_name": "semantic_edge_guidance_fresh_C_P_v1"
-        },
-        {
-          "ticket": 80,
-          "state": "queued",
-          "task_name": "phaseP_stability156x5_fresh_P_v1"
-        }
-      ],
-      "next_own_stage": "Audit pending U15 and U16 terminals, then finite-domain native judge/receipt normalization; follow existing P-only stability run",
-      "receipt": "05_handoff/independent_validation_20261004/rtllm_phaseP_binding_U16/LAUNCH_PREPARATION_CHECK.json"
-    },
+  "checked_at": "2026-10-05T21:43:20+08:00",
+  "own_running_stage_processes": 0,
+  "own_model_or_eda_processes": 0,
+  "model_pid": 2013333,
+  "model_identity_unchanged": true,
+  "processing_slots": null,
+  "full_experiment_running": false,
+  "full_experiment_running_scope": "comprehensive all-inclusive batch",
+  "known_full156_regression_completed_ticket": 61,
+  "latest_own_stage": "U16 source binding queued; U15 sealed recovery completed",
+  "latest_own_stage_complete": false,
+  "latest_own_stage_status": "queued_not_executed",
+  "latest_own_ticket": 81,
+  "own_monitor_pid": 4117004,
+  "other_active_tickets": [
+    {
+      "ticket": 80,
+      "state": "running",
+      "task_name": "phaseP_stability156x5_fresh_P_v1",
+      "completed_rows": 27,
+      "planned_rows": 780,
+      "actual_model_requests": 28
+    }
+  ],
+  "next_own_stage": "Combined finite native judge and receipt integration, draft not AMD-verified; no duplicate generation or repeated passed controls",
+  "receipt": "05_handoff/independent_validation_20261004/rtllm_phaseP_binding_U16/LAUNCH_PREPARATION_CHECK.json"
+},
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
       "hypothetical_tasks": 185,
@@ -5302,26 +5300,39 @@
     "result_sha256": "6e4b0e4390ea3cd516b4420a9ad0574db748615408104c27fa7f7c8253a3982b"
   },
   "sealed_receipts_U15_20261005": {
-    "updated_at": "2026-10-05 21:10 +08:00",
-    "status": "queued_not_executed",
-    "source_commit": "326f829a2ed6c10afa565cad55973ce5f0051082",
-    "ticket": 79,
-    "monitor_pid": 4095586,
-    "monitor_verified": true,
-    "real_model_calls_budget": 0,
-    "eda_calls_budget": 0,
-    "historical_rows_to_replay": 6,
-    "constructed_callbacks_budget": 3,
-    "stage_timeout_s": 120,
-    "slot_minutes": 5,
-    "expected_controls": 16,
-    "public_spec": "03_analysis/helper_extraction_20261004/U15_SEALED_RECEIPTS_20261005.json",
-    "private_receipt": "05_handoff/independent_validation_20261004/sealed_receipts_U15/LAUNCH_PREPARATION_CHECK.json",
-    "preceding_task_state": "Ticket77 owner-inspected task-name mismatch, failed_released_after_inspection; ticket78 running. U15 ticket79 queued, no result yet.",
-    "tested": false,
-    "full_batch": false,
-    "next": "Inspect U15 terminal then RTLLM finite-domain binding. Follow existing P-only ticket80; do not duplicate or call it an A/P/B comprehensive batch."
-  },
+  "updated_at": "2026-10-05T21:45:00+08:00",
+  "status": "completed_verified_engineering_only",
+  "source_commit": "326f829a2ed6c10afa565cad55973ce5f0051082",
+  "ticket": 79,
+  "monitor_pid": 4095586,
+  "monitor_verified": true,
+  "real_model_calls_budget": 0,
+  "eda_calls_budget": 0,
+  "historical_rows_to_replay": 6,
+  "constructed_callbacks_budget": 3,
+  "stage_timeout_s": 120,
+  "slot_minutes": 5,
+  "expected_controls": 16,
+  "public_spec": "03_analysis/helper_extraction_20261004/U15_SEALED_RECEIPTS_20261005.json",
+  "private_receipt": "05_handoff/independent_validation_20261004/sealed_receipts_U15/LAUNCH_PREPARATION_CHECK.json",
+  "preceding_task_state": "Historical launch ordering retained in private launch receipt; ticket79 now completed.",
+  "tested": true,
+  "full_batch": false,
+  "next": "Reuse U15 without replay. Consolidate finite judge and receipt integration; follow existing ticket80 and frozen ticket81.",
+  "stage_pid": 4121705,
+  "control_count": 16,
+  "historical_rows_verified": 6,
+  "real_model_calls": 0,
+  "eda_calls": 0,
+  "stage_elapsed_s": 0.3836532887071371,
+  "guard_elapsed_s": 0.7882395889610052,
+  "archive_sha256": "b18029b9898bcc211614cc61c1431e609db46aab8067b33de8e1458c3c5708fe",
+  "dual_verified_files": 334,
+  "removed_empty_dirs": 10,
+  "temporary_residue": 0,
+  "algorithm_adoption": false,
+  "private_postflight": "05_handoff/independent_validation_20261004/sealed_receipts_U15/POSTFLIGHT.json"
+},
   "public_exposure_reconciliation_20261005": {
     "checked_at": "2026-10-05 20:34:21 +08:00",
     "scope": "Read-only reconciliation of forwarded exposure notice and full156 result",
@@ -5400,5 +5411,35 @@
     "finite_judge_bound": false,
     "full_batch": false,
     "next": "Audit U15/U16 then bind isolated finite native judge and actual receipt normalization; retain unscored15 and never reuse official L0-L3 as RTLLM score."
+  },
+  "acceleration_revision_20261005": {
+  "updated_at": "2026-10-05T21:45:00+08:00",
+  "user_priority": "Accelerate verified quality outcomes and avoid serial micro-pretests",
+  "retained_candidate": "Frozen phasefull P",
+  "active_quality_run_ticket": 80,
+  "new_model_runs_started": 0,
+  "reuse_completed_U15": true,
+  "finite_judge_code": "written_not_AMD_validated",
+  "combined_next_acceptance": [
+    "historical minimum observation counts",
+    "candidate compilation vs environment failures",
+    "29 finite-domain judge integration",
+    "source-bound queue terminal normalization and recovery"
+  ],
+  "not_admitted": [
+    "independent materials",
+    "comprehensive A/P/B budget and credits",
+    "formal32GB delivery"
+  ],
+  "peer_ticket78": {
+    "complete": true,
+    "known_tasks": 14,
+    "rows": 28,
+    "requests": 36,
+    "functional_repairs": 1,
+    "functional_harms": 1,
+    "decision": "Do not expand unchanged semantic suffix",
+    "independent_tasks": 0
   }
+}
 }
