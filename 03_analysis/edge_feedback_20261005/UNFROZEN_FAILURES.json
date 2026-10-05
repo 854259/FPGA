@@ -1,0 +1,26 @@
+{
+  "initial_tests_failure": [
+    {
+      "kind": "generation_script_wrong_relative_cwd",
+      "source_changed": false,
+      "model_calls": 0,
+      "eda_calls": 0
+    },
+    {
+      "kind": "negative_fixture_missing_worker_ROOT_patch",
+      "initial_fixture_sha256": "f404c15502db7204b9826de05f8b6229ca22d05e5a9ce2e1a61d49cd663f7015",
+      "production_worker_changed_to_fix_fixture": false,
+      "initial_unrelated_ValueError_must_not_count_as_boundary_success": true,
+      "model_calls": 0,
+      "eda_calls": 0
+    }
+  ],
+  "terminal_sync_failure": {
+    "initial_remote_python_string_syntax_rejected_before_mutation": true,
+    "corrected_script_compiled_before_ssh": true,
+    "snapshot_trailing_literal_newline_corrected_and_json_readback_verified": true,
+    "terminal_final_commit": "531d7ce73602c7f25d1bd56be89af37cce422f49",
+    "model_calls": 0,
+    "eda_calls": 0
+  }
+}

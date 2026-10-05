@@ -1,0 +1,39 @@
+{
+  "schema": "edge_feedback_archived_exposure_v1",
+  "archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+  "original_tasks": 156,
+  "unchanged_dispatch_tasks": 154,
+  "newly_supported_tasks": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect"
+  ],
+  "exposure": [
+    {
+      "task": "Prob045_edgedetect2",
+      "original_C_level": 1,
+      "original_C_requests": 1,
+      "prompt_sha256": "6926a568cc4f9885b107d72eb0ab2768957f15251407130d74c7c8ee218421ed",
+      "first_request_sha256": "b52787bf9c5604b94606b026999a13ea193ffc14b068600a472101dc6a87d03d",
+      "first_reply_sha256": "e2f4ccd795a7f1ce8eef77e4f7bc7865869458ae1e72a3398973341b47059506",
+      "new_family": "edge",
+      "checks": 80,
+      "kind": "any"
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "original_C_level": 1,
+      "original_C_requests": 1,
+      "prompt_sha256": "a24103ba08a3714b868e13a00a1af2bf5da14b226881f463bb97a007c2ae28ce",
+      "first_request_sha256": "c2bd49c3aeacfcc3131e9a2fb872b75fdce686740765040e4884e01dea262645",
+      "first_reply_sha256": "5d7114eaccfc5308c7dd623bccfdae44779d93f45a02004925f5da2d984a00f1",
+      "new_family": "edge",
+      "checks": 53,
+      "kind": "rising"
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "actual_new_model_repair_measured": false,
+  "independent_natural_tasks": 0,
+  "adoption": false
+}
