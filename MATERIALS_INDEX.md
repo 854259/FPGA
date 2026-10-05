@@ -1,3 +1,7 @@
+## 2026-10-05 新提分候选
+
+`03_analysis/compile_diagnostic_priority_20261005/README.md` / `EVIDENCE_META.json`：8纯检查、单历史诊断适用、0新模型/EDA，scope合并边界保留。`03_analysis/bit_mapping_guidance_20261005/README.md`：通用位映射技能后缀，仅准备，鲜样本收益待测。
+
 ## 2026-10-05 表格反馈准备与实际失败复查
 
 `03_analysis/prompt_table_feedback_20261005/README.md`：20项FAKE检查、0原生/模型、未准入。`03_analysis/prompt_table_failure_propagation_review_20261005/ANALYSIS.md`：75实际收据只读复绑、5真实sentinel rc0、旧门槛失败保持。

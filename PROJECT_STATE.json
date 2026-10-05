@@ -6001,5 +6001,34 @@
     "root_cause_established": false,
     "proposed_factor_executed": false,
     "report": "03_analysis/prompt_table_failure_propagation_review_20261005/ANALYSIS.md"
+  },
+  "compile_diagnostic_priority_20261005": {
+    "status": "eight_pure_checks_and_one_actual_historical_log_applicability_only",
+    "source_hashes": {
+      "priority.py": "9c820ad49aec9d2525093d1350ebf80c44b2671a5ea349f34faed5a5257d4edd",
+      "test_priority.py": "9a6cbeb37439e30f7aa5ba65061f64bc56d37a5ddcc45ea7f79bdb686c1cba11",
+      "README.md": "06ea57c15e7c7a193b1940081d88f8eb1e471e4aed5e758766ce389aeed5139e",
+      "EVIDENCE_META.json": "186af3c47403337fbd3fb57057cd9e61a193dee6ee3610a68ef80ee206d8a2a6"
+    },
+    "local_checks": 8,
+    "direct_motivation_cases": 1,
+    "actual_new_model_calls": 0,
+    "actual_new_eda_calls": 0,
+    "run_spec_created": false,
+    "score_gain_measured": false,
+    "report": "03_analysis/compile_diagnostic_priority_20261005/README.md"
+  },
+  "bit_mapping_guidance_20261005": {
+    "status": "generic_bit_mapping_skill_suffix_preparation_only",
+    "source_hashes": {
+      "APPENDIX.txt": "518a93fef56513e39467b67be1031c23fd1bf37ed9bcc1a672aa050e82dc6bce",
+      "README.md": "a9346f87f49f24e8ac85d89e2e503b2939fba3737a26788b60df56fdd6a9a4f6"
+    },
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "first_and_repair_system_messages_changed": true,
+    "run_spec_created": false,
+    "score_gain_measured": false,
+    "report": "03_analysis/bit_mapping_guidance_20261005/README.md"
   }
 }
