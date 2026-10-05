@@ -1,7 +1,7 @@
 {
   "schema": "natural_terminal_U9_frozen_v1",
-  "at": "2026-10-05T09:46:27.464448+00:00",
-  "status": "queued_not_executed",
+  "at": "2026-10-05T17:46:27.464448+08:00",
+  "status": "complete_audited_not_independent_admission",
   "action": "Readonly original archive audits; no native trial repetition or model requests",
   "entries": [
     {
@@ -44,20 +44,56 @@
       "ticket": 66,
       "task_name": "natural_terminal_U9_edge_original_audit",
       "monitor_pid": 4017621,
-      "accepted_at_utc": "2026-10-05T09:50:59.718874+00:00",
+      "accepted_at_utc": "2026-10-05T17:50:59.718874+08:00",
       "alias": "edge"
     },
     {
       "ticket": 67,
       "task_name": "natural_terminal_U9_reset_original_audit",
       "monitor_pid": 4017623,
-      "accepted_at_utc": "2026-10-05T09:50:59.772038+00:00",
+      "accepted_at_utc": "2026-10-05T17:50:59.772038+08:00",
       "alias": "reset"
     }
   ],
-  "initial_status_at": "2026-10-05T09:51:57.250420+00:00",
+  "initial_status_at": "2026-10-05T17:51:57.25042+08:00",
   "prepared_evidence_sha256": "521e8700e6bb03189c232757833ed9692556475d8b3e83eaeff0d267f3835f9e",
   "prepared_files_dual_verified": 13,
   "original_nested_files_dual_verified": 413,
-  "pending_inputs_retained": true
+  "pending_inputs_retained": false,
+  "terminal": {
+    "at": "2026-10-05T10:06:06+00:00",
+    "edge": {
+      "false_acceptances": [
+        "reset_ignored"
+      ],
+      "evidence_valid": true,
+      "result_sha256": "7b61c047f308f9c76e01a5a0dedcb05b37141a95a28950b4f56d428f247d59ef",
+      "driver_pid": 4024729,
+      "original_controls": 7,
+      "original_harness_qualified": false,
+      "stage_pid": 4024734,
+      "audit_elapsed_s": 0.17349154688417912
+    },
+    "reset": {
+      "generated_control_discrimination": true,
+      "driver_pid": 4024743,
+      "stage_pid": 4024748,
+      "original_harness": false,
+      "native_receipts": 28,
+      "audit_elapsed_s": 0.17359683476388454,
+      "result_sha256": "b7bd3816aae7f238aab39abafb138238873ca2384e5df508c3f139ebf0b79417",
+      "evidence_complete": true,
+      "generated_controls": 14,
+      "unconfirmed_attempts": 0
+    },
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "independent_quality_admitted": 0,
+    "adoption": false,
+    "archive_sha256": "514e476ac309ebc2d31f3798cceffcd2bf09576c269b279fa3093852602249e5",
+    "outer_files_dual_verified": 27,
+    "original_files_dual_verified": 413,
+    "cleanup_verified": true,
+    "process_note": "Stages and drivers exited; two FIFO monitors remain exited Z under PID1, no live work or locks. Initial archive existence-only check corrected after reading process state; no experiment rerun or process signal."
+  }
 }

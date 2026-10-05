@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05T17:54:00+08:00",
+  "last_updated": "2026-10-05T18:07:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3118,45 +3118,27 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T09:51:57.250420+00:00",
-      "own_live_processes": 2,
+      "checked_at": "2026-10-05T10:06:06+00:00",
+      "own_live_processes": 0,
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
+      "exited_fifo_monitor_zombies": [
+        4017621,
+        4017623
+      ],
       "model_pid": 2013333,
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
-      "known_full156_regression_running": false,
       "known_full156_regression_completed_ticket": 61,
-      "known_full156_samples": 312,
-      "last_completed_own_stage": "U8_original_terminal_audit",
-      "U8_terminal_audit_executed": true,
-      "U8_terminal_audit_ticket": 64,
       "latest_own_stage": "U9_original_calibration_terminal_audits",
-      "latest_own_stage_complete": false,
-      "latest_own_stage_status": "queued_not_executed",
-      "queued_tickets": [
-        {
-          "ticket": 66,
-          "monitor_pid": 4017621,
-          "alias": "edge",
-          "state": "queued"
-        },
-        {
-          "ticket": 67,
-          "monitor_pid": 4017623,
-          "alias": "reset",
-          "state": "queued"
-        }
-      ],
-      "other_task_queue_running": true,
+      "latest_own_stage_complete": true,
+      "latest_own_stage_status": "complete_audited_not_independent_admission",
       "other_task_ticket": 65,
-      "other_task_driver_pid": 4004756,
-      "other_task_stage_pid": 4004761,
-      "other_task_completed_samples": 9,
-      "other_task_expected_samples": 16,
-      "other_task_completed_row_requests": 14,
-      "other_task_scope": "known eight-task elaboration feedback pretest, not a complete batch",
-      "receipt": "05_handoff/independent_validation_20261004/natural_terminal_U9/LOCAL_EVIDENCE_CHECK.json"
+      "other_task_status": "completed",
+      "other_task_scope": "8 known-task elaboration pretest; summary no gain, original postflight pending",
+      "next_own_stage": "U10_elaboration_original_terminal_audit",
+      "next_own_stage_status": "prepared_not_executed",
+      "receipt": "05_handoff/independent_validation_20261004/natural_terminal_U9/TERMINAL_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3196,7 +3178,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T17:54:00+08:00",
+  "updated_at": "2026-10-05T18:07:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -4994,29 +4976,50 @@
     "next": "U9 frozen original calibration audits; current unrelated ticket65 proceeds unchanged."
   },
   "natural_terminal_U9_20261005": {
-    "status": "queued_not_executed",
-    "updated_at": "2026-10-05T17:54:00+08:00",
+    "status": "complete_audited_not_independent_admission",
+    "updated_at": "2026-10-05T18:07:00+08:00",
     "public_freeze": "03_analysis/helper_extraction_20261004/U9_NATURAL_TERMINAL_FREEZE_20261005.json",
     "frozen_public_commit": "e9f4b2e",
     "tickets": [
       66,
       67
     ],
-    "monitors": [
-      4017621,
-      4017623
-    ],
-    "source_archive_members": [
-      162,
-      251
-    ],
-    "new_model_calls": 0,
-    "new_eda_calls": 0,
-    "prepared_evidence_sha256": "521e8700e6bb03189c232757833ed9692556475d8b3e83eaeff0d267f3835f9e",
-    "dual_verified_members": 13,
-    "dual_verified_original_members": 413,
-    "pending_inputs_retained": true,
-    "cleanup_unneeded_residue": 0,
-    "next": "Follow existing FIFO and terminal receipts; original audit failure requires diagnosis, no retuning or repeated native trials. Reuse already complete same-spec evidence and do not submit duplicates."
+    "terminal": {
+      "at": "2026-10-05T10:06:06+00:00",
+      "edge": {
+        "false_acceptances": [
+          "reset_ignored"
+        ],
+        "evidence_valid": true,
+        "result_sha256": "7b61c047f308f9c76e01a5a0dedcb05b37141a95a28950b4f56d428f247d59ef",
+        "driver_pid": 4024729,
+        "original_controls": 7,
+        "original_harness_qualified": false,
+        "stage_pid": 4024734,
+        "audit_elapsed_s": 0.17349154688417912
+      },
+      "reset": {
+        "generated_control_discrimination": true,
+        "driver_pid": 4024743,
+        "stage_pid": 4024748,
+        "original_harness": false,
+        "native_receipts": 28,
+        "audit_elapsed_s": 0.17359683476388454,
+        "result_sha256": "b7bd3816aae7f238aab39abafb138238873ca2384e5df508c3f139ebf0b79417",
+        "evidence_complete": true,
+        "generated_controls": 14,
+        "unconfirmed_attempts": 0
+      },
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "independent_quality_admitted": 0,
+      "adoption": false,
+      "archive_sha256": "514e476ac309ebc2d31f3798cceffcd2bf09576c269b279fa3093852602249e5",
+      "outer_files_dual_verified": 27,
+      "original_files_dual_verified": 413,
+      "cleanup_verified": true,
+      "process_note": "Stages and drivers exited; two FIFO monitors remain exited Z under PID1, no live work or locks. Initial archive existence-only check corrected after reading process state; no experiment rerun or process signal."
+    },
+    "next": "U10 original elaboration terminal audit, no new model/EDA; then official baseline paired CLI engineering gap. Do not expand rejected no-gain candidate."
   }
 }
