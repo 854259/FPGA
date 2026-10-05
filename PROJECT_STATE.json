@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-05T23:00:09+08:00",
+  "checked_at": "2026-10-05T23:19:27+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3137,17 +3137,17 @@
       "ticket": 80,
       "state": "running",
       "task_name": "phaseP_stability156x5_fresh_P_v1",
-      "completed_rows": 123,
+      "completed_rows": 143,
       "planned_rows": 780,
-      "actual_model_requests": 130,
-      "confirmed_responses": 130,
+      "actual_model_requests": 153,
+      "confirmed_responses": 153,
       "stage_pid": 4121718
     }
   ],
   "next_own_stage": "Observe frozen U16 then U17 exits; audit P stability terminal evidence without duplicate generation",
   "receipt": "05_handoff/independent_validation_20261004/rtllm_finite_integration_U17/LAUNCH_PREPARATION_CHECK.json",
   "terminal_statistics_preparation": {
-    "status": "implemented_static_review_only_not_executed",
+    "status": "source_prepared_and_hash_verified_on_AMD_not_executed",
     "source": "03_analysis/helper_extraction_20261004/paired_uncertainty_20261005.py",
     "source_sha256": "44586ba92e7a842107d5a1bc0c3467b2944b3dd475c7418c6bcea7a230a2591b",
     "plan": "03_analysis/helper_extraction_20261004/STABILITY_POSTFLIGHT_20261005.md",
@@ -3156,7 +3156,16 @@
     "stage_timeout_seconds": 360,
     "slot_minutes": 10,
     "submitted": false,
-    "next_gate": "Full780 terminal and archive first; reuse original provenance audit, validate statistics on AMD only"
+    "next_gate": "Full780 terminal and archive first; reuse original provenance audit, validate statistics on AMD only",
+    "source_commit": "beb70974d66cdf585bf124f0c2a9d36ba8cecb17",
+    "bridge": "03_analysis/helper_extraction_20261004/run_paired_postflight_20261005.py",
+    "bridge_sha256": "5d24a88e70e80d8955457609acb81220a959507d82c169a65d295dd79e464bb0",
+    "prepared_at": "2026-10-05T23:25:10+08:00",
+    "prepared_source_files": 8,
+    "receipt": "05_handoff/independent_validation_20261004/phaseP_stability_terminal/PREPARATION.json",
+    "receipt_sha256": "cc76f49886e3f4adf2f6805f90d43b74e33ef71c06204688ca05c4058045ae55",
+    "execution_ready": false,
+    "final_plan_frozen": false
   }
 },
     "rtllm_full_contracts_certified": false,
