@@ -4463,8 +4463,8 @@
     "quota_latest_observed_used_percent": 33,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
     "previous_goal_turn_classification": "progress",
-    "last_actual_shared_sync_commit": "89b4f391448a438f814c96023136519da766fb60",
-    "last_actual_shared_sync_public_files": 185,
+    "last_actual_shared_sync_commit": "4ba6d9a0b9f1eddd530512326918bf0c5c0938ff",
+    "last_actual_shared_sync_public_files": 19,
     "offline_deferred_by_user": true
   },
   "concise_output_pilot_20261004": {
@@ -6320,7 +6320,7 @@
     "eta_report": "03_analysis/phase_P_stability156x5_20261005/ETA_SNAPSHOT.json"
   },
   "team_coordination_20261005": {
-    "status": "protocol_and_tool_local_checked_cloud_publication_pending",
+    "status": "cloud_cards_watcher_and_github_reminder_published",
     "local_tests": 6,
     "reviewed_peer_commit": "d785af57108fa4aee2ec4e38fd2af43624b1cac5",
     "reuse_peer_stability_statistics": true,
@@ -6330,8 +6330,15 @@
     "watch_interval_s": 60,
     "watch_model_calls": 0,
     "watch_eda_calls": 0,
-    "github_reminder_pending": true,
+    "github_reminder_pending": false,
     "protocol": "05_handoff/TEAM_DEVELOPMENT_PROTOCOL.md",
-    "report": "03_analysis/team_coordination_20261005/README.md"
+    "report": "03_analysis/team_coordination_20261005/README.md",
+    "linux_tests": 6,
+    "github_issue_url": "https://github.com/854259/FPGA/issues/7",
+    "watcher_pid": 47838,
+    "watcher_starttime": "848787162",
+    "latest_actual_shared_commit": "4ba6d9a0b9f1eddd530512326918bf0c5c0938ff",
+    "latest_actual_shared_public_files": 19,
+    "publication_receipt": "03_analysis/team_coordination_20261005/PUBLICATION_RECEIPT.json"
   }
 }

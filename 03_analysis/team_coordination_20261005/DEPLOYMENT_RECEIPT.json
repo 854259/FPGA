@@ -1,0 +1,59 @@
+{
+  "schema": "actual_team_coordination_deployment_v1",
+  "git_commit": "4ba6d9a0b9f1eddd530512326918bf0c5c0938ff",
+  "base_commit": "89b4f391448a438f814c96023136519da766fb60",
+  "public_files": 19,
+  "shared_artifacts": "/workspace/team/activity/fpga_owner/artifacts/4ba6d9a",
+  "linux_tests_passed": 6,
+  "linux_returncode": 0,
+  "linux_checks_sha256": "e903479b19fb01657e79af32331334f8558c8ad478aa258b8c8eb09151e19114",
+  "protected_source_counts": {
+    "phase_full156_20261005_v1": 44,
+    "natural_edge_calibration_20261005_v1": 11,
+    "native_reset_contract_20261005_v1": 5,
+    "natural_worker_20261005_v1": 5,
+    "native_reset_calibration_20261005_v1": 44,
+    "natural_runtime_20261005_v1": 17,
+    "elaboration_feedback_pilot_20261005_v1": 38,
+    "prompt_table_calibration_20261005_v2": 68,
+    "multidriver_guidance_pilot_20261005_v1": 49,
+    "multidriver_guidance_pilot_20261005_v2": 49,
+    "bit_mapping_guidance_pilot_20261005_v1": 61,
+    "compile_diagnostic_priority_pilot_20261005_v1": 54,
+    "semantic_edge_guidance_pilot_20261005_v1": 64,
+    "phase_P_stability156x5_20261005_v1": 56
+  },
+  "all_frozen_sources_unchanged": true,
+  "shared_model_identity_unchanged": true,
+  "primary_status_written": false,
+  "primary_status_unchanged": true,
+  "watcher_pid": 47838,
+  "watcher_starttime": "848787162",
+  "watcher_cmd_sha256": "23d631877bdd27473dee6bb4e4eff8fa2349dab1387073de7dfe8fe215dcfbd3",
+  "watch_interval_s": 60,
+  "maximum_watch_s": 50400,
+  "stop_ticket": 80,
+  "observed_at_epoch": 1791214222.6438494,
+  "current_card_sha256": "e9000940b603d40fd526564494dfcce2cb3477a95c45b67cd82cebe527f2f899",
+  "notice_id": "team-log-policy-20261005-v1",
+  "notice_revision": "79a91ba4ca07d5126308c9ca8e718554fb02184f34fd07c57f1965c4b367bf18",
+  "peer_acknowledgment": "pending",
+  "runs": [
+    {
+      "ticket": 80,
+      "status": "running",
+      "completed_samples": 152,
+      "expected_samples": 780
+    },
+    {
+      "ticket": 78,
+      "status": "completed_pending_audit",
+      "completed_samples": 28,
+      "expected_samples": 28
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "adoption": false,
+  "github_reminder_pending": true
+}
