@@ -4401,6 +4401,45 @@
           "judge_s": 449.6800675857812
         }
       }
-    }
+    },
+    "next_gate": "Independent within-contract natural material unavailable in the existing 156+44 inputs; candidate held as local research signal, no full batch launched."
+  },
+  "phase_support_T9_20261005": {
+    "complete": true,
+    "source_commit": "ff5da711a6965452073d4ef256804a6b5905481f",
+    "spec_sha256": "9fe8630836047d17eaadb034e632d79a10c169f3384fa8dded0caee9a3b2a20d",
+    "model_calls": 0,
+    "eda_calls": 0,
+    "independent_tasks": 0,
+    "full_batch_complete": false,
+    "elapsed_s": 0.0270687323063612,
+    "datasets": {
+      "VerilogEval156": {
+        "total": 156,
+        "phase_targets": [
+          "Prob045_edgedetect2",
+          "Prob054_edgedetect"
+        ],
+        "family_counts": {
+          "None": 154,
+          "edge": 2
+        }
+      },
+      "RTLLM44": {
+        "total": 44,
+        "phase_targets": [],
+        "family_counts": {
+          "None": 44
+        }
+      }
+    },
+    "limits": "Applicability only. Non-triggering correct samples do not establish safe forced review or repair benefit. Existing inputs remain development/regression; no new data admission.",
+    "ticket": 48,
+    "driver_pid": 3742647,
+    "stage_pid": 3742652,
+    "guard_elapsed_s": 0.25124717876315117,
+    "archive_sha256": "0199d6193729118dfd12e602b043bedcf3f9aeb76500b2f0d220b9984ef20431",
+    "archive_files_dual_verified": 12,
+    "cache_remaining": 0
   }
 }
