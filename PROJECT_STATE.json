@@ -4289,5 +4289,24 @@
     "generated_executables_removed": 48,
     "remaining_cache": 0,
     "conclusion": "Retain for isolated integration and a separately frozen conditional-repair comparison; no quality or generalization claim."
+  },
+  "phase_repair_T8_20261005": {
+    "updated_at": "2026-10-05T10:11:00+08:00",
+    "status": "running_conditional_repair",
+    "commit": "0c8c2527aa85e098ff11c00e16eefb16ab54b11f",
+    "ticket": 46,
+    "driver_pid": 3709172,
+    "stage_pid": 3709177,
+    "amd_root": "/workspace/team/runs/fpga_teammate/phase_repair_T8_20261005_0c8c252",
+    "spec_sha256": "86ac7739c5fa6d6084af42c299fb5625690c08ddc6901c7f132313e260425890",
+    "integration_controls_passed": 4,
+    "expected_new_calls": 20,
+    "stage_budget_s": 3600,
+    "first_generation_replayed": true,
+    "independent_tasks": 0,
+    "full_batch_complete": false,
+    "adopted": false,
+    "preparation_files_dual_verified": 34,
+    "preparation_archive_sha256": "e59f623f759bef3f40fc1cf35adf0fd35517a988a941592c44c2703b5f599f99"
   }
 }
