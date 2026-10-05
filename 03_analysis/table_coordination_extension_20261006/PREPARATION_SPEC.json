@@ -1,0 +1,19 @@
+{
+  "schema": "table_coordination_extension_frozen_v1",
+  "cloud_root": "/workspace/team/tools/table-coordination-extension-20261006_v1",
+  "source_hashes": {
+    "table_coordination_wrapper.py": "012370da40913ba32b26fc129e03dd524a419d803f7b43e02b88bc72ae6775db",
+    "test_table_coordination_wrapper.py": "14256517f19ccefbff829216b170f837d7b21f4de483ea9daa33d16f30506607",
+    "README.md": "ac685d678e025ee5fcfa6e3fc52fa748ea86f2124c7a2c2c47fd59e6e0f2904d"
+  },
+  "original_tool": "/workspace/team/tools/team-coordination-20261005_v1/team_coordination.py",
+  "original_tool_sha256": "71c6c8490c201a37ded586d2c3a898d3651b2aec917babaf8ef8b062a5449b30",
+  "local_pure_tests": 18,
+  "watch_interval_s": 60,
+  "watch_maximum_s": 50400,
+  "stop_ticket": 83,
+  "owner": "fpga_owner",
+  "writes": "Own coordination card and TABLE_PROGRESS.md only; no model/FIFO/peer/primary status management",
+  "local_checks_sha256": "2514ba31da00807852b99a458743a4fd3323a7e988f73c99f0e70c3c6ec8506f",
+  "quality_conclusion_policy": "Stage pending / terminal audit pending; no automatic score or qualification promotion"
+}

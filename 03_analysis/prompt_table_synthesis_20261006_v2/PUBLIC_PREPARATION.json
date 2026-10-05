@@ -1,6 +1,6 @@
 {
   "schema": "prompt_table_synthesis_public_preparation_v1",
-  "status": "preflight_passed_pending_fifo",
+  "status": "queued_whole_task_fifo83",
   "spec_sha256": "06c2abe4643f40ba193672375219551f0bcaa1274b8443d8333d51a70fde7adb",
   "source_assets": 89,
   "public_source_assets": 87,
@@ -28,5 +28,11 @@
     "No score or rollout qualification until exact terminal audit."
   ],
   "local_tests_passed": 56,
-  "linux_tests_passed": 56
+  "linux_tests_passed": 56,
+  "ticket": 83,
+  "submission_receipt_sha256": "3d48015e9c9bb916e54cb0dcef0e74dd692673ad614b29a8ee94ecb4cc4812ca",
+  "queue_order": "Existing80 long test and peer81/82 first; no interruption",
+  "actual_model_calls_at_submission": 0,
+  "eda_calls_at_submission": 0,
+  "accepted_at_utc": "2026-10-05T16:57:15.036983+00:00"
 }

@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "table_generation_v2_frozen_double_preflight_passed_pending_fifo; stability80_running_263_of780; semantic78_rejected",
+    "continuation_status": "prompt_only_table_pilot83_queued_after80_81_82; observer_extension_double_preflight_passed_pending_activation; no_new_scores",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -6406,7 +6406,7 @@
     "peer_acknowledgment": "pending"
   },
   "prompt_table_synthesis_pilot_20261006": {
-    "status": "v2_double_preflight_passed_pending_fifo",
+    "status": "queued_whole_task_fifo83",
     "version": "v2",
     "spec_sha256": "06c2abe4643f40ba193672375219551f0bcaa1274b8443d8333d51a70fde7adb",
     "source_assets": 89,
@@ -6431,6 +6431,30 @@
     "factor": "strict consumed complete combinational prompt table generation, otherwise original phase-P fallback",
     "predecessor_status": "v1_preflight_failed_not_submitted_immutable_88_sources",
     "predecessor_failure": "03_analysis/prompt_table_synthesis_20261006/PREFLIGHT_FAILURE.json",
-    "execution_plan": "03_analysis/prompt_table_synthesis_20261006_v2/EXECUTION_PLAN.md"
+    "execution_plan": "03_analysis/prompt_table_synthesis_20261006_v2/EXECUTION_PLAN.md",
+    "ticket": 83,
+    "monitor_pid": 141665,
+    "monitor_starttime": "849308451",
+    "monitor_command_sha256": "d985b4bfc16f9f41df738fe179c1e64e1e68da66752d2422611d26d34f51b4ec",
+    "submission": "03_analysis/prompt_table_synthesis_20261006_v2/SUBMISSION.json",
+    "queue_order": "80 then earlier peer81/82 then83",
+    "actual_model_calls_at_submission": 0
+  },
+  "table_coordination_extension_20261006": {
+    "status": "double_preflight_passed_pending_actual_observer_activation",
+    "spec_sha256": "0e16fb3e6a602bb9eb864bf81cdfccd610d3738a9690354ee9aeb9251c860f44",
+    "cloud_root": "/workspace/team/tools/table-coordination-extension-20261006_v1",
+    "source_assets": 3,
+    "local_pure_checks": 18,
+    "linux_pure_checks": 18,
+    "original_tool_unchanged": true,
+    "own_old_watcher_pid": 47838,
+    "new_watcher_started": false,
+    "stop_ticket": 83,
+    "observation": "Completion rows and actual calls separately; quality pending even on terminal",
+    "peer_acknowledgment": "pending",
+    "primary_status_written": false,
+    "model_calls": 0,
+    "eda_calls": 0
   }
 }

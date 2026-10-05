@@ -1,0 +1,25 @@
+{
+  "schema": "table_coordination_extension_local_checks_v1",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "cloud_reads": 0,
+  "cloud_writes": 0,
+  "watcher_started": false,
+  "real_shared_publish": false,
+  "runs": [
+    {
+      "label": "new_isolated_tests",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cli_forwards_original_actions_without_starting_watcher (test_table_coordination_wrapper.TableObserverTests.test_cli_forwards_original_actions_without_starting_watcher) ... ok\ntest_complete_summary_must_have_exact_cost_and_28_rows (test_table_coordination_wrapper.TableObserverTests.test_complete_summary_must_have_exact_cost_and_28_rows) ... ok\ntest_completed_28_outputs_are_not_28_calls_or_quality_pass (test_table_coordination_wrapper.TableObserverTests.test_completed_28_outputs_are_not_28_calls_or_quality_pass) ... ok\ntest_failed_partial_retains_attempt_cost_without_full_score (test_table_coordination_wrapper.TableObserverTests.test_failed_partial_retains_attempt_cost_without_full_score) ... ok\ntest_invalid_accounting_and_illegal_zero_are_unknown (test_table_coordination_wrapper.TableObserverTests.test_invalid_accounting_and_illegal_zero_are_unknown) ... ok\ntest_missing_summary_queued_is_pending_and_calls_unknown (test_table_coordination_wrapper.TableObserverTests.test_missing_summary_queued_is_pending_and_calls_unknown) ... ok\ntest_old_schema_card_run_stays_unchanged (test_table_coordination_wrapper.TableObserverTests.test_old_schema_card_run_stays_unchanged) ... ok\ntest_partial_calls_before_completed_row_are_visible (test_table_coordination_wrapper.TableObserverTests.test_partial_calls_before_completed_row_are_visible) ... ok\ntest_pinned_original_is_unchanged_and_only_schema_added (test_table_coordination_wrapper.TableObserverTests.test_pinned_original_is_unchanged_and_only_schema_added) ... ok\ntest_publish_preserves_legacy_files_peer_card_and_pending_ack (test_table_coordination_wrapper.TableObserverTests.test_publish_preserves_legacy_files_peer_card_and_pending_ack) ... ok\ntest_schema_and_snapshot_race_fail_closed (test_table_coordination_wrapper.TableObserverTests.test_schema_and_snapshot_race_fail_closed) ... ok\ntest_ticket_and_spec_bindings_precede_extra_metadata (test_table_coordination_wrapper.TableObserverTests.test_ticket_and_spec_bindings_precede_extra_metadata) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.346s\n\nOK\n"
+    },
+    {
+      "label": "original_six_tests_with_extended_runtime",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_ack_requires_current_revision_and_writes_reviewer_only (original_coordination_tests.CoordinationTests.test_ack_requires_current_revision_and_writes_reviewer_only) ... ok\ntest_ack_without_reviewer_card_is_visible_with_unknown_activity (original_coordination_tests.CoordinationTests.test_ack_without_reviewer_card_is_visible_with_unknown_activity) ... ok\ntest_freshness_audit_state_and_same_direction_different_experiment (original_coordination_tests.CoordinationTests.test_freshness_audit_state_and_same_direction_different_experiment) ... ok\ntest_future_card_is_unknown_and_unbounded_verification_rejected (original_coordination_tests.CoordinationTests.test_future_card_is_unknown_and_unbounded_verification_rejected) ... ok\ntest_owned_publish_preserves_peer_and_primary_status_and_chinese (original_coordination_tests.CoordinationTests.test_owned_publish_preserves_peer_and_primary_status_and_chinese) ... ok\ntest_owned_run_progress_is_not_quality_and_unknown_or_failed_preserved (original_coordination_tests.CoordinationTests.test_owned_run_progress_is_not_quality_and_unknown_or_failed_preserved) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.270s\n\nOK\n"
+    }
+  ],
+  "tests_passed": 18
+}
