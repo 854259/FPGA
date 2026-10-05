@@ -1,0 +1,64 @@
+{
+  "observed_at_epoch": 1791177703.3655272,
+  "source_assets": 44,
+  "source_unchanged": true,
+  "model": {
+    "pid": 2013333,
+    "state": "S",
+    "start": "823869819",
+    "live": true
+  },
+  "monitor": {
+    "pid": 3761321,
+    "state": "S",
+    "start": "845096354",
+    "live": true
+  },
+  "child": {
+    "pid": 3761322,
+    "state": "S",
+    "start": "845096362",
+    "live": true
+  },
+  "stage": {
+    "pid": 3761327,
+    "state": "S",
+    "start": "845096388",
+    "live": true
+  },
+  "completed_samples": 12,
+  "disk_free_bytes": 9983528960,
+  "ticket": {
+    "ticket": 61,
+    "task_name": "phase_full156_fresh_C_P_v1",
+    "state": "running",
+    "created_at": null,
+    "started_at": null,
+    "finished_at": null,
+    "exit_code": null,
+    "runner": {
+      "pid": 3761321,
+      "starttime": "845096354"
+    },
+    "child": {
+      "pid": 3761322,
+      "starttime": "845096362"
+    }
+  },
+  "guard": {
+    "status": null,
+    "stage_pid": 3761327,
+    "stage_rc": null,
+    "elapsed_seconds": null,
+    "error": null,
+    "started_at": null,
+    "ended_at": null
+  },
+  "progress": {
+    "actual_model_requests": 12,
+    "actual_model_responses": null,
+    "complete": false,
+    "error": null
+  },
+  "partial_scores_published": false
+}

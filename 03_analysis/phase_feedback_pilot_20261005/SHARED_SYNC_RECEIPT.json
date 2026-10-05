@@ -1,14 +1,22 @@
 {
-  "git_commit": "e50827618dafff665ea9cbf226b31156c2e43770",
-  "public_files": 58,
-  "shared_artifacts": "/workspace/team/activity/fpga_owner/artifacts/e508276",
+  "git_commit": "1cb832e5b282f231466db5612b82ee5924c8b6eb",
+  "public_files": 14,
+  "shared_artifacts": "/workspace/team/activity/fpga_owner/artifacts/1cb832e",
   "ticket": 58,
-  "observed_state": "running",
   "source_assets": 41,
   "source_unchanged": true,
-  "primary_status_preserved": true,
-  "first_generation_replayed": false,
+  "archive_sha256": "56e16ddd32c2e17357d89a13bcf6b61f1eeb84f8b52638288d4e31047b98160a",
+  "model_requests": 22,
+  "model_responses": 22,
+  "C_score": 0.8,
+  "P_score": 1.0,
+  "matched_native_repair_tasks": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect"
+  ],
+  "qualified_for_new_full_regression": true,
+  "independent_validation_qualified": false,
   "adoption": false,
-  "independent_model_tasks": 0,
-  "observed_at_epoch": 1791175583.2660758
+  "observed_at_epoch": 1791177080.3452072,
+  "primary_status_replaced": true
 }
