@@ -1,6 +1,6 @@
 {
   "schema": "three_arm_execution_U14_R2_frozen_v1",
-  "status": "frozen_before_execution",
+  "status": "complete_engineering_preflight_passed",
   "parent": "9c828f298d06d1aee5f77f69cfd8a90d220f0f6d",
   "source_hashes": {
     "three_arm_queue_20261005.py": "34d8d3dd306720bc340957f869cf489b70be9a519d156db3f5a3967034456603",
@@ -55,7 +55,7 @@
     "Correct/repair cases are one constructed semantic family, 0 independent natural tasks",
     "Full data/resource/budget and32GB requirements remain open"
   ],
-  "next": "If integration passes, freeze complete admission manifest and identify the exact independent-data/resource/budget gaps; do not substitute more smoke tests for natural validation.",
+  "next": "Complete RTLLM finite-domain routing and evidence-retention contract for full plan. Do not map the historical C label to P without explicit source binding; do not apply VEVAL L0-L3 to RTLLM. Independent data, full budget/credits and32GB remain required.",
   "previous_failure": {
     "reason": "RefModule appears in original system prohibition; blanket request substring check was false positive. Exact first user payload and missing private sentinel verified.",
     "real_model_calls": 0,
@@ -65,5 +65,101 @@
     "guard_elapsed_s": 1.0032135229557753,
     "ticket": 74
   },
-  "change_scope": "Only synthetic HTTP control: keep private sentinel rejection across all messages; check exact first user prompt/interface and repair prefix, restrict reference-module substring check to user message. Original solvers, scoring, paired inputs, outputs and budgets unchanged."
+  "change_scope": "Only synthetic HTTP control: keep private sentinel rejection across all messages; check exact first user prompt/interface and repair prefix, restrict reference-module substring check to user message. Original solvers, scoring, paired inputs, outputs and budgets unchanged.",
+  "execution_source_commit": "478d34153e50b48d0c711ef3bf367289bbd3f83c",
+  "terminal": {
+    "levels": [
+      3,
+      3,
+      3,
+      3,
+      0,
+      3
+    ],
+    "postflight_sha256": "f891f3333f572acd301d2a7ea3bc2a31c6d9949b0351e59982636d60ef755f97",
+    "actual_solver_child_invocations": 7,
+    "paired_rows": 6,
+    "failed_synthetic_request": 1,
+    "stage_pid": 4055860,
+    "rows": [
+      {
+        "case": "correct",
+        "arm": "A",
+        "level": 3,
+        "attempts": 1,
+        "solve_s": 1.4251319486647844,
+        "judge_s": 27.911702612414956,
+        "end_to_end_s": 29.4875921420753
+      },
+      {
+        "case": "correct",
+        "arm": "P",
+        "level": 3,
+        "attempts": 1,
+        "solve_s": 1.4758156388998032,
+        "judge_s": 27.561416279524565,
+        "end_to_end_s": 29.189688002690673
+      },
+      {
+        "case": "correct",
+        "arm": "B",
+        "level": 3,
+        "attempts": 1,
+        "solve_s": 0.37406691536307335,
+        "judge_s": 27.220718698576093,
+        "end_to_end_s": 27.7476266939193
+      },
+      {
+        "case": "repair",
+        "arm": "P",
+        "level": 3,
+        "attempts": 2,
+        "solve_s": 2.7778742257505655,
+        "judge_s": 27.36140564456582,
+        "end_to_end_s": 30.2917896527797
+      },
+      {
+        "case": "repair",
+        "arm": "B",
+        "level": 0,
+        "attempts": 1,
+        "solve_s": 0.3741235863417387,
+        "judge_s": 2.4270172007381916,
+        "end_to_end_s": 2.9599708933383226
+      },
+      {
+        "case": "repair",
+        "arm": "A",
+        "level": 3,
+        "attempts": 2,
+        "solve_s": 2.677234072238207,
+        "judge_s": 27.309438152238727,
+        "end_to_end_s": 30.13893217779696
+      }
+    ],
+    "independent_natural_tasks": 0,
+    "cleanup": {
+      "sealed": true,
+      "remaining_cache_or_pending": 0,
+      "removed_empty_dirs": 1,
+      "removed_cache_files": 14,
+      "removed_cache_dirs": 6,
+      "canonical_complete_evidence": "verified archive; do not resume cleaned engineering queue"
+    },
+    "result_sha256": "6e4b0e4390ea3cd516b4420a9ad0574db748615408104c27fa7f7c8253a3982b",
+    "dual_verified_files": 356,
+    "archive_sha256": "1a5b4d9794ea87110fa71ab3b20f62521d34b160431d1780eefd20347022c0c7",
+    "real_model_calls": 0,
+    "confirmed_fake_responses": 8,
+    "ticket": 75,
+    "controls_passed": 7,
+    "official_judgements": 6,
+    "full_batch": false,
+    "guard_elapsed_s": 151.46278496459126,
+    "driver_pid": 4055855,
+    "decision": "Retain execution plumbing. No natural accuracy, repair/harm gain or backend cancellation claim.",
+    "original_compile_receipts": 6,
+    "fake_http_posts": 9,
+    "stage_elapsed_s": 150.836694939062
+  }
 }

@@ -1,6 +1,6 @@
 {
   "schema": "three_arm_execution_U14_frozen_v1",
-  "status": "frozen_before_execution",
+  "status": "failed_engineering_control_false_positive_archived",
   "parent": "f6725e2db3080c4376b719ef485627ae63170a73",
   "source_hashes": {
     "three_arm_queue_20261005.py": "34d8d3dd306720bc340957f869cf489b70be9a519d156db3f5a3967034456603",
@@ -55,5 +55,19 @@
     "Correct/repair cases are one constructed semantic family, 0 independent natural tasks",
     "Full data/resource/budget and32GB requirements remain open"
   ],
-  "next": "If integration passes, freeze complete admission manifest and identify the exact independent-data/resource/budget gaps; do not substitute more smoke tests for natural validation."
+  "next": "If integration passes, freeze complete admission manifest and identify the exact independent-data/resource/budget gaps; do not substitute more smoke tests for natural validation.",
+  "terminal": {
+    "official_judgements": 0,
+    "stage_pid": 4055791,
+    "fake_client_attempts": 1,
+    "driver_pid": 4055786,
+    "reason": "Original system prohibition mentions RefModule. Blanket request substring assertion falsely rejected it; exact user prompt/interface and no evaluator sentinel verified.",
+    "dual_verified_files": 91,
+    "next": "U14_R2 same fixed controls, only narrow the synthetic-server assertion to user input",
+    "ticket": 74,
+    "remaining_cache_or_pending": 0,
+    "guard_elapsed_s": 1.0032135229557753,
+    "archive_sha256": "0799f47cb2e6b43080603112163acac0ee85b76377dc8bc6388f798ab884c36b",
+    "real_model_calls": 0
+  }
 }

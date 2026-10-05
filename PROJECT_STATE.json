@@ -3118,28 +3118,38 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T19:41:49.173092+08:00",
+      "checked_at": "2026-10-05T20:13:22.328163+08:00",
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
-      "own_queue_monitor_pid": 4039034,
-      "own_queue_monitor_live": true,
       "model_pid": 2013333,
+      "model_identity_unchanged": true,
       "processing_slots": 0,
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
       "known_full156_regression_completed_ticket": 61,
-      "latest_own_stage": "U14_three_arm_execution_preflight",
-      "latest_own_stage_complete": false,
-      "latest_own_stage_status": "queued_not_executed",
-      "latest_own_ticket": 74,
-      "active_queue_tasks": 2,
-      "historical_completed_tickets": 63,
-      "historical_failed_released_tickets": 9,
-      "preceding_ticket": 73,
-      "preceding_ticket_status": "running",
-      "next_own_stage": "follow_U14_then_comprehensive_admission_manifest",
-      "next_own_stage_status": "wait_for_existing_queue_entry_no_duplicate",
-      "receipt": "05_handoff/independent_validation_20261004/three_arm_execution_U14/LAUNCH_CHECK.json"
+      "latest_own_stage": "U14_R2_three_arm_execution_preflight",
+      "latest_own_stage_complete": true,
+      "latest_own_stage_status": "complete_engineering_only",
+      "latest_own_ticket": 75,
+      "completed_tickets": [
+        75
+      ],
+      "inspected_failed_tickets": [
+        74
+      ],
+      "active_queue_tasks": 1,
+      "historical_completed_tickets": 65,
+      "historical_failed_released_tickets": 10,
+      "other_active_tickets": [
+        {
+          "ticket": 76,
+          "task_name": "bit_mapping_guidance_fresh_C_P_v1",
+          "state": "running"
+        }
+      ],
+      "next_own_stage": "RTLLM_finite_domain_execution_binding_and_sealed_receipt_recovery",
+      "next_own_stage_status": "static_gap_identified_not_launched",
+      "receipt": "05_handoff/independent_validation_20261004/three_arm_execution_U14/three_arm_execution_U14_R2_20261005_478d341_TERMINAL_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5223,12 +5233,12 @@
     "public_result": "03_analysis/helper_extraction_20261004/U13_BASELINE_RECEIPTS_20261005.json"
   },
   "three_arm_execution_U14_20261005": {
-    "status": "queued_source_verified_not_executed",
+    "status": "failed_control_false_positive_archived",
     "source_commit": "9c828f298d06d1aee5f77f69cfd8a90d220f0f6d",
     "ticket": 74,
     "monitor_pid": 4039034,
-    "driver_pid": null,
-    "stage_pid": null,
+    "driver_pid": 4055786,
+    "stage_pid": 4055791,
     "accepted_at": "2026-10-05T19:39:52.711444+08:00",
     "remote_root": "/workspace/team/runs/fpga_teammate/three_arm_execution_U14_20261005_9c828f2",
     "source_hashes": {
@@ -5246,7 +5256,53 @@
     "stage_timeout_s": 1500,
     "whole_row_reservation_s": 670,
     "full_batch": false,
-    "cleanup": "preparation_sources_required_by_queued_run_retained_no_cache_or_pending",
-    "next": "Follow existing ticket74; preserve any failure, diagnose before re-freeze; archive and assess. Close complete admission gaps before natural model batch."
+    "cleanup": "91 files dual verified; one empty work dir removed; failure preserved",
+    "next": "Completed replacement U14_R2; never rerun this failed queue",
+    "failure_reason": "Original system RefModule prohibition triggered overbroad synthetic request check; exact user prompt/interface and no private sentinel verified.",
+    "archive_sha256": "0799f47cb2e6b43080603112163acac0ee85b76377dc8bc6388f798ab884c36b"
+  },
+  "three_arm_execution_U14_R2_20261005": {
+    "stage_elapsed_s": 150.836694939062,
+    "controls_passed": 7,
+    "driver_pid": 4055855,
+    "confirmed_fake_responses": 8,
+    "independent_natural_tasks": 0,
+    "expected_and_actual_levels": [
+      3,
+      3,
+      3,
+      3,
+      0,
+      3
+    ],
+    "next": "RTLLM finite-domain A/P/B source binding and archive-aware row recovery, then complete admission; no automatic full model launch.",
+    "fake_http_posts": 9,
+    "source_files_verified": 47,
+    "cleanup": {
+      "retained_files_verified": 342,
+      "remaining_cache_or_pending": 0,
+      "removed_cache_files": 14,
+      "removed_empty_dirs": 1,
+      "sealed": true,
+      "canonical_complete_evidence": "verified ZIP; cleaned live engineering directory must not be resumed",
+      "removed_cache_dirs": 6
+    },
+    "real_compile_receipts": 6,
+    "official_judgements": 6,
+    "guard_elapsed_s": 151.46278496459126,
+    "source_commit": "478d34153e50b48d0c711ef3bf367289bbd3f83c",
+    "ticket": 75,
+    "actual_solver_child_invocations": 7,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "postflight_sha256": "f891f3333f572acd301d2a7ea3bc2a31c6d9949b0351e59982636d60ef755f97",
+    "full_batch": false,
+    "stage_pid": 4055860,
+    "dual_verified_files": 356,
+    "status": "complete_engineering_only",
+    "own_slot_released": true,
+    "archive_sha256": "1a5b4d9794ea87110fa71ab3b20f62521d34b160431d1780eefd20347022c0c7",
+    "actual_model_calls": 0,
+    "result_sha256": "6e4b0e4390ea3cd516b4420a9ad0574db748615408104c27fa7f7c8253a3982b"
   }
 }
