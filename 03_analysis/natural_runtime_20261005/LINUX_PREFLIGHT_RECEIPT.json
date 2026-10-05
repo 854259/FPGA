@@ -1,0 +1,40 @@
+{
+  "spec_sha256": "e24623685fe4b3543f2ee2da8730e5a68c97c8664bd6152d9faa1c181e5f251d",
+  "archive_sha256": "221f9c7c67d559c2bb72ee861d72d458b4ce574e88d0e2b3d4cccea1d698e6db",
+  "assets": 17,
+  "python_version": "3.12.3",
+  "tests_run": 177,
+  "http_protocol_subchecks": 76,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "owned_python_process_controls": [
+    "actual_portable_own_hanging_dummy_handle_cleanup",
+    "actual_portable_own_normal_dummy",
+    "actual_linux_normal_pipe_full_supervisor",
+    "actual_linux_own_hang_detached_grandchild_cleanup"
+  ],
+  "protected_source_counts": {
+    "phase_full156_20261005_v1": 44,
+    "natural_edge_calibration_20261005_v1": 11,
+    "native_reset_contract_20261005_v1": 5,
+    "natural_worker_20261005_v1": 5,
+    "native_reset_calibration_20261005_v1": 44
+  },
+  "protected_inputs": 936,
+  "protected_official": 35,
+  "source_unchanged": true,
+  "shared_model_identity_unchanged": true,
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "actual_native_tests": 0,
+  "actual_fifo_submitted": false,
+  "run_spec_created": false,
+  "real_execution_admitted": false,
+  "production_guard_integration_verified": false,
+  "full300s_timeout_verified": false,
+  "quality_verified": false,
+  "independent_models_completed": 0,
+  "adoption": false,
+  "at_epoch": 1791189671.5986907
+}

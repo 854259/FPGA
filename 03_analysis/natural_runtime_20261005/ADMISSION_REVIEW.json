@@ -1,0 +1,134 @@
+{
+  "schema": "natural_runtime_readonly_admission_review_v1",
+  "status": "source_review_only_not_execution_or_qualification",
+  "reviewer": "runtime_admission",
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "actual_cloud_reads": 0,
+  "execution_admitted": false,
+  "frozen_sources_modified": false,
+  "observed_source_snapshots": {
+    "runtime.py": "dc292ee95a9ef4431742fbd94e5b75903155c9b1bd85cca327ca945458c53018",
+    "worker.py": "b534b34fe99712decc0020460975ff89a4fb60de8b607ce1c9d7092cd3e3bae6",
+    "phase_full156/RUN_SPEC.json": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+    "phase_full156/audit.py": "681b46a55166caf319a03b48988d83cb923692c8a9424760d7ea7a5edfaea1ab",
+    "native_reset_calibration/RUN_SPEC.json": "f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3",
+    "native_reset_calibration/audit.py": "084cbce2b1d32234c429f4fe4a1cc50baa9a829347cb1146259298b99a3226b0",
+    "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c"
+  },
+  "scope_note": "These are source snapshots while root owns the mutable draft. They do not freeze the draft, prove actual prerequisite completion, or transfer old C/P quality to this new integration factor.",
+  "findings": [
+    {
+      "priority": 0,
+      "functions": ["evaluate_documents", "_bound_report"],
+      "problem": "The full gate accepts any document with selected booleans/counts. It does not check the actual full audit schema, pinned spec, frozen auditor or qualification scope. _bound_report checks report/archive digests and the report's self-described spec string, but never verifies actual archived RUN_SPEC or its audit source.",
+      "existing_full_fields": {
+        "schema": "phase_full156_readonly_audit_v1",
+        "spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+        "auditor_sha256": "681b46a55166caf319a03b48988d83cb923692c8a9424760d7ea7a5edfaea1ab",
+        "qualification_scope": "Permits faithful independent model validation only; no five-sample/offline/target hardware/official baseline certificate or automatic deployment.",
+        "expected_samples": 312,
+        "historical_fixture_only": false,
+        "audit_model_calls": 0,
+        "audit_eda_calls": 0,
+        "adoption": false,
+        "official_baseline_gain_measured": false,
+        "five_sample_measured": false,
+        "five_sample_qualified": false,
+        "previous_full_gate_still_failed": true,
+        "matched_native_repair_tasks": ["Prob045_edgedetect2", "Prob054_edgedetect"]
+      },
+      "apply": [
+        "Bind the full report to the exact fields above and retain all existing quality gates; require exact integers for request/sample/unconfirmed counts, not bool-as-int.",
+        "Require full unchanged_first_reply_regressions == []; verify exact two matched task names/order without duplicate or arbitrary replacements.",
+        "Use a type-specific bound report entry containing the root-pinned report/archive/spec/auditor digests and archive type; validate complete safe unique archive names, ARCHIVE_MANIFEST file-set/digests, actual run/RUN_SPEC.json bytes and actual run/audit.py digest against the pinned spec source_hashes.",
+        "Full archive schema is functional_fresh_archive_v1, full run schema phase_full156_frozen_v1, and full guard paths are guard/status.json and guard/resource_check.json. Do not guess they are the native14 paths.",
+        "The earlier full report authorizes trying faithful independent model validation only. Preserve new-factor qualification=false and deployment=false until the new factor's own actual comparison is audited."
+      ],
+      "pure_checks": ["wrong/missing full schema", "different spec/auditor", "different scope", "arbitrary or duplicate matched task names", "synthetic archive with valid report self-description but different actual spec", "bool substituted for integer"]
+    },
+    {
+      "priority": 0,
+      "functions": ["_physical_admission", "_paired"],
+      "problem": "Runtime only compares model PID/start to its own spec and endpoint/owner to the resource receipt. The paired helper validates the resource receipt against live state but cannot establish that this receipt is bound to the runtime's fixed model command, fixed shared lock and fixed protected inventory.",
+      "existing_paired_checks": ["schema_version=1 and actual socket.gethostname", "resource_idle=true", "first check age 0..120 seconds from checked_at_utc", "actual slot file SHA and first line owner", "live /proc full model_identity", "live protected package/official/tasks trees", "baseline/official absolute-path projection integrity"],
+      "apply": [
+        "Require resource.model_identity == spec.model_identity as an exact four-field object: pid, starttime, exe, command_sha256. Also require resource model_pid/starttime agree with it.",
+        "Require resource.slot_lock_path == spec.slot_lock_path == the authorized /workspace/team/SLOT.lock; call no_links on it; verify actual lock bytes SHA == resource.slot_lock_sha256 and first line == spec.slot_owner immediately before each actual effect. Its actual SHA is minted by the current guard at acquire time, not preinvented in RUN_SPEC.",
+        "Freeze INPUT_MANIFEST.json in required own sources. Require exact input_sha256 count936 and official_sha256 count35 and equality to resource.protected.tasks/official. Preserve complete package/baseline checks from paired.check_resource, with protected package binding if the runtime spec promises one.",
+        "Bind paired_dependency.path/hash to the authorized known immutable helper, rather than an arbitrary valid-hash file; no_links on its full physical path before import.",
+        "Call paired.check_resource before actual IO after the own comparisons; preserve first=True freshness gate at initial acquire and first=False for the already admitted same whole task. Never reacquire or launch outside whole-task FIFO."
+      ],
+      "pure_checks": ["same PID/start but changed exe/command SHA", "different resource lock path with self-consistent SHA", "changed/missing manifest entry", "936/35 wrong count", "self-consistent resource with different protected manifest", "symlinked helper or lock"]
+    },
+    {
+      "priority": 0,
+      "functions": ["_physical_admission", "admit_real", "solve_real"],
+      "problem": "Current guard starts Popen before publishing status.json with direct write_text. A child may observe missing/partial status. The status schema contains only stage_pid, so an exact PID check does not supply a start identity, actual guard parent identity or safe per-solve worker authorization. It also prevents a naively spawned hard-deadline worker from admitting.",
+      "existing_guard_publication": ["resource_check.json is written before Popen", "Popen(start_new_session=True, cwd=guard_directory)", "result.stage_pid is set only after Popen", "status.json is direct non-atomic write_text", "no existing stage_starttime or guard_identity field"],
+      "apply": [
+        "Do not change the running frozen guard. Give this new runtime its own copied, explicitly changed guard and freeze it as a new source/factor.",
+        "Use an explicit owned startup handshake/ready receipt published atomically by the guard after it records actual guard and stage /proc pid/starttime/PPID/PGID/SID plus exact launch argv and spec SHA. The child may wait only a short bounded interval within its already started 300-second clock for that receipt; malformed/missing/terminal/wrong identity after the bound fails closed before any socket or native process.",
+        "For a per-solve external supervisor, authorize the precise supervisor-to-worker identity chain/nonce minted by the owned parent. Revalidate live process identities and ancestry; do not treat arbitrary descendant membership, a mutable boolean, or a stale same-PID status file as capability.",
+        "Initial handshake waiting must tolerate only the known status publication race; it must not loop indefinitely, rewrite guard status, hide admission errors, or restart any shared process."
+      ],
+      "pure_checks": ["missing then valid status", "partial then atomic valid receipt", "stale same-PID/different-start", "wrong parent or process group", "unregistered descendant", "terminal guard", "deadline consumed by handshake"]
+    },
+    {
+      "priority": 0,
+      "functions": ["compiler_argv", "verify_public_package", "worker.compile_package"],
+      "problem": "Worker records include resolution as source.parent/operand, while compiler argv searches every globally sorted parent directory. With same-named headers these describe different possible resolution. Runtime ignores resolved_includes, mode and include_isolation entirely. No actual preprocessor/include-resolution proof exists.",
+      "counterexample_shape": {
+        "files": ["a/defs.svh", "b/defs.svh", "b/main.sv"],
+        "different_header_bytes": true,
+        "source_directive": "b/main.sv: `include \"defs.svh\"",
+        "worker_claim": "b/defs.svh",
+        "argv_order": ["-I", "/inputs/a", "-I", "/inputs/b"],
+        "evidence_status": "Static discrepancy only; no native compiler was executed by this review."
+      },
+      "apply": [
+        "Recompute literal include directives from every complete public HDL file and verify package.resolved_includes exactly matches all directives and the supported compiler search recipe; validate mode=REAL and actual bound include isolation marker.",
+        "Do not drop helpers, globally rename headers or rewrite sources to force the predicted resolution. Until native same-recipe controls prove unambiguous behavior, abstain on multiple matching search candidates, macros, unresolved nested includes, absolute or parent-escaping operands.",
+        "Then test actual relative include behavior, same-named opposite-value headers, nested includes and helper ordering with the exact frozen Icarus/tool/library/bwrap recipe. Preserve actual preprocessor output or dependency receipt and bind it to the consumed candidate/context bytes. A pure projected resolution list cannot prove actual compiler input.",
+        "Guard generated feedback TB module/path collisions against the public HDL: its new path is currently checked, but a candidate module with the same generated probe name should also fail as an unconfirmed harness collision, never become a repair diagnostic."
+      ],
+      "pure_checks": ["tampered resolved_includes", "tampered mode/isolation marker", "same-named different header contents", "nested include", "macro include", "absolute or parent escape", "generated probe module collision"]
+    },
+    {
+      "priority": 0,
+      "functions": ["_tree_verify", "sandbox_recipe"],
+      "problem": "Current tree verification enumerates only is_file objects and follows file symlinks; it ignores empty directories, broken links and link objects/types, and may not traverse a linked directory. A runtime library link can resolve outside the frozen bundle, with different or missing guest resolution after mounting. A same byte digest alone does not freeze the link topology consumed by the loader.",
+      "apply": [
+        "The immediate closed gate is to reject every symlink/junction in roots and recursively every entry, including linked/broken directories, and require physically copied regular-file runtime libraries in the owned bundle. A library bundle that has not been assembled and tested remains unavailable, not a simulated capability.",
+        "If symlinks are necessary for the real loader, introduce a typed complete manifest using lstat: directory, regular file digest/size, or literal symlink target. Bind resolved target containment and actual guest path resolution; reject outside targets/broken links/cycles. Include the typed manifest in sandbox_recipe_sha256.",
+        "Require exact whole entry set rather than hiding __pycache__ or empty directories for native runtime libraries; separate an explicit immutable Python dependency policy if cache omissions are needed there.",
+        "Run actual correct-RTL/native loader and each escape control in the exact same mounted recipe before any model request. Dynamic loader existence, shell helper need, /bin/sh and Icarus helper invocation cannot be inferred from hashing source bytes."
+      ],
+      "pure_checks": ["file link to outside identical bytes", "directory link", "broken link", "empty directory added", "link target changed", "guest-relative versus host-relative link target", "wrong typed manifest recipe"]
+    },
+    {
+      "priority": 1,
+      "functions": ["evaluate_documents", "_bound_report"],
+      "problem": "native14 and original harness reports have distinct actual output structures. Inventing a shared schema/auditor/historical field would reject the real native14 audit or falsely label projected original admission as existing evidence.",
+      "actual_native14_shape": {
+        "schema_field": "absent in frozen audit return",
+        "auditor_sha256_field": "absent in frozen audit return",
+        "historical_fixture_only_field": "absent in frozen audit return",
+        "archive_schema": "native_reset_generated_research_archive_v1",
+        "run_schema": "native_reset_generated_research_frozen_v1",
+        "guard_paths": ["run/guard/status.json", "run/guard/resource_check.json"],
+        "report_gate_fields": ["evidence_complete", "qualified_for_generated_control_discrimination", "archive_sha256", "spec_sha256", "native_compile_commands", "native_simulation_commands", "global_native_receipts", "attempted_compile_commands", "attempted_simulation_commands", "unconfirmed_native_attempts", "generated_research_test", "original_harness", "controls"],
+        "row_fields": ["label", "intent", "returncode", "checks", "retained_scalar_actual_values", "mismatches", "control_matched", "false_acceptance"]
+      },
+      "apply": [
+        "Bind native14 using its actual report fields, exact pinned native14 spec and external frozen auditor/source binding. Preserve strict14/14/28/0 counts, all14 labels/order, all control_matched=true, all false_acceptance=false, research=true/original=false, model_calls=0, audit_model_calls=0, audit_eda_calls=0, independent_quality_admitted=0, eligible_for_independent_models=false and adoption=false.",
+        "Original edge actual audit schema is natural_edge_original_harness_readonly_audit_v1. Its original_harness_calibration is keyed by record ID, not public-input hash; controls carry record_id/label/passed/failed/native_trials/original_harness/false_acceptance. A new natural_original_harness_admission_audit_v1 projection is not presently an actual original audit.",
+        "Only root may prepare a projection from an actual successful source archive/audit, binding the original prompt/context/output ABI to a complete public-input hash. Retain the source archive/report/auditor/spec digests and raw control provenance. If reset_ignored passes, that original record remains excluded despite positive/sentinel results and despite native14 passing.",
+        "No native14 generated research result can substitute for an excluded original harness, unseen-task quality, five-sample qualification or target hardware/official certificate."
+      ],
+      "pure_checks": ["real-shaped native14 report has no invented schema/auditor fields", "wrong native14 spec", "unknown/reordered control labels", "wrong zero-model scope fields", "projection without exact original source audit", "false-acceptance original row even when native14 qualifies"]
+    }
+  ],
+  "not_performed": ["No actual model or HTTP request", "No EDA/native compilation or simulation", "No SSH or FIFO activity", "No Git mutation", "No edit to runtime.py, worker.py, any frozen source or teammate file", "No assertion that any requested prerequisite has completed"],
+  "recommended_next_step": "Root applies these checks to the owned mutable new runtime and its pure protocol tests, then binds real completed prerequisite archives. Existing missing full/native/original/isolation evidence remains a closed gate; it must not be synthesized to force admission."
+}

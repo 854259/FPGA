@@ -1,0 +1,62 @@
+{
+  "schema": "natural_runtime_engineering_checks_v1",
+  "python": "3.12.14",
+  "platform": "win32",
+  "tests_run": 177,
+  "passed": true,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 3,
+  "skipped_controls": [
+    "test_runtime_recovery.RecoveryControls.test_link_member_is_rejected_without_following_or_modifying_target",
+    "test_supervisor.LinuxOwnedControls.test_actual_linux_normal_pipe_and_full_supervisor",
+    "test_supervisor.LinuxOwnedControls.test_actual_linux_owned_hang_and_detached_grandchild_cleanup"
+  ],
+  "http_protocol_subchecks": 76,
+  "physical_link_methods": [
+    "physical_windows_junction",
+    "physical_windows_junction"
+  ],
+  "source_hashes": {
+    "adapter.py": "9b41ef3adfd345ff037ee4dcd3ef918d991c3bc5e52562ed8bc309355e0a39f9",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "native_reset_contract.py": "94bcb3b86b7bf1209c5a2348f9d3da5e9c74136e15f77cbdeeedc838ee5fa43d",
+    "prepare.py": "03bc0ccfa9e37766e7029f2f53f63fa802835c030a6c924243844ae7566ccd56",
+    "run_checks.py": "aba31c07eb60270dafbb43a540f11242677476b3298043de431d074389093d05",
+    "runtime.py": "1484da4ab40cbb8c2c3d6fa24c6d5c8af94bd0697307146026edc7859eb85d8a",
+    "solve_child.py": "30d44222fac620589199e9df3b671254d11c0084819b91f5050623af34f9e614",
+    "supervisor.py": "522ae883f976d8e1e7b241a29612cbb1659af49e8c6edc8e49f0a2755985f701",
+    "test_admission.py": "6ac035ebb2378bb022bc490b9cd8e5a440d0c67dfb3268476bff5aac43b6c267",
+    "test_io_journal.py": "6ea934d201ab8c1033a1872de1f625fe40d8f6db299981b619dc3b1f0c0eebfc",
+    "test_runtime_protocol.py": "ce745ed0c1a33d7f47b3a80ea30c531f4be28fc5b3d3ba15b5f2a6101c0f0b77",
+    "test_runtime_recovery.py": "587f4be97a1f9d65e140598156d190bb555b9639061c642a98f3ab9ec5f7b999",
+    "test_supervised_entry.py": "2d0c0afc6f80c60456868584a97cf6cd64ace31bd8db8463e919de200283b9d4",
+    "test_supervisor.py": "1f4a16bf3b8e48b211a5a10ff1a784dba15f3602d2820b799d04c98ee74ed4b3",
+    "test_worker.py": "bbe5afa1214baf9b35d6a1778d45bee6afafe1f2f2f5e8aefb6ff056e1549753",
+    "worker.py": "6cedf105178f4f33fdfa930527edbe782bf6b1e279cbd1aa521f50b2299d15e3",
+    "INPUT_MANIFEST.json": "817ebfc6df996f00ec123c4ea71f47a09918511dade2643d79ee4bfc70feba40"
+  },
+  "linux_owned_supervisor_controls_enabled": false,
+  "owned_python_process_controls": [
+    "actual_portable_own_hanging_dummy_handle_cleanup",
+    "actual_portable_own_normal_dummy"
+  ],
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "actual_native_tests": 0,
+  "real_execution_admitted": false,
+  "full300s_timeout_verified": false,
+  "production_guard_integration_verified": false,
+  "offline_target32GB_verified": false,
+  "quality_verified": false,
+  "independent_models_completed": 0,
+  "adoption": false,
+  "limits": [
+    "HTTP sockets and native callbacks are synthetic; process controls use explicitly owned Python dummy children only.",
+    "Complete-shaped prerequisite fixtures never establish actual qualification or runtime execution admission.",
+    "The supervisor guard for opt-in Linux dummy tests is fabricated and differs from the production guard.",
+    "This 272-second work allocation is a new integration factor and has not inherited earlier C/P quality.",
+    "Client process termination never confirms server-side model cancellation.",
+    "Actual OS/include isolation, original-harness projection and full156 terminal qualification remain unavailable."
+  ]
+}
