@@ -4291,8 +4291,8 @@
     "conclusion": "Retain for isolated integration and a separately frozen conditional-repair comparison; no quality or generalization claim."
   },
   "phase_repair_T8_20261005": {
-    "updated_at": "2026-10-05T10:11:00+08:00",
-    "status": "running_conditional_repair",
+    "updated_at": "2026-10-05T10:33:51.2305948+08:00",
+    "status": "completed_audited_signal_only",
     "commit": "0c8c2527aa85e098ff11c00e16eefb16ab54b11f",
     "ticket": 46,
     "driver_pid": 3709172,
@@ -4312,11 +4312,95 @@
       "commit": "64f3e533edc8bbb7fb8968d67a518bb03f0f4ab2",
       "ticket": 47,
       "monitor_pid": 3720086,
-      "status": "queued",
+      "status": "completed_verified",
       "script_sha256": "847b606164b7b9f591243ffb374e1572cb17a0414cbdb51a8f81ea30c49912fc",
       "model_calls": 0,
       "eda_calls": 0
     },
-    "preparation_cleanup_verified": true
+    "preparation_cleanup_verified": true,
+    "terminal_result": {
+      "complete": true,
+      "valid": true,
+      "source_commit": "0c8c2527aa85e098ff11c00e16eefb16ab54b11f",
+      "spec_sha256": "86ac7739c5fa6d6084af42c299fb5625690c08ddc6901c7f132313e260425890",
+      "model_calls": 0,
+      "eda_calls": 0,
+      "audited_samples": 20,
+      "actual_model_calls": 20,
+      "confirmed_responses": 20,
+      "first_generation_replayed": true,
+      "descriptive_paired_repairs": 5,
+      "descriptive_paired_regressions": 0,
+      "descriptive_paired_unchanged": 5,
+      "per_task": {
+        "Prob045_edgedetect2": {
+          "S": {
+            "l3": 5,
+            "native_and_l3": 5,
+            "solve_elapsed_s": 91.84996625967324,
+            "judge_elapsed_s": 223.79666579328477,
+            "distinct_output_count": 1
+          },
+          "P": {
+            "l3": 5,
+            "native_and_l3": 5,
+            "solve_elapsed_s": 91.54841930046678,
+            "judge_elapsed_s": 224.63734829239547,
+            "distinct_output_count": 1
+          }
+        },
+        "Prob054_edgedetect": {
+          "S": {
+            "l3": 0,
+            "native_and_l3": 0,
+            "solve_elapsed_s": 91.69984055683017,
+            "judge_elapsed_s": 39.67128015123308,
+            "distinct_output_count": 1
+          },
+          "P": {
+            "l3": 5,
+            "native_and_l3": 5,
+            "solve_elapsed_s": 91.54615399800241,
+            "judge_elapsed_s": 225.04271929338574,
+            "distinct_output_count": 1
+          }
+        }
+      },
+      "mechanism_signal_gate_passed": true,
+      "adopted": false,
+      "full_batch_complete": false,
+      "independent_tasks": 0,
+      "scope": "Two already-seen checkpoints, correlated conditional repeats; not ten independent designs or official five-sample full solves.",
+      "generation_stage_elapsed_s": 1141.3115748614073,
+      "generation_guard_elapsed_s": 1141.530528947711,
+      "audit_elapsed_s": 0.20290875807404518,
+      "decision": "Signal only; independent admission still required.",
+      "provenance_files": 1060,
+      "archives": {
+        "generation": {
+          "sha256": "b74d09963f9a5e82e9d34a0736194d2bcba74aeda23a8ba49ab6b5208e455a9d",
+          "files_dual_verified": 2635
+        },
+        "audit": {
+          "sha256": "1744eb17b45800fb57d52235d0bb4e4f25c56c866e9c4eb2df0cc327aaf91545",
+          "files_dual_verified": 9
+        }
+      },
+      "cleanup": {
+        "removed_cache_directories": 96,
+        "removed_archived_cache_files": 1008,
+        "remaining_cache": 0
+      },
+      "total_times": {
+        "S": {
+          "solve_s": 183.5498068165034,
+          "judge_s": 263.46794594451785
+        },
+        "P": {
+          "solve_s": 183.0945732984692,
+          "judge_s": 449.6800675857812
+        }
+      }
+    }
   }
 }
