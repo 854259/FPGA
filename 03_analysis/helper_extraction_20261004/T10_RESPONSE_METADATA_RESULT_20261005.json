@@ -1,0 +1,74 @@
+{
+  "scope": "All 156 archived first responses; no new generation or EDA",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "pairs": 156,
+  "checks": {
+    "request_equal": 156,
+    "content_equal": 92,
+    "fingerprint_equal": 156,
+    "model_equal": 156,
+    "prompt_tokens_equal": 156,
+    "cached_tokens_equal": 152
+  },
+  "cache_content_table": {
+    "cache_same/content_same": 92,
+    "cache_same/content_different": 60,
+    "cache_different/content_different": 4
+  },
+  "request_option_sets": [
+    {
+      "max_tokens": 8192,
+      "model": "Qwen3.6-27B-Q4_K_M",
+      "temperature": 0,
+      "top_p": 1
+    }
+  ],
+  "fingerprint_sets": {
+    "old": [
+      "b1-c13fcbf"
+    ],
+    "new": [
+      "b1-c13fcbf"
+    ]
+  },
+  "side_totals": {
+    "old": {
+      "cached_tokens": 59178,
+      "evaluated_prompt_tokens": 19288,
+      "prompt_tokens": 78466,
+      "completion_tokens": 79458,
+      "prompt_ms": 54057.667,
+      "generation_ms": 2691779.764
+    },
+    "new": {
+      "cached_tokens": 59525,
+      "evaluated_prompt_tokens": 18941,
+      "prompt_tokens": 78466,
+      "completion_tokens": 83033,
+      "prompt_ms": 53957.396,
+      "generation_ms": 2820580.514
+    }
+  },
+  "limits": [
+    "Cache token counts do not identify cached token contents or numerical computation history.",
+    "Association cannot prove cache causes output drift; identical counts do not rule out cache effects.",
+    "Temperature zero and repeated content do not prove independent statistical samples.",
+    "Absent request fields inherit server defaults; random seed alone does not explain greedy decoding.",
+    "Archive metadata cannot isolate GPU reduction order, prefill batching, concurrency or timing."
+  ],
+  "complete": true,
+  "independent_tasks": 0,
+  "full_batch_complete": false,
+  "archive_hashes": [
+    "64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616",
+    "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055"
+  ],
+  "driver_sha256": "a9f1e4c2aa8620fc26eb01e9a6e8c21c51c7e835aed7c9e0b8db42bc55154c47",
+  "elapsed_s": 0.11229260265827179,
+  "ticket": 49,
+  "driver_pid": 3742701,
+  "stage_pid": 3742706,
+  "guard_elapsed_s": 0.5017173774540424,
+  "archive_sha256": "fd75a4e19b725c8bf9cf487ade2870be76aa9ad0f3e14cd3a9800b50a902ead2"
+}
