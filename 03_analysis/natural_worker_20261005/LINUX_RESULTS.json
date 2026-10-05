@@ -1,0 +1,35 @@
+{
+  "schema": "natural_worker_fake_test_receipt_v1",
+  "python": "3.12.3",
+  "tests_run": 52,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "physical_link_controls": 2,
+  "physical_link_methods": [
+    "physical_symlink",
+    "physical_symlink"
+  ],
+  "source_hashes": {
+    "adapter.py": "9b41ef3adfd345ff037ee4dcd3ef918d991c3bc5e52562ed8bc309355e0a39f9",
+    "worker.py": "852f346daa444098c1743634b4649a7589f507b6dd8c95d1a92d212d372d9647",
+    "test_worker.py": "bbe5afa1214baf9b35d6a1778d45bee6afafe1f2f2f5e8aefb6ff056e1549753",
+    "run_checks.py": "d151ebb973042585795f37d51b1d5542d9e6741d050d4a09468005e235365678"
+  },
+  "real_model_calls": 0,
+  "real_eda_calls": 0,
+  "real_native_tests": 0,
+  "quality_verified": false,
+  "eligible_for_independent_models": false,
+  "adoption": false,
+  "limits": [
+    "Synthetic fake callbacks test only transport, physical file boundaries, budgets and evidence retention.",
+    "C/P are prototype arm labels sharing the immutable adapter; ANSI early-return, frozen native runtime and functional feedback are not integrated.",
+    "No real HTTP/model/native compiler/runner/judge or process cancellation integration.",
+    "Physical symlink/junction tests execute only filesystem setup; no EDA command is invoked.",
+    "Argument canonical before/after snapshots detect object mutation on return/exception only; no proof of external transport/compiler fidelity, timeout kill or system isolation.",
+    "Include capability is simulated only; native safe isolation is unverified and must abstain before any real compile.",
+    "No natural solved count, solver score, original-harness calibration or training independence claim."
+  ]
+}

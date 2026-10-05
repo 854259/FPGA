@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full_CP156_FIFO61_running;original_edge_controls_FIFO62_queued;native_reset_tools_dual_environment_frozen;faithful_worker_FAKE52_under_freeze;native_reset_calibration14_preparation",
+    "continuation_status": "full_CP156_FIFO61_running;original_edge_controls_FIFO62_queued;native_reset_tools35_242_and_faithful_worker52_frozen_dual_environment;generated_native_controls14_draft_count_audit_fixes",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -4457,12 +4457,12 @@
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
     "G3": "Fresh C/P16 two real repair chains audited; same-source full156 C/P312 FIFO61 actually running. Strict complete audit/no per-task regression/no deadline/unconfirmed/tool error/cost and two actual causal chains required. No independent/five/adoption qualification yet.",
-    "G4": "All302 faithful input adapter engineering passed. Frozen C/P dispatch0; new complete native dual-output/async-reset grammar frozen with local/Linux35 methods/242 subchecks, all302 support1/abstain152/skip149, no native execution or quality. Original edge harness7 controls frozen/preflight, not yet submitted. Faithful FAKE worker prototype under review; actual independent model tasks0 and full qualification/exposure/exclusion gates preserved. Original edge control calibration now actually queued as whole FIFO62, zero native trials yet; faithful worker52 fake controls only, no actual model admission.",
+    "G4": "All302 faithful public input adapter engineering passed, frozen C/P dispatch0. New native dual-output/async-reset grammar frozen with local/Linux35 methods/242 subchecks, all302 support1; faithful FAKE worker local/Linux52 checks frozen, actual HTTP/native feedback/hard cancellation/isolation not integrated. Original edge harness7 controls wholeFIFO62 queued, zero native trials; generated research native14 controls draft under audit. Independent actual model tasks0; full qualification/exposure/original exclusion gates preserved.",
     "G5": "Formal bridge engineering controls audited; official baseline/five samples/offline/target32GB not certified.",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 18,
+    "quota_latest_observed_used_percent": 19,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
-    "previous_goal_turn_classification": "progress_native_contract_dual_environment_and_original_edge_FIFO62_queued"
+    "previous_goal_turn_classification": "progress_two_frozen_pure_tool_packages_and_original_harness_FIFO62_queued"
   },
   "concise_output_pilot_20261004": {
     "status": "completed_audited_rejected",
@@ -5618,5 +5618,30 @@
     "monitor_starttime": "845579592",
     "actual_native_trials": 0,
     "submission_git_commit": "44205ab865d6842d13bc1eef76e6e092ec005c81"
+  },
+  "natural_worker_20261005": {
+    "status": "frozen_FAKE_dual_environment52_passed",
+    "spec_sha256": "1073465430810c8bd5f569b27b12c81ee069367e9fdc427620cd2d6f9a6a0a22",
+    "source_assets": 5,
+    "tests_per_environment": 52,
+    "local_physical_links": [
+      "physical_windows_junction",
+      "physical_windows_junction"
+    ],
+    "linux_physical_links": [
+      "physical_symlink",
+      "physical_symlink"
+    ],
+    "original_adapter_exact_bytes": true,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "actual_fifo_submitted": false,
+    "real_transport_integrated": false,
+    "real_native_compiler_integrated": false,
+    "real_hard_timeout_integrated": false,
+    "real_functional_feedback_integrated": false,
+    "quality_qualification": false,
+    "adoption": false,
+    "report": "03_analysis/natural_worker_20261005/README.md"
   }
 }
