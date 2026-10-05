@@ -4462,9 +4462,9 @@
     "goal_complete": false,
     "quota_latest_observed_used_percent": 22,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
-    "previous_goal_turn_classification": "progress_runtime_durable_IO_confirmations_pending_recovery_and_supervisor_integrated_177_dual_host_engineering_checks",
-    "last_actual_shared_sync_commit": "bbed929479cf56fb6d7ea0b20c720015f5789568",
-    "last_actual_shared_sync_public_files": 36
+    "previous_goal_turn_classification": "progress_runtime17_frozen_177_dual_host_checks_actual_owned_dummy_cleanup_and_Git_shared_three_ledgers_complete",
+    "last_actual_shared_sync_commit": "e83c8a6dbee53de879ff05563b5a6da9d6639c5f",
+    "last_actual_shared_sync_public_files": 38
   },
   "concise_output_pilot_20261004": {
     "status": "completed_audited_rejected",
@@ -5732,7 +5732,10 @@
     "report": "03_analysis/natural_runtime_20261005/README.md",
     "linux_receipt": "03_analysis/natural_runtime_20261005/LINUX_PREFLIGHT_RECEIPT.json",
     "calls_log_scope": "engineering owned fixtures and durable attempt/confirmation mechanisms; no actual fresh model run",
-    "latest_actual_shared_commit": "bbed929479cf56fb6d7ea0b20c720015f5789568",
-    "current_package_shared": false
+    "latest_actual_shared_commit": "e83c8a6dbee53de879ff05563b5a6da9d6639c5f",
+    "current_package_shared": true,
+    "shared_sync_receipt": "03_analysis/natural_runtime_20261005/SHARED_SYNC_RECEIPT.json",
+    "shared_sync_public_files": 38,
+    "primary_status_preserved": true
   }
 }
