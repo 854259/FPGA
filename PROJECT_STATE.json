@@ -6242,7 +6242,7 @@
     "report": "03_analysis/latest_semantic_improvement_review_20261005/README.md"
   },
   "semantic_edge_guidance_pilot_20261005": {
-    "status": "actual_whole_task_FIFO78_running",
+    "status": "actual_whole_task_FIFO78_complete_terminal_audit_pending",
     "spec_sha256": "f36257ba3b7c9c30d92b4ddd825b2dbf0dda56d3bb2a87af77d0d91c93ff6b1e",
     "assets": 64,
     "local_checks": 59,
@@ -6260,16 +6260,18 @@
     "monitor_starttime": "847751923",
     "actual_model_calls_terminal_audit_pending": true,
     "latest_launch_commit": "57bc98107d5f2a6d523279c6973ab5953a201378",
-    "observed_at_epoch": 1791205113.415018,
-    "completed_samples_observed": 0,
-    "journaled_request_attempts_observed": 2,
-    "confirmed_responses_observed": 2,
-    "measurement_complete": false,
+    "observed_at_epoch": 1791212657.897385,
+    "completed_samples_observed": 28,
+    "journaled_request_attempts_observed": 36,
+    "confirmed_responses_observed": 36,
+    "measurement_complete": true,
     "measurement_error": null,
-    "all_original_task_prompt_names_and_bytes_verified": true
+    "all_original_task_prompt_names_and_bytes_verified": true,
+    "guard_complete": true,
+    "guard_passed": true
   },
   "phase_P_stability156x5_20261005": {
-    "status": "actual_whole_task_FIFO80_queued",
+    "status": "actual_whole_task_FIFO80_running",
     "spec_sha256": "589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15",
     "assets": 56,
     "local_checks": 7,
@@ -6293,10 +6295,10 @@
     "ticket": 80,
     "monitor_pid": 4095982,
     "monitor_starttime": "847801517",
-    "observed_at_epoch": 1791205108.3892512,
-    "completed_samples_observed": 0,
+    "observed_at_epoch": 1791212807.6601698,
+    "completed_samples_observed": 132,
     "journaled_request_attempts_observed": 0,
-    "confirmed_responses_observed": 0,
+    "confirmed_responses_observed": 140,
     "measurement_complete": false,
     "measurement_error": null,
     "actual_model_calls_terminal_audit_pending": true,
@@ -6307,6 +6309,14 @@
     "latest_actual_shared_commit": "89b4f391448a438f814c96023136519da766fb60",
     "shared_receipt": "03_analysis/phase_P_stability156x5_20261005/SHARED_SYNC_RECEIPT.json",
     "latest_actual_sync_protected_groups": 14,
-    "latest_actual_sync_protected_source_assets": 565
+    "latest_actual_sync_protected_source_assets": 565,
+    "started_at_utc": "2026-10-05T13:28:33.861812+00:00",
+    "reported_requests_observed": 140,
+    "eta_estimate_remaining_hours": [
+      8,
+      10
+    ],
+    "eta_is_estimate_only": true,
+    "eta_report": "03_analysis/phase_P_stability156x5_20261005/ETA_SNAPSHOT.json"
   }
 }

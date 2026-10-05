@@ -1,7 +1,7 @@
 {
-  "observed_at_epoch": 1791205113.415018,
+  "observed_at_epoch": 1791212657.897385,
   "ticket": 78,
-  "ticket_state": "running",
+  "ticket_state": "completed",
   "source_assets": 64,
   "source_unchanged": true,
   "model": {
@@ -13,17 +13,17 @@
   "monitor": {
     "pid": 4091002,
     "start": "847751923",
-    "state": "S",
-    "live": true
+    "state": "Z",
+    "live": false
   },
   "adoption": false,
-  "completed_samples": 0,
+  "completed_samples": 28,
   "expected_samples": 28,
-  "measurement_complete": false,
+  "measurement_complete": true,
   "measurement_error": null,
-  "reported_requests_from_completed_workers": 0,
-  "journaled_request_attempts": 2,
-  "confirmed_responses": 2,
-  "guard_complete": false,
-  "guard_passed": false
+  "reported_requests_from_completed_workers": 36,
+  "journaled_request_attempts": 36,
+  "confirmed_responses": 36,
+  "guard_complete": true,
+  "guard_passed": true
 }
