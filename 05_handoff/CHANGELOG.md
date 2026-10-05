@@ -1,3 +1,9 @@
+## 2026-10-05 原生研究校准与队列收据共享同步完成
+
+Git bbed929相对上次实际共享285c280的36公开文件已逐Git blob/SHA同步至共享artifacts/bbed929，并追加调用/修改/结论三台账。全量44+原校准11+契约5+worker5+研究校准44全部冻结源与模型身份保持；FIFO61 running、62/63 queued，primary STATUS/SNAPSHOT未覆盖且同步期间未变。实际共享收据见03_analysis/native_reset_calibration_20261005/SHARED_SYNC_RECEIPT.json；本次后续收据提交不冒充已共享。
+
+辅助Codex任务容量提示只影响未冻结的runtime草稿，根任务已接手并做纯AST核验，原adapter/契约字节保持，0实际新模型/EDA。待补durable尝试与未确认计数、异常证据封口、HTTP确认撤销、每solve外层硬截止及真实状态/原生计数；旧全156的independent_validation_qualified仅是准入字段，不当新因子已验证。真实HTTP/编译与隔离尚未测，不称同源合格P或部署结果。目标及G3/G4/G5保持active。
+
 ## 2026-10-05 原生复位研究14控制实际FIFO63排队
 
 44冻结源f4889422、双环境16方法82子检查及collector4方法13子检查后，14编译/14仿真/0模型研究校准于15:31（北京时间）接受FIFO63；实际queued、monitor3919181/start845913207存活、guard/results尚无、0原生执行。等待61完整C/P与62原harness控制，保持整任务先到先得，不改队友/共享模型/当前冻结源。研究TB original_harness=false，实际测量和控制鉴别仍待原始档案审计。
