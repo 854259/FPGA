@@ -4040,7 +4040,7 @@
     "next": "Freeze evaluator-only common module-name conversion on constructed controls, then audit eligibility without model outputs; retain full156 nonpromotion"
   },
   "cvdp_name_binding_20261005": {
-    "updated_at": "2026-10-05T07:54:00+08:00",
+    "updated_at": "2026-10-05T08:20:00+08:00",
     "independent_admitted": 0,
     "full_batch_complete": false,
     "S3": {
@@ -4057,14 +4057,14 @@
       "archive_sha256": "76f5f4e7178405647cc0a8a6ed8568c6313b94563ddfb267206e7c608bae459e",
       "members_verified": 20,
       "cleanup_verified": true,
-      "root_cause": "Input event hypothesis pending reproduction"
+      "root_cause": "Confirmed by S4 same-DUT controlled reproduction: initialized d=0 and first same-value drive cause no input event; q unknown until event."
     },
     "S4": {
-      "status": "queued_not_executed",
+      "status": "completed_verified_engineering_only",
       "commit": "330f9cc2cef1674d92c73cfd027a2ee3c934cffb",
       "ticket": 40,
       "monitor_pid": 3660638,
-      "stage_pid": null,
+      "stage_pid": 3674783,
       "amd_root": "/workspace/team/runs/fpga_teammate/cvdp_name_S4_20261005_330f9cc",
       "plan_sha256": "ba43ad75b7e70bf9bad2d6f28650d5a4edfcbc6210708515354ee4b44eaf1116",
       "actual_model_max": 0,
@@ -4072,16 +4072,37 @@
       "actual_sim_max": 17,
       "dataset_eda_max": 0,
       "stage_timeout_s": 300,
-      "mapping_functions_unchanged": true
+      "mapping_functions_unchanged": true,
+      "verified_archive_files": 120,
+      "archive_sha256": "72be46c8150f8bfed9bfeb335fb51979592081bd9c8b4a0da31502bda06ac157",
+      "actual_model": 0,
+      "actual_compile": 17,
+      "abstain": 111,
+      "guard_elapsed_s": 0.7525627873837948,
+      "stage_elapsed_s": 0.3283465728163719,
+      "actual_sim": 17,
+      "cleanup_verified": true,
+      "mechanically_reversible": 56,
+      "driver_pid": 3674778
     },
     "existing_queue39": {
-      "status": "running_observed",
+      "status": "completed_observed_20261005_0817",
       "owner": "other_existing_owner",
       "task_name": "repair_context_fresh_C_D_v2",
       "driver_pid": 3659717,
       "stage_pid": 3659722,
       "max_actual_model_requests": 32,
       "not_dispatched_or_modified_by_this_task": true
+    },
+    "S5": {
+      "actual_model_max": 0,
+      "status": "frozen_not_started",
+      "stage_timeout_s": 300,
+      "commit": "b069853d3bac35ab74fdd2cf472553b88dfbb09a",
+      "reason": "Constructed quoted literal semantic counterexample frozen before S4 corpus results were read",
+      "dataset_eda_max": 0,
+      "actual_compile_max": 19,
+      "actual_sim_max": 19
     }
   }
 }

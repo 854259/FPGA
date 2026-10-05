@@ -1,0 +1,88 @@
+{
+  "complete": true,
+  "passed": true,
+  "actual_model_requests": 0,
+  "independent_tasks_admitted": 0,
+  "full_batch_complete": false,
+  "dataset_eda_calls": 0,
+  "source_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "controls": {
+    "prompt_roundtrip_controls": 12,
+    "rejection_controls": 20,
+    "native_pairs": [
+      {
+        "width": 1,
+        "sequential": false,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 1,
+        "sequential": true,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 8,
+        "sequential": false,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 8,
+        "sequential": true,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 17,
+        "sequential": false,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 17,
+        "sequential": true,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 64,
+        "sequential": false,
+        "passed": true,
+        "checks_per_mode": 5
+      },
+      {
+        "width": 64,
+        "sequential": true,
+        "passed": true,
+        "checks_per_mode": 5
+      }
+    ],
+    "initialization_diagnostic_passed": true,
+    "actual_compile_commands": 17,
+    "actual_sim_commands": 17
+  },
+  "total_source_records": 302,
+  "structural_records": 167,
+  "status_counts": {
+    "mechanically_reversible_needs_contract_review": 56,
+    "abstain": 111
+  },
+  "abstention_reasons": {
+    "name_occurrence_outside_explicit_module_slot": 95,
+    "original_name_absent": 16
+  },
+  "private_binding_sha256": "260824f8033bf51e56d9292afabb34a076faf78bd4dc406c442ed62103e9dad2",
+  "limitations": [
+    "Reversibility is not semantic/oracle validity or source independence",
+    "Rule frozen before corpus application; no exclusions by model score",
+    "All published references empty; natural positive/negative oracle controls remain unresolved",
+    "Do not use converted prompts for model evaluation before contract and exposure admission"
+  ],
+  "elapsed_s": 0.3283465728163719,
+  "executed_commit": "330f9cc2cef1674d92c73cfd027a2ee3c934cffb",
+  "archive_sha256": "72be46c8150f8bfed9bfeb335fb51979592081bd9c8b4a0da31502bda06ac157",
+  "verified_archive_files": 120,
+  "guard_elapsed_s": 0.7525627873837948
+}
