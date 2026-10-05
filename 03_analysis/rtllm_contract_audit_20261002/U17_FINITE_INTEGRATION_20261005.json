@@ -1,0 +1,42 @@
+{
+  "schema": "finite_integration_U17_frozen_v1",
+  "status": "frozen_not_launched",
+  "purpose": "One combined changed-path acceptance: all29 native control pairs, actual A/P/B children with synthetic HTTP, source-bound sealed report normalization",
+  "private_inputs_sha256": "614866af373ad29422636c9d18a6a5aa6976571f06d48eec86570b2aaff0b603",
+  "historical_contract_sha256": "7e381b00f7968dcb217cfab41a2c28faf0d8271706f1729024a0aa9e07dfa14f",
+  "source_hashes": {
+    "three_arm_queue_20261005.py": "2db9babf7a358f2048056030eeb2f596462c4849ad5b3b1ee6216b96db416604",
+    "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422",
+    "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+    "official_baseline_scoring_20261005.py": "a6bf0420bdb89a2fd38f9e3ac3c951cc4b27f9a90204e4cc3073d7154a1f8983",
+    "three_arm_execution_preflight_20261005.py": "65ee4c41b108a196aa79b349270c0e8fcbf823f5c5a95a825a60564a11718d00",
+    "reporting_contract_20261005.py": "2785641e13237dc32a30b575b1ffb8cf83b88f361b6b86ee14c514bdc26c120e",
+    "finite_scoring_20261005.py": "0061be4ee7ef4f42a4db379f9c32dc843ea3be5b949082a8838d77931b437f6e",
+    "finite_integration_20261005.py": "86362d33f4fd4c0d5aa6b418f431f30188723c7113c90bf6167abd3b27cf663f"
+  },
+  "budget": {
+    "real_model_calls": 0,
+    "synthetic_http_post_cap": 5,
+    "native_control_pairs": 29,
+    "additional_syntax_control": 1,
+    "actual_solver_child_cap": 3,
+    "finite_queue_judgement_cap": 3,
+    "stage_timeout_s": 2700,
+    "slot_minutes": 50
+  },
+  "acceptance": [
+    "Every frozen finite positive passes and every negative is detected;15 blocked tasks remain unscored",
+    "Historical observation floors enforced;multiple mismatches per observation allowed;unknown fatal or missing evidence rejected",
+    "Candidate syntax error classified only by native candidate-file diagnostics;unknown tool/elaboration failures stay unscored",
+    "Actual pinned A/P/B children and isolated finite judge complete with synthetic HTTP only;no evaluator files in solver inputs",
+    "A/P/B normalization agrees before and after sealed recovery;synthetic/mixed-run/source-drift receipts rejected",
+    "Model and protected files unchanged;owned descendants exit;private evidence verified before cleanup"
+  ],
+  "limits": [
+    "Engineering integration, not model improvement or full batch",
+    "Retain all44 ledger;29 finite domains are historically seen, independent tasks0",
+    "725 is capacity for a future435-row plan, not a new approved model budget",
+    "Unknown elaboration failures still require diagnosis and cannot be silently scored",
+    "Existing ticket80 and ticket81 remain frozen;no duplicate generation, no model restart or deployment"
+  ]
+}

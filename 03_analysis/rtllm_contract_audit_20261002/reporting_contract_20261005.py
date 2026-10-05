@@ -113,6 +113,7 @@ def normalize_queue_row(folder, row, plan, contract, run):
     import three_arm_queue_20261005 as queue
     folder = Path(folder)
     require(plan['reporting_run'] == run, 'unfrozen reporting run')
+    require(plan['reporting_implementation_sha256'] == digest(Path(__file__).read_bytes()), 'report implementation drift')
     require(run['observation_kind'] == 'real_model', 'non-model run cannot become model scores')
     serialized = (json.dumps(contract, indent=2, ensure_ascii=False)+'\n').encode()
     require(plan['reporting_contract_sha256'] == digest(serialized), 'report contract drift')
@@ -138,6 +139,7 @@ def normalize_queue_row(folder, row, plan, contract, run):
             bound['evaluator_sha256'] == finite['entry_sha256'], 'judge source drift')
     require(bound['task_files'] == row['evaluator_hashes'] and
             bound['input_sha256'] == row['input_hashes']['prompt.txt'], 'judge inputs')
+    require(bound['minimum_observations'] == row['minimum_observations'], 'observation floor drift')
     require(bound['client_request_attempts'] == bound['confirmed_model_responses'] ==
             receipt['actual_calls'] and receipt['unconfirmed_calls'] == 0, 'unconfirmed responses')
     require(bound['verdict']['passed'] == receipt['finite_pass'], 'outcome drift')

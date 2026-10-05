@@ -137,6 +137,8 @@ def validate(plan):
         for name, expected in finite['tools'].items():
             assert official.sha(Path(finite['toolbin'])/name) == expected, 'Native tool drift'
         assert all(row['dataset'] == 'rtllm_finite_development' for row in plan['rows'])
+        assert all(type(row['minimum_observations']) is int and row['minimum_observations'] > 0
+                   for row in plan['rows'])
     for path, expected in plan['sources']['files'].items():
         assert official.sha(path) == expected, path
     for name, expected in official.OFFICIAL.items():
@@ -156,7 +158,8 @@ def validate(plan):
             evaluator = Path(row['evaluator_dir']).resolve()
             assert {'task.json','prompt.txt'} <= set(row['evaluator_hashes'])
             assert not any(p.is_symlink() for p in evaluator.rglob('*'))
-            assert {str(p.relative_to(evaluator)):official.sha(p) for p in evaluator.rglob('*') if p.is_file()} == row['evaluator_hashes']
+            paths = evaluator.rglob('*') if 'finite_judge' in plan else evaluator.iterdir()
+            assert {str(p.relative_to(evaluator)):official.sha(p) for p in paths if p.is_file()} == row['evaluator_hashes']
             assert {n:row['evaluator_hashes'][n] for n in row['input_hashes']} == row['input_hashes']
     for group in groups.values():
         assert {(x['sample'], x['arm']) for x in group} == {
@@ -353,7 +356,8 @@ def execute_row(plan, argv, row, folder, resource_check):
             '--kit',plan['kit'],'--solve',str(solve),'--task',str(evaluator),'--arm',row['arm'],
             '--out',str(folder/'judge'),'--resource-check',str(resource_check)]
         if finite:
-            judge_argv += ['--contract',finite['contract'],'--toolbin',finite['toolbin']]
+            judge_argv += ['--contract',finite['contract'],'--toolbin',finite['toolbin'],
+                           '--minimum-samples',str(row['minimum_observations'])]
         command = resource.owned_command(judge_argv,folder,folder/'judge.log',plan['judge_supervisor_s'])
         save(folder/'JUDGE_COMMAND.json',command)
         assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Judge supervision/environment failure'
@@ -371,6 +375,7 @@ def execute_row(plan, argv, row, folder, resource_check):
             assert bound['evaluator_sha256'] == finite['entry_sha256']
             assert bound['contract_sha256'] == finite['contract_sha256']
             assert bound['task'] == row['task'] and type(bound['verdict']['passed']) is bool
+            assert bound['minimum_observations'] == row['minimum_observations']
             assert bound['confirmed_model_responses'] == receipt['actual_calls']
             receipt.update(finite_pass=bound['verdict']['passed'], official_score=None,
                            finite_judge_sha256=finite['entry_sha256'])
