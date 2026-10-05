@@ -1,0 +1,71 @@
+{
+  "schema": "edge_feedback_other_owner_alignment",
+  "updated_at": "2026-10-05T09:26:00+08:00",
+  "scope": "Read-only alignment of existing other-owner ticket42; not a new experiment or complete native replay audit",
+  "original_ticket": 42,
+  "run_spec_sha256": "bce903e984fd0f1b92bd11759b0ecc3bdf77783f384bca74cde0b9cf09beacf6",
+  "summary_sha256": "8f330f8d9bf3004c0f8c76ef80b885c95e72715d5e35c7087cf141c63d77cc77",
+  "source_files_verified": 36,
+  "dependency_files_verified": 2,
+  "request_response_files_verified": 44,
+  "tasks": 8,
+  "samples_per_task_per_arm": 1,
+  "first_requests_identical": 8,
+  "first_contents_identical": 8,
+  "original_model_requests": 22,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "original_L3": 5,
+  "candidate_L3": 6,
+  "repairs_observed": 1,
+  "regressions_observed": 0,
+  "quality_coefficient": {
+    "control": 0.7,
+    "candidate": 0.8
+  },
+  "requests": {
+    "control": 10,
+    "candidate": 12
+  },
+  "solve_seconds": {
+    "control": 201.8315281327814,
+    "candidate": 235.62853755056858
+  },
+  "additional_solve_seconds": 33.797009417787194,
+  "original_stage_elapsed_s": 899.8651705589145,
+  "edge_checks": [
+    {
+      "before_mismatches": 71,
+      "after_mismatches": 0,
+      "checks": 80,
+      "official_after": "L3"
+    },
+    {
+      "before_mismatches": 43,
+      "after_mismatches": 41,
+      "checks": 53,
+      "official_after": "L1"
+    }
+  ],
+  "frozen_required_successful_edge_chains": 2,
+  "observed_potential_successful_edge_chains": 1,
+  "qualified_for_new_full_regression": false,
+  "adoption": false,
+  "independent_tasks": 0,
+  "five_sample_measured": false,
+  "full_batch_complete": false,
+  "important_limits": [
+    "Original complete native replay audit not performed by this read-only alignment. Failure of the required second chain is sufficient to reject expansion, even if the remaining provenance audit succeeds.",
+    "All8 are known development/guard designs. Repeated generations do not add independent tasks. Single-sample scorer pass@5 output is not five-sample evidence.",
+    "Single-point temporal feedback insufficiency is a next hypothesis, not a confirmed universal root cause or demonstrated beneficial fix."
+  ],
+  "private_archive_sha256": "a4a9b251618e8d0b9c8bf948e5a13d67f116b499d7cac77819806e6df1ec1f8f",
+  "archive_files_verified": 151,
+  "both_ends_verified": true,
+  "cleanup": {
+    "temporary_files_created": 0,
+    "other_owner_files_modified": 0,
+    "raw_observed_evidence_preserved": true
+  },
+  "next": "Retain nonpromotion; check existing-owner overlap before isolated task-independent temporal phase-pair feedback controls. Freeze any new feedback candidate and complete comparison budgets; do not rerun this known failed task to pick a response or repeat rejected generic timing prompts."
+}
