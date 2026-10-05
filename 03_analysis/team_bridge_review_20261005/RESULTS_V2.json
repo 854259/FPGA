@@ -1,0 +1,70 @@
+{
+  "schema": "team_bridge_readonly_review_v2",
+  "stages": {
+    "T5": {
+      "archive_sha256": "137826f9d3099fee84c2b9f89b1931704b49ec009e5cf89b85636418b4a65c80",
+      "files_verified": 763,
+      "driver_sha256": "4190b4ccf0bc6ead8406f5d3491f8bd62988e6e398e151cfaa233693dc02cc76",
+      "owner_spec_sha256": "b98742b9694454c2dc41654a8bcb3668b7c2ee2066bb8dc85fa6009cc3e2eee3",
+      "actual_model_requests": 0,
+      "guard_protected_cleanup_verified": true,
+      "native_probes": 21,
+      "compile_commands_observed_in_original_trace": 15,
+      "independent_compile_argv_receipts_available": false,
+      "synthesis_commands": 0,
+      "fake_model_requests": 15,
+      "controls": [
+        {
+          "width": 8,
+          "checks_per_probe": 335,
+          "bad_mismatches": 32
+        },
+        {
+          "width": 17,
+          "checks_per_probe": 335,
+          "bad_mismatches": 32
+        },
+        {
+          "width": 64,
+          "checks_per_probe": 335,
+          "bad_mismatches": 32
+        }
+      ]
+    },
+    "T6": {
+      "archive_sha256": "861ffc2e2f85e7617ea09913a331cc4c4bc4896322caf8cff1fcc60f9bd84e16",
+      "files_verified": 69,
+      "driver_sha256": "66e29737f6736f0586eea827f0a894e9f9eca28871ae895f8b167dddf48b73cf",
+      "owner_spec_sha256": "b98742b9694454c2dc41654a8bcb3668b7c2ee2066bb8dc85fa6009cc3e2eee3",
+      "actual_model_requests": 0,
+      "guard_protected_cleanup_verified": true,
+      "fake_model_requests": 7,
+      "native_probes": 0,
+      "compile_commands": 0,
+      "transport_controls": [
+        {
+          "case": "first_headers",
+          "elapsed_s": 2.7214670721441507,
+          "recovery_s": 0.11832521110773087
+        },
+        {
+          "case": "first_body",
+          "elapsed_s": 2.7061303574591875,
+          "recovery_s": 0.11844579875469208
+        },
+        {
+          "case": "repair_headers",
+          "elapsed_s": 2.7058390974998474,
+          "recovery_s": 0.11792326159775257
+        }
+      ],
+      "observation_limit": "Historical peer closure/owned-process absence binds to recorded driver observations and terminal guard, not re-execution."
+    }
+  },
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "actual_model_quality_measured": false,
+  "independent_natural_tasks": 0,
+  "adoption": false,
+  "reviewer_sha256": "2567fdc0fbec068d4ef9379f29fd48499615ac7963654c14cd064bb78bc4a6f8"
+}

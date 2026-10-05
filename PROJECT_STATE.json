@@ -5205,8 +5205,32 @@
     "monitor_pid": 3659716,
     "monitor_starttime": "843151149",
     "queued_at_utc": "2026-10-04T23:51:02.014005+00:00",
-    "observed_samples": 1,
-    "observed_model_requests": 1,
-    "final_score_available": false
+    "observed_samples": 12,
+    "observed_model_requests": 16,
+    "final_score_available": false,
+    "last_observed_at_epoch": 1791158992.205855
+  },
+  "team_bridge_review_20261005": {
+    "status": "T5_T6_readonly_complete_archived832_files_verified",
+    "reviewer_sha256": "2567fdc0fbec068d4ef9379f29fd48499615ac7963654c14cd064bb78bc4a6f8",
+    "team_T5_native_probes_verified": 21,
+    "team_T5_original_trace_compile_calls": 15,
+    "independent_compile_argv_receipts": false,
+    "team_T5_widths": [
+      8,
+      17,
+      64
+    ],
+    "team_T5_checks_each": 335,
+    "team_T5_bad_mismatches_each": 32,
+    "team_T6_fake_requests_verified": 7,
+    "audit_model_calls": 0,
+    "audit_eda_calls": 0,
+    "independent_natural_tasks": 0,
+    "actual_model_quality_measured": false,
+    "teammate_modified": false,
+    "adoption": false,
+    "report": "03_analysis/team_bridge_review_20261005/README.md",
+    "goal_status": "active"
   }
 }
