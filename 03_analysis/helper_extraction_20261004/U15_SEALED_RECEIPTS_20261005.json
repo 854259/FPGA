@@ -1,0 +1,34 @@
+{
+  "schema": "three_arm_seal_U15_frozen_v1",
+  "status": "frozen_not_executed",
+  "purpose": "Preserve verifiable completed rows across owned cache cleanup without replaying model requests",
+  "source_hashes": {
+    "three_arm_queue_20261005.py": "de7d4df53461843503760047f03affa4ea682cc2aa9559e91c80db06d40f44e7",
+    "three_arm_seal_preflight_20261005.py": "bab9a0bc42046d9ab851e4ac18acc471be0ccc30e0ecf879cc7239bc0461c1aa",
+    "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422",
+    "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+    "official_baseline_scoring_20261005.py": "a6bf0420bdb89a2fd38f9e3ac3c951cc4b27f9a90204e4cc3073d7154a1f8983"
+  },
+  "parent_archive_sha256": "1a5b4d9794ea87110fa71ab3b20f62521d34b160431d1780eefd20347022c0c7",
+  "budget": {
+    "real_model_calls": 0,
+    "eda_calls": 0,
+    "historical_rows": 6,
+    "constructed_queue_callbacks": 3,
+    "stage_timeout_s": 120,
+    "slot_minutes": 5
+  },
+  "acceptance": [
+    "All six original row receipts retain hashes and levels after 14 cache files are removed from owned replay copies",
+    "Exactly three synthetic bookkeeping callbacks across A/P/B and resume; full conservative reservation remains consumed",
+    "16 persistence and rejection controls pass; drift or interrupted seal never dispatches another row",
+    "Original U14 archive, frozen model and protected files unchanged; private evidence dual verified before cleanup"
+  ],
+  "limits": [
+    "Engineering substage only; zero new accuracy or independent evidence",
+    "No original run is resumed or mutated",
+    "Private per-row ZIPs must never be published",
+    "Seals protect against accidental corruption, not malicious rewriting of both hashes and data"
+  ],
+  "next": "Bind audited RTLLM finite-domain evaluation to actual A/P/B source identities; independent data, complete budget and32GB admission remain open"
+}

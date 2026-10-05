@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 import shutil
 import time
+import zipfile
 
 import official_baseline_arm_20261005 as official
 
@@ -168,6 +169,90 @@ def launch_args(plan, row, folder, resource_check):
         str(Path(plan['sources']['root'])/'worker.py')]+common+['--task', row['task'], '--arm', row['arm']]
 
 
+def verify_terminal(folder, row, plan_sha256):
+    """Verify live or sealed evidence. An interrupted seal always fails closed.
+
+    The ZIP is private raw evidence, never a public report. Sealing permits later
+    removal of redundant live artifacts; it never changes the original receipt,
+    resets a call reservation, retries a solver, or deletes a file itself.
+    """
+    folder = Path(folder).resolve()
+    started, terminal = folder/'STARTED.json', folder/'TERMINAL.json'
+    assert not any((folder/name).is_symlink() for name in ['STARTED.json','TERMINAL.json','SEALED.json','EVIDENCE.zip'])
+    assert started.is_file(), 'Incomplete reservation: inspect, never rerun'
+    s = json.loads(started.read_text())
+    assert s['row'] == row and s['plan_sha256'] == plan_sha256
+    assert terminal.is_file(), 'Unfinished reservation: inspect, never rerun'
+    receipt = json.loads(terminal.read_text())
+    assert receipt['complete'] and receipt['unconfirmed_calls'] == 0, 'Unconfirmed/failed row blocks continuation'
+    assert type(receipt['actual_calls']) is int and 0 <= receipt['actual_calls'] <= row['reserved_calls']
+    assert receipt['files'], 'Empty terminal receipt'
+    files = dict(receipt['files'])
+    assert not set(files) & {'TERMINAL.json', 'EVIDENCE.zip', 'SEALED.json'}, 'Reserved evidence name'
+    files.update({'STARTED.json': official.sha(started), 'TERMINAL.json': official.sha(terminal)})
+    for name in files:
+        path = folder/name
+        assert not Path(name).is_absolute() and '..' not in Path(name).parts
+        assert str(Path(name)) == name and not path.is_symlink()
+        assert path.resolve().is_relative_to(folder), 'Evidence path outside row'
+    # STARTED may already belong to the original terminal manifest: do not let
+    # the live control file silently replace that original binding.
+    if 'STARTED.json' in receipt['files']:
+        assert receipt['files']['STARTED.json'] == files['STARTED.json']
+    archive, marker = folder/'EVIDENCE.zip', folder/'SEALED.json'
+    assert not (folder/'EVIDENCE.zip.pending').exists() and not (folder/'SEALED.json.pending').exists(), 'Interrupted seal'
+    if marker.exists():
+        seal = json.loads(marker.read_text())
+        assert seal['schema'] == 'private_row_evidence_v1'
+        assert seal['row_key'] == row['key'] and seal['plan_sha256'] == plan_sha256
+        assert seal['terminal_sha256'] == files['TERMINAL.json']
+        assert not archive.is_symlink() and official.sha(archive) == seal['archive_sha256'], 'Sealed archive drift'
+        with zipfile.ZipFile(archive) as z:
+            names = z.namelist()
+            assert len(names) == len(set(names)) and set(names) == set(files), 'Archive member mismatch'
+            for name, expected in files.items():
+                with z.open(name) as handle:
+                    digestor = hashlib.sha256()
+                    for chunk in iter(lambda: handle.read(1024*1024), b''):
+                        digestor.update(chunk)
+                assert digestor.hexdigest() == expected, 'Archived evidence drift'
+                path = folder/name
+                if path.exists():
+                    assert official.sha(path) == expected, 'Live evidence differs from archive'
+    else:
+        assert not archive.exists(), 'Archive without committed seal: inspect'
+        for name, expected in files.items():
+            assert official.sha(folder/name) == expected, 'Terminal evidence drift'
+    return receipt
+
+
+def seal_row(folder, row, plan_sha256):
+    """Caller holds queue.lock; fsync the private ZIP before committing its seal."""
+    folder = Path(folder).resolve()
+    receipt = verify_terminal(folder, row, plan_sha256)
+    if (folder/'SEALED.json').exists():
+        return json.loads((folder/'SEALED.json').read_text())
+    names = set(receipt['files']) | {'STARTED.json', 'TERMINAL.json'}
+    archive, pending = folder/'EVIDENCE.zip', folder/'EVIDENCE.zip.pending'
+    with pending.open('xb') as raw:
+        with zipfile.ZipFile(raw, 'w', zipfile.ZIP_DEFLATED) as z:
+            for name in sorted(names):
+                z.write(folder/name, name)
+        raw.flush(); os.fsync(raw.fileno())
+    pending.replace(archive)
+    fd = os.open(folder, os.O_RDONLY)
+    try:
+        os.fsync(fd)
+    finally:
+        os.close(fd)
+    seal = dict(schema='private_row_evidence_v1', row_key=row['key'], plan_sha256=plan_sha256,
+                terminal_sha256=official.sha(folder/'TERMINAL.json'), archive_sha256=official.sha(archive),
+                files=len(names), public_publish_allowed=False)
+    save(folder/'SEALED.json', seal)
+    verify_terminal(folder, row, plan_sha256)
+    return seal
+
+
 def advance(plan, out, resource_check, execute):
     """execute receives the frozen argv; tests substitute a process probe.
 
@@ -199,19 +284,8 @@ def advance(plan, out, resource_check, execute):
                 assert not any(out.glob('row_*')) or all(
                     p.name < folder.name for p in out.glob('row_*')), 'Non-prefix results'
                 next_row = (row, folder); break
-            started = folder/'STARTED.json'; terminal = folder/'TERMINAL.json'
-            assert started.is_file(), 'Incomplete reservation: inspect, never rerun'
-            s = json.loads(started.read_text())
-            assert s['row'] == row and s['plan_sha256'] == digest(plan)
             reserved += row['reserved_calls']
-            assert terminal.is_file(), 'Unfinished reservation: inspect, never rerun'
-            receipt = json.loads(terminal.read_text())
-            assert receipt['complete'] and receipt['unconfirmed_calls'] == 0, 'Unconfirmed/failed row blocks continuation'
-            assert isinstance(receipt['actual_calls'], int) and 0 <= receipt['actual_calls'] <= row['reserved_calls']
-            assert receipt['files'], 'Empty terminal receipt'
-            for name, expected in receipt['files'].items():
-                path = (folder/name).resolve()
-                assert path.is_relative_to(folder) and official.sha(path) == expected, 'Terminal evidence drift'
+            verify_terminal(folder, row, digest(plan))
         if next_row is None:
             return dict(complete=True, rows=len(plan['rows']), reserved_calls=reserved, full_batch=False)
         row, folder = next_row
@@ -229,6 +303,8 @@ def advance(plan, out, resource_check, execute):
         save(folder/'TERMINAL.json', receipt)
         validate(plan)
         assert {p.name: official.sha(p) for p in prompt.iterdir()} == row['input_hashes']
+        if receipt.get('complete') and receipt.get('unconfirmed_calls') == 0:
+            seal_row(folder, row, digest(plan))
         return dict(complete=False, executed_key=row['key'], reserved_calls=reserved+row['reserved_calls'])
 
 
