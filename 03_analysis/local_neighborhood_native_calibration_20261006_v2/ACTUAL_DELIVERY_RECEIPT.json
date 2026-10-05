@@ -1,0 +1,112 @@
+{
+  "schema": "neighborhood_native_actual_public_delivery_receipt_v2",
+  "metadata_only": true,
+  "snapshot_scope": "Actual prior PR15/FIFO86/public9 delivery plus later readonly queue observation; no native score result",
+  "verified_merge": {
+    "pr_number": 15,
+    "pr_url": "https://github.com/854259/FPGA/pull/15",
+    "reviewed_head_sha": "b1c29d04061c29d170c8dff132cf46443c63e83e",
+    "base_before_merge": "2901cdfd13caeea94316ba4da5d436c2eb7669e0",
+    "merge_sha": "a1025517e1144def8960170af4c2d1b81ac04c1d",
+    "merge_read_back": true,
+    "review_id": 5421538883
+  },
+  "actual_fifo_acceptance": {
+    "ticket": 86,
+    "task_name": "neighborhood_native_calibration_zero_model_v2",
+    "accepted_at_utc": "2026-10-05T22:43:58.453928+00:00",
+    "monitor_pid": 482365,
+    "monitor_starttime": "851388793",
+    "monitor_command_sha256": "bd19d900c2e497376bd20021562e4c7ccfb83e930c7d05bc1627cd3a1b9f11aa",
+    "run_spec_sha256": "917348629e616661a2bf962fed1f0af815c7bea5e7d8baa9e2fea518056b446b",
+    "submission_count": 1,
+    "state_at_submission": "queued"
+  },
+  "actual_public_delivery": {
+    "git_commit": "b1c29d04061c29d170c8dff132cf46443c63e83e",
+    "artifact": "/workspace/team/activity/fpga_owner/artifacts/neighborhood-native-preparation-v2-b1c29d04061c29d170c8dff132cf46443c63e83e",
+    "files": {
+      "03_analysis/EXPERIMENT_REGISTRY.md": "72b9cb485279c1dc4e8c331ba94cb1975fe3719adf9273f19b898d0b737eca2f",
+      "03_analysis/local_neighborhood_native_calibration_20261006_v2/AMD_PUBLIC_PREPARATION.json": "75426af2424ce762f512478ca1cd72066f74fae251e7083c046816e756bbe6f6",
+      "03_analysis/local_neighborhood_native_calibration_20261006_v2/FROZEN_RUN_BINDING.json": "e8a1a7289d97e9a20190a658ef34e11c55190ab9ccdd9411aec189a61d787319",
+      "03_analysis/local_neighborhood_native_calibration_20261006_v2/README.md": "be122b72813c52c810ecbe7cd70984a16f0dbcec62fc889191be08677d158500",
+      "05_handoff/CHANGELOG.md": "9d18f22da3debcaa41b36334a5f6c3f47daffbf6a6ad34d42a43e7be7d596d40",
+      "AI_CONTEXT.md": "6726410b492394f7eea9f3e2ca629ca889332972a231f1b354dff7ed6e31a475",
+      "MATERIALS_INDEX.md": "7c8a3420a139cd52e44a05c89434e4172e7741c6d4cb78d1fa7a95a968f60191",
+      "PROJECT_STATE.json": "e2522eb89c62e18b5b841dfe91d0acd04cd7e2cb9e4a05819184554d3ea71c7c",
+      "PROJECT_STATUS.md": "cb7916d1d63e05413f81c333dcdc1816e245c758243a0c46ddfda95de85910a7"
+    },
+    "public_git_delta_files": 9,
+    "public_delta_physically_read_back": true,
+    "packet_sha256": "8e08df8e247dbe1692ceba2016ab68ae21b288d71fbf4ac9c6c6bfc32d90f949",
+    "plan_commit_before": "5cf3ece2422bf47af2fe931396100483b3416d80",
+    "plan_commit_after": "b1c29d04061c29d170c8dff132cf46443c63e83e",
+    "plan_sha256": "7cfc50df4b3e0ef9df04fa3b7cc0b5cba04ef4b8237fd8057e2f8b4fb87c7684",
+    "owned_activity_entries_verified": 3,
+    "at_epoch": 1791240540.934664,
+    "peer_acknowledgment": "pending"
+  },
+  "actual_github_reminder": {
+    "url": "https://github.com/854259/FPGA/issues/7#issuecomment-6004772227",
+    "id": 6004772227,
+    "body_sha256": "5fbcea4aa1eabb29808303cf72883bc7168f3ef06d206e6803406dc79dbf4645",
+    "reviewed_head_sha": "b1c29d04061c29d170c8dff132cf46443c63e83e",
+    "peer_acknowledgment": "pending",
+    "comments_with_marker": 1
+  },
+  "evidence_binding": {
+    "amd_physical_delivery_receipt_sha256": "ffef5b2ef2fc5160c213b769a3a5571ec665f9baa2f02f70db4304444fa03330",
+    "local_delivery_readback_copy_sha256": "3ddc8f26c5a0ca3c9f35f488f862dce401811313d325a230914c33376b128ba7",
+    "local_submission_sha256": "c3a563757254c1df6313e0c819e4fc0b499062f5de1f672861d8bd7b136f8029",
+    "local_merge_receipt_sha256": "e4cd39268d6915a2f6d51a3ad3a5172d8e43a6cde75c2fae3c6aa8f27f0ee691",
+    "local_later_readonly_result_sha256": "5ada55337ef3e603b67a64bb340240be1e518a969c0079ff9deb64568245fc5f",
+    "local_later_readonly_process_sha256": "89be24b39eef744f1f3c66b4f40e7d52b71fb2481fd4fa354bec2f7fad68d293"
+  },
+  "later_readonly_queue_observation": {
+    "state": "queued",
+    "saved_monitor_identity_live": true,
+    "source_before_after_verified": true,
+    "remote_transport_returncode": 0,
+    "collection_exists": false,
+    "archive_present": false,
+    "helper_model_calls": 0,
+    "helper_eda_calls": 0
+  },
+  "preservation": {
+    "protected_groups": 21,
+    "protected_source_assets": 1274,
+    "native_source_assets": 151,
+    "frozen_sources_before_after_unchanged": true,
+    "model_identity_unchanged": true,
+    "sole_observer_unchanged": true,
+    "primary_unchanged": true,
+    "supported_runs_unchanged": [
+      80,
+      83,
+      84
+    ],
+    "new_job_or_observer_started": false,
+    "private_source_or_raw_published": false
+  },
+  "counts_and_limits": {
+    "actual_amd_pure_checks": 61,
+    "prepared_assets": 92,
+    "own_frozen_source_assets": 151,
+    "planned_native_controls": 29,
+    "planned_native_commands": 78,
+    "planned_supervisor_commands": 2,
+    "planned_guard_receipts": 162,
+    "planned_trace_observations": 10827,
+    "native_archive_audit": "pending",
+    "native_qualified": false,
+    "score_measured": false,
+    "quality_gain_verified": false,
+    "production_deployment": false,
+    "preparation_queued_false_is_historical_snapshot": true
+  },
+  "this_revision": {
+    "pr_delivery": "pending",
+    "actual_cloud_synchronization": false,
+    "peer_acknowledgment": "pending"
+  }
+}
