@@ -1,1 +1,1 @@
-已按整任务FIFO77实际接受，快照为queued，等待FIFO76当前位映射整任务结束；尚无模型样本。54源/双37预检/11组391旧源与模型保持，原2048/8192/唯一repair/绝对300秒不变。收益待终态原审计，不部署。详见SUBMISSION.json及LIVE_SNAPSHOT.json。
+FIFO77在14/16时失败：名单误写Prob144_ece241_2013_q4，原输入实际Prob144_conwaylife，worker读取不存在prompt报FileNotFoundError，阶段上报AssertionError。24尝试/24回复为终态快照；部分结果不当完整评测或收益。64个私有终态证据文件已逐SHA保全，54冻结源及原失败结果未改；原FIFO检查确认模型/EDA/锁空闲后仅将自己的77释放为failed_released_after_inspection，未杀进程/重跑/改输入。纯测试此前未覆盖全任务名称与输入清单的对应，下一新版本需加入该准入。78/80全部题目身份另行实查通过，队列已继续。详见HELD_RELEASE_RECEIPT和LIVE_SNAPSHOT；raw_evidence不公开。

@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "Useraway longcloudready: diagnostic77running,semantic78submitted,approvedphaseP156x5 dual7preflightdone; rejecteddriver/bit notexpanded",
+    "continuation_status": "Cloud long test actually FIFO80 queued independently; own failed diagnostic77 preserved and safely released, semantic78 running; score work retained for return",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -6180,7 +6180,7 @@
     "qualified_for_new_full_regression": false
   },
   "compile_diagnostic_priority_pilot_20261005": {
-    "status": "actual_whole_task_FIFO77_queued_behind_current_bit_trial",
+    "status": "actual_whole_task_FIFO77_failed_released_after_inspection",
     "spec_sha256": "f0e9142dd04630849a3751602f4e6f9c95a87d3a663cf1c2ef69ded972a1599c",
     "assets": 54,
     "local_checks": 37,
@@ -6199,12 +6199,23 @@
     "ticket": 77,
     "monitor_pid": 4072611,
     "monitor_starttime": "847654577",
-    "completed_samples_observed": 0,
-    "observed_at_epoch": 1791202998.471912,
+    "completed_samples_observed": 14,
+    "observed_at_epoch": 1791205111.238176,
     "actual_model_calls_terminal_audit_pending": true,
     "preflight_actual_model_calls": 0,
     "preflight_actual_eda_calls": 0,
-    "latest_launch_commit": "bc857e6240895d10bf900930ff22cea25decd2fc"
+    "latest_launch_commit": "bc857e6240895d10bf900930ff22cea25decd2fc",
+    "journaled_request_attempts_observed": 24,
+    "confirmed_responses_observed": 24,
+    "measurement_complete": false,
+    "measurement_error": "AssertionError: ",
+    "qualified_for_new_full_regression": false,
+    "original_failure_preserved": true,
+    "partial_capture_files": 64,
+    "task_list_missing_original_input": "Prob144_ece241_2013_q4",
+    "actual_original_task": "Prob144_conwaylife",
+    "queue_released_after_original_idle_probe": true,
+    "partial_score_not_published": true
   },
   "multidriver_guidance_failure_review_20261005": {
     "status": "actual_evidence_read_only_review_complete",
@@ -6231,7 +6242,7 @@
     "report": "03_analysis/latest_semantic_improvement_review_20261005/README.md"
   },
   "semantic_edge_guidance_pilot_20261005": {
-    "status": "actual_whole_task_FIFO78_submitted",
+    "status": "actual_whole_task_FIFO78_running",
     "spec_sha256": "f36257ba3b7c9c30d92b4ddd825b2dbf0dda56d3bb2a87af77d0d91c93ff6b1e",
     "assets": 64,
     "local_checks": 59,
@@ -6248,10 +6259,17 @@
     "monitor_pid": 4091002,
     "monitor_starttime": "847751923",
     "actual_model_calls_terminal_audit_pending": true,
-    "latest_launch_commit": "57bc98107d5f2a6d523279c6973ab5953a201378"
+    "latest_launch_commit": "57bc98107d5f2a6d523279c6973ab5953a201378",
+    "observed_at_epoch": 1791205113.415018,
+    "completed_samples_observed": 0,
+    "journaled_request_attempts_observed": 2,
+    "confirmed_responses_observed": 2,
+    "measurement_complete": false,
+    "measurement_error": null,
+    "all_original_task_prompt_names_and_bytes_verified": true
   },
   "phase_P_stability156x5_20261005": {
-    "status": "frozen_dual_environment_7_pass_ready_for_long_fifo",
+    "status": "actual_whole_task_FIFO80_queued",
     "spec_sha256": "589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15",
     "assets": 56,
     "local_checks": 7,
@@ -6259,9 +6277,7 @@
     "expected_samples": 780,
     "repetitions": 5,
     "max_model_calls": 1560,
-    "actual_model_calls": 0,
-    "actual_eda_calls": 0,
-    "fifo_submitted": false,
+    "fifo_submitted": true,
     "common_policy": "Approved latest phase_full156 P unchanged44 sources",
     "stage_protected_groups": 12,
     "stage_protected_source_assets": 445,
@@ -6273,6 +6289,20 @@
     "no_bestof_or_resampling": true,
     "formal_five_sample_qualified": false,
     "adoption": false,
-    "report": "03_analysis/phase_P_stability156x5_20261005/STATUS.md"
+    "report": "03_analysis/phase_P_stability156x5_20261005/STATUS.md",
+    "ticket": 80,
+    "monitor_pid": 4095982,
+    "monitor_starttime": "847801517",
+    "observed_at_epoch": 1791205108.3892512,
+    "completed_samples_observed": 0,
+    "journaled_request_attempts_observed": 0,
+    "confirmed_responses_observed": 0,
+    "measurement_complete": false,
+    "measurement_error": null,
+    "actual_model_calls_terminal_audit_pending": true,
+    "latest_launch_commit": "2e479f36fe0c416a7806e003d145b1d10a719c74",
+    "all_original_task_prompt_names_and_bytes_verified": true,
+    "independent_of_local_chat_process": true,
+    "score_gain_measured": false
   }
 }

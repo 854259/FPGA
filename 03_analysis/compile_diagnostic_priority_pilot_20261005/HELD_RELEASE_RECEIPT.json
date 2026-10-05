@@ -1,0 +1,31 @@
+{
+  "ticket": 77,
+  "before_state": "held_for_inspection",
+  "after_state": "failed_released_after_inspection",
+  "released_at_utc": "2026-10-05T12:58:11.005347+00:00",
+  "observed_at_epoch": 1791205091.0163128,
+  "inspection_reason": "Own FIFO77 inspected: frozen task-list typo Prob144_ece241_2013_q4 absent from original inputs; actual Prob144_conwaylife. 14/16 partial and all raw failure retained, not scored or retried. Guard terminal failed, own process cleanup complete, original queue probe confirms model/tools/slot idle. Semantic14 and stability156 original prompt identities verified; release only own failed ticket without source edits.",
+  "original_partial_samples": 14,
+  "expected_samples": 16,
+  "original_summary_sha256": "ec6ecd727a02ae9f55a106398a2b138e57b2c1d62d1b32cebbb6af4b2f36ed8c",
+  "original_guard_sha256": "cd955c20d8f1f6a0c547b0fa49f0407c948e667d90911556eba7c6f2dfab76f3",
+  "frozen_source_assets": 54,
+  "frozen_source_unchanged": true,
+  "queue_original_idle_probe_passed": true,
+  "following_prompt_admission": {
+    "semantic_edge_guidance_pilot_20261005_v1": {
+      "task_count": 14,
+      "all_prompt_names_and_original_bytes_verified": true
+    },
+    "phase_P_stability156x5_20261005_v1": {
+      "task_count": 156,
+      "all_prompt_names_and_original_bytes_verified": true
+    }
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "adoption": false,
+  "score_gain_measured": false,
+  "formal_five_sample_qualified": false,
+  "private_inspection_manifest_sha256": "1dcaf08a5d401f298fda6d863ffdf568fbe07eede49ebfcf066771ec3dda399e"
+}
