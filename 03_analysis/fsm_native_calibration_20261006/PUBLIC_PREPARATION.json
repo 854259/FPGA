@@ -5,7 +5,6 @@
   "private_preparation_original_files": 44,
   "amd_packet_files": 45,
   "historical_local_pure_checks": 14,
-  "historical_local_execution_predates_policy_adoption": true,
   "amd_pure_checks": 14,
   "amd_pure_receipt": {
     "schema": "fsm_emitter_amd_pure_checks_v1",
@@ -178,5 +177,8 @@
   },
   "public_sources_included": false,
   "privacy_review": "Parser regex contains substantial original prompt wording. All five source files remain private; metadata only.",
-  "first_owned_branch_commit_replaced_before_pr": true
+  "first_owned_branch_commit_replaced_before_pr": true,
+  "historical_local_execution_compliance_claimed": false,
+  "preparation_qualification_based_on": "actual_AMD_pure14_only",
+  "delivery_pr_url": "https://github.com/854259/FPGA/pull/9"
 }

@@ -4,7 +4,7 @@
 
 生成器只接收题面和独立接口文本，完整识别明确的 walking/falling 与 walking/falling/digging 叙述后生成 RTL；缺少时钟、复位、优先级或方向保持等必要条款时放弃，非空独立接口暂时放弃。不接收 task ID、参考实现、判定 testbench、旧候选或模型输出。状态转移由明确条款构造，题目哈希仅用于证据绑定。尚未接入实际求解 worker。
 
-原准备的全 156 题纯筛选中，两个题面被接纳、154 个放弃；这是历史本机纯筛选，不能写成新的 AMD 全量评分。采用新执行政策后，AMD 上实际运行了原 14 项纯检查，全部通过，45 个私有准备文件逐字节保持，零模型、零 EDA。实际过程和回执保存在 `/workspace/team/runs/fpga_owner/fsm_emitter_pure_20261006_v1`。`PUBLIC_PREPARATION.json` 绑定过程 SHA 和实际回执，`PRIVATE_INPUT_BINDING.json` 只含私有文件名称、长度及哈希，没有其原始内容。
+原准备的全 156 题纯筛选中，两个题面被接纳、154 个放弃；这是历史本机纯筛选，不能写成新的 AMD 全量评分，也不宣称该历史执行符合当前仅 AMD 执行约定。本轮资格仅建立在 AMD 上实际运行的原 14 项纯检查，全部通过，45 个私有准备文件逐字节保持，零模型、零 EDA。实际过程和回执保存在 `/workspace/team/runs/fpga_owner/fsm_emitter_pure_20261006_v1`。`PUBLIC_PREPARATION.json` 绑定过程 SHA 和实际回执，`PRIVATE_INPUT_BINDING.json` 只含私有文件名称、长度及哈希，没有其原始内容。
 
 生成器、原生 fixture recipe 和纯测试源码均保持在 AMD 私有包及原私有准备归档；本次公开元数据只绑定其 SHA，没有公开源码。审查发现解析规则能够还原较多原题面文字，即便没有 prompt.txt 也不能声称没有题面正文；因此将五份源码全部留私有。测试也依赖私有 prompt fixtures，仅在授权 AMD 私有包内运行。历史本机检查和当前 AMD 检查分别记录，原历史结果中的 Linux 未执行字段保持。
 
