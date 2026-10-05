@@ -1,0 +1,19 @@
+{
+  "schema": "frozen_CP_natural_prompt_dispatch_inventory_v1",
+  "source_sha256": "bd84c9a41832c00189b006966fced0ea18e3ed3c78ff2bb200c43e36c62ad6a3",
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "full_spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+  "binding_sha256": "53acfa88a1deae2fbefdea90976a2a2317df9ed92711f541af21634d05904864",
+  "records": 302,
+  "C_supported": 0,
+  "P_supported": 0,
+  "candidate_only_supported": 0,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "independent_quality_admitted": 0,
+  "limits": [
+    "Prompt-only parser applicability, not complete natural solver behavior or judge discrimination. Public contexts preserved by a separate file adapter, not fed to a parser with a changed signature.",
+    "No matched dispatch on this dataset would mean no evidence to attribute new C/P native-feedback gains here; model ability and broader verification methods remain untested.",
+    "A native-name/reset/port contract extension would be a new isolated factor requiring calibration, guards and regression; the running frozen full source must remain unchanged."
+  ]
+}

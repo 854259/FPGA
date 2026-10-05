@@ -1,0 +1,47 @@
+{
+  "schema": "natural_public_input_adapter_engineering_v1",
+  "python": "3.12.14",
+  "adapter_sha256": "9b41ef3adfd345ff037ee4dcd3ef918d991c3bc5e52562ed8bc309355e0a39f9",
+  "inventory_sha256": "26d8f8fbcaa94d83bf9e7a8332d4283e4cfbcbbf96b452ada289dc5dd0ac1bc9",
+  "test_source_sha256": "1856a26b398c26f6170e1490282307d0d38c346478d98d0483b33a13ebb79b6b",
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "all_record_binding_sha256": "f7cc9cdc2e0d19b0cd69d11b2c5880852651b90b116d11181a695fdb8f66b6c8",
+  "records": 302,
+  "lossless_prompt_context_records": 302,
+  "input_context_required": 133,
+  "multi_output_records": 5,
+  "input_context_distribution": {
+    "0": 169,
+    "1": 124,
+    "2": 6,
+    "3": 2,
+    "4": 1
+  },
+  "output_file_distribution": {
+    "1": 297,
+    "3": 2,
+    "2": 3
+  },
+  "tests_passed": 15,
+  "synthetic_file_transport_cases": 302,
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "independent_model_tasks": 0,
+  "independent_quality_admitted": 0,
+  "official_baseline_modified": false,
+  "full_frozen_runtime_modified": false,
+  "adoption": false,
+  "source_bindings": {
+    "package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "package/agent/map_runtime.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+    "package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+  },
+  "limits": [
+    "Only exact input/file target transport and common research skill format/ABI adaptation; no native module compilation or semantics, model worker integration or fresh model score yet.",
+    "Research C/P must share the new format/ABI adaptation; it is not a change to or a measurement of the untouched official baseline.",
+    "All original public contexts preserved, including partial designs; hidden harness, output response/answers, record IDs and categories are excluded from model messages.",
+    "Synthetic file replies and boundary rejection tests are engineering controls, not 302 solved or admitted natural tasks.",
+    "Full original evidence qualification, faithful native runner integration, per-record judge discrimination and exposure review remain necessary before independent real model experiments."
+  ]
+}
