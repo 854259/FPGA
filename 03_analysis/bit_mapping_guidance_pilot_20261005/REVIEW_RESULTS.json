@@ -1,0 +1,78 @@
+{
+  "schema": "teammate_phase_original_review_v1",
+  "evidence_valid": true,
+  "archive_sha256": {
+    "45": "ee0110706360286d58587e85a831dca4567f4c45f5203f2377354006b6b91383",
+    "46": "b74d09963f9a5e82e9d34a0736194d2bcba74aeda23a8ba49ab6b5208e455a9d",
+    "47": "1744eb17b45800fb57d52235d0bb4e4f25c56c866e9c4eb2df0cc327aaf91545"
+  },
+  "manifest_files": {
+    "45": 593,
+    "46": 2635,
+    "47": 9
+  },
+  "phase_source_sha256": "90b7c71b480a7cdd9d485e7401509feef996520111e76c03666ac519a2d01afa",
+  "source_commit": "0c8c2527aa85e098ff11c00e16eefb16ab54b11f",
+  "original_owner_replay_bytes_bound": true,
+  "conditional_samples": 20,
+  "actual_model_requests": 20,
+  "actual_model_responses": 20,
+  "first_generation_replayed": true,
+  "native_and_official_L3": {
+    "Prob045_edgedetect2": {
+      "S": 5,
+      "P": 5
+    },
+    "Prob054_edgedetect": {
+      "S": 0,
+      "P": 5
+    }
+  },
+  "output_hashes": {
+    "Prob045_edgedetect2": {
+      "S": [
+        "89e04e7ca9b1860243d7d342b8a2c0e63b111f8bc18c52ab7cdb919d8dc7ada3",
+        "89e04e7ca9b1860243d7d342b8a2c0e63b111f8bc18c52ab7cdb919d8dc7ada3",
+        "89e04e7ca9b1860243d7d342b8a2c0e63b111f8bc18c52ab7cdb919d8dc7ada3",
+        "89e04e7ca9b1860243d7d342b8a2c0e63b111f8bc18c52ab7cdb919d8dc7ada3",
+        "89e04e7ca9b1860243d7d342b8a2c0e63b111f8bc18c52ab7cdb919d8dc7ada3"
+      ],
+      "P": [
+        "56adc4d9390c3f5466e1f5038c20eee24465965311ed9b79592bf79994a6cf2a",
+        "56adc4d9390c3f5466e1f5038c20eee24465965311ed9b79592bf79994a6cf2a",
+        "56adc4d9390c3f5466e1f5038c20eee24465965311ed9b79592bf79994a6cf2a",
+        "56adc4d9390c3f5466e1f5038c20eee24465965311ed9b79592bf79994a6cf2a",
+        "56adc4d9390c3f5466e1f5038c20eee24465965311ed9b79592bf79994a6cf2a"
+      ]
+    },
+    "Prob054_edgedetect": {
+      "S": [
+        "ef7d4e89cceb3b2699ef8f154541381d0041d1d4b08e2402bdf1b4295d6ad2f3",
+        "ef7d4e89cceb3b2699ef8f154541381d0041d1d4b08e2402bdf1b4295d6ad2f3",
+        "ef7d4e89cceb3b2699ef8f154541381d0041d1d4b08e2402bdf1b4295d6ad2f3",
+        "ef7d4e89cceb3b2699ef8f154541381d0041d1d4b08e2402bdf1b4295d6ad2f3",
+        "ef7d4e89cceb3b2699ef8f154541381d0041d1d4b08e2402bdf1b4295d6ad2f3"
+      ],
+      "P": [
+        "0e5e8266c324f019ecc5742ff269dd88b928a6e92e694d4f4f36bef9d536862a",
+        "0e5e8266c324f019ecc5742ff269dd88b928a6e92e694d4f4f36bef9d536862a",
+        "0e5e8266c324f019ecc5742ff269dd88b928a6e92e694d4f4f36bef9d536862a",
+        "0e5e8266c324f019ecc5742ff269dd88b928a6e92e694d4f4f36bef9d536862a",
+        "0e5e8266c324f019ecc5742ff269dd88b928a6e92e694d4f4f36bef9d536862a"
+      ]
+    }
+  },
+  "constructed_controls": 48,
+  "review_model_calls": 0,
+  "review_eda_calls": 0,
+  "signal_supports_fresh_same_budget_pilot": true,
+  "qualified_for_full": false,
+  "independent_model_tasks": 0,
+  "adoption": false,
+  "limits": [
+    "Two known checkpoints, five correlated conditional repairs per arm; not five fresh full solves or independent designs.",
+    "T7 command receipts bind logs/rc but omit argv; actual command arguments inferred only from fixed driver, not independently archived native argv.",
+    "External installed tools, dependencies and original guard observations are historical evidence; not a fresh hardware or offline certification.",
+    "Own old full156, edge and FSM gates remain unchanged. Fresh C/phase16 requires two matched native+official repair chains and all guards/cost conditions."
+  ]
+}

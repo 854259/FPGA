@@ -1,0 +1,160 @@
+{
+  "schema": "multidriver_guidance_pilot_readonly_audit_v1",
+  "evidence_valid": true,
+  "archive_sha256": "7030c2c46f2affb8f7c1261158d1d30fc5fc8795c1dc89d86d58b598a980eaf9",
+  "spec_sha256": "bd7a55881b4599d856e5dac1a285fbe6456b14eec3c5485f4a6878f817ec7580",
+  "auditor_sha256": "a9f9e5c72bdefdd2b1e9a201b200937ebe6351cd6203cb716463dc0130462a7c",
+  "expected_samples": 16,
+  "actual_model_requests": 26,
+  "coefficients": {
+    "C": 0.775,
+    "P": 0.775
+  },
+  "requests_by_arm": {
+    "C": 13,
+    "P": 13
+  },
+  "solve_seconds_by_arm": {
+    "C": 266.35842460021377,
+    "P": 260.6751191653311
+  },
+  "repairs": [],
+  "improvements": [],
+  "regressions": [],
+  "solve_deadlines": [],
+  "unconfirmed_by_arm": {
+    "C": 0,
+    "P": 0
+  },
+  "unconfirmed_attempts": 0,
+  "guard_pass": true,
+  "unchanged_task_request_cost": true,
+  "screening_eligible": false,
+  "matched_native_repair_tasks": [],
+  "qualified_for_new_full_regression": false,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false,
+  "adoption": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "ticket": 73,
+  "actual_model_responses": 26,
+  "exact_audit_result_sha256": "22ee92c7ca3ce695f0f08f06365f2af7a018c026e3e0e208f663c9dab1bffdc0",
+  "identical_first_reply_pairs": 8,
+  "additional_candidate_requests": 0,
+  "additional_candidate_solve_seconds": -5.683305434882641,
+  "level_counts": {
+    "C": {
+      "L0": 1,
+      "L1": 1,
+      "L3": 6
+    },
+    "P": {
+      "L0": 1,
+      "L1": 1,
+      "L3": 6
+    }
+  },
+  "target_repair_chains": [
+    {
+      "task": "Prob133_2014_q3fsm",
+      "first_content_identical": true,
+      "control_level": 1,
+      "candidate_level": 1,
+      "coefficient_improved": false,
+      "candidate_l3": false,
+      "control_elaboration_checks": [],
+      "elaboration_checks": [],
+      "exact_elaboration_repair_chain": false
+    },
+    {
+      "task": "Prob156_review2015_fancytimer",
+      "first_content_identical": true,
+      "control_level": 0,
+      "candidate_level": 0,
+      "coefficient_improved": false,
+      "candidate_l3": false,
+      "control_elaboration_checks": [
+        {
+          "attempt": 0,
+          "outcome": "fail",
+          "returncode": 1,
+          "complete": true,
+          "measurement_valid": true,
+          "code_sha256": "ddda812b46cc944ca265f7cb0ef70af68877b9e73cf345a4a2dea7fa1ea3e0fb",
+          "receipt_sha256": "62b033edafb40219d78b66d57bfb002c23606c287cb9b2cb97112f66dbe5f9bf",
+          "log_sha256": "3a441044bce6fcec324580f4775635bac150a4817008bf4e1777ab3705f3adc5",
+          "feedback_sha256": "bd2f0669ceb1ccc8a78b8a37cbc9070c4668b8768b7467b921fdbf85802c4cb6",
+          "raw_multidriver_3818": true,
+          "fact_identity_sha256": "8579c0946848992b01702fa14f2d1f56ea0093eb377f49b357addc3b3bd5b96f",
+          "guidance_applied": false,
+          "model_feedback_sha256": "bd2f0669ceb1ccc8a78b8a37cbc9070c4668b8768b7467b921fdbf85802c4cb6"
+        },
+        {
+          "attempt": 1,
+          "outcome": "fail",
+          "returncode": 1,
+          "complete": true,
+          "measurement_valid": true,
+          "code_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+          "receipt_sha256": "8ee220191db67a22df3c22670afe59a5251e3ec68c884a547f23b18a0bc2d7c4",
+          "log_sha256": "d5813e7e960062f798a5924908f8dc6badad09474415135d5d5d70c1778d8731",
+          "feedback_sha256": "a90b55fd1bfe59340a24b4fe90547025ce4d198763068f0828c4f60a890f1175",
+          "raw_multidriver_3818": true,
+          "fact_identity_sha256": "8579c0946848992b01702fa14f2d1f56ea0093eb377f49b357addc3b3bd5b96f",
+          "guidance_applied": false,
+          "model_feedback_sha256": "a90b55fd1bfe59340a24b4fe90547025ce4d198763068f0828c4f60a890f1175"
+        }
+      ],
+      "elaboration_checks": [
+        {
+          "attempt": 0,
+          "outcome": "fail",
+          "returncode": 1,
+          "complete": true,
+          "measurement_valid": true,
+          "code_sha256": "ddda812b46cc944ca265f7cb0ef70af68877b9e73cf345a4a2dea7fa1ea3e0fb",
+          "receipt_sha256": "83aee2368449f1a457d6876c5bfa8bc353b995519bbf65df1b4a73387dae2b87",
+          "log_sha256": "a8bf01db993920f151b89d94f4822aeaaec9ea260ffeb1461bfc342bd734130a",
+          "feedback_sha256": "5adc49642fef949d1cd829f7a4afff6383ea4f9cf5b9e29afc7b4388af4707f4",
+          "raw_multidriver_3818": true,
+          "fact_identity_sha256": "8579c0946848992b01702fa14f2d1f56ea0093eb377f49b357addc3b3bd5b96f",
+          "guidance_applied": true,
+          "model_feedback_sha256": "5e686ccbcbcaae7455491fa6cae8d1caaf5b9d3b8973882f9b39c8d819751c65"
+        },
+        {
+          "attempt": 1,
+          "outcome": "fail",
+          "returncode": 1,
+          "complete": true,
+          "measurement_valid": true,
+          "code_sha256": "ecf37fd4161d6d7e782965b3c056fc68d61f4247f4f58516f3aa9e8d90c21656",
+          "receipt_sha256": "4d806f9d2d54582b75d77e12da83b4ad26c2b76bbe995a85bee1d2f349701c7d",
+          "log_sha256": "261231c40cd50389e0a39d80255ed759fba7acf7731bb0b9c4f33e396f7265dd",
+          "feedback_sha256": "e7ca0a3b078f4750b1c939823b7adc5f4946362d6a8bd20aba69786bf4468d38",
+          "raw_multidriver_3818": true,
+          "fact_identity_sha256": "8579c0946848992b01702fa14f2d1f56ea0093eb377f49b357addc3b3bd5b96f",
+          "guidance_applied": true,
+          "model_feedback_sha256": "206b932f435e9eda4434d79a5e763f38f6eff0ac325c7e31d76eadfc22652550"
+        }
+      ],
+      "exact_elaboration_repair_chain": false
+    }
+  ],
+  "native_controls": {
+    "complete": true,
+    "passed": true,
+    "model_calls": 0,
+    "native_compile_attempts": 2,
+    "native_elaboration_attempts": 2,
+    "receipt_sha256": "b8a563487cfb7e535a02effebaad086c7a8ce91d797bb7fe3da4fb850064b226"
+  },
+  "decision": "no_gain_rejected",
+  "formal_deployment_changed": false,
+  "actual_independent_model_samples": 0,
+  "actual_five_sample_runs": 0,
+  "common_control": "old65 P native xelab plus phase; not latest full P alone",
+  "scope": "8 known development tasks,one fresh per arm; no new full or adoption"
+}

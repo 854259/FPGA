@@ -1,7 +1,7 @@
 {
-  "observed_at_epoch": 1791200811.318978,
+  "observed_at_epoch": 1791201526.6028643,
   "ticket": 73,
-  "ticket_state": "running",
+  "ticket_state": "completed",
   "source_assets": 49,
   "source_unchanged": true,
   "model": {
@@ -13,19 +13,19 @@
   "monitor": {
     "pid": 4034569,
     "start": "847388631",
-    "state": "S",
-    "live": true
+    "state": "Z",
+    "live": false
   },
   "adoption": false,
-  "completed_samples": 10,
+  "completed_samples": 16,
   "expected_samples": 16,
-  "measurement_complete": false,
+  "measurement_complete": true,
   "measurement_error": null,
-  "reported_requests_from_completed_workers": 16,
-  "journaled_request_attempts": 17,
-  "confirmed_responses": 17,
-  "guard_complete": false,
-  "guard_passed": false,
+  "reported_requests_from_completed_workers": 26,
+  "journaled_request_attempts": 26,
+  "confirmed_responses": 26,
+  "guard_complete": true,
+  "guard_passed": true,
   "native_control_receipt_sha256": "b8a563487cfb7e535a02effebaad086c7a8ce91d797bb7fe3da4fb850064b226",
   "native_controls_complete": true,
   "native_controls_passed": true

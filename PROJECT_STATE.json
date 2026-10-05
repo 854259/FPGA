@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full156 P77.44 retained; table75 actual controls no false semantic acceptance but fatal rc0 gate failed; prepare truthful failure contract and independent generic repair hint",
+    "continuation_status": "Score priority: driver73 no gain rejected; bit20 dual53 preflight ready; diagnostic16 separate draft; semantic39 review ongoing",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -4460,11 +4460,12 @@
     "G4": "302 public ABI/context prepared; bounded native reset support1/302. New runtime17 sources e2462368 frozen, local177 (3 platform skips)/Linux177 (0 skips),76 fake HTTP subchecks and four actual owned Python controls. No actual model/EDA/quality/production300s/OS include sandbox admission. New272work+24cleanup+4receipt factor cannot inherit old ANSI/C/P; original harness exposures/exclusions and full156 terminal gates unchanged. Independent actual model tasks0; adoptionfalse.",
     "G5": "Formal bridge engineering prepared; official baseline/five samples/target32GB remain pending. User deferred offline verification; correctness and score prioritized.",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 27,
+    "quota_latest_observed_used_percent": 31,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
     "previous_goal_turn_classification": "progress",
-    "last_actual_shared_sync_commit": "f009da33cea0e4806a4fb92d11f036d6d9dc8031",
-    "last_actual_shared_sync_public_files": 41
+    "last_actual_shared_sync_commit": "dc2b898afa1d12d0281fc4b71b5f507666a70e0b",
+    "last_actual_shared_sync_public_files": 71,
+    "offline_deferred_by_user": true
   },
   "concise_output_pilot_20261004": {
     "status": "completed_audited_rejected",
@@ -6045,7 +6046,7 @@
     "failure_receipt": "03_analysis/multidriver_guidance_pilot_20261005_v2/UNSUBMITTED_V1_RECEIPT.json"
   },
   "multidriver_guidance_pilot_20261005_v2": {
-    "status": "actual_whole_task_FIFO73_running_no_gain_reported",
+    "status": "actual_FIFO73_audited_no_gain_rejected",
     "spec_sha256": "bd7a55881b4599d856e5dac1a285fbe6456b14eec3c5485f4a6878f817ec7580",
     "assets": 49,
     "local_checks": 77,
@@ -6059,13 +6060,13 @@
     "preflight_protected_groups": 9,
     "preflight_protected_source_assets": 281,
     "prior_elaboration_factor_rejected": true,
-    "score_gain_measured": false,
+    "score_gain_measured": true,
     "adoption": false,
-    "report": "03_analysis/multidriver_guidance_pilot_20261005_v2/STATUS.md",
+    "report": "03_analysis/multidriver_guidance_pilot_20261005_v2/FINAL_RESULT.md",
     "ticket": 73,
     "monitor_pid": 4034569,
     "monitor_starttime": "847388631",
-    "completed_samples_observed": 10,
+    "completed_samples_observed": 16,
     "observed_at_epoch": 1791200811.318978,
     "reported_requests_from_completed_workers": 16,
     "journaled_request_attempts_observed": 17,
@@ -6073,11 +6074,35 @@
     "native_controls_actual_compile_attempts": 2,
     "native_controls_actual_elaboration_attempts": 2,
     "native_controls_passed": true,
-    "actual_model_calls_terminal_audit_pending": true,
+    "actual_model_calls_terminal_audit_pending": false,
     "preflight_actual_model_calls": 0,
     "preflight_actual_eda_calls": 0,
     "source_unchanged": true,
-    "latest_launch_commit": "639cf7274be570173354ee9be0ccd988d904b95e"
+    "latest_launch_commit": "639cf7274be570173354ee9be0ccd988d904b95e",
+    "archive_sha256": "7030c2c46f2affb8f7c1261158d1d30fc5fc8795c1dc89d86d58b598a980eaf9",
+    "auditor_sha256": "a9f9e5c72bdefdd2b1e9a201b200937ebe6351cd6203cb716463dc0130462a7c",
+    "exact_audit_result_sha256": "22ee92c7ca3ce695f0f08f06365f2af7a018c026e3e0e208f663c9dab1bffdc0",
+    "evidence_valid": true,
+    "actual_model_calls": 26,
+    "actual_model_responses": 26,
+    "coefficients": {
+      "C": 0.775,
+      "P": 0.775
+    },
+    "requests_by_arm": {
+      "C": 13,
+      "P": 13
+    },
+    "solve_seconds_by_arm": {
+      "C": 266.35842460021377,
+      "P": 260.6751191653311
+    },
+    "regressions": [],
+    "improvements": [],
+    "solve_deadlines": [],
+    "unconfirmed_attempts": 0,
+    "qualified_for_new_full_regression": false,
+    "score_gain_coefficient": 0.0
   },
   "latest_score_failure_priority_20261005": {
     "status": "latest_P_failed43_actual_read_only_priority_review_complete",
@@ -6098,5 +6123,23 @@
     "new_eda_calls": 0,
     "score_gain_measured": false,
     "report": "03_analysis/latest_score_failure_priority_20261005/README.md"
+  },
+  "bit_mapping_guidance_pilot_20261005": {
+    "status": "frozen_dual_environment_53_pass_ready_for_whole_task_fifo",
+    "spec_sha256": "5b4485eaf9822d5b879c844b74e4c3b2059b5a55d5844b40b8226621a9ed3eec",
+    "assets": 61,
+    "local_checks": 53,
+    "linux_checks": 53,
+    "expected_samples": 20,
+    "max_model_calls": 40,
+    "fifo_submitted": false,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "protected_groups": 10,
+    "protected_source_assets": 330,
+    "score_gain_measured": false,
+    "adoption": false,
+    "only_policy_factor": "390 byte generation skill suffix in initial and repair system messages",
+    "report": "03_analysis/bit_mapping_guidance_pilot_20261005/STATUS.md"
   }
 }
