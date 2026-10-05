@@ -1,3 +1,13 @@
+## 2026-10-05 完整提分结果与新候选
+
+- `03_analysis/phase_full156_20261005/FINAL_RESULT.md` / `PUBLIC_RESULT.json`：312实际新样本原冻结审计，C/P .7576923/.7743590，0回退/截止/未确认；两条相同首稿边沿修复链，独立准入非已完成独立验证。
+- `03_analysis/score_failure_analysis_20261005/{syntax_transport,semantic}/`：旧完整10,591档案成员复绑，六L0/40L1与误判/欠规格边界，0新模型/EDA。
+- `03_analysis/elaboration_feedback_pilot_20261005/README.md`：新38资产87cb93c0、双环境54检查、实际FIFO65、原生2+2控制通过，16样本提分实验未终态不预报。
+- `03_analysis/prompt_table_contract_20261005/README.md`：严格题面parser准备，25方法631子检查；10/156有限admission、0实际提分。
+- `03_analysis/{natural_edge_calibration_20261005,native_reset_calibration_20261005}/FINAL_RESULT.md`：原edge漏reset错误控制排除；14控制只获生成研究测试鉴别资格，0模型泛化。
+- `03_analysis/original_harness_admission_20261005/README.md`：历史档案的两项有限原harness投影，第三项valid_zero误通过仍排除，0实际新模型。
+- `03_analysis/os_isolation_probe_20261005/README.md`：只读Landlock ABI4查询，无策略安装；用户已延后断网验证。
+
 # 资料索引与来源说明
 
 更新时间：2026-09-13

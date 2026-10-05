@@ -1,0 +1,41 @@
+{
+  "observed_at_epoch": 1791193437.5863338,
+  "ticket": 65,
+  "ticket_state": "running",
+  "monitor": {
+    "pid": 4004755,
+    "state": "S",
+    "start": "846701646",
+    "live": true
+  },
+  "model": {
+    "pid": 2013333,
+    "state": "S",
+    "start": "823869819",
+    "live": true
+  },
+  "source_assets": 38,
+  "source_unchanged": true,
+  "completed_samples": 0,
+  "actual_model_requests": 0,
+  "measurement_complete": false,
+  "measurement_error": null,
+  "native_controls_complete": true,
+  "native_controls_passed": true,
+  "guard_complete": false,
+  "guard_passed": false,
+  "recent_queue": [
+    {
+      "ticket": 64,
+      "task_name": "phase_full156_terminal_U8_original_audit",
+      "state": "completed"
+    },
+    {
+      "ticket": 65,
+      "task_name": "elaboration_feedback_fresh_C_P_v1",
+      "state": "running"
+    }
+  ],
+  "partial_scores_published": false,
+  "adoption": false
+}

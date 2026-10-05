@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full_CP156312_original_audit_passed; score-first elaboration and complete-table single factors preparing",
+    "continuation_status": "full_CP156312 immutable audit passed; actual score-factor FIFO65 running; complete Kmap native feedback preparation",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -5818,7 +5818,7 @@
     ]
   },
   "elaboration_feedback_pilot_20261005": {
-    "status": "38_frozen_assets_54_checks_both_hosts_ready_for_whole_task_FIFO",
+    "status": "actual_FIFO65_running_native2plus2_controls_passed",
     "spec_sha256": "87cb93c00f386f3f16ece9f0ec9a7f49b18fd260faac9c75e83d4db9d31038bf",
     "assets": 38,
     "local_checks": 54,
@@ -5829,12 +5829,23 @@
     "planned_native_controls_elaboration": 2,
     "actual_model_calls": 0,
     "actual_eda_calls": 0,
-    "actual_fifo_submitted": false,
+    "actual_fifo_submitted": true,
     "adoption": false,
     "first_generation_replayed": false,
     "base_development_policy": "phase-full P in both arms",
     "full_baseline_archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
-    "report": "03_analysis/elaboration_feedback_pilot_20261005/README.md"
+    "report": "03_analysis/elaboration_feedback_pilot_20261005/README.md",
+    "ticket": 65,
+    "monitor_pid": 4004755,
+    "monitor_starttime": "846701646",
+    "accepted_at_utc": "2026-10-05T09:42:46.985188+00:00",
+    "observed_at_epoch": 1791193437.5863338,
+    "native_controls_completed": true,
+    "native_controls_passed": true,
+    "actual_native_control_commands": 4,
+    "actual_model_calls_observed_completed_samples": 0,
+    "completed_samples_observed": 0,
+    "partial_scores_published": false
   },
   "prompt_table_contract_20261005": {
     "status": "strict_prompt_parser_preparation_only",
