@@ -18,10 +18,69 @@ def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def metadata_census(old, new, tasks):
+    """Observe existing response metadata; correlation cannot identify a cause."""
+    rows = []
+    for task in tasks:
+        pair = []
+        for archive, prefix in ((old, 'run/samples/A/'), (new, 'run/results/samples/A/')):
+            base = prefix + task + '/worker/requests/0/'
+            request_bytes = archive.read(base + 'request.json')
+            response_bytes = archive.read(base + 'response.json')
+            request, response = json.loads(request_bytes), json.loads(response_bytes)
+            usage, timings = response['usage'], response['timings']
+            cached = usage['prompt_tokens_details']['cached_tokens']
+            assert cached == timings['cache_n']
+            assert usage['prompt_tokens'] == timings['cache_n'] + timings['prompt_n']
+            assert usage['completion_tokens'] == timings['predicted_n']
+            pair.append(dict(
+                request_sha256=sha(request_bytes), response_sha256=sha(response_bytes),
+                request=request, content=response['choices'][0]['message'].get('content'),
+                options={k:v for k,v in request.items() if k != 'messages'},
+                fingerprint=response['system_fingerprint'], model=response['model'],
+                cached_tokens=cached, evaluated_prompt_tokens=timings['prompt_n'],
+                prompt_tokens=usage['prompt_tokens'], completion_tokens=usage['completion_tokens'],
+                prompt_ms=timings['prompt_ms'], generation_ms=timings['predicted_ms'],
+                finish_reason=response['choices'][0]['finish_reason']))
+        before, after = pair
+        rows.append(dict(task=task,
+            request_equal=before['request'] == after['request'],
+            content_equal=before['content'] is not None and before['content'] == after['content'],
+            fingerprint_equal=before['fingerprint'] == after['fingerprint'],
+            model_equal=before['model'] == after['model'],
+            prompt_tokens_equal=before['prompt_tokens'] == after['prompt_tokens'],
+            cached_tokens_equal=before['cached_tokens'] == after['cached_tokens'],
+            old={k:v for k,v in before.items() if k not in ('request','content')},
+            new={k:v for k,v in after.items() if k not in ('request','content')}))
+    assert len(rows) == 156
+    return dict(scope='All 156 archived first responses; no new generation or EDA',
+        model_calls=0, eda_calls=0, pairs=len(rows),
+        checks={name:sum(row[name] for row in rows) for name in (
+            'request_equal','content_equal','fingerprint_equal','model_equal',
+            'prompt_tokens_equal','cached_tokens_equal')},
+        cache_content_table=dict(Counter(
+            ('cache_same' if row['cached_tokens_equal'] else 'cache_different') + '/' +
+            ('content_same' if row['content_equal'] else 'content_different') for row in rows)),
+        request_option_sets=[json.loads(s) for s in sorted({
+            json.dumps(row[side]['options'], sort_keys=True) for row in rows for side in ('old','new')})],
+        fingerprint_sets={side:sorted({r[side]['fingerprint'] for r in rows}) for side in ('old','new')},
+        side_totals={side:{field:sum(r[side][field] for r in rows) for field in (
+            'cached_tokens','evaluated_prompt_tokens','prompt_tokens','completion_tokens',
+            'prompt_ms','generation_ms')} for side in ('old','new')},
+        rows=rows,
+        limits=[
+            'Cache token counts do not identify cached token contents or numerical computation history.',
+            'Association cannot prove cache causes output drift; identical counts do not rule out cache effects.',
+            'Temperature zero and repeated content do not prove independent statistical samples.',
+            'Absent request fields inherit server defaults; random seed alone does not explain greedy decoding.',
+            'Archive metadata cannot isolate GPU reduction order, prefill batching, concurrency or timing.'])
+
+
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     for n in ['old', 'new', 'paired', 'kit', 'resource-check', 'out']:
         p.add_argument('--'+n, required=True, type=Path)
+    p.add_argument('--metadata-only', action='store_true')
     a = p.parse_args()
     assert sys.platform == 'linux'
     assert sha(a.old.read_bytes()) == '64ace96d59d9a1802513f20be3e21c191786ba04d2054b9ab4072900893c7616'
@@ -37,6 +96,16 @@ if __name__ == '__main__':
         read = lambda z, n: json.loads(z.read(n))
         tasks = read(new, 'run/RUN_SPEC.json')['task_ids']
         assert len(tasks) == len(set(tasks)) == 156
+        if a.metadata_only:
+            result = metadata_census(old, new, tasks)
+            result.update(complete=True, independent_tasks=0, full_batch_complete=False,
+                archive_hashes=[sha(a.old.read_bytes()), sha(a.new.read_bytes())],
+                driver_sha256=sha(Path(__file__).read_bytes()), elapsed_s=time.monotonic()-tick)
+            resource.check_resource(a.resource_check, a.kit)
+            a.out.mkdir(exist_ok=False)
+            (a.out/'RESULT.json').write_text(json.dumps(result,indent=2)+'\n')
+            print(json.dumps({k:v for k,v in result.items() if k != 'rows'}),flush=True)
+            sys.exit(0)
         controls = {}
         for name in ['package/agent/runtime.py', 'package/baseline.py',
                      'package/skill/rtl-generation/SKILL.md',
