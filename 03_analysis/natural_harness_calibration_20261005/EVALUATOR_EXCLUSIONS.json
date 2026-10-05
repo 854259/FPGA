@@ -1,0 +1,26 @@
+{
+  "schema": "versioned_natural_evaluator_exclusions_v2",
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "excluded": [
+    {
+      "record_id": "cvdp_copilot_convolutional_encoder_0010",
+      "record_sha256": "c44cc5494c80f09613ccb26418af91a623a7c893248f17a2398747cac35de996",
+      "test_sha256": "603ebe13fb1c617e1016b7160ba8aadf082626087f2651f514a208b9893d319a",
+      "reason": "Original harness accepts both constant-zero and constant-one outputs, while deliberate failing assertion propagates correctly",
+      "evidence_archive_sha256": "296359d8abfec37ea8f545f8630ca564cbd28964975ce9ab62e877e448b9e4bf",
+      "result": "RESULTS.json"
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "record_sha256": "c16a5640e7f8601aadf52ab0a7a6e33e4408e48d3f7a97fda90edacaf00a1043",
+      "test_sha256": "6cbaca22add7d1e367d4f2969d3b0953c691e5fb28de2095f1cf4e7465ea78ef",
+      "reason": "Original harness accepts valid=0 while specification requires valid=1, with other outputs correct; all five native original configurations pass. Deliberate assertion propagates failure.",
+      "evidence_archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+      "result": "terminal_audit_v1/RESULTS.json"
+    }
+  ],
+  "all_other_records_admitted": false,
+  "dataset_modified": false,
+  "production_deployed": false,
+  "previous_manifest_sha256": "972124df8bdf4bebda5fcf887cdd960cf3f9c4f9705580cd23cc1be1e31bfc82"
+}

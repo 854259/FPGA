@@ -1,0 +1,185 @@
+{
+  "schema": "natural_harness_calibration_readonly_audit_v1",
+  "evidence_valid": true,
+  "archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+  "spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
+  "auditor_sha256": "e3992c2791b53dea5ec4b3391e7792c9c2dd7c5f4c71f220f81740bc4379359d",
+  "manifest_files": 613,
+  "model_calls": 0,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "native_compile_commands": 50,
+  "native_simulation_commands": 50,
+  "original_harness_calibration": {
+    "cvdp_copilot_reverse_bits_0001": true,
+    "cvdp_copilot_binary_to_gray_0001": true,
+    "cvdp_copilot_gray_to_binary_0001": false
+  },
+  "controls": [
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "positive",
+      "passed": true,
+      "failed": false,
+      "native_trials": 1,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "constant_zero",
+      "passed": false,
+      "failed": true,
+      "native_trials": 1,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "constant_one",
+      "passed": false,
+      "failed": true,
+      "native_trials": 1,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "identity",
+      "passed": false,
+      "failed": true,
+      "native_trials": 1,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "failure_propagation",
+      "passed": false,
+      "failed": true,
+      "native_trials": 1,
+      "original_harness": false,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "positive",
+      "passed": true,
+      "failed": false,
+      "native_trials": 3,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "constant_zero",
+      "passed": false,
+      "failed": true,
+      "native_trials": 3,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "constant_one",
+      "passed": false,
+      "failed": true,
+      "native_trials": 3,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "identity",
+      "passed": false,
+      "failed": true,
+      "native_trials": 3,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "failure_propagation",
+      "passed": false,
+      "failed": true,
+      "native_trials": 3,
+      "original_harness": false,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "positive",
+      "passed": true,
+      "failed": false,
+      "native_trials": 5,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "constant_zero",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "constant_one",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "identity",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": true,
+      "false_acceptance": false
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "valid_zero",
+      "passed": true,
+      "failed": false,
+      "native_trials": 5,
+      "original_harness": true,
+      "false_acceptance": true
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "failure_propagation",
+      "passed": false,
+      "failed": true,
+      "native_trials": 5,
+      "original_harness": false,
+      "false_acceptance": false
+    }
+  ],
+  "false_acceptances": [
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "valid_zero",
+      "passed": true,
+      "failed": false,
+      "native_trials": 5,
+      "original_harness": true,
+      "false_acceptance": true
+    }
+  ],
+  "independent_model_tasks": 0,
+  "eligible_for_independent_models": false,
+  "adoption": false,
+  "limits": [
+    "Original public natural prompts exposed only for evaluation calibration; not unseen or training-independence certification.",
+    "Known specification controls are evaluation artifacts and never model inputs. This is original-harness discrimination, not solver scores or official Vivado L3.",
+    "Parameter/input coverage limited to original harness; no claim of exhaustive full specification proof. All false acceptances retained, no narrowing of ports/domain to pass.",
+    "Package/toolchain hash verification at original run and guard checks are historical observations; archive lacks all external installed binaries, no fresh offline32GB certification.",
+    "Full156 qualification, faithful ABI/model integration and exposure review remain necessary before natural model comparison."
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "at_epoch": 1791173552.9026802,
+  "ticket": {
+    "schema": "whole_task_fifo_v1",
+    "ticket": 55,
+    "task_name": "natural_original_harness_controls_v1",
+    "accepted_at_utc": "2026-10-05T04:11:32.568865+00:00",
+    "state": "completed",
+    "command": [
+      "/usr/bin/env",
+      "PATH=/workspace/AMD/2026.1/Vivado/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "LD_LIBRARY_PATH=/workspace/team/udev-stub",
+      "VIVADO_BIN=/workspace/AMD/2026.1/Vivado/bin",
+      "PYTHONUTF8=1",
+      "/usr/bin/flock",
+      "-n",
+      "/workspace/team/.gpu.lock",
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/runs/fpga_owner/natural_harness_calibration_20261005_v1/guard_wrapper.py",
+      "--kit",
+      "/workspace/team/tasks/autodl-rtl-kit/project",
+      "--model-pid",
+      "2013333",
+      "--model-name",
+      "Qwen3.6-27B-Q4_K_M",
+      "--owner",
+      "codex_natural_harness_calibration_20261005_v1",
+      "--guard-out",
+      "/workspace/team/runs/fpga_owner/natural_harness_calibration_20261005_v1/guard",
+      "--slot-minutes",
+      "25",
+      "--stage-timeout-s",
+      "1300",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/runs/fpga_owner/natural_harness_calibration_20261005_v1/stage.py",
+      "--kit",
+      "/workspace/team/tasks/autodl-rtl-kit/project",
+      "--resource-check",
+      "{resource_check}"
+    ],
+    "cwd": "/workspace/team/runs/fpga_owner/natural_harness_calibration_20261005_v1",
+    "completion_json": "/workspace/team/runs/fpga_owner/natural_harness_calibration_20261005_v1/results/summary.json",
+    "slot_owner_prefix": "codex_natural_harness_calibration_20261005_v1",
+    "adopted_process": null,
+    "started_at_utc": "2026-10-05T04:11:32.652100+00:00",
+    "runner": {
+      "pid": 3742990,
+      "starttime": "844714205"
+    },
+    "task_fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
+    "child": {
+      "pid": 3742991,
+      "starttime": "844714213"
+    },
+    "finished_at_utc": "2026-10-05T04:12:02.394164+00:00",
+    "returncode": 0,
+    "completion_sha256": "7e64f4d150a2b9c9e077d4b9a63f809f3298b14ff89e8beaba212056e92290d9"
+  },
+  "model": {
+    "pid": 2013333,
+    "state": "S",
+    "start": "823869819",
+    "live": true
+  },
+  "monitor": {
+    "pid": 3742990,
+    "state": "Z",
+    "start": "844714205",
+    "live": false
+  },
+  "child": {
+    "pid": 3742991,
+    "live": false
+  },
+  "stage": {
+    "pid": 3742996,
+    "live": false
+  },
+  "source_assets": 10,
+  "source_unchanged": true,
+  "summary": {
+    "schema": "natural_harness_calibration_v1",
+    "complete": true,
+    "passed": true,
+    "error": null,
+    "run_spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
+    "model_calls": 0,
+    "adoption": false,
+    "independent_model_tasks": 0,
+    "eligible_for_independent_models": false,
+    "actual_compile": 50,
+    "actual_sim": 50,
+    "natural_original_harness_calibration": {
+      "cvdp_copilot_reverse_bits_0001": true,
+      "cvdp_copilot_binary_to_gray_0001": true,
+      "cvdp_copilot_gray_to_binary_0001": false
+    },
+    "false_acceptances": [
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "valid_zero"
+      }
+    ],
+    "source_unchanged": true,
+    "dependencies_unchanged": true,
+    "elapsed_s": 29.033335380256176
+  },
+  "completed_controls": 16
+}

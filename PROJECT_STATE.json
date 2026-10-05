@@ -4449,15 +4449,15 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "FSM_rejected_terminal;natural_harness_calibration_frozen_waiting_FIFO",
+    "continuation_status": "natural_original_harness55_terminal_audited;review_teammate_phase_signal_before_fresh_pilot",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
-    "G3": "Full156 three deadlines; repair-context no trigger; edge045 only; FSM150 only. All old gates unchanged. Next potential single factor decoded per-port actual FSM observation, not yet measured.",
-    "G4": "S4/S5 mechanical54 not functional admission; S7 original one harness accepted two wrong designs, record version-excluded after readonly review. Natural original harness positive/multiple negative/propagation calibration and exposure audit remain;0 admitted models.",
+    "G3": "Full156 three deadlines; repair-context no trigger; edge045 only; FSM150 only. Old gates unchanged. Next review teammate conditional phase feedback signal, then freeze fresh same-budget causal pilot if supported.",
+    "G4": "Natural original-harness55: two finite calibrations pass; gray_to_binary valid=0 false acceptance version-excluded alongside S7 convolutional encoder. 0 independent model comparisons; exact ABI/exposure/full qualification still required.",
     "G5": "Formal bridge engineering controls audited; official baseline/five samples/offline/target32GB not certified.",
     "goal_complete": false,
     "quota_latest_observed_used_percent": 15
@@ -5380,20 +5380,32 @@
     "goal_status": "active"
   },
   "natural_harness_calibration_20261005": {
-    "status": "frozen_static_dependencies_preflight_passed_not_submitted",
+    "status": "complete_original_evidence_audited_two_finite_pass_one_false_acceptance",
     "spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
-    "archive_sha256": "63e23d2f3018fe5cb6dd16b67d7334cd65f93bc9fd57af6858a6277b369401c3",
     "assets": 10,
     "controls": 16,
     "planned_native_compiles": 50,
     "planned_native_simulations": 50,
     "model_calls_max": 0,
-    "actual_fifo_submitted": false,
+    "actual_fifo_submitted": true,
     "actual_model_calls": 0,
-    "actual_eda_calls": 0,
+    "actual_eda_calls": 100,
     "independent_model_tasks": 0,
     "eligible_for_independent_models": false,
     "adoption": false,
-    "report": "03_analysis/natural_harness_calibration_20261005/README.md"
+    "report": "03_analysis/natural_harness_calibration_20261005/FINAL_RESULT.md",
+    "preparation_archive_sha256": "63e23d2f3018fe5cb6dd16b67d7334cd65f93bc9fd57af6858a6277b369401c3",
+    "archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+    "ticket": 55,
+    "actual_compile_commands": 50,
+    "actual_simulation_commands": 50,
+    "elapsed_s": 29.033335380256176,
+    "original_harness_calibration": {
+      "cvdp_copilot_reverse_bits_0001": true,
+      "cvdp_copilot_binary_to_gray_0001": true,
+      "cvdp_copilot_gray_to_binary_0001": false
+    },
+    "auditor_sha256": "e3992c2791b53dea5ec4b3391e7792c9c2dd7c5f4c71f220f81740bc4379359d",
+    "exclusions": "03_analysis/natural_harness_calibration_20261005/EVALUATOR_EXCLUSIONS.json"
   }
 }

@@ -1,0 +1,277 @@
+{
+  "schema": "native_parameter_observations_v1",
+  "archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+  "verified": true,
+  "compile_commands": 50,
+  "observations": [
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "positive",
+      "observed_compile_parameters": [
+        {}
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "constant_zero",
+      "observed_compile_parameters": [
+        {}
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "constant_one",
+      "observed_compile_parameters": [
+        {}
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "identity",
+      "observed_compile_parameters": [
+        {}
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "label": "failure_propagation",
+      "observed_compile_parameters": [
+        {}
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "positive",
+      "observed_compile_parameters": [
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "constant_zero",
+      "observed_compile_parameters": [
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "constant_one",
+      "observed_compile_parameters": [
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "identity",
+      "observed_compile_parameters": [
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "label": "failure_propagation",
+      "observed_compile_parameters": [
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "4"
+        },
+        {
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "positive",
+      "observed_compile_parameters": [
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "5"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "constant_zero",
+      "observed_compile_parameters": [
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "5"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "constant_one",
+      "observed_compile_parameters": [
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "5"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "identity",
+      "observed_compile_parameters": [
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "5"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "valid_zero",
+      "observed_compile_parameters": [
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "5"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "5"
+        }
+      ]
+    },
+    {
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "label": "failure_propagation",
+      "observed_compile_parameters": [
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "4"
+        },
+        {
+          "DEBUG_MODE": "0",
+          "WIDTH": "5"
+        },
+        {
+          "DEBUG_MODE": "1",
+          "WIDTH": "5"
+        }
+      ]
+    }
+  ],
+  "scope": "Original runner defaults and parameterized invocations only; not all specification parameters. No new native execution.",
+  "model_calls": 0,
+  "eda_calls": 0
+}

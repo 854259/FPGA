@@ -1,0 +1,25 @@
+{
+  "schema": "natural_terminal_audit_receipt_v1",
+  "ticket": 55,
+  "python_version": "3.12.14",
+  "evidence_valid": true,
+  "archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+  "auditor_sha256": "e3992c2791b53dea5ec4b3391e7792c9c2dd7c5f4c71f220f81740bc4379359d",
+  "spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
+  "manifest_files": 613,
+  "elapsed_s": 29.033335380256176,
+  "model_calls": 0,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "actual_compile": 50,
+  "actual_sim": 50,
+  "controls": 16,
+  "original_harness_calibration": {
+    "cvdp_copilot_reverse_bits_0001": true,
+    "cvdp_copilot_binary_to_gray_0001": true,
+    "cvdp_copilot_gray_to_binary_0001": false
+  },
+  "independent_model_tasks": 0,
+  "eligible_for_independent_models": false,
+  "adoption": false
+}

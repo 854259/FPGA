@@ -1,3 +1,9 @@
+## 2026-10-05 自然原测试FIFO55终态审计：两条有限通过，一条漏检排除
+
+16控制/50真实编译及仿真、29.033秒、0模型。613文件ZIP b2cee6bf与冻结审计e3992c27在3.12.14核验通过；位反转与binary_to_gray通过有限正/多负/失败传播校准。gray_to_binary的valid恒0错误在五原参数测试全部通过，已按原记录/test SHA纳入新版排除表，保留完整证据、不删端口或改判定器。原参数实际WIDTH4/5等逐命令记录，不推广所有参数。
+
+原题面/context/ABI/harness/runner保持，10冻结源/依赖/936+35/模型身份/自己清理释放通过。0求解成绩/独立模型，eligible_for_independent_models=false、adoption=false；完整156三截止和边沿/FSM两链失败门槛保持。下一步只读复核队友T7/T8条件回放修复信号，再冻结新首稿同预算对照，避免重复原生相位校准。G3/G4/G5 active，最新额度15%/停止线97%，未使用重置。入口03_analysis/natural_harness_calibration_20261005/FINAL_RESULT.md。
+
 ## 2026-10-05 三条自然原harness正负校准冻结，实际运行待FIFO
 
 10资产b423bb37/ZIP63e23d2f，本机及Linux静态解析编译、全部工具链/270 Python文件SHA及936+35/源/依赖核验，0预检模型EDA。原位反转、binary_to_gray、gray_to_binary三记录，原ABI/context/题面/test/runner保持；16控制计划50实际编译/仿真。正稿、多语义负稿、故意断言，另含gray有效信号置0的可疑遗漏，实测误通过必须保留、不能删端口放宽。
