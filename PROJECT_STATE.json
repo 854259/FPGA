@@ -4040,7 +4040,7 @@
     "next": "Freeze evaluator-only common module-name conversion on constructed controls, then audit eligibility without model outputs; retain full156 nonpromotion"
   },
   "cvdp_name_binding_20261005": {
-    "updated_at": "2026-10-05T09:02:00+08:00",
+    "updated_at": "2026-10-05T09:16:00+08:00",
     "independent_admitted": 0,
     "full_batch_complete": false,
     "S3": {
@@ -4146,6 +4146,50 @@
       "cleanup_verified": true,
       "active_fifo_tickets": [],
       "next": "Freeze bounded known-wrong output false-acceptance and failure propagation controls; no independent model scoring"
+    },
+    "S7": {
+      "schema": "CVDP_S7_PUBLIC_DIAGNOSTIC",
+      "updated_at": "2026-10-05T09:16:00+08:00",
+      "status": "completed_false_acceptance_confirmed_reject_fixture_admission",
+      "source_commit": "fe234c9c8d6b7ab3cc710b68e2151b831c002ef9",
+      "ticket": 43,
+      "driver_pid": 3691972,
+      "stage_pid": 3691977,
+      "private_freeze_sha256": "710a97e43c19600c4793659897b7d60d834dc940d025d6ed414d415120c74651",
+      "plan_sha256": "c7ce4bf83bf7a196ae948c3728ed78156441e8e74020a21731890cbfd429ac50",
+      "complete": true,
+      "completion_scope": "One development family, three evaluator controls, not a full experimental batch",
+      "original_harness_known_wrong_controls": 2,
+      "false_acceptances": 2,
+      "failure_propagation_controls": 1,
+      "failure_propagation_verified": true,
+      "actual_model_requests": 0,
+      "actual_compile": 3,
+      "actual_sim": 3,
+      "stage_elapsed_s": 2.56611162237823,
+      "guard_elapsed_s": 2.7575710508972406,
+      "repairs": null,
+      "harms": null,
+      "model_accuracy_claim": false,
+      "independent_admitted": 0,
+      "full_batch_complete": false,
+      "immutable_inputs_verified": true,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "process_cleanup_verified": true,
+      "slot_released": true,
+      "archive_sha256": "296359d8abfec37ea8f545f8630ca564cbd28964975ce9ab62e877e448b9e4bf",
+      "archive_members_verified": 46,
+      "local_and_remote_verified": true,
+      "cleanup": {
+        "simulation_artifacts_removed": 3,
+        "transfer_zips_removed": 2,
+        "remaining_unneeded": 0,
+        "original_sources_logs_and_controls_preserved": true
+      },
+      "conclusion": "Both deliberately wrong constant-output designs pass the unchanged original harness. Explicit failure reaches cocotb, pytest and supervisor. Missing functional assertions explains this false acceptance; no benchmark-wide false-acceptance probability follows from this selected diagnostic.",
+      "decision": "Do not admit the unchanged package as an independent primary benchmark; stop expanding this defective fixture route. Do not tune the solver against these outcomes.",
+      "next": "Read-only evidence alignment for the already-completed other-owner edge-feedback pilot before proposing any further runtime: inspect initial-generation comparability, actual repair trigger, cost and exposure. No duplicate model run or five-sample/generalization claim."
     }
   }
 }
