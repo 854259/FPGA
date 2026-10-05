@@ -107,7 +107,14 @@ endmodule
             index=state['count'];state['count']+=1
             assert state['row']['arm'] in ['A','P','B']
             assert (body['model'],body['temperature'],body['top_p'],body['max_tokens']) == (official.MODEL,0,1,8192)
-            assert 'PRIVATE_U14_EVALUATOR_DO_NOT_SEND' not in raw.decode() and 'RefModule' not in raw.decode()
+            assert 'PRIVATE_U14_EVALUATOR_DO_NOT_SEND' not in raw.decode()
+            # The unchanged system skill says NOT to output RefModule. Check
+            # solver input separately instead of mistaking that rule for a leak.
+            user=body['messages'][1]['content']
+            expected_user=PROMPT+'\n\nInterface:\n'+INTERFACE
+            if index==0: assert user==expected_user
+            else: assert user.startswith(expected_user+'\nPrevious candidate:\n')
+            assert 'RefModule' not in user
             content=BROKEN if state['case']=='repair' and index==0 else CODE
             response=json.dumps({'choices':[{'message':{'content':content},'finish_reason':'stop'}],
                                  'usage':{'prompt_tokens':9,'completion_tokens':12}}).encode()
