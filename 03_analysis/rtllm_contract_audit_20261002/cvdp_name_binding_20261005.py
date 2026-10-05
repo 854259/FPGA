@@ -33,6 +33,13 @@ def bind_prompt(text,old,new,keywords):
              r'(?![A-Za-z0-9_$]|\.s?v\b)')
     slots=sorted(set(m.span('name') for m in re.finditer(pattern,text)))
     if slots!=occurrences:raise ValueError('name_occurrence_outside_explicit_module_slot')
+    quoted=list(re.finditer(r'"(?:\\.|[^"\\])*"',text))
+    masked=re.sub(r'"(?:\\.|[^"\\])*"',lambda m:' '*len(m.group()),text)
+    if '"' in masked:raise ValueError('unbalanced_double_quote')
+    for lo,hi in slots:
+        for literal in quoted:
+            if literal.start()<lo and hi<literal.end() and literal.group()!='"'+old+'"':
+                raise ValueError('module_phrase_inside_string_literal')
     result=text
     for lo,hi in reversed(slots):result=result[:lo]+new+result[hi:]
     return result
@@ -60,7 +67,7 @@ def bind_source(source,old,new,keywords):
     return source[:lo]+new+source[hi:]
 
 
-def controls(out,tools,keywords,diagnostic_source):
+def controls(out,tools,keywords,diagnostic_source,previous):
     positives=0;negatives=0;native=[]
     templates=['Implement module NAME with the stated ports.',
                'Implement a module named `NAME` with the stated ports.',
@@ -80,7 +87,11 @@ def controls(out,tools,keywords,diagnostic_source):
              ('module alpha.sv is a file.','alpha'),('module alpha2.','alpha'),
              ('module \\alpha .','alpha'),('module endmodule.','endmodule'),
              ('module alpha-beta.','alpha-beta'),('module alpha$1.','alpha$1'),
-             ('module alpha. File alpha.v is required.','alpha')]
+             ('module alpha. File alpha.v is required.','alpha'),
+             ('module alpha. Emit the string "module alpha".','alpha'),
+             ('module alpha. Emit "module named alpha".','alpha'),
+             ('module alpha. Emit "Module name: alpha".','alpha'),
+             ('module alpha. Emit "module alpha','alpha')]
     for text,old in rejects:
         try:bind_prompt(text,old,'TopModule',keywords)
         except ValueError:negatives+=1
@@ -116,6 +127,31 @@ $display("EXPLICIT_INPUT_EVENTS PASS"); $finish; end endmodule
         save(diagnostic/'commands.json',diagnostic_commands)
         assert r.returncode==0,'Initialization hypothesis not reproduced'
     assert 'NO_INPUT_EVENT q=x' in r.stdout and 'EXPLICIT_INPUT_EVENTS PASS' in r.stdout
+    # A frozen counterexample: lexical roundtrip alone can change a constant.
+    counter=out/'quoted_literal_counterexample';counter.mkdir()
+    text='Implement module Leaf7 with output [127:0] tag. The output must equal the string "module Leaf7".'
+    converted=previous.bind_prompt(text,'Leaf7','TopModule',keywords)
+    assert '"module TopModule"' in converted
+    assert previous.bind_prompt(converted,'TopModule','Leaf7',keywords)==text
+    try:bind_prompt(text,'Leaf7','TopModule',keywords)
+    except ValueError as error:assert str(error)=='module_phrase_inside_string_literal'
+    else:raise AssertionError('New rule must abstain from semantic literal rewrite')
+    original='module Leaf7(output [127:0] tag); assign tag="module Leaf7"; endmodule\n'
+    canonical='module TopModule(output [127:0] tag); assign tag="module TopModule"; endmodule\n'
+    restored=bind_source(canonical,'TopModule','Leaf7',keywords)
+    save(counter/'input.json',dict(original=text,old_converted=converted,new_status='abstain'))
+    for label,source,expected_rc in [('original',original,0),('old_mapping',restored,1)]:
+        run=counter/label;run.mkdir();(run/'dut.sv').write_text(source)
+        (run/'tb.sv').write_text('module tb; wire [127:0] tag; Leaf7 dut(.tag(tag)); initial begin #1; if(tag !== "module Leaf7") $fatal(1,"LITERAL_CHANGED"); $display("LITERAL_PRESERVED"); $finish; end endmodule\n')
+        records=[]
+        for i,argv in enumerate([[str(tools/'bin/iverilog'),'-g2012','-s','tb','-o','simulation.vvp','dut.sv','tb.sv'],
+                                 [str(tools/'bin/vvp'),'simulation.vvp']]):
+            r=subprocess.run(argv,cwd=run,capture_output=True,text=True,timeout=15)
+            (run/f'command_{i}.log').write_text(r.stdout+r.stderr)
+            records.append(dict(argv=argv,rc=r.returncode,log_sha256=sha(run/f'command_{i}.log')))
+            save(run/'commands.json',records)
+            assert r.returncode==(0 if i==0 else expected_rc)
+        assert ('LITERAL_PRESERVED' if expected_rc==0 else 'LITERAL_CHANGED') in r.stdout
     for width in [1,8,17,64]:
         mask=(1<<width)-1
         for sequential in [False,True]:
@@ -155,12 +191,13 @@ $display("EXPLICIT_INPUT_EVENTS PASS"); $finish; end endmodule
             native.append(dict(width=width,sequential=sequential,passed=True,checks_per_mode=5))
     return dict(prompt_roundtrip_controls=positives,rejection_controls=negatives,
                 native_pairs=native,initialization_diagnostic_passed=True,
-                actual_compile_commands=17,actual_sim_commands=17)
+                old_quoted_literal_counterexample_confirmed=True,
+                actual_compile_commands=19,actual_sim_commands=19)
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser()
-    for name in ['data','inventory','toolchain-manifest','keywords','paired','kit','resource-check','out','diagnostic-source']:
+    for name in ['data','inventory','toolchain-manifest','keywords','paired','kit','resource-check','out','diagnostic-source','prior-driver']:
         p.add_argument('--'+name,required=True,type=Path)
     a=p.parse_args();assert sys.platform=='linux'
     pins={a.data:'cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857',
@@ -168,13 +205,16 @@ if __name__=='__main__':
         a.toolchain_manifest:'b0864aea493587c3fef1ff156b4fa49d52bd2ee712e9f28f94909d9e69252818',
         a.keywords:'3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e',
         a.paired:'78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c',
-        a.diagnostic_source:'44fc85bcdbacae77ca2b90eccb986d9aaf1ae55cad798437d01112d2d2e02a68'}
+        a.diagnostic_source:'44fc85bcdbacae77ca2b90eccb986d9aaf1ae55cad798437d01112d2d2e02a68',
+        a.prior_driver:'22658a7ca54687254e021cd767303142dd1c0db0038530df9619522f047eb3a0'}
     for path,digest in pins.items():assert sha(path)==digest,path.name
     sp=importlib.util.spec_from_file_location('name_resource',a.paired)
     resource=importlib.util.module_from_spec(sp);sp.loader.exec_module(resource)
     resource.check_resource(a.resource_check,a.kit,first=True)
     sp=importlib.util.spec_from_file_location('name_keywords',a.keywords)
     names=importlib.util.module_from_spec(sp);sp.loader.exec_module(names)
+    sp=importlib.util.spec_from_file_location('previous_name_controls',a.prior_driver)
+    previous=importlib.util.module_from_spec(sp);sp.loader.exec_module(previous)
     toolmanifest=json.loads(a.toolchain_manifest.read_text());tools=Path(toolmanifest['prefix'])
     for path,digest in toolmanifest['files'].items():assert sha(tools/path)==digest
     a.out.mkdir(exist_ok=False);(a.out/'controls').mkdir()
@@ -182,7 +222,7 @@ if __name__=='__main__':
     report=dict(complete=False,passed=False,actual_model_requests=0,independent_tasks_admitted=0,
                 full_batch_complete=False,dataset_eda_calls=0,source_sha256=pins[a.data])
     try:
-        report['controls']=controls(a.out/'controls',tools,names.KEYWORDS,a.diagnostic_source)
+        report['controls']=controls(a.out/'controls',tools,names.KEYWORDS,a.diagnostic_source,previous)
         save(a.out/'CONSTRUCTED_CONTROLS.json',report['controls'])
         # Only after constructed rules pass: apply once to all predeclared eligible rows.
         records=[json.loads(line) for line in a.data.read_text().splitlines()]
