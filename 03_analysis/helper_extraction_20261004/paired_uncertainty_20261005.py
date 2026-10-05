@@ -10,6 +10,8 @@ import sys
 import zipfile
 
 SPEC_SHA = '43ba0bb8da29e2ec9dd5cef5b3ae81173e5796973466c18f7f1ee34fff13bbb7'
+STABILITY_SPEC_SHA = '589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15'
+STABILITY_AUDITOR_SHA = '4004a32ef28d5b32513ebc5cd762fa959ead197a7005176c36602da0dd92f612'
 WEIGHTS = {0:0., 1:.2, 2:.7, 3:1.}
 
 
@@ -107,6 +109,160 @@ def summarize(pairs,tasks):
                                  for i,t in enumerate(tasks)])
 
 
+def stability_summary(rows, tasks):
+    """Complete P-only development repetitions, clustered by named task.
+
+    These are descriptive results and a conditional task-IID interval. Five
+    generations never become five independent tasks or a paired treatment gain.
+    """
+    if len(tasks) != 156 or tasks != sorted(set(tasks)):
+        raise ValueError('Expected frozen 156 named tasks')
+    expected = [(t, 'P', repeat) for repeat in range(1, 6) for t in tasks]
+    if [(r['task'], r['arm'], r['repeat']) for r in rows] != expected:
+        raise ValueError('Full 780-row ordered result required; no interim selection')
+    for r in rows:
+        v = r['verdict']; level = v['level']
+        if type(r['repeat']) is not int or type(level) is not int or level not in WEIGHTS:
+            raise ValueError('Invalid repeat or grade')
+        if v['task_id'] != r['task'] or v['tool_error'] or v['coefficient'] != WEIGHTS[level]:
+            raise ValueError('Unresolved grade identity or environment failure')
+        if type(v['stages']['simulate']) is not bool or type(r['solve_deadline_reached']) is not bool:
+            raise ValueError('Unknown simulation or deadline status')
+        calls, responses = r['actual_model_requests'], r['received_model_responses']
+        if type(calls) is not int or type(responses) is not int or not 0 <= responses <= calls <= 2 or calls < 1:
+            raise ValueError('Invalid request counts')
+        for seconds in [r['solve_elapsed_s'], v['elapsed_s']]:
+            if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds < 0:
+                raise ValueError('Invalid recorded duration')
+    grouped = {t: [r for r in rows if r['task'] == t] for t in tasks}
+    per_task = [dict(task=t, levels=[r['verdict']['level'] for r in group],
+                     quality_mean=math.fsum(r['verdict']['coefficient'] for r in group)/5,
+                     L3_count=sum(r['verdict']['level'] == 3 for r in group),
+                     simulation_pass_count=sum(r['verdict']['stages']['simulate'] for r in group))
+                for t, group in grouped.items()]
+    per_repeat = []
+    for repeat in range(1, 6):
+        group = [r for r in rows if r['repeat'] == repeat]
+        per_repeat.append(dict(repeat=repeat, tasks=156,
+            quality_mean=math.fsum(r['verdict']['coefficient'] for r in group)/156,
+            L3_count=sum(r['verdict']['level'] == 3 for r in group),
+            solve_s=math.fsum(r['solve_elapsed_s'] for r in group),
+            recorded_judge_s=math.fsum(r['verdict']['elapsed_s'] for r in group),
+            calls=sum(r['actual_model_requests'] for r in group)))
+    mean = math.fsum(r['quality_mean'] for r in per_task)/156
+    # Hoeffding applies to 156 bounded task means, not 780 correlated draws.
+    # Cross-task family independence is unverified; this is not a formal CI
+    # for unseen competition tasks or a confidence interval for a P-A gain.
+    radius = math.sqrt(math.log(40)/(2*156))
+    deadlines = sum(r['solve_deadline_reached'] for r in rows)
+    unconfirmed = sum(r['actual_model_requests']-r['received_model_responses'] for r in rows)
+    return dict(named_development_tasks=156, generation_rows=780, repetitions=5,
+        independent_unseen_tasks=0, effective_independent_families=None,
+        weighted_quality_mean=mean, per_repeat=per_repeat, per_task=per_task,
+        exploratory_task_mean_95_hoeffding=[max(0., mean-radius), min(1., mean+radius)],
+        interval_assumptions='156 independent task means in [0,1]; task/family independence unverified; no generalization guarantee',
+        tasks_with_level_variation=sum(len(set(r['levels'])) > 1 for r in per_task),
+        tasks_with_L3_variation=sum(0 < r['L3_count'] < 5 for r in per_task),
+        all_five_L3_tasks=sum(r['L3_count'] == 5 for r in per_task),
+        solve_seconds=math.fsum(r['solve_elapsed_s'] for r in rows),
+        recorded_judge_seconds=math.fsum(r['verdict']['elapsed_s'] for r in rows),
+        attempted_requests=sum(r['actual_model_requests'] for r in rows),
+        confirmed_responses=sum(r['received_model_responses'] for r in rows),
+        solve_deadlines=deadlines, unconfirmed_attempts=unconfirmed,
+        complete_stability_evidence_valid=deadlines == 0 and unconfirmed == 0,
+        paired_gain=None, repairs=None, harms=None, official_baseline_gain=None,
+        full_batch_complete=False, promotion_permitted=False)
+
+
+def stability_selfcheck():
+    import copy
+    tasks = [f'Task{i:03}' for i in range(156)]
+    rows = [dict(task=t, arm='P', repeat=repeat, solve_deadline_reached=False,
+                 actual_model_requests=1, received_model_responses=1, solve_elapsed_s=2.,
+                 verdict=dict(task_id=t, level=3, coefficient=1., tool_error=False,
+                              elapsed_s=3., stages={'simulate': True}))
+            for repeat in range(1, 6) for t in tasks]
+    all_good = stability_summary(rows, tasks)
+    assert all_good['weighted_quality_mean'] == 1 and all_good['all_five_L3_tasks'] == 156
+    assert all_good['generation_rows'] == 780 and all_good['effective_independent_families'] is None
+    assert all_good['solve_seconds'] == 1560 and all_good['recorded_judge_seconds'] == 2340
+    assert abs(all_good['exploratory_task_mean_95_hoeffding'][0]-(1-math.sqrt(math.log(40)/312))) < 1e-12
+    changed = copy.deepcopy(rows); changed[0]['verdict'].update(level=0, coefficient=0., stages={'simulate': False})
+    one = stability_summary(changed, tasks)
+    assert abs(one['weighted_quality_mean']-(1-1/780)) < 1e-12
+    assert one['tasks_with_level_variation'] == one['tasks_with_L3_variation'] == 1
+    assert one['all_five_L3_tasks'] == 155 and one['per_task'][0]['quality_mean'] == .8
+    uncertain = copy.deepcopy(rows); uncertain[0].update(solve_deadline_reached=True, received_model_responses=0)
+    invalid = stability_summary(uncertain, tasks)
+    assert not invalid['complete_stability_evidence_valid'] and invalid['unconfirmed_attempts'] == 1
+    assert invalid['repairs'] is None and invalid['harms'] is None and invalid['paired_gain'] is None
+    bad = [('missing', rows[:-1]), ('duplicate', rows[:-1]+[rows[0]]), ('reordered', list(reversed(rows)))]
+    for label, path, value in [('arm', ['arm'], 'A'), ('repeat_type', ['repeat'], True),
+            ('nan_time', ['solve_elapsed_s'], float('nan')), ('negative_time', ['verdict','elapsed_s'], -1),
+            ('tool_error', ['verdict','tool_error'], True), ('grade', ['verdict','coefficient'], .7),
+            ('extra_call', ['actual_model_requests'], 3), ('response_count', ['received_model_responses'], 2)]:
+        altered = copy.deepcopy(rows); target = altered[0]
+        for key in path[:-1]: target = target[key]
+        target[path[-1]] = value; bad.append((label, altered))
+    for label, altered in bad:
+        try: stability_summary(altered, tasks)
+        except ValueError: pass
+        else: raise AssertionError('Invalid evidence accepted: '+label)
+    return dict(complete=True, passed=True, synthetic_only=True, model_calls=0, eda_calls=0,
+                checks=['complete_grid', 'task_cluster_denominator', 'known_costs', 'single_sample_change',
+                        'deadline_and_unconfirmed_retained']+[label for label, unused in bad])
+
+
+def run_stability(a):
+    if sha(a.spec) != STABILITY_SPEC_SHA:
+        raise ValueError('Unfrozen stability protocol')
+    spec, summary, audit, guard = map(read, [a.spec, a.summary, a.audit, a.guard])
+    if not summary['complete'] or not summary['passed'] or summary['spec_sha256'] != STABILITY_SPEC_SHA:
+        raise ValueError('Stability result incomplete; never summarize a selected prefix')
+    if not audit['evidence_valid'] or not audit['stability780_evidence_valid'] or audit['historical_fixture_only']:
+        raise ValueError('Original terminal provenance audit required')
+    if audit['auditor_sha256'] != STABILITY_AUDITOR_SHA or audit['spec_sha256'] != STABILITY_SPEC_SHA:
+        raise ValueError('Original auditor identity mismatch')
+    archive_sha = sha(a.archive)
+    if audit['archive_sha256'] != archive_sha:
+        raise ValueError('Audit archive identity mismatch')
+    with zipfile.ZipFile(a.archive) as z:
+        if len(z.namelist()) != len(set(z.namelist())):
+            raise ValueError('Duplicate archive members')
+        for path, member in [(a.spec, 'run/RUN_SPEC.json'), (a.summary, 'run/results/summary.json'),
+                             (a.guard, 'guard/status.json')]:
+            if path.read_bytes() != z.read(member):
+                raise ValueError('Input not bound to terminal archive: '+member)
+    if not all(guard[k] for k in ['complete','passed','model_unchanged','protected_files_unchanged','own_slot_released']):
+        raise ValueError('Terminal guard incomplete')
+    if not guard['owned_cleanup']['verified'] or guard['owned_cleanup']['remaining']:
+        raise ValueError('Owned cleanup incomplete')
+    primary = stability_summary(summary['rows'], spec['task_ids'])
+    if not math.isclose(primary['weighted_quality_mean'], audit['coefficients']['P'], abs_tol=1e-12):
+        raise ValueError('Audited mean mismatch')
+    if primary['attempted_requests'] != audit['actual_model_requests'] or primary['unconfirmed_attempts'] != audit['unconfirmed_attempts']:
+        raise ValueError('Audited call count mismatch')
+    first_pairs = audit['first_pairs']
+    if [r['task'] for r in first_pairs] != spec['task_ids']:
+        raise ValueError('Audited repetition identity mismatch')
+    primary['tasks_with_five_identical_first_replies'] = sum(
+        r['all_five_first_content_identical'] for r in first_pairs)
+    for seconds in [summary['elapsed_s'], guard['elapsed_s']]:
+        if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds < 0:
+            raise ValueError('Invalid terminal wall time')
+    return dict(complete=True, analysis_only=True, analysis_source_sha256=sha(Path(__file__)),
+        inputs={k:sha(getattr(a,k)) for k in ['spec','summary','audit','guard']},
+        archived_evidence_sha256=archive_sha, primary=primary,
+        reported_stage_wall_seconds=summary['elapsed_s'], guard_wall_seconds=guard['elapsed_s'],
+        full_delivery_end_to_end_seconds=None, five_development_repetitions=True,
+        formal_five_sample_qualified=False, full_competition_score_computed=False,
+        full_batch_complete=False, promotion_decision_changed=False, new_model_calls=0, new_eda_calls=0,
+        limits=['Single P arm: repairs, harms and paired gain are unknown, not zero.',
+                'Known development tasks; family independence and unseen generalization remain unverified.',
+                'Solver plus recorded judge time excludes preparation, queueing, archive and transfer overhead.',
+                'No resampling, stopping-rule change or automatic promotion.'])
+
+
 def selfcheck():
     # Analytic boundaries, exact small discordance probabilities, arm-reversal symmetry,
     # and hard rejection of incomplete evidence; no model, RTL or external statistics dependency.
@@ -184,7 +340,11 @@ def run(a):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--self-check',action='store_true')
+    p=argparse.ArgumentParser()
+    modes=p.add_mutually_exclusive_group()
+    modes.add_argument('--self-check',action='store_true')
+    modes.add_argument('--stability-self-check',action='store_true')
+    modes.add_argument('--stability',action='store_true')
     for n in ['spec','summary','audit','guard','archive','out']:p.add_argument('--'+n,type=Path)
     for n in ['resource-check','paired','kit']:p.add_argument('--'+n,type=Path,required=True)
     a=p.parse_args()
@@ -195,7 +355,8 @@ if __name__=='__main__':
     resource_module=importlib.util.module_from_spec(resource_spec)
     resource_spec.loader.exec_module(resource_module)
     resource_module.check_resource(a.resource_check,a.kit,first=True)
-    result=selfcheck() if a.self_check else run(a)
+    result=(stability_selfcheck() if a.stability_self_check else selfcheck() if a.self_check
+            else run_stability(a) if a.stability else run(a))
     resource_module.check_resource(a.resource_check,a.kit)
     result['resource_check_sha256']=sha(a.resource_check)
     if not a.out or a.out.exists():raise ValueError('New output file required')
