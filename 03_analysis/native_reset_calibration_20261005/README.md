@@ -1,6 +1,6 @@
 # 原生异步复位契约研究校准
 
-状态：固定14项控制和独立生成测试的44项源码/材料已审查并冻结；本机Python3.12.14及云端3.12.3各16方法/82子检查、collector各4方法/13子检查通过，49项工具文件、936任务/35官方文件及模型/其他冻结阶段核验保持。已通过SSH在自己目录完成纯预检；尚未提交整任务FIFO，实际编译/仿真与模型调用均为0。`generated_research_test=true`、`original_harness=false`，不替代原 CVDP harness 校准或原官方成绩。
+状态：固定14项控制和独立生成测试的44项源码/材料已审查并冻结；本机Python3.12.14及云端3.12.3各16方法/82子检查、collector各4方法/13子检查通过，49项工具文件、936任务/35官方文件及模型/其他冻结阶段核验保持。已通过SSH在自己目录完成纯预检；已于2026-10-05 15:31（北京时间）接受为整任务FIFO63，现场queued、monitor3919181/start845913207存活，guard/results尚无；实际编译/仿真与模型调用均为0。`generated_research_test=true`、`original_harness=false`，不替代原 CVDP harness 校准或原官方成绩。
 
 本目录的 `native_reset_contract.py` 与已交付版本同字节，SHA `94bcb3b86b7bf1209c5a2348f9d3da5e9c74136e15f77cbdeeedc838ee5fa43d`。`tool_journal.py` 与已有自然边沿记录器同字节，SHA `ec07a0cb78495de1daee9611fb06e906ff319189fd239a91e41e52f58a67c465`。只读取原 public prompt；完整原题面、全改名题面、控制 RTL、生成 TB 和逐控制 SHA/role/run 绑定放在忽略的 `raw_evidence/`。原数据来源 SHA 为 `cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857`，没有读取隐藏 harness 或答案来构造本研究测试。
 
@@ -34,3 +34,5 @@
 纯复现只运行 `test_preparation.py`：Python 3.12.14 的 16 方法、82 子检查通过，0 模型/EDA。合成档案内的 spec、工具收据、身份、blob 都是明确虚构的审计 fixture，没有真实工具运行；它们不能当作 14 次真实编译/仿真结果。当前控制 RTL 只做 ABI/文本区别检查，没有 SystemVerilog 编译验证。真实控制鉴别、模型质量、未见/训练独立、官方 L3、全156资格、断网或单卡32GB验证仍未完成，独立质量准入0、adoption=false。
 
 冻结规格SHA `f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3`，44资产；准备ZIP `eb24bf9f38c7e4ec9a45643e413bf7f0f83b91ab5960e13b8cdc1793f0a1a6fa`。主任务补齐自己的guard/collector、完整保护与依赖清单、公有题面精确来源收据和固定14/14/0预算：每条工具命令30秒、阶段1200秒、守卫1300秒、25分钟租约保险。预检只有Python解析/虚构协议控制，未启动原生工具或真实模型；真实结果仍须FIFO运行、全28原生收据和69双输出观察独立审计。
+
+实际队列收据见SUBMISSION.json及LIVE_SNAPSHOT.json。等待FIFO61全量与FIFO62原harness校准结束，按先到先得执行，不绕过队列；第63号是单独研究校准，不称原harness结果或真实模型质量。

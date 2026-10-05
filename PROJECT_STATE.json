@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full_CP156_FIFO61_running;original_edge_controls_FIFO62_queued;native14_research_controls_frozen_preflight_passed;real_runtime_separate_draft_no_actual_calls",
+    "continuation_status": "full_CP156_FIFO61_running;edge_original_controls_FIFO62_queued;native14_generated_controls_FIFO63_queued;root_taking_over_unfrozen_real_runtime_draft_after_subagent_capacity_error",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -4462,7 +4462,7 @@
     "goal_complete": false,
     "quota_latest_observed_used_percent": 20,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
-    "previous_goal_turn_classification": "progress_native_reset_calibration_frozen_dual_environment_pure_preflight",
+    "previous_goal_turn_classification": "progress_native14_frozen_dual_environment_checked_and_actual_wholeFIFO63_queued",
     "last_actual_shared_sync_commit": "285c280408c55c0dd50fb269db6f713067c0d184",
     "last_actual_shared_sync_public_files": 56
   },
@@ -5650,7 +5650,7 @@
     "shared_sync_receipt": "03_analysis/natural_worker_20261005/SHARED_SYNC_RECEIPT.json"
   },
   "native_reset_calibration_20261005": {
-    "status": "frozen_dual_environment_pure_preflight_passed_not_submitted",
+    "status": "FIFO63_queued_actual_native_trials_zero",
     "spec_sha256": "f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3",
     "archive_sha256": "eb24bf9f38c7e4ec9a45643e413bf7f0f83b91ab5960e13b8cdc1793f0a1a6fa",
     "source_assets": 44,
@@ -5664,13 +5664,19 @@
     "actual_model_calls": 0,
     "actual_compile_commands": 0,
     "actual_simulation_commands": 0,
-    "actual_fifo_submitted": false,
+    "actual_fifo_submitted": true,
     "generated_research_test": true,
     "original_harness": false,
     "evidence_complete": false,
     "qualified_for_generated_control_discrimination": false,
     "independent_model_tasks": 0,
     "adoption": false,
-    "report": "03_analysis/native_reset_calibration_20261005/README.md"
+    "report": "03_analysis/native_reset_calibration_20261005/README.md",
+    "fifo_ticket": 63,
+    "monitor_pid": 3919181,
+    "monitor_starttime": "845913207",
+    "accepted_at_utc": "2026-10-05T07:31:22.595728+00:00",
+    "submission": "03_analysis/native_reset_calibration_20261005/SUBMISSION.json",
+    "live_snapshot": "03_analysis/native_reset_calibration_20261005/LIVE_SNAPSHOT.json"
   }
 }
