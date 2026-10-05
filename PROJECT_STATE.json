@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "edge_terminal_audited_one_chain_failed_two_chain_gate",
+    "continuation_status": "FSM_frozen_preflight33_waiting_actual_FIFO",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -5325,5 +5325,23 @@
     "teammate_modified": false,
     "report": "03_analysis/team_cvdp_interface_review_20261005/README.md",
     "goal_status": "active"
+  },
+  "fsm_feedback_pilot_20261005": {
+    "status": "frozen_local_linux33_preflight_passed_not_submitted",
+    "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
+    "archive_sha256": "88092bc3eff34922825be561da6a452139cdb98153dbdc546f62bf9ea954656d",
+    "assets": 40,
+    "local_tests_passed": 33,
+    "linux_tests_passed": 33,
+    "expected_samples": 16,
+    "max_actual_model_requests": 32,
+    "solve_deadline_s": 300,
+    "preflight_model_calls": 0,
+    "preflight_eda_calls": 0,
+    "actual_fifo_submitted": false,
+    "adoption": false,
+    "old_full_gate_unchanged": true,
+    "goal_status": "active",
+    "report": "03_analysis/fsm_feedback_pilot_20261005/README.md"
   }
 }

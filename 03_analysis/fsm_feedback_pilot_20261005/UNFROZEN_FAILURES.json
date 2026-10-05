@@ -1,0 +1,12 @@
+{
+  "schema": "fsm_feedback_unfrozen_preparation_failures_v1",
+  "failures": [
+    {"phase": "unfrozen_copy", "reason": "Assumed environment.py source filename absent; actual environment preflight lives in original pilot.py", "fix": "Copy actual original files; no original source or live task changed"},
+    {"phase": "unfrozen_fixture_copy", "reason": "Assumed task150 label absent in original archive", "fix": "Bind actual Prob150_review2015_fsmonehot from native audit and original archive"},
+    {"phase": "first_local33", "reason": "Two inherited E arm literals remained in test expected map and replay permitted arms", "fix": "Change only candidate label to F; reconstruction/metrics algorithm unchanged"}
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "live_task_modified": false,
+  "original_sources_modified": false
+}

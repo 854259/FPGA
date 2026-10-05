@@ -1,0 +1,37 @@
+{
+  "schema": "fsm_feedback_archived_exposure_v1",
+  "archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+  "original_tasks": 156,
+  "unchanged_dispatch_tasks": 154,
+  "newly_supported_tasks": [
+    "Prob143_fsm_onehot",
+    "Prob150_review2015_fsmonehot"
+  ],
+  "exposure": [
+    {
+      "task": "Prob143_fsm_onehot",
+      "original_C_level": 1,
+      "original_C_requests": 1,
+      "prompt_sha256": "a0b4c8718528c66ace00a8c5e3dc9e2e99825ff30f27bfb40a42c3247b20966d",
+      "first_request_sha256": "46b15f4a4e35e29bbcd09d41d1d89afe4742288ce15e6b7637b69e8cb873d567",
+      "first_reply_sha256": "b03feb3cddb1ac6ad4a908f7ebbcfdae3ee0f952e335c3a329c2b5421f430f7d",
+      "new_family": "full_vector_multistate",
+      "checks": 2048
+    },
+    {
+      "task": "Prob150_review2015_fsmonehot",
+      "original_C_level": 1,
+      "original_C_requests": 1,
+      "prompt_sha256": "9ffa0bd75f680d514876ae02104fb9773d8e2c411fdb292253663596775353c1",
+      "first_request_sha256": "69f1af5f93113dc96e6f8a0d971359f1b9344c44190af2859bed9afd7a5a2950",
+      "first_reply_sha256": "497d611d4e1c32c7966cd85373eb7985119c6e528a56de0f334e302c5dfcf0e8",
+      "new_family": "partial_scalar_onehot",
+      "checks": 80
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "actual_new_model_repair_measured": false,
+  "independent_natural_tasks": 0,
+  "adoption": false
+}

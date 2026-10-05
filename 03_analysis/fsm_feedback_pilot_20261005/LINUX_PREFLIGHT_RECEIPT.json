@@ -1,0 +1,43 @@
+{
+  "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
+  "archive_sha256": "88092bc3eff34922825be561da6a452139cdb98153dbdc546f62bf9ea954656d",
+  "assets": 40,
+  "python": "3.12.3",
+  "tests_passed": 33,
+  "returncode": 0,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "source_unchanged": true,
+  "protected": {
+    "input_files": 936,
+    "official_files": 35
+  },
+  "actual_experiment_submitted": false,
+  "environment": {
+    "verified": true,
+    "tools": {
+      "xvlog": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xelab": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xsim": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+        "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+      },
+      "vivado": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/vivado",
+        "sha256": "121b8c468f96f7ee750fc8f7d2386c54d047b204a5b8b7a5dada85f04997302d"
+      }
+    },
+    "vivado_bin": "/workspace/AMD/2026.1/Vivado/bin",
+    "udev_stub": "/workspace/team/udev-stub",
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "stdout": "",
+  "stderr": "test_A_uses_actual_first_generation_and_no_functional_review (test_fresh.Fresh.test_A_uses_actual_first_generation_and_no_functional_review) ... ok\ntest_C_priority_real_feedback_uses_only_one_original_repair (test_fresh.Fresh.test_C_priority_real_feedback_uses_only_one_original_repair) ... ok\ntest_C_shift_feedback_keeps_stimulus_and_phase (test_fresh.Fresh.test_C_shift_feedback_keeps_stimulus_and_phase) ... ok\ntest_correct_draft_has_no_extra_model_call (test_fresh.Fresh.test_correct_draft_has_no_extra_model_call) ... ok\ntest_native_compile_error_keeps_existing_repair (test_fresh.Fresh.test_native_compile_error_keeps_existing_repair) ... ok\ntest_persistent_mismatch_never_starts_third_call (test_fresh.Fresh.test_persistent_mismatch_never_starts_third_call) ... ok\ntest_unknown_prose_abstains (test_fresh.Fresh.test_unknown_prose_abstains) ... ok\ntest_both_FSM_families_C_abstains_F_repairs_once (test_fsm_integration.FSMIntegration.test_both_FSM_families_C_abstains_F_repairs_once) ... ok\ntest_correct_fsm_has_no_additional_model_call (test_fsm_integration.FSMIntegration.test_correct_fsm_has_no_additional_model_call) ... ok\ntest_full_domain_explicitly_checks_simultaneous_states (test_fsm_integration.FSMIntegration.test_full_domain_explicitly_checks_simultaneous_states) ... ok\ntest_original_compile_failure_feedback_and_budget_preserved (test_fsm_integration.FSMIntegration.test_original_compile_failure_feedback_and_budget_preserved) ... ok\ntest_original_successful_declaration_patch_returns_without_new_probe (test_fsm_integration.FSMIntegration.test_original_successful_declaration_patch_returns_without_new_probe) ... ok\ntest_partial_domain_never_invents_multihot_reset_or_registers (test_fsm_integration.FSMIntegration.test_partial_domain_never_invents_multihot_reset_or_registers) ... ok\ntest_persistent_failure_keeps_one_repair_budget (test_fsm_integration.FSMIntegration.test_persistent_failure_keeps_one_repair_budget) ... ok\ntest_unknown_semantics_preserves_C_abstention (test_fsm_integration.FSMIntegration.test_unknown_semantics_preserves_C_abstention) ... ok\ntest_feedback_binds_entire_observation_and_output_order (test_boundaries.Boundaries.test_feedback_binds_entire_observation_and_output_order) ... ok\ntest_file_access_or_includes_abstain_before_probe (test_boundaries.Boundaries.test_file_access_or_includes_abstain_before_probe) ... ok\ntest_missing_fabricated_or_equal_observed_counterexample_rejected (test_boundaries.Boundaries.test_missing_fabricated_or_equal_observed_counterexample_rejected) ... ok\ntest_tool_failure_never_becomes_model_counterexample (test_boundaries.Boundaries.test_tool_failure_never_becomes_model_counterexample) ... ok\ntest_unknown_ambiguous_prose_retains_original_dispatch (test_boundaries.Boundaries.test_unknown_ambiguous_prose_retains_original_dispatch) ... ok\ntest_either_arm_deadline_or_unconfirmed_retained_and_rejects (test_metrics.Metrics.test_either_arm_deadline_or_unconfirmed_retained_and_rejects) ... ok\ntest_execution_success_is_not_production_or_independent_qualification (test_metrics.Metrics.test_execution_success_is_not_production_or_independent_qualification) ... ok\ntest_fixed_complete_order_and_all_eight_denominators (test_metrics.Metrics.test_fixed_complete_order_and_all_eight_denominators) ... ok\ntest_guard_or_unknown_changes_extra_cost_and_tool_error_reject (test_metrics.Metrics.test_guard_or_unknown_changes_extra_cost_and_tool_error_reject) ... ok\ntest_no_real_two_task_chain_no_qualification (test_metrics.Metrics.test_no_real_two_task_chain_no_qualification) ... ok\ntest_diagnostic_actual_source_compiler_contract_dut_or_extra_factor_rejected (test_replay.Replay.test_diagnostic_actual_source_compiler_contract_dut_or_extra_factor_rejected) ... ok\ntest_original_source_messages_and_repair_feedback_bound (test_replay.Replay.test_original_source_messages_and_repair_feedback_bound) ... ok\ntest_F_worker_selection_executes_real_original_functional_path (test_stage.Stage.test_F_worker_selection_executes_real_original_functional_path) ... ok\ntest_whole_job_schedules16_new_workers_and16_original_judges (test_stage.Stage.test_whole_job_schedules16_new_workers_and16_original_judges) ... ok\ntest_available_pinned_environment_checked_without_tool_execution (test_environment.Environment.test_available_pinned_environment_checked_without_tool_execution) ... ok\ntest_each_missing_tool_rejected_before_model_call (test_environment.Environment.test_each_missing_tool_rejected_before_model_call) ... ok\ntest_missing_scoped_library_path_rejected (test_environment.Environment.test_missing_scoped_library_path_rejected) ... ok\ntest_wrong_tool_resolution_rejected (test_environment.Environment.test_wrong_tool_resolution_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 33 tests in 1.097s\n\nOK\n"
+}

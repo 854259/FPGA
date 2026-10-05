@@ -1,0 +1,32 @@
+{
+  "predecessor_pilot_spec_sha256": "bce903e984fd0f1b92bd11759b0ecc3bdf77783f384bca74cde0b9cf09beacf6",
+  "fsm_calibration_spec_sha256": "cce335ae31089b15fa100b95bacdff70e60185886a45e5810113dba082cdfa0a",
+  "original_copied_sha256": {
+    "priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+    "shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+    "prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+    "point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "collect_evidence.py": "d906f10f8ab3a26cf7c577fdebab0ccb0c2314d9793ba5b3c6f7f0a795e8a25a",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "official_eval_guarded.py": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c",
+    "test_fresh.py": "f7e56c86f5eaf766bc73f00374bf64121475e687bb75312247039d845d26b12e",
+    "test_environment.py": "22364ae9b621749261f9190f88e077d494a7be112d33f47b8dab28d916267159",
+    "replay.py": "efa76cbc762d9e83b84fc77848a1e69c3077037f8511496c78f478e030c283d9",
+    "INPUT_MANIFEST.json": "817ebfc6df996f00ec123c4ea71f47a09918511dade2643d79ee4bfc70feba40",
+    "raw_evidence/test_fixtures/priority.txt": "ae25e77bd3e4c274ecec6cea5af6d432379967aba0228435794b3bb83d9637b5",
+    "raw_evidence/test_fixtures/shift.txt": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386",
+    "raw_evidence/test_fixtures/score.py": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+    "package/agent/map_runtime.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+    "package/agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+    "package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+    "package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "fsm_contract.py": "79840b283036341242c9319ade53e3889dbd5bf3eddc37d419baf298136224ec"
+  },
+  "runtime_byte_identical": true,
+  "runtime_both_arms": "package/agent/map_runtime.py",
+  "candidate_change": "F complete prompt-derived FSM dispatch and observed point only",
+  "edge_included": false,
+  "compressor_included": false
+}
