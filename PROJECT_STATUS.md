@@ -1,3 +1,11 @@
+## 2026-10-05 原生复位研究校准44资产冻结并通过双环境纯预检
+
+14固定控制（2正确/11错误/1故意失败），原生契约保持94bcb3b8，题面按原prompt/record/dataSHA精确核验；独立研究TB全部original_harness=false。RUN_SPEC f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3冻结44资产。本机3.12.14/Linux3.12.3各16方法82子检查、collector4方法13子检查通过；49工具、936任务/35官方、44全量+11原校准+5契约+5worker源及模型身份保持。0预检模型/EDA/原生，尚未实际FIFO提交。
+
+根任务复查补全全局28收据/14+14尝试/0未确认/finally计数失败非零、审计导入助手同字节、自有守卫和collector。测量完整与控制鉴别资格分开，误通过保留；新collector不依赖不存在的summary.passed。正式原判定器、实际自然模型、全156终态资格、五样本/断网目标32GB仍待，0部署变化。
+
+全量最新171/312、181已计请求，四关键进程存活、44冻结源保持、complete=false/error=null；不发布部分分数。原harness七控制FIFO62排队，新真实runtime在单独目录准备而未请求模型。额度20%/97%停止线，无重置，G3/G4/G5及goal active。
+
 ## 2026-10-05 原生契约/忠实worker/原测试校准共享同步完成
 
 Git285c280相对上次实际共享38061d8的56个公开文件逐Git blob/SHA同步至共享artifacts/285c280，并追加调用/修改/结论三台账；44全量+11校准+5契约+5worker冻结源及模型身份核验保持，FIFO61 running、62 queued，primary STATUS/SNAPSHOT未覆盖且同步期间未变。原始题面/回复/RTL/工具档案不进入本次公开包。实际收据见03_analysis/natural_worker_20261005/SHARED_SYNC_RECEIPT.json；本次后续收据记录提交不冒充已共享的新提交。

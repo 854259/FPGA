@@ -1,0 +1,48 @@
+{
+  "spec_sha256": "f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3",
+  "archive_sha256": "eb24bf9f38c7e4ec9a45643e413bf7f0f83b91ab5960e13b8cdc1793f0a1a6fa",
+  "assets": 44,
+  "source_unchanged": true,
+  "dependencies_verified": true,
+  "toolchain_files_verified": 49,
+  "protected_inputs": 936,
+  "protected_official": 35,
+  "protected_sources": {
+    "phase_full156_20261005_v1": 44,
+    "natural_edge_calibration_20261005_v1": 11,
+    "native_reset_contract_20261005_v1": 5,
+    "natural_worker_20261005_v1": 5
+  },
+  "model_identity": {
+    "pid": 2013333,
+    "starttime": "823869819",
+    "exe": "llama-server",
+    "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+  },
+  "python_version": "3.12.3",
+  "pure_methods": 16,
+  "pure_subchecks": 82,
+  "collector_methods": 4,
+  "collector_subchecks": 13,
+  "processes": {
+    "preparation": {
+      "rc": 0,
+      "process_sha256": "01d6200519c39aa4e07fc30083b08acc076c7180c4f2a44ff01a08d273a5328a"
+    },
+    "collector": {
+      "rc": 0,
+      "process_sha256": "c8cd81ab4eb13155aab6219b9a112e5eb969659a1022d88441355276eb6c436d"
+    }
+  },
+  "preflight_model_calls": 0,
+  "preflight_eda_calls": 0,
+  "actual_compile_commands": 0,
+  "actual_simulation_commands": 0,
+  "planned_native_trials": 14,
+  "actual_fifo_submitted": false,
+  "generated_research_test": true,
+  "original_harness": false,
+  "independent_model_tasks": 0,
+  "adoption": false,
+  "at_epoch": 1791185071.3292959
+}
