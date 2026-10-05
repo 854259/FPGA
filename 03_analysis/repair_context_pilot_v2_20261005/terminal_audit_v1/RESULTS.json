@@ -1,0 +1,550 @@
+{
+  "schema": "repair_context_pilot_readonly_audit_v1",
+  "evidence_valid": true,
+  "historical_fixture_only": false,
+  "full156_evidence_valid": false,
+  "archive_sha256": "3a54db25a979b6355933b44e715d1cbe3785b4ad101996143a25f50a5a561213",
+  "spec_sha256": "f05cef4e81bc3b47453073678b3dd9f79c5d6ec31cd289be91812bc6ee26422b",
+  "auditor_sha256": "efd2d5aac2e134e3b96b006d8b88dbbf12e9f9b0111d9b873cf59dc0c115e2db",
+  "expected_samples": 16,
+  "actual_model_requests": 22,
+  "provenance": [
+    {
+      "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+      "declaration_patches": 1,
+      "context_receipts": [],
+      "task": "Prob058_alwaysblock2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+      "declaration_patches": 1,
+      "context_receipts": [],
+      "task": "Prob058_alwaysblock2",
+      "arm": "D",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "53a1155a4d81ecfe61c1d8a543ce6a7e4489632dd8c29bd5a30b488e2a30fe06",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob070_ece241_2013_q2",
+      "arm": "D",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "53a1155a4d81ecfe61c1d8a543ce6a7e4489632dd8c29bd5a30b488e2a30fe06",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob070_ece241_2013_q2",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob071_always_casez",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "da0d85f62fea08874ff6c73bfe076374316fb0d02ed896446593b022aca8f8ee",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob071_always_casez",
+      "arm": "D",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "pass",
+          "checks": 256,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "context_receipts": [
+        {
+          "tool": "repair_context",
+          "round": 1,
+          "changed": false,
+          "input_sha256": "39c728d07efbdae95ce6b40472a6c44e5f356867c2316a2fcf238faec64ee384",
+          "input_chars": 226,
+          "output_chars": 226,
+          "removed_chars": 0,
+          "removed_lines": 0,
+          "policy": "whole-line ordinary //; >=2048 chars and >=50% of copy",
+          "reason": "below_threshold",
+          "output_sha256": "39c728d07efbdae95ce6b40472a6c44e5f356867c2316a2fcf238faec64ee384"
+        }
+      ],
+      "task": "Prob112_always_case2",
+      "arm": "D",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "dc447a3b59472f5894e05480bd9e7b63b30c64d7e09ff7fa2705ee382b10c1cc",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob112_always_case2",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 16,
+          "mismatches": 11
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 16,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob115_shift18",
+      "arm": "C",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "01da76d2e143ea069af441885ec6d8103a88594a9b2dc543fd4a8923b99314cd",
+      "declaration_patches": 0,
+      "context_receipts": [
+        {
+          "tool": "repair_context",
+          "round": 1,
+          "changed": false,
+          "input_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5",
+          "input_chars": 598,
+          "output_chars": 598,
+          "removed_chars": 0,
+          "removed_lines": 0,
+          "policy": "whole-line ordinary //; >=2048 chars and >=50% of copy",
+          "reason": "below_threshold",
+          "output_sha256": "086739fb357f61bfc0e11cff6169af47f9d1da76dc1bc66f7416c31f782d2ae5"
+        }
+      ],
+      "task": "Prob115_shift18",
+      "arm": "D",
+      "contract_status": "supported",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 335,
+          "mismatches": 32
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "9cf4a70ae81fee4224d2ba7124a94351eb33a47ae47c63ba8a4f3cb5da035d7f",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob124_rule110",
+      "arm": "D",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "9cf4a70ae81fee4224d2ba7124a94351eb33a47ae47c63ba8a4f3cb5da035d7f",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob124_rule110",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f2d95bdfbfbb719457561aae63ecb6359029f1421358095556f83f197ce306ef",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob147_circuit10",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "f2d95bdfbfbb719457561aae63ecb6359029f1421358095556f83f197ce306ef",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob147_circuit10",
+      "arm": "D",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "69e7ee27313ea27d46579be041646289595adfa75bebc2e5f28ff79aaf115cdb",
+      "declaration_patches": 0,
+      "context_receipts": [
+        {
+          "tool": "repair_context",
+          "round": 1,
+          "changed": false,
+          "input_sha256": "01e60a62ac6cdcc2d0af93fac9b16193d09a9b98f96d036f75f6baf2c82197da",
+          "input_chars": 4472,
+          "output_chars": 4472,
+          "removed_chars": 0,
+          "removed_lines": 0,
+          "policy": "whole-line ordinary //; >=2048 chars and >=50% of copy",
+          "reason": "below_threshold",
+          "output_sha256": "01e60a62ac6cdcc2d0af93fac9b16193d09a9b98f96d036f75f6baf2c82197da"
+        }
+      ],
+      "task": "Prob153_gshare",
+      "arm": "D",
+      "contract_status": "abstain",
+      "native_checks": []
+    },
+    {
+      "first_reply_sha256": "69e7ee27313ea27d46579be041646289595adfa75bebc2e5f28ff79aaf115cdb",
+      "declaration_patches": 0,
+      "context_receipts": [],
+      "task": "Prob153_gshare",
+      "arm": "C",
+      "contract_status": "abstain",
+      "native_checks": []
+    }
+  ],
+  "first_pairs": [
+    {
+      "task": "Prob058_alwaysblock2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob070_ece241_2013_q2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob071_always_casez",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob112_always_case2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob115_shift18",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob124_rule110",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob147_circuit10",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob153_gshare",
+      "first_content_identical": true
+    }
+  ],
+  "adoption": false,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "limits": [
+    "8 known public development/guard tasks, one actual generation per arm; no full156 score, unseen-task or five-sample claim.",
+    "First prompts and skills identical; fresh first replies may differ despite temperature0, matched subset reported separately.",
+    "Control deadlines/unconfirmed remain in 8-task denominator and costs; candidate must be deadline/unconfirmed-free. This is a predeclared reliability-repair screen, not relaxation/rescoring of prior full gate.",
+    "Tool/environment failure retains failed job; do not resample, replace failures or alter frozen budget.",
+    "Only prompt/interface enter workers; reference/TB/grade live solely in original external judge. No task-ID scripted answers.",
+    "Whole-task FIFO and original inner locks/guard. Never manage shared model, instance, formal deployment or teammate jobs.",
+    "Stage/slot outer limits are safety bounds, not ETA. Hard300s includes generation/compilation/feedback; control timeouts are measured and model request drains without killing the model.",
+    "New frozen auditor binds the exact compressed copy/metadata and independently reconstructs original uncompressed DUT/diagnostics from responses/compile/native receipts.",
+    "No automatic deployment; full same-budget regression, independent validation and formal offline target32GB/five-sample acceptance remain required."
+  ],
+  "official_scores": {
+    "C": {
+      "tasks": 8,
+      "scored_tasks": 8,
+      "samples_per_task": 1,
+      "set_score": 0.775,
+      "pass@1": 0.775,
+      "pass@5": 0.775,
+      "level_counts": {
+        "L0": 1,
+        "L1": 1,
+        "L3": 6
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 227.1,
+      "per_task": [
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob070_ece241_2013_q2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob124_rule110",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob147_circuit10",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob153_gshare",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        }
+      ]
+    },
+    "D": {
+      "tasks": 8,
+      "scored_tasks": 8,
+      "samples_per_task": 1,
+      "set_score": 0.775,
+      "pass@1": 0.775,
+      "pass@5": 0.775,
+      "level_counts": {
+        "L0": 1,
+        "L1": 1,
+        "L3": 6
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 224.4,
+      "per_task": [
+        {
+          "task_id": "Prob058_alwaysblock2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob070_ece241_2013_q2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob071_always_casez",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob112_always_case2",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob115_shift18",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob124_rule110",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            3
+          ],
+          "pass@1": 1.0,
+          "pass@5": 1.0
+        },
+        {
+          "task_id": "Prob147_circuit10",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            1
+          ],
+          "pass@1": 0.2,
+          "pass@5": 0.2
+        },
+        {
+          "task_id": "Prob153_gshare",
+          "samples": 1,
+          "scored_samples": 1,
+          "excluded_samples": 0,
+          "levels": [
+            0
+          ],
+          "pass@1": 0.0,
+          "pass@5": 0.0
+        }
+      ]
+    }
+  },
+  "coefficients": {
+    "C": 0.775,
+    "D": 0.775
+  },
+  "requests_by_arm": {
+    "C": 11,
+    "D": 11
+  },
+  "solve_seconds_by_arm": {
+    "C": 527.3277960624546,
+    "D": 523.9773883055896
+  },
+  "repairs": [],
+  "regressions": [],
+  "solve_deadlines": [],
+  "unconfirmed_by_arm": {
+    "C": 0,
+    "D": 0
+  },
+  "unconfirmed_attempts": 0,
+  "guard_pass": true,
+  "screening_eligible": true,
+  "matched_compression_tasks": [],
+  "matched_coefficient_gain_tasks": [],
+  "matched_solve_seconds": {
+    "C": 0,
+    "D": 0
+  },
+  "qualified_for_new_full_regression": false,
+  "qualification_scope": "New full156 experiment only, not independent/production adoption.",
+  "previous_full_gate_still_failed": true,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false
+}
