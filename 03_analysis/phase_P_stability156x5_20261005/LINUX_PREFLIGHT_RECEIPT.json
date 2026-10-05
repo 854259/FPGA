@@ -1,0 +1,63 @@
+{
+  "schema": "actual_stability_pilot_linux_preflight_v1",
+  "spec_sha256": "589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15",
+  "archive_sha256": "4e163b44ea2b08e497499ec877b9f799e11fa55b83129a967b640393ebea5b5c",
+  "assets": 56,
+  "python": "3.12.3",
+  "tests_passed": 7,
+  "returncode": 0,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "source_unchanged": true,
+  "protected": {
+    "frozen_source_counts": {
+      "phase_full156_20261005_v1": 44,
+      "natural_edge_calibration_20261005_v1": 11,
+      "native_reset_contract_20261005_v1": 5,
+      "natural_worker_20261005_v1": 5,
+      "native_reset_calibration_20261005_v1": 44,
+      "natural_runtime_20261005_v1": 17,
+      "elaboration_feedback_pilot_20261005_v1": 38,
+      "prompt_table_calibration_20261005_v2": 68,
+      "multidriver_guidance_pilot_20261005_v1": 49,
+      "multidriver_guidance_pilot_20261005_v2": 49,
+      "bit_mapping_guidance_pilot_20261005_v1": 61,
+      "compile_diagnostic_priority_pilot_20261005_v1": 54,
+      "semantic_edge_guidance_pilot_20261005_v1": 64
+    },
+    "source_assets": 509,
+    "input_files": 936,
+    "official_files": 35,
+    "model_unchanged": true,
+    "verified": true
+  },
+  "environment": {
+    "verified": true,
+    "tools": {
+      "xvlog": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xelab": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xsim": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+        "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+      },
+      "vivado": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/vivado",
+        "sha256": "121b8c468f96f7ee750fc8f7d2386c54d047b204a5b8b7a5dada85f04997302d"
+      }
+    },
+    "vivado_bin": "/workspace/AMD/2026.1/Vivado/bin",
+    "udev_stub": "/workspace/team/udev-stub",
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "disk_free_bytes": 9771782144,
+  "actual_experiment_submitted": false,
+  "stdout": "",
+  "stderr": "test_all44_original_phase_sources_and_pinned_spec_exact (test_stability.Stability.test_all44_original_phase_sources_and_pinned_spec_exact) ... ok\ntest_deadline_unknown_not_valid_five_measurement (test_stability.Stability.test_deadline_unknown_not_valid_five_measurement) ... ok\ntest_exact780_unique_allP_five_complete_passes (test_stability.Stability.test_exact780_unique_allP_five_complete_passes) ... ok\ntest_ledger_repeat_ids_unique_without_payload_message_mutation (test_stability.Stability.test_ledger_repeat_ids_unique_without_payload_message_mutation) ... ok\ntest_missing_duplicate_reordered_or_bool_level_rejected (test_stability.Stability.test_missing_duplicate_reordered_or_bool_level_rejected) ... ok\ntest_no_formal_five_adoption_or_expansion_qualification (test_stability.Stability.test_no_formal_five_adoption_or_expansion_qualification) ... ok\ntest_weighted_mean_keeps_failed_sample_without_best_selection (test_stability.Stability.test_weighted_mean_keeps_failed_sample_without_best_selection) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.025s\n\nOK\n"
+}
