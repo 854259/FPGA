@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "FSM_terminal_one_chain_failed_gate",
+    "continuation_status": "FSM_rejected_terminal;natural_harness_calibration_frozen_waiting_FIFO",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -5378,5 +5378,22 @@
     "adoption": false,
     "teammate_modified": false,
     "goal_status": "active"
+  },
+  "natural_harness_calibration_20261005": {
+    "status": "frozen_static_dependencies_preflight_passed_not_submitted",
+    "spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
+    "archive_sha256": "63e23d2f3018fe5cb6dd16b67d7334cd65f93bc9fd57af6858a6277b369401c3",
+    "assets": 10,
+    "controls": 16,
+    "planned_native_compiles": 50,
+    "planned_native_simulations": 50,
+    "model_calls_max": 0,
+    "actual_fifo_submitted": false,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "independent_model_tasks": 0,
+    "eligible_for_independent_models": false,
+    "adoption": false,
+    "report": "03_analysis/natural_harness_calibration_20261005/README.md"
   }
 }
