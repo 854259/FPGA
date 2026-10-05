@@ -3,7 +3,9 @@ import argparse
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
+import shlex
 import shutil
 import sys
 from urllib.parse import urlsplit
@@ -53,12 +55,24 @@ def run_arm(official, task, out, resource, endpoint, seconds=300):
         if (task/name).is_file():
             shutil.copyfile(task/name, prompt/name)
     input_hashes = {p.name: sha(p) for p in prompt.iterdir()}
+    observer = Path(__file__).with_name('official_baseline_observed_20261005.py').resolve()
+    assert observer.is_file()
+    # Preserve the original shell and Python files; use a scoped Python launcher
+    # to install the observer explicitly before running that same baseline.py.
+    python = shutil.which('python3'); assert python
+    receipts, bin_dir = out/'transport', out/'bin'
+    receipts.mkdir(); bin_dir.mkdir()
+    launcher = bin_dir/'python3'
+    launcher.write_text('#!/bin/sh\nexec '+shlex.quote(python)+' -B '+shlex.quote(str(observer))+' "$@"\n')
+    launcher.chmod(0o700)
     argv = ['/usr/bin/env', 'NO_PROXY=127.0.0.1', 'no_proxy=127.0.0.1',
             'LLM_BASE_URL='+endpoint, 'MODEL_NAME='+MODEL,
+            'PATH='+str(bin_dir)+os.pathsep+os.environ['PATH'], 'BASELINE_RECEIPTS='+str(receipts),
             'TRACK=rtl', 'PYTHONDONTWRITEBYTECODE=1', '/bin/bash',
             str(package/'run_baseline.sh'), str(prompt), str(out/'output')]
     save(out/'LAUNCH.json', dict(argv=argv, input_sha256=input_hashes,
          official_sha256=OFFICIAL, deadline_s=seconds, source_sha256=sha(__file__),
+         observer_sha256=sha(observer), original_python=python,
          retries=0, skill_used=False, baseline_tool_calls=0))
     command = resource.owned_command(argv, out, out/'baseline.log', seconds)
     save(out/'COMMAND.json', command)
@@ -76,14 +90,31 @@ def run_arm(official, task, out, resource, endpoint, seconds=300):
         assert meta['served_model'] in [MODEL, None]
     response_confirmed = len(llm) == 1 and 'error' not in llm[0]
     transport_error = llm[0].get('error') if llm else None
-    failed = command['timeout'] or command['launch_error'] or command['returncode'] != 0 or not trace
+    bootstrap = receipts/'BOOTSTRAP.json'
+    recorder_ready = bootstrap.is_file() and json.loads(bootstrap.read_text()).get('ready') is True
+    request_dirs = list(receipts.glob('request_*'))
+    assert len(request_dirs) <= 1
+    attempts = []
+    for folder in request_dirs:
+        state = json.loads((folder/'STATE.json').read_text())
+        assert state['request_sha256'] == sha(folder/'request.bin')
+        if state['response_body_complete']:
+            assert state['response_sha256'] == sha(folder/'response.bin')
+        attempts.append(state)
+    if trace:
+        assert recorder_ready and len(attempts) == 1
+    failed = command['timeout'] or command['launch_error'] or command['returncode'] != 0 or not trace or not recorder_ready
     result = dict(schema='official_baseline_direct_arm_v1', arm='official_B',
                   complete=not failed, transport_ok=bool(response_confirmed and not failed),
                   timeout=command['timeout'], launch_error=command['launch_error'],
                   returncode=command['returncode'], transport_error=transport_error,
                   observed_llm_trace_events=len(llm), confirmed_model_responses=int(response_confirmed),
                   actual_post_count='unknown_without_server_receipt',
-                  unconfirmed_call=not response_confirmed,
+                  client_request_attempts=len(attempts) if recorder_ready else None,
+                  client_attempt_definition='durable pre-urlopen attempt; not proof of server receipt or inference completion',
+                  complete_http_bodies=sum(x['response_body_complete'] for x in attempts),
+                  recorder_ready=recorder_ready, transport_receipts=attempts,
+                  unconfirmed_call=bool(attempts) and not response_confirmed,
                   solve_elapsed_s=command['elapsed_s'], retry_count=0,
                   solution_present=solution.exists(), solution_sha256=sha(solution) if solution.exists() else None,
                   trace_sha256=sha(trace_path) if trace_path.exists() else None,
@@ -103,7 +134,8 @@ def main():
     p.add_argument('--resource-check', type=Path, required=True)
     args = p.parse_args()
     resource = resource_module()
-    resource.check_resource(args.resource_check, args.kit, first=True)
+    # This child may start after earlier rows in the same admitted guard lease.
+    resource.check_resource(args.resource_check, args.kit)
     result = run_arm(args.kit/'submission', args.task.resolve(), args.out.resolve(),
                      resource, 'http://127.0.0.1:8000/v1')
     resource.check_resource(args.resource_check, args.kit)

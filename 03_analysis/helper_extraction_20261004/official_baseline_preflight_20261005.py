@@ -3,10 +3,12 @@ import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
+import shutil
 import threading
 import time
 
 import official_baseline_arm_20261005 as arm
+import official_baseline_scoring_20261005 as scoring
 
 
 CODE = 'module TopModule(input a, output y); assign y = a; endmodule\n'
@@ -16,7 +18,7 @@ SYSTEM = ('You are an expert Verilog designer. Reply with a single synthesizable
           'SystemVerilog module named TopModule. Output only code — no prose, no '
           'markdown fences.')
 CASES = ['fenced_code', 'missing_interface', 'null_length', 'http_error',
-         'invalid_json', 'body_hang', 'recovery']
+         'invalid_json', 'body_hang', 'recovery', 'wrong_function', 'invalid_syntax']
 
 
 def preflight(args):
@@ -65,6 +67,8 @@ def preflight(args):
                 self.end_headers(); self.wfile.write(b'{'); self.wfile.flush()
                 release.wait(5); return
             content = None if case == 'null_length' else CODE
+            if case == 'wrong_function': content = CODE.replace('y = a','y = ~a')
+            if case == 'invalid_syntax': content = 'module TopModule(input a, output y); assign y = ; endmodule\n'
             if case == 'fenced_code':
                 fence = chr(96)*3
                 content = 'Here is code:\n'+fence+'sv\n'+CODE+fence
@@ -111,26 +115,104 @@ def preflight(args):
                 assert result['transport_ok'] and result['empty_content'] and result['finish'] == 'length'
                 assert result['confirmed_model_responses'] == 1 and solution.read_text() == '\n'
             else:
-                assert result['transport_ok'] and result['complete'] and solution.read_text() == CODE
+                expected=CODE
+                if case=='wrong_function': expected=CODE.replace('y = a','y = ~a')
+                if case=='invalid_syntax': expected='module TopModule(input a, output y); assign y = ; endmodule\n'
+                assert result['transport_ok'] and result['complete'] and solution.read_text() == expected
                 assert result['confirmed_model_responses'] == 1
             assert result['functional_grade'] is None and result['retry_count'] == 0
+            assert result['recorder_ready'] and result['client_request_attempts'] == 1
+            receipt=out/'cases'/case/'transport/request_0'
+            assert json.loads((receipt/'request.bin').read_text()) == request['payload']
+            state_record=json.loads((receipt/'STATE.json').read_text())
+            assert state_record['server_received'] is None
+            if case in ['body_hang','http_error']:
+                assert not state_record['response_body_complete']
+            else:
+                assert state_record['response_body_complete']
+                if case=='invalid_json': assert (receipt/'response.bin').read_bytes()==b'not-json'
+                else:
+                    body=json.loads((receipt/'response.bin').read_text())
+                    content=body['choices'][0]['message']['content'] or ''
+                    assert ('EVALUATOR_SENTINEL' not in content and 'REFERENCE_SENTINEL' not in content)
             rows.append(dict(case=case, passed=True, actual_fake_posts=1, **result))
             arm.save(out/'PROGRESS.json', dict(rows=rows, fake_posts=len(requests)))
     finally:
         release.set(); server.shutdown(); server.server_close(); thread.join(2)
         arm.save(out/'HTTP_REQUESTS.json', requests)
         arm.save(out/'HTTP_GETS.json', gets)
-    assert not thread.is_alive() and len(requests) == 7 and len(rows) == 7
+    assert not thread.is_alive() and len(requests) == 9 and len(rows) == 9
     assert all(row['path'] == '/v1/models' for row in gets)
     resource.check_resource(args.resource_check, args.kit)
-    result = dict(schema='official_baseline_cli_preflight_v1', complete=True, passed=True,
-                  cases=CASES, fake_model_posts=len(requests), real_model_calls=0, eda_calls=0,
+    # Observer initialization must fail before running an altered baseline.
+    bad=out/'bad_bootstrap';bad.mkdir()
+    for name in arm.OFFICIAL: shutil.copyfile(args.kit/'submission'/name,bad/name)
+    (bad/'baseline.py').write_text((bad/'baseline.py').read_text()+'\n# frozen tamper control\n')
+    empty_receipts=bad/'transport';empty_receipts.mkdir()
+    command=resource.owned_command(['/usr/bin/env','BASELINE_RECEIPTS='+str(empty_receipts),
+        '/usr/bin/python3','-B',str(Path(arm.__file__).with_name('official_baseline_observed_20261005.py')),
+        str(bad/'baseline.py'),str(out/'inputs/recovery'),str(bad/'output'),'rtl'],bad,bad/'bootstrap.log',5)
+    arm.save(bad/'COMMAND.json',command)
+    assert command['returncode']!=0 and not command['remaining_live_group']
+    assert not (bad/'output').exists() and not any(empty_receipts.iterdir())
+    # Evaluate constructed outputs in a separate process, with reference/TB
+    # only in this evaluator directory, after baseline generation is complete.
+    task=out/'evaluator_task';task.mkdir()
+    (task/'prompt.txt').write_text(PROMPT);(task/'interface.txt').write_text(INTERFACE)
+    (task/'ref.sv').write_text(CODE.replace('TopModule','RefModule'))
+    (task/'tb.sv').write_text('''module tb;
+reg a; wire y, yr;
+TopModule dut(.a(a),.y(y)); RefModule refdut(.a(a),.y(yr));
+integer mismatches=0; integer samples=0;
+initial begin
+ a=0; #5; samples=samples+1; if(y!==yr) mismatches=mismatches+1;
+ a=1; #5; samples=samples+1; if(y!==yr) mismatches=mismatches+1;
+ $display("Mismatches: %0d in %0d samples",mismatches,samples); $finish;
+end
+endmodule
+''')
+    arm.save(task/'task.json',dict(task_id='U13_constructed_wire',top='TopModule',
+        reference_module='ref.sv',testbench='tb.sv',part='xczu3eg-sbva484-1-e',period_ns=5))
+    judges=[]
+    for case, level in [('recovery',3),('wrong_function',1),('invalid_syntax',0),('null_length',0)]:
+        solve=out/'cases'/case; judge=out/'judges'/case
+        log=out/(case+'_judge.log')
+        command=resource.owned_command(['/usr/bin/python3','-B',str(Path(scoring.__file__).resolve()),
+            '--kit',str(args.kit),'--solve',str(solve),'--task',str(task),'--out',str(judge),
+            '--resource-check',str(args.resource_check)],out,log,360)
+        arm.save(out/(case+'_judge_command.json'),command)
+        assert command['returncode']==0 and not command['timeout'] and not command['remaining_live_group'],case
+        bound=json.loads((judge/'BOUND_VERDICT.json').read_text())
+        assert bound['verdict']['level']==level and not bound['verdict']['tool_error'],(case,bound)
+        judges.append(dict(case=case,expected_level=level,actual_level=bound['verdict']['level'],
+                           command_elapsed_s=command['elapsed_s'],bound_sha256=arm.sha(judge/'BOUND_VERDICT.json')))
+    blocked=[]
+    for case in ['http_error','invalid_json','body_hang']:
+        try: scoring.eligible(out/'cases'/case,task)
+        except AssertionError: blocked.append(case)
+        else: raise AssertionError('Transport failure admitted to scoring: '+case)
+    missing=out/'judges/missing_tool'
+    command=resource.owned_command(['/usr/bin/env','PATH=/usr/bin:/bin','/usr/bin/python3','-B',
+        str(Path(scoring.__file__).resolve()),'--kit',str(args.kit),'--solve',str(out/'cases/recovery'),
+        '--task',str(task),'--out',str(missing),'--resource-check',str(args.resource_check)],
+        out,out/'missing_tool.log',10)
+    arm.save(out/'missing_tool_command.json',command)
+    assert command['returncode']!=0 and not command['remaining_live_group']
+    assert 'judge environment: executable unavailable on PATH' in (out/'missing_tool.log').read_text()
+    assert not (missing/'verdict.json').exists() and not (missing/'BOUND_VERDICT.json').exists()
+    resource.check_resource(args.resource_check,args.kit)
+    result = dict(schema='official_baseline_receipt_scoring_preflight_v1', complete=True, passed=True,
+                  cases=CASES, fake_model_posts=len(requests), real_model_calls=0,
+                  official_judge_invocations=4,nonempty_native_judgements=3,judges=judges,
+                  rejected_before_scoring=blocked,observer_initialization_failure_rejected=True,
+                  missing_tool_not_graded_L0=True,
                   original_official_files=arm.OFFICIAL, wrapper_sha256=arm.sha(arm.__file__),
                   driver_sha256=arm.sha(__file__), rows=rows, full_batch=False,
                   independent_tasks=0, paired_quality_measured=False,
                   limitations=['Synthetic local HTTP only; real27B cancellation remains unverified.',
-                               'Direct original baseline trace does not record raw response or server POST receipt.',
-                               'No A/P/B scheduler, natural quality, five-sample or32GB certification.'])
+                               'Client attempt/response evidence is not proof of server execution for interrupted requests.',
+                               'Original baseline files unchanged; explicit observer adds measured evidence I/O overhead.',
+                               'Constructed judging only; no natural quality, full A/P/B, independent, five-sample or32GB certification.'])
     arm.save(out/'RESULTS.json', result)
     print(json.dumps({k:v for k,v in result.items() if k!='rows'}))
 

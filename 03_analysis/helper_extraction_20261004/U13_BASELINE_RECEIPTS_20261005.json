@@ -1,0 +1,58 @@
+{
+  "schema": "official_baseline_U13_frozen_v1",
+  "status": "frozen_not_launched",
+  "source_hashes": {
+    "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422",
+    "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+    "official_baseline_scoring_20261005.py": "0d004469aaf75c91e5411231c3cb47c67e0a31e2fbfda697bbe03727685e2e4b",
+    "official_baseline_preflight_20261005.py": "2cb0521180ff7e2d4090be19bfb655a30c2325de86b7e6a8830c6b7cf0caf691"
+  },
+  "reason": "U11 original baseline trace lacks raw request/response and attempt evidence; U12 must block unknown calls. Add explicit observer around unchanged CLI plus original external judge integration.",
+  "official_files": {
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75"
+  },
+  "budget": {
+    "nonempty_native_judgements": 3,
+    "slot_minutes": 30,
+    "judge_internal_s": 300,
+    "fake_model_posts": 9,
+    "real_model_calls": 0,
+    "official_judgements": 4,
+    "judge_supervisor_s": 360,
+    "stage_timeout_s": 1500
+  },
+  "fixed_http_cases": [
+    "fenced_code",
+    "missing_interface",
+    "null_length",
+    "http_error",
+    "invalid_json",
+    "body_hang",
+    "recovery",
+    "wrong_function",
+    "invalid_syntax"
+  ],
+  "fixed_judge_levels": {
+    "wrong_function": 1,
+    "invalid_syntax": 0,
+    "recovery": 3,
+    "null_length": 0
+  },
+  "acceptance": "Exactly9 fake server-observed POSTs and9 durable client attempts, unchanged original official bytes and fixed messages/parameters/extraction,0 retries. Every full response saved byte-for-byte; HTTP500/hanging response remains incomplete, invalid JSON retained. Hanging body cleanup under4s followed by recovery. Observer bootstrap altered-source control must fail before solve/POST. Four original judge outputs match frozenL3/L1/L0/L0; three transport failures refused before judgement, missing Vivado tool refuses without L0/verdict. Own children cleaned, model/protected files unchanged.",
+  "evaluator_sha256": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c",
+  "upstream_sha256": "0e47545af9001ecd884807ef6008c9c88700cf77d72f543c357103888698984b",
+  "change_scope": [
+    "Original CLI still invoked through unchanged shell and Python file; scoped interpreter launcher installs observer explicitly, not fail-open sitecustomize",
+    "Observer only records existingurlopen/read, returns original bytes/response and rethrows errors; request payloads and replies remain private",
+    "Child checks retained lease ownership/model/protected hashes; initial admission freshness checked by parent, avoiding spurious120s expiry mid-batch",
+    "External judge sees reference/TB only after baseline process exits"
+  ],
+  "limits": [
+    "Client pre-urlopen attempt is not proof of server receipt or inference completion",
+    "Synthetic HTTP backend;0 real27B calls and no real-backend cancellation claim",
+    "Three nonempty constructed judgements plus empty output control are not natural correctness or independent evidence",
+    "No productionfullbatch, formal32GB, fully auditedRTLLM, independent material or confirmedcredit budget"
+  ],
+  "next": "On pass retain observer and judgement bridge, then bind actual A/P/B execution receipts into the frozen row queue without adding a candidate policy. No real calls before full admission/budget is resolved."
+}
