@@ -1,0 +1,123 @@
+{
+  "stage": "U5_evaluation_valid_guard_regression",
+  "source_commit": "8eeaa83fe07ce7f047f55b129c3858f1f7b19fba",
+  "ticket": 60,
+  "driver_pid": 3761022,
+  "stage_pid": 3761027,
+  "spec_sha256": "5fe49dd3f3bb03ebb92f19fa785b5515ed11d2e6dc1a48f7a906d28519a5e56f",
+  "postflight": {
+    "schema": "natural_valid_guard_readonly_audit_v1",
+    "evidence_valid": true,
+    "archive_sha256": "65bc05bf81cbd77c95610487dfdecb6310b4ea6f94f4e158f2eacec67122c9a9",
+    "spec_sha256": "5fe49dd3f3bb03ebb92f19fa785b5515ed11d2e6dc1a48f7a906d28519a5e56f",
+    "auditor_sha256": "c8ac286af7222bf3cba62e7007a13fee9cefc1c3d6992caa71aa8bc0b0b554e8",
+    "manifest_files": 339,
+    "model_calls": 0,
+    "audit_model_calls": 0,
+    "audit_eda_calls": 0,
+    "native_compile_commands": 30,
+    "native_simulation_commands": 30,
+    "corrected_harness_calibration": {
+      "cvdp_copilot_gray_to_binary_0001": true
+    },
+    "controls": [
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "positive",
+        "passed": true,
+        "failed": false,
+        "native_trials": 5,
+        "original_harness": false,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "constant_zero",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": false,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "constant_one",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": false,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "identity",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": false,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "valid_zero",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": false,
+        "false_acceptance": false
+      },
+      {
+        "record_id": "cvdp_copilot_gray_to_binary_0001",
+        "label": "failure_propagation",
+        "passed": false,
+        "failed": true,
+        "native_trials": 5,
+        "original_harness": false,
+        "false_acceptance": false
+      }
+    ],
+    "false_acceptances": [],
+    "independent_model_tasks": 0,
+    "eligible_for_independent_models": false,
+    "adoption": false,
+    "limits": [
+      "Original public natural prompts exposed only for evaluation calibration; not unseen or training-independence certification.",
+      "Known specification controls are evaluation artifacts and never model inputs. This is corrected-harness discrimination, not solver scores or official Vivado L3.",
+      "Parameter/input coverage limited to original harness; no claim of exhaustive full specification proof. All false acceptances retained, no narrowing of ports/domain to pass.",
+      "Package/toolchain hash verification at original run and guard checks are historical observations; archive lacks all external installed binaries, no fresh offline32GB certification.",
+      "Full156 qualification, faithful ABI/model integration and exposure review remain necessary before natural model comparison."
+    ]
+  },
+  "stage_elapsed_s": 15.954819893464446,
+  "guard_elapsed_s": 16.299377631396055,
+  "postflight_elapsed_s": 0.1641874834895134,
+  "new_model_calls": 0,
+  "new_native_compiles": 30,
+  "new_native_simulations": 30,
+  "unique_parameter_configurations": 4,
+  "independent_model_tasks": 0,
+  "model_repair_count_measured": false,
+  "full_batch_complete": false,
+  "original_test_preserved": true,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "raw_archive_sha256": "65bc05bf81cbd77c95610487dfdecb6310b4ea6f94f4e158f2eacec67122c9a9",
+  "raw_archive_files": 339,
+  "postflight_archive_sha256": "08bca1a51d912f8537489b9a5a258602a03384f54feb1da92b3e5fd2174d5595",
+  "postflight_archive_files": 3,
+  "decision": "Retain isolated evaluator valid-port assertion after all frozen controls passed. Original harness remains rejected; no solver, model quality, independent validation or deployment claim.",
+  "dual_end_verified_files": [
+    339,
+    3
+  ],
+  "cleanup": {
+    "removed_sim_build_dirs": 6,
+    "removed_archived_cache_files": 18,
+    "unneeded_residuals": 0
+  },
+  "evaluator_change_retained": true,
+  "solver_changed": false,
+  "next": "Inspect already completed ticket58 phase-feedback pilot terminal provenance and frozen acceptance; do not duplicate its generation. No new full batch until independent material and resource budget admission are resolved."
+}

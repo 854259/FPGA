@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05T13:10:00+08:00",
+  "last_updated": "2026-10-05T13:14:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3118,18 +3118,16 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T12:46:00+08:00",
+      "checked_at": "2026-10-05T13:13:00+08:00",
       "own_live_processes": 0,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
       "full_experiment_running": false,
-      "other_task_queue_running": true,
-      "other_task_ticket": 58,
-      "other_task_name": "phase_feedback_fresh_C_P_v1",
-      "latest_own_stage": "U3",
+      "other_task_queue_running": false,
+      "latest_own_stage": "U5",
       "latest_own_stage_complete": true,
       "own_slot_lock_present": false,
-      "receipt": "05_handoff/independent_validation_20261004/fsm_terminal_U3/LOCAL_EVIDENCE_CHECK.json"
+      "receipt": "05_handoff/independent_validation_20261004/natural_valid_U5/LOCAL_EVIDENCE_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3169,7 +3167,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T13:10:00+08:00",
+  "updated_at": "2026-10-05T13:14:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -4688,5 +4686,41 @@
     "full_batch_complete": false,
     "next": "U5 evaluation-only valid assertion regression frozen:6 existing controls x5 runs,0 model,30 compiles/30 simulations; source prepared before execution. Then inspect completed owner ticket58 terminal evidence.",
     "updated_at": "2026-10-05T13:10:00+08:00"
+  },
+  "natural_valid_U5_20261005": {
+    "status": "isolated_evaluator_fix_verified",
+    "execution_commit": "8eeaa83fe07ce7f047f55b129c3858f1f7b19fba",
+    "ticket": 60,
+    "driver_pid": 3761022,
+    "stage_pid": 3761027,
+    "complete": true,
+    "full_batch_complete": false,
+    "new_model_calls": 0,
+    "actual_compile": 30,
+    "actual_sim": 30,
+    "known_development_inputs": 1,
+    "unique_parameter_configurations": 4,
+    "independent_model_tasks": 0,
+    "positive_passes": 5,
+    "wrong_control_failures": 20,
+    "failure_propagation_failures": 5,
+    "previous_valid_false_acceptances": 5,
+    "current_valid_false_acceptances": 0,
+    "stage_elapsed_s": 15.954819893464446,
+    "guard_elapsed_s": 16.299377631396055,
+    "postflight_elapsed_s": 0.1641874834895134,
+    "evaluator_change_retained": true,
+    "solver_changed": false,
+    "dual_verified_files": [
+      339,
+      3
+    ],
+    "raw_archive_sha256": "65bc05bf81cbd77c95610487dfdecb6310b4ea6f94f4e158f2eacec67122c9a9",
+    "postflight_archive_sha256": "08bca1a51d912f8537489b9a5a258602a03384f54feb1da92b3e5fd2174d5595",
+    "removed_sim_build_dirs": 6,
+    "removed_archived_cache_files": 18,
+    "cleanup_complete": true,
+    "next": "Inspect completed ticket58 phase feedback fresh pilot terminal and frozen gates; no duplicate generation.",
+    "updated_at": "2026-10-05T13:14:00+08:00"
   }
 }
