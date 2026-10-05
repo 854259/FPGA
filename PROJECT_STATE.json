@@ -4307,6 +4307,16 @@
     "full_batch_complete": false,
     "adopted": false,
     "preparation_files_dual_verified": 34,
-    "preparation_archive_sha256": "e59f623f759bef3f40fc1cf35adf0fd35517a988a941592c44c2703b5f599f99"
+    "preparation_archive_sha256": "e59f623f759bef3f40fc1cf35adf0fd35517a988a941592c44c2703b5f599f99",
+    "terminal_audit": {
+      "commit": "64f3e533edc8bbb7fb8968d67a518bb03f0f4ab2",
+      "ticket": 47,
+      "monitor_pid": 3720086,
+      "status": "queued",
+      "script_sha256": "847b606164b7b9f591243ffb374e1572cb17a0414cbdb51a8f81ea30c49912fc",
+      "model_calls": 0,
+      "eda_calls": 0
+    },
+    "preparation_cleanup_verified": true
   }
 }
