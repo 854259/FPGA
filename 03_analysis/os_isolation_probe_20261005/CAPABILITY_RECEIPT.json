@@ -1,0 +1,41 @@
+{
+  "result": {
+    "schema": "os_isolation_backend_capability_query_v1",
+    "pid": 3991347,
+    "starttime": "846429387",
+    "kernel": "6.8.0-79-generic",
+    "machine": "x86_64",
+    "python": "3.12.3",
+    "header": "/usr/include/asm-generic/unistd.h",
+    "header_sha256": "3f0118409044c13af582ea3ff637fecaebf819d6ae41fea8be37b5a99968b3be",
+    "syscall_number": 444,
+    "syscall_args": [
+      0,
+      0,
+      1
+    ],
+    "query_returncode": 4,
+    "observed_errno": 0,
+    "observed_errno_text": "Success",
+    "landlock_query_available": true,
+    "landlock_abi": 4,
+    "seccomp_mode_query": 2,
+    "no_new_privs_query": 0,
+    "installed_policy": false,
+    "namespace_created": false,
+    "network_requests": 0,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "sandbox_verified": false,
+    "real_execution_admitted": false,
+    "offline_target32GB_verified": false,
+    "scope": "Observed query only; denial may be kernel or outer policy. No global unsupported claim."
+  },
+  "source_sha256": "e19e27bb1ad922588f47ef3053d793fa2727809606d2848514990837a448327d",
+  "model_identity_unchanged": true,
+  "parent_namespace_and_policy_unchanged": true,
+  "owned_child_exited": true,
+  "child_returncode": 0,
+  "child_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "at_epoch": 1791190644.42289
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "phase_full156_readonly_audit_v1",
+  "evidence_valid": true,
+  "historical_fixture_only": false,
+  "full156_evidence_valid": true,
+  "archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+  "spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+  "auditor_sha256": "681b46a55166caf319a03b48988d83cb923692c8a9424760d7ea7a5edfaea1ab",
+  "expected_samples": 312,
+  "actual_model_requests": 338,
+  "adoption": false,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "coefficients": {
+    "C": 0.7576923076923077,
+    "P": 0.7743589743589744
+  },
+  "repairs": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect",
+    "Prob140_fsm_hdlc"
+  ],
+  "regressions": [],
+  "requests_by_arm": {
+    "C": 168,
+    "P": 170
+  },
+  "solve_seconds_by_arm": {
+    "C": 3247.1750146392733,
+    "P": 3251.8217146396637
+  },
+  "solve_deadlines": [],
+  "unconfirmed_by_arm": {
+    "C": 0,
+    "P": 0
+  },
+  "unconfirmed_attempts": 0,
+  "screening_eligible": true,
+  "candidate_qualified_for_independent_validation": true,
+  "matched_native_repair_tasks": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect"
+  ],
+  "unchanged_first_reply_regressions": [],
+  "independent_validation_qualified": true,
+  "qualification_scope": "Permits faithful independent model validation only; no five-sample/offline/target hardware/official baseline certificate or automatic deployment.",
+  "previous_full_gate_still_failed": true,
+  "five_sample_qualified": false,
+  "official_scores": {
+    "C": {
+      "tasks": 156,
+      "scored_tasks": 156,
+      "samples_per_task": 1,
+      "set_score": 0.7577,
+      "pass@1": 0.7577,
+      "pass@5": 0.7577,
+      "level_counts": {
+        "L0": 5,
+        "L1": 41,
+        "L3": 110
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 4065.0
+    },
+    "P": {
+      "tasks": 156,
+      "scored_tasks": 156,
+      "samples_per_task": 1,
+      "set_score": 0.7744,
+      "pass@1": 0.7744,
+      "pass@5": 0.7744,
+      "level_counts": {
+        "L0": 4,
+        "L1": 39,
+        "L3": 113
+      },
+      "tool_errors": 0,
+      "excluded": [],
+      "judge_elapsed_s": 4175.9
+    }
+  },
+  "actual_model_responses": 338,
+  "exact_audit_result_sha256": "3be06a7939895221aa194dfd5ff6814fe1ac84dcdee5ff2215b1b347bea05652",
+  "identical_first_reply_pairs": 154,
+  "actual_independent_model_samples": 0,
+  "actual_five_sample_runs": 0,
+  "new_policy_admitted_for_further_development": true,
+  "formal_deployment_changed": false,
+  "grade_changes": [
+    {
+      "task": "Prob045_edgedetect2",
+      "control_level": 1,
+      "candidate_level": 3,
+      "first_reply_identical": true,
+      "matched_causal_native_repair": true
+    },
+    {
+      "task": "Prob054_edgedetect",
+      "control_level": 1,
+      "candidate_level": 3,
+      "first_reply_identical": true,
+      "matched_causal_native_repair": true
+    },
+    {
+      "task": "Prob082_lfsr32",
+      "control_level": 0,
+      "candidate_level": 1,
+      "first_reply_identical": false,
+      "matched_causal_native_repair": false
+    },
+    {
+      "task": "Prob140_fsm_hdlc",
+      "control_level": 1,
+      "candidate_level": 3,
+      "first_reply_identical": false,
+      "matched_causal_native_repair": false
+    }
+  ]
+}

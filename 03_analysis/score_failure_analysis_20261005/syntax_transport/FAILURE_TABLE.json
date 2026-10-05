@@ -1,0 +1,1314 @@
+[
+  {
+    "task": "Prob021_mux256to1v",
+    "arm": "C",
+    "level": 3,
+    "solve_elapsed_s": 9.735782025381923,
+    "solve_deadline": false,
+    "requests": 2,
+    "received": 2,
+    "first_finish": "stop",
+    "first_completion_tokens": 77,
+    "first_request_elapsed_s": 3.8977544978260994,
+    "first_reply_sha256": "0cba5d8995ea07bde6d0662a652c73aa71cc757bae3a21d918cae704daba357e",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-4982",
+      "10-8530"
+    ],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      },
+      {
+        "tool": "llm",
+        "round": 1
+      },
+      {
+        "tool": "lint_start",
+        "round": 1
+      },
+      {
+        "tool": "lint",
+        "round": 1,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": 611,
+    "evidence": {
+      "run/results/samples/C/Prob021_mux256to1v/judge/judge_work_logs/w_judge.log": "deeeed8f84a5eecc2c1c07a3725ea6bfb4fe996b0572c2d2dffe34ab829d8f1f",
+      "run/results/samples/C/Prob021_mux256to1v/row.json": "0be5695a496134d8d06e6b54e50237622f4db8619b552ed63da50f23455a5ca2",
+      "run/results/samples/C/Prob021_mux256to1v/worker/compile_journal.json": "624a80bc3bd260bb50d452e4c07d996535f7bc3a3b59f20917d6223f193218ea",
+      "run/results/samples/C/Prob021_mux256to1v/worker/compile_receipts/0/owned_compile.log": "feaec2df5b32c688f1498f52ed2e2a5ff82f1a0fca01566cacef9458e4cb8205",
+      "run/results/samples/C/Prob021_mux256to1v/worker/compile_receipts/0/source_after.sv": "4e30f38690d52008303cef896fd2796ff2e3bd45fb3132d31ff7199392197643",
+      "run/results/samples/C/Prob021_mux256to1v/worker/compile_receipts/0/source_before.sv": "4e30f38690d52008303cef896fd2796ff2e3bd45fb3132d31ff7199392197643",
+      "run/results/samples/C/Prob021_mux256to1v/worker/compile_receipts/1/owned_compile.log": "ed468275bb76f1b92ba25dae289af7b99a03a7f1bc645ea6782e5b01c6d3eae3",
+      "run/results/samples/C/Prob021_mux256to1v/worker/compile_receipts/1/source_after.sv": "5532ea594c8250033951a0e61278851f2cf1ba557414c081823c8027bc38057d",
+      "run/results/samples/C/Prob021_mux256to1v/worker/compile_receipts/1/source_before.sv": "5532ea594c8250033951a0e61278851f2cf1ba557414c081823c8027bc38057d",
+      "run/results/samples/C/Prob021_mux256to1v/worker/requests.json": "6275be65af8608bb71031dc2cc9c8edf39a23d08a2760a7f0f5ae7830fe1b3f8",
+      "run/results/samples/C/Prob021_mux256to1v/worker/requests/0/request.json": "3a5ce74b2e76a4cd6ee47a63ecab0f85911a17031bbc65b06f8e1f2f815fb31f",
+      "run/results/samples/C/Prob021_mux256to1v/worker/requests/0/response.json": "c6f5ea28ad9d8fa7fac5659b70e170af5803fe4735819211ba123fe3155b26ce",
+      "run/results/samples/C/Prob021_mux256to1v/worker/requests/1/request.json": "25d25061b4fd648e06a7c7c092f01f4327a8c9d34bf472b37af78645ca11d3c3",
+      "run/results/samples/C/Prob021_mux256to1v/worker/requests/1/response.json": "4844fd42a84ac80ae73ecb32b317fd281789bbd7acfd51b9442f468ac5cf3e63",
+      "run/results/samples/C/Prob021_mux256to1v/worker/solution.v": "5532ea594c8250033951a0e61278851f2cf1ba557414c081823c8027bc38057d",
+      "run/results/samples/C/Prob021_mux256to1v/worker/trace.jsonl": "d6a44ca656ba61b4f565adcc04e3d3e199187d17994e1a14ad7dc0547a86dfdb"
+    },
+    "a_level": 3,
+    "first_content_identical_to_a": true,
+    "finding": "Real first compile fails; original one model repair used. Read error codes and final official level; not a prefix/fence-only extraction failure."
+  },
+  {
+    "task": "Prob026_alwaysblock1",
+    "arm": "C",
+    "level": 3,
+    "solve_elapsed_s": 5.129188258200884,
+    "solve_deadline": false,
+    "requests": 1,
+    "received": 1,
+    "first_finish": "stop",
+    "first_completion_tokens": 65,
+    "first_request_elapsed_s": 2.6028351075947285,
+    "first_reply_sha256": "b15a516326777b7d59f105eebbab6f8aa214e075cc6efaf9ff553c848b8ed87f",
+    "first_fenced": false,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-1280",
+      "10-8530"
+    ],
+    "declaration_fix_count": 1,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "declaration_fix",
+        "round": 0,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": null,
+    "evidence": {
+      "run/results/samples/C/Prob026_alwaysblock1/judge/judge_work_logs/w_judge.log": "3d5dd7ed9acacc380d31328ad5dffc5303ae9d2ea9ee81ae7682c95db27808f4",
+      "run/results/samples/C/Prob026_alwaysblock1/row.json": "33636e32c2249474b0b1d63a881f49864b09c9aa4c63835b6a696bf10d8a14be",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/compile_journal.json": "f7e1d9efa3db892512c58e275864489d57c2137cd2169ede6d532873349e5364",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/compile_receipts/0/owned_compile.log": "c656c5072cd973a5a4253b3438f2f765f24a6bb26b91ce61700b321f23ef45bf",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/compile_receipts/0/source_after.sv": "81aabc42ebeabeffc891e9726874019dd8685dce6eaa91d60b82cde48ef83794",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/compile_receipts/0/source_before.sv": "81aabc42ebeabeffc891e9726874019dd8685dce6eaa91d60b82cde48ef83794",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/compile_receipts/1/owned_compile.log": "d49768fc6c609ce7bfd62af1265011bba012fb057cb685e98ec7b031f1e05d73",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/compile_receipts/1/source_after.sv": "491fbf4de70333081649e0b65331381faf8e8bea1b01fcd374f4fd5a1ee8aeb5",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/compile_receipts/1/source_before.sv": "491fbf4de70333081649e0b65331381faf8e8bea1b01fcd374f4fd5a1ee8aeb5",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/requests.json": "25bc4007e8f0db26ab8419845ac4999a0397bc1613dea600877b85baeec2e12d",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/requests/0/request.json": "127b905d127d6cc179cddecf54260a79f55f163f6490f5b77a255e98b2a5def8",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/requests/0/response.json": "62031a390d3b41fd8b40c824dce4b2e506583332a13ea43d7c05c6bbfc6181f3",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/solution.v": "491fbf4de70333081649e0b65331381faf8e8bea1b01fcd374f4fd5a1ee8aeb5",
+      "run/results/samples/C/Prob026_alwaysblock1/worker/trace.jsonl": "a9c2ecd5ade93b8c1a9f44ef2cee63c269b5701682785a7f048d42ad46cfea5e"
+    },
+    "a_level": 3,
+    "first_content_identical_to_a": true,
+    "finding": "Mechanical ANSI fix recompiles then returns before map_feedback; contract abstain in this completed archive. No supported functional check skipped here."
+  },
+  {
+    "task": "Prob039_always_if",
+    "arm": "C",
+    "level": 3,
+    "solve_elapsed_s": 6.432962456718087,
+    "solve_deadline": false,
+    "requests": 1,
+    "received": 1,
+    "first_finish": "stop",
+    "first_completion_tokens": 110,
+    "first_request_elapsed_s": 3.9380265586078167,
+    "first_reply_sha256": "365dc46ec1798a1bfe2dcf244a397c0d9083e3f20fd9ca5a26aa9860484e38ee",
+    "first_fenced": false,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-1280",
+      "10-8530"
+    ],
+    "declaration_fix_count": 1,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "declaration_fix",
+        "round": 0,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": null,
+    "evidence": {
+      "run/results/samples/C/Prob039_always_if/judge/judge_work_logs/w_judge.log": "0adf78f9ac21f0c230bb45c81ece9b4aeb74c11b402cb2bd09a289373935bea4",
+      "run/results/samples/C/Prob039_always_if/row.json": "e3b60c986a2cc053e2d24ae58b4e50962dfde74e615b72019d6e6fd862ec0896",
+      "run/results/samples/C/Prob039_always_if/worker/compile_journal.json": "4a8e4f66d54baa6e659c1cb8093e91f86dfd9aa28c2b06274420a8727ebf4250",
+      "run/results/samples/C/Prob039_always_if/worker/compile_receipts/0/owned_compile.log": "daa8c110e346dff042f837ed2d33c0dd2eed42038ec22d1b4c609866a26ee523",
+      "run/results/samples/C/Prob039_always_if/worker/compile_receipts/0/source_after.sv": "c35f450a83c58860f9b629af8d567e63a37e7f7f275faff40e35294891aa9346",
+      "run/results/samples/C/Prob039_always_if/worker/compile_receipts/0/source_before.sv": "c35f450a83c58860f9b629af8d567e63a37e7f7f275faff40e35294891aa9346",
+      "run/results/samples/C/Prob039_always_if/worker/compile_receipts/1/owned_compile.log": "7462b021afdfef77ef17361aa2d89cc61a1c811e7a3d9b11879995bad6ca958f",
+      "run/results/samples/C/Prob039_always_if/worker/compile_receipts/1/source_after.sv": "47387c49c8a99759c46bcab34f30b8d6a261bcb376de43e6efc0d6344f09566f",
+      "run/results/samples/C/Prob039_always_if/worker/compile_receipts/1/source_before.sv": "47387c49c8a99759c46bcab34f30b8d6a261bcb376de43e6efc0d6344f09566f",
+      "run/results/samples/C/Prob039_always_if/worker/requests.json": "e1dadbc76a18a819541adc079e0d2f05610c5ee42d8f90a9a0cdc85df029177c",
+      "run/results/samples/C/Prob039_always_if/worker/requests/0/request.json": "f743ff9b9765494ee60f887fbaab1e2732e0598f1c813e6c04d073163fbda1f2",
+      "run/results/samples/C/Prob039_always_if/worker/requests/0/response.json": "5dff2fb89860b075977ebe98815dc372d68f8d2bcefae820b4632ad122097b32",
+      "run/results/samples/C/Prob039_always_if/worker/solution.v": "47387c49c8a99759c46bcab34f30b8d6a261bcb376de43e6efc0d6344f09566f",
+      "run/results/samples/C/Prob039_always_if/worker/trace.jsonl": "ce81c6e3a08db07fa136523a3c384798d86af7e1fd25af4cbc4777752e45a83b"
+    },
+    "a_level": 3,
+    "first_content_identical_to_a": true,
+    "finding": "Mechanical ANSI fix recompiles then returns before map_feedback; contract abstain in this completed archive. No supported functional check skipped here."
+  },
+  {
+    "task": "Prob053_m2014_q4d",
+    "arm": "C",
+    "level": 1,
+    "solve_elapsed_s": 8.984518513083458,
+    "solve_deadline": false,
+    "requests": 2,
+    "received": 2,
+    "first_finish": "stop",
+    "first_completion_tokens": 58,
+    "first_request_elapsed_s": 3.2196326553821564,
+    "first_reply_sha256": "1d603befddcb5b508e931dd60e7a0c15cf216432dee5e12475d38ec9eaa14706",
+    "first_fenced": false,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-3380",
+      "10-8530"
+    ],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      },
+      {
+        "tool": "llm",
+        "round": 1
+      },
+      {
+        "tool": "lint_start",
+        "round": 1
+      },
+      {
+        "tool": "lint",
+        "round": 1,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": 632,
+    "evidence": {
+      "run/results/samples/C/Prob053_m2014_q4d/judge/judge_work_logs/w_judge.log": "fa4897675e5444a6771c914fbe839d190873fb98167db911114e91032b75ca7d",
+      "run/results/samples/C/Prob053_m2014_q4d/row.json": "f7809f67235fe99f8bd35496671e6ac02808360e7d431aefc7f3f699fb12a7ca",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/compile_journal.json": "082993dbad266179925baf4517c1cbf344abfba705c02bd9d01436bedba88e86",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/compile_receipts/0/owned_compile.log": "15e1d2a68c3febe064e2314ca4e72c0c99b2de247d840d59ecb5ee1c9ce54cba",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/compile_receipts/0/source_after.sv": "b47e68c05a7d6c50ac033743a16dc053f1f5bd9ecd37bfbec67a46c05425df12",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/compile_receipts/0/source_before.sv": "b47e68c05a7d6c50ac033743a16dc053f1f5bd9ecd37bfbec67a46c05425df12",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/compile_receipts/1/owned_compile.log": "75ce78544d1ceabcb997f9df952d205432886bb410d878e08284df2547ff70f1",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/compile_receipts/1/source_after.sv": "22482d6b9efa572f954c1664a67548e65787bc796b169bd357b56673fe19ed1d",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/compile_receipts/1/source_before.sv": "22482d6b9efa572f954c1664a67548e65787bc796b169bd357b56673fe19ed1d",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/requests.json": "e3d2c01820719cc71cc88e2477120e4d3c5755275c0ab4a864af1ceed61c16f5",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/requests/0/request.json": "c46811f1fc69ca51b2e55c43fcfe3e5d19728ffec24aa90bdb502840eae45294",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/requests/0/response.json": "57b1edaa425c8a0630c7aef99e5088afb23e861e1364f6cc4d5bbff263fe3e29",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/requests/1/request.json": "a2201a86b3ff68c230c1d98043d06c8d34d56a791cae72d1d0fc553f4d9e13e5",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/requests/1/response.json": "d619f71a7cf8d4760956c4beb4032cc75549100fa4e01810486ed333b6dfa8fb",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/solution.v": "22482d6b9efa572f954c1664a67548e65787bc796b169bd357b56673fe19ed1d",
+      "run/results/samples/C/Prob053_m2014_q4d/worker/trace.jsonl": "be44aec61948a80d8bcfc310c08aa349d83b1e8d8d83daa4ccb342432f5eb825"
+    },
+    "a_level": 1,
+    "first_content_identical_to_a": true,
+    "finding": "Real first compile fails; original one model repair used. Read error codes and final official level; not a prefix/fence-only extraction failure."
+  },
+  {
+    "task": "Prob058_alwaysblock2",
+    "arm": "C",
+    "level": 3,
+    "solve_elapsed_s": 6.531448271125555,
+    "solve_deadline": false,
+    "requests": 1,
+    "received": 1,
+    "first_finish": "stop",
+    "first_completion_tokens": 102,
+    "first_request_elapsed_s": 4.005278058350086,
+    "first_reply_sha256": "573838219ad8ba568c224f15ade71fb3b27b2dc515599fb9006d73e5e88709e6",
+    "first_fenced": false,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-1280",
+      "10-8530"
+    ],
+    "declaration_fix_count": 1,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "declaration_fix",
+        "round": 0,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": null,
+    "evidence": {
+      "run/results/samples/C/Prob058_alwaysblock2/judge/judge_work_logs/w_judge.log": "1b0394582b7b2ac60c24739ea50b27a87dbc3aaca2968575ca42c42db2343c4b",
+      "run/results/samples/C/Prob058_alwaysblock2/row.json": "57fe6a90776fdda34bd1223db382a8029403a53b457f2c863cbd6f327aa7929b",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/compile_journal.json": "60643a14e0f2dde4676456b1b3b5376ad33ca342b36352d12115d4b1e5539698",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/compile_receipts/0/owned_compile.log": "07a87ba3681a5a9cb5f4f2934cdbeb6edf9cf58e1753bf8312eaeefe5e846bd5",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/compile_receipts/0/source_after.sv": "09a70ba3bda2229df1f8bba96873d6d216618e581b54922bb5ff7701d822fbcf",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/compile_receipts/0/source_before.sv": "09a70ba3bda2229df1f8bba96873d6d216618e581b54922bb5ff7701d822fbcf",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/compile_receipts/1/owned_compile.log": "038770a412d235267f16caa674241301ce4f4ae279c1a06a2888715657599d2f",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/compile_receipts/1/source_after.sv": "25bad84d49096aa19fb6059ad6c79b063a1f459e3086abaec31560662b048f4a",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/compile_receipts/1/source_before.sv": "25bad84d49096aa19fb6059ad6c79b063a1f459e3086abaec31560662b048f4a",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/requests.json": "6f167375b90f5abc85884898a0f073a1a782cc5530324ff46718cd34d9bb3104",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/requests/0/request.json": "cadcfd3d8df289072c8ef0ed25784753c41146ea7b71ff3aead1d2547ae878f8",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/requests/0/response.json": "f380b527b78f1966ffa196b2cbac41d07f0625ffb37e782aeb7e11a42025452f",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/solution.v": "25bad84d49096aa19fb6059ad6c79b063a1f459e3086abaec31560662b048f4a",
+      "run/results/samples/C/Prob058_alwaysblock2/worker/trace.jsonl": "15a1ef65f54a176d4710b5823a77ba5e9d7b823d34a76db3b00e38dba9e7354f"
+    },
+    "a_level": 3,
+    "first_content_identical_to_a": true,
+    "finding": "Mechanical ANSI fix recompiles then returns before map_feedback; contract abstain in this completed archive. No supported functional check skipped here."
+  },
+  {
+    "task": "Prob070_ece241_2013_q2",
+    "arm": "C",
+    "level": 0,
+    "solve_elapsed_s": 300.0122354477644,
+    "solve_deadline": true,
+    "requests": 2,
+    "received": 1,
+    "first_finish": "length",
+    "first_completion_tokens": 8192,
+    "first_request_elapsed_s": 281.0020259581506,
+    "first_reply_sha256": "decf928e1065a45946265bd2f06f707aa039a1ade7f730faa233123433041353",
+    "first_fenced": false,
+    "first_complete_topmodule": false,
+    "first_compile_rc": null,
+    "first_compile_error_codes": [],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "check_source",
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 0,
+    "official_error_codes": [
+      "10-1491"
+    ],
+    "repair_diagnostic_chars": 108,
+    "evidence": {
+      "run/results/samples/C/Prob070_ece241_2013_q2/judge/judge_work_logs/w_judge.log": "ab3e39dfd4cbc4fe7ad370f513e0d1087e9512f1872412499a0309de1056da2e",
+      "run/results/samples/C/Prob070_ece241_2013_q2/row.json": "7a153e623c78af25cddb3277d30d7b57fb87710a28393aa580552f588b497297",
+      "run/results/samples/C/Prob070_ece241_2013_q2/worker/requests.json": "03a981d496257e27f140fd2aa32d2ee47c7ba41eea0706b6c3df32d466f61d14",
+      "run/results/samples/C/Prob070_ece241_2013_q2/worker/requests/0/request.json": "3e61174a98350ef07e202fb4305a24b59b5cffe1d4f259745335ee79ba62e34f",
+      "run/results/samples/C/Prob070_ece241_2013_q2/worker/requests/0/response.json": "8c626312c112942e92695a9cf019ea9b5c8d85ee3effa00daea4e30aea3a09da",
+      "run/results/samples/C/Prob070_ece241_2013_q2/worker/requests/1/request.json": "460d9f03af303382f043045e01f756c67383fcc5a3aa71e190ce1a4e84066bf5",
+      "run/results/samples/C/Prob070_ece241_2013_q2/worker/solution.v": "ae31a5415a6ddd971eadfc83a40206d7ee43a2e9483ef05f4bcc90be0ab07dfe",
+      "run/results/samples/C/Prob070_ece241_2013_q2/worker/trace.jsonl": "fd9a1fcd9df1619202bd85697689a16e83fc851407cc47fb987e86a1512fc0c3"
+    },
+    "a_level": 0,
+    "first_content_identical_to_a": true,
+    "finding": "8192 tokens/length, incomplete endmodule; first request 281.002s; repair sent but no response at hard300s; no formatting-only recovery proven."
+  },
+  {
+    "task": "Prob078_dualedge",
+    "arm": "C",
+    "level": 1,
+    "solve_elapsed_s": 31.066702289506793,
+    "solve_deadline": false,
+    "requests": 2,
+    "received": 2,
+    "first_finish": "stop",
+    "first_completion_tokens": 558,
+    "first_request_elapsed_s": 19.249444102868438,
+    "first_reply_sha256": "27de3cfb68dbd0f64090a6c8b348e2dfeb819c479419e362c4798e76761f4f53",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-1280",
+      "10-8530"
+    ],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      },
+      {
+        "tool": "llm",
+        "round": 1
+      },
+      {
+        "tool": "lint_start",
+        "round": 1
+      },
+      {
+        "tool": "lint",
+        "round": 1,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": 971,
+    "evidence": {
+      "run/results/samples/C/Prob078_dualedge/judge/judge_work_logs/w_judge.log": "9cb9d027d5c0f172b15cdade20061b01261225f9f0852eea5ecdba27716eedb1",
+      "run/results/samples/C/Prob078_dualedge/row.json": "8498d082d5069dafe209a5925f9a6d476a6613a9fe4f1087aa8adb35b3b13647",
+      "run/results/samples/C/Prob078_dualedge/worker/compile_journal.json": "599113fa6a213713ee84bbddb1d4dc71ac2c82148836c6253081a1e673580317",
+      "run/results/samples/C/Prob078_dualedge/worker/compile_receipts/0/owned_compile.log": "3c03820364e244ccadae2df91c268bec0e43bf2a11ba399677876819bba991f2",
+      "run/results/samples/C/Prob078_dualedge/worker/compile_receipts/0/source_after.sv": "e1f5db76182ed286ddd3886229c157400f07e3f3a64a2ad757dabfe05a859eef",
+      "run/results/samples/C/Prob078_dualedge/worker/compile_receipts/0/source_before.sv": "e1f5db76182ed286ddd3886229c157400f07e3f3a64a2ad757dabfe05a859eef",
+      "run/results/samples/C/Prob078_dualedge/worker/compile_receipts/1/owned_compile.log": "6ce54d4b9306dd8f890fefa0a93c610248e1c0779f1824955107ab6832781b8f",
+      "run/results/samples/C/Prob078_dualedge/worker/compile_receipts/1/source_after.sv": "f3d4cc5d25f3ede2902d2b9c1b1ae7a18cafabeaf4284bf298a46bfda93ca0f8",
+      "run/results/samples/C/Prob078_dualedge/worker/compile_receipts/1/source_before.sv": "f3d4cc5d25f3ede2902d2b9c1b1ae7a18cafabeaf4284bf298a46bfda93ca0f8",
+      "run/results/samples/C/Prob078_dualedge/worker/requests.json": "758c046cc1aab9b2683a22c3a4da686bf975fcceb383ac37ab4eda3cf8b9e14f",
+      "run/results/samples/C/Prob078_dualedge/worker/requests/0/request.json": "37dc834676bbf10997598680873778be3567a603d232240ccfa5fcb68bd5886f",
+      "run/results/samples/C/Prob078_dualedge/worker/requests/0/response.json": "ee8443370d32d6e5fd4404fe4db1844c6e4fddd85b9c7daca1217fafbb8fe1ed",
+      "run/results/samples/C/Prob078_dualedge/worker/requests/1/request.json": "c4c383b17b4339126ddd1ed4a8b7531aeb3a16f35f22559c3acd5c19b6779492",
+      "run/results/samples/C/Prob078_dualedge/worker/requests/1/response.json": "677e3e8dcba42f707d63e8948f77528d133f3f274939a80487accc6de4dd8088",
+      "run/results/samples/C/Prob078_dualedge/worker/solution.v": "f3d4cc5d25f3ede2902d2b9c1b1ae7a18cafabeaf4284bf298a46bfda93ca0f8",
+      "run/results/samples/C/Prob078_dualedge/worker/trace.jsonl": "d7a5e06cf8db007286a16e41b64807cdeb630f17be7d6da56b9ceb3683f6aee4"
+    },
+    "a_level": 1,
+    "first_content_identical_to_a": true,
+    "finding": "Real first compile fails; original one model repair used. Read error codes and final official level; not a prefix/fence-only extraction failure."
+  },
+  {
+    "task": "Prob099_m2014_q6c",
+    "arm": "C",
+    "level": 0,
+    "solve_elapsed_s": 12.288909807801247,
+    "solve_deadline": false,
+    "requests": 1,
+    "received": 1,
+    "first_finish": "stop",
+    "first_completion_tokens": 316,
+    "first_request_elapsed_s": 10.899691615253687,
+    "first_reply_sha256": "f8d7946e433afa4361fb3eebaa786c7c935bb14c4c2beba4940015123062608f",
+    "first_fenced": false,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 0,
+    "first_compile_error_codes": [],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 1,
+    "official_error_codes": [
+      "10-3180",
+      "43-3322"
+    ],
+    "repair_diagnostic_chars": null,
+    "evidence": {
+      "run/results/samples/C/Prob099_m2014_q6c/judge/judge_work_logs/w_judge.log": "5e0bc84cc2fa7a32b2a61f915647568be29f2766cc1ef94b935d580b74a5746f",
+      "run/results/samples/C/Prob099_m2014_q6c/row.json": "d75d764d520e12931d5f20994ad44d027b11f70b4e33c4584fa3d9a1513f4300",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/compile_journal.json": "775955b51724bd0d7223c112c308f1fadd854a462917871e9d63006809925961",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/compile_receipts/0/owned_compile.log": "9cc1a7d882daca4b03c045cd8f7a5834c12d1824a66973213f25946c04cc22aa",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/compile_receipts/0/source_after.sv": "c95be318fa414aa567f6a3e9b5bababf6aa83a3bcc886fadff42acb45d6cfe12",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/compile_receipts/0/source_before.sv": "c95be318fa414aa567f6a3e9b5bababf6aa83a3bcc886fadff42acb45d6cfe12",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/requests.json": "86a7935679afb8a8df5b28f91f90ead6413f354414a7e4036d71cccfd4e59f35",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/requests/0/request.json": "012765a4eeb885242776e24cee83218560a9f16ea8bff24586fa0abdb56dbc32",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/requests/0/response.json": "ceb59a8c839e5d09c016cf034f83fac49d2ff22ee35178094489edcccd4fa2ee",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/solution.v": "c95be318fa414aa567f6a3e9b5bababf6aa83a3bcc886fadff42acb45d6cfe12",
+      "run/results/samples/C/Prob099_m2014_q6c/worker/trace.jsonl": "7d21510416384102aa591f9a02b6442f8ade2b5a49f2ce7f39372564932f42b3"
+    },
+    "a_level": 0,
+    "first_content_identical_to_a": true,
+    "finding": "Prompt port list Y1/Y3 contradicts later prose Y2/Y4; generated Y1/Y3 passes xvlog; official TB requires Y2/Y4. Input ambiguity, no permitted TB-driven automatic rename."
+  },
+  {
+    "task": "Prob118_history_shift",
+    "arm": "C",
+    "level": 3,
+    "solve_elapsed_s": 23.356421262025833,
+    "solve_deadline": false,
+    "requests": 2,
+    "received": 2,
+    "first_finish": "stop",
+    "first_completion_tokens": 260,
+    "first_request_elapsed_s": 10.10655302926898,
+    "first_reply_sha256": "34617bdac4458f9b6f53b284dc66c211a751f5ad80d6618000c92e4373db4fd3",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-2989",
+      "10-8530"
+    ],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      },
+      {
+        "tool": "llm",
+        "round": 1
+      },
+      {
+        "tool": "lint_start",
+        "round": 1
+      },
+      {
+        "tool": "lint",
+        "round": 1,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": 633,
+    "evidence": {
+      "run/results/samples/C/Prob118_history_shift/judge/judge_work_logs/w_judge.log": "ac10a73a56e44d8432d21fec997442d50a5cdc1267728c956acf01baed4d40ba",
+      "run/results/samples/C/Prob118_history_shift/row.json": "09187dce2c9dba06200491578249d3b968c2c49043858197ac4762d0d4316eac",
+      "run/results/samples/C/Prob118_history_shift/worker/compile_journal.json": "b8b0d1eb5a2ea5807b4fdbb902e2a48d8a510518866d8a68485602418a9f222b",
+      "run/results/samples/C/Prob118_history_shift/worker/compile_receipts/0/owned_compile.log": "3ceb4616ac0d361dc39b94972adcbab61a07fa5e0404f3d4dd9cfe140e209654",
+      "run/results/samples/C/Prob118_history_shift/worker/compile_receipts/0/source_after.sv": "3a9b45201df8e50bc326042b120fb9a2a8417a4a8f2b808707779f37e63e5b5f",
+      "run/results/samples/C/Prob118_history_shift/worker/compile_receipts/0/source_before.sv": "3a9b45201df8e50bc326042b120fb9a2a8417a4a8f2b808707779f37e63e5b5f",
+      "run/results/samples/C/Prob118_history_shift/worker/compile_receipts/1/owned_compile.log": "55973a7db1059e6c95e8e96370bc8442f0fd90620080a0e571717a28236a73e3",
+      "run/results/samples/C/Prob118_history_shift/worker/compile_receipts/1/source_after.sv": "8da913e8427f7f3017e48b143743ce95debad115d8673a00a921ba67da1e158d",
+      "run/results/samples/C/Prob118_history_shift/worker/compile_receipts/1/source_before.sv": "8da913e8427f7f3017e48b143743ce95debad115d8673a00a921ba67da1e158d",
+      "run/results/samples/C/Prob118_history_shift/worker/requests.json": "6ebb69fac5899e0f512bd502225e626923465ef2f44baadd67e9d2a651e2f70c",
+      "run/results/samples/C/Prob118_history_shift/worker/requests/0/request.json": "0638b941f9e367427ddfed1c10d29695165684824a18d28e9ab463c931d99378",
+      "run/results/samples/C/Prob118_history_shift/worker/requests/0/response.json": "bf5379e7814c0faa6add9813f178c4de40aff446e986b1682675f901fc27ba96",
+      "run/results/samples/C/Prob118_history_shift/worker/requests/1/request.json": "f2e82752232e0e40a3a4f569e84c8390c9ac7e0ffb9af41e52f3c06b58883c75",
+      "run/results/samples/C/Prob118_history_shift/worker/requests/1/response.json": "2af4faad149e468bfdfa4b6c194ec2d09eeabe152655c8f17c267a8b543ca064",
+      "run/results/samples/C/Prob118_history_shift/worker/solution.v": "8da913e8427f7f3017e48b143743ce95debad115d8673a00a921ba67da1e158d",
+      "run/results/samples/C/Prob118_history_shift/worker/trace.jsonl": "1554e41de2922c5f4a097a473fcbc6a96be547b959261cf8cf41cc9ab71fe880"
+    },
+    "a_level": 3,
+    "first_content_identical_to_a": true,
+    "finding": "Real first compile fails; original one model repair used. Read error codes and final official level; not a prefix/fence-only extraction failure."
+  },
+  {
+    "task": "Prob129_ece241_2013_q8",
+    "arm": "C",
+    "level": 3,
+    "solve_elapsed_s": 32.71921513043344,
+    "solve_deadline": false,
+    "requests": 1,
+    "received": 1,
+    "first_finish": "stop",
+    "first_completion_tokens": 866,
+    "first_request_elapsed_s": 30.20249617099762,
+    "first_reply_sha256": "cec4de1abff9926c27940ed7caba6b6ded09cb6b49ba4c66a92b976124cf574a",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-1280",
+      "10-8530"
+    ],
+    "declaration_fix_count": 1,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "declaration_fix",
+        "round": 0,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": null,
+    "evidence": {
+      "run/results/samples/C/Prob129_ece241_2013_q8/judge/judge_work_logs/w_judge.log": "2cf9b17f33a2495e0a200732453ce165a4aa095b7abb91576562f1c249a90314",
+      "run/results/samples/C/Prob129_ece241_2013_q8/row.json": "016f61d855b9188adde258da656b67245749a1469198b6a81d733aafbeaf11f0",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/compile_journal.json": "b103ba43bf5cd1996f30567f72698a6e2c63a71a6f53f97cc84a795c0a07aa29",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/compile_receipts/0/owned_compile.log": "96bb21550a895f8a4267e654f101e36464293cae4100f8b121c23b68f97c9ed1",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/compile_receipts/0/source_after.sv": "59d7b4415ddc6a1e20dd8adea1e980180d8b5fef6846bd5a989e64078dd9412f",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/compile_receipts/0/source_before.sv": "59d7b4415ddc6a1e20dd8adea1e980180d8b5fef6846bd5a989e64078dd9412f",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/compile_receipts/1/owned_compile.log": "c42dcb521d92bf04757ddfe2a59e422203c92171ab162c6594a542208af9f84b",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/compile_receipts/1/source_after.sv": "db6767c85a89f282e1ead626fd9960121e41211b9671d7595fc3600394204807",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/compile_receipts/1/source_before.sv": "db6767c85a89f282e1ead626fd9960121e41211b9671d7595fc3600394204807",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/requests.json": "b158cb4d7f180c30b02e0566d8df06eafe1a8c1a85f274987cdc88b1b4bd3bb3",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/requests/0/request.json": "4c071ac39a67992d2758df568a4deecd95132e4b9ed3e7ab79901d2db3b1a831",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/requests/0/response.json": "ad057303e3e449ae147d01ee91758b3f5d4a45754cd24d290dc2e0480dc48257",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/solution.v": "db6767c85a89f282e1ead626fd9960121e41211b9671d7595fc3600394204807",
+      "run/results/samples/C/Prob129_ece241_2013_q8/worker/trace.jsonl": "2cf430c30916770794ac4976c953bd6574289b4020459d9c5af6d27c4141edc9"
+    },
+    "a_level": 3,
+    "first_content_identical_to_a": true,
+    "finding": "Mechanical ANSI fix recompiles then returns before map_feedback; contract abstain in this completed archive. No supported functional check skipped here."
+  },
+  {
+    "task": "Prob133_2014_q3fsm",
+    "arm": "C",
+    "level": 0,
+    "solve_elapsed_s": 57.00795339792967,
+    "solve_deadline": false,
+    "requests": 1,
+    "received": 1,
+    "first_finish": "stop",
+    "first_completion_tokens": 1615,
+    "first_request_elapsed_s": 55.6387018058449,
+    "first_reply_sha256": "d06171adca944b69d82ae6f0500f381a4db71df7abd5d3d091e2b93c4edf6e32",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 0,
+    "first_compile_error_codes": [],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 1,
+    "official_error_codes": [
+      "10-3818",
+      "43-3322"
+    ],
+    "repair_diagnostic_chars": null,
+    "evidence": {
+      "run/results/samples/C/Prob133_2014_q3fsm/judge/judge_work_logs/w_judge.log": "c5e56f7adf905bddcb46886e693f829a878abc67bf6ba1d8fb89eb07888e976b",
+      "run/results/samples/C/Prob133_2014_q3fsm/row.json": "60e38eb561015053b0640e64f5b0b138bd4009e7a0d8cf0ff002c0f1de880a90",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/compile_journal.json": "094a53aefcc55f13b3705a0076d84f0d4f406fe7927e542f7c49cd0716ad0e65",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/compile_receipts/0/owned_compile.log": "d746253e4047da039e3aadea7c655c531e952e69bfbb2bd2b352b644128ddd13",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/compile_receipts/0/source_after.sv": "026bed6447fd20b41ebfcd758c0b980c6d0d16f642f34869f6a5699cae807233",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/compile_receipts/0/source_before.sv": "026bed6447fd20b41ebfcd758c0b980c6d0d16f642f34869f6a5699cae807233",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/requests.json": "5fb53c366f44eb635ea0f3e8757aaad1de62d02bcd2c85ad3eb963c0f5757eeb",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/requests/0/request.json": "e0537b03f4a4514b3911d7aaa0b46d490b1d19769d54dfe58bad1c1d0178b1e2",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/requests/0/response.json": "70d3ece725c140ae48a9ea8d23a59b588cc11f9c16b07cc2edc8b708974c0240",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/solution.v": "026bed6447fd20b41ebfcd758c0b980c6d0d16f642f34869f6a5699cae807233",
+      "run/results/samples/C/Prob133_2014_q3fsm/worker/trace.jsonl": "baa675f33f4c2d79c664544c3432a7272b1288564b2cf73d0c0ddb7f61496e9c"
+    },
+    "a_level": 0,
+    "first_content_identical_to_a": true,
+    "finding": "xvlog passes; official xelab rejects z_reg driven by always_comb and always_ff. One request, repair unused."
+  },
+  {
+    "task": "Prob134_2014_q3c",
+    "arm": "C",
+    "level": 0,
+    "solve_elapsed_s": 42.58426203392446,
+    "solve_deadline": false,
+    "requests": 2,
+    "received": 2,
+    "first_finish": "stop",
+    "first_completion_tokens": 543,
+    "first_request_elapsed_s": 18.8544438816607,
+    "first_reply_sha256": "5bb7168fc6f0082e38fd66c642426fee20a0ffbc8921f2b4a766b3a99f56fc00",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-1280",
+      "10-8530"
+    ],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      },
+      {
+        "tool": "llm",
+        "round": 1
+      },
+      {
+        "tool": "lint_start",
+        "round": 1
+      },
+      {
+        "tool": "lint",
+        "round": 1,
+        "rc": 1
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [
+      "10-1280",
+      "10-8530"
+    ],
+    "repair_diagnostic_chars": 2048,
+    "evidence": {
+      "run/results/samples/C/Prob134_2014_q3c/judge/judge_work_logs/w_judge.log": "a7ab61827cf7618f3e39e18d6ba0089e4f6835ca8fd87dc548a1e27253c05580",
+      "run/results/samples/C/Prob134_2014_q3c/row.json": "04ba48c95239be55601679dba0240a6f8817dbe6a8a7244b5c4bc34199e6b318",
+      "run/results/samples/C/Prob134_2014_q3c/worker/compile_journal.json": "94540c45e7de3d5dd87a7d9e9e36cbd90f227c4a2286fd271921f19214401c59",
+      "run/results/samples/C/Prob134_2014_q3c/worker/compile_receipts/0/owned_compile.log": "866631364258b8fdc39d5913b90dddd9bf6ee5ebcc477483b2b131acc5e93bcf",
+      "run/results/samples/C/Prob134_2014_q3c/worker/compile_receipts/0/source_after.sv": "41775a87eaeb3ee15e3f799e10493fe9451626fbd6492531a0909b524dbec825",
+      "run/results/samples/C/Prob134_2014_q3c/worker/compile_receipts/0/source_before.sv": "41775a87eaeb3ee15e3f799e10493fe9451626fbd6492531a0909b524dbec825",
+      "run/results/samples/C/Prob134_2014_q3c/worker/compile_receipts/1/owned_compile.log": "ec80a00d1b2b6f97b9f73b0c05178d12188f8da4ce55b52d079c493bbe6d28fe",
+      "run/results/samples/C/Prob134_2014_q3c/worker/compile_receipts/1/source_after.sv": "8d9b53291f679b84ca6a1c8d0f1e2aba06965c4474a614def61a3315d3f831c9",
+      "run/results/samples/C/Prob134_2014_q3c/worker/compile_receipts/1/source_before.sv": "8d9b53291f679b84ca6a1c8d0f1e2aba06965c4474a614def61a3315d3f831c9",
+      "run/results/samples/C/Prob134_2014_q3c/worker/requests.json": "342eca6b6e0e3b0c9ede4b3c8797be6bbe41f26f1823550e4e12b77a13e4ccac",
+      "run/results/samples/C/Prob134_2014_q3c/worker/requests/0/request.json": "1553e3b45065da8016b1d6300e1a88efa0995ee60312470edb6a73b00e8d85af",
+      "run/results/samples/C/Prob134_2014_q3c/worker/requests/0/response.json": "470cc0124b37e8687f71b0e8cb57a0ac15e9fe85700a4ed828b56ed093a1a8f3",
+      "run/results/samples/C/Prob134_2014_q3c/worker/requests/1/request.json": "81f3b4ec53535870ab86b224ff6a2d962ec0d611a4dc6136404021d0d7735bf9",
+      "run/results/samples/C/Prob134_2014_q3c/worker/requests/1/response.json": "ffa7290f09870f83012b55d45b9c5a56d94ea924073e72c09aa9374f21d08759",
+      "run/results/samples/C/Prob134_2014_q3c/worker/solution.v": "8d9b53291f679b84ca6a1c8d0f1e2aba06965c4474a614def61a3315d3f831c9",
+      "run/results/samples/C/Prob134_2014_q3c/worker/trace.jsonl": "b6cdfc1c472703dbe7d6e43701d0425dbde76caedda276b5ca96a85116790c4d"
+    },
+    "a_level": 0,
+    "first_content_identical_to_a": true,
+    "finding": "First wire next_state and assignment to input y fail. WARNING/repeated next_state fill2048 chars; y error absent from repair diagnostics. Repair changes next_state but still drives input y, L0."
+  },
+  {
+    "task": "Prob140_fsm_hdlc",
+    "arm": "C",
+    "level": 1,
+    "solve_elapsed_s": 84.64295602217317,
+    "solve_deadline": false,
+    "requests": 1,
+    "received": 1,
+    "first_finish": "stop",
+    "first_completion_tokens": 2398,
+    "first_request_elapsed_s": 82.14297445118427,
+    "first_reply_sha256": "ffa964d4c6b3a0cc5f653c26af0c6e75547c7c9641b69c7736440bb93e86bc63",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-1280",
+      "10-8530"
+    ],
+    "declaration_fix_count": 1,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "declaration_fix",
+        "round": 0,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": null,
+    "evidence": {
+      "run/results/samples/C/Prob140_fsm_hdlc/judge/judge_work_logs/w_judge.log": "322bebe6d50dd8f07a3762c44fb8ff3163670f19e746e792cac9a2d2443ec471",
+      "run/results/samples/C/Prob140_fsm_hdlc/row.json": "59c316764d6ef2a0149aeef542ae94691080161ff73e5371d6dce8e1e81d0121",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/compile_journal.json": "87d3a42ea7f04e061705d7b56a06dfc4f851e5195ca2ac9615d106260b246779",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/compile_receipts/0/owned_compile.log": "04b75b94c6d90a5f1eb806dc535572818f234f3a3b8e56f5ae9bab7f14ed8188",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/compile_receipts/0/source_after.sv": "e263a1f9357197d84d2d28b75f767b286d4d571d3179cab76d9dbeadb31bc698",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/compile_receipts/0/source_before.sv": "e263a1f9357197d84d2d28b75f767b286d4d571d3179cab76d9dbeadb31bc698",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/compile_receipts/1/owned_compile.log": "87c2f837ca7d4d67123d947268a95c7b9ece2adf20e0b33f5c5b06fdf8c62d22",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/compile_receipts/1/source_after.sv": "3e56d88358f330eae7af4617c9c5380d8de489105915ddc9708dbf9703000e26",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/compile_receipts/1/source_before.sv": "3e56d88358f330eae7af4617c9c5380d8de489105915ddc9708dbf9703000e26",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/requests.json": "14f47890460e58fa3b9527dc2c8f24748410ee75667ee3c93883d3c68e7ae913",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/requests/0/request.json": "c723afb918d5b41e391341ae22e4a877cf1b3b553b07d0d6c997f4911791a1f1",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/requests/0/response.json": "08a4579bc1cb938ed9cfe5b59a0bf6669206ca3f6cbddef99bbc1b5f0564fce8",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/solution.v": "3e56d88358f330eae7af4617c9c5380d8de489105915ddc9708dbf9703000e26",
+      "run/results/samples/C/Prob140_fsm_hdlc/worker/trace.jsonl": "3306c13b43480ec9c36ddb82103a81ebd70c126f75b4312cc3733f05dfe02e87"
+    },
+    "a_level": 1,
+    "first_content_identical_to_a": true,
+    "finding": "Mechanical ANSI fix recompiles then returns before map_feedback; contract abstain in this completed archive. No supported functional check skipped here."
+  },
+  {
+    "task": "Prob144_conwaylife",
+    "arm": "C",
+    "level": 0,
+    "solve_elapsed_s": 59.25571245700121,
+    "solve_deadline": false,
+    "requests": 2,
+    "received": 2,
+    "first_finish": "stop",
+    "first_completion_tokens": 869,
+    "first_request_elapsed_s": 31.03838225826621,
+    "first_reply_sha256": "435dab4a1f2cb578989e7f209edcb6feb2237769f6e4dcfb7fd853e8025b4e30",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-1280",
+      "10-2951",
+      "10-8530"
+    ],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      },
+      {
+        "tool": "llm",
+        "round": 1
+      },
+      {
+        "tool": "lint_start",
+        "round": 1
+      },
+      {
+        "tool": "lint",
+        "round": 1,
+        "rc": 1
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 3,
+    "official_error_codes": [
+      "10-2951",
+      "10-8530"
+    ],
+    "repair_diagnostic_chars": 1160,
+    "evidence": {
+      "run/results/samples/C/Prob144_conwaylife/judge/judge_work_logs/w_judge.log": "0e80e373fc8139a31cea120ab892264f0990f6e0e1aa8bb1326d16affe6ec6f2",
+      "run/results/samples/C/Prob144_conwaylife/row.json": "203ca4d5628dd81b7af66c551aa3dafaf249618a600372c0892deafa5cc1cfcc",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_journal.json": "cf7b17eb4cd34dee620b24a490e60ab9a0ccf83b98a4391c84830eb04d12954f",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/0/owned_compile.log": "c78d1a047eddc4c6f6f9cd07aa31643b692d4ec8a7f13f33b323bdef9fd5a369",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/0/source_after.sv": "dba1cdec4b546757a82b68310097114ad517f68babeecb6f6123fd2b52db6745",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/0/source_before.sv": "dba1cdec4b546757a82b68310097114ad517f68babeecb6f6123fd2b52db6745",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/1/owned_compile.log": "ec245b896b4e44b454ce47439d38416e4d6e3e3401271deaa7bfec5231dc0576",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/1/source_after.sv": "18941b31e353c7bc160d949c4604ea63e11dc168bee95c3f08543f39dbfc85eb",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/1/source_before.sv": "18941b31e353c7bc160d949c4604ea63e11dc168bee95c3f08543f39dbfc85eb",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/2/owned_compile.log": "86a8f0bf88b204b3a64997d9b641b5e5ee7835292ca1bd038ab79647fc8ea7d8",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/2/source_after.sv": "37b0ecc71117af20f378e67260ce3ef0d713e8f28f404505ec947d6351d7bded",
+      "run/results/samples/C/Prob144_conwaylife/worker/compile_receipts/2/source_before.sv": "37b0ecc71117af20f378e67260ce3ef0d713e8f28f404505ec947d6351d7bded",
+      "run/results/samples/C/Prob144_conwaylife/worker/requests.json": "1ef81c3a674ae2ab8459edabc2e305787f59377287608b86500b631d6130116a",
+      "run/results/samples/C/Prob144_conwaylife/worker/requests/0/request.json": "3adcf03dc83aa865fc3c522302a814f326062e7ec67e0b42f829b7846682b679",
+      "run/results/samples/C/Prob144_conwaylife/worker/requests/0/response.json": "849ab3f2cdd3c17f5f90f88fd29a7d94710144d0b42189b4f0c7c8bc9b2b7ae6",
+      "run/results/samples/C/Prob144_conwaylife/worker/requests/1/request.json": "db809b574a2e728b810e6ae4f72f2c97cc20ab0417597da8e6e5a9ce2e2780f1",
+      "run/results/samples/C/Prob144_conwaylife/worker/requests/1/response.json": "29bf4729f1c12101fb78668feb86e307234ca4e4b8b8e41d6349a0a05a5a2752",
+      "run/results/samples/C/Prob144_conwaylife/worker/solution.v": "37b0ecc71117af20f378e67260ce3ef0d713e8f28f404505ec947d6351d7bded",
+      "run/results/samples/C/Prob144_conwaylife/worker/trace.jsonl": "a90992b765d51855f891a6d4f3e8448ab4ab7e4f0ff9cb782b38b6d800515972"
+    },
+    "a_level": 0,
+    "first_content_identical_to_a": true,
+    "finding": "Both candidates use nonconstant cell_idx on continuous-assignment destination. First constant error was already delivered to repair; declaration patch attempt also fails; repair remains L0."
+  },
+  {
+    "task": "Prob153_gshare",
+    "arm": "C",
+    "level": 1,
+    "solve_elapsed_s": 123.09718288294971,
+    "solve_deadline": false,
+    "requests": 2,
+    "received": 2,
+    "first_finish": "stop",
+    "first_completion_tokens": 2435,
+    "first_request_elapsed_s": 84.14350207522511,
+    "first_reply_sha256": "9ee830f6d526ee5b8685d2ce50e4d13cdb7bd7c4088b4e0a3466998a97f9ca34",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-2951",
+      "10-4982",
+      "10-8530"
+    ],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      },
+      {
+        "tool": "llm",
+        "round": 1
+      },
+      {
+        "tool": "lint_start",
+        "round": 1
+      },
+      {
+        "tool": "lint",
+        "round": 1,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": 2048,
+    "evidence": {
+      "run/results/samples/C/Prob153_gshare/judge/judge_work_logs/w_judge.log": "e3466543492549d50bfc1d56944636b0378939f5e9c7ec1892702f7193bbdf53",
+      "run/results/samples/C/Prob153_gshare/row.json": "c235a2d40cfb1641ad2fd490c8854a991b4fb9eadc08bff9e0e863cb94b89c0f",
+      "run/results/samples/C/Prob153_gshare/worker/compile_journal.json": "9ea24a7732ca7c652668ed6c7c0273ae9898c3a43a5b4b5f16c9b7cb830ddca8",
+      "run/results/samples/C/Prob153_gshare/worker/compile_receipts/0/owned_compile.log": "47b9f2d3eef95df009e38769d251eb4cb1f6daef7118b78db9748be0d2d68390",
+      "run/results/samples/C/Prob153_gshare/worker/compile_receipts/0/source_after.sv": "60abfb38767ccee22bf5c40212b2421a674404fea030cf32642c41fe939209d1",
+      "run/results/samples/C/Prob153_gshare/worker/compile_receipts/0/source_before.sv": "60abfb38767ccee22bf5c40212b2421a674404fea030cf32642c41fe939209d1",
+      "run/results/samples/C/Prob153_gshare/worker/compile_receipts/1/owned_compile.log": "d95988879f684ae4fdd8a50239f49d873b75fabf32cbe2bbf00d87df0757b6e3",
+      "run/results/samples/C/Prob153_gshare/worker/compile_receipts/1/source_after.sv": "4cc57e1fa6a9f4b9e2b7858b1acb422fc4ca0da6e68145ce974f226b93e59dfa",
+      "run/results/samples/C/Prob153_gshare/worker/compile_receipts/1/source_before.sv": "4cc57e1fa6a9f4b9e2b7858b1acb422fc4ca0da6e68145ce974f226b93e59dfa",
+      "run/results/samples/C/Prob153_gshare/worker/requests.json": "f59b6f3018046f5c439f6504cfca00bb6539f5415fbf89b7d3cd1f3dcac3a8cb",
+      "run/results/samples/C/Prob153_gshare/worker/requests/0/request.json": "7738cb9bbdf01bc131949ca6a9d6f46e5253e50f893c6af1bd866cf9d7008fdd",
+      "run/results/samples/C/Prob153_gshare/worker/requests/0/response.json": "289b12b8d9330b6b58c5da3b9da18aa09779bd8e5ee47d9b82af567c42de14c2",
+      "run/results/samples/C/Prob153_gshare/worker/requests/1/request.json": "73b41d605f261af82752e1aabcf1fa28e7c42078f9d0bb87400c62c4cf42fd83",
+      "run/results/samples/C/Prob153_gshare/worker/requests/1/response.json": "1098b03f163dd83222dda870fa1d143ca5145d9c08901b690a03e74f2e07d010",
+      "run/results/samples/C/Prob153_gshare/worker/solution.v": "4cc57e1fa6a9f4b9e2b7858b1acb422fc4ca0da6e68145ce974f226b93e59dfa",
+      "run/results/samples/C/Prob153_gshare/worker/trace.jsonl": "721d48de73cbf2be93df1b756a4b884db36bdea1ba9908e8e6596d8a373a789b"
+    },
+    "a_level": 1,
+    "first_content_identical_to_a": true,
+    "finding": "Real first compile fails; original one model repair used. Read error codes and final official level; not a prefix/fence-only extraction failure."
+  },
+  {
+    "task": "Prob155_lemmings4",
+    "arm": "C",
+    "level": 3,
+    "solve_elapsed_s": 113.93676375597715,
+    "solve_deadline": false,
+    "requests": 2,
+    "received": 2,
+    "first_finish": "stop",
+    "first_completion_tokens": 1710,
+    "first_request_elapsed_s": 59.11538775078952,
+    "first_reply_sha256": "bc23d76c25a2f7033e9d36d29c25188478ac254a1ce94596eaed874f6c371bd2",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 1,
+    "first_compile_error_codes": [
+      "10-2967",
+      "10-4982",
+      "10-8530",
+      "10-8549"
+    ],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 1
+      },
+      {
+        "tool": "llm_start",
+        "round": 1
+      },
+      {
+        "tool": "llm",
+        "round": 1
+      },
+      {
+        "tool": "lint_start",
+        "round": 1
+      },
+      {
+        "tool": "lint",
+        "round": 1,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 2,
+    "official_error_codes": [],
+    "repair_diagnostic_chars": 2048,
+    "evidence": {
+      "run/results/samples/C/Prob155_lemmings4/judge/judge_work_logs/w_judge.log": "1345737cfe8ed425f39cbb0aef4bb2b9348b6cc1b3bc847e6d0429c38f4c04c9",
+      "run/results/samples/C/Prob155_lemmings4/row.json": "d24217e50dc2af5238e4ed95afd73322b3c16cb5b082398b2b0016adc0378834",
+      "run/results/samples/C/Prob155_lemmings4/worker/compile_journal.json": "00defe5af78e21093a08a90eca4395b7793401ac01170b566480779a750d44a3",
+      "run/results/samples/C/Prob155_lemmings4/worker/compile_receipts/0/owned_compile.log": "fdbe8e64e9d105f4db34683833168c5010e19985adfef64681208b6724e58672",
+      "run/results/samples/C/Prob155_lemmings4/worker/compile_receipts/0/source_after.sv": "ba490be4e905254d2394c0cfd411ac76d74c893ef05dc505fa2c19c05f8caad0",
+      "run/results/samples/C/Prob155_lemmings4/worker/compile_receipts/0/source_before.sv": "ba490be4e905254d2394c0cfd411ac76d74c893ef05dc505fa2c19c05f8caad0",
+      "run/results/samples/C/Prob155_lemmings4/worker/compile_receipts/1/owned_compile.log": "93fec9c28f33d0199b2ac2378538da1d31c8bc9f6f2f41a7576dd2282821dc1e",
+      "run/results/samples/C/Prob155_lemmings4/worker/compile_receipts/1/source_after.sv": "2cd95da270934f41edb47a1949a3e4c2336cf23690bef09ce204c3115ac27730",
+      "run/results/samples/C/Prob155_lemmings4/worker/compile_receipts/1/source_before.sv": "2cd95da270934f41edb47a1949a3e4c2336cf23690bef09ce204c3115ac27730",
+      "run/results/samples/C/Prob155_lemmings4/worker/requests.json": "a6eff401721fe75656bea590cb2fce1345007dbe7adddcf32d1fba0dac2b08f5",
+      "run/results/samples/C/Prob155_lemmings4/worker/requests/0/request.json": "8cb2efa0ade50f2f46690599ce08eff81d0e02b1a3a71e463b9a38b5dd979969",
+      "run/results/samples/C/Prob155_lemmings4/worker/requests/0/response.json": "1e6f8697209f46f463ef4e1fd5087e06e1aaefddd9ad0f73b4cbd8ffcdf81366",
+      "run/results/samples/C/Prob155_lemmings4/worker/requests/1/request.json": "02c0bc877b9b52c9aa71524497ec4cb77e9167d6c855aaf6e3491cb902f356f3",
+      "run/results/samples/C/Prob155_lemmings4/worker/requests/1/response.json": "846101ad266bcf6ad2334596fff018d5369d3752b8e10f7adb2c2285dd1ed292",
+      "run/results/samples/C/Prob155_lemmings4/worker/solution.v": "2cd95da270934f41edb47a1949a3e4c2336cf23690bef09ce204c3115ac27730",
+      "run/results/samples/C/Prob155_lemmings4/worker/trace.jsonl": "912f4040f270c2fb61ac3213f9aaad1615451f902f15f9482ed6d2adb231f47f"
+    },
+    "a_level": 3,
+    "first_content_identical_to_a": true,
+    "finding": "Real first compile fails; original one model repair used. Read error codes and final official level; not a prefix/fence-only extraction failure."
+  },
+  {
+    "task": "Prob156_review2015_fancytimer",
+    "arm": "C",
+    "level": 0,
+    "solve_elapsed_s": 48.242036605253816,
+    "solve_deadline": false,
+    "requests": 1,
+    "received": 1,
+    "first_finish": "stop",
+    "first_completion_tokens": 1336,
+    "first_request_elapsed_s": 46.867972154170275,
+    "first_reply_sha256": "620f9daf93a0f4d3a8f987cce20b90a7220592b3ab15cbe49543b8e4976efb76",
+    "first_fenced": true,
+    "first_complete_topmodule": true,
+    "first_compile_rc": 0,
+    "first_compile_error_codes": [],
+    "declaration_fix_count": 0,
+    "trace_tools": [
+      {
+        "tool": "agent_meta"
+      },
+      {
+        "tool": "llm_start",
+        "round": 0
+      },
+      {
+        "tool": "llm",
+        "round": 0
+      },
+      {
+        "tool": "lint_start",
+        "round": 0
+      },
+      {
+        "tool": "lint",
+        "round": 0,
+        "rc": 0
+      }
+    ],
+    "contract_status": "abstain",
+    "native_checks": [],
+    "compile_journal_count": 1,
+    "official_error_codes": [
+      "10-3818",
+      "43-3322"
+    ],
+    "repair_diagnostic_chars": null,
+    "evidence": {
+      "run/results/samples/C/Prob156_review2015_fancytimer/judge/judge_work_logs/w_judge.log": "25d77f41a8a1ef8ddabf9133911f89875def28d1c65d03bb99fe644bd17a2b9a",
+      "run/results/samples/C/Prob156_review2015_fancytimer/row.json": "4408e899cfe1810671520e4785272f82dce6118b068cba81b0d5112c400db5c8",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/compile_journal.json": "6df9b2274cb1289a9ec5c1b03ea99cd070245aee397910c295e0725490bc005d",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/compile_receipts/0/owned_compile.log": "5d14b3e02998689770ea92a1021f23f71223d235aa6098646d528fb31b7b104b",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/compile_receipts/0/source_after.sv": "b79d72bde68623b32520f8a5ed483bb09c85ca45d0f19b38b33a830d1d618744",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/compile_receipts/0/source_before.sv": "b79d72bde68623b32520f8a5ed483bb09c85ca45d0f19b38b33a830d1d618744",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/requests.json": "9411416f8166a6ca51ea7984471d028cb5e170532a3f01ef86b5e37368224773",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/requests/0/request.json": "ed2572d3672da82b2d611c6f5a3518f21d2d6baa39eb4f7ec139a1dab65f4d0a",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/requests/0/response.json": "3c340afd63de6528d0e188d435c83f54fa950e384e063a72d2d65004bf326489",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/solution.v": "b79d72bde68623b32520f8a5ed483bb09c85ca45d0f19b38b33a830d1d618744",
+      "run/results/samples/C/Prob156_review2015_fancytimer/worker/trace.jsonl": "2764f2a9ddb98254cb90ba611fe025a0c5aef474ada57195f330b8d255d35efb"
+    },
+    "a_level": 0,
+    "first_content_identical_to_a": true,
+    "finding": "xvlog passes; official xelab rejects delay_reg/count_reg/cycle_cnt/counting_reg/done_reg driven by always_comb and always_ff. One request, repair unused."
+  }
+]

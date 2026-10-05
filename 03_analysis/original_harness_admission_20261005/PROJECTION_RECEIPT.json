@@ -1,0 +1,30 @@
+{
+  "schema": "original_harness_projection_readonly_receipt_v1",
+  "projector_sha256": "da4131103e2f711eba24d8e6872e1d3ad6ca82ab84ec5579511687d75ce0482b",
+  "adapter_sha256": "9b41ef3adfd345ff037ee4dcd3ef918d991c3bc5e52562ed8bc309355e0a39f9",
+  "source_evidence": {
+    "spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
+    "archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+    "auditor_sha256": "e3992c2791b53dea5ec4b3391e7792c9c2dd7c5f4c71f220f81740bc4379359d",
+    "audit_report_sha256": "a1620cbe38e93c4599955fa352044d39d08b97f35460d973d1cc115ce6415056",
+    "manifest_sha256": "0ec738733933bd2e42a5ed7123f96663a902bdcec968b9872381fb687e768231",
+    "guard_sha256": "16b7c84b4cd90dce7e9e8ca7425464d555b6b97fd9cebad49eec3ce658fea25b",
+    "resource_sha256": "470163c03f9d1f6fbd8e7856abedacae57adac3cb1b05d1b214968556b9e94e0",
+    "adapter_sha256": "9b41ef3adfd345ff037ee4dcd3ef918d991c3bc5e52562ed8bc309355e0a39f9",
+    "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+    "source_files": 10,
+    "manifest_files": 613,
+    "global_native_receipts": 100,
+    "native_compile_commands": 50,
+    "native_simulation_commands": 50,
+    "actual_readonly_rebuild_matches_source": true
+  },
+  "qualified_inputs": 2,
+  "excluded_inputs": 1,
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "actual_cloud_or_fifo_calls": 0,
+  "archived_code_executed": false,
+  "verified_live_pure_auditor_reexecuted": true,
+  "projection_sha256": "7b0668e3dbe1628844581098a4a96be1a44d12c3e1a09eaf300f73cb43996ddb"
+}

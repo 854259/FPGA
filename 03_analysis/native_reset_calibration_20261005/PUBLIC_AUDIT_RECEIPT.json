@@ -1,0 +1,173 @@
+{
+  "schema": "actual_native14_terminal_audit_receipt_v1",
+  "observed_at_epoch": 1791192718.820789,
+  "python": "3.12.14",
+  "ticket": 63,
+  "archive_sha256": "1dec4736126e0de6472836a2fc5572e495d0a4febe1fc96e5ba43c9b3760de92",
+  "archive_bytes": 563497,
+  "spec_sha256": "f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3",
+  "auditor_sha256": "084cbce2b1d32234c429f4fe4a1cc50baa9a829347cb1146259298b99a3226b0",
+  "result_sha256": "b7bd3816aae7f238aab39abafb138238873ca2384e5df508c3f139ebf0b79417",
+  "source_assets": 44,
+  "source_unchanged": true,
+  "evidence_complete": true,
+  "qualified_for_generated_control_discrimination": true,
+  "native_compile_commands": 14,
+  "native_simulation_commands": 14,
+  "global_native_receipts": 28,
+  "attempted_compile_commands": 14,
+  "attempted_simulation_commands": 14,
+  "unconfirmed_native_attempts": 0,
+  "controls": [
+    {
+      "label": "positive",
+      "intent": "positive",
+      "returncode": 0,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "reset_ignored",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 18,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "synchronous_reset",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 12,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "history_sync_only",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 2,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "clear_rising_only",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 5,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "clear_falling_only",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 5,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "constant_zero",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 25,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "constant_one",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 113,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "swapped_edges",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 50,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "two_cycle_pulse",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 20,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "one_cycle_late",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 45,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "negedge_sample",
+      "intent": "wrong",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 16,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "failure_propagation",
+      "intent": "sentinel",
+      "returncode": 1,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "positive_renamed",
+      "intent": "positive",
+      "returncode": 0,
+      "checks": 69,
+      "retained_scalar_actual_values": 138,
+      "mismatches": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    }
+  ],
+  "false_acceptances": [],
+  "generated_research_test": true,
+  "original_harness": false,
+  "model_calls": 0,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "independent_quality_admitted": 0,
+  "eligible_for_independent_models": false,
+  "adoption": false,
+  "existing_audit_recovered": false
+}

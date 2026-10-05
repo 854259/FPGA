@@ -1,0 +1,53 @@
+{
+  "spec_sha256": "87cb93c00f386f3f16ece9f0ec9a7f49b18fd260faac9c75e83d4db9d31038bf",
+  "archive_sha256": "4361c6c6bf79861c321260b003f4bfbf3b9f5238605ca6380b8743dfa3bf9088",
+  "assets": 38,
+  "python": "3.12.3",
+  "tests_passed": 54,
+  "returncode": 0,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "source_unchanged": true,
+  "protected": {
+    "frozen_source_counts": {
+      "phase_full156_20261005_v1": 44,
+      "natural_edge_calibration_20261005_v1": 11,
+      "native_reset_contract_20261005_v1": 5,
+      "natural_worker_20261005_v1": 5,
+      "native_reset_calibration_20261005_v1": 44,
+      "natural_runtime_20261005_v1": 17
+    },
+    "input_files": 936,
+    "official_files": 35,
+    "model_unchanged": true
+  },
+  "environment": {
+    "verified": true,
+    "tools": {
+      "xvlog": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xelab": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xsim": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+        "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+      },
+      "vivado": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/vivado",
+        "sha256": "121b8c468f96f7ee750fc8f7d2386c54d047b204a5b8b7a5dada85f04997302d"
+      }
+    },
+    "vivado_bin": "/workspace/AMD/2026.1/Vivado/bin",
+    "udev_stub": "/workspace/team/udev-stub",
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "disk_free_bytes": 9861541888,
+  "actual_experiment_submitted": false,
+  "stdout": "",
+  "stderr": "test_cwd_argv_and_candidate_only_top_are_fixed (test_audit.ElaborationBindingTests.test_cwd_argv_and_candidate_only_top_are_fixed) ... ok\ntest_nonzero_without_real_error_and_tampered_feedback_rejected (test_audit.ElaborationBindingTests.test_nonzero_without_real_error_and_tampered_feedback_rejected) ... ok\ntest_normal_nonzero_facts_and_zero_pass_binding (test_audit.ElaborationBindingTests.test_normal_nonzero_facts_and_zero_pass_binding) ... ok\ntest_reference_or_pending_measurement_rejected (test_audit.ElaborationBindingTests.test_reference_or_pending_measurement_rejected) ... ok\ntest_tool_source_and_complete_log_bound (test_audit.ElaborationBindingTests.test_tool_source_and_complete_log_bound) ... ok\ntest_unknown_supervision_is_never_model_feedback (test_audit.ElaborationBindingTests.test_unknown_supervision_is_never_model_feedback) ... ok\ntest_control_arm_cannot_claim_candidate_elaboration (test_audit.ExactReplayTests.test_control_arm_cannot_claim_candidate_elaboration) ... ok\ntest_exact_native_feedback_in_unique_repair_and_pass_chain (test_audit.ExactReplayTests.test_exact_native_feedback_in_unique_repair_and_pass_chain) ... ok\ntest_invented_repair_payload_rejected (test_audit.ExactReplayTests.test_invented_repair_payload_rejected) ... ok\ntest_missing_or_orphan_candidate_check_rejected (test_audit.ExactReplayTests.test_missing_or_orphan_candidate_check_rejected) ... ok\ntest_successful_ansi_patch_preserves_early_return_without_xelab (test_audit.ExactReplayTests.test_successful_ansi_patch_preserves_early_return_without_xelab) ... ok\ntest_actual_log_missing_is_measurement_failure (test_elaboration.Controls.test_actual_log_missing_is_measurement_failure) ... ok\ntest_changed_full_log_receipt_rejected (test_elaboration.Controls.test_changed_full_log_receipt_rejected) ... ok\ntest_confirmed_nonzero_returns_actual_error_facts_only (test_elaboration.Controls.test_confirmed_nonzero_returns_actual_error_facts_only) ... ok\ntest_current_source_mismatch_rejected_before_native_effect (test_elaboration.Controls.test_current_source_mismatch_rejected_before_native_effect) ... ok\ntest_diagnostic_dedup_order_and_2048_bound (test_elaboration.Controls.test_diagnostic_dedup_order_and_2048_bound) ... ok\ntest_exact_established_native_argv_and_candidate_top_only (test_elaboration.Controls.test_exact_established_native_argv_and_candidate_top_only) ... ok\ntest_invalid_attempt_budget_tool_or_foreign_compile_path_rejected (test_elaboration.Controls.test_invalid_attempt_budget_tool_or_foreign_compile_path_rejected) ... ok\ntest_launch_failure_preserves_error_and_does_not_repair (test_elaboration.Controls.test_launch_failure_preserves_error_and_does_not_repair) ... ok\ntest_mutated_argv_cannot_be_claimed_original_command (test_elaboration.Controls.test_mutated_argv_cannot_be_claimed_original_command) ... ok\ntest_native_raised_exception_preserves_partial_log_and_source (test_elaboration.Controls.test_native_raised_exception_preserves_partial_log_and_source) ... ok\ntest_no_attempt_replay_or_existing_receipt_overwrite (test_elaboration.Controls.test_no_attempt_replay_or_existing_receipt_overwrite) ... ok\ntest_remaining_owned_processes_are_measurement_failure (test_elaboration.Controls.test_remaining_owned_processes_are_measurement_failure) ... ok\ntest_second_round_gets_independent_snapshot (test_elaboration.Controls.test_second_round_gets_independent_snapshot) ... ok\ntest_source_mutation_withdraws_feedback (test_elaboration.Controls.test_source_mutation_withdraws_feedback) ... ok\ntest_success_returns_empty_preserves_original_code_and_full_receipt (test_elaboration.Controls.test_success_returns_empty_preserves_original_code_and_full_receipt) ... ok\ntest_timeout_never_becomes_semantic_feedback (test_elaboration.Controls.test_timeout_never_becomes_semantic_feedback) ... ok\ntest_tool_mutation_withdraws_feedback (test_elaboration.Controls.test_tool_mutation_withdraws_feedback) ... ok\ntest_warning_only_nonzero_is_measurement_error_without_invented_feedback (test_elaboration.Controls.test_warning_only_nonzero_is_measurement_error_without_invented_feedback) ... ok\ntest_wrong_or_unconfirmed_return_code_rejected (test_elaboration.Controls.test_wrong_or_unconfirmed_return_code_rejected) ... ok\ntest_available_pinned_environment_checked_without_tool_execution (test_environment.Environment.test_available_pinned_environment_checked_without_tool_execution) ... ok\ntest_each_missing_tool_rejected_before_model_call (test_environment.Environment.test_each_missing_tool_rejected_before_model_call) ... ok\ntest_missing_scoped_library_path_rejected (test_environment.Environment.test_missing_scoped_library_path_rejected) ... ok\ntest_wrong_tool_resolution_rejected (test_environment.Environment.test_wrong_tool_resolution_rejected) ... ok\ntest_A_uses_actual_first_generation_and_no_functional_review (test_fresh.Fresh.test_A_uses_actual_first_generation_and_no_functional_review) ... ok\ntest_C_priority_real_feedback_uses_only_one_original_repair (test_fresh.Fresh.test_C_priority_real_feedback_uses_only_one_original_repair) ... ok\ntest_C_shift_feedback_keeps_stimulus_and_phase (test_fresh.Fresh.test_C_shift_feedback_keeps_stimulus_and_phase) ... ok\ntest_P_elaboration_failure_enters_only_original_repair_before_semantic_probe (test_fresh.Fresh.test_P_elaboration_failure_enters_only_original_repair_before_semantic_probe) ... ok\ntest_P_elaboration_success_keeps_same_phase_semantic_feedback (test_fresh.Fresh.test_P_elaboration_success_keeps_same_phase_semantic_feedback) ... ok\ntest_P_persistent_elaboration_failure_has_no_third_call_or_semantic_probe (test_fresh.Fresh.test_P_persistent_elaboration_failure_has_no_third_call_or_semantic_probe) ... ok\ntest_correct_draft_has_no_extra_model_call (test_fresh.Fresh.test_correct_draft_has_no_extra_model_call) ... ok\ntest_native_compile_error_keeps_existing_repair (test_fresh.Fresh.test_native_compile_error_keeps_existing_repair) ... ok\ntest_persistent_mismatch_never_starts_third_call (test_fresh.Fresh.test_persistent_mismatch_never_starts_third_call) ... ok\ntest_unknown_prose_abstains (test_fresh.Fresh.test_unknown_prose_abstains) ... ok\ntest_actual_first_failure_then_second_success_required (test_metrics.MetricTests.test_actual_first_failure_then_second_success_required) ... ok\ntest_deadline_or_unconfirmed_preserves_rows_but_denies_gate (test_metrics.MetricTests.test_deadline_or_unconfirmed_preserves_rows_but_denies_gate) ... ok\ntest_guard_l3_and_same_calls_required (test_metrics.MetricTests.test_guard_l3_and_same_calls_required) ... ok\ntest_one_l0_to_l1_is_score_gain_with_fixed_denominator (test_metrics.MetricTests.test_one_l0_to_l1_is_score_gain_with_fixed_denominator) ... ok\ntest_partial_wrong_order_or_tool_error_cannot_be_aggregate (test_metrics.MetricTests.test_partial_wrong_order_or_tool_error_cannot_be_aggregate) ... ok\ntest_regression_or_more_than_two_added_calls_denies_gate (test_metrics.MetricTests.test_regression_or_more_than_two_added_calls_denies_gate) ... ok\ntest_same_first_and_exact_repair_chain_required (test_metrics.MetricTests.test_same_first_and_exact_repair_chain_required) ... ok\ntest_score_level_mapping_unchanged (test_metrics.MetricTests.test_score_level_mapping_unchanged) ... ok\ntest_two_target_l3_not_required_but_preserved_separately (test_metrics.MetricTests.test_two_target_l3_not_required_but_preserved_separately) ... ok\ntest_same300s16_fresh_workers_original_judges_and_controls_first (test_stage.Stage.test_same300s16_fresh_workers_original_judges_and_controls_first) ... ok\n\n----------------------------------------------------------------------\nRan 54 tests in 0.222s\n\nOK\n"
+}

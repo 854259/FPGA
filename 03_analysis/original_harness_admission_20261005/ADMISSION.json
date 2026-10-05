@@ -1,0 +1,303 @@
+{
+  "schema": "natural_original_harness_admission_audit_v1",
+  "evidence_valid": true,
+  "archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+  "spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
+  "auditor_sha256": "e3992c2791b53dea5ec4b3391e7792c9c2dd7c5f4c71f220f81740bc4379359d",
+  "source_evidence": {
+    "spec_sha256": "b423bb37761744a33bc5fe91d3ae0d847dc06d29862afe2ab090059c97154a68",
+    "archive_sha256": "b2cee6bfd50e1b12cfd78246c767880b1f11ddd09324d3ca717cc322fe9f9acf",
+    "auditor_sha256": "e3992c2791b53dea5ec4b3391e7792c9c2dd7c5f4c71f220f81740bc4379359d",
+    "audit_report_sha256": "a1620cbe38e93c4599955fa352044d39d08b97f35460d973d1cc115ce6415056",
+    "manifest_sha256": "0ec738733933bd2e42a5ed7123f96663a902bdcec968b9872381fb687e768231",
+    "guard_sha256": "16b7c84b4cd90dce7e9e8ca7425464d555b6b97fd9cebad49eec3ce658fea25b",
+    "resource_sha256": "470163c03f9d1f6fbd8e7856abedacae57adac3cb1b05d1b214968556b9e94e0",
+    "adapter_sha256": "9b41ef3adfd345ff037ee4dcd3ef918d991c3bc5e52562ed8bc309355e0a39f9",
+    "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+    "source_files": 10,
+    "manifest_files": 613,
+    "global_native_receipts": 100,
+    "native_compile_commands": 50,
+    "native_simulation_commands": 50,
+    "actual_readonly_rebuild_matches_source": true
+  },
+  "public_inputs": {
+    "2e17171bf11366806be9d440faa96e7da2cdcb0eba1f93e8b4ecfc89895fefa7": {
+      "qualified": true,
+      "original_harness": true,
+      "prompt_sha256": "dabdc9c6ffc5738b012087aa157799985a53446ac1f5e514efeffae7800c39e8",
+      "input_context_sha256": {},
+      "output_paths": [
+        "rtl/reverse_bits.v"
+      ],
+      "false_acceptances": [],
+      "unconfirmed_native_attempts": 0,
+      "wrong_controls_checked": 3,
+      "correct_control_passed": true,
+      "failure_propagation_confirmed": true,
+      "failure_propagation_control_original_harness": false,
+      "failure_propagation_scope": "original test with evaluation-only forced AssertionError appended; not an unchanged original harness",
+      "record_id": "cvdp_copilot_reverse_bits_0001",
+      "record_sha256": "91ab190b6b004b4669baa4df3ef53ee799105f64c89622ff4e860d5c15222420",
+      "original_harness_sha256": {
+        "docker-compose.yml": "3b23d3c0a933d653574221d5642e2d57ed1db1076bf631ddbb474c63b8af6f77",
+        "src/.env": "f9b0a8a5212f343b9672c6efc8d785c866eec3466b43d70d11c6a16ff45242f2",
+        "src/test_reverse_bits.py": "f5519cef3e548b750b50e849a96c639a75fa4f96e7c9565c0e62b6c8c819dc9f",
+        "src/test_runner.py": "c4fdb8b020a32445c207260464efa2e6ab0006aeb384815b0ff8555a50a9fb7e"
+      },
+      "test_sha256": "f5519cef3e548b750b50e849a96c639a75fa4f96e7c9565c0e62b6c8c819dc9f",
+      "native_trials_per_control": 1,
+      "observed_controls": [
+        {
+          "label": "positive",
+          "passed": true,
+          "failed": false,
+          "native_trials": 1,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "constant_zero",
+          "passed": false,
+          "failed": true,
+          "native_trials": 1,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "constant_one",
+          "passed": false,
+          "failed": true,
+          "native_trials": 1,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "identity",
+          "passed": false,
+          "failed": true,
+          "native_trials": 1,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "failure_propagation",
+          "passed": false,
+          "failed": true,
+          "native_trials": 1,
+          "original_harness": false,
+          "false_acceptance": false
+        }
+      ],
+      "public_input_only": true,
+      "hidden_harness_forwarded": false,
+      "answers_forwarded": false,
+      "qualification_scope": "finite original-harness discrimination on this exact original public task version"
+    },
+    "df5da0840cbe7f0246351e496cd6586be816588b27726239ac8e04c6553c1932": {
+      "qualified": true,
+      "original_harness": true,
+      "prompt_sha256": "f46074f7573f46d95caa4ebabea5315a34ad723f0df1234c439ec1a95797da92",
+      "input_context_sha256": {},
+      "output_paths": [
+        "rtl/binary_to_gray.sv"
+      ],
+      "false_acceptances": [],
+      "unconfirmed_native_attempts": 0,
+      "wrong_controls_checked": 3,
+      "correct_control_passed": true,
+      "failure_propagation_confirmed": true,
+      "failure_propagation_control_original_harness": false,
+      "failure_propagation_scope": "original test with evaluation-only forced AssertionError appended; not an unchanged original harness",
+      "record_id": "cvdp_copilot_binary_to_gray_0001",
+      "record_sha256": "e111d3ae4206ca9ef9a4284540d92d714cddf1cf716a718315a0b7e1545152a7",
+      "original_harness_sha256": {
+        "docker-compose.yml": "2f5d3f2f9aacd40b95ff76bbf6df465830739b7253e7a0c91580585e35eb8a95",
+        "src/.env": "4c4262cc4ef4fe7273054a7e6dff34ac5eb180c0ac71a2431fdad7e948897697",
+        "src/test_binary_to_gray.py": "b559720569a7c749fa54638744ac4bfa5ea69795169e9c9621f03d23146faab0",
+        "src/test_runner.py": "b147b8d05056e06afed167f0f5f0177f06b1180ed27d9de1a6379ba6c641b53a"
+      },
+      "test_sha256": "b559720569a7c749fa54638744ac4bfa5ea69795169e9c9621f03d23146faab0",
+      "native_trials_per_control": 3,
+      "observed_controls": [
+        {
+          "label": "positive",
+          "passed": true,
+          "failed": false,
+          "native_trials": 3,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "constant_zero",
+          "passed": false,
+          "failed": true,
+          "native_trials": 3,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "constant_one",
+          "passed": false,
+          "failed": true,
+          "native_trials": 3,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "identity",
+          "passed": false,
+          "failed": true,
+          "native_trials": 3,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "failure_propagation",
+          "passed": false,
+          "failed": true,
+          "native_trials": 3,
+          "original_harness": false,
+          "false_acceptance": false
+        }
+      ],
+      "public_input_only": true,
+      "hidden_harness_forwarded": false,
+      "answers_forwarded": false,
+      "qualification_scope": "finite original-harness discrimination on this exact original public task version"
+    },
+    "8ad7fed8158539e2ffb843c224ddbf98435beea2090b6d7b2420223050850e5e": {
+      "qualified": false,
+      "original_harness": true,
+      "prompt_sha256": "c0a38a273cd64e18db54f104e7fcbebe2a23a26d435e67f095e4f9383b534ffa",
+      "input_context_sha256": {},
+      "output_paths": [
+        "rtl/gray_to_binary.sv"
+      ],
+      "false_acceptances": [
+        {
+          "record_id": "cvdp_copilot_gray_to_binary_0001",
+          "label": "valid_zero",
+          "passed": true,
+          "failed": false,
+          "native_trials": 5,
+          "original_harness": true,
+          "false_acceptance": true
+        }
+      ],
+      "unconfirmed_native_attempts": 0,
+      "wrong_controls_checked": 4,
+      "correct_control_passed": true,
+      "failure_propagation_confirmed": true,
+      "failure_propagation_control_original_harness": false,
+      "failure_propagation_scope": "original test with evaluation-only forced AssertionError appended; not an unchanged original harness",
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "record_sha256": "c16a5640e7f8601aadf52ab0a7a6e33e4408e48d3f7a97fda90edacaf00a1043",
+      "original_harness_sha256": {
+        "docker-compose.yml": "a69fa6957a4164a6d483835f922600207536dff2b954491abb4dde4ddb0664fb",
+        "src/.env": "c2587aebfdcc08fd5fea605dbdd181a513179ae0916885e4e0c05f89febc0a58",
+        "src/test_gray_to_binary.py": "6cbaca22add7d1e367d4f2969d3b0953c691e5fb28de2095f1cf4e7465ea78ef",
+        "src/test_runner.py": "80cdc4ecf35b9931f9bd631e712f856a14b874e601fe41f46be259686de02996"
+      },
+      "test_sha256": "6cbaca22add7d1e367d4f2969d3b0953c691e5fb28de2095f1cf4e7465ea78ef",
+      "native_trials_per_control": 5,
+      "observed_controls": [
+        {
+          "label": "positive",
+          "passed": true,
+          "failed": false,
+          "native_trials": 5,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "constant_zero",
+          "passed": false,
+          "failed": true,
+          "native_trials": 5,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "constant_one",
+          "passed": false,
+          "failed": true,
+          "native_trials": 5,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "identity",
+          "passed": false,
+          "failed": true,
+          "native_trials": 5,
+          "original_harness": true,
+          "false_acceptance": false
+        },
+        {
+          "label": "valid_zero",
+          "passed": true,
+          "failed": false,
+          "native_trials": 5,
+          "original_harness": true,
+          "false_acceptance": true
+        },
+        {
+          "label": "failure_propagation",
+          "passed": false,
+          "failed": true,
+          "native_trials": 5,
+          "original_harness": false,
+          "false_acceptance": false
+        }
+      ],
+      "public_input_only": true,
+      "hidden_harness_forwarded": false,
+      "answers_forwarded": false,
+      "qualification_scope": "finite original-harness discrimination on this exact original public task version"
+    }
+  },
+  "exclusions": [
+    {
+      "user_content_sha256": "8ad7fed8158539e2ffb843c224ddbf98435beea2090b6d7b2420223050850e5e",
+      "record_id": "cvdp_copilot_gray_to_binary_0001",
+      "record_sha256": "c16a5640e7f8601aadf52ab0a7a6e33e4408e48d3f7a97fda90edacaf00a1043",
+      "test_sha256": "6cbaca22add7d1e367d4f2969d3b0953c691e5fb28de2095f1cf4e7465ea78ef",
+      "false_acceptances": [
+        {
+          "record_id": "cvdp_copilot_gray_to_binary_0001",
+          "label": "valid_zero",
+          "passed": true,
+          "failed": false,
+          "native_trials": 5,
+          "original_harness": true,
+          "false_acceptance": true
+        }
+      ],
+      "reason": "original valid_zero control passed every original parameter trial; keep this exact original version excluded"
+    }
+  ],
+  "qualified_public_input_versions": 2,
+  "excluded_public_input_versions": 1,
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "actual_cloud_or_fifo_calls": 0,
+  "independent_model_tasks": 0,
+  "eligible_for_independent_models": false,
+  "real_execution_admitted": false,
+  "official_vivado_quality_certified": false,
+  "original_harness_required": true,
+  "research_modified_harness_admitted": false,
+  "adoption": false,
+  "limits": [
+    "Original public natural prompts exposed only for evaluation calibration; not unseen or training-independence certification.",
+    "Known specification controls are evaluation artifacts and never model inputs. This is original-harness discrimination, not solver scores or official Vivado L3.",
+    "Parameter/input coverage limited to original harness; no claim of exhaustive full specification proof. All false acceptances retained, no narrowing of ports/domain to pass.",
+    "Package/toolchain hash verification at original run and guard checks are historical observations; archive lacks all external installed binaries, no fresh offline32GB certification.",
+    "Full156 qualification, faithful ABI/model integration and exposure review remain necessary before natural model comparison.",
+    "This projection maps only three historical public task versions; two finite original-harness calibrations qualify and valid_zero false acceptance remains excluded.",
+    "Sentinel was an evaluation-only forced exception appended to the original test; its provenance is separately original_harness=false.",
+    "Unconfirmed native count zero derives from a successful completed frozen schedule with exactly 50+50 confirmed archived receipts, not a new durable-attempt instrumentation test.",
+    "Full156/net gain, actual OS/include isolation, real transport/supervision, model comparison and exposure review remain separate mandatory gates."
+  ]
+}

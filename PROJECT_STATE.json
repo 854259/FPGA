@@ -4449,20 +4449,20 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full_CP156_FIFO61_running;controls62_63_FIFO;natural_runtime17_sources_engineering_checked_both_hosts_no_actual_IO",
+    "continuation_status": "full_CP156312_original_audit_passed; score-first elaboration and complete-table single factors preparing",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
-    "G3": "Fresh C/P16 two real repair chains audited; same-source full156 C/P312 FIFO61 actually running. Strict complete audit/no per-task regression/no deadline/unconfirmed/tool error/cost and two actual causal chains required. No independent/five/adoption qualification yet.",
+    "G3": "New phase full156 C/P312 passed immutable audit: .7576923/.7743590,168/170 requests,0 regressions/deadlines/unconfirmed/tools;matched045054; admits independent validation, actual independent models0. Old functional43ba three deadline gate remains failed. Use P as development comparator; formal deployment unchanged.",
     "G4": "302 public ABI/context prepared; bounded native reset support1/302. New runtime17 sources e2462368 frozen, local177 (3 platform skips)/Linux177 (0 skips),76 fake HTTP subchecks and four actual owned Python controls. No actual model/EDA/quality/production300s/OS include sandbox admission. New272work+24cleanup+4receipt factor cannot inherit old ANSI/C/P; original harness exposures/exclusions and full156 terminal gates unchanged. Independent actual model tasks0; adoptionfalse.",
-    "G5": "Formal bridge engineering controls audited; official baseline/five samples/offline/target32GB not certified.",
+    "G5": "Formal bridge engineering prepared; official baseline/five samples/target32GB remain pending. User deferred offline verification; correctness and score prioritized.",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 22,
+    "quota_latest_observed_used_percent": 25,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
-    "previous_goal_turn_classification": "progress_runtime17_frozen_177_dual_host_checks_actual_owned_dummy_cleanup_and_Git_shared_three_ledgers_complete",
+    "previous_goal_turn_classification": "progress_complete312_audit_net_score_gain_and_actual_failure_analysis_new_score_factors_preparing",
     "last_actual_shared_sync_commit": "e83c8a6dbee53de879ff05563b5a6da9d6639c5f",
     "last_actual_shared_sync_public_files": 38
   },
@@ -5491,7 +5491,7 @@
     "preflight_model_calls": 0
   },
   "phase_full156_20261005": {
-    "status": "FIFO61_actual_running_terminal_audit_pending",
+    "status": "complete312_original_frozen_audit_passed_admits_independent_validation",
     "spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
     "archive_sha256": "4faa93ab70e4e3b02e988279d9518e07f8eb5438cd3171f18f12d23c003343d5",
     "assets": 44,
@@ -5506,35 +5506,60 @@
     "disk_reserve_bytes": 2147483648,
     "actual_fifo_submitted": true,
     "adoption": false,
-    "independent_validation_qualified": false,
+    "independent_validation_qualified": true,
     "five_sample_qualified": false,
-    "report": "03_analysis/phase_full156_20261005/README.md",
+    "report": "03_analysis/phase_full156_20261005/FINAL_RESULT.md",
     "ticket": 61,
     "monitor_pid": 3761321,
     "monitor_starttime": "845096354",
     "child_identity": {
       "pid": 3761322,
-      "state": "S",
-      "start": "845096362",
-      "live": true
+      "live": false
     },
     "stage_identity": {
       "pid": 3761327,
-      "state": "S",
-      "start": "845096388",
-      "live": true
+      "live": false
     },
-    "completed_samples_observed": 286,
-    "actual_model_requests_observed": 306,
-    "observed_at_epoch": 1791189737.7504058,
+    "completed_samples_observed": 312,
+    "actual_model_requests_observed": 338,
+    "observed_at_epoch": 1791192186.8234413,
     "stage_error": null,
     "source_unchanged": true,
     "model_identity_unchanged": true,
-    "terminal_audit_pending": true,
+    "terminal_audit_pending": false,
     "preflight_model_calls": 0,
     "preflight_eda_calls": 0,
     "latest_shared_commit": "0e8bf14643d2f52d010ca6bf8705aa17ed73e871",
-    "primary_status_preserved": true
+    "primary_status_preserved": true,
+    "terminal_archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+    "actual_model_responses": 338,
+    "coefficients": {
+      "C": 0.7576923076923077,
+      "P": 0.7743589743589744
+    },
+    "level_counts": {
+      "C": {
+        "L0": 5,
+        "L1": 41,
+        "L3": 110
+      },
+      "P": {
+        "L0": 4,
+        "L1": 39,
+        "L3": 113
+      }
+    },
+    "matched_native_repair_tasks": [
+      "Prob045_edgedetect2",
+      "Prob054_edgedetect"
+    ],
+    "regressions": [],
+    "solve_deadlines": [],
+    "unconfirmed_attempts": 0,
+    "actual_independent_model_samples": 0,
+    "actual_five_sample_runs": 0,
+    "formal_deployment_changed": false,
+    "public_result": "03_analysis/phase_full156_20261005/PUBLIC_RESULT.json"
   },
   "team_natural_valid_review_20261005": {
     "evidence_valid": true,
@@ -5600,7 +5625,7 @@
     "report": "03_analysis/native_reset_contract_20261005/README.md"
   },
   "natural_edge_calibration_20261005": {
-    "status": "whole_FIFO62_actually_queued_not_executed",
+    "status": "completed_actual_terminal_audit",
     "spec_sha256": "e68dff0e4bab1a708a9617552776e3ed86adcb6d7d53aa6c004c49728707fa65",
     "archive_sha256": "4d04a83759fbe02ecf61781fc0c3a2407277a8da3743f20d768f71656155fe8f",
     "source_assets": 11,
@@ -5613,13 +5638,37 @@
     "independent_model_tasks": 0,
     "quality_qualification": false,
     "adoption": false,
-    "report": "03_analysis/natural_edge_calibration_20261005/README.md",
+    "report": "03_analysis/natural_edge_calibration_20261005/FINAL_RESULT.md",
     "ticket": 62,
     "accepted_at_utc": "2026-10-05T06:35:46.441265+00:00",
     "monitor_pid": 3870791,
     "monitor_starttime": "845579592",
     "actual_native_trials": 0,
-    "submission_git_commit": "44205ab865d6842d13bc1eef76e6e092ec005c81"
+    "submission_git_commit": "44205ab865d6842d13bc1eef76e6e092ec005c81",
+    "terminal_archive_sha256": "d4f104f378b90fa25841603092879cb9d3dca0fc2265ad7efc489cfbc4405ce6",
+    "terminal_audit_complete": true,
+    "source_unchanged": true,
+    "eligible_for_independent_models": false,
+    "public_audit_receipt": "03_analysis/natural_edge_calibration_20261005/PUBLIC_AUDIT_RECEIPT.json",
+    "actual_native_compile_commands": 7,
+    "actual_native_simulation_commands": 7,
+    "original_harness_calibration": {
+      "cvdp_copilot_edge_detector_0001": false
+    },
+    "false_acceptances": [
+      {
+        "record_id": "cvdp_copilot_edge_detector_0001",
+        "label": "reset_ignored",
+        "passed": true,
+        "failed": false,
+        "native_trials": 1,
+        "original_harness": true,
+        "false_acceptance": true
+      }
+    ],
+    "excluded_record_ids": [
+      "cvdp_copilot_edge_detector_0001"
+    ]
   },
   "natural_worker_20261005": {
     "status": "frozen_FAKE_dual_environment52_passed",
@@ -5650,7 +5699,7 @@
     "shared_sync_receipt": "03_analysis/natural_worker_20261005/SHARED_SYNC_RECEIPT.json"
   },
   "native_reset_calibration_20261005": {
-    "status": "FIFO63_queued_actual_native_trials_zero",
+    "status": "completed_actual_terminal_audit",
     "spec_sha256": "f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3",
     "archive_sha256": "eb24bf9f38c7e4ec9a45643e413bf7f0f83b91ab5960e13b8cdc1793f0a1a6fa",
     "source_assets": 44,
@@ -5668,10 +5717,10 @@
     "generated_research_test": true,
     "original_harness": false,
     "evidence_complete": false,
-    "qualified_for_generated_control_discrimination": false,
+    "qualified_for_generated_control_discrimination": true,
     "independent_model_tasks": 0,
     "adoption": false,
-    "report": "03_analysis/native_reset_calibration_20261005/README.md",
+    "report": "03_analysis/native_reset_calibration_20261005/FINAL_RESULT.md",
     "fifo_ticket": 63,
     "monitor_pid": 3919181,
     "monitor_starttime": "845913207",
@@ -5686,7 +5735,17 @@
       "calls_changes_conclusions_appended": true,
       "primary_status_preserved": true,
       "receipt": "03_analysis/native_reset_calibration_20261005/SHARED_SYNC_RECEIPT.json"
-    }
+    },
+    "terminal_archive_sha256": "1dec4736126e0de6472836a2fc5572e495d0a4febe1fc96e5ba43c9b3760de92",
+    "terminal_audit_complete": true,
+    "source_unchanged": true,
+    "eligible_for_independent_models": false,
+    "public_audit_receipt": "03_analysis/native_reset_calibration_20261005/PUBLIC_AUDIT_RECEIPT.json",
+    "native_compile_commands": 14,
+    "native_simulation_commands": 14,
+    "global_native_receipts": 28,
+    "unconfirmed_native_attempts": 0,
+    "false_acceptances": []
   },
   "natural_runtime_20261005": {
     "status": "engineering_frozen_checked_both_hosts_real_io_not_admitted",
@@ -5737,5 +5796,58 @@
     "shared_sync_receipt": "03_analysis/natural_runtime_20261005/SHARED_SYNC_RECEIPT.json",
     "shared_sync_public_files": 38,
     "primary_status_preserved": true
+  },
+  "current_user_priority": {
+    "correctness_and_score_first": true,
+    "source": "User: 我们现在最重要的目标是提高智能体作对题目的能力，尽可能提高分数",
+    "offline_validation_deferred_by_user": true,
+    "engineering_work": "minimum required for real score experiments",
+    "development_comparator": "phase_full156_20261005 P",
+    "formal_deployment_changed": false
+  },
+  "score_failure_analysis_20261005": {
+    "status": "completed_old_full_readonly_bound",
+    "source_archive_sha256": "ac3b27f553bbf274d2edc875a7a3354b42741a9861ca409b37b779d1c6067055",
+    "syntax_report": "03_analysis/score_failure_analysis_20261005/syntax_transport/README.md",
+    "semantic_report": "03_analysis/score_failure_analysis_20261005/semantic/ANALYSIS.md",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "proposed_factors": [
+      "candidate elaboration facts",
+      "complete cared table observations"
+    ]
+  },
+  "elaboration_feedback_pilot_20261005": {
+    "status": "38_frozen_assets_54_checks_both_hosts_ready_for_whole_task_FIFO",
+    "spec_sha256": "87cb93c00f386f3f16ece9f0ec9a7f49b18fd260faac9c75e83d4db9d31038bf",
+    "assets": 38,
+    "local_checks": 54,
+    "linux_checks": 54,
+    "task_count": 8,
+    "expected_samples": 16,
+    "planned_native_controls_compile": 2,
+    "planned_native_controls_elaboration": 2,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "actual_fifo_submitted": false,
+    "adoption": false,
+    "first_generation_replayed": false,
+    "base_development_policy": "phase-full P in both arms",
+    "full_baseline_archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+    "report": "03_analysis/elaboration_feedback_pilot_20261005/README.md"
+  },
+  "prompt_table_contract_20261005": {
+    "status": "strict_prompt_parser_preparation_only",
+    "source_files": 3,
+    "parser_sha256": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+    "local_methods": 25,
+    "local_subchecks": 631,
+    "old156_prompt_only_admitted": 10,
+    "old156_abstained": 146,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "native_calibration_completed": false,
+    "score_gain_measured": false,
+    "next_scope": "explicit Kmap cared observations first; no waveform hidden-state assumption"
   }
 }

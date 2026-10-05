@@ -1,37 +1,33 @@
 {
-  "observed_at_epoch": 1791189737.7504058,
+  "observed_at_epoch": 1791192186.8234413,
   "source_assets": 44,
   "source_unchanged": true,
   "model": {
     "pid": 2013333,
-    "state": "R",
+    "state": "S",
     "start": "823869819",
     "live": true
   },
   "monitor": {
     "pid": 3761321,
-    "state": "S",
+    "state": "Z",
     "start": "845096354",
-    "live": true
+    "live": false
   },
   "child": {
     "pid": 3761322,
-    "state": "S",
-    "start": "845096362",
-    "live": true
+    "live": false
   },
   "stage": {
     "pid": 3761327,
-    "state": "S",
-    "start": "845096388",
-    "live": true
+    "live": false
   },
-  "completed_samples": 286,
-  "disk_free_bytes": 9898856448,
+  "completed_samples": 312,
+  "disk_free_bytes": 9881374720,
   "ticket": {
     "ticket": 61,
     "task_name": "phase_full156_fresh_C_P_v1",
-    "state": "running",
+    "state": "completed",
     "created_at": null,
     "started_at": null,
     "finished_at": null,
@@ -48,16 +44,16 @@
   "guard": {
     "status": null,
     "stage_pid": 3761327,
-    "stage_rc": null,
+    "stage_rc": 0,
     "elapsed_seconds": null,
     "error": null,
     "started_at": null,
     "ended_at": null
   },
   "progress": {
-    "actual_model_requests": 306,
+    "actual_model_requests": 338,
     "actual_model_responses": null,
-    "complete": false,
+    "complete": true,
     "error": null
   },
   "partial_scores_published": false

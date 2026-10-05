@@ -1,0 +1,19 @@
+{
+  "schema": "actual_full_CP156_terminal_audit_receipt_v1",
+  "python": "3.12.14",
+  "archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+  "spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+  "auditor_sha256": "681b46a55166caf319a03b48988d83cb923692c8a9424760d7ea7a5edfaea1ab",
+  "actual_model_requests": 338,
+  "actual_model_responses": 338,
+  "matched_native_repair_tasks": [
+    "Prob045_edgedetect2",
+    "Prob054_edgedetect"
+  ],
+  "candidate_qualified_for_independent_validation": true,
+  "adoption": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "evidence_valid": true,
+  "expected_samples": 312
+}

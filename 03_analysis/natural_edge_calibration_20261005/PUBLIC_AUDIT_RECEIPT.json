@@ -1,0 +1,50 @@
+{
+  "schema": "fifo62_actual_original_edge_terminal_audit_private_v1",
+  "python": "3.12.14",
+  "archive_sha256": "d4f104f378b90fa25841603092879cb9d3dca0fc2265ad7efc489cfbc4405ce6",
+  "archive_bytes": 1104792,
+  "spec_sha256": "e68dff0e4bab1a708a9617552776e3ed86adcb6d7d53aa6c004c49728707fa65",
+  "auditor_sha256": "df76ed6037a058d7869c7d01ce14c14e1e11b20a221ccbe9c3e080ca1e10caf1",
+  "manifest_files": 162,
+  "evidence_valid": true,
+  "actual_native_compile_commands": 7,
+  "actual_native_simulation_commands": 7,
+  "collection_model_calls": 0,
+  "collection_eda_calls": 0,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "original_harness_calibration": {
+    "cvdp_copilot_edge_detector_0001": false
+  },
+  "false_acceptances": [
+    {
+      "record_id": "cvdp_copilot_edge_detector_0001",
+      "label": "reset_ignored",
+      "passed": true,
+      "failed": false,
+      "native_trials": 1,
+      "original_harness": true,
+      "false_acceptance": true
+    }
+  ],
+  "reset_ignored": {
+    "record_id": "cvdp_copilot_edge_detector_0001",
+    "label": "reset_ignored",
+    "passed": true,
+    "failed": false,
+    "native_trials": 1,
+    "original_harness": true,
+    "false_acceptance": true
+  },
+  "excluded_record_ids": [
+    "cvdp_copilot_edge_detector_0001"
+  ],
+  "eligible_for_independent_models": false,
+  "independent_model_tasks": 0,
+  "adoption": false,
+  "source_assets": 11,
+  "source_unchanged": true,
+  "existing_report_revalidated": false,
+  "observed_at_epoch": 1791192527.2350345,
+  "result_sha256": "7b61c047f308f9c76e01a5a0dedcb05b37141a95a28950b4f56d428f247d59ef"
+}
