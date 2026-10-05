@@ -4449,14 +4449,14 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "FSM_frozen_preflight33_waiting_actual_FIFO",
+    "continuation_status": "FSM_FIFO44_actual_running_2of16",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
     "quota_used_percent_at_authorization": 6,
     "G1": "complete_full312_audited",
     "G2": "descriptive_inventory_complete_8_failures_manual_prompt_DUT_bound_review_remaining36_unattributed",
-    "G3": "Full156 A0.7449/C0.7564 but three deadlines; repair-context16 no trigger; edge16 one of two native repairs, neither new full experiment qualified. Next single factor complete FSM table feedback.",
+    "G3": "Full156/repair-context/edge previous failed gates retained; new FSM C/F16 FIFO44 running. Require two actual matched native repairs/guard/cost/full regression before independent or adoption.",
     "G4": "S4/S5 interface evidence reviewed;54 mechanical reversible,0 natural harness-admitted/model cases. Faithful original harness calibration remains.",
     "G5": "Formal bridge engineering controls audited; official baseline/five samples/offline/target32GB not certified.",
     "goal_complete": false,
@@ -5327,7 +5327,7 @@
     "goal_status": "active"
   },
   "fsm_feedback_pilot_20261005": {
-    "status": "frozen_local_linux33_preflight_passed_not_submitted",
+    "status": "actual_FIFO44_running",
     "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
     "archive_sha256": "88092bc3eff34922825be561da6a452139cdb98153dbdc546f62bf9ea954656d",
     "assets": 40,
@@ -5338,10 +5338,18 @@
     "solve_deadline_s": 300,
     "preflight_model_calls": 0,
     "preflight_eda_calls": 0,
-    "actual_fifo_submitted": false,
+    "actual_fifo_submitted": true,
     "adoption": false,
     "old_full_gate_unchanged": true,
     "goal_status": "active",
-    "report": "03_analysis/fsm_feedback_pilot_20261005/README.md"
+    "report": "03_analysis/fsm_feedback_pilot_20261005/README.md",
+    "ticket": 44,
+    "monitor_pid": 3692077,
+    "monitor_starttime": "843739550",
+    "queued_at_utc": "2026-10-05T01:29:06.026304+00:00",
+    "observed_samples": 2,
+    "observed_model_requests": 2,
+    "last_observed_at_epoch": 1791163795.2533736,
+    "final_score_available": false
   }
 }

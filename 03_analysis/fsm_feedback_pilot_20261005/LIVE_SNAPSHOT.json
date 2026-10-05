@@ -1,0 +1,214 @@
+{
+  "at_epoch": 1791163795.2533736,
+  "ticket": {
+    "schema": "whole_task_fifo_v1",
+    "ticket": 44,
+    "task_name": "fsm_feedback_fresh_C_F_v1",
+    "accepted_at_utc": "2026-10-05T01:29:06.026304+00:00",
+    "state": "running",
+    "command": [
+      "/usr/bin/env",
+      "PATH=/workspace/AMD/2026.1/Vivado/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "LD_LIBRARY_PATH=/workspace/team/udev-stub",
+      "VIVADO_BIN=/workspace/AMD/2026.1/Vivado/bin",
+      "PYTHONUTF8=1",
+      "MODEL_NAME=Qwen3.6-27B-Q4_K_M",
+      "RTL_REPAIRS=1",
+      "RTL_MAX_TOKENS=8192",
+      "RTL_TEMPERATURE=0",
+      "LLM_BASE_URL=http://127.0.0.1:8000/v1",
+      "/usr/bin/flock",
+      "-n",
+      "/workspace/team/.gpu.lock",
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/runs/fpga_owner/fsm_feedback_pilot_20261005_v1/guard_wrapper.py",
+      "--kit",
+      "/workspace/team/tasks/autodl-rtl-kit/project",
+      "--model-pid",
+      "2013333",
+      "--model-name",
+      "Qwen3.6-27B-Q4_K_M",
+      "--owner",
+      "codex_fsm_feedback_pilot_20261005_v1",
+      "--guard-out",
+      "/workspace/team/runs/fpga_owner/fsm_feedback_pilot_20261005_v1/guard",
+      "--slot-minutes",
+      "250",
+      "--stage-timeout-s",
+      "14600",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/runs/fpga_owner/fsm_feedback_pilot_20261005_v1/pilot.py",
+      "stage",
+      "--kit",
+      "/workspace/team/tasks/autodl-rtl-kit/project",
+      "--resource-check",
+      "{resource_check}"
+    ],
+    "cwd": "/workspace/team/runs/fpga_owner/fsm_feedback_pilot_20261005_v1",
+    "completion_json": "/workspace/team/runs/fpga_owner/fsm_feedback_pilot_20261005_v1/results/summary.json",
+    "slot_owner_prefix": "codex_fsm_feedback_pilot_20261005_v1",
+    "adopted_process": null,
+    "started_at_utc": "2026-10-05T01:29:06.106817+00:00",
+    "runner": {
+      "pid": 3692077,
+      "starttime": "843739550"
+    },
+    "task_fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
+    "child": {
+      "pid": 3692078,
+      "starttime": "843739558"
+    }
+  },
+  "queue": [
+    {
+      "ticket": 4,
+      "task_name": "prompt_map_checkpoint_v1",
+      "state": "failed_released_after_inspection",
+      "cwd": "/workspace/team/runs/fpga_owner/prompt_map_feedback_20261004_v1",
+      "runner": {
+        "pid": 3337110,
+        "starttime": "840272960"
+      },
+      "child": {
+        "pid": 3337111,
+        "starttime": "840272968"
+      }
+    },
+    {
+      "ticket": 12,
+      "task_name": "fpga_teammate_diagnostic_Q2",
+      "state": "failed_released_after_inspection",
+      "cwd": "/workspace/team/runs/fpga_teammate/diagnostic_Q2_20261005_09e0af4",
+      "runner": {
+        "pid": 3349632,
+        "starttime": "840613506"
+      },
+      "child": {
+        "pid": 3349633,
+        "starttime": "840613514"
+      }
+    },
+    {
+      "ticket": 17,
+      "task_name": "fpga_teammate_diagnostic_Q5",
+      "state": "failed_released_after_inspection",
+      "cwd": "/workspace/team/runs/fpga_teammate/diagnostic_Q5_20261005_865876a",
+      "runner": {
+        "pid": 3363655,
+        "starttime": "840810470"
+      },
+      "child": {
+        "pid": 3363656,
+        "starttime": "840810478"
+      }
+    },
+    {
+      "ticket": 27,
+      "task_name": "fpga_teammate_paired_uncertainty_T1",
+      "state": "failed_released_after_inspection",
+      "cwd": "/workspace/team/runs/fpga_teammate/paired_uncertainty_T1_20261005_aca7528",
+      "runner": {
+        "pid": 3418224,
+        "starttime": "841334523"
+      },
+      "child": {
+        "pid": 3628359,
+        "starttime": "842706160"
+      }
+    },
+    {
+      "ticket": 37,
+      "task_name": "repair_context_fresh_C_D_v1",
+      "state": "failed_released_after_inspection",
+      "cwd": "/workspace/team/runs/fpga_owner/repair_context_pilot_20261005_v1",
+      "runner": {
+        "pid": 3659619,
+        "starttime": "843085092"
+      },
+      "child": {
+        "pid": 3659620,
+        "starttime": "843085099"
+      }
+    },
+    {
+      "ticket": 38,
+      "task_name": "fpga_teammate_cvdp_name_S3",
+      "state": "failed_released_after_inspection",
+      "cwd": "/workspace/team/runs/fpga_teammate/cvdp_name_S3_20261005_c285394",
+      "runner": {
+        "pid": 3659667,
+        "starttime": "843128424"
+      },
+      "child": {
+        "pid": 3659668,
+        "starttime": "843128432"
+      }
+    },
+    {
+      "ticket": 44,
+      "task_name": "fsm_feedback_fresh_C_F_v1",
+      "state": "running",
+      "cwd": "/workspace/team/runs/fpga_owner/fsm_feedback_pilot_20261005_v1",
+      "runner": {
+        "pid": 3692077,
+        "starttime": "843739550"
+      },
+      "child": {
+        "pid": 3692078,
+        "starttime": "843739558"
+      }
+    }
+  ],
+  "source_assets": 40,
+  "source_unchanged": true,
+  "model": {
+    "pid": 2013333,
+    "state": "S",
+    "start": "823869819",
+    "live": true
+  },
+  "monitor": {
+    "pid": 3692077,
+    "state": "S",
+    "start": "843739550",
+    "live": true
+  },
+  "runner": {
+    "pid": 3692077,
+    "state": "S",
+    "start": "843739550",
+    "live": true
+  },
+  "child": {
+    "pid": 3692078,
+    "state": "S",
+    "start": "843739558",
+    "live": true
+  },
+  "stage": {
+    "pid": 3692083,
+    "state": "S",
+    "start": "843739584",
+    "live": true
+  },
+  "summary": {
+    "schema": "fsm_feedback_pilot_v1",
+    "complete": false,
+    "passed": false,
+    "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
+    "actual_model_requests": 2,
+    "first_generation_replayed": false,
+    "adoption": false,
+    "new_full_score": false,
+    "scope": "8 known development/guard tasks, one fresh C/F sample each, no independent/full156/five-sample claim"
+  },
+  "completed_samples": 2,
+  "python_packages": {
+    "cocotb": false,
+    "cocotb_tools": false,
+    "pytest": false
+  }
+}
