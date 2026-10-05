@@ -1,0 +1,33 @@
+{
+  "records": 302,
+  "counts": {
+    "supported": 1,
+    "abstain": 152,
+    "skip": 149
+  },
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "source_sha256": {
+    "native_reset_contract.py": "94bcb3b86b7bf1209c5a2348f9d3da5e9c74136e15f77cbdeeedc838ee5fa43d",
+    "inventory.py": "109fa6526b0ecd0c9bfed1446e3856de6b7d0e3ed7c7c87eebbfe41e10f6369f",
+    "test_native_reset_contract.py": "bb177ba2f9f89e54cb02f7906248b0a5715ed81cc781d7bbba3298c5d1d5ee67"
+  },
+  "supported_native_bindings": [
+    {
+      "module": "sync_pos_neg_edge_detector",
+      "roles": {
+        "clock": "i_clk",
+        "reset": "i_rstb",
+        "data": "i_detection_signal",
+        "rising": "o_positive_edge_detected",
+        "falling": "o_negative_edge_detected"
+      }
+    }
+  ],
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "actual_fifo_submitted": false,
+  "independent_quality_admitted": 0,
+  "quality_qualification": false,
+  "adoption": false,
+  "scope": "prompt-only parser coverage and pure schedule/transport; no302 model or generalization score"
+}

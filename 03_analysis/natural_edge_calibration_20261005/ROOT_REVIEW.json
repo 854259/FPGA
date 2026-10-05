@@ -1,0 +1,23 @@
+{
+  "status": "reviewed_before_freeze",
+  "scope": "read-only source and original archived command review, followed by root fixes before freeze",
+  "controls_or_original_prompt_test_runner_changed": false,
+  "root_fixes": [
+    "Bind owned root, kit, model identity, slot owner, loopback endpoint and complete protected inventories",
+    "Verify dependency hashes before loading dependency Python code",
+    "Run original pytest with a clean explicit environment and rebuild its full argv in the auditor",
+    "Bind exact compiler/simulator argv, cwd, input key sets, command file bytes and compiled artifact path/hash",
+    "Bind original Cocotb and pytest testcase identities",
+    "Require pytest failure exit code 1, positive passing and exact sentinel AssertionError propagation"
+  ],
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "native_execution_verified": false,
+  "quality_qualification": false,
+  "adoption": false,
+  "limits": [
+    "Source review and pure Python parsing do not prove SystemVerilog compilation or semantic simulation",
+    "Clean explicit child environment does not certify OS containment, offline operation or target 32GB",
+    "All seven fixed controls must be retained, including any reset_ignored false acceptance"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "natural_edge_static_binding_check_v1",
+  "static_checks_passed": true,
+  "python_version": "3.12.14",
+  "parsed_own_python_sources": [
+    "audit.py",
+    "collect.py",
+    "guard_wrapper.py",
+    "prepare.py",
+    "raw_evidence/adapt_templates.py",
+    "raw_evidence/create_materials.py",
+    "stage.py",
+    "static_check.py",
+    "tool_journal.py"
+  ],
+  "original_python_sources_parsed": [
+    "src/test_sync_pos_neg_edge_detector.py",
+    "src/test_runner.py"
+  ],
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "dataset_records": 302,
+  "record_id": "cvdp_copilot_edge_detector_0001",
+  "record_sha256": "0cabf0a3c97f589d6b52e508325194321e1100044013cdc1a6a0ea274c4a1011",
+  "prompt_sha256": "b55622d75576a72d6a5b321a592cc78c2a554dbc0da9e385d35b519fb6f535dc",
+  "original_test_sha256": "efff9fd2ede0205be0bea5c3aeba32ea006b34e99b794c446359189aa729cb71",
+  "original_runner_sha256": "c4fdb8b020a32445c207260464efa2e6ab0006aeb384815b0ff8555a50a9fb7e",
+  "original_harness_sha256": {
+    "docker-compose.yml": "3b23d3c0a933d653574221d5642e2d57ed1db1076bf631ddbb474c63b8af6f77",
+    "src/.env": "5c0598716e970895282b43c6d9265ed27f38c464ea55bb22cd4e32fa054bda26",
+    "src/test_runner.py": "c4fdb8b020a32445c207260464efa2e6ab0006aeb384815b0ff8555a50a9fb7e",
+    "src/test_sync_pos_neg_edge_detector.py": "efff9fd2ede0205be0bea5c3aeba32ea006b34e99b794c446359189aa729cb71"
+  },
+  "controls_sha256": "48040f0a15719a39a432098d940b6aa72b39d48c2bc49976dce06ee472fc034e",
+  "control_order": [
+    "positive",
+    "constant_zero",
+    "constant_one",
+    "swapped_edges",
+    "widened_pulse",
+    "reset_ignored",
+    "failure_propagation"
+  ],
+  "controls": 7,
+  "planned_native_trials": 7,
+  "original_assertions": 4,
+  "runtime_reset_assertions": 0,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "actual_native_trials": 0,
+  "quality_verified": false,
+  "eligible_for_independent_models": false,
+  "adoption": false,
+  "limits": [
+    "Python AST/compile and textual RTL ABI checks only; no SystemVerilog compiler or semantic simulator was run.",
+    "Controls and original public prompt/harness have evaluation exposure; no reference answer exists in this source record.",
+    "No native outcome is reported; reset_ignored false acceptance remains a pending guarded observation."
+  ]
+}

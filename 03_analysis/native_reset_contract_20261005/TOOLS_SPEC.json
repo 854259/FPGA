@@ -1,0 +1,22 @@
+{
+  "schema": "native_reset_pure_tools_frozen_v1",
+  "identity": "native_reset_contract_20261005_v1",
+  "cloud_root": "/workspace/team/runs/fpga_owner/native_reset_contract_20261005_v1",
+  "frozen_at_utc": "2026-10-05T06:27:07.999167+00:00",
+  "base_commit": "cb42adae802b72ec4ea8ad6baa11e01a679d68a4",
+  "source_hashes": {
+    "native_reset_contract.py": "94bcb3b86b7bf1209c5a2348f9d3da5e9c74136e15f77cbdeeedc838ee5fa43d",
+    "test_native_reset_contract.py": "bb177ba2f9f89e54cb02f7906248b0a5715ed81cc781d7bbba3298c5d1d5ee67",
+    "inventory.py": "109fa6526b0ecd0c9bfed1446e3856de6b7d0e3ed7c7c87eebbfe41e10f6369f",
+    "prepare.py": "98255b9d2b82f2e6a7b5c6ea02fd2b2f4768d75f141347e03eaaaf415d914107",
+    "raw_evidence/input.prompt": "b55622d75576a72d6a5b321a592cc78c2a554dbc0da9e385d35b519fb6f535dc"
+  },
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "pure_tests": 35,
+  "pure_subtests": 242,
+  "planned_model_calls": 0,
+  "planned_eda_calls": 0,
+  "scope": "Complete bounded prompt-only grammar, generated research TB and synthetic transcript integrity. All302 dispatch coverage only; no native execution, model quality, independent qualification or deployment.",
+  "quality_qualification": false,
+  "adoption": false
+}
