@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T10:26:15.949605+00:00",
+      "checked_at": "2026-10-05T18:45:40.009415+08:00",
       "own_live_processes": 0,
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
@@ -3127,21 +3127,22 @@
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
       "known_full156_regression_completed_ticket": 61,
-      "latest_own_stage": "U11_official_baseline_CLI_preflight",
+      "latest_own_stage": "U12_three_arm_queue_preflight",
       "latest_own_stage_complete": true,
       "latest_own_stage_status": "complete_engineering_only",
       "completed_tickets": [
-        66,
-        67,
-        68,
-        69
+        70
       ],
-      "active_queue_tasks": 0,
-      "historical_completed_tickets": 60,
+      "active_queue_tasks": 1,
+      "active_ticket": 71,
+      "active_ticket_task": "prompt_table25_generated_native_calibration_v1",
+      "active_ticket_driver_pid": 4025008,
+      "active_ticket_model_requests_max": 0,
+      "historical_completed_tickets": 61,
       "historical_failed_released_tickets": 9,
-      "next_own_stage": "A_P_B_paired_manifest_and_routing",
+      "next_own_stage": "official_B_transport_receipts_and_scoring_integration",
       "next_own_stage_status": "planned_not_launched",
-      "receipt": "05_handoff/independent_validation_20261004/official_baseline_U11/TERMINAL_CHECK.json"
+      "receipt": "05_handoff/independent_validation_20261004/three_arm_U12/TERMINAL_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5144,5 +5145,37 @@
       "decision": "Retain official B CLI engineering implementation only. Pair scheduling, real27B accounting/cancellation, independent data and formal32GB/full-five remain unverified."
     },
     "public_result": "03_analysis/helper_extraction_20261004/U11_OFFICIAL_BASELINE_20261005.json"
+  },
+  "three_arm_U12_20261005": {
+    "status": "complete_engineering_preflight_passed",
+    "execution_source_commit": "94e0d40",
+    "terminal": {
+      "ticket": 70,
+      "driver_pid": 4024938,
+      "stage_pid": 4024943,
+      "controls_passed": 16,
+      "process_probes": 36,
+      "real_model_calls": 0,
+      "eda_calls": 0,
+      "stage_elapsed_s": 2.252640238031745,
+      "guard_elapsed_s": 2.506991444155574,
+      "result_sha256": "a45bc42f2211cc6c2b0ec445074954ce3433ff24f5e61d81f4ed4a0f8cc0e91f",
+      "prospective_manifest_rows": 2340,
+      "prospective_call_upper_bound": 3900,
+      "prospective_rows_executed": 0,
+      "prospective_manifest_sha256": "687dc52ca51862a9f5aa645a3041028df2622d306b7a8d48a4eebf41cb2ed007",
+      "archive_sha256": "56c9bb91101cb57cd22a1c34d03f30338d606b51fd78968456b5a5a37cb02f54",
+      "dual_verified_files": 379,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "cleanup_verified": true,
+      "removed_empty_dirs": 1,
+      "full_batch": false,
+      "independent_natural_tasks": 0,
+      "decision": "Retain source routing and durable reservation engineering. No quality gain or full admission; actual solvers were replaced by controlled process probes."
+    },
+    "next": "Complete baseline request receipts and actual solver/scoring/cancellation integration before full launch.",
+    "public_result": "03_analysis/helper_extraction_20261004/U12_THREE_ARM_QUEUE_20261005.json"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema": "three_arm_U12_frozen_v1",
-  "status": "frozen_engineering_not_launched",
+  "status": "complete_engineering_preflight_passed",
   "source_hashes": {
     "three_arm_queue_20261005.py": "b7cf46f61b21b1c966ac44651f00c80a8af172980fe840f670b14139a65a9e42",
     "three_arm_preflight_20261005.py": "5a254c3a6116983bc49002c7dbe3bd567dca50b6555868e4dd70e0b16d0936de",
@@ -46,5 +46,32 @@
     "156 development tasks only; no RTLLM full admission, independent evidence, confirmed full credit budget or32GB certification",
     "This is one engineering substage, not one comprehensive batch or quality improvement"
   ],
-  "next": "If controls pass retain routing/reservation implementation; close direct baseline transport receipts and scoring integration before real three-arm launch. On failure preserve and diagnose once, then freeze any minimal correction."
+  "next": "Retain the passed routing and reservation implementation. Next complete direct baseline transport receipts and actual solver/scoring/cancellation integration. Full156 manifest remains unexecuted and not comprehensively admitted.",
+  "execution_source_commit": "94e0d40",
+  "terminal": {
+    "ticket": 70,
+    "driver_pid": 4024938,
+    "stage_pid": 4024943,
+    "controls_passed": 16,
+    "process_probes": 36,
+    "real_model_calls": 0,
+    "eda_calls": 0,
+    "stage_elapsed_s": 2.252640238031745,
+    "guard_elapsed_s": 2.506991444155574,
+    "result_sha256": "a45bc42f2211cc6c2b0ec445074954ce3433ff24f5e61d81f4ed4a0f8cc0e91f",
+    "prospective_manifest_rows": 2340,
+    "prospective_call_upper_bound": 3900,
+    "prospective_rows_executed": 0,
+    "prospective_manifest_sha256": "687dc52ca51862a9f5aa645a3041028df2622d306b7a8d48a4eebf41cb2ed007",
+    "archive_sha256": "56c9bb91101cb57cd22a1c34d03f30338d606b51fd78968456b5a5a37cb02f54",
+    "dual_verified_files": 379,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true,
+    "cleanup_verified": true,
+    "removed_empty_dirs": 1,
+    "full_batch": false,
+    "independent_natural_tasks": 0,
+    "decision": "Retain source routing and durable reservation engineering. No quality gain or full admission; actual solvers were replaced by controlled process probes."
+  }
 }
