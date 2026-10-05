@@ -6469,7 +6469,22 @@
     "shared_scope": "goal_document_and_target_metadata_only",
     "github_goal_comment": "https://github.com/854259/FPGA/issues/7#issuecomment-5997955301",
     "shared_receipt": "03_analysis/team_coordination_20261005/SCORE_GOAL_SHARED_RECEIPT.json",
-    "peer_acknowledgment": "pending"
+    "peer_acknowledgment": "pending",
+    "latest_actual_longtest_observation": {
+      "completed": 467,
+      "expected": 780,
+      "complete": false,
+      "error": null,
+      "actual_model_requests": 505,
+      "responses": 505,
+      "repeat_counts": {
+        "1": 156,
+        "2": 156,
+        "3": 155
+      },
+      "observed_at_epoch": 1791229498.2183096,
+      "terminal": false
+    }
   },
   "prompt_table_synthesis_pilot_20261006": {
     "status": "queued_fifo83_actual_shared_observer_live",
@@ -6603,5 +6618,52 @@
     "peer_acknowledgment": "pending",
     "public_git_sync_commit": "2032cc6f1ac7e7265e4ed75455871be950aa7b23",
     "followup_metadata_not_yet_cloud_synced": true
+  },
+  "vector_native_calibration_20261006_v1": {
+    "status": "amd52_prepared81_frozen140_pending_fifo",
+    "report": "03_analysis/vector_native_calibration_20261006_v1/README.md",
+    "public_receipt": "03_analysis/vector_native_calibration_20261006_v1/AMD_PUBLIC_PREPARATION.json",
+    "public_binding": "03_analysis/vector_native_calibration_20261006_v1/FROZEN_RUN_BINDING.json",
+    "cloud_root": "/workspace/team/runs/fpga_owner/vector_native_calibration_20261006_v1",
+    "run_spec_sha256": "0e583dcc393c2cafd14055bd5873d38d1a0329a6f9e8990993475720a6f5824f",
+    "amd_pure_checks": 52,
+    "pure_suites": {
+      "test_calibration": 18,
+      "test_vector_recipe": 13,
+      "test_audit": 21
+    },
+    "prepared_assets": 81,
+    "frozen_source_assets": 140,
+    "prepared_controls": 27,
+    "prepared_literal_observations": 7943,
+    "prepared_literal_domains": {
+      "binary": 3993,
+      "four_state_data": 3950
+    },
+    "prepared_observations_are_simulated_native_results": false,
+    "planned_native_commands": 72,
+    "planned_supervisor_commands": 2,
+    "planned_guard_receipts": 150,
+    "frozen_admission_validated_on_amd": true,
+    "compiler_environment_validated_on_amd": true,
+    "prior_protected_group_count": 18,
+    "prior_protected_source_assets": 930,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "queued": false,
+    "native_qualified": false,
+    "quality_gain_verified": false,
+    "score_measured": false,
+    "production_deployment": false,
+    "public_source_bodies_included": false,
+    "original_judge_policy": "future_full_original_judge_must_run_unchanged",
+    "future_fixed_cp_tasks": 6,
+    "future_cp_rows": 12,
+    "cp_prepared": false,
+    "cp_queued": false,
+    "actual_shared_logs": true,
+    "github_reminder": "https://github.com/854259/FPGA/issues/7#issuecomment-6001893083",
+    "peer_acknowledgment": "pending",
+    "new_public_git_delta_shared": false
   }
 }

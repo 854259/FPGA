@@ -1,0 +1,224 @@
+{
+  "schema": "vector_native_public_amd_preparation_v1",
+  "identity": "vector_native_calibration_20261006_v1",
+  "status": "amd_pure_and_preparation_verified_source_frozen_native_and_score_pending",
+  "private_receipt_schemas": {
+    "preparation": "vector_native_actual_amd_preparation_v1",
+    "root_readback": "vector_native_root_physical_preparation_readback_v1",
+    "source_freeze": "vector_native_actual_source_freeze_v1"
+  },
+  "observed_at_epoch": 1791229720.3797374,
+  "source_frozen_at_epoch": 1791229748.681063,
+  "snapshot_scope": "preparation_readback_and_source_freeze_before_native_queue; not a live runtime status feed",
+  "evidence_binding": {
+    "private_source_ledger_sha256": "41bc2f5de5fd3d967e5048ff4053c6e5f522bf878a9e6ce5ecb93cefa80cca45",
+    "private_static_review_sha256": "128f87ac92772772aa68154b09f1125a815efa2b211edf6b0ce38265c635caf9",
+    "installer_helper_sha256": "d251332c80021f65673494546c44db295e35511e5bb81854d0725ffa5d02e370",
+    "root_freeze_helper_sha256": "8257881bfd628684a304f58e2aec1176face8a9782ae7e762c7a75f46c1c1832",
+    "amd_preparation_receipt_sha256": "5d1fcbcd524ea08c3fe9ddeb3d8048a6d213a5964303c6f0184b6d7bbdb8794a",
+    "root_physical_readback_sha256": "19a4b4bbf327b9bd544c9997b9d944a7c1461977c2d3878a0840e5d0031ffd37",
+    "source_freeze_receipt_sha256": "5aacaccdfb34bbb4163ed2cc1843fcf442262651773bdd6fdf9d841924fac23d",
+    "case_plan_sha256": "092288966cd79c3818d124d39c9dd2c65a43eda3e0086cda4bedbaa51938579c"
+  },
+  "artifact_hash_scope": {
+    "source_freeze_receipt_sha256": "immutable ROOT local private transport-copy bytes without trailing newline; not the AMD same-named file physical SHA256, whose saved bytes include a trailing newline",
+    "root_physical_readback_sha256": "ROOT-generated immutable local physical-readback receipt bytes",
+    "amd_preparation_receipt_sha256": "independently verified AMD physical file bytes; matching immutable ROOT local transport copy",
+    "private_run_spec_sha256": "directly verified AMD physical RUN_SPEC.json file bytes"
+  },
+  "private_run_spec_sha256": "0e583dcc393c2cafd14055bd5873d38d1a0329a6f9e8990993475720a6f5824f",
+  "private_source_inventory_map_sha256": "c6b06ed7f4d906f46dc0b166e91cfa622b4af1c7f9655c30a38b33715bfdce97",
+  "source_inventory_canonicalization": "SHA256 of UTF8 compact JSON with ordinal sorted ASCII path keys and string SHA256 values; separators comma/colon; no trailing newline",
+  "actual": {
+    "pure_checks_passed": true,
+    "pure_methods_expected": 52,
+    "pure_methods_observed": 52,
+    "pure_suites": {
+      "test_audit": {
+        "expected": 21,
+        "individual_ok_lines": 21,
+        "observed": 21,
+        "passed": true,
+        "unique_OK": true
+      },
+      "test_calibration": {
+        "expected": 18,
+        "individual_ok_lines": 18,
+        "observed": 18,
+        "passed": true,
+        "unique_OK": true
+      },
+      "test_vector_recipe": {
+        "expected": 13,
+        "individual_ok_lines": 13,
+        "observed": 13,
+        "passed": true,
+        "unique_OK": true
+      }
+    },
+    "preparation_processes": {
+      "test_calibration": {
+        "process_sha256": "b9d080790f76037e9bd46038af60b1aabb82e2b575fa429a1a2cfb499e482dee",
+        "returncode": 0,
+        "timeout": false,
+        "remaining_live_group": []
+      },
+      "test_vector_recipe": {
+        "process_sha256": "9049ea93384a0982eaceb46e985b9af0d5f1c157acf0a3c42c65f36404d946a6",
+        "returncode": 0,
+        "timeout": false,
+        "remaining_live_group": []
+      },
+      "test_audit": {
+        "process_sha256": "c01a41577ed14730358e339a87e0f9f254d932ca3981bcee613ee10ee6acfd14",
+        "returncode": 0,
+        "timeout": false,
+        "remaining_live_group": []
+      },
+      "prepare": {
+        "process_sha256": "b324c84762950d2864a943d11f318cf55acd3ba9484af1faf19fc879ac7bc373",
+        "returncode": 0,
+        "timeout": false,
+        "remaining_live_group": []
+      }
+    },
+    "prepare_passed": true,
+    "prepared_controls": 27,
+    "prepared_assets": 81,
+    "prepared_literal_observation_count": 7943,
+    "prepared_literal_domain_counts": {
+      "binary": 3993,
+      "four_state_data": 3950
+    },
+    "prepared_literals_are_not_actual_native_observations": true,
+    "installation_source_assets": 22,
+    "frozen_source_assets": 140,
+    "source_unchanged": true,
+    "model_identity_unchanged": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "native_commands": 0,
+    "native_calibration_supervisor_probes": 0,
+    "original_judge_executed": false,
+    "frozen": true,
+    "queued": false,
+    "native_stage_executed": false,
+    "native_archive_audit_completed": false,
+    "native_qualified": false,
+    "score_measured": false,
+    "quality_gain_verified": false,
+    "adoption": false,
+    "deployment_triggered_by_preparation_or_merge": false
+  },
+  "strict_preparation_and_freeze_gates": {
+    "root_raw_physical_receipts_verified": true,
+    "all_four_processes_returncode_0": true,
+    "no_timeout_or_remaining_live_group": true,
+    "exact_52_unique_method_results": true,
+    "exact_27_controls_81_assets_and_7943_literals_replayed": true,
+    "source_and_shared_model_identity_unchanged": true,
+    "frozen_admission_validated_on_amd": true,
+    "compiler_environment_validated_on_amd": true,
+    "private_source_inventory_exact_140": true,
+    "prior_protected_group_count": 18,
+    "prior_protected_source_assets": 930,
+    "all_18_prior_frozen_groups_unchanged": true,
+    "future_native_requires_owned_fifo_and_resource_admission": true,
+    "stage_summary_alone_not_final_native_qualification": true,
+    "terminal_independent_archive_audit_required": true,
+    "unexpected_environment_tool_supervision_or_unconfirmed_evidence_refuses_qualification": true
+  },
+  "validated_environment": {
+    "environment_capture_sha256": "8c360a174934710a233798465e21e5db0c242b75830e1029116dee36c4034308",
+    "protected_capture_sha256": "32d443ee538ed856288670dc8c54a3c091fd04f0daf9f5406131f1d2dcf13360",
+    "python_runtime": {
+      "path": "/usr/bin/python3",
+      "sha256": "8295ee25cfdb239f3e165afceda7f46de73e2b606ff0e2e3d8623e3facd30acc"
+    },
+    "compiler_tools": {
+      "vivado": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/vivado",
+        "sha256": "121b8c468f96f7ee750fc8f7d2386c54d047b204a5b8b7a5dada85f04997302d"
+      },
+      "xelab": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xsim": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+        "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+      },
+      "xvlog": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      }
+    },
+    "compiler_env": {
+      "LD_LIBRARY_PATH": "/workspace/team/udev-stub",
+      "PATH": "/workspace/AMD/2026.1/Vivado/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "VIVADO_BIN": "/workspace/AMD/2026.1/Vivado/bin"
+    },
+    "udev_files": {
+      "libudev.so.1": "3a2d6266ccf18909d3ebccbf21e8125ce985359319fecc6c8172aeabf13ecf87"
+    },
+    "validation_is_not_native_execution": true
+  },
+  "planned_native_calibration": {
+    "total_controls": 27,
+    "producer_positives": 5,
+    "sentinel_positives": 2,
+    "semantic_negatives": 11,
+    "transport_refusals": 5,
+    "eda_failures": 2,
+    "owned_supervisor_probes": 2,
+    "native_commands": 72,
+    "native_by_tool": {
+      "xvlog": 25,
+      "xelab": 24,
+      "xsim": 23
+    },
+    "owned_supervisor_commands": 2,
+    "owned_commands": 74,
+    "guard_receipts": 150,
+    "native_trace_observations": 7943,
+    "binary_native_observations": 3993,
+    "four_state_data_native_observations": 3950,
+    "model_requests": 0
+  },
+  "bounded_scope": {
+    "selector_domain": "binary_complete_only_this_bounded_calibration",
+    "payload_stimuli": "finite_fixed_corpus",
+    "data_xz_domain": "four_state_bit_transfer_under_binary_selector",
+    "selector_xz_expectations": "none_defined_by_this_calibration",
+    "original_judge_selector_xz_scope": "unknown_unmodified",
+    "full_original_judge_must_remain_unchanged": true,
+    "native_qualification_does_not_establish_original_score": true
+  },
+  "future_fixed_c_p_pilot": {
+    "fixed_tasks": 6,
+    "fixed_c_p_rows": 12,
+    "prepared": false,
+    "frozen": false,
+    "queued": false,
+    "executed": false,
+    "original_token_budget": 8192,
+    "max_model_requests_per_row": 2,
+    "max_original_repairs": 1,
+    "absolute_deadline_s": 300,
+    "minimum_target_l3_net_gain": 1,
+    "no_current_correct_regression_required": true,
+    "no_call_cost_increase_required": true,
+    "full_156_only_after_complete_pilot_gate": true
+  },
+  "visibility": {
+    "metadata_only": true,
+    "private_parser_source_included": false,
+    "private_recipe_included": false,
+    "private_prompt_or_interface_included": false,
+    "private_rtl_or_tb_included": false,
+    "private_expected_bitstrings_included": false,
+    "private_raw_output_streams_included": false,
+    "private_full_source_file_map_included": false,
+    "full_private_run_spec_included": false
+  }
+}
