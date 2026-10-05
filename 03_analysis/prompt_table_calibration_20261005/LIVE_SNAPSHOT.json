@@ -1,0 +1,33 @@
+{
+  "observed_at_epoch": 1791197358.1835463,
+  "ticket": 71,
+  "ticket_state": "completed",
+  "source_assets": 68,
+  "source_unchanged": true,
+  "model": {
+    "pid": 2013333,
+    "start": "823869819",
+    "state": "S",
+    "live": true
+  },
+  "monitor": {
+    "pid": 4025007,
+    "start": "847078176",
+    "state": "Z",
+    "live": false
+  },
+  "actual_model_calls": 0,
+  "adoption": false,
+  "completed_controls": 25,
+  "measurement_complete": true,
+  "measurement_error": null,
+  "attempted_commands_by_tool": {
+    "xvlog": 25,
+    "xelab": 25,
+    "xsim": 25
+  },
+  "actual_native_commands": 75,
+  "unconfirmed_native_attempts": 0,
+  "guard_complete": true,
+  "guard_passed": true
+}

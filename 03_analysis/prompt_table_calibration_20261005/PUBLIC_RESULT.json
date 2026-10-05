@@ -1,0 +1,257 @@
+{
+  "schema": "prompt_table_generated_calibration_audit_v1",
+  "evidence_valid": true,
+  "actual_native_commands": 75,
+  "actual_xvlog": 25,
+  "actual_xelab": 25,
+  "actual_xsim": 25,
+  "actual_model_calls": 0,
+  "research_controls": 25,
+  "rows": [
+    {
+      "label": "Prob050_kmap1_positive",
+      "kind": "positive",
+      "checks": 8,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob050_kmap1_constant0",
+      "kind": "constant0",
+      "checks": 8,
+      "mismatches": 7,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob050_kmap1_constant1",
+      "kind": "constant1",
+      "checks": 8,
+      "mismatches": 1,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob050_kmap1_single_cell",
+      "kind": "single_cell",
+      "checks": 8,
+      "mismatches": 1,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob050_kmap1_sentinel",
+      "kind": "sentinel",
+      "checks": 8,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": false,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob057_kmap2_positive",
+      "kind": "positive",
+      "checks": 16,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob057_kmap2_constant0",
+      "kind": "constant0",
+      "checks": 16,
+      "mismatches": 10,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob057_kmap2_constant1",
+      "kind": "constant1",
+      "checks": 16,
+      "mismatches": 6,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob057_kmap2_single_cell",
+      "kind": "single_cell",
+      "checks": 16,
+      "mismatches": 1,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob057_kmap2_sentinel",
+      "kind": "sentinel",
+      "checks": 16,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": false,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob113_2012_q1g_positive",
+      "kind": "positive",
+      "checks": 16,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob113_2012_q1g_constant0",
+      "kind": "constant0",
+      "checks": 16,
+      "mismatches": 8,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob113_2012_q1g_constant1",
+      "kind": "constant1",
+      "checks": 16,
+      "mismatches": 8,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob113_2012_q1g_single_cell",
+      "kind": "single_cell",
+      "checks": 16,
+      "mismatches": 1,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob113_2012_q1g_sentinel",
+      "kind": "sentinel",
+      "checks": 16,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": false,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob122_kmap4_positive",
+      "kind": "positive",
+      "checks": 16,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob122_kmap4_constant0",
+      "kind": "constant0",
+      "checks": 16,
+      "mismatches": 8,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob122_kmap4_constant1",
+      "kind": "constant1",
+      "checks": 16,
+      "mismatches": 8,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob122_kmap4_single_cell",
+      "kind": "single_cell",
+      "checks": 16,
+      "mismatches": 1,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob122_kmap4_sentinel",
+      "kind": "sentinel",
+      "checks": 16,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": false,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob125_kmap3_positive",
+      "kind": "positive",
+      "checks": 13,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob125_kmap3_constant0",
+      "kind": "constant0",
+      "checks": 13,
+      "mismatches": 8,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob125_kmap3_constant1",
+      "kind": "constant1",
+      "checks": 13,
+      "mismatches": 5,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob125_kmap3_single_cell",
+      "kind": "single_cell",
+      "checks": 13,
+      "mismatches": 1,
+      "true_xsim_returncode": 0,
+      "control_matched": true,
+      "false_acceptance": false
+    },
+    {
+      "label": "Prob125_kmap3_sentinel",
+      "kind": "sentinel",
+      "checks": 13,
+      "mismatches": 0,
+      "true_xsim_returncode": 0,
+      "control_matched": false,
+      "false_acceptance": false
+    }
+  ],
+  "qualified_for_generated_control_discrimination": false,
+  "original_harness": false,
+  "generated_research_test": true,
+  "score_gain_measured": false,
+  "independent_model_qualification": false,
+  "adoption": false,
+  "archive_sha256": "af3cc0110d0370ff326df3e7946aec8f2d25a933dcef24b0037a3ef3c9cee121",
+  "spec_sha256": "cc1abf90fc1e38fbfcaf51df53eab0b47572c532dd8bcc91a334ed4cbfde9d74",
+  "actual_result_sha256": "526f4def25193ff88e2102506464e8b2628889fb0b2fe3cab3f960e9610e043b",
+  "auditor_sha256": "be7c8784dcc8254f7dc2b9ccaf0d9c37962097edd702a2cd91e3385b93935050",
+  "source_assets": 68,
+  "ticket": 71,
+  "matched_controls": 20,
+  "semantic_wrong_controls_detected": 15,
+  "false_acceptances": 0,
+  "sentinel_failures_not_propagated": 5,
+  "decision": "complete_measurement_but_failure_propagation_gate_failed",
+  "actual_five_sample_runs": 0,
+  "actual_independent_model_samples": 0,
+  "formal_deployment_changed": false
+}

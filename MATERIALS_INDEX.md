@@ -1,3 +1,7 @@
+## 2026-10-05 表格原生终审
+
+`03_analysis/prompt_table_calibration_20261005/FINAL_RESULT.md` / `PUBLIC_RESULT.json`：75实际命令，20/25匹配，15语义错误全检出但5 sentinel真实xsim0，资格false、0实际模型。原失败/完整日志保留。
+
 ## 2026-10-05 新提分因子准备
 
 - `03_analysis/prompt_table_calibration_20261005/README.md`：68冻结资产、25研究控制，双环境各15纯检查；计划75原生，实际0，未提交FIFO。
