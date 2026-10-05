@@ -87,7 +87,7 @@ def preflight(args):
             (task/'tb.sv').write_text('EVALUATOR_SENTINEL_DO_NOT_COPY')
             (task/'reference.sv').write_text('REFERENCE_SENTINEL_DO_NOT_COPY')
             before = len(requests)
-            result = arm.run_arm(args.kit/'official_reference', task, out/'cases'/case,
+            result = arm.run_arm(args.kit/'submission', task, out/'cases'/case,
                                  resource, endpoint, 1.5 if case == 'body_hang' else 10)
             assert len(requests) == before+1, (case, 'must make exactly one POST, no retry')
             request = requests[-1]

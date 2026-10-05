@@ -104,7 +104,7 @@ def main():
     args = p.parse_args()
     resource = resource_module()
     resource.check_resource(args.resource_check, args.kit, first=True)
-    result = run_arm(args.kit/'official_reference', args.task.resolve(), args.out.resolve(),
+    result = run_arm(args.kit/'submission', args.task.resolve(), args.out.resolve(),
                      resource, 'http://127.0.0.1:8000/v1')
     resource.check_resource(args.resource_check, args.kit)
     print(json.dumps(result))

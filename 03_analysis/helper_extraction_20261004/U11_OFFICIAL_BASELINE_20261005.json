@@ -3,8 +3,8 @@
   "status": "prepared_not_executed",
   "reason": "A/P/B full comparison lacks a verified direct unchanged official baseline entry; prior C/P controls are not B. Implement direct upstream CLI and failure accounting before a real full batch.",
   "source_hashes": {
-    "official_baseline_arm_20261005.py": "574f38c1a18b420934e6a4b3a97fb85731639f6ac886f26dd0a7b3e25ac3ecea",
-    "official_baseline_preflight_20261005.py": "a948fd25e4f3f47b014ac808c68fc7c6404b0dc70e6124c759935a42e47d2aba"
+    "official_baseline_arm_20261005.py": "fe46b1bf761c0875a87c80ba7ffab522f7e47b81ea11ae2dddb27ef1048248b2",
+    "official_baseline_preflight_20261005.py": "f14f6aa482f3e3021d6c94cc55700af01688370b3d2cae9b9914b2f781e3ac69"
   },
   "official_hashes": {
     "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
@@ -34,5 +34,16 @@
     "Original official trace lacks full reply/server POST receipt; wrapper conservatively records unknown actual POST count without receipt.",
     "No A/P/B full scheduler or independent/five/32GB qualification; no adoption, no score."
   ],
-  "next": "Retain only if all controls pass; otherwise preserve exact failure and minimally fix engineering before refreezing. Do not rerun known natural tasks or retry to select scores."
+  "next": "Retain only if all controls pass; otherwise preserve exact failure and minimally fix engineering before refreezing. Do not rerun known natural tasks or retry to select scores.",
+  "revision": 2,
+  "official_source_location": "kit/submission; two files byte-exact to official upstream and current guard",
+  "prelaunch_failure": {
+    "reason": "Assumed kit/official_reference/baseline.py but file absent; actual pinned official files are in kit/submission",
+    "fix": "Only two source-location lines changed; original scripts and seven cases unchanged",
+    "eda_calls": 0,
+    "prior_source_retained": true,
+    "model_calls": 0,
+    "prior_commit": "0639df5",
+    "stage_started": false
+  }
 }
