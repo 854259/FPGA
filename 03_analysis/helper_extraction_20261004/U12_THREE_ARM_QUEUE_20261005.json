@@ -1,0 +1,50 @@
+{
+  "schema": "three_arm_U12_frozen_v1",
+  "status": "frozen_engineering_not_launched",
+  "source_hashes": {
+    "three_arm_queue_20261005.py": "b7cf46f61b21b1c966ac44651f00c80a8af172980fe840f670b14139a65a9e42",
+    "three_arm_preflight_20261005.py": "5a254c3a6116983bc49002c7dbe3bd567dca50b6555868e4dd70e0b16d0936de",
+    "official_baseline_arm_20261005.py": "fe46b1bf761c0875a87c80ba7ffab522f7e47b81ea11ae2dddb27ef1048248b2"
+  },
+  "purpose": "Integrate source-bound A/P/B routing and durable at-most-once reservations. Avoid legacy owner/input paths and resubmission after lost confirmation.",
+  "inherited_phase_spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+  "changes": [
+    "Only three input/activity/event identity lines in an owned copy of the pinned worker",
+    "A/P runtime, skills and phase sources remain identical",
+    "B routes to the existing direct original CLI wrapper",
+    "Durable prelaunch reservations, strict row keys, hash checks, cumulative budget and nonblocking queue lock"
+  ],
+  "budget": {
+    "slot_minutes": 5,
+    "eda_calls": 0,
+    "stage_timeout_s": 120,
+    "real_model_calls": 0,
+    "synthetic_process_probes": 36
+  },
+  "controls": [
+    "two_dataset_five_sample_three_arm_exactly_once_and_resume",
+    "counterbalanced_order_and_unique_cross_dataset_keys",
+    "frozen_plan_drift",
+    "incomplete_pair_matrix",
+    "duplicate_row",
+    "input_drift",
+    "source_drift",
+    "terminal_evidence_drift",
+    "conservative_call_cap",
+    "wall_deadline_not_restarted_on_resume",
+    "crash_after_child_never_retried",
+    "unconfirmed",
+    "unknown_actual_calls",
+    "orphan_result_no_new_manifest",
+    "concurrent_dispatch_lock",
+    "full156_five_sample_manifest_only"
+  ],
+  "acceptance": "All16 controls pass under existing AMD resource guard,36 controlled child probes,0 actual solver/model/EDA execution. Failures and incomplete reservations must remain blocked without retry; source/input/result drift, duplicate/missing rows and budget exhaustion reject. Only prompt/interface copied. Protected sources and model unchanged. Full156 plan has2340 unique rows and3900 prospective request upper bound, zero executed.",
+  "limitations": [
+    "Process probes replace actual solver dispatch; actual A/P/B inference and scoring integration remain unverified",
+    "No production queue CLI. Unknown B actual POST count must remain unknown and cannot qualify a full run",
+    "156 development tasks only; no RTLLM full admission, independent evidence, confirmed full credit budget or32GB certification",
+    "This is one engineering substage, not one comprehensive batch or quality improvement"
+  ],
+  "next": "If controls pass retain routing/reservation implementation; close direct baseline transport receipts and scoring integration before real three-arm launch. On failure preserve and diagnose once, then freeze any minimal correction."
+}
