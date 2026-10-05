@@ -1,0 +1,200 @@
+{
+  "schema": "multidriver_guidance_negative_terminal_review_v1",
+  "archive_sha256": "7030c2c46f2affb8f7c1261158d1d30fc5fc8795c1dc89d86d58b598a980eaf9",
+  "evidence_valid": true,
+  "original_samples": 16,
+  "confirmed_model_requests": 26,
+  "coefficients": {
+    "C": 0.775,
+    "P": 0.775
+  },
+  "improvements": [],
+  "regressions": [],
+  "deadlines": [],
+  "unconfirmed_attempts": 0,
+  "guards_pass": true,
+  "qualified_for_new_full_regression": false,
+  "adoption": false,
+  "targets": [
+    {
+      "task": "Prob133_2014_q3fsm",
+      "same_first_request": true,
+      "same_first_candidate": true,
+      "samples": [
+        {
+          "arm": "C",
+          "level": 1,
+          "coefficient": 0.2,
+          "requests": 1,
+          "all_responses_confirmed": true,
+          "solve_deadline": false,
+          "finish_reasons": [
+            "stop"
+          ],
+          "completion_tokens": [
+            1268
+          ],
+          "final_solution_sha256": "b46e60b10caa0f8850669ca654d97b77b74805e3b76873fdbd655f088f42348f",
+          "declaration_patches": 1,
+          "guidance_applied": false,
+          "native_compile_rcs": [
+            1,
+            0
+          ],
+          "elaboration_attempts": 0,
+          "official_mismatches": 230,
+          "official_samples": 1414,
+          "interpretation": "ANSI fix-success early return; guidance not triggered."
+        },
+        {
+          "arm": "P",
+          "level": 1,
+          "coefficient": 0.2,
+          "requests": 1,
+          "all_responses_confirmed": true,
+          "solve_deadline": false,
+          "finish_reasons": [
+            "stop"
+          ],
+          "completion_tokens": [
+            1268
+          ],
+          "final_solution_sha256": "b46e60b10caa0f8850669ca654d97b77b74805e3b76873fdbd655f088f42348f",
+          "declaration_patches": 1,
+          "guidance_applied": false,
+          "native_compile_rcs": [
+            1,
+            0
+          ],
+          "elaboration_attempts": 0,
+          "official_mismatches": 230,
+          "official_samples": 1414,
+          "interpretation": "ANSI fix-success early return; guidance not triggered."
+        }
+      ]
+    },
+    {
+      "task": "Prob156_review2015_fancytimer",
+      "same_first_request": true,
+      "same_first_candidate": true,
+      "samples": [
+        {
+          "arm": "C",
+          "level": 0,
+          "coefficient": 0.0,
+          "requests": 2,
+          "all_responses_confirmed": true,
+          "solve_deadline": false,
+          "finish_reasons": [
+            "stop",
+            "stop"
+          ],
+          "completion_tokens": [
+            1340,
+            1195
+          ],
+          "final_solution_sha256": "08d83cc8f662f5c13a2ca85a6b1a51413780de6c631313b8089d88771593676d",
+          "declaration_patches": 0,
+          "guidance_applied": false,
+          "native_compile_rcs": [
+            0,
+            0
+          ],
+          "elaboration_rcs": [
+            1,
+            1
+          ],
+          "same_native_error_variables_before_after": 5,
+          "repair_fenced_blocks": 0,
+          "repair_complete_topmodules": 1,
+          "repair_matches_final_rtl_exactly": true,
+          "available_reply_message_fields": [
+            "content",
+            "role"
+          ],
+          "repair_payload_exact": true,
+          "guidance_appendix_chars": 0,
+          "native_error_preserved": true,
+          "procedural_writer_processes_per_error_variable_before": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "procedural_writer_processes_per_error_variable_after": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "only_two_defaults_and_comments": false,
+          "interpretation": "Repair retained both process writers; same native failure and official L0."
+        },
+        {
+          "arm": "P",
+          "level": 0,
+          "coefficient": 0.0,
+          "requests": 2,
+          "all_responses_confirmed": true,
+          "solve_deadline": false,
+          "finish_reasons": [
+            "stop",
+            "stop"
+          ],
+          "completion_tokens": [
+            1340,
+            1175
+          ],
+          "final_solution_sha256": "ecf37fd4161d6d7e782965b3c056fc68d61f4247f4f58516f3aa9e8d90c21656",
+          "declaration_patches": 0,
+          "guidance_applied": true,
+          "native_compile_rcs": [
+            0,
+            0
+          ],
+          "elaboration_rcs": [
+            1,
+            1
+          ],
+          "same_native_error_variables_before_after": 5,
+          "repair_fenced_blocks": 0,
+          "repair_complete_topmodules": 1,
+          "repair_matches_final_rtl_exactly": true,
+          "available_reply_message_fields": [
+            "content",
+            "role"
+          ],
+          "repair_payload_exact": true,
+          "guidance_appendix_chars": 369,
+          "native_error_preserved": true,
+          "procedural_writer_processes_per_error_variable_before": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "procedural_writer_processes_per_error_variable_after": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "only_two_defaults_and_comments": true,
+          "interpretation": "Repair retained both process writers; same native failure and official L0."
+        }
+      ]
+    }
+  ],
+  "conclusion": "One directly triggered 156 repair received the exact hint but retained five duplicate procedural owners and the same native failure;133 did not trigger the hint.",
+  "scope": "Observed outputs/receipts only; no hidden reasoning or general capability inference; no independent/full/five qualification.",
+  "original_auditor_rerun": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_ssh_calls": 0,
+  "new_fifo_calls": 0,
+  "new_git_operations": 0
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "latest_semantic_review_binding_v1",
+  "original_actual_inputs": {
+    "RUN_SPEC.json": {
+      "sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+      "bytes": 13105
+    },
+    "audit.py": {
+      "sha256": "681b46a55166caf319a03b48988d83cb923692c8a9424760d7ea7a5edfaea1ab",
+      "bytes": 12789
+    },
+    "raw_evidence/terminal_v1.zip": {
+      "sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+      "bytes": 8400448
+    },
+    "raw_evidence/terminal_audit_v1/RESULTS.json": {
+      "sha256": "3be06a7939895221aa194dfd5ff6814fe1ac84dcdee5ff2215b1b347bea05652",
+      "bytes": 209155
+    }
+  },
+  "files": {
+    "REVIEW.json": {
+      "sha256": "f81c5183008126bf17f0253f0b71aa18f2e175186b34fdf12f00006a652a5b9c",
+      "bytes": 26143
+    },
+    "README.md": {
+      "sha256": "4077d284c347261d19a09731831fb3d62e346fc9db72b1146c8a65292e755c6a",
+      "bytes": 2087
+    },
+    "raw_evidence/AUTHENTICATION.json": {
+      "sha256": "66661f5f669bd507a8d37f0a3f33fa80a2ab31b39f89fdbf4cbe9133bcd24811",
+      "bytes": 1180
+    },
+    "raw_evidence/CURRENT_L1_39.json": {
+      "sha256": "4c6a1ec1c7cf0aa7f3cdf7fe11658867522418e638433ffa5081bf1efec0edaf",
+      "bytes": 30965
+    },
+    "raw_evidence/ACTUAL_39_MEMBER_BINDINGS.json": {
+      "sha256": "f206cbb1f31d01ea8ba807817968146abee0a9609fb4e2c712173122d265dc2f",
+      "bytes": 71625
+    },
+    "raw_evidence/PROPOSED_GENERIC_APPENDIX.txt": {
+      "sha256": "8728d9f3a6d32ee785082771d1c28a08d6c4dbfa59fc5daa55b93e191ddbba36",
+      "bytes": 586
+    },
+    "raw_evidence/authenticate.py": {
+      "sha256": "05ebeea0cd275f9d9e6399a3d01b3408eeca3d91e8358569c0afa3eee1382d90",
+      "bytes": 4452
+    },
+    "raw_evidence/build_review.py": {
+      "sha256": "b7f69cac19e170022a9e4ea56697f044f474f74bf4accc8623227a688d86a885",
+      "bytes": 22694
+    }
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "oracle_body_semantics_read": false
+}
