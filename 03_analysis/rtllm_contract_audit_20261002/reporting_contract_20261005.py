@@ -80,6 +80,28 @@ def make_contract(coverage, public, manifest, original):
                         'No independent generalization, family independence or promotion established.'])
 
 
+def bind_phase_p(contract, arm_sources):
+    """Create a new source-bound contract; never relabel historical C results.
+
+    The caller audits these execution identities before binding. This only
+    binds report semantics and does not authenticate model runs or admit them.
+    """
+    original = json.dumps(contract, indent=2, ensure_ascii=False)+'\n'
+    require(digest(original.encode()) ==
+            '7e381b00f7968dcb217cfab41a2c28faf0d8271706f1729024a0aa9e07dfa14f',
+            'original U2 contract identity')
+    require(set(arm_sources) == {'A', 'P', 'B'}, 'explicit A/P/B identities')
+    require(all(isinstance(v, str) and len(v) == 64 and
+                all(c in '0123456789abcdef' for c in v) for v in arm_sources.values()),
+            'source identity hash')
+    require(len(set(arm_sources.values())) == 3, 'arm execution identities must differ')
+    bound = copy.deepcopy(contract)
+    bound.update(schema='rtllm_finite_reporting_phaseP_v2', arms=['A', 'P', 'B'],
+                 parent_contract_sha256=digest(original.encode()),
+                 arm_sources=copy.deepcopy(arm_sources), candidate_arm='P')
+    return bound
+
+
 def summarize(rows, contract, run):
     """Accept a complete normalized finite-domain result only; never select/retry rows.
 
@@ -87,13 +109,20 @@ def summarize(rows, contract, run):
     generation configuration, arm sources and grading receipts. This function
     validates declared hashes; it cannot authenticate those declarations.
     """
+    arms = tuple(contract['arms'])
+    require(arms in (ARMS, ('A', 'P', 'B')), 'unsupported arm labels')
+    if arms != ARMS:
+        require(contract['schema'] == 'rtllm_finite_reporting_phaseP_v2' and
+                contract['candidate_arm'] == 'P' and
+                contract['arm_sources'] == run['arm_sources'], 'frozen phaseP source binding')
+    candidate = arms[1]
     finite = {r['task']: r for r in contract['ledger'] if r['status'] == 'finite_default_domain_evidence'}
-    expected = {(task, arm, sample) for task in finite for arm in ARMS for sample in range(5)}
+    expected = {(task, arm, sample) for task in finite for arm in arms for sample in range(5)}
     require(len(rows) == 435, 'missing or extra rows')
     require(isinstance(run['run_id'], str) and bool(run['run_id']), 'run id')
     for v in [run['model_config_sha256'], *run['arm_sources'].values()]:
         require(isinstance(v, str) and len(v) == 64 and all(c in '0123456789abcdef' for c in v), 'run hash')
-    require(set(run['arm_sources']) == set(ARMS), 'arm identities')
+    require(set(run['arm_sources']) == set(arms), 'arm identities')
     indexed = {}
     for row in rows:
         require(type(row['sample']) is int, 'sample type')
@@ -114,7 +143,7 @@ def summarize(rows, contract, run):
         indexed[key] = row
     require(set(indexed) == expected, 'incomplete grid')
     arm_reports = {}
-    for arm in ARMS:
+    for arm in arms:
         grouped = [[indexed[t, arm, s] for s in range(5)] for t in sorted(finite)]
         arm_reports[arm] = dict(
             task_count=29, generation_count=145,
@@ -127,19 +156,20 @@ def summarize(rows, contract, run):
     per_sample = []
     for sample in range(5):
         a = [indexed[t, 'A', sample]['passed'] for t in sorted(finite)]
-        c = [indexed[t, 'C', sample]['passed'] for t in sorted(finite)]
+        c = [indexed[t, candidate, sample]['passed'] for t in sorted(finite)]
         per_sample.append(dict(sample=sample, tasks=29, repairs=sum(not x and y for x,y in zip(a,c)),
                                harms=sum(x and not y for x,y in zip(a,c)),
                                unchanged=sum(x == y for x,y in zip(a,c))))
     for t in sorted(finite):
-        differences.append(sum(int(indexed[t,'C',s]['passed'])-int(indexed[t,'A',s]['passed']) for s in range(5))/5)
+        differences.append(sum(int(indexed[t,candidate,s]['passed'])-int(indexed[t,'A',s]['passed']) for s in range(5))/5)
     task_results = [dict(task=t['task'], status=t['status'], scope=t['scope'], remaining=t['remaining'],
-                         arms={a:sum(indexed[t['task'],a,s]['passed'] for s in range(5))/5 for a in ARMS}
+                         arms={a:sum(indexed[t['task'],a,s]['passed'] for s in range(5))/5 for a in arms}
                          if t['task'] in finite else None) for t in contract['ledger']]
     return dict(report_kind='finite_domain_development_only', original_inventory=44,
                 scored_tasks=29, blocked_unscored_tasks=15, independent_tasks=0,
                 task_families_independence_unknown=True, generation_rows=len(rows),
                 arms=arm_reports, task_results=task_results, paired_by_generation=per_sample, paired_task_mean_deltas=differences,
+                comparison=['A', candidate],
                 net_task_mean_delta=sum(differences)/29,
                 full44_accuracy=None, official_contest_score=None, uncertainty=None,
                 promotion_permitted=False, full_batch_complete=False,
@@ -147,15 +177,16 @@ def summarize(rows, contract, run):
 
 
 def test_reporting(contract):
+    arms = tuple(contract['arms'])
     run = dict(run_id='synthetic_report_guard_only', model_config_sha256='0'*64,
-               arm_sources={a:str(i)*64 for i,a in enumerate(ARMS,1)})
+               arm_sources=contract.get('arm_sources', {a:str(i)*64 for i,a in enumerate(arms,1)}))
     rows = [dict(task=t['task'], arm=a, sample=s, passed=True, status='completed',
                  input_sha256=t['input_sha256'], judge_sha256=t['judge_sha256'],
                  run_id=run['run_id'], model_config_sha256=run['model_config_sha256'],
                  arm_source_sha256=run['arm_sources'][a], call_attempts=1, call_confirmed=1,
                  solve_s=1.0, judge_s=2.0)
             for t in contract['ledger'] if t['status']=='finite_default_domain_evidence'
-            for a in ARMS for s in range(5)]
+            for a in arms for s in range(5)]
     result = summarize(rows,contract,run)
     require(result['arms']['A']['finite_pass_at_1'] == 1 and result['scored_tasks'] == 29 and
             result['blocked_unscored_tasks'] == 15 and result['independent_tasks'] == 0 and

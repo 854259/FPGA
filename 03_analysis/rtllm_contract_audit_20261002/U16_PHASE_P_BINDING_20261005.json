@@ -1,0 +1,45 @@
+{
+  "schema": "rtllm_phaseP_binding_U16_frozen_v1",
+  "status": "prepared_not_executed",
+  "purpose": "Bind unchanged RTLLM finite-domain inputs and source identities to A/P/B; keep historical C separate",
+  "source_hashes": {
+    "03_analysis/helper_extraction_20261004/three_arm_queue_20261005.py": "de7d4df53461843503760047f03affa4ea682cc2aa9559e91c80db06d40f44e7",
+    "03_analysis/helper_extraction_20261004/official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422",
+    "03_analysis/helper_extraction_20261004/official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+    "03_analysis/helper_extraction_20261004/official_baseline_scoring_20261005.py": "a6bf0420bdb89a2fd38f9e3ac3c951cc4b27f9a90204e4cc3073d7154a1f8983",
+    "03_analysis/rtllm_contract_audit_20261002/reporting_contract_20261005.py": "b360ddd13f220a594c6faa80e2209cc4da97f9a1476201f4ccadaaebe8d6a784",
+    "03_analysis/rtllm_contract_audit_20261002/phase_p_binding_20261005.py": "3bd642fa2a6a534b6b0ddd06a8b8bff03eb663e5b513db9bac9aa7f1e5fd19e1"
+  },
+  "parent_contract_sha256": "7e381b00f7968dcb217cfab41a2c28faf0d8271706f1729024a0aa9e07dfa14f",
+  "parent_P_spec_sha256": "3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1",
+  "budget": {
+    "real_model_calls": 0,
+    "eda_calls": 0,
+    "stage_timeout_s": 120,
+    "slot_minutes": 5
+  },
+  "expected": {
+    "fixture_files": 220,
+    "inventory": 44,
+    "finite": 29,
+    "blocked": 15,
+    "plan_rows": 435,
+    "capacity_reservations_not_approved": 725,
+    "legacy_controls": 18,
+    "phaseP_controls": 18,
+    "check_groups": 12
+  },
+  "acceptance": [
+    "Every frozen dataset file matches;29 inputs expose prompt only",
+    "Explicit distinct source-bound A/P/B identities; old C observations rejected, joint source drift rejected",
+    "Legacy contract original bytes preserved, full44 ledger and15 unscored retained",
+    "Unbound finite judge blocks actual execution before solver launch",
+    "Shared model/protected sources unchanged; private evidence retained and verified"
+  ],
+  "limits": [
+    "Engineering preflight only, not a model-quality or full-batch result",
+    "Future finite native judge and receipt normalization remain unimplemented; no official L0-L3 substitution",
+    "435 rows and725 reservations describe capacity, not an approved inference budget",
+    "No new independent tasks or full44 contract certification"
+  ]
+}
