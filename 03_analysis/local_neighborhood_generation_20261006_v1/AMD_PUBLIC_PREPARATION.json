@@ -1,0 +1,262 @@
+{
+  "schema": "local_neighborhood_amd_public_preparation_v1",
+  "identity": "local_neighborhood_generation_20261006_v1",
+  "status": "actual_amd_pure_checks_and_prompt_intake_complete_native_unqualified",
+  "metadata_only": true,
+  "snapshot_scope": "actual AMD pure preparation and root physical evidence audit; not a score or live runtime feed",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "native_qualified": false,
+  "score_measured": false,
+  "quality_gain_verified": false,
+  "original_judge_executed": false,
+  "queued": false,
+  "adoption": false,
+  "production_deployment": false,
+  "evidence_binding": {
+    "amd_preflight_sha256": "1f30672d706b01a8e13d36657ee44300f10d0cc292696b67253c51257730c973",
+    "amd_intake_result_sha256": "8ab27ccc41f86835acbac656f87200798d9e0a2a6e035cc2979aa652720b43cc",
+    "packet_sha256": "72901eb0e3479b355a675849b10c13d97058626e5750c28267f5cddb79025932",
+    "local_install_transport_receipt_sha256": "9e5e25166e8bb51e629cf5965cd89aaeab3f960642ffd36628bd934fa88520af",
+    "root_physical_evidence_audit_sha256": "dbaeb0755dea7dabbc2962a35d673c6cb7e23ca3185473e9c4434b3ccec11665",
+    "historical_root_evidence_readback_sha256": "47f1c44bddb6e1077fd2e2e6a68a01296a801c22a1b5f6af639eea6027bac204",
+    "original_input_manifest_sha256": "96fdf604daceaa2d6b8f08c32c08254e8cb44850461bacf3aff19de8144ed479",
+    "private_frozen_pure_inputs_manifest_sha256": "585e36080fa3e9a9c2c47ef49c17ed107ea4499b66e46d6d4a5cb1d13a3db3b6",
+    "unit_stderr_sha256": "b19d0294cd95eee178731877359c162cb0c717fad92c00873b0f29f260b6beb3"
+  },
+  "artifact_hash_scope": {
+    "amd_preflight_sha256": "actual AMD preflight file bytes bound by root physical evidence audit",
+    "amd_intake_result_sha256": "actual AMD intake file bytes bound by root physical evidence audit",
+    "root_physical_evidence_audit_sha256": "ROOT local independent static audit receipt file bytes",
+    "local_install_transport_receipt_sha256": "ROOT local UTF8 transport-copy receipt bytes",
+    "unit_stderr_sha256": "actual raw AMD stderr stream bytes; body remains private",
+    "selected_private_source_hashes": "source identities only; no executable source or complete private input map is included"
+  },
+  "selected_private_source_hashes": {
+    "synthesis.py": "7a31e5eac9ccce97a839551eed89e06073ca406e467173a1a1eac58d8798a2df",
+    "test_synthesis.py": "a32a88e9201e5296d7f0bc9e0ba6526aedd95275902428327f73a4a7190f7820",
+    "SOURCE_DESIGN_DRAFT.json": "f7b51513ae8c7238e58721f1bfba54fac6bd71fa152fdb4506d48c2d508d45e0",
+    "STATIC_PRODUCER_REVIEW.json": "4b86b38a451cf916b2bce0c1b710532be66a86d58611be7e6bfade969fbb95dc",
+    "amd_intake.py": "75995b23387e0d39ab1760f14bec462c4d72583b785835b81623d0a636e8c153",
+    "amd_pure_runner.py": "f5113df6bfc21451494fd6c790a9c79d332f46053f497cbca25489252e0d074b"
+  },
+  "actual": {
+    "amd_pure_checks_expected": 14,
+    "amd_pure_checks_passed": 14,
+    "intake_tasks": 156,
+    "emitted": 3,
+    "abstained": 153,
+    "source_assets": 163,
+    "packet_assets": 164,
+    "source_unchanged": true,
+    "python_runtime_unchanged": true,
+    "protected_before_after_unchanged": true,
+    "protected_groups": 19,
+    "protected_source_assets": 1070,
+    "shared_model_identity_unchanged": true,
+    "normal_completed_child_group_signals": 0,
+    "model_calls_in_this_preparation": 0,
+    "eda_calls_in_this_preparation": 0,
+    "root_physical_evidence_valid": true,
+    "preflight_complete": true,
+    "preflight_passed": true,
+    "root_audit_project_execution": false
+  },
+  "actual_process_metadata": {
+    "unit": {
+      "returncode": 0,
+      "timeout": false,
+      "error": null,
+      "remaining_group": [],
+      "group_signals": [],
+      "source_unchanged": true,
+      "elapsed_s": 0.14236744865775108,
+      "cap_s": 75
+    },
+    "intake": {
+      "returncode": 0,
+      "timeout": false,
+      "error": null,
+      "remaining_group": [],
+      "group_signals": [],
+      "source_unchanged": true,
+      "elapsed_s": 0.14064634963870049,
+      "cap_s": 30
+    },
+    "execution_host": "authorized_AMD_only",
+    "raw_stream_bodies_included": false
+  },
+  "admitted_task_metadata": [
+    {
+      "task": "Prob108_rule90",
+      "experimental_role": "existing_correct_guard",
+      "prompt_sha256": "ecbe064747496af3741721ce5958a5f9f898604f830f31429bea4b0eca4f5cbc",
+      "interface_file_present": false,
+      "interface_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contract_sha256": "a3ef741bdc6b1d1e3e5ee1b6ce83f6fb3b163e4705ae91e38d36a832c7602f65",
+      "rtl_sha256": "26a8e7ab5b286a9f6462717b148dce33cb71f6f64f4e338f34441b43fb61e739",
+      "receipt_sha256": "b7899da242405c50996ac6d367cf212ccb0d89a7f22bf64f8eecf10e8276df33",
+      "emitted": true,
+      "new_native_or_l3_qualification": false
+    },
+    {
+      "task": "Prob124_rule110",
+      "experimental_role": "potential_error_target",
+      "prompt_sha256": "bd6fb5a346cafe3c19462f07fe449107ea62cd3873199dca40a831288fac821f",
+      "interface_file_present": false,
+      "interface_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contract_sha256": "1bbb41e719a0e8ea818e1b4761d5c528222c9c4f6718f5632c3bcb98aa092863",
+      "rtl_sha256": "453000c6d789b645723cce6ba1c3bc494c99b72aa89203d35792f623e82b896a",
+      "receipt_sha256": "3f56cf9b628e1c8ab7fd47053bb86064302b3d3698dac0eb0a42f0563ab2389d",
+      "emitted": true,
+      "new_native_or_l3_qualification": false
+    },
+    {
+      "task": "Prob144_conwaylife",
+      "experimental_role": "potential_error_target",
+      "prompt_sha256": "bc5fda7713cf5f8a009e33fbb7e4bc0a84173c4fb65b82e1f27069430da4866c",
+      "interface_file_present": false,
+      "interface_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contract_sha256": "fcce94cd8bbf342f7ad7e2620c495eb18b19799834bd815e0123ec3a9a29be41",
+      "rtl_sha256": "61639b5732601f222cd4f4aac65c61cac449e93f1bd9b9b1ae1a4d13aa4afa73",
+      "receipt_sha256": "c2f733e6a9edb3b19435bb352e11603da02d24527d59676535c4ef56f70b4ae1",
+      "emitted": true,
+      "new_native_or_l3_qualification": false
+    }
+  ],
+  "production_scope": {
+    "inputs": "complete original prompt and physically bound optional interface text only",
+    "generic_legal_roles_and_dimensions": true,
+    "complete_local_binary_table_or_complete_neighbor_count_law_required": true,
+    "task_ids_used_only_for_experiment_metadata": true,
+    "task_id_or_input_hash_dispatch": false,
+    "cached_answer_or_rule_label_lookup": false,
+    "unknown_incomplete_conflicting_or_extra_requirements_abstain": true,
+    "max_utf8_bytes_per_input": 20000,
+    "ports_exact": 4,
+    "max_cells": 4096,
+    "one_dimensional_min_cells": 3,
+    "two_dimensional_rows_and_columns_min": 3,
+    "two_dimensional_rows_and_columns_max": 64,
+    "explicit_interface_file_absence_bound": true,
+    "empty_text_hash_does_not_claim_physical_interface_file_presence": true
+  },
+  "semantic_scope_and_limits": {
+    "explicit_xor_center_independence_requires_native_four_state_witness": true,
+    "directed_neighbor_indices_parsed_from_original_numeric_relations": true,
+    "moore_torus_destination_indices_are_elaboration_constants": true,
+    "neighbor_count_width_bits": 4,
+    "simultaneous_old_state_and_synchronous_load_priority": true,
+    "historical_mechanism_evidence_is_not_new_producer_quality": true,
+    "two_dimensional_column_bit_orientation": "inferred conventional order within explicit row slices",
+    "uniform_column_mirror_equivalence": "symmetric complete Moore neighbor-count torus only",
+    "general_nonbinary_local_table_or_count_semantics": "unspecified beyond explicit XOR obligation",
+    "binary_qualification_does_not_remove_original_judge_x_z_requirements": true,
+    "three_emissions_are_not_l3_or_native_results": true
+  },
+  "historical_mechanism_metadata": {
+    "archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+    "scope": "root readback of earlier original full-P archive and mechanism review; not execution of the new producer",
+    "guard_108": {
+      "original_level": 3,
+      "mismatches": 0,
+      "observations": 7121,
+      "new_producer_quality_verified": false
+    },
+    "target_124": {
+      "original_level": 1,
+      "compile_passed": true,
+      "simulation_passed": false,
+      "mismatches": 6220,
+      "observations": 6283,
+      "historical_solution_sha256": "f162f1a1b4ed8d5ac46f4331a76ac76a832e31e752a0995bfb8e675b93427d21",
+      "root_mechanism_finding": "numeric neighbor direction reversed relative to original prompt",
+      "new_producer_quality_verified": false
+    },
+    "target_144": {
+      "original_level": 0,
+      "compile_passed": false,
+      "historical_solution_sha256": "f12638f54ecf4ea73d59726cda61c729070be79bc14378b74b428fbe1edb1f8d",
+      "historical_compile_receipt_sha256": [
+        "8854679b6d225638c3d57a6d46b27ec09b60c363454c8609d441afca4569016f",
+        "ecae978746c950db7038e09e4fd16411f3f29a0a567f167400073335c30e3e54"
+      ],
+      "root_mechanism_finding": "variable supplied where an elaboration-time constant index was required",
+      "new_producer_quality_verified": false
+    },
+    "historical_candidate_or_log_bodies_included": false
+  },
+  "historical_baseline_and_active_goal": {
+    "baseline_provenance": "previously audited phase_full156 development-set result; not measured by this pure preparation",
+    "tasks": 156,
+    "baseline_fully_correct": 113,
+    "baseline_weighted_percent_rounded": 77.4359,
+    "goal_status": "active",
+    "goal_fully_correct_minimum": 120,
+    "goal_weighted_percent_minimum": 80,
+    "this_factor_current_error_targets_maximum": 2,
+    "this_factor_mathematical_weighted_gain_upper_bound_percentage_points": 1.1538461538461537,
+    "this_factor_mathematical_fully_correct_upper_bound": 115,
+    "upper_bound_is_forecast": false,
+    "upper_bound_is_measured_gain": false,
+    "this_factor_alone_suffices_for_total_goal": false
+  },
+  "next_gate": {
+    "independent_native_control_and_complete_physical_archive_audit_first": true,
+    "expected_native_observations_must_not_use_producer_contract_or_rtl_as_oracle": true,
+    "fixed_same_budget_c_p_after_native_gate": true,
+    "original_tokens_per_model_request": 8192,
+    "original_max_model_requests_per_row": 2,
+    "original_repairs_maximum": 1,
+    "original_absolute_deadline_s": 300,
+    "target_net_gain_required": true,
+    "no_current_correct_regression_required": true,
+    "no_p_call_cost_rise_required": true,
+    "full_156_only_after_complete_pilot_gate": true,
+    "full_original_judge_bytes_tools_and_decision_unchanged": true
+  },
+  "not_established_by_this_preparation": {
+    "native_qualified": false,
+    "score_measured": false,
+    "quality_gain_verified": false,
+    "original_judge_executed": false,
+    "c_p_pilot_prepared": false,
+    "queued": false,
+    "adoption": false,
+    "production_deployment": false
+  },
+  "coordination_snapshot": {
+    "initial_investigation_notice_issue": 7,
+    "initial_investigation_notice_id": 6002549689,
+    "initial_investigation_notice_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6002549689",
+    "initial_notice_is_this_pure_result_delivery_receipt": false,
+    "peer_acknowledgment": "pending",
+    "new_pure_result_sharing": "actual_shared_metadata_three_logs_notice_and_github_reminder_read_back",
+    "new_public_merge_pr": null,
+    "new_public_cloud_sync_receipt": null,
+    "new_pure_result_reminder_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6003156294",
+    "actual_pure_result_sharing": {
+      "actual_shared": true,
+      "shared_metadata": "/workspace/team/activity/fpga_owner/LOCAL_NEIGHBORHOOD_AMD_PURE_v1.json",
+      "shared_metadata_sha256": "7f688323cccbb4b45bcd800978867bfba690373b6d4b88fa8f76be990ae19358",
+      "notice_id": "local-neighborhood-amd-pure-v1",
+      "notice_revision": "1f30672d706b01a8e13d36657ee44300f10d0cc292696b67253c51257730c973",
+      "reminder_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6003156294",
+      "reminder_id": 6003156294,
+      "reminder_body_sha256": "d99a849f2f9bedebb72b87501ac0f2e80a48a61a416f5633b54196f3fe353627",
+      "peer_acknowledgment": "pending",
+      "logs_appended": 3,
+      "public_git_delta_delivery_still_pending": true
+    }
+  },
+  "visibility": {
+    "private_source_or_regex_body_included": false,
+    "private_prompt_or_interface_body_included": false,
+    "private_rtl_or_tb_included": false,
+    "private_oracle_or_expected_bits_included": false,
+    "private_raw_stdout_or_stderr_included": false,
+    "private_full_input_or_source_file_map_included": false,
+    "full_runnable_run_spec_included": false,
+    "credentials_included": false
+  }
+}

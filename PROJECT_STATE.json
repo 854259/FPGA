@@ -2176,7 +2176,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05",
+  "last_updated": "2026-10-06",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -6471,6 +6471,18 @@
     "shared_receipt": "03_analysis/team_coordination_20261005/SCORE_GOAL_SHARED_RECEIPT.json",
     "peer_acknowledgment": "pending",
     "latest_actual_longtest_observation": {
+      "completed": 577,
+      "expected": 780,
+      "complete": false,
+      "error": null,
+      "actual_model_requests": 620,
+      "responses": 620,
+      "observed_at_epoch": 1791234323.027,
+      "terminal": false,
+      "verified_live_process_count": 6,
+      "eta_claimed": false
+    },
+    "previous_actual_longtest_observation": {
       "completed": 532,
       "expected": 780,
       "complete": false,
@@ -6687,5 +6699,146 @@
     "verified_live_process_count": 6,
     "model_calls_scope": "preparation_and_submission_helpers_only; native stage model maximum0",
     "eda_calls_scope": "preparation_and_submission_helpers_only; queued native stage not executed at submission snapshot"
+  },
+  "local_neighborhood_generation_20261006_v1": {
+    "status": "actual_amd_pure14_intake156_complete_native_design_only",
+    "private_factor_namespace": "local_neighborhood_pure_20261006_v1",
+    "report": "03_analysis/local_neighborhood_generation_20261006_v1/README.md",
+    "public_receipt": "03_analysis/local_neighborhood_generation_20261006_v1/AMD_PUBLIC_PREPARATION.json",
+    "actual_amd_pure_tests": 14,
+    "actual_intake_tasks": 156,
+    "emitted": 3,
+    "abstained": 153,
+    "pure_input_source_assets": 163,
+    "packet_assets": 164,
+    "pure_counts_are_new_native_or_score_results": false,
+    "preflight_sha256": "1f30672d706b01a8e13d36657ee44300f10d0cc292696b67253c51257730c973",
+    "intake_sha256": "8ab27ccc41f86835acbac656f87200798d9e0a2a6e035cc2979aa652720b43cc",
+    "root_physical_pure_audit_sha256": "dbaeb0755dea7dabbc2962a35d673c6cb7e23ca3185473e9c4434b3ccec11665",
+    "private_source_hashes": {
+      "synthesis.py": "7a31e5eac9ccce97a839551eed89e06073ca406e467173a1a1eac58d8798a2df",
+      "test_synthesis.py": "a32a88e9201e5296d7f0bc9e0ba6526aedd95275902428327f73a4a7190f7820",
+      "SOURCE_DESIGN_DRAFT.json": "f7b51513ae8c7238e58721f1bfba54fac6bd71fa152fdb4506d48c2d508d45e0",
+      "STATIC_PRODUCER_REVIEW.json": "4b86b38a451cf916b2bce0c1b710532be66a86d58611be7e6bfade969fbb95dc"
+    },
+    "generator_input_policy": "Complete prompt/interface only; no task IDs, cached answers, reference/TB, old RTL, or rule-label answer dispatch.",
+    "original_interface_binding": "All156 archived original task inputs physically lack interface files; empty argument represents absence, not an invented empty file.",
+    "physical_unit_and_intake_returncodes": [
+      0,
+      0
+    ],
+    "timeout": false,
+    "remaining_groups_after_completion": 0,
+    "normal_completed_child_group_signals": 0,
+    "source_and_python_before_after_unchanged": true,
+    "prior_protected_group_count": 19,
+    "prior_protected_source_assets": 1070,
+    "model_identity_unchanged": true,
+    "actual_model_calls": 0,
+    "eda_calls": 0,
+    "native_qualified": false,
+    "original_judge_executed": false,
+    "score_measured": false,
+    "quality_gain_verified": false,
+    "cp_prepared": false,
+    "cp_queued": false,
+    "fifo_submitted": false,
+    "adoption": false,
+    "production_deployment": false,
+    "historical_factor_selection": {
+      "source_experiment": "phase_full156_20261005_v1 P original archived evidence",
+      "Prob124_rule110": {
+        "level": 1,
+        "compile": true,
+        "simulate": false,
+        "mismatches": 6220,
+        "samples": 6283,
+        "mechanism": "Prompt/candidate static comparison found reversed neighbor directions; not new-factor repair evidence."
+      },
+      "Prob144_conwaylife": {
+        "level": 0,
+        "compile": false,
+        "mechanism": "Two real compiler receipts found nonconstant index where constant required; not new-factor repair evidence."
+      },
+      "Prob108_rule90": {
+        "level": 3,
+        "mismatches": 0,
+        "samples": 7121,
+        "role": "Previously correct regression guard"
+      },
+      "maximum_additional_fully_correct": 2,
+      "maximum_weighted_score_gain_percentage_points": 1.1538461538461537,
+      "upper_bound_is_forecast": false,
+      "factor_alone_sufficient_for_goal": false
+    },
+    "native_design": {
+      "status": "private_static_draft_only",
+      "planned_controls": 29,
+      "planned_native_commands": 78,
+      "planned_supervisor_commands": 2,
+      "planned_guard_receipts": 162,
+      "planned_complete_trace_observations": 10827,
+      "synthetic_input_binding": "pending",
+      "runtime_sources_implemented": false,
+      "prepared": false,
+      "frozen": false,
+      "executed": false
+    },
+    "validation_sequence": [
+      "Independent native controls and raw-archive audit",
+      "Fixed same-budget C/P: net gain, no correct regression, no increase in P model call cost",
+      "Only after gates pass, full156 original judge"
+    ],
+    "max_tokens": 8192,
+    "max_requests": 2,
+    "deadline_s": 300,
+    "original_judge_policy": "Full original judge unchanged, including original four-state obligations; native subset cannot exclude x/z.",
+    "same_active_goal": "score_goal_20261005",
+    "initial_shared_investigation_notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6002549689",
+    "peer_acknowledgment": "pending",
+    "new_pure_results_shared": true,
+    "preparation_pr_status": "pending",
+    "planned_public_delta_files": 8,
+    "delivery_status": "pending",
+    "public_source_bodies_included": false,
+    "private_prompt_RTL_TB_or_raw_published": false,
+    "latest_actual_existing_public_sync": {
+      "factor": "vector_post_submission_receipts",
+      "git_commit": "6c169008baf67cec5c52f267fdeaee85318f7175",
+      "merge_sha": "bff9ad85b394def89bb44637f27626336f38644a",
+      "pr_number": 13,
+      "public_files": 8,
+      "physically_read_back": true,
+      "is_neighborhood_pure_delivery": false
+    },
+    "latest_queue_snapshot": {
+      "observed_at_epoch": 1791234323.027,
+      "running": [
+        80
+      ],
+      "queued": [
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "verified_live_process_count": 6,
+      "terminal": false,
+      "eta_claimed": false
+    },
+    "actual_pure_result_sharing": {
+      "actual_shared": true,
+      "shared_metadata": "/workspace/team/activity/fpga_owner/LOCAL_NEIGHBORHOOD_AMD_PURE_v1.json",
+      "shared_metadata_sha256": "7f688323cccbb4b45bcd800978867bfba690373b6d4b88fa8f76be990ae19358",
+      "notice_id": "local-neighborhood-amd-pure-v1",
+      "notice_revision": "1f30672d706b01a8e13d36657ee44300f10d0cc292696b67253c51257730c973",
+      "reminder_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6003156294",
+      "reminder_id": 6003156294,
+      "reminder_body_sha256": "d99a849f2f9bedebb72b87501ac0f2e80a48a61a416f5633b54196f3fe353627",
+      "peer_acknowledgment": "pending",
+      "logs_appended": 3,
+      "public_git_delta_delivery_still_pending": true
+    }
   }
 }
