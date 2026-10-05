@@ -6340,5 +6340,23 @@
     "latest_actual_shared_commit": "4ba6d9a0b9f1eddd530512326918bf0c5c0938ff",
     "latest_actual_shared_public_files": 19,
     "publication_receipt": "03_analysis/team_coordination_20261005/PUBLICATION_RECEIPT.json"
+  },
+  "score_goal_20261005": {
+    "status": "active",
+    "current_weighted_score": 0.7743589743589744,
+    "current_fully_correct": 113,
+    "target_weighted_score": 0.8,
+    "target_fully_correct": 120,
+    "tasks": 156,
+    "max_tokens": 8192,
+    "max_requests": 2,
+    "deadline_s": 300,
+    "preserve_control_fully_correct": true,
+    "results_are_development_only": true,
+    "report": "05_handoff/SCORE_GOAL_20261005.md",
+    "primary_priority": "improve correctness and score",
+    "quota_stop_used_percent": 97,
+    "goal_is_not_achieved_yet": true,
+    "github_reminder_issue": "https://github.com/854259/FPGA/issues/7"
   }
 }
