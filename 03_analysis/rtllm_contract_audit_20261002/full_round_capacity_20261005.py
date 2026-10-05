@@ -43,9 +43,15 @@ def main(a):
     components = ac + baseline
     stage_proxy = stats['reported_stage_wall_seconds'] + baseline
     archive_stats = []
+    with zipfile.ZipFile(a.new_archive) as z:
+        tasks = json.loads(z.read('run/RUN_SPEC.json'))['task_ids']
+        assert len(tasks) == len(set(tasks)) == 156
     for p in (a.old_archive, a.new_archive):
         with zipfile.ZipFile(p) as z:
-            rows = [e for e in z.infolist() if e.filename.startswith(('run/samples/', 'run/results/samples/')) and not e.is_dir()]
+            base = 'run/samples/' if p == a.old_archive else 'run/results/samples/'
+            admitted = tuple(base+arm+'/'+task+'/' for arm in ('A','C') for task in tasks)
+            rows = [e for e in z.infolist() if e.filename.startswith(admitted) and not e.is_dir()]
+            excluded = [e for e in z.infolist() if e.filename.startswith(base) and not e.is_dir() and not e.filename.startswith(admitted)]
             prefixes = set()
             for row in rows:
                 if row.filename.endswith('/row.json'):
@@ -55,6 +61,7 @@ def main(a):
                 sample_file_count=len(rows), sample_expanded_bytes=sum(e.file_size for e in rows),
                 sample_compressed_payload_bytes=sum(e.compress_size for e in rows),
                 sample_cache_files=sum('xsim.dir/' in e.filename for e in rows),
+                separate_control_files=len(excluded), separate_control_expanded_bytes=sum(e.file_size for e in excluded),
                 archive_total_bytes=p.stat().st_size))
     raw_per_output = max(x['sample_expanded_bytes']/312 for x in archive_stats)
     zip_per_output = max(x['sample_compressed_payload_bytes']/312 for x in archive_stats)
