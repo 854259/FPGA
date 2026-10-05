@@ -1,0 +1,143 @@
+{
+  "schema": "fresh_phase_candidate_copy_v1",
+  "source_owner_spec_sha256": "bce903e984fd0f1b92bd11759b0ecc3bdf77783f384bca74cde0b9cf09beacf6",
+  "phase_source_sha256": "90b7c71b480a7cdd9d485e7401509feef996520111e76c03666ac519a2d01afa",
+  "copied_sources": {
+    "CALIBRATION_AUDIT.json": {
+      "original_sha256": "44a807475a388d25dfbffc6f9de689a10782b5e3e7a60f03cb4e38e7a897733e",
+      "copied_sha256": "44a807475a388d25dfbffc6f9de689a10782b5e3e7a60f03cb4e38e7a897733e"
+    },
+    "INPUT_MANIFEST.json": {
+      "original_sha256": "817ebfc6df996f00ec123c4ea71f47a09918511dade2643d79ee4bfc70feba40",
+      "copied_sha256": "817ebfc6df996f00ec123c4ea71f47a09918511dade2643d79ee4bfc70feba40"
+    },
+    "audit.py": {
+      "original_sha256": "bae5bcf33197245094b2b230ceef65bfd0a3a8461738b1d159ca3b2f2e8464cf",
+      "copied_sha256": "e889b6e2d0e7bb8615d24d41b831cade45e148a581046c9b200835ae57430d5b"
+    },
+    "collect_evidence.py": {
+      "original_sha256": "d906f10f8ab3a26cf7c577fdebab0ccb0c2314d9793ba5b3c6f7f0a795e8a25a",
+      "copied_sha256": "d906f10f8ab3a26cf7c577fdebab0ccb0c2314d9793ba5b3c6f7f0a795e8a25a"
+    },
+    "edge_contract.py": {
+      "original_sha256": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+      "copied_sha256": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd"
+    },
+    "edge_dispatch.py": {
+      "original_sha256": "8f86bf997ff9c40647ed6eaadcf57e6bda62521628e45dec831210ad2151558c",
+      "copied_sha256": "8f86bf997ff9c40647ed6eaadcf57e6bda62521628e45dec831210ad2151558c"
+    },
+    "edge_feedback.py": {
+      "original_sha256": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
+      "copied_sha256": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7"
+    },
+    "guard_wrapper.py": {
+      "original_sha256": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+      "copied_sha256": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9"
+    },
+    "metrics.py": {
+      "original_sha256": "dc8a19e4bc9dbb4e0799270041367afcc92ba97b2d76addb7a7595efc612dbb4",
+      "copied_sha256": "09ce06cfcc15f972664f90d82b7b36ad6d034b31f39cec2e95ebcd8572e39297"
+    },
+    "official_eval_guarded.py": {
+      "original_sha256": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c",
+      "copied_sha256": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c"
+    },
+    "package/agent/map_runtime.py": {
+      "original_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+      "copied_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba"
+    },
+    "package/agent/runtime.py": {
+      "original_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+      "copied_sha256": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7"
+    },
+    "package/baseline.py": {
+      "original_sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "copied_sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51"
+    },
+    "package/skill/rtl-feedback-repair/SKILL.md": {
+      "original_sha256": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+      "copied_sha256": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+    },
+    "package/skill/rtl-generation/SKILL.md": {
+      "original_sha256": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "copied_sha256": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01"
+    },
+    "pilot.py": {
+      "original_sha256": "1b8d6346d87532e89758ec97484a624f3ba57d8044167d1367bfd3a7ef914071",
+      "copied_sha256": "4b2bc51c9f42c2ab8803bff04d3c78afe3115be3ca1629e32c7cb50e948361fc"
+    },
+    "point_feedback.py": {
+      "original_sha256": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+      "copied_sha256": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c"
+    },
+    "priority_contract.py": {
+      "original_sha256": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+      "copied_sha256": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516"
+    },
+    "prompt_map.py": {
+      "original_sha256": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+      "copied_sha256": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953"
+    },
+    "raw_evidence/test_fixtures/priority.txt": {
+      "original_sha256": "ae25e77bd3e4c274ecec6cea5af6d432379967aba0228435794b3bb83d9637b5",
+      "copied_sha256": "ae25e77bd3e4c274ecec6cea5af6d432379967aba0228435794b3bb83d9637b5"
+    },
+    "raw_evidence/test_fixtures/score.py": {
+      "original_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+      "copied_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768"
+    },
+    "raw_evidence/test_fixtures/shift.txt": {
+      "original_sha256": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386",
+      "copied_sha256": "c017623ab6db0d3a4a5df55b68ae75e2723c1e6739183c7829e371b504df8386"
+    },
+    "replay.py": {
+      "original_sha256": "efa76cbc762d9e83b84fc77848a1e69c3077037f8511496c78f478e030c283d9",
+      "copied_sha256": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6"
+    },
+    "reserved_keywords.py": {
+      "original_sha256": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "copied_sha256": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e"
+    },
+    "shift_contract.py": {
+      "original_sha256": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+      "copied_sha256": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca"
+    },
+    "test_boundaries.py": {
+      "original_sha256": "9cf0da012bcca0d8f14336684d0b4d5521fc181eecc1b4792f1bc95d16e0489b",
+      "copied_sha256": "9cf0da012bcca0d8f14336684d0b4d5521fc181eecc1b4792f1bc95d16e0489b"
+    },
+    "test_edge_integration.py": {
+      "original_sha256": "3c0c7847f03368b6341e30ab1a600a809ca33387d8a6f2163d34946e26f224b3",
+      "copied_sha256": "366016a072c86904308cb0c4229f43ced0507db22d33d6846fab1e9438969010"
+    },
+    "test_environment.py": {
+      "original_sha256": "22364ae9b621749261f9190f88e077d494a7be112d33f47b8dab28d916267159",
+      "copied_sha256": "22364ae9b621749261f9190f88e077d494a7be112d33f47b8dab28d916267159"
+    },
+    "test_fresh.py": {
+      "original_sha256": "f7e56c86f5eaf766bc73f00374bf64121475e687bb75312247039d845d26b12e",
+      "copied_sha256": "f7e56c86f5eaf766bc73f00374bf64121475e687bb75312247039d845d26b12e"
+    },
+    "test_metrics.py": {
+      "original_sha256": "f00aaf3fdddefc80e6481f9830b1f58ef56402058eb4ec0abf9e046787788bdf",
+      "copied_sha256": "661d9fe0eabe7dc5ccfd4a1941559db8e8070fb74b4b992c226f140ea7d03056"
+    },
+    "test_replay.py": {
+      "original_sha256": "1d35581cfa29ce4c20bb364d4a1e0d394113475443fe8131468aa8d00385788a",
+      "copied_sha256": "9d28f40726eca46c612b63e8cea58f2ad19227cacfd38d56289f1ccc2fb1991a"
+    },
+    "test_stage.py": {
+      "original_sha256": "cc17425f58fa5786b8591ae3f9afe2bbcdd284a99cb29908b10cbfde8c4bb161",
+      "copied_sha256": "48cefca744178fac19d42503e136b64dabbaafccff55fe73c11014f35e619c52"
+    },
+    "worker.py": {
+      "original_sha256": "fbb169961519f92dd48b64e9a8e0d3f8c0ae5242eeca55701d35873e7c7b1aa2",
+      "copied_sha256": "ad337a954bfce0266c2dc34e76484df7ebf8cabb5480a920f6ddb360a84eef3e"
+    }
+  },
+  "first_generation_replayed": false,
+  "source_peer_review": "03_analysis/team_phase_repair_review_20261005/RESULTS.json",
+  "factor": "C original priority/shift versus P complete prompt-only edge checks with observed phase-group repair feedback. This fresh comparison tests the whole edge-feedback policy, not phase-only causal isolation.",
+  "production_deployed": false
+}

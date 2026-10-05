@@ -1,0 +1,43 @@
+{
+  "spec_sha256": "2539dcbc8ac9144a33b1d9a207361f0e695725c1788add314a653c8d71484ae5",
+  "archive_sha256": "5c68183580c760bd5acdc08cdd5d456b590b650937eacf8f5b498752d4988a21",
+  "assets": 41,
+  "python": "3.12.3",
+  "tests_passed": 36,
+  "returncode": 0,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "source_unchanged": true,
+  "protected": {
+    "input_files": 936,
+    "official_files": 35
+  },
+  "actual_experiment_submitted": false,
+  "environment": {
+    "verified": true,
+    "tools": {
+      "xvlog": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xelab": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xsim": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+        "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+      },
+      "vivado": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/vivado",
+        "sha256": "121b8c468f96f7ee750fc8f7d2386c54d047b204a5b8b7a5dada85f04997302d"
+      }
+    },
+    "vivado_bin": "/workspace/AMD/2026.1/Vivado/bin",
+    "udev_stub": "/workspace/team/udev-stub",
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "stdout": "",
+  "stderr": "test_A_uses_actual_first_generation_and_no_functional_review (test_fresh.Fresh.test_A_uses_actual_first_generation_and_no_functional_review) ... ok\ntest_C_priority_real_feedback_uses_only_one_original_repair (test_fresh.Fresh.test_C_priority_real_feedback_uses_only_one_original_repair) ... ok\ntest_C_shift_feedback_keeps_stimulus_and_phase (test_fresh.Fresh.test_C_shift_feedback_keeps_stimulus_and_phase) ... ok\ntest_correct_draft_has_no_extra_model_call (test_fresh.Fresh.test_correct_draft_has_no_extra_model_call) ... ok\ntest_native_compile_error_keeps_existing_repair (test_fresh.Fresh.test_native_compile_error_keeps_existing_repair) ... ok\ntest_persistent_mismatch_never_starts_third_call (test_fresh.Fresh.test_persistent_mismatch_never_starts_third_call) ... ok\ntest_unknown_prose_abstains (test_fresh.Fresh.test_unknown_prose_abstains) ... ok\ntest_C_abstains_E_enters_edge_and_repairs_once (test_edge_integration.EdgeIntegration.test_C_abstains_E_enters_edge_and_repairs_once) ... ok\ntest_correct_edge_no_additional_model_call (test_edge_integration.EdgeIntegration.test_correct_edge_no_additional_model_call) ... ok\ntest_omitted_polarity_feedback_is_preserved (test_edge_integration.EdgeIntegration.test_omitted_polarity_feedback_is_preserved) ... ok\ntest_original_compiler_failure_uses_original_repair (test_edge_integration.EdgeIntegration.test_original_compiler_failure_uses_original_repair) ... ok\ntest_original_priority_and_shift_requests_identical_to_C (test_edge_integration.EdgeIntegration.test_original_priority_and_shift_requests_identical_to_C) ... ok\ntest_original_successful_declaration_patch_returns_unchanged (test_edge_integration.EdgeIntegration.test_original_successful_declaration_patch_returns_unchanged) ... ok\ntest_persistent_edge_failure_never_third_request (test_edge_integration.EdgeIntegration.test_persistent_edge_failure_never_third_request) ... ok\ntest_unknown_edge_semantics_abstains (test_edge_integration.EdgeIntegration.test_unknown_edge_semantics_abstains) ... ok\ntest_complete_semantics_and_interface_remain_required (test_boundaries.Boundaries.test_complete_semantics_and_interface_remain_required) ... ok\ntest_feedback_rejects_contract_point_disagreement (test_boundaries.Boundaries.test_feedback_rejects_contract_point_disagreement) ... ok\ntest_file_access_or_include_abstains_before_probe (test_boundaries.Boundaries.test_file_access_or_include_abstains_before_probe) ... ok\ntest_missing_or_fabricated_counterexample_rejected (test_boundaries.Boundaries.test_missing_or_fabricated_counterexample_rejected) ... ok\ntest_native_environment_failure_never_fabricates_feedback (test_boundaries.Boundaries.test_native_environment_failure_never_fabricates_feedback) ... ok\ntest_either_arm_deadline_or_unconfirmed_retained_and_rejects (test_metrics.Metrics.test_either_arm_deadline_or_unconfirmed_retained_and_rejects) ... ok\ntest_execution_success_is_not_production_or_independent_qualification (test_metrics.Metrics.test_execution_success_is_not_production_or_independent_qualification) ... ok\ntest_fixed_complete_order_and_all_eight_denominators (test_metrics.Metrics.test_fixed_complete_order_and_all_eight_denominators) ... ok\ntest_guard_or_unknown_changes_extra_cost_and_tool_error_reject (test_metrics.Metrics.test_guard_or_unknown_changes_extra_cost_and_tool_error_reject) ... ok\ntest_no_real_two_task_chain_no_qualification (test_metrics.Metrics.test_no_real_two_task_chain_no_qualification) ... ok\ntest_diagnostic_actual_source_compiler_contract_dut_or_extra_factor_rejected (test_replay.Replay.test_diagnostic_actual_source_compiler_contract_dut_or_extra_factor_rejected) ... ok\ntest_original_source_messages_and_repair_feedback_bound (test_replay.Replay.test_original_source_messages_and_repair_feedback_bound) ... ok\ntest_E_worker_selection_executes_real_original_functional_path (test_stage.Stage.test_E_worker_selection_executes_real_original_functional_path) ... ok\ntest_whole_job_schedules16_new_workers_and16_original_judges (test_stage.Stage.test_whole_job_schedules16_new_workers_and16_original_judges) ... ok\ntest_available_pinned_environment_checked_without_tool_execution (test_environment.Environment.test_available_pinned_environment_checked_without_tool_execution) ... ok\ntest_each_missing_tool_rejected_before_model_call (test_environment.Environment.test_each_missing_tool_rejected_before_model_call) ... ok\ntest_missing_scoped_library_path_rejected (test_environment.Environment.test_missing_scoped_library_path_rejected) ... ok\ntest_wrong_tool_resolution_rejected (test_environment.Environment.test_wrong_tool_resolution_rejected) ... ok\ntest_actual_native_group_matches_point_and_has_multiple_phases (test_phase.Phase.test_actual_native_group_matches_point_and_has_multiple_phases) ... ok\ntest_missing_duplicate_reordered_fabricated_and_out_of_range_trace_rejected (test_phase.Phase.test_missing_duplicate_reordered_fabricated_and_out_of_range_trace_rejected) ... ok\ntest_original_stimulus_and_obligations_remain_exact_bytes (test_phase.Phase.test_original_stimulus_and_obligations_remain_exact_bytes) ... ok\n\n----------------------------------------------------------------------\nRan 36 tests in 0.368s\n\nOK\n"
+}

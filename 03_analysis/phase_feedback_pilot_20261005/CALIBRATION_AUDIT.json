@@ -1,0 +1,383 @@
+{
+  "schema": "edge_contract_offline_audit_v1",
+  "evidence_valid": true,
+  "controls_valid": true,
+  "archive_sha256": "e035cfa3a12c22326ce200ffa65fa6e0dfcf7f36a17119eab9e32b9b07c45724",
+  "run_spec_sha256": "12ff3efc385045e14580aa41ecae64cf6d0d2ce39f1150a344c846683cf1a9ab",
+  "auditor_sha256": "4fa7b42c50600a64969879efda49676d90b473bb9dc84842b2614a8d2f5e4651",
+  "cases": {
+    "edge_any5": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 62,
+          "mismatches": 0,
+          "first": null
+        },
+        "opposite_edge": {
+          "status": "fail",
+          "checks": 62,
+          "mismatches": 19,
+          "first": {
+            "step": 3,
+            "phase": "positive",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 31,
+            "expected": 31,
+            "output": "seen",
+            "observed_hex": "00"
+          }
+        },
+        "combinational": {
+          "status": "fail",
+          "checks": 62,
+          "mismatches": 53,
+          "first": {
+            "step": 3,
+            "phase": "stable",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 31,
+            "expected": 0,
+            "output": "seen",
+            "observed_hex": "1f"
+          }
+        },
+        "extra_delay": {
+          "status": "fail",
+          "checks": 62,
+          "mismatches": 59,
+          "first": {
+            "step": 1,
+            "phase": "positive",
+            "previous_input": 0,
+            "older_input": null,
+            "input": 0,
+            "expected": 0,
+            "output": "seen",
+            "observed_hex": "xx"
+          }
+        },
+        "wrong_direction": {
+          "status": "fail",
+          "checks": 62,
+          "mismatches": 36,
+          "first": {
+            "step": 5,
+            "phase": "positive",
+            "previous_input": 31,
+            "older_input": 31,
+            "input": 0,
+            "expected": 31,
+            "output": "seen",
+            "observed_hex": "00"
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 62,
+          "mismatches": 51,
+          "first": {
+            "step": 3,
+            "phase": "positive",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 31,
+            "expected": 31,
+            "output": "seen",
+            "observed_hex": "00"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "edge_rising3": {
+      "group": "constructed_calibration",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 33,
+          "mismatches": 0,
+          "first": null
+        },
+        "opposite_edge": {
+          "status": "pass",
+          "checks": 33,
+          "mismatches": 0,
+          "first": null
+        },
+        "combinational": {
+          "status": "fail",
+          "checks": 33,
+          "mismatches": 23,
+          "first": {
+            "step": 3,
+            "phase": "stable",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 7,
+            "expected": 0,
+            "output": "seen",
+            "observed_hex": "7"
+          }
+        },
+        "extra_delay": {
+          "status": "fail",
+          "checks": 33,
+          "mismatches": 26,
+          "first": {
+            "step": 3,
+            "phase": "cycle",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 7,
+            "expected": 7,
+            "output": "seen",
+            "observed_hex": "0"
+          }
+        },
+        "wrong_direction": {
+          "status": "fail",
+          "checks": 33,
+          "mismatches": 26,
+          "first": {
+            "step": 3,
+            "phase": "cycle",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 7,
+            "expected": 7,
+            "output": "seen",
+            "observed_hex": "0"
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 33,
+          "mismatches": 20,
+          "first": {
+            "step": 3,
+            "phase": "cycle",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 7,
+            "expected": 7,
+            "output": "seen",
+            "observed_hex": "0"
+          }
+        }
+      },
+      "candidate": null
+    },
+    "Prob045_edgedetect2": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 80,
+          "mismatches": 0,
+          "first": null
+        },
+        "opposite_edge": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 25,
+          "first": {
+            "step": 3,
+            "phase": "positive",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 255,
+            "expected": 255,
+            "output": "anyedge",
+            "observed_hex": "00"
+          }
+        },
+        "combinational": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 71,
+          "first": {
+            "step": 3,
+            "phase": "stable",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 255,
+            "expected": 0,
+            "output": "anyedge",
+            "observed_hex": "ff"
+          }
+        },
+        "extra_delay": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 77,
+          "first": {
+            "step": 1,
+            "phase": "positive",
+            "previous_input": 0,
+            "older_input": null,
+            "input": 0,
+            "expected": 0,
+            "output": "anyedge",
+            "observed_hex": "xx"
+          }
+        },
+        "wrong_direction": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 54,
+          "first": {
+            "step": 5,
+            "phase": "positive",
+            "previous_input": 255,
+            "older_input": 255,
+            "input": 0,
+            "expected": 255,
+            "output": "anyedge",
+            "observed_hex": "00"
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 69,
+          "first": {
+            "step": 3,
+            "phase": "positive",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 255,
+            "expected": 255,
+            "output": "anyedge",
+            "observed_hex": "00"
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 80,
+        "mismatches": 71,
+        "first": {
+          "step": 3,
+          "phase": "stable",
+          "previous_input": 0,
+          "older_input": 0,
+          "input": 255,
+          "expected": 0,
+          "output": "anyedge",
+          "observed_hex": "ff"
+        }
+      }
+    },
+    "Prob054_edgedetect": {
+      "group": "known_public_development",
+      "controls": {
+        "positive": {
+          "status": "pass",
+          "checks": 53,
+          "mismatches": 0,
+          "first": null
+        },
+        "opposite_edge": {
+          "status": "pass",
+          "checks": 53,
+          "mismatches": 0,
+          "first": null
+        },
+        "combinational": {
+          "status": "fail",
+          "checks": 53,
+          "mismatches": 43,
+          "first": {
+            "step": 3,
+            "phase": "stable",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 255,
+            "expected": 0,
+            "output": "pedge",
+            "observed_hex": "ff"
+          }
+        },
+        "extra_delay": {
+          "status": "fail",
+          "checks": 53,
+          "mismatches": 46,
+          "first": {
+            "step": 3,
+            "phase": "cycle",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 255,
+            "expected": 255,
+            "output": "pedge",
+            "observed_hex": "00"
+          }
+        },
+        "wrong_direction": {
+          "status": "fail",
+          "checks": 53,
+          "mismatches": 46,
+          "first": {
+            "step": 3,
+            "phase": "cycle",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 255,
+            "expected": 255,
+            "output": "pedge",
+            "observed_hex": "00"
+          }
+        },
+        "constant_zero": {
+          "status": "fail",
+          "checks": 53,
+          "mismatches": 40,
+          "first": {
+            "step": 3,
+            "phase": "cycle",
+            "previous_input": 0,
+            "older_input": 0,
+            "input": 255,
+            "expected": 255,
+            "output": "pedge",
+            "observed_hex": "00"
+          }
+        }
+      },
+      "candidate": {
+        "status": "fail",
+        "checks": 53,
+        "mismatches": 43,
+        "first": {
+          "step": 3,
+          "phase": "stable",
+          "previous_input": 0,
+          "older_input": 0,
+          "input": 255,
+          "expected": 0,
+          "output": "pedge",
+          "observed_hex": "ff"
+        }
+      }
+    }
+  },
+  "natural_hypothesis_matched": true,
+  "probe_executions": 26,
+  "synth_executions": 6,
+  "model_calls": 0,
+  "audit_eda_calls": 0,
+  "model_changed": false,
+  "deployment_changed": false,
+  "new_full_score": false,
+  "limits": [
+    "Known public archived replay plus constructed calibration, not independent natural task generalization",
+    "Complete bounded edge-pulse grammar; sampled transitions and stable phases, not exhaustive sequence proof; positive polarity only where explicit, omitted polarity accepts both",
+    "No model repair or production-path cost measured; next equal-budget generation/repair experiment still required",
+    "Controls are evaluation artifacts; no deterministic DUT answer generation in agent",
+    "Wrapper records actual synthesis argv; exact Tcl and native log bound; native-only calibration, no model quality score"
+  ]
+}
