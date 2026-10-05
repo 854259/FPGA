@@ -1,3 +1,9 @@
+## 2026-10-05 共享开发与阅读确认约定
+
+用户确认共享服务器+GitHub留提醒。开工前读双方最新卡/分支/实验登记，重要修改和测试结论立即共享，待阅读和已确认分开，失败也共享。新工具只读既有测试，每60秒写自己的短卡，过期不接管、待审计不当已解；本机必要检查通过，云端发布/回读待完成。原activity/FIFO/STATUS发布器/冻结源不改。
+
+已读队友research/semantic-repair最新d785af5：已准备780行稳定性终态统计并复用我们原审计，我们复用它而不重复写；U15封存恢复已有工程结论，U16/17已排队，未把准备/工程当质量成绩。队友是否读本更新尚待实际确认；GitHub统一提醒待发布。规则见05_handoff/TEAM_DEVELOPMENT_PROTOCOL.md。
+
 ## 2026-10-05 自然接入工程Git与共享三台账同步完成
 
 Git e83c8a6相对上次实际共享bbed929的38公开文件已逐blob/SHA同步至共享artifacts/e83c8a6，调用/修改/结论三台账追加完成；primary STATUS/SNAPSHOT未覆盖且期间未变。17新工程源与44全量+11原校准+5契约+5worker+44研究源及共享模型身份保持；实际FIFO61 running、62/63 queued。收据见03_analysis/natural_runtime_20261005/SHARED_SYNC_RECEIPT.json。本次后续收据提交不冒充已经共享的新提交。

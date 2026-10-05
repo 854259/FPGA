@@ -1,0 +1,122 @@
+{
+  "owner": "fpga_owner",
+  "branch": "codex/autonomous-rtl-20261004",
+  "commit": "80ccdb55c0e103c1248229be69edb27c86896443",
+  "authored_at_utc": "2026-10-05T15:24:02.632798+00:00",
+  "summary": "\u5206\u6570\u4f18\u5148\uff1a156\u9898\u00d75\u8f6e\u5f00\u53d1\u96c6\u7a33\u5b9a\u6027\u5df2\u8fd0\u884c\uff0c\u524d\u9762\u7684\u65f6\u5e8f28\u6837\u672c\u5b8c\u6210\u5f85\u539f\u5ba1\u8ba1\uff1b\u4e0d\u91cd\u590d\u961f\u53cb\u5df2\u7ecf\u51c6\u5907\u7684780\u884c\u7ec8\u6001\u7edf\u8ba1\u3002",
+  "next_step": "\u7b49\u5f8580\u5b8c\u6574\u7ec8\u6001\uff0c\u5148\u6838\u5bf9\u5b8c\u6574\u6863\u6848\u548c\u539f\u5ba1\u8ba1\uff0c\u518d\u590d\u7528\u961f\u53cbd785af5\u7edf\u8ba1\u5de5\u5177\uff1b78\u539f\u7ec8\u6001\u53e6\u5ba1\u8ba1\u3002\u65b0\u7684\u63d0\u5206\u5019\u9009\u5148\u67e5\u53cc\u65b9\u6700\u65b0\u65e5\u5fd7\u3001\u8bc1\u636e\u548c\u5b9e\u9a8c\u767b\u8bb0\u3002",
+  "changed_files": [
+    "05_handoff/TEAM_DEVELOPMENT_PROTOCOL.md",
+    "AGENTS.md",
+    "04_project/amd_rtl_agent/tools/team_coordination/",
+    "03_analysis/team_coordination_20261005/"
+  ],
+  "reviewed_sources": [
+    {
+      "branch": "research/semantic-repair-20261004",
+      "commit": "d785af57108fa4aee2ec4e38fd2af43624b1cac5",
+      "source": "03_analysis/helper_extraction_20261004/STABILITY_POSTFLIGHT_20261005.md",
+      "conclusion": "\u961f\u53cb\u5df2\u51c6\u5907\u5b8c\u6574780\u884c\u7edf\u8ba1\uff0c\u590d\u7528\u539faudit/metrics\uff1b\u5c1a\u672a\u4e91\u7aef\u6267\u884c\u3002U15\u5de5\u7a0b\u6062\u590d\u5df2\u8bb0\u5f55\u901a\u8fc7\uff0cU16/U17\u4ecd\u6392\u961f\u3002\u5206\u652f\u9648\u8ff0\u4e0d\u66ff\u4ee3\u539f\u7ec8\u6001\u5ba1\u8ba1\u3002"
+    }
+  ],
+  "issues": [
+    {
+      "issue_key": "verilog-eval156:phase-native-feedback",
+      "experiment_key": "phase-full156:3fb1531c:312-C-P:8192:one-repair:300s",
+      "status": "verified_bounded",
+      "evidence": [
+        "03_analysis/phase_full156_20261005/PUBLIC_RESULT.json"
+      ],
+      "limits": [
+        "\u5b8c\u6574\u5df2\u89c1156\u52a0\u674375.77\u219277.44%\uff0c113/156\u5168\u5bf9\uff1b\u6709\u754c\u5f00\u53d1\u7ed3\u679c\uff0c\u975e\u72ec\u7acb\u6216\u90e8\u7f72\u8d44\u683c\u3002"
+      ]
+    },
+    {
+      "issue_key": "verilog-eval156:phase-P-stability",
+      "experiment_key": "589ee0f5:P:156x5:8192:one-repair:300s",
+      "status": "running",
+      "evidence": [
+        "/workspace/team/runs/fpga_owner/phase_P_stability156x5_20261005_v1"
+      ],
+      "limits": [
+        "780\u5b8c\u6574\u5f00\u53d1\u96c6\u590d\u6d4b\uff1b\u4ec5\u539fphaseP\uff0c\u672a\u5b8c\u6210\u4e0d\u80fd\u79f0\u5b8c\u6574\u4e94\u8f6e\u6216\u6b63\u5f0f/\u9690\u85cf\u4e94\u6837\u672c\u9a8c\u6536\u3002"
+      ]
+    },
+    {
+      "issue_key": "verilog-eval156:stability-terminal-statistics",
+      "experiment_key": "d785af5:paired-uncertainty:original-audit:780-P",
+      "status": "prepared",
+      "evidence": [
+        "research/semantic-repair-20261004@d785af5:03_analysis/helper_extraction_20261004/STABILITY_POSTFLIGHT_20261005.md"
+      ],
+      "limits": [
+        "\u961f\u53cb\u5df2\u51c6\u5907\uff0c\u5c1a\u672aAMD\u6267\u884c\u3002\u6211\u4eec\u590d\u7528\uff0c\u4e0d\u53e6\u5199\u540c\u529f\u80fd\u811a\u672c\uff0c\u4e0d\u91cd\u590d\u6392\u5ba1\u8ba1\u6216\u751f\u6210\u3002"
+      ]
+    },
+    {
+      "issue_key": "verilog-eval156:multi-driver-repair-hint",
+      "experiment_key": "bd7a5588:16-C-P:xelab-plus-phase:50word:8192:one-repair:300s",
+      "status": "rejected",
+      "evidence": [
+        "03_analysis/multidriver_guidance_pilot_20261005_v2/PUBLIC_RESULT.json"
+      ],
+      "limits": [
+        "\u539f\u7ec8\u5ba1\u4e24\u81c277.50%\u3001\u65e0\u6536\u76ca\uff1b\u6b64\u63d0\u793a\u5728\u6b64\u9884\u7b97/\u5171\u540c\u7b56\u7565\u4e0b\u5931\u8d25\uff0c\u4e0d\u4ee3\u8868\u6240\u6709\u7ed3\u6784\u4fee\u590d\u65e0\u7528\u3002"
+      ]
+    },
+    {
+      "issue_key": "verilog-eval156:bit-mapping-generation-hint",
+      "experiment_key": "5b4485ea:20-C-P:390byte:8192:one-repair:300s",
+      "status": "rejected",
+      "evidence": [
+        "03_analysis/bit_mapping_guidance_pilot_20261005/PUBLIC_RESULT.json"
+      ],
+      "limits": [
+        "\u539f\u7ec8\u5ba174\u219266%\uff0c082\u90e8\u5206/086\u5168\u5bf9\u6539\u5584\u4f46115/124\u56de\u9000\uff1b\u4e0d\u6269\u5927\u540c\u7248\u672c\u3002"
+      ]
+    },
+    {
+      "issue_key": "verilog-eval156:compile-diagnostic-priority",
+      "experiment_key": "f0e9142d:16-C-P:2048-feedback:8192:one-repair:300s",
+      "status": "blocked",
+      "evidence": [
+        "03_analysis/compile_diagnostic_priority_pilot_20261005/HELD_RELEASE_RECEIPT.json"
+      ],
+      "limits": [
+        "\u4efb\u52a1\u76ee\u5f55\u540d\u8bef\u5199\uff0c14/16\u5931\u8d25\uff1b\u539f\u90e8\u5206\u8bc1\u636e\u4fdd\u5168\uff0c\u7968\u5df2\u5b89\u5168\u91ca\u653e\uff0c\u672a\u8bc1\u660e\u8be5\u673a\u5236\u65e0\u6548\u3002\u4e0b\u4e00\u65b0\u7248\u672c\u8865\u540d\u79f0\u51c6\u5165\uff0c\u4e0d\u6539\u65e7\u51bb\u7ed3\u6e90\u6216\u8865\u62bd\u3002"
+      ]
+    },
+    {
+      "issue_key": "verilog-eval156:semantic-edge-generation-hint",
+      "experiment_key": "f36257ba:28-C-P:586byte:8192:one-repair:300s",
+      "status": "completed_pending_audit",
+      "evidence": [
+        "/workspace/team/runs/fpga_owner/semantic_edge_guidance_pilot_20261005_v1"
+      ],
+      "limits": [
+        "28/28\u300136\u56de\u590d\u3001guard\u901a\u8fc7\uff0c\u539f\u7ec8\u6001\u5ba1\u8ba1\u5f85\u505a\uff1b\u6682\u4e0d\u6269\u5927/\u90e8\u7f72\uff0c\u4e5f\u4e0d\u628a\u51c6\u5907\u5f53\u6cdb\u5316\u3002"
+      ]
+    }
+  ],
+  "notices": [
+    {
+      "id": "team-log-policy-20261005-v1",
+      "revision": "79a91ba4ca07d5126308c9ca8e718554fb02184f34fd07c57f1965c4b367bf18",
+      "text": "\u8bf7\u961f\u53cb\u67e5\u770b\u5171\u540c\u5f00\u53d1\u7ea6\u5b9a\u3001\u6211\u4eec\u7684\u5f53\u524d\u5de5\u4f5c\u5361\u4e0e\u95ee\u9898\u767b\u8bb0\uff0c\u5e76\u786e\u8ba4\u5df2\u8bfb/\u8d1f\u8d23\u65b9\u5411/\u91cd\u53e0\u9879\u3002\u6211\u4eec\u5df2\u8bfb\u961f\u53cbd785af5\u5e76\u590d\u7528780\u7edf\u8ba1\uff1b\u961f\u53cb\u662f\u5426\u9605\u8bfb\u672c\u66f4\u65b0\u4ecd\u5f85\u5b9e\u9645\u786e\u8ba4\u3002"
+    }
+  ],
+  "runs": [
+    {
+      "ticket": 80,
+      "root": "/workspace/team/runs/fpga_owner/phase_P_stability156x5_20261005_v1",
+      "expected_samples": 780,
+      "spec_sha256": "589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15"
+    },
+    {
+      "ticket": 78,
+      "root": "/workspace/team/runs/fpga_owner/semantic_edge_guidance_pilot_20261005_v1",
+      "expected_samples": 28,
+      "spec_sha256": "f36257ba3b7c9c30d92b4ddd825b2dbf0dda56d3bb2a87af77d0d91c93ff6b1e"
+    }
+  ]
+}
