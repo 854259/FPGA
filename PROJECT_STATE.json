@@ -6471,6 +6471,18 @@
     "shared_receipt": "03_analysis/team_coordination_20261005/SCORE_GOAL_SHARED_RECEIPT.json",
     "peer_acknowledgment": "pending",
     "latest_actual_longtest_observation": {
+      "completed": 758,
+      "expected": 780,
+      "complete": false,
+      "error": null,
+      "actual_model_requests": 819,
+      "responses": 819,
+      "terminal": false,
+      "source": "physical original summary from readonly transport",
+      "local_summary_sha256": "74c8f65993fb5fc373e9533bd223264013394f6eeb30c230211c52fb35bc43e4",
+      "local_transport_sha256": "a769ca330931b1bdf8b8ab5f8f039c7dd4aaa068c6aa29a254f7c32bf4b83cbd"
+    },
+    "previous_actual_longtest_observation": {
       "completed": 577,
       "expected": 780,
       "complete": false,
@@ -6481,22 +6493,6 @@
       "terminal": false,
       "verified_live_process_count": 6,
       "eta_claimed": false
-    },
-    "previous_actual_longtest_observation": {
-      "completed": 532,
-      "expected": 780,
-      "complete": false,
-      "error": null,
-      "actual_model_requests": 574,
-      "responses": 574,
-      "repeat_counts": {
-        "1": 156,
-        "2": 156,
-        "3": 156,
-        "4": 64
-      },
-      "observed_at_epoch": 1791231928.5521703,
-      "terminal": false
     }
   },
   "prompt_table_synthesis_pilot_20261006": {
@@ -6845,7 +6841,7 @@
   "local_neighborhood_native_calibration_20261006_v2": {
     "schema": "local_neighborhood_native_amd_public_preparation_v2",
     "identity": "local_neighborhood_native_calibration_20261006_v2",
-    "status": "actual_amd_pure_prepared_frozen_native_unexecuted",
+    "status": "fifo86_accepted_queued_pending_original_native_archive_audit",
     "metadata_only": true,
     "execution_host": "authorized_AMD_only",
     "actual": {
@@ -6904,7 +6900,7 @@
     },
     "generated_expected_observations_are_actual_DUT_observations": false,
     "prepared_92_scope": "Remote physical byte/hash readback; not local replay of private RTL/TB/oracle.",
-    "queued": false,
+    "queued": true,
     "native_qualified": false,
     "score_measured": false,
     "quality_gain_verified": false,
@@ -6945,7 +6941,7 @@
     },
     "public_source_bodies_included": false,
     "private_prompt_RTL_TB_or_raw_published": false,
-    "public_git_delivery": "pending PR review/merge/actual shared delivery",
+    "public_git_delivery": "PR15 merged and prior9 public blobs physically shared; this post-delivery revision pending",
     "peer_acknowledgment": "pending",
     "report": "03_analysis/local_neighborhood_native_calibration_20261006_v2/README.md",
     "public_receipt": "03_analysis/local_neighborhood_native_calibration_20261006_v2/AMD_PUBLIC_PREPARATION.json",
@@ -6965,6 +6961,105 @@
         "4": 156,
         "5": 48
       }
-    }
+    },
+    "historical_preparation_snapshots": "AMD_PUBLIC_PREPARATION.json and FROZEN_RUN_BINDING.json unchanged; original queued=false is before actual acceptance",
+    "actual_delivery_receipt": "03_analysis/local_neighborhood_native_calibration_20261006_v2/ACTUAL_DELIVERY_RECEIPT.json",
+    "actual_fifo_ticket": 86,
+    "actual_github_reminder": "https://github.com/854259/FPGA/issues/7#issuecomment-6004772227"
+  },
+  "terminal_existing_source_reuse_20261006_v1": {
+    "schema": "terminal_existing_source_reuse_public_binding_v1",
+    "metadata_only": true,
+    "peer_commit": "8ed26b009282a6c6e7e53a0f431dd68209677b25",
+    "mode": "phaseP_stability_terminal_v1",
+    "source_draft_sha256": "c646f397d260349cc0e34c3aae39e2727ed662fbd98e7db11ebf57a9ae3a68c1",
+    "files": {
+      "run.py": {
+        "sha256": "5d24a88e70e80d8955457609acb81220a959507d82c169a65d295dd79e464bb0",
+        "bytes": 8318
+      },
+      "analysis.py": {
+        "sha256": "44586ba92e7a842107d5a1bc0c3467b2944b3dd475c7418c6bcea7a230a2591b",
+        "bytes": 22862
+      },
+      "owner_audit/stability_audit.py": {
+        "sha256": "4004a32ef28d5b32513ebc5cd762fa959ead197a7005176c36602da0dd92f612",
+        "bytes": 14281
+      },
+      "owner_audit/stability_metrics.py": {
+        "sha256": "06c23bda97bfa868133ea56dc738095aee931a9d1a25dd731b38989198a0830c",
+        "bytes": 2971
+      },
+      "owner_audit/stability_protected.py": {
+        "sha256": "1deebc61c919f483ef592287a7cf7d3702699b97777ddcc025c27898e532f446",
+        "bytes": 2162
+      },
+      "owner_audit/replay.py": {
+        "sha256": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+        "bytes": 5286
+      },
+      "full156_postflight_20261004/audit.py": {
+        "sha256": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+        "bytes": 26651
+      },
+      "inputs/RUN_SPEC.json": {
+        "sha256": "589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15",
+        "bytes": 117758
+      }
+    },
+    "independent_source_review_sha256": "4cf1e24d38cf443aecead2114479a583159a2d092117f0b39361f0ff4101069c",
+    "private_transport_bindings": {
+      "native": {
+        "helper_sha256": "800c13e5fbecb90ea640fb62068b54041d50c1c0dc91b825bdbc058307a8dc64",
+        "independent_review_sha256": "73e82e3cda919f7c835311d1e00a4298642df39baa9b5d615a0ae869ba0a60f4",
+        "actual_readonly_result_sha256": "5ada55337ef3e603b67a64bb340240be1e518a969c0079ff9deb64568245fc5f",
+        "actual_remote_transport_returncode": 0,
+        "original_audit_executed": false
+      },
+      "stability": {
+        "helper_sha256": "7e62099d196bc95f0bfaf8e768042df009984d5c2a11aa0383b9ca97a79fc0a5",
+        "independent_review_sha256": "7a815cafe262e46c7554e850efd7dfacc7ff368279e7a99819fbf22aa3457a97",
+        "actual_readonly_result_sha256": "7eb7ab9dbee51be04c25903914a9d3fc9b3e3da37e21810d89e3d166e34349fa",
+        "actual_remote_transport_returncode": 0,
+        "original_collector_executed": false,
+        "original_frozen_scope": {
+          "source_assets": 56,
+          "prior_groups": 12,
+          "prior_source_assets": 445
+        }
+      }
+    },
+    "actual_longtest_observation": {
+      "completed": 758,
+      "expected": 780,
+      "complete": false,
+      "error": null,
+      "actual_model_requests": 819,
+      "responses": 819,
+      "terminal": false,
+      "source": "physical original summary from readonly transport",
+      "local_summary_sha256": "74c8f65993fb5fc373e9533bd223264013394f6eeb30c230211c52fb35bc43e4",
+      "local_transport_sha256": "a769ca330931b1bdf8b8ab5f8f039c7dd4aaa068c6aa29a254f7c32bf4b83cbd"
+    },
+    "source_body_changes": 0,
+    "local_project_imports_or_tests": 0,
+    "source_only_draft": true,
+    "amd_source_upload": false,
+    "terminal_plan_created": false,
+    "full_archive_collected": false,
+    "original_audit_executed": false,
+    "statistics_executed": false,
+    "new_postflight_ticket_submitted": false,
+    "model_calls_in_new_readonly_helpers": 0,
+    "eda_calls_in_new_readonly_helpers": 0,
+    "helper_zero_counts_are_not_original_run_counts": true,
+    "score_measured": false,
+    "native_qualified": false,
+    "production_deployment": false,
+    "private_bodies_published": false,
+    "required_future_gate": "Fresh coordination and full780 original terminal/guard/released owned births, one physical bound ZIP, same original provenance audit4004 and peer8ed unchanged entry; no prefix/retry/new statistics.",
+    "this_revision_delivery": "pending PR and physical shared delivery",
+    "report": "03_analysis/stability_terminal_reuse_20261006_v1/README.md",
+    "public_binding": "03_analysis/stability_terminal_reuse_20261006_v1/SOURCE_BINDING.json"
   }
 }
