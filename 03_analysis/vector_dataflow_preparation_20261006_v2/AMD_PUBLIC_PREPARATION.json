@@ -1,0 +1,171 @@
+{
+  "schema": "vector_dataflow_actual_amd_pure14_shared_v2",
+  "cloud_root": "/workspace/team/runs/fpga_owner/vector_dataflow_pure_20261006_v2",
+  "source_hashes": {
+    "AUDIT_INPUTS.json": "2b05ac463d90f18a4e2fff39ecb85b9e71e3762aa1a799c01edb6b2ba415bae0",
+    "FROZEN_INPUT_MANIFEST.json": "bfb99855c2b7e05d54dbaf9a430296a1539399de1a316711f4048ab47cedc7eb",
+    "NATIVE_VALIDATION_OBLIGATIONS.json": "4ff95077105fbe37f9ce7e64dc36cad7e48ab2c34e20c8df17b3467205bfc6a4",
+    "PREPARATION_DRAFT.json": "882abfb5351dde5f9cd5e8d8a6ee2d53cfe695d01baea59a92f7dc29226c25d3",
+    "admission_check.py": "2acd43c87e0c0818da4766cad93159197fb0bab93a4952213a47d521f2efb0c1",
+    "remote_preflight_runner.py": "363e62b5d1fda1fe21c168f75d7bb4bba15311486e1eb4af3c1982d4cc2d8e27",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "synthesis.py": "4728bed2d669dbca94dfe7b6f6b12e17aa2eca5015b9fb0f6a5eea11eb503c8f",
+    "test_synthesis.py": "b2bc3825ab44dbea2b40bd5a72349abbb572b8c7b04b28f9db5fb1c32b71f46e"
+  },
+  "packet_sha256": "78c70412dcba0eb8eb597bf54905447a7f86fd6e122d93352310a70907d5f88a",
+  "pure_process_sha256": "6b4efbe2ddfadd1cb9fbf533d17e27fcd4354b9535a70b2b21fb1e030ef2d4a9",
+  "preflight_result_sha256": "8714939375c69879b4749f7874c07f7632f837c01f9e3bc3ed99296e6e307ec5",
+  "admission_result_sha256": "daa9153f1fab54a86ca8ffd2809365f5259572495489ff2f3734e6d4c0666960",
+  "actual_amd_pure_checks": 14,
+  "review_rows": 6,
+  "emitted": 3,
+  "abstained": 3,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "queued": false,
+  "native_qualified": false,
+  "quality_gain_verified": false,
+  "private_bodies_included": false,
+  "original_judge_executed": false,
+  "binary_native_scope_does_not_exclude_original_judge_x_z": true,
+  "plan_sha256": "666a7af26faf47706fce9a20c79ba6200050accfee2f6cc0bbc44d6a4b1baf08",
+  "public_git_sync_commit": "2032cc6f1ac7e7265e4ed75455871be950aa7b23",
+  "peer_acknowledgment": "pending",
+  "at_epoch": 1791226487.8370087,
+  "github_reminder": {
+    "url": "https://github.com/854259/FPGA/issues/7#issuecomment-6001022663",
+    "body_sha256": "baae08e4cdf78a551291f2035ac876e9ddf97ff2d9ce462e7c90c2827f104d94",
+    "actual_amd_pure_checks": 14,
+    "peer_acknowledgment": "pending"
+  },
+  "actual_review_rows": [
+    {
+      "review_label": "Prob064_vector3",
+      "emitted": true,
+      "reason": "complete_explicit_dataflow",
+      "prompt_sha256": "76e9cc108d109fe1527ffec220401614279423f3abcb034926e7a5b2da421a54",
+      "interface_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "6ce8ec6316bd6f4fea0513489dbfc1626fbc8d54569688df7a153d5bf319717f",
+      "rtl_sha256": "b4b0444eddbab35f6fa7979e989f27969f7e0c92beea6b9a02a383d870ec433e"
+    },
+    {
+      "review_label": "Prob097_mux9to1v",
+      "emitted": true,
+      "reason": "complete_explicit_dataflow",
+      "prompt_sha256": "7e4f32af08e2da6eaf53882e368898144421fb90f35518eeec9781e1c036effd",
+      "interface_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "63399e06807f9fda2a662f7b7ef587fcf1433f76ac2f1464076b91aa5bdb7ffe",
+      "rtl_sha256": "429382c9d5ad13622e3dca1b5a57a1ba32846481ac78e48fbdfc1149a36015ce"
+    },
+    {
+      "review_label": "Prob017_mux2to1v",
+      "emitted": true,
+      "reason": "complete_explicit_dataflow",
+      "prompt_sha256": "4689de864f6441c0c5fef7bee694da59f7982a5fff22bde0a83f15481f913f4d",
+      "interface_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "20e303ea46fa3b2a80826b4734a27e27dbcc36a9e5e346babc4db41c0352247b",
+      "rtl_sha256": "53eaa560078f6066f223269fcf3be3b853929676ab2b82c231580da4ec46a23c"
+    },
+    {
+      "review_label": "Prob042_vector4",
+      "emitted": false,
+      "reason": "unsupported_or_ambiguous_or_unconsumed_semantics",
+      "prompt_sha256": "fd9224b3470ffa833e6acd82720a95c281c0b236c4409f91b8bff6ed683fa79b",
+      "interface_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "4b2be9270df6922a2b94b099ed8c5e36a94ab638122968d31e1a659d3b8dd1d7",
+      "rtl_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "review_label": "Prob062_bugs_mux2",
+      "emitted": false,
+      "reason": "unconsumed_or_invalid_interface_header",
+      "prompt_sha256": "2be3eebba4aea325c3e1650030a20b2c5725cb10709499f392a223a84db84e34",
+      "interface_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "68e3d1d0bcb23c13c2cb13a4528b437699c93d57b840ac9b1cd6e843a7576c73",
+      "rtl_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "review_label": "Prob104_mt2015_muxdff",
+      "emitted": false,
+      "reason": "unsupported_or_ambiguous_or_unconsumed_semantics",
+      "prompt_sha256": "26c973bb9acce82394cad0ac9cab11c23f0bc923cf6e5fb4394578e8147c5659",
+      "interface_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "85a4440744b17d5648be1b2b1d84f4bf131b80241b53299f5ea11e92605da6a4",
+      "rtl_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Private prompt/interface-only vector preparation; no native qualification, model pilot or score.",
+  "future_native_scope": "Binary complete selector care; selected data x/z transparency where specified; full original judge unchanged.",
+  "terminal_failure_pending_mapping_fixed_before_actual_execution": true,
+  "helper_source_sha256": "4c1585c6790f45fd791ab12f078ffb328ac4748ae6b3af868301cd65726cb04d",
+  "followup_metadata_not_yet_in_shared_public_git_delta": true,
+  "independent_raw_pure_readback": {
+    "raw_stderr_sha256": "695794f84dfab3f3993ad5c8d898cfd411ed7ab9261f4b804e29a5a2ce776b64",
+    "actual_raw_tests": 14,
+    "individual_ok_lines": 14,
+    "raw_ends_OK": true,
+    "physical_returncode": 0,
+    "timeout": false,
+    "launch_or_supervision_error": null,
+    "remaining_live_group": [],
+    "source_before_after_equal": true,
+    "original_stream_body_public": false
+  },
+  "post_preparation_source_guard_readback": {
+    "observed_at_epoch": 1791227066.1957064,
+    "protected_group_count": 18,
+    "protected_source_assets": 930,
+    "all_sources_exact": true,
+    "process_identities": {
+      "model": {
+        "pid": 2013333,
+        "starttime": "823869819",
+        "state": "S",
+        "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1",
+        "verified_live_now": true
+      },
+      "stability_monitor": {
+        "pid": 4095982,
+        "starttime": "847801517",
+        "state": "S",
+        "command_sha256": "b5487d6756b4b45b376e2f9445be26d9687f1ea5a9c3bea91f6c60c5d55f180a",
+        "verified_live_now": true
+      },
+      "table_monitor": {
+        "pid": 141665,
+        "starttime": "849308451",
+        "state": "S",
+        "command_sha256": "d985b4bfc16f9f41df738fe179c1e64e1e68da66752d2422611d26d34f51b4ec",
+        "verified_live_now": true
+      },
+      "native_monitor": {
+        "pid": 245638,
+        "starttime": "849960852",
+        "state": "S",
+        "command_sha256": "e915a270fa5bee05b61448be304947dd2ec52202d830c432b47fef023d3b69ae",
+        "verified_live_now": true
+      },
+      "progress_watcher": {
+        "pid": 248714,
+        "starttime": "849980140",
+        "state": "S",
+        "command_sha256": "8a2971f5998ff50af4fb70243acdc6000fdfc3ee8ecefc9d2fb20f8b126df2cb",
+        "verified_live_now": true
+      }
+    },
+    "stability_checkpoint": {
+      "completed": 427,
+      "expected": 780,
+      "complete": false,
+      "error": null,
+      "actual_model_requests": 459,
+      "responses": 459,
+      "repeat_counts": {
+        "1": 156,
+        "2": 156,
+        "3": 115
+      }
+    },
+    "counts_are_snapshot_not_terminal_score": true
+  }
+}
