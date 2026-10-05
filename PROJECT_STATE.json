@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T18:45:40.009415+08:00",
+      "checked_at": "2026-10-05T19:14:06.962700+08:00",
       "own_live_processes": 0,
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
@@ -3127,22 +3127,18 @@
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
       "known_full156_regression_completed_ticket": 61,
-      "latest_own_stage": "U12_three_arm_queue_preflight",
+      "latest_own_stage": "U13_baseline_transport_scoring_preflight",
       "latest_own_stage_complete": true,
       "latest_own_stage_status": "complete_engineering_only",
       "completed_tickets": [
-        70
+        72
       ],
-      "active_queue_tasks": 1,
-      "active_ticket": 71,
-      "active_ticket_task": "prompt_table25_generated_native_calibration_v1",
-      "active_ticket_driver_pid": 4025008,
-      "active_ticket_model_requests_max": 0,
-      "historical_completed_tickets": 61,
+      "active_queue_tasks": 0,
+      "historical_completed_tickets": 63,
       "historical_failed_released_tickets": 9,
-      "next_own_stage": "official_B_transport_receipts_and_scoring_integration",
+      "next_own_stage": "actual_A_P_B_dispatch_receipts_and_scoring_in_queue",
       "next_own_stage_status": "planned_not_launched",
-      "receipt": "05_handoff/independent_validation_20261004/three_arm_U12/TERMINAL_CHECK.json"
+      "receipt": "05_handoff/independent_validation_20261004/baseline_receipts_U13/TERMINAL_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5177,5 +5173,52 @@
     },
     "next": "Complete baseline request receipts and actual solver/scoring/cancellation integration before full launch.",
     "public_result": "03_analysis/helper_extraction_20261004/U12_THREE_ARM_QUEUE_20261005.json"
+  },
+  "baseline_receipts_U13_20261005": {
+    "status": "complete_engineering_preflight_passed",
+    "execution_source_commit": "eaf2e59",
+    "terminal": {
+      "ticket": 72,
+      "driver_pid": 4033043,
+      "stage_pid": 4033048,
+      "guard_elapsed_s": 41.93623058870435,
+      "fake_server_posts": 9,
+      "client_attempts": 9,
+      "full_http_bodies": 7,
+      "parsed_model_responses": 6,
+      "real_model_calls": 0,
+      "official_judgements": 4,
+      "nonempty_native_judgements": 3,
+      "expected_and_actual_levels": {
+        "invalid_syntax": 0,
+        "null_length": 0,
+        "wrong_function": 1,
+        "recovery": 3
+      },
+      "transport_failures_refused_before_scoring": [
+        "http_error",
+        "invalid_json",
+        "body_hang"
+      ],
+      "observer_bootstrap_failure_rejected": true,
+      "missing_tool_not_graded_L0": true,
+      "hanging_body_cleanup_s": 1.513114731758833,
+      "following_recovery_s": 0.12354978732764721,
+      "result_sha256": "80a45967fe79a57d0c41d61abf7ca8d569eafa04b9310d1b94ba4ff558977b45",
+      "postflight_sha256": "147ff6e190c9dece371acbe81806032228c2c907587e7655a5a291de28537640",
+      "archive_sha256": "8ee441e9c96bcb502e340a438388f73e2f782bca460b9ff361e5f50a4f05fe9a",
+      "dual_verified_files": 239,
+      "original_official_bytes_preserved": true,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "own_slot_released": true,
+      "removed_empty_dirs": 3,
+      "cleanup_verified": true,
+      "full_batch": false,
+      "independent_natural_tasks": 0,
+      "decision": "Retain observed original CLI and external scoring bridge. Request attempts/response bytes/grades now linked; no natural quality gain, server execution guarantee, real27B cancellation or full admission claimed."
+    },
+    "next": "Bind these source-pinned receipt and scoring interfaces with actual A/P/B dispatch in the durable row queue; no candidate-policy change or real call without data/resource/budget admission.",
+    "public_result": "03_analysis/helper_extraction_20261004/U13_BASELINE_RECEIPTS_20261005.json"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema": "official_baseline_U13_frozen_v1",
-  "status": "frozen_not_launched",
+  "status": "complete_engineering_preflight_passed",
   "source_hashes": {
     "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422",
     "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
@@ -54,5 +54,47 @@
     "Three nonempty constructed judgements plus empty output control are not natural correctness or independent evidence",
     "No productionfullbatch, formal32GB, fully auditedRTLLM, independent material or confirmedcredit budget"
   ],
-  "next": "On pass retain observer and judgement bridge, then bind actual A/P/B execution receipts into the frozen row queue without adding a candidate policy. No real calls before full admission/budget is resolved."
+  "next": "Bind these source-pinned receipt and scoring interfaces with actual A/P/B dispatch in the durable row queue; no candidate-policy change or real call without data/resource/budget admission.",
+  "execution_source_commit": "eaf2e59",
+  "terminal": {
+    "ticket": 72,
+    "driver_pid": 4033043,
+    "stage_pid": 4033048,
+    "guard_elapsed_s": 41.93623058870435,
+    "fake_server_posts": 9,
+    "client_attempts": 9,
+    "full_http_bodies": 7,
+    "parsed_model_responses": 6,
+    "real_model_calls": 0,
+    "official_judgements": 4,
+    "nonempty_native_judgements": 3,
+    "expected_and_actual_levels": {
+      "invalid_syntax": 0,
+      "null_length": 0,
+      "wrong_function": 1,
+      "recovery": 3
+    },
+    "transport_failures_refused_before_scoring": [
+      "http_error",
+      "invalid_json",
+      "body_hang"
+    ],
+    "observer_bootstrap_failure_rejected": true,
+    "missing_tool_not_graded_L0": true,
+    "hanging_body_cleanup_s": 1.513114731758833,
+    "following_recovery_s": 0.12354978732764721,
+    "result_sha256": "80a45967fe79a57d0c41d61abf7ca8d569eafa04b9310d1b94ba4ff558977b45",
+    "postflight_sha256": "147ff6e190c9dece371acbe81806032228c2c907587e7655a5a291de28537640",
+    "archive_sha256": "8ee441e9c96bcb502e340a438388f73e2f782bca460b9ff361e5f50a4f05fe9a",
+    "dual_verified_files": 239,
+    "original_official_bytes_preserved": true,
+    "model_unchanged": true,
+    "protected_files_unchanged": true,
+    "own_slot_released": true,
+    "removed_empty_dirs": 3,
+    "cleanup_verified": true,
+    "full_batch": false,
+    "independent_natural_tasks": 0,
+    "decision": "Retain observed original CLI and external scoring bridge. Request attempts/response bytes/grades now linked; no natural quality gain, server execution guarantee, real27B cancellation or full admission claimed."
+  }
 }
