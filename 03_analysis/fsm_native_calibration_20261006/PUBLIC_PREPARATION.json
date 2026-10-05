@@ -1,0 +1,182 @@
+{
+  "schema": "strict_narrative_fsm_public_preparation_v1",
+  "status": "prepared_only",
+  "private_preparation_binding_sha256": "fc1de2ebb005880e229d1076c7200b4faeef1fdc6e66426d5d161801ec1f1a9b",
+  "private_preparation_original_files": 44,
+  "amd_packet_files": 45,
+  "historical_local_pure_checks": 14,
+  "historical_local_execution_predates_policy_adoption": true,
+  "amd_pure_checks": 14,
+  "amd_pure_receipt": {
+    "schema": "fsm_emitter_amd_pure_checks_v1",
+    "linux_pure_checks_passed": 14,
+    "source_unchanged": true,
+    "private_files_preserved": 45,
+    "cloud_root": "/workspace/team/runs/fpga_owner/fsm_emitter_pure_20261006_v1",
+    "packet_sha256": "b92c34ee528fc1c02f52d97e8459fd52a2a0351e63fc1c5e157550d0a7450909",
+    "process_sha256": "b3e568d09d272aacb8f8aac5f25cb7cf0bfee36869e85fff2b14943f6c61c4e3",
+    "model_identity_unchanged": true,
+    "actual_model_calls": 0,
+    "eda_calls": 0,
+    "native_calibration_executed": false,
+    "native_qualified": false,
+    "quality_gain_verified": false,
+    "at_epoch": 1791221801.5132687
+  },
+  "all156_historical_pure_admission": {
+    "count": 156,
+    "emitted": 2,
+    "abstained": 154,
+    "source_archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
+    "result_sha256": "c01d7c485a62114ae141b3cf9d09c370750c2ea91c52c658932f7dd00673483b",
+    "emissions": [
+      {
+        "task": "Prob142_lemmings2",
+        "prompt_member": "kit/bench/tasks_veval/Prob142_lemmings2/prompt.txt",
+        "prompt_sha256": "cb3939d17066809761e969e9093780b4edca92e35cc4dd40b64459bcc86f3687",
+        "interface_present": false,
+        "interface_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "emitted": true,
+        "reason": null,
+        "contract_sha256": "425a040ef531f38abd2ded5f468af6cbad8f6f478209c6fa8f52fd449c914d0c",
+        "rtl_sha256": "fc415935d1ed2709a91c4e6d4f87cec23a3322f6d341a3ea9665a82ee548afee",
+        "state_count": 4,
+        "transition_row_count": 32,
+        "case": "walking_falling"
+      },
+      {
+        "task": "Prob152_lemmings3",
+        "prompt_member": "kit/bench/tasks_veval/Prob152_lemmings3/prompt.txt",
+        "prompt_sha256": "b35e9888952abba73ee3da0faa3466dfd014908d8ca5fcf9e56706bcb735db5c",
+        "interface_present": false,
+        "interface_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "emitted": true,
+        "reason": null,
+        "contract_sha256": "c7b9a4bc5130ef6134ffce3bb0f880200b77ce8d8212de74505f0123b61c96fe",
+        "rtl_sha256": "75413a469da05854f878092c03f8660b8dce6231caac20c1b9618876e874b9b5",
+        "state_count": 6,
+        "transition_row_count": 96,
+        "case": "walking_falling_digging"
+      }
+    ],
+    "native_executed": false,
+    "quality_gain_verified": false
+  },
+  "known_gap": {
+    "original_native_recipe_checks": [
+      35,
+      65
+    ],
+    "fall_or_dig_async_reset_covered": false,
+    "new_native_calibration_status": "draft_not_frozen_or_queued",
+    "planned_controls": 38,
+    "planned_native_commands": 105,
+    "planned_supervisor_commands": 2,
+    "original_unfrozen_draft_controls": 35,
+    "original_unfrozen_draft_native_commands": 96,
+    "reason_for_plan_change": "Add three nonwalking reset direction-retention mutants without removing activity-reset negatives.",
+    "planned_check_counts": [
+      55,
+      115
+    ],
+    "planned_full_trace_observations": 3010
+  },
+  "actual_model_calls": 0,
+  "eda_calls": 0,
+  "native_qualified": false,
+  "quality_gain_verified": false,
+  "installed_in_production": false,
+  "independent_or_hidden_generalization_demonstrated": false,
+  "shared_notice": {
+    "schema": "fsm_amd_pure_shared_notice_v1",
+    "pure_receipt": {
+      "schema": "fsm_emitter_amd_pure_checks_v1",
+      "linux_pure_checks_passed": 14,
+      "source_unchanged": true,
+      "private_files_preserved": 45,
+      "cloud_root": "/workspace/team/runs/fpga_owner/fsm_emitter_pure_20261006_v1",
+      "packet_sha256": "b92c34ee528fc1c02f52d97e8459fd52a2a0351e63fc1c5e157550d0a7450909",
+      "process_sha256": "b3e568d09d272aacb8f8aac5f25cb7cf0bfee36869e85fff2b14943f6c61c4e3",
+      "model_identity_unchanged": true,
+      "actual_model_calls": 0,
+      "eda_calls": 0,
+      "native_calibration_executed": false,
+      "native_qualified": false,
+      "quality_gain_verified": false,
+      "at_epoch": 1791221801.5132687
+    },
+    "actual_model_calls": 0,
+    "eda_calls": 0,
+    "native_calibration_executed": false,
+    "native_qualified": false,
+    "quality_gain_verified": false,
+    "plan_sha256": "b284e017f0b7c79d5814ae31496fe54857fc20cf9369cbc98ae4123c2aede3c7",
+    "public_git_sync_commit": "962f2013e47abbe95e9d9d55e3afdf40639df71c",
+    "new_public_git_delta_synced": false,
+    "all_frozen_sources_unchanged": true,
+    "protected_source_counts": {
+      "phase_full156_20261005_v1": 44,
+      "natural_edge_calibration_20261005_v1": 11,
+      "native_reset_contract_20261005_v1": 5,
+      "natural_worker_20261005_v1": 5,
+      "native_reset_calibration_20261005_v1": 44,
+      "natural_runtime_20261005_v1": 17,
+      "elaboration_feedback_pilot_20261005_v1": 38,
+      "prompt_table_calibration_20261005_v2": 68,
+      "multidriver_guidance_pilot_20261005_v1": 49,
+      "multidriver_guidance_pilot_20261005_v2": 49,
+      "bit_mapping_guidance_pilot_20261005_v1": 61,
+      "compile_diagnostic_priority_pilot_20261005_v1": 54,
+      "semantic_edge_guidance_pilot_20261005_v1": 64,
+      "phase_P_stability156x5_20261005_v1": 56,
+      "prompt_table_synthesis_20261006_v1": 88,
+      "prompt_table_synthesis_20261006_v2": 89
+    },
+    "shared_model_identity_unchanged": true,
+    "primary_status_unchanged": true,
+    "peer_acknowledgment": "pending",
+    "at_epoch": 1791222422.8000398,
+    "github_comment_url": "https://github.com/854259/FPGA/issues/7#issuecomment-5999930676",
+    "github_body_sha256": "fadd06f6928d58c30a4b5bd431811988377891ab94a1418cd82a79bd6aea8f7e"
+  },
+  "checkpoint": {
+    "observed_at_epoch": 1791222261.0662591,
+    "stability": {
+      "completed": 319,
+      "expected": 780,
+      "complete": false,
+      "error": null,
+      "actual_model_requests": 344,
+      "responses": 344,
+      "repeat_counts": {
+        "1": 156,
+        "2": 156,
+        "3": 7
+      }
+    },
+    "protected_group_count": 16,
+    "protected_source_assets": 742
+  },
+  "public_git_sync_commit": "962f2013e47abbe95e9d9d55e3afdf40639df71c",
+  "new_public_git_delta_synced": false,
+  "development_baseline": {
+    "weighted_score": 0.774359,
+    "fully_correct": 113,
+    "tasks": 156
+  },
+  "active_goal": {
+    "weighted_score_at_least": 0.8,
+    "fully_correct_at_least": 120,
+    "no_regression": true
+  },
+  "private_source_hashes": {
+    "synthesis.py": "0bddeb3480e260bcd9f23e68e215510c9894e4d56e1ae3cb99662312b7b2160d",
+    "narrative_spec.py": "648f550d72c89f5997be322660ef17e7ae59261b2a388df36ff8e9d68d6c9898",
+    "narrative_keywords.py": "b2d174387bd14c9c9e59432331ae52c66de5f6bf00fb6c417a31f8e2d60cd6f2",
+    "native_fixtures.py": "826cd483d0f417f0a36399c45ec3a076836cea1388106264c5161334c6081650",
+    "test_synthesis.py": "f262abd99a41f76de9a7f5952007514f195aaef0c9a770575a9ad761083d69a3"
+  },
+  "public_sources_included": false,
+  "privacy_review": "Parser regex contains substantial original prompt wording. All five source files remain private; metadata only.",
+  "first_owned_branch_commit_replaced_before_pr": true
+}

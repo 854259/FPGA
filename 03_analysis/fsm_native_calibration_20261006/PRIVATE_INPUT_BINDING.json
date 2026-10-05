@@ -1,0 +1,195 @@
+{
+  "schema": "private_strict_narrative_generation_source_binding_v1",
+  "production_sources": {
+    "synthesis.py": "0bddeb3480e260bcd9f23e68e215510c9894e4d56e1ae3cb99662312b7b2160d",
+    "narrative_spec.py": "648f550d72c89f5997be322660ef17e7ae59261b2a388df36ff8e9d68d6c9898",
+    "narrative_keywords.py": "b2d174387bd14c9c9e59432331ae52c66de5f6bf00fb6c417a31f8e2d60cd6f2"
+  },
+  "private_files": {
+    "ALL156_PURE_ADMISSION.json": {
+      "sha256": "c01d7c485a62114ae141b3cf9d09c370750c2ea91c52c658932f7dd00673483b",
+      "bytes": 68837
+    },
+    "FIXTURE_INPUT_BINDING.json": {
+      "sha256": "5ce50c40eb400992cb40994bb9f91e75ec9ced33e3aa08961cce02dfb61a9aee",
+      "bytes": 1637
+    },
+    "fixtures/Prob111_fsm2s.prompt.txt": {
+      "sha256": "e048cd8e3f02777f938e968ed677d1f802bd4874bd99cdc699b99d55e1f628ed",
+      "bytes": 535
+    },
+    "fixtures/Prob127_lemmings1.prompt.txt": {
+      "sha256": "919cdcd7f0e136616a0641235c5ce56a3b30a3db24c6c24676d6115ee5c25b64",
+      "bytes": 1232
+    },
+    "fixtures/Prob142_lemmings2.prompt.txt": {
+      "sha256": "cb3939d17066809761e969e9093780b4edca92e35cc4dd40b64459bcc86f3687",
+      "bytes": 1619
+    },
+    "fixtures/Prob152_lemmings3.prompt.txt": {
+      "sha256": "b35e9888952abba73ee3da0faa3466dfd014908d8ca5fcf9e56706bcb735db5c",
+      "bytes": 2436
+    },
+    "fixtures/Prob155_lemmings4.prompt.txt": {
+      "sha256": "535dbaa5d4bb8285958b113656c132ccd71937cc83e55138160b74b39acb531c",
+      "bytes": 2964
+    },
+    "FUTURE_SCREENING_METADATA_DRAFT.json": {
+      "sha256": "6b979f3b624fd8e59223dee04c7f7a7df78cce76ce83334ad41e497751674750",
+      "bytes": 5482
+    },
+    "narrative_keywords.py": {
+      "sha256": "b2d174387bd14c9c9e59432331ae52c66de5f6bf00fb6c417a31f8e2d60cd6f2",
+      "bytes": 2036
+    },
+    "narrative_spec.py": {
+      "sha256": "648f550d72c89f5997be322660ef17e7ae59261b2a388df36ff8e9d68d6c9898",
+      "bytes": 8748
+    },
+    "NATIVE_CONTROL_PLAN.md": {
+      "sha256": "8c688049a2951ecb1706e8327cc8506b4e254004de4a96c49d86f75b78e4cb5d",
+      "bytes": 4187
+    },
+    "native_fixtures.py": {
+      "sha256": "826cd483d0f417f0a36399c45ec3a076836cea1388106264c5161334c6081650",
+      "bytes": 11668
+    },
+    "PREPARATION_RESULT.json": {
+      "sha256": "c194e9bb19c906b6dfc3166ade06b54b56b3d8b4b46b9053c8f53e58e6852f89",
+      "bytes": 5136
+    },
+    "prepare_evidence.py": {
+      "sha256": "040a945989a1927679bd1d4aee396e40097d0799cc6d42787c71e079735d6624",
+      "bytes": 10299
+    },
+    "prepared/walking_falling/native_control_preparation.json": {
+      "sha256": "5ecc756d85da63b4de58acaf0137b8ec4bc61e24337f0da14396cdb0b54cf549",
+      "bytes": 14007
+    },
+    "prepared/walking_falling/native_fixture.prepared.sv": {
+      "sha256": "b789bfae446decc78f35db78353a3cae2150e61937da1c2757eb7e6e81805ce2",
+      "bytes": 2451
+    },
+    "prepared/walking_falling/sentinel_landing_bump.prepared.sv": {
+      "sha256": "e443aba044265725b38e8632d8dc28589b17c84d0a54fdf9fb14efd57601b8b7",
+      "bytes": 1068
+    },
+    "prepared/walking_falling/sentinel_lost_fall_direction.prepared.sv": {
+      "sha256": "0e2b5ba1d0bb651bf785b89ccefbf902b8401ee8b4fd2e574e13cc2e8ac46d32",
+      "bytes": 990
+    },
+    "prepared/walking_falling/sentinel_negative_clock_edge.prepared.sv": {
+      "sha256": "3cf91c012d9b4b19b764bfd338335203bd195b6f4548b94004984c5cdba6580f",
+      "bytes": 961
+    },
+    "prepared/walking_falling/sentinel_positive.prepared.sv": {
+      "sha256": "322f52463a50800d3d05336e20924d774ce54f9e02c6faf47818efacfb6f385c",
+      "bytes": 961
+    },
+    "prepared/walking_falling/sentinel_stuck_zero.prepared.sv": {
+      "sha256": "2e327cab181e2d35dcf2558c13ebe3c6aadd3cc51c3115088f79d05cab1f0114",
+      "bytes": 875
+    },
+    "prepared/walking_falling/sentinel_synchronous_reset.prepared.sv": {
+      "sha256": "5e66f5258411865ca5af281748e04289f1bf17b0bcf5851b61f4c0797e12fadb",
+      "bytes": 943
+    },
+    "prepared/walking_falling/sentinel_wrong_front_bump.prepared.sv": {
+      "sha256": "d44bcc60e4cb5ec8a519ae0b871dd78dd17cff4bf69a0b7ecb9b657075557931",
+      "bytes": 927
+    },
+    "prepared/walking_falling/solution.prepared.sv": {
+      "sha256": "fc415935d1ed2709a91c4e6d4f87cec23a3322f6d341a3ea9665a82ee548afee",
+      "bytes": 2271
+    },
+    "prepared/walking_falling/synthesis_receipt.json": {
+      "sha256": "621f837a16e20b71a6e90089ee0d1a5daa01e7e42c0ec7af816ad7878c8486ce",
+      "bytes": 13811
+    },
+    "prepared/walking_falling_digging/native_control_preparation.json": {
+      "sha256": "0d70a3c30d55dce1133c26ebe773ea3b45ae793e46428b2891d5debdcb05a42d",
+      "bytes": 21827
+    },
+    "prepared/walking_falling_digging/native_fixture.prepared.sv": {
+      "sha256": "ce2b933b9e9d9f84cf735236619bc1cdfd59f766f9ef2179281395ed3baf7f88",
+      "bytes": 3400
+    },
+    "prepared/walking_falling_digging/sentinel_bump_before_dig.prepared.sv": {
+      "sha256": "4ceadcaa8dab42e86e85931109f4f63669990a04ee3102d305c0b4f399fcea90",
+      "bytes": 1174
+    },
+    "prepared/walking_falling_digging/sentinel_dig_not_sticky.prepared.sv": {
+      "sha256": "a5c6757c92a488812556d1f8370c0e89c5b6dda8a6d9b2102be6eff86a70ed60",
+      "bytes": 1224
+    },
+    "prepared/walking_falling_digging/sentinel_landing_bump.prepared.sv": {
+      "sha256": "c230fe28d1269cd213f670331f0c81222c10d5bbf8e1c74594dd141c4213657c",
+      "bytes": 1281
+    },
+    "prepared/walking_falling_digging/sentinel_lost_fall_direction.prepared.sv": {
+      "sha256": "61e22a96ba0e69040908f559dfaa1557ff916b5c06c688158bd55a8df0f5455b",
+      "bytes": 1203
+    },
+    "prepared/walking_falling_digging/sentinel_negative_clock_edge.prepared.sv": {
+      "sha256": "530fd4c22b6b9e0aad9d6ee6bceb642edc8d83ffe27656be767eede73cb5e3cf",
+      "bytes": 1174
+    },
+    "prepared/walking_falling_digging/sentinel_positive.prepared.sv": {
+      "sha256": "cce885f33169da8f36427331e4c673baa8794fa587d140a7b3b65451ad3dbe45",
+      "bytes": 1174
+    },
+    "prepared/walking_falling_digging/sentinel_stuck_zero.prepared.sv": {
+      "sha256": "b67183395d4c8ce76f6c55f94b60c99783f8085bfb9d6cf0b53c16263d49240d",
+      "bytes": 1070
+    },
+    "prepared/walking_falling_digging/sentinel_synchronous_reset.prepared.sv": {
+      "sha256": "0e19173bf52f16efa4b9157623b052c2d942866b219b8b7473996711307b7e70",
+      "bytes": 1156
+    },
+    "prepared/walking_falling_digging/sentinel_wrong_front_bump.prepared.sv": {
+      "sha256": "a167285b2e4d152a84edb0536348c9d34e7438de403ded21c0d36dd3c7a8e9a1",
+      "bytes": 1140
+    },
+    "prepared/walking_falling_digging/solution.prepared.sv": {
+      "sha256": "75413a469da05854f878092c03f8660b8dce6231caac20c1b9618876e874b9b5",
+      "bytes": 5240
+    },
+    "prepared/walking_falling_digging/synthesis_receipt.json": {
+      "sha256": "15ed084d5504003b18e0d3520c986a0cb646cbab6f1e2433f9746229835f5ab0",
+      "bytes": 29765
+    },
+    "PURE_TEST_ATTEMPT_01.log": {
+      "sha256": "b67198a0fd81ea5702f962908ebab92f8619babe4301fab4b2e67c3bfd334d8c",
+      "bytes": 2225
+    },
+    "PURE_TEST_ATTEMPT_01_BINDING.json": {
+      "sha256": "5f86d73b2be2034ac578763b8fa8bdf67b9d23cca389d1d82a3c4b48f6edc1fc",
+      "bytes": 726
+    },
+    "PURE_TEST_ATTEMPT_02.log": {
+      "sha256": "bbbde9f5bad3a815b3dbffcdaf13d70083a3676cd608ceb30a4a8323cb92f8a4",
+      "bytes": 2225
+    },
+    "PURE_TEST_ATTEMPT_02_BINDING.json": {
+      "sha256": "bfef2e01ad87fe754ffb4872278ab007c071efa2cef0246126dbb64f45733602",
+      "bytes": 995
+    },
+    "synthesis.py": {
+      "sha256": "0bddeb3480e260bcd9f23e68e215510c9894e4d56e1ae3cb99662312b7b2160d",
+      "bytes": 5600
+    },
+    "test_synthesis.py": {
+      "sha256": "f262abd99a41f76de9a7f5952007514f195aaef0c9a770575a9ad761083d69a3",
+      "bytes": 16459
+    }
+  },
+  "old_private_sources_unchanged": {
+    "BINDING.json": "fa5481c987861ab26ab19257d86c412fa2aa20bd1f8f7d203d264d2196ef904f",
+    "narrative_contract.py": "bbe846376b3541b0737873365402837cc2255b660e630067a2c43f0dc17ad671",
+    "compile_narrative_rtl.py": "aa50e2218509026addc3cc0f86a77d73485eaa0def911cac69efe16680bbdfb8",
+    "SECOND_FACTOR_DESIGN_20261006_READONLY.md": "64632b31a4e766c1de1699138d01251e1e9cb82afd56860d13e0588673910b13"
+  },
+  "no_cloud_git_model_native_actions": true,
+  "source_frozen": false,
+  "no_quality_claim": true
+}
