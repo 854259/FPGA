@@ -1,0 +1,188 @@
+{
+  "stage": "U3_frozen_fsm_terminal_audit",
+  "execution_commit": "f88ed1f7c2eb6b27fc65538a45eb608272f87b2a",
+  "initial_protocol_commit": "c83b770b71f831ea4f64eb0f0f5618229e21a6b9",
+  "ticket": 57,
+  "driver_pid": 3743504,
+  "stage_pid": 3743509,
+  "auditor_child_pid": 3743510,
+  "schema": "fsm_feedback_pilot_readonly_audit_v1",
+  "evidence_valid": true,
+  "historical_fixture_only": false,
+  "full156_evidence_valid": false,
+  "archive_sha256": "e47a1406b6d56bf355342c0236847e0c75a1deff2532f4590cf663d9ac304914",
+  "spec_sha256": "09f06455ed3fbc4601f90a3c673c3c12acfadf377309f51565dac1eeeb2e87f9",
+  "auditor_sha256": "f5ec7199716c9bdd9a0dc8e39a45fb941c0a9fe19d93c27b2e9c51d563988284",
+  "expected_samples": 16,
+  "actual_model_requests": 22,
+  "first_pairs": [
+    {
+      "task": "Prob045_edgedetect2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob058_alwaysblock2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob071_always_casez",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob112_always_case2",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob115_shift18",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob124_rule110",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob143_fsm_onehot",
+      "first_content_identical": true
+    },
+    {
+      "task": "Prob150_review2015_fsmonehot",
+      "first_content_identical": true
+    }
+  ],
+  "adoption": false,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "coefficients": {
+    "C": 0.7,
+    "F": 0.8
+  },
+  "requests_by_arm": {
+    "C": 10,
+    "F": 12
+  },
+  "solve_seconds_by_arm": {
+    "C": 225.4219735842198,
+    "F": 318.65703631192446
+  },
+  "repairs": [
+    "Prob150_review2015_fsmonehot"
+  ],
+  "regressions": [],
+  "solve_deadlines": [],
+  "unconfirmed_by_arm": {
+    "C": 0,
+    "F": 0
+  },
+  "unconfirmed_attempts": 0,
+  "guard_pass": true,
+  "unknown_guard_pass": true,
+  "unchanged_task_request_cost": true,
+  "screening_eligible": true,
+  "matched_native_repair_tasks": [
+    "Prob150_review2015_fsmonehot"
+  ],
+  "qualified_for_new_full_regression": false,
+  "qualification_scope": "New full156 experiment only; not independent/five/adoption.",
+  "previous_full_gate_still_failed": true,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false,
+  "actual_model_requests_scope": "22 historical requests from completed owner ticket44; no new generation in this audit",
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "independent_natural_tasks": 0,
+  "full_batch_complete": false,
+  "observed_l3_counts": {
+    "C": 5,
+    "F": 6
+  },
+  "paired_unchanged_tasks": 7,
+  "paired_uncertainty": "One discordant development task among8; no independent families or stable gain established; no full-set estimate.",
+  "fsm_provenance": [
+    {
+      "first_reply_sha256": "3aac30a728fc6bfd5cdcc4b373c68f83b03c64cda1441adb0e4325ec1f5748da",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob143_fsm_onehot",
+      "arm": "F",
+      "contract_status": "supported",
+      "contract_family": "full_vector_multistate",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 768
+        },
+        {
+          "index": "map_check_1",
+          "status": "fail",
+          "checks": 2048,
+          "mismatches": 768
+        }
+      ]
+    },
+    {
+      "first_reply_sha256": "adf2c46aa3d5ffe3433633131fd60a54345e175a56b9258dd7f4b1174093eec6",
+      "declaration_patches": 0,
+      "original_repair_feedback_bound": true,
+      "task": "Prob150_review2015_fsmonehot",
+      "arm": "F",
+      "contract_status": "supported",
+      "contract_family": "partial_scalar_onehot",
+      "native_checks": [
+        {
+          "index": "map_check_0",
+          "status": "fail",
+          "checks": 80,
+          "mismatches": 8
+        },
+        {
+          "index": "map_check_1",
+          "status": "pass",
+          "checks": 80,
+          "mismatches": 0
+        }
+      ]
+    }
+  ],
+  "diagnosis": {
+    "task": "Prob143_fsm_onehot",
+    "before_sha256": "bfb31bb6cd4dfd7e873db2b52958519ad66910b5dd9a518eea4d0b227b87b122",
+    "after_sha256": "6a1e6997f95c827c8fad345ca72ad9e2ab76a251d374f60f8725297aef7972bf",
+    "nonblank_noncomment_lines_identical": true,
+    "added_comment_lines": 1,
+    "removed_lines": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "conclusion": "Repair changed only a comment; executable RTL unchanged. Native mismatch count768/2048 unchanged. Audit binds original counterexample feedback to actual second request. Packed output feedback may be less readable, but causal benefit of decomposing it is untested."
+  },
+  "audit_elapsed_s": 0.3242069333791733,
+  "guard_elapsed_s": 0.7524064239114523,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "owned_cleanup_verified": true,
+  "own_slot_released": true,
+  "evidence_archive_sha256": "87e5e186425668ed325b0be8893930b1be6d9ac813711bb7b08a8c767d04bbce",
+  "evidence_file_count": 16,
+  "initial_attempt": {
+    "ticket": 56,
+    "stage_started": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "reason": "Guard required literal resource_check argument; unchanged auditor lacked it. Minimal bridge added.",
+    "evidence_archive_sha256": "a20a60d1be27a6007741d84df0625c0495c65f2e4901b5712d851f56334971cc",
+    "evidence_files": 10
+  },
+  "next": "Reject expanding current FSM candidate under frozen two-chain gate; inspect already completed natural-harness terminal evidence before treating any source as independent. Do not repeat model calls to pick a better reply.",
+  "dual_end_member_verification": {
+    "failed_prelaunch_files": 10,
+    "completed_audit_files": 16,
+    "nested_source_files": 807
+  },
+  "cleanup": {
+    "duplicate_input_zips_removed": 2,
+    "own_unneeded_residuals": 0
+  }
+}

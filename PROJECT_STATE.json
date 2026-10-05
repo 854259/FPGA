@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-03T17:01:28+08:00",
+  "last_updated": "2026-10-05T12:48:00+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3118,16 +3118,18 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-04T23:40:48+08:00",
+      "checked_at": "2026-10-05T12:46:00+08:00",
       "own_live_processes": 0,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
       "full_experiment_running": false,
-      "other_task_queue_running": false,
-      "latest_own_stage": "N3",
+      "other_task_queue_running": true,
+      "other_task_ticket": 58,
+      "other_task_name": "phase_feedback_fresh_C_P_v1",
+      "latest_own_stage": "U3",
       "latest_own_stage_complete": true,
-      "slot_lock_present": false,
-      "receipt": "05_handoff/independent_validation_20261004/gatetruth_N3/N3_EXECUTION_EVIDENCE.zip"
+      "own_slot_lock_present": false,
+      "receipt": "05_handoff/independent_validation_20261004/fsm_terminal_U3/LOCAL_EVIDENCE_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3167,7 +3169,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T00:26:32.662783+08:00",
+  "updated_at": "2026-10-05T12:48:00+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
@@ -4600,5 +4602,47 @@
     "source_zip_removed": true,
     "next": "Check existing FSM pilot terminal provenance audit and triggering coverage without duplicating owner work; no repetition of reporting pretests; quota login pending.",
     "updated_at": "2026-10-05T12:12:00+08:00"
+  },
+  "fsm_terminal_U3_20261005": {
+    "status": "terminal_evidence_verified_candidate_rejected",
+    "execution_commit": "f88ed1f7c2eb6b27fc65538a45eb608272f87b2a",
+    "ticket": 57,
+    "driver_pid": 3743504,
+    "stage_pid": 3743509,
+    "child_pid": 3743510,
+    "complete": true,
+    "full_batch_complete": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "known_development_inputs": 8,
+    "independent_natural_tasks": 0,
+    "historical_model_requests": 22,
+    "l3": {
+      "C": 5,
+      "F": 6
+    },
+    "repairs": 1,
+    "harms": 0,
+    "unchanged": 7,
+    "solve_seconds": {
+      "C": 225.4219735842198,
+      "F": 318.65703631192446
+    },
+    "frozen_required_chains": 2,
+    "observed_qualifying_chains": 1,
+    "qualified_for_new_full_regression": false,
+    "failure_diagnosis": "Executable RTL unchanged; one comment added despite bound original counterexample feedback; native768/2048 remains.",
+    "dual_verified_archive_files": [
+      10,
+      16
+    ],
+    "nested_source_files_verified": 807,
+    "archive_sha256": "87e5e186425668ed325b0be8893930b1be6d9ac813711bb7b08a8c767d04bbce",
+    "failure_archive_sha256": "a20a60d1be27a6007741d84df0625c0495c65f2e4901b5712d851f56334971cc",
+    "own_cleanup_complete": true,
+    "model_and_protected_unchanged": true,
+    "next": "Audit existing natural_original_harness_controls_v1 ticket55 false acceptance before admitting independent models; do not rerun FSM pilot. Other-owner ticket58 running at12:46; follow without mutation.",
+    "public_result": "03_analysis/helper_extraction_20261004/FSM_TERMINAL_REVIEW_20261005.json",
+    "updated_at": "2026-10-05T12:48:00+08:00"
   }
 }
