@@ -1,3 +1,7 @@
+## 2026-10-05 通用驱动修复说明
+
+`03_analysis/multidriver_guidance_20261005/README.md`：13纯检查，实际历史诊断仅文本适用确认；0新模型/EDA，实际收益未测，未来两臂同旧展开对照。
+
 ## 2026-10-05 真实修复稿未消除驱动复查
 
 `03_analysis/elaboration_repair_failure_review_20261005/README.md`：944档案成员/38源逐SHA，唯一完整模块提取正确，真实诊断完整入repair；修复后五变量写入过程未变。只提出通用结构说明因子，实际收益未测，0模型/EDA。
