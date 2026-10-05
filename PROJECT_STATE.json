@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T20:13:22.328163+08:00",
+      "checked_at": "2026-10-05T20:45:14.699141+08:00",
       "own_running_stage_processes": 0,
       "own_model_or_eda_processes": 0,
       "model_pid": 2013333,
@@ -3127,29 +3127,25 @@
       "full_experiment_running": false,
       "full_experiment_running_scope": "comprehensive all-inclusive batch",
       "known_full156_regression_completed_ticket": 61,
-      "latest_own_stage": "U14_R2_three_arm_execution_preflight",
-      "latest_own_stage_complete": true,
-      "latest_own_stage_status": "complete_engineering_only",
-      "latest_own_ticket": 75,
-      "completed_tickets": [
-        75
-      ],
-      "inspected_failed_tickets": [
-        74
-      ],
-      "active_queue_tasks": 1,
-      "historical_completed_tickets": 65,
-      "historical_failed_released_tickets": 10,
+      "latest_own_stage": "U15_sealed_receipts_preflight",
+      "latest_own_stage_complete": false,
+      "latest_own_stage_status": "queued_not_executed",
+      "latest_own_ticket": 79,
+      "own_monitor_pid": 4095586,
       "other_active_tickets": [
         {
-          "ticket": 76,
-          "task_name": "bit_mapping_guidance_fresh_C_P_v1",
-          "state": "running"
+          "ticket": 77,
+          "state": "held_for_inspection",
+          "task_name": "compile_diagnostic_priority_fresh_C_P_v1"
+        },
+        {
+          "ticket": 78,
+          "state": "queued",
+          "task_name": "semantic_edge_guidance_fresh_C_P_v1"
         }
       ],
-      "next_own_stage": "RTLLM_finite_domain_execution_binding_and_sealed_receipt_recovery",
-      "next_own_stage_status": "static_gap_identified_not_launched",
-      "receipt": "05_handoff/independent_validation_20261004/three_arm_execution_U14/three_arm_execution_U14_R2_20261005_478d341_TERMINAL_CHECK.json"
+      "next_own_stage": "U15 terminal audit then RTLLM finite-domain execution binding",
+      "receipt": "05_handoff/independent_validation_20261004/sealed_receipts_U15/LAUNCH_PREPARATION_CHECK.json"
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5304,5 +5300,50 @@
     "archive_sha256": "1a5b4d9794ea87110fa71ab3b20f62521d34b160431d1780eefd20347022c0c7",
     "actual_model_calls": 0,
     "result_sha256": "6e4b0e4390ea3cd516b4420a9ad0574db748615408104c27fa7f7c8253a3982b"
+  },
+  "sealed_receipts_U15_20261005": {
+    "updated_at": "2026-10-05 20:47:44 +08:00",
+    "status": "queued_not_executed",
+    "source_commit": "326f829a2ed6c10afa565cad55973ce5f0051082",
+    "ticket": 79,
+    "monitor_pid": 4095586,
+    "monitor_verified": true,
+    "real_model_calls_budget": 0,
+    "eda_calls_budget": 0,
+    "historical_rows_to_replay": 6,
+    "constructed_callbacks_budget": 3,
+    "stage_timeout_s": 120,
+    "slot_minutes": 5,
+    "expected_controls": 16,
+    "public_spec": "03_analysis/helper_extraction_20261004/U15_SEALED_RECEIPTS_20261005.json",
+    "private_receipt": "05_handoff/independent_validation_20261004/sealed_receipts_U15/LAUNCH_PREPARATION_CHECK.json",
+    "preceding_task_state": "Ticket77 held_for_inspection: stage_rc1, summary AssertionError, owned cleanup verified, shared model/protected unchanged. Another owner; no release or retry performed.",
+    "tested": false,
+    "full_batch": false,
+    "next": "Await preceding owner inspection/FIFO, verify actual U15 terminal and archive. Then RTLLM finite-domain binding; no new model batch admitted."
+  },
+  "public_exposure_reconciliation_20261005": {
+    "checked_at": "2026-10-05 20:34:21 +08:00",
+    "scope": "Read-only reconciliation of forwarded exposure notice and full156 result",
+    "repository_visibility_verified": "public",
+    "removal_commit": "6a7bfb8e4f5839a1ea68a9c58509573a4bc120dc",
+    "branch_head_checked": "39e34e8a7a4a311823ddaf507d391dc2c68b3ae7",
+    "removed_paths": 18,
+    "removed_paths_present_at_branch_head": 0,
+    "removed_paths_present_at_old_parent": 18,
+    "text_scripts_checked": 5,
+    "scripts_with_ipv4_literal": 2,
+    "archives_rescanned": 0,
+    "comprehensive_security_clearance": false,
+    "repository_visibility_changed": false,
+    "history_rewritten": false,
+    "credentials_changed": false,
+    "amd_tasks_changed": false,
+    "forwarded_result_commit": "6d54ada3ddaab7a60e91e766568eda4f7779c4b6",
+    "result_matches_existing_stage": "U8 phase_full156 FIFO61, not a new experiment",
+    "adoption": false,
+    "next": "Keep repository public as explicitly requested. No visibility change or history rewrite. Continue AMD research; publish only reviewed source and public aggregate reports, retaining raw evidence privately. Historical exposure remains unresolved.",
+    "user_visibility_decision": "Keep repository public; user explicitly declined making it private.",
+    "user_visibility_decision_at": "2026-10-05 20:36:38 +08:00"
   }
 }

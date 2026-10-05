@@ -1,6 +1,6 @@
 {
   "schema": "three_arm_seal_U15_frozen_v1",
-  "status": "frozen_not_executed",
+  "status": "queued_not_executed",
   "purpose": "Preserve verifiable completed rows across owned cache cleanup without replaying model requests",
   "source_hashes": {
     "three_arm_queue_20261005.py": "de7d4df53461843503760047f03affa4ea682cc2aa9559e91c80db06d40f44e7",
@@ -30,5 +30,16 @@
     "Private per-row ZIPs must never be published",
     "Seals protect against accidental corruption, not malicious rewriting of both hashes and data"
   ],
-  "next": "Bind audited RTLLM finite-domain evaluation to actual A/P/B source identities; independent data, complete budget and32GB admission remain open"
+  "next": "Bind audited RTLLM finite-domain evaluation to actual A/P/B source identities; independent data, complete budget and32GB admission remain open",
+  "execution_source_commit": "326f829a2ed6c10afa565cad55973ce5f0051082",
+  "launch": {
+    "ticket": 79,
+    "monitor_pid": 4095586,
+    "state": "queued",
+    "preceding_ticket": 77,
+    "preceding_state": "held_for_inspection",
+    "stage_started": false,
+    "log": "/workspace/team/task_fifo/runner_00000079.log",
+    "checked_at": "2026-10-05T20:45:14.699141+08:00"
+  }
 }
