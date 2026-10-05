@@ -1,6 +1,6 @@
 # 原始 edge detector harness 校准准备
 
-状态：主任务已审阅并补强执行证据绑定，11源资产已冻结于 `RUN_SPEC.json`；本机Python3.12.14及云端3.12.3静态检查、49工具/270依赖文件和936任务/35官方保护文件核验通过。尚未提交整任务FIFO，实际模型/EDA/原生控制调用均为0；独立模型准入和采用均为false。
+状态：主任务已审阅并补强执行证据绑定，11源资产已冻结于 `RUN_SPEC.json`；本机Python3.12.14及云端3.12.3静态检查、49工具/270依赖文件和936任务/35官方保护文件核验通过。已于北京时间14:35按整任务FIFO提交第62号任务，当前确认queued、monitor3870791/start845579592存活；等待第61号完整评测释放整任务资源。实际模型/EDA/原生控制调用均为0；独立模型准入和采用均为false。
 
 原记录为 `cvdp_copilot_edge_detector_0001`，保持原模块 `sync_pos_neg_edge_detector`、三个输入、两个输出及原输出路径 `rtl/sync_pos_neg_edge_detector.sv`。完整原数据集同字节复制到私有 `raw_evidence/ORIGINAL_DATASET.jsonl`，SHA-256 为 `cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857`。`CONTROLS.json` 绑定原 JSON 行、规范记录、prompt/context/output、原四个 harness 文件、test 和 runner 的 SHA；原记录、题面、context、runner 均不修改，源记录没有参考答案。
 
