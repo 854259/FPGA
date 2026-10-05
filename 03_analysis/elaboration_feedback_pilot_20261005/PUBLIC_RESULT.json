@@ -1,0 +1,118 @@
+{
+  "schema": "elaboration_feedback_pilot_readonly_audit_v1",
+  "evidence_valid": true,
+  "archive_sha256": "87e3d657ae500d7657fb98c509b8a48f1dafa7953dc243fa081dfec43d82a078",
+  "spec_sha256": "87cb93c00f386f3f16ece9f0ec9a7f49b18fd260faac9c75e83d4db9d31038bf",
+  "auditor_sha256": "2102c7dd1db59b6f9d151502434d6c2c6b527bbb606d727e5c51037fc466b894",
+  "expected_samples": 16,
+  "actual_model_requests": 25,
+  "coefficients": {
+    "C": 0.775,
+    "P": 0.775
+  },
+  "requests_by_arm": {
+    "C": 12,
+    "P": 13
+  },
+  "solve_seconds_by_arm": {
+    "C": 207.45111947134137,
+    "P": 267.14288679882884
+  },
+  "repairs": [],
+  "improvements": [],
+  "regressions": [],
+  "solve_deadlines": [],
+  "unconfirmed_by_arm": {
+    "C": 0,
+    "P": 0
+  },
+  "unconfirmed_attempts": 0,
+  "guard_pass": true,
+  "unchanged_task_request_cost": true,
+  "screening_eligible": false,
+  "matched_native_repair_tasks": [],
+  "qualified_for_new_full_regression": false,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false,
+  "adoption": false,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "official_baseline_gain_measured": false,
+  "five_sample_measured": false,
+  "exact_audit_result_sha256": "ceab5044cabec2d0d3a6dc8e290b45ba7aebd506d928debcddc456da0312b02c",
+  "actual_model_responses": 25,
+  "ticket": 65,
+  "identical_first_reply_pairs": 8,
+  "additional_candidate_requests": 1,
+  "additional_candidate_solve_seconds": 59.69176732748747,
+  "actual_independent_model_samples": 0,
+  "actual_five_sample_runs": 0,
+  "formal_deployment_changed": false,
+  "decision": "no_gain_rejected",
+  "scope": "8 known development tasks, one fresh sample per arm. No gain; no new full regression or deployment.",
+  "level_counts": {
+    "C": {
+      "L0": 1,
+      "L1": 1,
+      "L3": 6
+    },
+    "P": {
+      "L0": 1,
+      "L1": 1,
+      "L3": 6
+    }
+  },
+  "target_repair_chains": [
+    {
+      "task": "Prob133_2014_q3fsm",
+      "first_content_identical": true,
+      "control_level": 1,
+      "candidate_level": 1,
+      "coefficient_improved": false,
+      "candidate_l3": false,
+      "exact_elaboration_repair_chain": false,
+      "elaboration_checks": []
+    },
+    {
+      "task": "Prob156_review2015_fancytimer",
+      "first_content_identical": true,
+      "control_level": 0,
+      "candidate_level": 0,
+      "coefficient_improved": false,
+      "candidate_l3": false,
+      "exact_elaboration_repair_chain": false,
+      "elaboration_checks": [
+        {
+          "attempt": 0,
+          "outcome": "fail",
+          "returncode": 1,
+          "complete": true,
+          "measurement_valid": true,
+          "code_sha256": "ddda812b46cc944ca265f7cb0ef70af68877b9e73cf345a4a2dea7fa1ea3e0fb",
+          "receipt_sha256": "31b25a481695ec4da0fb738948b95a1ae4ef71fb9ed65d8df24cbbd6e2f59a16",
+          "log_sha256": "df8c675dd1a5b858200e0a2d47e801b717a18c86c41d5f871f6df73d8cac6e06",
+          "feedback_sha256": "ccf9db9a22e48092d8a827962c8446e2897fcfe478b7ab48e687df4e14f040db"
+        },
+        {
+          "attempt": 1,
+          "outcome": "fail",
+          "returncode": 1,
+          "complete": true,
+          "measurement_valid": true,
+          "code_sha256": "ecf37fd4161d6d7e782965b3c056fc68d61f4247f4f58516f3aa9e8d90c21656",
+          "receipt_sha256": "d811ea5273af94fbb5bec31a296563c9a325165e71c51ddce0b2c47fac237f70",
+          "log_sha256": "2f27272385bb784a4d10158ac12bef7481a6a34ede1f792b51c0927bf982807a",
+          "feedback_sha256": "83298295b2d67dcf202d11824046b9dee6de2e598f4a274f99a23e89e2631432"
+        }
+      ]
+    }
+  ],
+  "native_controls": {
+    "complete": true,
+    "passed": true,
+    "model_calls": 0,
+    "native_compile_attempts": 2,
+    "native_elaboration_attempts": 2,
+    "receipt_sha256": "cef7c590445898462a65cfaeba8704069166f0b2635c0ccd4008788d976f5bef"
+  }
+}

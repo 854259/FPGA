@@ -1,12 +1,12 @@
 {
-  "observed_at_epoch": 1791193766.1625507,
+  "observed_at_epoch": 1791194433.1429513,
   "ticket": 65,
-  "ticket_state": "running",
+  "ticket_state": "completed",
   "monitor": {
     "pid": 4004755,
-    "state": "S",
+    "state": "Z",
     "start": "846701646",
-    "live": true
+    "live": false
   },
   "model": {
     "pid": 2013333,
@@ -16,14 +16,14 @@
   },
   "source_assets": 38,
   "source_unchanged": true,
-  "completed_samples": 6,
-  "actual_model_requests": 10,
-  "measurement_complete": false,
+  "completed_samples": 16,
+  "actual_model_requests": 25,
+  "measurement_complete": true,
   "measurement_error": null,
   "native_controls_complete": true,
   "native_controls_passed": true,
-  "guard_complete": false,
-  "guard_passed": false,
+  "guard_complete": true,
+  "guard_passed": true,
   "recent_queue": [
     {
       "ticket": 64,
@@ -33,7 +33,17 @@
     {
       "ticket": 65,
       "task_name": "elaboration_feedback_fresh_C_P_v1",
-      "state": "running"
+      "state": "completed"
+    },
+    {
+      "ticket": 66,
+      "task_name": "natural_terminal_U9_edge_original_audit",
+      "state": "completed"
+    },
+    {
+      "ticket": 67,
+      "task_name": "natural_terminal_U9_reset_original_audit",
+      "state": "completed"
     }
   ],
   "partial_scores_published": false,

@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full_CP156312 immutable audit passed; actual score-factor FIFO65 running; complete Kmap native feedback preparation",
+    "continuation_status": "full156 P77.44 verified; FIFO65 actual no gain rejected; prioritize full-care Kmap feedback and repair effectiveness",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -4460,9 +4460,9 @@
     "G4": "302 public ABI/context prepared; bounded native reset support1/302. New runtime17 sources e2462368 frozen, local177 (3 platform skips)/Linux177 (0 skips),76 fake HTTP subchecks and four actual owned Python controls. No actual model/EDA/quality/production300s/OS include sandbox admission. New272work+24cleanup+4receipt factor cannot inherit old ANSI/C/P; original harness exposures/exclusions and full156 terminal gates unchanged. Independent actual model tasks0; adoptionfalse.",
     "G5": "Formal bridge engineering prepared; official baseline/five samples/target32GB remain pending. User deferred offline verification; correctness and score prioritized.",
     "goal_complete": false,
-    "quota_latest_observed_used_percent": 25,
+    "quota_latest_observed_used_percent": 27,
     "current_objectives": "05_handoff/CURRENT_OBJECTIVES_20261005.md",
-    "previous_goal_turn_classification": "progress_complete312_audit_net_score_gain_and_actual_failure_analysis_new_score_factors_preparing",
+    "previous_goal_turn_classification": "progress",
     "last_actual_shared_sync_commit": "ea37f9ff226fa273c1726a59b0af0fac5f5809f7",
     "last_actual_shared_sync_public_files": 82
   },
@@ -5818,7 +5818,7 @@
     ]
   },
   "elaboration_feedback_pilot_20261005": {
-    "status": "actual_FIFO65_running_native2plus2_controls_passed",
+    "status": "actual_FIFO65_audited_no_gain_rejected",
     "spec_sha256": "87cb93c00f386f3f16ece9f0ec9a7f49b18fd260faac9c75e83d4db9d31038bf",
     "assets": 38,
     "local_checks": 54,
@@ -5827,28 +5827,50 @@
     "expected_samples": 16,
     "planned_native_controls_compile": 2,
     "planned_native_controls_elaboration": 2,
-    "actual_model_calls": 0,
-    "actual_eda_calls": 0,
+    "actual_model_calls": 25,
     "actual_fifo_submitted": true,
     "adoption": false,
     "first_generation_replayed": false,
     "base_development_policy": "phase-full P in both arms",
     "full_baseline_archive_sha256": "da7c2c6361648654eb2ea50c145b19e0ec0b27edce0a8f80b06e6985c05d5a3d",
-    "report": "03_analysis/elaboration_feedback_pilot_20261005/README.md",
+    "report": "03_analysis/elaboration_feedback_pilot_20261005/FINAL_RESULT.md",
     "ticket": 65,
     "monitor_pid": 4004755,
     "monitor_starttime": "846701646",
     "accepted_at_utc": "2026-10-05T09:42:46.985188+00:00",
-    "observed_at_epoch": 1791193437.5863338,
+    "observed_at_epoch": 1791194433.1429513,
     "native_controls_completed": true,
     "native_controls_passed": true,
     "actual_native_control_commands": 4,
-    "actual_model_calls_observed_completed_samples": 0,
-    "completed_samples_observed": 0,
+    "actual_model_calls_observed_completed_samples": 25,
+    "completed_samples_observed": 16,
     "partial_scores_published": false,
     "latest_actual_shared_commit": "ea37f9ff226fa273c1726a59b0af0fac5f5809f7",
     "shared_sync_public_files": 82,
-    "shared_sync_receipt": "03_analysis/elaboration_feedback_pilot_20261005/SHARED_SYNC_RECEIPT.json"
+    "shared_sync_receipt": "03_analysis/elaboration_feedback_pilot_20261005/SHARED_SYNC_RECEIPT.json",
+    "archive_sha256": "87e3d657ae500d7657fb98c509b8a48f1dafa7953dc243fa081dfec43d82a078",
+    "auditor_sha256": "2102c7dd1db59b6f9d151502434d6c2c6b527bbb606d727e5c51037fc466b894",
+    "exact_audit_result_sha256": "ceab5044cabec2d0d3a6dc8e290b45ba7aebd506d928debcddc456da0312b02c",
+    "evidence_valid": true,
+    "actual_model_responses": 25,
+    "coefficients": {
+      "C": 0.775,
+      "P": 0.775
+    },
+    "requests_by_arm": {
+      "C": 12,
+      "P": 13
+    },
+    "solve_seconds_by_arm": {
+      "C": 207.45111947134137,
+      "P": 267.14288679882884
+    },
+    "regressions": [],
+    "improvements": [],
+    "solve_deadlines": [],
+    "unconfirmed_attempts": 0,
+    "qualified_for_new_full_regression": false,
+    "native_control_commands_actual": 4
   },
   "prompt_table_contract_20261005": {
     "status": "strict_prompt_parser_preparation_only",
@@ -5877,5 +5899,20 @@
     "full_and_first_same_complete_raw_observations": true,
     "score_gain_measured": false,
     "report": "03_analysis/prompt_table_native_20261005/README.md"
+  },
+  "elaboration_repair_failure_review_20261005": {
+    "status": "actual_readonly_review_complete",
+    "archive_sha256": "87e3d657ae500d7657fb98c509b8a48f1dafa7953dc243fa081dfec43d82a078",
+    "audit_result_sha256": "ceab5044cabec2d0d3a6dc8e290b45ba7aebd506d928debcddc456da0312b02c",
+    "review_sha256": "9eae0c82011c7189857aad3878a305448010c9b70cee2d89ad8c5e0be734977e",
+    "archive_members_verified": 944,
+    "frozen_sources_verified": 38,
+    "discarded_later_correct_block_observed": false,
+    "extractor_error_observed": false,
+    "actual_writer_ownership_unchanged": true,
+    "proposed_generic_guidance_gain_measured": false,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "report": "03_analysis/elaboration_repair_failure_review_20261005/README.md"
   }
 }

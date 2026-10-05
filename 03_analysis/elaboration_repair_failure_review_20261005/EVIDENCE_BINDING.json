@@ -1,0 +1,21 @@
+{
+  "schema": "elaboration_repair_failure_review_binding_v1",
+  "python": "3.12.14",
+  "analysis_script_sha256": "81e44addc3afa08384c7b0745cd8f5ad12743c21b69b198b4657c8a7e1fb26a1",
+  "actual_files_sha256": {
+    "RUN_SPEC.json": "87cb93c00f386f3f16ece9f0ec9a7f49b18fd260faac9c75e83d4db9d31038bf",
+    "audit.py": "2102c7dd1db59b6f9d151502434d6c2c6b527bbb606d727e5c51037fc466b894",
+    "raw_evidence/terminal_v1.zip": "87e3d657ae500d7657fb98c509b8a48f1dafa7953dc243fa081dfec43d82a078",
+    "raw_evidence/terminal_audit_v1/RESULTS.json": "ceab5044cabec2d0d3a6dc8e290b45ba7aebd506d928debcddc456da0312b02c"
+  },
+  "archive_manifest_members_verified": 944,
+  "frozen_source_assets_verified": 38,
+  "selected_private_members": 23,
+  "review_sha256": "9eae0c82011c7189857aad3878a305448010c9b70cee2d89ad8c5e0be734977e",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "ssh_calls": 0,
+  "qualified_for_new_full_regression": false,
+  "adoption": false,
+  "readme_sha256": "aa2d065b473a4ed7880b8c566b8f824ba30b1ca7917a4e68936785242e106929"
+}

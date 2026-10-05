@@ -1,3 +1,11 @@
+## 2026-10-05 真实修复稿未消除驱动复查
+
+`03_analysis/elaboration_repair_failure_review_20261005/README.md`：944档案成员/38源逐SHA，唯一完整模块提取正确，真实诊断完整入repair；修复后五变量写入过程未变。只提出通用结构说明因子，实际收益未测，0模型/EDA。
+
+## 2026-10-05 提分实验65终态
+
+`03_analysis/elaboration_feedback_pilot_20261005/FINAL_RESULT.md` / `PUBLIC_RESULT.json`：原冻结审计完整16样本、25请求回复、77.50%两臂相同、候选增加1请求/59.692秒；无增分，拒绝新全量，完整P77.44%保持。原始回复/源码/诊断私有保留。
+
 ## 2026-10-05 完整Kmap观测准备
 
 `03_analysis/prompt_table_native_20261005/README.md`：原parser字节保持；20方法112子检查、5个显式Kmap研究TB仅生成，0实际编译/模型/EDA。first/full必须同完整真实care格日志，尚无提分资格。

@@ -1,0 +1,407 @@
+{
+  "schema": "actual_elaboration_repair_failure_review_v1",
+  "task": "Prob156_review2015_fancytimer",
+  "ticket": 65,
+  "spec_sha256": "87cb93c00f386f3f16ece9f0ec9a7f49b18fd260faac9c75e83d4db9d31038bf",
+  "archive_sha256": "87e3d657ae500d7657fb98c509b8a48f1dafa7953dc243fa081dfec43d82a078",
+  "auditor_sha256": "2102c7dd1db59b6f9d151502434d6c2c6b527bbb606d727e5c51037fc466b894",
+  "audit_result_sha256": "ceab5044cabec2d0d3a6dc8e290b45ba7aebd506d928debcddc456da0312b02c",
+  "evidence_valid": true,
+  "qualified_for_new_full_regression": false,
+  "actual_scores": {
+    "C": 0.775,
+    "P": 0.775
+  },
+  "expected_samples": 16,
+  "actual_model_requests": 25,
+  "unconfirmed_attempts": 0,
+  "c_p_first_content_identical": true,
+  "reply_metadata": [
+    {
+      "attempt": 0,
+      "request_sha256": "ed2572d3672da82b2d611c6f5a3518f21d2d6baa39eb4f7ec139a1dab65f4d0a",
+      "response_sha256": "06d85c9281684ccbe887b699b4a318284c4aa1791f4a0552ef9ac3e56fd55ce2",
+      "content_sha256": "f7fef62824c3c1085b4242235d1a29afb3c252d00a66c5152c2fce2c8ce0990f",
+      "content_chars": 4683,
+      "message_keys": [
+        "role",
+        "content"
+      ],
+      "choice_count": 1,
+      "separate_reasoning_fields": {},
+      "thinking_tag_present": false,
+      "fenced_block_count": 1,
+      "fence_languages": [
+        "systemverilog"
+      ],
+      "full_topmodule_count": 1,
+      "noncomment_full_topmodule_count": 1,
+      "first_full_module_sha256": "ddda812b46cc944ca265f7cb0ef70af68877b9e73cf345a4a2dea7fa1ea3e0fb",
+      "last_full_module_sha256": "ddda812b46cc944ca265f7cb0ef70af68877b9e73cf345a4a2dea7fa1ea3e0fb",
+      "extractor_output_sha256": "ddda812b46cc944ca265f7cb0ef70af68877b9e73cf345a4a2dea7fa1ea3e0fb",
+      "source_and_final_selection_bound": true,
+      "finish_reason": "stop",
+      "completion_tokens": 1340,
+      "generation_elapsed_s": 46.71269515901804,
+      "compiler_rc": 0,
+      "xelab_rc": 1
+    },
+    {
+      "attempt": 1,
+      "request_sha256": "1d1824e2a8fd3072e89fb338eaf7b26ea09dbbf490390fb6276073f4d43ed006",
+      "response_sha256": "1b30f2acfea743fe53b2c0ccecbef0752bb27e97327360f143facc6de6e9994f",
+      "content_sha256": "6b45d38951a8efe169fb75e2c841ddec7e6cccd3c49d9e6738a40054325565cc",
+      "content_chars": 4193,
+      "message_keys": [
+        "role",
+        "content"
+      ],
+      "choice_count": 1,
+      "separate_reasoning_fields": {},
+      "thinking_tag_present": false,
+      "fenced_block_count": 0,
+      "fence_languages": [],
+      "full_topmodule_count": 1,
+      "noncomment_full_topmodule_count": 1,
+      "first_full_module_sha256": "ecf37fd4161d6d7e782965b3c056fc68d61f4247f4f58516f3aa9e8d90c21656",
+      "last_full_module_sha256": "ecf37fd4161d6d7e782965b3c056fc68d61f4247f4f58516f3aa9e8d90c21656",
+      "extractor_output_sha256": "ecf37fd4161d6d7e782965b3c056fc68d61f4247f4f58516f3aa9e8d90c21656",
+      "source_and_final_selection_bound": true,
+      "finish_reason": "stop",
+      "completion_tokens": 1175,
+      "generation_elapsed_s": 43.72462427802384,
+      "compiler_rc": 0,
+      "xelab_rc": 1
+    }
+  ],
+  "repair_feedback_exactly_bound": true,
+  "repair_feedback_characters": 1387,
+  "diagnostic_signals_present": [
+    "delay_reg",
+    "count_reg",
+    "cycle_cnt",
+    "counting_reg",
+    "done_reg"
+  ],
+  "diagnostic_signal_set_after_repair_unchanged": true,
+  "discarded_later_complete_module": false,
+  "extractor_error_observed": false,
+  "only_comments_changed": false,
+  "noncomment_token_edit_groups": 2,
+  "assignment_ownership": [
+    {
+      "signal": "delay_reg",
+      "observed": [
+        {
+          "attempt": 0,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 5,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_comb": 1,
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              53,
+              86,
+              90,
+              94,
+              98
+            ],
+            "always_ff": [
+              137,
+              144
+            ]
+          }
+        },
+        {
+          "attempt": 1,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 5,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_comb": 1,
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              53,
+              86,
+              90,
+              94,
+              98
+            ],
+            "always_ff": [
+              137,
+              144
+            ]
+          }
+        }
+      ],
+      "owning_process_set_changed": false
+    },
+    {
+      "signal": "count_reg",
+      "observed": [
+        {
+          "attempt": 0,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 3,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_comb": 1,
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              54,
+              100,
+              115
+            ],
+            "always_ff": [
+              138,
+              145
+            ]
+          }
+        },
+        {
+          "attempt": 1,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 3,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_comb": 1,
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              54,
+              100,
+              115
+            ],
+            "always_ff": [
+              138,
+              145
+            ]
+          }
+        }
+      ],
+      "owning_process_set_changed": false
+    },
+    {
+      "signal": "cycle_cnt",
+      "observed": [
+        {
+          "attempt": 0,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 4,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_comb": 1,
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              55,
+              101,
+              116,
+              119
+            ],
+            "always_ff": [
+              139,
+              146
+            ]
+          }
+        },
+        {
+          "attempt": 1,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 4,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_comb": 1,
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              55,
+              101,
+              116,
+              119
+            ],
+            "always_ff": [
+              139,
+              146
+            ]
+          }
+        }
+      ],
+      "owning_process_set_changed": false
+    },
+    {
+      "signal": "counting_reg",
+      "observed": [
+        {
+          "attempt": 0,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 4,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              56,
+              102,
+              105,
+              111
+            ],
+            "always_ff": [
+              140,
+              147
+            ]
+          }
+        },
+        {
+          "attempt": 1,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 4,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_comb": 1,
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              56,
+              102,
+              105,
+              111
+            ],
+            "always_ff": [
+              140,
+              147
+            ]
+          }
+        }
+      ],
+      "owning_process_set_changed": false
+    },
+    {
+      "signal": "done_reg",
+      "observed": [
+        {
+          "attempt": 0,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 4,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              57,
+              112,
+              123,
+              126
+            ],
+            "always_ff": [
+              141,
+              148
+            ]
+          }
+        },
+        {
+          "attempt": 1,
+          "owner_kinds": [
+            "always_comb",
+            "always_ff"
+          ],
+          "assignment_counts": {
+            "always_comb": 4,
+            "always_ff": 2
+          },
+          "self_assignment_counts": {
+            "always_comb": 1,
+            "always_ff": 1
+          },
+          "lines_by_owner": {
+            "always_comb": [
+              57,
+              112,
+              123,
+              126
+            ],
+            "always_ff": [
+              141,
+              148
+            ]
+          }
+        }
+      ],
+      "owning_process_set_changed": false
+    }
+  ],
+  "final_solution_sha256": "ecf37fd4161d6d7e782965b3c056fc68d61f4247f4f58516f3aa9e8d90c21656",
+  "observation_limit": "Writer extraction is a bounded lexical review of the actual two begin/end bodies, not a general SystemVerilog parser or an official semantic judgement.",
+  "recommendations": [
+    {
+      "factor": "Confirmed multi-driver repair explanation",
+      "trigger": "Actual VRFC10-3818 compiler diagnosis plus current candidate procedural-writer facts.",
+      "change": "Keep the real diagnostic; add a short generic explanation that changing type or self-assigning a register does not remove its second writer. Each storage variable needs one owning procedural process; separate combinational next values or update it in its clocked owner. Use only names and block ownership confirmed in the candidate.",
+      "constraint": "One independent feedback factor only: no task ID rules, no reference/TB, no extractor/global token change, same first prompt/8192/one repair/300s, all guard results and costs retained.",
+      "gain_measured": false
+    }
+  ],
+  "model_calls": 0,
+  "eda_calls": 0,
+  "ssh_calls": 0,
+  "original_sources_changed": false,
+  "adoption": false
+}
