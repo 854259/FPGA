@@ -1,0 +1,38 @@
+{
+  "schema": "official_baseline_U11_frozen_v1",
+  "status": "prepared_not_executed",
+  "reason": "A/P/B full comparison lacks a verified direct unchanged official baseline entry; prior C/P controls are not B. Implement direct upstream CLI and failure accounting before a real full batch.",
+  "source_hashes": {
+    "official_baseline_arm_20261005.py": "574f38c1a18b420934e6a4b3a97fb85731639f6ac886f26dd0a7b3e25ac3ecea",
+    "official_baseline_preflight_20261005.py": "a948fd25e4f3f47b014ac808c68fc7c6404b0dc70e6124c759935a42e47d2aba"
+  },
+  "official_hashes": {
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75"
+  },
+  "cases": [
+    "fenced_code",
+    "missing_interface",
+    "null_length",
+    "http_error",
+    "invalid_json",
+    "body_hang",
+    "recovery"
+  ],
+  "budget": {
+    "real_model_calls": 0,
+    "eda_calls": 0,
+    "fake_model_posts": 7,
+    "case_timeout_s": 10,
+    "hang_supervisor_s": 1.5,
+    "stage_timeout_s": 120,
+    "slot_minutes": 5
+  },
+  "acceptance": "All seven CLI cases must preserve official hashes/prompt and interface only; original system, model name,8192/0/1 parameters; exactly one observed fake POST per case and zero retries. Extraction matches fixed reply; empty length is response-confirmed but not functional success. HTTP/JSON failures remain failures despite original process rc0. Hanging body is killed with no live owned child under4s, unconfirmed call retained, then recovery succeeds. Existing shared model and protected files unchanged. No real inference or EDA.",
+  "limits": [
+    "Only synthetic local HTTP; model process identity verified by resource guard but no real27B cancellation test.",
+    "Original official trace lacks full reply/server POST receipt; wrapper conservatively records unknown actual POST count without receipt.",
+    "No A/P/B full scheduler or independent/five/32GB qualification; no adoption, no score."
+  ],
+  "next": "Retain only if all controls pass; otherwise preserve exact failure and minimally fix engineering before refreezing. Do not rerun known natural tasks or retry to select scores."
+}

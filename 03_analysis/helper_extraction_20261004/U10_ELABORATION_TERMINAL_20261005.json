@@ -1,6 +1,6 @@
 {
   "at": "2026-10-05T10:05:30.136984+00:00",
-  "status": "prepared_not_executed",
+  "status": "complete_audited_no_gain_reject_expansion",
   "identity": "U10_elaboration_original_terminal_audit",
   "original_ticket": 65,
   "archive_sha256": "87e3d657ae500d7657fb98c509b8a48f1dafa7953dc243fa081dfec43d82a078",
@@ -19,5 +19,94 @@
     "guard_s": 120,
     "slot_minutes": 5
   },
-  "acceptance": "Bind all16 samples and25 original requests, same-first and candidate native elaboration diagnostics, final grades and original frozen gate. Preserve no-gain result; no regeneration or threshold changes. Pure audit, no complete-batch or independent qualification."
+  "acceptance": "Bind all16 samples and25 original requests, same-first and candidate native elaboration diagnostics, final grades and original frozen gate. Preserve no-gain result; no regeneration or threshold changes. Pure audit, no complete-batch or independent qualification.",
+  "result": {
+    "at": "2026-10-05T10:16:23.130260+00:00",
+    "complete": true,
+    "status": "audited_no_gain_reject_expansion",
+    "ticket": 68,
+    "driver_pid": 4024805,
+    "stage_pid": 4024810,
+    "audit_elapsed_s": 0.2741501033306122,
+    "guard_elapsed_s": 0.5018114540725946,
+    "audit_result_sha256": "bba977409a0b05ca3fe42697ae954074b38e4b407e8511126b23f92b31bca5a9",
+    "audit_model_calls": 0,
+    "audit_eda_calls": 0,
+    "original_requests": 25,
+    "original_samples": 16,
+    "same_first_pairs": 8,
+    "coefficients": {
+      "C": 0.775,
+      "P": 0.775
+    },
+    "requests_by_arm": {
+      "C": 12,
+      "P": 13
+    },
+    "solve_seconds_by_arm": {
+      "C": 207.45111947134137,
+      "P": 267.14288679882884
+    },
+    "judge_seconds_by_arm": {
+      "C": 242.8,
+      "P": 240.4
+    },
+    "levels": {
+      "C": {
+        "L0": 1,
+        "L1": 1,
+        "L3": 6
+      },
+      "P": {
+        "L0": 1,
+        "L1": 1,
+        "L3": 6
+      }
+    },
+    "repairs": 0,
+    "regressions": 0,
+    "improvements": 0,
+    "unchanged_pairs": 8,
+    "unconfirmed": 0,
+    "qualified_for_new_full_regression": false,
+    "target_chains": [
+      {
+        "task": "Prob133_2014_q3fsm",
+        "same_first": true,
+        "levels": [
+          1,
+          1
+        ],
+        "check_outcomes": [],
+        "valid_repair_chain": false
+      },
+      {
+        "task": "Prob156_review2015_fancytimer",
+        "same_first": true,
+        "levels": [
+          0,
+          0
+        ],
+        "check_outcomes": [
+          "fail",
+          "fail"
+        ],
+        "valid_repair_chain": false
+      }
+    ],
+    "decision": "Reject elaboration addition for expansion; extra diagnostic and original repair did not fix invalid multiple procedural drivers. Retain prior U8 phase candidate only. No prompt tuning or resampling of these known tasks.",
+    "full_batch": false,
+    "independent_tasks": 0,
+    "adoption": false,
+    "total_solve_plus_judge_s": {
+      "C": 450.2511194713414,
+      "P": 507.5428867988288
+    },
+    "evidence": {
+      "archive_sha256": "394b6e5dc1ba3bcae856c5076ea40cc674fb0a35208cf141ba9e01ec590a978b",
+      "outer_files": 15,
+      "original_files": 944,
+      "dual_verified": true
+    }
+  }
 }
