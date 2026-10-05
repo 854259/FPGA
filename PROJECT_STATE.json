@@ -466,7 +466,7 @@
     "cloud_model_tested": false,
     "cloud_blocker": "LLM_API_KEY is absent in the current process"
   },
-  "last_updated": "2026-10-05T15:09:18+08:00",
+  "last_updated": "2026-10-05T16:01:07+08:00",
   "github_sync_20260912": {
     "branch": "fix/reliable-evaluation",
     "report": "04_project/amd_rtl_agent/bench/results/qwen_cloud_first10_20260912.json",
@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-      "checked_at": "2026-10-05T07:09:18.260562+00:00",
+      "checked_at": "2026-10-05T08:01:07.224134+00:00",
       "own_live_processes": 0,
       "model_pid": 2013333,
       "model_identity_unchanged": true,
@@ -3129,32 +3129,48 @@
       "other_task_ticket": 61,
       "other_task_driver_pid": 3761322,
       "other_task_stage_pid": 3761327,
-      "other_task_completed_samples": 168,
+      "other_task_completed_samples": 239,
       "other_task_expected_samples": 312,
-      "completed_row_request_attempts": 178,
-      "completed_row_responses": 178,
+      "completed_row_request_attempts": 255,
+      "completed_row_responses": 255,
       "completed_row_deadlines": 0,
       "completed_row_unconfirmed": 0,
       "completed_row_tool_errors": 0,
-      "frozen_sources_verified": 44,
-      "queued_task": {
-        "ticket": 62,
-        "state": "queued",
-        "task": "natural_edge_original_harness_controls_v1",
-        "source_files_verified": 11,
-        "spec_sha256": "e68dff0e4bab1a708a9617552776e3ed86adcb6d7d53aa6c004c49728707fa65",
-        "model_calls_max": 0,
-        "compile_max": 7,
-        "simulations_max": 7,
-        "has_results": false,
-        "independent_model_admission": false
-      },
+      "driver_holds_gpu_lock": true,
+      "frozen_sources_last_verified_at": "2026-10-05T07:09:18.260562+00:00",
+      "frozen_sources_last_verified_count": 44,
+      "queued_tasks": [
+        {
+          "ticket": 62,
+          "state": "queued",
+          "task": "natural_edge_original_harness_controls_v1",
+          "spec_sha256": "e68dff0e4bab1a708a9617552776e3ed86adcb6d7d53aa6c004c49728707fa65",
+          "model_calls_max": 0,
+          "compile_max": 7,
+          "simulations_max": 7,
+          "has_results": false,
+          "independent_model_admission": false
+        },
+        {
+          "ticket": 63,
+          "state": "queued",
+          "task": "native_reset_generated_research_controls_v1",
+          "source_files_verified": 44,
+          "spec_sha256": "f4889422e53aa00848e567694d8df5e351c2d79713134ddd543ec638738a4bc3",
+          "model_calls_max": 0,
+          "compile_max": 14,
+          "simulations_max": 14,
+          "generated_research_test": true,
+          "original_harness": false,
+          "independent_model_admission": false
+        }
+      ],
       "latest_own_stage": "U8_terminal_audit_preparation",
       "latest_own_stage_complete": true,
       "terminal_audit_executed": false,
-      "receipt": "05_handoff/independent_validation_20261004/phase_terminal_U8/LIVE_FOLLOWUP.json",
-      "receipt_sha256": "ba99dc7fe015094a2a44d9c7cd5be0f65391df4e3048f45019dfdef4baca7d38",
-      "workspace_free_bytes": 9930297344
+      "receipt": "05_handoff/independent_validation_20261004/phase_terminal_U8/LIVE_FOLLOWUP_20261005T0801Z.json",
+      "receipt_sha256": "64847b3eb161be86ad045d43e4e95cd38a89046b71626731f09cff6566b5f895",
+      "workspace_free_bytes": 9908449280
     },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -3194,7 +3210,7 @@
       "result": "03_analysis/helper_extraction_20261004/FULL156_OBSERVATION_20261004.json"
     }
   },
-  "updated_at": "2026-10-05T15:09:18+08:00",
+  "updated_at": "2026-10-05T16:01:07+08:00",
   "rtllm_admission_20261004": {
     "role": "dataset_admission_substage_not_full_model_experiment",
     "status": "complete_limited_functional_domain_not_full_experiment",
