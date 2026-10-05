@@ -1,3 +1,9 @@
+## 2026-10-05 新提分因子准备
+
+- `03_analysis/prompt_table_calibration_20261005/README.md`：68冻结资产、25研究控制，双环境各15纯检查；计划75原生，实际0，未提交FIFO。
+- `03_analysis/multidriver_guidance_20261005/README.md`：真实3818诊断后通用writer说明，13纯检查；0实际模型/EDA，收益未测。
+- `03_analysis/elaboration_feedback_pilot_20261005/TERMINAL_SHARED_SYNC_RECEIPT.json`：23804e3实际共享21文件及三台账，65已终审无增分。
+
 ## 2026-10-05 通用驱动修复说明
 
 `03_analysis/multidriver_guidance_20261005/README.md`：13纯检查，实际历史诊断仅文本适用确认；0新模型/EDA，实际收益未测，未来两臂同旧展开对照。

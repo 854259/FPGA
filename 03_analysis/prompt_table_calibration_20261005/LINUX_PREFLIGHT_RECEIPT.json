@@ -1,0 +1,61 @@
+{
+  "spec_sha256": "cc1abf90fc1e38fbfcaf51df53eab0b47572c532dd8bcc91a334ed4cbfde9d74",
+  "archive_sha256": "54f086b5e8d6c2432cf36712046b5ee59cff926098be3aeb24b2b0404fe39cf4",
+  "assets": 68,
+  "python": "3.12.3",
+  "tests_passed": 15,
+  "returncode": 0,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "source_unchanged": true,
+  "protected": {
+    "frozen_source_counts": {
+      "phase_full156_20261005_v1": 44,
+      "natural_edge_calibration_20261005_v1": 11,
+      "native_reset_contract_20261005_v1": 5,
+      "natural_worker_20261005_v1": 5,
+      "native_reset_calibration_20261005_v1": 44,
+      "natural_runtime_20261005_v1": 17,
+      "elaboration_feedback_pilot_20261005_v1": 38
+    },
+    "input_files": 936,
+    "official_files": 35,
+    "model_unchanged": true
+  },
+  "environment": {
+    "verified": true,
+    "tools": {
+      "xvlog": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xvlog",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xelab": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xelab",
+        "sha256": "8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2"
+      },
+      "xsim": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/xsim",
+        "sha256": "bd7f90022e6c421db9acce9151c408c079b331ba76637ff98994c75a660b4a43"
+      },
+      "vivado": {
+        "path": "/workspace/AMD/2026.1/Vivado/bin/vivado",
+        "sha256": "121b8c468f96f7ee750fc8f7d2386c54d047b204a5b8b7a5dada85f04997302d"
+      }
+    },
+    "udev_files": {
+      "libudev.so.1": "3a2d6266ccf18909d3ebccbf21e8125ce985359319fecc6c8172aeabf13ecf87"
+    },
+    "compiler_env": {
+      "PATH": "/workspace/AMD/2026.1/Vivado/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "VIVADO_BIN": "/workspace/AMD/2026.1/Vivado/bin",
+      "LD_LIBRARY_PATH": "/workspace/team/udev-stub"
+    },
+    "complete_inherited_environment_sha256": "634a3eb710d607ef6837ba492d60b59f00c1e0cdd141c790fa19586433d180a5",
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "disk_free_bytes": 9836085248,
+  "actual_experiment_submitted": false,
+  "stdout": "",
+  "stderr": "test_compile_or_elaboration_fail_not_semantic_success (test_calibration.CalibrationControls.test_compile_or_elaboration_fail_not_semantic_success) ... ok\ntest_complete_failed_discrimination_survives_full_auditor (test_calibration.CalibrationControls.test_complete_failed_discrimination_survives_full_auditor) ... ok\ntest_const_negatives_have_both_care_values_and_semantic_counts (test_calibration.CalibrationControls.test_const_negatives_have_both_care_values_and_semantic_counts) ... ok\ntest_extra_unlisted_native_pending_and_missing_receipts_reject (test_calibration.CalibrationControls.test_extra_unlisted_native_pending_and_missing_receipts_reject) ... ok\ntest_full_synthetic75_audit_is_only_protocol_test (test_calibration.CalibrationControls.test_full_synthetic75_audit_is_only_protocol_test) ... ok\ntest_generated25_three_commands_each_exact_plans (test_calibration.CalibrationControls.test_generated25_three_commands_each_exact_plans) ... ok\ntest_guard_cleanup_protected_model_release_reject (test_calibration.CalibrationControls.test_guard_cleanup_protected_model_release_reject) ... ok\ntest_missing_duplicate_unknown_care_and_x_retained_no_feedback (test_calibration.CalibrationControls.test_missing_duplicate_unknown_care_and_x_retained_no_feedback) ... ok\ntest_no_freeze_rejected_before_any_native_or_process_call (test_calibration.CalibrationControls.test_no_freeze_rejected_before_any_native_or_process_call) ... ok\ntest_pending_partial_receipt_conservative_inventory (test_calibration.CalibrationControls.test_pending_partial_receipt_conservative_inventory) ... ok\ntest_positive_and_single_cell_differ_exactly_one_care (test_calibration.CalibrationControls.test_positive_and_single_cell_differ_exactly_one_care) ... ok\ntest_sentinel_requires_complete_observation_and_actual_failure (test_calibration.CalibrationControls.test_sentinel_requires_complete_observation_and_actual_failure) ... ok\ntest_source_log_and_summary_numeric_tamper_reject (test_calibration.CalibrationControls.test_source_log_and_summary_numeric_tamper_reject) ... ok\ntest_true_rc_bool_signal_timeout_environment_binding_reject (test_calibration.CalibrationControls.test_true_rc_bool_signal_timeout_environment_binding_reject) ... ok\ntest_wrong_false_acceptance_preserved_without_qualification (test_calibration.CalibrationControls.test_wrong_false_acceptance_preserved_without_qualification) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.255s\n\nOK\n"
+}

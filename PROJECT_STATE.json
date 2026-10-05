@@ -4449,7 +4449,7 @@
     "quota_stop_percent": 97,
     "whole_task_fifo": true,
     "formal_deployment_changed": false,
-    "continuation_status": "full156 P77.44 verified; FIFO65 actual no gain rejected; prioritize full-care Kmap feedback and repair effectiveness",
+    "continuation_status": "FIFO65 no gain audited/shared; Kmap25-control native calibration frozen/preflight; guidance13 pure only",
     "controller_pid": 3292932,
     "controller_receipt": "03_analysis/full156_postflight_20261004/CONTINUATION_LAUNCH.json",
     "linux_boundary_tests_passed": 12,
@@ -5929,5 +5929,22 @@
     "RUN_SPEC_created": false,
     "future_control_contains_same_elaboration": true,
     "report": "03_analysis/multidriver_guidance_20261005/README.md"
+  },
+  "prompt_table_calibration_20261005": {
+    "status": "frozen_dual_environment_preflight_only_not_submitted",
+    "assets": 68,
+    "spec_sha256": "cc1abf90fc1e38fbfcaf51df53eab0b47572c532dd8bcc91a334ed4cbfde9d74",
+    "local_checks": 15,
+    "linux_checks": 15,
+    "controls": 25,
+    "planned_native_commands": 75,
+    "actual_native_commands": 0,
+    "actual_model_calls": 0,
+    "actual_FIFO_submitted": false,
+    "original_harness": false,
+    "generated_research_test": true,
+    "score_gain_measured": false,
+    "adoption": false,
+    "report": "03_analysis/prompt_table_calibration_20261005/README.md"
   }
 }
