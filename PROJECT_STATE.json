@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-05T21:43:20+08:00",
+  "checked_at": "2026-10-05T22:13:28+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3127,23 +3127,23 @@
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 61,
-  "latest_own_stage": "U16 source binding queued; U15 sealed recovery completed",
+  "latest_own_stage": "U16 source binding and U17 combined finite integration queued; U15 recovery completed",
   "latest_own_stage_complete": false,
   "latest_own_stage_status": "queued_not_executed",
-  "latest_own_ticket": 81,
-  "own_monitor_pid": 4117004,
+  "latest_own_ticket": 82,
+  "own_monitor_pid": 4173192,
   "other_active_tickets": [
     {
       "ticket": 80,
       "state": "running",
       "task_name": "phaseP_stability156x5_fresh_P_v1",
-      "completed_rows": 27,
+      "completed_rows": 69,
       "planned_rows": 780,
-      "actual_model_requests": 28
+      "actual_model_requests": 72
     }
   ],
-  "next_own_stage": "Combined finite native judge and receipt integration, draft not AMD-verified; no duplicate generation or repeated passed controls",
-  "receipt": "05_handoff/independent_validation_20261004/rtllm_phaseP_binding_U16/LAUNCH_PREPARATION_CHECK.json"
+  "next_own_stage": "Observe frozen U16 then U17 exits; audit P stability terminal evidence without duplicate generation",
+  "receipt": "05_handoff/independent_validation_20261004/rtllm_finite_integration_U17/LAUNCH_PREPARATION_CHECK.json"
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5358,7 +5358,7 @@
     "user_visibility_decision_at": "2026-10-05 20:36:38 +08:00"
   },
   "peer_result_assimilation_20261005": {
-    "updated_at": "2026-10-05T21:10:00+08:00",
+    "updated_at": "2026-10-05T22:14:00+08:00",
     "source_branch": "codex/autonomous-rtl-20261004",
     "source_commit": "89b4f391448a438f814c96023136519da766fb60",
     "scope": "public terminal review, current AMD queue and exact U8/P-stability source comparison; no new model/EDA",
@@ -5373,10 +5373,10 @@
     "source_mismatches": 0,
     "task_order_equal": true,
     "stability_ticket": 80,
-    "stability_state": "queued",
+    "stability_state": "running",
     "stability_spec_sha256": "589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15",
     "stability_scope": "P only, known development156x5,780 outputs,max1560 calls,12h stage safety cap; not a paired three-arm or final official result",
-    "next": "Reuse completed compatible stability evidence after terminal audit; do not duplicate P-only work or splice later A/B into falsely contemporaneous pairs. Continue own U15/RTLLM binding.",
+    "next": "Audit P-only stability when complete; do not splice later A/B into contemporaneous pairs. U15 completed; U16 and U17 queued.",
     "private_archives_reaudited_this_sync": false,
     "new_model_calls": 0,
     "new_eda_calls": 0,
@@ -5384,7 +5384,7 @@
     "full_batch_completed": false
   },
   "rtllm_phaseP_binding_U16_20261005": {
-    "updated_at": "2026-10-05T21:24:00+08:00",
+    "updated_at": "2026-10-05T22:14:00+08:00",
     "status": "queued_not_executed",
     "source_commit": "237dfaa028eba5219cb752f81982e63107de1b50",
     "ticket": 81,
@@ -5410,16 +5410,16 @@
     "execution_ready": false,
     "finite_judge_bound": false,
     "full_batch": false,
-    "next": "Audit U15/U16 then bind isolated finite native judge and actual receipt normalization; retain unscored15 and never reuse official L0-L3 as RTLLM score."
+    "next": "Frozen U16 remains queued; combined native finite integration U17 is queued after it. Preserve both versions and distinguish binding checks from native judge acceptance."
   },
   "acceleration_revision_20261005": {
-  "updated_at": "2026-10-05T21:45:00+08:00",
+  "updated_at": "2026-10-05T22:14:00+08:00",
   "user_priority": "Accelerate verified quality outcomes and avoid serial micro-pretests",
   "retained_candidate": "Frozen phasefull P",
   "active_quality_run_ticket": 80,
   "new_model_runs_started": 0,
   "reuse_completed_U15": true,
-  "finite_judge_code": "written_not_AMD_validated",
+  "finite_judge_code": "frozen_ee724dd_queued_ticket82_not_AMD_validated",
   "combined_next_acceptance": [
     "historical minimum observation counts",
     "candidate compilation vs environment failures",
@@ -5441,5 +5441,38 @@
     "decision": "Do not expand unchanged semantic suffix",
     "independent_tasks": 0
   }
-}
+},
+  "rtllm_finite_integration_U17_20261005": {
+    "updated_at": "2026-10-05T22:14:00+08:00",
+    "status": "queued_not_executed",
+    "source_commit": "ee724dd1fcc634eb87f6e382dce2031723e85e34",
+    "ticket": 82,
+    "monitor_pid": 4173192,
+    "monitor_verified": true,
+    "accepted_at_utc": "2026-10-05T14:06:35.268323+00:00",
+    "stage_started": false,
+    "tested": false,
+    "real_model_calls_budget": 0,
+    "synthetic_http_post_cap": 5,
+    "native_control_pairs": 29,
+    "additional_syntax_control": 1,
+    "actual_solver_child_cap": 3,
+    "finite_queue_judgement_cap": 3,
+    "stage_timeout_s": 2700,
+    "slot_minutes": 50,
+    "dual_verified_source_files": 9,
+    "historical_control_files_verified": 64,
+    "blocked_unscored": 15,
+    "independent_tasks": 0,
+    "original_frozen_spec_sha256": "a1c771ff9bc29e9cdcc4b23825aaf8cfb29e07121ffc10520af93196e132b88c",
+    "private_inputs_sha256": "614866af373ad29422636c9d18a6a5aa6976571f06d48eec86570b2aaff0b603",
+    "private_receipt": "05_handoff/independent_validation_20261004/rtllm_finite_integration_U17/LAUNCH_PREPARATION_CHECK.json",
+    "private_receipt_sha256": "4217c8c300154ade4fe1333a672aab8b05a65d392c2829c68ef6739f479f365b",
+    "private_cleanup_receipt_sha256": "62771013173bd9467e785e601ef396965ff4630f778433e67bb7fde242fd9a76",
+    "redundant_transfer_zip_removed_both_sides": true,
+    "own_temporary_residue": 0,
+    "full_batch": false,
+    "quality_claim": false,
+    "next": "Apply frozen all-controls exit; preserve any failure; no automatic real model expansion"
+  }
 }

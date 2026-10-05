@@ -1,6 +1,6 @@
 {
   "schema": "finite_integration_U17_frozen_v1",
-  "status": "frozen_not_launched",
+  "status": "queued_not_executed",
   "purpose": "One combined changed-path acceptance: all29 native control pairs, actual A/P/B children with synthetic HTTP, source-bound sealed report normalization",
   "private_inputs_sha256": "614866af373ad29422636c9d18a6a5aa6976571f06d48eec86570b2aaff0b603",
   "historical_contract_sha256": "7e381b00f7968dcb217cfab41a2c28faf0d8271706f1729024a0aa9e07dfa14f",
@@ -38,5 +38,18 @@
     "725 is capacity for a future435-row plan, not a new approved model budget",
     "Unknown elaboration failures still require diagnosis and cannot be silently scored",
     "Existing ticket80 and ticket81 remain frozen;no duplicate generation, no model restart or deployment"
-  ]
+  ],
+  "execution": {
+    "frozen_source_commit": "ee724dd1fcc634eb87f6e382dce2031723e85e34",
+    "original_frozen_spec_sha256": "a1c771ff9bc29e9cdcc4b23825aaf8cfb29e07121ffc10520af93196e132b88c",
+    "accepted_at_utc": "2026-10-05T14:06:35.268323+00:00",
+    "ticket": 82,
+    "monitor_pid": 4173192,
+    "monitor_verified": true,
+    "tested": false,
+    "launch_receipt_sha256": "4217c8c300154ade4fe1333a672aab8b05a65d392c2829c68ef6739f479f365b",
+    "preparation_cleanup_sha256": "62771013173bd9467e785e601ef396965ff4630f778433e67bb7fde242fd9a76",
+    "redundant_transfer_removed_both_sides": true,
+    "frozen_remote_files_unchanged": true
+  }
 }
