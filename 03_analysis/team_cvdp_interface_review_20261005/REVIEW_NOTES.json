@@ -1,0 +1,8 @@
+{
+  "initial_manifest_assumption": "Expected wrapped files map; archive is flat path-SHA map. Failure retained before claiming file validation; corrected actual schema and all255 SHA verified.",
+  "initial_reviewer_sha256": "6caf8b29328e2050ddfeb1c5bb617be6f74f8afc20e34edaab4311c900994d27",
+  "second_reviewer_sha256": "30b47c40d35beaaf4a9dc4da58550e37fc3533abe111bc9f56ecaa7484a1ed73",
+  "AST_initial_rejections": "Pure-function calls all/any/enumerate missing from allowlist; inspected both fixed AST call sets, added only these side-effect-free builtins. Full driver execution and IO still forbidden.",
+  "model_calls": 0,
+  "eda_calls": 0
+}

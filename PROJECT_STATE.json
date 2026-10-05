@@ -5285,9 +5285,29 @@
     "monitor_pid": 3675146,
     "monitor_starttime": "843503275",
     "queued_at_utc": "2026-10-05T00:49:43.273723+00:00",
-    "observed_samples": 1,
-    "observed_model_requests": 1,
+    "observed_samples": 10,
+    "observed_model_requests": 14,
     "final_score_available": false,
-    "last_observed_at_epoch": 1791161432.0476203
+    "last_observed_at_epoch": 1791161821.0013242
+  },
+  "team_cvdp_interface_review_20261005": {
+    "status": "readonly_S4_S5_archived255_files_verified",
+    "reviewer_sha256": "d7233d0022b0e6e444e795a9c82c4fb14ea93119f8d8cf6a98ff2a7a3f6aa487",
+    "dataset_records": 302,
+    "structural_cohort": 167,
+    "S4_mechanically_reversible": 56,
+    "S5_mechanically_reversible": 54,
+    "constructed_native_pairs_each": 8,
+    "checks_per_mode": 5,
+    "iverilog_compile_receipts": 36,
+    "vvp_sim_receipts": 36,
+    "literal_rewrite_counterexample_verified": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "independent_tasks_admitted": 0,
+    "adoption": false,
+    "teammate_modified": false,
+    "report": "03_analysis/team_cvdp_interface_review_20261005/README.md",
+    "goal_status": "active"
   }
 }

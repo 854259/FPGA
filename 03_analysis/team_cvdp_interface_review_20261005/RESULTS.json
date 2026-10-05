@@ -1,0 +1,75 @@
+{
+  "schema": "team_cvdp_interface_readonly_review_v1",
+  "stages": [
+    {
+      "stage": "S4",
+      "archive_sha256": "72be46c8150f8bfed9bfeb335fb51979592081bd9c8b4a0da31502bda06ac157",
+      "manifest_files_verified": 120,
+      "driver_sha256": "22658a7ca54687254e021cd767303142dd1c0db0038530df9619522f047eb3a0",
+      "fixed_pure_mapping_functions_reapplied": true,
+      "original_records": 302,
+      "structural_cohort": 167,
+      "status_counts": {
+        "mechanically_reversible_needs_contract_review": 56,
+        "abstain": 111
+      },
+      "abstention_reasons": {
+        "name_occurrence_outside_explicit_module_slot": 95,
+        "original_name_absent": 16
+      },
+      "constructed_native_pairs_verified": 8,
+      "checks_each": 5,
+      "actual_iverilog_compile_receipts_verified": 17,
+      "actual_vvp_sim_receipts_verified": 17,
+      "quoted_literal_counterexample_verified": false,
+      "actual_dataset_eda": 0,
+      "actual_model_requests": 0,
+      "independent_natural_tasks_admitted": 0,
+      "adoption": false,
+      "limits": [
+        "Icarus constructed controls, not Vivado official grading or natural dataset oracle calibration.",
+        "Fixed functions validate exact reversible transformation; reversibility alone does not establish semantics.",
+        "Natural references empty; preserved original harness/context, positive/negative calibration and exposure review still required.",
+        "No source/driver/toolchain from teammate was modified or executed as a full stage; no model/EDA call in this review."
+      ]
+    },
+    {
+      "stage": "S5",
+      "archive_sha256": "17b28d710dbe42bc41c4648c222dc195ab7e199bc99b92fb4a27fa402076997e",
+      "manifest_files_verified": 135,
+      "driver_sha256": "9846de2dd7802ee3d693e7179cac0ae510fafeac3b6916373570aa3a3f1e077a",
+      "fixed_pure_mapping_functions_reapplied": true,
+      "original_records": 302,
+      "structural_cohort": 167,
+      "status_counts": {
+        "mechanically_reversible_needs_contract_review": 54,
+        "abstain": 113
+      },
+      "abstention_reasons": {
+        "name_occurrence_outside_explicit_module_slot": 95,
+        "original_name_absent": 16,
+        "unbalanced_double_quote": 2
+      },
+      "constructed_native_pairs_verified": 8,
+      "checks_each": 5,
+      "actual_iverilog_compile_receipts_verified": 19,
+      "actual_vvp_sim_receipts_verified": 19,
+      "quoted_literal_counterexample_verified": true,
+      "actual_dataset_eda": 0,
+      "actual_model_requests": 0,
+      "independent_natural_tasks_admitted": 0,
+      "adoption": false,
+      "limits": [
+        "Icarus constructed controls, not Vivado official grading or natural dataset oracle calibration.",
+        "Fixed functions validate exact reversible transformation; reversibility alone does not establish semantics.",
+        "Natural references empty; preserved original harness/context, positive/negative calibration and exposure review still required.",
+        "No source/driver/toolchain from teammate was modified or executed as a full stage; no model/EDA call in this review."
+      ]
+    }
+  ],
+  "reviewer_sha256": "d7233d0022b0e6e444e795a9c82c4fb14ea93119f8d8cf6a98ff2a7a3f6aa487",
+  "model_calls": 0,
+  "eda_calls": 0,
+  "adoption": false,
+  "independent_natural_tasks": 0
+}
