@@ -1,4 +1,123 @@
 {
+  "serial_timer_cp_worker_controls_20261007": {
+    "schema": "serial_timer_cp_worker_public_controls_v1",
+    "goal_status": "active",
+    "goal_achieved": false,
+    "producer_sha256": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+    "common_fallback_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+    "public_source_hashes": {
+      "worker.py": "1eac9c3b9bac6581bf0aa137fdead50835cf80483d000848554e298f2a7ed90a",
+      "factor_proof.py": "bda081df86cd2e6c9b7d597337079ae220a8398723483f9485eb50dc42bbe0fe",
+      "test_worker.py": "f35d4751740298cabb8a07f32d90b9fc7c32e5feac41357982e9cc4636b24e62"
+    },
+    "source_files": 75,
+    "controls": 20,
+    "old17_revalidated_on_new_adapter_source": true,
+    "new_controls": 3,
+    "test_names": [
+      "test_abstained_candidate_uses_same_baseline_and_preserves_arm (__main__.WorkerControls.test_abstained_candidate_uses_same_baseline_and_preserves_arm) ... ok",
+      "test_control_uses_original_actual_arm_without_synthesis (__main__.WorkerControls.test_control_uses_original_actual_arm_without_synthesis) ... ok",
+      "test_environment_fault_is_not_efficiency_or_score_gain (__main__.WorkerControls.test_environment_fault_is_not_efficiency_or_score_gain) ... ok",
+      "test_exact_common_baseline_one_delta (__main__.WorkerControls.test_exact_common_baseline_one_delta) ... ok",
+      "test_forged_emission_hash_or_contract_is_rejected_before_output (__main__.WorkerControls.test_forged_emission_hash_or_contract_is_rejected_before_output) ... ok",
+      "test_generated_zero_without_HTTP_or_fallback (__main__.WorkerControls.test_generated_zero_without_HTTP_or_fallback) ... ok",
+      "test_matching_interface_and_CRLF_emit_zero_request (__main__.WorkerControls.test_matching_interface_and_CRLF_emit_zero_request) ... ok",
+      "test_missing_freeze_spec_cannot_pass_CLI_gate (__main__.WorkerControls.test_missing_freeze_spec_cannot_pass_CLI_gate) ... ok",
+      "test_model_route_zero_journal_is_rejected (__main__.WorkerControls.test_model_route_zero_journal_is_rejected) ... ok",
+      "test_native_log_hash_cannot_be_forged (__main__.WorkerControls.test_native_log_hash_cannot_be_forged) ... ok",
+      "test_native_semantic_mismatch_is_retained_without_repair (__main__.WorkerControls.test_native_semantic_mismatch_is_retained_without_repair) ... ok",
+      "test_native_source_mutation_retains_before_after_and_rejects (__main__.WorkerControls.test_native_source_mutation_retains_before_after_and_rejects) ... ok",
+      "test_negative_signal_return_is_not_normal_compile_failure (__main__.WorkerControls.test_negative_signal_return_is_not_normal_compile_failure) ... ok",
+      "test_nonempty_interface_abstains_and_raw_CRLF_is_bound (__main__.WorkerControls.test_nonempty_interface_abstains_and_raw_CRLF_is_bound) ... ok",
+      "test_normal_compile_failure_keeps_candidate_without_second_pipeline (__main__.WorkerControls.test_normal_compile_failure_keeps_candidate_without_second_pipeline) ... ok",
+      "test_original_input_mutation_is_rejected_after_both_routes (__main__.WorkerControls.test_original_input_mutation_is_rejected_after_both_routes) ... ok",
+      "test_overlong_decimal_abstains_to_original_one_and_two_request_fallback (__main__.WorkerControls.test_overlong_decimal_abstains_to_original_one_and_two_request_fallback) ... ok",
+      "test_pending_native_qualification_cannot_pass_actual_CLI_freeze (__main__.WorkerControls.test_pending_native_qualification_cannot_pass_actual_CLI_freeze) ... ok",
+      "test_preparation_binding_and_original_fallback_source_proof (__main__.WorkerControls.test_preparation_binding_and_original_fallback_source_proof) ... ok",
+      "test_supervision_failures_raise_and_do_not_claim_completed (__main__.WorkerControls.test_supervision_failures_raise_and_do_not_claim_completed) ... ok"
+    ],
+    "receipt_sha256": "f33c3f05eec84263b8f01cba3a690e244c0e23c3d87dbca06d203666bbcdcd47",
+    "archive": {
+      "sha256": "a316c6998ac30aa3818423c4b7fdcf97eb2d7f13b79918b20087c106b8ce8973",
+      "members": 86,
+      "every_member_bound_both_ends": true
+    },
+    "process": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/serial_timer_cp_worker_pure_20261007_v1/test_worker.py"
+      ],
+      "cwd": "/workspace/team/runs/fpga_owner/serial_timer_cp_worker_pure_20261007_v1",
+      "cap_s": 40,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 1553254,
+        "state": "T",
+        "starttime": "859314980",
+        "pgid": 1553254,
+        "sid": 1553254,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 0.2996766082942486,
+      "leader_reaped": true,
+      "stdout_sha256": "6b6e90cdd09d7ddc2c4d9be5a52e03b805a3cf71a045020f30197b0dde86f6eb",
+      "stdout_bytes": 2977,
+      "normal_completion": true
+    },
+    "unittest_seconds": 0.056,
+    "protected_roots": 109,
+    "protected_unique_files": 7389,
+    "immutable_original103_capture_sha256": "ecebe107e4a1ab6a16ce9ea11b1272734086719767c32f24dc130ca56b4e961e",
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "new_fifo": false,
+    "native_qualified": false,
+    "natural_score_measured": false,
+    "adoption": false,
+    "independent_unseen": 0,
+    "native_original_ticket": 107,
+    "native_original_spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+    "cli_requires_completed_original_native_audit_and_archive": true,
+    "peer_comment_read": 6024975216,
+    "peer_pr": "https://github.com/854259/FPGA/pull/83",
+    "peer_review_sha256": "a89563280f3b35c9a97a76f236f2846f4e3d8b6dc94ff6b791fef98a0bee2501",
+    "peer_acceptance_scope": "Producer18/fresh156 and new16+scope1/117-source native preparation only. New worker20 and native/score qualification not independently accepted.",
+    "source_change": "Same9080 producer and common phase-P fallback bytes. New worker route labels and required original107 native/archive qualification gate. New worker/proof/test LF normalization only; upstream, fallback and producer remain exact.",
+    "prestart_static_failure_preserved": true,
+    "pending": [
+      "Original107 finite binary native execution and original terminal audit/archive binding",
+      "CP stage/audit/metrics adaptation and source-specific preparation",
+      "Fixed single-factor C/P7",
+      "Fresh complete paired156 if screen has net gain and no extra requests"
+    ],
+    "unchanged_score_budget": {
+      "tokens": 8192,
+      "max_requests": 2,
+      "repairs": 1,
+      "solver_outer_seconds": 300,
+      "judge_seconds": 300,
+      "supervisor_seconds": 360,
+      "original_xz_judge_unchanged": true
+    },
+    "goal": {
+      "historical_L3": 113,
+      "required_full_L3": 120,
+      "required_weighted": 0.8,
+      "all_paired_grades_nondecreasing": true,
+      "P_requests_must_not_exceed_C_for_total_unchanged_grade_and_all_historical_correct": true
+    },
+    "limitation": "Explicit FAKE workflow controls validate route wiring, cost bookkeeping and exception handling only; no actual compiler/model call, RTL functional qualification, natural score, hidden/unseen or adoption evidence."
+  },
   "serial_timer_native_v2_fifo_20261007": {
     "schema": "serial_timer_native_v2_original107_public_queue_receipt_v1",
     "ticket": 107,
