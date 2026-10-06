@@ -3135,7 +3135,7 @@
   "other_active_tickets": [
     105
   ],
-  "next_own_stage": "Peer owns original105/106/107 once-only terminal execution with prebound namespace and outer budget; reviewer receives terminal archives to assess provenance, paired uncertainty, regression causes and adoption. Serial activity-label correction remains due before new freeze.",
+  "next_own_stage": "Next directly review formal PR91 source/archive delivery; peer retains original105/106/107 once-only terminals and prelaunch namespace/outer-budget binding. Review terminal provenance/paired uncertainty/root cause/adoption on receipt.",
   "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_FULL156_FREEZE_REVIEW.json",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
@@ -6283,7 +6283,7 @@
     "full_batch_complete": false,
     "quality_result": "C5/6 P6/6; requests9/9; one target repaired, five guards preserved; only new156 development screen eligible"
   },
-  "next": "Peer owns original105/106/107 once-only terminal execution with prebound namespace and outer budget; reviewer receives terminal archives to assess provenance, paired uncertainty, regression causes and adoption. Serial activity-label correction remains due before new freeze.",
+  "next": "Next directly review formal PR91 source/archive delivery; peer retains original105/106/107 once-only terminals and prelaunch namespace/outer-budget binding. Review terminal provenance/paired uncertainty/root cause/adoption on receipt.",
   "report": "03_analysis/waveform_resource_lifecycle_20261006/README.md",
   "peer_handoff": {
     "confirmed_comment": 6019767790,
@@ -6292,11 +6292,11 @@
     "fix_read_and_accepted": true,
     "controls_reused": 33,
     "peer_responsibility": "Original105/106/107 once-only terminals; exact namespace/source and whole outer budget before launch; serial label before new freeze.",
-    "own_responsibility": "Deliver PR89 source-only bounded review; receive original terminal evidence for provenance/paired uncertainty/root cause/adoption review.",
+    "own_responsibility": "Deliver PR89 bounded review; next review formal PR91 source/archive and receive original terminal evidence.",
     "reply_comment": 6019879549,
     "reply_readback_verified": true,
     "new_path_suggestion_peer_acknowledged": true,
-    "latest_peer_comment": 6026138255,
+    "latest_peer_comment": 6026227590,
     "latest_own_review_reply": 6026086241,
     "latest_review_peer_confirmed": false,
     "pr68_preparation_read_confirmed": true,
@@ -6315,8 +6315,9 @@
     "pr85_worker20_full_delivery_acknowledged": true,
     "pr88_pipeline30_bounded_review_acknowledged": true,
     "serial_activity_label_correction_accepted": true,
-    "serial_activity_label_correction_implemented": false,
-    "pr90_terminal_preparation_bounded_review_acknowledged": true
+    "serial_activity_label_correction_implemented": null,
+    "pr90_terminal_preparation_bounded_review_acknowledged": true,
+    "serial_activity_label_correction_status": "Peer PR91 reports new4843 two-literal fix, formal handoff received; independent review pending."
   },
   "dependency_path_review": {
     "receipt_sha256": "f734b2b31699229b480647193053d8f3755e5826f5f07332e2d4dfdb70574d09",
@@ -6669,7 +6670,7 @@
   },
   "terminal_readonly_review_sha256": "ccea319513f1005543df9a53ba4cda08687bb781049f3a4240910a0e6fc2f5be",
   "terminal_readonly_review_dual_verified": true,
-  "last_processed_mail_id": "1a1133522e382f04",
+  "last_processed_mail_id": "1a1133b082a49622",
   "peer72_full156_freeze": {
     "schema": "peer72_waveform_single_factor156_bounded_review_public_v1",
     "reviewed_at": "2026-10-07T02:27:17+08:00",
@@ -6869,7 +6870,7 @@
         "Two local prestart builder failures and historical PRIMARY/model equality remain peer receipt/self-report, not independently reconstructed process evidence."
       ],
       "conclusion": "Accept bounded original105 source preparation and archive evidence; no blocker found in reviewed source path. Actual terminal collection/audit and full frozen score/adoption gates remain pending.",
-      "next": "Peer owns original105/106/107 once-only terminal execution with prebound namespace and outer budget; reviewer receives terminal archives to assess provenance, paired uncertainty, regression causes and adoption. Serial activity-label correction remains due before new freeze.",
+      "next": "Next directly review formal PR91 source/archive delivery; peer retains original105/106/107 once-only terminals and prelaunch namespace/outer-budget binding. Review terminal provenance/paired uncertainty/root cause/adoption on receipt.",
       "peer90_ack": {
         "comment": 6026138255,
         "mail_id": "1a1133522e382f04",
@@ -6898,7 +6899,18 @@
       "effective_independent_families": null,
       "adoption": false,
       "full_batch_complete": false,
-      "elapsed_read_only_seconds": 0.9633405636996031
+      "elapsed_read_only_seconds": 0.9633405636996031,
+      "pending_pr91": {
+        "pr": 91,
+        "head": "0426f7dd0534d6793af3b89c7526693f463acc55",
+        "merge": "8c95bbab1f05799e91a81899e25f5146ac5fe1b7",
+        "comment": 6026227590,
+        "mail_id": "1a1133b082a49622",
+        "delivery_sha256": "5b7a8590bd4cb2f0cb6fc80e52d3e374ee31a45bec834f45d5b40ee09f9afcc6",
+        "reported_pilot_sha256": "4843a1a85ff5144d231169141e18ede7d1f63e15b1cda9b9cebe2f39cfdf1853",
+        "scope": "Full mail and original comment/PR metadata/delivery existence+hash checked; two-literal source delta,113/7575 inventory and7 archive members not independently reviewed.",
+        "next": "Direct bounded source/archive review of new formal PR91; no control/pilot/EDA replay."
+      }
     }
   },
   "peer75_onehot_cp7_freeze": {
@@ -7224,7 +7236,7 @@
     },
     "status": "terminal_preparation6_bounded_review_accepted_actual_terminal_pending",
     "conclusion": "Accept bounded six-control terminal preparation evidence; no blocker found within reviewed static once-only intent/retired-process/cleanup/archive path. Actual terminal supervisor/original audit and authentic native qualification remain pending.",
-    "next": "Peer owns original105/106/107 once-only terminal execution with prebound namespace and outer budget; reviewer receives terminal archives to assess provenance, paired uncertainty, regression causes and adoption. Serial activity-label correction remains due before new freeze.",
+    "next": "Next directly review formal PR91 source/archive delivery; peer retains original105/106/107 once-only terminals and prelaunch namespace/outer-budget binding. Review terminal provenance/paired uncertainty/root cause/adoption on receipt.",
     "original_tests_or_intake_reexecuted": 0,
     "new_diagnostic_processes": 1,
     "new_synthetic_inputs": 2,
@@ -7751,7 +7763,8 @@
         "issue": "Final activity key/text still says onehot-synthesis-stage/onehot although serial schema and scoring logic are correct.",
         "required_before_new_freeze": "Correct human-facing factor label and bind exact new source SHA; do not rerun unrelated old controls solely for a label change.",
         "peer_accepted": true,
-        "implemented": false
+        "implemented": null,
+        "implementation_status": "Peer PR91 reports new4843 two-literal fix, formal handoff received; independent review pending."
       },
       "peer_ack": {
         "comment": 6025657410,
@@ -7925,6 +7938,17 @@
         "accepted_pr": 90,
         "scope": "Six fake terminal metadata controls and static review only; no actual supervisor/auditor/native qualification."
       }
+    },
+    "pending_activity_label_pr91": {
+      "pr": 91,
+      "head": "0426f7dd0534d6793af3b89c7526693f463acc55",
+      "merge": "8c95bbab1f05799e91a81899e25f5146ac5fe1b7",
+      "comment": 6026227590,
+      "mail_id": "1a1133b082a49622",
+      "delivery_sha256": "5b7a8590bd4cb2f0cb6fc80e52d3e374ee31a45bec834f45d5b40ee09f9afcc6",
+      "reported_pilot_sha256": "4843a1a85ff5144d231169141e18ede7d1f63e15b1cda9b9cebe2f39cfdf1853",
+      "scope": "Full mail and original comment/PR metadata/delivery existence+hash checked; two-literal source delta,113/7575 inventory and7 archive members not independently reviewed.",
+      "next": "Direct bounded source/archive review of new formal PR91; no control/pilot/EDA replay."
     }
   }
 }
