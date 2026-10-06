@@ -1,0 +1,107 @@
+{
+  "schema": "onehot_cp7_pipeline28_public_v1",
+  "goal_status": "active",
+  "new_pipeline_controls_valid": 28,
+  "reused_pipeline_controls": 27,
+  "first_corrected_pipeline_control": 1,
+  "reused_worker_controls": 17,
+  "worker_reuse_scope": "Original16 plus corrected1 from PR66; no new17 rerun",
+  "reused_archive_control": 1,
+  "archive_reuse": {
+    "original_receipt_sha256": "22d6fc2290fc84729ed39d3e065a5cb2074497c5cdcdefdb2ec9f2222b07304d",
+    "method": "test_original_safe_archive_unpack_rejects_inventory_hash_and_path_attacks",
+    "unchanged_method_ast": true,
+    "helper_sha256": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+    "new_archive_gate_tests": 0
+  },
+  "pure_checks_sha256": "8ffdb184f68b6c482481fc46d80fb2a7ea66a1c75541c6a7e254054d4450b3d5",
+  "source_manifest_sha256": "3c2acf8eddf070919e5a03270888e56b77233ca6b73a64248974c2097bff6961",
+  "public_source_hashes": {
+    "pilot.py": "617429298ffcba4524bb9435a93f5d430e46ace0a9ba164fff601b203bb4e739",
+    "audit.py": "fe87ec80bb812eea9316f6cc4c21ead1a68b04d9355619bfb5d99183914c9561",
+    "metrics.py": "46a84193c22550cecfe85885f048adabb42cdc83b725399da0a331f767fb92b6",
+    "preparation_inputs.py": "727b4f86993cb3d12558d80b31255b387acb03c1a224d6b72fbc690491161f83",
+    "test_cp_metrics.py": "95d3ef8d737e7af79bdd4316c023a88196096a742f35e939f4a81cd08fabbf63",
+    "test_stage_binding.py": "680e4a11e3b0ef72dcb373a370d43c0dffcdb65f1fc10195b8f6ea8023920337",
+    "test_audit.py": "027ad9ea402284b8d7a41e6a30d462eabac98a3ca86f50ac198441c388dd2c7b"
+  },
+  "worker_sha256": "e3d53648c31fa77acf4b9a30e91eee70252651f6a85399985e40db83e3585b6b",
+  "producer_sha256": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+  "fallback_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+  "production_unchanged_during_single_test_fix": true,
+  "pipeline_source_assets": 118,
+  "current_guard_groups": 94,
+  "current_guard_summed_source_assets": 6168,
+  "external_inventory_root_groups": 90,
+  "external_unique_immutable_files": 6021,
+  "external_legacy_group_summed_source_assets": 5811,
+  "scope": "All immutable paths actually read/digested by established90-group guard, regrouped by original root without omissions;94-group supervisor also protects later failures and original102 terminal.",
+  "fixed_screen": {
+    "tasks": 7,
+    "paired_outputs": 14,
+    "target_numbers": [
+      143
+    ],
+    "guard_numbers": [
+      45,
+      54,
+      71,
+      115,
+      127,
+      138
+    ],
+    "max_actual_model_requests": 28
+  },
+  "solver_wallclock": "Original outer owned worker command; includes parser, abstention, fallback and public feedback; absolute300s",
+  "mechanical_zero_requires_bound_evidence": true,
+  "model_route_requests": [
+    1,
+    2
+  ],
+  "each_fixed_task_request_cost_cannot_increase_even_if_grade_improves": true,
+  "retained_failures": [
+    {
+      "version": "v1",
+      "phase": "pre-test rejection: archive unittest warning split status across lines",
+      "new_tests": 0,
+      "receipt": "a6c44196a3be71d6262df4dc227a15776270a0e1d3ab1c8effeab99e33f04ed8",
+      "archive": "bcf592581d8d14caeb921066960782f5ff39849085cc81fff1a5ab8ba362b40c"
+    },
+    {
+      "version": "v2",
+      "phase": "pre-test rejection: notice identifier contained colon; validation before shared writes",
+      "new_tests": 0,
+      "receipt": "e89d7378ef46e95f19b08f9e768a55a21d1e807ec4f2120ee60b46d098dafd73",
+      "archive": "a329e3cf83d08e2789079b9d779e132e02bd32c9924d7a8521b350d4a447051e"
+    },
+    {
+      "version": "v3",
+      "phase": "28 tests ran,27passed/1 synthetic expectation failed; actual7/7 aggregate request tie is allowed but per-task extra cost still rejected",
+      "new_tests": 28,
+      "receipt": "8ed2ad80628186ee6a9cdf480f3002769bf4f6baaed2706258b1f43bd70433c6",
+      "archive": "51a3b9c9e523f51a70cbffc62899e4cd3f7a6bae8429dd92eed6073a093bff7e"
+    }
+  ],
+  "single_test_fix": "One mechanical saving and one extra fallback request now tie7/7; assertLessEqual tests aggregate<=C while the unchanged per-task cost gate must reject.",
+  "valid_archive": {
+    "archive_sha256": "08d958e611997db7d6cca805a5137708d91db547f2c2d7f0d85521521e7a480a",
+    "archive_bytes": 740576,
+    "archive_members": 135,
+    "every_member_bound_both_ends": true
+  },
+  "model_calls": 0,
+  "eda_calls": 0,
+  "new_fifo": false,
+  "new_natural_score": false,
+  "cp7_frozen": false,
+  "qualified_for_full156": false,
+  "adoption": false,
+  "finite_native_widths": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "natural_width10_still_unmeasured": true,
+  "next_action": "Fresh source/environment/dependency-path admission and freeze CP7, then one FIFO paired screen; original grade/cost/provenance audit before any new full156."
+}
