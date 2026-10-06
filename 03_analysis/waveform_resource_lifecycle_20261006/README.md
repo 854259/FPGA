@@ -174,6 +174,18 @@ PR62收尾计划的完整审计上限为180秒，而原97源内的owned_exec只�
 
 [PR76](https://github.com/854259/FPGA/pull/76) head ac2dd9a1、merge09a0d4d3；Gmail1a1129406ff6b2be、[6023308523](https://github.com/854259/FPGA/issues/7#issuecomment-6023308523)与实际交付a9580c9a一致。本方只限定核对原106票据/monitor，不声称独立审查其全部8份文档。106于02:54一次受理，03:04原monitor1446493/start858649026仍排队，尚无阶段/输出；105原runner/child、槽及模型身份一致，69/312输出、72请求。中途占位passed=false不作失败结论或挑分停轮；不重复提交、改变冻结根或接管原终审。
 
-[6022969116](https://github.com/854259/FPGA/issues/7#issuecomment-6022969116)、Gmail1a11281de4d97f3c与AMD ACK aadeefad已核对：对方明确接受本方PR74对波形PR72的限定复核，未扩大至本次onehot；随此实质交付同步此前旧快照。当前PR75新增复核尚无对方确认，不伪造已读/采纳。
+[6022969116](https://github.com/854259/FPGA/issues/7#issuecomment-6022969116)、Gmail1a11281de4d97f3c与AMD ACK aadeefad已核对：对方明确接受本方PR74对波形PR72的限定复核，未扩大至本次onehot；随此实质交付同步此前旧快照。03:04时PR75新增复核尚无对方确认；03:28补充章节已记录后续6023729474确认。
 
 本方只读回执 `abff5f7d03f844f04ad7b55289fcc9dfaab0adc46047830ee4e72802941e2012` 双端一致，核对1.482秒、0新模型/EDA/控制/审计，无FIFO提交。私有peer75保存两原档案和本方有效回执，未生成执行缓存。下一步仍由对方持有105/106原句柄，终态原collector/auditor各一次后交付；本方审核配对结果、根因、成本与采用条件，不合并不同候选收益。用户定义全包含批次仍未完成。
+
+## 2026-10-07 03:28 启动前失败源码与最小修正补充复核
+
+[Gmail对应原留言6023729474](https://github.com/854259/FPGA/issues/7#issuecomment-6023729474)与AMD ACK `8112d8a1ee857ee66a5513428f1fcee3f71054b237693c613f2b79f4440f9a04`一致。对方已实际读取并接受[PR77](https://github.com/854259/FPGA/pull/77)对成功PR75准备、来源、预算与生命周期的限定复核；原PR77“失败流尚未读取”是03:04快照，本节补齐其源码/输出流范围，不重跑成功控制。
+
+原失败REMOTE `d501fe24`、stderr `36e9beb7`、空stdout与两版嵌入包逐项核对。trace的stdin第21行调用保护器，保护器第14行要求schema以actual_开头；原值onehot_cp7_actual_current_immutable_capture_v1不满足。原源码第36行才创建root，第52行才调用owned.run，因此该失败发生于测试启动之前。提供的PRESTART_FAILURE_INSPECTION是对方当时“目录不存在”的观察记录；本方没有重新观察历史文件系统，也没有取得独立的原SSH进程出生/退出码回执。结论仅为原源码、输出流与来源绑定支持的拒绝归因，不将观察记录扩大为完整历史进程证明。
+
+两份嵌入包各120成员/119源，源清单变化只有PROTECTED_GROUPS_CAPTURE.json；其对象仅schema改为actual_onehot_cp7_current_immutable_capture_v1，其余字段及118共同源字节相同，全部生产和测试方法保持。修正版全部源与原成功scope实际文件一致。transport本体仅第4行包/留言元资料和第50行监督器来源变化：从不存在的包内owned_exec位置改为已验证外部路径，绑定原SHA `9981c3a3`，方法及40秒控制上限保持。复用已核验的scope `32866bd3`及本方PR77回执 `abff5f7d`，未重新运行控制。
+
+私有FAILURE_HANDOFF.zip `6c9da45c59504ed56059f57f7ae1cda2d295a813073ed6c098bcf188654c3018`（1699235字节、13成员）与清单、嵌入原包/修正版和本地副本逐项绑定；未将原始源码包或日志上传公库。本方只读回执 `680d53009a1e4357fdb433ea0eeccde208d2cf2c7876786db5911aa01aa3679e`双端一致，0.077秒、0新增测试/模型/EDA/FIFO。原失败保留，成功控制仍是27复用+新1，未增加独立样本，不改变PR75的筛选/成本/来源门或采用结论。
+
+03:26:55原105正常99/312输出、104请求，原106仍排队；109/126冻结源、原句柄、模型和槽一致。对方继续原105/106及各一次原collector/auditor，本方接终态交付复核配对结果、根因与采用条件。对方同条留言自报新串行算法13纯控制、1284前缀转移与18270阶段观察，当前仅核对其陈述，尚未独立复核原控制源码/进程/档案；更不代表RTL编译、原生qualification或自然分数。独立候选不混合，用户定义完整全包含批次及其实际预算/剩余额度仍未验收。
