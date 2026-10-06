@@ -1,0 +1,69 @@
+{
+  "schema": "neighborhood_failed86_fix_actual_amd_public_v1",
+  "original_fifo_ticket": 86,
+  "original_spec_sha256": "917348629e616661a2bf962fed1f0af815c7bea5e7d8baa9e2fea518056b446b",
+  "original_frozen_source_assets": 151,
+  "original_summary_sha256": "0abfb88d410dd881d0684378f44140e46463a972b23074495c4c5303bf333a65",
+  "original_controls_with_complete_evidence": 27,
+  "original_matched_controls": 26,
+  "original_semantic_negative_unmatched": 1,
+  "original_supervisor_failed": 1,
+  "original_native_commands": 78,
+  "original_native_qualified": false,
+  "original_failure_retained": true,
+  "root_cause_evidence": [
+    "actual probe traceback at immediate child identity read; missing identity artifact and live descendant retained",
+    "load priority mutant all nine physical observations unknown; literal binary witness not matched"
+  ],
+  "startup_window_cause_is_inference": true,
+  "changes": [
+    "bounded startup observation requires same unreaped birth/session/group and two exact argv samples",
+    "on refused identity keep owner alive for original outer group cleanup",
+    "known zero initial state added only to controlled priority mutant"
+  ],
+  "production_and_oracle_and_stage_unchanged": true,
+  "original_judge_unchanged": true,
+  "probe_startup_cap_s": 0.25,
+  "outer_probe_cap_s": 0.8,
+  "actual_checks": {
+    "v3_cloud_root": "/workspace/team/runs/fpga_owner/neighborhood_native_fix_checks_20261006_v3",
+    "v3_packet_sha256": "521dd6c5629fc965276cb944de7252efe5c3f881cb2302a12a32919529826c0d",
+    "v3_source_assets": 15,
+    "v3_stderr_sha256": "f2d8a39680e479622296ebedd222a3efe33507fbe3c8ba78ee1c774b626207c0",
+    "v3_methods_passed": 8,
+    "v3_setup_api_error_retained": true,
+    "v4_cloud_root": "/workspace/team/runs/fpga_owner/neighborhood_native_fix_checks_20261006_v4",
+    "v4_packet_sha256": "ef0ad618b698a0ae45fcde14c7f539b9076e20e702a790de1a12fdf8568005fe",
+    "v4_source_assets": 16,
+    "v4_stderr_sha256": "4bdfa6135ba37b2731495034b0ac909565872fec840b861a9ac149b96a3ac6ed",
+    "v4_updated_methods_passed": 2,
+    "old_eight_methods_ast_and_bytes_bound": true,
+    "qualified_distinct_pure_controls": 10,
+    "actual_owned_process_controls": 2,
+    "actual_process_control_receipt_sha256": "3b144a19570bd239a09bf4a8e7cacd0ca433f1081c0d9e14f879babe12fb75ba",
+    "both_process_groups_reaped": true
+  },
+  "protected_groups": 30,
+  "protected_source_assets": 2257,
+  "vector_source_assets_also_protected": 107,
+  "source_model_primary_unchanged": true,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "new_fifo": false,
+  "new_native_qualification": false,
+  "score_gain_measured": false,
+  "development_baseline": {
+    "full_correct": 113,
+    "total_tasks": 156,
+    "weighted": 0.7743589743589744
+  },
+  "goal": {
+    "full_correct_at_least": 120,
+    "weighted_at_least": 0.8,
+    "status": "active"
+  },
+  "peer_branch": "research/semantic-repair-20261004",
+  "peer_commit": "5bfe4e0600c75b2aa414bffe0c2bf9088f775586",
+  "peer_acknowledgment": "pending",
+  "next_step": "freeze a new native calibration with original strict oracle/judge, validate full qualification before a single-factor paired score pilot; preserve 90/92/93 and whole-task FIFO"
+}
