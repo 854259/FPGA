@@ -1,4 +1,119 @@
 {
+  "fsm_full156_preparation_20261006_v2": {
+    "schema": "fsm_full156_public_preparation_v2",
+    "baseline_full_correct": 113,
+    "baseline_weighted": 0.7743589743589744,
+    "goal_full_correct_at_least": 120,
+    "goal_weighted_at_least": 0.8,
+    "previous_goal_turn_classification": "Progress: accepted peer review, revised endpoint factor and8AMDcontrols/PR53/shared receipt. Current continuation completes final FSM full post-exit and3complete archives",
+    "source_assets": 118,
+    "spec_sha256": "451d7191252877db37971f49ecc80a35881da5eec6bb8c493a9fcb8a5167bd41",
+    "preparation_receipt_sha256": "c91ec28eefcc1d856d6ba00dd9b315e4fd29306d161fb6356bac8c3ee23b0fef",
+    "postexit_admission_sha256": "14013de1abe9ef2971d77ad035e81b2e57cacc843b9add1190920aa7104386c7",
+    "actual_new_scope_controls": 3,
+    "scope_receipt_sha256": "d2b5eda6deafc21a60bcd22263bf1beb132bce3ca31c91cdb22d4582542b3090",
+    "generic15_controls_reused_not_reexecuted": true,
+    "metrics_and_generic_test_exact_route_label_bijection": true,
+    "parent_cp8_audit_sha256": "086ca9bbd1c15dc0708c97d904a987102ee64f32edf4620fc3f4707e61f6854a",
+    "parent_cp8_rows": 16,
+    "parent_cp8_tasks": 8,
+    "parent_cp8_weighted_C": 0.8,
+    "parent_cp8_weighted_P": 1.0,
+    "parent_cp8_repairs": 2,
+    "parent_cp8_requests_C": 11,
+    "parent_cp8_requests_P": 9,
+    "parent_cp8_guard_count": 6,
+    "parent_cp8_is_full_score": false,
+    "original_parent_routes_only_read_replayed": true,
+    "original_production_admission_reused": {
+      "emits": 2,
+      "abstains": 154,
+      "new156_scan": false
+    },
+    "source_generator_worker_runtime_skills_native_original_judge_preserved": true,
+    "archives": {
+      "fsm_full156_controls_20261006_v1": {
+        "sha256": "ee3a1c1c94cd4f1b308b8669c5d777fe5efa8aa8c6dbc3bf0c722778a6d17dc2",
+        "bytes": 658603,
+        "members": 129,
+        "all_members_bound": true
+      },
+      "fsm_synthesis_full156_20261006_v1": {
+        "sha256": "3704da8cfcc6d4f736619e5fb8ff167cd998a542014deaea2dfaa1e00a9ed243",
+        "bytes": 660579,
+        "members": 129,
+        "all_members_bound": true
+      },
+      "fsm_synthesis_full156_20261006_v2": {
+        "sha256": "eaf8dd87eac8e1316438607adb814ac2b0ee40ae2fd25ffbb38ab49dffd052e4",
+        "bytes": 831864,
+        "members": 133,
+        "all_members_bound": true
+      }
+    },
+    "failed_v1": {
+      "reason": "new preparation entry overwrote inherited prepare.py; only that source differed; source admission refused before freeze/model/EDA/FIFO",
+      "source_assets": 116,
+      "receipt_sha256": "471e926f5c508228a2c52a0aae72967a0300fed5019a7708a631fb721b028895",
+      "child_retired": true,
+      "submitted": false
+    },
+    "recovery_v2": "Preserve inherited prepare.py; distinct prepare_full_scope.py entry; failed116 sources now protected; old3controls and parent16 routes not reexecuted",
+    "protected_in_frozen_spec": {
+      "groups": 74,
+      "source_assets": 4909
+    },
+    "protected_at_postexit": {
+      "groups": 77,
+      "source_assets": 5039
+    },
+    "tasks": 156,
+    "expected_samples": 312,
+    "guard_original_correct_tasks": 113,
+    "max_actual_model_requests": 624,
+    "per_sample": {
+      "output_tokens": 8192,
+      "max_requests": 2,
+      "repairs": 1,
+      "solver_s": 300,
+      "judge_s": 300,
+      "judge_supervisor_s": 360
+    },
+    "safety_caps": {
+      "stage_s": 43200,
+      "guard_s": 43600,
+      "slot_minutes": 740,
+      "eta": false
+    },
+    "gates": [
+      "Complete156 pairedC/P with original judge including x/z and all source/raw/request/native evidence",
+      "At least120L3 and weighted>=0.80 on fresh full run",
+      "Every original113correct remainsL3; every paired grade nondecreasing",
+      "Ptotalrequests<=C; all unchanged-grade and all original-correct tasks no additional requests even if grade improves",
+      "No deadline/unconfirmed/tool/source failure; failures preserved, no redraw or retrospective cherry-picking"
+    ],
+    "submitted": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "score_measured": false,
+    "qualified_for_goal": false,
+    "adoption": false,
+    "deployment": false,
+    "old_fifo_order_preserved": [
+      98,
+      99,
+      100,
+      101
+    ],
+    "peer_commit_read": "f67f4805aaacee3b5532971d39aecdac3529fd3e",
+    "peer_direction": "Source/interface/body provenance review; no FSM generator implementation overlap",
+    "peer_acknowledgment": "pending",
+    "waveform_issue_accepted_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6014117192",
+    "waveform_revision_pr53": "https://github.com/854259/FPGA/pull/53",
+    "old101_semantic_adoption_hold": true,
+    "next_step": "Reviewed own PR and actual8-file Git shared receipt, then only this finalv2 once whole-taskFIFO; terminal originalcollector/auditor decides target/adoption. Revisedwaveform separate pipeline/CP pending, no older scores substituted.",
+    "quota_stop_used_percent": 97
+  },
   "waveform_endpoint_semantics_20261006_v3": {
     "schema": "waveform_sample_endpoint_semantics_public_v3",
     "baseline_full_correct": 113,

@@ -1,3 +1,8 @@
+## FSM全156最终v2准备与退出后准入
+
+- [范围、复用、失败保留与整任务FIFO计划](03_analysis/fsm_full156_preparation_20261006_v2/README.md)
+- [118源、3控制、完整三档案绑定及同预算保护门](03_analysis/fsm_full156_preparation_20261006_v2/PUBLIC_PREPARATION.json)
+
 ## 波形端点语义修正与旧101采用边界
 
 - [接受队友意见、AMD8项新检查与失败保留](03_analysis/waveform_endpoint_semantics_20261006_v3/README.md)
