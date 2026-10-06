@@ -1,4 +1,106 @@
 {
+  "terminal_whole_budget_20261007": {
+    "schema": "terminal_whole_budget_public_v1",
+    "goal_status": "active",
+    "goal_achieved": false,
+    "public_source_hashes": {
+      "wave105/terminal_supervisor.py": "2404f7d47a83d94d0a63b4c464be1fe18c1b421a8d3c4411bbc226aad257b74b",
+      "onehot106/terminal_supervisor.py": "ca74707025f4ac56f35e5f7f274e6f6258e1cbb36fe620e734b6ec0fc6301b7f",
+      "serial107/terminal_supervisor.py": "08cf2467a366d821f958c73ef6b27886a8586550fde05d08300ba22f291ff27c",
+      "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+      "check_budget.py": "ba573ea1f84c0b0b5112bcf193ea03f5fa50df646394576b297555f328dabd78"
+    },
+    "public_source_cloud_map": {
+      "wave105/terminal_supervisor.py": "/workspace/team/runs/fpga_owner/terminal_whole_budget_supervisor_preparation_20261007_v1/wave105/terminal_supervisor.py",
+      "onehot106/terminal_supervisor.py": "/workspace/team/runs/fpga_owner/terminal_whole_budget_supervisor_preparation_20261007_v1/onehot106/terminal_supervisor.py",
+      "serial107/terminal_supervisor.py": "/workspace/team/runs/fpga_owner/terminal_whole_budget_supervisor_preparation_20261007_v1/serial107/terminal_supervisor.py",
+      "full_budget.py": "/workspace/team/runs/fpga_owner/terminal_whole_budget_supervisor_preparation_20261007_v1/wave105/full_budget.py",
+      "check_budget.py": "/workspace/team/runs/fpga_owner/terminal_whole_budget_pure_20261007_v1/check_budget.py"
+    },
+    "controls": 3,
+    "controls_scope": "New normal450, paired outer-expiry and native outer-expiry real child contexts with explicit fake auditors; original supervisors/auditors unexecuted",
+    "control_receipt_sha256": "26047a76076da016f3aa5e2734536c01eff9a5aee3eb932a576d28b713b6fbc3",
+    "control_archive": {
+      "sha256": "220aef4c99445f835e73630fddc217b8cf55d83f7dfd7617049362c92c53a534",
+      "members": 40,
+      "every_member_bound_both_ends": true
+    },
+    "preparation_root": "/workspace/team/runs/fpga_owner/terminal_whole_budget_supervisor_preparation_20261007_v1",
+    "preparation_receipt_sha256": "c65390afb86b72f821d0c56780bb3d23352034a487f4f9fb47b6496525be87e8",
+    "preparation_archive": {
+      "sha256": "a75a95f04733804ec41b87913782c31a5d5972793168ddfc72e579cae6a8a084",
+      "members": 30,
+      "every_member_bound_both_ends": true
+    },
+    "bindings": {
+      "wave105": {
+        "new_source_manifest_sha256": "2ea6e57bfb7f9722b00d0647d28238ac899fc7628053523d4e75011fddc1c8a2",
+        "source_hashes": {
+          "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+          "PREPARATION_SCOPE.json": "3fc5344b7de34bafc35cbc29cb8db09740769cb504ba28f7b1ecca0cfc3ae9b3",
+          "protected_prefix.py": "fea8091d76fc82714400725fda131ddd6bda339b962da0ae6ed4014b4b4fdcc4",
+          "terminal_process_functions.py": "7a07969ada10f56f7e36473990c18c82b341d1db281f3fc87f0fd0782588a22a",
+          "terminal_supervisor.py": "2404f7d47a83d94d0a63b4c464be1fe18c1b421a8d3c4411bbc226aad257b74b",
+          "dependencies/protected_sources.py": "53507373aa69e54ccd083a6452fb7acaa0cdbc144d2bdf0e01710b21cfd5ed1a",
+          "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "5836feaa67b7f4056637bc66287dbdd2e1379e4611ef328456670c85a9494a47"
+        },
+        "whole_terminal_budget_s": 450,
+        "working_budget_s": 430,
+        "cleanup_reserve_s": 20,
+        "terminal_output_namespace": "/workspace/team/runs/fpga_owner/waveform_first_request_full156_20261007_v1_terminal_review_v2"
+      },
+      "onehot106": {
+        "new_source_manifest_sha256": "52df3caaddd59f278d304784fd3c1c7b09f0ce98175dc08d9e10bb8cd3db6715",
+        "source_hashes": {
+          "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+          "PREPARATION_SCOPE.json": "adadc4c9cf20ae0df35801da3d74e21ffba55a22176f384bb789413d8fbe0931",
+          "protected_prefix.py": "fea8091d76fc82714400725fda131ddd6bda339b962da0ae6ed4014b4b4fdcc4",
+          "terminal_process_functions.py": "7a07969ada10f56f7e36473990c18c82b341d1db281f3fc87f0fd0782588a22a",
+          "terminal_supervisor.py": "ca74707025f4ac56f35e5f7f274e6f6258e1cbb36fe620e734b6ec0fc6301b7f",
+          "dependencies/protected_sources.py": "53507373aa69e54ccd083a6452fb7acaa0cdbc144d2bdf0e01710b21cfd5ed1a",
+          "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "5836feaa67b7f4056637bc66287dbdd2e1379e4611ef328456670c85a9494a47"
+        },
+        "whole_terminal_budget_s": 450,
+        "working_budget_s": 430,
+        "cleanup_reserve_s": 20,
+        "terminal_output_namespace": "/workspace/team/runs/fpga_owner/onehot_synthesis_cp7_20261007_v1_terminal_review_v1"
+      },
+      "serial107": {
+        "new_source_manifest_sha256": "c88988a3ac5bb4cf9f2adacc8d6b0257036186e1550356f6eee50a208f7d8199",
+        "source_hashes": {
+          "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+          "PREPARATION_SCOPE.json": "8735d8ae4d5944192c99c93c664532e952f04a7b848a1485b25b850f23fa43e4",
+          "protected_prefix.py": "3ef0f1204ac8f5d8014754fd7744b7f177b17c5843ad3b46d03fe13e6742551a",
+          "terminal_gate.py": "a17bb7c8c028fb83f4ee280f917d752963aa901be0fea0649baab062f5e136a7",
+          "terminal_supervisor.py": "08cf2467a366d821f958c73ef6b27886a8586550fde05d08300ba22f291ff27c",
+          "test_terminal_gate.py": "5f080616023ea64becb1065644da3a9c03188f296949a90dcf28b9bda51f4b81",
+          "dependencies/protected_sources.py": "53507373aa69e54ccd083a6452fb7acaa0cdbc144d2bdf0e01710b21cfd5ed1a",
+          "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "5836feaa67b7f4056637bc66287dbdd2e1379e4611ef328456670c85a9494a47"
+        },
+        "whole_terminal_budget_s": 120,
+        "working_budget_s": 100,
+        "cleanup_reserve_s": 20,
+        "terminal_output_namespace": "/workspace/team/runs/fpga_owner/serial_timer_native_20261007_v2_terminal_review_v2"
+      }
+    },
+    "source_assets": 26,
+    "protected_roots": 115,
+    "protected_unique_files": 7591,
+    "whole_budget_helper_sha256": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "new_fifo": false,
+    "old_controls_replayed": 0,
+    "original_collector_executed": false,
+    "original_auditor_executed": false,
+    "terminal_supervisor_executed": false,
+    "native_qualified": false,
+    "natural_score": false,
+    "adoption": false,
+    "old_preparation_snapshots_preserved": true,
+    "original_scoring_sources_and_budgets_unchanged": true,
+    "next_gate": "Launch only after authentic original terminal/cleanup/release, new output namespace and exact source binding; global original once intent and full archive remain required. Pending transport adaptation must use these new source manifests and budgets."
+  },
   "serial_timer_activity_label_20261007": {
     "schema": "serial_activity_label_public_v1",
     "goal_status": "active",
