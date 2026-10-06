@@ -5725,5 +5725,30 @@
   "private_evidence": "05_handoff/independent_validation_20261004/source_body_provenance_20261006/",
   "report": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "next": "Verify complete terminal body audit and archive; then choose no-stub source elaboration/proof route or reject source on evidence. Do not repeat passed tool controls or start a model run."
+},
+  "team_table_terminal_intake_20261006": {
+  "checked_at": "2026-10-06T17:01:00+08:00",
+  "ticket": 90,
+  "candidate": "table_synthesis_P_not_old_phase_P",
+  "status": "terminal_report_verified_against_original_aggregate_not_full_raw_reaudit",
+  "source_commit": "067fa65fbea3b30b7b7112d16f0543a5d7be6a9d",
+  "report": "03_analysis/prompt_table_full156_terminal_20261006_v1/README.md",
+  "task_count": 156,
+  "samples_per_arm": 1,
+  "C_L3": 112,
+  "P_L3": 118,
+  "C_weighted": 0.7679487179487179,
+  "P_weighted": 0.7987179487179488,
+  "C_model_requests": 167,
+  "P_model_requests": 159,
+  "paired_score_regressions": 0,
+  "mechanical_repairs": 5,
+  "model_path_improvements": 1,
+  "historical_correct_regressions": 3,
+  "historical_correct_repair_call_increases": 1,
+  "adoption": false,
+  "full_batch_complete": false,
+  "own_algorithm_contribution": false,
+  "scope": "Known development regression only; separate from old phase-P stability and official baseline comparison."
 }
 }
