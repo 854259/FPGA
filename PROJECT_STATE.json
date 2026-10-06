@@ -3118,24 +3118,22 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T18:40:45+08:00",
+  "checked_at": "2026-10-06T19:58:00+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
-  "model_identity_unchanged": null,
+  "model_identity_unchanged": true,
   "processing_slots": null,
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
-  "known_full156_regression_completed_ticket": 61,
+  "known_full156_regression_completed_ticket": 98,
   "latest_own_stage": "Evaluator-only body provenance audit",
-  "latest_own_stage_complete": false,
-  "latest_own_stage_status": "queued_not_executed",
+  "latest_own_stage_complete": true,
+  "latest_own_stage_status": "completed_verified_mechanical_only",
   "latest_own_ticket": 100,
-  "own_monitor_pid": 992574,
-  "other_active_tickets": [
-    98
-  ],
-  "next_own_stage": "Verify complete terminal body audit and archive; then choose no-stub source elaboration/proof route or reject source on evidence. Do not repeat passed tool controls or start a model run.",
+  "own_monitor_pid": null,
+  "other_active_tickets": [],
+  "next_own_stage": "Withhold current corpus from independent correctness scoring; preserve all64 and unresolved contracts/dependencies/licenses/exposure. Do not repeat passed body/lexer controls. Next review peer ticket98 frozen156 terminal results and ticket101 owner-handled hold.",
   "receipt": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
@@ -3202,21 +3200,23 @@
     }
   },
   "other_ticket90_stage_summary": "Terminal report intake verified at 17:01: C 112/156, P 118/156 (0.798717949); adoption=false. See team_table_terminal_intake_20261006. Not an audit_pending claim.",
-  "processing_slots_note": "Not queried during another owner run; own terminal guard observed backend idle when ticket97 exited.",
+  "processing_slots_note": "Ticket100 exit observed idle; no inference about later peer requests.",
   "other_queued_tickets": [
-    99,
-    101,
-    102
+    102,
+    103
   ],
-  "model_identity_check_scope": "Ticket97 terminal guard passed; current other-owner run identity not rechecked at this queue snapshot.",
+  "model_identity_check_scope": "Ticket100 terminal guard recorded unchanged model, backend idle and slot released; not a guarantee about later peer activity.",
   "state_sync_note": "Current status is comprehensive_cycle_20261004.latest_live_check. A prior root synchronization matched the same key in a historical section; the current node is now explicitly scoped and reconciled. No frozen execution input changed.",
   "queued_tickets": [
-    99,
-    100,
-    101,
-    102
+    102,
+    103
   ],
-  "own_frozen_input_hashes_verified": 4
+  "own_frozen_input_hashes_verified": 4,
+  "other_held_tickets": [
+    101
+  ],
+  "peer98_status": "Original execution complete; adoption false, full provenance terminal review pending.",
+  "peer101_status": "Original completion failed (AssertionError), held for inspection; owner notified6015731185. No takeover or release."
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5701,8 +5701,8 @@
   "merge_commit": "8153af890a8fc075c388b97f2b2f59eb7e247ce8"
 },
   "source_body_provenance_20261006": {
-  "checked_at": "2026-10-06T16:51:00+08:00",
-  "status": "frozen_queued_not_executed",
+  "checked_at": "2026-10-06T19:58:00+08:00",
+  "status": "completed_verified_mechanical_only",
   "execution_commit": "6139441b7c52d96514e73802a7e3b3b3437710bf",
   "ticket": 100,
   "monitor_pid": 992574,
@@ -5731,10 +5731,84 @@
   "independent_admitted": 0,
   "full_batch_complete": false,
   "pull_request": "https://github.com/854259/FPGA/pull/50",
-  "pr_status": "draft_pending_AMD_validation",
+  "pr_status": "AMD_terminal_validated_ready_for_own_review_and_merge",
   "private_evidence": "05_handoff/independent_validation_20261004/source_body_provenance_20261006/",
   "report": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
-  "next": "Verify complete terminal body audit and archive; then choose no-stub source elaboration/proof route or reject source on evidence. Do not repeat passed tool controls or start a model run."
+  "next": "Withhold current corpus from independent correctness scoring; preserve all64 and unresolved contracts/dependencies/licenses/exposure. Do not repeat passed body/lexer controls. Next review peer ticket98 frozen156 terminal results and ticket101 owner-handled hold.",
+  "terminal": {
+    "schema": "source_body_terminal_review_20261006_v1",
+    "passed": true,
+    "reviewed_at_utc": "2026-10-06T11:55:06.147581+00:00",
+    "result_sha256": "d269f9ca47803d0a151dd21267732149dac5aed3882ffbf34cecd20e265b6b9c",
+    "guard_sha256": "861a82b44c44aeb051b09572029b091deb46a213281ad16f331e1c113f27b0a9",
+    "resource_sha256": "bbcca5037c1909ec02a1b7bb337f79cdcf4ee8e7a4a753e7601eacd5f7c50f6e",
+    "stage_log_sha256": "fb239b31ece87f2733d8da7bdb8545ef64d71c521a42551b04409562dcf8c204",
+    "plan_sha256": "714058f2bb8b09946750c9b76ccc2bc262c802bc7048d9bd52d9ec3a7e6a3ef9",
+    "complete_scope": {
+      "tasks": 64,
+      "assets": 84,
+      "files": 308,
+      "blobs": 212
+    },
+    "family_summary": {
+      "double_fpu": {
+        "tasks": 9,
+        "assets": 12,
+        "git_blob": 5,
+        "no_mechanical_identity": 7
+      },
+      "i2c": {
+        "tasks": 3,
+        "assets": 6,
+        "git_blob": 4,
+        "no_mechanical_identity": 2
+      },
+      "mips_16": {
+        "tasks": 11,
+        "assets": 21,
+        "git_blob": 18,
+        "no_mechanical_identity": 3
+      },
+      "or1200_hp": {
+        "tasks": 38,
+        "assets": 41,
+        "git_blob": 1,
+        "no_mechanical_identity": 40
+      },
+      "verilog_cordic_core": {
+        "tasks": 3,
+        "assets": 4,
+        "git_blob": 3,
+        "no_mechanical_identity": 1
+      }
+    },
+    "mechanical_identity_counts": {
+      "git_blob": 31,
+      "no_mechanical_identity": 53
+    },
+    "stdout_matches_result_summary": true,
+    "all_212_blob_sizes_sha256_git_ids_reverified": true,
+    "original_controls_passed": 5,
+    "stage_elapsed_s": 0.30412851460278034,
+    "guard_elapsed_s": 0.5017146728932858,
+    "queue_wait_s": 10562.329477,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "model_protected_cleanup_slot_receipts_passed": true,
+    "independent_admitted": 0,
+    "full_batch_complete": false,
+    "decision": "Mechanical provenance stage accepted. Reference-contract admission rejected at present:53 assets still lack mechanical identity, dependency/license/behavior/exposure gates unresolved. Preserve all64 entries; do not treat same module names or found include basenames as proof.",
+    "next": "Do not repeat body/lexer controls or use these references for independent model scoring. Review peer frozen156 terminal results and peer-owned101 hold; any future no-stub source proof needs a separately frozen complete contract/dependency scope."
+  },
+  "archive": {
+    "members": 226,
+    "payloads": 225,
+    "all_member_hashes_verified": true,
+    "dual_end_verified": true,
+    "bytes": 712240,
+    "sha256": "d5f11533e562fff5eb2b0d50c207ea9837a3722df11d25dceca353dfb43ac2d3",
+    "review_sha256": "04ac30c8001cb080f0438060b1239fbc982859d3287d0b9455d9a5b39234293c"
+  }
 },
   "team_table_terminal_intake_20261006": {
   "checked_at": "2026-10-06T17:01:00+08:00",
