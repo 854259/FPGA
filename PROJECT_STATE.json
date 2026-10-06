@@ -1,6 +1,18 @@
 {
+  "neighborhood_worker_adapter_20261006": {
+    "status": "amd_worker22_and_intake156_passed_native94_pending",
+    "report": "03_analysis/neighborhood_worker_adapter_20261006/README.md",
+    "metadata": "03_analysis/neighborhood_worker_adapter_20261006/PUBLIC_CHECKS.json",
+    "qualified_worker_controls": 22,
+    "pure_intake_emitted": 3,
+    "pure_intake_abstained": 153,
+    "native_qualified": false,
+    "score_pilot_frozen": false,
+    "new_score": false,
+    "goal_achieved": false
+  },
   "neighborhood_native_v3_20261006": {
-    "status": "amd_prepared_frozen_native_unqualified",
+    "status": "fifo94_actual_accepted_native_unqualified",
     "report": "03_analysis/local_neighborhood_native_calibration_20261006_v3/README.md",
     "metadata": "03_analysis/local_neighborhood_native_calibration_20261006_v3/FROZEN_PREPARATION_METADATA.json",
     "source_assets": 153,
@@ -8,10 +20,12 @@
     "actual_owned_process_controls": 3,
     "protected_groups": 34,
     "protected_source_assets": 2413,
-    "queued": false,
+    "queued": true,
     "native_qualified": false,
     "new_score": false,
-    "goal_achieved": false
+    "goal_achieved": false,
+    "actual_fifo_ticket": 94,
+    "actual_delivery_metadata": "03_analysis/neighborhood_worker_adapter_20261006/PUBLIC_CHECKS.json"
   },
   "neighborhood_native_fix_20261006": {
     "status": "new_fix_checks_passed_native_qualification_pending",
