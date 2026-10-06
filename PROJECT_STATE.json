@@ -3127,15 +3127,15 @@
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 98,
-  "latest_own_stage": "Resource lifecycle fix, AMD controls and CP6 refreeze",
+  "latest_own_stage": "104 dependency relocation audit preparation",
   "latest_own_stage_complete": false,
-  "latest_own_stage_status": "104 queued; peer accepted resource fix; separate dependency-path audit preparation required",
+  "latest_own_stage_status": "13 controls and frozen preflight passed; original104 queued, terminal audit pending",
   "latest_own_ticket": 104,
   "own_monitor_pid": 1151739,
   "other_active_tickets": [
     102
   ],
-  "next_own_stage": "Peer owns98 full provenance and102 terminal audit; this task owns104 terminal and102 bounded result review. Prepare separately bound104 dependency relocation audit; do not change frozen97 files or repeat controls/generation.",
+  "next_own_stage": "Follow original102/104; peer owns98 and102 original terminal. After104 clean stage exit execute frozen separate terminal plan once, reuse existing valid archive; preserve all failures, no new generation.",
   "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_PREPARATION.json",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
@@ -6232,9 +6232,9 @@
   }
 },
   "waveform_resource_fix_20261006": {
-  "updated_at": "2026-10-06T23:38:15+08:00",
+  "updated_at": "2026-10-06T23:57:01+08:00",
   "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
-  "status": "peer_accepted_fix_104_queued_terminal_path_binding_pending",
+  "status": "104_audit_relocation_preparation_verified_terminal_pending",
   "pull_request": "https://github.com/854259/FPGA/pull/59",
   "source_commit": "ab7139bb49b32df281849249f4c2dbcc6ae941ab",
   "spec_sha256": "216637107d75156c6ad4c1db13656e6ea94f7fce225a8df9da03b7b2f6db25cb",
@@ -6270,7 +6270,7 @@
     "full_batch_complete": false,
     "quality_result": null
   },
-  "next": "Peer owns98 full provenance and102 terminal audit; this task owns104 terminal and102 bounded result review. Prepare separately bound104 dependency relocation audit; do not change frozen97 files or repeat controls/generation.",
+  "next": "Follow original102/104; peer owns98 and102 original terminal. After104 clean stage exit execute frozen separate terminal plan once, reuse existing valid archive; preserve all failures, no new generation.",
   "report": "03_analysis/waveform_resource_lifecycle_20261006/README.md",
   "peer_handoff": {
     "confirmed_comment": 6019767790,
@@ -6302,12 +6302,36 @@
     "peer98_failure_receipt_sha256": "78c154ed7b6e3ab84d4c738301038f1197a5ddf500303dcfcbbfdc735caa8e24",
     "own104_original_audit_executed": false,
     "own104_strict_path_assertion_satisfied": false,
-    "repaired_audit_implemented": false,
+    "repaired_audit_implemented": true,
     "repaired_audit_verified": false,
     "historical_import_proven": false,
     "model_calls": 0,
     "eda_calls": 0,
     "audit_reruns": 0
+  },
+  "audit_relocation_preparation": {
+    "pull_request": "https://github.com/854259/FPGA/pull/62",
+    "source_commit": "a446a3ef00f3f81427ff93cff1f9033f78433f30",
+    "controls_passed": 13,
+    "actual_frozen_preflight_passed": true,
+    "elapsed_s": 0.33878016471862793,
+    "wrapper_sha256": "4db6d2419a933011dd4242ffb23c1031d9472fb2d9d42b4f4bd0e6898f994a91",
+    "receipt_sha256": "488e85cc09f3cfa88aa3cc2c2f6c09ac6aeb6d4b50432e8d96c769255b97abfb",
+    "archive_sha256": "75806a9720fa3b239c5d632f703bdbcb9d4997a89487f01040a714cab52a69d9",
+    "archive_members": 12,
+    "archive_dual_verified": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "frozen_runs_and_model_unchanged": true,
+    "temporary_files_remaining": 0,
+    "terminal_audit_executed": false,
+    "terminal_audit_passed": false,
+    "terminal_plan_sha256": "2bb7a3f485b1bedb77c884e5be6ff712aa9a65339a11b45a9ff625e7fc206fa3",
+    "terminal_total_budget_s": 300,
+    "collector_cap_s": 60,
+    "auditor_cap_s": 180,
+    "terminal_started": false,
+    "private_archive": "05_handoff/independent_validation_20261004/waveform_resource_fix_20261006/audit_relocation/"
   }
 }
 }
