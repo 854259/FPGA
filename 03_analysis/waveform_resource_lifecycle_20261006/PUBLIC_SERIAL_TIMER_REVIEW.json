@@ -131,9 +131,9 @@
     "supervisor_terminal_state": "Z, empty cmdline; retained by PID1, not active",
     "original_failure_retained": true
   },
-  "status": "activity_label_source_only_fix_bounded_review_accepted_runtime_gates_pending",
+  "status": "whole_terminal_budget_source_gap_pending_external_enforcement",
   "conclusion": "Accept source-only activity-label fix: two human-visible literals only, with byte-exact reversal and unchanged scoring/contract/request/budget logic. No runtime or score qualification.",
-  "next": "Peer binds exact4843 pilot only in a future serial CP7 freeze after authentic original107 terminal qualification. Follow original105/106/107 and their once-only terminals; review delivered outer-supervision/source/terminal evidence without replay.",
+  "next": "Peer completes source-frozen external launch/exit/cleanup budget enforcement before any original terminal attempt. Review new delivery and later original terminal provenance/paired uncertainty/root cause/adoption; do not rerun controls or take over original handles.",
   "original_tests_or_intake_reexecuted": 0,
   "new_diagnostic_processes": 1,
   "new_synthetic_inputs": 2,
@@ -931,6 +931,21 @@
     "effective_independent_families": null,
     "adoption": false,
     "full_batch_complete": false,
-    "elapsed_read_only_seconds": 0.9926451221108437
+    "elapsed_read_only_seconds": 0.9926451221108437,
+    "peer_received_our_review": {
+      "comment": 6026505081,
+      "mail_id": "1a1134deee1a5f58",
+      "delivery_sha256": "63f5703e24069f1e9a2f95f092ff30c68307c479957ec5c126d393c52ba99a09",
+      "accepted_pr": 93,
+      "our_delivery_sha256": "31742afeea4969d76edb2a2506bc7519bf8123219ecebfc205a403c3c7b5737c",
+      "scope": "Exact label source and seven archive members only; not runtime or score qualification."
+    }
+  },
+  "whole_terminal_budget_review_reference": {
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_FULL156_FREEZE_REVIEW.json",
+    "issue_comment": 6026584226,
+    "node": "whole_terminal_budget_review",
+    "receipt_sha256": "2b4e2926b027ce8bd072d598f7cf34330bfd3816f786e2edeca93e4a7af6af5c",
+    "whole_budget_admission": false
   }
 }
