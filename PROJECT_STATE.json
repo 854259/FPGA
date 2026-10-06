@@ -3133,7 +3133,7 @@
   "latest_own_ticket": 100,
   "own_monitor_pid": null,
   "other_active_tickets": [],
-  "next_own_stage": "Withhold current corpus from independent correctness scoring; preserve all64 and unresolved contracts/dependencies/licenses/exposure. Do not repeat passed body/lexer controls. Next review peer ticket98 frozen156 terminal results and ticket101 owner-handled hold.",
+  "next_own_stage": "Review owner103 freshness fix/refreeze and original98 terminal provenance. Do not run invalid103 or duplicate model/EDA.",
   "receipt": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
@@ -3215,8 +3215,8 @@
   "other_held_tickets": [
     101
   ],
-  "peer98_status": "Original execution complete; adoption false, full provenance terminal review pending.",
-  "peer101_status": "Original completion failed (AssertionError), held for inspection; owner notified6015731185. No takeover or release."
+  "peer98_status": "312 original rows,116 frozen sources and request/judge binding verified;112/115 and167/165, historical/cost/goal gates fail. Owner full provenance replay pending.",
+  "peer101_status": "Worker first=True rechecks120s age on every sample; original stale receipt failure confirmed.103 inherits;102 uses ordinary worker check. Owner alerted6015906969; no takeover."
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5731,14 +5731,14 @@
   "independent_admitted": 0,
   "full_batch_complete": false,
   "pull_request": "https://github.com/854259/FPGA/pull/50",
-  "pr_status": "AMD_terminal_validated_ready_for_own_review_and_merge",
+  "pr_status": "merged",
   "private_evidence": "05_handoff/independent_validation_20261004/source_body_provenance_20261006/",
   "report": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "next": "Withhold current corpus from independent correctness scoring; preserve all64 and unresolved contracts/dependencies/licenses/exposure. Do not repeat passed body/lexer controls. Next review peer ticket98 frozen156 terminal results and ticket101 owner-handled hold.",
   "terminal": {
     "schema": "source_body_terminal_review_20261006_v1",
     "passed": true,
-    "reviewed_at_utc": "2026-10-06T11:55:06.147581+00:00",
+    "reviewed_at_utc": "2026-10-06T19:55:06.147581+08:00",
     "result_sha256": "d269f9ca47803d0a151dd21267732149dac5aed3882ffbf34cecd20e265b6b9c",
     "guard_sha256": "861a82b44c44aeb051b09572029b091deb46a213281ad16f331e1c113f27b0a9",
     "resource_sha256": "bbcca5037c1909ec02a1b7bb337f79cdcf4ee8e7a4a753e7601eacd5f7c50f6e",
@@ -5808,7 +5808,8 @@
     "bytes": 712240,
     "sha256": "d5f11533e562fff5eb2b0d50c207ea9837a3722df11d25dceca353dfb43ac2d3",
     "review_sha256": "04ac30c8001cb080f0438060b1239fbc982859d3287d0b9455d9a5b39234293c"
-  }
+  },
+  "merge_commit": "dd7a76b3137e274f8a336a394a2c0ec4735bb78c"
 },
   "team_table_terminal_intake_20261006": {
   "checked_at": "2026-10-06T17:01:00+08:00",
@@ -6030,6 +6031,208 @@
     "next_review": "Original CP6 terminal rows, request/diagnostic replay, grade/request cost and all five guard gates; do not repeat completed preparation checks.",
     "adoption": false,
     "complete_batch": false
+  }
+},
+  "peer_vector_resource_review_20261006": {
+  "checked_at": "2026-10-06T20:11:22+08:00",
+  "status": "bounded_terminal_intake_verified_peer_runtime_blocker_reported",
+  "report": "03_analysis/PEER_VECTOR_AND_RESOURCE_REVIEW_20261006.md",
+  "evidence": {
+    "schema": "peer_terminal_intake_and_resource_stale_review_v1",
+    "reviewed_at_utc": "2026-10-06T20:11:22.421369+08:00",
+    "scope": "Read-only terminal row/journal/command/source binding; no project module execution, model, EDA or benchmark rerun; not full generator or independent validation.",
+    "ticket98": {
+      "spec_sha256": "be08491a5eed64483ac8c6b4871731e9b3faa557a8b18aa7c57013cdf7f6d395",
+      "summary_sha256": "c0f92c62b882a4d71fc57ef45036690a5af8268559034240c2f4fdcebf8f41a5",
+      "source_files_verified": 116,
+      "rows_verified": 312,
+      "pairs": 156,
+      "requests": {
+        "C": 167,
+        "P": 165
+      },
+      "coefficients": {
+        "C": 0.7679487179487179,
+        "P": 0.7833333333333333
+      },
+      "fully_correct": {
+        "C": 112,
+        "P": 115
+      },
+      "routes": {
+        "C/model": 156,
+        "P/model": 153,
+        "P/mechanical_vector": 3
+      },
+      "changes": [
+        {
+          "task": "Prob064_vector3",
+          "Clevel": 1,
+          "Plevel": 3,
+          "Crequests": 1,
+          "Prequests": 0,
+          "Proute": "mechanical_vector",
+          "historical_L3": false
+        },
+        {
+          "task": "Prob097_mux9to1v",
+          "Clevel": 1,
+          "Plevel": 3,
+          "Crequests": 1,
+          "Prequests": 0,
+          "Proute": "mechanical_vector",
+          "historical_L3": false
+        },
+        {
+          "task": "Prob140_fsm_hdlc",
+          "Clevel": 1,
+          "Plevel": 3,
+          "Crequests": 1,
+          "Prequests": 2,
+          "Proute": "model",
+          "historical_L3": true
+        }
+      ],
+      "historical_regressions": [
+        {
+          "task": "Prob143_fsm_onehot",
+          "Clevel": 1,
+          "Plevel": 1,
+          "Crequests": 1,
+          "Prequests": 1,
+          "Proute": "model",
+          "historical_L3": true
+        },
+        {
+          "task": "Prob145_circuit8",
+          "Clevel": 1,
+          "Plevel": 1,
+          "Crequests": 1,
+          "Prequests": 1,
+          "Proute": "model",
+          "historical_L3": true
+        },
+        {
+          "task": "Prob151_review2015_fsm",
+          "Clevel": 1,
+          "Plevel": 1,
+          "Crequests": 1,
+          "Prequests": 1,
+          "Proute": "model",
+          "historical_L3": true
+        }
+      ],
+      "cost_violations": [
+        {
+          "task": "Prob140_fsm_hdlc",
+          "Clevel": 1,
+          "Plevel": 3,
+          "Crequests": 1,
+          "Prequests": 2,
+          "Proute": "model",
+          "historical_L3": true
+        }
+      ],
+      "mechanical": [
+        {
+          "task": "Prob017_mux2to1v",
+          "Clevel": 3,
+          "Plevel": 3,
+          "Crequests": 1,
+          "Prequests": 0,
+          "Proute": "mechanical_vector",
+          "historical_L3": true
+        },
+        {
+          "task": "Prob064_vector3",
+          "Clevel": 1,
+          "Plevel": 3,
+          "Crequests": 1,
+          "Prequests": 0,
+          "Proute": "mechanical_vector",
+          "historical_L3": false
+        },
+        {
+          "task": "Prob097_mux9to1v",
+          "Clevel": 1,
+          "Plevel": 3,
+          "Crequests": 1,
+          "Prequests": 0,
+          "Proute": "mechanical_vector",
+          "historical_L3": false
+        }
+      ],
+      "delta": 0.015384615384615441,
+      "discordant_pairs": 3,
+      "exact_two_sided_sign_p": 0.25,
+      "uncertainty_limit": "Only3 discordant known-development pairs; p assumes independent discordances, unproved here. No independent-generalization claim or new adoption rule.",
+      "effective_independent_admitted": 0,
+      "independent_family_N": null,
+      "adoption": false,
+      "provenance_audit_pending": true,
+      "conclusion": "Fails preset historical113/cost and120/.80 goal. Three paired gains include two mechanical routes and one model-route difference; route binding is not causal proof."
+    },
+    "waveform101": {
+      "spec_sha256": "29245c3265c0ed7f9567d78ee94bdc0d05e66d2d31fdcfcf95e31fbd4dd4a5da",
+      "failure_log_sha256": "fb35be3a3982973eb55a99abedf089203c6cbb127221dbd9bfd2e2c49422cf06",
+      "complete": false,
+      "completed_rows": 2,
+      "recorded_model_requests": 4,
+      "failure_before_next_run_worker": true,
+      "cause": "worker45 passes first=True for every task, rechecking120s age of original resource receipt; failed before third worker run_worker and no request journal."
+    },
+    "waveform103": {
+      "spec_sha256": "9b90acec3379490e4d313d59bceb6fd9833ed713624267f1a0aa05de96cc121c",
+      "worker_sha256": "5ea05bec155c64807da1aee9cd94f2dd734abcd2b618f5c6b9601441e9959306",
+      "same_failure_mechanism_present": true,
+      "queued_at_inspection": true,
+      "requires_owner_refreeze": true
+    },
+    "fsm102": {
+      "spec_sha256": "451d7191252877db37971f49ecc80a35881da5eec6bb8c493a9fcb8a5167bd41",
+      "worker_sha256": "036e1bf19fedc01b3d9d5484913b819b39832ba87f92091219d455ea5f6bc1a1",
+      "same_first_true_counterexample_found": false,
+      "scope": "worker103 uses normal identity/lock/protection checks; stage entry retains first check. Not complete runtime acceptance."
+    },
+    "original_guards": {
+      "98": {
+        "complete": true,
+        "passed": true,
+        "stage_rc": 0,
+        "model_unchanged": true,
+        "protected_files_unchanged": true,
+        "own_slot_released": true,
+        "cleanup_verified": true,
+        "remaining_descendants": 0,
+        "idle_processing_slots": 0
+      },
+      "101": {
+        "complete": true,
+        "passed": false,
+        "stage_rc": 1,
+        "model_unchanged": true,
+        "protected_files_unchanged": true,
+        "own_slot_released": true,
+        "cleanup_verified": true,
+        "remaining_descendants": 0,
+        "idle_processing_slots": 0
+      }
+    },
+    "peer_feedback": "https://github.com/854259/FPGA/issues/7#issuecomment-6015906969",
+    "action_boundary": "No edits/releases/cancellation/retry of peer tickets; owner must preserve failed evidence and decide prestart cancellation/refreeze; no refresh timestamp or removal of resource guard."
+  },
+  "evidence_review_sha256": "c006876694dd7e3aa0e39ef7c9be8074dec39c3bf329c3759bf041c47b79862d",
+  "archive_sha256": "b3d8ea0333a7ba45d6ff2e8480e5ef0c946078f9597296d60c94836d0439d2de",
+  "archive_members": 20,
+  "archive_payloads": 19,
+  "dual_endpoint_verified": true,
+  "acknowledgement": "confirmed_by_peer6015959115_gmail_and_AMD_hash; fix_and_queue_handling_not_done",
+  "next": "Owner resumes and handles101 hold/103 prestart version then repairs/refreezes with generic controls; this task reviews actual diff and98 original terminal audit. No takeover or repeated model/EDA.",
+  "peer_execution_status": "Peer reports its own autonomous goal paused; no permission inferred to resume/take over it.",
+  "acknowledgment_evidence": {
+    "comment_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6015959115",
+    "gmail_message_id": "1a1112116fe117c5",
+    "amd_sha256": "19dbdb34c026f6b63c7253ec4a7a5b9921f3ea22eac08baeba14d803ce59fd2e"
   }
 }
 }
