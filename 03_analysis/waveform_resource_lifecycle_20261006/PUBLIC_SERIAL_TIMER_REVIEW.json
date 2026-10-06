@@ -133,7 +133,7 @@
   },
   "status": "original107_finite_native_qualified_next_fixed_cp7",
   "conclusion": "Original107 source-specific finite native evidence accepted; natural paired scoring and adoption remain unmeasured.",
-  "next": "Peer delivers each original105/106 terminal audit and source/outer-budget evidence, then freezes the serial CP7 using original107 finite qualification. Reviewer checks pairing, uncertainty, root causes and per-task request gates. No original audit/control/FIFO replay; no105 adoption or factor-score addition.",
+  "next": "Peer freezes one new onehot156 development regression and serial CP7 using original107 finite qualification, with separate candidates and fixed per-task cost gates. Reviewer checks source/freeze and eventual results. Do not expand rejected105, replay audits/controls, compose factor scores, or treat these sub-stages as the complete batch.",
   "original_tests_or_intake_reexecuted": 0,
   "new_diagnostic_processes": 1,
   "new_synthetic_inputs": 2,
@@ -1122,7 +1122,20 @@
     "effective_independent_families": null,
     "full_all_inclusive_batch_complete": false,
     "remaining_server_quota_verified": false,
-    "peer_acceptance_of_this_review": false,
-    "next": "Peer delivers each original105/106 terminal audit and source/outer-budget evidence, then freezes the serial CP7 using original107 finite qualification. Reviewer checks pairing, uncertainty, root causes and per-task request gates. No original audit/control/FIFO replay; no105 adoption or factor-score addition."
+    "peer_acceptance_of_this_review": true,
+    "next": "Peer delivers each original105/106 terminal audit and source/outer-budget evidence, then freezes the serial CP7 using original107 finite qualification. Reviewer checks pairing, uncertainty, root causes and per-task request gates. No original audit/control/FIFO replay; no105 adoption or factor-score addition.",
+    "peer_acceptance": {
+      "accepted_scope": "PR101 complete684d9a37 finite native107 and report-gate scope; no natural adoption.",
+      "mail_id": "1a11387f4623f601",
+      "comment": 6027274917,
+      "actual_delivery_sha256": "1ad70aeaf447d660c8a46e4612862fc31fc1213831efc250b965d863b7d7112f"
+    }
+  },
+  "paired_terminal_followup": {
+    "original107_finite_qualification_reused": true,
+    "original105_rejected": true,
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_FULL156_FREEZE_REVIEW.json",
+    "original106_new156_only": true,
+    "node": "original105_106_terminal_review"
   }
 }

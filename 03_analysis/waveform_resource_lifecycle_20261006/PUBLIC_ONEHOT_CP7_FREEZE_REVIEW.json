@@ -7,7 +7,7 @@
   "spec_sha256": "d4cc6b511450e4cbc19e95105f2479d11c5bdd7166c6782043b9da7decda70d2",
   "review_receipt_sha256": "abff5f7d03f844f04ad7b55289fcc9dfaab0adc46047830ee4e72802941e2012",
   "review_receipt_dual_verified": true,
-  "status": "bounded_preparation_review_accepted_original_ticket106_queued",
+  "status": "original106_terminal_audited_eligible_for_one_new_full156",
   "scope_sources": 119,
   "frozen_sources": 126,
   "reused_pipeline_methods": 27,
@@ -141,7 +141,7 @@
   "natural_terminal_score_audited": false,
   "adoption": false,
   "full_all_inclusive_batch_complete": false,
-  "next": "Peer retains original105 and106 handles and owns once-only terminal collector/auditor. This task follows and reviews terminal results, paired uncertainty, root causes and adoption conditions. No combination of candidates or repeated controls.",
+  "next": "Peer freezes one new onehot156 development regression and serial CP7 using original107 finite qualification, with separate candidates and fixed per-task cost gates. Reviewer checks source/freeze and eventual results. Do not expand rejected105, replay audits/controls, compose factor scores, or treat these sub-stages as the complete batch.",
   "elapsed_read_only_seconds": 1.482100335881114,
   "prestart_failure_review": {
     "reviewed_at": "2026-10-07T03:28:32+08:00",
@@ -184,5 +184,13 @@
     "adoption": false,
     "full_batch_complete": false,
     "elapsed_read_only_seconds": 0.0770959872752428
+  },
+  "terminal_review_reference": {
+    "receipt_sha256": "edeaafe24c6055b4080f57041474c7d302f642c58ca40f14327bb42e0008450b",
+    "adoption": false,
+    "source_and_all_members_verified": true,
+    "node": "original105_106_terminal_review.onehot106",
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_FULL156_FREEZE_REVIEW.json",
+    "qualified_for_new_full_regression": true
   }
 }

@@ -7,7 +7,7 @@
   "spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
   "review_receipt_sha256": "60f29430676cac32a6d020cb329ecb9e16ee606708303dfefd9e3291f4fa7f19",
   "review_receipt_dual_verified": true,
-  "status": "bounded_preparation_review_accepted_original_ticket105_running",
+  "status": "original105_terminal_audited_rejected",
   "source_counts": {
     "scope_controls": 105,
     "frozen": 109,
@@ -101,7 +101,7 @@
   "new_control_or_audit_runs": 0,
   "own_fifo_submissions": 0,
   "adoption": false,
-  "natural_terminal_score_audited": false,
+  "natural_terminal_score_audited": true,
   "full_all_inclusive_batch_complete": false,
   "remaining_server_quota_independently_verified": false,
   "full_all_inclusive_budget_admitted": false,
@@ -115,7 +115,7 @@
     "current_ack_sha256": "aadeefadd66a0b64fca2151e6329bc1b6bd1b7ec79978be0c63638f06a461303"
   },
   "limits": "Known development C/P156 only. Does not complete A/P/B, RTLLM, five independent samples or formal32GB/interface/recovery acceptance; no onehot/FSM composition. Live partial counts are progress only.",
-  "next": "Peer continues original FIFO105 and owns original terminal collection/audit; this task follows handle and reviews terminal evidence. No duplicate submission, rerun104/102 or change to frozen gates.",
+  "next": "Peer freezes one new onehot156 development regression and serial CP7 using original107 finite qualification, with separate candidates and fixed per-task cost gates. Reviewer checks source/freeze and eventual results. Do not expand rejected105, replay audits/controls, compose factor scores, or treat these sub-stages as the complete batch.",
   "peer_fifo_delivery": {
     "pr": 73,
     "head": "892e8ddb19d226e5ec7c993f43160e4c76dbb2c3",
@@ -505,7 +505,8 @@
       "accepted_pr95_delivery": "16e49eb7e1a84d4cfdf6150c0e8f663b5614d17225500028d669c21e34b9a761",
       "accepted_pr97_delivery": "b9d3a75abce1d268e174dfa1d081c12a9e7a64389fc8e77c1a8d5c3c64ab429c",
       "scope": "PR95 work-deadline/source scope and PR97 completed-summary/recorded-exit intake; not original audit or adoption."
-    }
+    },
+    "followup_terminal_review": "original105_106_terminal_review; prior intake remains historical summary-only evidence."
   },
   "external_terminal_budget_review": {
     "schema": "peer98_external_budget_bounded_review_v1",
@@ -667,5 +668,243 @@
     "node": "native_terminal_qualification_review",
     "optional_error_repair_verified": true,
     "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_SERIAL_TIMER_REVIEW.json"
+  },
+  "original105_106_terminal_review": {
+    "schema": "original105_106_terminal_bounded_independent_review_v1",
+    "checked_at": "2026-10-07T07:33:58.755903+08:00",
+    "source_commit": "81c073379d2e436ca17b634ee63e225437830e8c",
+    "peer_comment": 6027274917,
+    "mail_id": "1a11387f4623f601",
+    "peer_delivery_sha256": "1ad70aeaf447d660c8a46e4612862fc31fc1213831efc250b965d863b7d7112f",
+    "peer_results_sha256": "e08dbf4cdff5dee16fec711120673770fb7621c32b8696199e4ddcc579f1f026",
+    "scope": "Original105/106 once-only terminal provenance, complete archives, all326 row/request/judge bindings, paired descriptive statistics and bounded root-cause review. No semantic replay/original audit reexecution by reviewer.",
+    "wave105": {
+      "spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+      "source_files": 109,
+      "outputs": 312,
+      "summary_sha256": "02ffca339afa40c442f93767e6b0a528b65b68bd41ab35edeb4977d98200ae74",
+      "original_audit_sha256": "6f5dc899dc35c95419f389499d8bb36f572d7a5b36e57b7c25e4ce07c808c4e8",
+      "terminal_receipt_sha256": "f412f5d63e15ff54fe7ce99d539ea7bc7ccab9d4ed017de22481cc8a7551fc01",
+      "once_intent_sha256": "e97645e97454fce4001eb30c2bf9c8748f7560f70584251c5da1a59f8b965271",
+      "archive": {
+        "sha256": "997e65f38eeb1f03fbb20b15fddd8c0f11b4110d28616a5eedfcacbafe6924b1",
+        "bytes": 70255982,
+        "members": 12511,
+        "manifest_sha256": "ecda83c7c67551038313b5e781cde2f9e30659e0d6578dfc948a4569a7dfaf3f",
+        "dual_end_all_members_verified": true
+      },
+      "original_processes": {
+        "collector": {
+          "pid": 1664095,
+          "pgid": 1664095,
+          "session": 1664095,
+          "starttime": "860184208",
+          "command_sha256": "f65c5cf0a4958443031548ee98fa347c1a476fedeb931f991e661820c456c08b",
+          "returncode": 0,
+          "elapsed_s": 7.358222646638751,
+          "stdout_sha256": "3574a7b17da82c96df15823b05ca873e47543f50fb83e4163457e1de344fd762",
+          "streams_and_original_attempt_bound": true,
+          "current_identity_retired": true
+        },
+        "auditor": {
+          "pid": 1664096,
+          "pgid": 1664096,
+          "session": 1664096,
+          "starttime": "860185235",
+          "command_sha256": "e57de5c344c80cac039e3d0fbcce54d470e7ade677282b5695d2a47d1dadf79d",
+          "returncode": 0,
+          "elapsed_s": 4.504763258621097,
+          "stdout_sha256": "1e540613ba19992cdc808e4226cc5c321acf29417d779cc31ffb311f2e1fe718",
+          "streams_and_original_attempt_bound": true,
+          "current_identity_retired": true
+        }
+      },
+      "process_identity_scope": "original post-exec PID/start/cmd snapshots, stream/argv/return/recovery binding; no invented raw birth-stat/exec handshake",
+      "terminal_child": {
+        "pid": 1664094,
+        "state": "T",
+        "starttime": "860184022",
+        "pgid": 1664094,
+        "sid": 1664094,
+        "command_sha256": "71cec9611e9a3ec5a84dcfc39800aad50c8bbd329ad71e0303f94366b6b472f4",
+        "exec_confirmed": true,
+        "leader_reaped": true,
+        "elapsed_s": 20.351426286622882,
+        "cap_s": 450,
+        "final_artifacts_exit_reap_cleanup_verified": true,
+        "fake_injection": false
+      },
+      "observer": {
+        "pid": 1664093,
+        "starttime": "860183907",
+        "command_sha256": "71cec9611e9a3ec5a84dcfc39800aad50c8bbd329ad71e0303f94366b6b472f4",
+        "role": "wave105",
+        "state": "Z_empty_cmdline",
+        "receipt_not_self_exit_proof": true,
+        "self_complete_budget_not_claimed": true
+      },
+      "recorded_guard_identities_retired": 11255,
+      "protection_receipts": 625,
+      "L3": {
+        "C": 112,
+        "P": 114
+      },
+      "requests": {
+        "C": 167,
+        "P": 168
+      },
+      "weighted": {
+        "C": 0.7679487179487179,
+        "P": 0.7782051282051282
+      },
+      "paired_L3_table_both_P_only_C_only_neither": [
+        112,
+        2,
+        0,
+        42
+      ],
+      "descriptive_exact_mcnemar_p": 0.5,
+      "original_audit_pending_field": false,
+      "original_auditor_actual_executed": true,
+      "qualified_for_new_full_regression": false,
+      "adoption": false
+    },
+    "onehot106": {
+      "spec_sha256": "d4cc6b511450e4cbc19e95105f2479d11c5bdd7166c6782043b9da7decda70d2",
+      "source_files": 126,
+      "outputs": 14,
+      "summary_sha256": "1ae79af06c8d4ebc2bc2d641709761e44928466007603fc2a93cea279ee8113c",
+      "original_audit_sha256": "5071f22193cc25d78c31c4545178e2d794087f96f9834a933c965625b63a71a0",
+      "terminal_receipt_sha256": "333e8e1e3b0d3dc5a18fe015530b93a73067319c8840775706c4942811bee9c3",
+      "once_intent_sha256": "c494123d3cb36da867c4d819abedfa92129e0607b65540e642f3ad14bfa04924",
+      "archive": {
+        "sha256": "3cc31207ae275e295d075209c3cb23827d1b93cd17ff2a0b1948698be73792d7",
+        "bytes": 4515213,
+        "members": 881,
+        "manifest_sha256": "0cd04f36dc985a238eec2ed57de30683b70ec1115bb8b052ba5bc39c624e1987",
+        "dual_end_all_members_verified": true
+      },
+      "original_processes": {
+        "collector": {
+          "pid": 1664102,
+          "pgid": 1664102,
+          "session": 1664102,
+          "starttime": "860186017",
+          "command_sha256": "48c9a5414ea5fa4504e41153b0881e5c044e2cd23fde2bff740c40583e83899c",
+          "returncode": 0,
+          "elapsed_s": 0.5468202661722898,
+          "stdout_sha256": "0a809eceb86a5e9dacf601343eb625bd4a81d5f48ee17479e94a7414774195b2",
+          "streams_and_original_attempt_bound": true,
+          "current_identity_retired": true
+        },
+        "auditor": {
+          "pid": 1664103,
+          "pgid": 1664103,
+          "session": 1664103,
+          "starttime": "860186255",
+          "command_sha256": "ab9759628e21968b7f96b72d1baebb5e0298ff1770c9e9feece1856d76678d9c",
+          "returncode": 0,
+          "elapsed_s": 0.6466982644051313,
+          "stdout_sha256": "0e9cafd78350a4d95a3d2fa3f861be6f05843de35996c8f14f5876f859aa22ce",
+          "streams_and_original_attempt_bound": true,
+          "current_identity_retired": true
+        }
+      },
+      "process_identity_scope": "original post-exec PID/start/cmd snapshots, stream/argv/return/recovery binding; no invented raw birth-stat/exec handshake",
+      "terminal_child": {
+        "pid": 1664101,
+        "state": "T",
+        "starttime": "860185829",
+        "pgid": 1664101,
+        "sid": 1664101,
+        "command_sha256": "2c1738a5cdab98a1210a64d679b9e162d0d1fa3ebb57d6d689dab3a226cf6af3",
+        "exec_confirmed": true,
+        "leader_reaped": true,
+        "elapsed_s": 8.546911153942347,
+        "cap_s": 450,
+        "final_artifacts_exit_reap_cleanup_verified": true,
+        "fake_injection": false
+      },
+      "observer": {
+        "pid": 1664100,
+        "starttime": "860185715",
+        "command_sha256": "2c1738a5cdab98a1210a64d679b9e162d0d1fa3ebb57d6d689dab3a226cf6af3",
+        "role": "onehot106",
+        "state": "Z_empty_cmdline",
+        "receipt_not_self_exit_proof": true,
+        "self_complete_budget_not_claimed": true
+      },
+      "recorded_guard_identities_retired": 735,
+      "protection_receipts": 29,
+      "L3": {
+        "C": 6,
+        "P": 7
+      },
+      "requests": {
+        "C": 10,
+        "P": 9
+      },
+      "weighted": {
+        "C": 0.8857142857142858,
+        "P": 1
+      },
+      "paired_L3_table_both_P_only_C_only_neither": [
+        6,
+        1,
+        0,
+        0
+      ],
+      "descriptive_exact_mcnemar_p": 1,
+      "original_audit_pending_field": true,
+      "original_auditor_actual_executed": true,
+      "qualified_for_new_full_regression": true,
+      "adoption": false
+    },
+    "root_cause_review": {
+      "data_use": "All inspected known tasks and raw outputs remain development/regression; no reference RTL/testbench read for generation, no new tuning.",
+      "waveform": {
+        "gains": 2,
+        "advice_applied_gain": 1,
+        "other_gain_without_advice": 1,
+        "nonadvice_first_response_differed": true,
+        "nonadvice_extra_request_cause": "First P response had duplicate enum declarations; native compile rejected, fixed second response. C/P original request identical, cannot causally attribute this gain/cost to waveform advice.",
+        "historical_failures": [
+          "Common C/P output decode omitted a shared active-state contribution; both remained L1.",
+          "Common C/P FSM adds an idle cycle between last shift and counting; both remained L1."
+        ],
+        "supported_waveform_case": "C used rising-edge-only updates; P used level-sensitive tracking plus falling-edge capture, matching its original judge. One known task is insufficient for generalization.",
+        "reject": "Historical preservation, per-historical-task and total request cost, 120 L3 and .80 gates fail; preserve candidate, no expansion."
+      },
+      "onehot": {
+        "mechanical_target_width": 10,
+        "L1_to_L3": true,
+        "zero_model_requests": true,
+        "root_cause": "C omits shared-state contribution in both output masks; frozen prompt-derived mechanical emitter includes it. Original native judge 27/224 mismatches to0/224, synthesis passed. Scope is this one natural task, not arbitrary widths or full Boolean-domain proof.",
+        "six_guards_preserved": true,
+        "every_task_request_nonincrease": true,
+        "qualification": "Only a fresh frozen156 known-development regression; no adoption."
+      }
+    },
+    "original107_prior_review_reused": "313bad8c3541644c533ffb6daf15fe2113de81d5a52a8df8cc8b4288d69aeae3",
+    "peer_acceptance_of_pr99_and_pr101": {
+      "comment": 6027274917,
+      "pr99_actual": "775e0b9cafd51b27a77f3514b80635236ec98d06db64ca2946727fa0c42f1bb6",
+      "pr101_actual": "684d9a37328d3be5a774f2edf8eff61a02b4f4bf19140a351afb13d359fcb0ee",
+      "accepted_limited_scope": true,
+      "not_independent_full_generator_or_adoption": true
+    },
+    "read_only_receipt_sha256": "edeaafe24c6055b4080f57041474c7d302f642c58ca40f14327bb42e0008450b",
+    "read_only_seconds": 3.8361109476536512,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_tests": 0,
+    "original_auditor_or_collector_reviewer_runs": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "full_all_inclusive_batch_complete": false,
+    "full_batch_budget_or_actual_quota_verified": false,
+    "peer_acceptance_of_this_new_review": false,
+    "next": "Peer freezes one new onehot156 development regression and serial CP7 using original107 finite qualification, with separate candidates and fixed per-task cost gates. Reviewer checks source/freeze and eventual results. Do not expand rejected105, replay audits/controls, compose factor scores, or treat these sub-stages as the complete batch."
   }
 }
