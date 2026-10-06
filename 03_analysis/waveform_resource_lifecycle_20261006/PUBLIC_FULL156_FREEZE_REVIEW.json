@@ -346,10 +346,17 @@
       "description": "finish() disarms alarm and samples elapsed before final receipt serialization/write and process exit; one-shot work alarm has no independent cleanup-end deadline.",
       "required": "New launch transport must enforce actual whole supervisor birth through final receipt, exit/reaping and owned cleanup; reject timeout or unconfirmed cleanup; preserve global once-only intents.",
       "whole_budget_admission": false,
-      "peer_received_or_accepted": null
+      "peer_received_or_accepted": {
+        "comment": 6026725808,
+        "mail": "1a1135db0e26dfe7",
+        "hold_receipt_sha256": "95c6f722946b9c53c120a4cb4aee62e03989aa915cb01e8c7c4c4793ea981ba4",
+        "accepted_feedback": 6026584226,
+        "full_pr95_delivery_acknowledged": false,
+        "launcher_HOLD_source_not_independently_read": true
+      }
     },
     "conclusion": "Accept bounded provenance of original three controls and installed sources; complete process-budget qualification remains open. No actual terminal audit or score qualification.",
-    "next": "Peer completes source-frozen external launch/exit/cleanup budget enforcement before any original terminal attempt. Review new delivery and later original terminal provenance/paired uncertainty/root cause/adoption; do not rerun controls or take over original handles.",
+    "next": "Peer closes new outer terminal budget before original collector/auditor once; then independent final provenance and root-cause review. Continue existing106/107 only. No expansion/adoption from preliminary summary.",
     "limits": [
       "Two negative controls used20.2s total/.2s work cutoff, not120/450s duration stress.",
       "Three new terminal supervisors and original collectors/auditors were not executed by these controls.",
@@ -377,5 +384,113 @@
     },
     "adoption": false,
     "full_batch_complete": false
+  },
+  "generation_exit_intake": {
+    "schema": "wave105_generation_exit_bounded_intake_v1",
+    "checked_at": "2026-10-07T06:41:40.493656+08:00",
+    "scope": "Completed generation summary and recorded exit/guard evidence only; original collector/auditor and full raw provenance not executed or certified by reviewer",
+    "inputs": {
+      "RUN_SPEC.json": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+      "results/summary.json": "02ffca339afa40c442f93767e6b0a528b65b68bd41ab35edeb4977d98200ae74",
+      "guard/status.json": "3ac4cf480a7e5e35cf2e4d149a65a6b4eae9e31d8cb79d914ca11b8c6eaeca91",
+      "STAGE_STATUS.json": "cb2ff04d70cb08328a984378b874a72e0b73e0685353f78b6a7107527cfefd75"
+    },
+    "ticket_sha256": "521fcc105dcb0b9911b9a99daa5ec712d51e0ce84d929cec5bfef10e89403b3c",
+    "completed_at": "2026-10-07T06:38:42.935336+08:00",
+    "source_count": 109,
+    "source_files_match": true,
+    "rows": 312,
+    "unique_seen_development_pairs": 156,
+    "requests": {
+      "C": 167,
+      "P": 168
+    },
+    "L3": {
+      "C": 112,
+      "P": 114
+    },
+    "coefficients_reported": {
+      "C": 0.7679487179487179,
+      "P": 0.7782051282051282
+    },
+    "paired_cells_from_summary": {
+      "both_L3": 112,
+      "P_only_L3": 2,
+      "C_only_L3": 0,
+      "neither_L3": 42
+    },
+    "exact_mcnemar_two_sided_descriptive_p": 0.5,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "grade_regressions": [],
+    "changed_levels": [
+      {
+        "C_level": 1,
+        "P_level": 3
+      },
+      {
+        "C_level": 1,
+        "P_level": 3
+      }
+    ],
+    "request_increases": [
+      {
+        "C_requests": 1,
+        "P_requests": 2,
+        "C_level": 1,
+        "P_level": 3,
+        "C_s": 56.65972513332963,
+        "P_s": 154.2092605754733
+      }
+    ],
+    "summary_screening_eligible": false,
+    "summary_original_provenance_audit_pending": true,
+    "reported_deadlines": 0,
+    "reported_unconfirmed": 0,
+    "tool_errors_from_rows": 0,
+    "generation_elapsed_s": 15458.440058683977,
+    "guard_elapsed_s": 15458.765525085852,
+    "guard_rc": 0,
+    "guard_passed": true,
+    "guard_model_idle_after": {
+      "processing_slots_at_guard_exit": 0,
+      "health_status": "ok"
+    },
+    "guard_owned_cleanup_verified": true,
+    "recorded_unique_owned_identities": 11255,
+    "live_matching_owned_non_zombie": [],
+    "own_slot_released": true,
+    "original_monitor": {
+      "pid": 1399205,
+      "state": "Z",
+      "starttime": "858451282",
+      "command_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "original_guard": null,
+    "original_stage": null,
+    "shared_model_match": true,
+    "current_slot_owner": "codex_onehot_synthesis_cp7_20261007_v1",
+    "original_audit_intent_exists": false,
+    "budget_gap_ack": {
+      "comment": 6026725808,
+      "mail": "1a1135db0e26dfe7",
+      "hold_receipt_sha256": "95c6f722946b9c53c120a4cb4aee62e03989aa915cb01e8c7c4c4793ea981ba4",
+      "accepted_feedback": 6026584226,
+      "full_pr95_delivery_acknowledged": false,
+      "launcher_HOLD_source_not_independently_read": true
+    },
+    "next": "Peer closes new outer terminal budget before original collector/auditor once; then independent final provenance and root-cause review. Continue existing106/107 only. No expansion/adoption from preliminary summary.",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_tests": 0,
+    "original_collector_or_auditor_runs": 0,
+    "new_fifo": 0,
+    "adoption": false,
+    "full_batch_complete": false,
+    "read_only_seconds": 0.15019429102540016,
+    "review_receipt_sha256": "140abb442c847180acac2591a3a0babdd0897c5fb7e2e7c4f727eb6e4661294f",
+    "historical_L3_regressions_reported_count": 2,
+    "interpretation": "Preliminary completed-summary intake: runtime completion does not imply acceptance. Total candidate requests increase, one improved historically correct task costs more, historical protection and120/.80 thresholds fail. Full provenance and algorithmic root cause await original terminal audit.",
+    "gate_root_cause_scope": "Frozen acceptance gates only; no assertion about underlying RTL/model mechanism without original provenance review."
   }
 }
