@@ -38,7 +38,7 @@ Probe0.017377s; guard0.251180s. Model identity, protected files, descendant clea
 
 ## Decision and next gate
 
-Keep P frozen. Do not expand this corpus or repeat old model samples. A possible admission route must first establish complete combinational equivalence or valid induction with no generated stubs, preserving interfaces, state assumptions, failure and timeout distinctions. That route is not implemented or verified. Actual quota, independent materials and formal32GB delivery remain blockers for an all-inclusive run.
+Keep P frozen. Do not expand this corpus or repeat old model samples. A possible admission route must first establish complete combinational equivalence or valid induction with no generated stubs, preserving interfaces, state assumptions, failure and timeout distinctions. That route is not implemented or verified. Actual quota, independent materials and formal32GB delivery remain blockers for an all-inclusive run. At09:36, no Yosys was found in the current default PATH or three standard locations; this bounded lookup does not prove absence from isolated installations. No tools were installed or executed. Next: inspect the existing isolated-tool manifests before preparing any proof route. Actual remaining hours and expiry have been requested from the user; no purchase or model expansion is authorized by this report.
 
 ## Evidence and cleanup
 
