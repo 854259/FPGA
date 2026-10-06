@@ -2,6 +2,8 @@
 
 2026-10-06. **Prepared, not executed or passed.** This is an engineering admission substage, not a quality run or a full batch. P remains frozen. The other owner's ticket90 is running its own frozen 156-task C/P regression; this work must wait in the existing FIFO.
 
+At10:03+08, ticket91 is queued with monitor638501 alive; no result directory exists. Execution source61407c9ece32894eda9095d675ce8e6b5e8be0aa, source SHA25604460ec0f35281327e194724061cf9c6536d2bdb51d9b0bae7d6b1f62e233204, plan SHA256c65efde8ece96947a77ba374abbc666cbb37a6d7021e82a40a409629770f29cf. All8 prepared files match on both endpoints; model identity is unchanged. Reviewed under [draft PR23](https://github.com/854259/FPGA/pull/23), pending actual AMD validation before merge.
+
 The source-metadata counterexample showed that a text label and finite simulation cannot by themselves establish full correctness. The next useful question is whether an isolated local tool can provide complete finite-width combinational proofs and valid sequential induction, while keeping bounded success, reachable counterexample, inconclusive proof and tool failure distinct.
 
 ## Frozen experiment
