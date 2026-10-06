@@ -1,0 +1,73 @@
+{
+  "schema": "fsm102_original_full156_terminal_public_v1",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "ticket": 102,
+  "development_tasks": 156,
+  "paired_outputs": 312,
+  "actual_model_requests": 333,
+  "original_frozen_sources": 118,
+  "spec_sha256": "451d7191252877db37971f49ecc80a35881da5eec6bb8c493a9fcb8a5167bd41",
+  "original_auditor_passed": true,
+  "original_collector_executions": 1,
+  "original_auditor_executions": 1,
+  "both_returncode_zero": true,
+  "auditor_sha256": "e3048ed3a0345aef88842f4839d144ee89723c058365bce9aa2e219375c091c4",
+  "audit_sha256": "acc9998e4b5f28a5d43c5ccb591f4d9d7f30c3ab105d7fda75a2fc342ea3cc65",
+  "terminal_receipt_sha256": "e3d4ff9f70dcffb04f5564b66f05ebb2d8cb90e1c8b0d52054945a527fd0b4e9",
+  "fully_correct_by_arm": {
+    "C": 112,
+    "P": 115
+  },
+  "coefficients": {
+    "C": 0.7679487179487179,
+    "P": 0.7833333333333333
+  },
+  "requests_by_arm": {
+    "C": 167,
+    "P": 166
+  },
+  "improvements": [
+    "Prob140_fsm_hdlc",
+    "Prob142_lemmings2",
+    "Prob152_lemmings3"
+  ],
+  "mechanical_repairs": [
+    "Prob142_lemmings2",
+    "Prob152_lemmings3"
+  ],
+  "paired_regressions": [],
+  "original113_regressions": [
+    "Prob143_fsm_onehot",
+    "Prob145_circuit8",
+    "Prob151_review2015_fsm"
+  ],
+  "request_increases": [
+    {
+      "task": "Prob140_fsm_hdlc",
+      "C_level": 1,
+      "P_level": 3,
+      "C_requests": 1,
+      "P_requests": 2
+    }
+  ],
+  "guard_pass": false,
+  "unchanged_task_request_cost": false,
+  "qualified_for_goal": false,
+  "adoption": false,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false,
+  "archive": {
+    "archive_sha256": "0faed6d9a8edfd87a938b5b6280b63aeefaba907960a0935e4550d269b1685ed",
+    "archive_bytes": 62485702,
+    "archive_members": 11988,
+    "every_member_bound_both_ends": true
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo": false,
+  "new_scoring_runs": 0,
+  "terminal_protected_groups": 92,
+  "terminal_summed_source_assets": 6047,
+  "next_action": "Reject adoption; task-blind fixed onehot CP7 next, retain peer104 responsibility and full original goals."
+}
