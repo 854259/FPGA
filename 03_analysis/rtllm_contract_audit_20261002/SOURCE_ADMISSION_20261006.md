@@ -1,3 +1,24 @@
+## Current gate: complete source metadata inventory
+
+2026-10-06 14:31+08. The strict formal-tool control stage passed and was merged through [PR23](https://github.com/854259/FPGA/pull/23), merge eadb360b919c4041f946169676d60fe9a2658ff2. This enables a separate source-admission audit; it admits no task by itself.
+
+The next engineering substage is frozen at source182c4ddc5222074891fc1edeea12d4626a4c33e9 and submitted as FIFO ticket97, monitor881938, after the other owner's ticket96. [PR44](https://github.com/854259/FPGA/pull/44) remains draft pending AMD execution and terminal review. No task body or candidate setting is changed.
+
+The complete Git tree at ChipVerilog3eea482f20c048966d54ed04c418b85e5fd4d498 contains5565 metadata entries and is not truncated. It was acquired as a pure file operation; no task descriptions, RTL, testbenches or generated-output bodies were downloaded. Tree SHA256102874d7e191b48fdbc00a9ad071ee56446aec6c2dcfabd9a84c2f2e0cb1d497; source SHA256fcb0f33d72433ca679bd1b087e8aa9bf38d74eec2a55882a563de376390f4d80; plan SHA256e91589afd911108f7124e1c337891e9bf5765209bfddbaecb771440939805e3b. All three inputs match on AMD.
+
+Scope: inventory every declared64 task and5 families. Pair source/reference description copies by Git blob hash and size within each declared family; retain every missing/ambiguous record. Record reference-directory RTL asset paths and same-blob upstream paths, without inferring their top modules, role, correctness or full dependencies from filenames. Declaration counts38/11/9/3/3 come from the existing README, not observed model performance. No task-ID exceptions, source stubs or score-based selection.
+
+The inventory must reject tree/plan/source drift, truncation, duplicate/unsafe paths, malformed object identities or count mismatch. Gaps remain explicit in the output; they are not silently removed to obtain a pass. It does not execute the downloaded verifier. Budget0 model/EDA,120-second stage,5-minute FIFO slot, no automatic retry or corpus expansion. The prior classifier-probe mode remains separate and is not repeated.
+
+All five families still need actual license/contract/reference/dependency review. Three CORDIC tasks have an unspecified exact license according to the pinned declaration; MIPS and FPU LGPL versions/source notices remain unresolved. The declared five source families are not a measured effective independent N. Team-wide and training exposure remain unknown. Merely reading metadata cannot certify untouched independent materials.
+
+Next after terminal review: freeze an evaluation-only source-body/contract audit, preserving all64 entries and keeping reference/testbench contents outside generator prompts. Any material used to change candidates/rules becomes development data. Actual quota/expiry, complete A/P/B cost, independent admission and formal32GB delivery remain open; P stays frozen.
+
+Private preparation and future receipts:05_handoff/independent_validation_20261004/source_contract_inventory_20261006/. No raw metadata response or private receipt is committed.
+
+---
+
+
 # Independent-source admission: bounded classifier counterexample
 
 Checked 2026-10-06 09:31 +08:00. This substage is complete. No new model quality result, independent admitted task, or all-inclusive batch completion.
