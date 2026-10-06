@@ -44,4 +44,3 @@ if __name__ == '__main__':
     paired.INHERITED_ORACLE = Path(spec['dependencies_cloud']) / 'probe_runner.py'
     paired.check_resource(args.resource_check, args.kit)
     run_worker(args, paired)
-
