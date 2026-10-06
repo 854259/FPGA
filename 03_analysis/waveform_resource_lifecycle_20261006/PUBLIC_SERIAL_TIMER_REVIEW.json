@@ -131,9 +131,9 @@
     "supervisor_terminal_state": "Z, empty cmdline; retained by PID1, not active",
     "original_failure_retained": true
   },
-  "status": "whole_terminal_budget_source_gap_pending_external_enforcement",
-  "conclusion": "Accept source-only activity-label fix: two human-visible literals only, with byte-exact reversal and unchanged scoring/contract/request/budget logic. No runtime or score qualification.",
-  "next": "Peer completes new immutable missing-error gate repair, launch/read source binding and necessary new-context evidence; then each original collector/auditor once under complete450/450/120 cap. Reviewer receives terminal provenance, pairing and root-cause evidence. No repeated controls/FIFO, no failed105 expansion.",
+  "status": "original107_finite_native_qualified_next_fixed_cp7",
+  "conclusion": "Original107 source-specific finite native evidence accepted; natural paired scoring and adoption remain unmeasured.",
+  "next": "Peer delivers each original105/106 terminal audit and source/outer-budget evidence, then freezes the serial CP7 using original107 finite qualification. Reviewer checks pairing, uncertainty, root causes and per-task request gates. No original audit/control/FIFO replay; no105 adoption or factor-score addition.",
   "original_tests_or_intake_reexecuted": 0,
   "new_diagnostic_processes": 1,
   "new_synthetic_inputs": 2,
@@ -976,5 +976,153 @@
       "next_minimal_change": "Peer source-specific report.get(error) gate with complete/passed/schema/spec/counts preserved, new gate controls and bindings before original once-only terminal launch."
     },
     "receipt_sha256": "113c2c2eca0c52fd5ab677b93b5ae7c35eea9536308701d395478af33deb0c49"
+  },
+  "native_terminal_qualification_review": {
+    "schema": "peer100_success_gate_native107_bounded_review_v1",
+    "checked_at": "2026-10-07T07:14:15.702861+08:00",
+    "peer_pr": 100,
+    "peer_head": "81c073379d2e436ca17b634ee63e225437830e8c",
+    "peer_merge": "7fbab7bdf729c06d2e79ca1a814d7a2423b84f09",
+    "peer_comment": 6027081975,
+    "mail_id": "1a11378ba7e6ead9",
+    "peer_delivery_sha256": "5f904146e5cdbc2f864267882ddb2f9d2575d22586764e6050d9670012d38e82",
+    "scope": "Optional error-field source repair and16 extracted report-assertion controls; original107 finite native provenance and actual terminal child budget. No paired105/106 audit acceptance or natural score.",
+    "public_files": 12,
+    "public_python_files": 3,
+    "preparation_sources": 26,
+    "source_delta": {
+      "wave105": {
+        "old_sha256": "2404f7d47a83d94d0a63b4c464be1fe18c1b421a8d3c4411bbc226aad257b74b",
+        "new_sha256": "e644353e40f666f3da4455438764a48070a9d6f55921856be80fd81f2fef335a",
+        "reverse_delta_exact": true
+      },
+      "onehot106": {
+        "old_sha256": "ca74707025f4ac56f35e5f7f274e6f6258e1cbb36fe620e734b6ec0fc6301b7f",
+        "new_sha256": "376ae958f2d956bfaaf51219de8360df052684ee2f2c6ba1c0856d59daea55da",
+        "reverse_delta_exact": true
+      }
+    },
+    "control_receipt_sha256": "130136f70bec5a1a54a7ce943d369892167ba6de3a4a64750531d991c831e365",
+    "control_process": {
+      "pid": 1664026,
+      "starttime": "860125181",
+      "elapsed_s": 0.1930894311517477,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "stdout_sha256": "87830c3e4d55ffebec15106b8d8c0cc76f4c069bbe0dce9f350bf6f921592644"
+    },
+    "first_failure": {
+      "receipt_sha256": "538c3546b9701fd4a923fd54707a01d7d3e34d7b104a9d3b5bc25da58cb0f06b",
+      "pid": 1664007,
+      "starttime": "860117461",
+      "elapsed_s": 0.13670015521347523,
+      "returncode": 1,
+      "stdout_sha256": "f58eac118d94bd82858b7c9a28244dc7e6143a6feddaed63678a5730a16353ee",
+      "scope": "Original selector included the post-audit equality; failed before first scenario. Exact selector-only correction, production two single-line changes unchanged. Failure retained, not a native/algorithm failure."
+    },
+    "controls": 16,
+    "protected_roots": 119,
+    "protected_unique_files": 7670,
+    "old117_groups_preserved": true,
+    "archives": [
+      {
+        "sha256": "ac64f8b061d14583f9ce479af66fd4a6e5af09dbc8473c7f7a648bc90321b6fa",
+        "bytes": 635689,
+        "members": 37,
+        "dual_end_all_members_verified": true
+      },
+      {
+        "sha256": "6a471b2046c54281dc8e9c862cd3a4e41a75914161e1dc57e8908f531f07ff7d",
+        "bytes": 12735824,
+        "members": 509,
+        "dual_end_all_members_verified": true
+      }
+    ],
+    "native107": {
+      "spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+      "source_files": 117,
+      "summary_sha256": "7c99177b80b7d8f90a439f2376d52081a3a14a91e559ae2238a8029d2d0db51f",
+      "original_audit_sha256": "f57af8d7a6d2cb11abc051e757876679a8b7bc040787a52d296894cc2e84d8d7",
+      "audit_pid": 1664047,
+      "audit_starttime": "860134854",
+      "audit_elapsed_s": 1.4407760854810476,
+      "audit_returncode": 0,
+      "audit_exec_and_reaped": true,
+      "audit_stdout_sha256": "3ceebb0a858a454dd9091591d55f6ca41a41bb9035942f6d4bda580e3516e49a",
+      "original_audits": 1,
+      "controls": 12,
+      "positive": 8,
+      "actual_rtl_mutants": 4,
+      "commands": 36,
+      "guard_receipts": 73,
+      "observations": 13800,
+      "model_calls": 0,
+      "recorded_guard_identities_retired": 166,
+      "terminal_receipt_sha256": "869ae57c8816193205670475dba395cfd06bcf0a449fd7d02196079d78639c1e",
+      "terminal_pid": 1664046,
+      "terminal_starttime": "860134671",
+      "terminal_external_seconds": 6.372556610032916,
+      "terminal_cap_seconds": 120,
+      "terminal_final_artifact_exit_reap_cleanup_verified": true,
+      "observer_identity": {
+        "pid": 1664045,
+        "starttime": "860134559",
+        "command_sha256": "141e8c150a066e19d86074321e418c219569dbd9842323f79b733d2ce9346f19",
+        "role": "serial107"
+      },
+      "observer_state": "Z_empty_cmdline",
+      "observer_receipt_not_self_exit_proof": true,
+      "observer_self_complete_budget_not_claimed": true,
+      "scope": "Finite synthetic binary events and synchronous reset/edge observations; no exhaustive parser domain, unknown-input extension, natural score or independent unseen evaluation.",
+      "internal_next_and_xz_not_qualified": true,
+      "original_summary_native_qualified_false_is_pre_audit_snapshot": true,
+      "qualification_accepted_for_future_fixed_cp7": true,
+      "natural_score_measured": false,
+      "adoption": false
+    },
+    "live": {
+      "105": {
+        "state": "completed",
+        "source_files": 109,
+        "spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+        "summary_sha256": "02ffca339afa40c442f93767e6b0a528b65b68bd41ab35edeb4977d98200ae74",
+        "outputs": 312,
+        "requests": 335,
+        "once_intent": true
+      },
+      "106": {
+        "state": "completed",
+        "source_files": 126,
+        "spec_sha256": "d4cc6b511450e4cbc19e95105f2479d11c5bdd7166c6782043b9da7decda70d2",
+        "summary_sha256": "1ae79af06c8d4ebc2bc2d641709761e44928466007603fc2a93cea279ee8113c",
+        "outputs": 14,
+        "requests": 19,
+        "once_intent": true
+      },
+      "107": {
+        "state": "completed",
+        "source_files": 117,
+        "spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+        "summary_sha256": "7c99177b80b7d8f90a439f2376d52081a3a14a91e559ae2238a8029d2d0db51f",
+        "outputs": 12,
+        "requests": 0,
+        "once_intent": true
+      }
+    },
+    "scope_limit": "All native raw command identities/streams/candidate/testbench hashes, recorded row measurements,73 guards and509 archive members bound. Reviewer did not reexecute measurement or original audit; finite binary three-output evidence only. 16 gate controls execute extracted assertions, not full supervisors. Runtime107 budget does not qualify105/106.",
+    "read_only_receipt_sha256": "313bad8c3541644c533ffb6daf15fe2113de81d5a52a8df8cc8b4288d69aeae3",
+    "read_only_seconds": 1.463172497227788,
+    "new_tests": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "original_auditor_or_collector_runs": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "full_all_inclusive_batch_complete": false,
+    "remaining_server_quota_verified": false,
+    "peer_acceptance_of_this_review": false,
+    "next": "Peer delivers each original105/106 terminal audit and source/outer-budget evidence, then freezes the serial CP7 using original107 finite qualification. Reviewer checks pairing, uncertainty, root causes and per-task request gates. No original audit/control/FIFO replay; no105 adoption or factor-score addition."
   }
 }
