@@ -1,4 +1,31 @@
-## Current gate: complete source metadata inventory — verified
+## Source body provenance — completed and verified; reference admission withheld
+
+2026-10-06 19:58+08. FIFO ticket100 completed at11:46:53Z under execution source6139441b7c52d96514e73802a7e3b3b3437710bf, unchanged SHA256 f846761b95741ff5f74680d32f875c42ac03750ba128ce35e7c73b29129d519b. This engineering substage is complete; independent task admission remains0 and no full quality batch has completed.
+
+All308 file paths and212 unique Git blobs match the pinned byte sizes, Git identities and acquisition SHA256 hashes. All64 description pairs and84 reference-directory RTL assets were retained. The five original generic comment/string controls passed. Raw bytes remain evaluator-only; no corpus code, model generation, compiler or simulator ran. The original stdout matches the result summary exactly.
+
+| Source family | Tasks | Reference assets | Exact original blob | No mechanical identity |
+|---|---:|---:|---:|---:|
+| double FPU |9|12|5|7|
+| I2C |3|6|4|2|
+| MIPS16 |11|21|18|3|
+| OR1200 |38|41|1|40|
+| CORDIC |3|4|3|1|
+| Total |64|84|31|53|
+
+Line-ending normalization and comment masking did not identify additional matching assets. This is not proof that the53 differ in behavior: whitespace, extraction, edits and actual semantic differences remain unresolved. Although51 of53 have a matching lexical module-name list, names do not establish equivalence. The66 reference assets with literal include hints all have basename candidates in the original family; this does not prove that include resolution or dependency closure is correct. No generated stubs or benchmark-specific source repair were used.
+
+The original stage took0.304128515s and the resource guard0.501714673s; queue wait10562.329477s is separate. Frozen caps were120s and a five-minute FIFO slot, with zero model/EDA calls. Original guard receipts confirm unchanged model/protected files, owned descendant cleanup, idle backend at exit and slot release. Terminal review reverified all212 blob identities, every retained row, summary counts and stdout binding without rerunning the experiment.
+
+Private evidence remains in the existing source_body_provenance_20261006 archive under05_handoff/independent_validation_20261004. Terminal ZIP712240bytes has226 members (225 hashed payloads plus manifest), SHA256 d5f11533e562fff5eb2b0d50c207ea9837a3722df11d25dceca353dfb43ac2d3. Both endpoint ZIP hashes and every member match. Result SHA256 d269f9ca47803d0a151dd21267732149dac5aed3882ffbf34cecd20e265b6b9c; guard861a82b44c44aeb051b09572029b091deb46a213281ad16f331e1c113f27b0a9; terminal review04ac30c8001cb080f0438060b1239fbc982859d3287d0b9455d9a5b39234293c. Frozen originals and valid evidence are retained; no task-created temporary/cache residue remains. Raw corpus bodies, source tree, logs and private receipts are excluded from GitHub. Delivered through [PR50](https://github.com/854259/FPGA/pull/50).
+
+Decision: accept this mechanical provenance audit, but withhold the corpus from independent correctness scoring in its present form. All64 entries remain visible with unresolved full-contract, dependency, license, reference-trust and exposure gates. There is no new independent-task count, effective independent-family N or accuracy gain. Matching31 assets does not admit31 tasks; five named families are not a proved independent sample size. Do not repeat the passed lexical/body controls or start model scoring on this evidence.
+
+Next: continue the agreed specific-version review of the peer's completed ticket98 C/P156 results and adoption gates. Ticket101 is held after an original failed completion receipt; its owner was notified in [Issue7 comment6015731185](https://github.com/854259/FPGA/issues/7#issuecomment-6015731185), without releasing or restarting the peer's work. A future no-stub source proof route requires a separately frozen complete contract/dependency scope; it is not automatically authorized by this mechanical audit. Full A/P/B, independent material, actual total budget/quota and formal32GB delivery remain open.
+
+---
+
+## Completed source metadata inventory — verified
 
 2026-10-06 16:41+08. FIFO ticket 97 completed on AMD at 06:41:00Z. All 64 source/reference description pairs are unique across five declared families. All 84 reference-directory RTL assets are bound to the pinned Git tree; 53 have no identical blob in the corresponding original Src family. This is a provenance gap, not evidence that those assets are incorrect: testbenches, formatting, extraction or edits still require body inspection.
 

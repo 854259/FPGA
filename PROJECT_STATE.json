@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T16:38:27+08:00",
+  "checked_at": "2026-10-06T19:58:00+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3126,16 +3126,14 @@
   "processing_slots": null,
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
-  "known_full156_regression_completed_ticket": 61,
-  "latest_own_stage": "Complete source metadata inventory",
+  "known_full156_regression_completed_ticket": 98,
+  "latest_own_stage": "Evaluator-only body provenance audit",
   "latest_own_stage_complete": true,
-  "latest_own_stage_status": "completed_verified",
-  "latest_own_ticket": 97,
-  "own_monitor_pid": 881938,
-  "other_active_tickets": [
-    98
-  ],
-  "next_own_stage": "Freeze evaluator-only body/provenance audit of all 64 tasks and original source families; retain every gap. No candidate change or new model run.",
+  "latest_own_stage_status": "completed_verified_mechanical_only",
+  "latest_own_ticket": 100,
+  "own_monitor_pid": null,
+  "other_active_tickets": [],
+  "next_own_stage": "Withhold current corpus from independent correctness scoring; preserve all64 and unresolved contracts/dependencies/licenses/exposure. Do not repeat passed body/lexer controls. Next review peer ticket98 frozen156 terminal results and ticket101 owner-handled hold.",
   "receipt": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
@@ -3201,11 +3199,24 @@
       "tasks_with_five_identical_first_replies": 142
     }
   },
-  "other_ticket90_stage_summary": "312/312 complete; audit_pending=true at terminal follow-up, acceptance not verified here",
-  "processing_slots_note": "Not queried during another owner run; own terminal guard observed backend idle when ticket97 exited.",
+  "other_ticket90_stage_summary": "Terminal report intake verified at 17:01: C 112/156, P 118/156 (0.798717949); adoption=false. See team_table_terminal_intake_20261006. Not an audit_pending claim.",
+  "processing_slots_note": "Ticket100 exit observed idle; no inference about later peer requests.",
   "other_queued_tickets": [
-    99
-  ]
+    102,
+    103
+  ],
+  "model_identity_check_scope": "Ticket100 terminal guard recorded unchanged model, backend idle and slot released; not a guarantee about later peer activity.",
+  "state_sync_note": "Current status is comprehensive_cycle_20261004.latest_live_check. A prior root synchronization matched the same key in a historical section; the current node is now explicitly scoped and reconciled. No frozen execution input changed.",
+  "queued_tickets": [
+    102,
+    103
+  ],
+  "own_frozen_input_hashes_verified": 4,
+  "other_held_tickets": [
+    101
+  ],
+  "peer98_status": "Original execution complete; adoption false, full provenance terminal review pending.",
+  "peer101_status": "Original completion failed (AssertionError), held for inspection; owner notified6015731185. No takeover or release."
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5672,7 +5683,7 @@
   "effective_independent_family_n": null,
   "full_batch_complete": false,
   "pull_request": "https://github.com/854259/FPGA/pull/44",
-  "pr_status": "terminal_review_passed_pending_merge",
+  "pr_status": "merged",
   "report": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "private_evidence": "05_handoff/independent_validation_20261004/source_contract_inventory_20261006/",
   "next": "Freeze evaluator-only body/provenance audit of all 64 tasks and original source families; retain every gap. No candidate change or new model run.",
@@ -5686,6 +5697,339 @@
   "archive_members": 12,
   "archive_dual_verified": true,
   "owned_temporary_residue": 0,
-  "guard_passed": true
+  "guard_passed": true,
+  "merge_commit": "8153af890a8fc075c388b97f2b2f59eb7e247ce8"
+},
+  "source_body_provenance_20261006": {
+  "checked_at": "2026-10-06T19:58:00+08:00",
+  "status": "completed_verified_mechanical_only",
+  "execution_commit": "6139441b7c52d96514e73802a7e3b3b3437710bf",
+  "ticket": 100,
+  "monitor_pid": 992574,
+  "source_sha256": "f846761b95741ff5f74680d32f875c42ac03750ba128ce35e7c73b29129d519b",
+  "plan_sha256": "714058f2bb8b09946750c9b76ccc2bc262c802bc7048d9bd52d9ec3a7e6a3ef9",
+  "manifest_sha256": "8a56d9119d6ea691ce04cf7a25f3e79fd4923f5a166a390e90738d8fc2b3ea66",
+  "inventory_sha256": "f6ae361ab4f7ecab872084ae216dcdad5aaa31f8372cd13e1d0860138a1d5324",
+  "upstream_commit": "3eea482f20c048966d54ed04c418b85e5fd4d498",
+  "files": 308,
+  "unique_blobs": 212,
+  "all_bodies_dual_verified": true,
+  "all_tasks_retained": 64,
+  "reference_assets": 84,
+  "acquisition_s": 86.7894847,
+  "failed_downloads": 0,
+  "maximum_attempts_per_blob": 1,
+  "model_calls": 0,
+  "EDA_calls": 0,
+  "stage_timeout_s": 120,
+  "slot_minutes": 5,
+  "private_evaluation_body_access": true,
+  "generator_body_exposure": false,
+  "body_text_printed": false,
+  "result_bodies_opened": false,
+  "upstream_code_executed": false,
+  "independent_admitted": 0,
+  "full_batch_complete": false,
+  "pull_request": "https://github.com/854259/FPGA/pull/50",
+  "pr_status": "AMD_terminal_validated_ready_for_own_review_and_merge",
+  "private_evidence": "05_handoff/independent_validation_20261004/source_body_provenance_20261006/",
+  "report": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
+  "next": "Withhold current corpus from independent correctness scoring; preserve all64 and unresolved contracts/dependencies/licenses/exposure. Do not repeat passed body/lexer controls. Next review peer ticket98 frozen156 terminal results and ticket101 owner-handled hold.",
+  "terminal": {
+    "schema": "source_body_terminal_review_20261006_v1",
+    "passed": true,
+    "reviewed_at_utc": "2026-10-06T11:55:06.147581+00:00",
+    "result_sha256": "d269f9ca47803d0a151dd21267732149dac5aed3882ffbf34cecd20e265b6b9c",
+    "guard_sha256": "861a82b44c44aeb051b09572029b091deb46a213281ad16f331e1c113f27b0a9",
+    "resource_sha256": "bbcca5037c1909ec02a1b7bb337f79cdcf4ee8e7a4a753e7601eacd5f7c50f6e",
+    "stage_log_sha256": "fb239b31ece87f2733d8da7bdb8545ef64d71c521a42551b04409562dcf8c204",
+    "plan_sha256": "714058f2bb8b09946750c9b76ccc2bc262c802bc7048d9bd52d9ec3a7e6a3ef9",
+    "complete_scope": {
+      "tasks": 64,
+      "assets": 84,
+      "files": 308,
+      "blobs": 212
+    },
+    "family_summary": {
+      "double_fpu": {
+        "tasks": 9,
+        "assets": 12,
+        "git_blob": 5,
+        "no_mechanical_identity": 7
+      },
+      "i2c": {
+        "tasks": 3,
+        "assets": 6,
+        "git_blob": 4,
+        "no_mechanical_identity": 2
+      },
+      "mips_16": {
+        "tasks": 11,
+        "assets": 21,
+        "git_blob": 18,
+        "no_mechanical_identity": 3
+      },
+      "or1200_hp": {
+        "tasks": 38,
+        "assets": 41,
+        "git_blob": 1,
+        "no_mechanical_identity": 40
+      },
+      "verilog_cordic_core": {
+        "tasks": 3,
+        "assets": 4,
+        "git_blob": 3,
+        "no_mechanical_identity": 1
+      }
+    },
+    "mechanical_identity_counts": {
+      "git_blob": 31,
+      "no_mechanical_identity": 53
+    },
+    "stdout_matches_result_summary": true,
+    "all_212_blob_sizes_sha256_git_ids_reverified": true,
+    "original_controls_passed": 5,
+    "stage_elapsed_s": 0.30412851460278034,
+    "guard_elapsed_s": 0.5017146728932858,
+    "queue_wait_s": 10562.329477,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "model_protected_cleanup_slot_receipts_passed": true,
+    "independent_admitted": 0,
+    "full_batch_complete": false,
+    "decision": "Mechanical provenance stage accepted. Reference-contract admission rejected at present:53 assets still lack mechanical identity, dependency/license/behavior/exposure gates unresolved. Preserve all64 entries; do not treat same module names or found include basenames as proof.",
+    "next": "Do not repeat body/lexer controls or use these references for independent model scoring. Review peer frozen156 terminal results and peer-owned101 hold; any future no-stub source proof needs a separately frozen complete contract/dependency scope."
+  },
+  "archive": {
+    "members": 226,
+    "payloads": 225,
+    "all_member_hashes_verified": true,
+    "dual_end_verified": true,
+    "bytes": 712240,
+    "sha256": "d5f11533e562fff5eb2b0d50c207ea9837a3722df11d25dceca353dfb43ac2d3",
+    "review_sha256": "04ac30c8001cb080f0438060b1239fbc982859d3287d0b9455d9a5b39234293c"
+  }
+},
+  "team_table_terminal_intake_20261006": {
+  "checked_at": "2026-10-06T17:01:00+08:00",
+  "ticket": 90,
+  "candidate": "table_synthesis_P_not_old_phase_P",
+  "status": "terminal_report_verified_against_original_aggregate_not_full_raw_reaudit",
+  "source_commit": "067fa65fbea3b30b7b7112d16f0543a5d7be6a9d",
+  "report": "03_analysis/prompt_table_full156_terminal_20261006_v1/README.md",
+  "task_count": 156,
+  "samples_per_arm": 1,
+  "C_L3": 112,
+  "P_L3": 118,
+  "C_weighted": 0.7679487179487179,
+  "P_weighted": 0.7987179487179488,
+  "C_model_requests": 167,
+  "P_model_requests": 159,
+  "paired_score_regressions": 0,
+  "mechanical_repairs": 5,
+  "model_path_improvements": 1,
+  "historical_correct_regressions": 3,
+  "historical_correct_repair_call_increases": 1,
+  "adoption": false,
+  "full_batch_complete": false,
+  "own_algorithm_contribution": false,
+  "scope": "Known development regression only; separate from old phase-P stability and official baseline comparison."
+},
+  "peer_direct_coordination_20261006": {
+  "updated_at": "2026-10-06T19:42:10+08:00",
+  "authorization": "User endorses peer candidate development and this task's feasibility/results/root-cause review, with direct peer discussion.",
+  "channel": "https://github.com/854259/FPGA/issues/7",
+  "peer": "nzh152-lang",
+  "own_login": "854259",
+  "comment_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6013294241",
+  "comment_id": 6013294241,
+  "posted_and_exact_readback_verified": true,
+  "peer_acknowledged": true,
+  "agreement_status": "confirmed_by_peer_comment_6014117192",
+  "read_scope": "PR53 corrected endpoint semantics and AMD control bindings; PR54 full156/historical113/request-cost gates and actual frozen hashes. No independent rerun or full generator proof.",
+  "shared_results": [
+    "PR18 original phase-P stability audit and statistics",
+    "I1 rejected mechanism counterexample; elaboration success insufficient to skip functional repair",
+    "ticket90 team terminal result attribution and historical protection gap",
+    "PR44 completed / PR50 pending evaluator-side source admission"
+  ],
+  "follow_up": "Peer owns candidate fixes, new freezes, execution and original terminal evidence. This task reviews specific versions/results and continues queued100 source admission without duplicate jobs.",
+  "automation_updated": true,
+  "frozen_execution_changed": false,
+  "latest_static_review": {
+    "updated_at": "2026-10-06T17:36:00+08:00",
+    "pr": "https://github.com/854259/FPGA/pull/51",
+    "head": "8da46efa850a78f874e9db2d1e3959b02357f943",
+    "read_only_production_hashes": {
+      "waveform_facts": "bb42ed730e43c9f69fab393091462dfaa82e8f90c158a9967db02db349562e2d",
+      "waveform_request": "b3176bf77fdc94c2a6d30b3389ca6f5f044d8541def694860a971eec3e9134ea",
+      "worker": "5ea05bec155c64807da1aee9cd94f2dd734abcd2b618f5c6b9601441e9959306"
+    },
+    "status": "peer_accepted_objection_corrected_in_PR53_source68312067",
+    "finding": "Equal clock values at adjacent sampled endpoints do not establish no intervening edges without a complete-event-table guarantee; current advice may overstate the observation.",
+    "locations": [
+      "waveform_facts.py:89",
+      "waveform_facts.py:127",
+      "waveform_facts.py:132"
+    ],
+    "scope": "Generic static counterexample only; no assertion that the current development task omitted edges or that measured scores are wrong.",
+    "recommendation": "Bind a verified complete-event contract or phrase observations as endpoint equality with conditional circuit guidance; any adopted change needs a new freeze and targeted boundary validation.",
+    "comment_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6013481782",
+    "comment_readback_verified": true,
+    "peer_reply": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "frozen_source_modified": false,
+    "review_acceptance": false
+  },
+  "peer_ack_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014117192",
+  "latest_cross_review": {
+    "updated_at": "2026-10-06T18:41:00+08:00",
+    "peer_ack_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014117192",
+    "peer_corrected_version_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014260480",
+    "our_review_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014502936",
+    "our_review_exact_readback_verified": true,
+    "peer_read_our_new_review": true,
+    "waveform": {
+      "pr": 53,
+      "head": "7e804059e6d160bd4122887454e4c0aa2522fdc7",
+      "source_sha256": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+      "receipt_sha256": "ec936302cd8cad999a9861a8b35e0d5724c46b78854b41189e4ecec4ac113f56",
+      "six_source_hashes_verified": true,
+      "peer_actual_controls": 8,
+      "controls_independently_reexecuted": 0,
+      "status": "Original endpoint-to-interval inference objection resolved by static source review; original AMD control receipt, stdout and source bindings verified.",
+      "next": "Peer prepares a separate frozen corrected pipeline/CP; old ticket101 cannot qualify this version.",
+      "full_pipeline_accepted": false,
+      "accuracy_gain_proven": false
+    },
+    "fsm": {
+      "pr": 54,
+      "head": "7ec429cbbabbe9d9532934b85f4a7bd087af04d0",
+      "spec_sha256": "451d7191252877db37971f49ecc80a35881da5eec6bb8c493a9fcb8a5167bd41",
+      "frozen_sources_verified": 118,
+      "ticket": 102,
+      "status": "No blocker found in reviewed full156 membership, historical113 and paired/total request-cost gates; execution and terminal audit remain pending.",
+      "scope": "Full156 development C/P:312 ordered rows; original113 L3 preserved; no paired grade regression; P total, unchanged-grade and historical-correct per-task requests <= C;120 L3/.80 plus complete provenance.",
+      "peer_new_control_receipt_sha256": "d2b5eda6deafc21a60bcd22263bf1beb132bce3ca31c91cdb22d4582542b3090",
+      "control_receipt_sources_verified": 116,
+      "refreshed_environment_capture_count": 2,
+      "old_capture_bytes_preserved_verified": true,
+      "generic15_exact_route_label_reuse_verified": true,
+      "controls_independently_reexecuted": 0,
+      "all_generator_semantics_reviewed": false,
+      "adoption": false
+    },
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "frozen_execution_modified": false,
+    "next_responsibility": "Peer owns candidate fixes, new freezes, execution and original terminal evidence. This task reviews specific versions/results and continues queued100 source admission without duplicate jobs.",
+    "peer_review_ack_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014788977"
+  },
+  "gmail_monitoring": {
+    "user_authorized": true,
+    "updated_at": "2026-10-06T19:42:10+08:00",
+    "automation_id": "amd-rtl",
+    "poll_interval_minutes": 5,
+    "read_only_mail": true,
+    "scope": "FPGA GitHub notifications; verify original Issue/PR and relevant AMD state. Related mail only; no raw email or personal headers in public records.",
+    "deduplicate_by": "Gmail message ID and canonical GitHub comment ID; do not rely solely on UNREAD.",
+    "last_correlated_comment_id": 6015420576,
+    "last_mail_received_at": "2026-10-06T19:37:58+08:00",
+    "latest_mail_body_read": true,
+    "github_original_cross_checked": true,
+    "reported_new_PR55_pipeline": "Original worker7 and pipeline15 AMD receipts, stdout and source hashes now read-only verified; corrected v3 wiring reviewed within recorded scope, no independent rerun or CP acceptance.",
+    "notification_policy": "Meaningful updates only; unchanged checks do not cause posts, commits or experiment reruns.",
+    "instantaneous_delivery_guaranteed": false,
+    "mail_state_modified": false
+  },
+  "latest_pipeline_review": {
+    "updated_at": "2026-10-06T19:21:00+08:00",
+    "upstream_pr": 55,
+    "upstream_head": "36865c647f9f1f1def6816d608ae6346a610cbaa",
+    "peer_notice_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014958126",
+    "our_review_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6015143421",
+    "our_review_exact_readback_verified": true,
+    "peer_read_this_review": true,
+    "scope": "Read-only differential wiring and original AMD control-evidence review; not a full preparation archive audit, independent test rerun or CP acceptance.",
+    "failed_v2": {
+      "archive_sha256": "cc49345c22c710e0c7806daa1eddf62464b1138198531c799edf5fdaba6cd933",
+      "retained_assets": 84,
+      "run_spec_absent": true,
+      "submission_absent": true,
+      "reason": "Preparation selected the wrong manifest path for semantic8 facts; exited rc1 before admission."
+    },
+    "corrected_v3": {
+      "entry_sha256": "a76861f1c5b0d9745b5038babcb8a5619d091f13b832f9b3359493ada26e8571",
+      "spec_sha256": "9b90acec3379490e4d313d59bceb6fd9833ed713624267f1a0aa05de96cc121c",
+      "source_assets_hash_verified": 89,
+      "facts_sha256": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+      "path_fix": "Require exactly one root or nested waveform_facts.py manifest key and verify its SHA.",
+      "preparation_receipt_sha256": "6bd65b630595a8998ae040aadb82a4fe952b8495ff3f4e21b3a628e8b1a5ed3e",
+      "postexit_receipt_sha256": "1abc46bcdedfbaeee4529a8216fb96e2f87e152deb3addb6df58db701fcac676",
+      "postexit_reports_passed": true,
+      "postexit_archive_independently_audited": false,
+      "submission_absent_at": "2026-10-06T19:20:00+08:00"
+    },
+    "original_controls_read_only_verified": [
+      {
+        "group": "worker",
+        "checks": 7,
+        "sources": 56,
+        "receipt_sha256": "b092ea9562943775ca7ce467eaa12b94ae29619c76dae95f4b68ffdf624880bf",
+        "stdout_and_sources_verified": true
+      },
+      {
+        "group": "pipeline",
+        "checks": 15,
+        "sources": 83,
+        "receipt_sha256": "2a45888b8fadf121ea38b7c2e005e72e5767abb9ed12e9f738c9d4a9beeebc5b",
+        "stdout_and_sources_verified": true
+      }
+    ],
+    "status": "No new blocker found in reviewed first-request-only advice, original C/fallback/repair request binding and replayed diagnostics. Original v2 path blocker resolved in the inspected v3 entry.",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "independent_control_reruns": 0,
+    "accuracy_gain_proven": false,
+    "complete_batch": false,
+    "adoption": false,
+    "next_responsibility": "Peer owns v3 archive, PR/FIFO and original terminal evidence; this task reviews frozen versions/results and queued100 source admission.",
+    "peer_ack_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6015420576"
+  },
+  "latest_archive_review": {
+    "updated_at": "2026-10-06T19:42:10+08:00",
+    "pr": 57,
+    "head": "63bd87d76fe827652f33a81a3dccf39748451788",
+    "merge_sha": "2166d2b04ad9e3b2a11898be1f409f54a035bdef",
+    "our_review_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6015491404",
+    "our_review_exact_readback_verified": true,
+    "peer_read_this_new_reply": false,
+    "archive_sha256": "b6f55ffd788f82a7391f9d5d48804ea078628f47205b4e65f25e98aecb357387",
+    "archive_bytes": 516951,
+    "members": 103,
+    "manifest_payload_members_hash_verified": 102,
+    "frozen_sources_bound_to_archive_and_disk": 89,
+    "spec_sha256": "9b90acec3379490e4d313d59bceb6fd9833ed713624267f1a0aa05de96cc121c",
+    "process_receipt_sha256": "573c9457622687323c3f466a35af973eaa018a2a00b032a2c04f9609f9d5c9e5",
+    "normal_rc0_exit_reaped_stdout_bound": true,
+    "original_child_active": false,
+    "protection_capture_before_after_equal": true,
+    "postexit_sha256": "1abc46bcdedfbaeee4529a8216fb96e2f87e152deb3addb6df58db701fcac676",
+    "scope": "Mechanical AMD archive/manifest/source/receipt correspondence only; no Windows peer copy audit or control rerun/full independent admission certification",
+    "submission_exists": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "submission": {
+      "ticket": 103,
+      "accepted_at_utc": "2026-10-06T11:40:28.022844+00:00",
+      "state_at_check": "queued",
+      "task_name": "waveform_sample_endpoint_first_request_cp6_v3",
+      "spec_sha256": "9b90acec3379490e4d313d59bceb6fd9833ed713624267f1a0aa05de96cc121c"
+    },
+    "next_review": "Original CP6 terminal rows, request/diagnostic replay, grade/request cost and all five guard gates; do not repeat completed preparation checks.",
+    "adoption": false,
+    "complete_batch": false
+  }
 }
 }
