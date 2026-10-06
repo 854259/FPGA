@@ -1,0 +1,56 @@
+{
+  "schema": "terminal_success_summary_optional_error_public_v1",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "public_source_hashes": {
+    "wave105/terminal_supervisor.py": "e644353e40f666f3da4455438764a48070a9d6f55921856be80fd81f2fef335a",
+    "onehot106/terminal_supervisor.py": "376ae958f2d956bfaaf51219de8360df052684ee2f2c6ba1c0856d59daea55da",
+    "check_success_report_gate.py": "bf6b3d9492fc3f010d4000406864ff121a1b369cad8943164870eb7c89989904"
+  },
+  "public_source_cloud_map": {
+    "wave105/terminal_supervisor.py": "/workspace/team/runs/fpga_owner/terminal_success_summary_compatibility_20261007_v2/wave105/terminal_supervisor.py",
+    "onehot106/terminal_supervisor.py": "/workspace/team/runs/fpga_owner/terminal_success_summary_compatibility_20261007_v2/onehot106/terminal_supervisor.py",
+    "check_success_report_gate.py": "/workspace/team/runs/fpga_owner/terminal_success_summary_compatibility_20261007_v2/check_success_report_gate.py"
+  },
+  "controls": 16,
+  "control_scope": "Exact two production pre-audit report assertions per role, authentic completed105/106 reports, explicit-null positive and six failure negatives; no paired supervisor/audit execution",
+  "receipt_sha256": "130136f70bec5a1a54a7ce943d369892167ba6de3a4a64750531d991c831e365",
+  "archive": {
+    "sha256": "ac64f8b061d14583f9ce479af66fd4a6e5af09dbc8473c7f7a648bc90321b6fa",
+    "members": 37,
+    "every_member_bound_both_ends": true
+  },
+  "source_assets": 26,
+  "paired_source_changes": {
+    "wave105": {
+      "old_sha256": "2404f7d47a83d94d0a63b4c464be1fe18c1b421a8d3c4411bbc226aad257b74b",
+      "new_sha256": "e644353e40f666f3da4455438764a48070a9d6f55921856be80fd81f2fef335a",
+      "reverse_delta_exact": true
+    },
+    "onehot106": {
+      "old_sha256": "ca74707025f4ac56f35e5f7f274e6f6258e1cbb36fe620e734b6ec0fc6301b7f",
+      "new_sha256": "376ae958f2d956bfaaf51219de8360df052684ee2f2c6ba1c0856d59daea55da",
+      "reverse_delta_exact": true
+    }
+  },
+  "reverse_delta_exact": true,
+  "protected_roots": 119,
+  "protected_files": 7670,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "new_fifo": false,
+  "old_external_controls_replayed": 0,
+  "paired_supervisors_executed": false,
+  "paired_original_auditors_executed": false,
+  "original_scoring_and_judge_sources_unchanged": true,
+  "monitor_four_python_sources_unchanged": true,
+  "monitor_config_bound_to_new_pair_manifests": true,
+  "prestart105_failure": "Successful report has no error field; failed before namespace/intent/process creation; absence probe retained",
+  "first_gate_failure": "AST selection included a third post-audit equality; zero report scenarios executed. Source/process/stream retained within119/7670 protection; corrected selection leaves production delta unchanged",
+  "scope_limits": [
+    "16 report predicates only; old four external controls reused, not replayed",
+    "Separate serial107 audit outcome is not qualified by these report predicates",
+    "Paired launch/read source adaptation and final original archives remain required"
+  ],
+  "next_gate": "Exact new paired manifests/config; each original collector/auditor once; actual child exit/reap and adopted descendants/final artifacts under450s; independently verify observer retirement"
+}
