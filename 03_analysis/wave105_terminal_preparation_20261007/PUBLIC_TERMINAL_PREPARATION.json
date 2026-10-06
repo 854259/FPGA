@@ -1,0 +1,45 @@
+{
+  "schema": "wave105_terminal_preparation_public_v1",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "public_source_hashes": {
+    "terminal_supervisor.py": "af1ba23835c2c5145f27f02f059cec9f6c19387e89ac8059a4f87a46b6697de9",
+    "terminal_process_functions.py": "7a07969ada10f56f7e36473990c18c82b341d1db281f3fc87f0fd0782588a22a"
+  },
+  "source_files": 6,
+  "receipt_sha256": "f6f3326da30134791e2160ee353f7150433cd5e60cbc568e4bed7878e357cb23",
+  "archive": {
+    "sha256": "27c38e4a70aa675f5403b7283f0f0cbc2e7d2514db7b03360c528ccfe3dbe157",
+    "members": 10,
+    "every_member_bound_both_ends": true
+  },
+  "qualification_scope": "Source preparation only; no new tests, original collector/auditor or terminal supervisor executed.",
+  "terminal_supervisor_executed": false,
+  "original_auditor_executed": false,
+  "original_collector_executed": false,
+  "protected_roots": 112,
+  "protected_unique_files": 7566,
+  "original_spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+  "original_frozen_sources": 109,
+  "expected_outputs": 312,
+  "model_requests_min": 312,
+  "model_requests_max": 624,
+  "request_count_binds_actual_terminal_summary": true,
+  "collector_exact_original104": true,
+  "original105_collector_unchanged": true,
+  "process_functions_exact_original102": true,
+  "original105_auditor_metrics_judge_unchanged": true,
+  "global_once_intent_required_before_collector_auditor": true,
+  "prestart_local_failures_retained": [
+    "Builder syntax rejected before operations",
+    "Incorrect exact102 collector equality rejected; only bin suffix delta, exact104 proven"
+  ],
+  "new_project_tests": 0,
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "new_fifo": false,
+  "natural_score_measured": false,
+  "adoption": false,
+  "independent_unseen": 0,
+  "next_gate": "Original105 actual complete/cleaned/released and dead original processes, original collector and auditor once, full archive dual binding, original score/history/grade/cost gates before deciding goal."
+}
