@@ -3118,24 +3118,22 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T10:03:30+08:00",
+  "checked_at": "2026-10-06T14:23:00+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
   "model_identity_unchanged": true,
-  "processing_slots": 1,
+  "processing_slots": 0,
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 61,
-  "latest_own_stage": "Strict formal-tool admission frozen and queued after other owner regression",
-  "latest_own_stage_complete": false,
-  "latest_own_stage_status": "queued_not_executed",
+  "latest_own_stage": "Strict formal-tool admission completed and verified; engineering scope only",
+  "latest_own_stage_complete": true,
+  "latest_own_stage_status": "completed_verified",
   "latest_own_ticket": 91,
   "own_monitor_pid": 638501,
-  "other_active_tickets": [
-    90
-  ],
-  "next_own_stage": "Verify ticket91 terminal controls and archive; keep PR23 draft until AMD validation. No corpus/model expansion.",
+  "other_active_tickets": [],
+  "next_own_stage": "Audit pinned ChipVerilog source families, licenses, complete contracts/dependencies and exposure through metadata first. No automatic corpus execution/model expansion. Actual quota/expiry and formal32GB remain unresolved.",
   "receipt": "03_analysis/rtllm_contract_audit_20261002/STRICT_FORMAL_TOOL_20261006.md",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
@@ -3200,7 +3198,8 @@
       "tasks_with_level_variation": 1,
       "tasks_with_five_identical_first_replies": 142
     }
-  }
+  },
+  "other_ticket90_stage_summary": "312/312 complete; audit_pending=true at terminal follow-up, acceptance not verified here"
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5602,8 +5601,8 @@
   "next": "Check feasibility of full equivalence/valid induction without generated stubs; no corpus expansion or model calls before data and actual quota admission. Keep P frozen; full32GB delivery remains unverified."
 },
   "strict_formal_tool_admission_20261006": {
-  "checked_at": "2026-10-06T10:03:30+08:00",
-  "status": "frozen_queued_not_executed",
+  "checked_at": "2026-10-06T14:23:00+08:00",
+  "status": "completed_verified_engineering_only",
   "ticket": 91,
   "monitor_pid": 638501,
   "execution_commit": "61407c9ece32894eda9095d675ce8e6b5e8be0aa",
@@ -5614,14 +5613,14 @@
   "constructed_rtl_controls": 8,
   "constructed_parser_controls": 5,
   "new_model_calls": 0,
-  "yosys_invocations_executed": 0,
+  "yosys_invocations_executed": 9,
   "yosys_invocations_cap": 9,
   "stage_timeout_s": 1200,
   "slot_minutes": 25,
   "independent_tasks_admitted": 0,
   "full_batch_complete": false,
-  "stage_executed": false,
-  "admission_passed": false,
+  "stage_executed": true,
+  "admission_passed": true,
   "source_corpus_bodies_opened": false,
   "model_identity_unchanged_at_preparation": true,
   "after_ticket": 90,
@@ -5629,7 +5628,16 @@
   "private_evidence": "05_handoff/independent_validation_20261004/strict_formal_tool_20261006/",
   "report": "03_analysis/rtllm_contract_audit_20261002/STRICT_FORMAL_TOOL_20261006.md",
   "pull_request": "https://github.com/854259/FPGA/pull/23",
-  "pr_status": "draft_pending_AMD_validation",
-  "next": "Follow existing FIFO; preserve first failure or verify all frozen controls, archive receipts and review PR23. No automatic corpus admission or model expansion. Actual quota/expiry and formal32GB remain unresolved."
+  "pr_status": "AMD_verified_review_for_merge",
+  "next": "Audit pinned ChipVerilog source families, licenses, complete contracts/dependencies and exposure through metadata first. No automatic corpus execution/model expansion. Actual quota/expiry and formal32GB remain unresolved.",
+  "stage_elapsed_s": 30.322594666853547,
+  "guard_elapsed_s": 30.554557071998715,
+  "archive_sha256": "2798d6bbee64d363a3572c21fa10d3d7eaa283304b811f8f52c0adc0f9ae2607",
+  "archive_members": 49,
+  "archive_dual_verified": true,
+  "installed_files_verified": 443,
+  "owned_active_descendants": 0,
+  "temporary_residue_count": 0,
+  "runtime_dependencies_retained": true
 }
 }

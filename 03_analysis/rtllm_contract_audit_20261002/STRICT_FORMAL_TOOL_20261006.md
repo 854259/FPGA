@@ -1,8 +1,8 @@
-# Strict formal-tool admission preparation
+# Strict formal-tool admission result
 
-2026-10-06. **Prepared, not executed or passed.** This is an engineering admission substage, not a quality run or a full batch. P remains frozen. The other owner's ticket90 is running its own frozen 156-task C/P regression; this work must wait in the existing FIFO.
+2026-10-06. **Completed and verified: engineering admission only.** This is an engineering admission substage, not a quality run or a full batch. P remains frozen. The stage ran after the other owner's frozen 156-task C/P regression through the existing FIFO.
 
-At10:03+08, ticket91 is queued with monitor638501 alive; no result directory exists. Execution source61407c9ece32894eda9095d675ce8e6b5e8be0aa, source SHA25604460ec0f35281327e194724061cf9c6536d2bdb51d9b0bae7d6b1f62e233204, plan SHA256c65efde8ece96947a77ba374abbc666cbb37a6d7021e82a40a409629770f29cf. All8 prepared files match on both endpoints; model identity is unchanged. Reviewed under [draft PR23](https://github.com/854259/FPGA/pull/23), pending actual AMD validation before merge.
+Preparation record at10:03+08: ticket91 was queued with monitor638501 alive; no result directory exists. Execution source61407c9ece32894eda9095d675ce8e6b5e8be0aa, source SHA25604460ec0f35281327e194724061cf9c6536d2bdb51d9b0bae7d6b1f62e233204, plan SHA256c65efde8ece96947a77ba374abbc666cbb37a6d7021e82a40a409629770f29cf. All8 prepared files match on both endpoints; model identity is unchanged. Delivered through [PR23](https://github.com/854259/FPGA/pull/23); AMD terminal validation is recorded below.
 
 The source-metadata counterexample showed that a text label and finite simulation cannot by themselves establish full correctness. The next useful question is whether an isolated local tool can provide complete finite-width combinational proofs and valid sequential induction, while keeping bounded success, reachable counterexample, inconclusive proof and tool failure distinct.
 
@@ -38,3 +38,17 @@ A successful stage permits a separate source-family/contract audit for an indepe
 The bounded inventory verified the prior isolated Icarus manifest and found no Yosys in that tool prefix, team tools, current owner dependency directory, /opt or selected task/model deployment directories (maximumdepth5). This is not a machine-wide absence claim. Actual server quota/expiry remains requested; no purchase or time extension was made.
 
 All raw wheel metadata, provenance, queue/guard receipts and future logs remain under the existing private handoff archive. Repository changes are delivered through an own-reviewed PR; AMD execution remains bound to its frozen source SHA.
+
+## Verified terminal result
+
+At2026-10-06 14:23+08, FIFO ticket91 completed under source61407c9ece32894eda9095d675ce8e6b5e8be0aa. All eight RTL controls and five parser controls matched the original freeze; no source, wheel, rule or budget change. Nine Yosys invocations and zero model calls. Actual tool: Yosys0.69, Git9f75ca1f9.
+
+The addition and parity controls produced complete combinational and inductive proofs, respectively. Dropped carry and unknown output produced counterexamples. Undriven output and missing dependency were structural failures; no stubs were added. The delayed-failure circuit passed the four-step bounded check, while induction found a reachable base-case failure. This is the key distinction needed for source admission: a bounded pass cannot be reported as complete correctness.
+
+Stage30.322595s; guard30.554557s. Queue wait14176.759977s is separate. Installation0.778389s and first startup26.247163s account for most stage time. Maximum observed subprocess-group RSS was1,540,698,112bytes, sampled every0.1s; this is not a continuous memory peak or formal32GB model-flow evidence.
+
+Raw receipts were checked against source/plan/wheel hashes, generated control sources, command scripts, return codes and actual proof markers. All443 installed files match the terminal hashes. The guard confirmed no active owned descendants, unchanged model/protected files, backend idle at stage exit and slot release. Two finished FIFO monitors remained zombies when inspected; they were not active computation and were not killed.
+
+The private terminal ZIP has49 members (48 content hashes plus manifest),100571bytes, SHA2562798d6bbee64d363a3572c21fa10d3d7eaa283304b811f8f52c0adc0f9ae2607. Every member and both endpoint archive hashes were verified. Result SHA256d137968a16195fd4131cb67ec22c4cc0119306b1ad90cd0ac56055a531fc4349; guard SHA25682ca6c5848e83bc1d50d18618ea6ef93f254ae5a2518f3bda9871be1628bb729. No task-owned temporary/Python-cache residue remains. Installed tool106,634,792bytes and runtime cache214,359,680bytes remain necessary dependencies; pinned wheels are retained privately. No raw logs, wheels or private receipts enter this PR.
+
+The engineering substage is complete. It establishes a usable proof tool for the constructed contracts only; independent admission remains0 and the all-inclusive batch remains incomplete. Next, audit the pinned ChipVerilog source-family/license/contract/dependency/exposure inventory before any source-body execution or model call. No automatic benchmark expansion, reference repair, support stubbing, candidate adoption or deployment. The other owner's ticket90 has312/312 outputs, but its stage summary still reports audit_pending; that is not a reviewed acceptance decision here.
