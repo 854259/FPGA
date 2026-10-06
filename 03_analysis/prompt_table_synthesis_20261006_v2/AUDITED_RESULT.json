@@ -1,0 +1,42 @@
+{
+  "schema": "table83_audited_public_result_v1",
+  "evidence_valid": true,
+  "archive_sha256": "1a79285d4c4363b3abd05402d983d0f3c8a2ad9c418a3c73d947bfd17f074b7d",
+  "spec_sha256": "06c2abe4643f40ba193672375219551f0bcaa1274b8443d8333d51a70fde7adb",
+  "auditor_sha256": "5d0bbda1c93bdec02126d67a977d41cbf5ca2f039b715f36485f95b9334fb3ca",
+  "expected_samples": 28,
+  "actual_model_requests": 25,
+  "unconfirmed_attempts": 0,
+  "coefficients": {
+    "C": 0.6571428571428571,
+    "P": 0.9428571428571428
+  },
+  "requests_by_arm": {
+    "C": 17,
+    "P": 8
+  },
+  "repairs": [
+    "Prob057_kmap2",
+    "Prob101_circuit4",
+    "Prob102_circuit3",
+    "Prob113_2012_q1g",
+    "Prob125_kmap3"
+  ],
+  "regressions": [],
+  "guard_pass": true,
+  "unchanged_task_request_cost": true,
+  "qualified_for_new_full_regression": true,
+  "audited_generation_provenance_bound": true,
+  "qualification_scope": "One new full156 regression only; known development screen, no independent/five/adoption.",
+  "adoption": false,
+  "metadata_only": true,
+  "task_count": 14,
+  "fully_correct_by_arm": {
+    "C": 8,
+    "P": 13
+  },
+  "audit_sha256": "3cb9d4cb0db9f7a0e7a9c996e0b71339d39fbec616f3624d83be5dc66d6923f3",
+  "full156_evidence_valid": false,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false
+}
