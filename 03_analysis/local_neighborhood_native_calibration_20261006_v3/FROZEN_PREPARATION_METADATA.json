@@ -1,0 +1,145 @@
+{
+  "schema": "neighborhood_native_fixed_v3_frozen_preparation_public_v1",
+  "cloud_root": "/workspace/team/runs/fpga_owner/local_neighborhood_native_calibration_20261006_v3",
+  "spec_sha256": "d37aa70b62e8ea261855cb216fc631b44ad7197e1ddacbb41e516041f7517f80",
+  "source_assets": 153,
+  "actual_amd_pure_checks": 61,
+  "prepared_assets": 92,
+  "protected_group_count": 34,
+  "protected_source_assets": 2413,
+  "planned_controls": 29,
+  "planned_native_commands": 78,
+  "planned_supervisor_commands": 2,
+  "planned_guard_receipts": 162,
+  "planned_trace_observations": 10827,
+  "frozen_admission_validated_on_amd": true,
+  "compiler_environment_validated_on_amd": true,
+  "source_model_primary_unchanged": true,
+  "actual_model_calls": 0,
+  "eda_calls": 0,
+  "frozen": true,
+  "queued": false,
+  "native_qualified": false,
+  "quality_gain_verified": false,
+  "original_failure_retained": true,
+  "freeze_inventory_failure_retained": true,
+  "narrow_admission_repeated_due_to_verified_bytecode_inventory_failure": true,
+  "full_61_tests_not_repeated": true,
+  "bytecode_preserved_at": "/workspace/team/activity/fpga_owner/artifacts/neighborhood-freeze-v3-bytecode-prefix-recovery",
+  "at_epoch": 1791257493.6238656,
+  "freeze_receipt_sha256": "dc1c37425cb5fd8a4d919709d5c66fd3c5350f6d8c07609d5b23b58f9c0b088c",
+  "strict_startup_probe_sha256": "c031e4565bf4202b37132aae9bed1c360ce78166136cda55e071e086175b7dc2",
+  "new_startup_checks": {
+    "schema": "neighborhood_native_fix_strict_deadline_checks_actual_amd_v5",
+    "cloud_root": "/workspace/team/runs/fpga_owner/neighborhood_native_fix_checks_20261006_v5",
+    "packet_sha256": "51f192c8ff2250384933a289dcf93c42445f9ebac2b281dc25178aefb7ea4cba",
+    "source_assets": 18,
+    "new_pure_controls": 9,
+    "actual_pure_controls": 9,
+    "pure": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_probe_startup.StartupControls"
+      ],
+      "identity": {
+        "pid": 736122,
+        "state": "R",
+        "starttime": "853065326",
+        "pgid": 736122,
+        "session": 736122,
+        "command_sha256": "333eaf59d5c49d9368138421733acc3ca4ea9243135b7cbc4170109bc0785926"
+      },
+      "returncode": 0,
+      "timeout": false,
+      "elapsed_s": 0.11437886394560337,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "4fda3ded381464fb9b11ccf294a5e1d7970c45802ec61bfa4e5f0dbab056996c"
+    },
+    "pure_passed": true,
+    "actual_process_control_runner": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "actual_probe_checks.py"
+      ],
+      "identity": {
+        "pid": 736123,
+        "state": "R",
+        "starttime": "853065337",
+        "pgid": 736123,
+        "session": 736123,
+        "command_sha256": "439fe79b375790c44a97e2eaf6b4743b74ecdfde8dcb8485097d6fd2e630f52e"
+      },
+      "returncode": 0,
+      "timeout": false,
+      "elapsed_s": 2.5676256734877825,
+      "stdout_sha256": "a3e94b33cd5d8496b9d5d7311abc9a0d38f69f64ea03b0da45b142106bcbbf73",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "actual_owned_process_controls": 3,
+    "actual_process_controls_passed": true,
+    "passed": true,
+    "source_model_primary_unchanged": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_fifo": false,
+    "native_qualification": false,
+    "score_gain_measured": false
+  },
+  "priority_fixture_checks_reused": {
+    "cloud_root": "/workspace/team/runs/fpga_owner/neighborhood_native_fix_checks_20261006_v4",
+    "packet_sha256": "ef0ad618b698a0ae45fcde14c7f539b9076e20e702a790de1a12fdf8568005fe",
+    "source_assets": 16,
+    "actual_pure_controls": 2,
+    "pure": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_probe_startup.PriorityFixtureControls"
+      ],
+      "identity": {
+        "pid": 731630,
+        "state": "R",
+        "starttime": "853016111",
+        "pgid": 731630,
+        "session": 731630,
+        "command_sha256": "6db7db166022d6e8b8237446d9493290d81ea9018d5d696381ddbeb4b250e934"
+      },
+      "returncode": 0,
+      "timeout": false,
+      "elapsed_s": 0.11445799842476845,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "4bdfa6135ba37b2731495034b0ac909565872fec840b861a9ac149b96a3ac6ed"
+    },
+    "passed": true
+  },
+  "priority_fixture_reuse_ast_and_source_binding_valid": true,
+  "qualified_distinct_pure_controls": 72,
+  "actual_owned_process_controls": 3,
+  "full_61_integration_tests_executed_once": true,
+  "pure_preparation_elapsed_s": 20.17224584519863,
+  "pure_preparation_readback_sha256": "462ce793a958360d2d0c26dd030c51efdaf6a491a84b23992784e8ea0df2f0fb",
+  "known_bytecode_prefix_failure_retained": true,
+  "score_gain_measured": false,
+  "goal_achieved": false,
+  "development_baseline": {
+    "full_correct": 113,
+    "total_tasks": 156,
+    "weighted": 0.7743589743589744
+  },
+  "goal": {
+    "full_correct_at_least": 120,
+    "weighted_at_least": 0.8,
+    "status": "active"
+  },
+  "peer_commit": "5bfe4e0600c75b2aa414bffe0c2bf9088f775586",
+  "peer_acknowledgment": "pending",
+  "next_step": "submit this exact new frozen version through whole-task FIFO after existing tasks; qualify only after full original 29-control native evidence and physical archive audit; then single-factor paired scoring"
+}
