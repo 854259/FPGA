@@ -1,3 +1,22 @@
+## Current gate: complete source metadata inventory — verified
+
+2026-10-06 16:41+08. FIFO ticket 97 completed on AMD at 06:41:00Z. All 64 source/reference description pairs are unique across five declared families. All 84 reference-directory RTL assets are bound to the pinned Git tree; 53 have no identical blob in the corresponding original Src family. This is a provenance gap, not evidence that those assets are incorrect: testbenches, formatting, extraction or edits still require body inspection.
+
+Execution commit 182c4ddc5222074891fc1edeea12d4626a4c33e9; source SHA256 fcb0f33d72433ca679bd1b087e8aa9bf38d74eec2a55882a563de376390f4d80; plan SHA256 e91589afd911108f7124e1c337891e9bf5765209bfddbaecb771440939805e3b. The source in PR44 remains identical to executed source. The earlier strict formal-tool controls passed and were merged through PR23 (eadb360b919c4041f946169676d60fe9a2658ff2); neither stage admits benchmark tasks.
+
+The complete ChipVerilog tree at 3eea482f20c048966d54ed04c418b85e5fd4d498 contains 5565 metadata entries, not truncated; tree SHA256 102874d7e191b48fdbc00a9ad071ee56446aec6c2dcfabd9a84c2f2e0cb1d497. Every output row and asset was rechecked against that tree during terminal review. Family counts are OR1200 38, MIPS 11, double FPU 9, I2C 3 and CORDIC 3. No rows were discarded. No task descriptions, reference RTL, testbench or generated-output bodies were acquired by this stage. No upstream verifier was executed.
+
+Stage time 0.0637936983s; guard time 0.2512672730s; model/compiler/simulator calls 0. The frozen limits were 120 seconds and a five-minute FIFO slot. The guard confirmed model/protected-file identity, no remaining owned descendants, idle backend at exit and slot release. Follow-up at 08:38Z found no active owned runner/child; other-owner tickets 98 running and 99 queued were left unchanged. Queue wait is separate from execution time.
+
+Private evidence: 05_handoff/independent_validation_20261004/source_contract_inventory_20261006/. The 263588-byte terminal ZIP contains 12 members (11 hashed content files plus manifest), SHA256 f47d117b3d1647b28dfe87c8e0e747788c9925a6d63f5a53cbd7975009ccd4a7. Both endpoints and all members match. Result SHA256 f6ae361ab4f7ecab872084ae216dcdad5aaa31f8372cd13e1d0860138a1d5324; guard SHA256 58d9aad8d71da8bca876fd9410676a83ac4a715e445be1193a93b94f79e4b0e2. No temporary transfer package, generated cache or empty temporary directory remains; frozen inputs and evidence are retained.
+
+Decision: metadata inventory accepted; correctness, full contract, dependency completeness, exact licensing and independent admission remain unverified. All five families need source-body review; CORDIC exact licensing and some LGPL source notices remain unresolved. Team-wide/training exposure is unknown. Independent admitted count stays 0; effective independent-family N is unknown. This is an engineering substage, not an all-inclusive batch or quality improvement.
+
+Next: freeze an evaluation-only body/provenance audit covering all 64 tasks and their source families, without exposing reference/testbench bodies to generation or modifying P. Preserve every ambiguous or missing dependency and do not fabricate stubs. Any material used for candidate/rule tuning becomes development data. Actual quota/expiry, full A/P/B budget, independent materials and formal 32GB delivery remain open.
+
+---
+
+
 # Independent-source admission: bounded classifier counterexample
 
 Checked 2026-10-06 09:31 +08:00. This substage is complete. No new model quality result, independent admitted task, or all-inclusive batch completion.

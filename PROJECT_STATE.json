@@ -3118,23 +3118,25 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T14:24:05+08:00",
+  "checked_at": "2026-10-06T16:38:27+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
   "model_identity_unchanged": true,
-  "processing_slots": 0,
+  "processing_slots": null,
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 61,
-  "latest_own_stage": "Strict formal-tool admission completed and verified; engineering scope only",
+  "latest_own_stage": "Complete source metadata inventory",
   "latest_own_stage_complete": true,
   "latest_own_stage_status": "completed_verified",
-  "latest_own_ticket": 91,
-  "own_monitor_pid": 638501,
-  "other_active_tickets": [96],
-  "next_own_stage": "Audit pinned ChipVerilog source families, licenses, complete contracts/dependencies and exposure through metadata first. No automatic corpus execution/model expansion. Actual quota/expiry and formal32GB remain unresolved.",
-  "receipt": "03_analysis/rtllm_contract_audit_20261002/STRICT_FORMAL_TOOL_20261006.md",
+  "latest_own_ticket": 97,
+  "own_monitor_pid": 881938,
+  "other_active_tickets": [
+    98
+  ],
+  "next_own_stage": "Freeze evaluator-only body/provenance audit of all 64 tasks and original source families; retain every gap. No candidate change or new model run.",
+  "receipt": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
     "source": "03_analysis/helper_extraction_20261004/paired_uncertainty_20261005.py",
@@ -3199,7 +3201,11 @@
       "tasks_with_five_identical_first_replies": 142
     }
   },
-  "other_ticket90_stage_summary": "312/312 complete; audit_pending=true at terminal follow-up, acceptance not verified here"
+  "other_ticket90_stage_summary": "312/312 complete; audit_pending=true at terminal follow-up, acceptance not verified here",
+  "processing_slots_note": "Not queried during another owner run; own terminal guard observed backend idle when ticket97 exited.",
+  "other_queued_tickets": [
+    99
+  ]
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5628,7 +5634,7 @@
   "private_evidence": "05_handoff/independent_validation_20261004/strict_formal_tool_20261006/",
   "report": "03_analysis/rtllm_contract_audit_20261002/STRICT_FORMAL_TOOL_20261006.md",
   "pull_request": "https://github.com/854259/FPGA/pull/23",
-  "pr_status": "AMD_verified_review_for_merge",
+  "pr_status": "merged",
   "next": "Audit pinned ChipVerilog source families, licenses, complete contracts/dependencies and exposure through metadata first. No automatic corpus execution/model expansion. Actual quota/expiry and formal32GB remain unresolved.",
   "stage_elapsed_s": 30.322594666853547,
   "guard_elapsed_s": 30.554557071998715,
@@ -5638,6 +5644,48 @@
   "installed_files_verified": 443,
   "owned_active_descendants": 0,
   "temporary_residue_count": 0,
-  "runtime_dependencies_retained": true
+  "runtime_dependencies_retained": true,
+  "merge_commit": "eadb360b919c4041f946169676d60fe9a2658ff2"
+},
+  "source_contract_inventory_20261006": {
+  "checked_at": "2026-10-06T16:41:00+08:00",
+  "status": "completed_verified",
+  "ticket": 97,
+  "monitor_pid": 881938,
+  "execution_commit": "182c4ddc5222074891fc1edeea12d4626a4c33e9",
+  "source_sha256": "fcb0f33d72433ca679bd1b087e8aa9bf38d74eec2a55882a563de376390f4d80",
+  "plan_sha256": "e91589afd911108f7124e1c337891e9bf5765209bfddbaecb771440939805e3b",
+  "git_tree_sha256": "102874d7e191b48fdbc00a9ad071ee56446aec6c2dcfabd9a84c2f2e0cb1d497",
+  "upstream_commit": "3eea482f20c048966d54ed04c418b85e5fd4d498",
+  "tree_entries": 5565,
+  "input_files_dual_verified": 3,
+  "model_calls": 0,
+  "EDA_calls": 0,
+  "stage_timeout_s": 120,
+  "slot_minutes": 5,
+  "expected_tasks": 64,
+  "declared_source_families": 5,
+  "task_bodies_opened": false,
+  "reference_bodies_opened": false,
+  "result_bodies_opened": false,
+  "independent_admitted": 0,
+  "effective_independent_family_n": null,
+  "full_batch_complete": false,
+  "pull_request": "https://github.com/854259/FPGA/pull/44",
+  "pr_status": "terminal_review_passed_pending_merge",
+  "report": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
+  "private_evidence": "05_handoff/independent_validation_20261004/source_contract_inventory_20261006/",
+  "next": "Freeze evaluator-only body/provenance audit of all 64 tasks and original source families; retain every gap. No candidate change or new model run.",
+  "unique_pairs": 64,
+  "rtl_assets": 84,
+  "assets_without_same_blob_upstream": 53,
+  "stage_elapsed_s": 0.06379369832575321,
+  "guard_elapsed_s": 0.2512672729790211,
+  "archive_sha256": "f47d117b3d1647b28dfe87c8e0e747788c9925a6d63f5a53cbd7975009ccd4a7",
+  "archive_bytes": 263588,
+  "archive_members": 12,
+  "archive_dual_verified": true,
+  "owned_temporary_residue": 0,
+  "guard_passed": true
 }
 }

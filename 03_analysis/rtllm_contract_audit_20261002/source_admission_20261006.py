@@ -5,13 +5,104 @@ import hashlib
 import json
 import re
 import time
+import sys
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Sequence
 
+def inventory_metadata(args, started):
+    """Inventory Git metadata only; never open a task, reference or result body."""
+    if sys.platform != "linux":
+        raise ValueError("AMD execution required")
+    raw_plan = args.inventory_plan.read_bytes()
+    if hashlib.sha256(raw_plan).hexdigest() != args.inventory_plan_sha256:
+        raise ValueError("inventory plan drift")
+    plan = json.loads(raw_plan)
+    if hashlib.sha256(Path(__file__).read_bytes()).hexdigest() != plan["source_sha256"]:
+        raise ValueError("inventory source drift")
+    raw = args.git_tree.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != plan["git_tree_sha256"]:
+        raise ValueError("Git metadata drift")
+    tree = json.loads(raw)
+    if tree.get("truncated") is not False or tree.get("sha") != plan["upstream_commit"]:
+        raise ValueError("incomplete or wrong upstream tree")
+    paths = [row["path"] for row in tree["tree"]]
+    if len(paths) != len(set(paths)):
+        raise ValueError("duplicate Git paths")
+    for row in tree["tree"]:
+        if (row["path"].startswith("/") or ".." in row["path"].split("/")
+                or not re.fullmatch(r"[0-9a-f]{40}", row["sha"])):
+            raise ValueError("invalid Git metadata")
+    blobs = [row for row in tree["tree"] if row["type"] == "blob"]
+    prompts = [row for row in blobs if row["path"].startswith("Src/")
+               and "/des/" in row["path"] and row["path"].endswith("/description.txt")]
+    references = [row for row in blobs if row["path"].startswith("Des/")
+                  and row["path"].endswith("/description.txt")]
+    families = plan["family_roots"]  # Declared repository families, never task-ID exceptions.
+    rows = []
+    family_counts = {}
+    for prompt in sorted(prompts, key=lambda row: row["path"]):
+        family = prompt["path"].split("/")[1]
+        if family not in families:
+            raise ValueError("undeclared source family")
+        family_counts[family] = family_counts.get(family, 0) + 1
+        # Content-addressed pairing also exposes aliases; do not guess module names.
+        matches = [row for row in references
+                   if row["path"].split("/")[1] == families[family]
+                   and row["sha"] == prompt["sha"] and row["size"] == prompt["size"]]
+        assets = []
+        if len(matches) == 1:
+            directory = matches[0]["path"].rsplit("/", 1)[0] + "/"
+            assets = [row for row in blobs if row["path"].startswith(directory)
+                      and row["path"].lower().endswith((".v", ".sv", ".vh", ".svh"))]
+        upstream = [row for row in blobs if row["path"].startswith("Src/"+family+"/")
+                    and "/des/" not in row["path"]]
+        asset_rows = [dict(path=a["path"], git_blob=a["sha"], bytes=a["size"],
+                           upstream_same_blob_paths=[u["path"] for u in upstream
+                                                     if u["sha"] == a["sha"]]) for a in assets]
+        rows.append(dict(source_prompt_path=prompt["path"], family=family,
+                         prompt_git_blob=prompt["sha"], description_bytes=prompt["size"],
+                         matching_reference_prompt_paths=[m["path"] for m in matches],
+                         reference_directory_rtl_assets=asset_rows,
+                         pairing_unique=len(matches) == 1,
+                         declared_license=plan["declared_family_license"][family],
+                         contract_verified=False, dependencies_verified=False,
+                         reference_trust_verified=False, independent_admitted=False))
+    if len(rows) != plan["expected_tasks"] or family_counts != plan["expected_family_counts"]:
+        raise ValueError("declared task/family count mismatch")
+    report = dict(schema="source_contract_metadata_20261006_v1", complete=True,
+                  source_sha256=plan["source_sha256"], upstream_commit=tree["sha"],
+                  git_tree_sha256=plan["git_tree_sha256"], tree_entries=len(paths),
+                  task_count=len(rows), family_counts=family_counts,
+                  reference_description_count=len(references),
+                  unique_description_blobs=len({r["prompt_git_blob"] for r in rows}),
+                  unique_pairs=sum(r["pairing_unique"] for r in rows),
+                  rows_with_no_rtl_assets=sum(not r["reference_directory_rtl_assets"] for r in rows),
+                  rtl_assets=sum(len(r["reference_directory_rtl_assets"]) for r in rows),
+                  assets_without_same_blob_upstream=sum(not a["upstream_same_blob_paths"]
+                      for r in rows for a in r["reference_directory_rtl_assets"]),
+                  task_rows=rows, model_calls=0, compiler_calls=0, simulator_calls=0,
+                  task_prompts_or_reference_bodies_opened=False,
+                  result_bodies_opened=False, upstream_code_executed=False,
+                  team_wide_exposure="unknown", training_exposure="unknown",
+                  independent_admitted=0, effective_independent_family_n=None,
+                  full_batch_complete=False,
+                  evidence_limit="Git-declared paths/blob identities only, not body verification or correctness. "
+                    "No RTL-versus-testbench distinction, interface inference or dependency completeness from filenames.",
+                  decision="Use inventory to freeze evaluation-side contract/source checks. "
+                    "Retain every missing/ambiguous record; no model run, task selection or source stubbing.",
+                  elapsed_s=time.monotonic()-started)
+    args.out.mkdir(parents=True, exist_ok=False)
+    (args.out / "RESULT.json").write_text(json.dumps(report, indent=2)+"\n")
+    print(json.dumps({k: v for k, v in report.items() if k != "task_rows"}))
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--source", type=Path, required=True)
+    source = ap.add_mutually_exclusive_group(required=True)
+    source.add_argument("--source", type=Path)
+    source.add_argument("--git-tree", type=Path)
+    ap.add_argument("--inventory-plan", type=Path)
+    ap.add_argument("--inventory-plan-sha256")
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--resource-check", type=Path, required=True)
     args = ap.parse_args()
@@ -20,6 +111,10 @@ def main():
     guard = json.loads(args.resource_check.read_text())
     if not guard:
         raise ValueError("missing resource admission")
+    if args.git_tree:
+        if not args.inventory_plan or not args.inventory_plan_sha256 or not guard.get("resource_idle"):
+            raise ValueError("frozen inventory plan and idle resource admission required")
+        return inventory_metadata(args, started)
     raw = args.source.read_bytes()
     expected = "396da5f709ecd2ec79272f788a089992f1863d2e9b78d6aa103c70f4e44cc4ed"
     if hashlib.sha256(raw).hexdigest() != expected:
