@@ -1,0 +1,46 @@
+{
+  "schema": "resource_fix_post_exit_admission_v1",
+  "verified": true,
+  "at_utc": "2026-10-06T13:12:56.179391+00:00",
+  "preparation_process_retired": true,
+  "frozen_sources": 97,
+  "spec_sha256": "216637107d75156c6ad4c1db13656e6ea94f7fce225a8df9da03b7b2f6db25cb",
+  "actual_changed_inherited_paths": [
+    "SOURCE_FACTOR_PROOF.json",
+    "factor_proof.py",
+    "worker.py"
+  ],
+  "parent_unchanged": true,
+  "stage_checker_scoring_budget_unchanged": true,
+  "controls": 10,
+  "inherited_controls_reexecuted": 23,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "source_commit": "ab7139bb49b32df281849249f4c2dbcc6ae941ab",
+  "fifo_states": {
+    "101": "failed_released_after_inspection",
+    "102": "running",
+    "103": "cancelled_before_start"
+  },
+  "archive_sha256": "31a51abedab4b1094be7e708339b06bbb218207a963af51e3d82935f27793b0e",
+  "archive_bytes": 553191,
+  "archive_members": 101,
+  "worker_sha256": "7e98fccf8a9bfe93f04ebf9b6a6783aa3a469db50c563cddf9974d94e574ca96",
+  "run_scope": {
+    "tasks": 6,
+    "outputs": 12,
+    "max_requests": 24,
+    "initial_tokens": 8192,
+    "stage_timeout_s": 9000,
+    "guard_timeout_s": 9400,
+    "slot_minutes": 160
+  },
+  "old_failed101_recorded_requests": 4,
+  "accuracy_gain_claimed": false,
+  "whole_batch_complete": false,
+  "fifo_ticket": 104,
+  "fifo_accepted_at_utc": "2026-10-06T13:13:53.490626+00:00",
+  "fifo_state_at_submission": "queued",
+  "archive_dual_verified": true,
+  "pull_request": "https://github.com/854259/FPGA/pull/59"
+}
