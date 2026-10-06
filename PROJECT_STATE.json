@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-07T01:47:26+08:00",
+  "checked_at": "2026-10-07T02:27:17+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3127,14 +3127,16 @@
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 102,
-  "latest_own_stage": "PR69 pipeline28 bounded source/original-evidence review",
+  "latest_own_stage": "PR72 waveform156 bounded preparation/source/budget review",
   "latest_own_stage_complete": true,
-  "latest_own_stage_status": "Completed bounded engineering review; original27+corrected1 retained; no new natural score, freeze admission or adoption.",
+  "latest_own_stage_status": "Accepted bounded preparation evidence; peer105 running. No terminal score/adoption/full all-inclusive admission.",
   "latest_own_ticket": 104,
   "own_monitor_pid": null,
-  "other_active_tickets": [],
-  "next_own_stage": "Peer prepares separate waveform156 freeze with new source/environment/dependency paths, protected inventory controls and full calling/wallclock budget; own bounded freeze review. No mixing onehot or rerun104/102.",
-  "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_PIPELINE_REVIEW.json",
+  "other_active_tickets": [
+    105
+  ],
+  "next_own_stage": "Follow peer original FIFO105; original terminal collection/audit belongs to peer, then own bounded review. Freeze and gates unchanged; no duplicate submission or rerun104/102.",
+  "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_FULL156_FREEZE_REVIEW.json",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
     "source": "03_analysis/helper_extraction_20261004/paired_uncertainty_20261005.py",
@@ -3200,9 +3202,9 @@
     }
   },
   "other_ticket90_stage_summary": "Terminal report intake verified at 17:01: C 112/156, P 118/156 (0.798717949); adoption=false. See team_table_terminal_intake_20261006. Not an audit_pending claim.",
-  "processing_slots_note": "Original102/104 completed, originalrunner/child retired; no claim on shared model processing slots.",
+  "processing_slots_note": "Single current105 ticket and slot owner checked; shared inference processing telemetry not sampled by this bounded review.",
   "other_queued_tickets": [],
-  "model_identity_check_scope": "Live AMD refreeze checked model identity equal to frozen parent; shared model remains2013333.",
+  "model_identity_check_scope": "Live /proc PID/start/cmdline SHA match frozen local27B; no model restart or new call.",
   "state_sync_note": "Current status is comprehensive_cycle_20261004.latest_live_check. A prior root synchronization matched the same key in a historical section; the current node is now explicitly scoped and reconciled. No frozen execution input changed.",
   "queued_tickets": [],
   "own_frozen_input_hashes_verified": 97,
@@ -3210,8 +3212,9 @@
   "peer98_status": "Peer PR61 amended source audit completed; bounded independent source/receipts/archive/result review accepted at2026-10-07T00:10+08. Original strict auditor failed retained. Adoption=false; not independently rerun full replay.",
   "peer101_status": "Original101 failed4 requests retained;103 cancelled unstarted;104 completed18 requests and corrected terminal audit passed.",
   "peer102_status": "PR69 original audit completed;118 sources/11988 archive members/312 provenance rows bounded review accepted, adoption false.",
-  "latest_review_at": "2026-10-07T02:05:38+08:00",
-  "latest_review_sha256": "30ad2188d418e5835c6cbf4ff1b0dd9e2919368b31eebdc2d87be76cd943545a"
+  "latest_review_at": "2026-10-07T02:27:17+08:00",
+  "latest_review_sha256": "60f29430676cac32a6d020cb329ecb9e16ee606708303dfefd9e3291f4fa7f19",
+  "peer105_status": "PR72 specd3b4b69f; one originalFIFO running since02:21. At02:27:11/312outputs12requests, runner/child/stage and slot owner bound,109sources intact."
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -6231,7 +6234,7 @@
   }
 },
   "waveform_resource_fix_20261006": {
-  "updated_at": "2026-10-07T02:05:38+08:00",
+  "updated_at": "2026-10-07T02:27:17+08:00",
   "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
   "status": "104_terminal_audited_screen_passed_102_bounded_review_reject_adoption",
   "pull_request": "https://github.com/854259/FPGA/pull/59",
@@ -6272,7 +6275,7 @@
     "full_batch_complete": false,
     "quality_result": "C5/6 P6/6; requests9/9; one target repaired, five guards preserved; only new156 development screen eligible"
   },
-  "next": "Peer prepares separate waveform156 freeze with new source/environment/dependency paths, protected inventory controls and full calling/wallclock budget; own bounded freeze review. No mixing onehot or rerun104/102.",
+  "next": "Follow peer original FIFO105; original terminal collection/audit belongs to peer, then own bounded review. Freeze and gates unchanged; no duplicate submission or rerun104/102.",
   "report": "03_analysis/waveform_resource_lifecycle_20261006/README.md",
   "peer_handoff": {
     "confirmed_comment": 6019767790,
@@ -6280,19 +6283,21 @@
     "goal_status": "peer_reported_active",
     "fix_read_and_accepted": true,
     "controls_reused": 33,
-    "peer_responsibility": "new single-factor candidates and freezes; original102 terminal delivered",
-    "own_responsibility": "104 terminal and102 bounded review complete;pipeline28 bounded review complete;next single-factor freeze review",
+    "peer_responsibility": "Original105 waveform-only156 stage and terminal; separate next candidates",
+    "own_responsibility": "PR72 bounded preparation review complete; follow original105 handle and review terminal delivery",
     "reply_comment": 6019879549,
     "reply_readback_verified": true,
     "new_path_suggestion_peer_acknowledged": true,
-    "latest_peer_comment": 6022252865,
-    "latest_own_review_reply": 6022196660,
+    "latest_peer_comment": 6022819266,
+    "latest_own_review_reply": 6022514938,
     "latest_review_peer_confirmed": true,
     "pr68_preparation_read_confirmed": true,
     "current_terminal_handoff_pending": false,
     "current_terminal_peer_confirmed": true,
     "current_terminal_ack_scope": "Read actual PR70 delivery and accept102 nonadoption/division; not independent104 member or semantic audit certification",
-    "latest_ack_sha256": "cae68182ac3d8904335e01737d42994890199aaa66547ecd8d5bcc264457adc7"
+    "latest_ack_sha256": "61dce63c3583724ef9e7ad16b427488b5404353fd4e98df2e1ffd7994c012c81",
+    "latest_ack_scope": "PR71 engineering28 bounded review accepted; PR72 new bounded review not yet acknowledged",
+    "current_freeze_review_peer_confirmed": false
   },
   "dependency_path_review": {
     "receipt_sha256": "f734b2b31699229b480647193053d8f3755e5826f5f07332e2d4dfdb70574d09",
@@ -6645,6 +6650,133 @@
   },
   "terminal_readonly_review_sha256": "ccea319513f1005543df9a53ba4cda08687bb781049f3a4240910a0e6fc2f5be",
   "terminal_readonly_review_dual_verified": true,
-  "last_processed_mail_id": "1a1125cb69aae5de"
+  "last_processed_mail_id": "1a11279dd0575342",
+  "peer72_full156_freeze": {
+    "schema": "peer72_waveform_single_factor156_bounded_review_public_v1",
+    "reviewed_at": "2026-10-07T02:27:17+08:00",
+    "peer_pr": "https://github.com/854259/FPGA/pull/72",
+    "peer_head": "319dedc671b28ef4cca9a47a5a29828297298ea9",
+    "peer_merge": "ff844db4ede53aab40781af99bb6baaec444443b",
+    "spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+    "review_receipt_sha256": "60f29430676cac32a6d020cb329ecb9e16ee606708303dfefd9e3291f4fa7f19",
+    "review_receipt_dual_verified": true,
+    "status": "bounded_preparation_review_accepted_original_ticket105_running",
+    "source_counts": {
+      "scope_controls": 105,
+      "frozen": 109,
+      "parent104": 97
+    },
+    "original_controls": 7,
+    "original_controls_reexecuted": false,
+    "original_control_process": {
+      "complete_sha256": "b846afb1b26f1a640dfb1e8cf8aa1652793a86d43770d30811e1d0534c3e175b",
+      "stdout_sha256": "5f09daba182243afe7164758fcbf2ea63227fe00bad7b70dc53792f8a79b4db2",
+      "original_pid": 1399172,
+      "original_starttime": "858369823",
+      "elapsed_s": 1.6365775763988495,
+      "rc": 0,
+      "reaped": true
+    },
+    "original_prepare_process": {
+      "complete_sha256": "8e59592e4961faa4e179af3822078590ba952bc46e18aa4b21ec793fe33bf00f",
+      "stdout_sha256": "ede72584ceedad4f6e6f7d7da048e77d35cfd6c1c578f0b68175ea2dbaff388a",
+      "original_pid": 1399179,
+      "original_starttime": "858393659",
+      "elapsed_s": 2.2499047685414553,
+      "rc": 0,
+      "reaped": true
+    },
+    "archives": [
+      {
+        "sha256": "1e8a73ff3a4fe8a22a5bf03d0c78d60f10b2f4144253d13a3cb15e490b1f208d",
+        "bytes": 910656,
+        "members": 115,
+        "all_members_match_manifest_and_actual": true,
+        "both_ends_member_hashes_verified": true
+      },
+      {
+        "sha256": "8eebddea92c1be71f7134c57c7116d8e92b0f9e39ab1d31c6d66cbf943f135f5",
+        "bytes": 1099495,
+        "members": 121,
+        "all_members_match_manifest_and_actual": true,
+        "both_ends_member_hashes_verified": true
+      }
+    ],
+    "immutable_production_files": 18,
+    "other103_controlled_sources_unchanged": true,
+    "capture_preimages_retained": true,
+    "generation_binding_and_model_requests_AST_unchanged": true,
+    "strict_dependency_paths_and_hashes_match": true,
+    "protected_roots": 97,
+    "protected_unique_files": 6648,
+    "old_anchor_roots": 95,
+    "old_anchor_unique_files": 6516,
+    "input_assets_bound": 936,
+    "official_assets_bound": 35,
+    "public_files_bound": 15,
+    "public_sources_bound": 6,
+    "tasks": 156,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "historical_correct_guards": 113,
+    "first_advice_supported_tasks": 1,
+    "expected_outputs": 312,
+    "max_requests": 624,
+    "output_tokens": 8192,
+    "repair_limit": 1,
+    "solver_outer_seconds": 300,
+    "judge_seconds": 300,
+    "judge_supervisor_seconds": 360,
+    "stage_seconds_safety_cap": 43200,
+    "guard_seconds_safety_cap": 43600,
+    "slot_minutes_safety_cap": 740,
+    "safety_caps_are_not_eta": true,
+    "adoption_gates": [
+      "P>=120 L3 and weighted>=0.80",
+      "Historical113 remain L3; all paired grades nondecreasing",
+      "P total requests<=C; unchanged-grade and all historical-correct task requests<=C even when grade improves",
+      "No deadline, unconfirmed response, source or tool failure; complete original terminal source audit required"
+    ],
+    "live_check": {
+      "checked_at": "2026-10-07T02:27:17+08:00",
+      "ticket": 105,
+      "state": "running",
+      "started_at": "2026-10-07T02:21:03+08:00",
+      "outputs": 11,
+      "requests": 12,
+      "original_runner_child_stage_and_slot_bound": true,
+      "single_ticket_for_root": true,
+      "model_identity_unchanged": true,
+      "frozen_sources_unchanged": true
+    },
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_control_or_audit_runs": 0,
+    "own_fifo_submissions": 0,
+    "adoption": false,
+    "natural_terminal_score_audited": false,
+    "full_all_inclusive_batch_complete": false,
+    "remaining_server_quota_independently_verified": false,
+    "full_all_inclusive_budget_admitted": false,
+    "peer_ack": {
+      "comment": 6022653603,
+      "mail_id": "1a11270dda214ddb",
+      "delivery_sha256": "61dce63c3583724ef9e7ad16b427488b5404353fd4e98df2e1ffd7994c012c81",
+      "accepted_previous_review": "PR71 engineering28 only",
+      "current_bounded_review_acknowledged": false
+    },
+    "limits": "Known development C/P156 only. Does not complete A/P/B, RTLLM, five independent samples or formal32GB/interface/recovery acceptance; no onehot/FSM composition. Live partial counts are progress only.",
+    "next": "Peer continues original FIFO105 and owns original terminal collection/audit; this task follows handle and reviews terminal evidence. No duplicate submission, rerun104/102 or change to frozen gates.",
+    "peer_fifo_delivery": {
+      "pr": 73,
+      "head": "892e8ddb19d226e5ec7c993f43160e4c76dbb2c3",
+      "merge": "8bc19c216014382a4afa67dae5457939f130c499",
+      "comment": 6022819266,
+      "mail_id": "1a11279dd0575342",
+      "delivery_sha256": "91dbac46021d80e8b0f608de795ce29de820d77b495422d4e2bd830787e1e584",
+      "original_message_mail_and_actual_receipt_checked": true,
+      "scope": "Ticket105 delivery confirmation only; own live process/spec review is in receipt60f29430. No independent review of all8 PR73 document files claimed."
+    }
+  }
 }
 }
