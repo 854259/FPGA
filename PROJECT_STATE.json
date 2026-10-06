@@ -1,4 +1,95 @@
 {
+  "onehot99_native_terminal_20261007": {
+    "schema": "onehot99_finite_fourstate_native_terminal_public_v1",
+    "fifo_ticket": 99,
+    "original_spec_sha256": "6d0d61c65f49b68a33c825a9ae6ba8f6bb8bef2f2fad05f6f0495cd868866939",
+    "original_auditor_passed": true,
+    "original_auditor_sha256": "1e21ecc8c5922fc613f0155c9597a385c7f3c9d007d76ba9437269e33171015d",
+    "original_audit_result_sha256": "a0e506f4799f311caf8ea78b23c8ed838f2954b5d5109015fee56ee921a9e980",
+    "terminal_receipt_sha256": "e84db4448d999170cf20cb1e6c798b456425e175fe4e3aa5b1e7b3206d638574",
+    "native_qualified": true,
+    "controls": 8,
+    "positive_cases": 6,
+    "negative_mutants": 2,
+    "native_commands": 24,
+    "guard_receipts": 49,
+    "observations": 14144,
+    "semantics": "bitwise OR over every active state, combinational state transition and outputs, four-state inputs including x/z",
+    "original_auditor_process": {
+      "returncode": 0,
+      "exec_confirmed": true,
+      "normal_completion": true,
+      "leader_reaped": true,
+      "timeout": false,
+      "remaining_group": [],
+      "elapsed_s": 0.9017175398766994
+    },
+    "archive": {
+      "sha256": "2132eb10bb683d759402881192c34a1bae5390749d7adfcc4dc77a832993e661",
+      "bytes": 6550546,
+      "members": 332,
+      "every_member_bound_both_ends": true,
+      "final_snapshot_differences": []
+    },
+    "final_metadata_separate_from_archive": true,
+    "active_wrapper_streams_excluded_from_frozen_archive": true,
+    "retained_prestart_wrapper_failure_sha256": "aba60ca249771d1bf1a9af2d8660e1125bec85cbf718b8c207d1374183279cf7",
+    "recovery_scope": "Create missing output parent before first original audit execution; do not rerun original native stage",
+    "original_stage_model_requests": 0,
+    "additional_model_requests": 0,
+    "additional_native_commands": 0,
+    "new_scoring_runs": 0,
+    "new_fifo": false,
+    "terminal_protection": {
+      "primary": {
+        "STATUS.md": "779b5966af1b2a1a0475f29a2eaa6b9543e3dd44ef3b0f932ce33e5306762465",
+        "SNAPSHOT.json": "2463e95c74c49bdce0b41281da1b4f70e269468fd0caeae7a0d7ddac71a8e870"
+      },
+      "model_starttime": "823869819",
+      "spec_sha256": "2a68a5237a696a50374dd2a7d120ba0c729fbf2d7a69966a7be3939c9d5276e7",
+      "groups": 85,
+      "source_assets": 5460
+    },
+    "full_score_measured": false,
+    "independent_unseen_tasks": 0,
+    "goal_qualified": false,
+    "adoption": false,
+    "next_step": "Integrate the unchanged prompt-only onehot compiler as one factor; fixed paired screen before any new full156 qualification",
+    "goal_gates": {
+      "tasks": 156,
+      "minimum_fully_correct": 120,
+      "minimum_weighted_score": 0.8,
+      "historical_correct_to_preserve": 113,
+      "max_tokens": 8192,
+      "max_requests_per_task": 2,
+      "repair_attempts": 1,
+      "solver_timeout_s": 300,
+      "judge_timeout_s": 300,
+      "supervisor_timeout_s": 360,
+      "paired_grade_nondecreasing": true,
+      "candidate_total_requests_lte_control": true,
+      "unchanged_grade_and_historical_correct_requests_lte_control": true
+    },
+    "prompt_only_generator_sha256": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007"
+  },
+  "github_actual_peer61_confirmation_20261007": {
+    "comment_id": 6020420574,
+    "read_response_id": 6020526051,
+    "peer_receipt_sha256": "cbcf5b62b68b92145bf58ecc787b8f4b70cc75130e41e6119976615f7852cd9d",
+    "scope": "PR61 exact source amendment, original archive bindings and aggregate results; no peer semantic replay or unseen-task verification",
+    "division": {
+      "owner": [
+        99,
+        102
+      ],
+      "teammate": [
+        104
+      ],
+      "teammate_bounded_review": [
+        102
+      ]
+    }
+  },
   "vector98_full156_terminal_20261006": {
     "schema": "vector98_full156_independent_relocation_terminal_public_v1",
     "goal_status": "active",
