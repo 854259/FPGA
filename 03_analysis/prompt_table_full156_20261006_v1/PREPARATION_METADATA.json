@@ -1,0 +1,43 @@
+{
+  "schema": "table_full156_reviewed_preparation_metadata_v1",
+  "spec_sha256": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
+  "source_assets": 98,
+  "actual_amd_checks": 54,
+  "physical_files_verified": 113,
+  "tasks": 156,
+  "expected_cp_rows": 312,
+  "original_fully_correct_guards": 113,
+  "prompt_only_mechanical_emissions": 9,
+  "max_requests": 624,
+  "budget": {
+    "tokens": 8192,
+    "max_requests_per_row": 2,
+    "repair": 1,
+    "absolute_solve_seconds": 300,
+    "original_judge_seconds": 300
+  },
+  "stage_cap_seconds": 43200,
+  "guard_cap_seconds": 43600,
+  "whole_task_slot_minutes": 735,
+  "protected_groups": 22,
+  "protected_source_assets": 1425,
+  "producer_and_fallback_unchanged": true,
+  "original_judge_unchanged": true,
+  "original_x_z_checks_preserved": true,
+  "qualified_pilot_audit_sha256": "3cb9d4cb0db9f7a0e7a9c996e0b71339d39fbec616f3624d83be5dc66d6923f3",
+  "model_calls_in_preparation": 0,
+  "eda_calls_in_preparation": 0,
+  "submitted": false,
+  "new_full_score_measured": false,
+  "adoption": false,
+  "goal_achieved": false,
+  "independent_or_hidden_evidence": false,
+  "failures_preserved": [
+    "initial_local_source_copy_missing_private_capture_before_execution",
+    "initial_remote_staging_wrong_dependency_path_before_tests",
+    "exact_original_packet_recovery_after_timestamp_pin_refusal",
+    "root_test_line_reader_did_not_handle_expected_zip_attack_warning"
+  ],
+  "recovery_scope": "Inspected staging prefix only; actual AMD prepare and54 checks once. Original claims/source and all failures retained.",
+  "delivery_status": "This revision records preparation before submission; actual queue acceptance requires a separate receipt."
+}

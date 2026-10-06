@@ -6365,7 +6365,7 @@
     "shared_audit_receipt": "03_analysis/semantic_edge_guidance_pilot_20261005/SHARED_TERMINAL_AUDIT_RECEIPT.json"
   },
   "phase_P_stability156x5_20261005": {
-    "status": "measurement_terminal_archive_valid_peer_report_repair_pending",
+    "status": "terminal_peer88_audit_and_statistics_physically_reused",
     "spec_sha256": "589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15",
     "assets": 56,
     "local_checks": 7,
@@ -6395,7 +6395,7 @@
     "confirmed_responses_observed": 140,
     "measurement_complete": true,
     "measurement_error": null,
-    "actual_model_calls_terminal_audit_pending": true,
+    "actual_model_calls_terminal_audit_pending": false,
     "latest_launch_commit": "2e479f36fe0c416a7806e003d145b1d10a719c74",
     "all_original_task_prompt_names_and_bytes_verified": true,
     "independent_of_local_chat_process": true,
@@ -6440,7 +6440,17 @@
       "formal_five_sample_qualified": false,
       "duplicate_postflight_submitted": false
     },
-    "legacy_snapshot_fields_are_historical": true
+    "legacy_snapshot_fields_are_historical": true,
+    "statistics_complete": true,
+    "peer88_reused_result": "03_analysis/phase_P_stability156x5_20261005/PEER88_REUSED_RESULT.json",
+    "weighted_quality_mean": 0.768974358974359,
+    "fully_correct_per_repeat": [
+      113,
+      112,
+      112,
+      112,
+      112
+    ]
   },
   "team_coordination_20261005": {
     "status": "owned_audited_notices_shared_old_observer_retired",
@@ -6509,8 +6519,16 @@
       "actual_model_requests": 844,
       "responses": 844,
       "terminal": true,
-      "valid_statistics_pending": true,
-      "archive_sha256": "afb7f260adda76247e83436b40bc59796d0f5eb6dabac92dd7aaa631ea19e5c1"
+      "valid_statistics_pending": false,
+      "archive_sha256": "afb7f260adda76247e83436b40bc59796d0f5eb6dabac92dd7aaa631ea19e5c1",
+      "weighted_quality_mean": 0.768974358974359,
+      "fully_correct_per_repeat": [
+        113,
+        112,
+        112,
+        112,
+        112
+      ]
     },
     "previous_actual_longtest_observation": {
       "completed": 577,
@@ -6524,7 +6542,7 @@
       "verified_live_process_count": 6,
       "eta_claimed": false
     },
-    "next_step": "One qualified table full156 regression; FSM8/vector6 independent C/P after native qualification. No adoption, no relaxed judge, no duplicate peer stability audit.",
+    "next_step": "Submit sealed table full156/312 CP once through whole-task FIFO; original terminal provenance audit then score gate. Independently prepare native-qualified FSM8/vector6 single factors; reuse peer88 statistics, do not rerun.",
     "prior_actual_longtest_observation": {
       "completed": 758,
       "expected": 780,
@@ -7335,5 +7353,48 @@
     "own_additional_native_sources": 151,
     "no_automatic_deployment": true,
     "quota_stop_used_percent": 97
+  },
+  "prompt_table_full156_20261006_v1": {
+    "schema": "table_full156_reviewed_preparation_metadata_v1",
+    "spec_sha256": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
+    "source_assets": 98,
+    "actual_amd_checks": 54,
+    "physical_files_verified": 113,
+    "tasks": 156,
+    "expected_cp_rows": 312,
+    "original_fully_correct_guards": 113,
+    "prompt_only_mechanical_emissions": 9,
+    "max_requests": 624,
+    "budget": {
+      "tokens": 8192,
+      "max_requests_per_row": 2,
+      "repair": 1,
+      "absolute_solve_seconds": 300,
+      "original_judge_seconds": 300
+    },
+    "stage_cap_seconds": 43200,
+    "guard_cap_seconds": 43600,
+    "whole_task_slot_minutes": 735,
+    "protected_groups": 22,
+    "protected_source_assets": 1425,
+    "producer_and_fallback_unchanged": true,
+    "original_judge_unchanged": true,
+    "original_x_z_checks_preserved": true,
+    "qualified_pilot_audit_sha256": "3cb9d4cb0db9f7a0e7a9c996e0b71339d39fbec616f3624d83be5dc66d6923f3",
+    "model_calls_in_preparation": 0,
+    "eda_calls_in_preparation": 0,
+    "submitted": false,
+    "new_full_score_measured": false,
+    "adoption": false,
+    "goal_achieved": false,
+    "independent_or_hidden_evidence": false,
+    "failures_preserved": [
+      "initial_local_source_copy_missing_private_capture_before_execution",
+      "initial_remote_staging_wrong_dependency_path_before_tests",
+      "exact_original_packet_recovery_after_timestamp_pin_refusal",
+      "root_test_line_reader_did_not_handle_expected_zip_attack_warning"
+    ],
+    "recovery_scope": "Inspected staging prefix only; actual AMD prepare and54 checks once. Original claims/source and all failures retained.",
+    "delivery_status": "This revision records preparation before submission; actual queue acceptance requires a separate receipt."
   }
 }
