@@ -1,0 +1,123 @@
+{
+  "schema": "waveform104_terminal_and_fsm102_bounded_review_public_v1",
+  "updated_at": "2026-10-07T01:50:00+08:00",
+  "waveform104": {
+    "status": "completed_audited_development_pretest",
+    "spec_sha256": "216637107d75156c6ad4c1db13656e6ea94f7fce225a8df9da03b7b2f6db25cb",
+    "source_commit": "ab7139bb49b32df281849249f4c2dbcc6ae941ab",
+    "frozen_sources": 97,
+    "unique_development_tasks": 6,
+    "outputs": 12,
+    "model_requests": 18,
+    "old_failed101_requests_separate": 4,
+    "fully_correct": {
+      "C": 5,
+      "P": 6
+    },
+    "coefficients": {
+      "C": 0.8666666666666667,
+      "P": 1
+    },
+    "requests": {
+      "C": 9,
+      "P": 9
+    },
+    "solver_seconds": {
+      "C": 182.34297827631235,
+      "P": 137.04871198162436
+    },
+    "stage_elapsed_s": 790.6241767965257,
+    "paired_L3": {
+      "both": 5,
+      "P_only": 1,
+      "C_only": 0,
+      "neither": 0
+    },
+    "descriptive_exact_mcnemar_p": 1,
+    "independent_unseen_tasks": 0,
+    "effective_independent_families": null,
+    "guard_pass": true,
+    "request_cost_pass": true,
+    "new_full156_development_screen_eligible": true,
+    "adoption": false,
+    "full_batch_complete": false,
+    "five_sample_measured": false,
+    "official_baseline_gain_measured": false,
+    "terminal_plan_sha256": "2bb7a3f485b1bedb77c884e5be6ff712aa9a65339a11b45a9ff625e7fc206fa3",
+    "terminal_receipt_sha256": "e6b605fd5a17f2986f60484bb68f77ff0c008d7171d165e34a55e980c38f599e",
+    "audit_sha256": "b46456f68f8383f23c7bea3c192d2b797d82921fb4339c4d90f3adcd7af0405a",
+    "supervisor_source_commit": "7c993afb4eeae63e52c4394c9dc1b6abb1a9eb37",
+    "supervisor_sha256": "42916be76aa99a12363780e1f4e30df438df830d8c81d95de06556d0cdf61c8b",
+    "auditor_wrapper_sha256": "4db6d2419a933011dd4242ffb23c1031d9472fb2d9d42b4f4bd0e6898f994a91",
+    "original_auditor_sha256": "a1cb51aca23bde8aa3f09879b58711f257b72e010acc681c4503009356883715",
+    "effective_auditor_sha256": "26a465f85feae45d6b8c234ce4fe11813c69a2ac28deb2dd4f5d9567a620ccd4",
+    "collector_executions": 1,
+    "corrected_auditor_executions": 1,
+    "terminal_elapsed_s": 1.1081933733075857,
+    "new_terminal_model_calls": 0,
+    "new_terminal_eda_calls": 0,
+    "archive": {
+      "sha256": "f260ae0bbe0ac133319a004a03710076597010b549f96d1cc76f4ad8d7602d35",
+      "bytes": 3472479,
+      "members": 812,
+      "dual_verified": true
+    },
+    "metadata_archive": {
+      "sha256": "c21fe7131673512343d3b2e07637386688f3c3abdb68dcfddcdee9f198b4dce7",
+      "bytes": 47653,
+      "members": 28,
+      "dual_verified": true
+    },
+    "pending_flag_caveat": "Original metrics aggregate leaves generation_provenance_audit_pending=true; preserved raw artifact. Completed corrected audit explicitly binds all12 rows and audit execution. No rerun or frozen-result rewrite."
+  },
+  "peer102": {
+    "pr": "https://github.com/854259/FPGA/pull/69",
+    "head": "d14268f44f9616c4892585392b36fa3e9ca570fa",
+    "merge": "2ae22034aab37007aaf05c7c784d38e5bf588ec3",
+    "spec_sha256": "451d7191252877db37971f49ecc80a35881da5eec6bb8c493a9fcb8a5167bd41",
+    "original_audit_sha256": "acc9998e4b5f28a5d43c5ccb591f4d9d7f30c3ab105d7fda75a2fc342ea3cc65",
+    "frozen_sources": 118,
+    "outputs": 312,
+    "model_requests": 333,
+    "fully_correct": {
+      "C": 112,
+      "P": 115
+    },
+    "coefficients": {
+      "C": 0.7679487179487179,
+      "P": 0.7833333333333333
+    },
+    "requests": {
+      "C": 167,
+      "P": 166
+    },
+    "paired_L3": {
+      "both": 112,
+      "P_only": 3,
+      "C_only": 0,
+      "neither": 41
+    },
+    "descriptive_exact_mcnemar_p": 0.25,
+    "unique_development_tasks": 156,
+    "independent_unseen_tasks": 0,
+    "effective_independent_families": null,
+    "mechanical_repairs": 2,
+    "model_improvements": 1,
+    "paired_grade_regressions": 0,
+    "historical113_not_preserved": 3,
+    "request_increase_tasks": 1,
+    "adoption": false,
+    "full_batch_complete": false,
+    "scope": "Bound118 sources,11988 original archive members to current files, original process/stream receipts and312 provenance rows. No independent original audit/replay/collector/model/EDA rerun.",
+    "archive_sha256": "0faed6d9a8edfd87a938b5b6280b63aeefaba907960a0935e4550d269b1685ed"
+  },
+  "bounded_review_receipt_sha256": "ccea319513f1005543df9a53ba4cda08687bb781049f3a4240910a0e6fc2f5be",
+  "bounded_review_receipt_dual_verified": true,
+  "peer69_pipeline28": {
+    "delivery_and_comment_read": true,
+    "independent_source_control_review_complete": false,
+    "natural_score_verified": false,
+    "cp7_frozen_verified": false
+  },
+  "next": "Peer prepares separate single-factor waveform156 freeze with original screening/grade/history/cost gates, fresh source admission and full invocation/time budget; do not merge onehot factors or sum scores. Our next independent work is PR69 pipeline28 evidence review and next freeze review. No new run submitted by this report."
+}
