@@ -1,3 +1,8 @@
+## 2026-10-06 波形请求接入
+
+- [原请求与原worker构造验证、后续评分边界](03_analysis/waveform_first_request_integration_20261006_v1/README.md)
+- [15＋7检查、两档案完整绑定及固定12行计划](03_analysis/waveform_first_request_integration_20261006_v1/PUBLIC_PREPARATION.json)
+
 ## 2026-10-06 时序波形观察辅助
 
 - [准备与限制](03_analysis/sequential_waveform_facts_20261006_v1/README.md)
