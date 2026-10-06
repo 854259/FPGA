@@ -79,7 +79,7 @@
     "abstentions": 155,
     "reexecuted": false
   },
-  "prestart_transport_failure_scope": "Peer reported metadata-prefix prestart rejection; raw failed transport/source not included in delivered archives and not independently reconstructed in this review.",
+  "prestart_transport_failure_scope": "03:04 original scope was unreviewed; supplemented bounded source/trace review completed03:28, see prestart_failure_review. No independent original SSH birth/exit receipt.",
   "budget": {
     "tasks": 7,
     "outputs": 14,
@@ -126,7 +126,9 @@
     "peer74_comment": 6022969116,
     "ack_sha256": "aadeefadd66a0b64fca2151e6329bc1b6bd1b7ec79978be0c63638f06a461303",
     "accepted": "PR74 bounded waveform PR72 preparation only",
-    "current_peer75_review_acknowledged": false
+    "current_peer75_review_acknowledged": true,
+    "current_peer75_ack_comment": 6023729474,
+    "current_peer75_ack_sha256": "8112d8a1ee857ee66a5513428f1fcee3f71054b237693c613f2b79f4440f9a04"
   },
   "new_model_calls": 0,
   "new_eda_calls": 0,
@@ -140,5 +142,47 @@
   "adoption": false,
   "full_all_inclusive_batch_complete": false,
   "next": "Peer retains original105 and106 handles and owns once-only terminal collector/auditor. This task follows and reviews terminal results, paired uncertainty, root causes and adoption conditions. No combination of candidates or repeated controls.",
-  "elapsed_read_only_seconds": 1.482100335881114
+  "elapsed_read_only_seconds": 1.482100335881114,
+  "prestart_failure_review": {
+    "reviewed_at": "2026-10-07T03:28:32+08:00",
+    "peer_comment": 6023729474,
+    "peer_ack_sha256": "8112d8a1ee857ee66a5513428f1fcee3f71054b237693c613f2b79f4440f9a04",
+    "review_receipt_sha256": "680d53009a1e4357fdb433ea0eeccde208d2cf2c7876786db5911aa01aa3679e",
+    "receipt_and_archive_dual_verified": true,
+    "archive": {
+      "sha256": "6c9da45c59504ed56059f57f7ae1cda2d295a813073ed6c098bcf188654c3018",
+      "bytes": 1699235,
+      "members": 13
+    },
+    "source_manifests_each": 119,
+    "unchanged_sources": 118,
+    "capture_only_change": {
+      "before": "onehot_cp7_actual_current_immutable_capture_v1",
+      "after": "actual_onehot_cp7_current_immutable_capture_v1"
+    },
+    "transport_changed_lines": [
+      4,
+      50
+    ],
+    "transport_change_scope": "Exact external owned_exec path and SHA binding on line50; message/comment/packet metadata on line4.",
+    "failure_trace": {
+      "stdin_line": 21,
+      "protector_line": 14,
+      "mkdir_line": 36,
+      "owned_run_line": 52,
+      "stdout_empty": true,
+      "stderr_sha256": "36e9beb756db3c57ea848de6780e9fe92bdeed023ded26846566e97920f5e1e9",
+      "source_sha256": "d501fe24af3519cac814ed115eb58a0d9a1a92b10952239b5b21c57ce0b44bcf"
+    },
+    "external_owned_exec_sha256": "9981c3a36183787d559aaed73fcfd34d36e6a7354e5da1874cf5308c6ee476c5",
+    "corrected_sources_match_prior_success": true,
+    "prior_scope_receipt_sha256": "32866bd3e23b1f08ef47272e3def005e54b006bcdf0366c7466a9a94e61eccf7",
+    "prior_success_bounded_review_sha256": "abff5f7d03f844f04ad7b55289fcc9dfaab0adc46047830ee4e72802941e2012",
+    "historical_absence_limit": "Supplied contemporaneous observation; not independently re-observed historical filesystem. Static original source plus traceback corroborate rejection before mkdir/test execution. No separate original SSH process birth/returncode receipt supplied.",
+    "conclusion": "Original source and stderr corroborate schema-prefix rejection before directory creation/test launch; bounded failure-source review accepted. No replay.",
+    "new_test_model_eda_or_fifo": 0,
+    "adoption": false,
+    "full_batch_complete": false,
+    "elapsed_read_only_seconds": 0.0770959872752428
+  }
 }
