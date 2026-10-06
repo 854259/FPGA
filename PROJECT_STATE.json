@@ -1,4 +1,140 @@
 {
+  "vector98_full156_terminal_20261006": {
+    "schema": "vector98_full156_independent_relocation_terminal_public_v1",
+    "goal_status": "active",
+    "goal_achieved": false,
+    "fifo_ticket": 98,
+    "development_tasks": 156,
+    "paired_outputs": 312,
+    "spec_sha256": "be08491a5eed64483ac8c6b4871731e9b3faa557a8b18aa7c57013cdf7f6d395",
+    "original_auditor_passed": false,
+    "original_auditor_failure": "Inherited CP6 capture path differs from full156 runtime path; original strict comparison rejected",
+    "independent_amended_auditor_passed": true,
+    "audit_sha256": "0ea0b7e3f6d2a7883902dd636079872b3cc3fe4c518e64c1fe528b53a2b7b694",
+    "amended_auditor_sha256": "d7f9f801a5666d90a855a804d693776c3d730fa30bc679354b5433122efd16a2",
+    "original_auditor_sha256": "909ec475e88e2cf4819645fbae47e8cf0d5dd2343bdd9a93dd83345ba6952129",
+    "dependency_binding": {
+      "schema": "frozen_parent_dependency_capture_relocation_v1",
+      "verified": true,
+      "parent_spec_sha256": "3e5433ef5e11e62aafd75cb3bf4f96aa95fc94cc9efe8689db21183c6a4e86b2",
+      "capture_sha256": "b129f8b679b0dddf00c766deb92d460cc7ff9524306c8ef97ef066da21abed35",
+      "captured_cloud_root": "/workspace/team/runs/fpga_owner/vector_synthesis_cp6_20261006_v2",
+      "executing_cloud_root": "/workspace/team/runs/fpga_owner/vector_synthesis_full156_20261006_v3",
+      "captured_dependencies_cloud": "/workspace/team/runs/fpga_owner/vector_synthesis_cp6_20261006_v2/dependencies",
+      "executing_dependencies_cloud": "/workspace/team/runs/fpga_owner/vector_synthesis_full156_20261006_v3/dependencies",
+      "dependency_hashes": {
+        "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+        "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+      }
+    },
+    "generic_controls_passed": 8,
+    "all_other_original_assertions_replayed": true,
+    "fully_correct_by_arm": {
+      "C": 112,
+      "P": 115
+    },
+    "coefficients": {
+      "C": 0.7679487179487179,
+      "P": 0.7833333333333333
+    },
+    "requests_by_arm": {
+      "C": 167,
+      "P": 165
+    },
+    "actual_model_requests": 332,
+    "improvements": [
+      "Prob064_vector3",
+      "Prob097_mux9to1v",
+      "Prob140_fsm_hdlc"
+    ],
+    "mechanical_repairs": [
+      "Prob064_vector3",
+      "Prob097_mux9to1v"
+    ],
+    "paired_regressions": [],
+    "original113_regressions": [
+      "Prob143_fsm_onehot",
+      "Prob145_circuit8",
+      "Prob151_review2015_fsm"
+    ],
+    "request_increases": [
+      {
+        "task": "Prob140_fsm_hdlc",
+        "C_requests": 1,
+        "P_requests": 2,
+        "C_level": 1,
+        "P_level": 3
+      }
+    ],
+    "guard_pass": false,
+    "unchanged_task_request_cost": false,
+    "qualified_for_goal": false,
+    "adoption": false,
+    "independent_validation_qualified": false,
+    "five_sample_qualified": false,
+    "route_counts": {
+      "C": {
+        "model": 156,
+        "mechanical_vector": 0
+      },
+      "P": {
+        "model": 153,
+        "mechanical_vector": 3
+      }
+    },
+    "archive_binding": {
+      "vector98": {
+        "sha256": "dba3ff40b634ec29296d2ba1aae33a398e270584727e1abd3e8160aceda90624",
+        "bytes": 56658897,
+        "members": 11987,
+        "every_member_bound_both_ends": true,
+        "verified_partial_prefix_bytes": 49905664
+      },
+      "peer104": {
+        "sha256": "31a51abedab4b1094be7e708339b06bbb218207a963af51e3d82935f27793b0e",
+        "bytes": 553191,
+        "members": 101,
+        "every_member_bound_both_ends": true,
+        "verified_partial_prefix_bytes": 0
+      }
+    },
+    "audit_metadata_archive": {
+      "sha256": "92bf8e82fa5dcd675686c89e792894c0e58b7b0c01db6e7dfd5e0221e426b449",
+      "bytes": 54559,
+      "members": 31,
+      "every_member_bound_both_ends": true
+    },
+    "retained_failures": [
+      "Terminal wrapper v1 cap rejected before any collector/auditor process",
+      "Original collector once passed; original auditor once rejected dependency path equality",
+      "Read-only transfer timeout and partial bytes retained; verified-prefix chunk transfer bound same full archive",
+      "Static amendment draft v3 spacing mismatch rejected before AMD installation"
+    ],
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": false,
+    "new_scoring_runs": 0,
+    "original_frozen_sources": 116,
+    "base_protected_groups": 81,
+    "base_protected_assets": 5351,
+    "peer104_protected_sources": 97,
+    "peer_handoff": {
+      "actual_read_comments": [
+        6016115759,
+        6016915105,
+        6017167193
+      ],
+      "ack_comment": 6019767790,
+      "fix_pr": "https://github.com/854259/FPGA/pull/59",
+      "spec_sha256": "216637107d75156c6ad4c1db13656e6ea94f7fce225a8df9da03b7b2f6db25cb",
+      "controls_reused_not_reexecuted": 33,
+      "fifo101": "failed_released_after_inspection",
+      "fifo103": "cancelled_before_start",
+      "fifo104_owner": "fpga_teammate",
+      "owner_responsibility": "Original98 full provenance and original102 terminal audit; no duplicate104 submission/audit"
+    },
+    "next_action": "Audit original102 at natural terminal, reuse peer104 original terminal, audit native99 once, investigate task-blind timer/serial phase factor before fixed paired screening. No adoption of failed full candidate."
+  },
   "waveform_endpoint_cp6_preparation_20261006_v3": {
     "schema": "waveform_endpoint_cp6_public_preparation_v3",
     "goal_status": "active",
