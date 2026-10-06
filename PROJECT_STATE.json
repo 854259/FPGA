@@ -3129,7 +3129,7 @@
   "known_full156_regression_completed_ticket": 102,
   "latest_own_stage": "104 original natural pretest",
   "latest_own_stage_complete": false,
-  "latest_own_stage_status": "Running after102 original generation completed; separate terminal supervisor8 controls passed, no terminal audit yet",
+  "latest_own_stage_status": "Running after102 original generation completed; separate terminal supervisor effective9 controls passed (8 reused +1 wiring supplement), no terminal audit yet",
   "latest_own_ticket": 104,
   "own_monitor_pid": 1151739,
   "other_active_tickets": [],
@@ -6228,7 +6228,7 @@
   }
 },
   "waveform_resource_fix_20261006": {
-  "updated_at": "2026-10-07T01:20:01+08:00",
+  "updated_at": "2026-10-07T01:28:00+08:00",
   "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
   "status": "104_running_terminal_supervisor_prepared",
   "pull_request": "https://github.com/854259/FPGA/pull/59",
@@ -6439,20 +6439,26 @@
     "ack_sha256": "cceaecae88c597e0d5698146f65e920984babe5e9eed1ce62b01bbea5d4ff550"
   },
   "terminal_supervisor_preparation": {
-    "source_commit": "97ed003077a075e2b3ffdde395a0ef4610302176",
-    "supervisor_sha256": "dd187834b5696164a91e10b1a720b851d41cf6046b2946c836b4a6562b7b1b17",
-    "tests_passed": 8,
-    "elapsed_s": 0.6721398569643497,
-    "receipt_sha256": "173d8ebf508ba5672317d07711601a489d42355e665d8352ee9c4b7a655c437a",
-    "archive_sha256": "721f1c5eb84ba2efe957577124e11efde905df6c1ae80c9f248afe1d030f0074",
-    "archive_members": 14,
+    "source_commit": "7c993afb4eeae63e52c4394c9dc1b6abb1a9eb37",
+    "supervisor_sha256": "42916be76aa99a12363780e1f4e30df438df830d8c81d95de06556d0cdf61c8b",
+    "tests_passed": 9,
+    "elapsed_s": 0.8468102924525738,
+    "receipt_sha256": "7c0a626bc62cc0f37eed66214186ac3ca457e646ed06024d9ee7d6734828ba48",
+    "archive_sha256": "f89c0033e15d64f3191348575d58e333b682d8249860ec6803b1dc65a775ac9b",
+    "archive_members": 22,
     "archive_dual_verified": true,
     "new_model_calls": 0,
     "new_eda_calls": 0,
     "source97_unchanged": true,
     "temporary_directories_remaining": 0,
     "terminal_audit_executed": false,
-    "private_archive": "05_handoff/independent_validation_20261004/waveform_resource_fix_20261006/terminal_supervisor/"
+    "private_archive": "05_handoff/independent_validation_20261004/waveform_resource_fix_20261006/terminal_supervisor/",
+    "original_control_receipt_sha256": "173d8ebf508ba5672317d07711601a489d42355e665d8352ee9c4b7a655c437a",
+    "original_controls_reused": 8,
+    "pull_request": "https://github.com/854259/FPGA/pull/68",
+    "original_archive_sha256": "721f1c5eb84ba2efe957577124e11efde905df6c1ae80c9f248afe1d030f0074",
+    "new_positive_control": 1,
+    "old_wiring_negative_control_rejected": true
   }
 }
 }
