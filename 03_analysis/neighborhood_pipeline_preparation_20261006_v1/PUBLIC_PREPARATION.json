@@ -1,0 +1,55 @@
+{
+  "schema": "neighborhood_pipeline49_actual_preparation_v1",
+  "source_assets": 101,
+  "producer_sha256": "7a31e5eac9ccce97a839551eed89e06073ca406e467173a1a1eac58d8798a2df",
+  "worker_sha256": "c1d18664ab7d52413ec75c552c661c37e20bc71c9a71fe54cb4426403dcf584f",
+  "metrics_sha256": "6af9581f3896f1a6f2c683ee734123ddcf7c3ddf6ca68e83f54776dafd404af4",
+  "qualified_distinct_controls": 49,
+  "reused_worker_controls": 22,
+  "reused_metrics_controls": 8,
+  "new_actual_stage_controls": 9,
+  "new_actual_inner_audit_controls": 10,
+  "original_new_control_executions": 19,
+  "recovery_new_test_executions": 0,
+  "original_pure_summary_passed": false,
+  "original_summary_sha256": "2f75ad63cc86a5ff2502a0b260a02c0f0fc29d6dce2ec269095b8d66c31aa434",
+  "same_result_recovery_sha256": "f7771b944b1cf92534966c85986c8d463f74b0e86ca9ec467851728c3e2d027a",
+  "original_failure_traceback_sha256": "d73eed93bb82e02bfc7570db6d8e0576f7271f23213f20f7a6ccfaf29b4f26d5",
+  "original_failure_retained": true,
+  "parser_warning_caused_count_failure": true,
+  "protected_groups": 46,
+  "protected_assets": 3520,
+  "model_primary_sources_preserved": true,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "new_fifo": false,
+  "full_score_stage_and_archive_audit_blocked": true,
+  "native94_qualification_pending": true,
+  "fixed_score_plan": {
+    "tasks": 6,
+    "rows": 12,
+    "targets": [
+      "124",
+      "144"
+    ],
+    "mechanical_guard": "108",
+    "model_guard": "042",
+    "abstention_boundaries": [
+      "104",
+      "143"
+    ],
+    "max_model_requests": 24
+  },
+  "budget": {
+    "max_tokens": 8192,
+    "max_requests": 2,
+    "max_repairs": 1,
+    "absolute_solve_deadline_s": 300,
+    "original_judge_full_domain_including_xz": true
+  },
+  "score_measured": false,
+  "goal_achieved": false,
+  "deployment": false,
+  "peer_acknowledgment": "pending",
+  "at_epoch": 1791262924.3042142
+}
