@@ -1,4 +1,86 @@
 {
+  "serial107_terminal_preparation_20261007": {
+    "schema": "serial107_terminal_preparation_public_v1",
+    "goal_status": "active",
+    "goal_achieved": false,
+    "public_source_hashes": {
+      "terminal_gate.py": "a17bb7c8c028fb83f4ee280f917d752963aa901be0fea0649baab062f5e136a7",
+      "terminal_supervisor.py": "382f808fe6b1550785f47293ba38319e76a294ad79a5c4fe1c7cce255fdbd965",
+      "test_terminal_gate.py": "5f080616023ea64becb1065644da3a9c03188f296949a90dcf28b9bda51f4b81"
+    },
+    "source_files": 7,
+    "gate_controls": 6,
+    "actual_test_names": [
+      "test_cleanup_release_or_source_model_drift_refuses",
+      "test_complete_metadata_admits_only_audit_eligibility_not_qualification",
+      "test_live_original_or_unknown_prior_audit_never_restarts",
+      "test_missing_or_failed_report_or_wrong_original_spec_refuses",
+      "test_native_counts_cannot_substitute_old_onehot_qualification",
+      "test_queued_running_and_failed_original_cannot_admit"
+    ],
+    "receipt_sha256": "9a59463ee1fe7b81abc249b4abb2d4a7922eede63d8f8c6d68da0e55af588a86",
+    "archive": {
+      "sha256": "b6f3827175620078315742f75845edd0f10b13e9e8a34f95c3c4a8a4c14828fa",
+      "members": 18,
+      "every_member_bound_both_ends": true
+    },
+    "process": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/serial107_terminal_gate_pure_20261007_v1/test_terminal_gate.py"
+      ],
+      "cwd": "/workspace/team/runs/fpga_owner/serial107_terminal_gate_pure_20261007_v1",
+      "cap_s": 40,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 1595280,
+        "state": "T",
+        "starttime": "859549677",
+        "pgid": 1595280,
+        "sid": 1595280,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 0.12212334759533405,
+      "leader_reaped": true,
+      "stdout_sha256": "ea00b406ff2c97c11ad9e674923205615f81819c543abaee92748ac4b6e7b5bb",
+      "stdout_bytes": 1042,
+      "normal_completion": true
+    },
+    "qualification_scope": "Six FAKE terminal-metadata eligibility controls only; terminal supervisor and original107 auditor remain unexecuted.",
+    "terminal_supervisor_executed": false,
+    "original_auditor_executed": false,
+    "original_collector_executed": false,
+    "old_native99_source_reused_not_qualification": true,
+    "protected_roots": 111,
+    "protected_unique_files": 7556,
+    "original_spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+    "original_frozen_sources": 117,
+    "original_guard_protected_kit_reused": true,
+    "global_once_intent_required_before_auditor": true,
+    "terminal_live_or_prior_attempt_refuses": true,
+    "static_prestart_failure_retained": true,
+    "static_prestart_failure_scope": "Nonexistent native protected_prefix path, no AMD execution; missing process parent also repaired before first execution.",
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "new_fifo": false,
+    "native_qualified": false,
+    "natural_score_measured": false,
+    "adoption": false,
+    "independent_unseen": 0,
+    "peer85_actual_delivery_read": "399522a3df0030c6265c388a7f9bf87eaa11ee84cecee4d63c86750d80dce3d7",
+    "peer85_bounded_worker20_only": true,
+    "next_gate": "Original107 terminal, original audit once, full archive dual binding, successful native qualification chain, then fixed CP7; net gain and costs gate before new full156."
+  },
   "serial_timer_cp_pipeline_controls_20261007": {
     "schema": "serial_timer_cp_pipeline_public_controls_v1",
     "goal_status": "active",
