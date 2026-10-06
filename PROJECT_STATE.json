@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T14:31:00+08:00",
+  "checked_at": "2026-10-06T16:38:27+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3127,15 +3127,15 @@
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 61,
-  "latest_own_stage": "Complete pinned source metadata inventory, queued",
-  "latest_own_stage_complete": false,
-  "latest_own_stage_status": "queued_not_executed",
+  "latest_own_stage": "Complete source metadata inventory",
+  "latest_own_stage_complete": true,
+  "latest_own_stage_status": "completed_verified",
   "latest_own_ticket": 97,
   "own_monitor_pid": 881938,
   "other_active_tickets": [
-    96
+    98
   ],
-  "next_own_stage": "Verify terminal metadata inventory and archive. Only then freeze evaluation-only contract/reference/dependency checks; no automatic model or source execution.",
+  "next_own_stage": "Freeze evaluator-only body/provenance audit of all 64 tasks and original source families; retain every gap. No candidate change or new model run.",
   "receipt": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
@@ -3202,7 +3202,10 @@
     }
   },
   "other_ticket90_stage_summary": "312/312 complete; audit_pending=true at terminal follow-up, acceptance not verified here",
-  "processing_slots_note": "Last read at14:24 was0; ticket96 running at14:30; not inferred idle from queue."
+  "processing_slots_note": "Not queried during another owner run; own terminal guard observed backend idle when ticket97 exited.",
+  "other_queued_tickets": [
+    99
+  ]
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -5645,8 +5648,8 @@
   "merge_commit": "eadb360b919c4041f946169676d60fe9a2658ff2"
 },
   "source_contract_inventory_20261006": {
-  "checked_at": "2026-10-06T14:31:00+08:00",
-  "status": "frozen_queued_not_executed",
+  "checked_at": "2026-10-06T16:41:00+08:00",
+  "status": "completed_verified",
   "ticket": 97,
   "monitor_pid": 881938,
   "execution_commit": "182c4ddc5222074891fc1edeea12d4626a4c33e9",
@@ -5669,9 +5672,20 @@
   "effective_independent_family_n": null,
   "full_batch_complete": false,
   "pull_request": "https://github.com/854259/FPGA/pull/44",
-  "pr_status": "draft_pending_AMD_validation",
+  "pr_status": "terminal_review_passed_pending_merge",
   "report": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "private_evidence": "05_handoff/independent_validation_20261004/source_contract_inventory_20261006/",
-  "next": "Verify terminal metadata inventory and archive. Only then freeze evaluation-only contract/reference/dependency checks; no automatic model or source execution."
+  "next": "Freeze evaluator-only body/provenance audit of all 64 tasks and original source families; retain every gap. No candidate change or new model run.",
+  "unique_pairs": 64,
+  "rtl_assets": 84,
+  "assets_without_same_blob_upstream": 53,
+  "stage_elapsed_s": 0.06379369832575321,
+  "guard_elapsed_s": 0.2512672729790211,
+  "archive_sha256": "f47d117b3d1647b28dfe87c8e0e747788c9925a6d63f5a53cbd7975009ccd4a7",
+  "archive_bytes": 263588,
+  "archive_members": 12,
+  "archive_dual_verified": true,
+  "owned_temporary_residue": 0,
+  "guard_passed": true
 }
 }
