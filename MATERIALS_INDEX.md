@@ -1,3 +1,8 @@
+## 波形端点语义修正与旧101采用边界
+
+- [接受队友意见、AMD8项新检查与失败保留](03_analysis/waveform_endpoint_semantics_20261006_v3/README.md)
+- [源码SHA、回执、全部私有档案绑定及限制](03_analysis/waveform_endpoint_semantics_20261006_v3/PUBLIC_PREPARATION.json)
+
 ## 波形CP6实际封存与新增AMD23项检查
 
 - 公开准备与全部证据SHA：[波形CP6准备](03_analysis/waveform_cp6_preparation_20261006_v1/README.md)、[公开元数据](03_analysis/waveform_cp6_preparation_20261006_v1/PUBLIC_PREPARATION.json)。89源/完整私有档案已绑定，12行固定对照尚未入队；不作为提分/全量/部署证据。

@@ -1,0 +1,79 @@
+{
+  "schema": "waveform_sample_endpoint_semantics_public_v3",
+  "baseline_full_correct": 113,
+  "baseline_weighted": 0.7743589743589744,
+  "goal_full_correct_at_least": 120,
+  "goal_weighted_at_least": 0.8,
+  "previous_goal_turn_classification": "Progress: actual peer response and authoritative own plan/log semantic adoption hold; this turn new production correction and8 AMD controls",
+  "peer_division_agreed_by_owner": true,
+  "peer_owner_response_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014117192",
+  "accepted_peer_review_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6013481782",
+  "old_facts_sha256": "bb42ed730e43c9f69fab393091462dfaa82e8f90c158a9967db02db349562e2d",
+  "old101_spec_sha256": "29245c3265c0ed7f9567d78ee94bdc0d05e66d2d31fdcfcf95e31fbd4dd4a5da",
+  "old101_preserved": true,
+  "old101_full_qualification_adoption_on_hold": true,
+  "correction": "Only adjacent given-row endpoints; no between-row event completeness/order or unique circuit inferred; no unconditional edge exclusion",
+  "facts_sha256": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+  "actual_amd_private_root": "/workspace/team/runs/fpga_owner/waveform_endpoint_semantics_pure_20261006_v3",
+  "new_controls": 8,
+  "control_executions": 16,
+  "failed_v2_errors": 7,
+  "passed_v3_controls": 8,
+  "actual_receipt_sha256": "ec936302cd8cad999a9861a8b35e0d5724c46b78854b41189e4ecec4ac113f56",
+  "failed_receipt_sha256": "fb687b7bd11609932e23ad9ca911fa633584880acfce56e6d0baea18d9e0ac87",
+  "source_assets": 6,
+  "unchanged_request_keywords_owned_exec": true,
+  "old65_controls_not_reexecuted": true,
+  "constructive_hidden_edge_and_transparent_sample_ambiguity": true,
+  "archives": {
+    "failed_v2": {
+      "sha256": "add6201095790ef8e9243e00076d05677672b82b16f3deb2428481f33b855d2e",
+      "bytes": 23490,
+      "members": 16,
+      "all_members_dual_end_bound": true
+    },
+    "passed_v3": {
+      "sha256": "648a38bce022a20a624257f59062f04447eac4007ae51c2ffee755bfa66c6d2a",
+      "bytes": 22980,
+      "members": 16,
+      "all_members_dual_end_bound": true
+    }
+  },
+  "protected_groups": 76,
+  "protected_source_assets": 5033,
+  "per_sample": {
+    "output_tokens": 8192,
+    "max_requests": 2,
+    "repairs": 1,
+    "solver_s": 300,
+    "judge_s": 300,
+    "judge_supervisor_s": 360
+  },
+  "original_judge_preserved": true,
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "new_fifo": false,
+  "new_score_measured": false,
+  "qualified_for_new_full_regression": false,
+  "adoption": false,
+  "deployment": false,
+  "peer_review_of_new_sha": "pending",
+  "peer_commit_read": "f67f4805aaacee3b5532971d39aecdac3529fd3e",
+  "latest_readonly_vector98": {
+    "completed_samples": 220,
+    "expected_samples": 312,
+    "actual_requests": 225,
+    "complete": false,
+    "physical_monitor_pid": 889564,
+    "physical_monitor_starttime": "854559845"
+  },
+  "fifo_order": [
+    98,
+    99,
+    100,
+    101
+  ],
+  "fsm_full156_v2_prepared_spec_sha256": "451d7191252877db37971f49ecc80a35881da5eec6bb8c493a9fcb8a5167bd41",
+  "next_step": "Peer reviews revised SHA; qualify new independent fixed CP source/wire/stage/audit before fresh same-budget measurement; retain/audit old101 without retroactive qualification. Complete separate FSMfull post-exit/archive/PR/FIFO.",
+  "quota_stop_used_percent": 97
+}
