@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T19:58:00+08:00",
+  "checked_at": "2026-10-06T21:15:19+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3127,14 +3127,16 @@
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 98,
-  "latest_own_stage": "Evaluator-only body provenance audit",
-  "latest_own_stage_complete": true,
-  "latest_own_stage_status": "completed_verified_mechanical_only",
-  "latest_own_ticket": 100,
-  "own_monitor_pid": null,
-  "other_active_tickets": [],
-  "next_own_stage": "Review owner103 freshness fix/refreeze and original98 terminal provenance. Do not run invalid103 or duplicate model/EDA.",
-  "receipt": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
+  "latest_own_stage": "Resource lifecycle fix, AMD controls and CP6 refreeze",
+  "latest_own_stage_complete": false,
+  "latest_own_stage_status": "engineering_passed_frozen104_queued",
+  "latest_own_ticket": 104,
+  "own_monitor_pid": 1151739,
+  "other_active_tickets": [
+    102
+  ],
+  "next_own_stage": "Observe104 behind running102; preserve original101 failure and cancelled103; audit terminal results without redraw.",
+  "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_PREPARATION.json",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
     "source": "03_analysis/helper_extraction_20261004/paired_uncertainty_20261005.py",
@@ -3200,23 +3202,17 @@
     }
   },
   "other_ticket90_stage_summary": "Terminal report intake verified at 17:01: C 112/156, P 118/156 (0.798717949); adoption=false. See team_table_terminal_intake_20261006. Not an audit_pending claim.",
-  "processing_slots_note": "Ticket100 exit observed idle; no inference about later peer requests.",
-  "other_queued_tickets": [
-    102,
-    103
-  ],
-  "model_identity_check_scope": "Ticket100 terminal guard recorded unchanged model, backend idle and slot released; not a guarantee about later peer activity.",
+  "processing_slots_note": "102 is running; no claim of backend idle during evaluation.",
+  "other_queued_tickets": [],
+  "model_identity_check_scope": "Live AMD refreeze checked model identity equal to frozen parent; shared model remains2013333.",
   "state_sync_note": "Current status is comprehensive_cycle_20261004.latest_live_check. A prior root synchronization matched the same key in a historical section; the current node is now explicitly scoped and reconciled. No frozen execution input changed.",
   "queued_tickets": [
-    102,
-    103
+    104
   ],
-  "own_frozen_input_hashes_verified": 4,
-  "other_held_tickets": [
-    101
-  ],
+  "own_frozen_input_hashes_verified": 97,
+  "other_held_tickets": [],
   "peer98_status": "312 original rows,116 frozen sources and request/judge binding verified;112/115 and167/165, historical/cost/goal gates fail. Owner full provenance replay pending.",
-  "peer101_status": "Worker first=True rechecks120s age on every sample; original stale receipt failure confirmed.103 inherits;102 uses ordinary worker check. Owner alerted6015906969; no takeover."
+  "peer101_status": "User-authorized takeover:101 failed_released_after_inspection,103 cancelled before start, generic fix validated and104 queued. Original4 requests preserved."
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -6234,5 +6230,47 @@
     "gmail_message_id": "1a1112116fe117c5",
     "amd_sha256": "19dbdb34c026f6b63c7253ec4a7a5b9921f3ea22eac08baeba14d803ce59fd2e"
   }
+},
+  "waveform_resource_fix_20261006": {
+  "updated_at": "2026-10-06T21:15:19+08:00",
+  "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
+  "status": "fix_verified_refrozen_queued_and_existing_fsm_running",
+  "pull_request": "https://github.com/854259/FPGA/pull/59",
+  "source_commit": "ab7139bb49b32df281849249f4c2dbcc6ae941ab",
+  "spec_sha256": "216637107d75156c6ad4c1db13656e6ea94f7fce225a8df9da03b7b2f6db25cb",
+  "worker_sha256": "7e98fccf8a9bfe93f04ebf9b6a6783aa3a469db50c563cddf9974d94e574ca96",
+  "controls": {
+    "generic": 10,
+    "inherited_boundary_and_pipeline": 23,
+    "all_passed_on_amd": true,
+    "model_calls": 0,
+    "eda_calls": 0
+  },
+  "fifo": {
+    "original_failed101": "failed_released_after_inspection",
+    "original_failed_recorded_requests": 4,
+    "fsm102": "running",
+    "fsm102_progress_observed": 16,
+    "fsm102_expected_outputs": 312,
+    "original_unstarted103": "cancelled_before_start",
+    "corrected104": "queued",
+    "corrected104_monitor": 1151739
+  },
+  "private_archive": "05_handoff/independent_validation_20261004/waveform_resource_fix_20261006/",
+  "archive_sha256": "31a51abedab4b1094be7e708339b06bbb218207a963af51e3d82935f27793b0e",
+  "archive_members": 101,
+  "archive_dual_verified": true,
+  "preparation_initial_rejection": "Trailing newline outside exact one-line patch; rejected before tests, freeze root, model or EDA. Evidence retained.",
+  "scope": {
+    "tasks": 6,
+    "outputs": 12,
+    "max_model_requests": 24,
+    "independent_unseen_tasks": 0,
+    "adoption": false,
+    "full_batch_complete": false,
+    "quality_result": null
+  },
+  "next": "Observe original102 and104; audit terminal model/response/grade/cost/cleanup evidence, then follow unchanged frozen acceptance. Do not duplicate submissions or restore peer goal.",
+  "report": "03_analysis/waveform_resource_lifecycle_20261006/README.md"
 }
 }
