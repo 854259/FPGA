@@ -5772,6 +5772,32 @@
   ],
   "follow_up": "Read new replies; discuss concrete objections and adoption reasons against PR/SHA; record responsibility and evidence, without duplicate messages or changing frozen runs.",
   "automation_updated": true,
-  "frozen_execution_changed": false
+  "frozen_execution_changed": false,
+  "latest_static_review": {
+    "updated_at": "2026-10-06T17:36:00+08:00",
+    "pr": "https://github.com/854259/FPGA/pull/51",
+    "head": "8da46efa850a78f874e9db2d1e3959b02357f943",
+    "read_only_production_hashes": {
+      "waveform_facts": "bb42ed730e43c9f69fab393091462dfaa82e8f90c158a9967db02db349562e2d",
+      "waveform_request": "b3176bf77fdc94c2a6d30b3389ca6f5f044d8541def694860a971eec3e9134ea",
+      "worker": "5ea05bec155c64807da1aee9cd94f2dd734abcd2b618f5c6b9601441e9959306"
+    },
+    "status": "static_semantics_concern_pending_peer_clarification",
+    "finding": "Equal clock values at adjacent sampled endpoints do not establish no intervening edges without a complete-event-table guarantee; current advice may overstate the observation.",
+    "locations": [
+      "waveform_facts.py:89",
+      "waveform_facts.py:127",
+      "waveform_facts.py:132"
+    ],
+    "scope": "Generic static counterexample only; no assertion that the current development task omitted edges or that measured scores are wrong.",
+    "recommendation": "Bind a verified complete-event contract or phrase observations as endpoint equality with conditional circuit guidance; any adopted change needs a new freeze and targeted boundary validation.",
+    "comment_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6013481782",
+    "comment_readback_verified": true,
+    "peer_reply": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "frozen_source_modified": false,
+    "review_acceptance": false
+  }
 }
 }
