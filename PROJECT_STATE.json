@@ -1,4 +1,157 @@
 {
+  "onehot_cp_adapter_20261007": {
+    "schema": "onehot_cp_adapter_actual_worker_context_public_v3",
+    "worker_adapter_ready": true,
+    "source_sha256": {
+      "worker.py": "e3d53648c31fa77acf4b9a30e91eee70252651f6a85399985e40db83e3585b6b",
+      "synthesis.py": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "native_material_fixture.py": "a98f4c3b5c982be8cdd99a160f5e8a004b4dc2274b61d18e51131d30c7058701",
+      "test_worker.py": "4a1e66525b5ae71199aed8193b987dc32081292184898a20635843200b584432",
+      "factor_proof.py": "1b8f366b986c74334becf8c61dae13eab4660d6c6fddc005e64e3dee48523d48"
+    },
+    "producer_byte_identical_to_native99": true,
+    "original_phase_fallback_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+    "distinct_valid_worker_context_controls": 17,
+    "original_first_run_controls": 17,
+    "original_first_run_passed": 16,
+    "original_first_run_failed": 1,
+    "new_corrected_controls_executed": 1,
+    "unchanged_passed_controls_reused": 16,
+    "reuse_binding": {
+      "passed": true,
+      "reused_worker_context_controls": 16,
+      "new_worker_context_controls": 1,
+      "reused_methods": [
+        "test_exact_common_baseline_one_delta",
+        "test_generated_zero_without_HTTP_or_fallback",
+        "test_control_uses_original_actual_arm_without_synthesis",
+        "test_abstained_candidate_uses_same_baseline_and_preserves_arm",
+        "test_nonempty_interface_abstains_and_raw_CRLF_is_bound",
+        "test_normal_compile_failure_keeps_candidate_without_second_pipeline",
+        "test_native_semantic_mismatch_is_retained_without_repair",
+        "test_supervision_failures_raise_and_do_not_claim_completed",
+        "test_negative_signal_return_is_not_normal_compile_failure",
+        "test_native_log_hash_cannot_be_forged",
+        "test_native_source_mutation_retains_before_after_and_rejects",
+        "test_environment_fault_is_not_efficiency_or_score_gain",
+        "test_original_input_mutation_is_rejected_after_both_routes",
+        "test_model_route_zero_journal_is_rejected",
+        "test_missing_freeze_spec_cannot_pass_CLI_gate",
+        "test_native_binding_and_original_fallback_source_proof"
+      ],
+      "old_stdout_sha256": "be49588e10332bb969974e5bfb7ef3faf88ff36ec751cb6911c56b5e41c0fa04",
+      "production_sources_unchanged": true,
+      "old_manifest_sha256": "89d6b69f4b9999f42cc01abece9dec08fb3d89150cf052bdc92f571cd645a69d"
+    },
+    "actual_receipt_sha256": "a9b7a2123eae7ce65bdf51906a27499b7e9b296128363becb0c1f1b07afbcab2",
+    "verified_archive": {
+      "sha256": "f788596f8df3fb5293136955069f2a2a45c0d4617a6c48e86ab7e13c861aef55",
+      "bytes": 589433,
+      "members": 130,
+      "every_member_bound_both_ends": true
+    },
+    "retained_failed17": {
+      "receipt_sha256": "82050867026c54908d8d728932baeda63c19e2611eceba628ac38fae6efd5ad7",
+      "archive_sha256": "a5792d0b4f0f6f165514206cfe796a8cc376af023186fb4156f5445637451e82",
+      "bytes": 587223,
+      "members": 129,
+      "every_member_bound_both_ends": true,
+      "reason": "Test incorrectly expected raw CRLF in original read_text-normalized functional-feedback text; production raw inputs and zero-request route correct"
+    },
+    "retained_prestart_metadata_rejection": {
+      "receipt_sha256": "6a34197d9605e96bea0d28b818304d2268b5d9850d5cd1d9e1838b598abb5a71",
+      "archive_sha256": "00ec1ab849a23b53eee511b49c449f5ccdce737fb54bf557d6bddbcdbd7978a5",
+      "bytes": 581801,
+      "members": 122,
+      "every_member_bound_both_ends": true,
+      "actual_new_controls": 0,
+      "reason": "Metadata hashed normalized decoded LF instead of actual CRLF source bytes"
+    },
+    "correction_scope": [
+      "One test expects existing LF feedback normalization while preserving raw-input assertions",
+      "Read merged owned-command stdout stream",
+      "Bind actual source file bytes"
+    ],
+    "worker_producer_and_fallback_changed_by_test_recovery": false,
+    "protected_before": {
+      "primary": {
+        "STATUS.md": "779b5966af1b2a1a0475f29a2eaa6b9543e3dd44ef3b0f932ce33e5306762465",
+        "SNAPSHOT.json": "2463e95c74c49bdce0b41281da1b4f70e269468fd0caeae7a0d7ddac71a8e870"
+      },
+      "model_starttime": "823869819",
+      "spec_sha256": "2a68a5237a696a50374dd2a7d120ba0c729fbf2d7a69966a7be3939c9d5276e7",
+      "groups": 89,
+      "source_assets": 5695
+    },
+    "protected_after": {
+      "primary": {
+        "STATUS.md": "779b5966af1b2a1a0475f29a2eaa6b9543e3dd44ef3b0f932ce33e5306762465",
+        "SNAPSHOT.json": "2463e95c74c49bdce0b41281da1b4f70e269468fd0caeae7a0d7ddac71a8e870"
+      },
+      "model_starttime": "823869819",
+      "spec_sha256": "2a68a5237a696a50374dd2a7d120ba0c729fbf2d7a69966a7be3939c9d5276e7",
+      "groups": 89,
+      "source_assets": 5695
+    },
+    "actual_model_requests": 0,
+    "actual_eda_calls": 0,
+    "new_fifo": false,
+    "new_scoring_runs": 0,
+    "original_native_scope": {
+      "positive_graphs": 6,
+      "positive_observations": 5952,
+      "negative_mutants_same_graph": 2,
+      "negative_observations": 8192,
+      "positive_state_widths": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "accepted_parser_widths": [
+        2,
+        16
+      ],
+      "independent_samples": false,
+      "all_parser_widths_native_verified": false
+    },
+    "proposed_fixed_screen": {
+      "tasks": 7,
+      "paired_outputs": 14,
+      "target_numbers": [
+        143
+      ],
+      "guard_numbers": [
+        45,
+        54,
+        71,
+        115,
+        127,
+        138
+      ],
+      "target_state_width": 10,
+      "metadata_only_task_selection": true,
+      "stage_audit_metrics_adapted": false,
+      "frozen": false,
+      "submitted": false
+    },
+    "original_producer156_scan": {
+      "reuse_only": true,
+      "tasks": 156,
+      "emitted": 1,
+      "abstained": 155,
+      "receipt_sha256": "8ea1afdb4a334a6db42925d5a8bceeed8e95ac6a2e7623f2482080b6bebcd0d5",
+      "current_worker_full156_scan_executed": false,
+      "quality_evidence": false
+    },
+    "full_score_measured": false,
+    "independent_unseen_tasks": 0,
+    "qualified_for_new_full_regression": false,
+    "goal_qualified": false,
+    "adoption": false,
+    "deployment": false
+  },
   "onehot99_native_terminal_20261007": {
     "schema": "onehot99_finite_fourstate_native_terminal_public_v1",
     "fifo_ticket": 99,
