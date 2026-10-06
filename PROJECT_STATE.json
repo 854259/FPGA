@@ -5762,7 +5762,7 @@
   "scope": "Known development regression only; separate from old phase-P stability and official baseline comparison."
 },
   "peer_direct_coordination_20261006": {
-  "updated_at": "2026-10-06T18:41:00+08:00",
+  "updated_at": "2026-10-06T19:02:59+08:00",
   "authorization": "User endorses peer candidate development and this task's feasibility/results/root-cause review, with direct peer discussion.",
   "channel": "https://github.com/854259/FPGA/issues/7",
   "peer": "nzh152-lang",
@@ -5815,7 +5815,7 @@
     "peer_corrected_version_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014260480",
     "our_review_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014502936",
     "our_review_exact_readback_verified": true,
-    "peer_read_our_new_review": null,
+    "peer_read_our_new_review": true,
     "waveform": {
       "pr": 53,
       "head": "7e804059e6d160bd4122887454e4c0aa2522fdc7",
@@ -5849,7 +5849,25 @@
     "new_model_calls": 0,
     "new_eda_calls": 0,
     "frozen_execution_modified": false,
-    "next_responsibility": "Peer owns candidate fixes, new freezes, execution and original terminal evidence. This task reviews specific versions/results and continues queued100 source admission without duplicate jobs."
+    "next_responsibility": "Peer owns candidate fixes, new freezes, execution and original terminal evidence. This task reviews specific versions/results and continues queued100 source admission without duplicate jobs.",
+    "peer_review_ack_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014788977"
+  },
+  "gmail_monitoring": {
+    "user_authorized": true,
+    "updated_at": "2026-10-06T19:02:59+08:00",
+    "automation_id": "amd-rtl",
+    "poll_interval_minutes": 5,
+    "read_only_mail": true,
+    "scope": "FPGA GitHub notifications; verify original Issue/PR and relevant AMD state. Related mail only; no raw email or personal headers in public records.",
+    "deduplicate_by": "Gmail message ID and canonical GitHub comment ID; do not rely solely on UNREAD.",
+    "last_correlated_comment_id": 6014788977,
+    "last_mail_received_at": "2026-10-06T18:59:16+08:00",
+    "latest_mail_body_read": true,
+    "github_original_cross_checked": true,
+    "reported_new_PR55_pipeline": "Peer reports22 engineering controls; not independently reviewed in this mail-integration update.",
+    "notification_policy": "Meaningful updates only; unchanged checks do not cause posts, commits or experiment reruns.",
+    "instantaneous_delivery_guaranteed": false,
+    "mail_state_modified": false
   }
 }
 }
