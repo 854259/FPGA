@@ -3118,23 +3118,21 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T23:38:15+08:00",
-  "own_running_stage_processes": 0,
-  "own_model_or_eda_processes": 0,
+  "checked_at": "2026-10-07T01:20:01+08:00",
+  "own_running_stage_processes": 1,
+  "own_model_or_eda_processes": null,
   "model_pid": 2013333,
   "model_identity_unchanged": true,
   "processing_slots": null,
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
-  "known_full156_regression_completed_ticket": 98,
-  "latest_own_stage": "104 dependency relocation audit preparation",
+  "known_full156_regression_completed_ticket": 102,
+  "latest_own_stage": "104 original natural pretest",
   "latest_own_stage_complete": false,
-  "latest_own_stage_status": "13 controls and frozen preflight passed; original104 queued, terminal audit pending",
+  "latest_own_stage_status": "Running after102 original generation completed; separate terminal supervisor8 controls passed, no terminal audit yet",
   "latest_own_ticket": 104,
   "own_monitor_pid": 1151739,
-  "other_active_tickets": [
-    102
-  ],
+  "other_active_tickets": [],
   "next_own_stage": "Follow original102/104; peer owns98 and102 original terminal. After104 clean stage exit execute frozen separate terminal plan once, reuse existing valid archive; preserve all failures, no new generation.",
   "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_PREPARATION.json",
   "terminal_statistics_preparation": {
@@ -3202,17 +3200,15 @@
     }
   },
   "other_ticket90_stage_summary": "Terminal report intake verified at 17:01: C 112/156, P 118/156 (0.798717949); adoption=false. See team_table_terminal_intake_20261006. Not an audit_pending claim.",
-  "processing_slots_note": "102 is running; no claim of backend idle during evaluation.",
+  "processing_slots_note": "104 running; no idle claim.102 generation completed312 outputs333 requests; peer original terminal audit pending.",
   "other_queued_tickets": [],
   "model_identity_check_scope": "Live AMD refreeze checked model identity equal to frozen parent; shared model remains2013333.",
   "state_sync_note": "Current status is comprehensive_cycle_20261004.latest_live_check. A prior root synchronization matched the same key in a historical section; the current node is now explicitly scoped and reconciled. No frozen execution input changed.",
-  "queued_tickets": [
-    104
-  ],
+  "queued_tickets": [],
   "own_frozen_input_hashes_verified": 97,
   "other_held_tickets": [],
   "peer98_status": "Peer PR61 amended source audit completed; bounded independent source/receipts/archive/result review accepted at2026-10-07T00:10+08. Original strict auditor failed retained. Adoption=false; not independently rerun full replay.",
-  "peer101_status": "User-authorized takeover:101 failed_released_after_inspection,103 cancelled before start, generic fix validated and104 queued. Original4 requests preserved."
+  "peer101_status": "101 failed and released after inspection;103 cancelled unstarted;104 running with frozen generic fix.Original4 requests preserved."
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -6232,9 +6228,9 @@
   }
 },
   "waveform_resource_fix_20261006": {
-  "updated_at": "2026-10-07T01:00:00+08:00",
+  "updated_at": "2026-10-07T01:20:01+08:00",
   "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
-  "status": "104_audit_relocation_preparation_verified_terminal_pending",
+  "status": "104_running_terminal_supervisor_prepared",
   "pull_request": "https://github.com/854259/FPGA/pull/59",
   "source_commit": "ab7139bb49b32df281849249f4c2dbcc6ae941ab",
   "spec_sha256": "216637107d75156c6ad4c1db13656e6ea94f7fce225a8df9da03b7b2f6db25cb",
@@ -6249,12 +6245,13 @@
   "fifo": {
     "original_failed101": "failed_released_after_inspection",
     "original_failed_recorded_requests": 4,
-    "fsm102": "running",
-    "fsm102_progress_observed": 204,
+    "fsm102": "completed",
+    "fsm102_progress_observed": 312,
     "fsm102_expected_outputs": 312,
     "original_unstarted103": "cancelled_before_start",
-    "corrected104": "queued",
-    "corrected104_monitor": 1151739
+    "corrected104": "running",
+    "corrected104_monitor": 1151739,
+    "fsm102_actual_requests": 333
   },
   "private_archive": "05_handoff/independent_validation_20261004/waveform_resource_fix_20261006/",
   "archive_sha256": "31a51abedab4b1094be7e708339b06bbb218207a963af51e3d82935f27793b0e",
@@ -6283,9 +6280,9 @@
     "reply_comment": 6019879549,
     "reply_readback_verified": true,
     "new_path_suggestion_peer_acknowledged": true,
-    "latest_peer_comment": 6021160109,
+    "latest_peer_comment": 6021468182,
     "latest_own_review_reply": 6021258096,
-    "latest_review_peer_confirmed": false
+    "latest_review_peer_confirmed": true
   },
   "dependency_path_review": {
     "receipt_sha256": "f734b2b31699229b480647193053d8f3755e5826f5f07332e2d4dfdb70574d09",
@@ -6437,7 +6434,25 @@
     "full_batch_passed": false,
     "reply_comment": 6021258096,
     "reply_readback_verified": true,
-    "peer_confirmed": false
+    "peer_confirmed": true,
+    "confirmation_comment": 6021468182,
+    "ack_sha256": "cceaecae88c597e0d5698146f65e920984babe5e9eed1ce62b01bbea5d4ff550"
+  },
+  "terminal_supervisor_preparation": {
+    "source_commit": "97ed003077a075e2b3ffdde395a0ef4610302176",
+    "supervisor_sha256": "dd187834b5696164a91e10b1a720b851d41cf6046b2946c836b4a6562b7b1b17",
+    "tests_passed": 8,
+    "elapsed_s": 0.6721398569643497,
+    "receipt_sha256": "173d8ebf508ba5672317d07711601a489d42355e665d8352ee9c4b7a655c437a",
+    "archive_sha256": "721f1c5eb84ba2efe957577124e11efde905df6c1ae80c9f248afe1d030f0074",
+    "archive_members": 14,
+    "archive_dual_verified": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "source97_unchanged": true,
+    "temporary_directories_remaining": 0,
+    "terminal_audit_executed": false,
+    "private_archive": "05_handoff/independent_validation_20261004/waveform_resource_fix_20261006/terminal_supervisor/"
   }
 }
 }
