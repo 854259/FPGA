@@ -1,4 +1,86 @@
 {
+  "table_vector_composition_preparation_20261006_v1": {
+    "status": "8_pure_controls_qualified_original_parent_and_vector_quality_pending",
+    "report": "03_analysis/table_vector_composition_preparation_20261006_v1/README.md",
+    "metadata": "03_analysis/table_vector_composition_preparation_20261006_v1/PUBLIC_PREPARATION.json",
+    "schema": "table_parent_vector_extension_public_preparation_v1",
+    "source_assets": 11,
+    "packet_sha256": "6a1e585ff60edcd6c11f77a9f5390750c393391fc795bf18c25d0963cb1065d3",
+    "pure_receipt_sha256": "68952e1a38f62d878b5abfc8dfe57cf365fbbc5e61b58dfbd1399b9710e5eaa0",
+    "composition_source_sha256": "3f19ecfb46551ae3a984cab881648ef590cf11e5b80ab2dffead926595e4eb0a",
+    "table_producer_source_sha256": "a18ac21891dc229b3252df9ac3122517874a08bb8d269e5763d9146eae1279e5",
+    "vector_producer_source_sha256": "4728bed2d669dbca94dfe7b6f6b12e17aa2eca5015b9fb0f6a5eea11eb503c8f",
+    "original_producer_bytes_preserved": true,
+    "qualified_distinct_composition_controls": 8,
+    "current_fixture_dependent_controls": 6,
+    "reused_unaffected_controls": 2,
+    "total_actual_control_executions": 14,
+    "old_failed_controls": 3,
+    "original_failed_summary_sha256": "57155df76afd33103adc5cda8a6ce5f93122be8208609686e8bfce6464acb07f",
+    "first_fixture_declaration_prose_mismatch_failure_retained": true,
+    "prelaunch_helper_count_typo_retained": true,
+    "prelaunch_failed_attempt_ran_no_tests": true,
+    "protected_groups": 48,
+    "protected_source_assets": 3631,
+    "source_model_primary_unchanged": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_fifo": false,
+    "common_parent": "unchanged table policy; existing phase-P model fallback",
+    "new_single_factor": "vector generation only on table-parent abstentions",
+    "parent_table90_full_audit_pending": true,
+    "vector95_pilot_audit_pending": true,
+    "comparison_worker_stage_full_archive_integration_pending": true,
+    "score_entry_closed": true,
+    "score_gain_measured": false,
+    "goal_achieved": false,
+    "deployment": false,
+    "peer_acknowledgment": "pending",
+    "coverage_assessment_sha256": "6b5798bcef4565a1963f69ffb99932ef4831456bebbfdccb6a6a16b454341803",
+    "coverage": {
+      "task_count": 156,
+      "provider_counts": {
+        "table": {
+          "admitted": 9,
+          "historical_incorrect": 6,
+          "historical_correct": 3
+        },
+        "vector": {
+          "admitted": 3,
+          "historical_incorrect": 2,
+          "historical_correct": 1
+        },
+        "fsm": {
+          "admitted": 2,
+          "historical_incorrect": 2,
+          "historical_correct": 0
+        },
+        "neighborhood": {
+          "admitted": 3,
+          "historical_incorrect": 2,
+          "historical_correct": 1
+        }
+      },
+      "admitted_union": 17,
+      "abstention_union": 139,
+      "overlap_count": 0,
+      "historical_incorrect_opportunities": 12,
+      "historical_correct_in_union": 5,
+      "hypothetical_maximum_L3_all_four_if_all_incorrect_repaired": 125,
+      "hypothetical_maximum_L3_table_vector_if_all_incorrect_repaired": 121,
+      "mathematical_bounds_are_not_scores": true,
+      "new_generator_calls_during_metadata_assessment": 0,
+      "metadata_not_production_inputs": true
+    },
+    "budget": {
+      "tokens": 8192,
+      "max_requests": 2,
+      "max_repairs": 1,
+      "absolute_deadline_s": 300,
+      "original_full_judge_including_xz": true
+    },
+    "at_epoch": 1791264009.3611712
+  },
   "neighborhood_pipeline_preparation_20261006_v1": {
     "status": "49_controls_qualified_full_score_entry_blocked_native94_pending",
     "report": "03_analysis/neighborhood_pipeline_preparation_20261006_v1/README.md",
