@@ -1,6 +1,48 @@
 {
+  "sequential_waveform_facts_20261006_v1": {
+    "schema": "sequential_waveform_facts_public_preparation_v1",
+    "status": "amd_pure_checks_passed_not_scored",
+    "cloud_root": "/workspace/team/runs/fpga_owner/sequential_waveform_facts_pure_20261006_v1",
+    "producer_sha256": "bb42ed730e43c9f69fab393091462dfaa82e8f90c158a9967db02db349562e2d",
+    "source_assets": 5,
+    "actual_amd_controls": 20,
+    "pure_receipt_sha256": "c5335bfb78976372ea8338e5d180f0eb80b5148cd6a06c4364fc260132855863",
+    "intake_receipt_sha256": "5f843de031671ff9ca0901820cbe76ed5c84f1d97553cd4484cfb7f0e39885b0",
+    "original_intake_tasks": 156,
+    "supported": 1,
+    "abstained": 11,
+    "skipped": 144,
+    "supported_with_known_off_clock_changes": 1,
+    "archive_sha256": "09d386070a94f84fe7c588f422954ced326bf0d9d74fecd93c571b586bf2be2d",
+    "archive_bytes": 32749,
+    "archive_members": 20,
+    "all_archive_members_byte_bound": true,
+    "protected_groups": 66,
+    "protected_source_assets": 4354,
+    "known_frozen_source_checks_passed": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_fifo": false,
+    "score_measured": false,
+    "score_gain": false,
+    "native_qualified": false,
+    "adoption": false,
+    "deployment": false,
+    "unique_circuit_inferred": false,
+    "reset_inferred": false,
+    "initialization_inferred": false,
+    "raw_materials_private": true,
+    "peer_acknowledgment": "pending",
+    "goal": {
+      "fully_correct_at_least": 120,
+      "weighted_at_least": 0.8,
+      "preserve_original113": true,
+      "status": "active"
+    },
+    "next_step": "Freeze a task-blind first-request advice factor against unchanged phase model worker, validate exact request/source/budget proof, then one same-budget paired pilot; full regression only after net gain and guards/cost pass."
+  },
   "onehot_native_execution_20261006_v2": {
-    "status": "frozen_amd_post_exit_admitted_native_not_submitted",
+    "status": "fifo99_accepted_queued_native_not_yet_measured",
     "report": "03_analysis/onehot_native_execution_20261006_v2/README.md",
     "spec_sha256": "6d0d61c65f49b68a33c825a9ae6ba8f6bb8bef2f2fad05f6f0495cd868866939",
     "preparation": {
@@ -89,6 +131,17 @@
         "submitted": false,
         "old_spec_unchanged": true
       }
+    },
+    "actual_fifo": {
+      "ticket": 99,
+      "spec_sha256": "6d0d61c65f49b68a33c825a9ae6ba8f6bb8bef2f2fad05f6f0495cd868866939",
+      "accepted_at_utc": "2026-10-06T08:26:52.183829+00:00",
+      "monitor_pid": 961733,
+      "monitor_starttime": "854886166",
+      "submitted": true,
+      "observed_state": "queued",
+      "shared_actual_receipt": "/workspace/team/activity/fpga_owner/artifacts/onehot-native-fifo99-v2/ACTUAL_DELIVERY.json",
+      "github_reminder": "https://github.com/854259/FPGA/issues/7#issuecomment-6012424741"
     }
   },
   "onehot_fourstate_preparation_20261006_v1": {
