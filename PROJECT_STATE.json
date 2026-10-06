@@ -5762,7 +5762,7 @@
   "scope": "Known development regression only; separate from old phase-P stability and official baseline comparison."
 },
   "peer_direct_coordination_20261006": {
-  "updated_at": "2026-10-06T19:02:59+08:00",
+  "updated_at": "2026-10-06T19:21:00+08:00",
   "authorization": "User endorses peer candidate development and this task's feasibility/results/root-cause review, with direct peer discussion.",
   "channel": "https://github.com/854259/FPGA/issues/7",
   "peer": "nzh152-lang",
@@ -5854,20 +5854,73 @@
   },
   "gmail_monitoring": {
     "user_authorized": true,
-    "updated_at": "2026-10-06T19:02:59+08:00",
+    "updated_at": "2026-10-06T19:21:00+08:00",
     "automation_id": "amd-rtl",
     "poll_interval_minutes": 5,
     "read_only_mail": true,
     "scope": "FPGA GitHub notifications; verify original Issue/PR and relevant AMD state. Related mail only; no raw email or personal headers in public records.",
     "deduplicate_by": "Gmail message ID and canonical GitHub comment ID; do not rely solely on UNREAD.",
-    "last_correlated_comment_id": 6014788977,
-    "last_mail_received_at": "2026-10-06T18:59:16+08:00",
+    "last_correlated_comment_id": 6014958126,
+    "last_mail_received_at": "2026-10-06T19:10:26+08:00",
     "latest_mail_body_read": true,
     "github_original_cross_checked": true,
-    "reported_new_PR55_pipeline": "Peer reports22 engineering controls; not independently reviewed in this mail-integration update.",
+    "reported_new_PR55_pipeline": "Original worker7 and pipeline15 AMD receipts, stdout and source hashes now read-only verified; corrected v3 wiring reviewed within recorded scope, no independent rerun or CP acceptance.",
     "notification_policy": "Meaningful updates only; unchanged checks do not cause posts, commits or experiment reruns.",
     "instantaneous_delivery_guaranteed": false,
     "mail_state_modified": false
+  },
+  "latest_pipeline_review": {
+    "updated_at": "2026-10-06T19:21:00+08:00",
+    "upstream_pr": 55,
+    "upstream_head": "36865c647f9f1f1def6816d608ae6346a610cbaa",
+    "peer_notice_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014958126",
+    "our_review_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6015143421",
+    "our_review_exact_readback_verified": true,
+    "peer_read_this_review": false,
+    "scope": "Read-only differential wiring and original AMD control-evidence review; not a full preparation archive audit, independent test rerun or CP acceptance.",
+    "failed_v2": {
+      "archive_sha256": "cc49345c22c710e0c7806daa1eddf62464b1138198531c799edf5fdaba6cd933",
+      "retained_assets": 84,
+      "run_spec_absent": true,
+      "submission_absent": true,
+      "reason": "Preparation selected the wrong manifest path for semantic8 facts; exited rc1 before admission."
+    },
+    "corrected_v3": {
+      "entry_sha256": "a76861f1c5b0d9745b5038babcb8a5619d091f13b832f9b3359493ada26e8571",
+      "spec_sha256": "9b90acec3379490e4d313d59bceb6fd9833ed713624267f1a0aa05de96cc121c",
+      "source_assets_hash_verified": 89,
+      "facts_sha256": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+      "path_fix": "Require exactly one root or nested waveform_facts.py manifest key and verify its SHA.",
+      "preparation_receipt_sha256": "6bd65b630595a8998ae040aadb82a4fe952b8495ff3f4e21b3a628e8b1a5ed3e",
+      "postexit_receipt_sha256": "1abc46bcdedfbaeee4529a8216fb96e2f87e152deb3addb6df58db701fcac676",
+      "postexit_reports_passed": true,
+      "postexit_archive_independently_audited": false,
+      "submission_absent_at": "2026-10-06T19:20:00+08:00"
+    },
+    "original_controls_read_only_verified": [
+      {
+        "group": "worker",
+        "checks": 7,
+        "sources": 56,
+        "receipt_sha256": "b092ea9562943775ca7ce467eaa12b94ae29619c76dae95f4b68ffdf624880bf",
+        "stdout_and_sources_verified": true
+      },
+      {
+        "group": "pipeline",
+        "checks": 15,
+        "sources": 83,
+        "receipt_sha256": "2a45888b8fadf121ea38b7c2e005e72e5767abb9ed12e9f738c9d4a9beeebc5b",
+        "stdout_and_sources_verified": true
+      }
+    ],
+    "status": "No new blocker found in reviewed first-request-only advice, original C/fallback/repair request binding and replayed diagnostics. Original v2 path blocker resolved in the inspected v3 entry.",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "independent_control_reruns": 0,
+    "accuracy_gain_proven": false,
+    "complete_batch": false,
+    "adoption": false,
+    "next_responsibility": "Peer owns v3 archive, PR/FIFO and original terminal evidence; this task reviews frozen versions/results and queued100 source admission."
   }
 }
 }
