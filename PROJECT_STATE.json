@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T21:15:19+08:00",
+  "checked_at": "2026-10-06T23:38:15+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3129,13 +3129,13 @@
   "known_full156_regression_completed_ticket": 98,
   "latest_own_stage": "Resource lifecycle fix, AMD controls and CP6 refreeze",
   "latest_own_stage_complete": false,
-  "latest_own_stage_status": "engineering_passed_frozen104_queued",
+  "latest_own_stage_status": "104 queued; peer accepted resource fix; separate dependency-path audit preparation required",
   "latest_own_ticket": 104,
   "own_monitor_pid": 1151739,
   "other_active_tickets": [
     102
   ],
-  "next_own_stage": "Observe104 behind running102; preserve original101 failure and cancelled103; audit terminal results without redraw.",
+  "next_own_stage": "Peer owns98 full provenance and102 terminal audit; this task owns104 terminal and102 bounded result review. Prepare separately bound104 dependency relocation audit; do not change frozen97 files or repeat controls/generation.",
   "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_PREPARATION.json",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
@@ -3211,7 +3211,7 @@
   ],
   "own_frozen_input_hashes_verified": 97,
   "other_held_tickets": [],
-  "peer98_status": "312 original rows,116 frozen sources and request/judge binding verified;112/115 and167/165, historical/cost/goal gates fail. Owner full provenance replay pending.",
+  "peer98_status": "Owner resumed and original full audit failed dependency path equality; dependency hashes match, no full provenance acceptance. Owner retains failure and diagnoses; no duplicate original audit.",
   "peer101_status": "User-authorized takeover:101 failed_released_after_inspection,103 cancelled before start, generic fix validated and104 queued. Original4 requests preserved."
 },
     "rtllm_full_contracts_certified": false,
@@ -6232,9 +6232,9 @@
   }
 },
   "waveform_resource_fix_20261006": {
-  "updated_at": "2026-10-06T21:15:19+08:00",
+  "updated_at": "2026-10-06T23:38:15+08:00",
   "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
-  "status": "fix_verified_refrozen_queued_and_existing_fsm_running",
+  "status": "peer_accepted_fix_104_queued_terminal_path_binding_pending",
   "pull_request": "https://github.com/854259/FPGA/pull/59",
   "source_commit": "ab7139bb49b32df281849249f4c2dbcc6ae941ab",
   "spec_sha256": "216637107d75156c6ad4c1db13656e6ea94f7fce225a8df9da03b7b2f6db25cb",
@@ -6250,7 +6250,7 @@
     "original_failed101": "failed_released_after_inspection",
     "original_failed_recorded_requests": 4,
     "fsm102": "running",
-    "fsm102_progress_observed": 16,
+    "fsm102_progress_observed": 204,
     "fsm102_expected_outputs": 312,
     "original_unstarted103": "cancelled_before_start",
     "corrected104": "queued",
@@ -6270,7 +6270,44 @@
     "full_batch_complete": false,
     "quality_result": null
   },
-  "next": "Observe original102 and104; audit terminal model/response/grade/cost/cleanup evidence, then follow unchanged frozen acceptance. Do not duplicate submissions or restore peer goal.",
-  "report": "03_analysis/waveform_resource_lifecycle_20261006/README.md"
+  "next": "Peer owns98 full provenance and102 terminal audit; this task owns104 terminal and102 bounded result review. Prepare separately bound104 dependency relocation audit; do not change frozen97 files or repeat controls/generation.",
+  "report": "03_analysis/waveform_resource_lifecycle_20261006/README.md",
+  "peer_handoff": {
+    "confirmed_comment": 6019767790,
+    "ack_sha256": "f8ebadbc5a7e3c92fc8ce47f91980daf3a31360f80049d697701eaa11d21439f",
+    "goal_status": "peer_reported_active",
+    "fix_read_and_accepted": true,
+    "controls_reused": 33,
+    "peer_responsibility": "98 full provenance and102 original terminal",
+    "own_responsibility": "104 original monitor/terminal and102 bounded result review",
+    "reply_comment": 6019879549,
+    "reply_readback_verified": true,
+    "new_path_suggestion_peer_acknowledged": false
+  },
+  "dependency_path_review": {
+    "receipt_sha256": "f734b2b31699229b480647193053d8f3755e5826f5f07332e2d4dfdb70574d09",
+    "hash_maps_equal_for": [
+      98,
+      102,
+      104
+    ],
+    "stale_capture_path_for": [
+      98,
+      104
+    ],
+    "dependencies_per_run": 2,
+    "current_files_at_both_declared_paths_match": true,
+    "capture_frozen_hashes_match": true,
+    "peer98_original_audit_passed": false,
+    "peer98_failure_receipt_sha256": "78c154ed7b6e3ab84d4c738301038f1197a5ddf500303dcfcbbfdc735caa8e24",
+    "own104_original_audit_executed": false,
+    "own104_strict_path_assertion_satisfied": false,
+    "repaired_audit_implemented": false,
+    "repaired_audit_verified": false,
+    "historical_import_proven": false,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "audit_reruns": 0
+  }
 }
 }
