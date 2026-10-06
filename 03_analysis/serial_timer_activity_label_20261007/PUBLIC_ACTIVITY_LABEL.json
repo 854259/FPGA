@@ -1,0 +1,41 @@
+{
+  "schema": "serial_activity_label_public_v1",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "old_source_sha256": "ee694cccb8b29d86fe0ea6afc82b468c67428e67ecca04c4b0c3bd277a189a6e",
+  "public_source_hashes": {
+    "pilot.py": "4843a1a85ff5144d231169141e18ede7d1f63e15b1cda9b9cebe2f39cfdf1853"
+  },
+  "changes": [
+    [
+      "onehot-synthesis-stage:",
+      "serial-timer-synthesis-stage:"
+    ],
+    [
+      "完整onehot图机械生成14输出阶段结束；确定性输出与实际模型调用分开统计；终态审计前不发布收益或全量资格，不部署。",
+      "完整串行计时器机械生成14输出阶段结束；确定性输出与实际模型调用分开统计；终态审计前不发布收益或全量资格，不部署。"
+    ]
+  ],
+  "receipt_sha256": "00db174999869774faaeb1b1a5e8d471014ef9856091b6d3acddbf801a30aac1",
+  "archive": {
+    "sha256": "2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b",
+    "members": 7,
+    "every_member_bound_both_ends": true
+  },
+  "protected_roots": 113,
+  "protected_unique_files": 7575,
+  "reversed_literals_byte_exact": true,
+  "scoring_logic_unchanged": true,
+  "old_measured_snapshot_preserved": true,
+  "qualification_scope": "AMD static source binding only; no runtime test or score",
+  "new_tests": 0,
+  "actual_model_calls": 0,
+  "actual_eda_calls": 0,
+  "new_fifo": false,
+  "pilot_executed": false,
+  "native_qualified": false,
+  "natural_score": false,
+  "adoption": false,
+  "preinstall_metadata_failure_retained": true,
+  "next_gate": "Use exact corrected pilot SHA in future serial CP7 freeze after authentic original107 qualification and full archive; all other pipeline sources/budget/judge unchanged."
+}
