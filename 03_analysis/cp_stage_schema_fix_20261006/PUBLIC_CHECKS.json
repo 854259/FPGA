@@ -1,0 +1,144 @@
+{
+  "schema": "cp92_93_unstarted_schema_fix_and_neighborhood_metrics_public_v1",
+  "cancellation_receipt": {
+    "schema": "own_cp92_93_protocol_cancel_before_start_v1",
+    "rows": [
+      {
+        "ticket": 92,
+        "state": "cancelled_before_start",
+        "cancelled_at_utc": "2026-10-06T04:05:09.105136+00:00",
+        "spec_sha256": "37204e5383556ce4d7a71c0ff0381d549af648c9f94213db7bc107fa7419de03",
+        "source_assets": 108,
+        "ticket_before_sha256": "9b624d9e81b5a33776be6d09eebf7b3c49d71af62729a3e908c4d2ea4068a388",
+        "ticket_after_sha256": "2d270aba2a57a242895883c8a47d2ccd6b15a46310d91dbd0c4ee823d17cdec4",
+        "fifo_returncode": 0,
+        "model_or_eda_calls": 0,
+        "original_sources_and_submission_preserved": true
+      },
+      {
+        "ticket": 93,
+        "state": "cancelled_before_start",
+        "cancelled_at_utc": "2026-10-06T04:05:09.172474+00:00",
+        "spec_sha256": "646b7b4c6c763b983de1fd317ffb1089b72e96e85be476e9d5c27c122f5c7807",
+        "source_assets": 107,
+        "ticket_before_sha256": "86f3afdb7b51c57463fa46bef1310fd792ba9cc94dcbb9ade2ac730cbe27b1a9",
+        "ticket_after_sha256": "ba3efdbe63d3b0fd6c90b87ffffc754e47c1b44f28fb4feb6fdd42964ff10cc6",
+        "fifo_returncode": 0,
+        "model_or_eda_calls": 0,
+        "original_sources_and_submission_preserved": true
+      }
+    ],
+    "source_and_model_unchanged": true,
+    "no_process_signals": true,
+    "no_frozen_edits": true,
+    "no_resampling": true,
+    "peer_and90_and94_untouched": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_score": false,
+    "at_epoch": 1791259509.1877117
+  },
+  "cancellation_receipt_sha256": "9cdb22f435efac577a46a5f078eb779d7507dec26b0b8478a472321cc2b7df79",
+  "old_frozen_roots_preserved": true,
+  "old_experiment_failed_before_scoring": false,
+  "original_bug": "Stage required table route schema; FSM/vector workers and audits produce their own exact schemas",
+  "source_bound_fixes": {
+    "fsm": {
+      "original_ticket": 92,
+      "original_spec_sha256": "37204e5383556ce4d7a71c0ff0381d549af648c9f94213db7bc107fa7419de03",
+      "original_pilot_sha256": "6ea6096791919eb04890de18c2c12c62ee8a02a6f5d471e96577d306199a4601",
+      "corrected_pilot_sha256": "bac9b765c30bf3a2a3a1475b06080fd30b870ec1cd336e48dab3142f31ff031f",
+      "exact_ast_change": "one stage route-schema constant matches existing worker and audit",
+      "line_endings_normalized_in_corrected_source": true,
+      "production_worker_metrics_audit_byte_unchanged": true,
+      "amd_end_to_end_controls": 4,
+      "actual_process": {
+        "pid": 771269,
+        "pgid": 771269,
+        "session": 771269,
+        "starttime": "853329713",
+        "command_sha256": "3212e2d3a8a6ca2863865a96b7699e28b1abd34e013b043b82d49fb1b15f28bb"
+      },
+      "stderr_sha256": "2ebad2ef34d9c243218562ef9ddcb5896247c27e73f061fe76b9c76fd79854b1",
+      "original_checks_reusable": 35,
+      "distinct_checks_after_this_fix": 39,
+      "original_native_source_qualification_reused": 84,
+      "new_score": false,
+      "new_version_frozen": false,
+      "new_version_queued": false
+    },
+    "vector": {
+      "original_ticket": 93,
+      "original_spec_sha256": "646b7b4c6c763b983de1fd317ffb1089b72e96e85be476e9d5c27c122f5c7807",
+      "original_pilot_sha256": "250586ec7ccc92bcb2edc806c732d8f227c724361d827e5e0b38beae9b1b6d7d",
+      "corrected_pilot_sha256": "965f350b3de14fd6066c8bfb4fd7dc2915c377d75d1dcb153fa6e88bb3c6c1cb",
+      "exact_ast_change": "one stage route-schema constant matches existing worker and audit",
+      "line_endings_normalized_in_corrected_source": true,
+      "production_worker_metrics_audit_byte_unchanged": true,
+      "amd_end_to_end_controls": 4,
+      "actual_process": {
+        "pid": 771270,
+        "pgid": 771270,
+        "session": 771270,
+        "starttime": "853329730",
+        "command_sha256": "a011f26d71820ea2857266a5264eed86a3f83049021694273b5f2b8949b4de63"
+      },
+      "stderr_sha256": "1b871796c7f4be5fd4900ccf5905a596afba33cf97499ad27f58cbd27b5ec0db",
+      "original_checks_reusable": 38,
+      "distinct_checks_after_this_fix": 42,
+      "original_native_source_qualification_reused": 85,
+      "new_score": false,
+      "new_version_frozen": false,
+      "new_version_queued": false
+    }
+  },
+  "actual_checks_receipt_sha256": "b96c137fc90e373ae170c5656d1695d372d588c21f5bf0c6726b7af411722ece",
+  "actual_amd_source_assets": 213,
+  "actual_packet_sha256": "a99d2edf7bde1c9f424238c6427b67c428cf917b6216a5d9b971f69554edd900",
+  "protected_prior_groups": 39,
+  "protected_prior_source_assets": 2657,
+  "source_model_primary_unchanged": true,
+  "local_neighborhood": {
+    "new_metrics_controls": 8,
+    "reused_worker_controls": 22,
+    "qualified_distinct_controls": 30,
+    "actual_cloud_root": "/workspace/team/runs/fpga_owner/neighborhood_metrics_pure_20261006_v1",
+    "actual_receipt_sha256": "d20d1842ac18ad978bc40ad75af8a46bed13fffb64e72d3f6202ff14dae9fb5f",
+    "stderr_sha256": "67fc3d9fa772a696a7b87714f4ea8049638f5ef0d695db11614604ff41779610",
+    "original156_intake_sha256": "6a368030e9728555b08299c63a49be013528f54e1d34f795df72ebc2c03b05ad",
+    "native94_still_pending": true,
+    "no_new_intake_or_worker_tests": true,
+    "score_pilot_not_frozen_or_queued": true
+  },
+  "original_8192_max2_one_repair_absolute300s_judge_unchanged": true,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "new_fifo": false,
+  "new_native_qualification": false,
+  "new_score": false,
+  "goal_achieved": false,
+  "development_baseline": {
+    "full_correct": 113,
+    "total_tasks": 156,
+    "weighted": 0.7743589743589744
+  },
+  "goal": {
+    "full_correct_at_least": 120,
+    "weighted_at_least": 0.8,
+    "status": "active"
+  },
+  "full156_latest": {
+    "at_epoch": 1791259263.6167626,
+    "completed": 179,
+    "expected": 312,
+    "actual_model_requests": 185,
+    "tool_error_rows": 0,
+    "deadline_rows": 0,
+    "original_runner_child_verified_live": true,
+    "source_assets_verified": 98,
+    "not_a_score": true
+  },
+  "next_step": "freeze independent corrected FSM8/vector6 versions after current strict source/guard admission; enqueue after all earlier tickets; neighborhood score stage waits native94 original archive qualification",
+  "peer_commit": "5bfe4e0600c75b2aa414bffe0c2bf9088f775586",
+  "peer_acknowledgment": "pending"
+}

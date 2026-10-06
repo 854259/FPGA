@@ -1,4 +1,21 @@
 {
+  "cp_stage_schema_fix_20261006": {
+    "status": "amd8_end_to_end_passed_old92_93_cancelled_before_start",
+    "report": "03_analysis/cp_stage_schema_fix_20261006/README.md",
+    "metadata": "03_analysis/cp_stage_schema_fix_20261006/PUBLIC_CHECKS.json",
+    "actual_cancelled_tickets": [
+      92,
+      93
+    ],
+    "new_end_to_end_controls": 8,
+    "neighborhood_worker_and_metrics_controls": 30,
+    "corrected_fsm_checks": 39,
+    "corrected_vector_checks": 42,
+    "new_version_frozen": false,
+    "new_version_queued": false,
+    "new_score": false,
+    "goal_achieved": false
+  },
   "neighborhood_worker_adapter_20261006": {
     "status": "amd_worker22_and_intake156_passed_native94_pending",
     "report": "03_analysis/neighborhood_worker_adapter_20261006/README.md",
@@ -7566,7 +7583,7 @@
     ],
     "first24_notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6007783210",
     "peer_acknowledgment": "pending",
-    "status": "actual_fifo92_accepted_queued_terminal_score_pending",
+    "status": "cancelled_before_start_protocol_mismatch_no_score",
     "actual_final_preparation": {
       "schema": "fsm_cp8_reviewed_frozen_preparation_metadata_v1",
       "spec_sha256": "37204e5383556ce4d7a71c0ff0381d549af648c9f94213db7bc107fa7419de03",
@@ -7827,7 +7844,7 @@
         "absolute_solve_seconds": 300
       }
     },
-    "status": "actual_fifo93_accepted_queued_terminal_score_pending",
+    "status": "cancelled_before_start_protocol_mismatch_no_score",
     "actual_final_preparation": {
       "schema": "vector_cp6_reviewed_frozen_preparation_metadata_v1",
       "spec_sha256": "646b7b4c6c763b983de1fd317ffb1089b72e96e85be476e9d5c27c122f5c7807",
