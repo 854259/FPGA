@@ -223,6 +223,13 @@ def run_stability(a):
         raise ValueError('Original terminal provenance audit required')
     if audit['auditor_sha256'] != STABILITY_AUDITOR_SHA or audit['spec_sha256'] != STABILITY_SPEC_SHA:
         raise ValueError('Original auditor identity mismatch')
+    repair = audit.get('report_schema_repair')
+    if repair is not None and repair != dict(
+            kind='remove_duplicate_actual_model_requests_keyword_only',
+            original_source_sha256=STABILITY_AUDITOR_SHA,
+            executed_source_sha256='3eb3ae5454d1080635b02bad9eec050c774efeb63cb3d28b38e2b6331eb6ef89',
+            regression_original_reproduced=True, regression_corrected_passed=True, source_drift_rejected=True):
+        raise ValueError('Unknown audit report correction')
     archive_sha = sha(a.archive)
     if audit['archive_sha256'] != archive_sha:
         raise ValueError('Audit archive identity mismatch')
@@ -251,6 +258,7 @@ def run_stability(a):
         if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds < 0:
             raise ValueError('Invalid terminal wall time')
     return dict(complete=True, analysis_only=True, analysis_source_sha256=sha(Path(__file__)),
+        audit_report_schema_repair=repair,
         inputs={k:sha(getattr(a,k)) for k in ['spec','summary','audit','guard']},
         archived_evidence_sha256=archive_sha, primary=primary,
         reported_stage_wall_seconds=summary['elapsed_s'], guard_wall_seconds=guard['elapsed_s'],

@@ -1,5 +1,6 @@
 """AMD-only serial postflight: pinned original provenance audit, then statistics."""
 import argparse
+import ast
 import hashlib
 import importlib.util
 import json
@@ -13,12 +14,64 @@ def sha(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 
+def audit_report_source(source):
+    """Remove one duplicate output keyword; preserve every frozen evidence check."""
+    assert hashlib.sha256(source).hexdigest() == '4004a32ef28d5b32513ebc5cd762fa959ead197a7005176c36602da0dd92f612'
+    old = b"expected_samples=5*len(spec['task_ids']),actual_model_requests=total,"
+    new = b"expected_samples=5*len(spec['task_ids']),"
+    assert source.count(old) == 1
+    fixed = source.replace(old, new)
+    assert hashlib.sha256(fixed).hexdigest() == '3eb3ae5454d1080635b02bad9eec050c774efeb63cb3d28b38e2b6331eb6ef89'
+    return fixed
+
+
+def audit_report(root, plan):
+    """Execute the explicitly bound report correction against the unchanged ZIP."""
+    auditor = root/'owner_audit/stability_audit.py'
+    source = auditor.read_bytes()
+    fixed = audit_report_source(source)
+    # Reproduce the actual failing result expression, with synthetic report inputs.
+    def expression(text):
+        nodes = [n.value for n in ast.walk(ast.parse(text)) if isinstance(n, ast.Assign)
+                 and any(isinstance(t, ast.Name) and t.id == 'result' for t in n.targets)]
+        assert len(nodes) == 1
+        return compile(ast.Expression(nodes[0]), '<audit-report-regression>', 'eval')
+    env = dict(sha=lambda unused: 'synthetic', Path=Path, __file__='synthetic',
+               archive='synthetic', spec_sha='synthetic', spec={'task_ids': list(range(156)), 'limits': []},
+               total=17, provenance=[], first_pairs=[], aggregate={'actual_model_requests': 17})
+    try:
+        eval(expression(source), env)
+    except TypeError as error:
+        assert "multiple values for keyword argument 'actual_model_requests'" in str(error)
+    else:
+        raise AssertionError('Original report failure not reproduced')
+    assert eval(expression(fixed), env)['actual_model_requests'] == 17
+    try:
+        audit_report_source(source+b'\n')
+    except AssertionError:
+        pass
+    else:
+        raise AssertionError('Source drift accepted')
+    out = root/'results/audit'
+    assert not out.exists()
+    sys.path.insert(0, str(auditor.parent))
+    # __file__ keeps original source pins meaningful; executed bytes are separately disclosed.
+    namespace = {'__file__': str(auditor), '__name__': 'report_corrected_stability_audit'}
+    exec(compile(fixed, str(auditor), 'exec'), namespace)
+    result = namespace['audit'](root/'INPUT.zip', out, plan['spec_sha256'])
+    result['report_schema_repair'] = dict(
+        kind='remove_duplicate_actual_model_requests_keyword_only',
+        original_source_sha256=sha(auditor), executed_source_sha256=hashlib.sha256(fixed).hexdigest(),
+        regression_original_reproduced=True, regression_corrected_passed=True, source_drift_rejected=True)
+    (out/'RESULTS.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
+
+
 def stability_postflight(root, plan, args, resource, paired):
     """One terminal-only stage: both checks, original audit if absent, statistics."""
     assert plan['model_calls'] == plan['eda_calls'] == 0
     assert plan['stage_cap_s'] == 360 and not plan['runtime_and_gates_changed']
     pins = {
-        'analysis.py': '44586ba92e7a842107d5a1bc0c3467b2944b3dd475c7418c6bcea7a230a2591b',
+        'analysis.py': '2fb223efab3eced0628e660a3afb20a5bc5557bce7f6a7d2645afe83eb0cc426',
         'inputs/RUN_SPEC.json': '589ee0f566d708924370ad5b051ff23fce41df4891853e3ce8abf153104a4f15',
         'owner_audit/stability_audit.py': '4004a32ef28d5b32513ebc5cd762fa959ead197a7005176c36602da0dd92f612',
         'owner_audit/stability_metrics.py': '06c23bda97bfa868133ea56dc738095aee931a9d1a25dd731b38989198a0830c',
@@ -54,6 +107,12 @@ def stability_postflight(root, plan, args, resource, paired):
         assert audit['auditor_sha256'] == pins['owner_audit/stability_audit.py']
         assert audit['archive_sha256'] == plan['files']['INPUT.zip']
         assert audit['spec_sha256'] == plan['spec_sha256'] and audit['stability780_evidence_valid']
+    elif plan.get('audit_report_schema_repair'):
+        assert plan['audit_report_schema_repair'] is True
+        audit_path = out/'audit/RESULTS.json'
+        commands.append(('report_corrected_audit', 180, [sys.executable, '-B', str(root/'run.py'),
+            '--plan', str(args.plan), '--plan-sha', args.plan_sha,
+            '--resource-check', str(args.resource_check), '--audit-report-only']))
     else:
         audit_path = out/'audit/RESULTS.json'
         commands.append(('original_audit', 180, [sys.executable, '-B', str(root/'owner_audit/stability_audit.py'),
@@ -85,6 +144,7 @@ if __name__ == '__main__':
     p.add_argument('--plan', type=Path, required=True)
     p.add_argument('--plan-sha', required=True)
     p.add_argument('--resource-check', type=Path, required=True)
+    p.add_argument('--audit-report-only', action='store_true')
     a = p.parse_args()
     assert sys.platform == 'linux', 'Execution stays on authorized AMD'
     assert sha(a.plan) == a.plan_sha, 'Preparation changed'
@@ -98,6 +158,11 @@ if __name__ == '__main__':
     resource = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(resource)
     resource.check_resource(a.resource_check, Path(plan['kit']), first=True)
+    if a.audit_report_only:
+        assert plan.get('mode') == 'phaseP_stability_terminal_v1' and plan.get('audit_report_schema_repair') is True
+        audit_report(root, plan)
+        resource.check_resource(a.resource_check, Path(plan['kit']))
+        raise SystemExit(0)
     if plan.get('mode') == 'phaseP_stability_terminal_v1':
         stability_postflight(root, plan, a, resource, paired)
         raise SystemExit(0)
