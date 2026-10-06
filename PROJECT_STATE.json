@@ -1,4 +1,133 @@
 {
+  "waveform_endpoint_pipeline_20261006_v2": {
+    "schema": "waveform_endpoint_pipeline_bounded_evidence_v2",
+    "per_round_github_read_user_confirmed": "2026-10-06",
+    "github_workflow": [
+      "start of every round including automatic continuation and resumption",
+      "after substantive changes or experiment conclusions",
+      "before finishing"
+    ],
+    "peer_review": {
+      "url": "https://github.com/854259/FPGA/issues/7#issuecomment-6014502936",
+      "comment_id": 6014502936,
+      "body_sha256": "4ddb66bc60ddc466715bc70279c6c7b65ab292c347827522ee2d2f76cc927e24",
+      "actual_owned_record_sha256": "da4d7360e020c8d8bee703f5f912049b686a3401fdfef1db5aeeebf3e08a1d50",
+      "division_accepted": true,
+      "confirmed_scope": [
+        "PR53 minimal endpoint semantics and original8 AMD controls evidence",
+        "PR54 source/scope156/historical113/grade/request cost gates and3 new controls evidence"
+      ],
+      "not_confirmed": [
+        "New waveform worker7 or pipeline15 integration",
+        "New CP6 freeze and natural scoring",
+        "FSM complete generator semantics or terminal full156 audit",
+        "Accuracy improvement or hidden generalization"
+      ]
+    },
+    "facts_sha256": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+    "previous_semantic_controls": 8,
+    "new_worker_controls": 7,
+    "new_pipeline_controls": 15,
+    "corrected_revision_context_control_executions": 30,
+    "whole_old65_controls_reexecuted": false,
+    "worker": {
+      "root": "/workspace/team/runs/fpga_owner/waveform_endpoint_worker_integration_20261006_v2",
+      "source_assets": 56,
+      "receipt_sha256": "b092ea9562943775ca7ce467eaa12b94ae29619c76dae95f4b68ffdf624880bf",
+      "constructed_transport_calls": 9,
+      "constructed_compiler_calls": 6,
+      "real_http_posts": 0,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "archive": {
+        "passed": true,
+        "sha256": "8eae57b4cee1c27a1992616d7945653062252c905c590cccb59134ce1922d99a",
+        "bytes": 444812,
+        "members": 232,
+        "every_member_dual_end_bound": true,
+        "peer_record_sha256": "da4d7360e020c8d8bee703f5f912049b686a3401fdfef1db5aeeebf3e08a1d50",
+        "prior_eight_receipt_sha256": "db7afc168f34a4b8dd9147efd8b95ddf511539d540b9e9ec907732c96d156c35"
+      }
+    },
+    "pipeline": {
+      "root": "/workspace/team/runs/fpga_owner/waveform_endpoint_cp6_pipeline_20261006_v2",
+      "source_assets": 83,
+      "receipt_sha256": "2a45888b8fadf121ea38b7c2e005e72e5767abb9ed12e9f738c9d4a9beeebc5b",
+      "request_wire_controls": 12,
+      "source_proof_controls": 1,
+      "stage_auditor_controls": 2,
+      "normal_completion": true,
+      "original_child_reaped": true,
+      "archive": {
+        "passed": true,
+        "archive_sha256": "9481be3cb937670fd1417c1a2c68ef99d4fbb1e611f4193bdad9f8da25517532",
+        "bytes": 317859,
+        "members": 94,
+        "every_member_dual_end_bound": true
+      }
+    },
+    "unchanged_eight_controls_reused": {
+      "controls": 8,
+      "method_sha256": {
+        "test_six_task_denominator_and_one_fixed_target_gain": "a11e20086288bc5119f39a71d922e038ca285bc77fa8a7dd78af36ca7377812f",
+        "test_no_gain_is_rejected": "e450b125a35f212968f69acc35c0d5a0a225ddc01a72dcd22d153e997184a111",
+        "test_historical_target_extra_request_rejected_despite_grade_gain_and_equal_total": "aea68083f2e502148a5e433177bf1162b64fb17919d3aeab5be7942ab354a840",
+        "test_guard_regression_rejected": "830410145c16ee470030696a4936cc4412e4244a6057ecc4f829578769ee1c38",
+        "test_missing_ordered_row_rejected": "fb03a58af8374509a9ec589b51e518bacc98fd1ce486f1e2fe6d94bf8aa9534f",
+        "test_unconfirmed_or_deadline_rejected": "72057c61aeb6a12a0f4b747ccb31927a68135a3dfb716c29245f3342d4f1cd68",
+        "test_missing_factor_proof_rejects_qualification": "5d418edbadba04faeec20995c1bf019bda20c3793e114bd9eb120186f60cd9cf",
+        "test_wire_bins_are_collected_and_bound": "0584d1ad17b8fe3f007bad546d1a8f2cdd8d7babc947f3963c54804f632e6b6e"
+      },
+      "metrics_sha256": "33172268c4b49d9d5744c2e5977809dc0fda1dd7204317e5b51bbba705ee1f74",
+      "collector_sha256": "727a1a721b31d9d533e738610e486b20f28d39e357dae0233642be24298616c4",
+      "exact_function_bytes_same": true,
+      "execution_repeated": false,
+      "claim": "Unchanged score and archive functions only; new15 context controls separately executed under corrected SHA",
+      "prior_receipt_sha256": "db7afc168f34a4b8dd9147efd8b95ddf511539d540b9e9ec907732c96d156c35",
+      "exact_whole_test_source_only_fixture_path_changed": true,
+      "helper_and_material_bytes_unchanged": true,
+      "validated_on_amd": true
+    },
+    "protection": {
+      "groups": 79,
+      "source_assets": 5178,
+      "model_primary_and_old_sources_preserved": true
+    },
+    "failures_preserved": [
+      "metadata expected obsolete12593b4c rejected before command: original83 installed bytes unchanged; actual absence checked before first15 execution",
+      "archive observer misspelled prior fixture path rejected before archive or peer record writes: corrected reader only; no test rerun"
+    ],
+    "fifo102": {
+      "ticket": 102,
+      "spec_sha256": "451d7191252877db37971f49ecc80a35881da5eec6bb8c493a9fcb8a5167bd41",
+      "state_at_last_original_observation": "queued",
+      "accepted_at_utc": "2026-10-06T10:32:49.735072UTC",
+      "accepted_only_once": true,
+      "source_assets": 118,
+      "new_full_score": false
+    },
+    "old101_semantic_adoption_hold": true,
+    "new_waveform_cp_freeze_pending": true,
+    "new_fifo_submission": false,
+    "new_natural_score": false,
+    "adoption": false,
+    "deployment": false,
+    "goal": {
+      "full_correct_at_least": 120,
+      "weighted_at_least": 0.8,
+      "preserve_original113_and_paired_grades": true,
+      "preserve_total_same_grade_and_historically_correct_request_costs": true,
+      "output_tokens": 8192,
+      "max_requests": 2,
+      "repairs": 1,
+      "solver_deadline_s": 300,
+      "judge_deadline_s": 300,
+      "judge_supervisor_s": 360,
+      "status": "active",
+      "achieved": false,
+      "usage_stop_percent": 97
+    }
+  },
   "fsm_full156_preparation_20261006_v2": {
     "schema": "fsm_full156_public_preparation_v2",
     "baseline_full_correct": 113,

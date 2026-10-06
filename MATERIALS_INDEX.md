@@ -1,3 +1,9 @@
+## 每轮GitHub核对与修正版波形接入证据
+
+- [实际队友确认、22新AMD检查与边界](03_analysis/waveform_endpoint_pipeline_20261006_v2/README.md)
+- [原回执、两个完整档案及限定确认](03_analysis/waveform_endpoint_pipeline_20261006_v2/PUBLIC_EVIDENCE.json)
+- [每轮核对与实质回应约定](05_handoff/TEAM_DEVELOPMENT_PROTOCOL.md)
+
 ## FSM全156最终v2准备与退出后准入
 
 - [范围、复用、失败保留与整任务FIFO计划](03_analysis/fsm_full156_preparation_20261006_v2/README.md)
