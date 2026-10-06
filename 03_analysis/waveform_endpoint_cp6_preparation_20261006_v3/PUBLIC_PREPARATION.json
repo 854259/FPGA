@@ -1,0 +1,115 @@
+{
+  "schema": "waveform_endpoint_cp6_public_preparation_v3",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "facts_revision": "waveform_sample_endpoints_v2",
+  "facts_sha256": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+  "source_assets": 89,
+  "source_parent83_exact": true,
+  "unique_new_entry_sha256": "a76861f1c5b0d9745b5038babcb8a5619d091f13b832f9b3359493ada26e8571",
+  "spec_sha256": "9b90acec3379490e4d313d59bceb6fd9833ed713624267f1a0aa05de96cc121c",
+  "preparation_receipt_sha256": "6bd65b630595a8998ae040aadb82a4fe952b8495ff3f4e21b3a628e8b1a5ed3e",
+  "postexit_admission_sha256": "1abc46bcdedfbaeee4529a8216fb96e2f87e152deb3addb6df58db701fcac676",
+  "postexit_passed": true,
+  "original_prepare_child_retired": true,
+  "corrected_context_controls_reused": {
+    "semantic": 8,
+    "worker": 7,
+    "pipeline": 15,
+    "total": 30
+  },
+  "unchanged_score_archive_controls_reused": 8,
+  "old65_whole_controls_not_reexecuted": true,
+  "new_tests_in_prepare": 0,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_natural_score": false,
+  "new_fifo_submission": false,
+  "new_revision_full156_prompt_only_admission": {
+    "tasks": 156,
+    "status_counts": {
+      "abstain": 11,
+      "skip": 144,
+      "supported": 1
+    },
+    "producer_reads_prompt_string_only": true
+  },
+  "stage_schema_kept_for_original_pilot_compatibility": "waveform_first_request_cp6_frozen_v1",
+  "old101_adoption_held": true,
+  "old101_score_qualifies_new_revision": false,
+  "failed_preparation_v2": {
+    "source_assets": 84,
+    "entry_sha256": "13f66f43b80539ed4c2e7b4629206cf1cf50549e15011fbdef4c51a3e0adfcdb",
+    "reason": "Semantic8 source file stored under sources/; metadata binding wrongly used root key",
+    "returncode": 1,
+    "normal_failure": true,
+    "original_child_retired": true,
+    "run_spec_absent": true,
+    "fifo_absent": true,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "retained_receipt_sha256": "3bc175adf8ed1844500ca136a991f83da9b69202f7c7cbbff201ee08d4594996",
+    "archive": {
+      "passed": true,
+      "sha256": "cc49345c22c710e0c7806daa1eddf62464b1138198531c799edf5fdaba6cd933",
+      "bytes": 328766,
+      "members": 96,
+      "every_member_dual_end_bound": true,
+      "failure_retained_sha256": "3bc175adf8ed1844500ca136a991f83da9b69202f7c7cbbff201ee08d4594996"
+    }
+  },
+  "final_preparation_archive": {
+    "passed": true,
+    "archive_sha256": "b6f55ffd788f82a7391f9d5d48804ea078628f47205b4e65f25e98aecb357387",
+    "bytes": 516951,
+    "members": 103,
+    "every_member_dual_end_bound": true
+  },
+  "protection": {
+    "frozen_groups": 80,
+    "frozen_source_assets": 5262,
+    "postexit_groups": 81,
+    "postexit_source_assets": 5351,
+    "model_and_primary_unchanged": true
+  },
+  "fixed_screen": {
+    "tasks": 6,
+    "targets": 1,
+    "historically_correct_guards": 5,
+    "expected_samples": 12,
+    "max_model_requests": 24,
+    "output_tokens": 8192,
+    "max_requests_per_sample": 2,
+    "repairs": 1,
+    "solver_deadline_s": 300,
+    "judge_deadline_s": 300,
+    "judge_supervisor_s": 360,
+    "stage_cap_s": 9000,
+    "guard_cap_s": 9400,
+    "slot_cap_minutes": 160,
+    "caps_are_not_eta": true,
+    "acceptance": [
+      "At least1 target newL3 and weightedP>C",
+      "Five guards bothL3 and all paired grades nondecreasing",
+      "P total requests<=C; unchanged grades and all historically-correct task requests<=C",
+      "Complete original12 rows/wires/request provenance/diagnostic replay/judge includingx-z/archive audit",
+      "No deadline/unconfirmed/source/tool failure; no redraw or deployment"
+    ]
+  },
+  "peer_review": {
+    "comment_id": 6014502936,
+    "confirmed": "PR53 minimal endpoint semantics/original8 evidence and PR54 scope/cost only",
+    "new22_integration_and_this_freeze": "pending actual reply",
+    "last_material_reply": "https://github.com/854259/FPGA/issues/7#issuecomment-6014788977",
+    "failure_notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6014958126"
+  },
+  "next_action": "Reviewed ownPR and actual Git share, then single whole-task FIFO submit of finalv3; original collector/auditor once at terminal. Qualified screen only then fresh full156. Generic timer phase factor still pending.",
+  "adoption": false,
+  "deployment": false,
+  "full156_goal": {
+    "full_correct_at_least": 120,
+    "weighted_at_least": 0.8,
+    "preserve_original113_paired_grades_and_request_costs": true,
+    "usage_stop_percent": 97
+  }
+}
