@@ -1,0 +1,62 @@
+{
+  "schema": "peer69_pipeline28_bounded_public_review_v1",
+  "reviewed_at": "2026-10-07T02:05:38+08:00",
+  "peer_pr": 69,
+  "peer_head": "d14268f44f9616c4892585392b36fa3e9ca570fa",
+  "peer_merge": "2ae22034aab37007aaf05c7c784d38e5bf588ec3",
+  "bounded_review_complete": true,
+  "limited_engineering_delivery_accepted": true,
+  "private_receipt_sha256": "30ad2188d418e5835c6cbf4ff1b0dd9e2919368b31eebdc2d87be76cd943545a",
+  "dual_archive_members": [
+    126,
+    128,
+    135,
+    135
+  ],
+  "sources_per_version": [
+    118,
+    118,
+    118,
+    118
+  ],
+  "effective_pipeline_controls": 28,
+  "reused_pipeline_controls": 27,
+  "new_corrected_control": 1,
+  "independent_control_reruns": 0,
+  "reused_worker_controls": 17,
+  "worker_shared_source_files": 106,
+  "reused_archive_gate": 1,
+  "public_source_files_bound": 7,
+  "production_unchanged": true,
+  "original_failures_retained": [
+    "v1 archive warning split output before test",
+    "v2 notice identifier colon before test",
+    "v3 synthetic total request strict-less assertion; actual7/7"
+  ],
+  "test_fix": "assertLess to assertLessEqual only; per-task increase still rejected",
+  "actual_valid_receipt_sha256": "8ffdb184f68b6c482481fc46d80fb2a7ea66a1c75541c6a7e254054d4450b3d5",
+  "valid_archive_sha256": "08d958e611997db7d6cca805a5137708d91db547f2c2d7f0d85521521e7a480a",
+  "original_inventory_roots": 90,
+  "original_unique_immutable_files": 6021,
+  "legacy_summed_group_assets": 5811,
+  "new_95_root_inventory_qualified": false,
+  "cp7_frozen_verified": false,
+  "natural_score_verified": false,
+  "qualified_for_full156": false,
+  "adoption": false,
+  "full_comprehensive_batch_complete": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "read_only_elapsed_s": 0.7550117578357458,
+  "peer70_ack": {
+    "comment": 6022252865,
+    "gmail_message_id": "1a1125cb69aae5de",
+    "amd_ack_sha256": "cae68182ac3d8904335e01737d42994890199aaa66547ecd8d5bcc264457adc7",
+    "scope": "Read104/102 delivery, accept102 nonadoption and division; not independent104 archive/audit certification"
+  },
+  "post_archive_cleanup": {
+    "receipt_sha256": "8b80915030f023f86a78eeecac03a7f50f9136f6190b007ab85660b77a81d256",
+    "supervisor_state": "Exited Z child retained by PID1; empty cmdline, not running. Collector/auditor reaped. Do not rerun."
+  },
+  "next": "Peer prepares separate waveform-only156 freeze and complete budgets; this task reviews source/environment/dependency-path/scope and admission, no mix with onehot or rerun104/102."
+}

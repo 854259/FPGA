@@ -3127,14 +3127,14 @@
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 102,
-  "latest_own_stage": "104 terminal and102 bounded review",
+  "latest_own_stage": "PR69 pipeline28 bounded source/original-evidence review",
   "latest_own_stage_complete": true,
-  "latest_own_stage_status": "104 corrected audit passed; screen only qualifies next frozen156 development regression.102 bounded review agrees adoption false.",
+  "latest_own_stage_status": "Completed bounded engineering review; original27+corrected1 retained; no new natural score, freeze admission or adoption.",
   "latest_own_ticket": 104,
   "own_monitor_pid": null,
   "other_active_tickets": [],
-  "next_own_stage": "Review PR69 pipeline28 original evidence and next single-factor freeze; peer prepares separate waveform156 specification/admission/budget. Do not rerun104 or sum candidate gains.",
-  "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_TERMINAL.json",
+  "next_own_stage": "Peer prepares separate waveform156 freeze with new source/environment/dependency paths, protected inventory controls and full calling/wallclock budget; own bounded freeze review. No mixing onehot or rerun104/102.",
+  "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_PIPELINE_REVIEW.json",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
     "source": "03_analysis/helper_extraction_20261004/paired_uncertainty_20261005.py",
@@ -3209,7 +3209,9 @@
   "other_held_tickets": [],
   "peer98_status": "Peer PR61 amended source audit completed; bounded independent source/receipts/archive/result review accepted at2026-10-07T00:10+08. Original strict auditor failed retained. Adoption=false; not independently rerun full replay.",
   "peer101_status": "Original101 failed4 requests retained;103 cancelled unstarted;104 completed18 requests and corrected terminal audit passed.",
-  "peer102_status": "PR69 original audit completed;118 sources/11988 archive members/312 provenance rows bounded review accepted, adoption false."
+  "peer102_status": "PR69 original audit completed;118 sources/11988 archive members/312 provenance rows bounded review accepted, adoption false.",
+  "latest_review_at": "2026-10-07T02:05:38+08:00",
+  "latest_review_sha256": "30ad2188d418e5835c6cbf4ff1b0dd9e2919368b31eebdc2d87be76cd943545a"
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -6229,7 +6231,7 @@
   }
 },
   "waveform_resource_fix_20261006": {
-  "updated_at": "2026-10-07T01:50:00+08:00",
+  "updated_at": "2026-10-07T02:05:38+08:00",
   "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
   "status": "104_terminal_audited_screen_passed_102_bounded_review_reject_adoption",
   "pull_request": "https://github.com/854259/FPGA/pull/59",
@@ -6270,7 +6272,7 @@
     "full_batch_complete": false,
     "quality_result": "C5/6 P6/6; requests9/9; one target repaired, five guards preserved; only new156 development screen eligible"
   },
-  "next": "Review PR69 pipeline28 original evidence and next single-factor freeze; peer prepares separate waveform156 specification/admission/budget. Do not rerun104 or sum candidate gains.",
+  "next": "Peer prepares separate waveform156 freeze with new source/environment/dependency paths, protected inventory controls and full calling/wallclock budget; own bounded freeze review. No mixing onehot or rerun104/102.",
   "report": "03_analysis/waveform_resource_lifecycle_20261006/README.md",
   "peer_handoff": {
     "confirmed_comment": 6019767790,
@@ -6279,16 +6281,18 @@
     "fix_read_and_accepted": true,
     "controls_reused": 33,
     "peer_responsibility": "new single-factor candidates and freezes; original102 terminal delivered",
-    "own_responsibility": "104 terminal completed and archived;102 bounded review complete;pipeline28 and next freeze review",
+    "own_responsibility": "104 terminal and102 bounded review complete;pipeline28 bounded review complete;next single-factor freeze review",
     "reply_comment": 6019879549,
     "reply_readback_verified": true,
     "new_path_suggestion_peer_acknowledged": true,
-    "latest_peer_comment": 6021960442,
-    "latest_own_review_reply": 6021258096,
+    "latest_peer_comment": 6022252865,
+    "latest_own_review_reply": 6022196660,
     "latest_review_peer_confirmed": true,
     "pr68_preparation_read_confirmed": true,
-    "current_terminal_handoff_pending": true,
-    "current_terminal_peer_confirmed": false
+    "current_terminal_handoff_pending": false,
+    "current_terminal_peer_confirmed": true,
+    "current_terminal_ack_scope": "Read actual PR70 delivery and accept102 nonadoption/division; not independent104 member or semantic audit certification",
+    "latest_ack_sha256": "cae68182ac3d8904335e01737d42994890199aaa66547ecd8d5bcc264457adc7"
   },
   "dependency_path_review": {
     "receipt_sha256": "f734b2b31699229b480647193053d8f3755e5826f5f07332e2d4dfdb70574d09",
@@ -6578,13 +6582,69 @@
     "archive_sha256": "0faed6d9a8edfd87a938b5b6280b63aeefaba907960a0935e4550d269b1685ed"
   },
   "peer69_pipeline28": {
-    "delivery_and_comment_read": true,
-    "independent_source_control_review_complete": false,
+    "schema": "peer69_pipeline28_bounded_public_review_v1",
+    "reviewed_at": "2026-10-07T02:05:38+08:00",
+    "peer_pr": 69,
+    "peer_head": "d14268f44f9616c4892585392b36fa3e9ca570fa",
+    "peer_merge": "2ae22034aab37007aaf05c7c784d38e5bf588ec3",
+    "bounded_review_complete": true,
+    "limited_engineering_delivery_accepted": true,
+    "private_receipt_sha256": "30ad2188d418e5835c6cbf4ff1b0dd9e2919368b31eebdc2d87be76cd943545a",
+    "dual_archive_members": [
+      126,
+      128,
+      135,
+      135
+    ],
+    "sources_per_version": [
+      118,
+      118,
+      118,
+      118
+    ],
+    "effective_pipeline_controls": 28,
+    "reused_pipeline_controls": 27,
+    "new_corrected_control": 1,
+    "independent_control_reruns": 0,
+    "reused_worker_controls": 17,
+    "worker_shared_source_files": 106,
+    "reused_archive_gate": 1,
+    "public_source_files_bound": 7,
+    "production_unchanged": true,
+    "original_failures_retained": [
+      "v1 archive warning split output before test",
+      "v2 notice identifier colon before test",
+      "v3 synthetic total request strict-less assertion; actual7/7"
+    ],
+    "test_fix": "assertLess to assertLessEqual only; per-task increase still rejected",
+    "actual_valid_receipt_sha256": "8ffdb184f68b6c482481fc46d80fb2a7ea66a1c75541c6a7e254054d4450b3d5",
+    "valid_archive_sha256": "08d958e611997db7d6cca805a5137708d91db547f2c2d7f0d85521521e7a480a",
+    "original_inventory_roots": 90,
+    "original_unique_immutable_files": 6021,
+    "legacy_summed_group_assets": 5811,
+    "new_95_root_inventory_qualified": false,
+    "cp7_frozen_verified": false,
     "natural_score_verified": false,
-    "cp7_frozen_verified": false
+    "qualified_for_full156": false,
+    "adoption": false,
+    "full_comprehensive_batch_complete": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "read_only_elapsed_s": 0.7550117578357458,
+    "peer70_ack": {
+      "comment": 6022252865,
+      "gmail_message_id": "1a1125cb69aae5de",
+      "amd_ack_sha256": "cae68182ac3d8904335e01737d42994890199aaa66547ecd8d5bcc264457adc7",
+      "scope": "Read104/102 delivery, accept102 nonadoption and division; not independent104 archive/audit certification"
+    },
+    "post_archive_cleanup": {
+      "receipt_sha256": "8b80915030f023f86a78eeecac03a7f50f9136f6190b007ab85660b77a81d256",
+      "supervisor_state": "Exited Z child retained by PID1; empty cmdline, not running. Collector/auditor reaped. Do not rerun."
+    },
+    "next": "Peer prepares separate waveform-only156 freeze and complete budgets; this task reviews source/environment/dependency-path/scope and admission, no mix with onehot or rerun104/102."
   },
   "terminal_readonly_review_sha256": "ccea319513f1005543df9a53ba4cda08687bb781049f3a4240910a0e6fc2f5be",
   "terminal_readonly_review_dual_verified": true,
-  "last_processed_mail_id": "1a1124d933b1794b"
+  "last_processed_mail_id": "1a1125cb69aae5de"
 }
 }
