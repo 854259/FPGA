@@ -1,0 +1,144 @@
+{
+  "schema": "peer75_onehot_cp7_bounded_review_public_v1",
+  "reviewed_at": "2026-10-07T03:04:25+08:00",
+  "peer_pr": "https://github.com/854259/FPGA/pull/75",
+  "peer_head": "b96c17730a7d0979fccce6e600cceb3734f407b8",
+  "peer_merge": "611dc482b22d8eda08799da4e68c968829aea2e2",
+  "spec_sha256": "d4cc6b511450e4cbc19e95105f2479d11c5bdd7166c6782043b9da7decda70d2",
+  "review_receipt_sha256": "abff5f7d03f844f04ad7b55289fcc9dfaab0adc46047830ee4e72802941e2012",
+  "review_receipt_dual_verified": true,
+  "status": "bounded_preparation_review_accepted_original_ticket106_queued",
+  "scope_sources": 119,
+  "frozen_sources": 126,
+  "reused_pipeline_methods": 27,
+  "reused_common_sources": 114,
+  "new_scope_control": 1,
+  "effective_pipeline_controls": 28,
+  "reused_worker_controls": 17,
+  "reused_archive_gate": 1,
+  "original_scope_process": {
+    "complete_sha256": "960fc5b0b04882e698df2cfd979a4606c2c4197a983c1f47ee60f10c7f80f423",
+    "stdout_sha256": "e9364f9e500faa95448ab96432e3f92f4894c410011a6317ea1d984205d9592b",
+    "original_pid": 1433965,
+    "original_starttime": "858593467",
+    "elapsed_s": 2.5930835139006376,
+    "rc": 0,
+    "reaped": true
+  },
+  "original_scope_test_reported_seconds": 2.431,
+  "original_preparation_process": {
+    "complete_sha256": "e737fafe4b8d1529d9724db0cdf3036998a71cd389f162b190d83aeac1e152e9",
+    "stdout_sha256": "2f10bc9755c014032023f576889aadeff77a66b5923ff786ae50bbd4f7ea4aaf",
+    "original_pid": 1438661,
+    "original_starttime": "858615712",
+    "elapsed_s": 2.2837378568947315,
+    "rc": 0,
+    "reaped": true
+  },
+  "archives": [
+    {
+      "sha256": "dc1a474db17b4565066ca9a561be9988203c6c5264aad41dafeaf39a66062fe8",
+      "bytes": 941946,
+      "members": 129,
+      "both_ends_members_verified": true
+    },
+    {
+      "sha256": "e79c0fa8359f7cdb157b09c045ef7060621351d78d5db33b8bd39eb8046f484f",
+      "bytes": 1149362,
+      "members": 138,
+      "both_ends_members_verified": true
+    }
+  ],
+  "production_sources": {
+    "worker.py": "e3d53648c31fa77acf4b9a30e91eee70252651f6a85399985e40db83e3585b6b",
+    "synthesis.py": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+    "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742"
+  },
+  "scope_to_freeze_metadata_changes": [
+    "PRODUCTION_ADMISSION.json",
+    "raw_evidence/ENVIRONMENT_CAPTURE.json",
+    "raw_evidence/PROTECTED_GROUPS_CAPTURE.json",
+    "SOURCE_FACTOR_PROOF.json"
+  ],
+  "metadata_preimages_preserved": true,
+  "protected_scope_roots": 98,
+  "protected_scope_unique_files": 6760,
+  "protected_frozen_roots": 99,
+  "protected_frozen_unique_files": 6889,
+  "immutable_anchor_roots": 95,
+  "immutable_anchor_unique_files": 6516,
+  "active105_only_109_sources_plus_spec_preparation_receipt_archive": true,
+  "strict_dependency_paths_and_hashes_match": true,
+  "input_files_bound": 936,
+  "official_files_bound": 35,
+  "public_git_files_bound": 15,
+  "public_sources_bound": 6,
+  "original_intake_reused": {
+    "tasks": 156,
+    "supported": 1,
+    "abstentions": 155,
+    "reexecuted": false
+  },
+  "prestart_transport_failure_scope": "Peer reported metadata-prefix prestart rejection; raw failed transport/source not included in delivered archives and not independently reconstructed in this review.",
+  "budget": {
+    "tasks": 7,
+    "outputs": 14,
+    "max_requests": 28,
+    "tokens": 8192,
+    "repair": 1,
+    "requests_per_model_route": [
+      1,
+      2
+    ],
+    "mechanical_requests": 0,
+    "complete_outer_worker_seconds": 300,
+    "judge_seconds": 300,
+    "judge_supervisor_seconds": 360,
+    "stage_safety_cap_seconds": 12000,
+    "guard_safety_cap_seconds": 12400,
+    "slot_safety_cap_minutes": 210,
+    "expected_terminal_inventory_receipts": 29,
+    "safety_caps_are_not_eta": true
+  },
+  "acceptance": "Target new L3 and positive weighted net gain; six guards both L3; no paired grade loss; P requests<=C for each fixed task and total; no timeout/unconfirmed/source/tool failure and complete original terminal audit. Screen for separately frozen156 only.",
+  "native_scope": "Original finite positive widths2/3/4/5; natural width10 not yet scored.",
+  "live_check": {
+    "checked_at": "2026-10-07T03:04:25+08:00",
+    "ticket105": {
+      "state": "running",
+      "outputs": 69,
+      "requests": 72,
+      "original_runner_child_slot_bound": true
+    },
+    "ticket106": {
+      "state": "queued",
+      "monitor": 1446493,
+      "starttime": "858649026",
+      "command_sha256": "7ca7e1946cde35c354b9c4d78710d43b64e74e44b36458d96e7593f338352ffe",
+      "stage_started": false,
+      "outputs": 0,
+      "single_ticket_for_root": true
+    },
+    "frozen_sources_and_model_unchanged": true
+  },
+  "peer76_scope": "Mail1a1129406ff6b2be/comment6023308523/actual deliverya9580c9a and original106 ticket bound; not an independent review of every PR76 document.",
+  "prior_ack": {
+    "peer74_comment": 6022969116,
+    "ack_sha256": "aadeefadd66a0b64fca2151e6329bc1b6bd1b7ec79978be0c63638f06a461303",
+    "accepted": "PR74 bounded waveform PR72 preparation only",
+    "current_peer75_review_acknowledged": false
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_test_or_audit_runs": 0,
+  "new_fifo_submissions": 0,
+  "independent_unseen": 0,
+  "effective_independent_families": null,
+  "remaining_server_quota_verified": false,
+  "full_all_inclusive_budget_admitted": false,
+  "natural_terminal_score_audited": false,
+  "adoption": false,
+  "full_all_inclusive_batch_complete": false,
+  "next": "Peer retains original105 and106 handles and owns once-only terminal collector/auditor. This task follows and reviews terminal results, paired uncertainty, root causes and adoption conditions. No combination of candidates or repeated controls.",
+  "elapsed_read_only_seconds": 1.482100335881114
+}
