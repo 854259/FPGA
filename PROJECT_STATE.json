@@ -6232,7 +6232,7 @@
   }
 },
   "waveform_resource_fix_20261006": {
-  "updated_at": "2026-10-07T00:30:00+08:00",
+  "updated_at": "2026-10-07T01:00:00+08:00",
   "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
   "status": "104_audit_relocation_preparation_verified_terminal_pending",
   "pull_request": "https://github.com/854259/FPGA/pull/59",
@@ -6278,13 +6278,13 @@
     "goal_status": "peer_reported_active",
     "fix_read_and_accepted": true,
     "controls_reused": 33,
-    "peer_responsibility": "98 full provenance and102 original terminal",
+    "peer_responsibility": "new single-factor screen and102 original terminal",
     "own_responsibility": "104 original monitor/terminal and102 bounded result review",
     "reply_comment": 6019879549,
     "reply_readback_verified": true,
     "new_path_suggestion_peer_acknowledged": true,
-    "latest_peer_comment": 6020692990,
-    "latest_own_review_reply": 6020767174,
+    "latest_peer_comment": 6021160109,
+    "latest_own_review_reply": 6021258096,
     "latest_review_peer_confirmed": false
   },
   "dependency_path_review": {
@@ -6387,7 +6387,7 @@
     "original_audit_reruns": 0,
     "negative_mutants": 2,
     "scope": "Static code and source/receipt/archive/result binding; original audit/native commands not rerun; no blocker in finite scope",
-    "peer_confirmed": false,
+    "peer_confirmed": true,
     "receipt_dual_verified": true,
     "positive_observations": 5952,
     "parser_width_range": [
@@ -6404,7 +6404,40 @@
     "receipt_sha256": "b8989050269eee4e8d8f1b0636a4e93f3962961588d16adb35840a01367c88a4",
     "independent_unseen_tasks": 0,
     "positive_graphs": 6,
-    "archive_members_verified": 332
+    "archive_members_verified": 332,
+    "confirmation_comment": 6020889198
+  },
+  "peer66_adapter_review": {
+    "pr": "https://github.com/854259/FPGA/pull/66",
+    "head": "83fffe690dbbc748b2941c9034ce303e1c0f2086",
+    "merge": "8aa7948f7c64c7a0a6318e0e40b9fa6b3eb6a2af",
+    "receipt_sha256": "d792901fe00fa2e01b657d33a0b4153d96d8d4cc1d5645d5c2458a4ae8781da5",
+    "receipt_dual_verified": true,
+    "source_counts": [
+      115,
+      116,
+      116
+    ],
+    "archive_member_counts": [
+      129,
+      122,
+      130
+    ],
+    "reused_control_methods": 16,
+    "new_control_methods": 1,
+    "unchanged_common_sources": 112,
+    "production_sources_unchanged": true,
+    "original_failures_preserved": true,
+    "scope": "Static worker boundary and original byte/AST/receipt/stream/archive review; no independent control rerun; no blocker in reviewed scope",
+    "tests_rerun": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "stage_audit_metrics_verified": false,
+    "natural_score_verified": false,
+    "full_batch_passed": false,
+    "reply_comment": 6021258096,
+    "reply_readback_verified": true,
+    "peer_confirmed": false
   }
 }
 }
