@@ -7383,7 +7383,7 @@
     "qualified_pilot_audit_sha256": "3cb9d4cb0db9f7a0e7a9c996e0b71339d39fbec616f3624d83be5dc66d6923f3",
     "model_calls_in_preparation": 0,
     "eda_calls_in_preparation": 0,
-    "submitted": false,
+    "submitted": true,
     "new_full_score_measured": false,
     "adoption": false,
     "goal_achieved": false,
@@ -7395,6 +7395,25 @@
       "root_test_line_reader_did_not_handle_expected_zip_attack_warning"
     ],
     "recovery_scope": "Inspected staging prefix only; actual AMD prepare and54 checks once. Original claims/source and all failures retained.",
-    "delivery_status": "This revision records preparation before submission; actual queue acceptance requires a separate receipt."
+    "delivery_status": "This revision records preparation before submission; actual queue acceptance requires a separate receipt.",
+    "status": "actual_fifo90_running_terminal_score_and_audit_pending",
+    "fifo_ticket": 90,
+    "actual_delivery_receipt": "03_analysis/prompt_table_full156_20261006_v1/ACTUAL_DELIVERY_RECEIPT.json",
+    "latest_observation": {
+      "at_epoch": 1791251420.1708813,
+      "fifo_state": "running",
+      "completed": 4,
+      "expected": 312,
+      "complete": false,
+      "passed": false,
+      "actual_model_requests": 5,
+      "tool_error_rows": 0,
+      "deadline_rows": 0,
+      "runner_live": true,
+      "child_live": true,
+      "source_assets_verified": 98,
+      "model_identity_unchanged": true
+    },
+    "preparation_snapshot_preserved": true
   }
 }
