@@ -1,3 +1,8 @@
+## 修正版波形固定CP6最终v3准备
+
+- [固定范围、失败保留与原预算资格门](03_analysis/waveform_endpoint_cp6_preparation_20261006_v3/README.md)
+- [89源、准备/退出后准入与完整档案绑定](03_analysis/waveform_endpoint_cp6_preparation_20261006_v3/PUBLIC_PREPARATION.json)
+
 ## 每轮GitHub核对与修正版波形接入证据
 
 - [实际队友确认、22新AMD检查与边界](03_analysis/waveform_endpoint_pipeline_20261006_v2/README.md)
