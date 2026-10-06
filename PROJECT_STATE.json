@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-06T08:59:59+08:00",
+  "checked_at": "2026-10-06T09:28:15+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3127,14 +3127,14 @@
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 61,
-  "latest_own_stage": "P780 corrected-report provenance audit and fixed statistics verified",
+  "latest_own_stage": "Source metadata classifier counterexample verified; corpus not admitted",
   "latest_own_stage_complete": true,
-  "latest_own_stage_status": "completed_verified_full_batch_admission_still_blocked",
-  "latest_own_ticket": 88,
-  "own_monitor_pid": 616702,
+  "latest_own_stage_status": "completed_verified_source_admission_still_blocked",
+  "latest_own_ticket": 89,
+  "own_monitor_pid": 616828,
   "other_active_tickets": [],
-  "next_own_stage": "Close matched A/P/B all-inclusive budget, actual credits, independent data admission and32GB delivery gates; no repeat P sampling or redundant U16/U17 controls.",
-  "receipt": "03_analysis/helper_extraction_20261004/STABILITY_POSTFLIGHT_20261005.md",
+  "next_own_stage": "Check full-equivalence/no-stub route feasibility, actual quota and formal32GB; retain frozen P; no repeated model sampling.",
+  "receipt": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
     "source": "03_analysis/helper_extraction_20261004/paired_uncertainty_20261005.py",
@@ -5571,5 +5571,32 @@
       "owned_cleanup_verified": true,
       "public_report": "03_analysis/rtllm_contract_audit_20261002/U16_U17_TERMINAL_20261006.md"
     }
-  }
+  },
+  "independent_source_admission_20261006": {
+  "checked_at": "2026-10-06T09:34:00+08:00",
+  "status": "metadata_probe_complete_source_not_admitted",
+  "ticket": 89,
+  "execution_commit": "e4737d883e88f933d3b64d5014839dbb316abda3",
+  "upstream_commit": "3eea482f20c048966d54ed04c418b85e5fd4d498",
+  "source_files_verified": 5,
+  "metadata_control_cases": 4,
+  "classifier_counterexample": true,
+  "benchmark_corpus_false_acceptance_measured": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "independent_tasks_admitted": 0,
+  "full_batch_complete": false,
+  "task_bodies_opened": false,
+  "stage_elapsed_s": 0.017377471551299095,
+  "guard_elapsed_s": 0.2511797472834587,
+  "archive_sha256": "bc4d35bd931b3eff59533015567c8737d6ddbaeb7d347546c0830c4c89d1b547",
+  "archive_files_dual_verified": 17,
+  "model_unchanged": true,
+  "protected_files_unchanged": true,
+  "own_process_cleanup_verified": true,
+  "slot_released": true,
+  "own_cache_remaining": 0,
+  "report": "03_analysis/rtllm_contract_audit_20261002/SOURCE_ADMISSION_20261006.md",
+  "next": "Check feasibility of full equivalence/valid induction without generated stubs; no corpus expansion or model calls before data and actual quota admission. Keep P frozen; full32GB delivery remains unverified."
+}
 }
