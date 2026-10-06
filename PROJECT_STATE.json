@@ -1,4 +1,111 @@
 {
+  "waveform_full156_preparation_20261007": {
+    "schema": "waveform_single_factor_full156_public_preparation_v1",
+    "status": "frozen_admitted_awaiting_pr_and_fifo",
+    "goal_status": "active",
+    "goal_achieved": false,
+    "spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+    "frozen_source_count": 109,
+    "preparation_receipt_sha256": "20b3cf5c30d0abe371b3936705d32ae136c7f85cf45c673db6bb9f1c5e5f7441",
+    "postexit_admission_passed": true,
+    "strict_dependency_path_and_hash_map_equal": true,
+    "qualifying104_spec_sha256": "216637107d75156c6ad4c1db13656e6ea94f7fce225a8df9da03b7b2f6db25cb",
+    "qualifying104_audit_sha256": "b46456f68f8383f23c7bea3c192d2b797d82921fb4339c4d90f3adcd7af0405a",
+    "qualifying104_outputs": 12,
+    "qualifying104_requests": 18,
+    "qualifying104_L3": {
+      "C": 5,
+      "P": 6
+    },
+    "qualifying104_requests_by_arm": {
+      "C": 9,
+      "P": 9
+    },
+    "qualifying104_complete_archive": {
+      "sha256": "f260ae0bbe0ac133319a004a03710076597010b549f96d1cc76f4ad8d7602d35",
+      "members": 812,
+      "every_member_bound_both_ends": true
+    },
+    "new_amd_scope_controls": 7,
+    "scope_receipt_sha256": "77d42fecd65f12c99cea04b96f06c4e296fcf825173d568646bd7ff6a8d51abf",
+    "scope_archive": {
+      "sha256": "1e8a73ff3a4fe8a22a5bf03d0c78d60f10b2f4144253d13a3cb15e490b1f208d",
+      "bytes": 910656,
+      "members": 115,
+      "every_member_bound_both_ends": true
+    },
+    "old104_tests_or_collector_or_auditor_rerun": false,
+    "original_prompt_only156_admission_reused": true,
+    "advice_support_count": 1,
+    "advice_abstentions": 11,
+    "advice_skipped": 144,
+    "production_worker_sha256": "7e98fccf8a9bfe93f04ebf9b6a6783aa3a469db50c563cddf9974d94e574ca96",
+    "facts_sha256": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+    "original_production_judge_and_wire_unchanged": true,
+    "tasks": 156,
+    "arms": [
+      "C",
+      "P"
+    ],
+    "outputs": 312,
+    "max_actual_model_requests": 624,
+    "output_tokens": 8192,
+    "max_requests_per_sample": 2,
+    "repairs": 1,
+    "solver_outer_seconds": 300,
+    "judge_seconds": 300,
+    "judge_supervisor_seconds": 360,
+    "protected_group_count": 97,
+    "protected_unique_assets": 6648,
+    "immutable_anchor_groups": 95,
+    "immutable_anchor_unique_files": 6516,
+    "expected_protection_receipts": 625,
+    "historical_reference_L3": 113,
+    "goal_L3": 120,
+    "goal_weighted": 0.8,
+    "thresholds_and_guards": [
+      "Historical113 remain L3",
+      "All paired grades nondecreasing",
+      "P total requests<=C",
+      "Unchanged-grade and all historical-correct task requests<=C even when grade improves",
+      "No deadline/unconfirmed/source/tool failure",
+      "Full original archive audit required"
+    ],
+    "preparation_archive": {
+      "sha256": "8eebddea92c1be71f7134c57c7116d8e92b0f9e39ab1d31c6d66cbf943f135f5",
+      "bytes": 1099495,
+      "members": 121,
+      "every_member_bound_both_ends": true
+    },
+    "public_source_hashes": {
+      "pilot.py": "52779e18ec9e551ccd8968897e26658b5708bacc15da228991c04bf95ba17bcf",
+      "audit.py": "6ebb554ae2dd6a7456897848093ed7c2066028212f1b2529197f56749a629ad3",
+      "metrics.py": "f48143ec1b2e983d7975cdf5b2873fccef73f0405dbd0480c77aa6cb0022c353",
+      "preparation_inputs.py": "cbe197872ca1031fba499225f1e406bc28d12ae3adac3d4d10ef4fe6ea8d0d47",
+      "test_waveform_full_scope.py": "34f4b09484138acbb52b58659967f10fdf5709c090bc2c9700b6b5fe9a4d90f5",
+      "prepare_full_scope.py": "b0938b76f0ecf85c335680a20153b9cd5b3f53484705433db475dc2a279bacc3"
+    },
+    "stage_seconds_safety_cap": 43200,
+    "guard_seconds_safety_cap": 43600,
+    "slot_minutes_safety_cap": 740,
+    "safety_caps_are_not_eta": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": false,
+    "new_full_score_measured": false,
+    "adoption": false,
+    "scope": "Known156 development single factor only; no onehot/FSM/table/vector composition, independent/hidden/five-sample/deployment claim.",
+    "peer_latest_actual_read_comment": 6022514938,
+    "owner_ack_comment": 6022252865,
+    "peer_pr70_merge": "c7ba5681420741b10a2f2acba4fc5bc8b502b33e",
+    "division": "Owner prepares waveform156; peer completed bounded PR69 review and next reviews new freeze; no duplicate104 terminal execution.",
+    "next": "Reviewed merged PR and actual Git delivery, then one whole-task FIFO submission. At terminal collect and audit original evidence once.",
+    "peer_pr71_merge": "03191acea0269999cadbc00af99d16dca31b30d6",
+    "peer_pipeline28_bounded_review_accepted": true,
+    "peer_pipeline28_receipt_sha256": "30ad2188d418e5835c6cbf4ff1b0dd9e2919368b31eebdc2d87be76cd943545a",
+    "peer_pipeline28_delivery_sha256": "a832a249cc7a7cff819989c3c88140189e0772c1a6b3481290fa008fbf285b12",
+    "peer_confirmation_scope": "PR69 engineering28 source/archives only; not fresh inventory/new freeze/natural CP7 certification."
+  },
   "fsm102_onehot_pipeline28_20261007": {
     "fsm102": {
       "schema": "fsm102_original_full156_terminal_public_v1",
