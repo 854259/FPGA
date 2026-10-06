@@ -151,7 +151,7 @@ def execute(preparation, ticket_path, existing_archive=None):
                          '--source', str(source), '--archive', str(archive), '--out', str(out/'audit')], 180))
         for name, argv, cap in commands:
             assert time.monotonic() - started + cap + 12 < 300
-            record = owned['run'](argv, source, out/name, cap)
+            record = owned['run'](argv, source, out/(name+'_process'), cap)
             result['processes'][name] = record
             assert record['normal_completion'] and record['returncode'] == 0, name
             if name == 'collector':
