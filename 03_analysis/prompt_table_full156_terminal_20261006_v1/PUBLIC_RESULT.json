@@ -1,0 +1,107 @@
+{
+  "schema": "table_full156_original_terminal_public_result_v1",
+  "ticket": 90,
+  "spec_sha256": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
+  "auditor_sha256": "e02d930ca4f9fcf0a2ea7a37ee52496e002d5a75cc888c0a05dbe57dd32a16d0",
+  "audit_sha256": "bb691e96ffe900a1a23c5e581312dfe7e834c3c06e1747c204641a9f7aaaea88",
+  "archive_sha256": "717720916aeee350c3468472c9ca50318ef21b0dff84cebdd943efa1b4ef9e5f",
+  "archive_bytes": 36342571,
+  "archive_members": 11984,
+  "terminal_supervision_sha256": "8b3a7e41d8e7848dbc4433efc95ae302a55a897e545853ac42e54fc12bad95bd",
+  "expected_samples": 312,
+  "actual_model_requests": 326,
+  "received_model_responses": 326,
+  "evidence_valid": true,
+  "historical_first_reply_matches_on_three_guard_losses": {
+    "Prob143_fsm_onehot": {
+      "C": false,
+      "P": false
+    },
+    "Prob145_circuit8": {
+      "C": false,
+      "P": false
+    },
+    "Prob151_review2015_fsm": {
+      "C": false,
+      "P": false
+    }
+  },
+  "improvement_routes": {
+    "Prob057_kmap2": "mechanical_table",
+    "Prob101_circuit4": "mechanical_table",
+    "Prob102_circuit3": "mechanical_table",
+    "Prob113_2012_q1g": "mechanical_table",
+    "Prob125_kmap3": "mechanical_table",
+    "Prob140_fsm_hdlc": "model"
+  },
+  "mechanical_paired_full_repairs": 5,
+  "model_route_paired_improvements": 1,
+  "model_route_improvement_not_attributed_to_table": true,
+  "historical_losses_are_not_paired_regressions": true,
+  "changed_historical_first_replies_do_not_prove_model_cause": true,
+  "protected_groups": 52,
+  "protected_source_assets": 3724,
+  "original_source_model_primary_preserved": true,
+  "audit_model_calls": 0,
+  "audit_eda_calls": 0,
+  "new_scoring_runs": 0,
+  "goal_achieved": false,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false,
+  "adoption": false,
+  "deployment": false,
+  "next_action": "Inspect new historical first-reply changes and unchanged-grade request increases; composition scoring stays closed until preservation/cost qualification.",
+  "peer_acknowledgment": "pending",
+  "coefficients": {
+    "C": 0.7679487179487179,
+    "P": 0.7987179487179487
+  },
+  "fully_correct_by_arm": {
+    "C": 112,
+    "P": 118
+  },
+  "requests_by_arm": {
+    "C": 167,
+    "P": 159
+  },
+  "samples_by_generation_route": {
+    "C": {
+      "model": 156,
+      "mechanical_table": 0
+    },
+    "P": {
+      "model": 147,
+      "mechanical_table": 9
+    }
+  },
+  "repairs": [
+    "Prob057_kmap2",
+    "Prob101_circuit4",
+    "Prob102_circuit3",
+    "Prob113_2012_q1g",
+    "Prob125_kmap3"
+  ],
+  "improvements": [
+    "Prob057_kmap2",
+    "Prob101_circuit4",
+    "Prob102_circuit3",
+    "Prob113_2012_q1g",
+    "Prob125_kmap3",
+    "Prob140_fsm_hdlc"
+  ],
+  "regressions": [],
+  "original113_regressions": [
+    "Prob143_fsm_onehot",
+    "Prob145_circuit8",
+    "Prob151_review2015_fsm"
+  ],
+  "guard_pass": false,
+  "unchanged_task_request_cost": false,
+  "unconfirmed_attempts": 0,
+  "solve_deadlines": [],
+  "screening_eligible": false,
+  "qualified_for_goal": false,
+  "full156_evidence_valid": true,
+  "full_score_measured": true,
+  "qualified_for_new_full_regression": false
+}
