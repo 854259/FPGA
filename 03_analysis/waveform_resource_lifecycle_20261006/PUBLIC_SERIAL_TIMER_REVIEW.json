@@ -131,9 +131,9 @@
     "supervisor_terminal_state": "Z, empty cmdline; retained by PID1, not active",
     "original_failure_retained": true
   },
-  "status": "pipeline30_bounded_review_accepted_label_correction_native_score_pending",
-  "conclusion": "Accept bounded pipeline30 engineering evidence. Source/contract/qualification/cost/time/inventory checks are supported by original fake controls; one nonblocking activity-label correction is required before new freeze. Real native qualification and natural scores remain pending.",
-  "next": "Peer corrects activity label and prepares source-specific freeze, retains original105/106/107 and once-only original terminal audits. After authentic107 audit/archive success binding, separately freeze fixed C/P7; net gain with no per-task request increase may support a new156 development regression. No takeover/repeated old controls.",
+  "status": "terminal_preparation6_bounded_review_accepted_actual_terminal_pending",
+  "conclusion": "Accept bounded six-control terminal preparation evidence; no blocker found within reviewed static once-only intent/retired-process/cleanup/archive path. Actual terminal supervisor/original audit and authentic native qualification remain pending.",
+  "next": "Peer binds fresh terminal namespace and outer budget, retains original105/106/107 and once-only original terminal ownership. Reviewer next reviews formally delivered PR89 preparation. Serial activity-label correction remains due before new C/P freeze.",
   "original_tests_or_intake_reexecuted": 0,
   "new_diagnostic_processes": 1,
   "new_synthetic_inputs": 2,
@@ -658,7 +658,9 @@
       "file": "pilot.py",
       "function": "main",
       "issue": "Final activity key/text still says onehot-synthesis-stage/onehot although serial schema and scoring logic are correct.",
-      "required_before_new_freeze": "Correct human-facing factor label and bind exact new source SHA; do not rerun unrelated old controls solely for a label change."
+      "required_before_new_freeze": "Correct human-facing factor label and bind exact new source SHA; do not rerun unrelated old controls solely for a label change.",
+      "peer_accepted": true,
+      "implemented": false
     },
     "peer_ack": {
       "comment": 6025657410,
@@ -696,6 +698,133 @@
     "effective_independent_families": null,
     "adoption": false,
     "full_batch_complete": false,
-    "elapsed_read_only_seconds": 0.6586803775280714
+    "elapsed_read_only_seconds": 0.6586803775280714,
+    "peer_received_our_review": {
+      "comment": 6025962528,
+      "mail_id": "1a1132992581e1cd",
+      "sha256": "08301bfbd8c83f7102907a72d214daddaff69607b64174c84481422b78690e13",
+      "accepted_pr": 88,
+      "actual_delivery_sha256": "301efbd9e583e26fd11fe3533874be3e258167a5d765269e7f903ace13412d58",
+      "scope": "pipeline30 bounded engineering only; activity-label correction accepted for next freeze, not yet implemented."
+    }
+  },
+  "terminal_preparation_review": {
+    "reviewed_at": "2026-10-07T05:43:21.641419+08:00",
+    "scope": "PR87 six original fake terminal metadata controls and three-source static review; seven bound files, original process/stream/archive; no terminal supervisor or original audit execution",
+    "peer_pr": 87,
+    "peer_head": "802cd2a2d3c0f180d7aa7e2470e097bfd792ebee",
+    "peer_merge": "27900de9f068d6d019c40d40bd81f828bf17e19a",
+    "peer_comment": 6025768565,
+    "mail_id": "1a1131d38ba37aaf",
+    "peer_delivery_sha256": "b097ee78bae8f594d58ec50a001a2fb0ff637a54b3bc050a327adb696baa2135",
+    "review_receipt_sha256": "55c761ec4e91a17786e58925327b76f25fab326a179f48266a43377da4cf09ba",
+    "source_files": 7,
+    "public_git_files": 12,
+    "public_python_files": 3,
+    "git_and_actual_bytes_match": true,
+    "original_controls": 6,
+    "actual_test_names": [
+      "test_cleanup_release_or_source_model_drift_refuses",
+      "test_complete_metadata_admits_only_audit_eligibility_not_qualification",
+      "test_live_original_or_unknown_prior_audit_never_restarts",
+      "test_missing_or_failed_report_or_wrong_original_spec_refuses",
+      "test_native_counts_cannot_substitute_old_onehot_qualification",
+      "test_queued_running_and_failed_original_cannot_admit"
+    ],
+    "source_sha256": {
+      "terminal_gate.py": "a17bb7c8c028fb83f4ee280f917d752963aa901be0fea0649baab062f5e136a7",
+      "terminal_supervisor.py": "382f808fe6b1550785f47293ba38319e76a294ad79a5c4fe1c7cce255fdbd965",
+      "test_terminal_gate.py": "5f080616023ea64becb1065644da3a9c03188f296949a90dcf28b9bda51f4b81"
+    },
+    "original_receipt_sha256": "9a59463ee1fe7b81abc249b4abb2d4a7922eede63d8f8c6d68da0e55af588a86",
+    "process": {
+      "pid": 1595280,
+      "starttime": "859549677",
+      "unittest_reported_seconds": 0,
+      "outer_seconds": 0.12212334759533405,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining_group": [],
+      "stdout_sha256": "ea00b406ff2c97c11ad9e674923205615f81819c543abaee92748ac4b6e7b5bb",
+      "complete_sha256": "a5802bccd1b0eaaf0e59c9e9929b3908f81c178fa347f3d4aea6c9d63e2c0934"
+    },
+    "archive": {
+      "sha256": "b6f3827175620078315742f75845edd0f10b13e9e8a34f95c3c4a8a4c14828fa",
+      "bytes": 415916,
+      "members": 18,
+      "all_members_amd_and_private_local_verified": true
+    },
+    "inventory": {
+      "roots": 111,
+      "unique_files": 7556,
+      "actual_bytes_verified": true,
+      "legacy99_prefix_sha256": "3ef0f1204ac8f5d8014754fd7744b7f177b17c5843ad3b46d03fe13e6742551a",
+      "legacy_prefix_exact_reuse": true,
+      "legacy_result_not_reused_as_qualification": true
+    },
+    "original107": {
+      "spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+      "frozen_sources": 117,
+      "all_frozen_bytes_verified": true,
+      "kit_hash_only_counts": {
+        "package": 18,
+        "official": 35,
+        "tasks": 936
+      },
+      "queued_no_stage": true
+    },
+    "verified_scope": [
+      "Six fake controls reject queued/running/failed, wrong original/schema/counts, cleanup/release/source/model failures, live-original or prior-attempt metadata.",
+      "Success returns terminal_eligible only, audit_executed=false and native_qualified=false.",
+      "Static supervisor checks original runner/child birth retirement, scans live original auditor, exclusively creates global original107 intent before one owned 60s auditor call.",
+      "Original audit schema/counts/evidence/native flags and full source/command/guard archive are checked in supervisor source; actual execution is pending."
+    ],
+    "limitations": [
+      "Six controls do not execute the supervisor, real process scan, exclusive intent creation, original auditor or ZIP assembly.",
+      "A fresh terminal namespace is required: processes mkdir rejects reuse of the original pure-control directory.",
+      "Original auditor cap60 exists; actual outer wrapper/guard budget and namespace binding need prelaunch freeze.",
+      "Original missing-prefix/missing-parent prestart failures remain peer self-report, not an independently reconstructed failed process.",
+      "Historical PRIMARY equality is original receipt claim; current model identity and protected assets were independently checked.",
+      "Read-only discovery initially requested nonexistent PLAN.json; used actual PREPARATION_SCOPE and ATTEMPT, with no source/test change."
+    ],
+    "conclusion": "Accept bounded six-control terminal preparation evidence; no blocker found within reviewed static once-only intent/retired-process/cleanup/archive path. Actual terminal supervisor/original audit and authentic native qualification remain pending.",
+    "next": "Peer binds fresh terminal namespace and outer budget, retains original105/106/107 and once-only original terminal ownership. Reviewer next reviews formally delivered PR89 preparation. Serial activity-label correction remains due before new C/P freeze.",
+    "peer88_ack": {
+      "comment": 6025962528,
+      "mail_id": "1a1132992581e1cd",
+      "sha256": "08301bfbd8c83f7102907a72d214daddaff69607b64174c84481422b78690e13",
+      "accepted_pr": 88,
+      "actual_delivery_sha256": "301efbd9e583e26fd11fe3533874be3e258167a5d765269e7f903ace13412d58",
+      "scope": "pipeline30 bounded engineering only; activity-label correction accepted for next freeze, not yet implemented."
+    },
+    "pending_pr89": {
+      "pr": 89,
+      "head": "1d5dbde3d64b00dbb78bf8806644fa9d7358ca9a",
+      "merge": "1c45252684b8de0fd992c01eb5a94ba5d81b3e58",
+      "comment": 6025984508,
+      "mail_id": "1a1132b08d68a1bf",
+      "delivery_sha256": "9cc26431c61f85e467db7e3c305b3e2ef2c6ae8e03d78b213d091a2ba71fb34d",
+      "scope": "Original105 terminal six-source preparation, installation and10-member archive self-report; only mail/original-comment/delivery hash checked, not independently reviewed."
+    },
+    "live": {
+      "checked_at": "2026-10-07T05:44:02+08:00",
+      "ticket105": "running",
+      "outputs": 262,
+      "requests": 279,
+      "ticket106": "queued",
+      "ticket107": "queued",
+      "sources_handles_model_slot_match": true
+    },
+    "reviewer_test_replays": 0,
+    "reviewer_original_audit_replays": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "adoption": false,
+    "full_batch_complete": false,
+    "elapsed_read_only_seconds": 0.96363172121346
   }
 }
