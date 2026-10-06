@@ -1,4 +1,118 @@
 {
+  "onehot_vector_fsm_screen_20261006_v1": {
+    "status": "vector95_fsm96_qualified_for_individual_full_onehot_pure_only",
+    "report": "03_analysis/onehot_vector_fsm_screen_20261006_v1/README.md",
+    "schema": "onehot_graph_pure_vector95_fsm96_public_v1",
+    "onehot": {
+      "producer_sha256": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+      "keyword_sha256": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "pure_receipt_sha256": "60c5d359dc830726ffdaef195eb69890cfcbfb3996b651d052a3e9133c7a9683",
+      "controls": 14,
+      "passed": true,
+      "source_assets": 4,
+      "raw_prompt_interface_only": true,
+      "ast_import_and_input_boundary_verified": true,
+      "original_intake_tasks": 156,
+      "emitted": 1,
+      "abstained": 155,
+      "intake_receipt_sha256": "8ea1afdb4a334a6db42925d5a8bceeed8e95ac6a2e7623f2482080b6bebcd0d5",
+      "model_calls": 0,
+      "eda_calls": 0,
+      "native_qualified": false,
+      "formal_qualified": false,
+      "score_gain": false,
+      "semantics": "OR contributions from all active states; no state storage",
+      "limits": [
+        "Strict complete grammar only; unsupported text returns to original model path.",
+        "Synthetic binary controls and pure original intake do not prove native, original judge, hidden or scoring success."
+      ]
+    },
+    "vector95": {
+      "rows": 12,
+      "actual_model_requests": 9,
+      "coefficients": {
+        "C": 0.4666666666666666,
+        "P": 0.7333333333333334
+      },
+      "requests_by_arm": {
+        "C": 6,
+        "P": 3
+      },
+      "repair_count": 2,
+      "regressions": 0,
+      "guard_pass": true,
+      "unchanged_task_request_cost": true,
+      "screening_eligible": true,
+      "qualified_for_new_full_regression": true,
+      "audit_sha256": "da0d63e6186e78d25ca8c846b9a7abba56f577effe213ae9afe8a063e43baf7c",
+      "archive_sha256": "e9577a2cf6c6729e0dd5532a42f25e21aa4648541555e07b7ada500d2486f12b",
+      "archive_bytes": 2847049,
+      "archive_members": 590,
+      "protected_groups": 55,
+      "protected_source_assets": 3732,
+      "full_score_measured": false,
+      "independent_validation_qualified": false,
+      "five_sample_qualified": false,
+      "adoption": false
+    },
+    "fsm96": {
+      "rows": 16,
+      "actual_model_requests": 20,
+      "coefficients": {
+        "C": 0.8,
+        "P": 1.0
+      },
+      "requests_by_arm": {
+        "C": 11,
+        "P": 9
+      },
+      "repair_count": 2,
+      "regressions": 0,
+      "guard_pass": true,
+      "unchanged_task_request_cost": true,
+      "screening_eligible": true,
+      "qualified_for_new_full_regression": true,
+      "audit_sha256": "086ca9bbd1c15dc0708c97d904a987102ee64f32edf4620fc3f4707e61f6854a",
+      "archive_sha256": "fdec4b9e90652a4caa4ae075d58760df01de7547e2e3321fee4060a18ee67eae",
+      "archive_bytes": 3660337,
+      "archive_members": 938,
+      "protected_groups": 56,
+      "protected_source_assets": 3734,
+      "full_score_measured": false,
+      "independent_validation_qualified": false,
+      "five_sample_qualified": false,
+      "adoption": false
+    },
+    "failures_preserved": [
+      "Onehot notice identifier rejected before plan write/test launch; unchanged source first tests after physical absence inspection.",
+      "Vector95 terminal helper protection path error before any original collector/auditor; failed two assets preserved, new helper corrected only protection and added failure guard.",
+      "FSM96 readonly observation timed out; same physical supervisor/outputs read again, no execution restart.",
+      "Old live-only FSM96 reader rejected retired monitor; terminal-aware same-handle read verified actual terminal."
+    ],
+    "original_judge_and_budget_unchanged": true,
+    "new_scoring_runs": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "original_table90_quality_gate_still_failed": true,
+    "composition_score_entry_closed": true,
+    "goal": {
+      "status": "active",
+      "fully_correct_at_least": 120,
+      "weighted_score_at_least": 0.8,
+      "preserve_original_correct": true
+    },
+    "latest_full_score": {
+      "fully_correct": 118,
+      "tasks": 156,
+      "weighted_score": 0.7987179487179487,
+      "qualified_for_goal": false
+    },
+    "independent_validation_qualified": false,
+    "five_sample_qualified": false,
+    "adoption": false,
+    "deployment": false,
+    "peer_acknowledgment": "pending"
+  },
   "historical_guard_drift_native94_review_20261006_v1": {
     "status": "same_request_different_first_reply_verified_native94_failed_released",
     "report": "03_analysis/historical_guard_drift_native94_review_20261006_v1/README.md",
