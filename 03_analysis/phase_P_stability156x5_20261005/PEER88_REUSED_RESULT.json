@@ -1,0 +1,36 @@
+{
+  "schema": "peer88_actual_stability_statistics_reuse_independent_review_v1",
+  "source_commit": "98ab03916e9f2950b588f7975b9109f985548456",
+  "archive_sha256": "afb7f260adda76247e83436b40bc59796d0f5eb6dabac92dd7aaa631ea19e5c1",
+  "archive_members": 27110,
+  "case_safe_physical_files": 29,
+  "audit_sha256": "909b1d2c12adfc4d53952884b9b86989afbf23f152eb45c779e6afcdd981cdea",
+  "statistics_sha256": "0b1af1fd4704372dfbc1b5be44712b03fcfa8728703f26ecf367e77d668396b6",
+  "original_auditor_sha256": "4004a32ef28d5b32513ebc5cd762fa959ead197a7005176c36602da0dd92f612",
+  "executed_auditor_sha256": "3eb3ae5454d1080635b02bad9eec050c774efeb63cb3d28b38e2b6331eb6ef89",
+  "report_repair_only": true,
+  "ordered_rows": 780,
+  "actual_requests": 844,
+  "weighted_quality_mean": 0.768974358974359,
+  "fully_correct_per_repeat": [
+    113,
+    112,
+    112,
+    112,
+    112
+  ],
+  "means_per_repeat": [
+    0.773076923076923,
+    0.7679487179487179,
+    0.7679487179487179,
+    0.7679487179487179,
+    0.7679487179487179
+  ],
+  "statistics_reused": true,
+  "no_duplicate_audit": true,
+  "independent_unseen_tasks": 0,
+  "formal_five_sample_qualified": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "project_calls_in_this_review": 0
+}
