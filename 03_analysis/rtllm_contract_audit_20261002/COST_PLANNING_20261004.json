@@ -41,5 +41,39 @@
     "RTLLM cost is extrapolated from VerilogEval; it may differ substantially.",
     "Independent source tasks and their cost are excluded; no quota sufficiency claim.",
     "This is capacity planning, not authorization to purchase resources or a completed full experiment."
-  ]
+  ],
+  "stability780_update_20261006": {
+    "checked_at": "2026-10-06T08:58:21.198318+08:00",
+    "source_statistics_sha256": "0b1af1fd4704372dfbc1b5be44712b03fcfa8728703f26ecf367e77d668396b6",
+    "observed_P780_stage_seconds": 37646.47655764222,
+    "observed_P780_stage_hours": 10.457354599345061,
+    "observed_P780_solver_seconds": 16449.656637143344,
+    "observed_P780_recorded_judge_seconds": 20855.2,
+    "observed_P780_requests": 844,
+    "observed_original_archive_bytes": 43258550,
+    "observed_original_archive_uncompressed_bytes": 132670529,
+    "scenario_only": {
+      "named_development_tasks": 185,
+      "finite_rtllm_tasks": 29,
+      "blocked_rtllm_unscored": 15,
+      "arms": 3,
+      "samples_per_arm": 5,
+      "outputs": 2775,
+      "calls_ceiling_A2_P2_B1": 4625,
+      "equal_P_wall_extrapolation_hours": 37.204050016900695
+    },
+    "not_a_budget": true,
+    "not_a_launch_authorization": true,
+    "full_delivery_end_to_end_seconds": null,
+    "unresolved": [
+      "Matched archived A and official B full timing unmeasured",
+      "RTLLM cost is not transferable from VerilogEval without evidence",
+      "Independent unseen materials admitted:0; family independence unknown",
+      "Actual credits and full wall-clock quota not verified",
+      "Formal32GB and full delivery checks incomplete"
+    ],
+    "next_gate": "Freeze all-inclusive protocol only after data use/admission, actual quota and all wall-clock components verified; do not rerun P for a better score",
+    "new_model_calls": 0,
+    "new_eda_calls": 0
+  }
 }
