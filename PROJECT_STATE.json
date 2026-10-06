@@ -54,7 +54,7 @@
     "five_sample_qualified": false,
     "adoption": false,
     "deployment": false,
-    "next_action": "Inspect new historical first-reply changes and unchanged-grade request increases; composition scoring stays closed until preservation/cost qualification.",
+    "next_action": "Inspect changed historical first replies and historical-correct task140 repair request increase; no same-grade request increase observed. Composition scoring stays closed until original preservation/cost qualification.",
     "peer_acknowledgment": "pending",
     "coefficients": {
       "C": 0.7679487179487179,
@@ -107,7 +107,18 @@
     "qualified_for_goal": false,
     "full156_evidence_valid": true,
     "full_score_measured": true,
-    "qualified_for_new_full_regression": false
+    "qualified_for_new_full_regression": false,
+    "unchanged_grade_request_cost_violations": [],
+    "historical_guard_request_cost_violations": [
+      {
+        "task": "Prob140_fsm_hdlc",
+        "C_requests": 1,
+        "P_requests": 2,
+        "C_level": 1,
+        "P_level": 3
+      }
+    ],
+    "composite_cost_field_contains_two_distinct_requirements": true
   },
   "table_vector_comparison_worker_20261006_v1": {
     "status": "worker12_AMD_passed_score_stage_full_audit_pending",
@@ -420,7 +431,6 @@
       "evaluation_resubmitted": false
     }
   },
-
   "cp_stage_schema_fix_20261006": {
     "status": "amd8_end_to_end_passed_old92_93_cancelled_before_start",
     "report": "03_analysis/cp_stage_schema_fix_20261006/README.md",
