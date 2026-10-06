@@ -1,4 +1,97 @@
 {
+  "terminal_external_budget_20261007": {
+    "schema": "terminal_external_budget_public_v1",
+    "goal_status": "active",
+    "goal_achieved": false,
+    "public_source_hashes": {
+      "terminal_outer.py": "569b70a5881ae97267e4035a71a3371d753b3487bbf0efd4f09c3d838bc993b1",
+      "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+      "owned_tree_cleanup.py": "5dd37bb39db4616b3411a51878124987ce51f0a289174b81dad0d81e34b134ad",
+      "check_external_budget.py": "766f588ad66b3e3c475688b3668b484fa7e153cf613ae70adddcfd371822df1f",
+      "monitor_terminal.py": "d521dc841bc6e20c0d1e8412cb1085a46fb9344c1c941da9410de05a7b59747b"
+    },
+    "public_source_cloud_map": {
+      "terminal_outer.py": "/workspace/team/runs/fpga_owner/terminal_external_budget_pure_20261007_v1/terminal_outer.py",
+      "bounded_owned_exec.py": "/workspace/team/runs/fpga_owner/terminal_external_budget_pure_20261007_v1/bounded_owned_exec.py",
+      "owned_tree_cleanup.py": "/workspace/team/runs/fpga_owner/terminal_external_budget_pure_20261007_v1/owned_tree_cleanup.py",
+      "check_external_budget.py": "/workspace/team/runs/fpga_owner/terminal_external_budget_pure_20261007_v1/check_external_budget.py",
+      "monitor_terminal.py": "/workspace/team/runs/fpga_owner/terminal_external_monitor_preparation_20261007_v1/monitor_terminal.py"
+    },
+    "controls": 4,
+    "control_receipt_sha256": "26944060b48cf97de3e84b4c464052c4b8a76ff65381d2130e14a5c785bc86ec",
+    "control_archive": {
+      "sha256": "42d9054b86983a7ce9ccf7d2a4102b03d4028810277c61a1d5499637996be8e0",
+      "members": 57,
+      "every_member_bound_both_ends": true
+    },
+    "control_scope": "New real fake-terminal boundary contexts; scaled1/.4/1.5/.4s caps, not450/120s duration stress; excessive cleanup is explicitly injected fake callback, production never passes it",
+    "control_cases": [
+      {
+        "label": "final-write-before-real-exit",
+        "passed": true,
+        "subject_passed": true,
+        "elapsed_s": 0.27900764904916286,
+        "deadline_expired": false,
+        "returncode": 0,
+        "leader_reaped": true,
+        "owned_cleanup_verified": true
+      },
+      {
+        "label": "post-finish-hang-rejected",
+        "passed": true,
+        "subject_passed": false,
+        "elapsed_s": 0.28751344978809357,
+        "deadline_expired": false,
+        "returncode": -9,
+        "leader_reaped": true,
+        "owned_cleanup_verified": true
+      },
+      {
+        "label": "escaped-session-adopted-cleanup",
+        "passed": true,
+        "subject_passed": true,
+        "elapsed_s": 0.16156495176255703,
+        "deadline_expired": false,
+        "returncode": 0,
+        "leader_reaped": true,
+        "owned_cleanup_verified": true
+      },
+      {
+        "label": "cleanup-overrun-full-deadline-rejected",
+        "passed": true,
+        "subject_passed": false,
+        "elapsed_s": 0.40037266351282597,
+        "deadline_expired": true,
+        "returncode": 0,
+        "leader_reaped": true,
+        "owned_cleanup_verified": true
+      }
+    ],
+    "preparation_root": "/workspace/team/runs/fpga_owner/terminal_external_monitor_preparation_20261007_v1",
+    "preparation_receipt_sha256": "4f0e10dfe508c5755f53fa4c43c8d97f791dcd5a3ea3ce218edc94c1c1f32e44",
+    "preparation_archive": {
+      "sha256": "ec8016a40147716d3a7256b2037fbf75ca5c5f99c25552a48174a63b843fc439",
+      "members": 11,
+      "every_member_bound_both_ends": true
+    },
+    "monitor_source_assets": 7,
+    "protected_roots": 117,
+    "protected_files": 7631,
+    "original_controls_replayed": 0,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_fifo": false,
+    "monitor_executed": false,
+    "original_collectors_executed": false,
+    "original_auditors_executed": false,
+    "natural_score": false,
+    "native_qualified": false,
+    "adoption": false,
+    "original105_106_107_sources_unchanged": true,
+    "once_intents_preserved": true,
+    "observer_receipt_does_not_prove_observer_exit": true,
+    "next_gate": "Exact installed observer and original terminal manifests; original terminal/release confirmation; one launch; verify observer retirement plus original child actual exit/reap, all adopted descendants and final receipts/archive under450/450/120. All current original launchers remain held pending adaptation."
+  },
   "terminal_complete_process_budget_hold_20261007": {
     "schema": "terminal_complete_process_budget_gap_hold_v1",
     "held": true,
