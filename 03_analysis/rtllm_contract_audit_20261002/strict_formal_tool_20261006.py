@@ -126,10 +126,18 @@ def main():
     ap.add_argument("--wheels", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--resource-check", type=Path, required=True)
+    ap.add_argument("--plan", type=Path, required=True)
+    ap.add_argument("--plan-sha256", required=True)
     args = ap.parse_args()
     started = time.monotonic()
-    if sys.platform != "linux" or not json.loads(args.resource_check.read_text()):
+    if sys.platform != "linux" or not json.loads(args.resource_check.read_text()).get("resource_idle"):
         raise RuntimeError("AMD Linux resource admission required")
+    plan_raw = args.plan.read_bytes()
+    if hashlib.sha256(plan_raw).hexdigest() != args.plan_sha256:
+        raise RuntimeError("frozen plan drift")
+    plan = json.loads(plan_raw)
+    if hashlib.sha256(Path(__file__).read_bytes()).hexdigest() != plan["source_sha256"]:
+        raise RuntimeError("frozen source drift")
     if shutil.disk_usage(args.out.parent).free < 2 * 1024**3:
         raise RuntimeError("less than 2 GiB free before isolated admission")
     # A failed induction step alone is not a reachable counterexample; bounded success
