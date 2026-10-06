@@ -1,0 +1,84 @@
+{
+  "schema": "waveform_first_request_cp6_public_preparation_v1",
+  "evidence": "Actual AMD controls, frozen source admission and complete byte-bound private archives; natural score not measured",
+  "baseline_full_correct": 113,
+  "baseline_weighted": 0.7743589743589744,
+  "goal_full_correct_at_least": 120,
+  "goal_weighted_at_least": 0.8,
+  "previous_goal_turn_classification": "Previous goal clarification was no progress; current continuation completes new score/evidence integration,23 AMD controls and actual89-source freeze",
+  "new_boundary_controls": 21,
+  "new_pipeline_controls": 2,
+  "earlier_controls_reused": 42,
+  "total_distinct_controls": 65,
+  "boundary_receipt_sha256": "db7afc168f34a4b8dd9147efd8b95ddf511539d540b9e9ec907732c96d156c35",
+  "pipeline_receipt_sha256": "ac81671086dbc107881cf97e2dc90079a0481953a6553caa9db1aec7cee95806",
+  "source_assets": 89,
+  "spec_sha256": "29245c3265c0ed7f9567d78ee94bdc0d05e66d2d31fdcfcf95e31fbd4dd4a5da",
+  "preparation_receipt_sha256": "a327b9ab05841a0f6aaa7da8a30c43709a579511f99eed77ce2800d25304d21c",
+  "postexit_admission_sha256": "f8de0fd428a7aa70e70760b6425975c3630d227eb5f55ad31682bd328238ca4c",
+  "archives": {
+    "waveform_cp6_boundary_controls_20261006_v1": {
+      "sha256": "f3d0a13ea07c0f9a44270502e70851ca04d460398b7fca7b9da623f1792cda50",
+      "bytes": 317427,
+      "members": 95,
+      "all_members_bound": true
+    },
+    "waveform_cp6_pipeline_controls_20261006_v1": {
+      "sha256": "83f2c2661485a63986b44833b799849fe69027f5e5e9ff04e3e6411e69e36817",
+      "bytes": 317867,
+      "members": 96,
+      "all_members_bound": true
+    },
+    "waveform_first_request_cp6_20261006_v1": {
+      "sha256": "a777097226334c45940f1b00e2127d6f4b7b6b1697194c50e6959c992fb77938",
+      "bytes": 487703,
+      "members": 102,
+      "all_members_bound": true
+    }
+  },
+  "protected_groups": 71,
+  "protected_source_assets": 4588,
+  "tasks": 6,
+  "target_tasks": 1,
+  "correct_guard_tasks": 5,
+  "expected_samples": 12,
+  "max_actual_model_requests": 24,
+  "per_sample": {
+    "output_tokens": 8192,
+    "max_requests": 2,
+    "repairs": 1,
+    "solver_s": 300,
+    "judge_s": 300,
+    "judge_supervisor_s": 360
+  },
+  "safety_caps": {
+    "stage_s": 9000,
+    "guard_s": 9400,
+    "slot_minutes": 160,
+    "eta": false
+  },
+  "gates": [
+    "At least one target full repair and weighted P>C",
+    "All paired grades nondecreasing and all5 guards bothL3",
+    "P total requests<=C; same grades and all original-correct selected tasks no extra requests",
+    "No deadline/unconfirmed/tool/source failure; independent original raw-wire/repair/native/judge archive audit"
+  ],
+  "arm_difference": "P only supported first user text gains source waveform observations; C/abstention/second repair exact original wire",
+  "prior44_sources_and_common_worker_preserved": true,
+  "original_judge_preserved": true,
+  "raw_wire_bin_archive_bound": true,
+  "actual_new_model_calls": 0,
+  "actual_new_eda_calls": 0,
+  "new_fifo": false,
+  "submitted": false,
+  "score_measured": false,
+  "qualified_for_new_full_regression": false,
+  "adoption": false,
+  "deployment": false,
+  "failure_retained": "Initial readback helper omitted zipfile import after post-exit gate succeeded; new observer reads same gate/archive and preserves all89 frozen sources, no test/model/EDA/submit repeat.",
+  "peer_latest_reviewed_commit": "f67f4805aaacee3b5532971d39aecdac3529fd3e",
+  "peer_direction": "source/interface/dependency provenance; independent of first-request observation",
+  "peer_acknowledgment": "pending",
+  "next_step": "After reviewed PR and owned shared Git receipt, submit this fixed CP6 once via whole-task FIFO; terminal original archive audit decides qualification; no gain/regression means revise or abandon, no redraw",
+  "quota_stop_used_percent": 97
+}

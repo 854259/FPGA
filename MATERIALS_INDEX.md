@@ -1,3 +1,7 @@
+## 波形CP6实际封存与新增AMD23项检查
+
+- 公开准备与全部证据SHA：[波形CP6准备](03_analysis/waveform_cp6_preparation_20261006_v1/README.md)、[公开元数据](03_analysis/waveform_cp6_preparation_20261006_v1/PUBLIC_PREPARATION.json)。89源/完整私有档案已绑定，12行固定对照尚未入队；不作为提分/全量/部署证据。
+
 ## 2026-10-06 波形请求接入
 
 - [原请求与原worker构造验证、后续评分边界](03_analysis/waveform_first_request_integration_20261006_v1/README.md)
