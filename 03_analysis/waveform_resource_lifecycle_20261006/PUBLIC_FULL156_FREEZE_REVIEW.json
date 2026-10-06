@@ -356,7 +356,7 @@
       }
     },
     "conclusion": "Accept bounded provenance of original three controls and installed sources; complete process-budget qualification remains open. No actual terminal audit or score qualification.",
-    "next": "Peer closes new outer terminal budget before original collector/auditor once; then independent final provenance and root-cause review. Continue existing106/107 only. No expansion/adoption from preliminary summary.",
+    "next": "Peer completes new immutable missing-error gate repair, launch/read source binding and necessary new-context evidence; then each original collector/auditor once under complete450/450/120 cap. Reviewer receives terminal provenance, pairing and root-cause evidence. No repeated controls/FIFO, no failed105 expansion.",
     "limits": [
       "Two negative controls used20.2s total/.2s work cutoff, not120/450s duration stress.",
       "Three new terminal supervisors and original collectors/auditors were not executed by these controls.",
@@ -383,7 +383,14 @@
       "new_fifo": 0
     },
     "adoption": false,
-    "full_batch_complete": false
+    "full_batch_complete": false,
+    "peer_complete_delivery_accepted": {
+      "comment": 6026894490,
+      "mail_id": "1a1136a3e67f56df",
+      "accepted_pr95_delivery": "16e49eb7e1a84d4cfdf6150c0e8f663b5614d17225500028d669c21e34b9a761",
+      "accepted_pr97_delivery": "b9d3a75abce1d268e174dfa1d081c12a9e7a64389fc8e77c1a8d5c3c64ab429c",
+      "scope": "PR95 work-deadline/source scope and PR97 completed-summary/recorded-exit intake; not original audit or adoption."
+    }
   },
   "generation_exit_intake": {
     "schema": "wave105_generation_exit_bounded_intake_v1",
@@ -479,7 +486,7 @@
       "full_pr95_delivery_acknowledged": false,
       "launcher_HOLD_source_not_independently_read": true
     },
-    "next": "Peer closes new outer terminal budget before original collector/auditor once; then independent final provenance and root-cause review. Continue existing106/107 only. No expansion/adoption from preliminary summary.",
+    "next": "Peer completes new immutable missing-error gate repair, launch/read source binding and necessary new-context evidence; then each original collector/auditor once under complete450/450/120 cap. Reviewer receives terminal provenance, pairing and root-cause evidence. No repeated controls/FIFO, no failed105 expansion.",
     "new_model_calls": 0,
     "new_eda_calls": 0,
     "new_tests": 0,
@@ -491,6 +498,167 @@
     "review_receipt_sha256": "140abb442c847180acac2591a3a0babdd0897c5fb7e2e7c4f727eb6e4661294f",
     "historical_L3_regressions_reported_count": 2,
     "interpretation": "Preliminary completed-summary intake: runtime completion does not imply acceptance. Total candidate requests increase, one improved historically correct task costs more, historical protection and120/.80 thresholds fail. Full provenance and algorithmic root cause await original terminal audit.",
-    "gate_root_cause_scope": "Frozen acceptance gates only; no assertion about underlying RTL/model mechanism without original provenance review."
+    "gate_root_cause_scope": "Frozen acceptance gates only; no assertion about underlying RTL/model mechanism without original provenance review.",
+    "peer_received_our_review": {
+      "comment": 6026894490,
+      "mail_id": "1a1136a3e67f56df",
+      "accepted_pr95_delivery": "16e49eb7e1a84d4cfdf6150c0e8f663b5614d17225500028d669c21e34b9a761",
+      "accepted_pr97_delivery": "b9d3a75abce1d268e174dfa1d081c12a9e7a64389fc8e77c1a8d5c3c64ab429c",
+      "scope": "PR95 work-deadline/source scope and PR97 completed-summary/recorded-exit intake; not original audit or adoption."
+    }
+  },
+  "external_terminal_budget_review": {
+    "schema": "peer98_external_budget_bounded_review_v1",
+    "checked_at": "2026-10-07T07:00:32.995538+08:00",
+    "peer_pr": 98,
+    "peer_head": "e1f523712fb6f7e8efd33231bc4cabbaf8556e2c",
+    "peer_merge": "2c08360957e7000ab8063ed0ce4aa46efe188bdb",
+    "peer_comment": 6026894490,
+    "mail_id": "1a1136a3e67f56df",
+    "peer_delivery_sha256": "bace9b4497f8b87f1227b225be75ead30c224714d83ccc5d0b039af8e856c61a",
+    "scope": "Four scaled real fake-terminal controls, static monitor preparation, original summary/namespace intake; not original audits, full-budget runtime or adoption.",
+    "control_source_files": 8,
+    "monitor_source_files": 7,
+    "public_files": 14,
+    "public_python_files": 5,
+    "control_receipt_sha256": "26944060b48cf97de3e84b4c464052c4b8a76ff65381d2130e14a5c785bc86ec",
+    "preparation_receipt_sha256": "4f0e10dfe508c5755f53fa4c43c8d97f791dcd5a3ea3ce218edc94c1c1f32e44",
+    "original_control_process": {
+      "pid": 1653771,
+      "starttime": "860037632",
+      "elapsed_s": 1.2537966649979353,
+      "stdout_sha256": "a725562114962c056c6a4f1668ba958680e73c621bb8bf9ea122d0a2a3d4bd7a",
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true
+    },
+    "cases": [
+      {
+        "label": "final-write-before-real-exit",
+        "total_cap_s": 1,
+        "elapsed_s": 0.27900764904916286,
+        "subject_passed": true,
+        "deadline_expired": false,
+        "returncode": 0,
+        "cleanup_verified": true
+      },
+      {
+        "label": "post-finish-hang-rejected",
+        "total_cap_s": 0.4,
+        "elapsed_s": 0.28751344978809357,
+        "subject_passed": false,
+        "deadline_expired": false,
+        "returncode": -9,
+        "cleanup_verified": true
+      },
+      {
+        "label": "escaped-session-adopted-cleanup",
+        "total_cap_s": 1.5,
+        "elapsed_s": 0.16156495176255703,
+        "subject_passed": true,
+        "deadline_expired": false,
+        "returncode": 0,
+        "cleanup_verified": true
+      },
+      {
+        "label": "cleanup-overrun-full-deadline-rejected",
+        "total_cap_s": 0.4,
+        "elapsed_s": 0.40037266351282597,
+        "subject_passed": false,
+        "deadline_expired": true,
+        "returncode": 0,
+        "cleanup_verified": true
+      }
+    ],
+    "archives": [
+      {
+        "name": "CONTROL_EVIDENCE.zip",
+        "sha256": "42d9054b86983a7ce9ccf7d2a4102b03d4028810277c61a1d5499637996be8e0",
+        "bytes": 382896,
+        "members": 57,
+        "every_member_bound_both_ends": true
+      },
+      {
+        "name": "PREPARATION_EVIDENCE.zip",
+        "sha256": "ec8016a40147716d3a7256b2037fbf75ca5c5f99c25552a48174a63b843fc439",
+        "bytes": 359534,
+        "members": 11,
+        "every_member_bound_both_ends": true
+      }
+    ],
+    "protected_roots": 117,
+    "protected_unique_files": 7631,
+    "old115_groups_preserved": true,
+    "source_reuse": {
+      "owned_exec_reverse_single_cap_exact": true,
+      "original106_cleanup_three_functions_source_and_ast_exact": true,
+      "old_controls_replayed": 0
+    },
+    "actual_monitor_executed": false,
+    "actual_complete_process_budget_verified": false,
+    "observer_receipt_does_not_prove_own_exit": true,
+    "scope_limit": "Caps1/.4/1.5/.4 seconds are scaled contexts. Cleanup overrun uses an explicitly fake callback. Production450/450/120 and launch/read/observer retirement remain unverified.",
+    "prestart_hold": {
+      "comment": 6026938442,
+      "receipt_sha256": "895114177b3c1272e5b920830f2c66fb5bd81c6de1c5991cb6eebb9ceca1d00b",
+      "observed_successful_105_and_106_have_no_error_key": true,
+      "original_child_observer_intent_namespaces_absent": true,
+      "launcher_exception_and_local_HOLD_source": "peer reported; no independent Windows launcher traceback or source read",
+      "next_minimal_change": "Peer source-specific report.get(error) gate with complete/passed/schema/spec/counts preserved, new gate controls and bindings before original once-only terminal launch."
+    },
+    "peer_acceptance": {
+      "comment": 6026894490,
+      "mail_id": "1a1136a3e67f56df",
+      "accepted_pr95_delivery": "16e49eb7e1a84d4cfdf6150c0e8f663b5614d17225500028d669c21e34b9a761",
+      "accepted_pr97_delivery": "b9d3a75abce1d268e174dfa1d081c12a9e7a64389fc8e77c1a8d5c3c64ab429c",
+      "scope": "PR95 work-deadline/source scope and PR97 completed-summary/recorded-exit intake; not original audit or adoption."
+    },
+    "original_execution_snapshot": {
+      "105": {
+        "state": "completed",
+        "spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+        "source_files": 109,
+        "summary_sha256": "02ffca339afa40c442f93767e6b0a528b65b68bd41ab35edeb4977d98200ae74",
+        "outputs": 312,
+        "requests": 335,
+        "complete": true,
+        "error_field_present": false,
+        "adoption": false
+      },
+      "106": {
+        "state": "completed",
+        "spec_sha256": "d4cc6b511450e4cbc19e95105f2479d11c5bdd7166c6782043b9da7decda70d2",
+        "source_files": 126,
+        "summary_sha256": "1ae79af06c8d4ebc2bc2d641709761e44928466007603fc2a93cea279ee8113c",
+        "outputs": 14,
+        "requests": 19,
+        "complete": true,
+        "error_field_present": false,
+        "adoption": false
+      },
+      "107": {
+        "state": "completed",
+        "spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+        "source_files": 117,
+        "summary_sha256": "7c99177b80b7d8f90a439f2376d52081a3a14a91e559ae2238a8029d2d0db51f",
+        "outputs": 12,
+        "requests": 0,
+        "complete": true,
+        "error_field_present": true,
+        "adoption": false
+      }
+    },
+    "next": "Peer completes new immutable missing-error gate repair, launch/read source binding and necessary new-context evidence; then each original collector/auditor once under complete450/450/120 cap. Reviewer receives terminal provenance, pairing and root-cause evidence. No repeated controls/FIFO, no failed105 expansion.",
+    "review_receipt_sha256": "113c2c2eca0c52fd5ab677b93b5ae7c35eea9536308701d395478af33deb0c49",
+    "read_only_seconds": 1.0032346826046705,
+    "new_tests": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "original_collector_or_auditor_runs": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "adoption": false,
+    "full_batch_complete": false
   }
 }
