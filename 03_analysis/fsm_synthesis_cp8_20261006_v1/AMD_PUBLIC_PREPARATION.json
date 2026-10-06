@@ -1,0 +1,113 @@
+{
+  "schema": "fsm_cp_reviewed_pure_preparation_metadata_v1",
+  "actual_amd_checks": 35,
+  "worker_metrics_source_checks": 24,
+  "audit_controls": 11,
+  "source_assets_each_packet": 105,
+  "fixed_tasks": 8,
+  "fixed_cp_rows": 16,
+  "targets": [
+    "Prob142_lemmings2",
+    "Prob152_lemmings3"
+  ],
+  "guard_numbers": [
+    45,
+    54,
+    71,
+    115,
+    127,
+    138
+  ],
+  "native_audit_sha256": "2456e768203613114803a8897be00e9c309e9bb8994f6e6f8ce3189b238071bc",
+  "native_producer_source_sha256": "0bddeb3480e260bcd9f23e68e215510c9894e4d56e1ae3cb99662312b7b2160d",
+  "worker_and_metrics_byte_unchanged_between_check_suites": true,
+  "original_model_fallback_byte_unchanged": true,
+  "original_judge_and_x_z_checks_unchanged": true,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "frozen": false,
+  "submitted": false,
+  "new_score_measured": false,
+  "adoption": false,
+  "all156_producer_admission_pending": true,
+  "freeze_and_environment_admission_pending": true,
+  "stage_and_audit_source_written": true,
+  "scoped_pipeline_not_yet_run": true,
+  "expected_protected_receipts": 33,
+  "planned_protection_groups": 24,
+  "planned_protected_source_assets": 1628,
+  "planned_stage_cap_s": 12000,
+  "planned_guard_cap_s": 12400,
+  "planned_whole_task_slot_minutes": 210,
+  "limits": [
+    "35 synthetic evidence/worker/source controls do not measure RTL task quality",
+    "Native84 establishes finite qualification only; original judge is unchanged",
+    "Separate FSM factor; table full156 FIFO90 remains unchanged and running",
+    "All156 admission and final capture/freeze must pass before queue submission"
+  ],
+  "budget": {
+    "tokens": 8192,
+    "max_requests_per_row": 2,
+    "repairs": 1,
+    "absolute_solve_s": 300
+  },
+  "screen_gate": "At least one target newL3; all six guards bothL3; no paired grade regression, deadlines/unconfirmed/tool/source errors; P total requests and unchanged-pair request costs <=C; complete16 provenance audit.",
+  "checks": [
+    {
+      "schema": "fsm_cp_adapter_actual_amd_pure_checks_v1",
+      "identity": {
+        "pid": 634184,
+        "starttime": "852559638",
+        "pgid": 634184,
+        "sid": 634184,
+        "command_sha256": "1241f7909cd10b8795a6e324323a0d0bf11986c41e52af484067b9f272e7e4f3"
+      },
+      "returncode": 0,
+      "elapsed_s": 0.3020016588270664,
+      "expected_methods": 24,
+      "actual_methods": 24,
+      "passed": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "52f761ec7d52f1edfcf6f847cfae9260f06b790c70ee29cb84315371f0dda2dd",
+      "packet_sha256": "2c44548942ba68c0d58bc17aa7ffef566cc0b6ff08f28521cbdd1671718967ed",
+      "source_assets": 105,
+      "source_unchanged": true,
+      "protection_model_primary_unchanged": true,
+      "full156_untouched": true,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "new_fifo": false,
+      "draft_not_runnable": true,
+      "stage_and_provenance_audit_still_pending": true
+    },
+    {
+      "schema": "fsm_cp_pipeline_actual_amd_audit_controls_v2",
+      "identity": {
+        "pid": 639136,
+        "starttime": "852578059",
+        "pgid": 639136,
+        "sid": 639136,
+        "command_sha256": "57814b6b51bd1d3adf36942a51ac3e833235065628e37e72a7ff235abc12d8c6"
+      },
+      "returncode": 0,
+      "elapsed_s": 0.4526234343647957,
+      "expected_methods": 11,
+      "actual_methods": 11,
+      "passed": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5045c88934057584eed5e8b7b4677b0fdae92d4630eb5a7862cd1ad83a329b74",
+      "packet_sha256": "ecec387681a1c4e5e098a372a25183df7d61440a057b9c966968be684849af6b",
+      "source_assets": 105,
+      "source_unchanged": true,
+      "protection_model_primary_unchanged": true,
+      "full156_untouched": true,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "new_fifo": false,
+      "draft_not_runnable": true,
+      "stage_and_provenance_audit_still_pending": true
+    }
+  ],
+  "first24_notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6007783210",
+  "peer_acknowledgment": "pending"
+}
