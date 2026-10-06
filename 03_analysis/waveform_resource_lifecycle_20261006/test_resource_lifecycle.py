@@ -128,4 +128,3 @@ receipt = dict(schema="resource_lifecycle_generic_controls_v1", passed=result.wa
                scope="Real resource checker and CLI boundary; solver stub only; artificial timestamp, no actual lease renewal")
 args.receipt.write_text(json.dumps(receipt, indent=2)+"\n")
 raise SystemExit(0 if result.wasSuccessful() else 1)
-
