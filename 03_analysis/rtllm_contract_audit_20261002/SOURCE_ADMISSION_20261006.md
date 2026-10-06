@@ -1,4 +1,19 @@
-## Current gate: complete source metadata inventory — verified
+## Current gate: evaluator-only source body provenance — frozen, not validated
+
+2026-10-06 16:50+08. PR44 was merged as 8153af890a8fc075c388b97f2b2f59eb7e247ce8 after its AMD terminal review. The next engineering substage keeps P unchanged and covers every one of the same 64 tasks. The fixed acquisition scope is 308 paths / 212 unique Git blobs: original Src RTL/header and license/readme notices excluding /des/, all paired descriptions, all 84 reference-directory RTL assets, and root license/readme declarations. Scope was frozen before body acquisition, manifest SHA256 8a56d9119d6ea691ce04cf7a25f3e79fd4923f5a166a390e90738d8fc2b3ea66. All 212 blobs passed byte size and Git identity checks, with one download attempt each; acquisition took 86.789s. This was pure file acquisition, with no corpus code or project test execution on Windows.
+
+The existing admission script adds a separate body mode. AMD will recheck all frozen identities, five synthetic comment/string controls, every description pair and reference asset, and compare exact / line-ending-normalized / comment-masked identities against the original source family. It records lexical module names, literal and nonliteral include hints, and license keywords only as unresolved clues. It does not compile, prove, infer licenses from keywords, infer dependency completeness from basenames, run upstream tools, generate stubs, or inspect prior model-result bodies. Mismatches remain in the complete report, with no task selection or task-ID rules.
+
+Bodies are kept only in the private evaluation evidence directory; no RTL/testbench/description text is printed to chat or supplied to a generation prompt. Current source SHA256 f846761b95741ff5f74680d32f875c42ac03750ba128ce35e7c73b29129d519b. Freeze budget: zero model/EDA calls, 120-second stage, five-minute FIFO slot. Stop on frozen input/content drift, missing/extra blob, unsafe path, failed synthetic control or timeout; preserve failure and do not silently retry.
+
+Status: implemented and statically reviewed; real AMD run still pending. Success establishes only mechanical provenance, not behavior, full contract, dependency completeness, source-license permission or independent admission. All 64 entries remain pending those gates. New evaluation-side body access is recorded separately from generator access; team-wide/training exposure is unknown. Materials used to change candidates/rules become development data permanently. The next decision must use the actual complete audit to determine whether a no-stub source elaboration/proof route is feasible, or reject the source; do not repeat passed tool controls.
+
+Private scope and receipts: 05_handoff/independent_validation_20261004/source_body_provenance_20261006/. Raw corpus files, tree and logs are excluded from GitHub. No all-inclusive batch started; real quota/expiry, independent materials and complete resource/delivery acceptance remain open.
+
+---
+
+
+## Completed source metadata inventory — verified
 
 2026-10-06 16:41+08. FIFO ticket 97 completed on AMD at 06:41:00Z. All 64 source/reference description pairs are unique across five declared families. All 84 reference-directory RTL assets are bound to the pinned Git tree; 53 have no identical blob in the corresponding original Src family. This is a provenance gap, not evidence that those assets are incorrect: testbenches, formatting, extraction or edits still require body inspection.
 

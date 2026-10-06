@@ -96,11 +96,165 @@ def inventory_metadata(args, started):
     (args.out / "RESULT.json").write_text(json.dumps(report, indent=2)+"\n")
     print(json.dumps({k: v for k, v in report.items() if k != "task_rows"}))
 
+
+def body_provenance(args, started):
+    """Private evaluator-only mechanical source audit; never executes corpus code."""
+    if sys.platform != "linux":
+        raise ValueError("AMD execution required")
+    plan_raw = args.inventory_plan.read_bytes()
+    if hashlib.sha256(plan_raw).hexdigest() != args.inventory_plan_sha256:
+        raise ValueError("body audit plan drift")
+    plan = json.loads(plan_raw)
+    for path, expected in [
+        (Path(__file__), plan["source_sha256"]),
+        (args.body_manifest, plan["body_manifest_sha256"]),
+        (args.body_inventory, plan["inventory_sha256"]),
+    ]:
+        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            raise ValueError("body audit frozen input drift")
+    manifest = json.loads(args.body_manifest.read_text())
+    inventory = json.loads(args.body_inventory.read_text())
+    if (manifest["upstream_commit"] != plan["upstream_commit"]
+            or inventory["upstream_commit"] != plan["upstream_commit"]
+            or len(inventory["task_rows"]) != 64
+            or len(manifest["files"]) != plan["expected_files"]
+            or len(manifest["blobs"]) != plan["expected_blobs"]):
+        raise ValueError("body audit scope drift")
+
+    # Preserve string literals and line structure. This is not a Verilog parser.
+    comments = re.compile(r'"(?:\\.|[^"\\])*"|//[^\r\n]*|/\*[\s\S]*?\*/')
+    def without_comments(text):
+        return comments.sub(lambda m: re.sub(r"[^\r\n]", " ", m[0])
+                            if m[0].startswith(("//", "/*")) else m[0], text)
+    controls = [
+        ('module x; // module fake;\nendmodule', 'module x;\nendmodule'),
+        ('"//not a comment" /* hidden */', '"//not a comment"'),
+        (chr(96) + 'include "a.vh"\n', chr(96) + 'include "a.vh"\n'),
+    ]
+    for source, expected in controls:
+        if without_comments(source).split() != expected.split():
+            raise ValueError("comment/string control failed")
+    if without_comments('assign y = 0;') == without_comments('assign y = 1;'):
+        raise ValueError("different logic collapsed")
+    if without_comments('"/* kept */"') != '"/* kept */"':
+        raise ValueError("string literal lost")
+
+    blob_root = args.body_root.resolve()
+    verified = {}
+    for blob in manifest["blobs"]:
+        ident = blob["git_blob"]
+        if not re.fullmatch(r"[0-9a-f]{40}", ident) or ident in verified:
+            raise ValueError("duplicate or unsafe body blob")
+        path = blob_root / ident
+        if path.is_symlink() or not path.is_file():
+            raise ValueError("missing or linked body blob")
+        raw = path.read_bytes()
+        git_hash = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
+        if len(raw) != blob["bytes"] or git_hash != ident:
+            raise ValueError("source body Git identity drift")
+        verified[ident] = dict(raw=raw, sha256=hashlib.sha256(raw).hexdigest())
+    if {p.name for p in blob_root.iterdir()} != set(verified):
+        raise ValueError("unfrozen file in body directory")
+    files = {}
+    for entry in manifest["files"]:
+        name = entry["path"]
+        if (name in files or name.startswith("/") or ".." in name.split("/")
+                or entry["mode"] not in ("100644", "100755")
+                or entry["sha"] not in verified):
+            raise ValueError("unsafe or missing manifest entry")
+        raw = verified[entry["sha"]]["raw"]
+        if len(raw) != entry["size"]:
+            raise ValueError("file size mismatch")
+        # Latin1 is a lossless one-byte mapping; non-ASCII and NUL stay recorded.
+        text = raw.decode("latin1").replace("\r\n", "\n").replace("\r", "\n")
+        stripped = without_comments(text)
+        rtl = name.lower().endswith((".v", ".sv", ".vh", ".svh"))
+        modules = re.findall(r"\bmodule\s+(?:automatic\s+)?([A-Za-z_][A-Za-z0-9_$]*)", stripped) if rtl else []
+        literal_includes = re.findall(r'(?m)^\s*' + chr(96) + r'include\s+"([^"\r\n]+)"', stripped) if rtl else []
+        directive_count = len(re.findall(r"(?m)^\s*" + chr(96) + r"include\b", stripped)) if rtl else 0
+        files[name] = dict(
+            path=name, git_blob=entry["sha"], bytes=len(raw), sha256=verified[entry["sha"]]["sha256"],
+            line_ending_normalized_sha256=hashlib.sha256(text.encode("latin1")).hexdigest(),
+            comment_masked_sha256=hashlib.sha256(stripped.encode("latin1")).hexdigest(),
+            rtl=rtl, lexical_modules=modules, literal_includes=literal_includes,
+            nonliteral_include_count=directive_count-len(literal_includes),
+            nonascii_bytes=sum(b > 127 for b in raw), nul_bytes=raw.count(b"\0"),
+            license_keywords=sorted(set(re.findall(r"\b(?:SPDX-License-Identifier|LGPL|GPL|BSD|MIT)\b", text, re.I))),
+            initial_keyword_hint=bool(re.search(r"\binitial\b", stripped)) if rtl else False,
+            simulation_system_task_hint=bool(re.search(r"\$(?:display|finish|stop|fatal|error)\b", stripped)) if rtl else False,
+            syntax_or_elaboration_verified=False)
+    task_rows = []
+    classes = {}
+    for task in inventory["task_rows"]:
+        family = task["family"]
+        original = [row for name, row in files.items()
+                    if name.startswith("Src/" + family + "/") and "/des/" not in name and row["rtl"]]
+        descriptions = [task["source_prompt_path"]] + task["matching_reference_prompt_paths"]
+        if len(descriptions) != 2 or files[descriptions[0]]["git_blob"] != files[descriptions[1]]["git_blob"]:
+            raise ValueError("description body pair drift")
+        assets = []
+        for asset in task["reference_directory_rtl_assets"]:
+            row = files[asset["path"]]
+            if row["git_blob"] != asset["git_blob"]:
+                raise ValueError("reference asset body drift")
+            matches = {}
+            for key in ("git_blob", "line_ending_normalized_sha256", "comment_masked_sha256"):
+                matches[key] = [a["path"] for a in original if a[key] == row[key]]
+            category = next((key for key, paths in matches.items() if paths), "no_mechanical_identity")
+            classes[category] = classes.get(category, 0) + 1
+            includes = []
+            for include in row["literal_includes"]:
+                # Enumerate candidates only; basename matching is not elaboration.
+                candidates = [a["path"] for a in original if Path(a["path"]).name == Path(include).name]
+                includes.append(dict(include=include, original_family_basename_candidates=candidates,
+                                     resolution_verified=False))
+            same_module = [a["path"] for a in original
+                           if row["lexical_modules"] and a["lexical_modules"] == row["lexical_modules"]]
+            assets.append(dict(path=row["path"], mechanical_identity=category, matching_paths=matches,
+                               same_lexical_module_list_paths=same_module, include_hints=includes,
+                               nonliteral_include_count=row["nonliteral_include_count"],
+                               reference_trust_verified=False))
+        task_rows.append(dict(source_prompt_path=task["source_prompt_path"], family=family,
+                              descriptions_body_verified=True, assets=assets,
+                              full_contract_verified=False, dependencies_verified=False,
+                              source_license_verified=False, independent_admitted=False))
+    report = dict(schema="source_body_provenance_20261006_v1", complete=True,
+                  upstream_commit=plan["upstream_commit"], source_sha256=plan["source_sha256"],
+                  body_manifest_sha256=plan["body_manifest_sha256"],
+                  inventory_sha256=plan["inventory_sha256"], controls_passed=5,
+                  files_verified=len(files), unique_blobs_verified=len(verified),
+                  tasks_retained=len(task_rows), reference_assets=sum(len(t["assets"]) for t in task_rows),
+                  mechanical_identity_counts=classes,
+                  reference_assets_with_literal_includes=sum(bool(a["include_hints"]) for t in task_rows for a in t["assets"]),
+                  unresolved_literal_include_hints=sum(not a["original_family_basename_candidates"]
+                      for t in task_rows for asset in t["assets"] for a in asset["include_hints"]),
+                  nonliteral_include_count=sum(a["nonliteral_include_count"] for t in task_rows for a in t["assets"]),
+                  files_with_nonascii_bytes=sum(bool(r["nonascii_bytes"]) for r in files.values()),
+                  files_with_nul_bytes=sum(bool(r["nul_bytes"]) for r in files.values()),
+                  task_rows=task_rows, file_rows=list(files.values()),
+                  model_calls=0, compiler_calls=0, simulator_calls=0,
+                  evaluation_side_body_access=True, generator_body_exposure=False,
+                  result_bodies_opened=False, upstream_code_executed=False,
+                  syntax_or_elaboration_verified=False, full_contracts_verified=0,
+                  independent_admitted=0, effective_independent_family_n=None,
+                  team_wide_exposure="unknown", training_exposure="unknown", full_batch_complete=False,
+                  evidence_limit="Mechanical identities and lexical hints only. Comments, module names, license keywords "
+                    "and basename candidates do not prove behavior, license permission or complete dependencies. "
+                    "All 64 tasks retained; no support stubs or candidate changes.",
+                  elapsed_s=time.monotonic()-started)
+    args.out.mkdir(parents=True, exist_ok=False)
+    (args.out / "RESULT.json").write_text(json.dumps(report, indent=2) + "\n")
+    print(json.dumps({k: v for k, v in report.items() if k not in ("task_rows", "file_rows")}))
+
+
 def main():
     ap = argparse.ArgumentParser()
     source = ap.add_mutually_exclusive_group(required=True)
     source.add_argument("--source", type=Path)
     source.add_argument("--git-tree", type=Path)
+    source.add_argument("--body-manifest", type=Path)
+    ap.add_argument("--body-root", type=Path)
+    ap.add_argument("--body-inventory", type=Path)
     ap.add_argument("--inventory-plan", type=Path)
     ap.add_argument("--inventory-plan-sha256")
     ap.add_argument("--out", type=Path, required=True)
@@ -111,6 +265,11 @@ def main():
     guard = json.loads(args.resource_check.read_text())
     if not guard:
         raise ValueError("missing resource admission")
+    if args.body_manifest:
+        if not all((args.body_root, args.body_inventory, args.inventory_plan,
+                    args.inventory_plan_sha256, guard.get("resource_idle"))):
+            raise ValueError("frozen body audit and idle resource admission required")
+        return body_provenance(args, started)
     if args.git_tree:
         if not args.inventory_plan or not args.inventory_plan_sha256 or not guard.get("resource_idle"):
             raise ValueError("frozen inventory plan and idle resource admission required")
