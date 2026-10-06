@@ -1,0 +1,150 @@
+{
+  "schema": "original_audits_and_serial_cp7_freeze_public_v1",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "original_paired_audits": {
+    "wave105": {
+      "audit_sha256": "6f5dc899dc35c95419f389499d8bb36f572d7a5b36e57b7c25e4ce07c808c4e8",
+      "spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+      "original_collector_runs": 1,
+      "original_auditor_runs": 1,
+      "fully_correct_by_arm": {
+        "C": 112,
+        "P": 114
+      },
+      "weighted": {
+        "C": 0.7679487179487179,
+        "P": 0.7782051282051282
+      },
+      "requests": {
+        "C": 167,
+        "P": 168
+      },
+      "qualified_for_new_full_regression": false,
+      "adoption": false,
+      "archive": {
+        "archive_sha256": "997e65f38eeb1f03fbb20b15fddd8c0f11b4110d28616a5eedfcacbafe6924b1",
+        "archive_bytes": 70255982,
+        "archive_members": 12511,
+        "every_member_bound_both_ends": true
+      },
+      "external_complete_elapsed_s": 20.351426286622882,
+      "external_total_cap_s": 450,
+      "observer_independently_retired": true
+    },
+    "onehot106": {
+      "audit_sha256": "5071f22193cc25d78c31c4545178e2d794087f96f9834a933c965625b63a71a0",
+      "spec_sha256": "d4cc6b511450e4cbc19e95105f2479d11c5bdd7166c6782043b9da7decda70d2",
+      "original_collector_runs": 1,
+      "original_auditor_runs": 1,
+      "fully_correct_by_arm": {
+        "C": 6,
+        "P": 7
+      },
+      "weighted": {
+        "C": 0.8857142857142858,
+        "P": 1.0
+      },
+      "requests": {
+        "C": 10,
+        "P": 9
+      },
+      "qualified_for_new_full_regression": true,
+      "adoption": false,
+      "archive": {
+        "archive_sha256": "3cc31207ae275e295d075209c3cb23827d1b93cd17ff2a0b1948698be73792d7",
+        "archive_bytes": 4515213,
+        "archive_members": 881,
+        "every_member_bound_both_ends": true
+      },
+      "external_complete_elapsed_s": 8.546911153942347,
+      "external_total_cap_s": 450,
+      "observer_independently_retired": true
+    }
+  },
+  "serial_native107": {
+    "audit_sha256": "f57af8d7a6d2cb11abc051e757876679a8b7bc040787a52d296894cc2e84d8d7",
+    "spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+    "producer_sha256": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+    "original_auditor_runs": 1,
+    "native_qualified": true,
+    "controls": 12,
+    "positive": 8,
+    "actual_rtl_mutants": 4,
+    "native_commands": 36,
+    "guard_receipts": 73,
+    "observations": 13800,
+    "model_calls": 0,
+    "archive_sha256": "6a471b2046c54281dc8e9c862cd3a4e41a75914161e1dc57e8908f531f07ff7d",
+    "archive_members": 509,
+    "all_members_bound_both_ends": true,
+    "external_complete_elapsed_s": 6.372556610032916,
+    "external_total_cap_s": 120,
+    "scope": "Finite binary event/reset, three observed outputs; no internal-next/xz/exhaustive/unseen/natural score/adoption"
+  },
+  "new_serial_cp7_freeze": {
+    "root": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_cp7_20261007_v1",
+    "spec_sha256": "378c8706992c4da961dc4c237a4aad6b21bf48c4aefb13e51dfa4a8cf97ef117",
+    "source_assets": 101,
+    "preparation_receipt_sha256": "eca821fbfef558b058fcbaf981c2cad998465213554b15602f9f04b89c80024d",
+    "preparation_archive_sha256": "279bffabd7e9737ec0aaec8d50bffffe3ae51ad4e5f2a29607d10159133ffaee",
+    "preparation_archive_bytes": 13559888,
+    "preparation_archive_members": 113,
+    "all_members_bound_both_ends": true,
+    "postexit_admission_passed": true,
+    "preparation_source_sha256": "0c63f248cd4433dbb8830377ac3e7d184c831f30cbc8c878dfdb0e4e625f674d",
+    "production_sources": {
+      "worker.py": "1eac9c3b9bac6581bf0aa137fdead50835cf80483d000848554e298f2a7ed90a",
+      "synthesis.py": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+      "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+      "pilot.py": "4843a1a85ff5144d231169141e18ede7d1f63e15b1cda9b9cebe2f39cfdf1853",
+      "metrics.py": "0d6f962da2f3a4b9d389ec6090bbe88d623571e079563ce2fa2545bd61b1675a",
+      "audit.py": "60a41c187fe033418808c5ed7013bc688539d4d14e62fe10d01355f67fbc6796",
+      "factor_proof.py": "bda081df86cd2e6c9b7d597337079ae220a8398723483f9485eb50dc42bbe0fe"
+    },
+    "tasks": 7,
+    "outputs": 14,
+    "max_requests": 28,
+    "stage_cap_s": 12000,
+    "guard_cap_s": 12400,
+    "slot_minutes": 210,
+    "pipeline_controls_reused": 30,
+    "worker_controls_reused": 20,
+    "new_tests": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": false,
+    "score_measured": false
+  },
+  "budget": {
+    "tokens": 8192,
+    "max_requests_per_sample": 2,
+    "repair": 1,
+    "complete_solver_s": 300,
+    "judge_s": 300,
+    "judge_supervisor_s": 360,
+    "xz_retained": true,
+    "retries": 0
+  },
+  "protection": {
+    "original109_roots": 109,
+    "original109_files": 7389,
+    "current_roots": 119,
+    "current_files": 7670,
+    "immutable_original_anchor_preserved": true,
+    "model_unchanged": true,
+    "primary_unchanged": true
+  },
+  "github_round_policy": true,
+  "peer101_bounded_review_accepted": true,
+  "peer101_actual_sha256": "684d9a37328d3be5a774f2edf8eff61a02b4f4bf19140a351afb13d359fcb0ee",
+  "material_shared_receipt": "1ad70aeaf447d660c8a46e4612862fc31fc1213831efc250b965d863b7d7112f",
+  "next": "Deliver and submit fresh serial CP7 once; same-factor onehot full156 preparation follows. Preserve120/.80, historical113, paired grades and per-task/total request costs.",
+  "limits": [
+    "Existing7 development screen only; one target gain is not statistically conclusive or independent validation.",
+    "Original score/lifecycle evidence reused, no collector/auditor/control replay.",
+    "Wave105 rejects goal/history/cost gates, same version not adopted or expanded.",
+    "Serial freeze is source qualification, not score; safety caps are not ETA.",
+    "Raw RTL/prompts/wire/archive/member evidence remains private."
+  ]
+}
