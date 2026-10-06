@@ -1,0 +1,181 @@
+{
+  "schema": "neighborhood_worker_adapter_actual_amd_public_v1",
+  "checks": {
+    "qualified_distinct_worker_controls": 22,
+    "total_actual_test_executions": 23,
+    "original22_returncode": 1,
+    "original21_passed": 21,
+    "original_failure": "one CRLF feedback expectation; raw physical inputs remain exact",
+    "original_stderr_sha256": "564669b1df772b39e910ada3285e27f24b41ec5dd66985ac868e0bfd9cedfa5b",
+    "corrected_test_only_returncode": 0,
+    "corrected_stderr_sha256": "a836d420b1af1775b3334ea1640f89b55b8c14809bb93c6cd0ca31dd173a7f58",
+    "prior21_methods_ast_reused": true,
+    "source_and_fallback_byte_unchanged": true,
+    "intermediate_receipt_parser_failure_retained": true,
+    "intermediate_test_executions": 0,
+    "receipt_parser_fix": "recognize uppercase characters in actual test method names, preserving exact method count and set checks",
+    "final_receipt_sha256": "679b699f1440e7182e2e747847cfb4cc90531c50e98dca9580bf48ff11d08646",
+    "final_cloud_root": "/workspace/team/runs/fpga_owner/neighborhood_worker_adapter_pure_20261006_v3",
+    "final_source_assets": 22,
+    "final_packet_sha256": "f29ce51b98afaa6a3c71d07faf7e3220d50cad05dc3c8376a55e65e8db9c02e8"
+  },
+  "pure_intake": {
+    "tasks": 156,
+    "emitted": 3,
+    "abstained": 153,
+    "receipt_sha256": "6a368030e9728555b08299c63a49be013528f54e1d34f795df72ebc2c03b05ad",
+    "production_sha256": "7a31e5eac9ccce97a839551eed89e06073ca406e467173a1a1eac58d8798a2df",
+    "baseline_reference_sha256": "8677fcf01f6589d7afee636cd328e7b296c5abef96da92adecd4929c007171ce",
+    "baseline_used_after_generation_only": true,
+    "not_a_score": true
+  },
+  "planned_single_factor_screen": {
+    "targets": [
+      "Prob124_rule110",
+      "Prob144_conwaylife"
+    ],
+    "emit_guard": [
+      "Prob108_rule90"
+    ],
+    "model_guard": [
+      "Prob042_vector4"
+    ],
+    "abstention_boundaries": [
+      "Prob104_mt2015_muxdff",
+      "Prob143_fsm_onehot"
+    ],
+    "tasks": 6,
+    "paired_rows": 12,
+    "max_model_requests": 24,
+    "task_selection_not_a_production_input": true,
+    "score_pilot_not_frozen_or_queued": true,
+    "metrics_stage_complete_archive_audit_still_pending": true
+  },
+  "actual_fifo94": {
+    "submission": {
+      "ticket": 94,
+      "task_name": "neighborhood_native_calibration_zero_model_v3",
+      "monitor_pid": 751952,
+      "accepted_at_utc": "2026-10-06T03:37:29.287534+00:00",
+      "schema": "neighborhood_native_actual_fifo_submission_v3",
+      "cloud_root": "/workspace/team/runs/fpga_owner/local_neighborhood_native_calibration_20261006_v3",
+      "spec_sha256": "d37aa70b62e8ea261855cb216fc631b44ad7197e1ddacbb41e516041f7517f80",
+      "source_assets": 153,
+      "monitor_starttime": "853149876",
+      "monitor_command_sha256": "73bbb4411e20297c6f420270217b6378454f161fee1236ea6879ea162f2985e1",
+      "monitor_actual_argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/tools/task-fifo-20261004/task_fifo.py",
+        "--root",
+        "/workspace/team/task_fifo",
+        "_run",
+        "--ticket",
+        "94"
+      ],
+      "public_head": "2d6b44dd360e441a45a3fc9e2353fe993853ff9a",
+      "merged_pr_url": "https://github.com/854259/FPGA/pull/32",
+      "merge_sha": "a03afd3aae02134edadc36cffca7e6cfecff2fee",
+      "qualified_distinct_pure_controls": 72,
+      "actual_full_preparation_checks": 61,
+      "protected_groups": 34,
+      "protected_source_assets": 2413,
+      "planned_controls": 29,
+      "planned_native_commands": 78,
+      "planned_supervisor_commands": 2,
+      "planned_guard_receipts": 162,
+      "planned_trace_observations": 10827,
+      "model_calls_in_submission_helper": 0,
+      "eda_calls_in_submission_helper": 0,
+      "new_native_qualification": false,
+      "score_gain": false,
+      "source_before_after_verified": true,
+      "queue_order": "Whole-task FIFO after all earlier tasks",
+      "submission_monitor_format_check_failed_retained": true,
+      "known_accepted_ticket_receipt_recovery_only": true,
+      "observed_at_epoch": 1791257949.804799
+    },
+    "submission_sha256": "817514c3d834e27f8f6e81711d36fa3d9ad3b712ea7d16d76c355663e34d1f28",
+    "recovered_receipt_sha256": "1c8a852a1be4d47aa171ba8bbadc7477e753ac8be3b00bf6d6e8cd89f29c7421",
+    "latest_readonly_observation": {
+      "schema": "neighborhood_native94_existing_handle_readonly_v3",
+      "at_epoch": 1791258413.0796487,
+      "ticket": 94,
+      "state": "queued",
+      "monitor": {
+        "pid": 751952,
+        "state": "S",
+        "starttime": "853149876",
+        "command_sha256": "73bbb4411e20297c6f420270217b6378454f161fee1236ea6879ea162f2985e1"
+      },
+      "progress": null,
+      "model": {
+        "pid": 2013333,
+        "state": "R",
+        "starttime": "823869819",
+        "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+      },
+      "source_assets_verified": 153,
+      "new_project_calls": 0,
+      "new_model_calls": 0,
+      "new_eda_calls": 0
+    },
+    "acceptance_does_not_prove_qualification": true
+  },
+  "protection": {
+    "prior_groups": 37,
+    "prior_source_assets": 2610,
+    "source_model_primary_unchanged": true
+  },
+  "model_calls": 0,
+  "eda_calls": 0,
+  "new_fifo": false,
+  "native_qualified": false,
+  "new_score": false,
+  "goal_achieved": false,
+  "original_8192_max2_one_repair_absolute300s_and_judge_unchanged": true,
+  "table_full156_readonly_progress": {
+    "at_epoch": 1791258639.1027799,
+    "progress": {
+      "completed": 171,
+      "expected": 312,
+      "complete": false,
+      "passed": false,
+      "actual_model_requests": 177,
+      "tool_error_rows": 0,
+      "deadline_rows": 0
+    },
+    "processes": {
+      "runner": {
+        "pid": 616893,
+        "state": "S",
+        "starttime": "852494166",
+        "pgid": 616893,
+        "sid": 616893,
+        "command_sha256": "e999c6f11d7352d365a02ce6a9b8966745c6908485c0de4d3395f8a36d8e7928"
+      },
+      "child": {
+        "pid": 616894,
+        "state": "S",
+        "starttime": "852494175",
+        "pgid": 616894,
+        "sid": 616894,
+        "command_sha256": "49bf3cb4037659a79c2f5aa206d04a8eb141705ae5d99eb9747accc543f00b4b"
+      }
+    },
+    "source_assets_verified": 98
+  },
+  "development_baseline": {
+    "full_correct": 113,
+    "total_tasks": 156,
+    "weighted": 0.7743589743589744
+  },
+  "goal": {
+    "full_correct_at_least": 120,
+    "weighted_at_least": 0.8,
+    "status": "active"
+  },
+  "peer_commit": "5bfe4e0600c75b2aa414bffe0c2bf9088f775586",
+  "peer_acknowledgment": "pending",
+  "next_step": "complete score provenance adapter; only after native94 original terminal archive audit qualifies the exact producer, freeze one fixed single-factor six-task score pilot; retain original90/92/93/94 configs"
+}
