@@ -183,7 +183,7 @@
         "guard_receipts_cross_bound": 85,
         "protected_current8242_files_not_reaudited": true,
         "scope": "有限二态stream/output/synchronous reset；next为0占位，data仅done0掩蔽，不推至全参数/XZ/自然正确率。",
-        "formal_terminal_pending": true,
+        "formal_terminal_pending": false,
         "terminal_followup_report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_SERIAL_FRAMING_REVIEW.json#original111_terminal_followup"
       },
       "new_model_or_eda_or_original_auditor_calls": 0,
@@ -12218,7 +12218,7 @@
     "reviewer_new_producer_calls": 0,
     "reviewer_original_audits": 0,
     "reviewer_new_fifo": 0,
-    "peer_acknowledgment_of_this_complete_review": true,
+    "peer_acknowledgment_of_this_complete_review": false,
     "next": "Original113 CP8 completed C6/P8, requests11/9 and frozen screening gates satisfied; owner original terminal still pending. Original110 paired result source and111 finite native terminal reviews are bounded-complete and reused. Owner decides unique next admitted freeze/submission; no current156 ticket, no old control replay, no cross-run gain addition. Full inclusive acceptance and historical118 goal remain unmet.",
     "numeric_boundary_review": {
       "schema": "peer111_serial_framing_numeric_bounded_independent_review_v1",
@@ -13853,7 +13853,9 @@
         "current113_gates_unchanged": true
       }
     },
-    "native_qualification_scope": "Original111 finite binary stream/output/synchronous reset only; next0 placeholder, done0 data masking; not all-parameter/XZ/generalization."
+    "native_qualification_scope": "Original111 finite binary stream/output/synchronous reset only; next0 placeholder, done0 data masking; not all-parameter/XZ/generalization.",
+    "prior_complete_review_acknowledgment_preserved": true,
+    "peer_acknowledgment_scope": "Prior controls and bounded native111 review were accepted in Issue comment 6037419564; the new original113 result review and this combined public follow-up have not yet been acknowledged."
   },
   "original_terminal_inventory_compatibility": {
     "schema": "original109_110_inventory_static_compatibility_review_v1",
