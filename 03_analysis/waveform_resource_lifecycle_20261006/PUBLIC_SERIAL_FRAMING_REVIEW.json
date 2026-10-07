@@ -1,14 +1,14 @@
 {
   "schema": "peer110_serial_framing_pure_bounded_independent_review_v1",
   "checked_at": "2026-10-07T09:42:20.973084+08:00",
-  "updated_at": "2026-10-07T09:47:00+08:00",
+  "updated_at": "2026-10-07T09:59:00+08:00",
   "peer_pr": "https://github.com/854259/FPGA/pull/110",
   "head": "c8d2a3cad8571f2a9160c6ffcfbfc28f1835986e",
   "merge": "88afad35d47b0f5208efe1391e54d56e2b00e553",
   "peer_comment": 6028973734,
   "mail_id": "1a113ff5f30dbb47",
   "peer_delivery_sha256": "969600d8b8ba4528d25d09773660565a636e8f6c718f4842fc87959a26bc5215",
-  "scope": "Original20 pure methods and original156 coverage/source/receipt only; parser boundary completeness and advancement withheld pending lexical guard, independent native semantics still required.",
+  "scope": "Original20/156 parsing coverage remains historical for oldf491 held source; newaaac single lexical delta and original8 numeric controls accepted, independent native semantics and scoring pending.",
   "readonly_receipt_sha256": "3451a12d72a6b84e891cba08828ca6120b495afaf68fc5ee083867e2d5d28d54",
   "readonly_seconds": 0.7495576087385416,
   "source_hashes": {
@@ -103,7 +103,8 @@
     "static_finding_accepted": true,
     "original_failure_not_yet_measured": true,
     "new_fix_not_formally_delivered": true,
-    "scope": "Peer accepts static inference, will freeze minimal canonical ASCII1..16 lexical guard before int plus only necessary new boundary evidence. No global digit-limit change or rerun of original20/156; native/scoring held."
+    "scope": "Peer accepts static inference, will freeze minimal canonical ASCII1..16 lexical guard before int plus only necessary new boundary evidence. No global digit-limit change or rerun of original20/156; native/scoring held.",
+    "historical_snapshot_at_comment6029081238": true
   },
   "peer_pr108_acceptance": {
     "comment": 6028893731,
@@ -164,5 +165,191 @@
   "reviewer_original_audits": 0,
   "reviewer_new_fifo": 0,
   "peer_acknowledgment_of_this_complete_review": false,
-  "next": "Peer owns new lexical-boundary fix/evidence, then independent native correct/mutant bit-order, post-edge valid-stop done timing, back-to-back frames, invalid-stop high-rearm, phase resets and explicit x/z scope. This task reviews new formal evidence without rerunning old20/156 or taking implementation. Follow frozen original109 running/110 queued and their owner-run one-time terminal evidence; no interim score stopping or factor addition."
+  "next": "Peer freezes independent serial-frame native correct designs and actual RTL mutants for aaac, with explicit edge/NBA done timing, bit order, back-to-back frames, invalid-stop high-rearm, per-phase synchronous reset and x/z scope. Only qualified native evidence can admit a new fixed same-budget C/P screen; no replay of old20/156 or implicit new156 coverage. Owner retains original109 running/110 queued and their one-time terminal; this task reviews new formal evidence.",
+  "numeric_boundary_review": {
+    "schema": "peer111_serial_framing_numeric_bounded_independent_review_v1",
+    "checked_at": "2026-10-07T09:56:07.502148+08:00",
+    "peer_pr": "https://github.com/854259/FPGA/pull/111",
+    "head": "7c07908a0c3211f0e8a2126572bb2c7e72c4e099",
+    "merge": "6011dc25f4fa74fddb0500b1bafcd38921a67735",
+    "peer_comment": 6029156153,
+    "mail_id": "1a1140dfe218c645",
+    "peer_delivery_sha256": "57914ae399a6e8a61f96b72533e4fa897686a627f9d5a9d417079b72a72c43f6",
+    "readonly_receipt_sha256": "61c5b29c9caa9635202d3b4d109806d90d5dee7864e43e2fdb85b6f0348c42ef",
+    "readonly_seconds": 0.7250320091843605,
+    "scope": "New aaac lexical-boundary delta and original8 controls accepted only; old f491 remains held, old20/156 not attributed to new source, new source eligible only for independently frozen native preparation.",
+    "source_hashes": {
+      "owned_exec.py": "9981c3a36183787d559aaed73fcfd34d36e6a7354e5da1874cf5308c6ee476c5",
+      "prepare.py": "393dc3846d096f7fd5693fe350137e7ed58f5080e9096f16d47a85a04cb50563",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "SOURCE_DELTA_PROOF.json": "47563bbb030de0b6a35a80df87cb715aa0cace4eeacfddc38d435db84ff72257",
+      "synthesis.py": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+      "test_numeric.py": "8e6cb1be9b8ebb0093a185adb6042576421b5066abd1cc7400983b1e873170e1"
+    },
+    "public_file_count": 10,
+    "public_python_files": 0,
+    "all_public_git_amd_bytes_equal": true,
+    "exact_single_delta_reverse": true,
+    "old_source_preserved_and_held": "f491f7037bdd78418a1ef1d920495cbc1b5d677d0b0822c88f51b04464728045",
+    "old_archive_preserved": "055259bd5aa0a0caa30f01b720edc17906e3424061d63b48f2d4506528953bcc",
+    "original_process": {
+      "pid": 1752285,
+      "starttime": "861117487",
+      "elapsed_s": 0.13916868530213833,
+      "cap_s": 40,
+      "exec_confirmed": true,
+      "returncode": 0,
+      "leader_reaped": true,
+      "remaining_group": [],
+      "current_identity_retired": true,
+      "birth_argv_stream_completion_bound": true,
+      "merged_stream_sha256": "62a52d90f48f24852847a16a7eebcf20672f3b031a63f57eb1be4bf32e382410",
+      "merged_stream_bytes": 2501,
+      "process_sha256": "8c939ec99676c6153a378de129d25e1786a3afe7d2407c0902621e32b403c102"
+    },
+    "original_control_receipt_sha256": "2b2edcaa98765401c4125d8ebec4868b333aafe63c4213579ada75a9b50fd5cc",
+    "original_new_control_methods": 8,
+    "failures": 0,
+    "errors": 0,
+    "old_exception_measured_by_peer_inside_successful_control": true,
+    "old_exception": "ValueError: integer width conversion exceeds4300 digits for4301 input; caught by original unittest assertRaises, no failed outer process or uncaught traceback claim.",
+    "observations": {
+      "runtime_digit_limit_before_after": [
+        4300,
+        4300
+      ],
+      "original4301": {
+        "exception_type": "ValueError",
+        "message": "Exceeds the limit (4300 digits) for integer string conversion: value has 4301 digits; use sys.set_int_max_str_digits() to increase the limit",
+        "static_peer_claim_now_measured": true,
+        "old_source_unchanged": true
+      },
+      "oversized_lengths": [
+        4300,
+        4301,
+        100000
+      ],
+      "constructed_boundary_same_rtl": [
+        {
+          "width": 2,
+          "data": false,
+          "rtl_sha256": "0c09c2003f455ac11cd225f401000f0824ef546f725a623742975b7112d75569"
+        },
+        {
+          "width": 2,
+          "data": true,
+          "rtl_sha256": "8bb61aced89acfa2feb20cd1ef2eedabcd2e26df993723706c357ccaa97fc793"
+        },
+        {
+          "width": 8,
+          "data": false,
+          "rtl_sha256": "59841f42720a004d30519b615af8a2037f02e5468a89f149a26a9f894b471d0a"
+        },
+        {
+          "width": 8,
+          "data": true,
+          "rtl_sha256": "5fd216cf10e6d1c37b5c47671beef07c08a63b8f7411d1ba7b169de3b9d685f6"
+        },
+        {
+          "width": 16,
+          "data": false,
+          "rtl_sha256": "024d4341d1e9e58cc1597b764bd1bc6712ea9ef815b63f417df20c37be0185dd"
+        },
+        {
+          "width": 16,
+          "data": true,
+          "rtl_sha256": "44d16d761211ca2968c312472c7df54427f95c84ab4e12a96dfb26f848e15179"
+        }
+      ]
+    },
+    "runtime_limit_scope": "4300 at module initialization and first alphabetically executed test_exact method; no claim of a separate post-all8 read. Static parsed sources have no set_int_max_str_digits call; old4301 exception independently reports4300.",
+    "original_test_methods": [
+      "test_original_4301_digit_exception_once",
+      "test_oversized_ascii_is_rejected_before_int",
+      "test_supported_scalar_and_payload_boundaries_same_rtl",
+      "test_out_of_range_and_zero_tokens_abstain",
+      "test_leading_zero_not_canonical",
+      "test_unicode_decimal_tokens_abstain",
+      "test_guard_covers_every_port_position",
+      "test_exact_single_delta_and_runtime_digit_limit_retained"
+    ],
+    "old20_reexecuted": 0,
+    "original156_reexecuted": 0,
+    "new_source_original156_coverage_claim": false,
+    "constructed_equivalence_scope": "Six synthetic payload2/8/16 with/without data, scalar ports1. Original test assertions compare RTL/contract; reviewer binds source/receipt/stream but does not reexecute producer or regenerate RTL. Not all-width/native proof.",
+    "protection": {
+      "groups": 126,
+      "entries": 8064,
+      "unique_files": 7938,
+      "before_after_equal": true,
+      "original109_sources": 136,
+      "original110_sources": 116,
+      "primary_unchanged_peer_receipt_only": true
+    },
+    "archive": {
+      "sha256": "13282612ab37b5eead33e4f07e8912769b635102cb1ed30057f2751f4c8ec3c0",
+      "bytes": 381395,
+      "members": 18,
+      "manifest_sha256": "55f53313d972c88e28f91a4156d60ab1ef25ddefdc33a435b168eb6b411ca768",
+      "all_members_amd_original_and_local_verified": true
+    },
+    "peer_local_format_failure": "Peer reports README trailing blank-line rejection before commit/push/PR then formatting-only continuation. Reviewer did not independently inspect local failure process; no AMD rerun implied.",
+    "live": {
+      "checked_at": "2026-10-07T09:56:07.502148+08:00",
+      "original109": {
+        "pid": 1680247,
+        "state": "S",
+        "starttime": "860779708",
+        "command_sha256": "6c0e6ae31cad3b80384e732a0827ce98ea6c0084071c9e442669524bd7adc84c",
+        "completed_samples": 100,
+        "actual_model_requests": 104,
+        "expected_samples": 312,
+        "complete": false
+      },
+      "original110": {
+        "pid": 1710412,
+        "state": "S",
+        "starttime": "860902725",
+        "command_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a",
+        "queued": true,
+        "no_stage": true
+      },
+      "model": {
+        "pid": 2013333,
+        "starttime": "823869819",
+        "exe": "llama-server",
+        "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+      },
+      "slot_owner": "codex_onehot_synthesis_full156_20261007_v1"
+    },
+    "reviewer_new_producer_calls": 0,
+    "reviewer_new_controls": 0,
+    "reviewer_new_model_calls": 0,
+    "reviewer_new_eda_calls": 0,
+    "reviewer_original_auditor_or_collector": 0,
+    "reviewer_new_fifo": 0,
+    "numeric_boundary_fix_accepted": true,
+    "native_preparation_only_eligible": true,
+    "native_qualified": false,
+    "score_entry_open": false,
+    "adoption": false,
+    "full_all_inclusive_batch_complete": false,
+    "full_budget_actual_quota_verified": false,
+    "independent_unseen": 0,
+    "effective_family_N": null,
+    "peer_acknowledgment_of_this_complete_review": false,
+    "next": "Peer freezes independent serial-frame native correct designs and actual RTL mutants for aaac, with explicit edge/NBA done timing, bit order, back-to-back frames, invalid-stop high-rearm, per-phase synchronous reset and x/z scope. Only qualified native evidence can admit a new fixed same-budget C/P screen; no replay of old20/156 or implicit new156 coverage. Owner retains original109 running/110 queued and their one-time terminal; this task reviews new formal evidence."
+  },
+  "status": "aaac_numeric_boundary_accepted_native_preparation_only_f491_held",
+  "current_source_sha256": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+  "original_pure_review_delivery": {
+    "pr": "https://github.com/854259/FPGA/pull/112",
+    "head": "26f27b2c8feaa99c214c2d637125ae4b44675974",
+    "merge": "fb06feb95d27fe5c806705f5150159029a104843",
+    "delivery_sha256": "6093dc718f023163108ca6de7701e8e6298a9df535590cb26463fd3fe77a9928",
+    "readonly_sha256": "3451a12d72a6b84e891cba08828ca6120b495afaf68fc5ee083867e2d5d28d54",
+    "public_sha256": "79e05377b192a41fb1c285d9575795e1a0b6ca79526297e0cdb9c7d348cfc941",
+    "comment": 6029200679,
+    "peer_accepted": false
+  }
 }
