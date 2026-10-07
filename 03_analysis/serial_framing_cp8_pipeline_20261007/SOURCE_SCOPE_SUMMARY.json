@@ -1,0 +1,46 @@
+{
+  "schema": "serial_framing_cp8_pipeline_source_scope_v1",
+  "parent_worker_receipt_sha256": "f71db4282018a5e11dff8c9acf485b35a45f0e91133c04afd26c919a663c854d",
+  "parent_worker_archive_sha256": "ba7f9dc9b513b592746c4ea864ee935cc6f4650003b9604142186017ffb4ac8e",
+  "parent_serial_pipeline_receipt_sha256": "a6785a284e4ef80752a5324337cea1a7a5b72188b0192c608c78083ce43eb304",
+  "parent_serial_pipeline_archive_sha256": "39a66b53ee16d5a62a8144af53321235e39dc96b88088c3ba88d0e0812a280c9",
+  "worker_effective21_reused_not_replayed": true,
+  "worker_critical11_source_bytes_exact": true,
+  "old_safe_unpack_method_ast_exact_not_replayed": true,
+  "old_full_postflight_helper_exact_6b14": true,
+  "changes": [
+    "CP8 metadata and16 sample/32 request/33 guard counts",
+    "Frame route names and original111 native qualification gate",
+    "Separate interface abstention binding and exact raw inputs",
+    "Immutable current133/8454 capture anchor",
+    "Same physical path allowed only same SHA; unique count separately bound to spec"
+  ],
+  "diagnostic_original_sources": {
+    "109": {
+      "root": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+      "spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+      "files": {
+        "audit.py": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+        "EXTERNAL_SOURCE_MANIFEST.json": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+        "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "729c323bcdcbfe65bfd887caabd2a176c0e983b51ab074d761b9774011916761"
+      }
+    },
+    "110": {
+      "root": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_full156_20261007_v1",
+      "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+      "files": {
+        "audit.py": "63698813e1593a82c1a79c9e954cf40c3f415048e27ba605ea1e3d32dd0ddd7c",
+        "EXTERNAL_SOURCE_MANIFEST.json": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+        "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "31a57e9cbd073fd32a680b3170fab140fb37f9bb425b54af541fbf0a47917db2",
+        "raw_evidence/IMMUTABLE_ORIGINAL109_CAPTURE.json": "61972041751052691c9e42e0683a7d49e51abb9a956c8c32271ed711409091c3"
+      }
+    }
+  },
+  "original_full_auditor_calls": 0,
+  "original_collector_calls": 0,
+  "new_contexts": 31,
+  "source_dependent_pipeline_contexts": 30,
+  "new_inventory_subfunction_method": 1,
+  "native_qualified": false,
+  "score_entry_open": false
+}
