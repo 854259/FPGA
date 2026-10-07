@@ -131,9 +131,9 @@
     "supervisor_terminal_state": "Z, empty cmdline; retained by PID1, not active",
     "original_failure_retained": true
   },
-  "status": "original110_serial_full156_freeze_reviewed_queued",
-  "conclusion": "Original108 once-only terminal provenance and fixed7 development screening accepted; only one fresh same-factor156 regression eligible, no adoption or generalization.",
-  "next": "Original109 development regression is closed and rejected for adoption; preserve its failure and all evidence, do not rerun or tune on it. Owner retains running110 and queued111, each once-only closure; reviewer receives original110 terminal and original111 native14/42EDA/85guards/12568 observations/six mutant detections. Compatible110 source entry accepted within six original controls, not actual terminal acceptance. Only after111 actual native qualifies may owner freeze CP8 same-budget screening. Full A/P/B156, audited RTLLM, important five samples, resource/interface/recovery and whole budget/actual quota remain outstanding; no combined-factor gain or generalization claim.",
+  "status": "original110_result_sources_verified_rejected",
+  "conclusion": "Original110 C112/P114 at167 requests each remains rejected under frozen gates. Bounded original archive/row/request and disclosed compatible terminal evidence accepted, not new accuracy or full inclusive qualification.",
+  "next": "Original113 CP8 completed C6/P8, requests11/9 and frozen screening gates satisfied; owner original terminal still pending. Original110 paired result source and111 finite native terminal reviews are bounded-complete and reused. Owner decides unique next admitted freeze/submission; no current156 ticket, no old control replay, no cross-run gain addition. Full inclusive acceptance and historical118 goal remain unmet.",
   "original_tests_or_intake_reexecuted": 0,
   "new_diagnostic_processes": 1,
   "new_synthetic_inputs": 2,
@@ -1966,11 +1966,96 @@
     "native_qualified": false,
     "readonly_receipt_sha256": "d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf"
   },
-  "updated_at": "2026-10-07T14:05:00+08:00",
+  "updated_at": "2026-10-07T20:20:00+08:00",
   "original109_terminal_review_reference": {
     "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_ONEHOT_CP7_FREEZE_REVIEW.json",
     "readonly_receipt_sha256": "a3b47bc8f782e4d817b2aa1f860553c6e6a54f10db5ae5afeefe92f60962de61",
     "adoption": false,
     "peer_comment": 6031857060
+  },
+  "original110_terminal_followup": {
+    "captured_at": "2026-10-07T20:00:07.412058+08:00",
+    "scope": "retained archive byte binding and original terminal receipts only; no project import or original auditor execution",
+    "archive": {
+      "sha256": "bfc644c9945379642739f548c6d494b16dc29d1ee3bd508bbc969252c10ef9ca",
+      "bytes": 97660880,
+      "members": 11982,
+      "files_verified": 11981,
+      "uncompressed_verified_bytes": 605753828,
+      "manifest_sha256": "e050ea0adfb28c5f3dd6311f0154bdc7ecd9186c777c7c1b6c7b24f2a99f9561"
+    },
+    "sources_current_and_archive": 116,
+    "summary_sha256": "f597f92fbf36666d850bf051d88dea3652cb58e7021ba54aa6c75d6d7e84dc96",
+    "audit_sha256": "f285539b01c0f0364d8066631d9a2a46c1b64df6133013eb6c8ef7f384f06ba8",
+    "receipt_sha256": "880364400427eed6e434c0d968dc8e16c96b1ce61102615f6d20032f91614fe1",
+    "rows": 312,
+    "requests": 334,
+    "L3": {
+      "C": 112,
+      "P": 114
+    },
+    "requests_by_arm": {
+      "C": 167,
+      "P": 167
+    },
+    "paired": {
+      "both": 112,
+      "neither": 42,
+      "P_only": 2
+    },
+    "descriptive_mcnemar_p": 0.5,
+    "coefficients": {
+      "C": 0.7679487179487179,
+      "P": 0.7782051282051282
+    },
+    "guard_receipts_archived": 625,
+    "guard_groups": 126,
+    "guard_record_count": 8064,
+    "current_guard_files_rehashed": false,
+    "processes": [
+      {
+        "role": "original_collector",
+        "pid": 2174477,
+        "starttime": "863970515",
+        "elapsed_s": 8.745666543021798,
+        "stdout_sha256": "db2551fd3dafe6389a9f9b035cdcff9b2c9d8e6cee13a3fefc4fbfc3efa5f9c3",
+        "retired": true
+      },
+      {
+        "role": "compatible_auditor",
+        "pid": 2174478,
+        "starttime": "863971764",
+        "elapsed_s": 5.069279534742236,
+        "stdout_sha256": "56e21dbc1986e46070d7f9c285f5b3b7d18fda5d2078aa40567d629e6c1fe93a",
+        "retired": true
+      }
+    ],
+    "terminal_elapsed_s": 21.766779992729425,
+    "outer_budget": {
+      "total_cap_s": 450,
+      "working_cap_s": 430,
+      "cleanup_reserve_s": 20,
+      "elapsed_s": 21.76677560247481,
+      "working_deadline_expired": false,
+      "within_complete_budget": true
+    },
+    "evidence_reject": true,
+    "adoption": false,
+    "new_project_calls": 0,
+    "new_model_calls": 0,
+    "new_EDA_calls": 0,
+    "new_FIFO": false,
+    "independent_peer_E_archive_verified": false,
+    "complete_external_observer_independently_verified": false,
+    "raw_guard_permissions_verified": false,
+    "local_read_files": 133,
+    "local_read_inventory_sha256": "a0b0a141f2916c595fbf1ba90028de3c954e3e2bc1bcc7589019a5fbcee82fe6",
+    "readonly_elapsed_s": 3.6560542173683643,
+    "review_comment": "https://github.com/854259/FPGA/issues/7#issuecomment-6037521224",
+    "peer_pr": 135,
+    "peer_head": "696e00e2982319c690d416d23b801394ae7ffb9d",
+    "peer_merge": "601c076808aa98db7b2d2b94d0c9226a0c987cb8",
+    "local_private_receipt_sha256": "3743a1b911e0dd768a7b12379ff95988313b43fe1e3169643f8bbb9e5010d8bb",
+    "qualification": "Original110 same-budget development result valid and rejected under frozen gates. Not full inclusive acceptance, independent validation or adoption."
   }
 }
