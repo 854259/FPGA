@@ -1,0 +1,24 @@
+{
+  "schema": "timing_literal_fixed15_source_scope_public_v1",
+  "core_source_sha256": {
+    "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+    "timing_obligations.py": "e59a42925363e4840bf69677e61ed84c9039f1a0bd41e65f40facc89a6710cb2",
+    "timing_request.py": "1d6e8af688e697dbe1e1a5ed3300e26634e56d3fdeb2a4d51625fee95431efb5",
+    "worker.py": "b86bc41a6044033005883b38ddf235bf6175284b0041bac39e55ed2c8bf6740a"
+  },
+  "actual_pipeline_source_manifest_sha256": "5b9d8298dfefe62bb1674969c883c127f79f23c4b187bd813e3331f275966cc1",
+  "qualified_formal_source_manifest_sha256": "ff58e5081233cade72bc1b96209f3d9fe7ee92e8bf092504b023f4276417d9fc",
+  "qualified_runtime_sources": 100,
+  "C_common_phase_P": true,
+  "P_only_original_literal_excerpts_in_first_request": true,
+  "repair_request_unchanged": true,
+  "abstention_exactwire": true,
+  "task_blind_inputs": "original prompt/interface/payload only",
+  "maximum_appended_user_characters_including_marker": 8192,
+  "character_cap_is_not_input_token_or_context_cap": true,
+  "output_max_tokens_unchanged": 8192,
+  "whole_abstain_no_truncation": true,
+  "model_request_delta": 0,
+  "original_parameters_baseline_judge_and_xz_retained": true,
+  "private_payloads_sources_and_logs_excluded": true
+}
