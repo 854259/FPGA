@@ -14131,5 +14131,437 @@
       "https://github.com/854259/FPGA/issues/7#issuecomment-6032945176"
     ],
     "next": "Freeze a task-blind single-factor fixed15 screen only after its separate source/stage/auditor preparation. Actual net gain, every historical/paired grade and each-task/total request cost gate precede any new full156; no model scoring has occurred here."
+  },
+  "timing_literal_fixed15_pipeline_preparation_20261007": {
+    "schema": "timing_literal_fixed15_pipeline_preparation_public_v1",
+    "pipeline": {
+      "qualification": {
+        "schema": "timing_literal_fixed15_pipeline_pure_qualification_v1",
+        "synthetic_methods": 7,
+        "all_synthetic_methods_passed": true,
+        "permanent_synthetic_fixture_files": 98,
+        "old_literal_methods_replayed": 0,
+        "old_wiring_methods_replayed": 0,
+        "whole156_scan_once": false,
+        "old_waveform_methods_replayed": 0,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "new_fifo": false,
+        "semantic_interpretation_qualified": false,
+        "native_qualified": false,
+        "score_measured": false,
+        "adoption": false,
+        "independent_unseen": 0
+      },
+      "receipt_sha256": "f31250f5d5ea9650f0a429233006df5018c856ba682756c2ee58fa5e7653450c",
+      "qualification_result_sha256": "63973d034a0aafcfec7bab9c48cf9230ad49de69dcdf0292bfdb09734241bb92",
+      "actual_source_manifest_sha256": "5b9d8298dfefe62bb1674969c883c127f79f23c4b187bd813e3331f275966cc1",
+      "actual_source_files": 103,
+      "actual_shipped_sources_including_manifest": 104,
+      "qualified_formal_source_manifest_sha256": "ff58e5081233cade72bc1b96209f3d9fe7ee92e8bf092504b023f4276417d9fc",
+      "qualified_runtime_sources": 100,
+      "archive": {
+        "path": "/workspace/team/runs/fpga_owner/timing_literal_fixed15_pipeline_pure_20261007_v1/PURE_EVIDENCE.zip",
+        "sha256": "7cd73e534cf8a0546b7c8239051e535be2c3f5102bda1b0973d0078f697f498b",
+        "bytes": 1355049,
+        "members": 212,
+        "every_member_dual_bound": true,
+        "manifest_member_sha256": "49334de0f4c7383b9e5f2cbd11d38159504cf77d1b006bb083457bd20c63ef53"
+      },
+      "process": {
+        "cap_s": 25,
+        "timeout": false,
+        "exec_confirmed": true,
+        "returncode": 0,
+        "leader_reaped": true,
+        "remaining_group": [],
+        "elapsed_s": 0.6312410570681095,
+        "stdout_sha256": "b90b135925247e2423e7e46c073646a213aa0829bbcfc8f0484304eae0bbe18d",
+        "stdout_bytes": 1852,
+        "normal_completion": true,
+        "child_identity": {
+          "pid": 2087250,
+          "starttime": "863254633"
+        },
+        "independent_child_retirement": true
+      },
+      "original_literal18_and_wiring229_physically_bound": true,
+      "permanent_synthetic_fixture_files": 98,
+      "all_synthetic_fixture_files_bound": true,
+      "original_frozen_sources_unchanged": true,
+      "shared_model_unchanged": true,
+      "primary_scope": "Only STATUS.md and SNAPSHOT.json original hashes are bound; no whole-directory PRIMARY proof."
+    },
+    "formal_preparation": {
+      "status": "actual_formal_preparation_complete_scoring_pending",
+      "frozen": true,
+      "queued": false,
+      "cloud_root": "/workspace/team/runs/fpga_owner/timing_literal_first_request_fixed15_20261007_v1",
+      "base_commit": "c65328da5ab2e10cb4bcc0c8787104ef522186ef",
+      "public_metadata_tree_base": "aa23fc4cdf02dd460b4c146e6f3894e567c74c23",
+      "spec_sha256": "8a2a1b4a5484b5e3db52fcd4b969d0edfddcbd7354559f912b41664cb5e6a8c1",
+      "frozen_at_utc": "2026-10-07T09:15:36.984771+00:00",
+      "preparation_receipt_sha256": "b2ca5de26825035270273ee91aa3c0d97025549db3030442a853f2f960cd1e1a",
+      "execution_receipt_sha256": "e1fbeff5189fd60ec40733f9cb5047d090d795849042d61e4c1766b845ffd250",
+      "source_manifest_sha256": "ff58e5081233cade72bc1b96209f3d9fe7ee92e8bf092504b023f4276417d9fc",
+      "runtime_source_files": 100,
+      "frozen_source_and_evidence_files": 125,
+      "environment_capture_sha256": "eb4d23e9a3c5e46ecfc93afc8bb1fdb544903d536baf4dc9254ecc41559f2c92",
+      "dependency_hashes": {
+        "full156_postflight_audit.py": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+        "paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+        "probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0"
+      },
+      "dependencies_cloud": "/workspace/team/runs/fpga_owner/timing_literal_first_request_fixed15_20261007_v1/dependencies",
+      "original141_revalidated": true,
+      "archive": {
+        "path": "/workspace/team/runs/fpga_owner/timing_literal_fixed15_formal_transport_20261007_v1/PREPARATION_EVIDENCE.zip",
+        "sha256": "e22d4d4e9e8b59ba798ecba77b4785f067d40da6075595536378df42fd98d382",
+        "bytes": 5748824,
+        "members": 154,
+        "every_member_dual_bound": true,
+        "manifest_member_sha256": "e04afcacf8d0c101f56ab52d8ecdde1878414d32f354577ed3d360519d9db2c8"
+      },
+      "archive_original_namespaces": "stage/* and transport/*; original154, not root-only stage filenames",
+      "process": {
+        "cap_s": 60,
+        "timeout": false,
+        "exec_confirmed": true,
+        "returncode": 0,
+        "leader_reaped": true,
+        "remaining_group": [],
+        "elapsed_s": 3.1684151478111744,
+        "stdout_sha256": "80b72b46997108bad6e480d06640f2c042686809b4077311aa1c0743c5aca47c",
+        "stdout_bytes": 563,
+        "normal_completion": true,
+        "child_identity": {
+          "pid": 2164480,
+          "starttime": "863818468"
+        },
+        "independent_child_retirement": true
+      },
+      "independent_postexit_sha256": "ee9fb01da8c7006608cfd913c3ab75e8d88f48698410c3bb8df11bd4d6f54187",
+      "all5_births_independently_retired": true,
+      "independent_postexit_timing_scope": "This later independent file/proc verification through alias byte verification; excludes following result file writes/stdout/SSH/local landing. No old elapsed timing is extended.",
+      "independent_postexit_elapsed_s": 5.841777740046382,
+      "postprepare_copy_and_metadata": {
+        "alias": {
+          "path": "/workspace/team/runs/fpga_owner/timing_literal_first_request_fixed15_20261007_v1/PREPARATION_EVIDENCE.zip",
+          "sha256": "e22d4d4e9e8b59ba798ecba77b4785f067d40da6075595536378df42fd98d382",
+          "same_original_archive_bytes": true,
+          "created_after_original_archive": true,
+          "not_in_original154": true
+        },
+        "independent_postexit_path": "/workspace/team/runs/fpga_owner/timing_literal_first_request_fixed15_20261007_v1/raw_evidence/INDEPENDENT_POSTEXIT.json",
+        "private_activity_path": "/workspace/team/activity/fpga_owner/artifacts/timing-literal-fixed15-formal-postexit-20261007-v1/READBACK.json",
+        "not_in_original154": true,
+        "original125_spec_and154_zip_unchanged": true
+      },
+      "external_observation": {
+        "receipt_sha256": "c43b6cf7f8572044dc6b0163fd011c514bd27a1723b3e82594b3adb031201a2d",
+        "cap_s": 210,
+        "elapsed_s": 17.75,
+        "returncode": 0,
+        "scope": "From before original stdlib transport launch through its actual process exit and observer stdout/stderr local landing; later dual download, independent postexit, public sharing are separate stages",
+        "later_dual_postexit_sharing_excluded": true,
+        "no_historical_timing_claim": true
+      },
+      "outputs_pending": 30,
+      "model_requests_maximum": 60,
+      "expected_guard_receipts": 61,
+      "guard_numbers": "000 through060",
+      "actual_controls_reused": true,
+      "new_control_calls": 0,
+      "new_extract_scan_calls": 0,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo": false,
+      "new_score": false,
+      "queue_plan": "Whole-task FIFO after original110 terminal audit and original111 terminal evidence; frozen fixed15 ticket is not claimed."
+    },
+    "capture_history": {
+      "actual_capture_sha256": "8f88ffbb61504a29336f9c235ba907c50c40d8924acde980ff1f7d3675b43686",
+      "protected_groups": 141,
+      "records": 8825,
+      "unique_files": 8699,
+      "same_path_same_sha_duplicate_records": 126,
+      "original135_groups_preserved": true,
+      "legacy_immutable_anchor_groups": 95,
+      "legacy_unique_files": 6516,
+      "correction": "The original135 snapshot omitted the later original110 root. Read-only v1 admission rejected before mutation; v2 appended its116 actual frozen sources and preserved all135 groups. Original failure stdout/stderr are retained.",
+      "correction_metadata_sha256": "25902b1efd182257965d3c4a6610fea747b5a564cf982381547410fd5169fda4",
+      "old_control_replays": 0
+    },
+    "existing_postexit_supplement": {
+      "receipt_path": "/workspace/team/activity/fpga_owner/artifacts/pr128-original-postexit-supplement-20261007-v1/ACTUAL_SUPPLEMENT.json",
+      "receipt_sha256": "706f4741c8fe285be5cd5b173ae1e9cb59f0b864c5208f71847e89009c488ca6",
+      "original_files_copied_byte_for_byte": 26,
+      "all26_current_private_AMD_physical_paths_bound": true,
+      "original18_and229_archives_unchanged": true,
+      "old_tests_scan_and_retiming_calls": 0,
+      "peer_comment": 6033653738,
+      "peer_ACK_claimed": false,
+      "original_intervals": {
+        "literal": {
+          "reported_original_monotonic_elapsed_s": 0.45677899196743965,
+          "owned_process_elapsed_s": 0.19883678294718266,
+          "delivery_readback_sha256": "2b74640a160281022bcbc0ba08900d9c5713cc9c57cdff697e3b3187dd3460e7",
+          "delivery_stdout_sha256": "8e2acf2baec3ce96710ece671648dc0c98c5177fcd32d4f20daf61281b684b5c",
+          "original_remote_source_sha256": "051b2d1d96c3aa0c6cd91ac71d99257456942a2379e5e3a812153c9043c65ed6",
+          "independent_postexit_readback_sha256": "b19f9ccbafad638c5bb397fd221f6203b1f4aeea69e214fb531b8443a7d5643f"
+        },
+        "wire": {
+          "reported_original_monotonic_elapsed_s": 0.5261585395783186,
+          "owned_process_elapsed_s": 0.23885765857994556,
+          "delivery_readback_sha256": "361b818a848fc2c088c75e4d1b35f0cdc7d7d1da052f4494f01fdc7c29c09d94",
+          "delivery_stdout_sha256": "d8b92bb9b4d393e0c91f7d6c374a470e947a6a31a78f1e0b3ebc66edeb9794d4",
+          "original_remote_source_sha256": "e5b7fa5f6b71361e2805cdf71b2111d8d40a51af326b55c4fe5c19fe4e38f490",
+          "independent_postexit_readback_sha256": "0322dc1837edfe118a128e48e1e74f05e53b4db1f71b2faaedcb10e99ae9f07e"
+        }
+      },
+      "timing_correction": "These are original REMOTE_SOURCE monotonic intervals from start to completed ZIP per-member versus original physical-byte verification. They exclude subsequent completion logs, coordination publish, final protect, stdout printing, SSH transport/return and local file writes; they do not prove total outer cleanup time.",
+      "owned_execution_reap_no_residual_and_later_independent_retirement_are_separate": true,
+      "original_SSH_returncode_artifact_retained": false,
+      "new_elapsed_time_claim": false,
+      "current_model_unchanged": true,
+      "PRIMARY_scope": "Only STATUS.md and SNAPSHOT.json; no whole-directory proof."
+    },
+    "first_request_capacity": {
+      "schema": "first30_capacity_and_original_failure_scope_public_v1",
+      "actual_versions": [
+        {
+          "version": 1,
+          "archive": {
+            "path": "/workspace/team/runs/fpga_owner/timing_literal_first_request_fixed15_input_capacity_20261007_v1/CAPACITY_EVIDENCE.zip",
+            "sha256": "865474e49ae5906ee657aab597a827c6111ae76dd7335e40c4324b449d34f975",
+            "bytes": 17508,
+            "members": 14,
+            "every_member_dual_bound": true,
+            "manifest_member_sha256": "a40b40f0f3867045537b32ef0ae21321d4cbc4b0a06061a33f02fb6c4ab944e4"
+          },
+          "original_process_identity": {
+            "pid": 2141950,
+            "starttime": "863600318"
+          },
+          "original_returncode": 1,
+          "original_owned_elapsed_s": 0.15264109708368778,
+          "original_owned_cap_s": 60,
+          "original_source_sha256": "906887489ef4926bdd8599f7a737ef870c7b7039e8febb4b1864f9dd859bf261",
+          "independently_retired": true,
+          "before_capacity_INTENT_failure": true,
+          "original_pure_HTTP_attempts": 0
+        },
+        {
+          "version": 2,
+          "archive": {
+            "path": "/workspace/team/runs/fpga_owner/timing_literal_first_request_fixed15_input_capacity_20261007_v2/CAPACITY_EVIDENCE.zip",
+            "sha256": "fb099104e1a9a0c0c701b52f07126f0c771d501c13e8905f503962cf995ef849",
+            "bytes": 17369,
+            "members": 14,
+            "every_member_dual_bound": true,
+            "manifest_member_sha256": "f89ed585903c68cc8e4d96bd103c3394a18b154923795b2979e5410266cd8bb0"
+          },
+          "original_process_identity": {
+            "pid": 2146197,
+            "starttime": "863632654"
+          },
+          "original_returncode": 1,
+          "original_owned_elapsed_s": 0.1558358445763588,
+          "original_owned_cap_s": 60,
+          "original_source_sha256": "fc9daee2c6078415fd36bf3eefab42f92c2e6fb058b29d76e446d6c8d06061cc",
+          "independently_retired": true,
+          "before_capacity_INTENT_failure": true,
+          "original_pure_HTTP_attempts": 0
+        },
+        {
+          "version": 3,
+          "archive": {
+            "path": "/workspace/team/runs/fpga_owner/timing_literal_first_request_fixed15_input_capacity_20261007_v3/CAPACITY_EVIDENCE.zip",
+            "sha256": "e2bd55fb1f3afbcde60abd86a57f7281e247f1815f0502ed5579470ed832dc7a",
+            "bytes": 412346,
+            "members": 331,
+            "every_member_dual_bound": true,
+            "manifest_member_sha256": "2498fcdb66e76dcff00b436d9518cecbb3f6b0133599c7629a9eb05cab6aaee6"
+          },
+          "original_process_identity": {
+            "pid": 2157736,
+            "starttime": "863750166"
+          },
+          "original_returncode": 0,
+          "original_owned_elapsed_s": 0.34222242794930935,
+          "original_owned_cap_s": 60,
+          "original_source_sha256": "c0bc32eb190753fb4e3001d59352476689d89cd6261f0bb5542e0cada0685330",
+          "independently_retired": true,
+          "before_capacity_INTENT_failure": false,
+          "original_pure_HTTP_attempts": 64
+        }
+      ],
+      "budget_scope_binding_sha256": "922b0d330aafe4aed963fbefef8894cb020f446ea7e9f81b6b9f15aedbb9a4ae",
+      "formal_source_manifest_sha256": "ff58e5081233cade72bc1b96209f3d9fe7ee92e8bf092504b023f4276417d9fc",
+      "first_messages_only": 30,
+      "observed_context_tokens": 16384,
+      "output_max_tokens_unchanged": 8192,
+      "appended_user_characters_including_marker_cap": 8192,
+      "characters_are_input_tokens": false,
+      "conservative_special_inclusive_input_tokens_min": 391,
+      "conservative_special_inclusive_input_tokens_max": 2848,
+      "minimum_headroom_after_reserved_output": 5344,
+      "first30_each_special_inclusive_input_plus8192_at_most16384": true,
+      "old_C_usage_prompt_tokens": 509,
+      "current_special_inclusive_count": 509,
+      "calibration_delta": 0,
+      "server_build_info": "b1-c13fcbf",
+      "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+      "pure_template_tokenize_POST": 62,
+      "metadata_GET": 2,
+      "generation_HTTP": 0,
+      "EDA": 0,
+      "new_extract_calls": 0,
+      "old_control_or156_replays": 0,
+      "original_failure_v1": "Optional interface file absent; failure before capacity INTENT or HTTP. Original rc1 retained.",
+      "original_failure_v2": "Original CRLF prompt rejected before capacity INTENT or HTTP. Original rc1 retained.",
+      "successful_v3": "Optional empty interface convention and exact raw-to-runtime newline correspondence checked; qualified100 unchanged.",
+      "repair_capacity_qualified": false,
+      "actual_scoring_wires_already_consumed": false,
+      "future_actual_first_scoring_wire_sha256_must_match": true,
+      "exact_ChatAPI_prompt_tokens_claimed": false,
+      "independent_current_physical_postexit_sha256": "feb8da065e60e31c03ec3b14dbff60a0d62ae503e6f828715d09eb21047c9e22",
+      "all14_plus14_plus331_members_physically_bound": true,
+      "independent_read_elapsed_s": 5.691521955654025,
+      "independent_read_excluded_from_old_timings": true,
+      "external_observation": {
+        "receipt_sha256": "ba6d84562090fc2d947360442026c8d31035fc8525c394f3b7af647586ed0b90",
+        "returncode": 0,
+        "cap_s": 210,
+        "elapsed_s": 9.640999999999622,
+        "scope": "From before original stdlib transport launch through its actual process exit and observer stdout/stderr local landing; later dual download, independent postexit, public sharing are separate stages",
+        "later_dual_postexit_public_sharing_excluded": true,
+        "no_historical_timing_claim": true
+      },
+      "score_measured": false,
+      "native_qualified": false,
+      "semantic_qualified": false,
+      "adoption": false
+    },
+    "bounded_peer_review": {
+      "PR130": {
+        "url": "https://github.com/854259/FPGA/pull/130",
+        "head": "965c811cfe5184a545f9994790e3309c750900bc",
+        "merge": "f83c4bb9c8cdb4ee19d22fbbbc986029bec80c78",
+        "actual_private_original_file_hashes": {
+          "READ_ONLY_REVIEW.json": "778d1d822e45f7edf4b2378750eda654326496a5d329cfd15526ff90d712a93f",
+          "PUBLIC_TIMING_LITERAL_REVIEW.json": "d04f02fb2935e84bb16c117d38e5c5a5e8cc7209b70beb912553d9edb6310501",
+          "ACTUAL_DELIVERY.json": "bd9032c0c39734a2c2c98ade754cad89c29e91db98de7e9b35df7fbe19411d1c"
+        },
+        "existing_old_original_supplement_accepted": true,
+        "old_literal_and_fake_wiring_bounded_evidence_accepted": true,
+        "complete_external_timing_accepted": false,
+        "fixed15_new7_or_capacity_or_freeze_peer_acceptance_claimed": false
+      },
+      "PR131": {
+        "url": "https://github.com/854259/FPGA/pull/131",
+        "head": "cb64d7b6d7fa6ce227a1bd37bb342e20719ebc69",
+        "merge": "154c0089e834dae116ff5a4d24b6e54f59875a56",
+        "peer_comment": 6034642013,
+        "owner_cooperation_direction_accepts_items": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "item2_new_experiment_rule_is_discussion": true,
+        "current120_L3_point80_and_history113_cost_goal_changed": false,
+        "shared_both_arms_historical_failure_is_not_paired_regression": true,
+        "owner_next": "Receive original110 terminal audit and original111 native terminal evidence, keep e59 literal paragraph first-request attention as one task-blind factor, freeze fixed15 and decide its FIFO screen after those results; no timer/table/onehot composition.",
+        "peer_fixed15_source_stage_capacity_freeze_or_score_acceptance_claimed": false
+      }
+    },
+    "source_scope": {
+      "schema": "timing_literal_fixed15_source_scope_public_v1",
+      "core_source_sha256": {
+        "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+        "timing_obligations.py": "e59a42925363e4840bf69677e61ed84c9039f1a0bd41e65f40facc89a6710cb2",
+        "timing_request.py": "1d6e8af688e697dbe1e1a5ed3300e26634e56d3fdeb2a4d51625fee95431efb5",
+        "worker.py": "b86bc41a6044033005883b38ddf235bf6175284b0041bac39e55ed2c8bf6740a"
+      },
+      "actual_pipeline_source_manifest_sha256": "5b9d8298dfefe62bb1674969c883c127f79f23c4b187bd813e3331f275966cc1",
+      "qualified_formal_source_manifest_sha256": "ff58e5081233cade72bc1b96209f3d9fe7ee92e8bf092504b023f4276417d9fc",
+      "qualified_runtime_sources": 100,
+      "C_common_phase_P": true,
+      "P_only_original_literal_excerpts_in_first_request": true,
+      "repair_request_unchanged": true,
+      "abstention_exactwire": true,
+      "task_blind_inputs": "original prompt/interface/payload only",
+      "maximum_appended_user_characters_including_marker": 8192,
+      "character_cap_is_not_input_token_or_context_cap": true,
+      "output_max_tokens_unchanged": 8192,
+      "whole_abstain_no_truncation": true,
+      "model_request_delta": 0,
+      "original_parameters_baseline_judge_and_xz_retained": true,
+      "private_payloads_sources_and_logs_excluded": true
+    },
+    "budget": {
+      "output_tokens": 8192,
+      "max_requests": 2,
+      "repairs": 1,
+      "solver_s": 300,
+      "judge_s": 300,
+      "judge_supervisor_s": 360,
+      "xz_retained": true,
+      "retries": 0,
+      "screen_outputs": 30,
+      "screen_max_requests": 60,
+      "screen_guard_receipts": 61,
+      "stage_safety_ceiling_s": 43200,
+      "guard_safety_ceiling_s": 43600,
+      "slot_safety_ceiling_minutes": 740,
+      "safety_ceilings_are_ETA": false,
+      "observed_model_context_tokens": 16384,
+      "first30_special_inclusive_capacity_checked": true,
+      "unknown_repair_capacity_checked": false,
+      "appended_chars_are_input_tokens": false
+    },
+    "gates": {
+      "full156_minimum_L3": 120,
+      "full156_minimum_weighted_score": 0.8,
+      "historical113_all_P_L3": true,
+      "paired_grades_nondecreasing": true,
+      "historical_correct_each_task_P_cost_at_most_C": true,
+      "unchanged_grade_each_task_P_cost_at_most_C": true,
+      "total_P_cost_at_most_C": true,
+      "all_task_cost_disclosed_without_stricter_gate": true,
+      "screen_historical_subset": 7,
+      "screen_targets": 8,
+      "screen_strict_L3_net_minimum": 1,
+      "screen_weighted_P_strictly_greater_C": true,
+      "complete30_original_judge_rows_and61_real_guards": true,
+      "no_deadline_unconfirmed_source_tool_failure": true,
+      "independent_complete_archive_audit_required_before_new_full156": true
+    },
+    "prior_PR128": {
+      "url": "https://github.com/854259/FPGA/pull/128",
+      "head": "c65328da5ab2e10cb4bcc0c8787104ef522186ef",
+      "historical_node": "timing_literal_first_request_qualification_20261007",
+      "original_245_nodes_preserved": true,
+      "original_conclusions_unchanged": true,
+      "literal6_and_wire4_and_once156_separate_from_new7": true,
+      "old_literal_wire_wave_controls_replayed": 0
+    },
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": false,
+    "score_measured": false,
+    "native_qualified": false,
+    "semantic_interpretation_qualified": false,
+    "independent_unseen": 0,
+    "five_sample_qualification": false,
+    "adoption": false,
+    "goal_achieved": false,
+    "goal_status": "active",
+    "quota_policy": {
+      "max_reset_consumptions": 0,
+      "reset_consumed": false
+    },
+    "next": "Only a fixed15 development screen is prepared. Its30 pending original judge outputs,61 real guards, strict newL3 gain, all historical/paired grades and exact cost gates must pass complete independent audit before a fresh same-factor full156. No earlier factor scores are combined."
   }
 }
