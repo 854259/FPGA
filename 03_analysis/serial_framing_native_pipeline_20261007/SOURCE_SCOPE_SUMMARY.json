@@ -1,0 +1,214 @@
+{
+  "schema": "serial_framing_pipeline_source_scope_v2",
+  "correction": {
+    "old_sha256": "0603f5575630731465c292ee765f95aad3e729511c91adc1dd307f6ea15c6f38",
+    "new_sha256": "bdb37e620d30a1424a4b3df0bb274c3d5a76485a5eb77f9945c709b5c490787b",
+    "reverse_exact": true,
+    "changes": [
+      {
+        "old": "spec['stage_timeout_s'] == 4200",
+        "new": "spec['stage_timeout_s'] == 3600"
+      },
+      {
+        "old": "spec['source_hashes']['sources/serial_timer.py']",
+        "new": "spec['source_hashes']['sources/synthesis.py']"
+      }
+    ]
+  },
+  "prior_adaptation_chain": {
+    "sources/stage.py": {
+      "old_sha256": "1df860be7c404a629d340dbc17f7ceeedc54abd1f0c432c9da435e8e96146e0a",
+      "new_sha256": "0603f5575630731465c292ee765f95aad3e729511c91adc1dd307f6ea15c6f38",
+      "reverse_exact": true,
+      "replacements": [
+        {
+          "old": "serial_timer_binary_event_native_",
+          "new": "serial_framing_binary_event_native_",
+          "count": 3
+        },
+        {
+          "old": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+          "new": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+          "count": 1
+        },
+        {
+          "old": "'serial_timer.py'",
+          "new": "'synthesis.py'",
+          "count": 1
+        },
+        {
+          "old": "'timer_fixture.py'",
+          "new": "'framing_fixture.py'",
+          "count": 1
+        },
+        {
+          "old": "0 <= w['offset'] < 3",
+          "new": "0 <= w['offset'] < len(expected[w['index']]['outputs'])",
+          "count": 1
+        },
+        {
+          "old": "== 36",
+          "new": "== 42",
+          "count": 4
+        },
+        {
+          "old": "== 12",
+          "new": "== 14",
+          "count": 3
+        },
+        {
+          "old": "== 73",
+          "new": "== 85",
+          "count": 3
+        },
+        {
+          "old": "plan['negative_mutants'] == 4",
+          "new": "plan['negative_mutants'] == 6",
+          "count": 1
+        },
+        {
+          "old": "expected_samples=12",
+          "new": "expected_samples=14",
+          "count": 1
+        },
+        {
+          "old": "serial_timer_snapshot",
+          "new": "serial_framing_snapshot",
+          "count": 2
+        }
+      ]
+    },
+    "sources/audit.py": {
+      "old_sha256": "3beec4b762a8c0fe62caaa88a052c3f278cae9338987459c9161dde27717a385",
+      "new_sha256": "3e970defdb1ced56a5cc4134a292f3d11dc448dd030c3781674845ac435079c3",
+      "reverse_exact": true,
+      "replacements": [
+        {
+          "old": "serial_timer_binary_event_native_",
+          "new": "serial_framing_binary_event_native_",
+          "count": 2
+        },
+        {
+          "old": "== 36",
+          "new": "== 42",
+          "count": 1
+        },
+        {
+          "old": "== 73",
+          "new": "== 85",
+          "count": 1
+        },
+        {
+          "old": "== 12",
+          "new": "== 14",
+          "count": 1
+        },
+        {
+          "old": "range(73)",
+          "new": "range(85)",
+          "count": 2
+        },
+        {
+          "old": "controls=12",
+          "new": "controls=14",
+          "count": 1
+        },
+        {
+          "old": "negative_mutants=4",
+          "new": "negative_mutants=6",
+          "count": 1
+        },
+        {
+          "old": "native_commands=36",
+          "new": "native_commands=42",
+          "count": 1
+        },
+        {
+          "old": "guard_receipts=73",
+          "new": "guard_receipts=85",
+          "count": 1
+        }
+      ]
+    },
+    "sources/test_pipeline.py": {
+      "original_qualified_source_sha256": "a73e0467f07bfbd36373cc7061ea6bfe53261107e042ca690481d4dd6f1a0c35",
+      "new_sha256": "e21f538e4740f8f7e5deb537c1f05b958f59574154cca65b9c9863e198c994c0",
+      "methods": 9,
+      "old_timer_material7_excluded": true,
+      "new_frame_material6_not_replayed": true,
+      "source_dependent_new_frame_contexts_pending": true,
+      "changes": [
+        {
+          "old": "serial_timer_binary_event_native_",
+          "new": "serial_framing_binary_event_native_"
+        },
+        {
+          "old": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+          "new": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5"
+        },
+        {
+          "old": "planned_controls=12",
+          "new": "planned_controls=14"
+        },
+        {
+          "old": "planned_native_commands=36",
+          "new": "planned_native_commands=42"
+        },
+        {
+          "old": "planned_guard_receipts=73",
+          "new": "planned_guard_receipts=85"
+        },
+        {
+          "old": "plan['controls'],12",
+          "new": "plan['controls'],14"
+        },
+        {
+          "old": "plan['native_calls_planned'],36",
+          "new": "plan['native_calls_planned'],42"
+        },
+        {
+          "old": "plan['guard_receipts_planned'],73",
+          "new": "plan['guard_receipts_planned'],85"
+        },
+        {
+          "old": "prepared_cases/canonical_four/",
+          "new": "prepared_cases/byte_data/"
+        },
+        {
+          "old": "plan['rows'][2]",
+          "new": "plan['rows'][4]"
+        },
+        {
+          "old": "b\"4'd7: _timer_next = 4'd8;\"",
+          "new": "b\"_sf_buffer[_sf_index] <= serial;\""
+        },
+        {
+          "old": "b\"4'd7: _timer_next = 4'd4;\"",
+          "new": "b\"_sf_buffer[7-_sf_index] <= serial;\""
+        },
+        {
+          "old": "'planned_native_commands':35,'planned_controls':11,'planned_guard_receipts':72",
+          "new": "'planned_native_commands':41,'planned_controls':13,'planned_guard_receipts':84"
+        },
+        {
+          "old": "dict(w,offset=3)",
+          "new": "dict(w,offset=len(expected[w['index']]['outputs']))"
+        },
+        {
+          "old": "serial_timer_snapshot",
+          "new": "serial_framing_snapshot"
+        }
+      ]
+    }
+  },
+  "reused_source_hashes": {
+    "sources/measure.py": "e4f4f574edb5f6317e6a01f6542173c7273a4a86a89700cb1d96c3d2b5ebaae2",
+    "sources/owned_exec.py": "9981c3a36183787d559aaed73fcfd34d36e6a7354e5da1874cf5308c6ee476c5",
+    "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+    "dependencies/protected_sources.py": "53507373aa69e54ccd083a6452fb7acaa0cdbc144d2bdf0e01710b21cfd5ed1a",
+    "dependencies/paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c"
+  },
+  "original_v1_qualified": false,
+  "material6_not_replayed": true,
+  "native_qualified": false
+}
