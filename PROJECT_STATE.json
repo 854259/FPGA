@@ -3118,7 +3118,7 @@
       "dependency_scope": "isolated Icarus and six pinned Python packages; not full official image"
     },
     "latest_live_check": {
-  "checked_at": "2026-10-07T09:09:33.970325+08:00",
+  "checked_at": "2026-10-07T09:18:40.145086+08:00",
   "own_running_stage_processes": 0,
   "own_model_or_eda_processes": 0,
   "model_pid": 2013333,
@@ -3127,16 +3127,16 @@
   "full_experiment_running": false,
   "full_experiment_running_scope": "comprehensive all-inclusive batch",
   "known_full156_regression_completed_ticket": 102,
-  "latest_own_stage": "PR105 onehot full156 frozen source/preparation and original FIFO109 bounded review",
+  "latest_own_stage": "PR107 serial full156 source/preparation and original FIFO110 bounded review",
   "latest_own_stage_complete": true,
-  "latest_own_stage_status": "One fresh same-factor all156 development C/P frozen source/preparation/admission and original FIFO109 binding only. No running score review or adoption.",
+  "latest_own_stage_status": "One fresh same-factor serial all156 development C/P source/preparation/admission and original queued FIFO110 binding only; active109 remains unchanged. No natural score or adoption.",
   "latest_own_ticket": 104,
   "own_monitor_pid": null,
   "other_active_tickets": [
     109
   ],
-  "next_own_stage": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
-  "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_ONEHOT_CP7_FREEZE_REVIEW.json",
+  "next_own_stage": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
+  "receipt": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_SERIAL_TIMER_REVIEW.json",
   "terminal_statistics_preparation": {
     "status": "complete_verified_after_single_report_schema_correction",
     "source": "03_analysis/helper_extraction_20261004/paired_uncertainty_20261005.py",
@@ -3202,8 +3202,10 @@
     }
   },
   "other_ticket90_stage_summary": "Terminal report intake verified at 17:01: C 112/156, P 118/156 (0.798717949); adoption=false. See team_table_terminal_intake_20261006. Not an audit_pending claim.",
-  "processing_slots_note": "08:53 original109 owns SLOT; original108 completed and its monitor is same-birth Z. Shared27B identity preserved; no new telemetry/inference call.",
-  "other_queued_tickets": [],
+  "processing_slots_note": "09:18 original109 owns SLOT and runs 50/312 outputs, 52 requests; original110 queued with no stage/results. Both original monitor identities and shared27B preserved. No new inference/EDA/FIFO call.",
+  "other_queued_tickets": [
+    110
+  ],
   "model_identity_check_scope": "Live /proc PID/start/cmdline SHA match frozen local27B; no model restart or new call.",
   "state_sync_note": "Current status is comprehensive_cycle_20261004.latest_live_check. A prior root synchronization matched the same key in a historical section; the current node is now explicitly scoped and reconciled. No frozen execution input changed.",
   "queued_tickets": [],
@@ -3212,14 +3214,15 @@
   "peer98_status": "Peer PR61 amended source audit completed; bounded independent source/receipts/archive/result review accepted at2026-10-07T00:10+08. Original strict auditor failed retained. Adoption=false; not independently rerun full replay.",
   "peer101_status": "Original101 failed4 requests retained;103 cancelled unstarted;104 completed18 requests and corrected terminal audit passed.",
   "peer102_status": "PR69 original audit completed;118 sources/11988 archive members/312 provenance rows bounded review accepted, adoption false.",
-  "latest_review_at": "2026-10-07T09:09:33.970325+08:00",
-  "latest_review_sha256": "84788be6cca44afa7f4097ff77d3bffa6afa25972bc5935f243003d8fa2ceba6",
+  "latest_review_at": "2026-10-07T09:18:40.145086+08:00",
+  "latest_review_sha256": "e95d40e7ab817f56ead990b45c7ca72c8b6bdd30d49fa0989ee1cb3c63105bfe",
   "peer105_status": "Original terminal audited once,312/335,C112/P114,requests167/168; source/outer450/all12511members verified; rejected, no expansion.",
   "peer106_status": "Original terminal audited once,14/19,C6/P7,requests10/9; six guards/per-task cost/all881members verified; only eligible for a newly frozen156 development regression.",
   "peer107_status": "Original107 finite native qualification reused in original108; original108 terminal now qualifies only one new same-factor156 regression.",
   "peer108_status": "Completed14/19 and original once terminal audited; C6/P7 requests10/9, all fixed gates pass, only one new same-factor156 development regression eligible. Inherited audit_pending does not trigger rerun.",
-  "peer109_status": "Running36/312 outputs36 requests at09:09; freeze11717fea/136 sources and preparation reviewed, original terminal pending. No score conclusion.",
-  "peer108_monitor_state": "Original1664273/start860326911 Z_empty_cmdline; not active."
+  "peer109_status": "Running50/312 outputs52 requests at09:18;136 frozen sources preserved; PR108 freeze review complete, original terminal pending, no score conclusion.",
+  "peer108_monitor_state": "Original1664273/start860326911 Z_empty_cmdline; not active.",
+  "peer110_status": "Queued original110/monitor1710412/start860902725, no stage/results;116-source846b7d4f serial same-factor freeze independently reviewed; no natural score."
 },
     "rtllm_full_contracts_certified": false,
     "capacity_estimate": {
@@ -6239,7 +6242,7 @@
   }
 },
   "waveform_resource_fix_20261006": {
-  "updated_at": "2026-10-07T09:12:00+08:00",
+  "updated_at": "2026-10-07T09:21:00+08:00",
   "authorization": "Explicit user request to assist peer fix and start execution; takeover limited to resource freshness bug and FIFO recovery.",
   "status": "104_terminal_audited_screen_passed_102_bounded_review_reject_adoption",
   "pull_request": "https://github.com/854259/FPGA/pull/59",
@@ -6280,7 +6283,7 @@
     "full_batch_complete": false,
     "quality_result": "C5/6 P6/6; requests9/9; one target repaired, five guards preserved; only new156 development screen eligible"
   },
-  "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
+  "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
   "report": "03_analysis/waveform_resource_lifecycle_20261006/README.md",
   "peer_handoff": {
     "confirmed_comment": 6019767790,
@@ -6288,27 +6291,27 @@
     "goal_status": "peer_reported_active",
     "fix_read_and_accepted": true,
     "controls_reused": 33,
-    "peer_responsibility": "Own frozen109 and its original terminal; separately freeze serial156 using108 qualified screening; no audit replay.",
-    "own_responsibility": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
+    "peer_responsibility": "Own frozen running109/queued110 and their original terminal each once; no repeated controls/audits or score addition.",
+    "own_responsibility": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
     "reply_comment": 6019879549,
     "reply_readback_verified": true,
     "new_path_suggestion_peer_acknowledged": true,
-    "latest_peer_comment": 6028426140,
-    "latest_own_review_reply": 6028586864,
+    "latest_peer_comment": 6028716496,
+    "latest_own_review_reply": 6028767306,
     "latest_review_peer_confirmed": false,
     "pr68_preparation_read_confirmed": true,
     "current_terminal_handoff_pending": false,
     "current_terminal_peer_confirmed": true,
     "current_terminal_ack_scope": "Read actual PR70 delivery and accept102 nonadoption/division; not independent104 member or semantic audit certification",
-    "latest_ack_sha256": "5680046693f8ad90349c12f785fb702623e8aef6864789aedabadc2fb600ea96",
-    "latest_ack_scope": "6028261850 explicitly accepts all six AMD files for PR103 bounded105/106 terminal and PR104 serial108 freeze; not new generator proof or adoption.",
+    "latest_ack_sha256": "90b1f93249c7622cdfd2dbd034bfd3f21c99435bc20127076bd69004e3900fc2",
+    "latest_ack_scope": "6028716496 explicitly accepts PR106 final head and all three original108 bounded terminal delivery files; actual hashes verified, not new109/110 qualification.",
     "current_freeze_review_peer_confirmed": true,
     "pr78_bounded_failure_acknowledged": true,
     "serial_numeric_counterexample_peer_acknowledged": true,
     "pr79_bounded_review_peer_acknowledged": true,
     "pr80_numeric_v2_bounded_review_peer_acknowledged": true,
     "pr83_native_v2_preparation_bounded_review_peer_acknowledged": true,
-    "latest_own_review_reply_scope": "PR106 complete original108 bounded terminal delivery7fbb1e15 posted and read back, peer acknowledgment pending. PR105 freeze independently reviewed, new delivery follows.",
+    "latest_own_review_reply_scope": "PR108 complete onehot109 freeze bounded delivery21b32de9 posted and read back; peer acknowledgment pending. New serial110 freeze review complete, delivery follows.",
     "pr85_worker20_full_delivery_acknowledged": true,
     "pr88_pipeline30_bounded_review_acknowledged": true,
     "serial_activity_label_correction_accepted": true,
@@ -6323,7 +6326,8 @@
     "pr99_external_budget_bounded_review_acknowledged": true,
     "pr101_native107_bounded_review_acknowledged": true,
     "pr103_original105_106_terminal_acknowledged": true,
-    "pr104_serial108_freeze_acknowledged": true
+    "pr104_serial108_freeze_acknowledged": true,
+    "pr106_original108_terminal_acknowledged": true
   },
   "dependency_path_review": {
     "receipt_sha256": "f734b2b31699229b480647193053d8f3755e5826f5f07332e2d4dfdb70574d09",
@@ -6676,7 +6680,7 @@
   },
   "terminal_readonly_review_sha256": "ccea319513f1005543df9a53ba4cda08687bb781049f3a4240910a0e6fc2f5be",
   "terminal_readonly_review_dual_verified": true,
-  "last_processed_mail_id": "1a113d7906155775",
+  "last_processed_mail_id": "1a113ea56beef3de",
   "peer72_full156_freeze": {
     "schema": "peer72_waveform_single_factor156_bounded_review_public_v1",
     "reviewed_at": "2026-10-07T02:27:17+08:00",
@@ -6794,7 +6798,7 @@
       "current_ack_sha256": "aadeefadd66a0b64fca2151e6329bc1b6bd1b7ec79978be0c63638f06a461303"
     },
     "limits": "Known development C/P156 only. Does not complete A/P/B, RTLLM, five independent samples or formal32GB/interface/recovery acceptance; no onehot/FSM composition. Live partial counts are progress only.",
-    "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
+    "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
     "peer_fifo_delivery": {
       "pr": 73,
       "head": "892e8ddb19d226e5ec7c993f43160e4c76dbb2c3",
@@ -7599,6 +7603,13 @@
       "readonly_sha256": "84788be6cca44afa7f4097ff77d3bffa6afa25972bc5935f243003d8fa2ceba6",
       "scope": "One fresh same-factor all156 development C/P frozen source/preparation/admission and original FIFO109 binding only. No running score review or adoption.",
       "terminal_pending": true
+    },
+    "serial_full156_freeze_review_reference": {
+      "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_SERIAL_TIMER_REVIEW.json",
+      "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+      "readonly_sha256": "e95d40e7ab817f56ead990b45c7ca72c8b6bdd30d49fa0989ee1cb3c63105bfe",
+      "scope": "One fresh same-factor serial all156 development C/P source/preparation/admission and original queued FIFO110 binding only; active109 remains unchanged. No natural score or adoption.",
+      "terminal_pending": true
     }
   },
   "peer75_onehot_cp7_freeze": {
@@ -7744,7 +7755,7 @@
     "natural_terminal_score_audited": true,
     "adoption": false,
     "full_all_inclusive_batch_complete": false,
-    "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
+    "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
     "elapsed_read_only_seconds": 1.482100335881114,
     "prestart_failure_review": {
       "reviewed_at": "2026-10-07T03:28:32+08:00",
@@ -7989,7 +8000,15 @@
       "full_all_inclusive_batch_complete": false,
       "full_budget_actual_quota_verified": false,
       "peer_acknowledgment_of_this_new_review": false,
-      "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105."
+      "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
+      "own_delivery": {
+        "pr": "https://github.com/854259/FPGA/pull/108",
+        "head": "549d0146116f8e31681f2472d61a0de0a2c86200",
+        "merge": "8418e41e5dd837e3dc667d407bf4af007e2bf1f2",
+        "delivery_sha256": "21b32de96b55db5dd83edb045ac10bbf0370bb120eb0e29171c5026a513c0afb",
+        "comment": 6028767306,
+        "peer_accepted": false
+      }
     }
   },
   "serial_timer_preparation_review": {
@@ -8125,9 +8144,9 @@
       "supervisor_terminal_state": "Z, empty cmdline; retained by PID1, not active",
       "original_failure_retained": true
     },
-    "status": "original108_terminal_audited_eligible_for_one_new_same_factor156",
+    "status": "original110_serial_full156_freeze_reviewed_queued",
     "conclusion": "Original108 once-only terminal provenance and fixed7 development screening accepted; only one fresh same-factor156 regression eligible, no adoption or generalization.",
-    "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
+    "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
     "original_tests_or_intake_reexecuted": 0,
     "new_diagnostic_processes": 1,
     "new_synthetic_inputs": 2,
@@ -9462,8 +9481,8 @@
       "adoption": false,
       "full_all_inclusive_batch_complete": false,
       "full_batch_budget_actual_quota_verified": false,
-      "peer_acknowledgment_of_this_new_review": false,
-      "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
+      "peer_acknowledgment_of_this_new_review": true,
+      "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
       "terminal_sources_public_binding": {
         "source_files": 2,
         "exact_git_amd_bytes": true,
@@ -9477,7 +9496,225 @@
         "merge": "9b382efc8f005e124a51fd3ab0d40581d4299bc9",
         "delivery_sha256": "7fbb1e156a49a59600f04b619c673856b3d3ef39fd76e145430ab77390ef9a99",
         "comment": 6028586864,
-        "peer_accepted": false
+        "peer_accepted": true
+      },
+      "peer_acceptance": {
+        "comment": 6028716496,
+        "mail_id": "1a113ea56beef3de",
+        "full_actual_files_verified": {
+          "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/PUBLIC_SERIAL_TIMER_REVIEW.json": "3c509039ce9dcebd18696c58fa2b4532a68c40f22d07c9fb779ce25cca88c57e",
+          "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "08cdaebe9caf240d23ee134a01ea1b2856a8e5c6c09e03298aa61f1a49449b59",
+          "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "7fbb1e156a49a59600f04b619c673856b3d3ef39fd76e145430ab77390ef9a99"
+        },
+        "scope": "Explicit acceptance of PR106 final head and all three original108 bounded delivery files; no extra109 or generalization qualification."
+      }
+    },
+    "full156_freeze_review": {
+      "schema": "peer107_serial_full156_freeze_bounded_independent_review_v1",
+      "checked_at": "2026-10-07T09:18:40.145086+08:00",
+      "peer_pr": "https://github.com/854259/FPGA/pull/107",
+      "head": "e4be460fb79125666a3fc7e13f7cd62a9b114467",
+      "merge": "f27c7946acd1af661286f634c3e491eef5a63d1f",
+      "peer_comment": 6028716496,
+      "mail_id": "1a113ea56beef3de",
+      "peer_delivery_sha256": "90b1f93249c7622cdfd2dbd034bfd3f21c99435bc20127076bd69004e3900fc2",
+      "fifo_delivery_sha256": "4cf908c97d1d74f81a3e4ff9ec85a9befc6ce1964e2fbea2e539aa7364cea8ac",
+      "submission_binding_sha256": "1ec8435fc8737c98d15d2d0e48f9a454bb9a79cc0e5f1bf67029e9833e789475",
+      "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+      "scope": "One fresh same-factor serial all156 development C/P source/preparation/admission and original queued FIFO110 binding only; active109 remains unchanged. No natural score or adoption.",
+      "source_count": 116,
+      "parent_source_count": 101,
+      "unchanged_common": 95,
+      "changed": [
+        "audit.py",
+        "metrics.py",
+        "pilot.py",
+        "preparation_inputs.py",
+        "raw_evidence/ENVIRONMENT_CAPTURE.json",
+        "raw_evidence/PROTECTED_GROUPS_CAPTURE.json"
+      ],
+      "added": [
+        "ACTUAL_FULL_SCOPE_ADMISSION.json",
+        "DRAFT_SOURCE_MANIFEST.json",
+        "FULL_BASELINE_REFERENCE.json",
+        "FULL_BASELINE_SOURCE_AUDIT.json",
+        "FULL_SOURCE_ADAPTATION_PROOF.json",
+        "PRODUCTION_ADMISSION.json",
+        "QUALIFYING_CP7_AUDIT.json",
+        "QUALIFYING_CP7_AUDIT_DERIVATIVE.json",
+        "QUALIFYING_CP7_ORIGINAL_BINDING.json",
+        "QUALIFYING_CP7_SPEC.json",
+        "collect_evidence.py",
+        "prepare_full_scope.py",
+        "raw_evidence/ARCHIVAL_CP7_ENVIRONMENT_CAPTURE.json",
+        "raw_evidence/ARCHIVAL_CP7_PROTECTED_GROUPS_CAPTURE.json",
+        "test_full_metrics.py"
+      ],
+      "production_unchanged": {
+        "worker.py": "1eac9c3b9bac6581bf0aa137fdead50835cf80483d000848554e298f2a7ed90a",
+        "synthesis.py": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+        "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+        "factor_proof.py": "bda081df86cd2e6c9b7d597337079ae220a8398723483f9485eb50dc42bbe0fe",
+        "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+        "NATIVE_QUALIFICATION_AUDIT.json": "f57af8d7a6d2cb11abc051e757876679a8b7bc040787a52d296894cc2e84d8d7",
+        "NATIVE_ARCHIVE_BINDING.json": "fe1673d5c029e4fd8fb82d8d1069c11f160b9db133b402683df914a8cd632e52",
+        "NATIVE_EVIDENCE.zip": "6a471b2046c54281dc8e9c862cd3a4e41a75914161e1dc57e8908f531f07ff7d",
+        "upstream/official_eval_guarded.py": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c"
+      },
+      "pilot_unchanged_functions": 8,
+      "audit_unchanged_functions": 8,
+      "generic_metrics_and_tests_exact_route_label_bijection": true,
+      "preparation_source_sha256": "a3a59920928a3fb329a1d2cb846d1147919a1379ad9a5ac972ad94a2cb9542c5",
+      "original_prepare": {
+        "pid": 1692728,
+        "state": "T",
+        "starttime": "860829980",
+        "pgid": 1692728,
+        "sid": 1692728,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603",
+        "elapsed_s": 2.7558195032179356,
+        "cap_s": 40,
+        "rc": 0,
+        "exec_confirmed": true,
+        "leader_reaped": true,
+        "remaining": [],
+        "stdout_sha256": "39a6068e654bc2f9c1cfdf3167010a2ab98a32bdc3251b530ebd31bc8b030757",
+        "stdout_bytes": 673,
+        "birth_stat_cmd_argv_stream_receipt_verified": true,
+        "outer_observation_s": 3.863230064511299,
+        "observer_self_complete_budget_not_claimed": true
+      },
+      "preparation_receipt_sha256": "73f4d0d1a9f743d1065c538f8a7e68db26320db2c8737e6dd47ba52c1820fd89",
+      "preparation_process_receipt_sha256": "fc1f351de46306eb4b5ace28c17a6596fea0cacf76228bcf9ce5af060c3e26d5",
+      "post_exit_sha256": "3bca86ab74d764763d7d4a08002394e6c1e1f4513e6548c3f7d04f1a0d04e49c",
+      "source_claim_files": 110,
+      "two_capture_originals_preserved": true,
+      "actual_new_scope_admission_groups": 4,
+      "admission_checks": [
+        "original108 qualifier and exact unchanged single-factor production/native107 bound",
+        "all156 input bytes,113 historical guards and exact1emit155abstain admission bound",
+        "same original grade,provenance,complete300 solver measurement and historical/per-task/total cost gates retained",
+        "immutable95/6516,original109/7389 and current125/7928 retained;136 active109 frozen sources added, progress excluded"
+      ],
+      "new_test_controls_executed": 0,
+      "reused_evidence": "Original108 audit4578ce6b/856-member02002e35; native107f57af8d7/509-member6a471b20; old worker20/pipeline30/numeric156 intake/generic15/original audits reused, not rerun. Root collector alias exact original upstream bytes.",
+      "finite_native_scope": "Finite107 binary-event/synchronous-reset/edge three-output qualification; TRACE next placeholder does not prove internal next/xz/full domain. One known natural CP7 contract case is not generalization.",
+      "protection": {
+        "groups": 126,
+        "declared_entries": 8064,
+        "unique_files": 7938,
+        "original125_preserved": true,
+        "original95_6516_preserved": true,
+        "active109_frozen136_only": true,
+        "kit_counts": {
+          "package": 18,
+          "official": 35,
+          "tasks": 936,
+          "baseline": 2,
+          "upstream_commit": 40
+        },
+        "original_prepare_before_after_groups": 119,
+        "original125_all_retained": true,
+        "original106_duplicate_entries": 126,
+        "all_duplicates_same_hash": true
+      },
+      "archive": {
+        "sha256": "f10f447961a76d30ab0e6f5b81861eb5645e996c00dd021e3dc5f21e3f4852ec",
+        "bytes": 14048795,
+        "members": 129,
+        "manifest_sha256": "17d7fe21cec4a94a9a315a6ad6f15de2c279b3f0bfd249ea06fd1710d50ed95d",
+        "dual_end_all_members_verified": true
+      },
+      "public_files": 15,
+      "public_python_files": 5,
+      "all_public_git_amd_bytes_equal": true,
+      "budget": {
+        "solve_deadline_s": 300,
+        "judge_timeout_s": 300,
+        "judge_supervisor_timeout_s": 360,
+        "max_worker_requests_per_arm": 2,
+        "max_actual_model_requests": 624,
+        "stage_timeout_s": 43200,
+        "guard_timeout_s": 43600,
+        "slot_minutes": 740,
+        "retries": 0
+      },
+      "tasks": 156,
+      "expected_outputs": 312,
+      "historical_guards": 113,
+      "existing_admission": {
+        "emitted": 1,
+        "abstentions": 155,
+        "no_new_intake_scan": true,
+        "original_receipt_sha256": "372887fc6483bd8f0995e88f1089575525f5b9c49c4b47e54a5c08c58b6846f0",
+        "private_rows_sha256": "5d062924bae20ef218a41b4985de3ae6029120bf292604e53c75f226173bf0ad",
+        "metadata_not_production_dispatch": true
+      },
+      "tokens": 8192,
+      "repairs": 1,
+      "acceptance": "All156/312 original judge rows, P>=120 fully correct and weighted>=.80; historical113 allL3, paired grades nondecreasing; P total requests<=C and every historical-correct/unchanged-grade task P requests<=C, no deadline/unconfirmed/tool/source failure; original terminal archive audit required.",
+      "original_fifo": {
+        "number": 110,
+        "state": "queued",
+        "monitor": {
+          "pid": 1710412,
+          "state": "R",
+          "starttime": "860902725",
+          "command_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a"
+        },
+        "no_stage_or_results": true
+      },
+      "status_at_check": {
+        "state": "queued",
+        "no_stage_or_results": true
+      },
+      "submission_evidence_scope": "Saved submission argv/rc0/stdout ticket, spec/source, monitor birth snapshot and current exact PID/start/cmd; queued without stage/results. No invented preexec submission handshake.",
+      "limits": [
+        "One fresh same-factor all156 development C/P run; no redraw/stored answer/five/independent/hidden/adoption/deployment.",
+        "Single serial timer factor with common original phase-P model fallback; no taskID production dispatch or waveform/FSM/vector/table/onehot composition.",
+        "8192/max2/repair1/complete worker300/judge300/super360 including x-z unchanged.",
+        "Finite107 binary pattern/shift/event/reset three-output qualification and one actual known151 instance are not internal-next/xz/all-parameter proof.",
+        "Stage43200/guard43600/slot740min are safety caps, not ETA.",
+        "Original score gains are not added; target120/.80/history/cost gates all mandatory.",
+        "8064 grouped source records correspond to7938 unique physical files; inherited126 duplicate entries are identical106 source references.",
+        "Original prepare pre/post119-group snapshots are retained; new126 inventory independently checked, active109 progress excluded.",
+        "PR delivery schema alias and prepare docstring retain onehot labels; actual serial root/spec/source/qualification and FIFO serial schema bind scope. Label changes would not prove mechanism benefit.",
+        "Peer precommit CRLF rejection is self-report; actual15Git/AMD bytes plus -text whitespace=cr-at-eol checked, no AMD preparation rerun."
+      ],
+      "readonly_receipt_sha256": "e95d40e7ab817f56ead990b45c7ca72c8b6bdd30d49fa0989ee1cb3c63105bfe",
+      "readonly_seconds": 1.4907888062298298,
+      "reviewer_new_model_calls": 0,
+      "reviewer_new_eda_calls": 0,
+      "reviewer_new_controls": 0,
+      "reviewer_original_audit_or_collector_runs": 0,
+      "reviewer_new_fifo": 0,
+      "independent_unseen": 0,
+      "effective_family_N": null,
+      "adoption": false,
+      "full_all_inclusive_batch_complete": false,
+      "full_budget_actual_quota_verified": false,
+      "peer_acknowledgment_of_this_new_review": false,
+      "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
+      "qualifying108_audit_sha256": "4578ce6bbd335d67f1e02a4a33553fa03048fde48cea04fe63c679fbe1044803",
+      "native107_audit_sha256": "f57af8d7a6d2cb11abc051e757876679a8b7bc040787a52d296894cc2e84d8d7",
+      "active109_at_check": {
+        "monitor": {
+          "pid": 1680247,
+          "starttime": "860779708"
+        },
+        "completed_samples": 50,
+        "actual_model_requests": 52,
+        "complete": false
+      },
+      "peer_pr106_acceptance": {
+        "comment": 6028716496,
+        "mail_id": "1a113ea56beef3de",
+        "full_actual_files_verified": {
+          "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/PUBLIC_SERIAL_TIMER_REVIEW.json": "3c509039ce9dcebd18696c58fa2b4532a68c40f22d07c9fb779ce25cca88c57e",
+          "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "08cdaebe9caf240d23ee134a01ea1b2856a8e5c6c09e03298aa61f1a49449b59",
+          "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "7fbb1e156a49a59600f04b619c673856b3d3ef39fd76e145430ab77390ef9a99"
+        },
+        "scope": "Explicit acceptance of PR106 final head and all three original108 bounded delivery files; no extra109 or generalization qualification."
       }
     }
   }

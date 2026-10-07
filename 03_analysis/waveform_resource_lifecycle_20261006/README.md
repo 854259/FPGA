@@ -455,3 +455,19 @@ ZIP `2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b`（349335�
 本轮固定156已见开发题、C/P各一次共312/max624，8192/max2/repair1/retries0，完整worker300/judge300/super360含xz；历史113全L3、配对等级不降、同等级与全部历史正确题逐题P≤C（提升不豁免）、总P≤C、P≥120L3且加权≥.80、无deadline/unconfirmed/source/tool失败及完整原来源625保护回执为出口。旧输入准入1机械/155弃权仅复用；题号只用于实验清单，不进入生产特例。stage43200/guard43600/slot740分钟是安全上限，不是ETA或剩余额度。
 
 只读回执84788be6cca44afa7f4097ff77d3bffa6afa25972bc5935f243003d8fa2ceba6，09:09:33/1.350689秒；字段/函数名与SUBMISSION_BINDING位置的读取假设更正以及展示截断不算项目失败/重跑。接受范围是新冻结、准备准入与原109受理来源，不是运行分数、采用或完整批次通过。对方负责原109终态和各一次原审计，本方接配对不确定性/根因/采用条件复核；串行另冻同因素156，不叠加波形/独热/串行收益。全部题仍已见开发，独立未见0、家族有效N未知；完整A/P/B156、审计RTLLM、重要五样本、资源接口恢复及总预算/实际额度仍未验收。
+
+## 2026-10-07 09:21 PR107串行全156冻结与原110限定复核
+
+[原留言6028716496](https://github.com/854259/FPGA/issues/7#issuecomment-6028716496)、Gmail1a113ea56beef3de与[PR107](https://github.com/854259/FPGA/pull/107) head e4be460fb79125666a3fc7e13f7cd62a9b114467 / merge f27c7946acd1af661286f634c3e491eef5a63d1f、AMD实际交付90b1f93249c7622cdfd2dbd034bfd3f21c99435bc20127076bd69004e3900fc2及FIFO交付4cf908c97d1d74f81a3e4ff9ec85a9befc6ce1964e2fbea2e539aa7364cea8ac一致。15公版文件含5PY全部Git/AMD原字节相同。继承的PR交付schema与prepare首行docstring仍含onehot标签，但实际serial根、spec846b7d4f、116来源、15文件及串行FIFO schema已绑定；保留旧回执，不把标签修正当机制收益。对方自报CRLF预提交拒绝后加gitattributes，独立核验的是原测字节和 `*.py -text whitespace=cr-at-eol`，不冒称已验证其本地失败进程，不重跑AMD准备。
+
+相对原108的101来源，95不变、6项范围/捕获适配、15新增。worker1eac9c3b、producer9080c49a、共同fallback7ff7ed6e、factorbda081df及原107资格/档案保持；pilot/audit各8函数原文不变，metrics/test_full_metrics反转mechanical_serial_timer路由标签逐字节还原已审独热156通用门。根collector d906f10f与upstream原字节一致，来源位置无旧108入口路径混淆。原108审计4578ce6b/856档案02002e35、原107有限资格f57af8d7/509档案6a471b20只复用已审证据。
+
+原prepare1692728/start860829980有出生stat/cmdline、argv、exec确认、673B合并流39a6068e、rc0/回收及无剩余组，实际2.755820秒<40。PROCESS外层观察3.863230秒不当其自身完整预算证明。PREPARATION_RECEIPT73f4d0d、PROCESS fc1f351d、POST_EXIT3bca86ab、110源claim和两旧捕获存档一致。四项新准入绑定原108资格及单因素生产/原107、全156输入及113保护、完整评分/成本门、旧锚和当前库存；旧worker20/pipeline30/数值156准入/generic15/native107/原108审计均不重跑。旧数值版准入原receipt372887fc及私有rows5d062924绑定1支持155弃权；元数据不进入生产调度，不增独立样本。
+
+原prepare前后119组快照精确保留，新冻结从已审125组7928记录扩为126组8064记录，对应7938唯一物理文件。继承原106同源双组引用的126条差额，不算新证据。新增组仅原109的136冻结文件，与原spec11717fea逐一相同，排除results/guard/STAGE_STATUS/SUBMISSION等活动文件；旧95/6516、109组7389锚、119组及125组均保留。依赖、编译器、库、模型身份与KIT18/35/936哈希核验，无读取参考用于生成。129成员ZIPf10f447961a76d30ab0e6f5b81861eb5645e996c00dd021e3dc5f21e3f4852ec（14048795B）全部AMD原文件/私有本地成员一致。
+
+原110 SUBMISSION_BINDING1ec8435f、原提交argv/rc0/stdout票据与spec846b7d4f、monitor1710412/start860902725/cmdc92097b7一致。09:18状态queued且无stage/results；原109仍running50/312输出52请求、monitor1680247/start860779708及槽保持。不重提FIFO、不改冻结、不接管各一次原终审。此次只读回执e95d40e7ab817f56ead990b45c7ca72c8b6bdd30d49fa0989ee1cb3c63105bfe（1.490789秒），0新模型/EDA/控制/原审计；一次原119前后保护与新125/126清单层级的读取假设更正仅只读编排，不是实验失败/重跑。
+
+全部156已见开发题C/P各一次312/max624，8192/max2/repair1/retries0、完整worker300/judge300/super360含xz；历史113全L3、配对等级不降、同等级及全部历史正确题逐题P≤C（改善不豁免）、总P≤C、P≥120L3且加权≥.80、无deadline/unconfirmed/source/tool失败与625保护/完整原终审门不变。stage43200/guard43600/slot740分钟只是安全上限，不是ETA/剩余额度。有限二态事件/同步复位/边沿三输出资格不证明内部next、xz或生成器全域；自然CP7一差异对不构成泛化。
+
+6028716496明确接受[PR106](https://github.com/854259/FPGA/pull/106)最后head9c1d1cc4及AMD三份原108限定交付，三份实际哈希已核；这不替代新109/110审查。本方[PR108](https://github.com/854259/FPGA/pull/108)的独热156冻结复核已合并8418e41e、完整交付21b32de9、[评论6028767306](https://github.com/854259/FPGA/issues/7#issuecomment-6028767306)逐字回读，尚无对方接受，不伪造双向共识。后续owner完成109/110各一次原终态，本方接来源、配对不确定性、根因和采用门；不加总因素收益。完整A/P/B156、经审计RTLLM、重要五样本、资源接口恢复和完整预算/实际额度尚未完成。
