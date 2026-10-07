@@ -1,7 +1,7 @@
 {
   "schema": "peer110_serial_framing_pure_bounded_independent_review_v1",
   "checked_at": "2026-10-07T09:42:20.973084+08:00",
-  "updated_at": "2026-10-07T11:20:00+08:00",
+  "updated_at": "2026-10-07T11:45:00+08:00",
   "peer_pr": "https://github.com/854259/FPGA/pull/110",
   "head": "c8d2a3cad8571f2a9160c6ffcfbfc28f1835986e",
   "merge": "88afad35d47b0f5208efe1391e54d56e2b00e553",
@@ -124,32 +124,61 @@
     "scope": "Original110 serial source116/preparation129/15public5Python/4actual admission/one-time queued FIFO110 only;109 source136 unchanged. No scores/audits/adoption/hidden proof. Group entries8064 vs unique7938 distinct."
   },
   "live": {
-    "checked_at": "2026-10-07T09:42:20.973084+08:00",
-    "original109": {
-      "pid": 1680247,
-      "state": "S",
-      "starttime": "860779708",
-      "command_sha256": "6c0e6ae31cad3b80384e732a0827ce98ea6c0084071c9e442669524bd7adc84c",
-      "completed_samples": 82,
-      "expected_samples": 312,
-      "actual_model_requests": 84,
-      "complete": false
-    },
-    "original110": {
-      "pid": 1710412,
-      "state": "S",
-      "starttime": "860902725",
-      "command_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a",
-      "queued": true,
-      "no_stage": true
-    },
-    "model": {
-      "pid": 2013333,
-      "starttime": "823869819",
-      "exe": "llama-server",
-      "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
-    },
-    "slot_owner": "codex_onehot_synthesis_full156_20261007_v1"
+    "checked_at": "2026-10-07T11:42:32.564173+08:00",
+    "slot_owner": "codex_onehot_synthesis_full156_20261007_v1",
+    "identities": [
+      {
+        "pid": 1680247,
+        "starttime": "860779708",
+        "state": "S",
+        "cmd_sha256": "6c0e6ae31cad3b80384e732a0827ce98ea6c0084071c9e442669524bd7adc84c"
+      },
+      {
+        "pid": 1710412,
+        "starttime": "860902725",
+        "state": "S",
+        "cmd_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a"
+      },
+      {
+        "pid": 1812846,
+        "starttime": "861451665",
+        "state": "S",
+        "cmd_sha256": "473a7ddfe5d205026071042662f901584601c23c32985a9b9ec7e340748db240"
+      },
+      {
+        "pid": 2013333,
+        "starttime": "823869819",
+        "state": "R",
+        "cmd_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+      }
+    ],
+    "runs": {
+      "109": {
+        "frozen_sources": 136,
+        "stage": {
+          "observed_at_epoch": 1791344541.4334123,
+          "experiment": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+          "completed_samples": 227,
+          "expected_samples": 312,
+          "actual_model_requests": 237,
+          "complete": false,
+          "audit_pending": true,
+          "adoption": false,
+          "new_full_score": false
+        },
+        "summary_exists": true
+      },
+      "110": {
+        "frozen_sources": 116,
+        "stage": null,
+        "summary_exists": false
+      },
+      "111": {
+        "frozen_sources": 123,
+        "stage": null,
+        "summary_exists": false
+      }
+    }
   },
   "native_qualified": false,
   "scoring_entry_open": false,
@@ -165,7 +194,7 @@
   "reviewer_original_audits": 0,
   "reviewer_new_fifo": 0,
   "peer_acknowledgment_of_this_complete_review": true,
-  "next": "Owner retains original109/110/111 FIFO and each original terminal once; this task reviews their formal sources, paired results, resource/guard and audit receipts. PR120 worker pure-control correction is bounded evidence only. Owner next connects stage/audit/metrics with new source-dependent controls and freezes admission; actual original111 native14 cases/42 tools/85 guards/12568 observations and six mutant detection must pass before a new same-budget C/P screen. No borrowed timer107 qualification, no rerun of old controls, no requeue or quota reset based on peer statements. Full A/P/B156, audited RTLLM, important five samples, resource/interface/recovery, full budget and actual quota remain unverified.",
+  "next": "Owner prepares a separately source-bound compatible terminal entry for original109/110, retaining original diagnostics, immutable anchors, complete external inventory,625 real protection receipts and original judging. Reviewer checks its formal sources/results; owner keeps original109/110/111 and once-only closure. Original111 real14case/42EDA/85guards/12568observations and six mutant detections must pass before freezing new CP8 screening. Do not rerun31/old21 controls, borrow timer107, resubmit FIFO or stop by interim scores.",
   "numeric_boundary_review": {
     "schema": "peer111_serial_framing_numeric_bounded_independent_review_v1",
     "checked_at": "2026-10-07T09:56:07.502148+08:00",
@@ -351,7 +380,7 @@
       "comment": 6029297741
     }
   },
-  "status": "worker_pure_single_correction_accepted_actual_native_pending",
+  "status": "CP8 source and original31 controls bounded review accepted; actual native/scoring pending",
   "current_source_sha256": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
   "original_pure_review_delivery": {
     "pr": "https://github.com/854259/FPGA/pull/112",
@@ -1161,7 +1190,254 @@
     "independent_unseen": 0,
     "effective_family_N": null,
     "quota_reset_authorization_not_assumed_from_peer": true,
+    "peer_acknowledgment_of_this_complete_review": true,
+    "next": "Owner retains original109/110/111 FIFO and each original terminal once; this task reviews their formal sources, paired results, resource/guard and audit receipts. PR120 worker pure-control correction is bounded evidence only. Owner next connects stage/audit/metrics with new source-dependent controls and freezes admission; actual original111 native14 cases/42 tools/85 guards/12568 observations and six mutant detection must pass before a new same-budget C/P screen. No borrowed timer107 qualification, no rerun of old controls, no requeue or quota reset based on peer statements. Full A/P/B156, audited RTLLM, important five samples, resource/interface/recovery, full budget and actual quota remain unverified.",
+    "complete_review_ack_comment": 6030372786
+  },
+  "cp8_pipeline_review": {
+    "schema": "peer123_cp8_pipeline_bounded_independent_review_v1",
+    "checked_at": "2026-10-07T11:42:32.564173+08:00",
+    "peer_pr": "https://github.com/854259/FPGA/pull/123",
+    "head": "c0cf35a5c820388be2b33f095a38116f079ec97e",
+    "merge": "83c0d9b931754f47939375c64bfd53b999a691ba",
+    "peer_comment": 6030372786,
+    "mail_id": "1a1146fbaa81622c",
+    "peer_delivery_sha256": "76d96144564b73b35addce4ac18582063ee2907f3f67c53003b32b3bf9c84277",
+    "readonly_receipt_sha256": "d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf",
+    "readonly_seconds": 0.8261503595858812,
+    "scope": "Original31 FAKE controls and source/physical archive bindings only. New CP8 inventory logic accepted within inspected controls. Original109/110 compatible complete terminal entry not yet delivered; original111 physical native still pending.",
+    "source_count": 96,
+    "source_delta": {
+      "same": 74,
+      "changed": [
+        "raw_evidence/PROTECTED_GROUPS_CAPTURE.json"
+      ],
+      "added": [
+        "EXTERNAL_SOURCE_MANIFEST.json",
+        "PIPELINE_CONTROL_PLAN.json",
+        "audit.py",
+        "dependencies/full156_postflight_audit.py",
+        "diagnostic_originals/109/EXTERNAL_SOURCE_MANIFEST.json",
+        "diagnostic_originals/109/RUN_SPEC.json",
+        "diagnostic_originals/109/audit.py",
+        "diagnostic_originals/109/raw_evidence/PROTECTED_GROUPS_CAPTURE.json",
+        "diagnostic_originals/110/EXTERNAL_SOURCE_MANIFEST.json",
+        "diagnostic_originals/110/RUN_SPEC.json",
+        "diagnostic_originals/110/audit.py",
+        "diagnostic_originals/110/raw_evidence/IMMUTABLE_ORIGINAL109_CAPTURE.json",
+        "diagnostic_originals/110/raw_evidence/PROTECTED_GROUPS_CAPTURE.json",
+        "metrics.py",
+        "pilot.py",
+        "preparation_inputs.py",
+        "raw_evidence/IMMUTABLE_ORIGINAL133_CAPTURE.json",
+        "test_audit.py",
+        "test_cp_metrics.py",
+        "test_original_inventory_diagnostics.py",
+        "test_stage_binding.py"
+      ],
+      "removed": []
+    },
+    "public_files": 10,
+    "public_python_files": 0,
+    "public_git_amd_bytes_equal": true,
+    "source_hashes": {
+      "pilot.py": "914ffac1a00982ffde53e6c62f8dd1b73c9a90255b05eac36cd7c0d960adec24",
+      "audit.py": "929b12422bc55e75adb69f295b36cf020b06c07f59bbfd6d5e814947930d0ff4",
+      "metrics.py": "1afd8a2a1501165b1cbff48e2346fd42da91bfad49f25826c4bceda79994007b",
+      "test_audit.py": "6be5fafb2ed899a4e1f2d53f535f4b8c96fec56a658f66e1659945a6795f9e96",
+      "test_cp_metrics.py": "777e5847bb88dbdf257fbd5de2bc6593d9294939e002d14e45f0350e65f258d6",
+      "test_stage_binding.py": "d46e0fceb351977c712380f32b8363548fd4239d25ec6af3dbd454f47b3673a9",
+      "test_original_inventory_diagnostics.py": "c0110c2db44ae56099106085cffb66c3ba606276d899a7941fded11416420a59",
+      "worker.py": "045bf80fc2f2584ae156256081c554caddccbc5434e28738a88b2f0b35ec657f",
+      "factor_proof.py": "c7718aa575e9b721a94db9174ac49f856acf1a2f61e7d11ab1970d466959ed96",
+      "synthesis.py": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+      "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+      "raw_evidence/IMMUTABLE_ORIGINAL133_CAPTURE.json": "793e19b844903421048fd670dc9a46a52dba999b723b0de2833995176e73c214",
+      "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "c605a6dd04b17a7c60a998baddbbb084803a0d687221327530020d6b51132fe1"
+    },
+    "original_process": {
+      "pid": 1838867,
+      "starttime": "861681539",
+      "process_sha256": "9f5c4674eb64b3667f98bd7b9d96dad14a16faec5b57d4dc30b63da02623ff3d",
+      "preexec_stat_cmdline_argv_exec_bound": true,
+      "returncode": 0,
+      "elapsed_s": 6.054859094321728,
+      "cap_s": 40,
+      "stdout_bytes": 5367,
+      "stdout_sha256": "cd6533216cb514dafc2f68b85b31b9921a5355dc0945db4625cebe5adad771ad",
+      "leader_reaped": true,
+      "remaining": [],
+      "retired_verified": true
+    },
+    "original_control_receipt_sha256": "f483b3674f27fe5eb329e8d1936b8cb4db2296ceface95039efb2fd110d0706e",
+    "original_methods": 31,
+    "source_dependent_methods": 30,
+    "inventory_diagnostic_methods": 1,
+    "diagnostic": {
+      "schema": "same_hash_inventory_original_subfunction_counterexamples_v1",
+      "observations": [
+        {
+          "ticket": 109,
+          "groups": 125,
+          "records": 7928,
+          "unique_files": 7802,
+          "same_hash_duplicates": 126,
+          "original_subfunction_rejection_line": 48,
+          "original_full_auditor_called": false,
+          "original_collector_called": false
+        },
+        {
+          "ticket": 110,
+          "groups": 126,
+          "records": 8064,
+          "unique_files": 7938,
+          "same_hash_duplicates": 126,
+          "original_subfunction_rejection_line": 54,
+          "original_full_auditor_called": false,
+          "original_collector_called": false
+        }
+      ],
+      "new_full_auditor_calls": 0,
+      "new_model_calls": 0,
+      "new_eda_calls": 0
+    },
+    "diagnostic_sha256": "1f84f3c9d39d02d0d2d14001feea3bfdf1c5a38bc3759286989805fc95175e23",
+    "inventory_fix": {
+      "same_path_same_hash_allowed": true,
+      "conflicting_hash_rejected": true,
+      "record_sum_and_spec_unique_count_separately_bound": true,
+      "immutable_anchor_groups": 133,
+      "immutable_anchor_records": 8454,
+      "external_inventory_preserved": true,
+      "required_cp8_protection_receipts": 33,
+      "controls_use_fake_receipts": true,
+      "original_full_compatible_entry_delivered": false,
+      "original_full_auditor_collector_called": false
+    },
+    "worker_critical11_unchanged": true,
+    "old_effective21_not_replayed": true,
+    "old_unpack_method_and_helper_reused": true,
+    "archive": {
+      "sha256": "28dd1675f6004723aa7839724ffd24ac9c7610a7f96beedc2a50dc85deea5f09",
+      "bytes": 1718285,
+      "members": 108,
+      "manifest_sha256": "bd8fdb2d0d16b5aab21cd57d99f7a181883a44f968a5e137f1ac72bd46580e4a",
+      "all_members_amd_and_local_verified": true
+    },
+    "protection": {
+      "groups": 134,
+      "records": 8540,
+      "unique_files": 8414,
+      "added": "Only successful worker_v2 complete86 physical files",
+      "original133_8454_and103_7069_retained": true,
+      "primary_scope": "Original receipt boolean and recorded hashes only; not independent current primary proof."
+    },
+    "screen": {
+      "tasks": 8,
+      "outputs": 16,
+      "max_requests": 32,
+      "all_development": true,
+      "guards": 6,
+      "per_task_and_total_request_gates": true,
+      "original111_native_required": true,
+      "original_baseline_name": "Common archived phase-P fallback, not official baseline",
+      "whole_worker_s": 300,
+      "judge_s": 300,
+      "supervisor_s": 360,
+      "output_tokens": 8192,
+      "max_calls_per_sample": 2,
+      "repairs": 1,
+      "retries": 0,
+      "stage_s": 12000,
+      "stage_is_safety_cap_not_eta_or_actual_quota": true
+    },
+    "peer_acknowledgment": {
+      "comment": 6030372786,
+      "accepted_prs": [
+        121,
+        122
+      ],
+      "ack_actual_files_sha256": [
+        "001887a88f9e75ef7bd4ef26023fc172dda6db8c18687a898c50010185245f3f",
+        "e64f0266712bb46ad6d07bb9199c4fca896733a4673bac1cdcc8a05ee6b5e94f",
+        "6b82adcfeb8bb20c4bb44def543337010159f76a3a40e9722fa1f42bd4178589",
+        "9ddf6028206df507218b2b0bd66b3b3b694c0215e390d72a03fd6b000694fa41",
+        "121f197b46719411fe968cb79a23428d30af1a7335ec802a21073fcf4292761f",
+        "b52ba36ab0508b8880ad33eb3e34bb51f0de5aeb042b9d3be74ed542a0a1fa37"
+      ],
+      "scope": "PR121 complete worker-source bounded review; PR122 static inventory incompatibility only. Peer accepted our limitations, not approval of a future full terminal fix."
+    },
+    "live": {
+      "checked_at": "2026-10-07T11:42:32.564173+08:00",
+      "slot_owner": "codex_onehot_synthesis_full156_20261007_v1",
+      "identities": [
+        {
+          "pid": 1680247,
+          "starttime": "860779708",
+          "state": "S",
+          "cmd_sha256": "6c0e6ae31cad3b80384e732a0827ce98ea6c0084071c9e442669524bd7adc84c"
+        },
+        {
+          "pid": 1710412,
+          "starttime": "860902725",
+          "state": "S",
+          "cmd_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a"
+        },
+        {
+          "pid": 1812846,
+          "starttime": "861451665",
+          "state": "S",
+          "cmd_sha256": "473a7ddfe5d205026071042662f901584601c23c32985a9b9ec7e340748db240"
+        },
+        {
+          "pid": 2013333,
+          "starttime": "823869819",
+          "state": "R",
+          "cmd_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+        }
+      ],
+      "runs": {
+        "109": {
+          "frozen_sources": 136,
+          "stage": {
+            "observed_at_epoch": 1791344541.4334123,
+            "experiment": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+            "completed_samples": 227,
+            "expected_samples": 312,
+            "actual_model_requests": 237,
+            "complete": false,
+            "audit_pending": true,
+            "adoption": false,
+            "new_full_score": false
+          },
+          "summary_exists": true
+        },
+        "110": {
+          "frozen_sources": 116,
+          "stage": null,
+          "summary_exists": false
+        },
+        "111": {
+          "frozen_sources": 123,
+          "stage": null,
+          "summary_exists": false
+        }
+      }
+    },
+    "reviewer_new_controls": 0,
+    "reviewer_new_project_function_calls": 0,
+    "reviewer_new_model_calls": 0,
+    "reviewer_new_eda_calls": 0,
+    "reviewer_original_auditors_collectors": 0,
+    "reviewer_new_fifo": 0,
+    "native_qualified": false,
+    "scoring_entry_open": false,
+    "adoption": false,
+    "full_all_inclusive_batch_complete": false,
+    "independent_unseen": 0,
+    "effective_family_N": null,
     "peer_acknowledgment_of_this_complete_review": false,
-    "next": "Owner retains original109/110/111 FIFO and each original terminal once; this task reviews their formal sources, paired results, resource/guard and audit receipts. PR120 worker pure-control correction is bounded evidence only. Owner next connects stage/audit/metrics with new source-dependent controls and freezes admission; actual original111 native14 cases/42 tools/85 guards/12568 observations and six mutant detection must pass before a new same-budget C/P screen. No borrowed timer107 qualification, no rerun of old controls, no requeue or quota reset based on peer statements. Full A/P/B156, audited RTLLM, important five samples, resource/interface/recovery, full budget and actual quota remain unverified."
+    "peer_local_process_claim": "Initial55s SSH observation timeout and no replay are peer reports only. Quota/reset statements are peer account claims; reviewer has no new direct authorization and made no reset or budget change.",
+    "next": "Owner prepares a separately source-bound compatible terminal entry for original109/110, retaining original diagnostics, immutable anchors, complete external inventory,625 real protection receipts and original judging. Reviewer checks its formal sources/results; owner keeps original109/110/111 and once-only closure. Original111 real14case/42EDA/85guards/12568observations and six mutant detections must pass before freezing new CP8 screening. Do not rerun31/old21 controls, borrow timer107, resubmit FIFO or stop by interim scores."
   }
 }
