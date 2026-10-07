@@ -1,0 +1,118 @@
+{
+  "schema": "serial_framing_cp8_original113_terminal_public_summary_v1",
+  "date": "2026-10-07",
+  "status": "ORIGINAL_AUDIT_VALID_DEVELOPMENT_SCREEN_PASSED",
+  "original_ticket": 113,
+  "evidence_valid": true,
+  "screening_eligible": true,
+  "qualified_for_new_full_regression": true,
+  "qualification_scope": "One new full156 regression only; known development screen, no independent/five/adoption.",
+  "control_scope": "Original common phase-P control; official baseline gain is not measured.",
+  "tasks": 8,
+  "expected_samples": 16,
+  "level3_by_arm": {
+    "C": 6,
+    "P": 8
+  },
+  "weighted_coefficients": {
+    "C": 0.8,
+    "P": 1.0
+  },
+  "requests_by_arm": {
+    "C": 11,
+    "P": 9
+  },
+  "actual_model_requests": 20,
+  "max_model_requests": 32,
+  "target_results": [
+    {
+      "task": "Prob137_fsm_serial",
+      "C_level": 1,
+      "P_level": 3,
+      "C_requests": 1,
+      "P_requests": 0,
+      "P_route": "mechanical_serial_framing"
+    },
+    {
+      "task": "Prob146_fsm_serialdata",
+      "C_level": 1,
+      "P_level": 3,
+      "C_requests": 1,
+      "P_requests": 0,
+      "P_route": "mechanical_serial_framing"
+    }
+  ],
+  "six_history_guards_both_L3": true,
+  "paired_regressions": [],
+  "same_grade_request_cost_passed": true,
+  "every_fixed_task_request_cost_passed": true,
+  "total_request_cost_passed": true,
+  "solve_deadlines": 0,
+  "unconfirmed_attempts": 0,
+  "tool_errors_by_arm": {
+    "C": 0,
+    "P": 0
+  },
+  "audited_generation_provenance_bound": true,
+  "original_auditor_generation_provenance_audit_pending_flag": true,
+  "original_collector_calls": 1,
+  "original_auditor_calls": 1,
+  "source_assets": 112,
+  "protection_receipts": 33,
+  "protected_groups": 141,
+  "protected_source_records": 8825,
+  "protected_unique_files": 8699,
+  "duplicate_protected_records": 126,
+  "run_spec_sha256": "b11485bc55efe5eaf9c5dde6d55ed6f4d719eee4548a5e906b3f344f75518167",
+  "original_auditor_sha256": "929b12422bc55e75adb69f295b36cf020b06c07f59bbfd6d5e814947930d0ff4",
+  "original_collector_sha256": "727a1a721b31d9d533e738610e486b20f28d39e357dae0233642be24298616c4",
+  "original_audit_result_sha256": "15c1025f0b897afc058312ee845e928236b09ea1cba1174e12b4422b7841c4ff",
+  "terminal_receipt_sha256": "ff629a41c29330a7e63ac659fcdf4fd81f0f4950e8dad6bf639a6d29f319f0da",
+  "observer_result_sha256": "a7b17aaa4ea614198d5ebe07a6c05401dc51ac6dfd2c6b5aadf2a09fdef64c6d",
+  "independent_dual_postexit_receipt_sha256": "9ac9a6624d2c35d67eed58e44f88360853c261ef199331c80a5b1f95b9c8e0cc",
+  "original_and_closure_births_retired": true,
+  "archive_backup_complete": true,
+  "peer_review": {
+    "url": "https://github.com/854259/FPGA/issues/7#issuecomment-6037707870",
+    "source": "Saved Issue7 peer comment; scope-limited development diagnosis.",
+    "diagnosis": "The peer found mixed combinational/sequential drivers in one C result and next-state-triggered sequential actions in the other. These are source-supported error paths; no independent minimal reproduction attributes every mismatch to one location.",
+    "descriptive_paired_L3_counts": {
+      "both": 6,
+      "P_only": 2,
+      "C_only": 0,
+      "neither": 0
+    },
+    "descriptive_mcnemar_p": 0.5,
+    "independent_generalization_measured": false
+  },
+  "next_route": {
+    "retain_effective_CP8_component": true,
+    "one_same_factor_full156_permitted": true,
+    "full156_is_required_now": false,
+    "broader_first_system_factor_A": "PRIVATE_HOLD_UNQUALIFIED_UNSCORED",
+    "future_freeze_and_whole_task_FIFO_submission_owner": "fpga_owner root only",
+    "cross_round_score_addition_allowed": false
+  },
+  "full156_evidence_valid": false,
+  "full_score_measured": false,
+  "independent_validation_qualified": false,
+  "five_sample_qualified": false,
+  "adoption": false,
+  "qualified_for_goal": false,
+  "goal": {
+    "status": "ACTIVE",
+    "minimum_L3": 120,
+    "minimum_weighted_coefficient": 0.8,
+    "history_and_cost_gates_unchanged": true
+  },
+  "user_schedule": {
+    "timezone": "Asia/Shanghai",
+    "days": "Sunday through Thursday",
+    "handoff": "22:20",
+    "local_pause": "22:40",
+    "power_off_before": "23:00",
+    "detached_cloud_task_may_continue": true,
+    "resume": "User resumes in the morning; inspect the same handles.",
+    "working_days_assumption": "Monday through Friday; later user holiday/shift instructions override"
+  }
+}
