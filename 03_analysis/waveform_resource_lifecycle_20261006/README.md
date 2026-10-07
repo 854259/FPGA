@@ -487,3 +487,17 @@ ZIP `2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b`（349335�
 原PR108最终549d0146及三份实际交付21b32de9/84788be6/41f950c4已由6028893731/Gmail1a113f8dabb3a2f5/AMD170fc04d、ENTRY_COUNTS43a5e725/PEER108_BOUND_SCOPE180f054a明确接受；PR109最终5d7c4e9a及088d6b65/e95d40e7/723445cb三原件已由6028973734明确接受，哈希均核。两者仅原109/110冻结、准备与一次受理，非原终态/分数/采用。
 
 09:42原109同出生monitor1680247/start860779708运行82/312输出84请求，原110monitor1710412/start860902725 queued无stage，27B及109槽保持；不读中途分数挑停。下一项由owner完成数字边界新证据，再独立native正稿/实际突变，明确位序、有效stop后采样沿与NBA后done观察时点、连续帧、无效stop丢帧等待高再武装、各阶段同步reset及x/z范围；本方只读审查。当前native/评分入口关闭，109/110原各一次终态仍归owner。本次是纯准备子阶段，完整A/P/B156+审计RTLLM+重要五独立样本+资源接口恢复与完整预算/实际额度尚未完成，独立未见0、家族有效N未知，因素收益不相加。
+
+## 2026-10-07 09:59 PR111数字边界修复限定复核
+
+[PR111](https://github.com/854259/FPGA/pull/111) head 7c07908a0c3211f0e8a2126572bb2c7e72c4e099 / merge 6011dc25f4fa74fddb0500b1bafcd38921a67735、[6029156153](https://github.com/854259/FPGA/issues/7#issuecomment-6029156153)、Gmail1a1140dfe218c645与AMD实际57914ae399a6e8a61f96b72533e4fa897686a627f9d5a9d417079b72a72c43f6一致。6来源、10公版0PY全部Git/AMD字节同。新synthesis aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5只有一处修改：端口width须匹配规范ASCII1..16后才int。SOURCE_DELTA_PROOF47563bbb反向替换精确还原f491原字节，无全局数字限制修改；旧5源及055259bd档案保持，旧源仍HOLD。
+
+原prepare1752285/start861117487真实出生stat/cmdline/argv/exec、2501B合并流62a52d90、rc0/退出回收与无remaining已核，0.139169秒<40，当前原身份退休。原PROCESS8c939ec9、receipt2b2edcaa与流末JSON逐字数据一致，8项新方法均实际列入流并OK。旧4301位输入由其中assertRaises(ValueError)一次调用旧源并实际捕获，异常文本明确4300上限；这是新成功进程内的否定证据，不是旧20失败、也不是外层rc1/未捕获traceback。本方只读绑定，没有重新执行生产器、测试或反例。
+
+新8方法覆盖4300/4301/100000位、五端口位置、Unicode十进制/混合数字、前导零、0/17/99等越界与六个合法构造：payload2/8/16各带/不带数据、标量端口1。原测试逐字比较新旧RTL及contract，receipt保存六RTL哈希，本方核测试源码/成功流/回执，不冒称重生成RTL或单独原RTL文件。正例仍用旧生产body_template，不是独立native语义oracle。runtime_digit_limit_before_after=[4300,4300]实际来自模块初始化和按字母顺序首个test_exact方法内读取，不是全部8方法结束后的额外观测；静态AST未发现新生产/测试/prepare调用set_int_max_str_digits，旧实测异常另证当时4300。此口径限定不要求为补标签重跑控制。
+
+准备前/PROCESS/后126组8064记录相同，7938唯一物理文件及原109136/110116源码、同机27B均保持；PRIMARY只原PROCESS布尔，不作独立文件认证。18成员ZIP13282612ab37b5eead33e4f07e8912769b635102cb1ed30057f2751f4c8ec3c0（381395B），manifest55f53313d972c88e28f91a4156d60ab1ef25ddefdc33a435b168eb6b411ca768，全部AMD原文件和私有本地成员核验。只读回执61c5b29c9caa9635202d3b4d109806d90d5dee7864e43e2fdb85b6f0348c42ef，09:56:07/0.725032秒，0新控制/生产/模型/EDA/原审计/FIFO。一次保护元资料展示过大截断后改白名单只读，非项目测试失败/重跑。对方README尾空行格式拒绝仍限定其自报，不捏造本地失败进程。
+
+接受新aaac数字边界修复及原8项控制，允许独立native准备；不将旧20/原156的2支持154弃权追授给新源，旧20/156均不重跑。新源native/评分/采用仍false；下一步owner冻结独立正稿/实际RTL突变，明确位序、有效stop采样沿及NBA后done时点、连续帧、错误stop丢帧等待高再武装、各阶段同步reset和x/z范围。合格后才新固定同预算C/P，净收益/逐题和总成本/守护门之后才同因素新156。此前[PR112](https://github.com/854259/FPGA/pull/112)完整原纯准备复核已合并fb06feb9，实际6093dc71、公版79e05377、只读3451a12d和[6029200679](https://github.com/854259/FPGA/issues/7#issuecomment-6029200679)逐字回读；6029081238接受静态缺口不能扩成收到完整复核。
+
+09:56原109运行100/312输出104请求、110原monitor排队无stage，模型/槽/冻结不变。原各一次collector/auditor仍归owner，本方接109/110终态来源、配对不确定性、根因与采用门。已见开发、独立未见0/家族N未知；不相加因素收益，不按中途分数停轮。完整A/P/B156+审计RTLLM+重要五样本+资源接口恢复和完整总预算/实际额度仍未闭合。
