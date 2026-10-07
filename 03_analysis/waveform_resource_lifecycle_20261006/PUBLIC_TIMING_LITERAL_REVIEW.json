@@ -118,7 +118,10 @@
     "mail_body_exactly_matches_original": true,
     "own_current_review_peer_accepted": false,
     "postexit_supplement_comment": 6033850017,
-    "peer_accepted_missing_original_request_only": true
+    "peer_accepted_missing_original_request_only": true,
+    "PR130_limited_supplement_and_timing_accepted_comment": 6034930858,
+    "PR131_workflow_agreed_comment": 6034930858,
+    "future_gate_relaxation_agreed": false
   },
   "prior109": {
     "closed_and_rejected": true,
@@ -153,8 +156,8 @@
     ],
     "same_model_process": true
   },
-  "next": "Existing postexit originals are bound; complete external timing remains unproved. Peer corrects its next necessary public metadata and separately supplies fixed15 source/stage/auditor/budget and complete external envelope evidence; this task reviews it and original110/111 terminal deliveries. No rerun, takeover or new budget authorization.",
-  "fixed15_pipeline7_self_report_independently_reviewed": false,
+  "next": "Owner closes original110/111 first, then decides on this single-factor fixed15 under frozen gates and real resource/budget readiness. Match actual first-wire SHA before applying predicted capacity; repair capacity remains unknown. Review outer observer originals with next necessary delivery, no old reruns.",
+  "fixed15_pipeline7_self_report_independently_reviewed": true,
   "new_project_functions": 0,
   "new_controls": 0,
   "new_extract_scan_calls": 0,
@@ -248,5 +251,115 @@
     "new_model_calls": 0,
     "new_eda_calls": 0,
     "new_FIFO": 0
+  },
+  "fixed15_preparation_review": {
+    "reviewed_at": "2026-10-07T17:37:21.545060+08:00",
+    "status": "bounded_source_retained_controls_and_first_request_capacity_review_complete",
+    "peer_comment": 6034930858,
+    "peer_mail_id": "1a115ab11f1a90c1",
+    "mail_exactly_matches_original": true,
+    "reviewer_reply": 6035122713,
+    "spec_sha256": "8a2a1b4a5484b5e3db52fcd4b969d0edfddcbd7354559f912b41664cb5e6a8c1",
+    "source_manifest_sha256": "ff58e5081233cade72bc1b96209f3d9fe7ee92e8bf092504b023f4276417d9fc",
+    "frozen_sources": 125,
+    "private_readonly_review_sha256": "6a6ae3a0f3f53e7b0c67b8e2916fa4b61f3f4c10ee072534c01737b9ce813117",
+    "archives": [
+      {
+        "sha256": "7cd73e534cf8a0546b7c8239051e535be2c3f5102bda1b0973d0078f697f498b",
+        "bytes": 1355049,
+        "members": 212,
+        "bound_members": 211,
+        "manifest_sha256": "49334de0f4c7383b9e5f2cbd11d38159504cf77d1b006bb083457bd20c63ef53",
+        "all_members_amd_local_bound": true
+      },
+      {
+        "sha256": "e2bd55fb1f3afbcde60abd86a57f7281e247f1815f0502ed5579470ed832dc7a",
+        "bytes": 412346,
+        "members": 331,
+        "bound_members": 330,
+        "manifest_sha256": "2498fcdb66e76dcff00b436d9518cecbb3f6b0133599c7629a9eb05cab6aaee6",
+        "all_members_amd_local_bound": true
+      },
+      {
+        "sha256": "e22d4d4e9e8b59ba798ecba77b4785f067d40da6075595536378df42fd98d382",
+        "bytes": 5748824,
+        "members": 154,
+        "bound_members": 153,
+        "manifest_sha256": "e04afcacf8d0c101f56ab52d8ecdde1878414d32f354577ed3d360519d9db2c8",
+        "all_members_amd_local_bound": true
+      }
+    ],
+    "scope": "Fixed15 development preparation only. Reuse previously reviewed literal/wire factors; new source/gates and retained evidence reviewed without executing project functions or controls.",
+    "factor_sha256": "e59a42925363e4840bf69677e61ed84c9039f1a0bd41e65f40facc89a6710cb2",
+    "baseline": "Original common phase-P, not archived best118 or official baseline. P only adds original timing paragraphs in request0; repair unchanged.",
+    "output_count": 30,
+    "max_generation_requests": 60,
+    "solver_s": 300,
+    "judge_s": 300,
+    "judge_supervisor_s": 360,
+    "output_tokens": 8192,
+    "repairs": 1,
+    "retries": 0,
+    "retained_pipeline": {
+      "methods": 7,
+      "synthetic_files": 98,
+      "receipt_sha256": "f31250f5d5ea9650f0a429233006df5018c856ba682756c2ee58fa5e7653450c",
+      "source_and_seven_ok_log_bound": true,
+      "process_pid": 2087250,
+      "process_starttime": "863254633",
+      "original_elapsed_s": 0.6312410570681095,
+      "original_cap_s": 25,
+      "retired": true,
+      "score_claim": false
+    },
+    "acceptance": "Historical7 intersection P L3, paired grades not lower, net L3>=1 and weighted gain, total/equal-grade/historically-correct cost gates unchanged. All-task cost is disclosed, not an extra gate; a new nonhistorical L3 may cost one extra repair offset elsewhere.",
+    "first_request_capacity": {
+      "binding_sha256": "922b0d330aafe4aed963fbefef8894cb020f446ea7e9f81b6b9f15aedbb9a4ae",
+      "rows": 30,
+      "retained_http_records_bound": 64,
+      "minimum_input_tokens": 391,
+      "maximum_input_tokens": 2848,
+      "minimum_reserved_output_headroom": 5344,
+      "output_reserved": 8192,
+      "context": 16384,
+      "repair_capacity_qualified": false,
+      "future_actual_wire_equality_pending": true
+    },
+    "external_transport": {
+      "capacity_owner_reported_s": 9.641,
+      "preparation_owner_reported_s": 17.75,
+      "owner_reported_outer_cap_s": 210,
+      "receipt_hashes": {
+        "capacity": "ba6d84562090fc2d947360442026c8d31035fc8525c394f3b7af647586ed0b90",
+        "preparation": "c43b6cf7f8572044dc6b0163fd011c514bd27a1723b3e82594b3adb031201a2d"
+      },
+      "independent_scope": "Receipt hashes bound; original local outer-observer source and streams not independently reviewed here. No reviewer-verified full end-to-end time claim."
+    },
+    "resource_snapshot": {
+      "available_bytes": 3501977600,
+      "existing_free_space_gate_bytes": 2147483648,
+      "original110_stage_complete": true,
+      "original110_outputs": 312,
+      "original110_requests": 334,
+      "original111_stage_complete": true,
+      "original111_cases": 14,
+      "original111_native_commands": 42,
+      "both_formal_terminal_reviews_pending": true,
+      "no_current_disk_gate_failure_observed": true,
+      "no_peak_capacity_proof": true
+    },
+    "data_contact": "All15 from previously seen development156; retained synthetic fixtures are not independent natural tasks.",
+    "independent_unseen": 0,
+    "effective_family_N": null,
+    "formal_budget_authorization_changed": false,
+    "reviewer_project_calls": 0,
+    "reviewer_new_controls": 0,
+    "reviewer_model_or_tokenizer_http": 0,
+    "reviewer_eda": 0,
+    "reviewer_fifo": 0,
+    "full_preparation_or_execution_admission": false,
+    "new_natural_score": false,
+    "adoption": false,
+    "next": "Owner closes original110/111 first, then decides on this single-factor fixed15 under frozen gates and real resource/budget readiness. Match actual first-wire SHA before applying predicted capacity; repair capacity remains unknown. Review outer observer originals with next necessary delivery, no old reruns."
   }
 }

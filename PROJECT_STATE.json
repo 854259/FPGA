@@ -6,7 +6,7 @@
       "preserved": "完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准",
       "frequency_override": "仅旧5分钟频率由用户最新15分钟决定覆盖；下一轮具体门槛仍待共同冻结"
     },
-    "updated_at": "2026-10-07T17:04:24+08:00",
+    "updated_at": "2026-10-07T17:40:00+08:00",
     "status": "active_not_achieved",
     "user_confirmed": {
       "joint_discussion_and_faster_progress": true,
@@ -36,13 +36,17 @@
       "review_baseline_pr": 130,
       "review_baseline_sha": "965c811cfe5184a545f9994790e3309c750900bc",
       "proposal_posted_and_read_back": true,
-      "peer_acknowledged": false,
+      "peer_acknowledged": true,
       "peer_agreed_new_gates": false,
       "owner": "nzh152-lang：候选与原运行/收尾",
-      "reviewer": "本任务：可行性、配对结果、根因和采用条件；直接讨论分歧"
+      "reviewer": "本任务：可行性、配对结果、根因和采用条件；直接讨论分歧",
+      "peer_reply": "https://github.com/854259/FPGA/issues/7#issuecomment-6034930858",
+      "reviewer_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6035122713",
+      "agreed_workflow": "Owner110/111原终态；复用不变证据、只审新增风险；合并纯ACK；单因素对照与完整验收。",
+      "peer_score_gate_position": "对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。"
     },
     "next_gate_proposal": {
-      "status": "待双方讨论并于下一实验前冻结，不改旧标准或当前实验",
+      "status": "分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结",
       "focus": [
         "同轮总体L3收益",
         "配对退步机制及不确定性",
@@ -71,13 +75,14 @@
       "private_raw_evidence_and_pr_delivery": true
     },
     "next_actions": [
-      "接原110正式终态，依据真实收益决定计时器路线",
-      "接原111正式native终态及fixed15正式来源/预算，按现有责任推进",
-      "接对方对6034642013的实质反馈，商定下一冻结候选与准入；对方可提出更有证据价值的路线"
+      "接owner原110/111正式终态；两原执行阶段已结束，不代其收尾或根据未审汇总宣布成绩。",
+      "fixed15仅新增来源/留存7控/首轮容量已限定核验；原摘录与接线直接复用。由owner据110结果决定是否执行，当前未入队。",
+      "启动前按既有门核对真实预算、空间与完整执行观测；真实首轮wire须匹配预测容量，repair容量未知不得冒称通过。",
+      "下一完整大测试仍落实A/P/B156、经审计RTLLM、重要五样本及资源/接口/恢复。"
     ],
     "unresolved": [
-      "下一轮可接受回退/成本及统计采用门待共同确定",
-      "完整大测试数据准入、实际额度与完整预算仍须落实；本目标不补足未知"
+      "完整大测试数据准入、实际额度与完整预算仍须落实；目标不补足未知。",
+      "对方原110/111正式终态仍待交付；fixed15尚无自然成绩，完整外部观察原件与repair容量不由本次有限核验授予。"
     ]
   },
   "helper_extraction_20261004": {
@@ -6827,7 +6832,10 @@
         "mail_body_exactly_matches_original": true,
         "own_current_review_peer_accepted": false,
         "postexit_supplement_comment": 6033850017,
-        "peer_accepted_missing_original_request_only": true
+        "peer_accepted_missing_original_request_only": true,
+        "PR130_limited_supplement_and_timing_accepted_comment": 6034930858,
+        "PR131_workflow_agreed_comment": 6034930858,
+        "future_gate_relaxation_agreed": false
       },
       "prior109": {
         "closed_and_rejected": true,
@@ -6862,8 +6870,8 @@
         ],
         "same_model_process": true
       },
-      "next": "Existing postexit originals are bound; complete external timing remains unproved. Peer corrects its next necessary public metadata and separately supplies fixed15 source/stage/auditor/budget and complete external envelope evidence; this task reviews it and original110/111 terminal deliveries. No rerun, takeover or new budget authorization.",
-      "fixed15_pipeline7_self_report_independently_reviewed": false,
+      "next": "Owner closes original110/111 first, then decides on this single-factor fixed15 under frozen gates and real resource/budget readiness. Match actual first-wire SHA before applying predicted capacity; repair capacity remains unknown. Review outer observer originals with next necessary delivery, no old reruns.",
+      "fixed15_pipeline7_self_report_independently_reviewed": true,
       "new_project_functions": 0,
       "new_controls": 0,
       "new_extract_scan_calls": 0,
@@ -6957,6 +6965,116 @@
         "new_model_calls": 0,
         "new_eda_calls": 0,
         "new_FIFO": 0
+      },
+      "fixed15_preparation_review": {
+        "reviewed_at": "2026-10-07T17:37:21.545060+08:00",
+        "status": "bounded_source_retained_controls_and_first_request_capacity_review_complete",
+        "peer_comment": 6034930858,
+        "peer_mail_id": "1a115ab11f1a90c1",
+        "mail_exactly_matches_original": true,
+        "reviewer_reply": 6035122713,
+        "spec_sha256": "8a2a1b4a5484b5e3db52fcd4b969d0edfddcbd7354559f912b41664cb5e6a8c1",
+        "source_manifest_sha256": "ff58e5081233cade72bc1b96209f3d9fe7ee92e8bf092504b023f4276417d9fc",
+        "frozen_sources": 125,
+        "private_readonly_review_sha256": "6a6ae3a0f3f53e7b0c67b8e2916fa4b61f3f4c10ee072534c01737b9ce813117",
+        "archives": [
+          {
+            "sha256": "7cd73e534cf8a0546b7c8239051e535be2c3f5102bda1b0973d0078f697f498b",
+            "bytes": 1355049,
+            "members": 212,
+            "bound_members": 211,
+            "manifest_sha256": "49334de0f4c7383b9e5f2cbd11d38159504cf77d1b006bb083457bd20c63ef53",
+            "all_members_amd_local_bound": true
+          },
+          {
+            "sha256": "e2bd55fb1f3afbcde60abd86a57f7281e247f1815f0502ed5579470ed832dc7a",
+            "bytes": 412346,
+            "members": 331,
+            "bound_members": 330,
+            "manifest_sha256": "2498fcdb66e76dcff00b436d9518cecbb3f6b0133599c7629a9eb05cab6aaee6",
+            "all_members_amd_local_bound": true
+          },
+          {
+            "sha256": "e22d4d4e9e8b59ba798ecba77b4785f067d40da6075595536378df42fd98d382",
+            "bytes": 5748824,
+            "members": 154,
+            "bound_members": 153,
+            "manifest_sha256": "e04afcacf8d0c101f56ab52d8ecdde1878414d32f354577ed3d360519d9db2c8",
+            "all_members_amd_local_bound": true
+          }
+        ],
+        "scope": "Fixed15 development preparation only. Reuse previously reviewed literal/wire factors; new source/gates and retained evidence reviewed without executing project functions or controls.",
+        "factor_sha256": "e59a42925363e4840bf69677e61ed84c9039f1a0bd41e65f40facc89a6710cb2",
+        "baseline": "Original common phase-P, not archived best118 or official baseline. P only adds original timing paragraphs in request0; repair unchanged.",
+        "output_count": 30,
+        "max_generation_requests": 60,
+        "solver_s": 300,
+        "judge_s": 300,
+        "judge_supervisor_s": 360,
+        "output_tokens": 8192,
+        "repairs": 1,
+        "retries": 0,
+        "retained_pipeline": {
+          "methods": 7,
+          "synthetic_files": 98,
+          "receipt_sha256": "f31250f5d5ea9650f0a429233006df5018c856ba682756c2ee58fa5e7653450c",
+          "source_and_seven_ok_log_bound": true,
+          "process_pid": 2087250,
+          "process_starttime": "863254633",
+          "original_elapsed_s": 0.6312410570681095,
+          "original_cap_s": 25,
+          "retired": true,
+          "score_claim": false
+        },
+        "acceptance": "Historical7 intersection P L3, paired grades not lower, net L3>=1 and weighted gain, total/equal-grade/historically-correct cost gates unchanged. All-task cost is disclosed, not an extra gate; a new nonhistorical L3 may cost one extra repair offset elsewhere.",
+        "first_request_capacity": {
+          "binding_sha256": "922b0d330aafe4aed963fbefef8894cb020f446ea7e9f81b6b9f15aedbb9a4ae",
+          "rows": 30,
+          "retained_http_records_bound": 64,
+          "minimum_input_tokens": 391,
+          "maximum_input_tokens": 2848,
+          "minimum_reserved_output_headroom": 5344,
+          "output_reserved": 8192,
+          "context": 16384,
+          "repair_capacity_qualified": false,
+          "future_actual_wire_equality_pending": true
+        },
+        "external_transport": {
+          "capacity_owner_reported_s": 9.641,
+          "preparation_owner_reported_s": 17.75,
+          "owner_reported_outer_cap_s": 210,
+          "receipt_hashes": {
+            "capacity": "ba6d84562090fc2d947360442026c8d31035fc8525c394f3b7af647586ed0b90",
+            "preparation": "c43b6cf7f8572044dc6b0163fd011c514bd27a1723b3e82594b3adb031201a2d"
+          },
+          "independent_scope": "Receipt hashes bound; original local outer-observer source and streams not independently reviewed here. No reviewer-verified full end-to-end time claim."
+        },
+        "resource_snapshot": {
+          "available_bytes": 3501977600,
+          "existing_free_space_gate_bytes": 2147483648,
+          "original110_stage_complete": true,
+          "original110_outputs": 312,
+          "original110_requests": 334,
+          "original111_stage_complete": true,
+          "original111_cases": 14,
+          "original111_native_commands": 42,
+          "both_formal_terminal_reviews_pending": true,
+          "no_current_disk_gate_failure_observed": true,
+          "no_peak_capacity_proof": true
+        },
+        "data_contact": "All15 from previously seen development156; retained synthetic fixtures are not independent natural tasks.",
+        "independent_unseen": 0,
+        "effective_family_N": null,
+        "formal_budget_authorization_changed": false,
+        "reviewer_project_calls": 0,
+        "reviewer_new_controls": 0,
+        "reviewer_model_or_tokenizer_http": 0,
+        "reviewer_eda": 0,
+        "reviewer_fifo": 0,
+        "full_preparation_or_execution_admission": false,
+        "new_natural_score": false,
+        "adoption": false,
+        "next": "Owner closes original110/111 first, then decides on this single-factor fixed15 under frozen gates and real resource/budget readiness. Match actual first-wire SHA before applying predicted capacity; repair capacity remains unknown. Review outer observer originals with next necessary delivery, no old reruns."
       }
     },
   "updated_at": "2026-10-07T16:25:58.274966+08:00",
