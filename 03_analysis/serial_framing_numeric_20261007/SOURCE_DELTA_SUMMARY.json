@@ -1,0 +1,11 @@
+{
+  "schema": "serial_framing_numeric_public_delta_v2",
+  "old_sha256": "f491f7037bdd78418a1ef1d920495cbc1b5d677d0b0822c88f51b04464728045",
+  "new_sha256": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+  "reverse_exact": true,
+  "only_change": "Before int, require canonical ASCII decimal width1..16. Leading-zero/non-ASCII/out-of-range/oversized tokens abstain.",
+  "global_digit_limit_unchanged": true,
+  "private_full_delta_sha256": "47563bbb030de0b6a35a80df87cb715aa0cace4eeacfddc38d435db84ff72257",
+  "old_native_or_score_entry_closed": true,
+  "new_native_or_score_entry_closed": true
+}

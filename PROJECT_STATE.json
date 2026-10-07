@@ -1,4 +1,134 @@
 {
+  "serial_framing_numeric_boundary_20261007": {
+    "schema": "serial_framing_numeric_public_actual_v2",
+    "root": "/workspace/team/runs/fpga_owner/serial_framing_numeric_pure_20261007_v2",
+    "source_files": 6,
+    "source_hashes": {
+      "owned_exec.py": "9981c3a36183787d559aaed73fcfd34d36e6a7354e5da1874cf5308c6ee476c5",
+      "prepare.py": "393dc3846d096f7fd5693fe350137e7ed58f5080e9096f16d47a85a04cb50563",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "SOURCE_DELTA_PROOF.json": "47563bbb030de0b6a35a80df87cb715aa0cace4eeacfddc38d435db84ff72257",
+      "synthesis.py": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+      "test_numeric.py": "8e6cb1be9b8ebb0093a185adb6042576421b5066abd1cc7400983b1e873170e1"
+    },
+    "old_production_sha256": "f491f7037bdd78418a1ef1d920495cbc1b5d677d0b0822c88f51b04464728045",
+    "new_production_sha256": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+    "peer_issue_id": 6029046924,
+    "peer_counterexample_initially_static": true,
+    "original4301_exception_now_measured": true,
+    "old_failure_was_caught_inside_successful_new_control_process": true,
+    "original20_and156_history_preserved": true,
+    "old_f491_blocked_for_native_or_scoring": true,
+    "actual_new_methods": 8,
+    "passed_new_methods": 8,
+    "receipt_sha256": "2b2edcaa98765401c4125d8ebec4868b333aafe63c4213579ada75a9b50fd5cc",
+    "process_sha256": "8c939ec99676c6153a378de129d25e1786a3afe7d2407c0902621e32b403c102",
+    "actual_owned_process": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/serial_framing_numeric_pure_20261007_v2/prepare.py"
+      ],
+      "cwd": "/workspace/team/runs/fpga_owner/serial_framing_numeric_pure_20261007_v2",
+      "cap_s": 40,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 1752285,
+        "state": "T",
+        "starttime": "861117487",
+        "pgid": 1752285,
+        "sid": 1752285,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 0.13916868530213833,
+      "leader_reaped": true,
+      "stdout_sha256": "62a52d90f48f24852847a16a7eebcf20672f3b031a63f57eb1be4bf32e382410",
+      "stdout_bytes": 2501,
+      "normal_completion": true
+    },
+    "exact_child_retired_separately_verified": true,
+    "archive_sha256": "13282612ab37b5eead33e4f07e8912769b635102cb1ed30057f2751f4c8ec3c0",
+    "archive_bytes": 381395,
+    "archive_members": 18,
+    "every_member_bound_both_ends": true,
+    "reverse_delta_exact": true,
+    "lexical_guard": "Canonical ASCII decimal1..16 before int; oversized/non-ASCII/leading-zero/out-of-range tokens abstain; global digit limit unchanged.",
+    "runtime_digit_limit_before_after": [
+      4300,
+      4300
+    ],
+    "actual_oversized_lengths": [
+      4300,
+      4301,
+      100000
+    ],
+    "constructed_boundary_same_rtl": [
+      {
+        "width": 2,
+        "data": false,
+        "rtl_sha256": "0c09c2003f455ac11cd225f401000f0824ef546f725a623742975b7112d75569"
+      },
+      {
+        "width": 2,
+        "data": true,
+        "rtl_sha256": "8bb61aced89acfa2feb20cd1ef2eedabcd2e26df993723706c357ccaa97fc793"
+      },
+      {
+        "width": 8,
+        "data": false,
+        "rtl_sha256": "59841f42720a004d30519b615af8a2037f02e5468a89f149a26a9f894b471d0a"
+      },
+      {
+        "width": 8,
+        "data": true,
+        "rtl_sha256": "5fd216cf10e6d1c37b5c47671beef07c08a63b8f7411d1ba7b169de3b9d685f6"
+      },
+      {
+        "width": 16,
+        "data": false,
+        "rtl_sha256": "024d4341d1e9e58cc1597b764bd1bc6712ea9ef815b63f417df20c37be0185dd"
+      },
+      {
+        "width": 16,
+        "data": true,
+        "rtl_sha256": "44d16d761211ca2968c312472c7df54427f95c84ab4e12a96dfb26f848e15179"
+      }
+    ],
+    "old_tests_replayed": 0,
+    "intake156_runs": 0,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_fifo": false,
+    "native_qualified": false,
+    "score_entry_open": false,
+    "adoption": false,
+    "goal_status": "active",
+    "goal_achieved": false,
+    "old_f491_five_sources_and_archive_unchanged": true,
+    "original109_110_sources_model_primary_unchanged": true,
+    "pure_scope": "Eight new numeric-boundary methods only. Six constructed supported width/data contexts retain exact RTL and contract. Old20 and156 not rerun or attributed to new source. No native semantic/all-width/fuzz/score/generalization proof.",
+    "next": "Use new aaac source for independent native frame timing/bit order/reset/error-recovery and actual mutant qualification; only then fresh fixed same-budget C/P screen and net-gain/cost/guard gates before full156.",
+    "future_budgets": {
+      "tokens": 8192,
+      "max_requests": 2,
+      "repairs": 1,
+      "solver_s": 300,
+      "judge_s": 300,
+      "judge_supervisor_s": 360,
+      "xz_retained": true,
+      "retries": 0
+    },
+    "original113_paired_grade_per_task_and_total_cost_120_and80_gates_unchanged": true
+  },
   "serial_framing_pure_preparation_20261007": {
     "schema": "serial_framing_pure_public_preparation_v1",
     "root": "/workspace/team/runs/fpga_owner/serial_framing_pure_20261007_v1",
