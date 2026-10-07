@@ -1,4 +1,131 @@
 {
+  "onehot_full156_serial108_audited_20261007": {
+    "schema": "onehot_full156_and_original_serial108_public_v1",
+    "goal_status": "active",
+    "goal_achieved": false,
+    "serial108": {
+      "spec_sha256": "378c8706992c4da961dc4c237a4aad6b21bf48c4aefb13e51dfa4a8cf97ef117",
+      "source_assets": 101,
+      "audit_sha256": "4578ce6bbd335d67f1e02a4a33553fa03048fde48cea04fe63c679fbe1044803",
+      "fully_correct_by_arm": {
+        "C": 6,
+        "P": 7
+      },
+      "weighted": {
+        "C": 0.8857142857142858,
+        "P": 1.0
+      },
+      "requests": {
+        "C": 10,
+        "P": 9
+      },
+      "samples": 14,
+      "actual_model_requests": 19,
+      "guards": 6,
+      "guard_pass": true,
+      "regressions": [],
+      "all_fixed_task_request_cost_pass": true,
+      "qualified_for_new_full_regression": true,
+      "original_collector_executions": 1,
+      "original_auditor_executions": 1,
+      "archive": {
+        "archive_sha256": "02002e35f411644992723980a0ba2103634418cb74d3a0e958114e8fcb8f3633",
+        "archive_bytes": 17366023,
+        "archive_members": 856,
+        "every_member_bound_both_ends": true
+      },
+      "terminal_sources": {
+        "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+        "PREPARATION_SCOPE.json": "f93fbcd3fe8f9f0a18ad3319c639cd2e25ede319e1b0b01395cc87e0b408e3e5",
+        "protected_prefix.py": "fea8091d76fc82714400725fda131ddd6bda339b962da0ae6ed4014b4b4fdcc4",
+        "terminal_process_functions.py": "a4627d8b3faf6a75dce75cb3c5b02e96de51a52252da7186fe6cdfbf18daccec",
+        "terminal_supervisor.py": "194c08986c726c953a4824a2a7a305090f5e7a08ef701c65c1c0a1fa9643bce1",
+        "dependencies/protected_sources.py": "53507373aa69e54ccd083a6452fb7acaa0cdbc144d2bdf0e01710b21cfd5ed1a",
+        "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "285e9314c324a2a39116c67f18da64da496d4ce1ba8ae3760196c554fd5f921b"
+      },
+      "external_complete_elapsed_s": 9.112118303775787,
+      "external_cap_s": 450,
+      "observer_retired_independently": true,
+      "preexec_original_step_handshake_claimed": false,
+      "prior_entry_failure": "Known two old path assertions rejected before original attempt/streams/Popen; original collector/auditor0. Failure and intent preserved; two exact path adaptations reverse to old bytes. Corrected outer proved actual terminal; original steps each once."
+    },
+    "onehot_full156": {
+      "root": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+      "spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+      "source_assets": 136,
+      "preparation_receipt_sha256": "96efdbfd844e70048c5417be5f0bcefd02e6c4522b5b7dc2dc43b7dbd351513d",
+      "preparation_archive_sha256": "905e89b5d1e108c1c84956ff41e7d39556e42feedef03e7771fb786a7877a251",
+      "preparation_archive_bytes": 1648538,
+      "preparation_archive_members": 149,
+      "every_member_bound_both_ends": true,
+      "postexit_admission_passed": true,
+      "postexit_sha256": "bedc255cb77f7246f601f4a9b37fe862cc7a964570a71a12a0d72866b898ae7a",
+      "tasks": 156,
+      "outputs": 312,
+      "max_model_requests": 624,
+      "historical_guards": 113,
+      "emitted": 1,
+      "abstentions": 155,
+      "actual_new_scope_admission_groups": 4,
+      "new_test_controls_executed": 0,
+      "generic15_reused_not_rerun": true,
+      "old_worker_pipeline_intake_native_audits_not_rerun": true,
+      "production_sources": {
+        "worker.py": "e3d53648c31fa77acf4b9a30e91eee70252651f6a85399985e40db83e3585b6b",
+        "synthesis.py": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+        "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+        "factor_proof.py": "1b8f366b986c74334becf8c61dae13eab4660d6c6fddc005e64e3dee48523d48",
+        "pilot.py": "4c87ccca86a3b085bf8ac36d6e002d866fd2421c6ee9f9b1acd4dfb27fed1522",
+        "metrics.py": "b438a55573474b93e90687185e50cf03474fcd27da9c3677794ddb21808db1c8",
+        "audit.py": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+        "preparation_inputs.py": "223dd1287062391e1dd2673e77f65c0758eb4524e13509bb607339b00b99238a",
+        "prepare_full_scope.py": "c2c27daee7d243b60b2c64328d2a0e2d6c547e69a316ef4d1e24e777a961043e"
+      },
+      "qualifying106_audit_sha256": "5071f22193cc25d78c31c4545178e2d794087f96f9834a933c965625b63a71a0",
+      "stage_cap_s": 43200,
+      "guard_cap_s": 43600,
+      "slot_minutes": 740,
+      "protected_roots": 125,
+      "protected_source_assets": 7928,
+      "immutable119_7670_and95_6516_preserved": true,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo": false,
+      "score_measured": false,
+      "observation_formatter_failure": "Only final transport formatter expected a separate stderr file; original owned_exec merges streams. Same namespace read confirms original rc0/retirement/archive; preparation not rerun."
+    },
+    "budget": {
+      "tokens": 8192,
+      "max_requests": 2,
+      "repair": 1,
+      "complete_solver_s": 300,
+      "judge_s": 300,
+      "judge_supervisor_s": 360,
+      "xz_retained": true,
+      "retries": 0
+    },
+    "acceptance": "Original156/312 audited rows,>=120L3 and weighted>=.80; historical113 allL3 and paired grades nondecreasing; totalPrequests<=C and each historical-correct/unchanged-grade taskPrequests<=C; no deadline/unconfirmed/tool/source failure.",
+    "adoption": false,
+    "peer103_104_actual_read": true,
+    "peer_scope": "105 rejected;106 one same-factor newfull;108 preparation only until owner original audit; postexec step identity not preexec handshake.",
+    "serial108_actual_shared_receipt": "5680046693f8ad90349c12f785fb702623e8aef6864789aedabadc2fb600ea96",
+    "next": "Publish exact frozen sources and submit onehot same-factor full156 once via whole-task FIFO; independently prepare serial same-factor full156 next.",
+    "limits": [
+      "Fixed7 single target gain only; no unseen/hidden/independent qualification.",
+      "Safety43200/43600/740min is not ETA.",
+      "No score addition, taskID production routing, answer injection, redraw, relaxed judge or automatic deployment.",
+      "Private prompts/RTL/wire/archives remain outside public Git."
+    ],
+    "public_sources": {
+      "prepare_onehot_full156.py": "c2c27daee7d243b60b2c64328d2a0e2d6c547e69a316ef4d1e24e777a961043e",
+      "pilot.py": "4c87ccca86a3b085bf8ac36d6e002d866fd2421c6ee9f9b1acd4dfb27fed1522",
+      "metrics.py": "b438a55573474b93e90687185e50cf03474fcd27da9c3677794ddb21808db1c8",
+      "audit.py": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+      "preparation_inputs.py": "223dd1287062391e1dd2673e77f65c0758eb4524e13509bb607339b00b99238a",
+      "serial108_terminal_supervisor.py": "194c08986c726c953a4824a2a7a305090f5e7a08ef701c65c1c0a1fa9643bce1",
+      "serial108_terminal_process_functions.py": "a4627d8b3faf6a75dce75cb3c5b02e96de51a52252da7186fe6cdfbf18daccec"
+    }
+  },
   "original_audits_serial_cp7_frozen_20261007": {
     "schema": "original_audits_and_serial_cp7_freeze_public_v1",
     "goal_status": "active",
