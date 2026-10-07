@@ -1,4 +1,85 @@
 {
+  "collaborative_goal_20261007": {
+    "reaffirmed_user_constraints": {
+      "attachment_sha256": "62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd",
+      "matches_existing_automation_handoff_ignoring_whitespace": true,
+      "preserved": "完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准",
+      "frequency_override": "仅旧5分钟频率由用户最新15分钟决定覆盖；下一轮具体门槛仍待共同冻结"
+    },
+    "updated_at": "2026-10-07T17:04:24+08:00",
+    "status": "active_not_achieved",
+    "user_confirmed": {
+      "joint_discussion_and_faster_progress": true,
+      "check_interval_minutes": 15,
+      "deadline": null,
+      "completion_basis": "完整验收；不设截止时间"
+    },
+    "objective": "获得超过历史118/156 L3完整正确题数的候选，并按事前冻结标准完成完整验收；目标不等于保证达到或追加预算授权。",
+    "historical_reference": {
+      "l3": 118,
+      "total": 156,
+      "l3_rate": 0.7564102564102564,
+      "weighted_score": 0.7987179487179488,
+      "scope": "真值表候选既有开发结果，成绩保留，历史adoption=false不追改",
+      "report_commit": "067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"
+    },
+    "acceptance_scope": [
+      "同机27B唯一候选、最佳归档原版和官方baseline的156题配对",
+      "经审计RTLLM，分别报告两题集与数据用途",
+      "按实验大纲的重要候选五样本",
+      "资源、官方接口、恢复、可复现交付及真实预算",
+      "配对不确定性、有效独立样本量；已见开发不冒充泛化"
+    ],
+    "cooperation": {
+      "channel": "https://github.com/854259/FPGA/issues/7",
+      "discussion": "https://github.com/854259/FPGA/issues/7#issuecomment-6034642013",
+      "review_baseline_pr": 130,
+      "review_baseline_sha": "965c811cfe5184a545f9994790e3309c750900bc",
+      "proposal_posted_and_read_back": true,
+      "peer_acknowledged": false,
+      "peer_agreed_new_gates": false,
+      "owner": "nzh152-lang：候选与原运行/收尾",
+      "reviewer": "本任务：可行性、配对结果、根因和采用条件；直接讨论分歧"
+    },
+    "next_gate_proposal": {
+      "status": "待双方讨论并于下一实验前冻结，不改旧标准或当前实验",
+      "focus": [
+        "同轮总体L3收益",
+        "配对退步机制及不确定性",
+        "总调用、完整耗时与资源成本"
+      ],
+      "reconsider": "不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结",
+      "distinguish": [
+        "探索保留",
+        "下一阶段准入",
+        "正式采用"
+      ],
+      "single_result_over_118_not_automatic_acceptance": true
+    },
+    "workflow": [
+      "优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步",
+      "已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响",
+      "控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑",
+      "正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"
+    ],
+    "preserved_boundaries": {
+      "original_110_111_freezes_ownership_budgets_stop_rules_unchanged": true,
+      "no_new_model_eda_fifo_execution": true,
+      "no_budget_reset_or_deployment": true,
+      "no_reference_leakage_task_id_exceptions_or_retry_selection": true,
+      "all_project_execution_on_authorized_amd": true,
+      "private_raw_evidence_and_pr_delivery": true
+    },
+    "next_actions": [
+      "接原110正式终态，依据真实收益决定计时器路线",
+      "接原111正式native终态及fixed15正式来源/预算，按现有责任推进",
+      "接对方对6034642013的实质反馈，商定下一冻结候选与准入；对方可提出更有证据价值的路线"
+    ],
+    "unresolved": [
+      "下一轮可接受回退/成本及统计采用门待共同确定",
+      "完整大测试数据准入、实际额度与完整预算仍须落实；本目标不补足未知"
+    ]
+  },
   "helper_extraction_20261004": {
     "status": "approved_batch_completed_and_archived_research_only",
     "updated_at": "2026-10-04T13:34:00+08:00",
