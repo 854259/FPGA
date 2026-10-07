@@ -577,3 +577,25 @@ v1 ZIP026ab3929b63e13f92f7529bc4325395f14774844eecd5827c9d0bd8202b4e49（699487B
 已在[6030252301](https://github.com/854259/FPGA/issues/7#issuecomment-6030252301)反馈：仅删除首个重复路径assert还不足，兼容入口需接受相同路径相同SHA、拒绝冲突，并把记录总数和绑定spec的唯一物理文件数分开，保留不可变锚、完整外部来源和全部625保护回执；由owner冻结独立终态审计入口、保存原诊断和准确来源差异。本方接正式结果，不接管实现。对方新CP8 stage/audit/metrics的30来源依赖控制加1原库存子函数诊断，目前仅自述计划/启动，未赋31方法通过或新资格。
 
 [PR121](https://github.com/854259/FPGA/pull/121) head aeba767309b48fbec9b752fae81b2bb04048bf41 / merge172b95ebb7c835b275eeaae106f6aaf751f1fbfc 的限定worker复核已实际交付：只读e64f0266712bb46ad6d07bb9199c4fca896733a4673bac1cdcc8a05ee6b5e94f、公版001887a88f9e75ef7bd4ef26023fc172dda6db8c18687a898c50010185245f3f、实际交付6b82adcfeb8bb20c4bb44def543337010159f76a3a40e9722fa1f42bd4178589，Issue6030252301逐字回读；尚无peer ACK。本条不反写PR121的历史文件。真实native、准确率新采用、独立未见泛化与完整全包含批次均未通过。
+
+## 2026-10-07 11:45 PR123 CP8流程与原库存诊断限定复核
+
+[PR123](https://github.com/854259/FPGA/pull/123) head c0cf35a5c820388be2b33f095a38116f079ec97e / merge 83c0d9b931754f47939375c64bfd53b999a691ba、[6030372786](https://github.com/854259/FPGA/issues/7#issuecomment-6030372786)、Gmail1a1146fbaa81622c和AMD实际交付76d96144564b73b35addce4ac18582063ee2907f3f67c53003b32b3bf9c84277已对应。96源码逐文件核验，与worker_v2相比74原文件相同、1保护capture更新、21新增；10公版0PY与Git字节同。原生产aaac、worker045bf80f、factorc7718aa5、共同fallback7ff等11关键文件保持；fallback是归档phase-P，不称官方baseline。
+
+原31方法=30条新来源接合控制+1条原库存子函数诊断。child1838867/start861681539的preexec stat/cmdline/argv、exec、5367B合并流cd6533216cb514dafc2f68b85b31b9921a5355dc0945db4625cebe5adad771ad、rc0/回收/无remaining及当前退休均核实；完整6.054859094321728秒<40。原receipt f483b3674f27fe5eb329e8d1936b8cb4db2296ceface95039efb2fd110d0706e，process 9f5c4674eb64b3667f98bd7b9d96dad14a16faec5b57d4dc30b63da02623ff3d。31方法均在原流记录OK，不是31自然题。旧worker有效21和旧解包方法/原6b14 helper复用不重跑；历史ADAPTER内pending字段是准备快照，不追授资格或重跑。
+
+诊断只复制两原spec、audit、capture、锚及外部清单，调用protected_receipts子函数并核对异常的函数名和断言行。109在第48行、110在第54行实际拒绝同路径同SHA引用，各126条：125组7928记录7802唯一与126组8064记录7938唯一。原诊断1f84f3c9d39d02d0d2d14001feea3bfdf1c5a38bc3759286989805fc95175e23与原流/receipt/交付一致。本方PR122此前只做静态分析，本次复核的是owner原一次实测；双方均未调用两个原完整auditor/collector，不称原完整终审、模型或评分失败。
+
+新frame audit929b1242的改动接受同路径同SHA、拒绝冲突；来源记录和spec绑定唯一数分别核验，保持当前133组8454记录不可变锚793e19b8、完整外部6516文件清单和33个前后保护回执。原控制含有效库存、额外完整根、同SHA重复正向，以及冲突、改锚/重hash锚、缺/篡改守卫、计数和外部hash错误拒绝。这里使用FAKE保护JSON，不能当实际33次保护或原full625守卫终态。该逻辑在CP8上下文有限接受，原109/110的独立兼容入口尚未交付或验收。
+
+stage914ffac1/audit929b1242/metrics1afd8a2a相对旧timer的逐项差异已检查：家族标签、固定8题/16输出/32请求/33保护、当前锚及库存规则；原模型回退、判定、请求与超时边界保持。CRLF题面/非空独立interface接线安全回退，合成HTTP/编译日志、实际worker函数配FAKE后端及语义反例均仅流程控制。两目标加六守护只在评测元数据，生成器/worker不因题号调整；8192/max2/repair1/完整300/300/360含xz/retries0保持。stage12000是安全上限，不是新全批次预算或实际额度。
+
+stage和audit在输入准入/评分前绑定factor require_native=True，要求原111/spec97adb9aa的14案例/42工具/85守卫/12568观测和六实际突变检出。当前真实native尚未执行，模拟日志不能开启评分；不能借旧timer107资格，也不能把两套小样本增益相加。原111真实来源审计与每个物理成员、资源终态通过后，才有新冻结同预算CP8前测的准入条件。
+
+108成员ZIP 28dd1675f6004723aa7839724ffd24ac9c7610a7f96beedc2a50dc85deea5f09（1718285B）、清单bd8fdb2d0d16b5aab21cd57d99f7a181883a44f968a5e137f1ac72bd46580e4a全部AMD原件与本地成员逐一绑定。134组8540记录=8414唯一，只追加成功worker_v2完整86物理文件，旧133/8454和103/7069及原失败证据保持。PRIMARY仅原回执布尔和所记hash，不扩大为本方独立当前主目录证明。post_exit03:22:04UTC为公版/交付内嵌记录；原来源和进程退休另核。
+
+[PR121](https://github.com/854259/FPGA/pull/121)最终aeba7673/merge172b95eb的e64f0266/001887a8/6b82adcf、[PR122](https://github.com/854259/FPGA/pull/122)最终8f402a1e/merge06b7db6c的121f197b/9ddf6028/b52ba36a六实际原件均重新hash，6030372786明确接受各自限定范围。本次发布仍不等于对方已读/采纳。对方55秒SSH观察超时与未重放是其过程自报；额度重置及撤回也只是对方账号陈述，本任务未执行重置或更改预算。
+
+本方READ_ONLY_REVIEW d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf，2026-10-07T11:42:32.564173+08:00，0.8261503595858812秒，0新项目函数/控制/模型/EDA/原终审/FIFO。现场原109为227/312输出237请求、complete=false；110/111无stage、111无summary。三原监控及27B同出生，冻结136/116/123来源保持，槽仍109；不按中途分数停轮或改冻结。
+
+下一步由owner冻结独立来源绑定的109/110兼容收尾入口，明示差异、保留原诊断、不可变锚/完整外部来源/625真实保护及原判定，本方复核正式交付和原终态；三个原句柄各一次收尾仍归owner，不接管、不重提FIFO。完整A/P/B156、审计RTLLM、重要五样本、资源接口恢复、完整预算/实际额度仍未验收；独立未见0、家族有效N未知，不晋级。

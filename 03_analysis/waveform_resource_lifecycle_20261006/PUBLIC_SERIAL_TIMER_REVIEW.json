@@ -133,7 +133,7 @@
   },
   "status": "original110_serial_full156_freeze_reviewed_queued",
   "conclusion": "Original108 once-only terminal provenance and fixed7 development screening accepted; only one fresh same-factor156 regression eligible, no adoption or generalization.",
-  "next": "Owner retains original109/110/111 FIFO and once-only terminal work. Before terminal acceptance, resolve the statically confirmed duplicate-record incompatibility in a separately source-bound audit entry without overwriting frozen originals: same-path/same-hash accepted, conflicts rejected, record/unique counts separate, immutable anchors/external inventory/625 guards preserved. Review peer formal31-context integration and diagnostic delivery next; currently only plan/start self-report. Original111 native qualification remains mandatory before new C/P screening. No new score/adoption/full batch or quota-reset authorization.",
+  "next": "Owner prepares a separately source-bound compatible terminal entry for original109/110, retaining original diagnostics, immutable anchors, complete external inventory,625 real protection receipts and original judging. Reviewer checks its formal sources/results; owner keeps original109/110/111 and once-only closure. Original111 real14case/42EDA/85guards/12568observations and six mutant detections must pass before freezing new CP8 screening. Do not rerun31/old21 controls, borrow timer107, resubmit FIFO or stop by interim scores.",
   "original_tests_or_intake_reexecuted": 0,
   "new_diagnostic_processes": 1,
   "new_synthetic_inputs": 2,
@@ -141,12 +141,61 @@
   "new_eda_calls": 0,
   "new_fifo": 0,
   "live": {
-    "checked_at": "2026-10-07T03:47:09+08:00",
-    "ticket105": "running",
-    "outputs": 132,
-    "requests": 139,
-    "ticket106": "queued",
-    "frozen_sources_model_handles_slot_match": true
+    "checked_at": "2026-10-07T11:42:32.564173+08:00",
+    "slot_owner": "codex_onehot_synthesis_full156_20261007_v1",
+    "identities": [
+      {
+        "pid": 1680247,
+        "starttime": "860779708",
+        "state": "S",
+        "cmd_sha256": "6c0e6ae31cad3b80384e732a0827ce98ea6c0084071c9e442669524bd7adc84c"
+      },
+      {
+        "pid": 1710412,
+        "starttime": "860902725",
+        "state": "S",
+        "cmd_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a"
+      },
+      {
+        "pid": 1812846,
+        "starttime": "861451665",
+        "state": "S",
+        "cmd_sha256": "473a7ddfe5d205026071042662f901584601c23c32985a9b9ec7e340748db240"
+      },
+      {
+        "pid": 2013333,
+        "starttime": "823869819",
+        "state": "R",
+        "cmd_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+      }
+    ],
+    "runs": {
+      "109": {
+        "frozen_sources": 136,
+        "stage": {
+          "observed_at_epoch": 1791344541.4334123,
+          "experiment": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+          "completed_samples": 227,
+          "expected_samples": 312,
+          "actual_model_requests": 237,
+          "complete": false,
+          "audit_pending": true,
+          "adoption": false,
+          "new_full_score": false
+        },
+        "summary_exists": true
+      },
+      "110": {
+        "frozen_sources": 116,
+        "stage": null,
+        "summary_exists": false
+      },
+      "111": {
+        "frozen_sources": 123,
+        "stage": null,
+        "summary_exists": false
+      }
+    }
   },
   "peer78_ack": {
     "comment": 6024013554,
@@ -1772,8 +1821,8 @@
       }
     ],
     "conclusion": "Frozen inventory contains126 exact same-path same-hash duplicate records. Both frozen protected_receipts functions require every record path unique and final unique count equals record count. Static incompatibility confirmed; original function/auditor/collector not executed by this review, no original terminal failure observed.",
-    "owner_diagnostic31_status": "Peer plan/start statement only; formal new31 controls and diagnostic evidence not delivered or independently accepted.",
-    "required_followup": "Owner preserves originals and once-only terminal ownership; freeze independently bound companion audit entry and same-path/same-hash dedup rule with conflict rejection, separate record and unique counts, immutable anchors, full external inventory and625 receipts. No mutation of original frozen run, repeated collector/auditor or score-based optional stopping.",
+    "owner_diagnostic31_status": "PR123 original31=30 new source controls plus1 diagnostic method for two original subfunctions independently reviewed. Each original function rejects126 same-hash duplicate records at line48/54. No complete original auditor or collector called.",
+    "required_followup": "Owner prepares a separately source-bound compatible terminal entry for original109/110, retaining original diagnostics, immutable anchors, complete external inventory,625 real protection receipts and original judging. Reviewer checks its formal sources/results; owner keeps original109/110/111 and once-only closure. Original111 real14case/42EDA/85guards/12568observations and six mutant detections must pass before freezing new CP8 screening. Do not rerun31/old21 controls, borrow timer107, resubmit FIFO or stop by interim scores.",
     "new_controls": 0,
     "new_project_function_calls": 0,
     "new_model_calls": 0,
@@ -1789,8 +1838,25 @@
     "complete_batch": false,
     "readonly_seconds": 0.1036893967539072,
     "readonly_receipt_sha256": "121f197b46719411fe968cb79a23428d30af1a7335ec802a21073fcf4292761f",
-    "peer_acknowledgment": false,
+    "peer_acknowledgment": true,
     "compatibility_fix_accepted": false,
-    "originals_unchanged": true
+    "originals_unchanged": true,
+    "owner_diagnostic_review": {
+      "receipt_sha256": "f483b3674f27fe5eb329e8d1936b8cb4db2296ceface95039efb2fd110d0706e",
+      "peer_comment": 6030372786,
+      "peer_pr": "https://github.com/854259/FPGA/pull/123",
+      "diagnostic_sha256": "1f84f3c9d39d02d0d2d14001feea3bfdf1c5a38bc3759286989805fc95175e23",
+      "readonly_receipt_sha256": "d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf",
+      "original_full_auditor_calls": 0,
+      "original_collector_calls": 0
+    },
+    "peer_ack_comment": 6030372786,
+    "cp8_inventory_rule_limited_accepted": true
+  },
+  "cp8_pipeline_review_reference": {
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_SERIAL_FRAMING_REVIEW.json",
+    "peer_pr": "https://github.com/854259/FPGA/pull/123",
+    "native_qualified": false,
+    "readonly_receipt_sha256": "d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf"
   }
 }
