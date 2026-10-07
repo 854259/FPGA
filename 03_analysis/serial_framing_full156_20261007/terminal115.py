@@ -242,6 +242,7 @@ def followup():
         model_calls=0, eda_calls=0, fifo_calls=0, scoring_calls=0, cap_s=450, auditor_cap_s=180,
         limit='New dependency-path compatibility attempt only. Prior failed attempt retained, no original scoring or collector repeated.'))
     save(nxt/'SOURCE_MANIFEST.json', {p.name: sha(p) for p in nxt.iterdir()})
+    sys.path.insert(0, str(ROOT))
     import terminal_outer
     result = terminal_outer.run([sys.executable, '-B', str(nxt/'terminal115.py'), 'followup_child'],
         nxt, nxt/'external', 450, 20, [nxt/'FOLLOWUP_RECEIPT.json', nxt/'audit_result/RESULTS.json'], 2013333)
