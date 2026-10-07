@@ -545,3 +545,23 @@ ZIP `2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b`（349335�
 本方只读 ef6e0f087d8342e93073d37af4dd519a4df18eb556d3ddb0ffb0d669a241e1bb，2026-10-07T10:45:59.264835+08:00 / 0.8400105945765972秒，0新控制/模型/EDA/原终审/FIFO。[PR117](https://github.com/854259/FPGA/pull/117)最终af4f2294/merge39b606d7的25d72283、2bbbd91c、7adc0bfa三实际原件已重新hash，6029747142明确限定接受；未伪造对方接受本次复核。10:45原109正常163/312输出171请求、complete=false，110queued无stage。
 
 本次仅接受native冻结准备：30秒单工具/3600阶段/4000guard/70分钟槽为安全上限，模型调用上限0；真实42EDA、85guards、12568观测、六突变检出、资源完整终态及原一次来源审计仍待owner整任务FIFO正式交付。不得把准备或排队作为native资格。实际资格后才新固定同预算C/P前测；原109/110收尾各一次归owner。本方不接管、不重提FIFO、不相加因素收益。独立未见0、家族N未知，完整A/P/B156+审计RTLLM+重要五样本+资源接口恢复+完整预算/实际额度仍未闭合。
+
+## 2026-10-07 11:20 PR120串行帧worker单项修正限定复核
+
+[PR120](https://github.com/854259/FPGA/pull/120) head fd77f1efd5779ce4220f67112eebf64a582adcb3 / merge 9faea6ed05949239a05614044f23a02494003485、[6030076173](https://github.com/854259/FPGA/issues/7#issuecomment-6030076173)、Gmail 1a1145549fb2d838 和AMD正式交付 9dbc20b6c07b1352322727401dddcc4419d3c731554edfad8586bd2956f747f5 一致。75来源逐文件核验，10公版0PY与Git字节相同；本方没有执行生产器、测试、模型、EDA、原审计或FIFO。
+
+原v1实际21方法中20通过、1失败，失败是 test_matching_interface_and_CRLF_emit_zero_request 误沿用timer语义：aaac对非空独立interface安全弃权，原断言却要求emitted。原child1824714/start861561101的preexec出生stat/cmdline/argv、exec、3706B流c6f95dd134bd2b6020141644f2dd75ab6230891ec6c8bdeffcb072d8263663ef、rc1、回收及退休均已核；完整0.26553194783627987秒<40。receipt da30b0f8976c1fd8e0c743a158bc584407c7dfd32fb09052f79874cf6ac65578。normal_completion仅表示进程正常返回，不能将rc1改写为测试通过。
+
+v2仅修改该方法为 test_matching_separate_interface_and_CRLF_abstains_to_baseline，并只新执行1项：CRLF题面/独立interface原字节保持，reason=separate_interface_unsupported，回退原P流程一次，1条模拟请求、无模拟编译/反馈。原child1825662/start861573634的出生/exec、256B流7b1093c947b17c31efad1036dc79485c7cf5269ef92429044e00d488d0716003、rc0、回收/退休完整核验，0.18667698465287685秒<40；receipt f71db4282018a5e11dff8c9acf485b35a45f0e91133c04afd26c919a663c854d。旧20方法和辅助代码逐字不变、没有重跑；原21上下文由旧20成功记录与新1修正组成，不是新跑21项。方法SHA5e36c7be→5862d3f8的范围包含缩进及尾空行；反替换还原完整旧test文件22c664ee，新文件9af1d9bb。v1→v2的75源仅test/ADAPTER证明/保护capture三文件改变。原生产aaac、worker045bf80f、factorc7718aa5、baseline7ff均不变。
+
+与旧timer接入原75源/receipt f33c3f05/档案a316c699逐项绑定：worker只改route schema、trace事件及route值命名，反转后字节精确；factor只适配aaac、spec97adb9aa、framing111档案家族和14/8/6/42/85/12568/0计数及语义标签，逆变换精确。44上游与15运行依赖保持；共同fallback为归档phase-P的单点candidate=True变换，C/P均使用，不将它称官方baseline。numeric8/material6/pipeline9/prepare1原回执重hash，不执行或追授旧f491的156识别资格。
+
+原v1中新增的资格家族控制使用显式FAKE档案/JSON：正向后分别拒绝旧timer家族、旧spec、旧producer、重hash后guard=73；不是七计数每个错误的穷举控制，也不是真实native。静态门核14case/8正6负/42工具/85guard/12568观测/0模型及原111/spec/aaac/审计和档案哈希，但它依赖外部已审计声明，自己不遍历ZIP证明物理执行。本方当前确认正式资格文件尚不存在；原111的一次真实来源审计、逐成员绑定、工具回执、六突变检出及完整资源终态仍是必须出口。模拟资源门/编译器/反馈不能代替真实验收；本次不打开评分入口。
+
+v1 ZIP026ab3929b63e13f92f7529bc4325395f14774844eecd5827c9d0bd8202b4e49（699487B）、v2 ZIPba7f9dc9b513b592746c4ea864ee935cc6f4650003b9604142186017ffb4ac8e（707302B）均86成员，清单29f2b28f/e63b3d0d；AMD原文件与私有本地成员逐个一致。保护先132组8368条=8242唯一，再133组8454条=8328唯一，只追加原native126成员和失败v1完整86成员，旧131/8242、103/7069及所有旧hash保持；重复文件不增加独立证据。PRIMARY仍仅原回执布尔及所记hash，不扩大为本方独立主目录证明。post-exit03:02:16UTC为公版/交付内嵌记录，另核真实原件/退出身份，不补造新进程或重执行控制。本方只读展示路径/方法尾空行范围/Git参数编排修正不属于项目失败或项目重跑。
+
+本方READ_ONLY_REVIEW e64f0266712bb46ad6d07bb9199c4fca896733a4673bac1cdcc8a05ee6b5e94f，2026-10-07T11:17:35.205849+08:00，1.6505367513746023秒，0新控制/模型/EDA/原终审/FIFO。[PR119](https://github.com/854259/FPGA/pull/119)最终d78daf2e/merge43a88442的ef6e0f08/635dbba3/1bc9fa41三实际原件重新核验，6029979819、6030003265、6030076173明确限定接受，现并入统一记录；发布本次复核不等于对方已读或采纳。
+
+11:17原109为190/312输出198请求、complete=false，110/111无stage、111无summary；三监控和共享27B同出生在活，136/116/123冻结源保持，槽仍109。111已受理原FIFO的51ce0b02回执保持，不重提。原各一次collector/auditor均归owner；只读进度不据中途分数停轮或改冻结。对方关于一次额度重置的授权说法只属对方陈述，本任务没有直接人类新授权，不重置或放宽预算。
+
+下一步：owner继续准备新stage/audit/metrics及必要来源依赖控制，并保留原109/110/111终态任务归属；本方接正式来源和实际结果复核。原111真实native合格后才允许新冻结同预算C/P前测；20旧/1新纯控制不代表准确率或完整生成器证明。独立未见0、家族有效N未知，两因素不相加；完整A/P/B156、审计RTLLM、重要五样本、资源接口恢复和完整预算/实际额度仍未验收。
