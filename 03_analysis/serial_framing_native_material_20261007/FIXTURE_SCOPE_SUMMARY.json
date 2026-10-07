@@ -1,0 +1,11 @@
+{
+  "schema": "serial_framing_independent_material_scope_v1",
+  "producer_sha256": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+  "case_plan_sha256": "b4e0b1c7a46754bf11c71e588285a410e865fc960fcf56683bf1e75bbe8aa24d",
+  "independent_fixture": true,
+  "oracle": "Literal prompt separate from production body_template; offline full-stream packet slicing/cursor with reset interruptions, not DUT state/index emulation or reference/TB/response input.",
+  "timing": "After sampled valid stop, done observed after positive-edge NBA; before-positive and after-opposite checks include sync-reset behavior. next TRACE field is constant0 placeholder and not internal-next proof.",
+  "data_care": "Payload masked only when done0; done never masked. Initial pre-reset unknown interval not fabricated as zero.",
+  "native_tools_not_yet_executed": true,
+  "actual_mutant_detection_not_yet_measured": true
+}
