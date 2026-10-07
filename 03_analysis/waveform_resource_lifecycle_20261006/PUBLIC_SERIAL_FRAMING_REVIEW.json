@@ -1,14 +1,14 @@
 {
   "schema": "peer110_serial_framing_pure_bounded_independent_review_v1",
   "checked_at": "2026-10-07T09:42:20.973084+08:00",
-  "updated_at": "2026-10-07T10:11:00+08:00",
+  "updated_at": "2026-10-07T10:32:00+08:00",
   "peer_pr": "https://github.com/854259/FPGA/pull/110",
   "head": "c8d2a3cad8571f2a9160c6ffcfbfc28f1835986e",
   "merge": "88afad35d47b0f5208efe1391e54d56e2b00e553",
   "peer_comment": 6028973734,
   "mail_id": "1a113ff5f30dbb47",
   "peer_delivery_sha256": "969600d8b8ba4528d25d09773660565a636e8f6c718f4842fc87959a26bc5215",
-  "scope": "Oldf491 parsing remains held historical; newaaac numeric8 and independent material6/14cases accepted only. Actual native tools/detection/source audit and scoring pending.",
+  "scope": "Oldf491 parsing remains held historical; aaac numeric8, independent material6/14cases and corrected source-dependent pipeline9 accepted only. Actual native tools/detection/source audit and scoring pending.",
   "readonly_receipt_sha256": "3451a12d72a6b84e891cba08828ca6120b495afaf68fc5ee083867e2d5d28d54",
   "readonly_seconds": 0.7495576087385416,
   "source_hashes": {
@@ -165,7 +165,7 @@
   "reviewer_original_audits": 0,
   "reviewer_new_fifo": 0,
   "peer_acknowledgment_of_this_complete_review": true,
-  "next": "Owner binds current aaac producer and14 prepared cases into source-frozen native stage/audit/guard/resource flow, retaining42 planned tools/85guards, explicit output widths and finite binary scope. No scoring until actual native qualification and one-time source audit; then a fresh fixed same-budget C/P screen. No replay of old20/156/numeric8/material6/timer107. Original109 continues and110 remains FIFO-owned by peer, with each original terminal once; this task reviews formal evidence.",
+  "next": "Owner freezes actual serial-frame native14 cases/42 tools/85 guards with aaac producer, original material and corrected bdb37e62 stage; then whole-task FIFO under existing resource rules, preserving each original109/110 terminal once. This task reviews formal freeze/native/terminal evidence. No old20/8/6/156/timer107 reruns, no borrowed qualification; native success only permits a fresh fixed same-budget C/P screen. Full all-inclusive batch, audited RTLLM, five independent generations and actual total budget/quota remain unverified.",
   "numeric_boundary_review": {
     "schema": "peer111_serial_framing_numeric_bounded_independent_review_v1",
     "checked_at": "2026-10-07T09:56:07.502148+08:00",
@@ -351,7 +351,7 @@
       "comment": 6029297741
     }
   },
-  "status": "aaac_independent_material_accepted_native_execution_pending",
+  "status": "corrected_pipeline_pure9_accepted_actual_native_pending",
   "current_source_sha256": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
   "original_pure_review_delivery": {
     "pr": "https://github.com/854259/FPGA/pull/112",
@@ -529,8 +529,264 @@
     "full_budget_actual_quota_verified": false,
     "independent_unseen": 0,
     "effective_family_N": null,
-    "peer_acknowledgment_of_this_complete_review": false,
-    "next": "Owner binds current aaac producer and14 prepared cases into source-frozen native stage/audit/guard/resource flow, retaining42 planned tools/85guards, explicit output widths and finite binary scope. No scoring until actual native qualification and one-time source audit; then a fresh fixed same-budget C/P screen. No replay of old20/156/numeric8/material6/timer107. Original109 continues and110 remains FIFO-owned by peer, with each original terminal once; this task reviews formal evidence."
+    "peer_acknowledgment_of_this_complete_review": true,
+    "next": "Owner binds current aaac producer and14 prepared cases into source-frozen native stage/audit/guard/resource flow, retaining42 planned tools/85guards, explicit output widths and finite binary scope. No scoring until actual native qualification and one-time source audit; then a fresh fixed same-budget C/P screen. No replay of old20/156/numeric8/material6/timer107. Original109 continues and110 remains FIFO-owned by peer, with each original terminal once; this task reviews formal evidence.",
+    "peer_ack_comment": 6029565310,
+    "peer_ack_prior_comment": 6029511740,
+    "peer_ack_delivery_sha256": "8e7480580dd1c202ce95fc27900835e1f5885e7b5135fd1ec9ed68f30ff31938",
+    "complete_review_delivery": {
+      "pr": "https://github.com/854259/FPGA/pull/115",
+      "head": "f38a5d0e94041e624242065c4714b6645ee8fee5",
+      "merge": "78fc94e42a8eb7af869f401ebb79296935efd5f1",
+      "readonly_sha256": "5db4e3c74a79a45450fa5d9bdd27e0be900399ded544832ea592bfb685e300d6",
+      "public_sha256": "cb41f8ad4d0713f00a9e52fdd1c96627001535c918cd7380986d60c8058e171f",
+      "delivery_sha256": "36e03311d491fe62bdc25b86a22a6fa5bbf730f4fa70058cf21fd90706f591ed",
+      "comment": 6029462934
+    }
   },
-  "original_pure_ack_comment": 6029279652
+  "original_pure_ack_comment": 6029279652,
+  "pipeline_source_review": {
+    "schema": "peer116_framing_pipeline_bounded_independent_review_v1",
+    "checked_at": "2026-10-07T10:30:29.766898+08:00",
+    "peer_pr": "https://github.com/854259/FPGA/pull/116",
+    "head": "06501133b55dce884dfb73586e196acc11293b12",
+    "merge": "d99925c8a7388b7906539523789515dc1e5f2cb4",
+    "peer_comment": 6029565310,
+    "mail_id": "1a1142e3b9e0c4c2",
+    "peer_delivery_sha256": "8e7480580dd1c202ce95fc27900835e1f5885e7b5135fd1ec9ed68f30ff31938",
+    "readonly_receipt_sha256": "25d7228372a7bdd156b73587d9748cbc6753df8f69934f4a887c299111bf2adb",
+    "readonly_seconds": 0.7788122277706861,
+    "scope": "Accept only corrected source-bound9 pure pipeline contexts with original v1 failure retained. Native42 tools/85 guards, actual mutant detection and source-frozen full native execution remain pending; no borrowed timer107 qualification.",
+    "source_files": 15,
+    "source_hashes": {
+      "SOURCE_REUSE_PROOF.json": "1153f480306dfbc546822fb2277ea8aaccc5a47a1410e8d6b865ead3b42a8c5f",
+      "dependencies/paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+      "dependencies/protected_sources.py": "53507373aa69e54ccd083a6452fb7acaa0cdbc144d2bdf0e01710b21cfd5ed1a",
+      "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+      "raw_evidence/PROTECTED_BASE_CAPTURE.json": "ecebe107e4a1ab6a16ce9ea11b1272734086719767c32f24dc130ca56b4e961e",
+      "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "abad8719f3485b052a9077ad81934ba367bdc9f21dafa38abd8de66f359efd4f",
+      "sources/audit.py": "3e970defdb1ced56a5cc4134a292f3d11dc448dd030c3781674845ac435079c3",
+      "sources/calibration.py": "1f1534e0764c5de3762254fe791a8132be0fcee46b41fb8e0bd9ed59f86de5a6",
+      "sources/framing_fixture.py": "a24526fe27b41365337bfaeae29038ce9fec4e8688895455625ecc0c29c39385",
+      "sources/measure.py": "e4f4f574edb5f6317e6a01f6542173c7273a4a86a89700cb1d96c3d2b5ebaae2",
+      "sources/owned_exec.py": "9981c3a36183787d559aaed73fcfd34d36e6a7354e5da1874cf5308c6ee476c5",
+      "sources/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "sources/stage.py": "bdb37e620d30a1424a4b3df0bb274c3d5a76485a5eb77f9945c709b5c490787b",
+      "sources/synthesis.py": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+      "sources/test_pipeline.py": "e21f538e4740f8f7e5deb537c1f05b958f59574154cca65b9c9863e198c994c0"
+    },
+    "public_files": 10,
+    "public_python_files": 0,
+    "public_git_amd_bytes_equal": true,
+    "source_changes_from_v1": [
+      "SOURCE_REUSE_PROOF.json",
+      "raw_evidence/PROTECTED_GROUPS_CAPTURE.json",
+      "sources/stage.py"
+    ],
+    "stage_two_changes_reverse_exact": true,
+    "prior_timer_adaptation_reverse_exact": [
+      {
+        "source": "sources/stage.py",
+        "old_sha256": "1df860be7c404a629d340dbc17f7ceeedc54abd1f0c432c9da435e8e96146e0a",
+        "new_sha256": "bdb37e620d30a1424a4b3df0bb274c3d5a76485a5eb77f9945c709b5c490787b",
+        "reverse_original": true
+      },
+      {
+        "source": "sources/audit.py",
+        "old_sha256": "3beec4b762a8c0fe62caaa88a052c3f278cae9338987459c9161dde27717a385",
+        "new_sha256": "3e970defdb1ced56a5cc4134a292f3d11dc448dd030c3781674845ac435079c3",
+        "reverse_original": true
+      }
+    ],
+    "original_v1": {
+      "receipt_sha256": "ee5c5b3fbc50be8b7bdb9c28db5dabf2d6e6f50d73670c11a5e897a6f0ba82b1",
+      "process": {
+        "schema": "owned_preexec_birth_gate_v1",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/runs/fpga_owner/serial_framing_native_pipeline_pure_20261007_v1/sources/test_pipeline.py"
+        ],
+        "cwd": "/workspace/team/runs/fpga_owner/serial_framing_native_pipeline_pure_20261007_v1",
+        "cap_s": 40,
+        "timeout": false,
+        "signals": [
+          "SIGCONT_bound_preexec_child"
+        ],
+        "exec_error": null,
+        "error": null,
+        "child_identity": {
+          "pid": 1786426,
+          "state": "T",
+          "starttime": "861281534",
+          "pgid": 1786426,
+          "sid": 1786426,
+          "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+        },
+        "exec_confirmed": true,
+        "returncode": 1,
+        "remaining_group": [],
+        "elapsed_s": 0.6133171170949936,
+        "leader_reaped": true,
+        "stdout_sha256": "a8d062bb8a4d2694652e88eb6c6313d8588e46eb18f552be94562b82acd97c31",
+        "stdout_bytes": 3809,
+        "normal_completion": true
+      },
+      "actual_methods": [
+        "test_actual_synthetic_frozen_contract_reconstructs",
+        "test_same_inventory_rehashed_wrong_rtl_is_rejected",
+        "test_fixed_scope_deadlines_counts_and_production_identity_cannot_drift",
+        "test_capture_scope_and_prepared_expected_inventory_rejected_if_replaced",
+        "test_actual_context_negative_witnesses_strict_and_nonvacuous",
+        "test_independent_auditor_fresh_serial_traces_and_refusals",
+        "test_native_command_arguments_scoped_to_scratch_and_fixed_order",
+        "test_absent_or_extra_prepared_case_rows_cannot_pass_freeze",
+        "test_protection_allows_complete_append_but_never_replacement_of_base"
+      ],
+      "passed": false,
+      "original_child_retired": true,
+      "protected_before_after_equal": true,
+      "model_before_after_equal": true,
+      "passed_methods": 7,
+      "failed_methods": 2,
+      "failure_reason": "Broad numeric-prefix substitution changed stage3600 to4200. Two positive freeze checks failed at the deadline assertion. Wrong sources/serial_timer.py key was also found statically; this downstream defect was not reached in that failed stream.",
+      "normal_completion_is_not_test_success": true,
+      "remaining_seven_methods_not_qualification": true
+    },
+    "original_v2": {
+      "receipt_sha256": "551c9cf985a35f9001cf2de6e0f2b06d8690838c848073476727e7a9bf54b26a",
+      "process": {
+        "schema": "owned_preexec_birth_gate_v1",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/runs/fpga_owner/serial_framing_native_pipeline_pure_20261007_v2/sources/test_pipeline.py"
+        ],
+        "cwd": "/workspace/team/runs/fpga_owner/serial_framing_native_pipeline_pure_20261007_v2",
+        "cap_s": 40,
+        "timeout": false,
+        "signals": [
+          "SIGCONT_bound_preexec_child"
+        ],
+        "exec_error": null,
+        "error": null,
+        "child_identity": {
+          "pid": 1795053,
+          "state": "T",
+          "starttime": "861328139",
+          "pgid": 1795053,
+          "sid": 1795053,
+          "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+        },
+        "exec_confirmed": true,
+        "returncode": 0,
+        "remaining_group": [],
+        "elapsed_s": 0.8356161843985319,
+        "leader_reaped": true,
+        "stdout_sha256": "b23b6541c1f66c1cacceab294e3b3f82a9c926eae8e55c6427e3eac18551f182",
+        "stdout_bytes": 1579,
+        "normal_completion": true
+      },
+      "actual_methods": [
+        "test_actual_synthetic_frozen_contract_reconstructs",
+        "test_same_inventory_rehashed_wrong_rtl_is_rejected",
+        "test_fixed_scope_deadlines_counts_and_production_identity_cannot_drift",
+        "test_capture_scope_and_prepared_expected_inventory_rejected_if_replaced",
+        "test_actual_context_negative_witnesses_strict_and_nonvacuous",
+        "test_independent_auditor_fresh_serial_traces_and_refusals",
+        "test_native_command_arguments_scoped_to_scratch_and_fixed_order",
+        "test_absent_or_extra_prepared_case_rows_cannot_pass_freeze",
+        "test_protection_allows_complete_append_but_never_replacement_of_base"
+      ],
+      "passed": true,
+      "original_child_retired": true,
+      "protected_before_after_equal": true,
+      "model_before_after_equal": true,
+      "passed_methods": 9,
+      "failed_methods": 0,
+      "new_source_dependent_controls_only": true
+    },
+    "static_review": {
+      "output_width_witness_bound_to_expected": true,
+      "stage_guard_count": "initial1 plus two per42 tools equals85",
+      "auditor_rechecks42_birth_argv_stream_exit_and85_guards": true,
+      "native_main_guard_resource_paths_not_executed_by_pure9": true,
+      "auditor_trace_control_uses_synthetic_stream_not_real_eda": true,
+      "test_audit_measure_producer_fixture_owned_unchanged_between_v1_v2": true,
+      "preparation_pending_fields_are_immutable_prefinal_metadata": true
+    },
+    "archives": [
+      {
+        "root": "/workspace/team/runs/fpga_owner/serial_framing_native_pipeline_pure_20261007_v1",
+        "sha256": "8c3791e6f53bed6178dec90b531958f81a99a871064e8840ee30cc9061a79722",
+        "bytes": 531343,
+        "members": 25,
+        "manifest_sha256": "59fc9955236dedd134b22941b07344637f3d9c96d79dd21b70030e84e1e5a6b2",
+        "all_members_amd_original_and_local_verified": true
+      },
+      {
+        "root": "/workspace/team/runs/fpga_owner/serial_framing_native_pipeline_pure_20261007_v2",
+        "sha256": "5df384a2bc5624f19ba152a0a1544e2e2110f47118e9fd4d21701c82bbb92f4c",
+        "bytes": 533749,
+        "members": 25,
+        "manifest_sha256": "d5b1716a64268a60275344dfebacd41403a911bed95eca413fa5ad6308137f64",
+        "all_members_amd_original_and_local_verified": true
+      }
+    ],
+    "protection": {
+      "groups": 130,
+      "entries": 8217,
+      "unique_files": 8091,
+      "original129_8192_preserved": true,
+      "original103_7069_preserved": true,
+      "only_added_original_failed_v1_group": true,
+      "primary_unchanged_peer_receipt_only": true
+    },
+    "material_source_reuse_no_rerun": true,
+    "peer115_three_original_files_verified": true,
+    "qualification_scope": "Corrected source-bound pure pipeline preparation only. Material14/12568 expected observations retained; actual42 native tools/85 guards and measured six-mutant detection remain pending. Finite binary outputs, next0 placeholder; no internal-next/XZ/all-width/unseen or score proof.",
+    "live": {
+      "checked_at": "2026-10-07T10:30:29.766898+08:00",
+      "original109": {
+        "pid": 1680247,
+        "state": "S",
+        "starttime": "860779708",
+        "command_sha256": "6c0e6ae31cad3b80384e732a0827ce98ea6c0084071c9e442669524bd7adc84c",
+        "completed_samples": 144,
+        "expected_samples": 312,
+        "actual_model_requests": 150,
+        "complete": false
+      },
+      "original110": {
+        "pid": 1710412,
+        "state": "S",
+        "starttime": "860902725",
+        "command_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a",
+        "queued": true,
+        "no_stage": true
+      },
+      "model": {
+        "pid": 2013333,
+        "state": "S",
+        "starttime": "823869819",
+        "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+      },
+      "slot_owner": "codex_onehot_synthesis_full156_20261007_v1"
+    },
+    "reviewer_new_controls": 0,
+    "reviewer_new_model_calls": 0,
+    "reviewer_new_eda_calls": 0,
+    "reviewer_original_auditor_or_collector": 0,
+    "reviewer_new_fifo": 0,
+    "pipeline_preparation_only_accepted": true,
+    "native_qualified": false,
+    "score_entry_open": false,
+    "adoption": false,
+    "full_all_inclusive_batch_complete": false,
+    "full_budget_actual_quota_verified": false,
+    "independent_unseen": 0,
+    "effective_family_N": null,
+    "peer_acknowledgment_of_this_complete_review": false,
+    "next": "Owner freezes actual serial-frame native14 cases/42 tools/85 guards with aaac producer, original material and corrected bdb37e62 stage; then whole-task FIFO under existing resource rules, preserving each original109/110 terminal once. This task reviews formal freeze/native/terminal evidence. No old20/8/6/156/timer107 reruns, no borrowed qualification; native success only permits a fresh fixed same-budget C/P screen. Full all-inclusive batch, audited RTLLM, five independent generations and actual total budget/quota remain unverified."
+  }
 }

@@ -515,3 +515,19 @@ ZIP `2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b`（349335�
 [PR112](https://github.com/854259/FPGA/pull/112)的3451a12d/79e05377/6093dc71获[6029279652](https://github.com/854259/FPGA/issues/7#issuecomment-6029279652)完整限定接受；[PR113](https://github.com/854259/FPGA/pull/113)的61c5b29c/45a32ea7/b4aec20d获6029347308完整限定接受，六原文件本次逐项核验。数字4300两读数为初始化/首个方法的口径已被对方采纳，原回执不改、不补跑。SSH连接超时同根续读、Git旧标记拒绝、材料交付前HOLD仍限定对方自报，不补造其本地过程证据。
 
 接受材料准备限定范围；owner继续stage/audit/guard/resource与新14case/输出宽度/85guards接合及新来源验证，然后冻结、按原串行资源规则执行独立native。实际资格后才同预算固定C/P前测，净收益和守护/逐题总成本合格才同因素156。原8192/max2/repair1/retries0/完整worker300/judge300/super360含xz、历史113/配对等级/逐题及总请求/120和.80门不变。10:09原109运行121/312输出127请求，110排队无stage，原各一次收尾归owner。已见开发、独立未见0/家族N未知；完整A/P/B156+RTLLM+五样本+资源接口恢复和完整预算/实际额度尚未闭合。
+
+## 2026-10-07 10:32 PR116串行帧流程接合修复限定复核
+
+[PR116](https://github.com/854259/FPGA/pull/116) head 06501133b55dce884dfb73586e196acc11293b12 / merge d99925c8a7388b7906539523789515dc1e5f2cb4、[6029565310](https://github.com/854259/FPGA/issues/7#issuecomment-6029565310)、Gmail1a1142e3b9e0c4c2与AMD交付8e7480580dd1c202ce95fc27900835e1f5885e7b5135fd1ec9ed68f30ff31938一致。15源、10公版0PY全部Git/AMD字节绑定；本方只读原文件、原回执和档案，不执行生产器、材料生成器、阶段、测试或原审计。
+
+原v1是实际前测失败：9方法7通过2失败，1786426/start861281534、0.613317秒<40、3809B流a8d062bb、rc1、exec/回收/无remaining及当前退休均核。两项正向freeze检查停在stage_timeout_s==4200，根因为36→42字符串前缀替换连带改动3600。原sources/serial_timer.py键错误另由静态发现，原失败流尚未到该键，不能伪称两个不同故障均被原测试直接触发。normal_completion只说明进程正常返回，不是测试通过；七项成功也不单独赋来源接合资格，部分负向检查可能被较早的错误预算断言挡住。
+
+新v2 stage bdb37e620d30a1424a4b3df0bb274c3d5a76485a5eb77f9945c709b5c490787b只恢复3600及改为sources/synthesis.py，两处逆转逐字原0603f557。15来源中仅stage、SOURCE_REUSE_PROOF和保护捕获发生改变；test e21f538e、audit3e970def、measure e4f4f574、aaac、fixturea245和owned9981保持。旧timer阶段和审计到新frame的计数/标签/宽度适配也已按原替换表反向绑定，不借用其native资格。新stage按每行expected输出长度检查witness，初始一次加42工具前后各一次共85guards；审计源码要求42工具出生/argv/流/退出及85原保护回执。新9方法检查正向冻结、改RTL/expected/范围/预算拒绝、非空witness、纯合成TRACE审计、参数顺序和保护追加/不可替换；它们未执行真实native main/资源guard链路。
+
+原v2控制1795053/start861328139、0.835616秒<40，1579B原流b23b6541c1f66c1cacceab294e3b3f82a9c926eae8e55c6427e3eac18551f182列出9方法全部OK，rc0、原preexec stat/cmdline/argv、exec确认、回收/无remaining及当前退休逐项绑定。原receipt551c9cf985a35f9001cf2de6e0f2b06d8690838c848073476727e7a9bf54b26a；旧失败ee5c5b3fbc50be8b7bdb9c28db5dabf2d6e6f50d73670c11a5e897a6f0ba82b1不可变。SOURCE_REUSE_PROOF里的pending是准备快照，实际执行由该原回执/流证明，不因此重跑。
+
+两25成员ZIP：旧8c3791e6f53bed6178dec90b531958f81a99a871064e8840ee30cc9061a79722（531343B），新5df384a2bc5624f19ba152a0a1544e2e2110f47118e9fd4d21701c82bbb92f4c（533749B），全部AMD原文件与私有本地成员一致。保护130组8217条记录=8091唯一文件；仅追加旧失败25成员，旧129/8192和103/7069逐项保留。PRIMARY仍只原布尔，不扩为本方独立主目录认证。原109136/110116冻结源与共享27B同出生保持。
+
+本方只读25d7228372a7bdd156b73587d9748cbc6753df8f69934f4a887c299111bf2adb，2026-10-07T10:30:29.766898+08:00 / 0.778812秒；0新控制/模型/EDA/原审计/FIFO。[PR115](https://github.com/854259/FPGA/pull/115)最终f38a5d0e/merge78fc94e4的5db4e3c7/cb41f8ad/36e03311三原件再次核验，并由[6029511740](https://github.com/854259/FPGA/issues/7#issuecomment-6029511740)和6029565310限定接受。未把发布等同于对方接受本次复核。
+
+只接受流程准备子阶段：实际14case/42EDA/85guards、六突变检出、完整预算终态和一次来源审计仍待正式交付。原14材料/12568预期观测沿用PR115，不重跑旧20/数字8/材料6/156识别或timer107。owner下一步冻结独立native，按现有整任务FIFO执行；实际合格后才新固定同预算C/P前测。10:30原109运行144/312输出150请求，110仍排队无stage，原各一次collector/auditor归owner。两个因素不合成；8192/max2/repair1/retries0/完整300/300/360含xz、113历史/等级/逐题及总成本/120且.80门保持。独立未见0、家族N未知，完整A/P/B156+审计RTLLM+重要五样本+资源接口恢复及完整预算/实际额度仍未闭合。
