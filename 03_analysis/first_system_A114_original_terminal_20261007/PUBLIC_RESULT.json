@@ -1,0 +1,59 @@
+{
+  "schema": "first_system_A114_original_terminal_public_v1",
+  "ticket": 114,
+  "development_tasks": 15,
+  "outputs": 30,
+  "actual_model_requests": 38,
+  "fully_correct_by_arm": {
+    "C": 4,
+    "P": 4
+  },
+  "coefficients": {
+    "C": 0.4,
+    "P": 0.4
+  },
+  "requests_by_arm": {
+    "C": 19,
+    "P": 19
+  },
+  "strict_new_L3_net": 0,
+  "evidence_valid": true,
+  "paired_grade_regressions": 1,
+  "historical_correct_task_failures": 3,
+  "guard_pass": false,
+  "unchanged_task_request_cost": false,
+  "historically_correct_request_cost": true,
+  "all_task_request_cost": false,
+  "screening_eligible": false,
+  "qualified_for_new_full_regression": false,
+  "full156_measured": false,
+  "qualified_for_goal": false,
+  "adoption": false,
+  "original_collector_calls": 1,
+  "original_auditor_calls": 1,
+  "closure_model_calls": 0,
+  "closure_EDA_calls": 0,
+  "closure_FIFO_calls": 0,
+  "original_birth_unique_count": 1079,
+  "all_original_and_closure_births_retired": true,
+  "source_assets": 106,
+  "protected_groups": 141,
+  "guard_receipts": 61,
+  "audit_sha256": "249e106211637e34c23f272e1fb41901ead58d03f8fb61b04a188cde04d193ff",
+  "local_dual_sha256": "a79b30dfce87e7457e4ebebac8f06b27705a856c6aabcfe92e0fafc011c94554",
+  "original_archive": {
+    "sha256": "4c7984f75a97963c591b8dcc679afb193fd60f95a6330f744826e95427785a81",
+    "bytes": 11539908,
+    "members": 1436,
+    "all_members_dual_bound": true
+  },
+  "supplement_archive": {
+    "sha256": "c9d0952682b79bddf9f5682a20507408a5fbf000ef61eb0ce0ff0ea63751cc68",
+    "bytes": 113786,
+    "members": 71,
+    "all_members_dual_bound": true
+  },
+  "raw_records_dual_bound": 55,
+  "actual_conclusion_sha256": "b9b0f9997f8b9375bcb4d82c05a38b976c185b465a811fb55adae27b28610f75",
+  "goal_status": "active_unachieved"
+}
