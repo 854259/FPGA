@@ -207,13 +207,99 @@ def observe(manifest_sha):
     return 0 if receipt['passed'] else 1
 
 
+def followup():
+    """One newly disclosed path-alias audit; preserve the failed first attempt."""
+    sealed()
+    spec, _ = gate()
+    first = read(ROOT/'TERMINAL_RECEIPT.json')
+    assert not first['passed'] and first['processes']['collector']['returncode'] == 0
+    assert first['processes']['auditor']['returncode'] == 1
+    assert 'capture[\'dependencies_cloud\']==spec[\'dependencies_cloud\']' in (ROOT/'processes/auditor/stdout.bin').read_text()
+    nxt = ROOT.with_name('framing115_terminal_dependency_followup_20261008_v1')
+    assert not nxt.exists()
+    old = "assert capture['dependency_hashes']==spec['dependency_hashes'] and capture['dependencies_cloud']==spec['dependencies_cloud']"
+    new = """assert capture['dependency_hashes']==spec['dependency_hashes']
+        original_cp8=read(run/'QUALIFYING_CP8_SPEC.json')
+        assert capture['dependencies_cloud']==original_cp8['dependencies_cloud']
+        assert original_cp8['dependency_hashes']==spec['dependency_hashes']
+        assert spec['dependencies_cloud']==str(here/'dependencies')
+        assert all(sha(here/'dependencies'/n)==h for n,h in spec['dependency_hashes'].items())"""
+    original = (ROOT/'auditor.py').read_text()
+    assert original.count(old) == 1
+    changed = original.replace(old, new)
+    assert changed.replace(new, old).encode() == (ROOT/'auditor.py').read_bytes()
+    ast.parse(changed)
+    nxt.mkdir()
+    (nxt/'auditor.py').write_text(changed)
+    shutil.copyfile(__file__, nxt/'terminal115.py')
+    for name in ['terminal_outer.py', 'bounded_owned_exec.py', 'owned_tree_cleanup.py']:
+        shutil.copyfile(ROOT/name, nxt/name)
+    save(nxt/'PLAN.json', dict(original_spec_sha256=SPEC, original_source_hashes=spec['source_hashes'],
+        first_manifest_sha256=sha(ROOT/'SOURCE_MANIFEST.json'), first_terminal_sha256=sha(ROOT/'TERMINAL_RECEIPT.json'),
+        first_error_stream_sha256=sha(ROOT/'processes/auditor/stdout.bin'), archive_sha256=sha(ROOT/'EVIDENCE.zip'),
+        previous_auditor_sha256=sha(ROOT/'auditor.py'), replacement=[old, new], inverse_byte_exact=True,
+        new_collector_calls=0, new_compatible_auditor_calls=1, original_auditor_calls=0,
+        model_calls=0, eda_calls=0, fifo_calls=0, scoring_calls=0, cap_s=450, auditor_cap_s=180,
+        limit='New dependency-path compatibility attempt only. Prior failed attempt retained, no original scoring or collector repeated.'))
+    save(nxt/'SOURCE_MANIFEST.json', {p.name: sha(p) for p in nxt.iterdir()})
+    import terminal_outer
+    result = terminal_outer.run([sys.executable, '-B', str(nxt/'terminal115.py'), 'followup_child'],
+        nxt, nxt/'external', 450, 20, [nxt/'FOLLOWUP_RECEIPT.json', nxt/'audit_result/RESULTS.json'], 2013333)
+    print(json.dumps(dict(passed=result['passed'], error=result['error'], elapsed_s=result['measured_complete_elapsed_s'])))
+    return 0 if result['passed'] else 1
+
+
+def followup_child():
+    nxt = Path(__file__).resolve().parent
+    assert nxt == ROOT.with_name('framing115_terminal_dependency_followup_20261008_v1')
+    manifest = read(nxt/'SOURCE_MANIFEST.json')
+    assert {n: sha(nxt/n) for n in manifest} == manifest
+    plan = read(nxt/'PLAN.json')
+    sealed()
+    spec, report = gate()
+    assert sha(ROOT/'EVIDENCE.zip') == plan['archive_sha256']
+    assert sha(ROOT/'TERMINAL_RECEIPT.json') == plan['first_terminal_sha256']
+    import bounded_owned_exec
+    rec = bounded_owned_exec.run([sys.executable, '-B', str(nxt/'auditor.py'), '--archive', str(ROOT/'EVIDENCE.zip'),
+        '--out', str(nxt/'audit_result'), '--spec-sha', SPEC], nxt, nxt/'auditor_process', 180)
+    result = dict(passed=False, process=rec, new_collector_calls=0, new_compatible_auditor_calls=1,
+                  original_auditor_calls=0, model_calls=0, eda_calls=0, adoption=False)
+    try:
+        assert rec['normal_completion'] and rec['returncode'] == 0
+        audited = read(nxt/'audit_result/RESULTS.json')
+        assert audited['evidence_valid'] and audited['full156_evidence_valid']
+        assert audited['spec_sha256'] == SPEC and audited['auditor_sha256'] == sha(nxt/'auditor.py')
+        assert audited['actual_model_requests'] == report['actual_model_requests']
+        with zipfile.ZipFile(ROOT/'EVIDENCE.zip') as zipped:
+            inventory = json.loads(zipped.read('ARCHIVE_MANIFEST.json'))
+            assert len(zipped.namelist()) == len(set(zipped.namelist())) == len(inventory['files'])+1
+            assert set(zipped.namelist()) == set(inventory['files'])|{'ARCHIVE_MANIFEST.json'}
+            bases = dict(run=RUN, guard=RUN/'guard', dependencies=Path(spec['dependencies_cloud']), kit=Path(spec['kit']))
+            for name, digest in inventory['files'].items():
+                prefix, relative = name.split('/', 1)
+                assert not Path(relative).is_absolute() and '..' not in Path(relative).parts
+                assert hashlib.sha256(zipped.read(name)).hexdigest() == digest == sha(bases[prefix]/relative)
+        gate()
+        sealed()
+        result.update(passed=True, audit_sha256=sha(nxt/'audit_result/RESULTS.json'), archive_sha256=sha(ROOT/'EVIDENCE.zip'),
+            archive_members=len(inventory['files'])+1, every_member_matches_original=True,
+            qualified_for_goal=audited['qualified_for_goal'], full156_evidence_valid=True)
+    except BaseException as exc:
+        result['error'] = type(exc).__name__+': '+str(exc)
+        (nxt/'FAILURE_TRACEBACK.txt').write_text(traceback.format_exc())
+    save(nxt/'FOLLOWUP_RECEIPT.json', result)
+    return 0 if result['passed'] else 1
+
+
 if __name__ == '__main__':
     assert sys.platform == 'linux' and sys.dont_write_bytecode and sha(sys.executable) == PYTHON
     parser = argparse.ArgumentParser()
-    parser.add_argument('mode', choices=['prepare', 'observe', 'child'])
+    parser.add_argument('mode', choices=['prepare', 'observe', 'child', 'followup', 'followup_child'])
     parser.add_argument('--manifest-sha')
     args = parser.parse_args()
     if args.mode == 'prepare':
         prepare()
+    elif args.mode in ['followup', 'followup_child']:
+        sys.exit(followup() if args.mode == 'followup' else followup_child())
     else:
         sys.exit(observe(args.manifest_sha) if args.mode == 'observe' else child())
