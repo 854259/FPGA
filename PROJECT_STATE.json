@@ -6,8 +6,8 @@
       "preserved": "完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准",
       "frequency_override": "仅旧5分钟频率由用户最新15分钟决定覆盖；下一轮具体门槛仍待共同冻结"
     },
-    "updated_at": "2026-10-07T20:50:00+08:00",
-    "status": "active_goal_not_achieved_cp8_terminal_verified_next_candidate_pending",
+    "updated_at": "2026-10-07T21:16:00+08:00",
+    "status": "active_takeover_authorized_peer_A_execution_coordinated",
     "user_confirmed": {
       "joint_discussion_and_faster_progress": true,
       "check_interval_minutes": 15,
@@ -30,7 +30,8 @@
         "timezone": "Asia/Shanghai",
         "effective_date": "2026-10-07",
         "requirement": "提前安排AMD有效工作和条件衔接，减少因本机离线造成的空等"
-      }
+      },
+      "delayed_peer_response_takeover": true
     },
     "objective": "获得超过历史118/156 L3完整正确题数的候选，并按事前冻结标准完成完整验收；目标不等于保证达到或追加预算授权。",
     "historical_reference": {
@@ -60,7 +61,7 @@
       "reviewer": "本任务：可行性、配对结果、根因和采用条件；直接讨论分歧",
       "peer_reply": "https://github.com/854259/FPGA/issues/7#issuecomment-6034930858",
       "reviewer_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6035122713",
-      "agreed_workflow": "Owner持原任务和唯一后续提交；文档归档与评分并行，复用不变证据和repair共同路径静审，仅审新增风险，不追ACK。",
+      "agreed_workflow": "Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.",
       "peer_score_gate_position": "对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。",
       "latest_peer_ack": {
         "url": "https://github.com/854259/FPGA/issues/7#issuecomment-6037419564",
@@ -68,8 +69,8 @@
         "email_and_original_exact_match": true,
         "accepted": "Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."
       },
-      "latest_execution_agreement": "https://github.com/854259/FPGA/issues/7#issuecomment-6037419564",
-      "latest_execution_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6037521224",
+      "latest_execution_agreement": "https://github.com/854259/FPGA/issues/7#issuecomment-6038656630",
+      "latest_execution_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6038689934",
       "latest_result_agreement": "https://github.com/854259/FPGA/issues/7#issuecomment-6037062332",
       "latest_mechanism_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6037143895",
       "latest_result_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6037707870",
@@ -105,14 +106,13 @@
       "private_raw_evidence_and_pr_delivery": true
     },
     "next_actions": [
-      "Owner completes new A wire qualification/input budget review or explicitly chooses another existing admitted candidate; only one frozen scoring job is submitted.",
-      "Reviewer checks the next formal delivery and paired causes; reuse original113 screen/native/worker/pipeline evidence, no repeat controls.",
-      "By night planning verify actual detached AMD ticket/process if admitted; otherwise report exact external gap before local offline. Preserve full acceptance scope and noon email."
+      "Peer currently finishes the actual frozen A preparation and unique original-budget submission; reviewer has completed bounded source/wire review and follows actual ticket/results. Fallback authorization applies if peer stops responding and no conflict exists.",
+      "If peer remains unavailable and no real conflicting work/ticket exists, take over remaining preparation/freezing/submission within existing budget instead of waiting for an ACK.",
+      "Keep next actual scoring detached on AMD when admitted, and report real L3/weighted results and full-acceptance gaps in the noon email."
     ],
     "unresolved": [
-      "Next unique scoring candidate is not yet formally qualified/frozen/submitted; CP8 permits one same-factor156 but does not require running it now.",
-      "No new156 result exceeds historical118; complete three-arm156/RTLLM/five-sample/resources/interface/recovery acceptance remains incomplete.",
-      "Peer E copy and current8699 protected-file rehash were not independently verified by this task; disclosed limits do not trigger old-control reruns."
+      "A is actually frozen on AMD, but no scoring ticket was present at21:10; finalize current preparation and unique execution responsibility without repeating old tests.",
+      "No new156 result exceeds118; full three-arm156, auditedRTLLM, important five-sample and resource/interface/recovery acceptance remains incomplete."
     ],
     "overnight_execution": {
       "automation_id": "amd-rtl-3",
@@ -120,11 +120,11 @@
       "local_cutoff": "23:00",
       "timezone": "Asia/Shanghai",
       "schedule_active_verified": true,
-      "remote_queue_status": "FIFO113 completed; original terminal pending; subsequent156 not yet submitted",
+      "remote_queue_status": "Original113 completed and accepted; A preparation freeze exists; no next scoring ticket at21:10.",
       "discussion": "https://github.com/854259/FPGA/issues/7#issuecomment-6035861866",
       "discussion_posted_and_read_back": true,
       "peer_agreement_to_new_night_arrangement": true,
-      "plan": "提前复核真实进程/锁/结果/磁盘/预算；具备准入的冻结任务由owner通过现有AMD nohup/FIFO串行设施落实；提前冻结可授权的下一阶段条件衔接，本机离线后无需本地轮询。",
+      "plan": "Check real admission, budget and collision; owner or authorized fallback reviewer performs the unique detached AMD FIFO submission. Never duplicate or change an active freeze.",
       "invariants": "不追改原冻结；有任务不重提；预算/准入不随离线要求放宽；前置失败按原规则保留现场；不以无价值重跑填满资源",
       "latest_owner_plan": "Peer says22:20 handoff/22:40 local save; not a human pause of this goal. Only admitted useful work may continue remotely."
     },
@@ -523,6 +523,73 @@
         "same_factor156_required_now": false,
         "next_scoring_submission_verified": false
       }
+    },
+    "fallback_takeover": {
+      "user_quote": "当对方迟迟没有给出答复的时候，你就帮他接手",
+      "directly_authorized": true,
+      "authorized_at": "2026-10-07",
+      "replaces": "Earlier no-takeover/wait-only/owner-exclusive-next-submission restrictions when delayed-response condition applies.",
+      "operational_default": "Two consecutive 15-minute checks without an actionable reply trigger ownership/live-process/lock/ticket/result/source-progress checks; when no conflict, announce exact scope in Issue7 and proceed without requiring an ACK. Real preparation progress receives parallel support, not blind duplicate submission.",
+      "permitted_scope": [
+        "Candidate preparation and necessary fixes",
+        "Existing-budget admission and freeze",
+        "Unique admitted FIFO submission and terminal work"
+      ],
+      "collision_rule": "Follow an already running/submitted job; preserve peer WIP and original frozen inputs; recheck exact run identity and ticket immediately before any launch.",
+      "invariants": "No new budget/reset, no changing active freezes, no task-ID exceptions/reference leakage/resampling, AMD same27B only, private originals retained and repository changes via own reviewed PR.",
+      "notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6038547021",
+      "notice_readback_exact": true,
+      "peer_acceptance_not_implied": true,
+      "automation_ids_updated": [
+        "amd-rtl",
+        "amd-rtl-2",
+        "amd-rtl-3"
+      ],
+      "current_coordination": {
+        "peer_reply": {
+          "comment": "https://github.com/854259/FPGA/issues/7#issuecomment-6038656630",
+          "gmail_id": "1a1167dab05b517b",
+          "mail_original_exact": true,
+          "actual_progress_verified": true,
+          "owner_unique_submission_reaffirmed": true
+        },
+        "reviewer_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6038689934",
+        "current_role": "Peer continues actual frozen A unique submission/terminal; reviewer performs bounded delta review. Fallback takeover remains authorized for future delayed-response conflicts-free conditions.",
+        "no_duplicate_run_prepared_or_submitted": true
+      }
+    },
+    "next_candidate_takeover_review": {
+      "checked_at": "2026-10-07T21:08:04.631081+08:00",
+      "root": "/workspace/team/runs/fpga_owner/first_system_emission_fixed15_20261007_v1",
+      "spec_sha256": "3ec6455085a0a31586a4de6341b7d7f460bd18b6a1d65b15345ddac7bcf0ed71",
+      "frozen_source_files_verified": 106,
+      "current_source_mismatches": 0,
+      "retained_control_sources": 85,
+      "control_archive_members_physically_bound": 141,
+      "control_archive_sha256": "b08b158fee3475e21e258a55f07e96cd5e741d4783367926698e88c5d63ac1f4",
+      "control_receipt_sha256": "e7a07444a150ac7f1a36154d845c8e07d9b1d3acf4364a87637fcf8982744195",
+      "control_stdout_sha256": "cf2b7539a3c1609fec5892f63da6013ca6039852fff97df29ab078f14b6162d2",
+      "actual_control_methods": 3,
+      "bounded_source_finding": "Only P request0 system appends the fixed task-independent final-RTL output rule. Original user and C/repair wire are unchanged; baseline reverse delta is only the import and validation gate. Retained synthetic C0/P0/P1 controls passed; this is not model scoring.",
+      "observed_budget": {
+        "development_tasks": 15,
+        "outputs": 30,
+        "max_requests": 60,
+        "max_tokens": 8192,
+        "repairs": 1,
+        "retries": 0,
+        "solver_seconds": 300,
+        "judge_seconds": 300,
+        "supervisor_seconds": 360
+      },
+      "context_limit": "Owner receipt claims conservative byte-BPE first-prompt headroom3775 within16384; not a measured new-P token count, exact deployed-build proof or all-repair capacity result. No new capacity gate or retokenization is imposed.",
+      "current_scope": "Bounded source and retained-control review complete; peer6038656630 has actual same-freeze progress and retains unique original-budget A submission, reviewer checks new delivery/results. No duplicate launch.",
+      "full_preparation_independently_accepted": false,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_calls": 0,
+      "new_accuracy": false,
+      "full_inclusive_batch_complete": false
     }
   },
   "helper_extraction_20261004": {
