@@ -1,0 +1,115 @@
+{
+  "schema": "serial_framing_pure_public_preparation_v1",
+  "root": "/workspace/team/runs/fpga_owner/serial_framing_pure_20261007_v1",
+  "source_files": 5,
+  "new_source_files": 3,
+  "reused_process_and_keywords_sources": 2,
+  "source_hashes": {
+    "synthesis.py": "f491f7037bdd78418a1ef1d920495cbc1b5d677d0b0822c88f51b04464728045",
+    "test_synthesis.py": "bb935daedad889c3b54267738eb38b0a7e23dfd180ae00dc457a8dd43d596c78",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "owned_exec.py": "9981c3a36183787d559aaed73fcfd34d36e6a7354e5da1874cf5308c6ee476c5",
+    "prepare.py": "161185d70097a4c8bc3d77bdb8b86ab282d5eac84fd8207863b4ae0b21f5c255"
+  },
+  "receipt_sha256": "1ecc6ecfdd7cc367e2cea51189a1e3111837b3eeb8ebc0baa3a5dd564c0ec3d0",
+  "intake_sha256": "1ae295b4c27a172ec9c44e2799220ce42721711c9893f57c19972eafdbaf7de6",
+  "process_sha256": "cc60f10f572edec3dd5594e5cbad2bda2ec54fbc92b280ff1c0c6e7f9aff54c9",
+  "actual_owned_process": {
+    "schema": "owned_preexec_birth_gate_v1",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/runs/fpga_owner/serial_framing_pure_20261007_v1/prepare.py"
+    ],
+    "cwd": "/workspace/team/runs/fpga_owner/serial_framing_pure_20261007_v1",
+    "cap_s": 40,
+    "timeout": false,
+    "signals": [
+      "SIGCONT_bound_preexec_child"
+    ],
+    "exec_error": null,
+    "error": null,
+    "child_identity": {
+      "pid": 1730408,
+      "state": "T",
+      "starttime": "861007744",
+      "pgid": 1730408,
+      "sid": 1730408,
+      "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+    },
+    "exec_confirmed": true,
+    "returncode": 0,
+    "remaining_group": [],
+    "elapsed_s": 0.155606122687459,
+    "leader_reaped": true,
+    "stdout_sha256": "f258b089fd8a3a9b1e9af0b0ad3c56eed58e480abeddc70feb2ca439d7512fe9",
+    "stdout_bytes": 2505,
+    "normal_completion": true
+  },
+  "original_child_retired_separately_verified": true,
+  "archive_sha256": "055259bd5aa0a0caa30f01b720edc17906e3424061d63b48f2d4506528953bcc",
+  "archive_bytes": 396948,
+  "archive_members": 20,
+  "every_member_bound_both_ends": true,
+  "actual_new_pure_methods": 20,
+  "new_pure_methods_passed": 20,
+  "original156_intake_runs": 1,
+  "emitted": 2,
+  "abstentions": 154,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "new_fifo": false,
+  "old_tests_reexecuted": 0,
+  "native_qualified": false,
+  "score_entry_open": false,
+  "adoption": false,
+  "goal_status": "active",
+  "goal_achieved": false,
+  "production_input_scope": "Complete prompt and interface strings only; strict consumed start0/payload/stop1/LSB-first/synchronous-positive-edge grammar, optional data output. No taskID/history/reference/TB/candidate/oracle/cache-answer inputs.",
+  "pure_scope": "Role/width/full-consumption controls only. Constructed widths2..16 and original156 recognition do not prove native RTL semantics.",
+  "native_scope_pending": [
+    "Immediate valid-stop done timing and data bit order",
+    "Contiguous frames and idle periods",
+    "Invalid-stop discard/wait-high/rearm",
+    "Reset at each protocol phase",
+    "Independent correct and actual mutated RTL discrimination",
+    "Explicit X/Z evidence scope and original complete judge, never inferred from binary parser checks"
+  ],
+  "next": "Prepare independent native qualification, then fresh original-budget fixed C/P screen; only net gain and guard/per-task cost gates permit same-factor full156. No composition of rejected factors or addition of old scores.",
+  "budgets_for_future_score": {
+    "tokens": 8192,
+    "max_requests": 2,
+    "repairs": 1,
+    "complete_solver_s": 300,
+    "judge_s": 300,
+    "judge_supervisor_s": 360,
+    "xz_retained": true,
+    "retries": 0
+  },
+  "historical113_and_paired_grade_cost_and120_80_gates_unchanged": true,
+  "original109_110_sources_model_primary_unchanged": true,
+  "peer108": {
+    "head": "549d0146116f8e31681f2472d61a0de0a2c86200",
+    "read_only_receipt_sha256": "84788be6cca44afa7f4097ff77d3bffa6afa25972bc5935f243003d8fa2ceba6",
+    "actual_delivery_sha256": "21b32de96b55db5dd83edb045ac10bbf0370bb120eb0e29171c5026a513c0afb",
+    "public_sha256": "41f950c4f396cd368078177bdce1ef8481bd92adafc616b1c2cf485ae721747d",
+    "accepted_scope": "Original109 source136/preparation149/17public7Python/4actual admission/one-time FIFO receipt only; no running score/audits/adoption/hidden proof. Group entries7928 vs unique7802 must be distinct.",
+    "serial110_freeze_review_pending": false
+  },
+  "peer109": {
+    "head": "5d7c4e9a5533ef530e4a55357ac2f6998c3d3a48",
+    "files": {
+      "/workspace/team/activity/fpga_teammate/artifacts/peer107-serial-full156-freeze-bounded-review-20261007-v1/PUBLIC_SERIAL_TIMER_REVIEW.json": "723445cbdd3f943d3e951e8cf7894e46db7a1548f568f0c4ea0de1f50fb26fb1",
+      "/workspace/team/activity/fpga_teammate/artifacts/peer107-serial-full156-freeze-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "e95d40e7ab817f56ead990b45c7ca72c8b6bdd30d49fa0989ee1cb3c63105bfe",
+      "/workspace/team/activity/fpga_teammate/artifacts/peer107-serial-full156-freeze-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "088d6b65beb65aaa1319d22174309c0d39cfe5613859448f4121cd7f5ae7bc9b"
+    },
+    "accepted_scope": "Original110 serial source116/preparation129/15public5Python/4actual admission/one-time queued FIFO110 only;109 source136 unchanged. No scores/audits/adoption/hidden proof. Group entries8064 vs unique7938 distinct."
+  },
+  "old_R3_generic_state_checklist_negative_result_retained": true,
+  "limits": [
+    "New pure preparation only; no official score, native simulation, hidden/independent sample, all-parameter proof or adoption.",
+    "Only two known-development inputs currently admitted; this coverage is not a measured gain.",
+    "New serial-frame reception factor is separate from frozen serial timer110.",
+    "Old rejected table/vector/FSM/waveform full gates remain failed; no score addition or forced composition."
+  ]
+}
