@@ -6,13 +6,31 @@
       "preserved": "完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准",
       "frequency_override": "仅旧5分钟频率由用户最新15分钟决定覆盖；下一轮具体门槛仍待共同冻结"
     },
-    "updated_at": "2026-10-07T17:40:00+08:00",
+    "updated_at": "2026-10-07T18:20:00+08:00",
     "status": "active_not_achieved",
     "user_confirmed": {
       "joint_discussion_and_faster_progress": true,
       "check_interval_minutes": 15,
       "deadline": null,
-      "completion_basis": "完整验收；不设截止时间"
+      "completion_basis": "完整验收；不设截止时间",
+      "daily_progress_email": {
+        "time": "12:00",
+        "timezone": "Asia/Shanghai",
+        "recipient": "authenticated_user_self",
+        "must_report_on_no_gain": true,
+        "focus": "实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩",
+        "automation_id": "amd-rtl-2",
+        "schedule_active_verified": true,
+        "first_send_due": "2026-10-08",
+        "first_send_completed": false
+      },
+      "local_unavailable_window": {
+        "from": "23:00",
+        "until": "次日早上不定时",
+        "timezone": "Asia/Shanghai",
+        "effective_date": "2026-10-07",
+        "requirement": "提前安排AMD有效工作和条件衔接，减少因本机离线造成的空等"
+      }
     },
     "objective": "获得超过历史118/156 L3完整正确题数的候选，并按事前冻结标准完成完整验收；目标不等于保证达到或追加预算授权。",
     "historical_reference": {
@@ -43,7 +61,15 @@
       "peer_reply": "https://github.com/854259/FPGA/issues/7#issuecomment-6034930858",
       "reviewer_response": "https://github.com/854259/FPGA/issues/7#issuecomment-6035122713",
       "agreed_workflow": "Owner110/111原终态；复用不变证据、只审新增风险；合并纯ACK；单因素对照与完整验收。",
-      "peer_score_gate_position": "对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。"
+      "peer_score_gate_position": "对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。",
+      "latest_peer_ack": {
+        "url": "https://github.com/854259/FPGA/issues/7#issuecomment-6035754695",
+        "gmail_id": "1a115d8d8410f177",
+        "email_and_original_exact_match": true,
+        "accepted": "PR133的125来源/212、331、154档案和30预测首请求有限复核；repair、原210秒监督源码/流及正式准入不扩大",
+        "cache_cleanup_claim": "对方自报已归档1335旧安装缓存文件并清除，释放1296683008B；本方未重审删除过程或E盘TAR",
+        "actual_share_sha256": "d334b2d19e152830651249733333a257565a00d2d669d6d3162868143d4e1f70"
+      }
     },
     "next_gate_proposal": {
       "status": "分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结",
@@ -75,15 +101,87 @@
       "private_raw_evidence_and_pr_delivery": true
     },
     "next_actions": [
-      "接owner原110/111正式终态；两原执行阶段已结束，不代其收尾或根据未审汇总宣布成绩。",
-      "fixed15仅新增来源/留存7控/首轮容量已限定核验；原摘录与接线直接复用。由owner据110结果决定是否执行，当前未入队。",
-      "启动前按既有门核对真实预算、空间与完整执行观测；真实首轮wire须匹配预测容量，repair容量未知不得冒称通过。",
-      "下一完整大测试仍落实A/P/B156、经审计RTLLM、重要五样本及资源/接口/恢复。"
+      "接owner原110/111正式终态并复用本方已完成的只读汇总/111工具与TRACE核对；不把初步结果称终态通过。",
+      "由owner据110原结果决定唯一literal15；日间提前准备夜间条件衔接，21:30专项排程，23:00前核对已受理票据和真实活句柄。",
+      "每天12:00向用户自己发送准确率为核心的详细邮件，即使无增长也如实发送并核对SENT；独立任务避免重复发信。",
+      "启动前落实已有预算、空间和执行条件；下一完整大测试仍需A/P/B156、审计RTLLM、重要五样本及资源/接口/恢复，不因夜间利用率而放宽。"
     ],
     "unresolved": [
       "完整大测试数据准入、实际额度与完整预算仍须落实；目标不补足未知。",
       "对方原110/111正式终态仍待交付；fixed15尚无自然成绩，完整外部观察原件与repair容量不由本次有限核验授予。"
-    ]
+    ],
+    "overnight_execution": {
+      "automation_id": "amd-rtl-3",
+      "preparation_time": "21:30",
+      "local_cutoff": "23:00",
+      "timezone": "Asia/Shanghai",
+      "schedule_active_verified": true,
+      "remote_queue_status": "pending_owner_coordination_not_submitted_by_reviewer",
+      "discussion": "https://github.com/854259/FPGA/issues/7#issuecomment-6035861866",
+      "discussion_posted_and_read_back": true,
+      "peer_agreement_to_new_night_arrangement": false,
+      "plan": "提前复核真实进程/锁/结果/磁盘/预算；具备准入的冻结任务由owner通过现有AMD nohup/FIFO串行设施落实；提前冻结可授权的下一阶段条件衔接，本机离线后无需本地轮询。",
+      "invariants": "不追改原冻结；有任务不重提；预算/准入不随离线要求放宽；前置失败按原规则保留现场；不以无价值重跑填满资源"
+    },
+    "latest_parallel_result_review": {
+      "status": "preliminary_retained_evidence_not_formal_terminal",
+      "discussion": "https://github.com/854259/FPGA/issues/7#issuecomment-6035663658",
+      "original110": {
+        "summary_sha256": "f597f92fbf36666d850bf051d88dea3652cb58e7021ba54aa6c75d6d7e84dc96",
+        "pairs": 156,
+        "l3": {
+          "C": 112,
+          "P": 114
+        },
+        "l3_rate": {
+          "C": 0.717948717948718,
+          "P": 0.7307692307692307
+        },
+        "weighted": {
+          "C": 0.7679487179487179,
+          "P": 0.7782051282051282
+        },
+        "requests": {
+          "C": 167,
+          "P": 167
+        },
+        "paired_l3": {
+          "both": 112,
+          "P_only": 2,
+          "C_only": 0,
+          "neither": 42
+        },
+        "descriptive_exact_mcnemar_p": 0.5,
+        "improvement_routes": {
+          "mechanical_serial_timer": 1,
+          "model": 1
+        },
+        "historical_failure_scope": "两题本轮C/P均L1且solution SHA相同，非P相对C退步",
+        "comparison_to109": "C输出153/156同SHA；不能因总分一致就当同一对照或合成因素收益",
+        "stage_adoption": false,
+        "formal_terminal_pending": true
+      },
+      "original111": {
+        "spec_sha256": "97adb9aa656b7df1eabd37757f2bedf6f01138e10b692baf8e9703ddeccb560e",
+        "summary_sha256": "76fce83692a6a6ec1a983f3b8ecb264a433eee4c9ceb12b4818e3a58b6af047b",
+        "read_checked_at": "2026-10-07T18:11:10.524443+08:00",
+        "files_read": 453,
+        "readonly_file_inventory_sha256": "a9f72ef3a470ea4de5cd04c2a632aa45a7d7846f68b2b7696d69919d0831a21a",
+        "local_private_review_bundle_sha256": "a337bd14123833bbff405a5c50eec9390c40ce69e83742fcfd756e5684d53dea",
+        "original_tool_records_bound": 42,
+        "original_identities_retired": 42,
+        "positive_cases": 8,
+        "detected_mutants": 6,
+        "observations": 12568,
+        "guard_receipts_cross_bound": 85,
+        "protected_current8242_files_not_reaudited": true,
+        "scope": "有限二态stream/output/synchronous reset；next为0占位，data仅done0掩蔽，不推至全参数/XZ/自然正确率。",
+        "formal_terminal_pending": true
+      },
+      "new_model_or_eda_or_original_auditor_calls": 0,
+      "independent_unseen_tasks": 0,
+      "family_effective_n": "unknown"
+    }
   },
   "helper_extraction_20261004": {
     "status": "approved_batch_completed_and_archived_research_only",
