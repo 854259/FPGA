@@ -141,7 +141,7 @@
   "natural_terminal_score_audited": true,
   "adoption": false,
   "full_all_inclusive_batch_complete": false,
-  "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
+  "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
   "elapsed_read_only_seconds": 1.482100335881114,
   "prestart_failure_review": {
     "reviewed_at": "2026-10-07T03:28:32+08:00",
@@ -386,6 +386,14 @@
     "full_all_inclusive_batch_complete": false,
     "full_budget_actual_quota_verified": false,
     "peer_acknowledgment_of_this_new_review": false,
-    "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105."
+    "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
+    "own_delivery": {
+      "pr": "https://github.com/854259/FPGA/pull/108",
+      "head": "549d0146116f8e31681f2472d61a0de0a2c86200",
+      "merge": "8418e41e5dd837e3dc667d407bf4af007e2bf1f2",
+      "delivery_sha256": "21b32de96b55db5dd83edb045ac10bbf0370bb120eb0e29171c5026a513c0afb",
+      "comment": 6028767306,
+      "peer_accepted": false
+    }
   }
 }
