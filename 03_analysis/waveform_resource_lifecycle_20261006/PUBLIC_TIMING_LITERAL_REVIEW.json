@@ -1,0 +1,169 @@
+{
+  "schema": "peer128_literal_wiring_bounded_public_review_v1",
+  "reviewed_at": "2026-10-07T16:05:43.119238+08:00",
+  "peer_pr": 128,
+  "peer_head": "c65328da5ab2e10cb4bcc0c8787104ef522186ef",
+  "peer_merge": "aa23fc4cdf02dd460b4c146e6f3894e567c74c23",
+  "peer_delivery_sha256": "1fd58e2a11cf8ea32146473276db4903f31992b1335882f66ff1d9cd4f9bb1f9",
+  "bounded_source_and_retained_control_review_complete": true,
+  "limited_literal_and_fake_wiring_evidence_accepted": true,
+  "complete_qualification_delivery_accepted": false,
+  "private_readonly_review_sha256": "d721d0db528708b547198ac25d25129c553614d76d77f33125140350cfd092a2",
+  "private_readonly_review_elapsed_s": 0.13899279944598675,
+  "public_git_amd_files_bound": 10,
+  "previous_state_and_six_explanation_bodies_preserved": true,
+  "public_state_and_source_scope_match": true,
+  "literal": {
+    "source_files": 6,
+    "receipt_sha256": "7bf90f9b92a719b6ff69bae4c1e56d0e8e0610a5beaf2d9671cf929fb4e70629",
+    "archive": {
+      "path": "/workspace/team/runs/fpga_owner/prompt_literal_timing_pure_20261007_v1/PURE_EVIDENCE.zip",
+      "sha256": "d731c13fa3e573d40a9683b5f119b1df19ecc676b7e796aa5e5dbdfb1004fb83",
+      "bytes": 124013,
+      "members": 18,
+      "every_member_dual_bound": true,
+      "manifest_member_sha256": "d5d6138148dab958bd9b66914f78828a899997a4f81acb99950c312489a9dbae"
+    },
+    "original_methods": 6,
+    "synthetic_contexts": 15,
+    "original_scan_rows": 156,
+    "retained_source_excerpts": 189,
+    "retained_literal_markers": 605,
+    "eligible_including_84_character_marker": 108,
+    "abstentions": 48,
+    "maximum_original_addendum_characters": 5524,
+    "source_and_utf8_offsets_verified": true,
+    "reextract_calls": 0,
+    "process_pid": 2055868,
+    "process_starttime": "862997384",
+    "original_process_elapsed_s": 0.19883678294718266,
+    "process_cap_s": 25,
+    "exec_rc0_reaped_retired_and_stream_bound": true,
+    "stdout_sha256": "fe6ffc036aa6f8dfd23d591c824cc58c96f55012eb3e074b4bf77ac74f24649c"
+  },
+  "wiring": {
+    "source_files": 22,
+    "receipt_sha256": "e330dda30e33ec9d40bc62f7b65c47000a594e71c7e81bdcd68ece85a2be730d",
+    "archive": {
+      "path": "/workspace/team/runs/fpga_owner/prompt_literal_timing_wiring_pure_20261007_v1/PURE_EVIDENCE.zip",
+      "sha256": "3ce79b2c085d21191a9d6f393ffa5a2b70867cfceeb9cb9d0e0cb6f1143f643a",
+      "bytes": 214580,
+      "members": 229,
+      "every_member_dual_bound": true,
+      "manifest_member_sha256": "73dc99f7625083fcb0a1ea24403e51c4f822e97418f4e822417e6bebda9c2fe8"
+    },
+    "original_methods": 4,
+    "planned_contexts": 11,
+    "retained_contexts": 6,
+    "retained_inventory_members": 189,
+    "retained_case_summary_files": 6,
+    "retained_physical_files": 195,
+    "fake_http": 8,
+    "fake_compile": 7,
+    "expected_exceptions": 2,
+    "original_partial_exception_evidence_bound": true,
+    "original_baseline_and_support_files_match_frozen109": 11,
+    "reverse_patch_restores_prior_test_sha256": "b93b304b63e354fab10c5814a922ea5fed0394a69b8742917ce810a8b4909d47",
+    "four_test_methods_and_fake_runtime_ast_unchanged": true,
+    "process_pid": 2066373,
+    "process_starttime": "863094438",
+    "original_process_elapsed_s": 0.23885765857994556,
+    "process_cap_s": 25,
+    "exec_rc0_reaped_retired_and_stream_bound": true,
+    "stdout_sha256": "0b5882d3f6febab55dde43ff8c8f5528c534668a2b35cf121aaa56c8fe9cfe4f"
+  },
+  "source_scope": {
+    "factor_sha256": "e59a42925363e4840bf69677e61ed84c9039f1a0bd41e65f40facc89a6710cb2",
+    "request_sha256": "1d6e8af688e697dbe1e1a5ed3300e26634e56d3fdeb2a4d51625fee95431efb5",
+    "worker_sha256": "b86bc41a6044033005883b38ddf235bf6175284b0041bac39e55ed2c8bf6740a",
+    "production_inputs": "Original prompt and interface only; full paragraphs and literal word/port-role annotations; no behavioral inference or RTL generation.",
+    "first_P_append_only": true,
+    "C_repair_abstain_original_wire_preserved": true,
+    "exception_hooks_restored_in_original_controls": true,
+    "appended_character_cap": 8192,
+    "character_cap_is_not_token_or_context_cap": true,
+    "source_groups_verified": [
+      136,
+      116,
+      123,
+      24,
+      4,
+      5
+    ],
+    "primary_scope": "Original receipt before/after and two recorded hashes only; no independent current whole PRIMARY proof."
+  },
+  "missing_external_evidence": {
+    "status": "requested_existing_originals_no_rerun",
+    "issue_comment": 6033653738,
+    "owner_local_postexit_sha256": [
+      "b19f9ccbafad638c5bb397fd221f6203b1f4aeea69e214fb531b8443a7d5643f",
+      "0322dc1837edfe118a128e48e1e74f05e53b4db1f71b2faaedcb10e99ae9f07e"
+    ],
+    "reported_whole_external_elapsed_s": [
+      0.45677899196743965,
+      0.5261585395783186
+    ],
+    "reported_whole_cap_s": 40,
+    "whole_external_elapsed_independently_verified": false,
+    "old_owner_local_unexecuted_19_member_draft_physically_delivered": false
+  },
+  "collaboration": {
+    "PR126_six_file_delivery_peer_accepted_comment": 6032516435,
+    "PR127_public_binding_reply": 6032614582,
+    "PR127_reply_peer_accepted_comment": 6032725212,
+    "PR128_formal_delivery_comment": 6033470551,
+    "mail_id": "1a115574df193fc0",
+    "mail_body_exactly_matches_original": true,
+    "own_current_review_peer_accepted": false
+  },
+  "prior109": {
+    "closed_and_rejected": true,
+    "rerun_calls": 0,
+    "L3_counts": [
+      112,
+      114
+    ],
+    "denominator": 156,
+    "L3_percent": [
+      71.7948717948718,
+      73.07692307692308
+    ],
+    "weighted_scores": [
+      0.7679487179487179,
+      0.7782051282051282
+    ],
+    "historical_failures_both_arms_L1": true,
+    "paired_grade_regressions": 0
+  },
+  "live": {
+    "checked_at": "2026-10-07T16:05:43.119238+08:00",
+    "original110_outputs": 232,
+    "original110_requests": 244,
+    "original110_complete": false,
+    "original111_queued": true,
+    "slot_owner": "codex_serial_timer_synthesis_full156_20261007_v1",
+    "original_frozen_sources": [
+      136,
+      116,
+      123
+    ],
+    "same_model_process": true
+  },
+  "next": "Peer supplies two existing private postexit originals and separately delivers fixed15 source/stage/auditor/budget evidence. This task reviews those and original110/111 terminal deliveries. No duplicate runs or FIFO submissions.",
+  "fixed15_pipeline7_self_report_independently_reviewed": false,
+  "new_project_functions": 0,
+  "new_controls": 0,
+  "new_extract_scan_calls": 0,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_original_auditor_collector_calls": 0,
+  "new_FIFO": 0,
+  "semantic_interpretation_qualified": false,
+  "native_qualified": false,
+  "accuracy_qualified": false,
+  "five_sample_qualified": false,
+  "adoption": false,
+  "independent_unseen": 0,
+  "effective_family_sample_size": null,
+  "complete_comprehensive_batch": false
+}
