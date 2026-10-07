@@ -1,6 +1,6 @@
 {
   "schema": "peer128_literal_wiring_bounded_public_review_v1",
-  "reviewed_at": "2026-10-07T16:05:43.119238+08:00",
+  "reviewed_at": "2026-10-07T16:25:58.274966+08:00",
   "peer_pr": 128,
   "peer_head": "c65328da5ab2e10cb4bcc0c8787104ef522186ef",
   "peer_merge": "aa23fc4cdf02dd460b4c146e6f3894e567c74c23",
@@ -93,19 +93,21 @@
     "primary_scope": "Original receipt before/after and two recorded hashes only; no independent current whole PRIMARY proof."
   },
   "missing_external_evidence": {
-    "status": "requested_existing_originals_no_rerun",
+    "status": "originals_received_and_bound_whole_external_timing_claim_rejected",
     "issue_comment": 6033653738,
     "owner_local_postexit_sha256": [
       "b19f9ccbafad638c5bb397fd221f6203b1f4aeea69e214fb531b8443a7d5643f",
       "0322dc1837edfe118a128e48e1e74f05e53b4db1f71b2faaedcb10e99ae9f07e"
     ],
-    "reported_whole_external_elapsed_s": [
+    "reported_whole_cap_s": 40,
+    "whole_external_elapsed_independently_verified": false,
+    "old_owner_local_unexecuted_19_member_draft_physically_delivered": false,
+    "superseded_by_comment": 6033850017,
+    "historical_reported_whole_external_elapsed_s": [
       0.45677899196743965,
       0.5261585395783186
     ],
-    "reported_whole_cap_s": 40,
-    "whole_external_elapsed_independently_verified": false,
-    "old_owner_local_unexecuted_19_member_draft_physically_delivered": false
+    "historical_label_is_invalid": true
   },
   "collaboration": {
     "PR126_six_file_delivery_peer_accepted_comment": 6032516435,
@@ -114,7 +116,9 @@
     "PR128_formal_delivery_comment": 6033470551,
     "mail_id": "1a115574df193fc0",
     "mail_body_exactly_matches_original": true,
-    "own_current_review_peer_accepted": false
+    "own_current_review_peer_accepted": false,
+    "postexit_supplement_comment": 6033850017,
+    "peer_accepted_missing_original_request_only": true
   },
   "prior109": {
     "closed_and_rejected": true,
@@ -149,7 +153,7 @@
     ],
     "same_model_process": true
   },
-  "next": "Peer supplies two existing private postexit originals and separately delivers fixed15 source/stage/auditor/budget evidence. This task reviews those and original110/111 terminal deliveries. No duplicate runs or FIFO submissions.",
+  "next": "Existing postexit originals are bound; complete external timing remains unproved. Peer corrects its next necessary public metadata and separately supplies fixed15 source/stage/auditor/budget and complete external envelope evidence; this task reviews it and original110/111 terminal deliveries. No rerun, takeover or new budget authorization.",
   "fixed15_pipeline7_self_report_independently_reviewed": false,
   "new_project_functions": 0,
   "new_controls": 0,
@@ -165,5 +169,84 @@
   "adoption": false,
   "independent_unseen": 0,
   "effective_family_sample_size": null,
-  "complete_comprehensive_batch": false
+  "complete_comprehensive_batch": false,
+  "existing_external_originals_delivery_accepted": true,
+  "timing_scope_correction": {
+    "reviewed_at": "2026-10-07T16:25:58.274966+08:00",
+    "peer_comment": 6033850017,
+    "mail_id": "1a1156dda7eb7a87",
+    "mail_exactly_matches_original": true,
+    "supplement_sha256": "706f4741c8fe285be5cd5b173ae1e9cb59f0b864c5208f71847e89009c488ca6",
+    "supplement_listed_files": 26,
+    "supplement_total_files": 28,
+    "all_files_amd_local_hash_bound": true,
+    "shared_notice_sha256": "6ad5d2f89e04de6b6634d2e14cbf738c78c9fa65eef40b4a5969d0df46b9bb46",
+    "private_review_sha256": "778d1d822e45f7edf4b2378750eda654326496a5d329cfd15526ff90d712a93f",
+    "private_review_elapsed_s": 0.0309639610350132,
+    "details": {
+      "literal": {
+        "postexit_readback_sha256": "b19f9ccbafad638c5bb397fd221f6203b1f4aeea69e214fb531b8443a7d5643f",
+        "delivery_source_sha256": "051b2d1d96c3aa0c6cd91ac71d99257456942a2379e5e3a812153c9043c65ed6",
+        "delivery_readback_stdout_equal": true,
+        "postexit_readback_stdout_equal": true,
+        "stderr_empty": true,
+        "packet_files": 7,
+        "packet_sha256": "888dfc66191331f82bd42f0770c7cb900ffd07e6743389f49e9bbb681614df8a",
+        "packet_bound_to_original_source": true,
+        "process_matches_original": true,
+        "child_retired_now": true,
+        "archive_sha256": "d731c13fa3e573d40a9683b5f119b1df19ecc676b7e796aa5e5dbdfb1004fb83",
+        "archive_members": 18,
+        "original_bytes": 692842,
+        "partial_elapsed_s": 0.45677899196743965,
+        "timer_start_line": 4,
+        "timer_stop_line": 55,
+        "final_publish_protect_line": 61,
+        "stdout_line": 62,
+        "postexit_has_no_elapsed_measurement": true
+      },
+      "wire": {
+        "postexit_readback_sha256": "0322dc1837edfe118a128e48e1e74f05e53b4db1f71b2faaedcb10e99ae9f07e",
+        "delivery_source_sha256": "e5b7fa5f6b71361e2805cdf71b2111d8d40a51af326b55c4fe5c19fe4e38f490",
+        "delivery_readback_stdout_equal": true,
+        "postexit_readback_stdout_equal": true,
+        "stderr_empty": true,
+        "packet_files": 23,
+        "packet_sha256": "14e85fde13554f8d1df16b66db2fa65e552d8a0988ef990b3eba9049ab5c8077",
+        "packet_bound_to_original_source": true,
+        "process_matches_original": true,
+        "child_retired_now": true,
+        "archive_sha256": "3ce79b2c085d21191a9d6f393ffa5a2b70867cfceeb9cb9d0e0cb6f1143f643a",
+        "archive_members": 229,
+        "original_bytes": 363465,
+        "partial_elapsed_s": 0.5261585395783186,
+        "timer_start_line": 4,
+        "timer_stop_line": 56,
+        "final_publish_protect_line": 62,
+        "stdout_line": 63,
+        "postexit_has_no_elapsed_measurement": true
+      }
+    },
+    "existing_postexit_and_delivery_originals_accepted": true,
+    "whole_external_elapsed_s": null,
+    "whole_external_40s_enforcement_verified": false,
+    "partial_40s_assertion_is_not_outer_watchdog": true,
+    "excluded_from_partial_clock": [
+      "completion ledger and plan updates",
+      "final publish",
+      "final protection checks",
+      "stdout emission",
+      "SSH transfer and exit status",
+      "local landing"
+    ],
+    "original_SSH_exit_status_file_provided": false,
+    "source_of_original_gap": "Original clock stops after ZIP member checks; final ledger/publish/protection/stdout and transport/landing follow outside that interval. Postexit checks retirement/bytes and contains no elapsed measurement.",
+    "next_stage_condition": "Independently observe the complete external envelope with frozen scope/cap and exit status for the next necessary stage; do not rerun old controls to repair historical timing.",
+    "old_archives_unchanged": true,
+    "new_project_calls": 0,
+    "new_controls": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_FIFO": 0
+  }
 }
