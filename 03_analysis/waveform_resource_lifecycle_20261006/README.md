@@ -439,3 +439,19 @@ ZIP `2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b`（349335�
 私有ZIP02002e35f411644992723980a0ba2103634418cb74d3a0e958114e8fcb8f3633（17366023B/856成员）全部成员与AMD原文件、本地清单一致；不公开私有ZIP或原题/RTL。只读回执08cdaebe9caf240d23ee134a01ea1b2856a8e5c6c09e03298aa61f1a49449b59，08:51:56、AMD核验.997403秒。大字段展示截断、清单/可选字段类型的读取更正只属只读编排，无新模型/EDA/测试/原审计/FIFO。
 
 6028261850已明确接受PR103及PR104的六份完整限定交付，AMD原文件哈希再次核对；不是本次新复核的对方接受。[新交付6028426140](https://github.com/854259/FPGA/issues/7#issuecomment-6028426140)与Gmail1a113d7906155775已读：PR105独热新156/原FIFO109的完整来源准备复核接续进行，对方负责原109及其一次收尾，串行另冻结同因素156。不能把收到、排队或运行当准确率通过，不能把三候选收益相加。完整A/P/B156、经审计RTLLM、重要候选五样本、资源接口恢复与完整预算/实际额度仍未完成。
+
+## 2026-10-07 09:12 PR105独热全156冻结与原109限定复核
+
+[PR105](https://github.com/854259/FPGA/pull/105) head 9c0d896a3624793029c62d06cd66fcd671e590db、merge cfaa2bc2c615483cddc94ecbb82604f8abcf4c21，与[原留言6028426140](https://github.com/854259/FPGA/issues/7#issuecomment-6028426140)、Gmail1a113d7906155775及两份AMD实际交付9503cf61918cd90639b753ff445fd1864076d3fccb4aa41ff7c1ff0b622700c6 / 675da418d50bf5e8c8b8cb142202c8e3b09de08b2d7a8d9c4049eeb7f98def5a一致。17公版文件含7PY全部Git与AMD原字节一致。原108终态已由[本方PR106](https://github.com/854259/FPGA/pull/106)完成限定复核并交付7fbb1e15，不在本节重复审计。
+
+原109 spec11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311包含136来源；对原106的126来源，119相同、7项范围或捕获适配、10项新增来源/准入/原106资格绑定。生产worker e3d53648、生成器fc1af52c、共同baseline7ff7ed6e及因素1b8f366b保持。pilot与audit各8函数原文不变，适配限于156范围/命名/预算与保护计数；metrics及test_full_metrics反转mechanical_onehot标签逐字节还原原全156通用门。原106审计5071f221及881档案3cc31207只绑定复用，旧generic15/worker17/pipeline28/intake156/native99不重跑，不称新增测试通过。
+
+原准备1680215/start860740765具备preexec出生stat/cmdline、计划argv、exec确认、667B合并输出流b6ae8f6e、rc0及退出回收，无剩余组。实际2.628480秒<40；PROCESS外层观察3.700418秒不是观察者自身全预算证明。PREPARATION_RECEIPT96efdbfd、PROCESS及POST_EXIT_ADMISSIONbedc255c绑定；预先130文件claim保留两份旧捕获原字节。四项新准入验证原106资格/单因素、全156输入及113历史保护、评分和成本门、旧保护与新增封存来源；是实际准入，不是新合成控制或自然准确率。对方“末端formatter误找独立stderr”仍仅其自报，原进程实际合并流且rc0；不补造失败进程或重执行prepare。
+
+保护计数明确区分：125组共7928条来源记录，按物理路径去重为7802文件。onehot_cp7_frozen_static_v1和onehot106_qualifying_original_frozen共同引用原106的126文件，内容哈希一致；这不是额外独立证据。原119组7670文件与95组6516锚保持，所有当前依赖/编译器/库/同机模型身份核验；KIT18/35/936只核哈希、不读参考供生成。149成员ZIP905e89b5d1e108c1c84956ff41e7d39556e42feedef03e7771fb786a7877a251（1648538B）清单148文件及自身全部在AMD和私有本地逐成员一致。
+
+原FIFO109的SUBMISSION_BINDING4c40792f、保存的提交argv/rc0/stdout票据、冻结来源与当前monitor1680247/start860779708/cmd6c0e6ae3一致；其FIFO child1680248是env/flock入口，不冒充真实guard。09:09观察36/312输出、36请求、complete=false，原slot及共享27B身份保持。此次只读没有新提交FIFO、执行prepare、控制、模型、EDA、collector或auditor；未发明原提交进程的preexec握手，也不因中途结果选择停轮。
+
+本轮固定156已见开发题、C/P各一次共312/max624，8192/max2/repair1/retries0，完整worker300/judge300/super360含xz；历史113全L3、配对等级不降、同等级与全部历史正确题逐题P≤C（提升不豁免）、总P≤C、P≥120L3且加权≥.80、无deadline/unconfirmed/source/tool失败及完整原来源625保护回执为出口。旧输入准入1机械/155弃权仅复用；题号只用于实验清单，不进入生产特例。stage43200/guard43600/slot740分钟是安全上限，不是ETA或剩余额度。
+
+只读回执84788be6cca44afa7f4097ff77d3bffa6afa25972bc5935f243003d8fa2ceba6，09:09:33/1.350689秒；字段/函数名与SUBMISSION_BINDING位置的读取假设更正以及展示截断不算项目失败/重跑。接受范围是新冻结、准备准入与原109受理来源，不是运行分数、采用或完整批次通过。对方负责原109终态和各一次原审计，本方接配对不确定性/根因/采用条件复核；串行另冻同因素156，不叠加波形/独热/串行收益。全部题仍已见开发，独立未见0、家族有效N未知；完整A/P/B156、审计RTLLM、重要五样本、资源接口恢复及总预算/实际额度仍未验收。

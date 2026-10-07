@@ -7,7 +7,7 @@
   "spec_sha256": "d4cc6b511450e4cbc19e95105f2479d11c5bdd7166c6782043b9da7decda70d2",
   "review_receipt_sha256": "abff5f7d03f844f04ad7b55289fcc9dfaab0adc46047830ee4e72802941e2012",
   "review_receipt_dual_verified": true,
-  "status": "original106_terminal_audited_eligible_for_one_new_full156",
+  "status": "original109_onehot_full156_freeze_reviewed_running",
   "scope_sources": 119,
   "frozen_sources": 126,
   "reused_pipeline_methods": 27,
@@ -141,7 +141,7 @@
   "natural_terminal_score_audited": true,
   "adoption": false,
   "full_all_inclusive_batch_complete": false,
-  "next": "Review formally received PR105 onehot156 source/136-file freeze/preparation and original FIFO109. Peer owns its original terminal; serial156 separately freezes using108 finite screening, never combine factor scores, replay originals or expand rejected105.",
+  "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105.",
   "elapsed_read_only_seconds": 1.482100335881114,
   "prestart_failure_review": {
     "reviewed_at": "2026-10-07T03:28:32+08:00",
@@ -199,5 +199,193 @@
       "six_original_artifact_hashes_verified": true,
       "accepted_bounded_scope": true
     }
+  },
+  "full156_freeze_review": {
+    "schema": "peer105_onehot_full156_freeze_bounded_independent_review_v1",
+    "checked_at": "2026-10-07T09:09:33.970325+08:00",
+    "peer_pr": "https://github.com/854259/FPGA/pull/105",
+    "head": "9c0d896a3624793029c62d06cd66fcd671e590db",
+    "merge": "cfaa2bc2c615483cddc94ecbb82604f8abcf4c21",
+    "peer_comment": 6028426140,
+    "mail_id": "1a113d7906155775",
+    "peer_delivery_sha256": "9503cf61918cd90639b753ff445fd1864076d3fccb4aa41ff7c1ff0b622700c6",
+    "fifo_delivery_sha256": "675da418d50bf5e8c8b8cb142202c8e3b09de08b2d7a8d9c4049eeb7f98def5a",
+    "submission_binding_sha256": "4c40792fc23b74cba4a672cdd3d8e99a5e056673e43bcc9265e0cee23abc8a12",
+    "spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+    "scope": "One fresh same-factor all156 development C/P frozen source/preparation/admission and original FIFO109 binding only. No running score review or adoption.",
+    "source_count": 136,
+    "parent_source_count": 126,
+    "unchanged_common": 119,
+    "changed": [
+      "audit.py",
+      "metrics.py",
+      "pilot.py",
+      "preparation_inputs.py",
+      "raw_evidence/ENVIRONMENT_CAPTURE.json",
+      "raw_evidence/PROTECTED_GROUPS_CAPTURE.json",
+      "test_full_metrics.py"
+    ],
+    "added": [
+      "ACTUAL_FULL_SCOPE_ADMISSION.json",
+      "DRAFT_SOURCE_MANIFEST.json",
+      "FULL_SOURCE_ADAPTATION_PROOF.json",
+      "QUALIFYING_CP7_AUDIT.json",
+      "QUALIFYING_CP7_AUDIT_DERIVATIVE.json",
+      "QUALIFYING_CP7_ORIGINAL_BINDING.json",
+      "QUALIFYING_CP7_SPEC.json",
+      "prepare_full_scope.py",
+      "raw_evidence/ARCHIVAL_CP7_ENVIRONMENT_CAPTURE.json",
+      "raw_evidence/ARCHIVAL_CP7_PROTECTED_GROUPS_CAPTURE.json"
+    ],
+    "production_unchanged": {
+      "worker.py": "e3d53648c31fa77acf4b9a30e91eee70252651f6a85399985e40db83e3585b6b",
+      "synthesis.py": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+      "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+      "factor_proof.py": "1b8f366b986c74334becf8c61dae13eab4660d6c6fddc005e64e3dee48523d48",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "upstream/official_eval_guarded.py": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c"
+    },
+    "pilot_unchanged_functions": 8,
+    "audit_unchanged_functions": 8,
+    "generic_metrics_and_tests_exact_route_label_bijection": true,
+    "preparation_source_sha256": "c2c27daee7d243b60b2c64328d2a0e2d6c547e69a316ef4d1e24e777a961043e",
+    "original_prepare": {
+      "pid": 1680215,
+      "state": "T",
+      "starttime": "860740765",
+      "pgid": 1680215,
+      "sid": 1680215,
+      "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603",
+      "elapsed_s": 2.6284803319722414,
+      "cap_s": 40,
+      "rc": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining": [],
+      "stdout_sha256": "b6ae8f6eba800da774b6bdfb44cad8fb7a9d94ded03dc2b925389f16f8c4642c",
+      "stdout_bytes": 667,
+      "birth_stat_cmd_argv_stream_receipt_verified": true,
+      "outer_observation_s": 3.7004179265350103,
+      "observer_self_complete_budget_not_claimed": true
+    },
+    "preparation_receipt_sha256": "96efdbfd844e70048c5417be5f0bcefd02e6c4522b5b7dc2dc43b7dbd351513d",
+    "preparation_process_receipt_sha256": "c48fea6b8172ec7b3a86b09a12eaa1dc49988a4427374ef6215c536743420c7f",
+    "post_exit_sha256": "bedc255cb77f7246f601f4a9b37fe862cc7a964570a71a12a0d72866b898ae7a",
+    "source_claim_files": 130,
+    "two_capture_originals_preserved": true,
+    "actual_new_scope_admission_groups": 4,
+    "admission_checks": [
+      "original106 qualifier and exact unchanged single-factor production bound",
+      "all156 input bytes,113 historical guards and exact1emit155abstain admission bound",
+      "same original grade,provenance,complete300 solver measurement and historical/per-task/total cost gates retained",
+      "immutable95/6516 and current119/7670 retained; sealed original106/108 and failed/corrected terminal sources added"
+    ],
+    "new_test_controls_executed": 0,
+    "reused_evidence": "Original106 audit5071f221/881-member archive3cc31207; generic15, old worker17/pipeline28/intake156/native99 are inherited evidence, not new reruns. Exact production worker/synthesis/common fallback/factor unchanged.",
+    "qualifying106_audit_sha256": "5071f22193cc25d78c31c4545178e2d794087f96f9834a933c965625b63a71a0",
+    "finite_native_scope": "Original finite widths2..5 and one known natural width10; not arbitrary-width or whole-generator proof.",
+    "protection": {
+      "groups": 125,
+      "declared_files": 7928,
+      "unique_files": 7802,
+      "original119_preserved": true,
+      "original95_6516_preserved": true,
+      "kit_counts": {
+        "package": 18,
+        "official": 35,
+        "tasks": 936,
+        "baseline": 2,
+        "upstream_commit": 40
+      },
+      "duplicate_group_pair": [
+        "onehot_cp7_frozen_static_v1",
+        "onehot106_qualifying_original_frozen"
+      ],
+      "duplicate_entries": 126,
+      "all_duplicates_same_hash": true
+    },
+    "archive": {
+      "sha256": "905e89b5d1e108c1c84956ff41e7d39556e42feedef03e7771fb786a7877a251",
+      "bytes": 1648538,
+      "members": 149,
+      "manifest_sha256": "935740bf6555cfc025805cc2e0cdf907d25fed0fe1a0eb30b354b4e65b42ca01",
+      "dual_end_all_members_verified": true
+    },
+    "public_files": 17,
+    "public_python_files": 7,
+    "all_public_git_amd_bytes_equal": true,
+    "budget": {
+      "solve_deadline_s": 300,
+      "judge_timeout_s": 300,
+      "judge_supervisor_timeout_s": 360,
+      "max_worker_requests_per_arm": 2,
+      "max_actual_model_requests": 624,
+      "stage_timeout_s": 43200,
+      "guard_timeout_s": 43600,
+      "slot_minutes": 740,
+      "retries": 0
+    },
+    "tasks": 156,
+    "expected_outputs": 312,
+    "historical_guards": 113,
+    "existing_admission": {
+      "emitted": 1,
+      "abstentions": 155,
+      "no_new_intake_scan": true
+    },
+    "tokens": 8192,
+    "repairs": 1,
+    "acceptance": "All156/312 original judge rows, P>=120 fully correct and weighted>=.80; historical113 allL3, paired grades nondecreasing; P total requests<=C and every historical-correct/unchanged-grade task P requests<=C, no deadline/unconfirmed/tool/source failure; original terminal archive audit required.",
+    "original_fifo": {
+      "number": 109,
+      "state": "running",
+      "live": {
+        "monitor": {
+          "pid": 1680247,
+          "starttime": "860779708",
+          "state": "S",
+          "command_sha256": "6c0e6ae31cad3b80384e732a0827ce98ea6c0084071c9e442669524bd7adc84c"
+        },
+        "fifo_child": {
+          "pid": 1680248,
+          "starttime": "860779717",
+          "state": "S",
+          "command_sha256": "f017868d6b0192ffb3703d80cac7f7776d07a8e269572d49e9bd4e0280dd7298"
+        }
+      },
+      "slot_owner": "codex_onehot_synthesis_full156_20261007_v1"
+    },
+    "status_at_check": {
+      "completed_samples": 36,
+      "expected_samples": 312,
+      "actual_model_requests": 36,
+      "complete": false
+    },
+    "submission_evidence_scope": "Saved subprocess argv/rc0/stdout ticket, frozen spec/source, existing monitor birth snapshot, current exact PID/start/cmd and slot; no invented raw preexec submission handshake.",
+    "limits": [
+      "One fresh same-factor all156 development C/P run; no redraw/stored answer/five/independent/hidden/adoption/deployment.",
+      "Single onehot graph factor with common original phase-P model fallback; no taskID production dispatch or waveform/FSM/vector/table/serial composition.",
+      "8192/max2/repair1/complete worker300/judge300/super360 including x-z unchanged.",
+      "Finite native widths2..5 and one actual known width10 instance are not all-parameter proof.",
+      "Stage43200/guard43600/slot740min are safety caps, not ETA.",
+      "Original score gains are not added; target120/.80/history/cost gates all mandatory.",
+      "7928 is grouped source entries; unique physical source files7802. Original106126 files appear in two groups with identical hashes, not extra independent evidence.",
+      "Preparation stdout/stderr is a combined stream. Final transport formatter failure remains peer report; no independent failure process evidence fabricated.",
+      "No current running score, complete audit, new unseen sample or combined-factor benefit is inferred."
+    ],
+    "readonly_receipt_sha256": "84788be6cca44afa7f4097ff77d3bffa6afa25972bc5935f243003d8fa2ceba6",
+    "readonly_seconds": 1.3506887834519148,
+    "reviewer_new_model_calls": 0,
+    "reviewer_new_eda_calls": 0,
+    "reviewer_new_controls": 0,
+    "reviewer_original_audit_or_collector_runs": 0,
+    "reviewer_new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_family_N": null,
+    "adoption": false,
+    "full_all_inclusive_batch_complete": false,
+    "full_budget_actual_quota_verified": false,
+    "peer_acknowledgment_of_this_new_review": false,
+    "next": "Follow peer-owned frozen109 through original terminal and review paired results/uncertainty/root cause/adoption gates. Peer separately freezes serial156 under accepted108 screening. Do not replay audits, alter running freeze, combine factor gains or expand rejected105."
   }
 }
