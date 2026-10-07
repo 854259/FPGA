@@ -107,8 +107,11 @@ def prepare():
     assert not ROOT.exists() and not (RUN/ONCE).exists()
     assert shutil.disk_usage(RUN).free >= 2 * 1024**3
     collector, auditor, changes = adapters()
-    expected = read(HELPERS/'SOURCE_MANIFEST.json')
-    names = ['terminal_outer.py', 'bounded_owned_exec.py', 'owned_tree_cleanup.py']
+    expected = {'terminal_outer.py': '569b70a5881ae97267e4035a71a3371d753b3487bbf0efd4f09c3d838bc993b1',
+                'bounded_owned_exec.py': '1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00',
+                'owned_tree_cleanup.py': '5dd37bb39db4616b3411a51878124987ce51f0a289174b81dad0d81e34b134ad'}
+    names = list(expected)
+    assert all(read(HELPERS/'SOURCE_MANIFEST.json')[n] == expected[n] for n in names)
     assert all(sha(HELPERS/n) == expected[n] for n in names)
     ROOT.mkdir()
     (ROOT/'collector.py').write_text(collector)
