@@ -1,4 +1,146 @@
 {
+  "serial_framing_native_material_20261007": {
+    "schema": "serial_framing_native_material_public_preparation_v1",
+    "root": "/workspace/team/runs/fpga_owner/serial_framing_native_material_20261007_v1",
+    "source_files": 7,
+    "new_source_files": 4,
+    "reused_sources": 3,
+    "source_hashes": {
+      "calibration.py": "1f1534e0764c5de3762254fe791a8132be0fcee46b41fb8e0bd9ed59f86de5a6",
+      "framing_fixture.py": "a24526fe27b41365337bfaeae29038ce9fec4e8688895455625ecc0c29c39385",
+      "owned_exec.py": "9981c3a36183787d559aaed73fcfd34d36e6a7354e5da1874cf5308c6ee476c5",
+      "prepare.py": "8840dc8a6516f457096599d5a6e2e5dfea6f6ff7dac75eb0557763ee964bf897",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "synthesis.py": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+      "test_material.py": "ddfa3f84e7721f4175088ba35d7a13f9b7453af52121e75433a5866b40996119"
+    },
+    "production_sha256": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+    "actual_new_material_methods": 6,
+    "passed_methods": 6,
+    "receipt_sha256": "4cfc454eb9f622e693d333151314ef359ee5bf7d7b40a202110bf25ee6f32aca",
+    "process_sha256": "8c9616b25aecf52967c7cf332373950ec8581ad01b185121564bd750b8b6f0fb",
+    "actual_owned_process": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/serial_framing_native_material_20261007_v1/prepare.py"
+      ],
+      "cwd": "/workspace/team/runs/fpga_owner/serial_framing_native_material_20261007_v1",
+      "cap_s": 40,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 1770361,
+        "state": "T",
+        "starttime": "861198353",
+        "pgid": 1770361,
+        "sid": 1770361,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 0.21676377579569817,
+      "leader_reaped": true,
+      "stdout_sha256": "aee0c5c6095e11d53d7ed83e9dba03352e086b76c7cceab52f29d42cb1ab7f2c",
+      "stdout_bytes": 1793,
+      "normal_completion": true
+    },
+    "original_child_retired_separately_verified": true,
+    "archive_sha256": "421ca414205d5b2a2d671683962d2a24fe22a709d8ab3df289a26d8b959e0017",
+    "archive_bytes": 519632,
+    "archive_members": 90,
+    "every_member_bound_both_ends": true,
+    "case_plan": {
+      "schema": "serial_framing_binary_event_native_plan_v1",
+      "controls": 14,
+      "positive_cases": 8,
+      "negative_mutants": 6,
+      "trace_observations": 12568,
+      "native_calls_planned": 42,
+      "guard_receipts_planned": 85,
+      "model_calls": 0,
+      "actual_eda_calls": 0,
+      "native_qualified": false,
+      "score_measured": false,
+      "qualification_scope": "Finite binary stream/output/synchronous-reset observations only, next constant0 placeholder, data masked only when done0; not all-parameter/XZ/score/unseen proof."
+    },
+    "prepared_positive_rtl": 8,
+    "prepared_actual_mutated_rtl": 6,
+    "prepared_trace_observations": 12568,
+    "planned_native_commands": 42,
+    "planned_guard_receipts": 85,
+    "actual_native_commands": 0,
+    "actual_model_calls": 0,
+    "actual_eda_calls": 0,
+    "new_fifo": false,
+    "old_controls_replayed": 0,
+    "original156_intake_runs": 0,
+    "numeric8_not_replayed": true,
+    "independent_fixture": true,
+    "oracle": "Literal prompt separate from production body_template; offline full-stream packet slicing/cursor with reset interruptions, not DUT state/index emulation or reference/TB/response input.",
+    "timing": "After sampled valid stop, done observed after positive-edge NBA; before-positive and after-opposite checks include sync-reset behavior. next TRACE field is constant0 placeholder and not internal-next proof.",
+    "data_care": "Payload masked only when done0; done never masked. Initial pre-reset unknown interval not fabricated as zero.",
+    "prepared_mutations": [
+      "early_done",
+      "missing_done",
+      "reverse_payload",
+      "invalid_stop_accepted",
+      "spurious_recovery_done",
+      "asynchronous_reset"
+    ],
+    "native_qualified": false,
+    "score_entry_open": false,
+    "adoption": false,
+    "goal_status": "active",
+    "goal_achieved": false,
+    "peer112": {
+      "head": "26f27b2c8feaa99c214c2d637125ae4b44675974",
+      "files": {
+        "/workspace/team/activity/fpga_teammate/artifacts/peer110-serial-framing-pure-bounded-review-20261007-v1/PUBLIC_SERIAL_FRAMING_REVIEW.json": "79e05377b192a41fb1c285d9575795e1a0b6ca79526297e0cdb9c7d348cfc941",
+        "/workspace/team/activity/fpga_teammate/artifacts/peer110-serial-framing-pure-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "3451a12d72a6b84e891cba08828ca6120b495afaf68fc5ee083867e2d5d28d54",
+        "/workspace/team/activity/fpga_teammate/artifacts/peer110-serial-framing-pure-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "6093dc718f023163108ca6de7701e8e6298a9df535590cb26463fd3fe77a9928"
+      },
+      "scope": "Old PR110 f491 source5/20 methods/one original156 coverage/20 archive/actual owned preparation only. Its static4301 inference now addressed by actual numeric8/PR111, not reviewed as new aaac/native/score. PRIMARY independent peer certification not inferred."
+    },
+    "protected_groups": 126,
+    "protected_source_records": 8064,
+    "protected_unique_files": 7938,
+    "original109_110_sources_model_primary_unchanged": true,
+    "limits": [
+      "Only six new pure material/oracle consistency methods and actual14-case generation. No native tools or detection of mutants in a physical trace yet.",
+      "Finite constructed binary output/reset/edge material, not all widths/unknown-state XZ/generalization/score proof.",
+      "Native stage/audit/guard/frozen-source adaptation and resource/FIFO integration still pending; original timer107 qualification is not borrowed.",
+      "Transport observation timeout resumed read-only in same original namespace; six controls not replayed."
+    ],
+    "next": "Adapt reused native stage/audit/guard/measurement/resource/protection to current producer, actual14 cases, output widths and85 guards; qualify changed pipeline source contexts on AMD, freeze/ownPR then once whole-taskFIFO. Only actual native qualification permits fresh fixed original-budget C/P screen.",
+    "future_budgets": {
+      "tokens": 8192,
+      "max_requests": 2,
+      "repairs": 1,
+      "solver_s": 300,
+      "judge_s": 300,
+      "judge_supervisor_s": 360,
+      "xz_retained": true,
+      "retries": 0
+    },
+    "original113_paired_grade_per_task_and_total_cost_120_and80_gates_unchanged": true,
+    "peer113_numeric_review": {
+      "head": "c1f9f280f6f6b7632fc3844a69b855fb658e9156",
+      "files": {
+        "/workspace/team/activity/fpga_teammate/artifacts/peer111-serial-framing-numeric-bounded-review-20261007-v1/PUBLIC_SERIAL_FRAMING_REVIEW.json": "45a32ea74222345815b0473b73352a59ab22b7b246941f3a8b5bc785944ec21a",
+        "/workspace/team/activity/fpga_teammate/artifacts/peer111-serial-framing-numeric-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "61c5b29c9caa9635202d3b4d109806d90d5dee7864e43e2fdb85b6f0348c42ef",
+        "/workspace/team/activity/fpga_teammate/artifacts/peer111-serial-framing-numeric-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "b4aec20deddf148fc7bbf94036d15adc2038aaafeac27ce80048bc72f532431f"
+      },
+      "scope": "PR111 new aaac single lexical delta and original8 controls only, source6/archive18/public10 and actual owned receipt; old f491/20/156 held historical. Eligible only for independent native preparation, no native/score/adoption/all-width/XZ/unseen/entire-batch proof. Numeric limit readings are module initialization plus first alphabetic test, not an after-all8 read; static no setter and actual old4301 exception scope retained. Gmail IDs are source metadata only, no messaging authorization.",
+      "runtime_limit_reporting_correction": "4300 readings are at module initialization and first alphabetic test_exact, not an additional post-all8 read. Static sources have no setter; original4301 exception proves4300 at its own call. Old receipts preserved, no old control replay."
+    }
+  },
   "serial_framing_numeric_boundary_20261007": {
     "schema": "serial_framing_numeric_public_actual_v2",
     "root": "/workspace/team/runs/fpga_owner/serial_framing_numeric_pure_20261007_v2",
