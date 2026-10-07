@@ -1,0 +1,55 @@
+--- a/baseline_worker.py
++++ b/baseline_worker.py
+@@ -1,6 +1,6 @@
+ """Owned fresh-generation worker; original maximum of one repair."""
+ import argparse
+-import first_system_request
++import agent_extract_hook
+ import ctypes
+ import hashlib
+ import importlib.util
+@@ -89,6 +89,14 @@
+     (out/'solution.v').write_text(''); (out/'trace.jsonl').write_text('')
+     requests, compiles = [], []
+     save(out/'requests.json', requests)
++    extractions = []
++    def extraction_receipt(receipt):
++        index = len(extractions)
++        assert index < 2 and index < len(requests) and requests[index]['response_received']
++        extractions.append(dict(index=index, arm=args.arm,
++            response_json_sha256=requests[index]['response_sha256'], **receipt))
++        save(out/'extraction_journal.json', extractions)
++    agent_extract_hook.configure(runtime, args.arm == 'P', extraction_receipt)
+     original_open, original_run = urllib.request.urlopen, subprocess.run
+ 
+     def gate():
+@@ -103,7 +111,7 @@
+         index = len(requests); assert index < 2
+         body = json.loads(request.data)
+         skill, repair = runtime.skill_texts()
+-        assert body['messages'][0] == dict(role='system', content=skill+('\n'+repair if index else '')+(first_system_request.SYSTEM_SUFFIX if args.arm == 'P' and index == 0 else ''))
++        assert body['messages'][0] == dict(role='system', content=skill+('\n'+repair if index else ''))
+         assert body['model'] == spec['model'] and body['temperature'] == 0
+         assert body['max_tokens'] == 8192 and body['top_p'] == 1
+         folder = out/'requests'/str(index); folder.mkdir(parents=True)
+--- a/package/agent/map_runtime.py
++++ b/package/agent/map_runtime.py
+@@ -32,6 +32,8 @@
+ if str(PKG) not in sys.path:
+     sys.path.insert(0, str(PKG))
+ LOCK = threading.Lock()
++# Optional agent-side extraction only; the official baseline stays untouched.
++RTL_EXTRACTOR = None
+ 
+ 
+ def skill_texts():
+@@ -346,7 +348,8 @@
+             reply = choice['message'].get('content') or ''
+             trace(out, 'llm', round=attempt, tokens_in=usage.get('prompt_tokens'),
+                   tokens_out=usage.get('completion_tokens'), finish=choice.get('finish_reason'))
+-            code = baseline.extract(reply, 'rtl')
++            code = (baseline.extract(reply, 'rtl') if RTL_EXTRACTOR is None else
++                    RTL_EXTRACTOR(reply, 'rtl', baseline.extract))
+         except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
+             trace(out, 'llm', round=attempt, error=type(exc).__name__)
+             return

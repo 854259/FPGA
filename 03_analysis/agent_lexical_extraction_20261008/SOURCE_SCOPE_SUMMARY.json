@@ -1,0 +1,20 @@
+{
+  "schema": "agent_lexical_extraction_source_scope_v1",
+  "source_sha256": {
+    "agent_extract_boundary.py": "0fde5a08d5ba0ceb78e8ba431bb91d84d6be3b12d1a0d630cdf4f3cf68d4c2b7",
+    "agent_extract_hook.py": "5500aa201738a1fd2572a3cfd34b52071fa24c829c02e829d552558f79545736",
+    "lexical_extraction.patch": "2284dc880af03d56202c728b506e5d79025d81483910dff9f071f6bbf5eaf404",
+    "SYNTHETIC_CASES.json": "99c01f6dc00162d50b5d8f1a624f66bcec26291276b5333a469acad34df803f4",
+    "test_actual_engineering8.py": "ff1d07080b7e2ffbe095ae9f2e030834294b3e94d094712177e4133768741086",
+    "native_compile14.py": "c5e02496aaa6acfe06dc6e01a5dd5c16fa60b3ac2c790526b95b2a4de5b954c9"
+  },
+  "original_runtime_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+  "original_worker_sha256": "b1f396a3a54b065ef2e0b19fc3aa54973aea41a6b82577a51b4cfc2e32876852",
+  "official_baseline_sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+  "exact_reverse_patch_verified": true,
+  "synthetic_fixtures_independent": true,
+  "raw_benchmark_prompt_RTL_TB_reference_response_published": false,
+  "credentials_weights_private_full_logs_published": false,
+  "source_manifest_sha256": "fa0358364e2ce630c827f76af89bc1453c11f64ff30494c9ca15a1f6465ba238",
+  "frozen_native_source_files": 15
+}

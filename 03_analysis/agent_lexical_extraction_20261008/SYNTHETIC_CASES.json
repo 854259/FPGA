@@ -1,0 +1,120 @@
+{
+  "schema": "agent_lexical_boundary_private_synthetic_cases_unexecuted_v1",
+  "status": "UNTESTED_NOT_ADMITTED_NOT_SUBMITTED",
+  "cases_are_independently_written": true,
+  "official_question_reference_or_expected_output_used": false,
+  "HTTP_calls": 0,
+  "EDA_calls": 0,
+  "test_methods_executed": 0,
+  "positive_boundary_cases": [
+    {
+      "name": "ordinary_module_unchanged",
+      "text": "module TopModule;\nendmodule",
+      "expected_status": "lexical_span_selected",
+      "expected_change": false,
+      "expected_code": "module TopModule;\nendmodule\n"
+    },
+    {
+      "name": "line_and_block_comments_are_opaque",
+      "text": "// module TopModule; endmodule\nmodule TopModule;\n// endmodule\n/* module TopModule endmodule */\nendmodule",
+      "expected_status": "lexical_span_selected",
+      "expected_change": true,
+      "expected_code": "module TopModule;\n// endmodule\n/* module TopModule endmodule */\nendmodule\n"
+    },
+    {
+      "name": "quoted_keywords_escaped_quote_and_backslash_are_opaque",
+      "text": "module TopModule;\ninitial $display(\"a \\\" endmodule \\\\ b\");\nendmodule",
+      "expected_status": "lexical_span_selected",
+      "expected_change": true,
+      "expected_code": "module TopModule;\ninitial $display(\"a \\\" endmodule \\\\ b\");\nendmodule\n"
+    },
+    {
+      "name": "escaped_identifiers_are_opaque_until_whitespace",
+      "text": "module TopModule;\nwire \\endmodule ;\nwire \\module ;\nendmodule",
+      "expected_status": "lexical_span_selected",
+      "expected_change": true,
+      "expected_code": "module TopModule;\nwire \\endmodule ;\nwire \\module ;\nendmodule\n"
+    },
+    {
+      "name": "keyword_substrings_are_identifiers",
+      "text": "module TopModule;\nwire endmodule_suffix;\nwire module_count;\nendmodule",
+      "expected_status": "lexical_span_selected",
+      "expected_change": true,
+      "expected_code": "module TopModule;\nwire endmodule_suffix;\nwire module_count;\nendmodule\n"
+    },
+    {
+      "name": "helper_modules_do_not_move_top_boundary",
+      "text": "module Helper; endmodule\nmodule TopModule; endmodule\nmodule After; endmodule",
+      "expected_status": "lexical_span_selected",
+      "expected_change": false,
+      "expected_code": "module TopModule; endmodule\n"
+    },
+    {
+      "name": "named_end_label_retains_original_stop_policy",
+      "text": "module TopModule; endmodule : TopModule",
+      "expected_status": "lexical_span_selected",
+      "expected_change": false,
+      "expected_code": "module TopModule; endmodule\n"
+    }
+  ],
+  "negative_abstention_cases": [
+    {
+      "name": "missing_real_end_is_not_repaired",
+      "text": "module TopModule;\n// endmodule",
+      "expected_reason": "missing_real_endmodule",
+      "expected_policy": "original_extract_result_byte_equal"
+    },
+    {
+      "name": "multiple_top_modules_are_not_concatenated_or_chosen",
+      "text": "module TopModule; endmodule\nmodule TopModule; endmodule",
+      "expected_reason": "top_module_missing_or_ambiguous",
+      "expected_policy": "original_extract_result_byte_equal"
+    },
+    {
+      "name": "directives_and_macro_tokens_are_not_preprocessed",
+      "text": "module TopModule;\n`define FAKE_END endmodule\nendmodule",
+      "expected_reason": "preprocessor_not_interpreted",
+      "expected_policy": "original_extract_result_byte_equal"
+    },
+    {
+      "name": "unterminated_block_comment_abstains",
+      "text": "module TopModule; /* endmodule",
+      "expected_reason": "unterminated_block_comment",
+      "expected_policy": "original_extract_result_byte_equal"
+    },
+    {
+      "name": "unterminated_string_abstains",
+      "text": "module TopModule; initial $display(\"endmodule); endmodule",
+      "expected_reason": "unterminated_string",
+      "expected_policy": "original_extract_result_byte_equal"
+    },
+    {
+      "name": "nested_module_syntax_abstains",
+      "text": "module TopModule; module Helper; endmodule endmodule",
+      "expected_reason": "nested_module_not_interpreted",
+      "expected_policy": "original_extract_result_byte_equal"
+    },
+    {
+      "name": "escaped_top_name_is_outside_small_scope",
+      "text": "module \\TopModule ; endmodule",
+      "expected_reason": "module_name_not_supported",
+      "expected_policy": "original_extract_result_byte_equal"
+    }
+  ],
+  "unchanged_delegation_cases": [
+    {
+      "name": "HLS_delegates_to_untouched_baseline",
+      "track": "hls",
+      "text": "int f() { return 0; }",
+      "expected_policy": "original_extract_result_byte_equal"
+    },
+    {
+      "name": "first_fence_selection_is_not_a_new_markdown_parser",
+      "track": "rtl",
+      "text": "```verilog\nmodule TopModule; endmodule\n```\n```verilog\nmodule TopModule; endmodule\n```",
+      "expected_status": "lexical_span_selected",
+      "expected_change": false,
+      "expected_code": "module TopModule; endmodule\n"
+    }
+  ]
+}
