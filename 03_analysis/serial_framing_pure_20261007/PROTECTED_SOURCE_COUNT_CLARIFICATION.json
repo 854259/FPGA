@@ -1,0 +1,39 @@
+{
+  "counts": {
+    "onehot109": {
+      "root": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+      "spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+      "capture_sha256": "729c323bcdcbfe65bfd887caabd2a176c0e983b51ab074d761b9774011916761",
+      "groups": 125,
+      "grouped_source_entries": 7928,
+      "unique_physical_source_files": 7802,
+      "duplicate_entries": 126,
+      "all_duplicate_path_hashes_equal": true,
+      "all_actual_file_hashes_match": true,
+      "duplicate_groups": [
+        "onehot106_qualifying_original_frozen",
+        "onehot_cp7_frozen_static_v1"
+      ]
+    },
+    "serial110": {
+      "root": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_full156_20261007_v1",
+      "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+      "capture_sha256": "31a57e9cbd073fd32a680b3170fab140fb37f9bb425b54af541fbf0a47917db2",
+      "groups": 126,
+      "grouped_source_entries": 8064,
+      "unique_physical_source_files": 7938,
+      "duplicate_entries": 126,
+      "all_duplicate_path_hashes_equal": true,
+      "all_actual_file_hashes_match": true,
+      "duplicate_groups": [
+        "onehot106_qualifying_original_frozen",
+        "onehot_cp7_frozen_static_v1"
+      ]
+    }
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_controls": 0,
+  "new_fifo": false,
+  "original_captures_unchanged": true
+}
