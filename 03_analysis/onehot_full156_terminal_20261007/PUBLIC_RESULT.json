@@ -1,0 +1,287 @@
+{
+  "schema": "onehot_synthesis_full156_terminal_public_v1",
+  "ticket": 109,
+  "complete_original156_regression_closed": true,
+  "expected_tasks": 156,
+  "expected_outputs": 312,
+  "audit_sha256": "ac49facd011560ac872244101a2f669520e15bb6b94c9730d3d80215d9731b4e",
+  "audit_schema": "onehot_synthesis_full156_inventory_compatible_readonly_audit_v1",
+  "evidence_valid": true,
+  "full156_evidence_valid": true,
+  "full_score_measured": true,
+  "audited_generation_provenance_bound": true,
+  "modified_auditor_disclosed": true,
+  "source_scope": {
+    "schema": "onehot109_complete_terminal_source_scope_public_v1",
+    "original_root": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+    "original_spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+    "original_source_files": 136,
+    "original_collector_sha256": "d906f10f8ab3a26cf7c577fdebab0ccb0c2314d9793ba5b3c6f7f0a795e8a25a",
+    "original_auditor_sha256": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+    "original_complete_auditor_calls": 0,
+    "compatible_entry": "/workspace/team/runs/fpga_owner/full156_inventory_compat_pure_20261007_v1/109/compatible_audit.py",
+    "compatible_auditor_sha256": "8037b8c10885fb405f32fe5b82ecaae92902fb4eb0734a472e20df095ec73174",
+    "modified_auditor_disclosed": true,
+    "compatibility_source_files": 24,
+    "original136_and_compatible24_preserved": true,
+    "terminal_source_files": 9,
+    "terminal_source_manifests": {
+      "child": {
+        "manifest_sha256": "52093785aedadb23c9d507430737b12879629d2bd58249070a15bcb8661076bf",
+        "files": {
+          "LOCAL_SOURCE_PLAN.json": "f855aa7c367dcd623429720e3ba89a3b45bb13cf925ce33b8fbe789c7fb5b8df",
+          "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+          "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+          "terminal_supervisor.py": "3e5ddb6947e1adfe13c835202fccf5a0d450adef2102092588f5bbe50723ba63"
+        }
+      },
+      "monitor": {
+        "manifest_sha256": "2592d97fa609e914698a3689b5c786b64822f32d698353e14ac24d40e3df1a33",
+        "files": {
+          "MONITOR_CONFIG.json": "1d2c4aac366d2616b6a31aa11ac3f956cc485db48036dc59178df80b7af3a2b3",
+          "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+          "monitor_terminal.py": "2d5dae9dcdd611256386bbc6d42e83ac6d85f14a0386fad9ada801029d47e653",
+          "owned_tree_cleanup.py": "5dd37bb39db4616b3411a51878124987ce51f0a289174b81dad0d81e34b134ad",
+          "terminal_outer.py": "569b70a5881ae97267e4035a71a3371d753b3487bbf0efd4f09c3d838bc993b1"
+        }
+      }
+    },
+    "original_inventory_groups": 125,
+    "original_inventory_records": 7928,
+    "original_inventory_unique_files": 7802,
+    "historical_same_sha_duplicate_references": 126,
+    "real_original_protection_receipts": 625,
+    "synthetic_original_protection_receipts": 0,
+    "original625_strict_comparisons_preserved": true,
+    "original_judge_grades_budgets_cost_gates_preserved": true,
+    "correction": {
+      "failed_v1_preserved": true,
+      "old_python_sha_length": 57,
+      "new_python_sha_length": 64,
+      "only_logic_change": "Canonical Python executable SHA literal; separate namespaces and source pointers disclosed.",
+      "terminal_monitor_plan_reverse_byte_exact": true,
+      "config_reverse": "Restore original child_root/observer_root/child_sources whole mapping including insertion order/child_manifest_sha256, then serialize indent2+LF to recover the complete original bytes.",
+      "all5_reused_helpers_byte_exact": true
+    },
+    "original_once_intent": "COMPATIBLE_TERMINAL_AUDIT_INTENT.json",
+    "original_once_intent_shared_across_versions": true,
+    "collector_calls": 1,
+    "compatible_auditor_calls": 1,
+    "scoring_reruns": 0,
+    "old_compatibility6_and_controls_not_replayed": true,
+    "archives": {
+      "original": {
+        "path": "/workspace/team/runs/fpga_owner/onehot109_compatible_terminal_20261007_v2/terminal_original109.zip",
+        "sha256": "7d00ebb5ba9d914b358a53784417c42c157ea41609b0d2f4b33fb8bbb8034eaa",
+        "bytes": 84697850,
+        "members": 12002,
+        "every_member_dual_bound": true,
+        "manifest_member_sha256": "24471891637f24e3804c1169816dd3b9c7c44fad7cbcc24b0ce89e52205de6a2"
+      },
+      "observer": {
+        "path": "/workspace/team/runs/fpga_owner/onehot109_compatible_terminal_evidence_20261007_v2/TERMINAL_OBSERVER_EVIDENCE.zip",
+        "sha256": "543b90459d86e86ba74ef03fbda9829b91fa8b19ce009463ff2ecba047968ab5",
+        "bytes": 420640,
+        "members": 51,
+        "every_member_dual_bound": true,
+        "manifest_member_sha256": "dcc0f609adaf730abdebee1055e05185ba6ca5665521ca30b4137f0c630c1907"
+      },
+      "failed_v1": {
+        "path": "/workspace/team/runs/fpga_owner/onehot109_compatible_terminal_failure_20261007_v1/FAILED_OBSERVER_ARCHIVE.zip",
+        "sha256": "ec8bd48dda8aa9c2d52a03a9e72d077e544bd5e0c28a0272fbbe267851e99699",
+        "bytes": 38555,
+        "members": 31,
+        "every_member_dual_bound": true,
+        "manifest_member_sha256": "f8c218d7b141cf4ba579f5574795e77021cf3174a8bcde417271b5858b742a38"
+      }
+    },
+    "private_code_RTL_prompts_TB_wires_process_streams_provenance_and_archive_bodies_excluded": true,
+    "retired_identity_scope": {
+      "recorded_guard_identities": 11396,
+      "fifo_runner_child_monitor_identities": 3,
+      "recorded_total": 11399,
+      "arbitrary_system_process_retirement_proved": false
+    }
+  },
+  "coefficients": {
+    "C": 0.7679487179487179,
+    "P": 0.7782051282051282
+  },
+  "fully_correct_by_arm": {
+    "C": 112,
+    "P": 114
+  },
+  "requests_by_arm": {
+    "C": 167,
+    "P": 167
+  },
+  "original_regression_model_requests": 334,
+  "paired_grade_regressions": [],
+  "original113_regressions": [
+    "Prob145_circuit8",
+    "Prob151_review2015_fsm"
+  ],
+  "guard_pass": false,
+  "unchanged_task_request_cost": false,
+  "goal_score_thresholds_met": false,
+  "qualified_for_goal": false,
+  "adoption": false,
+  "goal_status": "active",
+  "goal_achieved": false,
+  "rejection_reasons": [
+    "P114/156 and weighted77.8205% are below120/156 and80%.",
+    "Original-correct145 and151 are no longer L3; historical113 preservation fails.",
+    "Historical-correct140 uses2 P requests versus1 C request; per-task cost preservation fails."
+  ],
+  "first_pair_counts": {
+    "total": 156,
+    "identical": 154,
+    "different": 1,
+    "not_applicable": 1
+  },
+  "causal_scope": {
+    "mechanical_P_task": "Prob143_fsm_onehot",
+    "mechanical_P_requests": 0,
+    "mechanical_P_level": "L3",
+    "fallback_improvement_task": "Prob140_fsm_hdlc",
+    "fallback_first_reply_identical": false,
+    "fallback_improvement_attributable_to_onehot": false,
+    "all_first_replies_identical": false,
+    "production_routes_use_task_ids": false
+  },
+  "original_collector": {
+    "cap_s": 180,
+    "timeout": false,
+    "exec_confirmed": true,
+    "returncode": 0,
+    "leader_reaped": true,
+    "remaining_group": [],
+    "elapsed_s": 8.388847433030605,
+    "stdout_sha256": "75434eee7f6532080a98fd158eca6d20acd71b6649938a1282e0309a843994f1",
+    "stdout_bytes": 216,
+    "normal_completion": true,
+    "child_identity": {
+      "pid": 1967112,
+      "starttime": "862511975"
+    }
+  },
+  "compatible_auditor": {
+    "cap_s": 180,
+    "timeout": false,
+    "exec_confirmed": true,
+    "returncode": 0,
+    "leader_reaped": true,
+    "remaining_group": [],
+    "elapsed_s": 4.80475209094584,
+    "stdout_sha256": "56e21dbc1986e46070d7f9c285f5b3b7d18fda5d2078aa40567d629e6c1fe93a",
+    "stdout_bytes": 257,
+    "normal_completion": true,
+    "child_identity": {
+      "pid": 1967338,
+      "starttime": "862513177"
+    }
+  },
+  "terminal_receipt_sha256": "659575fa93cc7e19cf877696fe8f3f3bb57a0bca457763667c630852f62d3a39",
+  "observer_receipt_sha256": "2f094e6b5c8697812eae1a65d633caeca1acdd2a2d0ed1a4407f097b636239cc",
+  "external_receipt_sha256": "f182208bc1ec79ef442629cbedf3c363743b387d7c21d624ac167b08a6038a00",
+  "complete_budget": {
+    "total_cap_s": 450,
+    "child_cap_s": 430,
+    "cleanup_reserve_s": 20,
+    "collector_cap_s": 180,
+    "compatible_auditor_cap_s": 180,
+    "terminal_elapsed_s": 20.948432190343738,
+    "external_exit_reap_cleanup_artifact_elapsed_s": 21.219362787902355,
+    "observer_elapsed_s": 22.54542663320899,
+    "fake_cleanup_injection_used": false,
+    "all_terminal_and_observer_identities_retired_independently": true
+  },
+  "failed_v1": {
+    "preserved": true,
+    "archive": {
+      "path": "/workspace/team/runs/fpga_owner/onehot109_compatible_terminal_failure_20261007_v1/FAILED_OBSERVER_ARCHIVE.zip",
+      "sha256": "ec8bd48dda8aa9c2d52a03a9e72d077e544bd5e0c28a0272fbbe267851e99699",
+      "bytes": 38555,
+      "members": 31,
+      "every_member_dual_bound": true,
+      "manifest_member_sha256": "f8c218d7b141cf4ba579f5574795e77021cf3174a8bcde417271b5858b742a38"
+    },
+    "returncode": 1,
+    "child_pid": 1953677,
+    "original_collector_calls": 0,
+    "original_complete_auditor_calls": 0,
+    "compatible_auditor_calls": 0,
+    "stdout_sha256": "ad40dc77d06baefcf5e331fc8dee89d3ec943ec5ced0baa9010544216831f762",
+    "stdout_bytes": 269,
+    "failure": "57-char Python executable SHA rejected before budget/try/original once intent; no original project call."
+  },
+  "new_closure_model_calls": 0,
+  "new_closure_eda_calls": 0,
+  "new_fifo": false,
+  "original_complete_auditor_calls": 0,
+  "original_and_shared_model_preserved": true,
+  "primary_hashes": {
+    "STATUS.md": "779b5966af1b2a1a0475f29a2eaa6b9543e3dd44ef3b0f932ce33e5306762465",
+    "SNAPSHOT.json": "2463e95c74c49bdce0b41281da1b4f70e269468fd0caeae7a0d7ddac71a8e870"
+  },
+  "budgets": {
+    "tokens": 8192,
+    "max_requests": 2,
+    "repairs": 1,
+    "solver_s": 300,
+    "judge_s": 300,
+    "judge_supervisor_s": 360,
+    "xz_retained": true,
+    "retries": 0
+  },
+  "development_set_only": true,
+  "independent_unseen": 0,
+  "five_sample_qualification": false,
+  "peer_scope": "Peer126 independently accepts PR125 source24/6 FAKE inventory controls/archive35 and original109 complete development evidence only. Six actual review files are read and SHA-bound; 11396 recorded guard identities plus FIFO runner/child/monitor3 remain separate. P114/weighted77.8205% is rejected; no unseen, five-sample, full inclusive batch or current PRIMARY proof is inferred.",
+  "current_runs": {
+    "110": {
+      "state": "running",
+      "monitor_live": true,
+      "observed_outputs": 121,
+      "observed_requests": 127,
+      "all116_sources_held": true,
+      "complete": false,
+      "snapshot_only": true,
+      "same_handle_only": true,
+      "observation_artifact_name": "SERIAL_FULL156_110_READ_1791354526561860400"
+    },
+    "111": {
+      "state": "queued",
+      "monitor_live": true,
+      "all123_sources_held": true,
+      "native_qualified": false,
+      "same_handle_only": true,
+      "planned_cases": 14,
+      "planned_native_commands": 42,
+      "planned_guards": 85,
+      "planned_binary_observations": 12568
+    }
+  },
+  "quota_policy": {
+    "reset_authorization_revoked": true,
+    "max_reset_consumptions": 0,
+    "reset_consumed": false
+  },
+  "next": "Preserve rejected109 and same110/111 handles. Close110 once after actual terminal/guard release/retirement. Native111 must physically qualify with its own original auditor and complete archive before new frame CP8. Prompt-derived event/update-permission/priority/hold obligations are being drafted; no execution, qualification or score gain is yet claimed. A qualified task-blind single factor must pass fixed screening and cost/grade gates before fresh full156.",
+  "peer_review126": {
+    "issue": "https://github.com/854259/FPGA/issues/7#issuecomment-6032175059",
+    "public_pr": "https://github.com/854259/FPGA/pull/126",
+    "head": "dcc77f2c67a04a1a25fa8f29ccb10457aee971a5",
+    "merge": "df3b615e27c78ad4c4b0a83470078b9e81a7606a",
+    "files": {
+      "/workspace/team/activity/fpga_teammate/artifacts/peer125-inventory-compat-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "73ee3a24d92e5f44ba1e6264b349f10114fc6458a8324d17ae51189577937be1",
+      "/workspace/team/activity/fpga_teammate/artifacts/peer125-inventory-compat-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "a47fbbfe16ff018d8ec1119c989571821a2bba7cf9734ee97c47f2be4785d18c",
+      "/workspace/team/activity/fpga_teammate/artifacts/peer125-inventory-compat-bounded-review-20261007-v1/PUBLIC_FULL156_FREEZE_REVIEW.json": "b1c27320d93aa12f81732cb9454e4da2c6004ddc3ec2e4184437635a93bd15cc",
+      "/workspace/team/activity/fpga_teammate/artifacts/onehot109-terminal-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "fc7a19a0cd939a4dd38e7487e1153e29131d46fb867f12d7e404774b9b334d8e",
+      "/workspace/team/activity/fpga_teammate/artifacts/onehot109-terminal-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "a3b47bc8f782e4d817b2aa1f860553c6e6a54f10db5ae5afeefe92f60962de61",
+      "/workspace/team/activity/fpga_teammate/artifacts/onehot109-terminal-bounded-review-20261007-v1/PUBLIC_ONEHOT_CP7_FREEZE_REVIEW.json": "70be41271694f34df98db90d8622f517fd49ac2badf06241d6d45a4d42275d3d"
+    },
+    "accepted_scope": "Peer126 independently accepts PR125 source24/6 FAKE inventory controls/archive35 and original109 complete development evidence only. Six actual review files are read and SHA-bound; 11396 recorded guard identities plus FIFO runner/child/monitor3 remain separate. P114/weighted77.8205% is rejected; no unseen, five-sample, full inclusive batch or current PRIMARY proof is inferred.",
+    "primary_scope": "Original receipt booleans and recorded hashes only; no new independent current primary-directory proof."
+  }
+}

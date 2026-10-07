@@ -1,0 +1,92 @@
+{
+  "schema": "onehot109_complete_terminal_source_scope_public_v1",
+  "original_root": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+  "original_spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+  "original_source_files": 136,
+  "original_collector_sha256": "d906f10f8ab3a26cf7c577fdebab0ccb0c2314d9793ba5b3c6f7f0a795e8a25a",
+  "original_auditor_sha256": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+  "original_complete_auditor_calls": 0,
+  "compatible_entry": "/workspace/team/runs/fpga_owner/full156_inventory_compat_pure_20261007_v1/109/compatible_audit.py",
+  "compatible_auditor_sha256": "8037b8c10885fb405f32fe5b82ecaae92902fb4eb0734a472e20df095ec73174",
+  "modified_auditor_disclosed": true,
+  "compatibility_source_files": 24,
+  "original136_and_compatible24_preserved": true,
+  "terminal_source_files": 9,
+  "terminal_source_manifests": {
+    "child": {
+      "manifest_sha256": "52093785aedadb23c9d507430737b12879629d2bd58249070a15bcb8661076bf",
+      "files": {
+        "LOCAL_SOURCE_PLAN.json": "f855aa7c367dcd623429720e3ba89a3b45bb13cf925ce33b8fbe789c7fb5b8df",
+        "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+        "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+        "terminal_supervisor.py": "3e5ddb6947e1adfe13c835202fccf5a0d450adef2102092588f5bbe50723ba63"
+      }
+    },
+    "monitor": {
+      "manifest_sha256": "2592d97fa609e914698a3689b5c786b64822f32d698353e14ac24d40e3df1a33",
+      "files": {
+        "MONITOR_CONFIG.json": "1d2c4aac366d2616b6a31aa11ac3f956cc485db48036dc59178df80b7af3a2b3",
+        "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+        "monitor_terminal.py": "2d5dae9dcdd611256386bbc6d42e83ac6d85f14a0386fad9ada801029d47e653",
+        "owned_tree_cleanup.py": "5dd37bb39db4616b3411a51878124987ce51f0a289174b81dad0d81e34b134ad",
+        "terminal_outer.py": "569b70a5881ae97267e4035a71a3371d753b3487bbf0efd4f09c3d838bc993b1"
+      }
+    }
+  },
+  "original_inventory_groups": 125,
+  "original_inventory_records": 7928,
+  "original_inventory_unique_files": 7802,
+  "historical_same_sha_duplicate_references": 126,
+  "real_original_protection_receipts": 625,
+  "synthetic_original_protection_receipts": 0,
+  "original625_strict_comparisons_preserved": true,
+  "original_judge_grades_budgets_cost_gates_preserved": true,
+  "correction": {
+    "failed_v1_preserved": true,
+    "old_python_sha_length": 57,
+    "new_python_sha_length": 64,
+    "only_logic_change": "Canonical Python executable SHA literal; separate namespaces and source pointers disclosed.",
+    "terminal_monitor_plan_reverse_byte_exact": true,
+    "config_reverse": "Restore original child_root/observer_root/child_sources whole mapping including insertion order/child_manifest_sha256, then serialize indent2+LF to recover the complete original bytes.",
+    "all5_reused_helpers_byte_exact": true
+  },
+  "original_once_intent": "COMPATIBLE_TERMINAL_AUDIT_INTENT.json",
+  "original_once_intent_shared_across_versions": true,
+  "collector_calls": 1,
+  "compatible_auditor_calls": 1,
+  "scoring_reruns": 0,
+  "old_compatibility6_and_controls_not_replayed": true,
+  "archives": {
+    "original": {
+      "path": "/workspace/team/runs/fpga_owner/onehot109_compatible_terminal_20261007_v2/terminal_original109.zip",
+      "sha256": "7d00ebb5ba9d914b358a53784417c42c157ea41609b0d2f4b33fb8bbb8034eaa",
+      "bytes": 84697850,
+      "members": 12002,
+      "every_member_dual_bound": true,
+      "manifest_member_sha256": "24471891637f24e3804c1169816dd3b9c7c44fad7cbcc24b0ce89e52205de6a2"
+    },
+    "observer": {
+      "path": "/workspace/team/runs/fpga_owner/onehot109_compatible_terminal_evidence_20261007_v2/TERMINAL_OBSERVER_EVIDENCE.zip",
+      "sha256": "543b90459d86e86ba74ef03fbda9829b91fa8b19ce009463ff2ecba047968ab5",
+      "bytes": 420640,
+      "members": 51,
+      "every_member_dual_bound": true,
+      "manifest_member_sha256": "dcc0f609adaf730abdebee1055e05185ba6ca5665521ca30b4137f0c630c1907"
+    },
+    "failed_v1": {
+      "path": "/workspace/team/runs/fpga_owner/onehot109_compatible_terminal_failure_20261007_v1/FAILED_OBSERVER_ARCHIVE.zip",
+      "sha256": "ec8bd48dda8aa9c2d52a03a9e72d077e544bd5e0c28a0272fbbe267851e99699",
+      "bytes": 38555,
+      "members": 31,
+      "every_member_dual_bound": true,
+      "manifest_member_sha256": "f8c218d7b141cf4ba579f5574795e77021cf3174a8bcde417271b5858b742a38"
+    }
+  },
+  "private_code_RTL_prompts_TB_wires_process_streams_provenance_and_archive_bodies_excluded": true,
+  "retired_identity_scope": {
+    "recorded_guard_identities": 11396,
+    "fifo_runner_child_monitor_identities": 3,
+    "recorded_total": 11399,
+    "arbitrary_system_process_retirement_proved": false
+  }
+}
