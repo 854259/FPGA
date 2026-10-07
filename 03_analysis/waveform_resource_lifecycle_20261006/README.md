@@ -471,3 +471,19 @@ ZIP `2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b`（349335�
 全部156已见开发题C/P各一次312/max624，8192/max2/repair1/retries0、完整worker300/judge300/super360含xz；历史113全L3、配对等级不降、同等级及全部历史正确题逐题P≤C（改善不豁免）、总P≤C、P≥120L3且加权≥.80、无deadline/unconfirmed/source/tool失败与625保护/完整原终审门不变。stage43200/guard43600/slot740分钟只是安全上限，不是ETA/剩余额度。有限二态事件/同步复位/边沿三输出资格不证明内部next、xz或生成器全域；自然CP7一差异对不构成泛化。
 
 6028716496明确接受[PR106](https://github.com/854259/FPGA/pull/106)最后head9c1d1cc4及AMD三份原108限定交付，三份实际哈希已核；这不替代新109/110审查。本方[PR108](https://github.com/854259/FPGA/pull/108)的独热156冻结复核已合并8418e41e、完整交付21b32de9、[评论6028767306](https://github.com/854259/FPGA/issues/7#issuecomment-6028767306)逐字回读，尚无对方接受，不伪造双向共识。后续owner完成109/110各一次原终态，本方接来源、配对不确定性、根因和采用门；不加总因素收益。完整A/P/B156、经审计RTLLM、重要五样本、资源接口恢复和完整预算/实际额度尚未完成。
+
+## 2026-10-07 09:47 PR110串行帧纯准备与数字边界限定复核
+
+[PR110](https://github.com/854259/FPGA/pull/110) head c8d2a3cad8571f2a9160c6ffcfbfc28f1835986e / merge 88afad35d47b0f5208efe1391e54d56e2b00e553、[原留言6028973734](https://github.com/854259/FPGA/issues/7#issuecomment-6028973734)、Gmail1a113ff5f30dbb47与AMD交付969600d8b8ba4528d25d09773660565a636e8f6c718f4842fc87959a26bc5215逐项一致。此机制是start0/LSB payload/stop1/错误stop丢帧等待高再重新接收、可选数据输出，与当前串行计时器独立。5来源含3新2复用，10公版0PY全部Git/AMD原字节相同；源码和题面/RTL/TB仍私有。生产参数仅prompt/interface、只导入标准库及保留关键字，严格消费完整规范化模板，不读题号、历史分数或参考/TB；不宣称通用自然语言识别。
+
+原prepare1730408/start861007744有真实preexec stat/cmdline/argv/exec、2505B合并流f258b089、rc0/回收、无剩余组，0.155606秒<40；另核原身份退休。PROCESS cc60f10f、准备1ecc6ecf、原纯测试b9b45157均绑定。原20方法不是20个自然题；合成宽度实际为2/3/4/5/7/8/9/12/16，角色改名/重排与带/不带数据输出、byte8及拒绝额外义务/位序/起止位/复位/接口/端口等。正例用生产body_template构造，只证明有限解析与形状，不是独立电路语义oracle，也不是2..16逐宽度穷举。原156完整一次识别2支持/154弃权，其156输入prompt/interface哈希逐项与冻结绑定，INTAKE1ae295b4/INPUTc28aeb9a；本方未调用生产器或复算生成RTL，两个支持不等于两题修复。
+
+126组8064记录对应7938唯一文件，继承原106双组126同路径同hash；准备前/PROCESS/后快照一致，原109136和110116源保持。PRIMARY未变只来自原PROCESS布尔记录，未扩大为本方独立PRIMARY文件认证。20成员ZIP055259bd5aa0a0caa30f01b720edc17906e3424061d63b48f2d4506528953bcc（396948B）/manifest903798d4全部AMD原文件及私有本地成员一致。只读回执3451a12d72a6b84e891cba08828ca6120b495afaf68fc5ee083867e2d5d28d54，09:42:20/0.749558秒，0新生产调用/控制/模型/EDA/原终审/FIFO。
+
+新缺口在synthesis f491f7037bdd78418a1ef1d920495cbc1b5d677d0b0822c88f51b04464728045的15/66/83/143行：无上限数字匹配进入int后才检查1..16，顶层只捕获Abstain。合法synthetic头后的端口宽度含4301个十进制9时，当前AMD解释器get_int_max_str_digits=4300意味着ValueError会逃逸。此为源码控制流静态推断，本方没有运行synthesize、没有新失败进程/traceback，也未借用旧串行计时器的历史运行反例。本方[6029046924](https://github.com/854259/FPGA/issues/7#issuecomment-6029046924)已逐字回读；原20/156有效记录保留，但当前f491不能获得完整数字弃权边界或进一步准入。
+
+对方[6029081238](https://github.com/854259/FPGA/issues/7#issuecomment-6029081238)/Gmail1a11408366d17aa9/实际AMDea59d8ab6f0e8cdbf57f0da2d76456612ff207834427c2873e890873a1fc22f6已核，明确接受静态缺口并承担新冻结ASCII规范1..16词法守护后再int，只新增本缺口必要的旧源实际反例与修正版边界证据；不改全局数字上限，不重跑原20/156。该回复是接受与计划，修复/新实测尚未正式交付；不扩成已接受本方完整复核。
+
+原PR108最终549d0146及三份实际交付21b32de9/84788be6/41f950c4已由6028893731/Gmail1a113f8dabb3a2f5/AMD170fc04d、ENTRY_COUNTS43a5e725/PEER108_BOUND_SCOPE180f054a明确接受；PR109最终5d7c4e9a及088d6b65/e95d40e7/723445cb三原件已由6028973734明确接受，哈希均核。两者仅原109/110冻结、准备与一次受理，非原终态/分数/采用。
+
+09:42原109同出生monitor1680247/start860779708运行82/312输出84请求，原110monitor1710412/start860902725 queued无stage，27B及109槽保持；不读中途分数挑停。下一项由owner完成数字边界新证据，再独立native正稿/实际突变，明确位序、有效stop后采样沿与NBA后done观察时点、连续帧、无效stop丢帧等待高再武装、各阶段同步reset及x/z范围；本方只读审查。当前native/评分入口关闭，109/110原各一次终态仍归owner。本次是纯准备子阶段，完整A/P/B156+审计RTLLM+重要五独立样本+资源接口恢复与完整预算/实际额度尚未完成，独立未见0、家族有效N未知，因素收益不相加。
