@@ -501,3 +501,17 @@ ZIP `2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b`（349335�
 接受新aaac数字边界修复及原8项控制，允许独立native准备；不将旧20/原156的2支持154弃权追授给新源，旧20/156均不重跑。新源native/评分/采用仍false；下一步owner冻结独立正稿/实际RTL突变，明确位序、有效stop采样沿及NBA后done时点、连续帧、错误stop丢帧等待高再武装、各阶段同步reset和x/z范围。合格后才新固定同预算C/P，净收益/逐题和总成本/守护门之后才同因素新156。此前[PR112](https://github.com/854259/FPGA/pull/112)完整原纯准备复核已合并fb06feb9，实际6093dc71、公版79e05377、只读3451a12d和[6029200679](https://github.com/854259/FPGA/issues/7#issuecomment-6029200679)逐字回读；6029081238接受静态缺口不能扩成收到完整复核。
 
 09:56原109运行100/312输出104请求、110原monitor排队无stage，模型/槽/冻结不变。原各一次collector/auditor仍归owner，本方接109/110终态来源、配对不确定性、根因与采用门。已见开发、独立未见0/家族N未知；不相加因素收益，不按中途分数停轮。完整A/P/B156+审计RTLLM+重要五样本+资源接口恢复和完整总预算/实际额度仍未闭合。
+
+## 2026-10-07 10:11 PR114串行帧独立原生材料限定复核
+
+[PR114](https://github.com/854259/FPGA/pull/114) head 90f46c79168ae8a757bad0544d6a374e37e56c35 / merge 41f448e4b32bc2d88834dd559a1c98caaea330fc、[6029347308](https://github.com/854259/FPGA/issues/7#issuecomment-6029347308)、Gmail1a1141c5599fc5b8与AMD交付ba204c6aa8f374ce47a0ad83752cbb7f2907dac486bd6b594464818d2fae7639一致。7源4新3继承、10公版0PY与Git/AMD逐字匹配；aaac生产器、owned9981、keywords3546沿用已核来源。旧数字18成员13282612档案及旧控制保留，没有重跑原20/156、新8或旧timer107。
+
+独立framing_fixture a24526fe无import，完整题面literal与输入流packet/cursor oracle独立于生产body_template和DUT状态/索引，不读取参考RTL、TB或模型结果生成预期。原6材料方法包括literal有效/坏stop恢复、reset中断、实际单项突变逆转、观测相位/数据掩码及同步reset。正稿覆盖有限payload2/3/5/7/8/9/16及可选数据、端口角色/顺序。每个case原prompt/interface/RTL/TB/expected五文件全部绑定，总14case/70文件/12568预期观测。6突变逐项与byte_data原稿单处正反替换一致，prompt/interface/TB/expected完全沿用同一原稿；witness指向预期不同位，但没有真实工具输出，不能宣称突变已检出。
+
+测试台在有效stop正沿NBA后观察done，包含pre正沿、post正沿、post反沿、连续帧、坏stop持续low/等待high重武装和各阶段同步reset。原初始pre-reset未知窗口不伪造为0；TRACE next恒0只是占位，done=0只掩蔽data而不掩蔽done。异步reset突变的witness在reset_after_valid的pre正沿，指向前一有效输出脉冲。只接受有限二态材料，不证明全宽度/XZ/内部next或任意自然题。后续实际42工具、85保护回执及原始测量/来源审计仍待；不能借计时器107原生资格。
+
+原prepare1770361/start861198353真实preexec stat/cmdline/argv/exec、1793B合并流aee0c5c6095e11d53d7ed83e9dba03352e086b76c7cceab52f29d42cb1ab7f2c、rc0/回收/无remaining及当前身份退休均核，0.216764秒<40。PROCESS8c9616b25aecf52967c7cf332373950ec8581ad01b185121564bd750b8b6f0fb与receipt4cfc454eb9f622e693d333151314ef359ee5bf7d7b40a202110bf25ee6f32aca、流末精简JSON及原CASE_PLANb4e0b1c7a46754bf11c71e588285a410e865fc960fcf56683bf1e75bbe8aa24d一致；材料6方法实际列入原流并OK，本方未执行生产器、oracle、calibration或测试。90成员ZIP421ca414205d5b2a2d671683962d2a24fe22a709d8ab3df289a26d8b959e0017（519632B）全部AMD原文件/私有本地成员核验。126组8064来源记录/7938唯一及109136/110116来源、共享27B保持，PRIMARY只原PROCESS布尔，不独立认证。只读5db4e3c74a79a45450fa5d9bdd27e0be900399ded544832ea592bfb685e300d6，10:09:47/0.959493秒，0新控制/模型/EDA/原终审/FIFO。
+
+[PR112](https://github.com/854259/FPGA/pull/112)的3451a12d/79e05377/6093dc71获[6029279652](https://github.com/854259/FPGA/issues/7#issuecomment-6029279652)完整限定接受；[PR113](https://github.com/854259/FPGA/pull/113)的61c5b29c/45a32ea7/b4aec20d获6029347308完整限定接受，六原文件本次逐项核验。数字4300两读数为初始化/首个方法的口径已被对方采纳，原回执不改、不补跑。SSH连接超时同根续读、Git旧标记拒绝、材料交付前HOLD仍限定对方自报，不补造其本地过程证据。
+
+接受材料准备限定范围；owner继续stage/audit/guard/resource与新14case/输出宽度/85guards接合及新来源验证，然后冻结、按原串行资源规则执行独立native。实际资格后才同预算固定C/P前测，净收益和守护/逐题总成本合格才同因素156。原8192/max2/repair1/retries0/完整worker300/judge300/super360含xz、历史113/配对等级/逐题及总请求/120和.80门不变。10:09原109运行121/312输出127请求，110排队无stage，原各一次收尾归owner。已见开发、独立未见0/家族N未知；完整A/P/B156+RTLLM+五样本+资源接口恢复和完整预算/实际额度尚未闭合。
