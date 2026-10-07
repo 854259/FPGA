@@ -1,0 +1,38 @@
+{
+  "schema": "literal_timing_qualification_source_scope_public_v1",
+  "literal_source_files": 6,
+  "wiring_source_files": 22,
+  "literal_source_manifest_sha256": "19aa1d965087b69e0bb148a674878b0890c43598b61855a628a8df0670f7f35a",
+  "wiring_source_manifest_sha256": "ea2187cf142410179b98b9da3bd0e3f84145ceac489f671ed4d2823126e0614c",
+  "factor_sha256": "e59a42925363e4840bf69677e61ed84c9039f1a0bd41e65f40facc89a6710cb2",
+  "wrapper_sha256": "1d6e8af688e697dbe1e1a5ed3300e26634e56d3fdeb2a4d51625fee95431efb5",
+  "worker_sha256": "b86bc41a6044033005883b38ddf235bf6175284b0041bac39e55ed2c8bf6740a",
+  "baseline_worker_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+  "original_baseline_and10_support_files_preserved": true,
+  "task_blind_production_inputs": "original prompt/interface only",
+  "initial_P_append_only": true,
+  "C_repair_abstain_exactwire": true,
+  "original_system_and_model_parameters_preserved": true,
+  "maximum_appended_user_characters_including_marker": 8192,
+  "whole_abstain_no_truncation": true,
+  "original_requests_HTTP_and_compile_accounting_retained": true,
+  "model_request_delta": 0,
+  "literal_archive": {
+    "path": "/workspace/team/runs/fpga_owner/prompt_literal_timing_pure_20261007_v1/PURE_EVIDENCE.zip",
+    "sha256": "d731c13fa3e573d40a9683b5f119b1df19ecc676b7e796aa5e5dbdfb1004fb83",
+    "bytes": 124013,
+    "members": 18,
+    "every_member_dual_bound": true,
+    "manifest_member_sha256": "d5d6138148dab958bd9b66914f78828a899997a4f81acb99950c312489a9dbae"
+  },
+  "wiring_archive": {
+    "path": "/workspace/team/runs/fpga_owner/prompt_literal_timing_wiring_pure_20261007_v1/PURE_EVIDENCE.zip",
+    "sha256": "3ce79b2c085d21191a9d6f393ffa5a2b70867cfceeb9cb9d0e0cb6f1143f643a",
+    "bytes": 214580,
+    "members": 229,
+    "every_member_dual_bound": true,
+    "manifest_member_sha256": "73dc99f7625083fcb0a1ea24403e51c4f822e97418f4e822417e6bebda9c2fe8"
+  },
+  "real_new_resource_guard_claimed": false,
+  "private_sources_prompts_RTL_TB_HTTP_body_process_streams_excluded": true
+}
