@@ -1,0 +1,60 @@
+{
+  "schema": "timing112_terminal_cp8_next_source_scope_public_v1",
+  "original112_source_files": 125,
+  "original112_source_check_receipts": 61,
+  "original112_protected_groups": 141,
+  "original112_inventory_records": 8825,
+  "original112_inventory_unique_files": 8699,
+  "same_sha_duplicate_references": 126,
+  "original112_raw_files_dual_bound": 56,
+  "original112_archives": {
+    "original": {
+      "sha256": "a98adb0bd7c38268fbba25aa9f7cbb888ee04f115f4e7d78c70507551f1f46c8",
+      "bytes": 12522604,
+      "members": 1455,
+      "manifest_sha256": "def895bc518f3224c5957ae63b062f1164304465adb3f4f4f9dffb608ff8e7cc",
+      "every_member_bound_both_ends": true,
+      "local_private_stdlib_member_readback": true
+    },
+    "supplement": {
+      "sha256": "6feda602bc27db5c3cd179b101844782ad53a9ee525109ce51a7aeb25c00002f",
+      "bytes": 6146657,
+      "members": 70,
+      "manifest_sha256": "6e8fa2ecaf44278f7ef5868846a6bffc2d26d7b414a7c0182b696e046ed1c7ca",
+      "every_member_bound_both_ends": true,
+      "local_private_stdlib_member_readback": true
+    }
+  },
+  "complete_dual_postexit_sha256": "a71ec9748b60b61e3b230bcce51647a962f19e8115a4761e5aee0e71a3e24930",
+  "cp8_spec_sha256": "b11485bc55efe5eaf9c5dde6d55ed6f4d719eee4548a5e906b3f344f75518167",
+  "cp8_source_files": 112,
+  "cp8_preparation_receipt_sha256": "1a9290cfd9f42d281c3663be90e9a4b417389ea9786d7971a7a8170bd7c08720",
+  "cp8_preparation_archive": {
+    "sha256": "713fff6cc54a7a4ae08b8c6e06e1cb61332d2c31c93b6d9a12e094cf8d1d0c26",
+    "bytes": 22839471,
+    "members": 124,
+    "every_member_bound_both_ends": true
+  },
+  "native111_finite_reuse": {
+    "controls": 14,
+    "positive": 8,
+    "mutants": 6,
+    "native_commands": 42,
+    "protection_receipts": 85,
+    "observations": 12568,
+    "all_parameters_qualified": false,
+    "xz_qualified": false
+  },
+  "native111_original_archive_sha256": "2c11944ff948f4dae8cdbbdebad12e45f47f570c93e52bd284d4208d893613e3",
+  "native111_original_audit_sha256": "a909a642fc7f55b79b57915bf6981a0463359c30aca8b858ef48c92a9c4d1809",
+  "native_archive_binding_sha256": "76b376712c9fa89d48251c2056c17f1f0932570b4fb85569a496922fd36ad19f",
+  "old_controls_replayed": 0,
+  "new_preparation_model_calls": 0,
+  "new_preparation_eda_calls": 0,
+  "published_source_implementations": false,
+  "private_prompts_wires_RTL_TB_credentials_source_implementations_stat_cmdline_and_archive_bodies_excluded": true,
+  "original_packet96_asset_bytes_retained_in_original_root": true,
+  "production_core_source_unchanged": true,
+  "old134_capture_preserved_separately": true,
+  "new_same_path_capture_bound_current141": true
+}
