@@ -361,5 +361,114 @@
     "new_natural_score": false,
     "adoption": false,
     "next": "Owner closes original110/111 first, then decides on this single-factor fixed15 under frozen gates and real resource/budget readiness. Match actual first-wire SHA before applying predicted capacity; repair capacity remains unknown. Review outer observer originals with next necessary delivery, no old reruns."
+  },
+  "fixed15_preliminary_result_review": {
+    "reviewed_at": "2026-10-07T19:32:00+08:00",
+    "scope": "Preliminary read-only retained evidence review plus owner conclusion and four receipt hashes; complete archive and external-process audit not independently reviewed.",
+    "ticket": 112,
+    "peer_pr": 132,
+    "peer_head": "a9990d9f8dcf47b3b76c3d9a2b30e3d483758d5b",
+    "spec_sha256": "8a2a1b4a5484b5e3db52fcd4b969d0edfddcbd7354559f912b41664cb5e6a8c1",
+    "summary_sha256": "98a8e9bb1405a57895d0b4d7bcaf4c82db1b52f52b47c74e04a4d3719cc52532",
+    "retained_inventory_sha256": "af10061b4f01893fc8e4e52076bc305b1a83eee9ee61ae5aa71b42a92e1ed9ee",
+    "discussion": "https://github.com/854259/FPGA/issues/7#issuecomment-6037011259",
+    "measurement_complete": true,
+    "original_monitor_retired": true,
+    "paired_tasks": 15,
+    "solver_outputs": 30,
+    "l3": {
+      "C": 4,
+      "P": 5
+    },
+    "l3_rate": {
+      "C": 0.26666666666666666,
+      "P": 0.3333333333333333
+    },
+    "weighted": {
+      "C": 0.4,
+      "P": 0.4666666666666667
+    },
+    "requests": {
+      "C": 19,
+      "P": 19
+    },
+    "paired_l3": {
+      "both": 3,
+      "P_only": 2,
+      "C_only": 1,
+      "neither": 9
+    },
+    "descriptive_exact_mcnemar_two_sided_p": 1,
+    "historical_correct_restored_L3": 2,
+    "outside_historical_correct_new_L3": 0,
+    "other_L0_to_L1": 1,
+    "frozen_screening_eligible": false,
+    "adoption": false,
+    "same_factor_full156_admitted": false,
+    "failed_frozen_conditions": [
+      "One C-L3 to P-L1 regression",
+      "Two historical-correct cases remain below L3",
+      "One historical-correct case uses C1 versus P2 requests"
+    ],
+    "passed_cost_conditions": [
+      "Total requests unchanged",
+      "Unchanged-grade per-task request cost"
+    ],
+    "all_task_cost_scope": "Reported false, but not an additional screening veto.",
+    "bound_evidence": {
+      "rows": 30,
+      "verdicts": 30,
+      "final_compiled_sources": 30,
+      "request_files": 38,
+      "response_files": 38,
+      "first_pair_original_prefix_and_common_parameters": 15
+    },
+    "preliminary_environment": "125 frozen sources and model identity unchanged; summary reports no deadlines, unconfirmed requests or tool errors. Owner terminal declaration received; complete terminal resource audit not independently reviewed.",
+    "root_cause": {
+      "observed": "The regressed candidate replaces state-dependent transitions with toggling on either event; the control retains state-dependent conditions.",
+      "C_source_sha256": "39dbf82970c08a31039f117bbea364aee2bc0820c7ff8d8dab54106fbc6ca16e",
+      "P_source_sha256": "7efc443e10a9806f08245fcee03a536ca67525e286ba261ee21922ec88012f6e",
+      "original_prompt_sha256": "919cdcd7f0e136616a0641235c5ce56a3b30a3db24c6c24676d6115ee5c25b64",
+      "retained_mismatches": {
+        "C": 0,
+        "P": 83,
+        "observations": 229
+      },
+      "limit": "Complete literal paragraphs were preserved. A single pair identifies the generated-code defect, not a universal causal proof that highlighting alone causes it."
+    },
+    "stage_elapsed_seconds": 2198.4370600283146,
+    "elapsed_scope": "Recorded stage scope, not complete external terminal closure.",
+    "independent_unseen_tasks": 0,
+    "effective_independent_family_n": "unknown",
+    "five_sample_qualified": false,
+    "full_inclusive_batch_complete": false,
+    "next_action": "Both parties agree to abandon this literal-highlight candidate. Owner selects one of prepared serial/framing CP8, concise-output prompt A or a general agent extraction fix after existing budget/data admission and necessary mechanism controls; none is submitted yet. Keep the original official baseline unchanged.",
+    "owner_retains_original_terminal_and_next_submission": true,
+    "new_reviewer_model_eda_control_auditor_fifo_calls": 0,
+    "peer_conclusion": {
+      "comment": "https://github.com/854259/FPGA/issues/7#issuecomment-6037062332",
+      "received_and_hash_bound": true,
+      "conclusion_sha256": "4296a0db902a6b962f6dc00c84d6f186bff8b6226571a95161477aa2e3f06917",
+      "audit_sha256": "4b2fea3833e001817c89d69284ce05c434e2592009f94ac36a50fbdd7f0173b0",
+      "bound_receipt_hashes": 4,
+      "owner_accepts_rejection": true,
+      "owner_reports_original_collector_and_auditor_once": true,
+      "reviewer_independently_audited_complete_terminal_archive": false,
+      "first_wire_capacity": "Owner reports 15 C predicted-wire matches and 15 P mismatches (CRLF/LF suspected from two inspected examples); original prediction not fulfilled, no re-tokenization or retrospective capacity pass."
+    },
+    "extraction_followup": {
+      "discussion": "https://github.com/854259/FPGA/issues/7#issuecomment-6037143895",
+      "evidence": "Retained first response contains a commented endmodule before the real terminator; retained compiled source ends at the commented keyword and its log reports unexpected EOF. Static frozen extractor uses non-greedy module-to-endmodule matching without comment handling.",
+      "finish_reason": "stop",
+      "completion_tokens": 3914,
+      "commented_keyword_character_offset": 8896,
+      "real_terminator_character_offset": 10179,
+      "response_sha256": "6ec45a33233188fc5219c5e0501b7e10b405189ba2dff6771c8f7d2c249ecb1d",
+      "compiled_source_sha256": "0a7760ca5de5d20f2c6d3545b2677c2061a22bdd6ee3e5d44f35cf10fe138222",
+      "compile_log_sha256": "01174aa7bc4f433c0cbca13f5886e62cd2fad388954b1d274f009326ba7188ce",
+      "frozen_extractor_file_sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "source_review_only_no_reexecution": true,
+      "status": "General mechanism defect identified; candidate patch or prompt change has not been tested or adopted."
+    }
   }
 }
