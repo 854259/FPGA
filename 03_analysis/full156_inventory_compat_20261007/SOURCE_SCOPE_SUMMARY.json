@@ -1,0 +1,59 @@
+{
+  "schema": "full156_inventory_compat_source_scope_public_v1",
+  "original_bindings": {
+    "109": {
+      "original_root": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+      "spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+      "original_files": {
+        "audit.py": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+        "metrics.py": "b438a55573474b93e90687185e50cf03474fcd27da9c3677794ddb21808db1c8",
+        "upstream/replay.py": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+        "dependencies/full156_postflight_audit.py": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+        "EXTERNAL_SOURCE_MANIFEST.json": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+        "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "729c323bcdcbfe65bfd887caabd2a176c0e983b51ab074d761b9774011916761"
+      },
+      "unique_files": 7802,
+      "source_records": 7928,
+      "compatible_audit_sha256": "8037b8c10885fb405f32fe5b82ecaae92902fb4eb0734a472e20df095ec73174",
+      "reverse_restores_exact_original_auditor": true,
+      "original_complete_auditor_calls": 0,
+      "compatible_complete_auditor_calls": 0,
+      "original_collector_calls": 0,
+      "expected_original_protection_receipts": 625
+    },
+    "110": {
+      "original_root": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_full156_20261007_v1",
+      "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+      "original_files": {
+        "audit.py": "63698813e1593a82c1a79c9e954cf40c3f415048e27ba605ea1e3d32dd0ddd7c",
+        "metrics.py": "9b2ca5565cc7639a86f910f2557dc860dfd2709274b1fb91334594b18295aad0",
+        "upstream/replay.py": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+        "dependencies/full156_postflight_audit.py": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+        "EXTERNAL_SOURCE_MANIFEST.json": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+        "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "31a57e9cbd073fd32a680b3170fab140fb37f9bb425b54af541fbf0a47917db2",
+        "raw_evidence/IMMUTABLE_ORIGINAL109_CAPTURE.json": "61972041751052691c9e42e0683a7d49e51abb9a956c8c32271ed711409091c3"
+      },
+      "unique_files": 7938,
+      "source_records": 8064,
+      "compatible_audit_sha256": "75d4f2338a0ff42d9d885cd7cb44b22860ee8b6de871110df30b60cb52480e73",
+      "reverse_restores_exact_original_auditor": true,
+      "original_complete_auditor_calls": 0,
+      "compatible_complete_auditor_calls": 0,
+      "original_collector_calls": 0,
+      "expected_original_protection_receipts": 625
+    }
+  },
+  "same_path_duplicates_require_identical_sha": true,
+  "record_sum_and_unique_paths_bound_separately": true,
+  "original625_checks_and_original_grades_budgets_cost_gates_byte_unchanged": true,
+  "preload_checks_original_spec_and_four_support_files": true,
+  "original110_109group_7389record_anchor_retained": true,
+  "original109_full125group_capture_exact_sha_pinned": true,
+  "original_complete_auditor_calls": 0,
+  "compatible_complete_auditor_calls": 0,
+  "collector_calls": 0,
+  "new_inventory_and_source_controls": 6,
+  "FAKE625_rows_not_original_resource_protection_evidence": true,
+  "original_diagnostic31_not_replayed": true,
+  "actual_full_audit_not_yet_performed": true
+}

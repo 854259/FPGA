@@ -1,0 +1,198 @@
+{
+  "schema": "full156_inventory_compat_actual_pure_public_v1",
+  "root": "/workspace/team/runs/fpga_owner/full156_inventory_compat_pure_20261007_v1",
+  "source_files": 24,
+  "source_manifest": {
+    "COMPAT_SOURCE_PROOF.json": "31abf7214d133150e1e33a8767c02d25a5b740a2bbabdd6c74cfe8d931f046ed",
+    "CONTROL_PLAN.json": "1ea0103321ac5511a6e0173102735780a82f69a6c10aaeb80128c1aa5c2ed310",
+    "test_inventory_compat.py": "aff80d18279e6bdb044b75849a20459134e72e185d9c0d5d8c20f170b6857115",
+    "109/audit.py": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+    "109/compatible_audit.py": "8037b8c10885fb405f32fe5b82ecaae92902fb4eb0734a472e20df095ec73174",
+    "109/EXTERNAL_SOURCE_MANIFEST.json": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+    "109/metrics.py": "b438a55573474b93e90687185e50cf03474fcd27da9c3677794ddb21808db1c8",
+    "109/RUN_SPEC.json": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+    "110/audit.py": "63698813e1593a82c1a79c9e954cf40c3f415048e27ba605ea1e3d32dd0ddd7c",
+    "110/compatible_audit.py": "75d4f2338a0ff42d9d885cd7cb44b22860ee8b6de871110df30b60cb52480e73",
+    "110/EXTERNAL_SOURCE_MANIFEST.json": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+    "110/metrics.py": "9b2ca5565cc7639a86f910f2557dc860dfd2709274b1fb91334594b18295aad0",
+    "110/RUN_SPEC.json": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+    "dependencies/owned_exec.py": "9981c3a36183787d559aaed73fcfd34d36e6a7354e5da1874cf5308c6ee476c5",
+    "dependencies/protected_sources.py": "53507373aa69e54ccd083a6452fb7acaa0cdbc144d2bdf0e01710b21cfd5ed1a",
+    "raw_evidence/IMMUTABLE_ORIGINAL134_CAPTURE.json": "c605a6dd04b17a7c60a998baddbbb084803a0d687221327530020d6b51132fe1",
+    "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "61039bbbefbbf8cdc8481b79134054e5cc9b431c698375fedc5fef64a4c49aff",
+    "109/dependencies/full156_postflight_audit.py": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+    "109/raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "729c323bcdcbfe65bfd887caabd2a176c0e983b51ab074d761b9774011916761",
+    "109/upstream/replay.py": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+    "110/dependencies/full156_postflight_audit.py": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+    "110/raw_evidence/IMMUTABLE_ORIGINAL109_CAPTURE.json": "61972041751052691c9e42e0683a7d49e51abb9a956c8c32271ed711409091c3",
+    "110/raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "31a57e9cbd073fd32a680b3170fab140fb37f9bb425b54af541fbf0a47917db2",
+    "110/upstream/replay.py": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6"
+  },
+  "actual_new_controls": 6,
+  "actual_owned_process": {
+    "schema": "owned_preexec_birth_gate_v1",
+    "cap_s": 40,
+    "timeout": false,
+    "exec_confirmed": true,
+    "returncode": 0,
+    "remaining_group": [],
+    "elapsed_s": 4.188665261492133,
+    "leader_reaped": true,
+    "stdout_sha256": "539afcd5b8a2f94fe20a365a4e7c468a4ab14bb6c5dcbc2c80d3e06a1bc2a292",
+    "stdout_bytes": 1406,
+    "normal_completion": true,
+    "child_identity": {
+      "pid": 1868943,
+      "state": "T",
+      "starttime": "861836188",
+      "pgid": 1868943,
+      "sid": 1868943,
+      "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+    }
+  },
+  "receipt_sha256": "d547cb51f73ddc6e36be1d123e0b77f4228279ec85b1f6c060a85d3c46e1db39",
+  "archive_sha256": "4bed076032ceb72a079221dc02a58166a15e8a9d76e13d2d8138ee22f1e9e296",
+  "archive_bytes": 1314541,
+  "archive_members": 35,
+  "every_member_bound_both_ends": true,
+  "post_exit": {
+    "passed": true,
+    "root": "/workspace/team/runs/fpga_owner/full156_inventory_compat_pure_20261007_v1",
+    "receipt_sha256": "d547cb51f73ddc6e36be1d123e0b77f4228279ec85b1f6c060a85d3c46e1db39",
+    "archive_sha256": "4bed076032ceb72a079221dc02a58166a15e8a9d76e13d2d8138ee22f1e9e296",
+    "original_child_retired_separately": true,
+    "all24_sources_and_original_archive_members_amd_bound": true,
+    "original109_110_support_bytes_bound": true
+  },
+  "source_scope": {
+    "schema": "full156_inventory_compat_source_scope_public_v1",
+    "original_bindings": {
+      "109": {
+        "original_root": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+        "spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+        "original_files": {
+          "audit.py": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+          "metrics.py": "b438a55573474b93e90687185e50cf03474fcd27da9c3677794ddb21808db1c8",
+          "upstream/replay.py": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+          "dependencies/full156_postflight_audit.py": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+          "EXTERNAL_SOURCE_MANIFEST.json": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+          "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "729c323bcdcbfe65bfd887caabd2a176c0e983b51ab074d761b9774011916761"
+        },
+        "unique_files": 7802,
+        "source_records": 7928,
+        "compatible_audit_sha256": "8037b8c10885fb405f32fe5b82ecaae92902fb4eb0734a472e20df095ec73174",
+        "reverse_restores_exact_original_auditor": true,
+        "original_complete_auditor_calls": 0,
+        "compatible_complete_auditor_calls": 0,
+        "original_collector_calls": 0,
+        "expected_original_protection_receipts": 625
+      },
+      "110": {
+        "original_root": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_full156_20261007_v1",
+        "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+        "original_files": {
+          "audit.py": "63698813e1593a82c1a79c9e954cf40c3f415048e27ba605ea1e3d32dd0ddd7c",
+          "metrics.py": "9b2ca5565cc7639a86f910f2557dc860dfd2709274b1fb91334594b18295aad0",
+          "upstream/replay.py": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+          "dependencies/full156_postflight_audit.py": "6b141e6da0bac31fd2a3f00ed448f5f600eabe327eaa93594259d760f8d07ba3",
+          "EXTERNAL_SOURCE_MANIFEST.json": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+          "raw_evidence/PROTECTED_GROUPS_CAPTURE.json": "31a57e9cbd073fd32a680b3170fab140fb37f9bb425b54af541fbf0a47917db2",
+          "raw_evidence/IMMUTABLE_ORIGINAL109_CAPTURE.json": "61972041751052691c9e42e0683a7d49e51abb9a956c8c32271ed711409091c3"
+        },
+        "unique_files": 7938,
+        "source_records": 8064,
+        "compatible_audit_sha256": "75d4f2338a0ff42d9d885cd7cb44b22860ee8b6de871110df30b60cb52480e73",
+        "reverse_restores_exact_original_auditor": true,
+        "original_complete_auditor_calls": 0,
+        "compatible_complete_auditor_calls": 0,
+        "original_collector_calls": 0,
+        "expected_original_protection_receipts": 625
+      }
+    },
+    "same_path_duplicates_require_identical_sha": true,
+    "record_sum_and_unique_paths_bound_separately": true,
+    "original625_checks_and_original_grades_budgets_cost_gates_byte_unchanged": true,
+    "preload_checks_original_spec_and_four_support_files": true,
+    "original110_109group_7389record_anchor_retained": true,
+    "original109_full125group_capture_exact_sha_pinned": true,
+    "original_complete_auditor_calls": 0,
+    "compatible_complete_auditor_calls": 0,
+    "collector_calls": 0,
+    "new_inventory_and_source_controls": 6,
+    "FAKE625_rows_not_original_resource_protection_evidence": true,
+    "original_diagnostic31_not_replayed": true,
+    "actual_full_audit_not_yet_performed": true
+  },
+  "peer_reviews": {
+    "121": {
+      "actual_read": true,
+      "head": "aeba767309b48fbec9b752fae81b2bb04048bf41",
+      "files": {
+        "/workspace/team/activity/fpga_teammate/artifacts/peer120-framing-worker-bounded-review-20261007-v1/PUBLIC_SERIAL_FRAMING_REVIEW.json": "001887a88f9e75ef7bd4ef26023fc172dda6db8c18687a898c50010185245f3f",
+        "/workspace/team/activity/fpga_teammate/artifacts/peer120-framing-worker-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "e64f0266712bb46ad6d07bb9199c4fca896733a4673bac1cdcc8a05ee6b5e94f",
+        "/workspace/team/activity/fpga_teammate/artifacts/peer120-framing-worker-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "6b82adcfeb8bb20c4bb44def543337010159f76a3a40e9722fa1f42bd4178589"
+      },
+      "scope": "PR120 worker75-source pure integration:original21 methods20passed/1wrong separate-interface expectation preserved; corrected1 passes with original20 function/helper exact reuse; two86-member archives bounded. Gate hashes/claimed counts are not physical archive audit, native111 still pending. Source-dependent FAKE workflow scope only, no formal native/score/full-batch/adoption. PRIMARY only peer original receipt boolean",
+      "acknowledgment_scope": "Previously accepted bounded historical review only; no review of this new entry implied."
+    },
+    "122": {
+      "actual_read": true,
+      "head": "8f402a1ef333843e948ca57b6aea7fc63fb93d25",
+      "files": {
+        "/workspace/team/activity/fpga_teammate/artifacts/original109-110-inventory-static-review-20261007-v1/PUBLIC_FULL156_FREEZE_REVIEW.json": "9ddf6028206df507218b2b0bd66b3b3b694c0215e390d72a03fd6b000694fa41",
+        "/workspace/team/activity/fpga_teammate/artifacts/original109-110-inventory-static-review-20261007-v1/READ_ONLY_STATIC_REVIEW.json": "121f197b46719411fe968cb79a23428d30af1a7335ec802a21073fcf4292761f",
+        "/workspace/team/activity/fpga_teammate/artifacts/original109-110-inventory-static-review-20261007-v1/ACTUAL_DELIVERY.json": "b52ba36ab0508b8880ad33eb3e34bb51f0de5aeb042b9d3be74ed542a0a1fa37"
+      },
+      "scope": "Static source/inventory review only. No original subfunction/complete audit/collector/control/model/EDA/FIFO call. Separate from owner actual31 diagnostics.",
+      "acknowledgment_scope": "Previously accepted bounded historical review only; no review of this new entry implied."
+    },
+    "124": {
+      "actual_read": true,
+      "head": "ac2b63d855616a3f4e81cfcc39f61be769bb32fc",
+      "files": {
+        "/workspace/team/activity/fpga_teammate/artifacts/peer123-framing-cp8-pipeline-bounded-review-20261007-v1/PUBLIC_SERIAL_FRAMING_REVIEW.json": "1fa7751f4e47650d8c8c38c983a0ad613138bb82f1af57915cb6de3f2396bf14",
+        "/workspace/team/activity/fpga_teammate/artifacts/peer123-framing-cp8-pipeline-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf",
+        "/workspace/team/activity/fpga_teammate/artifacts/peer123-framing-cp8-pipeline-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "e1a83ae04751f06f311b7679a459bb6d4b8d929bbce4e836020edf367860a06d"
+      },
+      "scope": "Bounded PR123 pipeline review:96 sources/31 methods including two old inventory-subfunction diagnostics/108 archive; FAKE33 guards only; original full auditors and collectors uncalled. Native111 and real full625 guards pending. Reviewer no new project function/model/EDA/FIFO call. Not review of new compatible6.",
+      "accepted_scope": "Only prior PR123 source96/31 FAKE methods/108 archive plus original inventory-subfunction counterexamples; not current compatible6, true625 or real native111."
+    }
+  },
+  "protected_groups": 135,
+  "protected_source_records": 8648,
+  "protected_unique_files": 8522,
+  "immutable_original134_capture_sha256": "c605a6dd04b17a7c60a998baddbbb084803a0d687221327530020d6b51132fe1",
+  "original134_8540_and_old_anchors_retained": true,
+  "guard_rows_explicitly_FAKE": true,
+  "physical_original625_guards_proved": false,
+  "original_complete_auditor_calls": 0,
+  "compatible_complete_auditor_calls": 0,
+  "original_collector_calls": 0,
+  "actual_model_requests": 0,
+  "actual_native_commands": 0,
+  "new_fifo": false,
+  "native_qualified": false,
+  "new_score": false,
+  "adoption": false,
+  "independent_unseen": 0,
+  "goal_status": "active",
+  "goal_achieved": false,
+  "competition_budgets": {
+    "tokens": 8192,
+    "max_requests": 2,
+    "repairs": 1,
+    "solver_s": 300,
+    "judge_s": 300,
+    "judge_supervisor_s": 360,
+    "xz_retained": true,
+    "retries": 0
+  },
+  "historical113_grades_per_task_total_cost_120_and80_gates_unchanged": true,
+  "quota_policy": {
+    "reset_authorization_revoked": true,
+    "max_reset_consumptions": 0,
+    "reset_consumed": false,
+    "ordinary_usage_may_continue": true
+  },
+  "next": "Keep original109/110/111 and frozen sources intact. After each true terminal/guard release/monitor retirement, collect original evidence once and run the separately frozen disclosed compatible audit once for109/110. Original111 native physical qualification precedes any new frame CP8 score entry. No replay, redraw, score addition or unchecked adoption."
+}
