@@ -6,11 +6,11 @@
       "preserved": "完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准",
       "frequency_override": "仅旧5分钟频率由用户最新15分钟决定覆盖；下一轮具体门槛仍待共同冻结"
     },
-    "updated_at": "2026-10-07T21:16:00+08:00",
+    "updated_at": "2026-10-07T22:33:00+08:00",
     "status": "active_takeover_authorized_peer_A_execution_coordinated",
     "user_confirmed": {
       "joint_discussion_and_faster_progress": true,
-      "check_interval_minutes": 15,
+      "check_interval_minutes": 30,
       "deadline": null,
       "completion_basis": "完整验收；不设截止时间",
       "daily_progress_email": {
@@ -106,9 +106,10 @@
       "private_raw_evidence_and_pr_delivery": true
     },
     "next_actions": [
-      "Peer currently finishes the actual frozen A preparation and unique original-budget submission; reviewer has completed bounded source/wire review and follows actual ticket/results. Fallback authorization applies if peer stops responding and no conflict exists.",
-      "If peer remains unavailable and no real conflicting work/ticket exists, take over remaining preparation/freezing/submission within existing budget instead of waiting for an ACK.",
-      "Keep next actual scoring detached on AMD when admitted, and report real L3/weighted results and full-acceptance gaps in the noon email."
+      "Reject A114; preserve negative results and original terminal, no A156 or resampling.",
+      "Reviewer prepares the independent static-elaboration mechanism and generic controls; native/model execution remains subject to an exact fresh freeze and existing budget/resource admission.",
+      "Peer continues unique CP8 same-factor156 night admission; verify actual ticket before claiming queued; fallback takeover follows current ownership checks.",
+      "Complete unchanged full acceptance scope, noon email and detached night work; cadence30 minutes."
     ],
     "unresolved": [
       "A is actually frozen on AMD, but no scoring ticket was present at21:10; finalize current preparation and unique execution responsibility without repeating old tests.",
@@ -529,7 +530,7 @@
       "directly_authorized": true,
       "authorized_at": "2026-10-07",
       "replaces": "Earlier no-takeover/wait-only/owner-exclusive-next-submission restrictions when delayed-response condition applies.",
-      "operational_default": "Two consecutive 15-minute checks without an actionable reply trigger ownership/live-process/lock/ticket/result/source-progress checks; when no conflict, announce exact scope in Issue7 and proceed without requiring an ACK. Real preparation progress receives parallel support, not blind duplicate submission.",
+      "operational_default": "With the latest30-minute monitoring cadence, persistent lack of actionable replies triggers current process/lock/ticket/result/source-progress/ownership checks; when there is no conflict, announce exact scope in Issue7 and proceed under existing budget without waiting for ACK. Never duplicate real preparation or a submitted run.",
       "permitted_scope": [
         "Candidate preparation and necessary fixes",
         "Existing-budget admission and freeze",
@@ -590,7 +591,7 @@
       "new_fifo_calls": 0,
       "new_accuracy": false,
       "full_inclusive_batch_complete": false
-    }
+    },"latest_first_system_A_result_review":{"updated_at":"2026-10-07T22:33:00+08:00","ticket":114,"kind":"known-development pretest; not complete inclusive batch","spec_sha256":"3ec6455085a0a31586a4de6341b7d7f460bd18b6a1d65b15345ddac7bcf0ed71","summary_sha256":"9a41918c1dfdd958a71ab60e9ad8cc39998bcac98f6f128ec64bf50a5eed6d36","completed_outputs":30,"known_tasks":15,"independent_unseen_tasks":0,"effective_independent_family_n":null,"L3":{"C":4,"P":4},"L3_rate":{"C":0.26666666666666666,"P":0.26666666666666666},"weighted":{"C":0.4,"P":0.4},"requests":{"C":19,"P":19},"pairs":{"both_L3":4,"C_only":0,"P_only":0,"neither":11},"L3_net_gain":0,"grade_changes":{"up":1,"down":1},"uncertainty":"No L3-discordant pairs; zero observed difference does not establish equivalence or generality.","completion_tokens":{"C":20697,"P":12613},"stage_elapsed_seconds":1918.4870487507433,"elapsed_scope":"Original scoring stage only; not complete external closure.","screening_eligible":false,"adoption":false,"full156_admitted":false,"five_sample_qualified":false,"full_inclusive_batch_complete":false,"exceeded_historical118":false,"reviewer_verified":{"frozen_files":106,"rows_solutions_verdicts":30,"request_response_pairs":38,"P_first_suffix_only":15,"C_original_wires":19,"P_original_repair_wires":4,"first_reply_content_equal":0,"final_solution_equal":2},"root_cause":"One grade regression passed candidate xvlog but failed static elaboration with incompatible combinational/sequential procedural drivers. Its full generated terminator was retained; finish=stop and1159 completion tokens. This is a general compile/elaboration coverage gap, not the earlier commented-endmodule extraction failure.","owner_terminal":{"comment":"https://github.com/854259/FPGA/issues/7#issuecomment-6039780788","gmail_id":"1a116b67aa9128f9","mail_original_exact":true,"conclusion_sha256":"b9b0f9997f8b9375bcb4d82c05a38b976c185b465a811fb55adae27b28610f75","actual_conclusion_hash_verified":true,"audit_sha256":"249e106211637e34c23f272e1fb41901ead58d03f8fb61b04a188cde04d193ff","owner_reports_original_collector_and_auditor_once":true,"owner_accepts_rejection":true,"complete_terminal_archive_independently_reviewed":false,"original_pending_snapshot_preserved":true},"decision":"Reject A under original gates; no same-factor156 and no wording tweaks/resampling on these results.","reviewer_result_comment":"https://github.com/854259/FPGA/issues/7#issuecomment-6039471890","next_mechanism_comment":"https://github.com/854259/FPGA/issues/7#issuecomment-6040017934"},"static_elaboration_preparation":{"status":"source patch prepared; pure-file application and AST parse verified on AMD; runtime/native/scoring unverified","path":"03_analysis/agent_static_elaboration_20261007/static_elaboration.patch","patch_sha256":"9b174d44f91d64009e119a09cbe1322a20c6648a8bc533af2bf4d2825f8edac4","original_files":{"map_runtime":"2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba","baseline_worker":"b1f396a3a54b065ef2e0b19fc3aa54973aea41a6b82577a51b4cfc2e32876852"},"prepared_files":{"map_runtime":"c8d4a369611bd97aca61749ae885e9428cad8c5362d5a7ae8023ddd2a708d40e","baseline_worker":"cdca09cb49e7676a7dcbcc803bff88cf29d2b7aeb7494c4f06d3acb160438876"},"reviewer_owns":"New independent static-elaboration patch and generic-control preparation.","peer_owns":"Existing CP8 same-factor156 admission and unique night submission; not yet verified as submitted.","preserved":"C and original baseline unchanged; remove rejected A factor; max2/repair1 stay; ordinary and declaration-fix exits covered; candidate-only tools under existing owned supervision.","required_before_execution":["Fresh common C/P source/dependency freeze and owned activity_root","Task-independent native and controlled-flow materials","Exact command count, full time, budget/resource/FIFO admission","Updated provenance audit covering elaboration receipts without reusing A audit as proof"],"static_check_limit":"Git apply/reverse-check and AST parse only, no import or project runtime. An initial copy-location check failed before project execution because Git skipped paths outside its repository; an owned temporary repository corrected the file check. The earlier Windows command-length rejection executed nothing on AMD.","new_model_calls":0,"new_EDA_calls":0,"new_FIFO_calls":0,"active_frozen_files_changed":0,"temporary_copy_removed":true,"native_qualified":false,"accuracy_measured":false}
   },
   "helper_extraction_20261004": {
     "status": "approved_batch_completed_and_archived_research_only",
