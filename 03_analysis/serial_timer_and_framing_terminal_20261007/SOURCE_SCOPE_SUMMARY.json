@@ -1,0 +1,121 @@
+{
+  "schema": "serial110_complete_terminal_source_scope_public_v1",
+  "original_root": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_full156_20261007_v1",
+  "original_spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+  "original_source_files": 116,
+  "original_collector_sha256": "d906f10f8ab3a26cf7c577fdebab0ccb0c2314d9793ba5b3c6f7f0a795e8a25a",
+  "original_auditor_sha256": "63698813e1593a82c1a79c9e954cf40c3f415048e27ba605ea1e3d32dd0ddd7c",
+  "original_complete_auditor_calls": 0,
+  "compatible_auditor_sha256": "75d4f2338a0ff42d9d885cd7cb44b22860ee8b6de871110df30b60cb52480e73",
+  "modified_auditor_disclosed": true,
+  "compatibility_source_files": 24,
+  "terminal_child_source_files": 4,
+  "monitor_source_files": 5,
+  "terminal_source_manifests": {
+    "child": {
+      "manifest_sha256": "2ec3b7e74a5e1c8f878c9135150c7a2e2040d65682abd8c2df89cc550857c038",
+      "files": {
+        "LOCAL_SOURCE_PLAN.json": "fa9d41771b4574b66f60f57eeceb231a314d9aa4b2b450418d28ae2c49d504e7",
+        "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+        "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+        "terminal_supervisor.py": "88a6bbd5b0d97661ceb3f6a133cfa76a8ac05b3272f15da111385422591742bd"
+      }
+    },
+    "monitor": {
+      "manifest_sha256": "d54bf585c03a022f8e5bcde5dc6dd41da6ea4d6ac9a07a950eaf873bfeaf78a8",
+      "files": {
+        "MONITOR_CONFIG.json": "054e704c3d9029083e1b6de2488ce9f2cf0d91fff856e37eb458681cddf7d1ac",
+        "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+        "monitor_terminal.py": "dc2cf3f7d240c5a12c8adc63f7bb409b715363c322c00d73f92166d40d86bb4a",
+        "owned_tree_cleanup.py": "5dd37bb39db4616b3411a51878124987ce51f0a289174b81dad0d81e34b134ad",
+        "terminal_outer.py": "569b70a5881ae97267e4035a71a3371d753b3487bbf0efd4f09c3d838bc993b1"
+      }
+    }
+  },
+  "original_inventory_groups": 126,
+  "original_inventory_records": 8064,
+  "original_inventory_unique_files": 7938,
+  "historical_same_sha_duplicate_references": 126,
+  "original625_real_protection_receipts": true,
+  "original625_strict_each_receipt_comparisons_preserved": true,
+  "synthetic_original_protection_receipts": 0,
+  "original116_compatible24_terminal4_monitor5_held": true,
+  "reused_helpers_and_template_qualification": true,
+  "no_qualification_controls_replayed": true,
+  "collector_calls": 1,
+  "compatible_auditor_calls": 1,
+  "original_and_new_once_intents_preserved": true,
+  "no_original_scoring_rerun": true,
+  "original_archive": {
+    "remote_path": "/workspace/team/runs/fpga_owner/serial110_compatible_terminal_20261007_v1/terminal_original110.zip",
+    "local_private_path": "E:\\26qiansai\\private_archives\\completed_tests_20261007_v1\\original110.zip",
+    "sha256": "bfc644c9945379642739f548c6d494b16dc29d1ee3bd508bbc969252c10ef9ca",
+    "bytes": 97660880,
+    "members": 11982,
+    "every_member_dual_bound": true,
+    "manifest_member_sha256": "e050ea0adfb28c5f3dd6311f0154bdc7ecd9186c777c7c1b6c7b24f2a99f9561",
+    "full_original_physical_binding_observed_before_exact1250_raw_guard_offload": true
+  },
+  "closure_raw": {
+    "files": 46,
+    "bytes": 2626731,
+    "every_original_byte_dual_bound": true,
+    "dual_receipt_sha256": "7d80a39415b0f0fc1c2f8beeda8215ad76ea338ffbdc65e740e1b3bf4c03d968",
+    "local_private_root": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\SERIAL110_CLOSURE_RAW_DUAL_1791367590705289100\\actual_files"
+  },
+  "original_guard_bytes": 565388015,
+  "complete_dual_postexit_sha256": "e366725cc5be72eeef3ff003cfb823ed2e976c400c083b74a50568dbd65cf405",
+  "original_restore_metadata_sidecar_sha256": "c90d2ace85e01ebdef4c1c1d04af143c2528c7b47616f074d0198dae64e32588",
+  "archive_permission_scope": "Original110 raw guard JSON ZIP entries default0600; actual original mode/mtime captured in the independent local restore sidecar, and combined1250 offload sidecar preserves UID/GID/mode/mtime.",
+  "private_prompts_wires_RTL_TB_source_implementations_stat_cmdline_and_archive_bodies_excluded": true,
+  "native111": {
+    "original_spec_sha256": "97adb9aa656b7df1eabd37757f2bedf6f01138e10b692baf8e9703ddeccb560e",
+    "original_auditor_sha256": "3e970defdb1ced56a5cc4134a292f3d11dc448dd030c3781674845ac435079c3",
+    "original_source_files": 123,
+    "protected_groups": 131,
+    "protected_records": 8242,
+    "protected_unique_files": 8116,
+    "duplicate_same_sha_references": 126,
+    "real_guard_receipts": 85,
+    "child_source_files": 4,
+    "monitor_source_files": 5,
+    "source_manifests": {
+      "child": {
+        "manifest_sha256": "a6d7f7af00842b89a964b34a335b9f729e6df0e6a7788df5c37eb71687d1f1f8",
+        "files": {
+          "LOCAL_SOURCE_PLAN.json": "caf666abde20a9d9d560baa06d888bc9582fb10c5c5114f9b10948018720836e",
+          "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+          "full_budget.py": "76198551f43162fcc64a4c79b805cfc509bb22c76d39baeca63ddc9a64ec98ee",
+          "terminal_supervisor.py": "69625410b7c5fbf7be3ca6682a103a696c265ce5dc9205e4cd13d313bddbba97"
+        }
+      },
+      "monitor": {
+        "manifest_sha256": "395cbd3a07184cea0431b65a0339494fda31e76456184b83e08e6106017ddb04",
+        "files": {
+          "MONITOR_CONFIG.json": "7e02da4c7392bf613e9ffb87d129b6230624c032d530fe332a6fa3422bd42518",
+          "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+          "monitor_terminal.py": "dd2c07acc1d9d79cd6c07e0f30d54bcf423f297a0351c3ace2cb37839a7b8eb1",
+          "owned_tree_cleanup.py": "5dd37bb39db4616b3411a51878124987ce51f0a289174b81dad0d81e34b134ad",
+          "terminal_outer.py": "569b70a5881ae97267e4035a71a3371d753b3487bbf0efd4f09c3d838bc993b1"
+        }
+      }
+    },
+    "collector_adapter_disclosed": true,
+    "original123_contains_a_collector": false,
+    "original_auditor_calls": 1,
+    "collector_adapter_calls": 1,
+    "original807_plus_once_intent_files": 808,
+    "complete_archive_members": 829,
+    "complete_archive_sha256": "2c11944ff948f4dae8cdbbdebad12e45f47f570c93e52bd284d4208d893613e3",
+    "complete_archive_manifest_sha256": "e44b7d883c199f55a1c256feed0166e668b109e46673e95cb0b460fa369c8102",
+    "closure_raw_files": 39,
+    "closure_raw_bytes": 159220,
+    "complete_dual_postexit_sha256": "f6a70855a60ef397c6d1ef4e56a0093c9d6598bf9f5d4966b447de88d2e7ee3d",
+    "qualification_scope": "Finite binary stream/output/synchronous-reset observations only, next constant0 placeholder, data masked only when done0; not all-parameter/XZ/score/unseen proof.",
+    "original_native_EDA_model_not_rerun": true,
+    "full_score_measured": false,
+    "goal_qualified": false,
+    "adoption": false
+  },
+  "original625_presence_scope": "Genuine original stage receipts and ZIP verified before offload. After completed exact1250 offload, current physical equality to those1250 raw cloud paths is retired; complete E/cloud ZIP and original restore sidecar remain."
+}
