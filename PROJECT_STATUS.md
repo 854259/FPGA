@@ -1,3 +1,9 @@
+## 2026-10-08 组合生成来源核验通过，复用旧资格推进评分冻结
+
+新增只读9元数据/转录正向及38拒绝控制AMD通过；两机械元数据明确人为构造、六原模拟服务记录仅核验不重跑worker。绑定题面→selector/两producer→原recipe/RTL及原first/repair/reply/final，fc5f1d2b原replay逐字复用，模拟native不得授真实生成资格。0新worker/model/EDA/FIFO；旧native/intake/完整auditor不重跑。exec0/reaped约0.282秒、独立退休；623原件c0010b36已AMD/E逐项绑定。
+
+尚无新完整评分stage/归档auditor或真实组合成功输出，不记提分/全156/采用。依队友6052152576有限静审意见，复用原producer/native资格，只补变化接口与评分冻结；peer保留123/三臂/原终态，root下一模型任务仍PR166 pair2。目标120/.80 ACTIVE。详见 [来源核验](03_analysis/history_generation_proof_20261008/PUBLIC_RESULT.json)，旧节点与正文保留。
+
 ## 2026-10-08 组合worker12接线及原baseline/runtime6+1新上下文通过，尚无评分资格
 
 PR168唯一recipe selector接入原机械worker：C/弃权P保持原common7ff7/runtime2f7/skills，命中recipe原样保留并绑定所选源码，无新修复。AMD12完整wrapper模拟上下文与6实际原baseline/runtime/skills+1传输失败模拟服务上下文通过，首次及repair C/P wire逐字相同；0真实模型/EDA/FIFO，旧worker方法/算法/native/156 intake不重跑。67/200原件c27f1737/983ea44c已AMD/E逐项绑定、两个exec0/reaped并独立退休。首本地CRLF适配断言失败保留、AMD未执行，显式newline/位置SHA逆向恢复原字节。
