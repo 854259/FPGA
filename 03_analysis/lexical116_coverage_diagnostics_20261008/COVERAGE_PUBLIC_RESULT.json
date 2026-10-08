@@ -1,0 +1,29 @@
+{
+  "schema": "lexical_peer115_response_coverage_public_v1",
+  "original_physical_responses": 333,
+  "changed_extractions": 0,
+  "unchanged_extractions": 333,
+  "all333_span_selected": true,
+  "original_response_bytes_and_peer120_sources_unchanged": true,
+  "reference_TB_or_correct_answers_used": false,
+  "task_path_passed_to_production_helper": false,
+  "whole_child_hard_cap_s": 300,
+  "actual_child_elapsed_s": 0.47683107666671276,
+  "process_exec_rc0_reaped": true,
+  "result_sha256": "64fd957439e88d349adbb9dad69b450731e014147d61623dc747a7068449fb63",
+  "archive": {
+    "archive_sha256": "6ec423d40439103270107cfabe3cffe5033fad958be8bb9bfc2e1508a7a4d4d9",
+    "archive_members": 15,
+    "archive_bytes": 78977,
+    "all_members_E_AMD_bound": true
+  },
+  "receipt_sha256": "9c7875faf817f00cbc75d3c3139657ecc3f87e5a54d3167f5c2b015693b4a330",
+  "new_model_calls": 0,
+  "new_EDA_calls": 0,
+  "new_FIFO": false,
+  "new_scoring_calls": 0,
+  "scoring_deferred_for_no_observed_coverage": true,
+  "scope": "Zero observed impact on these responses does not prove no impact on all future responses.",
+  "score_measured": false,
+  "adoption": false
+}
