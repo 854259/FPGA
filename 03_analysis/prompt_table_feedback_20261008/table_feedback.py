@@ -47,6 +47,7 @@ def render_tb(parsed, task):
             expected = row['expected']
             lines += ['_tf_checks=_tf_checks+1;', f"if(_tf_o !== 1'b{expected}) begin",
                       f'if(_tf_bad==0) $display("TABLE_FIRST row={index} expected={expected} observed=%b",_tf_o);',
+                      f'$display("TABLE_POINT row={index} expected={expected} observed=%b",_tf_o);',
                       '_tf_bad=_tf_bad+1; end']
     lines += [f'$display("R2_PROBE_RESULT task={task} checks=%0d mismatches=%0d",_tf_checks,_tf_bad);',
               f'if(_tf_checks!={parsed["checks"]}) $fatal(1,"CHECK_COUNT_INVALID");',
@@ -67,6 +68,54 @@ def counterexample(log, parsed):
         raise ValueError('counterexample contradicts the prompt contract')
     return dict(inputs=row['inputs'], output=parsed['table']['output_port']['name'],
                 expected=int(expected), observed=observed)
+
+
+def counterexamples(log, parsed, mismatches):
+    """Bind every emitted mismatch; deduplicate the forward/reverse visits."""
+    first = counterexample(log, parsed)
+    lines = [line for line in log.splitlines() if line.startswith('TABLE_POINT')]
+    if len(lines) != mismatches or not 0 < mismatches <= parsed['checks']:
+        raise ValueError('counterexample count disagrees with the measured result')
+    rows = parsed['table']['rows']
+    points, seen, visits = [], set(), {}
+    for line in lines:
+        match = re.fullmatch(r'TABLE_POINT row=(\d+) expected=([01]) observed=([01xz])', line)
+        if match is None:
+            raise ValueError('malformed table counterexample')
+        index, expected, observed = match.groups()
+        index = int(index)
+        if index >= len(rows):
+            raise ValueError('counterexample row out of range')
+        row = rows[index]
+        if not row['care'] or row['expected'] != int(expected) or expected == observed:
+            raise ValueError('counterexample contradicts the prompt contract')
+        visits[index] = visits.get(index, 0) + 1
+        if visits[index] > 2:
+            raise ValueError('counterexample exceeds the two recorded row visits')
+        point = dict(inputs=row['inputs'], output=parsed['table']['output_port']['name'],
+                     expected=int(expected), observed=observed)
+        if not points and point != first:
+            raise ValueError('first counterexample disagrees with the observation stream')
+        if (index, observed) not in seen:
+            seen.add((index, observed))
+            points.append(point)
+    return points
+
+
+def format_feedback(points, parsed, mismatches):
+    ports = parsed['table']['input_ports']
+    lines = [f"A check derived only from the complete combinational table in the prompt "
+             f"found {mismatches} mismatches in {parsed['checks']} checks (forward and reverse order).",
+             "Measured counterexamples; input values use explicit Verilog binary literals:"]
+    # At most four input bits are admitted, so this is at most 32 observations.
+    for point in points:
+        values = ', '.join(f"{p['name']}={p['width']}'b{point['inputs'][p['name']]:0{p['width']}b}"
+                           for p in ports)
+        lines.append(f"inputs {values}; expected {point['output']}=1'b{point['expected']}, "
+                     f"observed {point['output']}=1'b{point['observed']}.")
+    lines.append('Recheck the complete prompt table, including cases that already worked. '
+                 'Repair the RTL; do not treat one counterexample as the entire specification.')
+    return '\n'.join(lines)
 
 
 def check(prompt, code, out, attempt, paired, task, root):
@@ -92,12 +141,11 @@ def check(prompt, code, out, attempt, paired, task, root):
         return ''
     if result['status'] != 'fail' or result['failure_kind'] != 'semantic_mismatch' or not 0 < result['mismatches'] <= parsed['checks']:
         raise RuntimeError('table tool/protocol failure; no fabricated feedback')
-    point = counterexample((folder / 'probe/xsim.log').read_text(encoding='utf-8', errors='replace'), parsed)
-    paired.save(folder / 'counterexample.json', point)
-    values = ', '.join(f'{name}={value}' for name, value in point['inputs'].items())
-    feedback = (f"A check derived only from the complete combinational table in the prompt found: "
-                f"inputs {values}; expected {point['output']}={point['expected']}, "
-                f"observed {point['output']}={point['observed']}.")
+    points = counterexamples((folder / 'probe/xsim.log').read_text(encoding='utf-8', errors='replace'),
+                             parsed, result['mismatches'])
+    paired.save(folder / 'counterexample.json', points[0])
+    paired.save(folder / 'counterexamples.json', points)
+    feedback = format_feedback(points, parsed, result['mismatches'])
     (folder / 'feedback.txt').write_text(feedback, encoding='utf-8', newline='\n')
     return feedback
 

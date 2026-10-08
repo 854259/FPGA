@@ -1,3 +1,7 @@
+## 当前候选版本（2026-10-08 20:49）
+
+仓库中的table_feedback.py现在是待验证的多反例版；在跑132仍使用先前冻结原版，不由Git更新替换。新增反馈逐一绑定实际仿真不符、按输入位宽显示二进制并保留总不符数，不生成DUT、不增加本次模型请求上限。multi_counterexample_controls.py的纯检查已在AMD通过，真实向量探针已排FIFO133，尚无native或评分资格。旧controls.py及下文早期结果对应其原冻结版本，不重跑旧7路径/3原生控制。详细来源、诊断和队列见PUBLIC_RESULT.json。
+
 # Model-generated RTL with prompt-table feedback
 
 The original model/phase worker has no complete-table functional checker. This

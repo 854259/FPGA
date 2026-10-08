@@ -1,7 +1,7 @@
 {
   "schema": "prompt_table_model_feedback_preparation_v1",
-  "updated_at": "2026-10-08T20:25:00+08:00",
-  "status": "full156x5_running_rtllm_applicability_zero",
+  "updated_at": "2026-10-08T20:49:00+08:00",
+  "status": "full156x5_running_next_multi_counterexample_native_queued",
   "selection": "Official RTL competition total score and submission requirements only; no historical-task or per-task-call vetoes.",
   "factor": "C retains original model/phase feedback. P checks the actual model RTL against a fully consumed prompt table and feeds only a measured counterexample into the existing one-repair loop.",
   "design_generation": "Model generates the RTL. This module renders only a testbench and diagnostics; no synthesis module is imported.",
@@ -71,7 +71,7 @@
     "Existing ANSI declaration-fix return bypasses functional feedback; this inherited behavior is unchanged in both arms.",
     "Five-sample nine-task comparison is complete only within its development scope. Full156 is running; applicable RTLLM coverage, engineering/resource/interface/recovery and official final total remain outstanding."
   ],
-  "next": "Complete original FIFO132 without retuning; compare official weighted means, same-run B gain and measured cost. Seek broader prompt-derived feedback; do not launch a redundant RTLLM A/P experiment for this zero-applicability factor.",
+  "next": "Keep FIFO132 unchanged. Once-only FIFO133 validates the new multi-counterexample diagnostic protocol after the current slot; no model scoring for this next factor before that result. Judge future candidates by official score quantities, not historical or per-call vetoes.",
   "full_goal_complete": false,
   "comparison": {
     "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison9x5_20261008_v1",
@@ -355,7 +355,7 @@
     "amd_and_local_all_members_verified": true
   },
   "full156_comparison": {
-    "status": "running_snapshot_20261008_2014",
+    "status": "running_snapshot_20261008_2045",
     "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1",
     "spec_sha256": "b499f6c16fa91868ca7ba60a168929204f02d5b0e164f5ade776a65983aa5c5d",
     "plan_sha256": "c85226725bab88c08503cd9feda393378ef17c491fabebec4bea0abd930d954c",
@@ -415,7 +415,7 @@
     "started_at": "2026-10-08T20:09:51.981661+08:00",
     "submission_sha256": "a71751015fa07c997dfc61d0aee5cacc0536a90b820616833a4a46b8e55cdbc8",
     "preparation_model_calls": 0,
-    "last_identity_check": "2026-10-08T20:14:26.832885+08:00",
+    "last_identity_check": "2026-10-08T20:45:06.978161+08:00",
     "monitor": {
       "pid": 2930407,
       "starttime": "873442383",
@@ -451,5 +451,90 @@
     "decision": "Do not dispatch repeated A/P comparisons for this unchanged factor on the 29 inputs. Preserve finite judge and original baseline for future applicable candidates.",
     "private_files": 13,
     "temporary_cache_remaining": 0
+  },
+  "multi_counterexample_preparation": {
+    "status": "pure_delta_passed_native_queued_not_scored",
+    "root": "/workspace/team/runs/fpga_teammate/table_multi_counterexamples_controls_20261008_v1",
+    "factor": "Return every unique measured mismatch (at most 32 observations from the existing four-bit contract) with explicit input width/binary literals and total mismatch count; no DUT generation.",
+    "source_sha256": {
+      "table_feedback": "1d04cae753ec195854a9b426f4aa773b32192fdbb9d11261d0f71139c6d4e515",
+      "controls": "ffd4b0bd44ff57a7d1b5959243a790d753fd57f5788411738f8c21be6346ea15"
+    },
+    "unchanged": "Parser, worker routing and original single-counterexample binding AST unchanged. Existing source frozen in FIFO132 remains cd8bed6b; no current model budget change.",
+    "plan_sha256": "841629edde4aa32b0cb13587c10c071f3f52acc7afba519af70fe50e738712dc",
+    "manifest_sha256": "c989a1135c05df06d011700dc87ca9a497e8ccbb4092915c61656ae01d0ce384",
+    "diagnosis": {
+      "root": "/workspace/team/activity/fpga_teammate/artifacts/table-feedback129-repair-diagnosis-20261008-v1",
+      "review_sha256": "24e8373357f47bf41cae5818a04cc925fdc119abbbcd5fcab3a723d7a7baf010",
+      "files_read": 227,
+      "failed_repair_samples": 15,
+      "named_tasks": 3,
+      "within_task_all_five_identical": true,
+      "probe_mismatches_before_after": [
+        [
+          12,
+          14,
+          32
+        ],
+        [
+          8,
+          14,
+          32
+        ],
+        [
+          8,
+          4,
+          26
+        ]
+      ],
+      "repair_received_original_feedback": true,
+      "read_only": true,
+      "project_imports": 0,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "reference_body_read": false,
+      "scope": "Retained development outputs only; not independent evidence or proof of improvement.",
+      "reader_correction": "Initial raw-markdown/prior-candidate byte assumption failed; corrected to retained extracted candidate. No experiment rerun."
+    },
+    "pure": {
+      "positive_checks": 5,
+      "corruption_rejections": 7,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "pid": 2984159,
+      "starttime": "873712171",
+      "returncode": 0,
+      "exec_confirmed": true,
+      "reaped": true,
+      "remaining_group": [],
+      "retired": true,
+      "child_elapsed_s": 0.16068734973669052,
+      "time_scope": "child wait only",
+      "result_sha256": "438806f1b16748b7e998bc56577e1eb19ee9983a29cefa59c39f6ff579b5a69c",
+      "process_sha256": "f61bd312860655ac6823279aa03e391fdbde5cd722685a7976988d29530cbe7c"
+    },
+    "native": {
+      "ticket": 133,
+      "state": "queued",
+      "accepted_at": "2026-10-08T20:45:50.460785+08:00",
+      "monitor_pid": 2985748,
+      "monitor_starttime": "873719994",
+      "monitor_command_sha256": "695eb6608ad81628f51a33cf18187cc76f59382d0caa8f23e7a005e47d24d669",
+      "submission_sha256": "019bce41ef08e8895dccafb0d98f456a29eed956f31e5fce5facf7a53f2366e6",
+      "process_sha256": "22ce4de202d40c4e060b52c3ee33f36cafdc6aca42026bb995626eb5a9732278",
+      "model_max": 0,
+      "eda_max": 3,
+      "native_cases": 1,
+      "tool_cap_s": 60,
+      "child_cap_s": 240,
+      "outer_cap_s": 270,
+      "guard_cap_s": 285,
+      "slot_minutes": 6,
+      "old_controls_repeated": 0,
+      "scoring_authorized": false
+    },
+    "private_originals_local": 7,
+    "private_originals_hash_bound": true,
+    "local_transport_note": "First oversized Windows command rejected before process creation; originals then transferred in bounded chunks and hashes matched. No project retry."
   }
 }
