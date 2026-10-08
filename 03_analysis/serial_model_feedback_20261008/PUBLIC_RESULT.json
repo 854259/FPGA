@@ -57,5 +57,26 @@
   ],
   "next": "Queue native qualification after peer129 by whole-task FIFO. If qualified, use prompt-only intake and a fresh model comparison, then decide whether full156 is justified.",
   "full_goal_complete": false,
-  "score_improvement_claimed": false
+  "score_improvement_claimed": false,
+  "intake": {
+    "passed": true,
+    "root": "/workspace/team/runs/fpga_owner/serial_model_feedback_intake_20261008_v1",
+    "tasks": 156,
+    "applicable": 2,
+    "selected_tasks": [
+      "Prob137_fsm_serial",
+      "Prob146_fsm_serialdata"
+    ],
+    "selection": "All complete prompt contracts; no task-ID dispatch or outcome selection",
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_fifo": 0,
+    "native_qualification_claimed": false,
+    "result_sha256": "507d8b1af34dc0b132d1143a2bbdb60019bef49e7e261df967c1b3f25e18e97d",
+    "receipt_sha256": "0fde43b5a3f80fd66e037a87758d3069144c7bd0c97d68f12d715d5167cb9287",
+    "archive_sha256": "9a9b38f9fc4121309d46a4403542e551b1f02be1959e80203566418444debb02",
+    "all_members_verified_on_E": true,
+    "archive_members": 15,
+    "intake_source_sha256": "62f9bca6b1cf4205b0b5ba644188b904918c8c6f2523bafba639886edcab2957"
+  }
 }

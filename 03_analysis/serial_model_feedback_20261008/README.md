@@ -9,3 +9,5 @@
 控制复用冻结baseline_worker、paired/probe、bounded_owned_exec及外层guard，完整哈希见ADAPTATION及PUBLIC_RESULT。运行时需使用私有冻结packet的RUN_SPEC/SOURCE_MANIFEST与原依赖，不可直接运行此目录冒充已获准执行。
 
 有限轨迹覆盖有效连续帧、错误stop后重新接收、复位中断和数据位序；不是穷尽证明。只有后续真实模型对照能说明是否提分。队友负责表格反馈及129五样本比较，本方负责串行协议反馈。
+
+AMD已完成全156题面准入扫描，2题符合完整串行契约（结果507d8b1a、15成员档案9a9b38f9双端校验）；0模型/EDA。此为准入证据，不是新增正确题。
