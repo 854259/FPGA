@@ -13,7 +13,22 @@
     "fixtures/late_stop_mutant.sv",
     "fixtures/positive.sv",
     "fixtures/reversed_data_mutant.sv",
-    "fixtures/unknown_done_mutant.sv"
+    "fixtures/unknown_done_mutant.sv",
+    "worker.py",
+    "serial_binding.py",
+    "binding_controls.py"
   ],
-  "packet_source_count": 27
+  "packet_source_count": 27,
+  "comparison_worker": {
+    "inherited_peer_spec_sha256": "317e40d723e7c0956a11143fc914b1841e036fe871a0ffba415f0939c90399da",
+    "inherited_worker_bind_body_unchanged": true,
+    "changes": "Replace table feedback with exact qualified serial feedback; P bind additionally ties actual model RTL/native evidence to the exact repair diagnostic",
+    "baseline_worker_sha256": "a4d212f06d16079d45cb79eb2843e7163cf8745d211706c4534e534a84b7fb66",
+    "baseline_route_only_changes": [
+      "PAIRED_TASK_DIR input",
+      "own run activity root",
+      "row-specific event identity"
+    ],
+    "first_model_request_unchanged": true
+  }
 }

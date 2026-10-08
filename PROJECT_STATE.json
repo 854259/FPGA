@@ -17481,8 +17481,8 @@
     "limits": "Eight fixed development inputs, one fresh sample per arm. No full156, five-independent-sample, hidden-task or official100 result. Semantic scope is an unmeasured hypothesis selected after126; do not sum scores across versions."
   },
   "serial_model_feedback_prepared_20261008": {
-    "schema": "serial_model_feedback_prepared_public_v1",
-    "status": "native_controls_queued_not_executed",
+    "schema": "serial_model_feedback_qualified_public_v1",
+    "status": "native_and_binding_qualified_real_model_comparison_pending",
     "model_generated_rtl_required": true,
     "factor": "Complete serial protocol prompt -> finite testbench -> actual model RTL observations -> original one-repair feedback; never emits a DUT.",
     "source_hashes": {
@@ -17493,14 +17493,17 @@
       "fixtures/late_stop_mutant.sv": "73fd6bcdbcae101788fec3b21d06ec8068e28f4eae8eb4c827e10a96aaf0b699",
       "fixtures/positive.sv": "b65e1f56a2d1a6cad7420be9ad43878b3eb54befcb5a0fd59891ee50c3425257",
       "fixtures/reversed_data_mutant.sv": "67c483dfc3cb2875bec325656c9902e1593db739dbfc2ada0db5f3187d60665d",
-      "fixtures/unknown_done_mutant.sv": "3f59a6973b4626fa9df038ae951e7685e690e81c45011028b125b3e5b45371ac"
+      "fixtures/unknown_done_mutant.sv": "3f59a6973b4626fa9df038ae951e7685e690e81c45011028b125b3e5b45371ac",
+      "worker.py": "61efa0a0d35efe4b26ef7f4607735ccebeef2678f63ed10f7aeef8d1eac51a45",
+      "serial_binding.py": "098a688e9ac3f8beeb726a5c61a72003820b787b7b5619f3e4b113e398534970",
+      "binding_controls.py": "9a8bf868f52200a3a9be2caed2e4521bb094c9489a8ce8b27bee31c57d45029a"
     },
     "source_manifest_sha256": "7542e83863a89216e62bc561643f3504734752028f5d8c32dfb741fe342696a2",
     "run_spec_sha256": "552233d8e0afd5870fb092232362293d39c655cf36ff60181bdd2eefc0f30b38",
     "native_controls": {
       "queued": true,
-      "executed": false,
-      "passed": null,
+      "executed": true,
+      "passed": true,
       "pure_tests": 8,
       "simulated_worker_flows": 3,
       "simulated_http_max": 4,
@@ -17514,7 +17517,25 @@
       "state_at_admission": "queued",
       "root": "/workspace/team/runs/fpga_owner/serial_model_feedback_controls_20261008_v1",
       "submission_receipt_sha256": "7bace7d23b5b225d1f7d95777481fa8f98cac587c2683323f94202925ca17af3",
-      "public_source_head": "4239aea83040e29a7bb8421b00bf3a7df8928856"
+      "public_source_head": "4239aea83040e29a7bb8421b00bf3a7df8928856",
+      "current_state": "completed",
+      "result_sha256": "0cf494788862371d0ccf8f53854ad00bb5bb206033a5d01d685528436eadd3ab",
+      "archive_sha256": "a1c29e714cd32946a81647a7271247b48d2e88cdf1878fbe01a37404e4c7f57e",
+      "archive_members": 312,
+      "all_members_verified_on_E": true,
+      "real_model_calls": 0,
+      "real_eda_commands": 12,
+      "simulated_http_calls": 4,
+      "elapsed_s": 25.19462608732283,
+      "monitor_retired": true,
+      "guard_passed": true,
+      "own_slot_released": true,
+      "native_mismatches": {
+        "positive": 0,
+        "late_stop_mutant": 1,
+        "reversed_data_mutant": 5,
+        "unknown_done_mutant": 69
+      }
     },
     "existing_model128": {
       "evidence_valid": true,
@@ -17537,7 +17558,7 @@
       "Native X output control; Z comparison is supported but lacks a separate native control.",
       "Original ANSI declaration-fix early return can bypass feedback."
     ],
-    "next": "Queue native qualification after peer129 by whole-task FIFO. If qualified, use prompt-only intake and a fresh model comparison, then decide whether full156 is justified.",
+    "next": "Freeze and submit actual intake-derived 2 tasks x 5 samples x A/P/B with the inherited original budgets; inspect actual accuracy, regressions, request costs and wall time before any full156.",
     "full_goal_complete": false,
     "score_improvement_claimed": false,
     "intake": {
@@ -17560,6 +17581,22 @@
       "all_members_verified_on_E": true,
       "archive_members": 15,
       "intake_source_sha256": "62f9bca6b1cf4205b0b5ba644188b904918c8c6f2523bafba639886edcab2957"
+    },
+    "binding_controls": {
+      "passed": true,
+      "simulated_controls": true,
+      "positive": 2,
+      "tamper_rejections": 4,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "old_flow_reruns": 0,
+      "native_reruns": 0,
+      "result_sha256": "0567e9f1c3e75e710e8798f8b18bfb00ba7c87f2a1d6e9405a87ddbdd544b3ce",
+      "archive_sha256": "5a5f93bf9cb77ebfb985a5f2d2553d94a894f5b0905c734e50fec1cc51fc8066",
+      "archive_members": 220,
+      "all_members_verified_on_E": true,
+      "source_and_original_evidence_held": true,
+      "compatibility_projection": "Only simulated copies derive omitted130 log_bytes from its SHA-bound bounded receipt/stdout; originals and production binder unchanged"
     }
   }
 }
