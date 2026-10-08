@@ -154,7 +154,8 @@ def simulate(solution, task, out, resource, toolbin, minimum_samples):
 def main(args):
     assert sys.platform == 'linux', 'AMD execution only'
     ledger = task_contract(args.contract, args.task)
-    original = scoring.eligible(args.solve, args.task, args.arm)
+    generation_source = getattr(args, 'generation_source', None)
+    original = scoring.eligible(args.solve, args.task, args.arm, generation_source)
     resource = arm.resource_module()
     resource.check_resource(args.resource_check, args.kit)
     assert not args.out.exists()
@@ -162,7 +163,7 @@ def main(args):
     verdict = simulate(args.solve/original['solution_relative'], args.task,
                        args.out/'native', resource, args.toolbin, args.minimum_samples)
     assert task_contract(args.contract, args.task) == ledger
-    assert scoring.eligible(args.solve, args.task, args.arm) == original
+    assert scoring.eligible(args.solve, args.task, args.arm, generation_source) == original
     resource.check_resource(args.resource_check, args.kit)
     arm.save(args.out/'verdict.json', verdict)
     arm.save(args.out/'BOUND_VERDICT.json', dict(
@@ -175,6 +176,7 @@ def main(args):
         task_files=ledger['all_files_sha256'], client_request_attempts=original['client_request_attempts'],
         confirmed_model_responses=original['client_request_attempts'], server_received_count=None,
         scope=ledger['scope'], remaining=ledger['remaining'], verdict=verdict,
+        generation_binding=original.get('generation_binding'),
         official_score=None, full_batch=False))
 
 
@@ -182,6 +184,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--arm', choices=['A', 'P', 'B'], required=True)
     parser.add_argument('--minimum-samples', type=int, required=True)
+    parser.add_argument('--generation-source', type=Path)
     for key in ['kit', 'solve', 'task', 'out', 'contract', 'toolbin', 'resource-check']:
         parser.add_argument('--'+key, type=Path, required=True)
     main(parser.parse_args())
