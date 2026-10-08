@@ -21,6 +21,18 @@ PARENT_SPEC = '3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1'
 MAX_CALLS = {'A': 2, 'P': 2, 'B': 1}
 
 
+def prepare_generation_sources(out):
+    """Independent A=original table90 P, P=vector123 P; B remains upstream."""
+    import three_arm_generation_20261008 as generation
+    out = Path(out).resolve()
+    assert not out.exists()
+    out.mkdir(parents=True)
+    arms = {label: generation.prepare(out/label, label) for label in ['A', 'P']}
+    files = {path: digest for value in arms.values() for path, digest in value['files'].items()}
+    files[str(Path(generation.__file__).resolve())] = official.sha(generation.__file__)
+    return dict(root=str(out), generation_arms=arms, files=files)
+
+
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
@@ -141,6 +153,18 @@ def validate(plan):
                    for row in plan['rows'])
     for path, expected in plan['sources']['files'].items():
         assert official.sha(path) == expected, path
+    if 'generation_arms' in plan['sources']:
+        import three_arm_generation_20261008 as generation
+        assert 'finite_judge' not in plan, 'Finite judge needs its own generation-source integration'
+        assert set(plan['sources']['generation_arms']) == {'A', 'P'}
+        entry = str(Path(generation.__file__).resolve())
+        assert plan['sources']['files'][entry] == official.sha(entry)
+        for label, source in plan['sources']['generation_arms'].items():
+            assert source['outer_arm'] == label and source['worker_arm'] == 'P'
+            assert source['original_spec_sha256'] == generation.ORIGINAL[label][1]
+            assert source['spec_sha256'] == official.sha(Path(source['root'])/'RUN_SPEC.json')
+            generation.validate(source['root'], label)
+            assert all(plan['sources']['files'][path] == digest for path, digest in source['files'].items())
     for name, expected in official.OFFICIAL.items():
         assert official.sha(Path(plan['kit'])/'submission'/name) == expected
     keys = set(); groups = {}
@@ -177,6 +201,13 @@ def launch_args(plan, row, folder, resource_check):
     common = ['--kit', plan['kit'], '--resource-check', str(resource_check), '--out', str(folder/'solve')]
     if row['arm'] == 'B':
         return argv+[plan['official_entry']]+common+['--task', str(prompt)]
+    if 'generation_arms' in plan['sources']:
+        source = plan['sources']['generation_arms'][row['arm']]
+        entry = str(Path(__file__).with_name('three_arm_generation_20261008.py').resolve())
+        return ['/usr/bin/env', 'LLM_BASE_URL=http://127.0.0.1:8000/v1',
+                'MODEL_NAME='+plan['model'], 'RTL_REPAIRS=1', 'RTL_TEMPERATURE=0',
+                'RTL_MAX_TOKENS=8192']+argv+[entry, 'worker']+common+[
+            '--task', str(prompt), '--arm', row['arm'], '--source-root', source['root']]
     return ['/usr/bin/env', 'PAIRED_TASK_DIR='+str(prompt), 'LLM_BASE_URL=http://127.0.0.1:8000/v1',
             'MODEL_NAME='+plan['model'], 'RTL_REPAIRS=1', 'RTL_TEMPERATURE=0', 'RTL_MAX_TOKENS=8192']+argv+[
         str(Path(plan['sources']['root'])/'worker.py')]+common+['--task', row['task'], '--arm', row['arm']]
@@ -343,10 +374,11 @@ def execute_row(plan, argv, row, folder, resource_check):
         save(folder/'SOLVE_COMMAND.json',command)
         assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Solver supervision failure'
         solve = folder/'solve'; evaluator = Path(row['evaluator_dir'])
-        original = scoring.eligible(solve,evaluator,row['arm'])
+        generation_source = plan['sources'].get('generation_arms', {}).get(row['arm'], {}).get('root')
+        original = scoring.eligible(solve,evaluator,row['arm'],generation_source)
         assert original['input_sha256'] == row['input_hashes']
         receipt.update(actual_calls=original['client_request_attempts'],unconfirmed_calls=0)
-        assert 1 <= receipt['actual_calls'] <= row['reserved_calls']
+        assert (0 if generation_source else 1) <= receipt['actual_calls'] <= row['reserved_calls']
         save(folder/'SOLVE_BOUND.json',original)
         validate(plan)
         resource.check_resource(resource_check,Path(plan['kit']))
@@ -355,6 +387,8 @@ def execute_row(plan, argv, row, folder, resource_check):
         judge_argv = ['/usr/bin/python3','-B',judge_entry,
             '--kit',plan['kit'],'--solve',str(solve),'--task',str(evaluator),'--arm',row['arm'],
             '--out',str(folder/'judge'),'--resource-check',str(resource_check)]
+        if generation_source:
+            judge_argv += ['--generation-source', generation_source]
         if finite:
             judge_argv += ['--contract',finite['contract'],'--toolbin',finite['toolbin'],
                            '--minimum-samples',str(row['minimum_observations'])]
@@ -367,7 +401,7 @@ def execute_row(plan, argv, row, folder, resource_check):
         assert bound['task_files'] == row['evaluator_hashes']
         assert bound['verdict_sha256'] == official.sha(folder/'judge/verdict.json')
         assert bound['client_request_attempts'] == receipt['actual_calls']
-        assert scoring.eligible(solve,evaluator,row['arm']) == original
+        assert scoring.eligible(solve,evaluator,row['arm'],generation_source) == original
         validate(plan)
         resource.check_resource(resource_check,Path(plan['kit']))
         if finite:
