@@ -1,0 +1,12 @@
+{
+  "schema": "model_onehot_scope_adaptation_v1",
+  "parent_packet": "MODEL_GENERATED_FSM8_FREEZE_PACKET_v1",
+  "parent_spec_sha256": "c4cd85e75fa36d84b454bca1f0b4dde2644eb769d0936f9524a88e833aea20e4",
+  "parent_guidance_sha256": "d4065440ae3d604093e1418e7c8ad992ab1185a9b66e4c97228139b551692048",
+  "new_guidance_sha256": "c6d8a08a1dac491de5d2a0bca822018af0ff37f6ec2b4443602d8580c255b7a1",
+  "only_production_change": "First-user guidance selected by one-hot wording in prompt rather than any state/serial/counter/timer word. Guidance bytes and original system, budget and repair remain unchanged.",
+  "routing_uses_task_ids": false,
+  "routing_uses_judge_or_reference": false,
+  "model_generated_RTL_required": true,
+  "old_controls_replayed": false
+}
