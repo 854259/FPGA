@@ -1,0 +1,21 @@
+{
+  "source_sha256": {
+    "pilot.py": "011a7de2188f57798876697cdde8d37b606b07f5c20df5c0230fe18a600f102e",
+    "metrics.py": "37a3a6f69263c989de05fb9f92e28f90d3c0b42806d386bfb257acbc05d577df",
+    "preparation_inputs.py": "e1949bea36287c2fc90455cd08620e415b83a2423800f0a4b09deebd926164d8",
+    "prepare_fixed15.py": "410e65ad1bae71a720602ab664a14d7daee292772fbd44fe994117818378f622",
+    "factor_admission.py": "679dda602055a7e9178c739f6faeb1935be983e8bb23f900ef511f10f6bc6f0b",
+    "factor_proof.py": "463958ecb0a899b44386e807dea997216bc3a65145381de8f0603fe27254ee74",
+    "audit.py": "c95df5b7d91f37584108ba959da81486c750738b96abb067f8a6f39f8891c7b8",
+    "test_score15_integration.py": "3d7bb0ce0ec4c8d295c62af4b55f7104b7f51e8f8f3df0b81d48b7f6879ab8e3"
+  },
+  "qualified_helper_reused_sha256": "7f0a05aaa7cb89616c6936ee2b87067bd29ea7cde897b48abc0860aeb22c666a",
+  "qualified_pipeline_PR": "https://github.com/854259/FPGA/pull/156",
+  "qualified_native121_PR": "https://github.com/854259/FPGA/pull/155",
+  "upstream44_and_original_judge_preserved": true,
+  "original_replay_unchanged_derived_declaration_replay_bound": true,
+  "old_grade_history_and_cost_gates_unchanged": true,
+  "production_does_not_import_fixed_scope_or_history": true,
+  "private_bench_prompts_responses_RTL_TB_or_credentials_published": false,
+  "validation_scope": "New AMD scoring acceptance/model-request/generation-binding integration and real preparation only. Complete original archive auditor still must execute on the upcoming real score; no prior A qualification substituted."
+}
