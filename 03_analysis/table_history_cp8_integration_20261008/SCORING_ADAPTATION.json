@@ -1,0 +1,120 @@
+{
+  "schema": "table_history_cp8_score7_scoring_adaptation_v1",
+  "files": {
+    "pilot.py": "46464a65d15a5cc5eeb59cac13e4617b746c4de643dd8bad85055f6f75940a81",
+    "audit.py": "2b762c0190afda3d90cbe6e1bbc9e4d23793e23189a68c351fdf251d3c4fe912",
+    "generation_entry.py": "99ebfd99f5cc85f25ccbb4b53336cfbed9536e0da33b756aaa5e10ad13f33117",
+    "metrics.py": "b82ef92a7d54ac012825d9338e4d91f074f963597a95658c0197630fac52db05",
+    "source_admission.py": "cb292c9296881d99a59b2929ce15e2a6a01d890d7f14ae4294af595060e3fbf6",
+    "test_cp8_score7_interfaces.py": "3cd6027f83d51df73d08dfa81ca4501fedf83622a1711eed9c4290d1e991ce05",
+    "COMPARISON_INPUT_PLAN.json": "03bed1cb0ecabae738c4461e3c464b39180c9656d002355517203e70c62f6898"
+  },
+  "ancestor_score_entry": "TABLE_HISTORY_WAVE_SCORE5_DRAFT_v1 (direct worker dispatch preserved; all wave paths removed)",
+  "ancestor_source_admission": "TABLE_HISTORY_SCORING_DRAFT_v1 (original44/common/table90/native retained)",
+  "fixed_tasks": {
+    "Prob045_edgedetect2": {
+      "C": {
+        "route": "model",
+        "selected_provider": null
+      },
+      "P": {
+        "route": "model",
+        "selected_provider": null
+      }
+    },
+    "Prob057_kmap2": {
+      "C": {
+        "route": "mechanical_table",
+        "selected_provider": "table"
+      },
+      "P": {
+        "route": "mechanical_table",
+        "selected_provider": "table"
+      }
+    },
+    "Prob127_lemmings1": {
+      "C": {
+        "route": "model",
+        "selected_provider": null
+      },
+      "P": {
+        "route": "model",
+        "selected_provider": null
+      }
+    },
+    "Prob137_fsm_serial": {
+      "C": {
+        "route": "model",
+        "selected_provider": null
+      },
+      "P": {
+        "route": "mechanical_serial_framing",
+        "selected_provider": "serial_framing"
+      }
+    },
+    "Prob143_fsm_onehot": {
+      "C": {
+        "route": "mechanical_onehot",
+        "selected_provider": "onehot"
+      },
+      "P": {
+        "route": "mechanical_onehot",
+        "selected_provider": "onehot"
+      }
+    },
+    "Prob146_fsm_serialdata": {
+      "C": {
+        "route": "model",
+        "selected_provider": null
+      },
+      "P": {
+        "route": "mechanical_serial_framing",
+        "selected_provider": "serial_framing"
+      }
+    },
+    "Prob151_review2015_fsm": {
+      "C": {
+        "route": "mechanical_timer",
+        "selected_provider": "timer"
+      },
+      "P": {
+        "route": "mechanical_timer",
+        "selected_provider": "timer"
+      }
+    }
+  },
+  "retained_CP8_metadata": {
+    "INPUT_MANIFEST.json": "817ebfc6df996f00ec123c4ea71f47a09918511dade2643d79ee4bfc70feba40",
+    "NATIVE_ARCHIVE_BINDING.json": "76b376712c9fa89d48251c2056c17f1f0932570b4fb85569a496922fd36ad19f",
+    "NATIVE_QUALIFICATION_AUDIT.json": "a909a642fc7f55b79b57915bf6981a0463359c30aca8b858ef48c92a9c4d1809",
+    "PRODUCER_PREPARATION_BINDING.json": "8c5a72f04bd57522d7deb9637fc17195d43582585951d0095f81e2e0df69d679",
+    "RESULTS.json": "15c1025f0b897afc058312ee845e928236b09ea1cba1174e12b4422b7841c4ff",
+    "RUN_SPEC.json": "b11485bc55efe5eaf9c5dde6d55ed6f4d719eee4548a5e906b3f344f75518167",
+    "SOURCE_FACTOR_PROOF.json": "0265c50d8568e1d1107c61e826a558a30dfd4978d71ace14813c9215de74d60a"
+  },
+  "expected_files_at_run": [
+    "WORKER_ADAPTATION.json = original table/history adaptation bcd52f80",
+    "CP8_WORKER_ADAPTATION.json = TABLE_HISTORY_CP8_WORKER_DRAFT_v1/ADAPTATION.json",
+    "qualification/serial_framing/ = RETAINED_CP8_METADATA/*",
+    "existing qualification/onehot, qualification/timer, qualification/table90 retained"
+  ],
+  "controls": {
+    "test": "test_cp8_score7_interfaces.py",
+    "output": "ACTUAL_CP8_SCORE7_INTERFACE_RESULT.json",
+    "fixtures": [
+      "OFFICIAL_SCORER.py (original score SHA2b382a41)",
+      "INPUT_MANIFEST.json (817ebfc6 original)",
+      "COMPARISON_INPUT_PLAN.json (fixed7)",
+      "metrics.py",
+      "pilot.py"
+    ],
+    "scope": "Synthetic seven-pair metadata and new direct pilot.worker dispatch with fake owned worker only; no producer/model/native execution."
+  },
+  "static_ast_parsed": true,
+  "actual_execution": false,
+  "full156_qualified": false,
+  "adoption": false,
+  "known_uncovered_history": [
+    "Prob145_circuit8"
+  ]
+}

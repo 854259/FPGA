@@ -1,4 +1,370 @@
 {
+  "table_history_cp8_integration_prepared_20261008": {
+    "schema": "table_history_cp8_integration_actual_prepared_public_v1",
+    "control": "Complete original table plus qualified onehot/timer, then unchanged original common model fallback.",
+    "candidate": "Same complete common strategy; only genuine no_complete_contract reaches unchanged qualified serial_framing aaac33da.",
+    "original_parent_outputs_preserved": true,
+    "production_routing": "Prompt/interface only; fixed task IDs and route plan are scoring metadata, never generation dispatch.",
+    "public_frozen_source_hashes": {
+      "composition.py": "e093b9ffcf64d2ae1d167fd92ed9ea7e86cfa7dbbbd6300d28c5eb609978a430",
+      "worker.py": "ea070dab956206f9fd2aca361f8b66265caec61ad892b433a6d30367086c4aa1",
+      "serial_framing_producer.py": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+      "generation_binding.py": "33f710aa3932400c182547c7222d2eac4f90c4094eabfe7164bdc03b01ec3a30",
+      "original_model_replay.py": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+      "generation_entry.py": "99ebfd99f5cc85f25ccbb4b53336cfbed9536e0da33b756aaa5e10ad13f33117",
+      "metrics.py": "b82ef92a7d54ac012825d9338e4d91f074f963597a95658c0197630fac52db05",
+      "source_admission.py": "cb292c9296881d99a59b2929ce15e2a6a01d890d7f14ae4294af595060e3fbf6",
+      "pilot.py": "46464a65d15a5cc5eeb59cac13e4617b746c4de643dd8bad85055f6f75940a81",
+      "audit.py": "2b762c0190afda3d90cbe6e1bbc9e4d23793e23189a68c351fdf251d3c4fe912",
+      "prepare.py": "638043ce9ed36674efc2de51c08462dc59977936b8f2e4c6991560c7188ffafe",
+      "WORKER_ADAPTATION.json": "bcd52f8052fea4c64ceb407d63d1d913e3c3162345418207691c88d36d1fef11",
+      "CP8_WORKER_ADAPTATION.json": "b792ade0c03ea428cf0eefd135d8a0eff9fe2e181bf61e55fb3d2ff8ade96c4f",
+      "GENERATION_ADAPTATION.json": "c61e47c5f3a9516fdc89d9208610791612d48e8a5f94cedeff5bd3fd5608f7d5",
+      "SCORING_ADAPTATION.json": "5056ffb97a6a74c55e5fe0de79889fe29f2dc6d21585f4eb32f9b88b3c5382f8",
+      "PREPARE_ADAPTATION.json": "e6afebe8b1241ea46e461b48a75d4ecb9f150fbc02b8076384ecb66279df02de",
+      "COMPARISON_INPUT_PLAN.json": "03bed1cb0ecabae738c4461e3c464b39180c9656d002355517203e70c62f6898"
+    },
+    "public_control_source_hashes": {
+      "test_cp8_extension.py": "3388f017e5bad539085f1a4819f29ee73b83c9d4cbbc6f50c4eac0bf851d489d",
+      "test_cp8_generation_binding.py": "0685ff39d1fc0c27c185e484d164e226374449d55c0acaaab7a3370b4f721052",
+      "test_cp8_score7_interfaces.py": "3cd6027f83d51df73d08dfa81ca4501fedf83622a1711eed9c4290d1e991ce05",
+      "run_new_cp8_controls.py": "302ff76301d064cc1d9287db04d2002fd5cfb03b0778d548fe226e2649d4077d"
+    },
+    "frozen": {
+      "root": "/workspace/team/runs/fpga_owner/table_history_cp8_score7_20261008_v1",
+      "spec_sha256": "a0bd4783f46381b15ce4306d7e26757bbe1a10291e8fdaa557789ac71584cf33",
+      "source_assets": 120,
+      "prepared": true,
+      "source_admission_passed": true,
+      "pilot_frozen_and_audit_sources_passed": true,
+      "first_generation_replayed": false
+    },
+    "tasks": [
+      "Prob045_edgedetect2",
+      "Prob057_kmap2",
+      "Prob127_lemmings1",
+      "Prob137_fsm_serial",
+      "Prob143_fsm_onehot",
+      "Prob146_fsm_serialdata",
+      "Prob151_review2015_fsm"
+    ],
+    "historical_subset": [
+      "Prob045_edgedetect2",
+      "Prob127_lemmings1",
+      "Prob143_fsm_onehot",
+      "Prob151_review2015_fsm"
+    ],
+    "target_tasks": [
+      "Prob137_fsm_serial",
+      "Prob146_fsm_serialdata"
+    ],
+    "expected_samples": 14,
+    "max_actual_model_requests": 28,
+    "structural_model_request_maximum": 12,
+    "structural_budget_basis": "C four model rows and P two model rows; unchanged maximum two calls each.",
+    "expected_protection_receipts": 29,
+    "original_budget": {
+      "output_tokens": 8192,
+      "max_requests_per_arm": 2,
+      "repairs": 1,
+      "retries": 0,
+      "solve_deadline_s": 300,
+      "judge_timeout_s": 300,
+      "judge_supervisor_timeout_s": 360
+    },
+    "safety_caps": {
+      "stage_timeout_s": 10000,
+      "guard_timeout_s": 10400,
+      "slot_minutes": 180,
+      "not_completion_estimate": true
+    },
+    "diagnostic_gates": {
+      "all_seven_P_L3": true,
+      "positive_paired_L3_net": true,
+      "no_paired_grade_regression": true,
+      "historical_subset_L3_preserved": true,
+      "unchanged_grade_and_historical_and_every_task_request_cost_not_above_C": true,
+      "total_requests_P_not_above_C": true,
+      "no_timeout_or_unconfirmed_request": true
+    },
+    "controls": {
+      "root": "/workspace/team/runs/fpga_owner/table_history_cp8_controls_20261008_v2",
+      "receipt_sha256": "4cd96823e7689e2022731c77d31c214c97f3ab410183fec8b9dd139eb63fc1e1",
+      "actual_result": {
+        "schema": "table_history_cp8_changed_interface_groups_v1",
+        "passed": true,
+        "groups": {
+          "worker": {
+            "returncode": 0,
+            "elapsed_s": 0.1278792843222618,
+            "result": {
+              "schema": "table_history_cp8_new_boundary_controls_v1",
+              "passed": true,
+              "cases": [
+                "complete_parent_table_bytes_preserved",
+                "complete_parent_onehot_bytes_preserved",
+                "C_worker_onehot_preserved",
+                "complete_parent_timer_bytes_preserved",
+                "C_worker_timer_preserved",
+                "invalid_parent_abstention_does_not_open_serial",
+                "ambiguous_parent_abstention_does_not_open_serial",
+                "normal_parent_and_serial_abstention_preserves_fallback",
+                "Prob137_fsm_serial_new_composition_bound_to_original113_recipe",
+                "Prob137_fsm_serial_new_serial_worker_path_simulated_native",
+                "C_original_serial_input_retains_common_model_delegate",
+                "Prob146_fsm_serialdata_new_composition_bound_to_original113_recipe",
+                "Prob146_fsm_serialdata_new_serial_worker_path_simulated_native"
+              ],
+              "checks": 13,
+              "worker_contexts": 5,
+              "synthetic_parent_boundary_producers_mocked": true,
+              "two_original113_recipes_reconstructed_at_new_composition_boundary": true,
+              "model_native_and_feedback_explicitly_mocked": true,
+              "original_helper_main_or_run_called": false,
+              "old_worker_native_intake_or_audit_suites_rerun": false,
+              "actual_model_calls": 0,
+              "actual_eda_calls": 0,
+              "real_native_or_score_qualification": false
+            }
+          },
+          "generation": {
+            "returncode": 0,
+            "elapsed_s": 0.1630154475569725,
+            "result": {
+              "schema": "table_history_cp8_new_generation_boundary_controls_v1",
+              "passed": true,
+              "positive_contexts": 7,
+              "rejection_contexts": 13,
+              "positives": [
+                "new_complete_C_onehot",
+                "new_complete_C_timer",
+                "Prob137_fsm_serial_C",
+                "Prob137_fsm_serial_P",
+                "Prob146_fsm_serialdata_C",
+                "Prob146_fsm_serialdata_P",
+                "actual_CP8_dependency_objects"
+              ],
+              "rejections": [
+                "serial_selected_provider_tampered",
+                "serial_original_recipe_tampered",
+                "serial_parent_recipe_tampered",
+                "serial_extension_selection_tampered",
+                "serial_rtl_tampered",
+                "serial_contract_tampered",
+                "C_cannot_use_serial",
+                "wave_factor_forbidden",
+                "simulated_serial_native_forbidden",
+                "serial_cached_other_object",
+                "serial_stale_keyword_dependency",
+                "worker_stale_composition_object",
+                "serial_source_SHA_mismatch"
+              ],
+              "original_two_recipes_and_RTL_retained": true,
+              "old_model_replay_and_native_suites_not_executed": true,
+              "real_worker_model_EDA_FIFO_calls": 0,
+              "metadata_only": true,
+              "score_or_native_qualification": false
+            }
+          },
+          "scoring": {
+            "returncode": 0,
+            "elapsed_s": 0.04454037360846996,
+            "result": {
+              "schema": "cp8_score7_new_interfaces_synthetic_controls_v1",
+              "passed": true,
+              "positive_contexts": 2,
+              "malformed_metadata_rejected": [
+                "C table cannot become model",
+                "Common mechanical requires zero calls",
+                "Model requires a request",
+                "Mechanical pair cannot change RTL",
+                "Mechanical contract equal in arms",
+                "Common strategy proof required",
+                "Loaded dependency identities required",
+                "Serial may not execute in C",
+                "Serial requires common parent abstention",
+                "Serial may not pretend to preserve a parent output",
+                "Provider cannot be replaced"
+              ],
+              "score_gate_rejections": [
+                "historical per-task cost",
+                "unconfirmed call",
+                "deadline",
+                "original300",
+                "all seven P must be L3; L2 remains .7"
+              ],
+              "synthetic_rows_only": true,
+              "new_frozen_entry_dispatch_control": {
+                "actual_new_entry_function_executed": true,
+                "run_worker_dispatch_reached_with_fake_owned_dependencies": true,
+                "standalone_closed_worker_CLI_not_executed": true,
+                "outside_scope_rejected_before_dispatch": true,
+                "actual_generation_model_or_EDA_execution": false
+              },
+              "original_worker_native_or_full_suites_invoked": false,
+              "new_worker_calls": 0,
+              "model_calls": 0,
+              "eda_calls": 0,
+              "new_fifo": false,
+              "score_measured": false,
+              "full156_qualified": false,
+              "goal_achieved": false,
+              "adoption": false
+            }
+          }
+        },
+        "new_model_EDA_FIFO_calls": 0,
+        "score_measured": false
+      },
+      "process": {
+        "schema": "owned_preexec_birth_gate_v1",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/runs/fpga_owner/table_history_cp8_controls_20261008_v2/run_new_cp8_controls.py"
+        ],
+        "cwd": "/workspace/team/runs/fpga_owner/table_history_cp8_controls_20261008_v2",
+        "cap_s": 40,
+        "timeout": false,
+        "signals": [
+          "SIGCONT_bound_preexec_child"
+        ],
+        "exec_error": null,
+        "error": null,
+        "child_identity": {
+          "pid": 2740528,
+          "state": "T",
+          "starttime": "871396914",
+          "pgid": 2740528,
+          "sid": 2740528,
+          "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+        },
+        "exec_confirmed": true,
+        "returncode": 0,
+        "remaining_group": [],
+        "elapsed_s": 0.46105973422527313,
+        "leader_reaped": true,
+        "stdout_sha256": "7d951f431b319bed54afe1d0af9b587f939a2637f1ba7d850f2c2419ea7de805",
+        "stdout_bytes": 3736,
+        "normal_completion": true
+      },
+      "independent_child_retired": true,
+      "archive_sha256": "853909cb3d16416ce3712e258b844a8b9b3adbf209cb5a8d52c7593b2ec4263a",
+      "archive_members": 310,
+      "AMD_E_every_member_bound": true
+    },
+    "retained_failure": {
+      "root": "/workspace/team/runs/fpga_owner/table_history_cp8_controls_20261008_v1",
+      "reason": "Initial controls packet omitted ADAPTATION.json alias required by retained helper; exit1. v2 adds alias without changing candidate/test sources.",
+      "receipt_sha256": "df6570936d0c36b3bef8057c54f6e85d40915b865dd5bbe565dec4c4cbfc5f38",
+      "archive_sha256": "d511b47d7bcc4145a39c208dd94e604970c67b615d17e739ab7aca3ad6f19057",
+      "archive_members": 145,
+      "process": {
+        "schema": "owned_preexec_birth_gate_v1",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/runs/fpga_owner/table_history_cp8_controls_20261008_v1/run_new_cp8_controls.py"
+        ],
+        "cwd": "/workspace/team/runs/fpga_owner/table_history_cp8_controls_20261008_v1",
+        "cap_s": 40,
+        "timeout": false,
+        "signals": [
+          "SIGCONT_bound_preexec_child"
+        ],
+        "exec_error": null,
+        "error": null,
+        "child_identity": {
+          "pid": 2734914,
+          "state": "T",
+          "starttime": "871346738",
+          "pgid": 2734914,
+          "sid": 2734914,
+          "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+        },
+        "exec_confirmed": true,
+        "returncode": 1,
+        "remaining_group": [],
+        "elapsed_s": 0.22783870063722134,
+        "leader_reaped": true,
+        "stdout_sha256": "4f933821e7193051f911c0694a2852a703886eb58f97491f8655c4f8d39e135a",
+        "stdout_bytes": 1396,
+        "normal_completion": true
+      },
+      "AMD_E_every_member_bound": true
+    },
+    "preparation": {
+      "receipt_sha256": "18d5b7693a254772c042a256f16334fca8c5a51017d15cd0dcfa5f378f225cde",
+      "process": {
+        "schema": "owned_preexec_birth_gate_v1",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/runs/fpga_owner/table_history_cp8_score7_20261008_v1/prepare.py"
+        ],
+        "cwd": "/workspace/team/runs/fpga_owner/table_history_cp8_score7_20261008_v1",
+        "cap_s": 40,
+        "timeout": false,
+        "signals": [
+          "SIGCONT_bound_preexec_child"
+        ],
+        "exec_error": null,
+        "error": null,
+        "child_identity": {
+          "pid": 2741384,
+          "state": "T",
+          "starttime": "871409220",
+          "pgid": 2741384,
+          "sid": 2741384,
+          "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+        },
+        "exec_confirmed": true,
+        "returncode": 0,
+        "remaining_group": [],
+        "elapsed_s": 2.8491596542298794,
+        "leader_reaped": true,
+        "stdout_sha256": "5bdbea3f9aa996ecebd5b3bb417d589108d325dc704d9080402e41d54d421f47",
+        "stdout_bytes": 5978,
+        "normal_completion": true
+      },
+      "independent_child_retired": true,
+      "archive_sha256": "b7e11ca1f37d550d18d363def88f44d15ac1592765cbd005887cca9b417dc2c5",
+      "archive_members": 132,
+      "AMD_E_every_member_bound": true
+    },
+    "reused_qualifications": {
+      "table90_original_audit": "bb691e96ffe900a1a23c5e581312dfe7e834c3c06e1747c204641a9f7aaaea88",
+      "serial111_native": "a909a642fc7f55b79b57915bf6981a0463359c30aca8b858ef48c92a9c4d1809",
+      "serial113_original_audit": "15c1025f0b897afc058312ee845e928236b09ea1cba1174e12b4422b7841c4ff",
+      "new_native_qualification": false,
+      "old_whole_candidate_rejections_retained": true
+    },
+    "new_model_EDA_FIFO_calls": 0,
+    "queued": false,
+    "score_measured": false,
+    "whole_stage_executed": false,
+    "full156_evidence_valid": false,
+    "qualified_for_new_full_regression": false,
+    "qualified_for_full156": false,
+    "adoption": false,
+    "goal_achieved": false,
+    "known_uncovered_history": [
+      "Prob145_circuit8"
+    ],
+    "waveform_factor_included": false,
+    "vector_factor_included": false,
+    "old_scores_not_added": true,
+    "original_native_worker_and_156_suites_not_rerun": true,
+    "goal": {
+      "status": "active",
+      "current_milestone_L3": 120,
+      "current_milestone_weighted": 0.8,
+      "milestones_adjusted_from_actual_evidence": true
+    },
+    "next_action": "Reviewed source delivery and unique whole-task FIFO submission for this frozen seven-pair diagnostic; judge actual outputs before selecting another factor.",
+    "private_inputs_raw_logs_and_fixtures_excluded": true,
+    "public_snapshot_requires_original_pinned_dependencies_and_private_inputs": true
+  },
   "table_parent_history_composition_controls_20261008": {
     "schema": "table_parent_history_composition_actual_controls_public_v1",
     "parent": "Complete original table producer a18ac218 and contract46d53, common fallback7ff7; both arms.",

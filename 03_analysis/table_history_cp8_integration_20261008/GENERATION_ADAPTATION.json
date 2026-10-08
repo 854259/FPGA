@@ -1,0 +1,100 @@
+{
+  "schema": "table_history_cp8_generation_minimal_byte_adaptation_v1",
+  "original_source": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\TABLE_HISTORY_CONTROLS_PACKET_v2\\generation_binding.py",
+  "original_sha256": "128a80c25d10bee029d1c12bae08571d9a71fbe50301603cb084bbb7d0ec5052",
+  "new_sha256": "33f710aa3932400c182547c7222d2eac4f90c4094eabfe7164bdc03b01ec3a30",
+  "replacements": [
+    {
+      "label": "worker_source",
+      "before": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e",
+      "after": "ea070dab956206f9fd2aca361f8b66265caec61ad892b433a6d30367086c4aa1",
+      "position": 821,
+      "before_sha256": "128a80c25d10bee029d1c12bae08571d9a71fbe50301603cb084bbb7d0ec5052",
+      "after_sha256": "cbce8e5de91820cbef9bf84ae26cd29bf9c73e5c27f385e8ebe3e52aae84d0e6"
+    },
+    {
+      "label": "composition_source",
+      "before": "f6f8bf7d01eee3df05b7f25ed1d4b2e8618203f4001e3caa61ef2f80e8038cc3",
+      "after": "e093b9ffcf64d2ae1d167fd92ed9ea7e86cfa7dbbbd6300d28c5eb609978a430",
+      "position": 907,
+      "before_sha256": "cbce8e5de91820cbef9bf84ae26cd29bf9c73e5c27f385e8ebe3e52aae84d0e6",
+      "after_sha256": "9da0ac7fd4f6a0e052d002031535fd9b3674494052509babaac201852efb97a2"
+    },
+    {
+      "label": "actual_dependency_objects",
+      "before": "\ndef bound_route(",
+      "after": "\nPINNED.update({\n    'serial_framing_producer.py':'aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5',\n    'original_model_replay.py':'fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6',\n    'package/baseline.py':'537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51',\n    'edge_dispatch.py':'1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680',\n    'phase_feedback.py':'efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078',\n    'dependencies/probe_runner.py':'954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0'})\nMODULE_FILES={\n    'composition':'composition.py','selector':'selector.py','table_contract':'contract.py',\n    'worker':'worker.py','reserved_keywords':'reserved_keywords.py',\n    'replay':'original_model_replay.py','baseline_worker':'baseline_worker.py',\n    'baseline':'package/baseline.py','runtime':'package/agent/map_runtime.py',\n    'parser':'edge_dispatch.py','feedback':'phase_feedback.py','runner':'dependencies/probe_runner.py'}\n\n\ndef bound_modules(run,modules):\n    \"\"\"Bind only the actual dependencies used by the new CP8 score entry.\"\"\"\n    run=Path(run)\n    assert type(modules) is dict and set(modules)==set(MODULE_FILES)|{'providers'}\n    assert all(sha(run/name)==value for name,value in PINNED.items())\n    for name,asset in MODULE_FILES.items():\n        assert Path(modules[name].__file__).resolve()==(run/asset).resolve(),name\n    providers=modules['providers'];composition=modules['composition'];worker=modules['worker']\n    assert [name for name,module in providers]==['table','onehot','timer','serial_framing']\n    for name,module in providers:\n        attribute='table_synthesis' if name=='table' else name+'_producer'\n        assert Path(module.__file__).resolve()==(run/(attribute+'.py')).resolve()\n        assert getattr(composition,attribute) is module\n    assert composition.selector is modules['selector']\n    assert composition.table_synthesis.contract is modules['table_contract']\n    assert composition.serial_framing_producer.KEYWORDS is modules['reserved_keywords'].KEYWORDS\n    assert worker.synthesis is composition and worker.baseline is modules['baseline_worker']\n    assert modules['baseline_worker'].edge_dispatch is modules['parser']\n    assert modules['baseline_worker'].phase_feedback is modules['feedback']\n    assert all(Path(modules[name].ROOT).resolve()==run.resolve() for name in ('worker','baseline_worker'))\n\n\ndef bound_route(",
+      "position": 1601,
+      "before_sha256": "9da0ac7fd4f6a0e052d002031535fd9b3674494052509babaac201852efb97a2",
+      "after_sha256": "dd2850a30f54db42b99623091501fc45a24c8d56a588d3e7215f724111f3dfef"
+    },
+    {
+      "label": "provider_order",
+      "before": "    assert [name for name,module in providers]==['table','onehot','timer']\n",
+      "after": "    assert [name for name,module in providers]==['table','onehot','timer','serial_framing']\n",
+      "position": 4580,
+      "before_sha256": "dd2850a30f54db42b99623091501fc45a24c8d56a588d3e7215f724111f3dfef",
+      "after_sha256": "5ba02f681f4469be4e8519fba1636486abdb3f2ec56c22e109410c1759267f84"
+    },
+    {
+      "label": "common_parent_C_and_CP8_only_P",
+      "before": "    receipt=composition.synthesize(prompt,interface) if arm=='P' else composition.parent(prompt,interface)",
+      "after": "    receipt=composition.synthesize_with_framing(prompt,interface) if arm=='P' else composition.synthesize(prompt,interface)",
+      "position": 5567,
+      "before_sha256": "5ba02f681f4469be4e8519fba1636486abdb3f2ec56c22e109410c1759267f84",
+      "after_sha256": "cf9cb04e7cd5e833137b36982d5d33d41b296248810dba0820b82ee94259a67c"
+    },
+    {
+      "label": "C_complete_parent",
+      "before": "    if arm=='C':assert selected in (None,'table')",
+      "after": "    if arm=='C':assert selected in (None,'table','onehot','timer')",
+      "position": 5902,
+      "before_sha256": "cf9cb04e7cd5e833137b36982d5d33d41b296248810dba0820b82ee94259a67c",
+      "after_sha256": "733da2755340229807100e2f0fc8bd5b3f1ee17ba356941c0692c773a53bcd4d"
+    },
+    {
+      "label": "route_schema",
+      "before": "schema='table_parent_history_extension_generation_route_v1'",
+      "after": "schema='table_history_cp8_generation_route_v1'",
+      "position": 5987,
+      "before_sha256": "733da2755340229807100e2f0fc8bd5b3f1ee17ba356941c0692c773a53bcd4d",
+      "after_sha256": "b22af80198927b6af5300f730110fb81f250d9378778f52be89f1ce5326f06d9"
+    },
+    {
+      "label": "reject_mechanical_model_trace",
+      "before": "('table_generation','onehot_generation','timer_generation','history_recipe_generation')",
+      "after": "('table_generation','onehot_generation','timer_generation','serial_framing_generation','history_recipe_generation')",
+      "position": 7671,
+      "before_sha256": "b22af80198927b6af5300f730110fb81f250d9378778f52be89f1ce5326f06d9",
+      "after_sha256": "7b934b48286bb00aa1b3d2770eb8881aacbda5acd2a1f38c864997d85c8af9f8"
+    },
+    {
+      "label": "native_provider",
+      "before": "    assert row['selected_provider'] in ('table','onehot','timer')\n    assert row['arm']=='P' or row['selected_provider']=='table'",
+      "after": "    assert row['selected_provider'] in ('table','onehot','timer','serial_framing')\n    assert row['arm']=='P' or row['selected_provider'] in ('table','onehot','timer')",
+      "position": 9927,
+      "before_sha256": "7b934b48286bb00aa1b3d2770eb8881aacbda5acd2a1f38c864997d85c8af9f8",
+      "after_sha256": "c06e7b22e2983e75fb913aab787470e4d49572984104822f47ca176a45c112ad"
+    },
+    {
+      "label": "actual_verify_modules",
+      "before": "    selection,providers,replay,baseline,runtime,parser,feedback,runner=modules",
+      "after": "    bound_modules(run,modules)\n    selection=modules['composition'];providers=modules['providers'];replay=modules['replay']\n    baseline=modules['baseline'];runtime=modules['runtime'];parser=modules['parser']\n    feedback=modules['feedback'];runner=modules['runner']",
+      "position": 15243,
+      "before_sha256": "c06e7b22e2983e75fb913aab787470e4d49572984104822f47ca176a45c112ad",
+      "after_sha256": "ab7ac80aaa12ff4016f2c70564b8b93b963bede872b7ae843bb3bd916bb39bac"
+    },
+    {
+      "label": "complete_parent_evidence",
+      "before": "    proof.update(parent_recipe_bound=True,parent_preserved_bound=selected=='table',\n                 parent_abstention_bound=selected!='table',\n                 parent_route='mechanical_table' if selected=='table' else 'model',\n                 parent_output_sha256=recipe['rtl_sha256'] if selected=='table' else None)",
+      "after": "    preserved=selected in ('table','onehot','timer')\n    proof.update(parent_recipe_bound=True,parent_preserved_bound=preserved,\n                 parent_abstention_bound=not preserved,\n                 parent_route='mechanical_'+selected if preserved else 'model',\n                 parent_output_sha256=recipe['rtl_sha256'] if preserved else None,\n                 common_mechanical_strategy_bound=True,module_source_objects_bound=True)",
+      "position": 18132,
+      "before_sha256": "ab7ac80aaa12ff4016f2c70564b8b93b963bede872b7ae843bb3bd916bb39bac",
+      "after_sha256": "33f710aa3932400c182547c7222d2eac4f90c4094eabfe7164bdc03b01ec3a30"
+    }
+  ],
+  "original_model_replay_sha256": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+  "scope": "C complete table+history; P unchanged parent first then qualified serial framing only after normal complete abstention. Original model replay and native provenance body preserved except allowed routes. No waveform factor.",
+  "source_SHA_pending": false,
+  "local_project_execution": false
+}

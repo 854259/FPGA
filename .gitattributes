@@ -139,3 +139,6 @@ Dockerfile text eol=lf
 03_analysis/vector_dataflow_preparation_20261006_v2/** -text -whitespace
 
 03_analysis/vector_native_calibration_20261006_v1/** -text -whitespace
+
+# This frozen adaptation receipt includes CRLF in its byte identity.
+03_analysis/table_history_cp8_integration_20261008/CP8_WORKER_ADAPTATION.json -text -whitespace

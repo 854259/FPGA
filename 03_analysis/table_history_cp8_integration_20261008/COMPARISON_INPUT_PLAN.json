@@ -1,0 +1,76 @@
+{
+  "schema": "table_history_cp8_score7_input_plan_v1",
+  "task_count": 7,
+  "tasks": {
+    "Prob045_edgedetect2": {
+      "C": {
+        "route": "model",
+        "selected_provider": null
+      },
+      "P": {
+        "route": "model",
+        "selected_provider": null
+      }
+    },
+    "Prob057_kmap2": {
+      "C": {
+        "route": "mechanical_table",
+        "selected_provider": "table"
+      },
+      "P": {
+        "route": "mechanical_table",
+        "selected_provider": "table"
+      }
+    },
+    "Prob127_lemmings1": {
+      "C": {
+        "route": "model",
+        "selected_provider": null
+      },
+      "P": {
+        "route": "model",
+        "selected_provider": null
+      }
+    },
+    "Prob137_fsm_serial": {
+      "C": {
+        "route": "model",
+        "selected_provider": null
+      },
+      "P": {
+        "route": "mechanical_serial_framing",
+        "selected_provider": "serial_framing"
+      }
+    },
+    "Prob143_fsm_onehot": {
+      "C": {
+        "route": "mechanical_onehot",
+        "selected_provider": "onehot"
+      },
+      "P": {
+        "route": "mechanical_onehot",
+        "selected_provider": "onehot"
+      }
+    },
+    "Prob146_fsm_serialdata": {
+      "C": {
+        "route": "model",
+        "selected_provider": null
+      },
+      "P": {
+        "route": "mechanical_serial_framing",
+        "selected_provider": "serial_framing"
+      }
+    },
+    "Prob151_review2015_fsm": {
+      "C": {
+        "route": "mechanical_timer",
+        "selected_provider": "timer"
+      },
+      "P": {
+        "route": "mechanical_timer",
+        "selected_provider": "timer"
+      }
+    }
+  }
+}
