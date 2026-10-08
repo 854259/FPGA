@@ -1,6 +1,6 @@
 {
   "schema": "serial_model_feedback_prepared_public_v1",
-  "status": "static_review_complete_native_controls_pending",
+  "status": "native_controls_queued_not_executed",
   "model_generated_rtl_required": true,
   "factor": "Complete serial protocol prompt -> finite testbench -> actual model RTL observations -> original one-repair feedback; never emits a DUT.",
   "source_hashes": {
@@ -16,7 +16,7 @@
   "source_manifest_sha256": "7542e83863a89216e62bc561643f3504734752028f5d8c32dfb741fe342696a2",
   "run_spec_sha256": "552233d8e0afd5870fb092232362293d39c655cf36ff60181bdd2eefc0f30b38",
   "native_controls": {
-    "queued": false,
+    "queued": true,
     "executed": false,
     "passed": null,
     "pure_tests": 8,
@@ -27,7 +27,12 @@
     "tool_cap_s": 60,
     "stage_cap_s": 900,
     "guard_cap_s": 1000,
-    "slot_minutes": 18
+    "slot_minutes": 18,
+    "ticket": 130,
+    "state_at_admission": "queued",
+    "root": "/workspace/team/runs/fpga_owner/serial_model_feedback_controls_20261008_v1",
+    "submission_receipt_sha256": "7bace7d23b5b225d1f7d95777481fa8f98cac587c2683323f94202925ca17af3",
+    "public_source_head": "4239aea83040e29a7bb8421b00bf3a7df8928856"
   },
   "existing_model128": {
     "evidence_valid": true,
