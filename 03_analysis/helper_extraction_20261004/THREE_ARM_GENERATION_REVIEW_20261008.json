@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-08T11:55:00+08:00",
-  "status": "finite_generation_and_reporting_controls_passed",
+  "updated_at": "2026-10-08T12:16:00+08:00",
+  "status": "finite_and_remote_runner_prepared",
   "run_root": "/workspace/team/runs/fpga_teammate/three_arm_generation_routes_20261008_v1",
   "archived_A": {
     "original_spec_sha256": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
@@ -210,6 +210,53 @@
       "Mechanical zero requires frozen source/prompt/RTL provenance; baseline zero and legacy unbound zero remain rejected.",
       "15 specification-blocked domains remain unscored; repeated samples do not increase independent task count.",
       "Current123 outcome and formal next-run admission remain pending; these are not new accuracy results."
+    ]
+  },
+  "remote_runner": {
+    "updated_at": "2026-10-08T12:16:00+08:00",
+    "status": "remote_runner_controls_passed",
+    "run_root": "/workspace/team/runs/fpga_teammate/three_arm_remote_runner_20261008_v1",
+    "source_sha256": {
+      "three_arm_queue_20261005.py": "cd42b55b7079768c14bbc02779f3fac91cf4b0f288d8486ef194bd0c3a850675",
+      "test_three_arm_queue_generation_20261008.py": "dc7508ff8be7fbfb23d4e9248c56d83c8b42402b8a2a86aa6dc4642996ba1190"
+    },
+    "receipts": {
+      "PLAN.json": "67e22d164de574ea8ac5cc48685fd652de96f6f12cb7398c9ec86f525ee5790f",
+      "RESULT.json": "1eb30dcef88fc55f49e25de3bd7cbf533c4893e73928cfdd150b31d6c64ed51a",
+      "RUNNER_CONTROL_RESULT.json": "0ac6b8bb15c1195c2161941bc64875ab9f15be439f02df928439d4a6371d94f1",
+      "runner_0.identity.json": "3f443b8b36469c044ae0fd4cde57e5fd247fce32c99d9e8540e4f556d768970e"
+    },
+    "checks": [
+      "complete_three_arms_and_repeat_without_dispatch",
+      "draft_and_wrong_plan_hash_rejected_before_output",
+      "second_driver_cannot_enter",
+      "crash_stops_next_row_and_never_retries",
+      "unconfirmed_stops_next_row_and_never_retries",
+      "zero_calls_do_not_refund_frozen_reservation",
+      "whole_row_time_reserved_before_dispatch"
+    ],
+    "fake_row_executions": 6,
+    "process": {
+      "child_wait_and_group_check_s": 1.0289570204913616,
+      "index": 0,
+      "pid": 2633429,
+      "reaped": true,
+      "remaining_live_group": [],
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4ffabb74c33ad4fcb4e74cb28ac62785145cef2f382a797835e2cb2e8c791944",
+      "timeout": false
+    },
+    "child_retired": true,
+    "model_calls": 0,
+    "eda_commands": 0,
+    "fifo_submissions": 0,
+    "scope": "New persistent driver only; real queue reservations, original seals and source validation, FAKE row outputs. Existing worker/native controls not rerun.",
+    "limits": [
+      "CLI must run under the existing AMD guard and FIFO with a separately frozen execution_authorized plan and exact plan SHA; this control does not admit scoring.",
+      "Per-row and total reservations unchanged; failed or unfinished rows halt without automatic retry or budget reset.",
+      "Recorded time covers child wait/group check only; no full external timing or new accuracy claim.",
+      "FIFO123 remains on its original frozen sources; full acceptance is incomplete."
     ]
   }
 }

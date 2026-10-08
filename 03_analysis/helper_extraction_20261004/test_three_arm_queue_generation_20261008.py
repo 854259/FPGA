@@ -1,5 +1,6 @@
 """One new queue integration control, reusing FAKE solve receipts; no solver/EDA."""
 import copy
+import fcntl
 import json
 from pathlib import Path
 import sys
@@ -71,5 +72,121 @@ def main(root):
         fixture='FAKE_NO_SOLVER_NO_JUDGE', new_model_requests=0, new_eda_commands=0))
 
 
+def runner_controls(root):
+    """New driver only: real reservations/seals, FAKE row results, no solver/EDA."""
+    prior = Path('/workspace/team/runs/fpga_teammate/three_arm_generation_routes_20261008_v1')
+    sources = json.loads((prior/'SOURCES.json').read_text())
+    sources['root'] = str(root)
+    entry = root/'three_arm_generation_20261008.py'
+    sources['files'][str(entry)] = official.sha(entry)
+    task = root/'runner_input'; task.mkdir()
+    (task/'prompt.txt').write_text('FAKE driver control; no RTL evaluation.\n')
+    tasks = [dict(dataset='synthetic', task='FAKE_RUNNER', family='driver_control',
+                  use='development', task_dir=str(task),
+                  hashes={'prompt.txt': official.sha(task/'prompt.txt')})]
+    base = queue.build_plan(tasks, 1, sources, root/'official_baseline_arm_20261005.py',
+                            '/workspace/team/tasks/autodl-rtl-kit/project', 5, 10000)
+    base['execution_authorized'] = True
+    base['synthetic_control'] = True
+    calls, checks = [], []
+    mode = {'value': 'success'}
+
+    def fake_row(plan, argv, row, folder, resource_check):
+        calls.append((str(folder), row['arm']))
+        (folder/'FAKE_RESULT.txt').write_text('FAKE_NO_SOLVER_NO_JUDGE\n')
+        if mode['value'] == 'crash':
+            raise RuntimeError('FAKE_CRASH_AFTER_DURABLE_RESERVATION')
+        return dict(complete=mode['value'] != 'unconfirmed',
+            actual_calls=1 if row['arm'] == 'B' else 0,
+            unconfirmed_calls=int(mode['value'] == 'unconfirmed'),
+            fixture='FAKE_NOT_SCORE', files={
+                'FAKE_RESULT.txt': official.sha(folder/'FAKE_RESULT.txt')})
+
+    def freeze(name, **changes):
+        plan = copy.deepcopy(base); plan.update(changes)
+        path = root/(name+'.json'); queue.save(path, plan)
+        return path, official.sha(path), root/name
+
+    def run(frozen):
+        return queue.run_plan(*frozen, root/'FAKE_RESOURCE.json')
+
+    def rejected(frozen, message):
+        before = len(calls)
+        try:
+            run(frozen)
+        except (AssertionError, RuntimeError, BlockingIOError) as error:
+            assert message in str(error), (message, str(error))
+        else:
+            raise AssertionError('Invalid queue accepted: '+message)
+        assert len(calls) == before
+
+    fake = SimpleNamespace(check_resource=lambda *args, **kwargs: None)
+    with patch.object(official, 'resource_module', return_value=fake), \
+         patch.object(queue, 'execute_row', side_effect=fake_row), \
+         patch('urllib.request.urlopen', side_effect=AssertionError('No HTTP permitted')):
+        done = freeze('complete')
+        assert run(done) == dict(complete=True, rows=3, reserved_calls=5, full_batch=False)
+        assert [arm for _, arm in calls] == ['A', 'P', 'B']
+        count = len(calls); assert run(done)['complete'] and len(calls) == count
+        assert len(list(done[2].glob('row_*/SEALED.json'))) == 3
+        checks.append('complete_three_arms_and_repeat_without_dispatch')
+
+        draft = freeze('draft', execution_authorized=False)
+        rejected(draft, 'Preparation plan cannot dispatch'); assert not draft[2].exists()
+        changed = freeze('changed')
+        rejected((changed[0], '0'*64, changed[2]), 'Frozen plan changed')
+        assert not changed[2].exists()
+        checks.append('draft_and_wrong_plan_hash_rejected_before_output')
+
+        locked = freeze('locked'); locked[2].mkdir()
+        with (locked[2]/'runner.lock').open('a+') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            rejected(locked, 'Resource temporarily unavailable')
+        assert not (locked[2]/'QUEUE.json').exists()
+        checks.append('second_driver_cannot_enter')
+
+        for state, message in [('crash', 'Unfinished reservation'),
+                               ('unconfirmed', 'Unconfirmed/failed row')]:
+            frozen = freeze(state); mode['value'] = state; before = len(calls)
+            try:
+                run(frozen)
+            except (AssertionError, RuntimeError):
+                pass
+            else:
+                raise AssertionError('Failed row did not stop')
+            assert len(calls) == before+1
+            assert len(list(frozen[2].glob('row_*'))) == 1
+            start_sha = official.sha(frozen[2]/'row_000000/STARTED.json')
+            mode['value'] = 'success'; rejected(frozen, message)
+            assert official.sha(frozen[2]/'row_000000/STARTED.json') == start_sha
+            checks.append(state+'_stops_next_row_and_never_retries')
+
+        capped = freeze('capped', max_calls=2); before = len(calls)
+        try:
+            run(capped)
+        except AssertionError as error:
+            assert 'Call reservation budget exhausted' in str(error)
+        else:
+            raise AssertionError('Zero actual calls incorrectly refunded maximum reservation')
+        assert len(calls) == before+1
+        rejected(capped, 'Call reservation budget exhausted')
+        checks.append('zero_calls_do_not_refund_frozen_reservation')
+        timed = freeze('timed', wall_seconds=669)
+        rejected(timed, 'Wall budget cannot cover next solve and judge')
+        assert not list(timed[2].glob('row_*'))
+        checks.append('whole_row_time_reserved_before_dispatch')
+    result = dict(passed=True, checks=checks, fake_row_executions=len(calls),
+        model_calls=0, eda_commands=0, fifo_submissions=0,
+        scope='Remote driver only; real queue reservations and ZIP seals; all row results FAKE',
+        full_batch=False)
+    queue.save(root/'RUNNER_CONTROL_RESULT.json', result)
+    print(json.dumps(result))
+
+
 if __name__ == '__main__':
-    main(Path(sys.argv[1]).resolve())
+    root = Path(sys.argv[1]).resolve()
+    if sys.argv[2:] == ['--runner-controls']:
+        runner_controls(root)
+    else:
+        assert not sys.argv[2:]
+        main(root)

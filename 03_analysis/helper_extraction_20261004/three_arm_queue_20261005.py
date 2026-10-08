@@ -299,9 +299,8 @@ def seal_row(folder, row, plan_sha256):
 def advance(plan, out, resource_check, execute):
     """execute receives the frozen argv; tests substitute a process probe.
 
-    A real runner must enforce admission before calling this function. This
-    module intentionally has no production CLI while real cancellation and the
-    full data/resource/budget admission contract remain incomplete.
+    The caller owns admission and the external AMD guard. Failed or unfinished
+    rows retain their reservation and prevent further dispatch.
     """
     out = Path(out).resolve()
     assert out.is_relative_to(Path(plan['sources']['root']).resolve()), 'Native probes require owned source root'
@@ -423,3 +422,55 @@ def execute_row(plan, argv, row, folder, resource_check):
     receipt['files'] = {str(p.relative_to(folder)):official.sha(p) for p in folder.rglob('*')
                         if p.is_file() and p.name != 'TERMINAL.json'}
     return receipt
+
+
+def run_plan(plan_path, expected_sha256, out, resource_check):
+    """Continue one frozen queue under its external AMD guard; never select/retry.
+
+    execution_authorized is set only in the separately reviewed scoring freeze.
+    It is not inferred from preparation/control success or available balance.
+    A finished queue is safe to inspect again; any unfinished row remains closed.
+    """
+    plan_path, out = Path(plan_path).resolve(), Path(out).resolve()
+    assert official.sha(plan_path) == expected_sha256, 'Frozen plan changed'
+    plan = json.loads(plan_path.read_text())
+    assert plan.get('execution_authorized') is True, 'Preparation plan cannot dispatch'
+    validate(plan)
+    assert out.is_relative_to(Path(plan['sources']['root']).resolve())
+    out.mkdir(parents=True, exist_ok=True)
+    with (out/'runner.lock').open('a+') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        with (out/'RUNNER_EVENTS.jsonl').open('a') as events:
+            try:
+                resource = official.resource_module()
+                resource.check_resource(resource_check, Path(plan['kit']), first=True)
+                events.write(json.dumps(dict(event='start', pid=os.getpid(),
+                    plan_sha256=expected_sha256, at_unix=time.time()))+'\n')
+                events.flush(); os.fsync(events.fileno())
+                while True:
+                    assert official.sha(plan_path) == expected_sha256, 'Frozen plan changed'
+                    progress = advance(plan, out, resource_check,
+                        lambda argv, row, folder: execute_row(plan, argv, row, folder, resource_check))
+                    events.write(json.dumps(dict(event='progress', at_unix=time.time(),
+                        **progress))+'\n')
+                    events.flush(); os.fsync(events.fileno())
+                    if progress['complete']:
+                        return progress
+            except Exception as error:
+                events.write(json.dumps(dict(event='stopped', at_unix=time.time(),
+                    error_type=type(error).__name__, error=str(error)))+'\n')
+                events.flush(); os.fsync(events.fileno())
+                raise
+
+
+if __name__ == '__main__':
+    import argparse
+    import sys
+    assert sys.platform == 'linux', 'Project execution is AMD-only'
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--plan', type=Path, required=True)
+    parser.add_argument('--plan-sha256', required=True)
+    parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--resource-check', type=Path, required=True)
+    args = parser.parse_args()
+    print(json.dumps(run_plan(args.plan, args.plan_sha256, args.out, args.resource_check)))
