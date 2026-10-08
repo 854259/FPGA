@@ -1,4 +1,55 @@
 {
+  "qualified_history_router_pure_composition_20261008": {
+    "schema": "qualified_history_router_pure_composition_public_v1",
+    "composition_controls_passed": true,
+    "new_synthetic_controls": 22,
+    "new_retained_composition_contexts": 2,
+    "retained_recipe_and_reversed_provider_order_equal": true,
+    "root": "/workspace/team/runs/fpga_owner/qualified_history_router_controls_20261008_v1",
+    "actual_receipt_sha256": "ff7eb90f51965c56ce9ed8f8aef355aacb086a029ba83529c71f7d41a028e06e",
+    "process_returncode": 0,
+    "exec_confirmed": true,
+    "leader_reaped": true,
+    "independent_child_retired": true,
+    "elapsed_s": 0.1364193744957447,
+    "archive_sha256": "e1fba70f098f528b411a31eb9f30720dfed6dd35563ad6df99b15dc1b05af36b",
+    "archive_members": 19,
+    "archive_AMD_E_every_member_bound": true,
+    "selector_sha256": "9ef0c99f24c90e396d7d31a66357ac7bdf3c1f097fcaa321641ed44d20f4d116",
+    "test_selector_sha256": "8d4a35f49b4bd7455444ca7373ceff2b501cea903e73dfc428d29119e1e9cdec",
+    "unchanged_producer_sha256": {
+      "onehot": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+      "serial_timer": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6"
+    },
+    "prior_measured_separate_routes": {
+      "onehot": {
+        "ticket": 109,
+        "task": "Prob143_fsm_onehot",
+        "P_level": 3,
+        "P_requests": 0
+      },
+      "serial_timer": {
+        "ticket": 110,
+        "task": "Prob151_review2015_fsm",
+        "P_level": 3,
+        "P_requests": 0
+      }
+    },
+    "prior_whole_candidates_remain_rejected": true,
+    "combined_score_measured": false,
+    "complete_worker_integration": false,
+    "new_native_qualification": false,
+    "all156_composition_intake_executed": false,
+    "queued": false,
+    "qualified_for_full156": false,
+    "adoption": false,
+    "new_model_EDA_FIFO_calls": 0,
+    "old_native_pure_worker_156_intake_not_rerun": true,
+    "own122_peer123_model_PRIMARY_preserved": true,
+    "selection_scope": "Unique complete prompt-only recipe; ambiguity or malformed receipt abstains to unchanged caller worker. Providers remain separately source-pinned and admitted; self-reported receipt is not independent execution proof.",
+    "goal_status": "active",
+    "goal_achieved": false
+  },
   "galois_pair2_actual_diagnostic_preparation_20261008": {
     "schema": "galois_pair2_diagnostic_actual_preparation_public_v1",
     "prepared": true,

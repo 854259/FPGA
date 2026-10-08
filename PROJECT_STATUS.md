@@ -1,3 +1,9 @@
+## 2026-10-08 复用one-hot/timer的纯组合控制通过，尚未接完整worker
+
+复用原109/110已真实L3/0调用的两条题面规则，两个旧完整策略仍拒绝、不相加跨轮分数。新增selector只接受唯一完整recipe，碰撞或记录不一致弃权；无ID/答案派发。AMD新增22模拟组合控制及2原自然输入上下文通过，原recipe与逆序选择保持、源码fc1af52c/9080c49a逐字不变。受限进程exec0/reaped约0.136秒、独立child退休；19原件e1fba70f已AMD/E逐项绑定，0模型/EDA/FIFO，旧native/算法/worker/156 intake不重跑。
+
+尚未接完整worker、未验证全156组合覆盖/新native/测分/入队/采用。来源声明核验不替代独立调用与生成证据。peer继续持123及三臂/终态；root既定下一模型任务仍为PR166 pair2，85源/原122/123/model/PRIMARY保持。目标120/.80仍ACTIVE；详情见 [组合摘要](03_analysis/qualified_history_router_20261008/PUBLIC_RESULT.json)。下方旧正文/节点保留为历史快照。
+
 ## 2026-10-08 两命中题诊断85源实际准备完成，尚未入队或测分
 
 新增原预算两题4输出/max8诊断入口及独立request/response/compile/最终稿核验。AMD新4旧模拟记录只读/40篡改拒绝、17元数据准入/4模拟native拒绝通过；旧worker/解析/scope/156 intake均未重跑，0真实模型/EDA/FIFO。85源584d07d9纯准备exec0/reaped约2.829秒、独立child退休，原44/common phase-P/判定及8192/max2/repair1/300/300/360保持。97原件ZIP a6bdd59b已AMD/E逐项绑定；初次审计夹具17失败原件保留。
