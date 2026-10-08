@@ -1,4 +1,201 @@
 {
+  "table_parent_history_composition_controls_20261008": {
+    "schema": "table_parent_history_composition_actual_controls_public_v1",
+    "parent": "Complete original table producer a18ac218 and contract46d53, common fallback7ff7; both arms.",
+    "candidate": "Same complete parent first; only explicit parent abstentions reach unchanged selector9ef0 / onehotfc1 / timer9080.",
+    "original_parent_outputs_preserved_by_construction": true,
+    "old_parent_whole_score_still_rejected": true,
+    "source_hashes": {
+      "composition.py": "f6f8bf7d01eee3df05b7f25ed1d4b2e8618203f4001e3caa61ef2f80e8038cc3",
+      "worker.py": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e",
+      "WORKER_ADAPTATION.json": "bcd52f8052fea4c64ceb407d63d1d913e3c3162345418207691c88d36d1fef11",
+      "generation_binding.py": "128a80c25d10bee029d1c12bae08571d9a71fbe50301603cb084bbb7d0ec5052",
+      "original_model_replay.py": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+      "GENERATION_ADAPTATION.json": "845d2ee79f526929327bec9e2337d2720f1962be757fc110d3a39eb3e0bf483e",
+      "test_parent_history.py": "dab2bca4471abebe9c99d74a38e17692dca74acb10d60e52324ee93ff19c26d9",
+      "test_parent_generation_binding.py": "6fc252bfcc10ed3a4b413fcf6e8891e4cb4b979c6c106b8a99486c83c72d76bd",
+      "run_new_controls.py": "a6558e9cf2580cc9e947708aa1e665408deded8b2d0335b0ee8df4fca77cfb6a",
+      "test_dependency_binding.py": "0676287c5d6a75bb70a357f3cb3386ce97afe7c3181f7abd012d993f50d13e23"
+    },
+    "actual_controls": {
+      "passed": true,
+      "worker": {
+        "schema": "table_parent_history_new_interface_controls_v1",
+        "passed": true,
+        "cases": [
+          "parent_priority_C",
+          "parent_priority_P",
+          "unique_extension_onehot",
+          "unique_extension_timer",
+          "C_skips_extensions",
+          "P_both_abstain",
+          "P_collision",
+          "invalid_extension_abstains",
+          "damaged_parent_prompt_sha256_fails_closed",
+          "damaged_parent_rtl_sha256_fails_closed",
+          "damaged_parent_actual_model_requests_fails_closed",
+          "damaged_parent_all_prompt_consumed_fails_closed",
+          "damaged_parent_abstention_fails_closed",
+          "C_native_failure_does_not_expand_budget",
+          "raw_input_original_delegate_C",
+          "raw_input_original_delegate_P",
+          "score_CLI_remains_closed"
+        ],
+        "contexts": 17,
+        "producers_model_native_explicitly_mocked": true,
+        "unchanged_selector_used_only_at_new_boundary": true,
+        "old_controls_or_native_or_intake_rerun": false,
+        "actual_model_calls": 0,
+        "actual_eda_calls": 0,
+        "real_native_or_score_qualification": false
+      },
+      "generation": {
+        "passed": true,
+        "positive_route_contexts": 6,
+        "rejection_contexts": 9,
+        "positives": [
+          "table_P",
+          "onehot_P",
+          "timer_P",
+          "table_C",
+          "parent_abstain_C",
+          "all_abstain_P"
+        ],
+        "rejections": [
+          "parent_selected_provider",
+          "parent_original_recipe",
+          "parent_parent_recipe",
+          "parent_rtl",
+          "C_cannot_use_extension",
+          "duplicate_parent_receipt_key",
+          "C_fake_native_not_qualification",
+          "C_extension_native_disallowed",
+          "composition_source_mismatch"
+        ],
+        "metadata_only_not_native_execution": true,
+        "new_parent_first_generation_interface_verified": true,
+        "old_request_replay_native_test_suites_and_intake_not_rerun": true,
+        "new_worker_model_EDA_FIFO_calls": 0,
+        "new_real_native_positive_or_score": false
+      },
+      "new_real_model_EDA_FIFO_calls": 0,
+      "score_or_adoption": false
+    },
+    "controls_root": "/workspace/team/runs/fpga_owner/table_history_composition_controls_20261008_v1",
+    "receipt_sha256": "37b761b4df58372bd9394eabdb5d6f348f81f201fcf40da5a3227b0bce00a83f",
+    "archive_sha256": "14334859cc746c04c21c85541b55e6ab6355f254198316811057955e526991bb",
+    "archive_members": 282,
+    "AMD_E_every_member_bound": true,
+    "process": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/table_history_composition_controls_20261008_v1/run_new_controls.py"
+      ],
+      "cwd": "/workspace/team/runs/fpga_owner/table_history_composition_controls_20261008_v1",
+      "cap_s": 40,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 2679415,
+        "state": "T",
+        "starttime": "870981677",
+        "pgid": 2679415,
+        "sid": 2679415,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 0.28405650332570076,
+      "leader_reaped": true,
+      "stdout_sha256": "3da503e326a5150cc56b1703870e48597fb1b5a2d49bc387805e9bad51e5c86b",
+      "stdout_bytes": 3275,
+      "normal_completion": true
+    },
+    "independent_child_retired": true,
+    "common_worker_model_wire_body_unchanged_by_explicit_reversible_adaptation": true,
+    "actual_model_wire_or_native_not_retested": true,
+    "old_native_producer_tests_five_table_gains_and_full_intake_not_rerun": true,
+    "waveform_factor_included": false,
+    "vector_factor_included": false,
+    "vector_decision_pending_peer123": true,
+    "known_historical145_gap_unresolved": true,
+    "scoring_stage_and_full_archive_integration_pending": true,
+    "new_RUN_SPEC_created": false,
+    "new_full156_admission": false,
+    "queued": false,
+    "new_score_measured": false,
+    "adoption": false,
+    "goal_achieved": false,
+    "existing_FIFO124_preserved": true,
+    "peer123_terminal_owner_preserved": true,
+    "independent_review_dependency_binding_fix": {
+      "issue": "Passed provider files did not establish identity of composition imported dependencies; old module cache could select a different source.",
+      "fixed": true,
+      "source_sha256": "128a80c25d10bee029d1c12bae08571d9a71fbe50301603cb084bbb7d0ec5052",
+      "new_controls": {
+        "passed": true,
+        "positive_contexts": 1,
+        "rejection_contexts": 5,
+        "rejections": [
+          "table_synthesis_object",
+          "onehot_producer_object",
+          "timer_producer_object",
+          "selector_foreign_path",
+          "contract_foreign_path"
+        ],
+        "only_new_module_identity_guard_tested": true,
+        "old_17_worker_6_route_9_rejection_results_reused_not_rerun": true,
+        "new_worker_model_EDA_FIFO_calls": 0,
+        "new_score_or_native_qualification": false
+      },
+      "controls_root": "/workspace/team/runs/fpga_owner/table_history_composition_controls_20261008_v2",
+      "receipt_sha256": "061c74496147dd67506403289cb02c15e7269b71dbffe6846f0602ecc2e9c865",
+      "archive_sha256": "f8676daee6f9275b080b6e8078dda1c1f38bbd04dcc00f93d3157da244dca862",
+      "archive_members": 47,
+      "AMD_E_every_member_bound": true,
+      "process": {
+        "schema": "owned_preexec_birth_gate_v1",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/runs/fpga_owner/table_history_composition_controls_20261008_v2/test_dependency_binding.py"
+        ],
+        "cwd": "/workspace/team/runs/fpga_owner/table_history_composition_controls_20261008_v2",
+        "cap_s": 40,
+        "timeout": false,
+        "signals": [
+          "SIGCONT_bound_preexec_child"
+        ],
+        "exec_error": null,
+        "error": null,
+        "child_identity": {
+          "pid": 2684645,
+          "state": "T",
+          "starttime": "871003727",
+          "pgid": 2684645,
+          "sid": 2684645,
+          "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+        },
+        "exec_confirmed": true,
+        "returncode": 0,
+        "remaining_group": [],
+        "elapsed_s": 0.18731009401381016,
+        "leader_reaped": true,
+        "stdout_sha256": "4ff77f3558ac03bd77cd981e1207795321ae6d0684f86e8420fdb2641b5ad720",
+        "stdout_bytes": 406,
+        "normal_completion": true
+      },
+      "independent_child_retired": true,
+      "earlier17_6_9_evidence_retained_not_rerun": true
+    }
+  },
   "galois_pair2_FIFO124_actual_20261008": {
     "schema": "galois_pair2_FIFO124_actual_public_v1",
     "ticket": 124,
