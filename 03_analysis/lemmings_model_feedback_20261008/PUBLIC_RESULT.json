@@ -1,6 +1,6 @@
 {
   "schema": "lemmings_model_feedback_qualification_public_v1",
-  "status": "pure_flow_intake_passed_native_not_submitted",
+  "status": "pure_flow_intake_passed_native136_queued",
   "factor": "Actual prompt-derived Lemmings event counterexample supplied to original one-repair model flow; never generate or modify DUT.",
   "scope": "Three complete prose variants: walk/fall, walk/fall/dig, and20-cycle landing-death; unsupported prompts retain original feedback.",
   "source_hashes": {
@@ -82,7 +82,7 @@
     "independent_unseen": 0
   },
   "native": {
-    "status": "not_submitted_not_run",
+    "status": "queued_not_run_not_qualified",
     "core_cases": 21,
     "exact_extracted_DUT_cases": 2,
     "max_eda_commands": 69,
@@ -93,7 +93,31 @@
     "slot_minutes": 80,
     "safety_caps_are_not_eta": true,
     "passed": null,
-    "score_measured": false
+    "score_measured": false,
+    "ticket": 136,
+    "submission_receipt_sha256": "fe7b55fa1581a46306196ea33fa111903531bb96b95fa5c26d63694c754b2e45",
+    "monitor_birth": {
+      "pid": 3046091,
+      "starttime": "874002832",
+      "state": "R",
+      "command_sha256": "eb00e270ddd51ec8c1bfc55fc6e99be4418cca305c566ade9f1bc6e0dd508a4b"
+    },
+    "monitor_live_at_admission": {
+      "pid": 3046091,
+      "starttime": "874002832",
+      "state": "R",
+      "ppid": 1,
+      "pgid": 3046091,
+      "sid": 3046091,
+      "command_sha256": "eb00e270ddd51ec8c1bfc55fc6e99be4418cca305c566ade9f1bc6e0dd508a4b"
+    },
+    "cloud_root": "/workspace/team/runs/fpga_owner/lemmings_feedback_controls_20261008_v1",
+    "detached": true,
+    "whole_task_fifo": true,
+    "public_pr": "https://github.com/854259/FPGA/pull/190",
+    "public_source_head": "4789e61b124ad584300862c0b9b2de470f6424c4",
+    "pr_draft": true,
+    "existing_ticket_only": true
   },
   "later_requirements": [
     "Actual23-case native qualification including exact extracted bad/good sources and matching first-feedback text.",
