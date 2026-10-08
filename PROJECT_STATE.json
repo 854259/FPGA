@@ -17482,7 +17482,7 @@
   },
   "serial_model_feedback_prepared_20261008": {
     "schema": "serial_model_feedback_qualified_public_v1",
-    "status": "native_and_binding_qualified_real_model_comparison_pending",
+    "status": "actual_comparison_prepared_not_submitted",
     "model_generated_rtl_required": true,
     "factor": "Complete serial protocol prompt -> finite testbench -> actual model RTL observations -> original one-repair feedback; never emits a DUT.",
     "source_hashes": {
@@ -17496,7 +17496,9 @@
       "fixtures/unknown_done_mutant.sv": "3f59a6973b4626fa9df038ae951e7685e690e81c45011028b125b3e5b45371ac",
       "worker.py": "61efa0a0d35efe4b26ef7f4607735ccebeef2678f63ed10f7aeef8d1eac51a45",
       "serial_binding.py": "098a688e9ac3f8beeb726a5c61a72003820b787b7b5619f3e4b113e398534970",
-      "binding_controls.py": "9a8bf868f52200a3a9be2caed2e4521bb094c9489a8ce8b27bee31c57d45029a"
+      "binding_controls.py": "9a8bf868f52200a3a9be2caed2e4521bb094c9489a8ce8b27bee31c57d45029a",
+      "prepare_comparison.py": "a2334f0178e7dcf4980bfcd13d286fb31d788be57a9ac358fd20db989ce3c258",
+      "comparison_result.py": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39"
     },
     "source_manifest_sha256": "7542e83863a89216e62bc561643f3504734752028f5d8c32dfb741fe342696a2",
     "run_spec_sha256": "552233d8e0afd5870fb092232362293d39c655cf36ff60181bdd2eefc0f30b38",
@@ -17558,7 +17560,7 @@
       "Native X output control; Z comparison is supported but lacks a separate native control.",
       "Original ANSI declaration-fix early return can bypass feedback."
     ],
-    "next": "Freeze and submit actual intake-derived 2 tasks x 5 samples x A/P/B with the inherited original budgets; inspect actual accuracy, regressions, request costs and wall time before any full156.",
+    "next": "After final source review/PR delivery, uniquely submit the frozen 30-output comparison by whole-task FIFO, then apply the unchanged peer PR183 reader once at completion.",
     "full_goal_complete": false,
     "score_improvement_claimed": false,
     "intake": {
@@ -17597,6 +17599,50 @@
       "all_members_verified_on_E": true,
       "source_and_original_evidence_held": true,
       "compatibility_projection": "Only simulated copies derive omitted130 log_bytes from its SHA-bound bounded receipt/stdout; originals and production binder unchanged"
+    },
+    "comparison_preparation": {
+      "complete": true,
+      "prepared": true,
+      "submitted": false,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "fifo_calls": 0,
+      "tasks": 2,
+      "outputs": 30,
+      "max_calls": 50,
+      "spec_sha256": "7b5f48c95500703aae2c43708e1c1c0e8fe0ad9647ce8a9ac5c200d23b55c8d0",
+      "plan_sha256": "a922a145640348a0d6fc053d0a57ceb1235f03052ef37e53072ac18135d0ae6c",
+      "sources_held": true,
+      "admission_requires_root_review": true,
+      "execution_authorized": true,
+      "safety_caps": {
+        "queue_wall_s": 21600,
+        "proposed_stage_cap_s": 21720,
+        "proposed_guard_s": 21900,
+        "proposed_fifo_slot_minutes": 370
+      },
+      "terminal_reader_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+      "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+      "terminal_reader": "/workspace/team/runs/fpga_owner/serial_model_feedback_comparison2x5_20261008_v1/comparison_result.py",
+      "official_score": "/workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/score.py",
+      "root": "/workspace/team/runs/fpga_owner/serial_model_feedback_comparison2x5_20261008_v1",
+      "result_sha256": "d1b6cf649d413e61190d51e00e65843a34a2418ae37f5b5db734a160ba66011d",
+      "receipt_sha256": "90984335839e4d2178aa811b9e421b0b70b63822a04c625b5234f1a59cd300f4",
+      "archive_sha256": "42706f5a3584d794da4d4d3fb756f27c116c32bbbdea24cb9bf469e994b9e68b",
+      "archive_members": 49,
+      "every_member_verified_on_E": true,
+      "source_count": 31,
+      "qualified_source_unchanged": true,
+      "samples": 5,
+      "arms": [
+        "A_original_agent",
+        "P_serial_feedback",
+        "B_official_baseline"
+      ],
+      "selection": "All actual prompt-only eligible rows",
+      "full156": false,
+      "formal_adoption": false,
+      "independent_unseen": 0
     }
   }
 }

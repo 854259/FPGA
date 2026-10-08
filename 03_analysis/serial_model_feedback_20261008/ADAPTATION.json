@@ -16,7 +16,9 @@
     "fixtures/unknown_done_mutant.sv",
     "worker.py",
     "serial_binding.py",
-    "binding_controls.py"
+    "binding_controls.py",
+    "prepare_comparison.py",
+    "comparison_result.py"
   ],
   "packet_source_count": 27,
   "comparison_worker": {
@@ -30,5 +32,12 @@
       "row-specific event identity"
     ],
     "first_model_request_unchanged": true
+  },
+  "comparison_preparation": {
+    "qualification_source_count": 29,
+    "comparison_source_count": 31,
+    "reader_reused_unchanged_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+    "queue_reused_unchanged_sha256": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de",
+    "original_worker_budgets_unchanged": true
   }
 }
