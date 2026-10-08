@@ -1,7 +1,7 @@
 {
   "schema": "prompt_table_model_feedback_preparation_v1",
-  "updated_at": "2026-10-08T20:49:00+08:00",
-  "status": "full156x5_running_next_multi_counterexample_native_queued",
+  "updated_at": "2026-10-08T21:12:00+08:00",
+  "status": "full156x5_running_native133_and_conditional_comparison134_queued",
   "selection": "Official RTL competition total score and submission requirements only; no historical-task or per-task-call vetoes.",
   "factor": "C retains original model/phase feedback. P checks the actual model RTL against a fully consumed prompt table and feeds only a measured counterexample into the existing one-repair loop.",
   "design_generation": "Model generates the RTL. This module renders only a testbench and diagnostics; no synthesis module is imported.",
@@ -71,7 +71,7 @@
     "Existing ANSI declaration-fix return bypasses functional feedback; this inherited behavior is unchanged in both arms.",
     "Five-sample nine-task comparison is complete only within its development scope. Full156 is running; applicable RTLLM coverage, engineering/resource/interface/recovery and official final total remain outstanding."
   ],
-  "next": "Keep FIFO132 unchanged. Once-only FIFO133 validates the new multi-counterexample diagnostic protocol after the current slot; no model scoring for this next factor before that result. Judge future candidates by official score quantities, not historical or per-call vetoes.",
+  "next": "Follow original132 to its natural exit. FIFO133 then validates the fixed multi-point probe; unique FIFO134 starts the frozen single-versus-multiple model comparison only if original133 completes validly. No local night polling or resubmission; select by official score quantities.",
   "full_goal_complete": false,
   "comparison": {
     "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison9x5_20261008_v1",
@@ -355,7 +355,7 @@
     "amd_and_local_all_members_verified": true
   },
   "full156_comparison": {
-    "status": "running_snapshot_20261008_2045",
+    "status": "running_snapshot_20261008_2109",
     "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1",
     "spec_sha256": "b499f6c16fa91868ca7ba60a168929204f02d5b0e164f5ade776a65983aa5c5d",
     "plan_sha256": "c85226725bab88c08503cd9feda393378ef17c491fabebec4bea0abd930d954c",
@@ -415,7 +415,7 @@
     "started_at": "2026-10-08T20:09:51.981661+08:00",
     "submission_sha256": "a71751015fa07c997dfc61d0aee5cacc0536a90b820616833a4a46b8e55cdbc8",
     "preparation_model_calls": 0,
-    "last_identity_check": "2026-10-08T20:45:06.978161+08:00",
+    "last_identity_check": "2026-10-08T21:09:47.689176+08:00",
     "monitor": {
       "pid": 2930407,
       "starttime": "873442383",
@@ -536,5 +536,103 @@
     "private_originals_local": 7,
     "private_originals_hash_bound": true,
     "local_transport_note": "First oversized Windows command rejected before process creation; originals then transferred in bounded chunks and hashes matched. No project retry."
+  },
+  "multi_counterexample_comparison": {
+    "root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison9x5_20261008_v1",
+    "status": "conditional_queued_not_started_or_scored",
+    "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+    "spec_sha256": "0cdacd933a0f799783d5e8195217cdfa4aeadbdb77b8b80271a58756d2c9cbc6",
+    "preparation_sha256": "232fbd2a71aa51c9decd31fd5b39e9f71d983a7c28d9553aba10dcc02652b376",
+    "arms": {
+      "A": "Archived single-counterexample feedback; model-generated DUT",
+      "P": "Multiple measured counterexamples with binary widths; model-generated DUT",
+      "B": "Unmodified official baseline"
+    },
+    "tasks": 9,
+    "samples_per_task": 5,
+    "outputs": 135,
+    "model_max": 225,
+    "retries": 0,
+    "selection": "Official coefficient mean/pass@1, same-run B gain and actual wall time; no invented historical or per-task-call vetoes.",
+    "data": "All nine tasks from original prompt-only applicability intake; seen development, not independent validation.",
+    "controls": {
+      "routing_cases": 5,
+      "conditional_positive": 1,
+      "conditional_rejections": 6,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "old_controls_rerun": 0,
+      "routing_result_sha256": "776ebc4b091da7884a86e896c36295a6a2824b98af6f359250a5a6389800d1c7",
+      "conditional_result_sha256": "ac6c658906ab618d343462be3afeb7e58ae81cfaab9b123e0bc95d5585287823"
+    },
+    "preparation_process": {
+      "pid": 3011078,
+      "starttime": "873836524",
+      "returncode": 0,
+      "reaped": true,
+      "exec_confirmed": true,
+      "remaining_group": [],
+      "retired": true,
+      "child_elapsed_s": 0.2720735017210245,
+      "time_scope": "Child wait only; not complete outer stage or transfer.",
+      "receipt_sha256": "9cef42dba293c88c0eabbaa4f93ba256e07996cc09407e111453e46d6b29da09"
+    },
+    "source_sha256": {
+      "worker": "baf1fbf52acef8ee99c4924cffdc5d545d98e80f7469350a0b19e2cb8d25946f",
+      "prepare": "f87c56f906f284c141c0f12672244c6b55c3cd6f037fd00ca0ece51f84bef0a2",
+      "control": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+      "candidate": "1d04cae753ec195854a9b426f4aa773b32192fdbb9d11261d0f71139c6d4e515"
+    },
+    "unchanged": "Worker.bind AST, official baseline/scoring/queue, parser, model parameters and prior controls. Current132 and133 copies stay frozen.",
+    "prerequisite": {
+      "ticket": 133,
+      "plan_sha256": "841629edde4aa32b0cb13587c10c071f3f52acc7afba519af70fe50e738712dc",
+      "manifest_sha256": "c989a1135c05df06d011700dc87ca9a497e8ccbb4092915c61656ae01d0ce384",
+      "requires": "Original ticket completed, source hashes, native 3 supervised EDA commands, passed outer and guard, released own slot; otherwise stop before any model request.",
+      "native_qualified": false
+    },
+    "submission": {
+      "ticket": 134,
+      "accepted_at": "2026-10-08T21:09:47.740389+08:00",
+      "state": "queued",
+      "monitor_pid": 3016870,
+      "monitor_starttime": "873863722",
+      "monitor_command_sha256": "f79b0dd91bde13d116bcf7ad32b8f3305e29014941977fd703e959f175d901b6",
+      "monitor_ppid": 1,
+      "monitor_sid": 3016870,
+      "last_direct_identity_check": "2026-10-08T21:11:46.486854+08:00",
+      "submission_sha256": "2afa3c3b4cb1fa3432096c999c4ff6d62c71bc978eb6538824b56cfef6a9274c",
+      "intent_sha256": "e9e90829b7a6a2c4cf5cc6b46cfc922a78f2badc6740b03a3a5d2178aaaa1fb4",
+      "process_sha256": "9212fb03e6554091fbe577039ea2e92d86d188a8746cd925a8dcc0be33397e94",
+      "binding_sha256": "d5e1d3f23230a5b135944c97a64504502a42a36b4fd09be3e636b854dc4729aa"
+    },
+    "limits": {
+      "max_tokens": 8192,
+      "AP_max_requests": 2,
+      "B_max_requests": 1,
+      "solve_s": 300,
+      "solve_supervisor_s": 310,
+      "judge_supervisor_s": 360,
+      "queue_s": 43200,
+      "guard_s": 43600,
+      "slot_minutes": 740,
+      "note": "Safety caps, not ETA or permanent official limits."
+    },
+    "archives": {
+      "preparation": {
+        "sha256": "afe6e5b0705dd54389401a1f8de1acb75f391135f46bea2fedb089ff7760aca2",
+        "members": 14
+      },
+      "submission": {
+        "sha256": "0d0ede31752ae43fbb4a0e4ba00369cdb3868d92e93b66a432f8065d9508e90e",
+        "members": 6
+      },
+      "both_end_members_verified": true
+    },
+    "scope": "Preparation/conditional acceptance only. No new accuracy, native qualification or full acceptance claimed.",
+    "readback_notes": [
+      "Preparation rc0 preceded a display error for nonexistent separate stderr; merged stdout retained, no rerun.",
+      "First submission readback assumed nonexistent ticket.monitor_identity; direct returned PID/start/cmd bound afterwards, no resubmission."
+    ]
   }
 }
