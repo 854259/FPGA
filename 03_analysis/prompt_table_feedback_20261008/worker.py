@@ -9,6 +9,29 @@ import baseline_worker
 import table_feedback
 
 
+def run_selected(args, paired, spec):
+    """Optional A=archived single-point feedback; preserve C result labels."""
+    if args.arm != 'C' or 'control_feedback_sha256' not in spec:
+        return table_feedback.run_worker(baseline_worker, args, paired)
+    root = Path(__file__).resolve().parent
+    control = root / 'control_feedback.py'
+    assert baseline_worker.sha(control) == spec['control_feedback_sha256']
+    old = baseline_worker.load('archived_single_point_feedback', control)
+    original = baseline_worker.functional_feedback
+
+    def feedback(prompt, code, out, attempt, tools, task, candidate=False):
+        measured = old.check(prompt, code, out, attempt, tools, task, baseline_worker.ROOT)
+        if measured is not None:
+            return measured
+        return original(prompt, code, out, attempt, tools, task, candidate=candidate)
+
+    baseline_worker.functional_feedback = feedback
+    try:
+        return baseline_worker.run_worker(args, paired)
+    finally:
+        baseline_worker.functional_feedback = original
+
+
 def bind(solve, selected_arm):
     """Read retained model replies; never call a model or a tool to verify them."""
     root, solve = Path(__file__).resolve().parent, Path(solve).resolve()
@@ -92,4 +115,4 @@ if __name__ == '__main__':
     for name, digest in spec['dependency_hashes'].items():
         assert baseline_worker.sha(Path(spec['dependencies_cloud']) / name) == digest
     paired = baseline_worker.load('table_feedback_owned', Path(spec['dependencies_cloud']) / 'paired_checkpoint.py')
-    table_feedback.run_worker(baseline_worker, args, paired)
+    run_selected(args, paired, spec)
