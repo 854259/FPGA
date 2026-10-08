@@ -1,0 +1,1371 @@
+{
+  "schema": "official_scoring_review_public_v1",
+  "date": "2026-10-08",
+  "purpose": "Correct scoring scope and index existing measured evidence; preserve original results and active frozen runs.",
+  "project_execution_this_review": false,
+  "official_or_project_modules_imported": false,
+  "new_scorer_reader_model_eda_calls": 0,
+  "official_recheck": {
+    "method": "git ls-remote + shallow official clone; git show canonical blob bytes; pure file and Git operations only",
+    "recorded_checked_utc": "2026-10-08T12:02:51.254094+00:00",
+    "repositories": {
+      "fpgachina26-amd": {
+        "head": "e47e4a81c2a6a35dbd0b25dcaa4d2edef9daf643",
+        "url": "https://gitee.com/Vickyiii/fpgachina26-amd"
+      },
+      "rtlagent2026": {
+        "head": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+        "url": "https://gitee.com/Vickyiii/rtlagent2026"
+      },
+      "hlsagent2026": {
+        "head": "2c242fd74d1ed3e67ca065ab0868ef07478e8fdc",
+        "url": "https://gitee.com/Vickyiii/hlsagent2026"
+      }
+    },
+    "RTL_HEAD_matches_existing_pin": true,
+    "local_SCORING_and_score_bytes_equal": true,
+    "sources": {
+      "SCORING.md": {
+        "sha256": "559d828ce7b167ab78410d773295c90e4e7b679e013cbb430ef097330638fdb2",
+        "git_blob_sha1": "06caae838ef8d12b5ef5e47a2d13d680d9695c64",
+        "bytes": 18652,
+        "url": "https://gitee.com/Vickyiii/rtlagent2026/blob/afd135e7ba5f6ec4c6d77e7c927c894327537801/SCORING.md"
+      },
+      "selftest/score.py": {
+        "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "git_blob_sha1": "b9df8ed09adc18e5193d1c5ccc07e564a3ff04d0",
+        "bytes": 8588,
+        "url": "https://gitee.com/Vickyiii/rtlagent2026/blob/afd135e7ba5f6ec4c6d77e7c927c894327537801/selftest/score.py"
+      },
+      "selftest/README.md": {
+        "sha256": "efba178ca27745bf84add599d3ac10a5424ebf24094ed12e03bffc7bd414e547",
+        "git_blob_sha1": "7500dc34e76d75cd9f467f66b915a7291cc37eb8",
+        "bytes": 7262,
+        "url": "https://gitee.com/Vickyiii/rtlagent2026/blob/afd135e7ba5f6ec4c6d77e7c927c894327537801/selftest/README.md"
+      },
+      "docs/API_CONTRACT.md": {
+        "sha256": "443b9eab7bd016a45b64c0b0d66c7efcfd91aaf26dd839f4ca8f7aa1871bcd62",
+        "git_blob_sha1": "9f889a2f1ca96e886d5d03a75f3b85df09a5b993",
+        "bytes": 16480,
+        "url": "https://gitee.com/Vickyiii/rtlagent2026/blob/afd135e7ba5f6ec4c6d77e7c927c894327537801/docs/API_CONTRACT.md"
+      },
+      "docs/FAQ.md": {
+        "sha256": "3b469edee61e0de15368ac70976c118e072e3c3b04d04e310d0192c5175b282d",
+        "git_blob_sha1": "1e9d65f9c28cfe452780c1496b261888f4f35431",
+        "bytes": 10078,
+        "url": "https://gitee.com/Vickyiii/rtlagent2026/blob/afd135e7ba5f6ec4c6d77e7c927c894327537801/docs/FAQ.md"
+      },
+      "example/baseline.py": {
+        "sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+        "git_blob_sha1": "88902edd12d68c1f07c7f93d152c669c42d88db0",
+        "bytes": 6897,
+        "url": "https://gitee.com/Vickyiii/rtlagent2026/blob/afd135e7ba5f6ec4c6d77e7c927c894327537801/example/baseline.py"
+      },
+      "example/run_baseline.sh": {
+        "sha256": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+        "git_blob_sha1": "432aaf1674b613eaadbb3e29cd7d203a95a1b807",
+        "bytes": 269,
+        "url": "https://gitee.com/Vickyiii/rtlagent2026/blob/afd135e7ba5f6ec4c6d77e7c927c894327537801/example/run_baseline.sh"
+      }
+    }
+  },
+  "official_RTL_protocol": {
+    "level_coefficients": {
+      "L0": 0,
+      "L1": 0.2,
+      "L2": 0.7,
+      "L3": 1
+    },
+    "samples_per_task": 5,
+    "task_pass_at_1": "mean coefficient over valid samples",
+    "task_pass_at_5": "max coefficient over valid samples",
+    "set_score": "equal mean of valid tasks; tool_error samples and all-error tasks excluded and disclosed",
+    "official_output_rounding_decimal_places": 4,
+    "capability_points": "30*S",
+    "gain_points": "clamp(40*log(S/B)/log(M),0,40), same-run unchanged official baseline B>0; g<=1 gives 0",
+    "cost_points": "10*min(Tref/T,1), official externally measured whole-set wall clock",
+    "engineering_points": "0..20, including human assessment",
+    "total": "C+G+Tscore+E",
+    "unknown": [
+      "M gain-full-mark multiplier",
+      "Tref cost reference",
+      "formal time limits and hidden dataset",
+      "B=0 final rule",
+      "external formal T",
+      "judges engineering E",
+      "actual hidden-set outcomes"
+    ],
+    "script_default_M_2_5_is_placeholder": true,
+    "script_does_not_self_assess_cost_or_engineering": true,
+    "experimental_8192_max2_repair1_300_is_not_official_universal_agent_limit": true,
+    "model_generated_design_required": true
+  },
+  "key_corrections": [
+    "调用原官方score.py.summarize可产生能力系数，并不等于完成官方五样本/同轮B/增益项/时耗项/工程项的100分计算。",
+    "C是当轮团队策略对照，不能冒充原官方B；A/P/B的B才是独立原baseline。",
+    "L3数量和加权系数分开，L0/L1/L2/L3系数0/.2/.7/1；加权系数不是全对率。",
+    "旧full_score_measured/new_full_score字段常仅指开发集范围内全部题测完；不是官方总分已知。",
+    "110/113/125直接机械生成DUT，保留诊断但不得计为正式模型设计提分；122机械声明修补合规性单列未核。",
+    "官方score.py能力均值输出先舍入4位；未舍入均值与P/B仅作另列诊断，不悄悄换精度冒称官方输出。"
+  ],
+  "rounds": [
+    {
+      "ticket": 105,
+      "status": "existing_completed_development_result",
+      "tasks": 156,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 312,
+      "L3_samples_by_arm": {
+        "C": 112,
+        "P": 114
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.7679487179487179,
+        "P": 0.7782051282051282
+      },
+      "model_requests_by_arm": {
+        "C": 167,
+        "P": 168
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "model_generated_route_bound_not_whole_rule_certification",
+        "new_direct_mechanical_DUT_absent": true,
+        "formal_all_requirements_verified": false,
+        "details": "全156开发集，题面波形提示；本轮没有五样本/官方B/100分。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "全156开发集，题面波形提示；本轮没有五样本/官方B/100分。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "997e65f38eeb1f03fbb20b15fddd8c0f11b4110d28616a5eedfcacbafe6924b1",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "02ffca339afa40c442f93767e6b0a528b65b68bd41ab35edeb4977d98200ae74",
+          "member": "run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+          "member": "run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "52779e18ec9e551ccd8968897e26658b5708bacc15da228991c04bf95ba17bcf",
+          "member": "run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "6ebb554ae2dd6a7456897848093ed7c2066028212f1b2529197f56749a629ad3",
+          "member": "run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "f48143ec1b2e983d7975cdf5b2873fccef73f0405dbd0480c77aa6cb0022c353",
+          "member": "run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 23.04,
+        "P": 23.35
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 110,
+      "status": "existing_completed_development_result",
+      "tasks": 156,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 312,
+      "L3_samples_by_arm": {
+        "C": 112,
+        "P": 114
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.7679487179487179,
+        "P": 0.7782051282051282
+      },
+      "model_requests_by_arm": {
+        "C": 167,
+        "P": 167
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "mechanical_DUT_included_not_formal_model_design_gain",
+        "new_direct_mechanical_DUT_absent": false,
+        "formal_all_requirements_verified": false,
+        "details": "P含mechanical_serial_timer直接DUT（151）；旧full_score_measured=true仅指开发集完整系数，不能解读为官方100分或合规提分。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "P含mechanical_serial_timer直接DUT（151）；旧full_score_measured=true仅指开发集完整系数，不能解读为官方100分或合规提分。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "bfc644c9945379642739f548c6d494b16dc29d1ee3bd508bbc969252c10ef9ca",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "f597f92fbf36666d850bf051d88dea3652cb58e7021ba54aa6c75d6d7e84dc96",
+          "member": "run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+          "member": "run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "14e8ddd925b322bb58b537463b862e63825a165409a1a45857d1c0a577c52caf",
+          "member": "run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "63698813e1593a82c1a79c9e954cf40c3f415048e27ba605ea1e3d32dd0ddd7c",
+          "member": "run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "9b2ca5565cc7639a86f910f2557dc860dfd2709274b1fb91334594b18295aad0",
+          "member": "run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "fc40c35f98921c2c4de108fcfa1ac524aa8a7977a4279dca2317888b24e94dc8",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 23.04,
+        "P": 23.35
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 112,
+      "status": "existing_completed_development_result",
+      "tasks": 15,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 30,
+      "L3_samples_by_arm": {
+        "C": 4,
+        "P": 5
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.4,
+        "P": 0.4666666666666667
+      },
+      "model_requests_by_arm": {
+        "C": 19,
+        "P": 19
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "model_generated_route_bound_not_whole_rule_certification",
+        "new_direct_mechanical_DUT_absent": true,
+        "formal_all_requirements_verified": false,
+        "details": "固定15题时序文字提示，单样本开发诊断。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "固定15题时序文字提示，单样本开发诊断。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "a98adb0bd7c38268fbba25aa9f7cbb888ee04f115f4e7d78c70507551f1f46c8",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "98a8e9bb1405a57895d0b4d7bcaf4c82db1b52f52b47c74e04a4d3719cc52532",
+          "member": "run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "8a2a1b4a5484b5e3db52fcd4b969d0edfddcbd7354559f912b41664cb5e6a8c1",
+          "member": "run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "20c618914145ebb42a1b7384fb7187a2cbeebac395d52e234f02fb0d0bdc1f9b",
+          "member": "run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "b612c5a60b5024c936463fc94cad3b8da1c46818bf4632a93e18766aab1637be",
+          "member": "run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "76d864baf3fdd8b29d85e54c537058ae05b2c5b99a56bbdc2700d1973257dab3",
+          "member": "run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "a7c2d55fb8f3f30f6caa810a2e60ed8ce547b915aa11112443eb19e8958ad981",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 12.0,
+        "P": 14.0
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 113,
+      "status": "existing_completed_development_result",
+      "tasks": 8,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 16,
+      "L3_samples_by_arm": {
+        "C": 6,
+        "P": 8
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.8,
+        "P": 1.0
+      },
+      "model_requests_by_arm": {
+        "C": 11,
+        "P": 9
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "mechanical_DUT_included_not_formal_model_design_gain",
+        "new_direct_mechanical_DUT_absent": false,
+        "formal_all_requirements_verified": false,
+        "details": "P两题mechanical_serial_framing直接DUT；旧screening_eligible不可作为正式模型设计提分。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "P两题mechanical_serial_framing直接DUT；旧screening_eligible不可作为正式模型设计提分。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "a7955870db34dca330ec87aaf9f88a0ca87f07b6530ac3c73ae6ac486bdedc0b",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "828923cd0bb0c27ff4e12e6e57f0247ee8eceaa9e12fddcc8b4e20485092dc27",
+          "member": "run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "b11485bc55efe5eaf9c5dde6d55ed6f4d719eee4548a5e906b3f344f75518167",
+          "member": "run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "914ffac1a00982ffde53e6c62f8dd1b73c9a90255b05eac36cd7c0d960adec24",
+          "member": "run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "929b12422bc55e75adb69f295b36cf020b06c07f59bbfd6d5e814947930d0ff4",
+          "member": "run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "1afd8a2a1501165b1cbff48e2346fd42da91bfad49f25826c4bceda79994007b",
+          "member": "run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "0f7521040d5f5986dc62ca86bd57f86873fad298695fbdd70e393bc517f3ef87",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 24.0,
+        "P": 30.0
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 114,
+      "status": "existing_completed_development_result",
+      "tasks": 15,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 30,
+      "L3_samples_by_arm": {
+        "C": 4,
+        "P": 4
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.4,
+        "P": 0.4
+      },
+      "model_requests_by_arm": {
+        "C": 19,
+        "P": 19
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "model_generated_route_bound_not_whole_rule_certification",
+        "new_direct_mechanical_DUT_absent": true,
+        "formal_all_requirements_verified": false,
+        "details": "固定15题首次system提示因素，单样本开发诊断。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "固定15题首次system提示因素，单样本开发诊断。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "4c7984f75a97963c591b8dcc679afb193fd60f95a6330f744826e95427785a81",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "9a41918c1dfdd958a71ab60e9ad8cc39998bcac98f6f128ec64bf50a5eed6d36",
+          "member": "run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "3ec6455085a0a31586a4de6341b7d7f460bd18b6a1d65b15345ddac7bcf0ed71",
+          "member": "run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "b715b7313546b01cd59ce7dadade63662da645dbec70ec4967c07c5d56cad1bf",
+          "member": "run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "04d033e2d56cda21890fdfcd2a8051a7d3f1ee7fcbca1f604f7e38d9fcfa4320",
+          "member": "run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "95c372dbebba4ab871da2fc28a627a0fc98950d70a64b0c84d31c9384f90b04b",
+          "member": "run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "5efaafaa4fb959cb03f6a039779c359be70daa5386cb556de26aefaba27485c2",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 12.0,
+        "P": 12.0
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 122,
+      "status": "existing_completed_development_result",
+      "tasks": 15,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 30,
+      "L3_samples_by_arm": {
+        "C": 5,
+        "P": 5
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.4533333333333333,
+        "P": 0.4533333333333333
+      },
+      "model_requests_by_arm": {
+        "C": 21,
+        "P": 19
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "model_first_draft_plus_mechanical_declaration_edit_compliance_unverified",
+        "new_direct_mechanical_DUT_absent": null,
+        "formal_all_requirements_verified": false,
+        "details": "模型首稿后脚本按真实VRFC反馈wire→reg；是机械声明修补，是否满足赛事设计生成限制未核验，不能记作全部RTL逐字由模型输出。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "模型首稿后脚本按真实VRFC反馈wire→reg；是机械声明修补，是否满足赛事设计生成限制未核验，不能记作全部RTL逐字由模型输出。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "a48075ddae7714345b65265a736f67d95f77a3a9f29425385013eb699961c4cb",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "nested_original_archive",
+          "sha256": "a135aa0d1ab9f982399474cd65d64c6b61e822b2804f1647e84be700adbc2c5a",
+          "member": "child/terminal_original122.zip",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "54e112ccb4a3f552c5a004ca6778f2eed606a97233b505566f3c9e7c9998d614",
+          "member": "child/terminal_original122.zip!/run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "a99a2396757b4a316151fb089961c5ed5af6ee791a9480cc41769422c639feb7",
+          "member": "child/terminal_original122.zip!/run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_completed_audit",
+          "sha256": "dcb92aa912c828aaa2e255153be8ff6432cdb45366b16d127ebd797621b1f79a",
+          "member": "child/original_auditor_result/RESULTS.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "011a7de2188f57798876697cdde8d37b606b07f5c20df5c0230fe18a600f102e",
+          "member": "child/terminal_original122.zip!/run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "c95df5b7d91f37584108ba959da81486c750738b96abb067f8a6f39f8891c7b8",
+          "member": "child/terminal_original122.zip!/run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "37a3a6f69263c989de05fb9f92e28f90d3c0b42806d386bfb257acbc05d577df",
+          "member": "child/terminal_original122.zip!/run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "child/terminal_original122.zip!/kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "e0f2ccb1c0ee6dbaecb83bb982abea1fecb2cc7b72f326f8eb94682bf54f7692",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 13.6,
+        "P": 13.6
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 124,
+      "status": "existing_completed_development_result",
+      "tasks": 2,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 4,
+      "L3_samples_by_arm": {
+        "C": 0,
+        "P": 1
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.1,
+        "P": 0.6
+      },
+      "model_requests_by_arm": {
+        "C": 4,
+        "P": 2
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "model_generated_route_bound_not_whole_rule_certification",
+        "new_direct_mechanical_DUT_absent": true,
+        "formal_all_requirements_verified": false,
+        "details": "两题模型Galois题面澄清；有1个未确认请求/原截止时间失败；能力汇总不构成有效正式收益。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "两题模型Galois题面澄清；有1个未确认请求/原截止时间失败；能力汇总不构成有效正式收益。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "568886f0680d3ef3cd17b60447cdd360fe407e2f661d6d54374ea6e260b43463",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "nested_original_archive",
+          "sha256": "280e750d1381a68d1b8ca2f572634bb689fda94c813c47aa49bb0b1e951d0846",
+          "member": "child/terminal_original124.zip",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "d25d991c9a4b318337bfc98bbc7b4627a92671fa15772e147e090358052bb207",
+          "member": "child/terminal_original124.zip!/run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "584d07d92840327fff473b22d1e7ad0ff9d0d181113192597294fd557a5f166a",
+          "member": "child/terminal_original124.zip!/run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_completed_audit",
+          "sha256": "8fe2b76c94433869807034e5e33ed5560ee52e43a0ddf38ae3c05ea778e2af4f",
+          "member": "child/original_auditor_result/RESULTS.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "da3f41f2593608621c0ef180cde4b155bbab494b0863a0aa2450d0b0ce26380a",
+          "member": "child/terminal_original124.zip!/run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "6bdc12d871a0cd36961f4fccfdf10d36b7e4f2895a7adf008eea22544fb36a40",
+          "member": "child/terminal_original124.zip!/run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "09ff3ad8b40a750b2c74d4b5f8823d5ad5b9cb0959373e75ee2c8c8be4348ac9",
+          "member": "child/terminal_original124.zip!/run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "child/terminal_original124.zip!/kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "9239d3a19bd04fc5cb0f9de6d2ad80383007b85cf1e4a39108bd7713f5884059",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 3.0,
+        "P": 18.0
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 125,
+      "status": "existing_completed_development_result",
+      "tasks": 7,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 14,
+      "L3_samples_by_arm": {
+        "C": 5,
+        "P": 7
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.7714285714285715,
+        "P": 1.0
+      },
+      "model_requests_by_arm": {
+        "C": 5,
+        "P": 3
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "mechanical_DUT_included_not_formal_model_design_gain",
+        "new_direct_mechanical_DUT_absent": false,
+        "formal_all_requirements_verified": false,
+        "details": "完整table/onehot/timer/serial机械DUT组合；只保留机制诊断，不能算正式模型设计提分。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "完整table/onehot/timer/serial机械DUT组合；只保留机制诊断，不能算正式模型设计提分。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "bd6b3b94bac84892342a2265d3c8263a2e064b9d0406ca2ee56649861cfd019b",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "nested_original_archive",
+          "sha256": "ef0ed59e188b3bd3517b38a8570d1b422706e1fe69af1ee32e0a4ae7823626ae",
+          "member": "child/terminal_original125.zip",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "c4015026913eae1494e6d213ff0c8a4862dff8d41fa0cfcbdbdc45584bd74d71",
+          "member": "child/terminal_original125.zip!/run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "a0bd4783f46381b15ce4306d7e26757bbe1a10291e8fdaa557789ac71584cf33",
+          "member": "child/terminal_original125.zip!/run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_completed_audit",
+          "sha256": "fd5e594a3ae20d9bcce84622a35f3a9810fe9974288aaa4195ac52f1842e592c",
+          "member": "child/original_auditor_result/RESULTS.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "46464a65d15a5cc5eeb59cac13e4617b746c4de643dd8bad85055f6f75940a81",
+          "member": "child/terminal_original125.zip!/run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "2b762c0190afda3d90cbe6e1bbc9e4d23793e23189a68c351fdf251d3c4fe912",
+          "member": "child/terminal_original125.zip!/run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "b82ef92a7d54ac012825d9338e4d91f074f963597a95658c0197630fac52db05",
+          "member": "child/terminal_original125.zip!/run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "child/terminal_original125.zip!/kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "9239d3a19bd04fc5cb0f9de6d2ad80383007b85cf1e4a39108bd7713f5884059",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 23.14,
+        "P": 30.0
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 126,
+      "status": "existing_completed_development_result",
+      "tasks": 8,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 16,
+      "L3_samples_by_arm": {
+        "C": 3,
+        "P": 3
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.5,
+        "P": 0.5
+      },
+      "model_requests_by_arm": {
+        "C": 8,
+        "P": 9
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "model_generated_route_bound_not_whole_rule_certification",
+        "new_direct_mechanical_DUT_absent": true,
+        "formal_all_requirements_verified": false,
+        "details": "仅模型首请求通用FSM指导；8题单样本C/P，无净能力收益。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "仅模型首请求通用FSM指导；8题单样本C/P，无净能力收益。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "8b697035d474799e347d1c11dfe8bfc103e9798d2e23aacec5ac56826b55e7a7",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "nested_original_archive",
+          "sha256": "42447049d0f8be1fef071392542ab16d9648d3f3380be836833ba134108a7304",
+          "member": "ORIGINAL_EVIDENCE.zip",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "032acab7d7d1cb6d6438e2244ddb18401f3288fb287ae63c6dc44f00551f5630",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "c4cd85e75fa36d84b454bca1f0b4dde2644eb769d0936f9524a88e833aea20e4",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_completed_audit",
+          "sha256": "d88f04942786f4909038e5530593a0b41bde88cc4ca9bed71f797ccba0576202",
+          "member": "AUDIT/RESULTS.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "376b929bdbce55f24e79efae8e388f6d908de8b8a3c914323d69907b4462e411",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "affa00378a2e779d0148cf81a89b5dfbcc6eb8309407dd8161d6cce62e8d4669",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "3f251e6254115ed6a0888580c8b9b452c0979f911244046ebf39db386056568c",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "ORIGINAL_EVIDENCE.zip!/kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "fbf9d38a4bb66699ee7550f8e233d490e941fd78150e2e9dd2ee4158ef167d71",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 15.0,
+        "P": 15.0
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 128,
+      "status": "existing_completed_development_result",
+      "tasks": 8,
+      "samples_per_task_per_arm": 1,
+      "arms": [
+        "C",
+        "P"
+      ],
+      "outputs": 16,
+      "L3_samples_by_arm": {
+        "C": 4,
+        "P": 4
+      },
+      "weighted_coefficient_by_arm": {
+        "C": 0.6,
+        "P": 0.6
+      },
+      "model_requests_by_arm": {
+        "C": 8,
+        "P": 8
+      },
+      "same_round_original_official_B": false,
+      "model_generation": {
+        "route": "model_generated_route_bound_not_whole_rule_certification",
+        "new_direct_mechanical_DUT_absent": true,
+        "formal_all_requirements_verified": false,
+        "details": "仅模型首请求one-hot语义范围指导；8题单样本C/P，无净能力收益。"
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；未完成官方全部评分项目",
+      "five_sample_official_protocol": false,
+      "notes": "仅模型首请求one-hot语义范围指导；8题单样本C/P，无净能力收益。",
+      "official_score_py": {
+        "called": true,
+        "mode": "Imported original score.py and called summarize() for capability aggregation",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_private_archive",
+          "sha256": "b28280e2a09d23e05c71cd25caf34925ed195a4b63f1ae0732136c8d3cf17cdf",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "nested_original_archive",
+          "sha256": "9b2febb619cb8762e549a76aedd6ddd37c58112e50c8643d609099feae822b32",
+          "member": "ORIGINAL_EVIDENCE.zip",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_run_summary",
+          "sha256": "d42ffed27db1f5ccce4a6c64ad9e72c0ba8ea2a8357a73809d2994fdd519b3d2",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/results/summary.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_run_spec",
+          "sha256": "fbd1599be8447ed04cba8492966fca1ea7812aa2f471672b57405aeb8e39b1f3",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/RUN_SPEC.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "original_completed_audit",
+          "sha256": "454a6071a460f0fc77897bc305c3938321a632e176c55be00481e2ce283aa345",
+          "member": "AUDIT/RESULTS.json",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "376b929bdbce55f24e79efae8e388f6d908de8b8a3c914323d69907b4462e411",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/pilot.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "affa00378a2e779d0148cf81a89b5dfbcc6eb8309407dd8161d6cce62e8d4669",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/audit.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "frozen_scoring_source",
+          "sha256": "3f251e6254115ed6a0888580c8b9b452c0979f911244046ebf39db386056568c",
+          "member": "ORIGINAL_EVIDENCE.zip!/run/metrics.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "pinned_official_score_module",
+          "sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+          "member": "ORIGINAL_EVIDENCE.zip!/kit/official_reference/selftest/score.py",
+          "original_result_sha256": null
+        },
+        {
+          "kind": "public_metadata_may_be_stale",
+          "sha256": "c49399b1d10edd381951cb2419a5b7aa1c54ccf61123023f42366af833c1bc17",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "C": 18.0,
+        "P": 18.0
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 129,
+      "status": "completed_original_terminal_read_bound",
+      "tasks": 9,
+      "samples_per_task_per_arm": 5,
+      "arms": [
+        "A",
+        "P",
+        "B"
+      ],
+      "outputs": 135,
+      "L3_samples_by_arm": {
+        "A": 19,
+        "P": 30,
+        "B": 10
+      },
+      "weighted_coefficient_by_arm": {
+        "A": 0.5377777777777778,
+        "P": 0.7333333333333333,
+        "B": 0.37777777777777777
+      },
+      "model_requests_by_arm": {
+        "A": 45,
+        "P": 71,
+        "B": 45
+      },
+      "same_round_original_official_B": true,
+      "model_generation": {
+        "route": "model_generated_DUT_with_prompt_table_feedback_only",
+        "new_direct_mechanical_DUT_absent": true,
+        "formal_all_requirements_verified": false
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；9题开发能力/同轮baseline增益与观察耗时，不是全套官方100分",
+      "five_sample_official_protocol": "五样本与同轮B已执行，但仅9个已见开发题",
+      "notes": "P-A +0.1955555556；真实能力增益伴随额外26请求与更长耗时，不能外推156题或官方总分。",
+      "official_score_output_pass_at_1": {
+        "A": 0.5378,
+        "P": 0.7333,
+        "B": 0.3778
+      },
+      "reported_unrounded_P_over_B_ratio": 1.9411764705882353,
+      "rounding_caveat": "Original reader also reports an unrounded diagnostic ratio. Official score.py rounds each set_score/pass@1 to four decimals before its gain report; do not label unrounded P/B as an exact official gain output.",
+      "official_score_py": {
+        "called": true,
+        "mode": "Frozen PR183 reader calls unmodified official score.summarize()",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "reader_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_record",
+          "sha256": "960dfe6aff8b162ea4fecf9d3a17ee459d9b44d0a4278b8eaa581d5b64b1dac1",
+          "member": null,
+          "original_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38"
+        },
+        {
+          "kind": "existing_record",
+          "sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "existing_record",
+          "sha256": "461e3f91205076ca26a5388e66177bf8d27d0d47a6d2883cbbbde7f7d4cf17ce",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": {
+        "A": 16.13,
+        "P": 22.0,
+        "B": 11.33
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 131,
+      "status": "completed_original_terminal_read_bound",
+      "tasks": 2,
+      "samples_per_task_per_arm": 5,
+      "arms": [
+        "A",
+        "P",
+        "B"
+      ],
+      "outputs": 30,
+      "L3_samples_by_arm": {
+        "A": 0,
+        "P": 0,
+        "B": 0
+      },
+      "levels_by_arm": {
+        "A": {
+          "L1": 10
+        },
+        "P": {
+          "L1": 10
+        },
+        "B": {
+          "L0": 10
+        }
+      },
+      "weighted_coefficient_by_arm": {
+        "A": 0.2,
+        "P": 0.2,
+        "B": 0.0
+      },
+      "model_requests_by_arm": {
+        "A": 10,
+        "P": 20,
+        "B": 10
+      },
+      "observed_solve_seconds_by_arm": {
+        "A": 252.13969528861344,
+        "P": 636.0795734021813,
+        "B": 314.4034185837954
+      },
+      "same_round_original_official_B": true,
+      "model_generation": {
+        "route": "model_generated_DUT_with_measured_prompt_serial_feedback_only",
+        "new_direct_mechanical_DUT_absent": true,
+        "formal_all_requirements_verified": false
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知；官方B=0的最终增益规则待公告，P/B不定义，不能报无穷或填默认分",
+      "five_sample_official_protocol": "2个已见开发题×5×A/P/B完整执行；正式100分与泛化未验证",
+      "notes": "A/P均10个L1、系数0.2，B10个L0、系数0；P比A多10调用且求解更慢，没有实测能力提升。根任务已决定不采用/不扩该版本；索引未修改策略。",
+      "official_score_output_pass_at_1": {
+        "A": 0.2,
+        "P": 0.2,
+        "B": 0.0
+      },
+      "P_minus_A_mean": 0.0,
+      "paired_task_mean_deltas": {
+        "Prob137_fsm_serial": 0.0,
+        "Prob146_fsm_serialdata": 0.0
+      },
+      "complete_archive_sha256": "91d07b99aa2553a7c24b09031ecbfe6394258dfbcc4916693136c25ea2f537b3",
+      "complete_archive_members": 1912,
+      "official_score_py": {
+        "called": true,
+        "mode": "Original PR183 reader executed once on AMD, calling unchanged official score.summarize()",
+        "source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+        "reader_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+        "full_CLI_entrypoint_executed": "未核验"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "existing_record",
+          "sha256": "d4f3b16434e7d0aaf8e13b0477187ec484f465aeabfc4e498cf87c67bc5324d5",
+          "member": null,
+          "original_result_sha256": "6eebb974c5470b81d4c43b973aeea04531c190174a0c3f4d0f382a50dbcef207"
+        },
+        {
+          "kind": "existing_record",
+          "sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "archive_member_index_scope": "Full member index remains in private verified archive, including ARCHIVE_MANIFEST.json.",
+      "capability_estimate_30_by_arm": {
+        "A": 6.0,
+        "P": 6.0,
+        "B": 0.0
+      },
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps."
+    },
+    {
+      "ticket": 132,
+      "status": "independently_observed_running_not_complete",
+      "tasks": 156,
+      "samples_per_task_per_arm": 5,
+      "arms": [
+        "A",
+        "P",
+        "B"
+      ],
+      "planned_outputs": 2340,
+      "L3_samples_by_arm": null,
+      "weighted_coefficient_by_arm": null,
+      "model_requests_by_arm": null,
+      "same_round_original_official_B": "planned_in_frozen_plan; queue acceptance independently observed, no completed results",
+      "model_generation": {
+        "route": "peer-reported unchanged model-generated prompt-table feedback, 147 prompt abstentions preserved",
+        "new_direct_mechanical_DUT_absent": "peer_source_claim_not_reaudited_here",
+        "formal_all_requirements_verified": false
+      },
+      "official_100_total": null,
+      "official_100_total_status": "未知，尚无完整结果",
+      "five_sample_official_protocol": "计划全156×5×A/P/B；peer报告排在131之后，不是完成证明",
+      "notes": "原票queued、原monitor出生及cmd、spec/plan/source SHA已独立只读确认。该状态只覆盖命名快照；后续是否开始/完成未在此索引更新。",
+      "observed_remote_epoch": 1791461389.5882988,
+      "source_hashes_held": true,
+      "original_monitor_identity_held": true,
+      "peer_pr": "https://github.com/854259/FPGA/pull/184",
+      "peer_claimed_merge_sha": "403a6a1eb50e508f9f295aa5fbbc145fc6e78c64",
+      "peer_claimed_plan_sha256": "c85226725bab88c08503cd9feda393378ef17c491fabebec4bea0abd930d954c",
+      "peer_claimed_spec_sha256": "b499f6c16fa91868ca7ba60a168929204f02d5b0e164f5ade776a65983aa5c5d",
+      "official_score_py": {
+        "called": "未核验：未完成，不能冒称本轮已汇总",
+        "planned_source_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768"
+      },
+      "private_evidence_checksums": [
+        {
+          "kind": "peer_statement",
+          "sha256": "c6955de85186f34b2202873353b3fe416ea76db4aaf83c65e52e5fc060ab074f",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "existing_record",
+          "sha256": "785e31bfbd6f059aec64a2837d4bbbd5b111b5b522c2aa8ea5c276f2f37ed70c",
+          "member": null,
+          "original_result_sha256": null
+        },
+        {
+          "kind": "independent_live_identity_and_frozen_source_read",
+          "sha256": "45138a6f13e51b8bfc3045bebc7869d240c1bf28905875eeb487259ee764dfdc",
+          "member": null,
+          "original_result_sha256": null
+        }
+      ],
+      "capability_estimate_30_by_arm": null,
+      "capability_estimate_scope": "Arithmetic development-set capability component only; does not repair sample-count, design-generation or other eligibility gaps.",
+      "latest_existing_handle_observation": {
+        "state": "running",
+        "observed_epoch": 1791461928.647184,
+        "readback_sha256": "0da456b335dc6d83d60d2c0f3e5408cf5659eab35450fc2570be96be82372b54",
+        "original_monitor_identity_confirmed": true,
+        "source_hashes_held": true
+      }
+    }
+  ],
+  "complete_official_100_score_available": false,
+  "private_evidence_index": {
+    "report_sha256": "0550c2d678faaacb5e1dec68899ddd34ccdc8ade1be4afa54a5fa43a052eb47e",
+    "text_sha256": "b8a60604b1b19c44f33579f8d3753d132b151f4b2e35a227f9b6b5bd370110eb"
+  },
+  "limits": [
+    "Official facts were checked only against the three named official repositories and recorded HEADs, not every possible offline competition announcement.",
+    "Model-route provenance is separate from full-rule compliance. Mechanical direct DUT rounds are excluded from formal gain claims.",
+    "This correction does not modify historical original results, frozen sources, queue budgets, or a teammate job.",
+    "129 and 131 are completed nine-task and two-task seen-development subsets. Neither provides an official full score.",
+    "132 existing-handle state, original monitor identity and frozen source hashes were independently observed only at the named snapshot; no completed score is claimed."
+  ],
+  "zero_execution_count_scope": "Static scoring-rule and historical-coverage review only; separate serial131 terminal reader executed once on AMD and is recorded in its own result.",
+  "optimization_under_unknown_constants": [
+    "Do not fill unknown M, Tref, official wall time or engineering points with defaults.",
+    "Use weighted five-sample pass@1, same-run B gain and measured solve time as separate observed axes.",
+    "Retain accuracy/time tradeoff evidence; current original experimental request and time budgets remain fixed.",
+    "Peer132 provides full156 comparison; unchanged no-gain serial131 is retired. Prepare source-structural error feedback within one repair based on failed traces, without DUT generation or private-judge feedback. A newly exposed second error would require a separate registered budget experiment; it is not executed."
+  ]
+}

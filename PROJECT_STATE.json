@@ -1,4 +1,225 @@
 {
+  "official_scoring_review_and_serial131_20261008": {
+    "scope": "Development estimates are distinct from official total",
+    "official_rtl_head": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+    "score_script_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+    "weights": {
+      "capability": 30,
+      "gain": 40,
+      "time": 10,
+      "engineering": 20
+    },
+    "official_total_score": null,
+    "missing": [
+      "announced_gain_fullmark_multiplier",
+      "announced_time_reference",
+      "official_external_final_wall_clock",
+      "manual_engineering_assessment",
+      "hidden_set_results"
+    ],
+    "serial131": {
+      "ticket": 131,
+      "complete": true,
+      "source_root": "/workspace/team/runs/fpga_owner/serial_model_feedback_comparison2x5_20261008_v1",
+      "plan_sha256": "a922a145640348a0d6fc053d0a57ceb1235f03052ef37e53072ac18135d0ae6c",
+      "result_sha256": "6eebb974c5470b81d4c43b973aeea04531c190174a0c3f4d0f382a50dbcef207",
+      "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+      "reader_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+      "samples_per_task": 5,
+      "tasks": 2,
+      "outputs": 30,
+      "arms": {
+        "A": {
+          "official_summary": {
+            "tasks": 2,
+            "scored_tasks": 2,
+            "samples_per_task": 5,
+            "set_score": 0.2,
+            "pass@1": 0.2,
+            "pass@5": 0.2,
+            "level_counts": {
+              "L1": 10
+            },
+            "tool_errors": 0,
+            "excluded": [],
+            "judge_elapsed_s": 79.0,
+            "per_task": [
+              {
+                "task_id": "Prob137_fsm_serial",
+                "samples": 5,
+                "scored_samples": 5,
+                "excluded_samples": 0,
+                "levels": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "pass@1": 0.2,
+                "pass@5": 0.2
+              },
+              {
+                "task_id": "Prob146_fsm_serialdata",
+                "samples": 5,
+                "scored_samples": 5,
+                "excluded_samples": 0,
+                "levels": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "pass@1": 0.2,
+                "pass@5": 0.2
+              }
+            ]
+          },
+          "coefficient_mean_unrounded": 0.2,
+          "all_five_L3_tasks": 0,
+          "model_requests": 10,
+          "observed_solve_s": 252.13969528861344,
+          "observed_judge_s": 83.15291643887758,
+          "observed_row_s": 338.50225771963596,
+          "same_run_official_baseline_gain": null
+        },
+        "P": {
+          "official_summary": {
+            "tasks": 2,
+            "scored_tasks": 2,
+            "samples_per_task": 5,
+            "set_score": 0.2,
+            "pass@1": 0.2,
+            "pass@5": 0.2,
+            "level_counts": {
+              "L1": 10
+            },
+            "tool_errors": 0,
+            "excluded": [],
+            "judge_elapsed_s": 78.6,
+            "per_task": [
+              {
+                "task_id": "Prob137_fsm_serial",
+                "samples": 5,
+                "scored_samples": 5,
+                "excluded_samples": 0,
+                "levels": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "pass@1": 0.2,
+                "pass@5": 0.2
+              },
+              {
+                "task_id": "Prob146_fsm_serialdata",
+                "samples": 5,
+                "scored_samples": 5,
+                "excluded_samples": 0,
+                "levels": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "pass@1": 0.2,
+                "pass@5": 0.2
+              }
+            ]
+          },
+          "coefficient_mean_unrounded": 0.2,
+          "all_five_L3_tasks": 0,
+          "model_requests": 20,
+          "observed_solve_s": 636.0795734021813,
+          "observed_judge_s": 82.7463191729039,
+          "observed_row_s": 722.1589744575322,
+          "same_run_official_baseline_gain": null
+        },
+        "B": {
+          "official_summary": {
+            "tasks": 2,
+            "scored_tasks": 2,
+            "samples_per_task": 5,
+            "set_score": 0.0,
+            "pass@1": 0.0,
+            "pass@5": 0.0,
+            "level_counts": {
+              "L0": 10
+            },
+            "tool_errors": 0,
+            "excluded": [],
+            "judge_elapsed_s": 33.0,
+            "per_task": [
+              {
+                "task_id": "Prob137_fsm_serial",
+                "samples": 5,
+                "scored_samples": 5,
+                "excluded_samples": 0,
+                "levels": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "pass@1": 0.0,
+                "pass@5": 0.0
+              },
+              {
+                "task_id": "Prob146_fsm_serialdata",
+                "samples": 5,
+                "scored_samples": 5,
+                "excluded_samples": 0,
+                "levels": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "pass@1": 0.0,
+                "pass@5": 0.0
+              }
+            ]
+          },
+          "coefficient_mean_unrounded": 0.0,
+          "all_five_L3_tasks": 0,
+          "model_requests": 10,
+          "observed_solve_s": 314.4034185837954,
+          "observed_judge_s": 35.577683977782726,
+          "observed_row_s": 351.73396270535886
+        }
+      },
+      "paired_task_mean_deltas": {
+        "Prob137_fsm_serial": 0.0,
+        "Prob146_fsm_serialdata": 0.0
+      },
+      "P_minus_A_mean": 0,
+      "official_total_score": null,
+      "gain_points": null,
+      "cost_points": null,
+      "engineering_points": null,
+      "baseline_zero_rule": "Official gain rule for zero baseline not announced; never substitute infinity or full marks.",
+      "adopted": false,
+      "full156_test": false,
+      "queue_wall_s": 1421.6256988048553,
+      "queue_wall_scope": "Queue header through completion event, includes all arms and judging; excludes preparation, final guard exit and transfer.",
+      "archive_sha256": "91d07b99aa2553a7c24b09031ecbfe6394258dfbcc4916693136c25ea2f537b3",
+      "archive_members": 1912,
+      "all_archive_members_verified_on_E": true,
+      "monitor_retired": true,
+      "guard_passed": true,
+      "own_slot_released": true,
+      "scope": "Two applicable development tasks, not hidden contest score"
+    },
+    "peer132": "independently_observed_running; peer owns terminal work",
+    "goal_complete": false,
+    "report": "03_analysis/official_scoring_review_20261008/README.md"
+  },
   "table_history_cp8_integration_prepared_20261008": {
     "schema": "table_history_cp8_integration_actual_prepared_public_v1",
     "control": "Complete original table plus qualified onehot/timer, then unchanged original common model fallback.",
