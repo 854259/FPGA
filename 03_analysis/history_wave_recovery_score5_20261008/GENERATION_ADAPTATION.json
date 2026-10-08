@@ -1,0 +1,95 @@
+{
+  "schema": "table_history_wave_scope_B_generation_adaptation_v1",
+  "scope": "B_pure_wave_on_common_complete_table_history",
+  "original_source_sha256": "128a80c25d10bee029d1c12bae08571d9a71fbe50301603cb084bbb7d0ec5052",
+  "source_sha256": "c0cfd158751caaa9d208777788574387251ae7a9c2174e060b8165c68138c382",
+  "worker_sha256": "2f2d23d008b933ad62604f8c13f7976b30346ef4bd7b9b4660a7fe837d3be349",
+  "replacements": [
+    {
+      "before": "'worker.py': '39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e'",
+      "after": "'worker.py': '2f2d23d008b933ad62604f8c13f7976b30346ef4bd7b9b4660a7fe837d3be349'",
+      "before_sha256": "128a80c25d10bee029d1c12bae08571d9a71fbe50301603cb084bbb7d0ec5052",
+      "after_sha256": "f5d9982d68ace8be49aec0eb4ae728969d121ae2996c5d62dd1fdd83de8bef3d"
+    },
+    {
+      "before": "\ndef bound_route(",
+      "after": "\nPINNED.update({\n    'waveform_worker.py':'7e98fccf8a9bfe93f04ebf9b6a6783aa3a469db50c563cddf9974d94e574ca96',\n    'waveform_request.py':'b3176bf77fdc94c2a6d30b3389ca6f5f044d8541def694860a971eec3e9134ea',\n    'waveform_facts.py':'683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c',\n    'request_proof.py':'2ceee6eea30a913de45d9237a7fb1755a3e0320a601f1d72a9c8af2c79c26bdc',\n    'waveform_replay.py':'9666bde8cdaa3493e836da696f1fcd5665e10dad721ffe4833674f4b3cd2d350',\n    'package/baseline.py':'537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51',\n    'edge_dispatch.py':'1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680',\n    'phase_feedback.py':'efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078',\n    'dependencies/probe_runner.py':'954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0'})\n\nMODULE_FILES={\n    'composition':'composition.py','selector':'selector.py','table_contract':'contract.py',\n    'worker':'worker.py','waveform_worker':'waveform_worker.py',\n    'waveform_request':'waveform_request.py','waveform_facts':'waveform_facts.py',\n    'request_proof':'request_proof.py','replay':'waveform_replay.py',\n    'baseline_worker':'baseline_worker.py','baseline':'package/baseline.py',\n    'runtime':'package/agent/map_runtime.py','parser':'edge_dispatch.py',\n    'feedback':'phase_feedback.py','runner':'dependencies/probe_runner.py'}\n\n\ndef bound_modules(run,modules):\n    \"\"\"Bind actual imported dependencies; stale cached modules are not substitutes.\"\"\"\n    run=Path(run)\n    assert type(modules) is dict and set(modules)==set(MODULE_FILES)|{'providers'}\n    assert all(sha(run/name)==value for name,value in PINNED.items())\n    for name,asset in MODULE_FILES.items():\n        module=modules[name]\n        assert Path(module.__file__).resolve()==(run/asset).resolve(),name\n    providers=modules['providers'];composition=modules['composition'];worker=modules['worker']\n    assert [name for name,module in providers]==['table','onehot','timer']\n    for name,module in providers:\n        attribute='table_synthesis' if name=='table' else name+'_producer'\n        assert Path(module.__file__).resolve()==(run/(attribute+'.py')).resolve()\n        assert getattr(composition,attribute) is module\n    assert composition.selector is modules['selector']\n    assert composition.table_synthesis.contract is modules['table_contract']\n    assert worker.synthesis is composition and worker.baseline is modules['baseline_worker']\n    assert worker.waveform_worker is modules['waveform_worker']\n    assert worker.waveform_worker.baseline_worker is modules['baseline_worker']\n    assert worker.waveform_worker.waveform_request is modules['waveform_request']\n    assert modules['waveform_request'].waveform_facts is modules['waveform_facts']\n    assert modules['request_proof'].waveform_facts is modules['waveform_facts']\n    assert modules['baseline_worker'].edge_dispatch is modules['parser']\n    assert modules['baseline_worker'].phase_feedback is modules['feedback']\n    assert all(Path(modules[name].ROOT).resolve()==run.resolve() for name in ('worker','waveform_worker','baseline_worker'))\n\n\ndef bound_route(",
+      "before_sha256": "f5d9982d68ace8be49aec0eb4ae728969d121ae2996c5d62dd1fdd83de8bef3d",
+      "after_sha256": "cec9461a975e6dcde990dc2f7c62a14cb41ddc64a476747080a9e9e9821a56dd"
+    },
+    {
+      "before": "receipt=composition.synthesize(prompt,interface) if arm=='P' else composition.parent(prompt,interface)",
+      "after": "receipt=composition.synthesize(prompt,interface)",
+      "before_sha256": "cec9461a975e6dcde990dc2f7c62a14cb41ddc64a476747080a9e9e9821a56dd",
+      "after_sha256": "39f2ce6dc0e8fc957a64f232c78668c597fecf277d813d7630a9029896dea5d3"
+    },
+    {
+      "before": "    if arm=='C':assert selected in (None,'table')\n",
+      "after": "",
+      "before_sha256": "39f2ce6dc0e8fc957a64f232c78668c597fecf277d813d7630a9029896dea5d3",
+      "after_sha256": "63ed46a7fc9cceaa1cb20032304791663c79bd8b1902d80e9fc77ee2a3dbefb8"
+    },
+    {
+      "before": "schema='table_parent_history_extension_generation_route_v1'",
+      "after": "schema='table_history_wave_generation_route_v1'",
+      "before_sha256": "63ed46a7fc9cceaa1cb20032304791663c79bd8b1902d80e9fc77ee2a3dbefb8",
+      "after_sha256": "b4413d4f933f41ac7a5c4e6aac37fc3076143d086645eaaed7ab15eaab180b90"
+    },
+    {
+      "before": "    assert not any((work/n).exists() for n in ['generation_selection.json','internal_declaration_journal.json','first_request_receipts','waveform_request_receipts'])\n",
+      "after": "    assert not any((work/n).exists() for n in ['generation_selection.json','internal_declaration_journal.json','first_request_receipts'])\n    if recipe is not None:assert not (work/'waveform_request_receipts').exists()\n",
+      "before_sha256": "b4413d4f933f41ac7a5c4e6aac37fc3076143d086645eaaed7ab15eaab180b90",
+      "after_sha256": "d795a7b2536be8e81cb43cbd0f4f13c7dcf16433a365d778901729eb7c818598"
+    },
+    {
+      "before": "    assert row['arm']=='P' or row['selected_provider']=='table'\n",
+      "after": "",
+      "before_sha256": "d795a7b2536be8e81cb43cbd0f4f13c7dcf16433a365d778901729eb7c818598",
+      "after_sha256": "3c17db68b7e5eabbabf43d890a03b8c0630922598156699905d4f47174e8fa13"
+    },
+    {
+      "before": "    selection,providers,replay,baseline,runtime,parser,feedback,runner=modules\n",
+      "after": "    bound_modules(run,modules)\n    selection=modules['composition'];providers=modules['providers'];replay=modules['replay']\n    baseline=modules['baseline'];runtime=modules['runtime'];parser=modules['parser'];feedback=modules['feedback'];runner=modules['runner']\n    request_proof=modules['request_proof']\n",
+      "before_sha256": "3c17db68b7e5eabbabf43d890a03b8c0630922598156699905d4f47174e8fa13",
+      "after_sha256": "8ca17190bedf2274b512e728b4809172646a1b580a096c92ffb0be43fadaf53a"
+    },
+    {
+      "before": "        proof=mechanical_provenance(work,run,row['task'],row,recipe,Path(cloud_work),runner,parser,verify_probe)\n",
+      "after": "        proof=mechanical_provenance(work,run,row['task'],row,recipe,Path(cloud_work),runner,parser,verify_probe)\n        proof.update(waveform_request_binding_verified=False,request_proof_sha256=None,first_request_advice_changed=False,first_original_wire_sha256=None,first_forwarded_wire_sha256=None,repair_wires_unchanged=True)\n",
+      "before_sha256": "8ca17190bedf2274b512e728b4809172646a1b580a096c92ffb0be43fadaf53a",
+      "after_sha256": "cb07f49431a2195f99f67169769ced3063b7eb45cd8d0d32910fb69035acb8a8"
+    },
+    {
+      "before": "        journal,first=model_requests(work,row,spec,generation,repair)\n",
+      "after": "        journal,first=model_requests(work,row,spec,generation,repair)\n        wire=request_proof.verify(work,prompt,interface,arm,spec['model'],generation,repair,allow_unconfirmed=row['solve_deadline_reached'])\n        assert first==wire['rounds'][0]['forwarded_body']\n        assert wire['actual_model_requests']==len(journal)\n        assert all(not r['changed'] and r['original_wire_sha256']==r['forwarded_wire_sha256'] for r in wire['rounds'][1:])\n        if arm=='C':assert all(not r['changed'] and r['original_wire_sha256']==r['forwarded_wire_sha256'] for r in wire['rounds'])\n",
+      "before_sha256": "cb07f49431a2195f99f67169769ced3063b7eb45cd8d0d32910fb69035acb8a8",
+      "after_sha256": "e511c7970a4e85cb14957fc77995f62d02c4dc45113934db728575e951413463"
+    },
+    {
+      "before": "        proof=replay.replay(work,combined,arm,contract,baseline,runtime,parser,feedback,verify_probe,sha,read,row['solve_deadline_reached'])\n",
+      "after": "        assert combined==request_proof.combined(prompt,interface)\n        # Only round zero uses forwarded advice. Repair and probe keep original combined prompt.\n        proof=replay.replay(work,combined,arm,contract,baseline,runtime,parser,feedback,verify_probe,sha,read,row['solve_deadline_reached'],first_user=wire['rounds'][0]['forwarded_body']['messages'][1]['content'])\n        proof.update(waveform_request_binding_verified=True,request_proof_sha256=wire['request_proof_sha256'],first_request_advice_changed=wire['first_request_advice_changed'],first_original_wire_sha256=wire['rounds'][0]['original_wire_sha256'],first_forwarded_wire_sha256=wire['rounds'][0]['forwarded_wire_sha256'],repair_wires_unchanged=True)\n",
+      "before_sha256": "e511c7970a4e85cb14957fc77995f62d02c4dc45113934db728575e951413463",
+      "after_sha256": "b761c17fb18847869f05d4d58a045f2a6bc809157f3f3a8358613d711f209bc0"
+    },
+    {
+      "before": "    proof.update(parent_recipe_bound=True,parent_preserved_bound=selected=='table',\n                 parent_abstention_bound=selected!='table',\n                 parent_route='mechanical_table' if selected=='table' else 'model',\n                 parent_output_sha256=recipe['rtl_sha256'] if selected=='table' else None)\n",
+      "after": "    proof.update(parent_recipe_bound=True,parent_preserved_bound=recipe is not None,\n                 parent_abstention_bound=recipe is None,parent_route=route['route'],\n                 parent_output_sha256=recipe['rtl_sha256'] if recipe is not None else None,\n                 common_mechanical_strategy_bound=True,module_source_objects_bound=True,\n                 wave_scope='model_first_user_only')\n",
+      "before_sha256": "b761c17fb18847869f05d4d58a045f2a6bc809157f3f3a8358613d711f209bc0",
+      "after_sha256": "c0cfd158751caaa9d208777788574387251ae7a9c2174e060b8165c68138c382"
+    }
+  ],
+  "original105_source_reuse": {
+    "worker.py": "7e98fccf8a9bfe93f04ebf9b6a6783aa3a469db50c563cddf9974d94e574ca96",
+    "waveform_facts.py": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+    "waveform_request.py": "b3176bf77fdc94c2a6d30b3389ca6f5f044d8541def694860a971eec3e9134ea",
+    "request_proof.py": "2ceee6eea30a913de45d9237a7fb1755a3e0320a601f1d72a9c8af2c79c26bdc",
+    "waveform_replay.py": "9666bde8cdaa3493e836da696f1fcd5665e10dad721ffe4833674f4b3cd2d350"
+  },
+  "original_request_proof_and_replay_byte_exact": true,
+  "project_execution": false,
+  "tests_executed": false,
+  "scoring_qualified": false,
+  "adoption": false,
+  "module_api": "Explicit dict MODULE_FILES plus providers, dependent objects must be the actual same module objects",
+  "parent_fields": "Whole common table+history strategy; table-internal parent remains independently bound in exact synthesis receipt"
+}

@@ -1,0 +1,89 @@
+{
+  "original_sha256": "fe30230890a6663d44458b8cda62443e7ab5473f76b77ade86574435ae7d6996",
+  "adapted_sha256": "5ce9a637f907c7d6fe349ab9484578f1a815ddddde66b2bf461f307e87d3be80",
+  "changes": [
+    {
+      "before": "AMD-only pure two-pair diagnostic freeze; reuses qualified controls, never inference.",
+      "after": "AMD-only fixed-five wave comparison freeze; original budget, no inference.",
+      "count": 1
+    },
+    {
+      "before": "galois_pair2_current_freeze_inputs_v1",
+      "after": "table_history_wave_score5_freeze_inputs_v1",
+      "count": 1
+    },
+    {
+      "before": "galois_diag",
+      "after": "history_wave5",
+      "count": 6
+    },
+    {
+      "before": " replay_proof=read(ROOT/'MODEL_REPLAY_ADAPTATION.json');assert replay_proof['original_sha256']==sha(ROOT/'upstream/replay.py')\n assert replay_proof['adapted_sha256']==sha(ROOT/'model_replay.py')\n adapted=(ROOT/'upstream/replay.py').read_bytes().decode()\n for change in replay_proof['changes']:\n  assert adapted.count(change['old'])==1;adapted=adapted.replace(change['old'],change['new'])\n assert adapted.encode()==(ROOT/'model_replay.py').read_bytes()\n intake=read(seed['intake_result_path']);tasks=intake['changed_tasks']\n assert intake['passed'] and intake['inputs']==156 and len(tasks)==2 and tasks==sorted(tasks)\n",
+      "after": " import source_admission\n admission=source_admission.verify(ROOT)\n tasks=seed['task_ids']\n assert tasks==['Prob001_zero','Prob057_kmap2','Prob143_fsm_onehot','Prob145_circuit8','Prob151_review2015_fsm']\n",
+      "count": 1
+    },
+    {
+      "before": " # Only retain the already-intaken two changed wires. No repeated156 intake, tokenization or requests.\n boundary=load('history_wave5_prepare_boundary',ROOT/'galois_first_request.py');generation=(ROOT/'package/skill/rtl-generation/SKILL.md').read_text()\n retained=[]\n for task in tasks:\n  source=kit/'bench/tasks_veval'/task;prompt=(source/'prompt.txt').read_bytes().decode();interface=(source/'interface.txt').read_bytes().decode() if (source/'interface.txt').exists() else ''\n  payload=dict(model=seed['model'],messages=[dict(role='system',content=generation),dict(role='user',content=boundary.combined(prompt,interface))],temperature=0.0,top_p=1.0,max_tokens=8192)\n  raw=json.dumps(payload).encode();forwarded,receipt=boundary.transform(raw,prompt,interface,'P',0)\n  oldrow=next(r for r in intake['rows'] if r['task']==task)\n  assert receipt['changed'] and hashlib.sha256(forwarded).hexdigest()==oldrow['forwarded_wire_sha256']\n  assert oldrow['conservative_context_total']<16384\n  retained.append(dict(task=task,forwarded_wire_sha256=oldrow['forwarded_wire_sha256'],context_bound=oldrow['conservative_context_total']))\n",
+      "after": " # Rebuild only the two model-fallback inputs in the new composed bundle.\n # Exact old105 wires and usage are retained evidence, not new tokenization.\n import waveform_request\n import composition\n original_wire=read(ROOT/'RETAINED_MODEL_FIRST_WIRES.json')\n assert original_wire['schema']=='original105_first_model_wires_for_new_score5_v1'\n generation=(ROOT/'package/skill/rtl-generation/SKILL.md').read_text()\n retained=[]\n for task in ['Prob001_zero','Prob145_circuit8']:\n  source=kit/'bench/tasks_veval'/task;prompt=(source/'prompt.txt').read_bytes().decode();interface=(source/'interface.txt').read_bytes().decode() if (source/'interface.txt').exists() else ''\n  assert not composition.synthesize(prompt,interface)['emitted']\n  user=prompt.replace('\\r\\n','\\n').replace('\\r','\\n');normalized=interface.replace('\\r\\n','\\n').replace('\\r','\\n')\n  if normalized.strip():user+='\\n\\nInterface:\\n'+normalized\n  body=dict(model=seed['model'],messages=[dict(role='system',content=generation),dict(role='user',content=user)],temperature=0.0,top_p=1.0,max_tokens=8192)\n  raw=json.dumps(body).encode()\n  for arm in ['C','P']:\n   forwarded,receipt=waveform_request.transform(raw,prompt,interface,arm,0)\n   previous=original_wire['tasks'][task][arm]\n   assert hashlib.sha256(raw).hexdigest()==previous['original_wire_sha256']\n   assert hashlib.sha256(forwarded).hexdigest()==previous['forwarded_wire_sha256']\n   assert receipt==previous['receipt']\n   assert receipt['changed']==(task=='Prob145_circuit8' and arm=='P')\n   assert type(previous['prompt_tokens']) is int and previous['prompt_tokens']+8192<16384\n   retained.append(dict(task=task,arm=arm,original_wire_sha256=receipt['original_wire_sha256'],forwarded_wire_sha256=receipt['forwarded_wire_sha256'],changed=receipt['changed'],old_first_prompt_tokens=previous['prompt_tokens'],first_context_bound=previous['prompt_tokens']+8192,old_usage_only=True,all_repair_capacity_proved=False))\n",
+      "count": 1
+    },
+    {
+      "before": "schema='galois_pair2_diagnostic_frozen_v1'",
+      "after": "schema='table_history_wave_score5_frozen_v1'",
+      "count": 1
+    },
+    {
+      "before": "expected_samples=4,max_actual_model_requests=8",
+      "after": "expected_samples=10,max_actual_model_requests=20",
+      "count": 2
+    },
+    {
+      "before": "expected_protection_receipts=9,stage_timeout_s=3600,guard_timeout_s=4000,slot_minutes=70",
+      "after": "expected_protection_receipts=21,stage_timeout_s=7200,guard_timeout_s=7600,slot_minutes=130",
+      "count": 1
+    },
+    {
+      "before": "schema='galois_pair2_actual_pure_preparation_receipt_v1'",
+      "after": "schema='table_history_wave_score5_actual_preparation_receipt_v1'",
+      "count": 1
+    },
+    {
+      "before": "Two eligible development inputs,4 fresh outputs/max8 requests.",
+      "after": "Five preselected development inputs,10 fresh outputs/max20 requests. Both arms retain complete table+history; only P initial model waveform advice differs.",
+      "count": 1
+    },
+    {
+      "before": "retained_intake_wires=retained",
+      "after": "retained_first_model_wires=retained",
+      "count": 2
+    },
+    {
+      "before": "existing_qualified_sources_bound=True",
+      "after": "existing_qualified_sources_bound=True,source_admission=admission",
+      "count": 1
+    },
+    {
+      "before": " assert original_wire['schema']=='original105_first_model_wires_for_new_score5_v1'\n",
+      "after": " assert original_wire['schema']=='original105_first_model_wires_for_new_score5_v1'\n wave_metadata=ROOT/'qualification/wave105'\n assert sha(wave_metadata/'MODEL_SCOPE_RECEIPTS.json')==source_admission.WAVE_SCOPE\n scope=read(wave_metadata/'MODEL_SCOPE_RECEIPTS.json')\n assert original_wire['scope_receipts_sha256']==source_admission.WAVE_SCOPE\n assert original_wire['original_spec_sha256']==scope['original_spec_sha256']==source_admission.WAVE_SPEC\n assert original_wire['original_audit_sha256']==scope['audit_sha256']==source_admission.WAVE_AUDIT\n assert set(original_wire['tasks'])==set(scope['tasks'])=={'Prob001_zero','Prob145_circuit8'}\n",
+      "count": 1
+    },
+    {
+      "before": "   previous=original_wire['tasks'][task][arm]\n",
+      "after": "   previous=original_wire['tasks'][task][arm]\n   folder=wave_metadata/'model_scope'/task/arm;retained_source=scope['tasks'][task][arm]\n   assert set(original_wire['tasks'][task])=={'C','P'}\n   for name,binding in retained_source['files'].items():assert sha(folder/name)==binding['sha256']\n   usage=read(folder/'response_usage.json')\n   assert previous['response_usage_sha256']==sha(folder/'response_usage.json')\n   assert previous['original_request_sha256']==usage['original_request_sha256']==sha(folder/'request.json')\n   assert previous['original_response_sha256']==usage['original_response_sha256']\n   assert usage['model']==seed['model'] and usage['first_only'] is True and usage['not_new_tokenization'] is True\n   assert previous['prompt_tokens']==usage['usage']['prompt_tokens']==retained_source['first_prompt_tokens']\n   assert previous['original_wire_sha256']==sha(folder/'original_wire.bin')==retained_source['first_original_wire_sha256']\n   assert previous['forwarded_wire_sha256']==sha(folder/'forwarded_wire.bin')==retained_source['first_forwarded_wire_sha256']\n   assert previous['receipt']==read(folder/'receipt.json')\n",
+      "count": 1
+    },
+    {
+      "before": "old_usage_only=True,all_repair_capacity_proved=False))",
+      "after": "old_usage_only=True,old_response_usage_sha256=previous['response_usage_sha256'],old_original_response_sha256=previous['original_response_sha256'],old_original_request_sha256=previous['original_request_sha256'],all_repair_capacity_proved=False))",
+      "count": 1
+    }
+  ],
+  "old_budget_helpers_and_single_freeze_semantics_preserved": true,
+  "whole_entry_executed": false,
+  "v1_sha256": "47c80f314c5d676b44fd336cc53499c7f1f9599c9b211ceeac72c5ac20f5b349",
+  "retained_usage_cross_binding_added": true,
+  "new_prepare_executed": false,
+  "old_worker_proof_scorer_or_native_changed": false,
+  "retained_wire_index_sha256": "8af4e24710884eddb970dbf46a269bc3f0fee325c4089b91ee539fe028fde62c",
+  "v2_inverse_to_v1_bytes_verified": true
+}
