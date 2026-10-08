@@ -1,0 +1,95 @@
+{
+  "receipt_sha256": "c0522c425d3cccc4d2bff01ccbba24fbfc81fb42f673b21210c3c44f61dd9603",
+  "passed": true,
+  "ticket": 121,
+  "state": "completed",
+  "spec_sha256": "8c08c1e8f080c03e3d8adda19ee326cc9e436727c0f7469760475b501ca7d3e9",
+  "summary_sha256": "003e88ee801802e5abc128c88b4a5b1388f85ebccfa9a907aeb1220b87fac63d",
+  "original_tests_repeated": false,
+  "new_signals": [],
+  "new_model_calls": 0,
+  "new_EDA_calls": 0,
+  "new_FIFO": false,
+  "actual_native_commands": 11,
+  "physical_protection_receipts": 23,
+  "new_finite_observations": 69,
+  "reused_original118_observations": 2053,
+  "original118_remains_failed": true,
+  "stage360_actual_exec_rc0_reaped": true,
+  "stage_elapsed_s": 24.787080788984895,
+  "guard_elapsed_s": 24.832381933927536,
+  "recorded_births": 59,
+  "all_recorded_births_retired": true,
+  "no_own_live_process": true,
+  "guard_cleanup_verified": true,
+  "own_slot_released": true,
+  "model_held": true,
+  "source17_held": true,
+  "archive_sha256": "3bdb47a5241a5af517193627e03a74f750b9875a4faf8f286841e9a06a5cc1fc",
+  "archive_members": 208,
+  "finite_native_qualification_passed": true,
+  "all_parameter_or_clock_proof": false,
+  "score_measured": false,
+  "adoption": false,
+  "goal_achieved": false,
+  "schema": "internal_wire_native121_finite_terminal_public_v1",
+  "new_native_commands_breakdown": {
+    "xvlog": 5,
+    "xelab": 3,
+    "xsim": 3
+  },
+  "C_expected_compile_failures": 2,
+  "remaining_nine_expected_success": true,
+  "new_observations_breakdown": [
+    49,
+    4,
+    16
+  ],
+  "reused_observations_breakdown": [
+    4,
+    2049
+  ],
+  "original118_three_C_compiles_not_replayed": true,
+  "new_helper_reproduced_original_two_passed_patch_hashes": true,
+  "finite_scope": "fixed independent structures; scalar and 5-bit four-state data, binary clocks",
+  "not_all_parameter_or_fourstate_clock_proof": true,
+  "protected141_groups_held": true,
+  "peer115_120_sources_held": true,
+  "original22_and8_and4_and2_controls_not_replayed": true,
+  "new_screening_prepared": false,
+  "new_screening_submitted": false,
+  "new_screening_score_measured": false,
+  "next_screening_plan": {
+    "tasks": 15,
+    "outputs": 30,
+    "max_requests": 60,
+    "diagnostic_targets": [
+      "Prob078_dualedge",
+      "Prob129_ece241_2013_q8"
+    ],
+    "include_historical_guards": [
+      "Prob143_fsm_onehot",
+      "Prob145_circuit8",
+      "Prob151_review2015_fsm"
+    ],
+    "production_never_receives_scope_or_task_ID": true,
+    "C": "original common phase-P",
+    "P": "only optional internal declaration repair",
+    "budgets": {
+      "tokens": 8192,
+      "max_requests": 2,
+      "repair_limit": 1,
+      "solver_s": 300,
+      "judge_s": 300,
+      "supervisor_s": 360
+    },
+    "require_independent_original_generation_reconstruction_and_new_mechanical_provenance": true,
+    "require_original113_intersection_and_paired_grade_and_per_task_and_total_request_cost": true
+  },
+  "limits": [
+    "Finite native checks do not establish score improvements or adoption.",
+    "Original118 failed, and old116 independent900 boundary gap remains unchanged.",
+    "Old reused observations and new observations are separate measured sets; their sum is not a new execution.",
+    "Stage and guard elapsed intervals exclude SSH preparation/transfer and archive observer lifetime."
+  ]
+}
