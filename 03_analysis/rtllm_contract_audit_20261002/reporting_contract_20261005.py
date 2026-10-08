@@ -9,6 +9,7 @@ import hashlib
 import importlib.util
 import json
 import math
+import re
 from pathlib import Path
 import sys
 import time
@@ -80,7 +81,7 @@ def make_contract(coverage, public, manifest, original):
                         'No independent generalization, family independence or promotion established.'])
 
 
-def bind_phase_p(contract, arm_sources, generation_sources=None):
+def bind_phase_p(contract, arm_sources, generation_sources=None, model_source=None):
     """Create a new source-bound contract; never relabel historical C results.
 
     The caller audits these execution identities before binding. This only
@@ -95,6 +96,7 @@ def bind_phase_p(contract, arm_sources, generation_sources=None):
                 all(c in '0123456789abcdef' for c in v) for v in arm_sources.values()),
             'source identity hash')
     require(len(set(arm_sources.values())) == 3, 'arm execution identities must differ')
+    require(generation_sources is None or model_source is None, 'mixed generation mechanisms')
     bound = copy.deepcopy(contract)
     bound.update(schema='rtllm_finite_reporting_phaseP_v2', arms=['A', 'P', 'B'],
                  parent_contract_sha256=digest(original.encode()),
@@ -105,6 +107,11 @@ def bind_phase_p(contract, arm_sources, generation_sources=None):
             require(source['outer_arm'] == label and source['worker_arm'] == 'P' and
                     source['spec_sha256'] == arm_sources[label], 'generation source identity')
         bound['generation_sources'] = copy.deepcopy(generation_sources)
+    if model_source is not None:
+        require(set(model_source) == {'root', 'spec_sha256'} and
+                Path(model_source['root']).is_absolute() and
+                re.fullmatch(r'[0-9a-f]{64}', model_source['spec_sha256']), 'model source identity')
+        bound['model_source'] = copy.deepcopy(model_source)
     return bound
 
 
@@ -163,6 +170,23 @@ def normalize_queue_row(folder, row, plan, contract, run):
             receipt['actual_calls'] and receipt['unconfirmed_calls'] == 0, 'unconfirmed responses')
     require(bound['verdict']['passed'] == receipt['finite_pass'], 'outcome drift')
     binding = bound.get('generation_binding')
+    model_binding = bound.get('model_binding')
+    if 'model_source' in contract:
+        require(plan['sources'].get('model_feedback') is True and
+                plan['sources']['root'] == contract['model_source']['root'] and
+                plan['sources']['files'][str(Path(plan['sources']['root'])/'RUN_SPEC.json')] ==
+                contract['model_source']['spec_sha256'], 'plan model source drift')
+        require(binding is None, 'mechanical binding in model-only report')
+        if row['arm'] != 'B':
+            require(bound.get('model_source') == contract['model_source'] and
+                    isinstance(model_binding, dict), 'missing or changed model source')
+            require(model_binding['outer_arm'] == row['arm'] and
+                    model_binding['worker_arm'] == ('C' if row['arm'] == 'A' else 'P') and
+                    model_binding['model_generated_rtl_bound'] is True and
+                    model_binding['actual_model_responses'] == receipt['actual_calls'] and
+                    model_binding['solution_sha256'] == bound['solution_sha256'], 'model evidence drift')
+        else:
+            require(model_binding is None and bound.get('model_source') is None, 'baseline model override')
     if 'generation_sources' in contract:
         require(plan['sources']['generation_arms'] == contract['generation_sources'], 'plan generation source drift')
         if row['arm'] != 'B':
@@ -186,6 +210,9 @@ def normalize_queue_row(folder, row, plan, contract, run):
         solve_s=receipt['solve_elapsed_s'], judge_s=receipt['judge_elapsed_s'])
     if binding is not None:
         normalized['generation_binding'] = binding
+    if 'model_source' in contract:
+        normalized.update(model_binding=model_binding, model_source=bound.get('model_source'),
+                          solution_sha256=bound['solution_sha256'])
     return normalized
 
 
@@ -223,6 +250,19 @@ def summarize(rows, contract, run):
             require(row[field] == value, field+' mismatch')
         calls = row['call_attempts']
         require(type(calls) is int and 0 <= calls <= (1 if row['arm'] == 'B' else 2), 'call budget')
+        if 'model_source' in contract:
+            require(calls >= 1 and row.get('generation_binding') is None, 'non-model result')
+            model = row.get('model_binding')
+            if row['arm'] != 'B':
+                require(row.get('model_source') == contract['model_source'] and isinstance(model, dict),
+                        'missing model source')
+                require(model['outer_arm'] == row['arm'] and
+                        model['worker_arm'] == ('C' if row['arm'] == 'A' else 'P') and
+                        model['model_generated_rtl_bound'] is True and
+                        model['actual_model_responses'] == calls and
+                        model['solution_sha256'] == row['solution_sha256'], 'model result drift')
+            else:
+                require(model is None and row.get('model_source') is None, 'baseline model override')
         if calls == 0:
             binding = row.get('generation_binding')
             verify_generation(binding, row['arm'], contract, row['input_sha256'])

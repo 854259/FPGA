@@ -1,0 +1,85 @@
+{
+  "schema": "rtllm_model_source_plumbing_v1",
+  "updated_at": "2026-10-08T17:22:00+08:00",
+  "status": "new_model_source_integration_verified_no_scoring_dispatch",
+  "purpose": "Connect model-generated A/P replies to the existing isolated finite-domain judge and report; B remains original baseline. Official contest requirements remain the only selection criteria.",
+  "source_hashes": {
+    "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+    "official_baseline_scoring_20261005.py": "83e6db24b1fd57fb7da4d28efc15a4097e0d0fdacb8a6fe8dbdf903844ed284c",
+    "test_finite_model_source_20261008.py": "bc821b820907a63efd6744f2b7ba449af4e88b9c0d77dee23a0df43db031691c",
+    "finite_scoring_20261005.py": "3c57b30b314384c617fa72ff32f1fdb70b070685de11a6140003fa9e1b6e0419",
+    "reporting_contract_20261005.py": "5a40df36483ec963e4cff7ebe7608c6ff98519ef8176f783cee0cd704de7a617",
+    "three_arm_queue_20261005.py": "fc39a74b224fca87b56f3f2b0e16c1668539f787897defad54e9f6132f5fb6e1",
+    "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422"
+  },
+  "result_sha256": "13a5be3c85550635c3623b5b04e3a9d063239ba7b87a19b90d4acf9fdd73464d",
+  "manifest_sha256": "9521aba18187fc27795ea5bb5e5e4964fd510ad630f3d66b94b3e46d2d491ebf",
+  "validation": {
+    "checks": [
+      "29_domains_bound_without_dispatch",
+      "three_retained_arms_finite_queue_and_reporting",
+      "five_sample_model_report_preserves_finite_scope"
+    ],
+    "eda_commands": 0,
+    "fake_native_judges": 3,
+    "fixture": "RETAINED_FAKE_OUTPUTS_AND_SYNTHETIC_REPORT_ONLY",
+    "full_batch": false,
+    "full_scoring_admission": false,
+    "old_native_controls_rerun": 0,
+    "passed": true,
+    "real_model_calls": 0,
+    "rejected": [
+      "A_synthetic_not_score",
+      "P_synthetic_not_score",
+      "B_synthetic_not_score",
+      "missing_model",
+      "different_source",
+      "different_solution",
+      "zero_calls"
+    ],
+    "retained_solve_cases": 3,
+    "solver_executions": 0
+  },
+  "prior_failure": {
+    "reason": "Test computed report-contract hash with ensure_ascii=True; production uses UTF-8 JSON. A finite/queue transport had completed before failure.",
+    "retained": true,
+    "reused_successful_A_transport": true,
+    "production_fix_for_failure": false
+  },
+  "processes": [
+    {
+      "pid": 2833983,
+      "starttime": "872472756",
+      "returncode": 1,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining_group": [],
+      "child_elapsed_s": 0.7583166211843491,
+      "cap_s": 60,
+      "receipt_sha256": "a8f6c672289d185624e6fa9356c3431d912ef7ba0ef03db713310ee5f57a4f45",
+      "stdout_sha256": "907c434df4e641facc819ae6eafab03563fccfe589d60a442d773105135b00f2"
+    },
+    {
+      "pid": 2836679,
+      "starttime": "872481675",
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining_group": [],
+      "child_elapsed_s": 0.8179508224129677,
+      "cap_s": 60,
+      "receipt_sha256": "24c1bf0132f14227b7fe3a4cd0e9f3910ee0239299bc0adafac4e3d40a5d01ba",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "time_scope": "Each bounded child through exit/reaping/owned-group check, excludes preparation, interval and transfer; not whole-stage elapsed.",
+  "private_evidence": {
+    "archive_sha256": "de0b923c4822f54a5214bfc9a36fb9abd3b29bbe68873048088933d14e590eec",
+    "members": 149,
+    "bytes": 238519,
+    "amd_original_and_local_members_verified": true
+  },
+  "remaining": "129 frozen five-sample VerilogEval comparison continues independently. RTLLM has 29 finite development domains and 15 specification blocks; no new model dispatch or official score. Full candidate/same-run baseline/five-sample/engineering validation remains pending.",
+  "current_scoring_mutated": false,
+  "selection_policy_unchanged": true
+}
