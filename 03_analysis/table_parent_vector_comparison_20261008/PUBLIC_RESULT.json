@@ -58,7 +58,7 @@
   "new_accuracy_result": false,
   "adoption": false,
   "full_acceptance_complete": false,
-  "next": "Unique FIFO submission after PR delivery; follow existing122, no duplicate or rerun.",
+  "next": "Follow original FIFO123; execute the sealed terminal entry once after completed-task and retirement gates, then analyze paired results. No financial-balance prerequisite.",
   "freeze_preparation": {
     "updated_at": "2026-10-08T10:00:00.885559+08:00",
     "source_commit": "657e156070c535e2d3592c2dd0a707bfe23a7128",
@@ -106,7 +106,7 @@
   },
   "execution_freeze": {
     "updated_at": "2026-10-08T10:30:00+08:00",
-    "status": "execution_frozen_pending_unique_fifo_submission",
+    "status": "FIFO123_running_since_2026-10-08T10:31:47+08:00",
     "authorization_sha256": "dddba0c0b90a3d98bf0e0b5c1b65819b3af131f9efc3cc5fd1b7aae9f3dd14b4",
     "source_commit": "3505590c6d3070fea697a204ee9891b3851d55d3",
     "spec_sha256": "8e80d776b3df21399fb66a4c99698a794a049527e4c5634e57900ed0c4b9e31c",
@@ -115,7 +115,7 @@
     "model_calls": 0,
     "eda_calls": 0,
     "repeated_intake_calls": 0,
-    "fifo_submissions": 0,
+    "fifo_submissions": 1,
     "financial_balance_verified": false,
     "financial_balance_execution_prerequisite": false,
     "peer_serial_window": "https://github.com/854259/FPGA/issues/7#issuecomment-6050797252",
@@ -124,6 +124,39 @@
     "maximum_submissions": 1,
     "new_accuracy_result": false,
     "goal_complete": false,
-    "next": "Unique FIFO submission after PR delivery; follow existing122, no duplicate or rerun."
+    "next": "Unique FIFO submission after PR delivery; follow existing122, no duplicate or rerun.",
+    "ticket": 123
+  },
+  "terminal_preparation": {
+    "updated_at": "2026-10-08T10:40:00+08:00",
+    "status": "prepared_pending_fifo123_completion",
+    "source_commit": "1d262463b8a7464cfc39fdc4eb6318991c157236",
+    "source_sha256": "44e700c7714634cf4535d2e9a9f3308d497a3c39c3a43bc643e753d977959b54",
+    "manifest_sha256": "72bf1977dd5868810edc523f9c831e41f385f34965cef143908b2d462689447a",
+    "plan_sha256": "8b9a900db95ba6bdff852bdf130099100a9fdf875649143b1370e933aa7aea13",
+    "compatible_collector_sha256": "7bec06965cf324d9d47975b125aec3031f9d20732771e99adff026dfa37d080a",
+    "compatible_auditor_sha256": "daed8f5c03af18dd09a3cda423b6eed7192dfae17410401df6f45441bd68c996",
+    "corrections": [
+      "Archive the actual execution freeze and sealed preparation receipts; preserve their names and hashes.",
+      "Bind inherited capture dependency path to the sealed prepared spec and exact current dependency hashes."
+    ],
+    "byte_exact_inverse_verified": true,
+    "scoring_source_changed": false,
+    "preparation_returncode": 0,
+    "preparation_child_wait_s": 0.0777719784528017,
+    "elapsed_scope": "Popen through wait/stream close/group check only",
+    "collector_calls": 0,
+    "auditor_calls": 0,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "fifo_submissions": 0,
+    "planned_collector_calls": 1,
+    "planned_auditor_calls": 1,
+    "per_command_cap_s": 180,
+    "external_cap_s": 450,
+    "cleanup_reserve_s": 20,
+    "old_helpers_reused": true,
+    "new_accuracy_result": false,
+    "terminal_passed": false
   }
 }
