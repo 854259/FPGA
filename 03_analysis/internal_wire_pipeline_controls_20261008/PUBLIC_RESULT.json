@@ -1,0 +1,80 @@
+{
+  "schema": "internal_declaration_pipeline_actual_controls_public_v1",
+  "status": "AMD full-worker identity/provenance controls passed; scoring preparation incomplete",
+  "passed": true,
+  "contexts": 4,
+  "mutation_checks": 18,
+  "production_wrapper_and_baseline_worker_executed": true,
+  "HTTP_and_compiler_simulated": true,
+  "shared_activity_intercepted_into_explicit_simulation_log": true,
+  "cases": [
+    {
+      "name": "mechanical_success",
+      "C_requests": 2,
+      "P_requests": 1,
+      "C_compiles": 2,
+      "P_compiles": 2
+    },
+    {
+      "name": "mechanical_failure_original_repair",
+      "C_requests": 2,
+      "P_requests": 2,
+      "C_compiles": 2,
+      "P_compiles": 3
+    }
+  ],
+  "first_request_raw_wire_equal": true,
+  "failed_mechanical_patch_original_repair_raw_wire_equal": true,
+  "source_reconstruction": {
+    "verified": true,
+    "upstream_original_assets": 44,
+    "reconstructed": {
+      "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+      "package/agent/map_runtime.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba"
+    },
+    "original_replay_sha256": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+    "derived_replay_sha256": "342c1d15b17cf766fb4caf40d4a1d58f8483f31373d62e00757291c10fe70b81",
+    "official_baseline_unchanged": true,
+    "model_calls": 0,
+    "EDA_calls": 0,
+    "score_measured": false
+  },
+  "process_cap_s": 60,
+  "process_actual_elapsed_s": 0.23925303481519222,
+  "exec_confirmed": true,
+  "leader_reaped": true,
+  "child_retired": true,
+  "source_manifest_sha256": "486b46a837165e416d8af5a815a6082e35930d639ef2b6721d6cf290ecbd1b74",
+  "source_files": 73,
+  "receipt_path": "/workspace/team/runs/fpga_owner/internal_wire_score15_pipeline4_transport_20261008_v2/ACTUAL_PURE_RECEIPT.json",
+  "receipt_sha256": "2a6b996a0ba83231898cb67c8a0c763fd732a25768053fe47cb88dec460efff0",
+  "AMD_archive_path": "/workspace/team/runs/fpga_owner/internal_wire_score15_pipeline4_transport_20261008_v2/PIPELINE4_EVIDENCE.zip",
+  "E_archive_path": "E:\\26qiansai\\private_archives\\internal_wire_pipeline4_passed_20261008_v2\\PIPELINE4_EVIDENCE.zip",
+  "archive_sha256": "3d79e4a48b3cd4b0ff425a562a859439d3cace0f58a863778d5c264b2b839bc7",
+  "archive_members": 175,
+  "all_members_verified_against_captured_AMD_manifest": true,
+  "fresh_individual_AMD_member_reread": false,
+  "original_failed_control": {
+    "archive_sha256": "94cc4a900e09b57ce8c18c5d46f6fa44783d35e6143cdbf1951ac0c235bb95a7",
+    "archive_members": 101,
+    "receipt_sha256": "6a54436c542ebf9851dbe344f7c8a23c5dc9321e8efc9fb4568460c47e672e45",
+    "completed_contexts": 0,
+    "cause": "Fixture expected raw text without the original extractor trailing newline; failed at first C repair payload assertion.",
+    "correction": "Fixture expected text now uses the unchanged original extractor; production source unchanged between failed and passed controls."
+  },
+  "original106_and_peer120_sources_held": true,
+  "shared_model_unchanged": true,
+  "primary_status_and_snapshot_unchanged": true,
+  "real_model_calls": 0,
+  "real_EDA_calls": 0,
+  "new_FIFO": false,
+  "score_measured": false,
+  "scoring_prepared": false,
+  "scoring_submitted": false,
+  "original118_failure_preserved": true,
+  "original121_finite_native_reused_without_replay": true,
+  "target_L3": 120,
+  "target_weighted": 0.8,
+  "goal_achieved": false,
+  "adoption": false
+}
