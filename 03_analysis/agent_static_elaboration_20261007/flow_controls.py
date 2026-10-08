@@ -23,7 +23,13 @@ ROOT = Path(__file__).resolve().parent
 BASE = Path('/workspace/team/runs/fpga_owner/first_system_emission_fixed15_20261007_v1')
 PRIOR = Path('/workspace/team/runs/fpga_teammate/serial_framing_synthesis_full156_20261007_v1')
 HELPERS = Path('/workspace/team/runs/fpga_owner/framing_cp8_113_terminal_monitor_20261007_v1')
-DEST = Path('/workspace/team/runs/fpga_teammate/static_elaboration_flow12_20261008_v1')
+PREVIOUS = Path('/workspace/team/runs/fpga_teammate/static_elaboration_flow12_20261008_v1')
+PREVIOUS_HASHES = {
+    'SOURCE_MANIFEST.json': '88460c4294054109dd626dc751725e64d2c9ceed0b4e85cb8538cad3a253fe4f',
+    'RESULTS.json': 'f9590a0fafce25946f1cdba78f95bee998cf240c448c9779f67b3b90a34f80ae',
+    'CONTROL_RESULTS/C_success/CONTROL_EXPECTATION.json': 'a968a83b8e7bd5afedf1bc2cadd457c24b2750845ed7c8b688279d38a467ffc1',
+}
+DEST = Path('/workspace/team/runs/fpga_teammate/static_elaboration_flow12_20261008_v2')
 PATCH_SHA = '9b174d44f91d64009e119a09cbe1322a20c6648a8bc533af2bf4d2825f8edac4'
 OUTPUTS = {
     'package/agent/map_runtime.py': 'c8d4a369611bd97aca61749ae885e9428cad8c5362d5a7ae8023ddd2a708d40e',
@@ -47,7 +53,6 @@ BAD_DECL = 'module TopModule(input clk, input d, output q); always @(posedge clk
 ANSI_DIAG = 'ERROR: [VRFC 10-1280] procedural assignment to a non-register q'
 ELAB_DIAG = 'ERROR: [SIMULATED_ELAB] incompatible procedural drivers in current candidate'
 CASES = [
-    ('C_success', 'C', 1, 1, 0, 1, None),
     ('P_success', 'P', 1, 1, 1, 1, None),
     ('C_ansi_success', 'C', 1, 2, 0, 0, None),
     ('P_ansi_success', 'P', 1, 2, 1, 0, None),
@@ -77,6 +82,7 @@ def save(path, data):
 
 
 def originals():
+    assert all(sha(PREVIOUS/n) == h for n, h in PREVIOUS_HASHES.items())
     for root, expected_count in [(BASE, 106), (PRIOR, 120)]:
         spec = read(root/'RUN_SPEC.json')
         assert len(spec['source_hashes']) == expected_count
@@ -143,7 +149,9 @@ def prepare():
     save(DEST/'RUN_SPEC.json', dict(model=MODEL, identity='static_elaboration_flow12_synthetic',
         dependencies_cloud=str(DEST/'UNUSED_NO_ORACLE'), activity_root=str(DEST/'SIMULATED_LEDGER')))
     save(DEST/'PLAN.json', dict(kind='controlled flow only; all transports and tools simulated',
-        cases=CASES, scenarios=12, real_model_calls=0, real_eda_calls=0, fifo_calls=0,
+        cases=CASES, scenarios=len(CASES), reused_control='C_success from v1', previous_hashes=PREVIOUS_HASHES,
+        correction='Exact extracted candidate includes the original baseline trailing LF; production and fixtures unchanged.',
+        real_model_calls=0, real_eda_calls=0, fifo_calls=0,
         max_simulated_requests_per_case=2, repair=1, retries=0,
         outer_cap_s=90, cleanup_reserve_s=10, single_observed_execution=True,
         changed_sources=OUTPUTS, original_sources={n: source_spec['source_hashes'][n] for n in SUPPORT+list(OUTPUTS)},
@@ -192,7 +200,7 @@ def one(case, worker):
         index = len(calls['http'])
         expected_user = PROMPT+'\n\nInterface:\n'+IFACE
         if index:
-            expected_user += '\nPrevious candidate:\n'+GOOD+'\nCandidate diagnostics:\n'+ELAB_DIAG
+            expected_user += '\nPrevious candidate:\n'+GOOD+'\n\nCandidate diagnostics:\n'+ELAB_DIAG
         assert body['messages'][1] == dict(role='user', content=expected_user)
         calls['http'].append(body)
         code = BAD_DECL if 'ansi' in name and index == 0 else GOOD
@@ -209,12 +217,12 @@ def one(case, worker):
         if tool == 'xvlog':
             assert argv[1:] == ['--sv', str(Path(cwd)/'candidate.sv')]
             calls['compile'].append(source)
-            if source == BAD_DECL:
+            if source == BAD_DECL+'\n':
                 rec['returncode'], diag = 1, ANSI_DIAG
         else:
             assert tool == 'xelab' and arm == 'P' and argv[1:] == ['TopModule', '-s', 'candidate_static']
             calls['elaborate'].append(source)
-            assert source == GOOD
+            assert source == GOOD+'\n'
             if (name in ('P_elab_repair', 'P_ansi_elab_repair') and len(calls['elaborate']) == 1) or name == 'P_exhausted':
                 rec['returncode'], diag = 1, ELAB_DIAG
             elif name == 'P_timeout':
@@ -252,6 +260,7 @@ def one(case, worker):
     assert subprocess.run is previous[1] and urllib_request.urlopen is previous[2]
     measured = [len(calls[k]) for k in ['http', 'compile', 'elaborate', 'feedback']]
     expected = [want_http, want_compile, want_elab, want_feedback]
+    save(result_root/'CONTROL_OBSERVED.json', dict(case=case, measured=measured, failure=failure, calls=calls))
     assert measured == expected, (name, measured, expected)
     assert (failure['type'] if failure else None) == want_error, (name, failure)
     assert calls['gates'] == want_http+want_compile+want_elab+want_feedback
@@ -276,7 +285,7 @@ def one(case, worker):
 def run():
     frozen()  # All source bytes and original frozen inputs checked before project import.
     assert not (ROOT/'CONTROL_INTENT.json').exists()
-    save(ROOT/'CONTROL_INTENT.json', dict(manifest_sha256=sha(ROOT/'SOURCE_MANIFEST.json'), scenarios=12))
+    save(ROOT/'CONTROL_INTENT.json', dict(manifest_sha256=sha(ROOT/'SOURCE_MANIFEST.json'), scenarios=len(CASES)))
     fixtures = ROOT/'SYNTHETIC_KIT/bench/tasks_veval/synthetic'
     fixtures.mkdir(parents=True)
     (fixtures/'prompt.txt').write_text(PROMPT)
@@ -289,13 +298,14 @@ def run():
                                     'RTL_TEMPERATURE': '0', 'LLM_BASE_URL': 'http://127.0.0.1:8000/v1'}):
             for case in CASES:
                 rows.append(one(case, worker))
-        assert read(ROOT/'CONTROL_RESULTS/C_success/requests/0/request.json') == read(ROOT/'CONTROL_RESULTS/P_success/requests/0/request.json')
+        assert read(PREVIOUS/'CONTROL_RESULTS/C_success/requests/0/request.json') == read(ROOT/'CONTROL_RESULTS/P_success/requests/0/request.json')
         assert read(ROOT/'CONTROL_RESULTS/C_ansi_success/requests/0/request.json') == read(ROOT/'CONTROL_RESULTS/P_ansi_success/requests/0/request.json')
         frozen()
     except BaseException as exc:
         import traceback
         failure = dict(type=type(exc).__name__, message=str(exc), traceback=traceback.format_exc())
-    save(ROOT/'RESULTS.json', dict(passed=failure is None and len(rows)==12, rows=rows, error=failure,
+    save(ROOT/'RESULTS.json', dict(passed=failure is None and len(rows)==len(CASES), rows=rows, error=failure,
+        reused_control=dict(name='C_success', root=str(PREVIOUS), bound_hashes=PREVIOUS_HASHES),
         real_model_calls=0, real_eda_calls=0, fifo_calls=0, synthetic_only=True,
         native_qualified=False, scoring_qualified=False))
     print(json.dumps(dict(passed=failure is None, scenarios=len(rows), error=failure)))
