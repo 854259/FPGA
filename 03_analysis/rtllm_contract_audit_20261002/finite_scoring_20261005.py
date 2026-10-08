@@ -155,7 +155,10 @@ def main(args):
     assert sys.platform == 'linux', 'AMD execution only'
     ledger = task_contract(args.contract, args.task)
     generation_source = getattr(args, 'generation_source', None)
-    original = scoring.eligible(args.solve, args.task, args.arm, generation_source)
+    model_source = getattr(args, 'model_source', None)
+    original = scoring.eligible(args.solve, args.task, args.arm, generation_source, model_source)
+    source = (dict(root=str(model_source.resolve()), spec_sha256=arm.sha(model_source/'RUN_SPEC.json'))
+              if model_source else None)
     resource = arm.resource_module()
     resource.check_resource(args.resource_check, args.kit)
     assert not args.out.exists()
@@ -163,7 +166,9 @@ def main(args):
     verdict = simulate(args.solve/original['solution_relative'], args.task,
                        args.out/'native', resource, args.toolbin, args.minimum_samples)
     assert task_contract(args.contract, args.task) == ledger
-    assert scoring.eligible(args.solve, args.task, args.arm, generation_source) == original
+    assert scoring.eligible(args.solve, args.task, args.arm, generation_source, model_source) == original
+    if model_source:
+        assert arm.sha(model_source/'RUN_SPEC.json') == source['spec_sha256']
     resource.check_resource(args.resource_check, args.kit)
     arm.save(args.out/'verdict.json', verdict)
     arm.save(args.out/'BOUND_VERDICT.json', dict(
@@ -177,6 +182,7 @@ def main(args):
         confirmed_model_responses=original['client_request_attempts'], server_received_count=None,
         scope=ledger['scope'], remaining=ledger['remaining'], verdict=verdict,
         generation_binding=original.get('generation_binding'),
+        model_binding=original.get('model_binding'), model_source=source,
         official_score=None, full_batch=False))
 
 
@@ -185,6 +191,7 @@ if __name__ == '__main__':
     parser.add_argument('--arm', choices=['A', 'P', 'B'], required=True)
     parser.add_argument('--minimum-samples', type=int, required=True)
     parser.add_argument('--generation-source', type=Path)
+    parser.add_argument('--model-source', type=Path)
     for key in ['kit', 'solve', 'task', 'out', 'contract', 'toolbin', 'resource-check']:
         parser.add_argument('--'+key, type=Path, required=True)
     main(parser.parse_args())

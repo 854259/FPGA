@@ -415,6 +415,12 @@ def execute_row(plan, argv, row, folder, resource_check):
         resource.check_resource(resource_check,Path(plan['kit']))
         if finite:
             assert bound.get('generation_binding') == original.get('generation_binding'), 'Finite generation source drift'
+            assert bound.get('model_binding') == original.get('model_binding'), 'Finite model binding drift'
+            if model_source:
+                assert bound['model_source'] == dict(root=str(Path(model_source).resolve()),
+                    spec_sha256=official.sha(Path(model_source)/'RUN_SPEC.json')), 'Finite model source drift'
+            else:
+                assert bound.get('model_source') is None, 'Unexpected finite model override'
             assert bound['schema'] == 'rtllm_finite_verdict_v1'
             assert bound['evaluator_sha256'] == finite['entry_sha256']
             assert bound['contract_sha256'] == finite['contract_sha256']
