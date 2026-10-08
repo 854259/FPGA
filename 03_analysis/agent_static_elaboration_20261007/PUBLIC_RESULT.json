@@ -1,0 +1,191 @@
+{
+  "schema": "static_elaboration_controlled_flow_result_v1",
+  "updated_at": "2026-10-08T08:21:51.140937+08:00",
+  "pr": 150,
+  "candidate_patch_sha256": "9b174d44f91d64009e119a09cbe1322a20c6648a8bc533af2bf4d2825f8edac4",
+  "production_sources_unchanged_between_attempts": true,
+  "runtime_sha256": "c8d4a369611bd97aca61749ae885e9428cad8c5362d5a7ae8023ddd2a708d40e",
+  "worker_sha256": "cdca09cb49e7676a7dcbcc803bff88cf29d2b7aeb7494c4f06d3acb160438876",
+  "distinct_scenarios_passed": 12,
+  "first_attempt": {
+    "completed": 1,
+    "failed": "P_success control wrongly compared extracted candidate to text without the baseline trailing LF; no production change."
+  },
+  "followup": {
+    "completed": 11,
+    "reused": "Original C_success, not rerun",
+    "change": "Exact LF expectation corrected; save observed exception before counter assertions."
+  },
+  "cases": [
+    {
+      "name": "C_success",
+      "passed": true,
+      "reused": true
+    },
+    {
+      "name": "P_success",
+      "passed": true,
+      "simulated_http": 1,
+      "simulated_xvlog": 1,
+      "simulated_xelab": 1,
+      "expected_error": null
+    },
+    {
+      "name": "C_ansi_success",
+      "passed": true,
+      "simulated_http": 1,
+      "simulated_xvlog": 2,
+      "simulated_xelab": 0,
+      "expected_error": null
+    },
+    {
+      "name": "P_ansi_success",
+      "passed": true,
+      "simulated_http": 1,
+      "simulated_xvlog": 2,
+      "simulated_xelab": 1,
+      "expected_error": null
+    },
+    {
+      "name": "P_elab_repair",
+      "passed": true,
+      "simulated_http": 2,
+      "simulated_xvlog": 2,
+      "simulated_xelab": 2,
+      "expected_error": null
+    },
+    {
+      "name": "P_ansi_elab_repair",
+      "passed": true,
+      "simulated_http": 2,
+      "simulated_xvlog": 3,
+      "simulated_xelab": 2,
+      "expected_error": null
+    },
+    {
+      "name": "P_exhausted",
+      "passed": true,
+      "simulated_http": 2,
+      "simulated_xvlog": 2,
+      "simulated_xelab": 2,
+      "expected_error": null
+    },
+    {
+      "name": "P_missing",
+      "passed": true,
+      "simulated_http": 1,
+      "simulated_xvlog": 1,
+      "simulated_xelab": 0,
+      "expected_error": "RuntimeError"
+    },
+    {
+      "name": "P_timeout",
+      "passed": true,
+      "simulated_http": 1,
+      "simulated_xvlog": 1,
+      "simulated_xelab": 1,
+      "expected_error": "RuntimeError"
+    },
+    {
+      "name": "P_launch_error",
+      "passed": true,
+      "simulated_http": 1,
+      "simulated_xvlog": 1,
+      "simulated_xelab": 1,
+      "expected_error": "RuntimeError"
+    },
+    {
+      "name": "P_survivor",
+      "passed": true,
+      "simulated_http": 1,
+      "simulated_xvlog": 1,
+      "simulated_xelab": 1,
+      "expected_error": "RuntimeError"
+    },
+    {
+      "name": "P_source_mutation",
+      "passed": true,
+      "simulated_http": 1,
+      "simulated_xvlog": 1,
+      "simulated_xelab": 1,
+      "expected_error": "AssertionError"
+    }
+  ],
+  "receipts": {
+    "v1": {
+      "result_sha256": "f9590a0fafce25946f1cdba78f95bee998cf240c448c9779f67b3b90a34f80ae",
+      "source_manifest_sha256": "88460c4294054109dd626dc751725e64d2c9ceed0b4e85cb8538cad3a253fe4f",
+      "external_sha256": "41bcdd58206318c1a236dcc004d61a83091f703a175444f7226c0331c284b972",
+      "elapsed_s": 0.24164750427007675,
+      "child": {
+        "pid": 2484324,
+        "state": "T",
+        "starttime": "869236079",
+        "pgid": 2484324,
+        "sid": 2484324,
+        "command_sha256": "30f2c396a4bde701ccc6b2851f9545478fc6e27c34ba4dfd5c65fc1628aea9bd"
+      },
+      "rc": 1
+    },
+    "v2": {
+      "result_sha256": "4cd45c19162d269f430ad01dd3c1b9280a41239b02fbbfeb88e8e91dbb539993",
+      "source_manifest_sha256": "c9b527b2c3c747c13704e3cbd2cc025f0d68d81ada819e6888c4a65425789d2b",
+      "external_sha256": "23a291465ce6a2642e1a0c1178a161121fd463117404883980f019cded752170",
+      "elapsed_s": 0.3885940611362457,
+      "child": {
+        "pid": 2484354,
+        "state": "T",
+        "starttime": "869249648",
+        "pgid": 2484354,
+        "sid": 2484354,
+        "command_sha256": "4a682fb107df8ce240cff2c0e8a3e4d0d96cd30e6c59abc052e35f5af0fe7ff2"
+      },
+      "rc": 0
+    }
+  },
+  "retired_identities": [
+    {
+      "pid": 2484324,
+      "starttime": "869236079",
+      "retired": true
+    },
+    {
+      "pid": 2484323,
+      "starttime": "869236068",
+      "retired": true
+    },
+    {
+      "pid": 2484354,
+      "starttime": "869249648",
+      "retired": true
+    },
+    {
+      "pid": 2484353,
+      "starttime": "869249637",
+      "retired": true
+    }
+  ],
+  "boundary_checks": [
+    "C bypass and original first request bytes",
+    "P ordinary and ANSI-corrected success exits",
+    "Only original repair consumed; corrected candidate and current diagnostics",
+    "Second elaboration failure exhausts original two requests",
+    "Missing tool, timeout, launch failure, live group and input mutation fail closed",
+    "HTTP/subprocess/cwd restoration and source/log hashes"
+  ],
+  "real_model_calls": 0,
+  "real_eda_calls": 0,
+  "fifo_calls": 0,
+  "independent_benchmark_tasks": 0,
+  "native_qualified": false,
+  "scoring_qualified": false,
+  "accuracy_gain_measured": false,
+  "budget": {
+    "outer_seconds_each_attempt": 90,
+    "child_seconds": 80,
+    "cleanup_reserve_seconds": 10,
+    "max_simulated_HTTP_per_case": 2
+  },
+  "timing_scope": "Each separate child birth gate through exit/reap, owned-tree cleanup and final file binding. First failure exits before final binding. Excludes preparation, observer serialization/exit, transfer and time between attempts.",
+  "next": "Fresh task-independent native controls and incremental cost/budget qualification before any frozen scoring experiment. No A/CP8/lexical/internal-wire combination."
+}
