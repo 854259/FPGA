@@ -16139,5 +16139,20 @@
     "FIFO_submitted": false,
     "score_measured": false,
     "goal_achieved": false
+  },
+  "generic_galois_prompt_clarification_20261008_v1": {
+    "status": "AMD_toy_semantic_controls_passed_not_integrated_or_scored",
+    "public_result": "03_analysis/galois_prompt_clarification_20261008/PUBLIC_RESULT.json",
+    "source_hashes": {
+      "galois_prompt_contract.py": "fc6cf9c047364c5f737c9b4670905d744dea7775421625ca1882ef0626248a95",
+      "test_prompt_contract.py": "684bccf1460f4cf30cdb0c1fb647f7d5ad1b68985cd36abb2342960e5841e3ca"
+    },
+    "positive_interfaces": 4,
+    "negative_interfaces": 19,
+    "independent_transition_checks": 664,
+    "new_model_EDA_FIFO_calls": 0,
+    "score_measured": false,
+    "adoption": false,
+    "goal_achieved": false
   }
 }

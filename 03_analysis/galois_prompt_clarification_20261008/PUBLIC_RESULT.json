@@ -1,0 +1,38 @@
+{
+  "schema": "generic_galois_prompt_clarification_public_development_v1",
+  "status": "AMD_toy_semantic_controls_passed_not_integrated_or_scored",
+  "factor": "Conservative clarification of explicitly specified right-shifting Galois recurrence, tap positions, seed and synchronous reset. No RTL emitter.",
+  "positive_interfaces": 4,
+  "negative_interfaces": 19,
+  "independent_state_transition_checks": 664,
+  "direction_mutants_rejected": 4,
+  "actual_AMD_root": "/workspace/team/runs/fpga_owner/generic_galois_prompt_controls_20261008_v1",
+  "actual_receipt_sha256": "eacefaf7122720f74b0d8eeab15758e97d0cddab7a680e33b9963e697b4068b3",
+  "actual_process_cap_s": 40,
+  "actual_process_elapsed_s": 0.1357571966946125,
+  "actual_exec_confirmed_and_leader_reaped": true,
+  "source_hashes": {
+    "galois_prompt_contract.py": "fc6cf9c047364c5f737c9b4670905d744dea7775421625ca1882ef0626248a95",
+    "test_prompt_contract.py": "684bccf1460f4cf30cdb0c1fb647f7d5ad1b68985cd36abb2342960e5841e3ca"
+  },
+  "model_calls": 0,
+  "EDA_calls": 0,
+  "FIFO_calls": 0,
+  "first_model_wire_integration_tested": false,
+  "real_score_measured": false,
+  "qualified_for_full156": false,
+  "adoption": false,
+  "goal_achieved": false,
+  "original_archive": {
+    "AMD_path": "/workspace/team/activity/fpga_owner/artifacts/generic-galois-prompt-controls-original-v1/ORIGINAL_CONTROLS.zip",
+    "E_path": "E:\\26qiansai\\private_archives\\generic_galois_prompt_controls_20261008_v1\\ORIGINAL_CONTROLS.zip",
+    "sha256": "f275878ce6f9cc8c8c7cae832e810b56dad1698ccd6958fdfd231d8f302b42b9",
+    "members": 13,
+    "every_original_member_verified_both_ends": true
+  },
+  "protected_current_score_source107_unchanged": true,
+  "protected_peer_prepared_source106_unchanged": true,
+  "shared_model_and_PRIMARY_two_files_unchanged": true,
+  "planned_integration": "New separate single-factor first-request semantic clarification; original declaration122 remains frozen. No next root model task until the peer table-parent/vector window is served.",
+  "limits": "Toy finite validation only. Real request wiring, input capacity, native scoring and whole-budget protection remain unverified. A simulation-timeout example is not counted as a semantic repair opportunity."
+}
