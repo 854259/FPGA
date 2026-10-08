@@ -1,0 +1,38 @@
+{
+  "schema": "history_scoring_interface_file_derivative_v1",
+  "changes": [
+    {
+      "file": "pilot.py",
+      "function": "generation_binding",
+      "original_sha256": "29ab1b8e99128a9c9ee4e30c456b8640c1e858b3736ef158b4660867b466923b",
+      "new_sha256": "14f6f84fa7adaf51afcf945689fdb610eba220c7927d6a9231c51e2854898787",
+      "original_lines": [
+        81,
+        140
+      ]
+    },
+    {
+      "file": "audit.py",
+      "function": "generation",
+      "original_sha256": "4030b1fc3056facaa53e9515d6fc1bedb8c0b271f2ded21d06078b79b3a4a83b",
+      "new_sha256": "482bedf2423236e51aa762ee5fc009d430818730af82fff41cdaa1d94c16573c",
+      "original_lines": [
+        36,
+        64
+      ]
+    }
+  ],
+  "source_files": {
+    "audit.py": "e1ee7e2274245bf0a9b55f46422e8b11d2286f1193c84f2fc785b2b1a9cd9b40",
+    "metrics.py": "f1511e4eacce1382b54f45cf80104dd0479e541cb9cdaaffb082f653ff4585fa",
+    "pilot.py": "cb09159a515fb34440ce6436d14ebb00e183ae712b26fa161ef367f3159db15a",
+    "probe_evidence.py": "82643e12d91afb34308af4efe29a086ebd6f46345a688b0befa50bfbeb25d1b9",
+    "source_admission.py": "17c6c92dfc1eb1041db0adf162f8fb0ed76723cd2b9ebff01d1c3cbfc1cccee9"
+  },
+  "original_full_stage_and_metrics_reused": true,
+  "original_pair2_archive_guard_judge_frame_reused": true,
+  "old_controls_native_intake_not_run": true,
+  "run_spec_or_preparation_not_created": true,
+  "actual_execution": false,
+  "scoring_admission": false
+}

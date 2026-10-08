@@ -1,4 +1,146 @@
 {
+  "history_scoring_interfaces_controls_20261008": {
+    "schema": "history_scoring_interface_sources_public_v1",
+    "score_stage_and_complete_archive_interface_sources_prepared": true,
+    "source_admission_uses_unchanged_original44_baseline_and_existing_native_evidence": true,
+    "controls": {
+      "schema": "history_scoring_new_interfaces_controls_v1",
+      "passed": true,
+      "positive_contexts": 5,
+      "rejection_contexts": 21,
+      "positives": [
+        "actual_reused_native_qualifications_and_original44_source_admission",
+        "synthetic_two_zero_call_routes_original113_no_invented_gain",
+        "synthetic_threshold_control_not_measured_score",
+        "synthetic_L2_coefficient_point7_preserved",
+        "new_probe_callback_reads_one_unchanged_old_native_record_no_execution"
+      ],
+      "rejections": [
+        "source_worker",
+        "source_upstream",
+        "source_worker_adaptation",
+        "source_onehot_native",
+        "source_timer_native",
+        "source_timer_archive",
+        "source_provider_binding",
+        "source_input_manifest",
+        "source_route_collision",
+        "source_production_admission",
+        "synthetic_gate_historical_regression",
+        "synthetic_gate_historical_extra_call",
+        "synthetic_gate_unchanged_extra_call",
+        "synthetic_gate_total_extra_calls",
+        "synthetic_gate_deadline",
+        "synthetic_gate_unconfirmed",
+        "synthetic_malformed_wrong_provider",
+        "synthetic_malformed_zero_model",
+        "synthetic_malformed_wrong_emitted_solution",
+        "synthetic_malformed_missing_row",
+        "synthetic_malformed_reordered"
+      ],
+      "scoring_cases_explicitly_synthetic": true,
+      "source_admission_reuses_old_qualifications": true,
+      "one_old_native_probe_record_read_only": true,
+      "old_worker_algorithm_native_intake_full_auditor_not_rerun": true,
+      "new_worker_model_EDA_FIFO_calls": 0,
+      "full_stage_or_full_archive_auditor_executed": false,
+      "real_score_or_full156_qualification": false
+    },
+    "archives": [
+      {
+        "root": "/workspace/team/runs/fpga_owner/history_scoring_interface_controls_20261008_v1",
+        "passed": false,
+        "receipt_sha256": "409d2911ac2a7de04afa3fda26a51ae7173d818d83156ca08b9a3dd2a12ab418",
+        "archive_sha256": "d74e7078e805ffb1f5d967cdd8c9c4306ba8e0bdaf4d11830924bd0fda8770e0",
+        "archive_members": 1615,
+        "AMD_E_every_member_bound": true,
+        "process": {
+          "schema": "owned_preexec_birth_gate_v1",
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/workspace/team/runs/fpga_owner/history_scoring_interface_controls_20261008_v1/test_scoring_interfaces.py"
+          ],
+          "cwd": "/workspace/team/runs/fpga_owner/history_scoring_interface_controls_20261008_v1",
+          "cap_s": 40,
+          "timeout": false,
+          "signals": [
+            "SIGCONT_bound_preexec_child"
+          ],
+          "exec_error": null,
+          "error": null,
+          "child_identity": {
+            "pid": 2654922,
+            "state": "T",
+            "starttime": "870800779",
+            "pgid": 2654922,
+            "sid": 2654922,
+            "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+          },
+          "exec_confirmed": true,
+          "returncode": 1,
+          "remaining_group": [],
+          "elapsed_s": 0.3751887883991003,
+          "leader_reaped": true,
+          "stdout_sha256": "3681fd61012f1000f3b69d1d61d40e709552d683bb7f49e2765367a0e9b981ce",
+          "stdout_bytes": 1560,
+          "normal_completion": true
+        },
+        "independent_child_retired": true
+      },
+      {
+        "root": "/workspace/team/runs/fpga_owner/history_scoring_interface_controls_20261008_v2",
+        "passed": true,
+        "receipt_sha256": "6b2a33df9ff46a5241290609203dcd15e579726e7f216171016acad2102c0f46",
+        "archive_sha256": "60f8e09295c06330ff6de46226e8cd6151d5a4197202fc64c90017b0723629b1",
+        "archive_members": 1627,
+        "AMD_E_every_member_bound": true,
+        "process": {
+          "schema": "owned_preexec_birth_gate_v1",
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/workspace/team/runs/fpga_owner/history_scoring_interface_controls_20261008_v2/test_scoring_interfaces.py"
+          ],
+          "cwd": "/workspace/team/runs/fpga_owner/history_scoring_interface_controls_20261008_v2",
+          "cap_s": 40,
+          "timeout": false,
+          "signals": [
+            "SIGCONT_bound_preexec_child"
+          ],
+          "exec_error": null,
+          "error": null,
+          "child_identity": {
+            "pid": 2654932,
+            "state": "T",
+            "starttime": "870809552",
+            "pgid": 2654932,
+            "sid": 2654932,
+            "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+          },
+          "exec_confirmed": true,
+          "returncode": 0,
+          "remaining_group": [],
+          "elapsed_s": 0.42085554637014866,
+          "leader_reaped": true,
+          "stdout_sha256": "79434d4fd2e30fb6e6f7a9674605b503819bea1cb21d0da6eee89e7d724ef39e",
+          "stdout_bytes": 1446,
+          "normal_completion": true
+        },
+        "independent_child_retired": true
+      }
+    ],
+    "initial_failure": "v1 omitted original6b141e6d archive helper; failed at module load before new retained-probe callback. v2 adds only this exact helper; candidate and test bytes unchanged; new interface controls rechecked. Both original outcomes retained.",
+    "original_producer_native_worker_intake_controls_not_rerun": true,
+    "whole_new_stage_or_full_archive_auditor_executed": false,
+    "full_scoring_freeze_created": false,
+    "full_scoring_admission": false,
+    "queued": false,
+    "score_measured": false,
+    "goal_achieved": false,
+    "adoption": false,
+    "peer123_and_PR166_next_model_job_preserved": true
+  },
   "history_generation_binding_controls_20261008": {
     "schema": "history_generation_binding_public_v1",
     "generation_binding_sha256": "031e19fbbaf798bf3e402e1df78481dc7bb8b1f18403bc0d8dc833fae53e836d",

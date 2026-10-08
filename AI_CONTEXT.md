@@ -1,3 +1,9 @@
+## 2026-10-08 组合评分接线源码与5/21接口控制通过，未冻结/入队
+
+准备原全156stage/完整归档/指标接口，接PR171；只读绑定原44/common/两producer及旧native资格，保留原历史113、配对及逐题/总调用成本、8192/max2/repair1/原判定/L2=.7。AMD5正向/21拒绝通过，评分行明确合成，新增probe回调只读一旧真实记录。0新worker/model/EDA/FIFO，旧native/worker/intake/完整auditor不重跑；新完整stage/audit未执行。首轮漏带原6b141e6d依赖加载失败，v2只补原文件、候选/测试未改后复核；失败1615与成功1627原件d74e7078/60f8e092均AMD/E逐项绑定、exec/reaped/独立退休。
+
+目前只有接口源码和有限控制，没有RUN_SPEC、评分冻结/全156准入/入队或新成绩。依据123实审与必要历史/成本门再选范围，旧分数不相加。peer保留123/三臂终态，root下一模型任务仍PR166 pair2，目标120/.80 ACTIVE。详见 [评分接线](03_analysis/history_scoring_interfaces_20261008/PUBLIC_RESULT.json)，旧节点及正文保留。
+
 ## 2026-10-08 组合生成来源核验通过，复用旧资格推进评分冻结
 
 新增只读9元数据/转录正向及38拒绝控制AMD通过；两机械元数据明确人为构造、六原模拟服务记录仅核验不重跑worker。绑定题面→selector/两producer→原recipe/RTL及原first/repair/reply/final，fc5f1d2b原replay逐字复用，模拟native不得授真实生成资格。0新worker/model/EDA/FIFO；旧native/intake/完整auditor不重跑。exec0/reaped约0.282秒、独立退休；623原件c0010b36已AMD/E逐项绑定。
