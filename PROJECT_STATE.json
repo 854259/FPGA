@@ -16154,5 +16154,36 @@
     "score_measured": false,
     "adoption": false,
     "goal_achieved": false
+  },
+  "internal_declaration122_original_terminal_20261008_v1": {
+    "status": "completed_original_audit_passed_no_new_L3_rejected_for_full156",
+    "public_result": "03_analysis/internal_declaration122_terminal_20261008/PUBLIC_RESULT.json",
+    "evidence_valid": true,
+    "L3_by_arm": {
+      "C": 5,
+      "P": 5
+    },
+    "requests_by_arm": {
+      "C": 21,
+      "P": 19
+    },
+    "strict_new_L3_net": 0,
+    "qualified_for_full156": false,
+    "adoption": false,
+    "goal_achieved": false
+  },
+  "galois_first_user_wire_20261008_v1": {
+    "status": "AMD_full_worker_mock_controls_passed_not_scored",
+    "public_result": "03_analysis/galois_first_request_20261008/PUBLIC_RESULT.json",
+    "source_hashes": {
+      "galois_first_request.py": "ca149ad77f3d322299cc014aa4a042801d0534adaf0cdcec21e331f893d3f4d3",
+      "worker.py": "772dcc2c8e7656180b9291ca54d578c17759d523f73bf7a5db6e1b032ef59bcb",
+      "test_first_request.py": "0ff8a9907e28cc662b6995650404fb1a8d2a23299f0e050cc6795a9a7ce34c64"
+    },
+    "complete_worker_mock_contexts": 4,
+    "new_model_EDA_FIFO": 0,
+    "score_measured": false,
+    "adoption": false,
+    "goal_achieved": false
   }
 }
