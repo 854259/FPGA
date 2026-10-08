@@ -1,0 +1,84 @@
+{
+  "schema": "table_parent_history_generation_binding_file_adaptation_v1",
+  "original_source_sha256": "031e19fbbaf798bf3e402e1df78481dc7bb8b1f18403bc0d8dc833fae53e836d",
+  "source_sha256": "128a80c25d10bee029d1c12bae08571d9a71fbe50301603cb084bbb7d0ec5052",
+  "replacements": [
+    {
+      "before": "PINNED={\n 'baseline_worker.py':'7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742',\n 'worker.py':'19f0aaf87f609dcbfee155f3516a8037dd09b67dc277676ac8bdf640521bab91',\n 'selector.py':'9ef0c99f24c90e396d7d31a66357ac7bdf3c1f097fcaa321641ed44d20f4d116',\n 'onehot_producer.py':'fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007',\n 'timer_producer.py':'9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6',\n 'reserved_keywords.py':'3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e',\n 'package/agent/map_runtime.py':'2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba'}\n\ndef bound_route(work,run,arm,prompt,interface,interface_present,selection_module,providers):\n    work,run=Path(work),Path(run)\n    assert arm in ('C','P') and type(interface_present) is bool\n    assert type(prompt) is str and type(interface) is str\n    assert interface_present or interface==''\n    assert all(sha(run/name)==value for name,value in PINNED.items())\n    assert Path(selection_module.__file__).resolve()==(run/'selector.py').resolve()\n    assert [name for name,module in providers]==['onehot','timer']\n    for name,module in providers:\n        assert Path(module.__file__).resolve()==(run/(name+'_producer.py')).resolve()\n    expected_inputs={'prompt.txt'}|({'interface.txt'} if interface_present else set())\n    assert {p.name for p in (work/'prompt_only').iterdir()}==expected_inputs\n    assert (work/'prompt_only/prompt.txt').read_bytes()==prompt.encode()\n    if interface_present:assert (work/'prompt_only/interface.txt').read_bytes()==interface.encode()\n    selection=selection_module.select(prompt,interface,[(name,module.synthesize) for name,module in providers]) if arm=='P' else None\n    recipe=selection['recipe'] if selection is not None else None\n    selected=selection['selected_provider'] if selection is not None else None\n    emitted=recipe is not None\n    tag='mechanical_'+selected if emitted else 'model'\n    expected=dict(schema='history_recipe_generation_route_v1',route=tag,outer_arm=arm,\n        prompt_sha256=digest(prompt),interface_sha256=digest(interface),interface_present=interface_present,\n        baseline_worker_sha256=sha(run/'baseline_worker.py'),\n        synthesis_source_sha256=sha(run/(selected+'_producer.py')) if emitted else None,\n        selector_source_sha256=sha(run/'selector.py'),\n        provider_source_hashes={name:sha(run/(name+'_producer.py')) for name,module in providers},\n        selected_provider=selected,\n        selection_sha256=digest(json.dumps(selection,sort_keys=True,separators=(',',':'))) if selection is not None else None,\n        generated_solution_sha256=recipe['rtl_sha256'] if emitted else None)\n    assert read(work/'generation_route.json')==expected\n    if arm=='P':assert read(work/'generation_selection.json')==selection\n    else:assert not (work/'generation_selection.json').exists()\n    if emitted:assert read(work/'synthesis_receipt.json')==recipe\n    else:assert not (work/'synthesis_receipt.json').exists()\n    assert not any((work/n).exists() for n in ['internal_declaration_journal.json','first_request_receipts','waveform_request_receipts'])\n    if not emitted:assert not (work/'emission').exists() and not (work/'native_receipts').exists()\n    return expected,recipe\n",
+      "after": "PINNED={'baseline_worker.py': '7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742', 'worker.py': '39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e', 'composition.py': 'f6f8bf7d01eee3df05b7f25ed1d4b2e8618203f4001e3caa61ef2f80e8038cc3', 'table_synthesis.py': 'a18ac21891dc229b3252df9ac3122517874a08bb8d269e5763d9146eae1279e5', 'contract.py': '46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206', 'selector.py': '9ef0c99f24c90e396d7d31a66357ac7bdf3c1f097fcaa321641ed44d20f4d116', 'onehot_producer.py': 'fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007', 'timer_producer.py': '9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6', 'reserved_keywords.py': '3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e', 'package/agent/map_runtime.py': '2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba'}\n\ndef bound_route(work,run,arm,prompt,interface,interface_present,composition,providers):\n    \"\"\"Reconstruct the full parent-first recipe from original input bytes.\"\"\"\n    work,run=Path(work),Path(run)\n    assert arm in ('C','P') and type(interface_present) is bool\n    assert type(prompt) is str and type(interface) is str\n    assert interface_present or interface==''\n    assert all(sha(run/name)==value for name,value in PINNED.items())\n    assert Path(composition.__file__).resolve()==(run/'composition.py').resolve()\n    assert [name for name,module in providers]==['table','onehot','timer']\n    for name,module in providers:\n        asset='table_synthesis.py' if name=='table' else name+'_producer.py'\n        assert Path(module.__file__).resolve()==(run/asset).resolve()\n    expected_inputs={'prompt.txt'}|({'interface.txt'} if interface_present else set())\n    assert {p.name for p in (work/'prompt_only').iterdir()}==expected_inputs\n    assert (work/'prompt_only/prompt.txt').read_bytes()==prompt.encode()\n    if interface_present:assert (work/'prompt_only/interface.txt').read_bytes()==interface.encode()\n    receipt=composition.synthesize(prompt,interface) if arm=='P' else composition.parent(prompt,interface)\n    assert type(receipt['emitted']) is bool and receipt['input_hashes_bound'] is True\n    recipe=receipt if receipt['emitted'] else None\n    selected=receipt['selected_provider'] if recipe is not None else None\n    if arm=='C':assert selected in (None,'table')\n    expected=dict(schema='table_parent_history_extension_generation_route_v1',\n        route='mechanical_'+selected if recipe is not None else 'model',outer_arm=arm,\n        prompt_sha256=digest(prompt),interface_sha256=digest(interface),interface_present=interface_present,\n        baseline_worker_sha256=sha(run/'baseline_worker.py'),\n        synthesis_source_sha256=sha(run/'composition.py'),\n        generated_solution_sha256=receipt['rtl_sha256'] if recipe is not None else None)\n    assert read(work/'generation_route.json')==expected\n    assert read(work/'synthesis_receipt.json')==receipt\n    assert not any((work/n).exists() for n in ['generation_selection.json','internal_declaration_journal.json','first_request_receipts','waveform_request_receipts'])\n    if recipe is None:assert not (work/'emission').exists() and not (work/'native_receipts').exists()\n    return expected,recipe\n\n",
+      "before_sha256": "031e19fbbaf798bf3e402e1df78481dc7bb8b1f18403bc0d8dc833fae53e836d",
+      "after_sha256": "6359acfa04fa0d3b42991c4ea686e79ce95b8ec501d2d98dc4267c4425ead68b"
+    },
+    {
+      "before": "assert row['arm'] == 'P' and not row['solve_deadline_reached']",
+      "after": "assert row['arm'] in ('C','P') and not row['solve_deadline_reached']\n    assert row['selected_provider'] in ('table','onehot','timer')\n    assert row['arm']=='P' or row['selected_provider']=='table'",
+      "before_sha256": "6359acfa04fa0d3b42991c4ea686e79ce95b8ec501d2d98dc4267c4425ead68b",
+      "after_sha256": "565a190a701a0cdc2509c36a89cbf2840883230c3a1b97e6c7f24d32106290a9"
+    },
+    {
+      "before": "('onehot_generation','history_recipe_generation')",
+      "after": "('table_generation','onehot_generation','timer_generation','history_recipe_generation')",
+      "before_sha256": "565a190a701a0cdc2509c36a89cbf2840883230c3a1b97e6c7f24d32106290a9",
+      "after_sha256": "6a3b9e7b08ea73a55f11c6134b6bda504703ba73c5479cca255dad22111b4eb8"
+    },
+    {
+      "before": "['history_recipe_generation','lint_start','lint','native_feedback']",
+      "after": "[row['selected_provider']+'_generation','lint_start','lint','native_feedback']",
+      "before_sha256": "6a3b9e7b08ea73a55f11c6134b6bda504703ba73c5479cca255dad22111b4eb8",
+      "after_sha256": "39a297dd50c9a8b2194b68c198eeed50b2442356ac615656217f7c29f1dced9c"
+    },
+    {
+      "before": "wr['complete'] and wr['arm'] == 'P'",
+      "after": "wr['complete'] and wr['arm'] == row['arm']",
+      "before_sha256": "39a297dd50c9a8b2194b68c198eeed50b2442356ac615656217f7c29f1dced9c",
+      "after_sha256": "df14002cd499e544f6e7d0769bd4b4050f033932afbbc727da51d552e16b20ea"
+    },
+    {
+      "before": "assert row['selected_provider']==route['selected_provider']",
+      "after": "selected=recipe['selected_provider'] if recipe is not None else None\n    assert row['selected_provider']==selected",
+      "before_sha256": "df14002cd499e544f6e7d0769bd4b4050f033932afbbc727da51d552e16b20ea",
+      "after_sha256": "28510ba5b5880a3594d597a41ae0841be68c26a6caba464a643d1bcafce42e86"
+    },
+    {
+      "before": "selected_provider=route['selected_provider']",
+      "after": "selected_provider=selected",
+      "before_sha256": "28510ba5b5880a3594d597a41ae0841be68c26a6caba464a643d1bcafce42e86",
+      "after_sha256": "65b58f818c46b26fa96bd0f720b4a018b94064fdcdcd26b19c43ec1a85aab565"
+    },
+    {
+      "before": "selection_receipt_bound=True,",
+      "after": "parent_first_original_recipe_bound=True,",
+      "before_sha256": "65b58f818c46b26fa96bd0f720b4a018b94064fdcdcd26b19c43ec1a85aab565",
+      "after_sha256": "20b806d037fbb1864802614eddcd52529c6035d3098527889ef4f99008a6c338"
+    },
+    {
+      "before": "    return proof\n",
+      "after": "    proof.update(parent_recipe_bound=True,parent_preserved_bound=selected=='table',\n                 parent_abstention_bound=selected!='table',\n                 parent_route='mechanical_table' if selected=='table' else 'model',\n                 parent_output_sha256=recipe['rtl_sha256'] if selected=='table' else None)\n    return proof\n",
+      "before_sha256": "20b806d037fbb1864802614eddcd52529c6035d3098527889ef4f99008a6c338",
+      "after_sha256": "f6d8c599a61404c72a7f74e326bfc2151a56bcef5aed58a224d4bab3b65153d0"
+    },
+    {
+      "before": "        assert Path(module.__file__).resolve()==(run/asset).resolve()\n",
+      "after": "        assert Path(module.__file__).resolve()==(run/asset).resolve()\n        dependency='table_synthesis' if name=='table' else name+'_producer'\n        assert getattr(composition,dependency) is module, 'Composition imported a different provider module'\n    assert Path(composition.selector.__file__).resolve()==(run/'selector.py').resolve()\n    assert Path(composition.table_synthesis.contract.__file__).resolve()==(run/'contract.py').resolve()\n",
+      "before_sha256": "f6d8c599a61404c72a7f74e326bfc2151a56bcef5aed58a224d4bab3b65153d0",
+      "after_sha256": "128a80c25d10bee029d1c12bae08571d9a71fbe50301603cb084bbb7d0ec5052"
+    }
+  ],
+  "pins": {
+    "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+    "worker.py": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e",
+    "composition.py": "f6f8bf7d01eee3df05b7f25ed1d4b2e8618203f4001e3caa61ef2f80e8038cc3",
+    "table_synthesis.py": "a18ac21891dc229b3252df9ac3122517874a08bb8d269e5763d9146eae1279e5",
+    "contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+    "selector.py": "9ef0c99f24c90e396d7d31a66357ac7bdf3c1f097fcaa321641ed44d20f4d116",
+    "onehot_producer.py": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+    "timer_producer.py": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "package/agent/map_runtime.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba"
+  },
+  "original_model_replay_unchanged": true,
+  "old_request_and_native_bodies_reused_except_explicit_provider_and_arm_binding": true,
+  "execution_tests": false,
+  "scoring_or_adoption": false,
+  "module_dependency_identity_guard_added_after_independent_review": true
+}
