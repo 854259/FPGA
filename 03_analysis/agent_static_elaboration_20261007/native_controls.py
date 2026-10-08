@@ -20,13 +20,13 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parent
 FLOW = Path('/workspace/team/runs/fpga_teammate/static_elaboration_flow12_20261008_v2')
-DEST = Path('/workspace/team/runs/fpga_teammate/static_elaboration_strict4_20261008_v1')
+DEST = Path('/workspace/team/runs/fpga_teammate/static_elaboration_strict4_20261008_v2')
 ORIGINAL = Path('/workspace/team/runs/fpga_teammate/static_elaboration_native5_20261008_v1')
 PRIOR = Path('/workspace/team/runs/fpga_teammate/serial_framing_synthesis_full156_20261007_v1')
 KIT = Path('/workspace/team/tasks/autodl-rtl-kit/project')
 MODEL = 'SIMULATED_NO_MODEL'
 REAL_MODEL = 'Qwen3.6-27B-Q4_K_M'
-OWNER = 'codex_teammate_static_elaboration_strict4_20261008_v1'
+OWNER = 'codex_teammate_static_elaboration_strict4_20261008_v2'
 GUARD_SHA = 'fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9'
 PAIRED_SHA = '78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c'
 TOOLS = {n: '/workspace/AMD/2026.1/Vivado/bin/'+n for n in ('xvlog', 'xelab')}
@@ -74,6 +74,12 @@ def source_check(root):
 
 
 def old_sources():
+    rejected = Path('/workspace/team/runs/fpga_teammate/static_elaboration_strict4_20261008_v1')
+    assert sha(rejected/'SOURCE_MANIFEST.json') == '1edf7a7ca5a526bcb6a7e3e21da282bc985aee5bfbe3a95b8e70cab6a28f2006'
+    source_check(rejected)
+    assert not any((rejected/n).exists() for n in ('guard', 'OBSERVE_INTENT.json', 'STAGE_INTENT.json', 'results'))
+    assert read(Path('/workspace/team/task_fifo/tickets/00000119.json'))['state'] == 'failed_released_after_inspection'
+    assert 400 < 415 < 8*60-60
     assert sha(ORIGINAL/'SOURCE_MANIFEST.json') == '8573e063b729a14bfcb97e0228bbb0aec1702ee477b0b9b522c63290645f43ac'
     source_check(ORIGINAL)
     prior = read(ORIGINAL/'results/summary.json')
@@ -116,7 +122,8 @@ def prepare():
         prior_outer_elapsed_s=15.47378627769649, aggregate_observed_stage_seconds_max=415.4737862776965,
         aggregate_time_scope='Sum of original observed stage interval plus this bounded outer stage; excludes preparation and between-stage gap. Not full wall time.',
         tool_cap_seconds=60, worker_cap_seconds=300, stage_child_cap_seconds=370,
-        stage_outer_cap_seconds=400, cleanup_reserve_seconds=30, guard_cap_seconds=430, slot_minutes=8,
+        stage_outer_cap_seconds=400, cleanup_reserve_seconds=30, guard_cap_seconds=415, slot_minutes=8,
+        prior119='Argument validation rejected guard430 with slot8 before guard/stage/model/EDA; original files retained. Only guard cap reduced to415 to leave65s lease reserve.',
         generation_max_tokens=8192, generation_max_requests=2, repair=1, retries=0,
         production_sources_unchanged=True, original117_failure_preserved=True,
         reused='Original117 ordinary positive C/P and C bypass;12 simulated-flow controls. This is four P controls, not new C/P pairs.',
