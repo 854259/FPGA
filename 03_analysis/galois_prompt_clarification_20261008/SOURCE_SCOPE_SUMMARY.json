@@ -1,0 +1,19 @@
+{
+  "public_sources": {
+    "galois_prompt_contract.py": "fc6cf9c047364c5f737c9b4670905d744dea7775421625ca1882ef0626248a95",
+    "test_prompt_contract.py": "684bccf1460f4cf30cdb0c1fb647f7d5ad1b68985cd36abb2342960e5841e3ca"
+  },
+  "generic_toy_fixtures_only": true,
+  "production_input_only": "Prompt/interface text",
+  "production_imports": [
+    "re"
+  ],
+  "production_external_IO": false,
+  "production_model_or_EDA_calls": false,
+  "production_task_ID_or_history_dispatch": false,
+  "production_reference_or_TB_inputs": false,
+  "private_prompts_responses_RTL_TB_credentials_published": false,
+  "prior_controls_reexecuted": false,
+  "score_claim": false,
+  "scope": "Prompt-only parser and semantic clarification formatter; no active model transport change."
+}
