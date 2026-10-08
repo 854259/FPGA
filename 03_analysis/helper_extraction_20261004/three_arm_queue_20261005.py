@@ -153,6 +153,13 @@ def validate(plan):
                    for row in plan['rows'])
     for path, expected in plan['sources']['files'].items():
         assert official.sha(path) == expected, path
+    if plan['sources'].get('model_feedback'):
+        assert 'generation_arms' not in plan['sources']
+        root = Path(plan['sources']['root'])
+        source_spec = json.loads((root/'RUN_SPEC.json').read_text())
+        assert source_spec['model_generated_rtl_only'] is True
+        for name, expected in source_spec['source_hashes'].items():
+            assert plan['sources']['files'][str(root/name)] == expected == official.sha(root/name)
     if 'generation_arms' in plan['sources']:
         import three_arm_generation_20261008 as generation
         assert set(plan['sources']['generation_arms']) == {'A', 'P'}
@@ -209,7 +216,8 @@ def launch_args(plan, row, folder, resource_check):
             '--task', str(prompt), '--arm', row['arm'], '--source-root', source['root']]
     return ['/usr/bin/env', 'PAIRED_TASK_DIR='+str(prompt), 'LLM_BASE_URL=http://127.0.0.1:8000/v1',
             'MODEL_NAME='+plan['model'], 'RTL_REPAIRS=1', 'RTL_TEMPERATURE=0', 'RTL_MAX_TOKENS=8192']+argv+[
-        str(Path(plan['sources']['root'])/'worker.py')]+common+['--task', row['task'], '--arm', row['arm']]
+        str(Path(plan['sources']['root'])/'worker.py')]+common+['--task', row['task'], '--arm',
+        'C' if plan['sources'].get('model_feedback') and row['arm'] == 'A' else row['arm']]
 
 
 def verify_terminal(folder, row, plan_sha256):
@@ -373,7 +381,8 @@ def execute_row(plan, argv, row, folder, resource_check):
         assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Solver supervision failure'
         solve = folder/'solve'; evaluator = Path(row['evaluator_dir'])
         generation_source = plan['sources'].get('generation_arms', {}).get(row['arm'], {}).get('root')
-        original = scoring.eligible(solve,evaluator,row['arm'],generation_source)
+        model_source = plan['sources']['root'] if plan['sources'].get('model_feedback') and row['arm'] != 'B' else None
+        original = scoring.eligible(solve,evaluator,row['arm'],generation_source,model_source)
         assert original['input_sha256'] == row['input_hashes']
         receipt.update(actual_calls=original['client_request_attempts'],unconfirmed_calls=0)
         assert (0 if generation_source else 1) <= receipt['actual_calls'] <= row['reserved_calls']
@@ -387,6 +396,8 @@ def execute_row(plan, argv, row, folder, resource_check):
             '--out',str(folder/'judge'),'--resource-check',str(resource_check)]
         if generation_source:
             judge_argv += ['--generation-source', generation_source]
+        if model_source:
+            judge_argv += ['--model-source', model_source]
         if finite:
             judge_argv += ['--contract',finite['contract'],'--toolbin',finite['toolbin'],
                            '--minimum-samples',str(row['minimum_observations'])]
@@ -399,7 +410,7 @@ def execute_row(plan, argv, row, folder, resource_check):
         assert bound['task_files'] == row['evaluator_hashes']
         assert bound['verdict_sha256'] == official.sha(folder/'judge/verdict.json')
         assert bound['client_request_attempts'] == receipt['actual_calls']
-        assert scoring.eligible(solve,evaluator,row['arm'],generation_source) == original
+        assert scoring.eligible(solve,evaluator,row['arm'],generation_source,model_source) == original
         validate(plan)
         resource.check_resource(resource_check,Path(plan['kit']))
         if finite:

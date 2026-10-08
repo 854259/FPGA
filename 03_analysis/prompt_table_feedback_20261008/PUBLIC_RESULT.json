@@ -1,13 +1,13 @@
 {
   "schema": "prompt_table_model_feedback_preparation_v1",
-  "updated_at": "2026-10-08T16:24:00+08:00",
-  "status": "implemented_intake_verified_native_controls_queued",
+  "updated_at": "2026-10-08T16:58:00+08:00",
+  "status": "native_controls_passed_five_sample_comparison_submitted",
   "selection": "Official RTL competition total score and submission requirements only; no historical-task or per-task-call vetoes.",
   "factor": "C retains original model/phase feedback. P checks the actual model RTL against a fully consumed prompt table and feeds only a measured counterexample into the existing one-repair loop.",
   "design_generation": "Model generates the RTL. This module renders only a testbench and diagnostics; no synthesis module is imported.",
   "source_hashes": {
     "table_feedback.py": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
-    "worker.py": "3a402257f3ccef5c8bc3b4703a00c7c4e3c2455da2ad3c9bbd73c09b06ea6391",
+    "worker.py": "7a301da74d5bdec18c19e308e43018a5385c96574840e2e36e837b6a5b0fa003",
     "controls.py": "ab9c28e8eb7dc755856c68b0776735388e9070c9a7f7a919a1e6cb5fb1efa9fe",
     "intake.py": "5403673172a742eee9caa073ddc7cb43bcab21b7d0edf1c8d10f2b92b90b2cfa"
   },
@@ -38,7 +38,7 @@
     "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_controls_20261008_v1",
     "ticket": 127,
     "accepted_at_utc": "2026-10-08T08:18:50.383585+00:00",
-    "state": "queued",
+    "state": "completed",
     "manifest_sha256": "358ba10431bdba161bc6a5dc0f3d238f8caf09e3db81599a439ae95b1ca2e254",
     "plan_sha256": "eca5e18074c0a9c8e520f4c947f947c8b957fa4dfad319c5b9c910b6a88b20b6",
     "submission_sha256": "9ffeaafbf58923c5ea770265721b4353d5f2fc360fa52166472b115c97cbba81",
@@ -53,15 +53,67 @@
     "guard_cap_s": 445,
     "slot_minutes": 9,
     "retries": 0,
-    "passed": null
+    "passed": true,
+    "real_model_calls": 0,
+    "real_eda_calls": 9,
+    "simulated_http_calls": 9,
+    "summary_sha256": "6fe418d496fbb6dc2f6cabf7673aa0fc655cfac8ae38d01b7057f65ed3dfb1b6",
+    "measured_external_s": 18.502181869000196,
+    "guard_elapsed_s": 18.81442486681044,
+    "time_scope": "External child birth through exit/reap/owned cleanup/final read; excludes preparation, observer own exit and transfer.",
+    "frozen_worker_sha256": "3a402257f3ccef5c8bc3b4703a00c7c4e3c2455da2ad3c9bbd73c09b06ea6391",
+    "recorded_processes_retired": true
   },
   "scope_limits": [
     "No new model accuracy or official total score.",
     "Finite two-state prompt-table observations only; X/Z outputs count as mismatches, declared don't-cares are not checked.",
     "Only explicit combinational waveform prose is admitted; incomplete or ambiguous prompts abstain.",
     "Existing ANSI declaration-fix return bypasses functional feedback; this inherited behavior is unchanged in both arms.",
-    "Actual model comparison and full five-sample original-baseline evaluation are pending."
+    "Five-sample nine-task comparison is submitted, not completed; full156, audited RTLLM, engineering/resource/interface/recovery and official final total remain outstanding."
   ],
-  "next": "Follow original127 without resubmission. If controls pass, freeze a model-generated comparison using the actual nine-contract inventory and existing judge/queue; route the new activity ledger into our own namespace. Keep peer FSM prompt factor separate.",
-  "full_goal_complete": false
+  "next": "Follow actual129 without resubmission or source changes; collect five-sample coefficients, baseline denominator, wall time and paired mechanisms. Keep peer FSM factor separate. Complete full competition evaluation before claiming an official best.",
+  "full_goal_complete": false,
+  "comparison": {
+    "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison9x5_20261008_v1",
+    "ticket": 129,
+    "accepted_at_utc": "2026-10-08T08:55:30.086559+00:00",
+    "state": "accepted",
+    "monitor_pid": 2795835,
+    "spec_sha256": "317e40d723e7c0956a11143fc914b1841e036fe871a0ffba415f0939c90399da",
+    "plan_sha256": "224db4651180473c18ce5904ef7e76be8487489cd8814b6949373a18840d1ce9",
+    "submission_sha256": "b77c6dd8612a9470e7dc27b1af8ce4a8d8754f1f11413f0fdc3caa7dc4f377a5",
+    "unique_tasks": 9,
+    "use": "seen_development",
+    "independent_unseen": 0,
+    "samples_per_task_per_arm": 5,
+    "outputs": 135,
+    "max_model_calls": 225,
+    "arms": {
+      "A": "Original model/phase worker C; no deterministic DUT synthesis",
+      "P": "Same model worker plus prompt-table functional feedback",
+      "B": "Original official baseline; single request; no skills or tools"
+    },
+    "request_limits": {
+      "A": 2,
+      "P": 2,
+      "B": 1
+    },
+    "max_tokens": 8192,
+    "retries": 0,
+    "stage_cap_s": 43200,
+    "guard_cap_s": 43600,
+    "slot_minutes": 740,
+    "control_sha256": "166b5343b0e5bafcf1a92e6a61c817f67098a1ac4691ecbb879d3c4aeaff1de4",
+    "preparation_child_s": 0.43242700584232807,
+    "new_binding_controls": "Reused retained synthetic C and P-repair outputs; attribution and A/C/P/B routing pass; fabricated DUT and replaced prompt rejected. Zero new model/EDA/old-control reruns.",
+    "selection": "Report official coefficient-mean pass@1, same-run original baseline gain and measured wall time; no invented official total or historical/per-call veto.",
+    "full156": false,
+    "formal_adoption": false
+  },
+  "private_evidence": {
+    "archive_sha256": "bdce4bd8be005a40d77ce133439afd6f82ad1ae35b8618f126942d1ad0cbc2c9",
+    "members": 215,
+    "bytes": 143657,
+    "amd_and_local_all_members_verified": true
+  }
 }
