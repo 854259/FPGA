@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import re
 import galois_prompt_contract as contract
+import prompt_scope
 
 ENDPOINT='http://127.0.0.1:8000/v1/chat/completions'
 SUFFIX='\n\n'
@@ -38,6 +39,7 @@ def interface_matches(interface,c):
 def clarification(prompt,interface):
     c=contract.parse(prompt)
     if c['status']!='supported':return '',c['reason']
+    if not prompt_scope.complete(prompt,c):return '','unconsumed_prompt_behavior'
     if not interface_matches(interface,c):return '','interface_conflict_or_scope'
     return contract.clarify(c),'explicit_prompt_contract'
 

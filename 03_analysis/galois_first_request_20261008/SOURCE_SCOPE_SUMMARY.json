@@ -1,22 +1,32 @@
 {
   "public_sources": {
-    "galois_first_request.py": "ca149ad77f3d322299cc014aa4a042801d0534adaf0cdcec21e331f893d3f4d3",
-    "worker.py": "772dcc2c8e7656180b9291ca54d578c17759d523f73bf7a5db6e1b032ef59bcb",
-    "test_first_request.py": "0ff8a9907e28cc662b6995650404fb1a8d2a23299f0e050cc6795a9a7ce34c64"
+    "galois_first_request.py": "5bcbedd63b829ffb72b5af2e13bd7363efcd44108a53145ace62fe8802ed63ec",
+    "prompt_scope.py": "f178679d1df97d184ef7b6ec5fa0fdb1acdf5bc832250dc78514c6b7e853ead4",
+    "test_first_request.py": "0ff8a9907e28cc662b6995650404fb1a8d2a23299f0e050cc6795a9a7ce34c64",
+    "test_prompt_scope.py": "0ad14c9568a5d52371b5007bad15c89d76c11279dfd077a193201d047d2c3fce",
+    "worker.py": "772dcc2c8e7656180b9291ca54d578c17759d523f73bf7a5db6e1b032ef59bcb"
   },
+  "production_inputs": "Original prompt/interface/current request only",
+  "production_task_ID_history_answer_reference_or_TB_dispatch": false,
   "private_prompts_model_responses_RTL_TB_credentials_published": false,
-  "generic_synthetic_fixture_only": true,
-  "no_task_ID_answer_or_reference_dispatch": true,
-  "production_inputs": "Original prompt/interface and current HTTP request only",
-  "artifact_IO": "Own original/forwarded wire and receipt files only",
-  "real_model_EDA_calls_in_controls": 0,
+  "generic_synthetic_scope_fixtures_only": true,
+  "production_delta": "Only AND complete prompt consumption before prior clarification; old parser and original worker/runtime held",
+  "old_worker_and_semantic_controls_reexecuted": false,
+  "new_targeted_scope_controls": true,
   "materialization": {
     "parser_from": "03_analysis/galois_prompt_clarification_20261008/galois_prompt_contract.py",
     "parser_sha256": "fc6cf9c047364c5f737c9b4670905d744dea7775421625ca1882ef0626248a95",
     "baseline_worker_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
     "map_runtime_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
     "official_baseline_sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
-    "source_packet_manifest_sha256": "605594cc5cdd0e551369b0030b296ce022e534331c3f580607b170ae94a57ffe"
+    "prior_mock_source_packet_manifest_sha256": "605594cc5cdd0e551369b0030b296ce022e534331c3f580607b170ae94a57ffe",
+    "current_scope_source_hashes": {
+      "galois_first_request.py": "5bcbedd63b829ffb72b5af2e13bd7363efcd44108a53145ace62fe8802ed63ec",
+      "prompt_scope.py": "f178679d1df97d184ef7b6ec5fa0fdb1acdf5bc832250dc78514c6b7e853ead4",
+      "test_prompt_scope.py": "0ad14c9568a5d52371b5007bad15c89d76c11279dfd077a193201d047d2c3fce",
+      "galois_prompt_contract.py": "fc6cf9c047364c5f737c9b4670905d744dea7775421625ca1882ef0626248a95",
+      "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00"
+    }
   },
-  "research_scoring_not_prepared": true
+  "research_scoring_prepared": false
 }
