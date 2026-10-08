@@ -1,3 +1,11 @@
+2026-10-08 09:11 +08:00：独立static elaboration的严格SV/ANSI原生阶段FIFO120已结束，4个P控制均符合冻结预期（不是4对新C/P）：严格SV分离写者成功；always_comb/always_ff冲突被candidate-only xelab检出并使用原一次repair；ANSI修正后的合法与冲突出口分别成功/进入原repair。新增8 xvlog+6 xelab、6模拟请求、真实模型0；与117合计23 EDA/12模拟请求，原控制预算已用完。117普通always多驱动反例和失败保留，生产patch9b174d44/runtime c8d4a369/worker cdca09cb不变。119此前因guard430违反cap<480-60，在guard目录和stage创建前拒绝，模型/EDA均0；保留原件并核退休释放后，v2仅改guard415/隔离目录及失败边界断言，120唯一实际执行。详见PUBLIC_STRICT_RESULT.json。
+
+120原外层20.945413秒与guard21.070734秒分别绑定，117+120外层36.419200秒只是两段观测之和，不含准备、间隔、observer退出或归档传输。14工具出生/argv/流/源码/rc/reap已核，66守护身份及FIFO角色退休、自有槽释放。410成员档案21fa3189全部AMD原物理/本地同hash；交付77e8c1a8、公版f9000f52、LOCAL_VERIFY992e8117两端同字节。只授这4个原生结构的有限接线证据，不授一般多驱动/功能/评分或泛化资格，不重跑旧控制。
+
+新增只读115开发覆盖复核：681文件库存72d19c74，C156仍112 L3/39 L1/5 L0、167原请求。5个L0中3个原xvlog失败、1个TB侧接口不匹配、1个严格SV多驱动；只有最后一类直接匹配本机制。4个首轮编译成功后原repair的任务最终均L3，中间candidate-only展开未知。该分类不是新一轮收益上限或修复成功证明，但不足以支持仅靠此因素从C112超过历史118。保留为可靠性组件，暂不因原生控制通过就启动单因素全156；与peer商量覆盖更广的下一候选，在新评分前明确冻结和完整预算。未打开reference/TB内容、未导入或重执行项目、没有新模型/EDA/FIFO/准确率。PUBLIC_COVERAGE.json SHA9333010b，私有只读原件1257057c已AMD/本地同hash。
+
+PR151已合并429bdcec，以上增量随同一PR153交付；Issue6050027912已全文回读。peer6050050116披露PR154独立内部wire新控制与native准备，仅按对方记录，当前Gmail遇限流，新条尚未邮件交叉核对，不接管/混合其因素。115原门拒绝和历史118不变；完整三臂156、审计RTLLM、重要五样本及资源接口恢复仍未验收。保持30分钟协作、12:00邮件、21:30远端排程和23:00本地停止。
+
 2026-10-08 08:48 +08:00：独立static elaboration原生前测FIFO117已按冻结首错停止，未获native或评分资格。5结构/10个C-P worker的原计划只完成6个worker：前5项符合预期，普通always @*与always @(posedge clk)共同写同一reg的P路径意外xvlog0/xelab0，没有触发repair；共6次xvlog+3次xelab、6次模拟首请求、真实模型0，两个ANSI结构均未执行。此反例否定“静态展开能拒绝任意组合/时序多驱动”的宽泛假设，不能改材料重跑或把原native5记为通过；已有12项模拟流程证据仍按原有限范围复用。summary ac2f4b60、source manifest8573e063、生产patch9b174d44/runtime c8d4a369/worker cdca09cb保持。
 
 原guard返回rc1，44记录身份及FIFO runner/child已核退休，模型与保护文件保持按原guard回执绑定，自有槽已释放；117现failed_released_after_inspection。外层15.473786秒仅child出生至退出回收与清理，失败在最终文件绑定前停止，不含observer自退出、准备或归档传输；guard区间15.802598秒不混同。329成员私有档案2c4c9d39已逐成员与AMD原物理/本地核验，交付f5aeebdd、LOCAL_VERIFY28cd44ad两端字节相同；原件与失败保留。详见03_analysis/agent_static_elaboration_20261007/PUBLIC_NATIVE_RESULT.json。一次只读归档路径误指sample/solution.v，在建目录前失败，按实际worker/solution.v更正并记录，无项目重跑。
