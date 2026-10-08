@@ -17281,5 +17281,36 @@
     "score_measured": false,
     "adoption": false,
     "goal_achieved": false
+  },
+  "history_wave_recovery_score5_20261008_v1": {
+    "status": "prepared_not_queued_or_scored",
+    "public_result": "03_analysis/history_wave_recovery_score5_20261008/PUBLIC_RESULT.json",
+    "frozen_root": "/workspace/team/runs/fpga_owner/table_history_wave_score5_20261008_v1",
+    "spec_sha256": "fc00d93067b813114b7714a53eea28a002a76131661a114678dd49b9fa19ef9b",
+    "source_assets": 143,
+    "task_ids": [
+      "Prob001_zero",
+      "Prob057_kmap2",
+      "Prob143_fsm_onehot",
+      "Prob145_circuit8",
+      "Prob151_review2015_fsm"
+    ],
+    "expected_samples": 10,
+    "max_actual_model_requests": 20,
+    "structural_model_request_upper_bound": 8,
+    "expected_protection_receipts": 21,
+    "common_strategy": "complete table+onehot/timer",
+    "P_only_factor": "original105 first-model-user waveform facts",
+    "CP8_included": false,
+    "separate_CP8_ticket125_already_queued": true,
+    "prepared": true,
+    "queued": false,
+    "score_measured": false,
+    "full156_qualified": false,
+    "adoption": false,
+    "private_archives_complete": true,
+    "original_failure_preserved": true,
+    "original275_nodes_preserved": true,
+    "next_step": "Review/public binding then submit this frozen diagnostic once; original history/cost gates remain."
   }
 }

@@ -1,0 +1,66 @@
+{
+  "schema": "table_history_wave_score5_input_plan_v1",
+  "task_count": 5,
+  "tasks": {
+    "Prob001_zero": {
+      "C": {
+        "route": "model",
+        "selected_provider": null,
+        "first_request_advice_changed": false
+      },
+      "P": {
+        "route": "model",
+        "selected_provider": null,
+        "first_request_advice_changed": false
+      }
+    },
+    "Prob057_kmap2": {
+      "C": {
+        "route": "mechanical_table",
+        "selected_provider": "table",
+        "first_request_advice_changed": false
+      },
+      "P": {
+        "route": "mechanical_table",
+        "selected_provider": "table",
+        "first_request_advice_changed": false
+      }
+    },
+    "Prob143_fsm_onehot": {
+      "C": {
+        "route": "mechanical_onehot",
+        "selected_provider": "onehot",
+        "first_request_advice_changed": false
+      },
+      "P": {
+        "route": "mechanical_onehot",
+        "selected_provider": "onehot",
+        "first_request_advice_changed": false
+      }
+    },
+    "Prob145_circuit8": {
+      "C": {
+        "route": "model",
+        "selected_provider": null,
+        "first_request_advice_changed": false
+      },
+      "P": {
+        "route": "model",
+        "selected_provider": null,
+        "first_request_advice_changed": true
+      }
+    },
+    "Prob151_review2015_fsm": {
+      "C": {
+        "route": "mechanical_timer",
+        "selected_provider": "timer",
+        "first_request_advice_changed": false
+      },
+      "P": {
+        "route": "mechanical_timer",
+        "selected_provider": "timer",
+        "first_request_advice_changed": false
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "table_history_wave_worker_scope_B_file_adaptation_v1",
+  "original_worker_sha256": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e",
+  "worker_sha256": "2f2d23d008b933ad62604f8c13f7976b30346ef4bd7b9b4660a7fe837d3be349",
+  "composition_sha256": "f6f8bf7d01eee3df05b7f25ed1d4b2e8618203f4001e3caa61ef2f80e8038cc3",
+  "original_worker_path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\TABLE_HISTORY_COMPOSITION_DRAFT_v1\\worker.py",
+  "replacements": [
+    {
+      "label": "wave_import",
+      "before": "import composition as synthesis\n",
+      "after": "import composition as synthesis\nimport waveform_worker\n",
+      "position": 233,
+      "before_sha256": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e",
+      "after_sha256": "a6115081f95dfa14b580928d647c02121755a36338493840e5fc1bc8211dfc13"
+    },
+    {
+      "label": "wave_schema",
+      "before": "table_parent_history_extension_generation_route_v1",
+      "after": "table_history_wave_generation_route_v1",
+      "position": 344,
+      "before_sha256": "a6115081f95dfa14b580928d647c02121755a36338493840e5fc1bc8211dfc13",
+      "after_sha256": "8d76682877d8e950109882510dedf80515a40482fd2849b72a3d89a82c17c363"
+    },
+    {
+      "label": "both_arms_full_mechanical_parent",
+      "before": "result = synthesis.synthesize(prompt, interface) if args.arm == 'P' else synthesis.parent(prompt, interface)",
+      "after": "result = synthesis.synthesize(prompt, interface)",
+      "position": 1299,
+      "before_sha256": "8d76682877d8e950109882510dedf80515a40482fd2849b72a3d89a82c17c363",
+      "after_sha256": "6c7af5b0bc66c03cbfad6786d614f507ca23fa50d5cc2414b69262ede21afbca"
+    },
+    {
+      "label": "C_admits_complete_parent",
+      "before": "assert args.arm == 'P' or provider == 'table'",
+      "after": "assert provider in ('table', 'onehot', 'timer')",
+      "position": 2108,
+      "before_sha256": "6c7af5b0bc66c03cbfad6786d614f507ca23fa50d5cc2414b69262ede21afbca",
+      "after_sha256": "37e6a02909dfbfe8dc13cbb1738c7d512beee801be042c805daee6aeee3781e5"
+    },
+    {
+      "label": "wave_only_after_total_abstention",
+      "before": "        baseline.run_worker(args, paired)",
+      "after": "        waveform_worker.run_worker(args, paired)",
+      "position": 2781,
+      "before_sha256": "37e6a02909dfbfe8dc13cbb1738c7d512beee801be042c805daee6aeee3781e5",
+      "after_sha256": "2f2d23d008b933ad62604f8c13f7976b30346ef4bd7b9b4660a7fe837d3be349"
+    }
+  ],
+  "original105_exact_copies": {
+    "worker.py": "7e98fccf8a9bfe93f04ebf9b6a6783aa3a469db50c563cddf9974d94e574ca96",
+    "waveform_facts.py": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+    "waveform_request.py": "b3176bf77fdc94c2a6d30b3389ca6f5f044d8541def694860a971eec3e9134ea",
+    "request_proof.py": "2ceee6eea30a913de45d9237a7fb1755a3e0320a601f1d72a9c8af2c79c26bdc",
+    "waveform_replay.py": "9666bde8cdaa3493e836da696f1fcd5665e10dad721ffe4833674f4b3cd2d350"
+  },
+  "bundle_names": {
+    "original105/worker.py": "waveform_worker.py"
+  },
+  "only_P_first_model_user_changes_after_common_complete_mechanical_abstention": true,
+  "original_baseline_runtime_compile_budget_unchanged": true,
+  "tests_executed": false,
+  "score_CLI_closed": true,
+  "static_inverse_worker_bytes_verified": true,
+  "new_test_source_sha256": "a72a4b3711b291808a24aaf7fe1c6950ef581e0316f7c58eec014599510db747",
+  "borrowed_setup_fixture_sha256": "dab2bca4471abebe9c99d74a38e17692dca74acb10d60e52324ee93ff19c26d9",
+  "borrowed_fixture_old_main_not_invoked": true,
+  "retained_private_input_sha256": "8761c5c6c74e80583b7c6b985f86acfdad47bb9d0d93e13d58ffcb48d6368422",
+  "test_entry": "test_history_wave_worker.py:main",
+  "test_result": "ACTUAL_HISTORY_WAVE_WORKER_RESULT.json"
+}

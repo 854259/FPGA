@@ -1,0 +1,55 @@
+{
+  "schema": "table_history_wave_score5_entry_draft_v1",
+  "scope": "B: common complete table+history in both arms, only P model first-user wave advice",
+  "source_hashes": {
+    "metrics.py": "f8ad9f530d22b712297be5da2c73c4c638a0538db8bec1324596b9bcc5978d65",
+    "source_admission.py": "963a2d05939d208cafc08583784c434c57f6ae8ed8672546ede06aad68fc6ca5",
+    "generation_entry.py": "9347a3a7cf4855e0f2aeb4226ee9cdb7cbf16e4ce7a6587f1e2c2ebff0d9eb69",
+    "pilot.py": "358e1ec4ac3989c72e7ad33936a4392617bba34d365f33da128a8eff2730084a",
+    "audit.py": "55dc6d58b7027ef53d1e7214d25538aba5314a7f04ee374c8f0c82a97fe57969",
+    "test_score5_interfaces.py": "0428b7c3a8551963324f35bedbd61ea450045f047119fb35de1385faa041fede"
+  },
+  "actual_project_tests_executed": false,
+  "static_ast_parse_passed": true,
+  "new_run_spec_created": false,
+  "new_plan_or_score_admission_created": false,
+  "task_ids": [
+    "Prob001_zero",
+    "Prob057_kmap2",
+    "Prob143_fsm_onehot",
+    "Prob145_circuit8",
+    "Prob151_review2015_fsm"
+  ],
+  "historically_correct_tasks": [
+    "Prob001_zero",
+    "Prob143_fsm_onehot",
+    "Prob145_circuit8",
+    "Prob151_review2015_fsm"
+  ],
+  "original_budget": {
+    "output_tokens": 8192,
+    "requests_per_arm": 2,
+    "repairs": 1,
+    "solve_deadline_s": 300,
+    "judge_timeout_s": 300,
+    "judge_supervisor_timeout_s": 360,
+    "retries": 0
+  },
+  "caps": {
+    "expected_samples": 10,
+    "max_actual_model_requests": 20,
+    "expected_protection_receipts": 21,
+    "stage_timeout_s": 7200,
+    "guard_timeout_s": 7600,
+    "slot_minutes": 130
+  },
+  "entry": "pilot.py worker -> frozen() -> bound actual module objects -> owned context/resource -> worker.run_worker(); standalone worker.py CLI remains closed",
+  "archive": "Original PR166 complete archive/guard/retirement/independent original judge skeleton; new shared generation_entry independently reconstructs each actual proof, exact stage/row binding, then original small-screen grade/cost accounting",
+  "plan_schema": "table_history_wave_score5_input_plan_v1",
+  "plan_shape": "task_count=5; tasks[task][C/P]={route,selected_provider,first_request_advice_changed}",
+  "retained_model_scope_sha256": "b79f1bd616aafc1530e507de225bee8ddcdd077ac966c0277e3ee0c72ac954f4",
+  "only_next_validation": "AMD new fixed5 scorer and owned entry dispatch controls, source/preparation bridge; existing algorithms/native/intake/full suites not rerun",
+  "full156_qualified": false,
+  "goal_achieved": false,
+  "adoption": false
+}

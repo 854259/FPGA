@@ -142,3 +142,7 @@ Dockerfile text eol=lf
 
 # This frozen adaptation receipt includes CRLF in its byte identity.
 03_analysis/table_history_cp8_integration_20261008/CP8_WORKER_ADAPTATION.json -text -whitespace
+
+# Preserve this frozen adaptation receipt byte-for-byte.
+03_analysis/history_wave_recovery_score5_20261008/GENERATION_ADAPTATION.json -text -whitespace
+03_analysis/history_wave_recovery_score5_20261008/PREPARE_ADAPTATION.json -text -whitespace
