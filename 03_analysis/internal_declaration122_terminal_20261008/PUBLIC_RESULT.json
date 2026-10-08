@@ -1,0 +1,57 @@
+{
+  "schema": "internal_declaration122_original_audited_public_v1",
+  "status": "completed_original_audit_passed_no_new_L3_rejected_for_full156",
+  "ticket": 122,
+  "cloud_root": "/workspace/team/runs/fpga_owner/internal_declaration_fixed15_20261008_v1",
+  "spec_sha256": "a99a2396757b4a316151fb089961c5ed5af6ee791a9480cc41769422c639feb7",
+  "summary_sha256": "54e112ccb4a3f552c5a004ca6778f2eed606a97233b505566f3c9e7c9998d614",
+  "audit_sha256": "dcb92aa912c828aaa2e255153be8ff6432cdb45366b16d127ebd797621b1f79a",
+  "evidence_valid": true,
+  "paired_tasks": 15,
+  "outputs": 30,
+  "actual_requests_by_arm": {
+    "C": 21,
+    "P": 19
+  },
+  "L3_by_arm": {
+    "C": 5,
+    "P": 5
+  },
+  "weighted_by_arm": {
+    "C": 0.4533333333333333,
+    "P": 0.4533333333333333
+  },
+  "strict_new_L3_net": 0,
+  "paired_grade_regressions": 0,
+  "historical_143_145_151_still_not_L3": true,
+  "history_joint_failure_distinct_from_paired_regression": true,
+  "request_savings_without_new_correct_answers": 2,
+  "unconfirmed_requests": 0,
+  "solver_timeouts": 0,
+  "original_collector_calls": 1,
+  "original_auditor_calls": 1,
+  "original_processes_exec_confirmed_and_reaped": true,
+  "original_guard_birth_records_retired": 1113,
+  "closure_child_elapsed_s": 9.755804724991322,
+  "closure_outer_elapsed_s": 11.539205852895975,
+  "whole_closure_cap_s": 450,
+  "own_slot_released": true,
+  "original_non_generated_records": 1372,
+  "original_main_archive_members": 1430,
+  "original_supplement_members": 72,
+  "complete_archive": {
+    "AMD_path": "/workspace/team/activity/fpga_owner/artifacts/wire122-complete-original-terminal-v1/COMPLETE_CLOSURE.zip",
+    "E_path": "E:\\26qiansai\\private_archives\\internal_declaration122_terminal_complete_20261008_v1\\COMPLETE_CLOSURE.zip",
+    "sha256": "a48075ddae7714345b65265a736f67d95f77a3a9f29425385013eb699961c4cb",
+    "members": 51,
+    "every_member_bound_both_ends": true
+  },
+  "frozen_sources_107_and_protected141_held": true,
+  "shared_model_and_PRIMARY_held": true,
+  "screening_eligible": false,
+  "qualified_for_new_full_regression": false,
+  "same_factor_full156_not_planned": true,
+  "adoption": false,
+  "goal_achieved": false,
+  "limits": "Development screening, not a new full156 score. Declaration repair saved requests but corrected no additional answers. Historical failures remain unresolved."
+}
