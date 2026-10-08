@@ -1,0 +1,62 @@
+{
+  "schema": "table_parent_vector_route_preparation_v1",
+  "updated_at": "2026-10-08T09:42:00+08:00",
+  "source_commit": "dedd9922033cc4ef85325bf68c07c7522f5d0bbe",
+  "factor": "C=archived table parent; P=same parent plus unchanged vector synthesis on parent abstention",
+  "controls": {
+    "new_methods": 9,
+    "passed": 9,
+    "synthetic": true,
+    "fake_tool_receipts": true,
+    "ast_selected_functions_only": true,
+    "complete_pipeline_tested": false
+  },
+  "plan_sha256": "7fddf4a22d6cdbe5625f0394e602d97fd79778ec97ca634cffaba40f8d97cfc4",
+  "result_sha256": "ff1b6f9dfaa4097303d3b6f9ccb70dc6134ff1a973d5241b423fe1c9eeb76312",
+  "execution": {
+    "schema": "table_parent_vector_routes_pure_result_v1",
+    "complete": true,
+    "passed": true,
+    "returncode": 0,
+    "timeout": false,
+    "leader_reaped": true,
+    "remaining_live_group": [],
+    "child_identity": {
+      "pid": 2489252,
+      "starttime": "869716660",
+      "state": "R",
+      "pgid": "2489252",
+      "session": "2489252",
+      "initial_cmdline_sha256": "91c642c0d7928ad92521ce87b30a59c222d8a7f1757b760b11d05089c1200306"
+    },
+    "child_wait_elapsed_s": 0.26454296708106995,
+    "elapsed_scope": "Popen through child wait and stream close only, excludes preparation and transfer",
+    "plan_sha256": "7fddf4a22d6cdbe5625f0394e602d97fd79778ec97ca634cffaba40f8d97cfc4",
+    "source_files": 31,
+    "new_test_methods": 9,
+    "streams": {
+      "stdout.bin": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr.bin": {
+        "sha256": "dd73b6824b7aa37158e97d9d9be4f1e8817ecd5ad26521f9ccaa56ecd8a44c58",
+        "bytes": 1337
+      }
+    },
+    "model_calls": 0,
+    "eda_calls": 0,
+    "fifo_submissions": 0,
+    "score_admission": false,
+    "complete_audit_qualified": false
+  },
+  "old_composition_controls_reused": 8,
+  "old_worker_controls_reused": 12,
+  "original_generators_and_worker_changed": false,
+  "peer_prospective_agreement": "https://github.com/854259/FPGA/issues/7#issuecomment-6050379738",
+  "score_admission": false,
+  "new_accuracy_result": false,
+  "adoption": false,
+  "full_acceptance_complete": false,
+  "next": "Bind new inputs, full execution/audit entry and prospective scoring budget. Shared historical failures remain separate from paired regressions without changing old rejection or formal adoption gates."
+}
