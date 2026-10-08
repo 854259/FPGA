@@ -53,3 +53,9 @@ not selection vetoes. The only ranking criterion is the competition's rules.
 
 Exact source, input and queue receipt hashes are in `PUBLIC_RESULT.json`.
 Private per-task inputs and process evidence remain in the AMD roots it names.
+
+Completed queues can be read with comparison_result.py using their frozen plan hash.
+It verifies retained row seals and source bindings and calls the unchanged official
+score.py summary. Fourteen synthetic aggregation checks passed on AMD with zero
+model/EDA calls. Actual129 audit remains pending completion. The reader never
+restarts a queue or rejudges a solution.

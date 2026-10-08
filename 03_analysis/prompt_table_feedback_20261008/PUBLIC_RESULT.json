@@ -1,6 +1,6 @@
 {
   "schema": "prompt_table_model_feedback_preparation_v1",
-  "updated_at": "2026-10-08T16:58:00+08:00",
+  "updated_at": "2026-10-08T17:51:00+08:00",
   "status": "native_controls_passed_five_sample_comparison_submitted",
   "selection": "Official RTL competition total score and submission requirements only; no historical-task or per-task-call vetoes.",
   "factor": "C retains original model/phase feedback. P checks the actual model RTL against a fully consumed prompt table and feeds only a measured counterexample into the existing one-repair loop.",
@@ -108,7 +108,61 @@
     "new_binding_controls": "Reused retained synthetic C and P-repair outputs; attribution and A/C/P/B routing pass; fabricated DUT and replaced prompt rejected. Zero new model/EDA/old-control reruns.",
     "selection": "Report official coefficient-mean pass@1, same-run original baseline gain and measured wall time; no invented official total or historical/per-call veto.",
     "full156": false,
-    "formal_adoption": false
+    "formal_adoption": false,
+    "result_reader": {
+      "status": "official_summary_controls_passed_actual_queue_audit_pending",
+      "source_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+      "test_sha256": "8b30b035e2c40593a24fe7a6c881779208a3089d59afdf48cf4f33d304f83d01",
+      "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+      "selection": "Unmodified official five-sample coefficient means; no historical-task or per-call veto. Unknown gain/cost/engineering points remain null.",
+      "controls": {
+        "root": "/workspace/team/runs/fpga_teammate/model_comparison_result_controls_20261008_v1",
+        "checks": [
+          "official_mean_not_best",
+          "higher_weighted_with_fewer_L3",
+          "same_run_baseline",
+          "zero_baseline_unknown",
+          "missing_sample",
+          "duplicate_sample",
+          "zero_call",
+          "third_call",
+          "nan_time",
+          "negative_time",
+          "boolean_sample",
+          "false_coefficient",
+          "tool_error",
+          "wrong_task"
+        ],
+        "result_sha256": "a9fa8c447c57785688a5d00f12ab044c01f6b813ee2411ecba8d5a07ee5f18a6",
+        "plan_sha256": "b586de730bbd0530354e362be0ff01d77bd6afb991b57e1217070743e885503a",
+        "process_sha256": "4f92a1e0112093333d4a01cfac0fcfa8a5eabfa0d1b710e89b64904e6ace4c5a",
+        "pid": 2886847,
+        "starttime": "872641833",
+        "returncode": 0,
+        "exec_confirmed": true,
+        "leader_reaped": true,
+        "remaining_group": [],
+        "retired": true,
+        "child_elapsed_s": 0.1352119091898203,
+        "time_scope": "Bounded child only; excludes preparation and transfer.",
+        "model_calls": 0,
+        "eda_calls": 0,
+        "real_results_read": 0,
+        "tested_reader_sha256": "178b3614f007e0f5a00763665543a8ddb0d60b7da6e44478fd90404186189f5e",
+        "summary_function_identical_to_final": true
+      },
+      "final_static_correction": "Observed original B source label is official_B while judge/outer label is B. Corrected reader label check before actual queue audit; summary AST unchanged, controls not rerun.",
+      "terminal_preparation": {
+        "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison129_terminal_20261008_v1",
+        "plan_sha256": "9f6c0b449da5ce3c3e0df1ab5de16dafba6dcbb5c011a22db0ecc88d04698ce9",
+        "max_model_calls": 0,
+        "max_eda_calls": 0,
+        "child_cap_s": 180,
+        "executed": false
+      },
+      "actual_score": null,
+      "full_goal_complete": false
+    }
   },
   "private_evidence": {
     "archive_sha256": "bdce4bd8be005a40d77ce133439afd6f82ad1ae35b8618f126942d1ad0cbc2c9",
