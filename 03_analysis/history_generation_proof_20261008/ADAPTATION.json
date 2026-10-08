@@ -1,0 +1,43 @@
+{
+  "schema": "original_onehot_generation_checks_derivative_v1",
+  "original_audit_sha256": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+  "original_replay_sha256": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+  "original_replay_byte_exact": true,
+  "core_patches": [
+    {
+      "before": "contract == result_contract(run, raw_prompt)",
+      "after": "contract == result['contract']",
+      "count": 1
+    },
+    {
+      "before": "'mechanical_onehot'",
+      "after": "'mechanical_' + row['selected_provider']",
+      "count": 3
+    },
+    {
+      "before": "['onehot_generation','lint_start','lint','native_feedback']",
+      "after": "['history_recipe_generation','lint_start','lint','native_feedback']",
+      "count": 1
+    },
+    {
+      "before": "e.get('tool') == 'onehot_generation'",
+      "after": "e.get('tool') in ('onehot_generation','history_recipe_generation')",
+      "count": 1
+    },
+    {
+      "before": "    folder = work/'native_receipts/0'; physical = read(folder/'command.json')",
+      "after": "    folder = work/'native_receipts/0'; physical = read(folder/'command.json')\n    assert not any(physical.get(key) for key in ('simulated','fixture','mock','synthetic')), 'Mock native receipt cannot authorize scoring'",
+      "count": 1
+    },
+    {
+      "before": "assert entry['index'] == index and entry['replayed'] is False",
+      "after": "assert type(entry['index']) is int and entry['index'] == index and entry['replayed'] is False\n        assert type(entry['response_received']) is bool",
+      "count": 1
+    }
+  ],
+  "new_module_sha256": "031e19fbbaf798bf3e402e1df78481dc7bb8b1f18403bc0d8dc833fae53e836d",
+  "source_and_route_reconstruction_added": true,
+  "explicit_mock_native_markers_rejected": true,
+  "original_judge_scorer_or_grade_changed": false,
+  "executed": false
+}
