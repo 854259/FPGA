@@ -1,0 +1,40 @@
+{
+  "schema": "lemmings_exact_flow_dut_native_extension_v1",
+  "status": "draft_not_run",
+  "cases": [
+    {
+      "name": "flow_bad_exact",
+      "original_flow_attempt": 0,
+      "flow_fixture": "flow_fixtures/bad_right_double_bump.sv",
+      "flow_fixture_sha256": "2c9f582f734e64ce7caa91ef7ead4e6a30102ceb9a8bf723d8ecc390908260f9",
+      "expected_extracted_dut_sha256": "84af7b3836ce13ef6056bc6231dcffaded2631d2f3e74c43045ac8c280ecf479",
+      "expected_extracted_bytes": 1390,
+      "expected": "semantic_mismatch",
+      "expected_hash_status": "statically_prepared_only_not_official_extractor_executed",
+      "actual_native_fixture": "created_on_AMD_only_from_actual_official_extract_output"
+    },
+    {
+      "name": "flow_good_exact",
+      "original_flow_attempt": 1,
+      "flow_fixture": "flow_fixtures/good_entry1.sv",
+      "flow_fixture_sha256": "0a7122b086d54daecf058cefdf72ffa6f18db201491e63d39266e0dbc8fafeaf",
+      "expected_extracted_dut_sha256": "e01c22b1691d85ccba8ffcc05cd45f9382aa83e4e7283c8e360f837866f6f781",
+      "expected_extracted_bytes": 1376,
+      "expected": "pass",
+      "expected_hash_status": "statically_prepared_only_not_official_extractor_executed",
+      "actual_native_fixture": "created_on_AMD_only_from_actual_official_extract_output"
+    }
+  ],
+  "core_manifest_sha256": "b5608f4d48e68a8c6f1fb40119226dd0685ade946abcdb29ef1e45fa7ae852ad",
+  "flow_manifest_sha256": "99d98b846396037fadcf4a69ffb2333330a0f7ea5a67a02e0917452b0dee24b2",
+  "official_extractor_sha256": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+  "extra_native_cases": 2,
+  "extra_eda_max": 6,
+  "per_eda_cap_seconds": 60,
+  "recommended_extension_stage_cap_seconds": 450,
+  "original_21_cases_unchanged": true,
+  "original_21_cases_not_rerun": true,
+  "original_flow_not_rerun": true,
+  "actual_new_model_calls": 0,
+  "actual_new_eda_calls": 0
+}

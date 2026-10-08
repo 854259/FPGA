@@ -1,0 +1,198 @@
+{
+  "status": "not_run",
+  "cases": [
+    {
+      "name": "positive_walk_fall",
+      "variant": "walk_fall",
+      "file": "fixtures/positive_walk_fall.sv",
+      "expected": "pass",
+      "synthetic": true,
+      "fault": 0,
+      "sha256": "29714b623dc4270b2966e934eb72ab71db45e2af7c0362e28dac5ef55888c605"
+    },
+    {
+      "name": "positive_dig",
+      "variant": "dig",
+      "file": "fixtures/positive_dig.sv",
+      "expected": "pass",
+      "synthetic": true,
+      "fault": 0,
+      "sha256": "61ff19b72309f2a39383ace9d3cc52ebd1915266a456175208f1f23ec61fd7f0"
+    },
+    {
+      "name": "positive_death_entry0",
+      "variant": "death",
+      "file": "fixtures/positive_death_entry0.sv",
+      "expected": "pass",
+      "synthetic": true,
+      "fault": 0,
+      "sha256": "20097dcc0dd80d9aaa92183d9d4c69b9135b9342ada1795b1a825f71d225c415"
+    },
+    {
+      "name": "negative_sync_reset",
+      "variant": "death",
+      "file": "fixtures/negative_sync_reset.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 1,
+      "sha256": "901f934c0da8034f857f8e18e64a631c42758999be48d0b3fd528b90b92e6f6f"
+    },
+    {
+      "name": "negative_right_double_bump",
+      "variant": "death",
+      "file": "fixtures/negative_right_double_bump.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 2,
+      "sha256": "fc3462ab774a855559027f15c279f4cb3618c407a3c62d1c81e9dc100ae50a55"
+    },
+    {
+      "name": "negative_left_gate",
+      "variant": "death",
+      "file": "fixtures/negative_left_gate.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 3,
+      "sha256": "a5235570d34d796ce341aeb8de837931b254e5275e2eed439ae59afcc2bf4d34"
+    },
+    {
+      "name": "negative_output_activity",
+      "variant": "death",
+      "file": "fixtures/negative_output_activity.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 4,
+      "sha256": "c233e6723310f7f2f1df27167b4a4c3e32fc20785ae9fe8c83aa845d6e9f778c"
+    },
+    {
+      "name": "negative_early_threshold",
+      "variant": "death",
+      "file": "fixtures/negative_early_threshold.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 5,
+      "sha256": "c27479738996fc1cd653fb75edf0be84023efff840cd408263dfb8d7840bc004"
+    },
+    {
+      "name": "negative_wraparound",
+      "variant": "death",
+      "file": "fixtures/negative_wraparound.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 6,
+      "sha256": "0b92fab161f2153d9d9622c9ea43dbc2045afdd1bab11b770a00a7757569913d"
+    },
+    {
+      "name": "negative_midair_death",
+      "variant": "death",
+      "file": "fixtures/negative_midair_death.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 7,
+      "sha256": "4c4cffad0f93ea7e059f364d5ee220e0ae75dc3726fd8c3dc4cc50fd0655fc20"
+    },
+    {
+      "name": "negative_episode_accumulation",
+      "variant": "death",
+      "file": "fixtures/negative_episode_accumulation.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 8,
+      "sha256": "f33bccbc6ef9d4e8d6fff6086f92166c7d6f300967b30387848168c3610c866e"
+    },
+    {
+      "name": "negative_dig_priority",
+      "variant": "death",
+      "file": "fixtures/negative_dig_priority.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 9,
+      "sha256": "be60628c9a145b137787884432613a54844e8d52ea30c510ad095a88dc0065f5"
+    },
+    {
+      "name": "negative_fall_priority",
+      "variant": "death",
+      "file": "fixtures/negative_fall_priority.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 10,
+      "sha256": "4016b054b2fcd4006d7a75ce6ef4d2b37ab0c39f74dad34c49d9b22c5d89c61f"
+    },
+    {
+      "name": "negative_landing_reacts",
+      "variant": "death",
+      "file": "fixtures/negative_landing_reacts.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 11,
+      "sha256": "5e7891d4fa7957280ca5b5c8fa9d7a12e1f7cef097c668736170470e32abd5b7"
+    },
+    {
+      "name": "negative_dig_request_hold",
+      "variant": "death",
+      "file": "fixtures/negative_dig_request_hold.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 12,
+      "sha256": "043f83b3a66f7c9f5f529622a702f933686468f29d792b578982dad5363cf301"
+    },
+    {
+      "name": "negative_air_direction",
+      "variant": "death",
+      "file": "fixtures/negative_air_direction.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 13,
+      "sha256": "43fe84a97b2fbb1d885876d9d7535b7aa2a60d56b9f84f67e9d2b48e73271bd4"
+    },
+    {
+      "name": "negative_mealy_output",
+      "variant": "death",
+      "file": "fixtures/negative_mealy_output.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 14,
+      "sha256": "0d68fa8ef1e4652e2ab48276b37149b589e5419d5c5c3cf33054a54ff1589ec0"
+    },
+    {
+      "name": "negative_dead_revives",
+      "variant": "death",
+      "file": "fixtures/negative_dead_revives.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 15,
+      "sha256": "d8da3a479f9691693b7f830853a094fcd1a03a27641c58bcfccb0e9132a86431"
+    },
+    {
+      "name": "negative_unknown_output",
+      "variant": "death",
+      "file": "fixtures/negative_unknown_output.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 16,
+      "sha256": "312c7a2965524764c8751424ccb324cf150bc6beb284259ca81678b0f1f9f7ce"
+    },
+    {
+      "name": "negative_reset_clock_dominance",
+      "variant": "death",
+      "file": "fixtures/negative_reset_clock_dominance.sv",
+      "expected": "semantic_mismatch",
+      "synthetic": true,
+      "fault": 17,
+      "sha256": "e804787c01c3bddc002977f0d86922628e815335e6f0356da04f8561cd37586b"
+    },
+    {
+      "name": "positive_death_entry1",
+      "variant": "death",
+      "file": "fixtures/independent_entry1.sv",
+      "expected": "pass",
+      "synthetic": true,
+      "independent_hand_authored_encoding": true,
+      "sha256": "0a7122b086d54daecf058cefdf72ffa6f18db201491e63d39266e0dbc8fafeaf"
+    }
+  ],
+  "native_cases": 21,
+  "max_eda_calls": 63,
+  "per_eda_cap_seconds": 60,
+  "new_model_calls": 0
+}
