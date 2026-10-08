@@ -1,4 +1,82 @@
 {
+  "lemmings_future_binding_static_20261008": {
+    "schema": "lemmings_future_binding_static_handoff_v1",
+    "status": "static_prepared_not_executed",
+    "public_source_directory": "03_analysis/lemmings_model_feedback_20261008/future_binding",
+    "future_new_packet_only": true,
+    "current_fifo136_frozen_source_count": 70,
+    "current_fifo136_source_manifest_sha256": "af0eab2ba5b116be36119b9576dfb23dbe583165fff653d59b3f9eaf1f04bd77",
+    "included_in_current_fifo136": false,
+    "must_not_append_to_existing_frozen_packet": true,
+    "source_hashes": {
+      "worker.py": "17527785141847c66dff8d05ac25b0e0684a0729a3c228fb774fceaeebfd64c2",
+      "lemmings_binding.py": "89a87f832a6680fd9550f3d2a331feeca714ba2cc6a3322a859316421c5ade2e",
+      "binding_controls.py": "e38b064aa615329721e37bbc048c9e10615b67118d6ee54785ff76b399e0430d"
+    },
+    "private_binding_manifest_sha256": "a4ff8f1793f4bf1f95b01d5ded85127fecafe897972f0ac5b57fb4818d82908d",
+    "private_controls_manifest_sha256": "260cc4e92bb7384e9dafdd680fed453c24f11507da4308409c0bc9d7dd570e25",
+    "inherited_worker_bind_source_unchanged": true,
+    "reviewed_consistency_fixes": [
+      "Reparse exactly one frozen-runner R2_PROBE_RESULT summary and match task/checks/mismatches to retained result.",
+      "Reject map_feedback without successful same-round lint; preserve successful-lint source-token-abstention fallback."
+    ],
+    "controls": {
+      "planned": 8,
+      "original_plan": 6,
+      "concrete_defect_regressions": 2,
+      "executed": false,
+      "passed": null,
+      "real_model_calls": 0,
+      "real_eda_calls": 0,
+      "old_flow_reruns": 0,
+      "native_reruns": 0,
+      "execution_requires_actual_native_exact_DUT_result_and_binding_inputs": true,
+      "source_equivalent_old21_fixtures_are_not_exact_DUT_evidence": true
+    },
+    "queue_snapshot": {
+      "beijing_time": "2026-10-08 21:56",
+      "refreshed_by_this_static_edit": false,
+      "132": "running",
+      "133": "queued",
+      "134": "queued",
+      "135": "queued",
+      "136": "queued",
+      "peer_owned": [
+        132,
+        133,
+        134
+      ],
+      "own_existing_only": [
+        135,
+        136
+      ],
+      "no_duplicate_submission": true
+    },
+    "structural135_terminal": {
+      "status": "private_static_entry_prepared_not_executed",
+      "script_sha256": "5c528ca5cfad52ce919171f67fa5c3291aa9907f6b2b7d6d15e3b466ad8e1f43",
+      "uploaded": true,
+      "executed": false,
+      "terminal_result_available": false,
+      "existing_handle_only": true,
+      "upload_scope": "private static backup only; not an executable admission"
+    },
+    "publication_scope": "Code and hash summaries only; original task prompts, model responses and native logs remain private.",
+    "new_model_score": null,
+    "score_gain_measured": false,
+    "formal_adoption": false,
+    "full_goal_complete": false,
+    "next_step": "Read existing 135/136 handles; after actual native exact-DUT qualification succeeds, freeze a separate new binding packet and run eight retained-evidence controls without model/native reruns.",
+    "private_draft_backup": {
+      "path": "/workspace/team/activity/fpga_owner/artifacts/queued-result-drafts-backup-v1",
+      "archive_sha256": "728f6b52ea61820d16a437f67eb5dcf896b1bd20846e58ce77995d6975b83c3b",
+      "members": 16,
+      "every_member_verified": true,
+      "executed": false,
+      "deployed": false,
+      "dual_verified": true
+    }
+  },
   "schema": "lemmings_model_feedback_qualification_public_v1",
   "status": "pure_flow_intake_passed_native136_queued",
   "factor": "Actual prompt-derived Lemmings event counterexample supplied to original one-repair model flow; never generate or modify DUT.",
