@@ -7,3 +7,5 @@ pilot/audit/metrics/factor_proof源自原90已归档代码，生成器、compari
 prepare.py先用156份原题面/接口生成两臂来源清单，再绑定原父策略、工具环境和保护库存。pilot.py的worker入口在完整冻结/预算校验后调用原worker函数，原worker和composition草稿CLI均不修改；审计对应绑定新argv和本轮实际库存，仍逐条核625保护记录。
 
 当前EXECUTION_AUTHORIZATION_SHA为空，只生成PREPARED_SPEC.json，不能产生可执行RUN_SPEC或提交评分。624请求与阶段43200/guard43600/槽740分钟仅是待确认方案上限，不是新额度或ETA；实际预算授权必须在下一次源冻结中绑定。旧9控制中的草稿关闭检查由test_freeze.py的新预算/入口控制替代，其余来源控制和旧8/12证据复用。原90/98拒绝采用不追改，不拼历史分数，完整三臂156/RTLLM/五样本/资源接口恢复范围保持。
+
+AMD实际准备与6项新入口控制已通过：156题C为9表格/147模型，P为相同9表格/3向量/144模型。旧来源证明文件名冲突在输入处理前停止，v2另名保存原件后完成唯一一次输入处理。没有模型、EDA、FIFO或新分数。完整数据绑定见PUBLIC_RESULT.json的freeze_preparation；不再重跑已完成控制。
