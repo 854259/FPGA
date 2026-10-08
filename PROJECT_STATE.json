@@ -1,4 +1,97 @@
 {
+  "structural_serial_feedback_prepared_20261008": {
+    "schema": "structural_serial_feedback_prepared_actual_v1",
+    "status": "prepared_not_submitted",
+    "scope": "All two tasks admitted from unchanged 156-prompt intake; five samples per arm; diagnostic subset only.",
+    "factor": "Append candidate-source scalar multi-process driver positions only to nonempty actual serial feedback; never emit or modify RTL.",
+    "arm_definitions": {
+      "A": "131 original P serial feedback; internal C unchanged",
+      "P": "Same serial feedback plus source-derived scalar driver facts",
+      "B": "Untouched official baseline"
+    },
+    "pure_controls": {
+      "passed": true,
+      "tests_run": 28,
+      "actual_replay_distinct_sources": 6,
+      "retained_observations": 20,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "result_sha256": "4a355fb9fc5413061c0dd57cd8ae88302b4c3a733727058e99c6ff246c84cc3b",
+      "archive_sha256": "91407dff7b3b0fd805c42ed26fe0f38528a210f145c3700c2459996c5ad5bce5"
+    },
+    "integration_controls": {
+      "passed": true,
+      "tests_run": 11,
+      "simulated_controls": true,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "originals_unchanged": true,
+      "result_sha256": "7bfdd494e2f8e212e1491be563ffca188b13322266443c28a35650930b37bab4",
+      "archive_sha256": "3865126946b383efc8af4507b01923ce02ea23b9dabc5707f99b26e486f33410"
+    },
+    "prepared": {
+      "root": "/workspace/team/runs/fpga_owner/structural_serial_feedback_comparison2x5_20261008_v1",
+      "source_count": 37,
+      "result_sha256": "714d54b986dba9a7ddb572afc17129a9f4b661ea1b56546ca1ed887b5c33bf25",
+      "spec_sha256": "bae9c415cebffb4bedd75ea6d41df58415db24cb880f69dae88ddc5b07a4b211",
+      "plan_sha256": "cdf204c57fb6fb2924bbefbed922311d066ed5a76baa9db707c2037bbe35021c",
+      "archive_sha256": "21814fb287d91cdc536213be4be8dacbb82bccbcc03a706b1cd4765fff4e8743",
+      "archive_members": 55,
+      "local_archive": "E:\\26qiansai\\private_archives\\structural_serial_feedback_comparison2x5_20261008_v1\\PREPARED_ORIGINALS.zip",
+      "amd_and_E_all_members_verified": true,
+      "source_hashes_held": true,
+      "qualification_sources_held": true,
+      "qualification_spec_held": true,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "fifo_calls": 0,
+      "submitted": false,
+      "execution_authorized_in_plan": true,
+      "admission_requires_root_review": true
+    },
+    "intake_result_sha256": "507d8b1af34dc0b132d1143a2bbdb60019bef49e7e261df967c1b3f25e18e97d",
+    "tasks": 2,
+    "samples_per_task": 5,
+    "arms": [
+      "A",
+      "P",
+      "B"
+    ],
+    "outputs": 30,
+    "max_reserved_calls": 50,
+    "budget": {
+      "max_output_tokens": 8192,
+      "max_calls_per_agent_sample": 2,
+      "repairs": 1,
+      "solve_deadline_s": 300,
+      "solve_supervisor_s": 310,
+      "judge_supervisor_s": 360,
+      "row_reservation_s": 670,
+      "retries": 0
+    },
+    "safety_caps": {
+      "queue_wall_s": 21600,
+      "proposed_stage_cap_s": 21720,
+      "proposed_guard_s": 21900,
+      "proposed_fifo_slot_minutes": 370,
+      "not_completion_estimate": true
+    },
+    "terminal_reader_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+    "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+    "measured_score_gain": null,
+    "formal_adoption": false,
+    "full156": false,
+    "goal_complete": false,
+    "peer_coordination": {
+      "peer132": "Full 156 x 5 x three arms; existing peer ownership and terminal responsibility unchanged.",
+      "peer133": "Peer reported unique table multiple-counterexample native controls queued after 132; 0 model calls and at most 3 EDA; peer owns terminal work.",
+      "peer133_issue_comment": "6060292322",
+      "peer133_pr": 187,
+      "our_next_submission": "Not submitted; normal whole-task FIFO after existing 132 and 133, subject to root admission review.",
+      "duplicate_submission_allowed": false
+    },
+    "next_step": "Root reviews exact frozen preparation, then submits once through existing whole-task FIFO; wait for real paired results before any adoption or gain claim."
+  },
   "official_scoring_review_and_serial131_20261008": {
     "scope": "Development estimates are distinct from official total",
     "official_rtl_head": "afd135e7ba5f6ec4c6d77e7c927c894327537801",

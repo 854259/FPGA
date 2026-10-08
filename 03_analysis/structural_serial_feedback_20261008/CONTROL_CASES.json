@@ -1,0 +1,257 @@
+{
+  "schema": "structural_driver_handwritten_controls_v1",
+  "status": "not_run",
+  "cases": [
+    {
+      "name": "scalar_comb_clock",
+      "file": "fixtures/01_scalar_comb_clock.sv",
+      "sha256": "1fe8ee223e3000f6ccf28e9934526a13bf05324c38ed658101a47e76c3c2b40d",
+      "expected_status": "source_conflict_needs_review",
+      "expected_variables": [
+        "flag"
+      ],
+      "independent_locations": {
+        "process_lines": [
+          2,
+          3
+        ],
+        "assignment_lines": [
+          2,
+          3
+        ],
+        "declaration_line": 1
+      },
+      "synthetic": true
+    },
+    {
+      "name": "nested_fsm_generic_identifier",
+      "file": "fixtures/02_nested_fsm_generic_identifier.sv",
+      "sha256": "91de91ba08828c45083154f9156eb3aeca00bfd85944f24f1e23b9ff60344691",
+      "expected_status": "source_conflict_needs_review",
+      "expected_variables": [
+        "completion_latch"
+      ],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "two_edge_processes",
+      "file": "fixtures/03_two_edge_processes.sv",
+      "sha256": "ed8be4c22dd8dcb66cb2cdf40ceed84ecb2ed26233d21de39e2c7e789198b4b7",
+      "expected_status": "source_conflict_needs_review",
+      "expected_variables": [
+        "q"
+      ],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "always_comb_always_ff",
+      "file": "fixtures/04_always_comb_always_ff.sv",
+      "sha256": "1d5891a565dd43e4a39c20b29be4249a5c17abf289f5ed79418737f8d0787b1c",
+      "expected_status": "source_conflict_needs_review",
+      "expected_variables": [
+        "completion"
+      ],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "two_scalar_findings",
+      "file": "fixtures/05_two_scalar_findings.sv",
+      "sha256": "1ba524b6ff07f46d8ca888392a802d946ad345bb7d55c4261346e2e4c4767804",
+      "expected_status": "source_conflict_needs_review",
+      "expected_variables": [
+        "u",
+        "v"
+      ],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "single_process_many_assignments",
+      "file": "fixtures/06_single_process_many_assignments.sv",
+      "sha256": "610f9a0f449f3571be6187ad402d930d8b51c14cc90306fd008c298058671d5d",
+      "expected_status": "supported_no_conflict",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "two_comb_no_edge",
+      "file": "fixtures/07_two_comb_no_edge.sv",
+      "sha256": "75932c094658a81689ee73ddc18552c944b2606b3166dd33c715ceafd64de5d2",
+      "expected_status": "supported_no_conflict",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "different_variables",
+      "file": "fixtures/08_different_variables.sv",
+      "sha256": "7b33c1235640b99e5055f1126e94629141fbbba71750234295313e0e5370c17c",
+      "expected_status": "supported_no_conflict",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "rhs_relational_not_write",
+      "file": "fixtures/09_rhs_relational_not_write.sv",
+      "sha256": "db7bc875f27fb0aea7446d4a5c11829248f63e0b90c969695691e232d5e48c9b",
+      "expected_status": "supported_no_conflict",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "if_relational_not_write",
+      "file": "fixtures/10_if_relational_not_write.sv",
+      "sha256": "50e88a270202d280cbe57e5efbf2461c8f868e24158280d3a9ea18a35492beb1",
+      "expected_status": "supported_no_conflict",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "comments_do_not_drive",
+      "file": "fixtures/11_comments_do_not_drive.sv",
+      "sha256": "c3a304414901e79ceeef4d6c4b8df71645569751aec1f248fd1d29b0d746a58a",
+      "expected_status": "supported_no_conflict",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "string_does_not_drive",
+      "file": "fixtures/12_string_does_not_drive.sv",
+      "sha256": "10a32167b850b8e15829a49f8ed35965026759b3530cafcf5483fb3073ecc680",
+      "expected_status": "supported_no_conflict",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "whole_vector_not_scalar",
+      "file": "fixtures/13_whole_vector_not_scalar.sv",
+      "sha256": "dbd44a6e229f4508f29524a6db11575b0cc5cb74cca24640a4146d64cb2ea004",
+      "expected_status": "supported_no_conflict",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "disjoint_selected_lhs",
+      "file": "fixtures/14_disjoint_selected_lhs.sv",
+      "sha256": "0e04d3efe436b85463d10bca001be5c825dd71a197e8d4f82b8ee3e93f88a5db",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "array_lhs",
+      "file": "fixtures/15_array_lhs.sv",
+      "sha256": "8682e15c4b5aa24671604b2ba48fab8872d00316680738b2e19bc8868e939e03",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "local_shadowing",
+      "file": "fixtures/16_local_shadowing.sv",
+      "sha256": "f843e9adb34c4f016edc7240f5920d26387c0c719aa692be9766c168da223fa7",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "named_local_scope",
+      "file": "fixtures/17_named_local_scope.sv",
+      "sha256": "c659a10e7f3dac2bdfa4e6b7cb0189ac78b3183027a6357b29c0cfce1941feda",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "explicit_generate_exclusion",
+      "file": "fixtures/18_explicit_generate_exclusion.sv",
+      "sha256": "5c3a3d2981d5c438f3d3aea1b17178e5d286af84a34818fb003dd3aacbc67cf9",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "implicit_generate_exclusion",
+      "file": "fixtures/19_implicit_generate_exclusion.sv",
+      "sha256": "3d488736f51dfbd37c344ad20ea2c65f63a29b1a6aebddb7358055bced500fa9",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "macro_exclusion",
+      "file": "fixtures/20_macro_exclusion.sv",
+      "sha256": "6aa8a6d11b94c3731d225127a3af39ac3272f9339810680839b2162446074e0c",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "function_scope",
+      "file": "fixtures/21_function_scope.sv",
+      "sha256": "7235ee7f78399a42013d8f340a0234943414276ef34376f5dc259f7ce39759bc",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "delayed_assignment",
+      "file": "fixtures/22_delayed_assignment.sv",
+      "sha256": "f39628bd62aa3b5d52402489bf95a31e730d9d72761539a179260759158c02ce",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "rhs_concat_abstains",
+      "file": "fixtures/23_rhs_concat_abstains.sv",
+      "sha256": "5ad138f0716f99ab85c18f3603949f56082f901dd9da1444b034ee9036449933",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "incomplete_module_abstains",
+      "file": "fixtures/24_incomplete_module_abstains.sv",
+      "sha256": "0c718f12f97aabe0918a9f483cb0550ef0f5c8f16570d865d8b5fcf0a82c74d0",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    },
+    {
+      "name": "multiple_modules_abstain",
+      "file": "fixtures/25_multiple_modules_abstain.sv",
+      "sha256": "ddf9f478e4ce624f2de69326de90b772e75da4cc613c8df8a9b0f34237cda2bd",
+      "expected_status": "abstain",
+      "expected_variables": [],
+      "independent_locations": null,
+      "synthetic": true
+    }
+  ],
+  "static_cases": 25,
+  "resource_cases": 3,
+  "total_controls": 28,
+  "actual_models": 0,
+  "actual_EDA": 0
+}
