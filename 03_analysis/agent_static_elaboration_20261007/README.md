@@ -1,6 +1,16 @@
-# Candidate-side static elaboration — preparation only
+# Candidate-side static elaboration — controlled flow verified
 
-Status: source patch prepared on 2026-10-07. Not deployed, not a scoring run, not native-qualified.
+Status, 2026-10-08: twelve distinct simulated-flow scenarios verified on AMD. Not deployed, not a scoring run, not native-qualified. Source patch prepared on 2026-10-07 remains unchanged.
+
+`flow_controls.py` drives the actual patched worker/runtime with simulated HTTP, owned compiler/elaborator outcomes, resource checks and activity events. Real model, EDA and FIFO calls are zero. `PUBLIC_RESULT.json` records the bounded result and source hashes.
+
+The first run passed C_success, then stopped at P_success because the control compared the extracted source with a literal missing the original extractor's final LF. Its rc1, files and partial results are preserved. The follow-up corrects exact expected bytes and records caught exceptions before outcome assertions; it executes only the remaining eleven scenarios and reuses the original C_success. Candidate sources, response literals and expected behavior did not change.
+
+Covered paths include C bypass, both P success exits, elaboration diagnostics using only the existing repair, ANSI-corrected candidate propagation, exhaustion of two requests, and fail-closed behavior for missing tool, timeout, launch error, surviving owned group or source mutation. Transport/subprocess/cwd restoration and receipt hashes were checked. Successful ANSI correction keeps its original immediate-return behavior after successful elaboration.
+
+Each observed attempt had a 90-second outer limit, including a 10-second cleanup reserve. The failed child interval was 0.241648s; the successful follow-up interval was 0.388594s. These are separate child-to-exit/reap/cleanup intervals; the failure exits before final-result binding. They exclude preparation, observer serialization/exit, transfer and time between attempts. Observer retirement was separately checked.
+
+The private 356-member archive preserves both attempts and preparation. Every member was compared with AMD originals and the local archive. Delivery SHA99376df010889c81a5694c52de9f172d7ce38e46a49f983c9b559997eadbd604, archive SHA18ce649c7496eeaef1ddacda6656bee2f305ea1243efef7ad5faa88f86b2ad04; local verification receipt SHA bcbb36de0f75dc4b806bb596cc9dd818521ff5c8d7543a3f8978e70d1d698b9b is shared with identical AMD bytes. Private raw traces are excluded from Git.
 
 The completed A114 development screen produced C4/P4 L3 out of15, weighted .40/.40, with19/19 requests. It is rejected under its original screen. A retained failure passed candidate xvlog but failed judge elaboration due to incompatible procedural drivers. That diagnosis identifies a general gap; it does not authorize reading judge material in production or establish the new mechanism's accuracy.
 
@@ -33,7 +43,7 @@ C retains both original success exits and never runs this new elaboration step.
 The existing owned_command supervises xelab with its original60-second single-command cap; the outer worker/judge/supervisor limits must stay at300/300/360 in a later paired run.
 Separate elaboration receipts record input before/after, log hash, command, actual result and owned process cleanup.
 A timeout, launch error, surviving owned group or missing tool is an execution failure, not a repaired design.
-The current patch is a reviewable proposal: support for candidate-only elaboration and its incremental runtime cost remain unmeasured.
+The controlled flow is verified; native candidate-only elaboration behavior and its incremental runtime cost remain unmeasured.
 
 ## Next necessary validation
 
@@ -44,14 +54,14 @@ Before real model use, freeze a fresh AMD-only, zero-model-call control run with
 - ANSI declaration correction followed by a valid design.
 - ANSI declaration correction that still leaves an elaboration error.
 
-Also exercise the worker with controlled transport/tool outcomes to check: C bypass, P diagnostics consuming only the existing repair, corrected-source propagation, no retry after missing tool/supervision failure, and no extra functional feedback on the successful declaration-fix exit.
+The controlled transport/tool outcomes above are complete and should be reused, without rerunning them for native admission.
 Synthetic outcomes are engineering controls and do not count as independent RTL benchmark tasks.
 Record all attempts and negative results, and do not change controls after seeing their results to select a passing version.
 Freeze exact command count, total time, resource admission and FIFO ownership before execution; no native/model/FIFO work is authorized merely by this README.
 
 ## Coordination and limits
 
-Issue7 response6040017934 assigns this preparation to the reviewer; nzh152-lang continues the separate, previously admitted CP8 same-factor156 preparation.
+Issue7 response6049443471 assigns the independent internal-wire declaration factor to nzh152-lang; this task owns static elaboration. FIFO115 CP8 development156 is closed and rejected under its original gates (PR148); it is not still waiting for terminal execution. The peer's new diagnosis/coverage claims are recorded as peer evidence, not independently rerun here.
 Reuse unchanged evidence and do not combine A, lexical extraction changes, or CP8 behavior with this mechanism.
 A114's original full terminal/archive claims have a bound owner conclusion; the reviewer has not independently re-audited its complete archive.
 The full objective remains more than118/156 L3 plus the three-arm156, auditedRTLLM, required five samples and resource/interface/recovery acceptance.
