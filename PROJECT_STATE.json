@@ -17312,5 +17312,104 @@
     "original_failure_preserved": true,
     "original275_nodes_preserved": true,
     "next_step": "Review/public binding then submit this frozen diagnostic once; original history/cost gates remain."
+  },
+  "model_generated_fsm8_20261008": {
+    "schema": "model_generated_fsm8_prepared_public_v1",
+    "prepared": true,
+    "FIFO_submitted": false,
+    "score_measured": false,
+    "formal100_unknown": true,
+    "model_generated_RTL_required": true,
+    "mechanical_producers_included": false,
+    "selection": "Official weighted pass@1 primary; private historical/per-task relative-call vetoes remain diagnostic only.",
+    "source_assets": 83,
+    "spec_sha256": "c4cd85e75fa36d84b454bca1f0b4dde2644eb769d0936f9524a88e833aea20e4",
+    "fixed_tasks": [
+      "Prob001_zero",
+      "Prob057_kmap2",
+      "Prob127_lemmings1",
+      "Prob137_fsm_serial",
+      "Prob143_fsm_onehot",
+      "Prob145_circuit8",
+      "Prob146_fsm_serialdata",
+      "Prob151_review2015_fsm"
+    ],
+    "arms": [
+      "C",
+      "P"
+    ],
+    "expected_samples": 16,
+    "max_actual_model_requests": 32,
+    "solve_deadline_s": 300,
+    "judge_timeout_s": 300,
+    "judge_supervisor_timeout_s": 360,
+    "output_tokens": 8192,
+    "max_calls": 2,
+    "repair_count": 1,
+    "retries": 0,
+    "stage_cap_s": 12000,
+    "guard_cap_s": 12400,
+    "slot_cap_minutes": 215,
+    "caps_are_not_ETA": true,
+    "controls": {
+      "request_boundary_tests": 7,
+      "score_selection_tests": 3,
+      "preparation_receipt_sha256": "6a269f3ddda3dcf6a46841a2a77e840d66e5361cfbb3207dc02e6bd9c77e2c27",
+      "selection_receipt_sha256": "0af0a2c368a558b694ad4d804d61b64917dc3ba5b4108f25cf3406c3dec2ec22",
+      "old_controls_replayed": false,
+      "new_real_model_EDA_FIFO_calls": 0
+    },
+    "complete_preparation_archive": {
+      "sha256": "0c3f735e33a15f9b8623bd86ef6cd82a8690e3a5840dfe1e91a393fa23341bac",
+      "members": 100,
+      "all_members_bound": true
+    },
+    "source_guidance_change_count": 5,
+    "unchanged_prompt_control_tasks": [
+      "Prob001_zero",
+      "Prob057_kmap2",
+      "Prob145_circuit8"
+    ],
+    "official_rules": {
+      "commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+      "SCORING_sha256": "559d828ce7b167ab78410d773295c90e4e7b679e013cbb430ef097330638fdb2",
+      "weights": {
+        "capability": 30,
+        "gain": 40,
+        "wall_clock": 10,
+        "engineering": 20
+      },
+      "official_five_sample_protocol_not_yet_run": true,
+      "gain_full_mark_and_baseline_time_unknown": true
+    },
+    "prior125": {
+      "original_audit_sha256": "fd5e594a3ae20d9bcce84622a35f3a9810fe9974288aaa4195ac52f1842e592c",
+      "C_L3": 5,
+      "P_L3": 7,
+      "C_requests": 5,
+      "P_requests": 3,
+      "new_L3_tasks": [
+        "Prob137_fsm_serial",
+        "Prob146_fsm_serialdata"
+      ],
+      "formal_gain": false,
+      "reason": "Mechanical RTL design route violates model-generated design requirement; retain diagnostic evidence only."
+    },
+    "prior124": {
+      "original_audit_sha256": "8fe2b76c94433869807034e5e33ed5560ee52e43a0ddf38ae3c05ea778e2af4f",
+      "C_L3": 0,
+      "P_L3": 1,
+      "unconfirmed_or_deadline_failure": true,
+      "formal_gain": false
+    },
+    "wave_PR176": {
+      "merged": true,
+      "frozen_sources_preserved": true,
+      "submission_cancelled_before_remote_once_intent": true,
+      "reason": "Complete parent includes mechanical design producers"
+    },
+    "goal_status": "active_not_achieved",
+    "adoption": false,
+    "peer123_and_formal_three_arm_owned_by_peer": true
   }
 }
