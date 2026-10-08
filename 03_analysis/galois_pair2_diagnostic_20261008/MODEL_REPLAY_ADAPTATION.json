@@ -1,0 +1,17 @@
+{
+  "schema": "galois_pair2_original_replay_narrow_adapter_v1",
+  "original_sha256": "fc5f1d2bb1f81825a4b31bee3dc4a84d7182361c24eb4644a0835420cc308ac6",
+  "adapted_sha256": "9666bde8cdaa3493e836da696f1fcd5665e10dad721ffe4833674f4b3cd2d350",
+  "changes": [
+    {
+      "old": "def replay(work,prompt,arm,contract,baseline,runtime,parser,feedback,probe,sha,read,deadline):",
+      "new": "def replay(work,prompt,arm,contract,baseline,runtime,parser,feedback,probe,sha,read,deadline,first_user=None):"
+    },
+    {
+      "old": "user=prompt if i==0 else prompt+",
+      "new": "user=(prompt if first_user is None else first_user) if i==0 else prompt+"
+    }
+  ],
+  "scope": "Only optional first-user string supplied from independently verified forwarded request; original actual response, candidate extraction, compiler source/log, repair diagnostic and final solution replay unchanged.",
+  "no_model_EDA_execution": true
+}

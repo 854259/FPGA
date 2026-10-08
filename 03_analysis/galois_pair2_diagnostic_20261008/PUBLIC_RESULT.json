@@ -1,0 +1,73 @@
+{
+  "schema": "galois_pair2_diagnostic_actual_preparation_public_v1",
+  "prepared": true,
+  "root": "/workspace/team/runs/fpga_owner/galois_pair2_diagnostic_20261008_v1",
+  "spec_sha256": "584d07d92840327fff473b22d1e7ad0ff9d0d181113192597294fd557a5f166a",
+  "source_assets": 85,
+  "original44_bound": true,
+  "common_phase_P_bound": true,
+  "expected_samples": 4,
+  "max_actual_model_requests": 8,
+  "solve_deadline_s": 300,
+  "judge_timeout_s": 300,
+  "judge_supervisor_timeout_s": 360,
+  "output_tokens": 8192,
+  "repairs": 1,
+  "retries": 0,
+  "stage_timeout_s": 3600,
+  "guard_timeout_s": 4000,
+  "slot_minutes": 70,
+  "stage_guard_slot_are_safety_caps_not_ETA": true,
+  "source_count_controlled_by_existing_intake": true,
+  "intake_inputs": 156,
+  "intake_changed_inputs": 2,
+  "intake_unchanged_inputs": 154,
+  "history113_intersection_in_this_diagnostic": 0,
+  "actual_qualification": {
+    "readonly_prior_mock_records": 4,
+    "new_wire_response_compile_final_record_mutants_rejected": 40,
+    "new_metadata_gate_cases": 17,
+    "mock_native_scoring_rejections": 4,
+    "prior_worker_scope_and_intake_controls_not_rerun": true,
+    "real_model_EDA_FIFO_calls": 0
+  },
+  "actual_preparation": {
+    "receipt_sha256": "9155ca05c523ac811abf12085a24dad149e2fe75ca7af456b2bacb16b6b0cf07",
+    "elapsed_s": 2.829356364905834,
+    "exec_confirmed": true,
+    "returncode": 0,
+    "leader_reaped": true,
+    "independent_child_retired": true,
+    "archive_sha256": "a6bdd59b87c76672b84598d3769ff5e9d6e3081f7d93473cea066fc3e9485c4d",
+    "archive_members": 97,
+    "AMD_E_all_members_bound": true
+  },
+  "artifacts": {
+    "audit_controls_receipt_sha256": "7fbb971cdc22fc37a9412b8408370f6a5fa097bbeb37ed9acf5a29dbc2ca76c7",
+    "audit_controls_archive_sha256": "6bb281bc61e6a5a1da6d30a815ae68fc07371bedd299b294a7e7bd16eeb02049",
+    "gate_controls_receipt_sha256": "88d435ba8d414b5b5cdffdf5fb6e1442b503ea6ef7127013d27877aef70a72ad",
+    "gate_controls_archive_sha256": "8d02e6050ccb9742195d86efa173b741c6bf0c5f1d1acc3b2ca940843d2cda6a"
+  },
+  "failures_retained": {
+    "audit_fixture_dependency_path_initial_failure_archive_sha256": "cf8277013319a1b08e3b42b392acb6712ba7af342e888ef8d886089b8fe776e6",
+    "original_control_archive_members": 17,
+    "fixture_only_fix_production_proof_replay_unchanged": true
+  },
+  "qualification_limits": {
+    "whole_stage_executed": false,
+    "complete_real_archive_auditor_executed": false,
+    "full_auditor_validation_pending_real_original_evidence": true,
+    "scorer_in_new_metadata_controls": "explicit_stub_only",
+    "old_original_judge_and_scorer_reused_unchanged": true,
+    "context_budget": "old_actual_usage_plus_added_UTF8_bytes_conservative_inference_only",
+    "all_repair_capacity_claim": false
+  },
+  "FIFO_submitted": false,
+  "score_measured": false,
+  "historical113_protection_complete": false,
+  "qualified_for_full156": false,
+  "adoption": false,
+  "goal_achieved": false,
+  "peer_owns_FIFO123_and_original_terminal": true,
+  "next_step": "After peer window is served and fresh source/resource/budget checks pass, root submits this unique two-pair diagnostic. Audit original evidence once. Even promising diagnostic never grants full156 admission; historical113 and paired/cost rules remain necessary."
+}
