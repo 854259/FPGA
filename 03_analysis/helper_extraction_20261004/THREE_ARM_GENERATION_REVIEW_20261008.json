@@ -1,0 +1,112 @@
+{
+  "updated_at": "2026-10-08T11:30:56.000+08:00",
+  "status": "new_source_routing_and_fake_queue_controls_passed",
+  "run_root": "/workspace/team/runs/fpga_teammate/three_arm_generation_routes_20261008_v1",
+  "archived_A": {
+    "original_spec_sha256": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
+    "original_internal_arm": "P",
+    "adoption": false
+  },
+  "candidate_P": {
+    "original_spec_sha256": "8e80d776b3df21399fb66a4c99698a794a049527e4c5634e57900ed0c4b9e31c",
+    "original_internal_arm": "P",
+    "adoption": false
+  },
+  "baseline_B": "Original official entry and one-request validation unchanged",
+  "source_changes": "Owned copies change only prompt input and activity routing. Original producers and generation_binding check bodies reused; raw worker_result retains P and outer A/P is separate.",
+  "source_sha256": {
+    "three_arm_generation_20261008.py": "0953e503f2576c9f47cf9c74daf96781e841f2586892034b8dbf095f5c9cbf33",
+    "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+    "official_baseline_scoring_20261005.py": "43e8add097d1477fa38a46fd19400656f0a91e019d6f181993b6935fb40c8f19",
+    "test_three_arm_queue_generation_20261008.py": "c12c09b77370f976bf2821c4362cb638147503d99af1261e29344354eda5cb57",
+    "test_three_arm_generation_20261008.py": "6fed7af8b7903636599947e8b04d71602545e57a308370b8cd49ddbde8dcefd0",
+    "three_arm_queue_20261005.py": "426b46a1448906f4499ec8d80a804b50e5273093ce83c2840d3d25abcf96e7e2",
+    "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422"
+  },
+  "receipt_sha256": {
+    "PLAN.json": "928820625591505dc85e3ea8b945db49d6b90b50f202be73261c6baba15bc07b",
+    "RESULT.json": "08738d1e6bda4028d2a93690eaab681e44dcc43fc433294894758951001f571c",
+    "SOURCES.json": "fc7990b000b1485361e585321b5d4e048dc04d933da9ed9d9f1437f98c6ce5e2",
+    "QUEUE_CONTROL_PLAN.json": "8d95ff7101cb54a252b8c30dfc1ac59162b10c198b7150a39048a5d4bf7d90ef",
+    "QUEUE_CONTROL_PROCESS.json": "c9cbad77fc92628011f506b89f6280cf27e6c1c0f1c20b7405c89de85d07da84",
+    "QUEUE_CONTROL_RESULT.json": "1a0e478a761954f4bd2dff0fe5b3be4d67cf004f82bd33bfffd29fbebcbae263"
+  },
+  "new_fake_cases": 4,
+  "new_queue_control": 1,
+  "processes": 6,
+  "all_rc0_reaped_no_live_group": true,
+  "model_calls": 0,
+  "eda_commands": 0,
+  "fifo_submissions": 0,
+  "new_accuracy_result": false,
+  "full_acceptance_complete": false,
+  "limits": [
+    "FAKE tool/transport receipts only; not native or candidate quality validation.",
+    "Three-arm production dataset/candidate admission, total budget and original resource interface remain to freeze.",
+    "Finite RTLLM judge explicitly rejects this new source mode until separately integrated.",
+    "Original U16/U17 and previous native/source controls not rerun.",
+    "Recorded intervals cover each child wait/group check, not complete preparation/SSH/archive time."
+  ],
+  "current123_live": {
+    "at": "2026-10-08T11:29:36.674058+08:00",
+    "spec_sha256": "8e80d776b3df21399fb66a4c99698a794a049527e4c5634e57900ed0c4b9e31c",
+    "summary_keys": [
+      "schema",
+      "complete",
+      "passed",
+      "spec_sha256",
+      "rows",
+      "actual_model_requests",
+      "first_generation_replayed",
+      "adoption",
+      "new_full_score",
+      "scope"
+    ],
+    "complete": false,
+    "audit_pending": null,
+    "adoption": false,
+    "rows": 87,
+    "requests": 89,
+    "processes": [
+      {
+        "pid": 2512832,
+        "state": "S",
+        "start": "870035731",
+        "cmd_sha256": "2ff161bcab4dd87ed2c28196a1fcff5c2871f0ed50c34efe30c620bc6365544e"
+      },
+      {
+        "pid": 2512833,
+        "state": "S",
+        "start": "870035741",
+        "cmd_sha256": "2f40f72fe4fed295f4d04eb379e73b64f86d972f65c59bcb1675e4494d00eb24"
+      },
+      {
+        "pid": 2013333,
+        "state": "S",
+        "start": "823869819",
+        "cmd_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+      }
+    ]
+  },
+  "next": "Finish FIFO123 and its prepared one-time terminal review. Use these independently pinned A/P sources in the next admitted three-arm plan; integrate the finite RTLLM judge before enabling that path.",
+  "peer_delta": {
+    "comment_id": 6051459685,
+    "gmail_id": "1a11984e56f5e6c2",
+    "same_text": true,
+    "scope": "Peer continues independent two-hit diagnostic preparation; no new scoring ticket. New controls not independently re-audited."
+  },
+  "peer_counterexample_closed": {
+    "pr": 164,
+    "head": "63227944842d61df1f3f1558e0f03af1491a4007",
+    "scope": "Bounded source/receipt review accepted full-prompt abstention fix, no rerun or general qualification.",
+    "existing_comment_updated": 6051168108
+  },
+  "compiler_warning_analysis": {
+    "original_ticket": 115,
+    "candidate_logs": 171,
+    "original_C_L1_tasks": 39,
+    "nonlocale_warnings_in_L1": 0,
+    "read_inventory_sha256": "0a0b505b8f949bcbdb2f92599cc8747af6eb86680e04b469f6bc1f553069fcbf",
+    "conclusion": "No evidence to start a warning-feedback score run for these39L1 tasks."
+  }
+}
