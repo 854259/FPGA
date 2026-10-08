@@ -1,3 +1,11 @@
+## 2026-10-08 声明15真实入口107源冻结完成，尚未入队
+
+AMD新13准入规则、4旧worker记录只读接入、8新审计拒绝通过；不重跑旧worker/native，无新增模型/EDA。评分stage/prepare/metrics/auditor已切为声明单因素，原upstream44/判定/首次及repair wire规则与8192/max2/repair1/300/300/360保持；8历史保护/7目标及原配对/逐题和总请求成本门不变。
+
+107源a99a2396准备通过，outer60/inner40真实exec0/reaped并独立读取退休；141组8825记录、模型与PRIMARY两文件保持。125成员完整ZIP9b7364e6逐项AMD/E绑定。新首次15输入与原115实际C请求内容相同，同PID/template旧真实usage复用核容量，无新推理/tokenize、不称新请求实际usage或全部repair容量。整任务FIFO stage43200/guard43600/slot740是安全上限，非预计耗时。
+
+prepared=true，FIFO/score/full156/adoption/goal=false；下一由root唯一提交15题30输出，真实运行及原完整证据审计后才报告得分。peer独立持table-parent/vector探索，不相加旧分或追授采用。详情见 [冻结摘要](03_analysis/internal_wire_score15_freeze_20261008/PUBLIC_RESULT.json)。
+
 ## 2026-10-08 声明修复完整worker来源接线通过，真实评分仍待准备
 
 AMD新4完整wrapper/baseline_worker流程、18来源/请求篡改拒绝通过；HTTP/编译明确模拟，活动日志截入私有模拟记录，0真实模型/EDA/FIFO。成功修复C2/P1请求，失败修复C2/P2且原repair raw wire逐字一致；两对首次request相同。原44源、baseline及原common worker/runtime逆向重建保持，P新机械journal逐次绑定响应/原稿/真实诊断/点名与推断/后继编译。
