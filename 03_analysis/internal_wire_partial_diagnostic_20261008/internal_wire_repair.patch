@@ -1,0 +1,55 @@
+--- a/baseline_worker.py
++++ b/baseline_worker.py
+@@ -1,6 +1,6 @@
+ """Owned fresh-generation worker; original maximum of one repair."""
+ import argparse
+-import first_system_request
++import internal_wire_hook
+ import ctypes
+ import hashlib
+ import importlib.util
+@@ -89,6 +89,15 @@
+     (out/'solution.v').write_text(''); (out/'trace.jsonl').write_text('')
+     requests, compiles = [], []
+     save(out/'requests.json', requests)
++    declaration_repairs = []
++    def declaration_receipt(receipt):
++        assert compiles and requests and requests[-1]['response_received']
++        assert receipt['original_sha256'] == compiles[-1]['source_before_sha256']
++        declaration_repairs.append(dict(index=len(declaration_repairs), arm=args.arm,
++            compile_index=len(compiles)-1,
++            response_json_sha256=requests[-1]['response_sha256'], **receipt))
++        save(out/'internal_declaration_journal.json', declaration_repairs)
++    internal_wire_hook.configure(runtime, args.arm == 'P', declaration_receipt)
+     original_open, original_run = urllib.request.urlopen, subprocess.run
+ 
+     def gate():
+@@ -103,7 +112,7 @@
+         index = len(requests); assert index < 2
+         body = json.loads(request.data)
+         skill, repair = runtime.skill_texts()
+-        assert body['messages'][0] == dict(role='system', content=skill+('\n'+repair if index else '')+(first_system_request.SYSTEM_SUFFIX if args.arm == 'P' and index == 0 else ''))
++        assert body['messages'][0] == dict(role='system', content=skill+('\n'+repair if index else ''))
+         assert body['model'] == spec['model'] and body['temperature'] == 0
+         assert body['max_tokens'] == 8192 and body['top_p'] == 1
+         folder = out/'requests'/str(index); folder.mkdir(parents=True)
+--- a/package/agent/map_runtime.py
++++ b/package/agent/map_runtime.py
+@@ -32,6 +32,8 @@
+ if str(PKG) not in sys.path:
+     sys.path.insert(0, str(PKG))
+ LOCK = threading.Lock()
++# Optional compiler-named repair after the existing ANSI repair abstains.
++DECLARATION_REPAIR = None
+ 
+ 
+ def skill_texts():
+@@ -407,6 +409,8 @@
+             # Prob058_alwaysblock2 goes from L0 to L3 this way with no model call.
+             try:
+                 patched = repair_ansi_declarations(code, feedback)
++                if patched is None and DECLARATION_REPAIR is not None:
++                    patched = DECLARATION_REPAIR(code, feedback)
+             except Exception:
+                 patched = None
+             if patched:

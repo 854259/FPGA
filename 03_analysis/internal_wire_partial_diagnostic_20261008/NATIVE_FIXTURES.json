@@ -1,0 +1,50 @@
+{
+  "independent": true,
+  "official_material_used": false,
+  "finite_scope": "5-bit four-state data, binary clocks, fixed independent structures; no all-parameter/all-clock proof",
+  "cases": [
+    {
+      "name": "two_distinct_internal_procedures",
+      "candidate": "module TopModule(input clk,input a,output out); wire left; wire right; always @(posedge clk) begin left<=a; end always @(negedge clk) begin right<=a; end assign out=clk ? left:right; endmodule",
+      "testbench": "module tb; logic clk=0;logic a; wire out;logic left_exp=1'bx;logic right_exp=1'bx;TopModule dut(clk,a,out);\nfunction automatic logic four(input integer value); case(value) 0:four=0;1:four=1;2:four=1'bx;default:four=1'bz;endcase endfunction\ninteger count=0;\ntask automatic check(input logic actual,input logic expected); if(actual !== expected) $fatal(1,\"MISMATCH\"); count=count+1; endtask\ninitial begin #1;check(out,right_exp);for(integer i=0;i<24;i=i+1) begin a=four(i%4);#1;clk=1;left_exp=a;#1;check(out,left_exp);clk=0;right_exp=a;#1;check(out,right_exp);end $display(\"WIRE_NATIVE_PASS %0d\",count);$finish;end endmodule\n",
+      "expected_observations": 49
+    },
+    {
+      "name": "repeated_assignments_one_procedure",
+      "candidate": "module TopModule(input a, output out);\nwire bucket;\nalways @(*) begin bucket = 0; if(a) begin bucket = 1; end end\nassign out = bucket;\nendmodule\n",
+      "testbench": "module tb; logic a; wire out; TopModule dut(a,out);\nfunction automatic logic four(input integer value); case(value) 0:four=0;1:four=1;2:four=1'bx;default:four=1'bz;endcase endfunction\ninteger count=0;\ntask automatic check(input logic actual,input logic expected); if(actual !== expected) $fatal(1,\"MISMATCH\"); count=count+1; endtask\ninitial begin for(integer i=0;i<4;i=i+1) begin a=four(i); #1; check(out,a===1'b1); end $display(\"WIRE_NATIVE_PASS %0d\",count); $finish; end endmodule\n",
+      "expected_observations": 4
+    },
+    {
+      "name": "nested_case_and_if_are_not_instances",
+      "candidate": "module TopModule(input a,input sel,output out); wire bucket; always_comb begin case(sel) 0:begin if(a) begin bucket=1; end else begin bucket=0; end end default:begin bucket=a; end endcase end assign out=bucket; endmodule",
+      "testbench": "module tb;logic a;logic choose;wire out;TopModule dut(a,choose,out);\nfunction automatic logic four(input integer value); case(value) 0:four=0;1:four=1;2:four=1'bx;default:four=1'bz;endcase endfunction\ninteger count=0;\ntask automatic check(input logic actual,input logic expected); if(actual !== expected) $fatal(1,\"MISMATCH\"); count=count+1; endtask\nlogic expected;initial begin for(integer s=0;s<4;s=s+1) begin for(integer i=0;i<4;i=i+1) begin a=four(i);choose=four(s);expected=a;if(choose===1'b0) expected=(a===1'b1);#1;check(out,expected);end end $display(\"WIRE_NATIVE_PASS %0d\",count);$finish;end endmodule\n",
+      "expected_observations": 16
+    }
+  ],
+  "reuse_passed118": [
+    {
+      "name": "scalar_internal_single_comb_writer",
+      "candidate": "module TopModule(input a, output out);\nwire bucket;\nalways @(*) begin bucket = a; end\nassign out = bucket;\nendmodule\n",
+      "testbench": "module tb; logic a; wire out; TopModule dut(a,out);\nfunction automatic logic four(input integer value); case(value) 0:four=0;1:four=1;2:four=1'bx;default:four=1'bz;endcase endfunction\ninteger count=0;\ntask automatic check(input logic actual,input logic expected); if(actual !== expected) $fatal(1,\"MISMATCH\"); count=count+1; endtask\ninitial begin for(integer i=0;i<4;i=i+1) begin a=four(i); #1; check(out,a); end $display(\"WIRE_NATIVE_PASS %0d\",count); $finish; end endmodule\n",
+      "expected_observations": 4
+    },
+    {
+      "name": "packed_internal_single_clock_writer",
+      "candidate": "module TopModule(input clk,input [4:0] a,output [4:0] out); wire [4:0] bucket; always @(posedge clk) begin bucket <= a; end assign out=bucket; endmodule",
+      "testbench": "module tb; logic clk=0; logic [4:0] a; wire [4:0] out; logic [4:0] expected='x; TopModule dut(clk,a,out);\nfunction automatic logic four(input integer value); case(value) 0:four=0;1:four=1;2:four=1'bx;default:four=1'bz;endcase endfunction\ninteger count=0;integer digit;\ntask automatic check; if(out !== expected) $fatal(1,\"MISMATCH\"); count=count+1; endtask\ninitial begin #1; check(); for(integer i=0;i<1024;i=i+1) begin digit=i; for(integer b=0;b<5;b=b+1) begin a[b]=four(digit%4);digit=digit/4;end #1;check();clk=1;expected=a;#1;check();clk=0;#1;end $display(\"WIRE_NATIVE_PASS %0d\",count);$finish;end endmodule\n",
+      "expected_observations": 2049
+    }
+  ],
+  "original118_bindings": {
+    "results/0/C_compile/stdout.bin": "c54ada48adc2056e9b2c523ce4604c5edab7e29ebf5d0b328d322bfb32d5f76c",
+    "results/0/C_compile/COMPLETE.json": "af382c1d2289c6b29eede464baa7844aa45f69fdc3a4572db3f00adf5a5d4c68",
+    "results/1/C_compile/stdout.bin": "a0b8925c933722337eae51c3870e2672d311a62ec7911ae81d06702c3e2df817",
+    "results/1/C_compile/COMPLETE.json": "9572cac62cff2d4568a6a28de7a04ac365b782ff7b1bb10afd20bdf65fc2b9a2",
+    "results/2/C_compile/stdout.bin": "e99bf11b9bd289833ccc501a3c6874bc32ef5cae01822750d84ae1485852ce04",
+    "results/2/C_compile/COMPLETE.json": "ea8600075300f85426fb7a78ea9dc241f6d0e9efda91098effca6144eea30c20",
+    "results/0/ACTUAL_REPAIR.json": "634c8aab745f391a063637012731e764091a5ec03ffa4f83ad3487e0c31fccd8",
+    "results/1/ACTUAL_REPAIR.json": "928267ea1da1fc50c7969eede47589145ef08f42c7c74653374748466ca04956",
+    "results/2/ACTUAL_REPAIR.json": "c81dd085429c6b5858c28be0da921114ec533dc321ce9ca254bb4cde4459b79d"
+  }
+}
