@@ -58,7 +58,7 @@
   "new_accuracy_result": false,
   "adoption": false,
   "full_acceptance_complete": false,
-  "next": "Resolve actual allocation and prospective scoring budget, then freeze the sole executable entry and FIFO submission. No repeat of completed controls or old scoring.",
+  "next": "Unique FIFO submission after PR delivery; follow existing122, no duplicate or rerun.",
   "freeze_preparation": {
     "updated_at": "2026-10-08T10:00:00.885559+08:00",
     "source_commit": "657e156070c535e2d3592c2dd0a707bfe23a7128",
@@ -103,5 +103,27 @@
     },
     "elapsed_scope": "Popen through each child's wait and stream close only, not preparation/SSH or full external duration.",
     "next": "Resolve actual allocation and prospective scoring budget, then freeze the sole executable entry and FIFO submission. No repeat of completed controls or old scoring."
+  },
+  "execution_freeze": {
+    "updated_at": "2026-10-08T10:30:00+08:00",
+    "status": "execution_frozen_pending_unique_fifo_submission",
+    "authorization_sha256": "dddba0c0b90a3d98bf0e0b5c1b65819b3af131f9efc3cc5fd1b7aae9f3dd14b4",
+    "source_commit": "3505590c6d3070fea697a204ee9891b3851d55d3",
+    "spec_sha256": "8e80d776b3df21399fb66a4c99698a794a049527e4c5634e57900ed0c4b9e31c",
+    "receipt_sha256": "9fbe55e3cc67b927bd856b1c3ce8cb5734e32275efc80fd71377ae548d606e46",
+    "source_assets": 107,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "repeated_intake_calls": 0,
+    "fifo_submissions": 0,
+    "financial_balance_verified": false,
+    "financial_balance_execution_prerequisite": false,
+    "peer_serial_window": "https://github.com/854259/FPGA/issues/7#issuecomment-6050797252",
+    "maximum_requests": 624,
+    "maximum_outputs": 312,
+    "maximum_submissions": 1,
+    "new_accuracy_result": false,
+    "goal_complete": false,
+    "next": "Unique FIFO submission after PR delivery; follow existing122, no duplicate or rerun."
   }
 }
