@@ -1,0 +1,63 @@
+{
+  "schema": "existing_independent_qualified_history_route_reconciliation_v1",
+  "existing156_generation_route_records_per_run": 156,
+  "existing_common_input_manifests_equal": true,
+  "mechanical_route_union": [
+    "Prob143_fsm_onehot",
+    "Prob151_review2015_fsm"
+  ],
+  "mechanical_route_intersection": [],
+  "existing_separate_runs": [
+    {
+      "ticket": 109,
+      "label": "onehot",
+      "archive_sha256": "7d00ebb5ba9d914b358a53784417c42c157ea41609b0d2f4b33fb8bbb8034eaa",
+      "existing_P_rows": 156,
+      "existing_mechanical_tasks": [
+        "Prob143_fsm_onehot"
+      ],
+      "observed_L3": [
+        "Prob143_fsm_onehot"
+      ],
+      "native_score_rerun": false
+    },
+    {
+      "ticket": 110,
+      "label": "timer",
+      "archive_sha256": "bfc644c9945379642739f548c6d494b16dc29d1ee3bd508bbc969252c10ef9ca",
+      "existing_P_rows": 156,
+      "existing_mechanical_tasks": [
+        "Prob151_review2015_fsm"
+      ],
+      "observed_L3": [
+        "Prob151_review2015_fsm"
+      ],
+      "native_score_rerun": false
+    }
+  ],
+  "existing_waveform_success": {
+    "ticket": 105,
+    "archive_sha256": "997e65f38eeb1f03fbb20b15fddd8c0f11b4110d28616a5eedfcacbafe6924b1",
+    "audit_sha256": "6f5dc899dc35c95419f389499d8bb36f572d7a5b36e57b7c25e4ce07c808c4e8",
+    "waveform_facts_sha256": "683120670f05b2aca062d38cb88a7240de08d44ea9c73c8c57653da44d973f3c",
+    "rows": [
+      {
+        "task": "Prob145_circuit8",
+        "arm": "C",
+        "level": 1,
+        "requests": 1
+      },
+      {
+        "task": "Prob145_circuit8",
+        "arm": "P",
+        "level": 3,
+        "requests": 1
+      }
+    ],
+    "actual_new_worker_contains_waveform_factor": false
+  },
+  "old_whole_candidates_remain_rejected": true,
+  "new_combined156_intake_or_score_measured": false,
+  "no_additive_score_claim": true,
+  "new_project_model_EDA_FIFO_calls": 0
+}

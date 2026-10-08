@@ -1,3 +1,9 @@
+## 2026-10-08 组合worker12接线及原baseline/runtime6+1新上下文通过，尚无评分资格
+
+PR168唯一recipe selector接入原机械worker：C/弃权P保持原common7ff7/runtime2f7/skills，命中recipe原样保留并绑定所选源码，无新修复。AMD12完整wrapper模拟上下文与6实际原baseline/runtime/skills+1传输失败模拟服务上下文通过，首次及repair C/P wire逐字相同；0真实模型/EDA/FIFO，旧worker方法/算法/native/156 intake不重跑。67/200原件c27f1737/983ea44c已AMD/E逐项绑定、两个exec0/reaped并独立退休。首本地CRLF适配断言失败保留、AMD未执行，显式newline/位置SHA逆向恢复原字节。
+
+仅只读合并原109/110各156条P生成路线和相同input manifest：旧onehot143/timer151不交叉。复查原105的正确端点因素68312067曾将145从L1恢复L3且C/P均1请求；三个原完整候选仍拒绝、跨轮分不相加，波形因素未加入本worker。尚未准备新评分stage/完整生成归档auditor/组合native准入，无新分数/全156资格/采用。peer继续持123与三臂/终态，root下一模型任务仍PR166 pair2；目标120/.80 ACTIVE。详见 [接线摘要](03_analysis/history_recipe_worker_20261008/PUBLIC_RESULT.json)，旧节点/正文保留。
+
 ## 2026-10-08 复用one-hot/timer的纯组合控制通过，尚未接完整worker
 
 复用原109/110已真实L3/0调用的两条题面规则，两个旧完整策略仍拒绝、不相加跨轮分数。新增selector只接受唯一完整recipe，碰撞或记录不一致弃权；无ID/答案派发。AMD新增22模拟组合控制及2原自然输入上下文通过，原recipe与逆序选择保持、源码fc1af52c/9080c49a逐字不变。受限进程exec0/reaped约0.136秒、独立child退休；19原件e1fba70f已AMD/E逐项绑定，0模型/EDA/FIFO，旧native/算法/worker/156 intake不重跑。
