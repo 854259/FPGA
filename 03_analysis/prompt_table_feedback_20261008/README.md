@@ -59,3 +59,7 @@ It verifies retained row seals and source bindings and calls the unchanged offic
 score.py summary. Fourteen synthetic aggregation checks passed on AMD with zero
 model/EDA calls. Actual129 audit remains pending completion. The reader never
 restarts a queue or rejudges a solution.
+
+## 五样本结果及完整156接续（2026-10-08）
+
+原135份结果已一次终审：官方系数均值A/P/B为0.5377778/0.7333333/0.3777778；P增加19.5556个百分点，真实耗时也增加。45对首次请求及回答内容相同，11份修复改善分布于3题；仅9项开发题，不外推完整成绩。保留原候选，`prepare_full_comparison.py`在AMD复用26份原源码与完整156输入生成2340行、最多3900请求的五样本三臂计划。36小时队列上限为安全停止边界；准备不等于提交。按赛题要求比较，旧逐题/调用否决条件不恢复。原RESULT与过程、私有档案SHA见PUBLIC_RESULT.json。
