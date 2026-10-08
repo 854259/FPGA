@@ -1,0 +1,43 @@
+{
+  "original_worker_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+  "paired_sha256": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+  "probe_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "bounded_sha256": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+  "contract_origin": "Reuse only the complete prose grammar from table_history_cp8_integration_20261008/serial_framing_producer.py; no DUT emitter/import.",
+  "control_adaptation": "Adds resource-check forwarding and source validation. Existing bounded executor wraps each native command; existing guard owns the stage. No executor implementation changed.",
+  "public_files": [
+    "serial_feedback.py",
+    "controls.py",
+    "test_serial_feedback.py",
+    "reserved_keywords.py",
+    "fixtures/late_stop_mutant.sv",
+    "fixtures/positive.sv",
+    "fixtures/reversed_data_mutant.sv",
+    "fixtures/unknown_done_mutant.sv",
+    "worker.py",
+    "serial_binding.py",
+    "binding_controls.py",
+    "prepare_comparison.py",
+    "comparison_result.py"
+  ],
+  "packet_source_count": 27,
+  "comparison_worker": {
+    "inherited_peer_spec_sha256": "317e40d723e7c0956a11143fc914b1841e036fe871a0ffba415f0939c90399da",
+    "inherited_worker_bind_body_unchanged": true,
+    "changes": "Replace table feedback with exact qualified serial feedback; P bind additionally ties actual model RTL/native evidence to the exact repair diagnostic",
+    "baseline_worker_sha256": "a4d212f06d16079d45cb79eb2843e7163cf8745d211706c4534e534a84b7fb66",
+    "baseline_route_only_changes": [
+      "PAIRED_TASK_DIR input",
+      "own run activity root",
+      "row-specific event identity"
+    ],
+    "first_model_request_unchanged": true
+  },
+  "comparison_preparation": {
+    "qualification_source_count": 29,
+    "comparison_source_count": 31,
+    "reader_reused_unchanged_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+    "queue_reused_unchanged_sha256": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de",
+    "original_worker_budgets_unchanged": true
+  }
+}
