@@ -1,3 +1,11 @@
+## 2026-10-08 原116编译通过；真实词法覆盖0，转向原编译诊断
+
+原FIFO116的14真实编译均预期通过，P7成功、3独立原截断C失败；29保护+1准入物理回执、46出生另读退休，239成员E/AMD完整绑定，模型、15源、141保护与peer120源保持，槽已释放。阶段约22.064秒；发现宣称stage900但实际只guard1000硬限，独立900未接，保留缺口且native_scoring_admission=false，不改原冻结或重跑14。
+
+新只读扫描peer115原333响应：词法提取改变0，300完整子进程硬限实际接上，约0.477秒；15成员E/AMD绑定，0模型/EDA/FIFO/评分。因此暂不为词法新排15/156，保留通用机制但不把夹具收益算比赛L3。原115的310编译journal有29失败记录：16非变量过程赋值、6未声明、2语法、1重声明、4其他；原ANSI修复8返回补丁、6实际后继重编译成功。992原输入绑定仅AMD，E另存5形态/10文件私有子集，不冒称全量E复制。
+
+root接着评估编译器点名的简单内部wire声明修复，端口/多驱动/复杂声明回原流程；与peer静态展开独立，prototype/native/评分尚未执行。peer保有115原collector/auditor，阶段C112/P115为未审计快照。目标120/.80 ACTIVE未达成，原113/配对/逐题与总成本/300/300/360保持。详情见 [原116摘要](03_analysis/lexical116_coverage_diagnostics_20261008/NATIVE116_PUBLIC_RESULT.json)、[真实覆盖](03_analysis/lexical116_coverage_diagnostics_20261008/COVERAGE_PUBLIC_RESULT.json) 和 [诊断分布](03_analysis/lexical116_coverage_diagnostics_20261008/DIAGNOSTIC_PUBLIC_RESULT.json)。
+
 ## 2026-10-08 通用词法提取：16边界／8接线通过，native待执行
 
 原始响应里的注释、字符串、转义标识符不再被候选误当模块边界；歧义沿用原extract。AMD16独立边界、8新接线工程检查首次通过，17及52成员E/AMD逐项绑定。接线使用模拟HTTP/编译，不计真实模型或EDA；C原extract、P首次/repair可选callback，official baseline文件/对象、原system、首次user及repair构造与8192/max2/repair1/HTTP300保持。15源原生编译冻结准备通过，计划14次xvlog/29保护，尚未入队/执行/评分/采用。
