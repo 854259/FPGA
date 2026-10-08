@@ -1,0 +1,58 @@
+{
+  "schema": "table_parent_history_worker_adapter_v1",
+  "original_worker_path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\TABLE_VECTOR_COMPOSITION_WORKER_AMD_PACKET_v3\\sources\\worker.py",
+  "original_worker_sha256": "16a824d901625dac008c92f6eeb71cf0f81c66f2d5bab521871c5e8edca26eb0",
+  "worker_sha256": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e",
+  "composition_sha256": "f6f8bf7d01eee3df05b7f25ed1d4b2e8618203f4001e3caa61ef2f80e8038cc3",
+  "replacements": [
+    {
+      "label": "route_schema",
+      "before": "table_parent_vector_extension_generation_route_v1",
+      "after": "table_parent_history_extension_generation_route_v1",
+      "position": 321,
+      "before_sha256": "16a824d901625dac008c92f6eeb71cf0f81c66f2d5bab521871c5e8edca26eb0",
+      "after_sha256": "18f620f08c4821e73b2251216edc4489f06d7c554435ef9e5eb7e20be99fcaea"
+    },
+    {
+      "label": "three_provider_names",
+      "before": "provider in ('table', 'vector')",
+      "after": "provider in ('table', 'onehot', 'timer')",
+      "position": 1940,
+      "before_sha256": "18f620f08c4821e73b2251216edc4489f06d7c554435ef9e5eb7e20be99fcaea",
+      "after_sha256": "0709f71b40906b62ee1ef9b4c8118d4b87f26e5927399eed03fd66bf9b5d9a71"
+    },
+    {
+      "label": "interface_scope",
+      "before": "    assert not interface.strip()\n",
+      "after": "    if provider == 'table':\n        assert not interface.strip()\n",
+      "position": 3605,
+      "before_sha256": "0709f71b40906b62ee1ef9b4c8118d4b87f26e5927399eed03fd66bf9b5d9a71",
+      "after_sha256": "dd677a4a3ce4f10019cd21e59b3c490cf80f0f08dfbe07c0c6d448ad184cd764"
+    },
+    {
+      "label": "extension_contract",
+      "before": "    if provider == 'vector':",
+      "after": "    if provider in ('onehot', 'timer'):",
+      "position": 3859,
+      "before_sha256": "dd677a4a3ce4f10019cd21e59b3c490cf80f0f08dfbe07c0c6d448ad184cd764",
+      "after_sha256": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e"
+    }
+  ],
+  "original_fallback_native_compile_and_feedback_code_unchanged": true,
+  "score_CLI_closed": true,
+  "actual_tests_executed": false,
+  "new_test_source_sha256": "dab2bca4471abebe9c99d74a38e17692dca74acb10d60e52324ee93ff19c26d9",
+  "retained_private_fixture_sha256": "c239c17060aa9b3b1ac833e6ac6591c1cded10d6c70c6033cb7160e106b362e3",
+  "source_bindings": {
+    "table_synthesis.py": "a18ac21891dc229b3252df9ac3122517874a08bb8d269e5763d9146eae1279e5",
+    "contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+    "selector.py": "9ef0c99f24c90e396d7d31a66357ac7bdf3c1f097fcaa321641ed44d20f4d116",
+    "onehot_producer.py": "fc1af52cd3d76faf9eed812167eb8179ab40b3c3d32740062e6d444459701007",
+    "timer_producer.py": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6"
+  },
+  "static_ast_parse_and_inverse_bytes_verified": true,
+  "new_test_source_path": "test_parent_history.py",
+  "actual_result_path": "ACTUAL_PARENT_HISTORY_RESULT.json"
+}

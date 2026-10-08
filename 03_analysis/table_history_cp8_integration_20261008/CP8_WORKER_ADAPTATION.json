@@ -1,0 +1,73 @@
+{
+  "schema": "table_history_cp8_minimal_worker_adaptation_v1",
+  "base_composition_sha256": "f6f8bf7d01eee3df05b7f25ed1d4b2e8618203f4001e3caa61ef2f80e8038cc3",
+  "base_worker_sha256": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e",
+  "composition_sha256": "e093b9ffcf64d2ae1d167fd92ed9ea7e86cfa7dbbbd6300d28c5eb609978a430",
+  "worker_sha256": "ea070dab956206f9fd2aca361f8b66265caec61ad892b433a6d30367086c4aa1",
+  "serial_framing_producer_sha256": "aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5",
+  "serial_producer_original_path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\FRAMING_CP8_FORMAL_PREPARATION_ACTUAL_v1\\files\\synthesis.py",
+  "replacements": [
+    {
+      "label": "composition_import",
+      "before": "import timer_producer",
+      "after": "import timer_producer\nimport serial_framing_producer",
+      "before_sha256": "f6f8bf7d01eee3df05b7f25ed1d4b2e8618203f4001e3caa61ef2f80e8038cc3",
+      "after_sha256": "953780f2c5779e82f5ded2c13d6e1a6bfb5c1f2697017275fbd37236b100800d"
+    },
+    {
+      "label": "producer_binding",
+      "before": "    'table': TABLE_SHA,",
+      "after": "    'table': TABLE_SHA,\n    'serial_framing': 'aaac33da469438e8c157a5c284ed5367c43256d126b9392392676fb01b1b3ed5',",
+      "before_sha256": "953780f2c5779e82f5ded2c13d6e1a6bfb5c1f2697017275fbd37236b100800d",
+      "after_sha256": "6787b3ce8083d4859b571cf2a9b9bcf6cb22f74f219344787bd4012d5ae376c0"
+    },
+    {
+      "label": "normal_abstention_framing_extension",
+      "before": "def score_admission():",
+      "after": "def synthesize_with_framing(prompt, interface=''):\n    \"\"\"Extend only the complete parent strategy's normal abstention.\"\"\"\n    common = synthesize(prompt, interface)\n    if common['emitted'] or common['reason'] != 'no_complete_contract':\n        return common\n    recipe = serial_framing_producer.synthesize(prompt, interface)\n    return _bound(common, recipe, 'serial_framing', prompt)\n\n\ndef score_admission():",
+      "before_sha256": "6787b3ce8083d4859b571cf2a9b9bcf6cb22f74f219344787bd4012d5ae376c0",
+      "after_sha256": "e093b9ffcf64d2ae1d167fd92ed9ea7e86cfa7dbbbd6300d28c5eb609978a430"
+    },
+    {
+      "label": "worker_route_schema",
+      "before": "table_parent_history_extension_generation_route_v1",
+      "after": "table_history_cp8_generation_route_v1",
+      "before_sha256": "39d7f16515a10fe9e4fb97b036ce4839095c05ed3ee419fb52842c418599e87e",
+      "after_sha256": "17e8d17847cb6f1f4b6f68f69c17daf9473f7c356600ef72e17262a34b8b81d7"
+    },
+    {
+      "label": "complete_parent_C_framing_P",
+      "before": "result = synthesis.synthesize(prompt, interface) if args.arm == 'P' else synthesis.parent(prompt, interface)",
+      "after": "result = synthesis.synthesize_with_framing(prompt, interface) if args.arm == 'P' else synthesis.synthesize(prompt, interface)",
+      "before_sha256": "17e8d17847cb6f1f4b6f68f69c17daf9473f7c356600ef72e17262a34b8b81d7",
+      "after_sha256": "64732885757e7e6c8afead799af396b432d4b1dfe27440414ae3476bd9a9ac4c"
+    },
+    {
+      "label": "four_provider_scope",
+      "before": "assert provider in ('table', 'onehot', 'timer') if emitted else provider is None",
+      "after": "assert provider in ('table', 'onehot', 'timer', 'serial_framing') if emitted else provider is None",
+      "before_sha256": "64732885757e7e6c8afead799af396b432d4b1dfe27440414ae3476bd9a9ac4c",
+      "after_sha256": "009d207aa2ebe0cbdce890c8be70f07bb6a0fd86aa0e86c27d434b47fc55b384"
+    },
+    {
+      "label": "C_complete_parent_scope",
+      "before": "assert args.arm == 'P' or provider == 'table'",
+      "after": "assert args.arm == 'P' or provider in ('table', 'onehot', 'timer')",
+      "before_sha256": "009d207aa2ebe0cbdce890c8be70f07bb6a0fd86aa0e86c27d434b47fc55b384",
+      "after_sha256": "18d48e35f160c369460ab0aef60f4be1f276a5355737af783594f32a9a9d227c"
+    },
+    {
+      "label": "serial_contract_scope",
+      "before": "if provider in ('onehot', 'timer'):",
+      "after": "if provider in ('onehot', 'timer', 'serial_framing'):",
+      "before_sha256": "18d48e35f160c369460ab0aef60f4be1f276a5355737af783594f32a9a9d227c",
+      "after_sha256": "ea070dab956206f9fd2aca361f8b66265caec61ad892b433a6d30367086c4aa1"
+    }
+  ],
+  "inverse_original_bytes_verified": true,
+  "static_ast_parsed": true,
+  "actual_execution": false,
+  "model_fallback_native_compile_feedback_and_budget_unchanged": true,
+  "score_cli_still_closed": true,
+  "old_producers_unchanged": true
+}
