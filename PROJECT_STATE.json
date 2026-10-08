@@ -17411,5 +17411,73 @@
     "goal_status": "active_not_achieved",
     "adoption": false,
     "peer123_and_formal_three_arm_owned_by_peer": true
+  },
+  "model_onehot_scope_20261008": {
+    "schema": "model_onehot_scope_prepared_public_v1",
+    "prepared": true,
+    "FIFO_submitted": false,
+    "score_measured": false,
+    "adoption": false,
+    "goal_achieved": false,
+    "spec_sha256": "fbd1599be8447ed04cba8492966fca1ea7812aa2f471672b57405aeb8e39b1f3",
+    "source_assets": 84,
+    "expected_samples": 16,
+    "max_actual_model_requests": 32,
+    "output_tokens": 8192,
+    "max_calls": 2,
+    "repairs": 1,
+    "solve_deadline_s": 300,
+    "judge_timeout_s": 300,
+    "judge_supervisor_s": 360,
+    "retries": 0,
+    "stage_cap_s": 12000,
+    "guard_cap_s": 12400,
+    "slot_cap_minutes": 215,
+    "caps_are_not_ETA": true,
+    "model_generated_RTL_required": true,
+    "mechanical_producers_included": false,
+    "scope": "one-hot wording in prompt, no task identifiers/reference/judge routing",
+    "one_changed_first_wire_identical_to126": true,
+    "seven_unchanged_first_wires": true,
+    "new_AMD_scope_tests": 3,
+    "old_controls_replayed": false,
+    "preparation_receipt_sha256": "88a632f4068f7854353bf9d3d485dddf27c03ac7afe1ad539df4ef7d0ed6e7df",
+    "prepare_archive_sha256": "7c49804c213b260b586e636300bb1ff6fb02b91d152e88df5c0020bb28b41cb8",
+    "prepare_archive_members": 101,
+    "all_prepare_members_AMD_E_bound": true,
+    "prior126": {
+      "evidence_valid": true,
+      "coefficients": {
+        "C": 0.5,
+        "P": 0.5
+      },
+      "L3": {
+        "C": 3,
+        "P": 3
+      },
+      "requests": {
+        "C": 8,
+        "P": 9
+      },
+      "repairs": [
+        "Prob143_fsm_onehot"
+      ],
+      "regressions": [
+        "Prob151_review2015_fsm"
+      ],
+      "diagnostic_promising": false,
+      "audit_sha256": "d88f04942786f4909038e5530593a0b41bde88cc4ca9bed71f797ccba0576202",
+      "original_evidence_sha256": "42447049d0f8be1fef071392542ab16d9648d3f3380be836833ba134108a7304",
+      "complete_closure_sha256": "8b697035d474799e347d1c11dfe8bfc103e9798d2e23aacec5ac56826b55e7a7",
+      "closure_members": 26,
+      "all_members_AMD_E_bound": true,
+      "collector_calls": 1,
+      "frozen_model_only_auditor_calls": 1,
+      "old_auditor_reused_unchanged": false,
+      "zero_unconfirmed": true,
+      "no_original_deadline": true,
+      "not_adopted": true
+    },
+    "limits": "Eight fixed development inputs, one fresh sample per arm. No full156, five-independent-sample, hidden-task or official100 result. Semantic scope is an unmeasured hypothesis selected after126; do not sum scores across versions."
   }
 }
