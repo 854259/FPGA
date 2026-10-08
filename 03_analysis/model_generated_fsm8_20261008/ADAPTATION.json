@@ -1,0 +1,88 @@
+{
+  "schema": "model_generated_fsm8_adaptation_v1",
+  "source_packet": "GALOIS_PAIR2_FREEZE_PACKET_v1",
+  "file_changes": {
+    "worker.py": {
+      "original_sha256": "772dcc2c8e7656180b9291ca54d578c17759d523f73bf7a5db6e1b032ef59bcb",
+      "adapted_sha256": "1c1d5368c326c58236802e7f5225c0e514185234aa425ccc18ae6f099477d774",
+      "changes": [
+        [
+          "galois_first_request as boundary",
+          "fsm_guidance as boundary"
+        ],
+        [
+          "galois_original_resource",
+          "fsm_model_original_resource"
+        ]
+      ]
+    },
+    "request_proof.py": {
+      "original_sha256": "8c27cfbdb05a2a17847afb25214544cce7bf05ca11b94753954de346e99ac455",
+      "adapted_sha256": "0aea916c235aa7c63898bd3cb8c9752ae0ced1886d9c5f1ad57f4c954176fe22",
+      "changes": [
+        [
+          "galois_first_request as boundary",
+          "fsm_guidance as boundary"
+        ],
+        [
+          "galois_first_user_original_response_request_proof_v1",
+          "fsm_model_first_user_original_response_request_proof_v1"
+        ]
+      ]
+    },
+    "pilot.py": {
+      "original_sha256": "da3f41f2593608621c0ef180cde4b155bbab494b0863a0aa2450d0b0ce26380a",
+      "adapted_sha256": "376b929bdbce55f24e79efae8e388f6d908de8b8a3c914323d69907b4462e411",
+      "changes": [
+        [
+          "galois_pair2",
+          "model_generated_fsm8"
+        ],
+        [
+          "galois_diag",
+          "fsm_model_diag"
+        ],
+        [
+          "len(spec['task_ids'])==2",
+          "len(spec['task_ids'])==8"
+        ],
+        [
+          "spec['expected_samples']==4",
+          "spec['expected_samples']==16"
+        ],
+        [
+          "spec['max_actual_model_requests']==8",
+          "spec['max_actual_model_requests']==32"
+        ],
+        [
+          "spec['expected_protection_receipts']==9",
+          "spec['expected_protection_receipts']==33"
+        ],
+        [
+          "spec['stage_timeout_s']==3600",
+          "spec['stage_timeout_s']==12000"
+        ],
+        [
+          "expected_samples=4",
+          "expected_samples=16"
+        ],
+        [
+          "report['actual_model_requests']<=8",
+          "report['actual_model_requests']<=32"
+        ],
+        [
+          "protection_index==9",
+          "protection_index==33"
+        ],
+        [
+          "Original-budget two-pair diagnostic",
+          "Original-budget model-generated eight-pair diagnostic"
+        ]
+      ]
+    }
+  },
+  "baseline_worker_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+  "model_replay_sha256": "9666bde8cdaa3493e836da696f1fcd5665e10dad721ffe4833674f4b3cd2d350",
+  "mechanical_producers_included": false,
+  "local_project_execution": false
+}
