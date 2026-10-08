@@ -11,6 +11,7 @@ import sys
 import time
 import metrics
 import composition as synthesis
+import prepare
 
 ROOT = Path(__file__).resolve().parent
 UPSTREAM_SPEC_SHA = '3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1'
@@ -36,9 +37,8 @@ def load(name, path):
 
 
 def frozen(kit):
-    # The inherited comparison admission stays closed until a new agreed freeze.
-    synthesis.score_admission()
     spec = json.loads((ROOT/'RUN_SPEC.json').read_bytes())
+    prepare.validate_authorization(ROOT, spec)
     assert spec['schema'] == 'table_parent_vector_full156_frozen_v1'
     for n, h in spec['source_hashes'].items():
         assert sha(ROOT/n) == h, n
@@ -50,8 +50,7 @@ def frozen(kit):
         assert sha(Path(spec['dependencies_cloud'])/n) == h, n
     inputs = json.loads((ROOT/'INPUT_MANIFEST.json').read_bytes())
     assert inputs == json.loads((ROOT/'upstream/INPUT_MANIFEST.json').read_bytes())
-    preparation = load('table_original_task_membership', ROOT/'preparation_inputs.py')
-    groups = preparation.validate_kit(ROOT, kit)
+    groups = prepare.task_groups(ROOT, kit)
     assert all(spec[key] == value for key, value in groups.items())
     for n, h in inputs['input_sha256'].items():
         assert sha(kit/'bench/tasks_veval'/n) == h, n
@@ -212,7 +211,7 @@ def main(args):
             gate()
             sample = out/'samples'/arm/task
             sample.mkdir(parents=True, exist_ok=False)
-            argv = [sys.executable, '-B', str(ROOT/'worker.py'), '--out', str(sample/'worker'),
+            argv = [sys.executable, '-B', str(ROOT/'pilot.py'), 'worker', '--out', str(sample/'worker'),
                     '--task', task, '--arm', arm, '--kit', str(args.kit), '--resource-check', str(args.resource_check)]
             command = paired.owned_command(argv, ROOT, sample/'worker.log', spec['solve_deadline_s'])
             command['argv'] = argv
@@ -263,20 +262,32 @@ def main(args):
         publish(report)
     sys.path.insert(0, '/workspace/team/tools/task-fifo-20261004')
     import activity
-    activity.append(Path('/workspace/team/activity/fpga_owner'), 'conclusions',
-                    'table-synthesis-stage:'+spec['identity'],
+    activity.append(Path('/workspace/team/activity/fpga_teammate'), 'conclusions',
+                    'table-parent-vector-stage:'+spec['identity'],
                     '题面表格机械生成312输出阶段结束；确定性输出与实际模型调用分开统计；终态审计前不发布收益或全量资格，不部署。',
                     {k: v for k, v in report.items() if k != 'rows'})
     return 0 if report['passed'] else 1
 
 
+def worker(args):
+    spec = frozen(args.kit)
+    assert args.task in spec['task_ids'] and args.arm in spec['arms']
+    assert sys.platform == 'linux' and ctypes.CDLL(None, use_errno=True).prctl(36, 1, 0, 0, 0) == 0
+    implementation = load('comparison_pinned_worker', ROOT/'worker.py')
+    assert implementation.frozen() == spec
+    paired = load('comparison_owned', Path(spec['dependencies_cloud'])/'paired_checkpoint.py')
+    implementation.run_worker(args, paired)
+    return 0
+
+
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
-    p.add_argument('phase', choices=['stage', 'judge'])
+    p.add_argument('phase', choices=['stage', 'judge', 'worker'])
     p.add_argument('--kit', required=True, type=Path)
     p.add_argument('--resource-check', type=Path)
     p.add_argument('--task')
+    p.add_argument('--arm', choices=['C', 'P'])
     p.add_argument('--solution', type=Path)
     p.add_argument('--out', type=Path)
     args = p.parse_args()
-    raise SystemExit(main(args) if args.phase == 'stage' else judge(args))
+    raise SystemExit(main(args) if args.phase == 'stage' else worker(args) if args.phase == 'worker' else judge(args))

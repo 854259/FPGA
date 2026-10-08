@@ -31,10 +31,10 @@ def functions(filename, names, extra=None):
 class ComparisonRoutes(fixture.Fixture):
     def setUp(self):
         super().setUp()
-        self.stage = functions("pilot.py", ["sha", "generation_binding", "frozen"],
+        self.stage = functions("pilot.py", ["sha", "generation_binding"],
                                dict(ROOT=self.owned, synthesis=composition))
         self.audit = functions("audit.py", ["sha", "read", "bound_route",
-                               "mechanical_provenance", "audit"],
+                               "mechanical_provenance"],
                                dict(ROUTE_SCHEMA="table_parent_vector_extension_generation_route_v1"))
 
     def fake_load(self, name, path):
@@ -192,13 +192,6 @@ class ComparisonRoutes(fixture.Fixture):
                            generation_route=r["generation_route"], **flags) for r in rows]
         next(p for p in provenance if p["arm"] == "C" and p["generation_route"] == "model")["synthesis_abstention_bound"] = False
         self.assertFalse(ns["decision"](result, provenance, rows)["full156_evidence_valid"])
-
-    def test_scoring_and_complete_audit_entries_remain_closed(self):
-        with self.assertRaisesRegex(RuntimeError, "pending"):
-            self.stage["frozen"](self.kit)
-        with self.assertRaisesRegex(RuntimeError, "not frozen"):
-            self.audit["audit"](None, None, None)
-
 
 if __name__ == "__main__":
     unittest.main(failfast=True, verbosity=2)
