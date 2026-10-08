@@ -634,5 +634,104 @@
       "Preparation rc0 preceded a display error for nonexistent separate stderr; merged stdout retained, no rerun.",
       "First submission readback assumed nonexistent ticket.monitor_identity; direct returned PID/start/cmd bound afterwards, no resubmission."
     ]
+  },
+  "http_bridge": {
+    "schema": "table_feedback_http_bridge_bounded_v1",
+    "status": "simulated_http_delta_passed_not_deployed",
+    "source_commit": "dccb3ea9fe12a0743c04d250e64fcc6c2dcfaa0a",
+    "root": "/workspace/team/runs/fpga_teammate/table_feedback_http_bridge_20261008_v1",
+    "plan_sha256": "5e9bf7bf5859fa60d45952a0b65f61e9b83dee52a5fb3d7d6dc29e9032797e71",
+    "preparation_sha256": "6106f2ca1ace8a010d4c25f9ae23a1a6cd1fba66ada080a7de4723cd33c66877",
+    "integrity_sha256": "12ed6b46d9bf439a8edf07c73fb4bee5bc8b46b2f2f9dfc64e13133c2941b4bc",
+    "result_sha256": "14ddef273b7b683f321b313f1ba4f2848a0dd983bae350ae15590f728e8ec8a7",
+    "prepare_process_sha256": "c4acafc81747464b8469fd4341f7517fbab17286d877d32ef5a9c580a1b48d81",
+    "control_process_sha256": "64cc2ddd86f05a92194a67e6b5149d7587ea5d77e354a4942b0e6b0973af41b4",
+    "result": {
+      "complete": true,
+      "passed": true,
+      "real_model_calls": 0,
+      "actual_eda_commands": 0,
+      "cases": [
+        {
+          "name": "table_repair",
+          "passed": true,
+          "fake_posts": 2,
+          "probes": 2
+        },
+        {
+          "name": "table_correct",
+          "passed": true,
+          "fake_posts": 1,
+          "probes": 1
+        },
+        {
+          "name": "abstention",
+          "passed": true,
+          "fake_posts": 1,
+          "probes": 0
+        },
+        {
+          "name": "official_baseline",
+          "passed": true,
+          "fake_posts": 1,
+          "probes": 0
+        }
+      ],
+      "fake_model_calls": 5,
+      "deployed": false,
+      "new_accuracy": false,
+      "fallback_matches_scored": true,
+      "failure_propagates": true,
+      "package_unchanged": true,
+      "fake_tool_processes": 13,
+      "elapsed_s": 1.3845857959240675
+    },
+    "staged_single_feedback_sha256": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+    "source_hashes": {
+      "prepare_http_bridge.py": "24534d711c9b31d2a32b5e58e93a809554881a059b3f835a856f51001c64717d",
+      "http_runtime.py": "585dad8a283055d794646382c7bae4e94b6805c2d45177a96528e65dcf911f7e",
+      "http_bridge_controls.py": "1fe6b60136200713c1d481668960988d082d6470ecef61a09662a4ec5d9cf0bb",
+      "table_http_feedback.py": "48a2bef2c9978d29f23405ad43eb5d9753095aa084257a9123d0e6bcefae29c1"
+    },
+    "limits": [
+      "Original132 feedback and candidate fallback retained; multi-feedback133/134 not substituted.",
+      "FAKE model/tools only; no new native, scoring, Docker build, target32GB or deployment qualification.",
+      "Reuse qualified bridge transport/T5/T6, no rerun of old controls.",
+      "Child elapsed intervals do not measure full packaging, observer exit or transmission."
+    ],
+    "updated_at": "2026-10-08T21:36:00+08:00",
+    "private_archive": {
+      "sha256": "2abcaf13aced65ffa06493f2ca028603077dc3aa08d6f4c12298a4a59681c751",
+      "members": 109,
+      "amd_and_local_all_members_verified": true,
+      "local_verify_sha256": "5c83ebd6fee6f17a2d441d26ec68c006276d8643a4d644eee279130ccdbf6430"
+    },
+    "processes": {
+      "prepare": {
+        "pid": 3044489,
+        "starttime": "873994544",
+        "child_elapsed_s": 0.1348978877067566
+      },
+      "control": {
+        "pid": 3044490,
+        "starttime": "873994557",
+        "child_elapsed_s": 1.5840906724333763
+      },
+      "both_rc0_exec_reaped_retired": true
+    },
+    "peer": {
+      "email_id": "1a11ba4c292def37",
+      "comment_id": 6060636572,
+      "full_text_matched": true,
+      "ticket": 135,
+      "state": "queued",
+      "monitor_pid": 3017416,
+      "starttime": "873865832",
+      "command_sha256": "25efd8708d1277055f2cdd60c28f3c8715a85219ea256a43f1dfde230a1d07fd",
+      "resume_sha256": "4d5193a81ac86ce034851e26edca189dc6989e4cf81c642e9f572116b84ffb22",
+      "source_controls": "peer disclosure, not independently re-executed",
+      "owner": "fpga_owner"
+    },
+    "next": "Keep132/133/134 frozen. Staged HTTP package is available for final selected original132 policy; a later policy needs its own matched package. No extra real model/native call for this delta."
   }
 }
