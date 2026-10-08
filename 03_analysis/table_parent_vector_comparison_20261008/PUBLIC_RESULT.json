@@ -106,7 +106,7 @@
   },
   "execution_freeze": {
     "updated_at": "2026-10-08T10:30:00+08:00",
-    "status": "FIFO123_running_since_2026-10-08T10:31:47+08:00",
+    "status": "FIFO123_completed_2026-10-08T14:56:18+08:00",
     "authorization_sha256": "dddba0c0b90a3d98bf0e0b5c1b65819b3af131f9efc3cc5fd1b7aae9f3dd14b4",
     "source_commit": "3505590c6d3070fea697a204ee9891b3851d55d3",
     "spec_sha256": "8e80d776b3df21399fb66a4c99698a794a049527e4c5634e57900ed0c4b9e31c",
@@ -124,12 +124,12 @@
     "maximum_submissions": 1,
     "new_accuracy_result": false,
     "goal_complete": false,
-    "next": "Unique FIFO submission after PR delivery; follow existing122, no duplicate or rerun.",
+    "next": "Do not repeat123; model-generated candidates are required for official scoring.",
     "ticket": 123
   },
   "terminal_preparation": {
     "updated_at": "2026-10-08T10:40:00+08:00",
-    "status": "prepared_pending_fifo123_completion",
+    "status": "completed_once_compatible_collector_and_auditor",
     "source_commit": "1d262463b8a7464cfc39fdc4eb6318991c157236",
     "source_sha256": "44e700c7714634cf4535d2e9a9f3308d497a3c39c3a43bc643e753d977959b54",
     "manifest_sha256": "72bf1977dd5868810edc523f9c831e41f385f34965cef143908b2d462689447a",
@@ -145,8 +145,8 @@
     "preparation_returncode": 0,
     "preparation_child_wait_s": 0.0777719784528017,
     "elapsed_scope": "Popen through wait/stream close/group check only",
-    "collector_calls": 0,
-    "auditor_calls": 0,
+    "collector_calls": 1,
+    "auditor_calls": 1,
     "model_calls": 0,
     "eda_calls": 0,
     "fifo_submissions": 0,
@@ -157,6 +157,82 @@
     "cleanup_reserve_s": 20,
     "old_helpers_reused": true,
     "new_accuracy_result": false,
-    "terminal_passed": false
+    "terminal_passed": true
+  },
+  "current_status": "completed123_development_result_official_only_selection_model_generated_route_required",
+  "selection_policy": {
+    "updated_at": "2026-10-08T15:58:00+08:00",
+    "user_instruction": "检查成绩是否最高的唯一标准是赛题要求；总体成绩最高即可。",
+    "objective": "Maximize the official RTL-track total score subject only to official submission and evaluation requirements.",
+    "source": {
+      "upstream": "https://gitee.com/Vickyiii/rtlagent2026",
+      "commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+      "HEAD_verified_at": "2026-10-08T15:55:00+08:00",
+      "scoring_path": "04_project/amd_rtl_agent/official_reference/SCORING.md",
+      "scoring_sha256": "559d828ce7b167ab78410d773295c90e4e7b679e013cbb430ef097330638fdb2",
+      "aggregator_path": "04_project/amd_rtl_agent/official_reference/selftest/score.py",
+      "aggregator_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768"
+    },
+    "weights": {
+      "capability": 30,
+      "gain": 40,
+      "wall_clock_cost": 10,
+      "engineering": 20
+    },
+    "coefficients": {
+      "L0": 0,
+      "L1": 0.2,
+      "L2": 0.7,
+      "L3": 1
+    },
+    "sampling": "Five independent samples per task. Official graded pass@1 averages valid sample coefficients per task, then tasks; pass@5 is diagnostic only. Official environment errors are explicitly excluded.",
+    "formulas": {
+      "capability": "30 * set_score",
+      "gain": "clamp(40 * log(agent_set_score / same_run_official_baseline_set_score) / log(announced_full_mark_multiplier), 0, 40)",
+      "cost": "10 * min(announced_reference_wall_time / measured_full_set_wall_time, 1)",
+      "engineering": "Official assessment, up to 20"
+    },
+    "removed_selection_vetoes": [
+      "historical113_each_task_preserved",
+      "each_paired_task_no_regression",
+      "each_task_model_calls_P_le_C",
+      "total_model_calls_P_le_C",
+      "minimum120_L3",
+      "minimum_weighted_point80",
+      "L3_count_lexicographic_priority"
+    ],
+    "retained_diagnostics": [
+      "L3 count",
+      "paired regressions and uncertainty",
+      "historical task changes",
+      "model calls",
+      "mechanism attribution"
+    ],
+    "official_generation_boundary": "SCORING sections 2.9-2.11 require model-generated design. Deterministic checks and formatting are allowed; directly scripted design with no substantive model generation is not an eligible submission route. A token model call does not cure this.",
+    "development_best": {
+      "ticket": 123,
+      "L3": 120,
+      "tasks": 156,
+      "weighted_set_score": 0.808974358974359,
+      "formal_total_score": null,
+      "official_submission_eligible": false,
+      "reason": "C has9 and P has12 mechanical direct RTL emissions; formal five-sample same-run baseline and full official evaluation are also incomplete."
+    },
+    "archival_policy": "Keep frozen original audit and numerical results intact. Old acceptance=false is historical, not a current score-selection veto. Do not rerun to replace it.",
+    "execution_policy": "Do not promote mechanical-only synthesis candidates to further official-scoring/full three-arm batches. Preserve completed123/124/125 and their diagnostic evidence. Continue model-generated RTL with checks/feedback; retain actual execution safety caps and no hidden retries.",
+    "unknown_official_parameters": [
+      "gain full-mark multiplier and zero-baseline rule not verified from an announcement",
+      "reference wall time and final per-task/full-set limits not verified from an announcement",
+      "final hidden set composition and official engineering assessment"
+    ],
+    "unknowns_do_not_block_authorized_development": true,
+    "financial_balance_gate": false,
+    "full_goal_complete": false
+  },
+  "completed_result": {
+    "path": "PUBLIC_FULL156_RESULT.json",
+    "sha256": "b0693793ba5ecf6cffe0f062c5c793fa617a14f28cfeddf0e80e4b0ca712c822",
+    "historical_decision_snapshot": true,
+    "current_decision": "selection_policy"
   }
 }
