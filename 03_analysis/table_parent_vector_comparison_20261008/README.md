@@ -6,6 +6,8 @@ pilot/audit/metrics/factor_proof源自原90已归档代码，生成器、compari
 
 prepare.py先用156份原题面/接口生成两臂来源清单，再绑定原父策略、工具环境和保护库存。pilot.py的worker入口在完整冻结/预算校验后调用原worker函数，原worker和composition草稿CLI均不修改；审计对应绑定新argv和本轮实际库存，仍逐条核625保护记录。
 
-当前EXECUTION_AUTHORIZATION_SHA为空，只生成PREPARED_SPEC.json，不能产生可执行RUN_SPEC或提交评分。624请求与阶段43200/guard43600/槽740分钟仅是待确认方案上限，不是新额度或ETA；实际预算授权必须在下一次源冻结中绑定。旧9控制中的草稿关闭检查由test_freeze.py的新预算/入口控制替代，其余来源控制和旧8/12证据复用。原90/98拒绝采用不追改，不拼历史分数，完整三臂156/RTLLM/五样本/资源接口恢复范围保持。
+PR159时EXECUTION_AUTHORIZATION_SHA为空，只生成PREPARED_SPEC.json。现依据既有人类授权及peer6050797252串行窗口，固定一次312输出/max624请求；AMD余额未知不再作为本方额外前置。EXECUTION_AUTHORIZATION.json已绑定，promote入口复用原输入计划，仅提升为独立执行冻结，不重新生成输入或重跑控制。43200/43600/740是安全上限，不是ETA或新增财务额度。旧9控制中的草稿关闭检查由test_freeze.py的新预算/入口控制替代，其余来源控制和旧8/12证据复用。原90/98拒绝采用不追改，不拼历史分数，完整三臂156/RTLLM/五样本/资源接口恢复范围保持。
 
 AMD实际准备与6项新入口控制已通过：156题C为9表格/147模型，P为相同9表格/3向量/144模型。旧来源证明文件名冲突在输入处理前停止，v2另名保存原件后完成唯一一次输入处理。没有模型、EDA、FIFO或新分数。完整数据绑定见PUBLIC_RESULT.json的freeze_preparation；不再重跑已完成控制。
+
+2026-10-08 10:30 +08:00：撤销本方擅自添加的“先查AMD余额/租期”执行前置；用户已有持续使用当前AMD与自主实验授权，未知财务信息不再阻止已授权工作。peer6050797252交出122后唯一串行窗口，实物c00e47d4已核。table-parent/vector执行冻结已在AMD通过，复用原156输入计划与原控制，模型/EDA/重复intake均0；107源、RUN_SPEC8e80d776b3df21399fb66a4c99698a794a049527e4c5634e57900ed0c4b9e31c、冻结回执9fbe55e3cc67b927bd856b1c3ce8cb5734e32275efc80fd71377ae548d606e46，prepare子进程2511612一次rc0/reaped、无存活组。0.189992秒仅childwait及组核验，不是完整外部耗时。唯一C/P156/312输出、max624/8192/max2/repair1/retries0/300-300-360及原判定门不变，43200/43600/740仍为安全上限。当前尚未提交FIFO，下一步在PR交付后唯一提交；122真实在跑，不抢占。旧blocked是本方错误条件留下的目标面板状态，不能据此停推进或伪称工具已resume。完整验收未达，无新分数。

@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent
 PARENT_SPEC_SHA = '0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702'
 # Replace only in a reviewed execution freeze backed by the actual authorization.
 # A JSON file with approved=true cannot open this preparation by itself.
-EXECUTION_AUTHORIZATION_SHA = None
+EXECUTION_AUTHORIZATION_SHA = 'dddba0c0b90a3d98bf0e0b5c1b65819b3af131f9efc3cc5fd1b7aae9f3dd14b4'
 LIMITS = dict(max_actual_model_requests=624, max_worker_requests_per_arm=2,
               retries=0, max_tokens=8192, solve_deadline_s=300,
               judge_timeout_s=300, judge_supervisor_timeout_s=360,
@@ -207,9 +207,54 @@ def prepare(base_commit, kit):
     return receipt
 
 
+def promote(base_commit, kit, prepared_root):
+    """Reuse the sealed intake; authorize one new run without regenerating it."""
+    assert sys.platform == 'linux' and sys.version_info[:2] == (3, 12)
+    assert re.fullmatch('[0-9a-f]{40}', base_commit)
+    prepared_root = Path(prepared_root).resolve()
+    assert ROOT.resolve() != prepared_root and not (ROOT/'RUN_SPEC.json').exists()
+    assert not (ROOT/'EXECUTION_FREEZE_RECEIPT.json').exists()
+    assert sha(prepared_root/'PREPARED_SPEC.json') == '2d2a46fb4945351e48126779f3b04271ee11825e5b4b9e4fce065d766b97acb5'
+    spec = read(prepared_root/'PREPARED_SPEC.json')
+    for name, digest in spec['source_hashes'].items():
+        assert sha(prepared_root/name) == digest, name
+        if name != 'prepare.py':
+            assert sha(ROOT/name) == digest, name
+    names = read(ROOT/'INSTALL_SOURCE_MANIFEST.json')['files']
+    assert set(names) == set(spec['source_hashes']) | {'EXECUTION_AUTHORIZATION.json'}
+    assert all(sha(ROOT/name) == digest for name, digest in names.items())
+    spec.update(identity=ROOT.name, cloud_root=str(ROOT), base_commit=base_commit,
+                dependencies_cloud=str(ROOT/'dependencies'),
+                execution_authorization_sha256=EXECUTION_AUTHORIZATION_SHA,
+                prepared_spec_sha256=sha(prepared_root/'PREPARED_SPEC.json'),
+                prepared_root=str(prepared_root), source_hashes=names,
+                execution_frozen_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat())
+    validate_authorization(ROOT, spec)
+    assert all(spec[key] == value for key, value in task_groups(ROOT, kit).items())
+    import factor_proof
+    assert factor_proof.verify(ROOT) == read(ROOT/'SOURCE_FACTOR_PROOF.json')
+    import pilot
+    env = pilot.validate_environment()
+    assert env['tools'] == spec['compiler_tools']
+    assert env['compiler_env'] == spec['compiler_env'] and env['udev_files'] == spec['udev_files']
+    save(ROOT/'RUN_SPEC.json', spec)
+    # Complete frozen entry validation performs no model/EDA or intake execution.
+    assert pilot.frozen(kit) == spec
+    receipt = dict(schema='table_parent_vector_execution_freeze_v1',
+                   spec_sha256=sha(ROOT/'RUN_SPEC.json'), source_assets=len(names),
+                   reused_input_plan_sha256=spec['input_plan_sha256'],
+                   execution_authorization_sha256=EXECUTION_AUTHORIZATION_SHA,
+                   model_calls=0, eda_calls=0, repeated_intake_calls=0,
+                   maximum_submissions=1, executable=True)
+    save(ROOT/'EXECUTION_FREEZE_RECEIPT.json', receipt)
+    return receipt
+
+
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--base-commit', required=True)
     p.add_argument('--kit', required=True, type=Path)
+    p.add_argument('--promote-prepared', type=Path)
     a = p.parse_args()
-    print(json.dumps(prepare(a.base_commit, a.kit)))
+    print(json.dumps(promote(a.base_commit, a.kit, a.promote_prepared)
+                     if a.promote_prepared else prepare(a.base_commit, a.kit)))
