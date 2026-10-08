@@ -20,29 +20,29 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parent
 FLOW = Path('/workspace/team/runs/fpga_teammate/static_elaboration_flow12_20261008_v2')
-DEST = Path('/workspace/team/runs/fpga_teammate/static_elaboration_native5_20261008_v1')
+DEST = Path('/workspace/team/runs/fpga_teammate/static_elaboration_strict4_20261008_v1')
+ORIGINAL = Path('/workspace/team/runs/fpga_teammate/static_elaboration_native5_20261008_v1')
 PRIOR = Path('/workspace/team/runs/fpga_teammate/serial_framing_synthesis_full156_20261007_v1')
 KIT = Path('/workspace/team/tasks/autodl-rtl-kit/project')
 MODEL = 'SIMULATED_NO_MODEL'
 REAL_MODEL = 'Qwen3.6-27B-Q4_K_M'
-OWNER = 'codex_teammate_static_elaboration_native5_20261008_v1'
+OWNER = 'codex_teammate_static_elaboration_strict4_20261008_v1'
 GUARD_SHA = 'fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9'
 PAIRED_SHA = '78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c'
 TOOLS = {n: '/workspace/AMD/2026.1/Vivado/bin/'+n for n in ('xvlog', 'xelab')}
 TOOL_SHA = '8894701f101f74c8c1b5fa5debadadfbe73c0e3a587abfe9a6eb69b99183fdf2'
 GOOD = 'module TopModule(input clk, input d, output reg q); always @(posedge clk) q <= d; endmodule'
-COMB = 'module TopModule(input clk, input d, output reg q); reg next_q; always @* next_q = d; always @(posedge clk) q <= next_q; endmodule'
-MULTI = 'module TopModule(input clk, input d, output reg q); always @* q = d; always @(posedge clk) q <= ~d; endmodule'
+COMB = 'module TopModule(input clk, input d, output reg q); reg next_q; always_comb next_q = d; always_ff @(posedge clk) q <= next_q; endmodule'
+MULTI = 'module TopModule(input clk, input d, output reg q); always_comb q = d; always_ff @(posedge clk) q <= ~d; endmodule'
 ANSI = GOOD.replace('output reg q', 'output q')
 ANSI_MULTI = MULTI.replace('output reg q', 'output q')
 PROMPT = 'Sample d into q on each rising edge of clk.'
 IFACE = 'module TopModule(input clk, input d, output reg q); endmodule'
 CASES = [
-    ('single', GOOD, {'C': [1, 1, 0, 1], 'P': [1, 1, 1, 1]}),
-    ('separate_comb_seq', COMB, {'C': [1, 1, 0, 1], 'P': [1, 1, 1, 1]}),
-    ('multiple_drivers', MULTI, {'C': [1, 1, 0, 1], 'P': [2, 2, 2, 1]}),
-    ('ansi_valid', ANSI, {'C': [1, 2, 0, 0], 'P': [1, 2, 1, 0]}),
-    ('ansi_invalid', ANSI_MULTI, {'C': [1, 2, 0, 0], 'P': [2, 3, 2, 1]}),
+    ('strict_separate', COMB, {'P': [1, 1, 1, 1]}),
+    ('strict_conflict', MULTI, {'P': [2, 2, 2, 1]}),
+    ('ansi_valid', ANSI, {'P': [1, 2, 1, 0]}),
+    ('ansi_invalid', ANSI_MULTI, {'P': [2, 3, 2, 1]}),
 ]
 
 
@@ -74,6 +74,12 @@ def source_check(root):
 
 
 def old_sources():
+    assert sha(ORIGINAL/'SOURCE_MANIFEST.json') == '8573e063b729a14bfcb97e0228bbb0aec1702ee477b0b9b522c63290645f43ac'
+    source_check(ORIGINAL)
+    prior = read(ORIGINAL/'results/summary.json')
+    assert sha(ORIGINAL/'results/summary.json') == 'ac2f4b60ceaa6d4df45467dcb97628c181a9bd8f07906531e851beaf7f116013'
+    assert not prior['passed'] and prior['real_eda_calls'] == 9 and sum(len(r['calls']['http']) for r in prior['rows']) == 6
+    assert read(Path('/workspace/team/task_fifo/tickets/00000117.json'))['state'] == 'failed_released_after_inspection'
     assert sha(FLOW/'SOURCE_MANIFEST.json') == 'c9b527b2c3c747c13704e3cbd2cc025f0d68d81ada819e6888c4a65425789d2b'
     source_check(FLOW)
     assert sha(PRIOR/'RUN_SPEC.json') == 'dbce8beb5342fe590078dd8eafb29a4d762575a58db2599cab9942f453331c4b'
@@ -102,14 +108,19 @@ def prepare():
     fixtures.mkdir(parents=True)
     (fixtures/'prompt.txt').write_text(PROMPT)
     (fixtures/'interface.txt').write_text(IFACE)
-    save(DEST/'RUN_SPEC.json', dict(model=MODEL, identity='static_elaboration_native5_synthetic',
+    save(DEST/'RUN_SPEC.json', dict(model=MODEL, identity='static_elaboration_strict4_synthetic',
         dependencies_cloud=str(DEST/'UNUSED_NO_ORACLE'), activity_root=str(DEST/'SIMULATED_LEDGER')))
-    save(DEST/'PLAN.json', dict(cases=CASES, structures=5, paired_worker_outputs=10,
-        real_model_calls=0, simulated_HTTP_max=12, xvlog_max=16, xelab_max=7, real_tools_max=23,
-        tool_cap_seconds=60, worker_cap_seconds=300, stage_child_cap_seconds=420,
-        stage_outer_cap_seconds=450, cleanup_reserve_seconds=30, guard_cap_seconds=500, slot_minutes=10,
+    save(DEST/'PLAN.json', dict(cases=CASES, structures=4, paired_worker_outputs=0, candidate_worker_outputs=4,
+        real_model_calls=0, simulated_HTTP_max=6, xvlog_max=8, xelab_max=6, real_tools_max=14,
+        prior_117_real_tools=9, prior_117_simulated_HTTP=6, aggregate_real_tools_max=23, aggregate_simulated_HTTP_max=12,
+        prior_outer_elapsed_s=15.47378627769649, aggregate_observed_stage_seconds_max=415.4737862776965,
+        aggregate_time_scope='Sum of original observed stage interval plus this bounded outer stage; excludes preparation and between-stage gap. Not full wall time.',
+        tool_cap_seconds=60, worker_cap_seconds=300, stage_child_cap_seconds=370,
+        stage_outer_cap_seconds=400, cleanup_reserve_seconds=30, guard_cap_seconds=430, slot_minutes=8,
         generation_max_tokens=8192, generation_max_requests=2, repair=1, retries=0,
-        production_sources_unchanged=True, native_qualification='Only synthetic compile/elaboration behavior, no behavioral simulation or benchmark score.',
+        production_sources_unchanged=True, original117_failure_preserved=True,
+        reused='Original117 ordinary positive C/P and C bypass;12 simulated-flow controls. This is four P controls, not new C/P pairs.',
+        native_qualification='Only strict-SV and ANSI exit compile/elaboration behavior; ordinary-always multi-driver blind spot retained. No behavioral simulation or benchmark score.',
         supervision_scope='Real pinned bounded_owned_exec supplies native command receipts through the existing worker owned_command interface; not a new test of legacy paired_checkpoint.owned_command.',
         failure='Stop on first unexpected tool/control/supervision outcome. Preserve all outputs; no resampling, fixture adjustment or implicit retry.',
         source_origin=str(FLOW), source_origin_manifest_sha256=sha(FLOW/'SOURCE_MANIFEST.json'),
@@ -223,11 +234,14 @@ def case_run(name, arm, resource):
                     sum(c['tool']=='xelab' for c in calls['tools']),len(calls['feedback'])]
         assert measured == expected[arm], (name, arm, measured, expected[arm])
         tool_codes = [c['process']['returncode'] for c in calls['tools']]
-        expected_codes = ([1,0] if name.startswith('ansi') else [0]) if arm=='C' else {
-            'single':[0,0], 'separate_comb_seq':[0,0], 'multiple_drivers':[0,1,0,0],
+        expected_codes = {
+            'strict_separate':[0,0], 'strict_conflict':[0,1,0,0],
             'ansi_valid':[1,0,0], 'ansi_invalid':[1,0,1,0,0]}[name]
         assert [int(c!=0) for c in tool_codes] == expected_codes, (tool_codes,expected_codes)
-        final = (GOOD if arm=='P' and name in ('multiple_drivers','ansi_invalid') else
+        if name in ('strict_conflict', 'ansi_invalid'):
+            logs = [args.out/'native_processes'/str(i)/'stdout.bin' for i,c in enumerate(calls['tools']) if c['tool']=='xelab' and c['process']['returncode'] != 0]
+            assert len(logs) == 1 and 'VRFC 10-3818' in logs[0].read_text()
+        final = (GOOD if name in ('strict_conflict','ansi_invalid') else
                  initial.replace('output q','output reg q') if name.startswith('ansi') else initial)+'\n'
         assert (args.out/'solution.v').read_text() == final
         gate()
@@ -242,7 +256,7 @@ def case_run(name, arm, resource):
 
 def stage(resource):
     frozen()
-    save(ROOT/'STAGE_INTENT.json',dict(manifest_sha256=sha(ROOT/'SOURCE_MANIFEST.json'),model_calls=0,real_tools_max=23))
+    save(ROOT/'STAGE_INTENT.json',dict(manifest_sha256=sha(ROOT/'SOURCE_MANIFEST.json'),model_calls=0,real_tools_max=14,aggregate_with117_max=23))
     (ROOT/'results').mkdir()
     import bounded_owned_exec
     reports=[];failure=None
@@ -250,7 +264,7 @@ def stage(resource):
         load('native_stage_resource', ROOT/'paired_checkpoint.py').check_resource(resource, KIT, first=True)
         for name,_,_ in CASES:
             (ROOT/'worker_processes'/name).mkdir(parents=True)
-            for arm in ('C','P'):
+            for arm in ('P',):
                 rec=bounded_owned_exec.run([sys.executable,'-B',str(ROOT/'native_controls.py'),'case',
                     '--case',name,'--arm',arm,'--resource-check',str(resource)],
                     ROOT,ROOT/'worker_processes'/name/arm,300)
@@ -258,14 +272,15 @@ def stage(resource):
                 reports.append(report)
                 assert rec['normal_completion'] and rec['returncode']==0 and rec['exec_confirmed'] and rec['leader_reaped']
                 assert report['passed']
-            assert read(ROOT/'results'/name/'C/requests/0/request.json') == read(ROOT/'results'/name/'P/requests/0/request.json')
-        assert sum(r['real_eda_calls'] for r in reports)==23
+            assert read(ORIGINAL/'results/single/C/requests/0/request.json') == read(ROOT/'results'/name/'P/requests/0/request.json')
+        assert sum(r['real_eda_calls'] for r in reports)==14
+        assert sum(len(r['calls']['http']) for r in reports)==6
         frozen()
     except BaseException as exc:
         failure=dict(type=type(exc).__name__,message=str(exc),traceback=traceback.format_exc())
-    summary=dict(complete=True,passed=failure is None and len(reports)==10,error=failure,rows=reports,
+    summary=dict(complete=True,passed=failure is None and len(reports)==4,error=failure,rows=reports,
                  real_model_calls=0,real_eda_calls=sum(r['real_eda_calls'] for r in reports),
-                 native_scope='Five independent synthetic structures; candidate-only compile/elaboration with simulated replies.',
+                 native_scope='Four P strict-SV/ANSI controls; prior ordinary C/P evidence reused and117 failure retained.',
                  scoring_qualified=False,accuracy_measured=False)
     save(ROOT/'results/summary.json',summary)
     print(json.dumps(dict(passed=summary['passed'],completed_workers=len(reports),error=failure)))
@@ -274,10 +289,10 @@ def stage(resource):
 
 def observe(resource):
     frozen()
-    save(ROOT/'OBSERVE_INTENT.json',dict(manifest_sha256=sha(ROOT/'SOURCE_MANIFEST.json'),cap_s=450))
+    save(ROOT/'OBSERVE_INTENT.json',dict(manifest_sha256=sha(ROOT/'SOURCE_MANIFEST.json'),cap_s=400,prior_elapsed_s=15.47378627769649))
     import terminal_outer
     rec=terminal_outer.run([sys.executable,'-B',str(ROOT/'native_controls.py'),'stage','--resource-check',str(resource)],
-        ROOT,ROOT/'external',450,30,[ROOT/'results/summary.json'],2013333)
+        ROOT,ROOT/'external',400,30,[ROOT/'results/summary.json'],2013333)
     print(json.dumps(dict(passed=rec['passed'],elapsed_s=rec['measured_complete_elapsed_s'],error=rec['error'])))
     return 0 if rec['passed'] else 1
 
