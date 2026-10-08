@@ -1,0 +1,46 @@
+{
+  "baseline_worker.py": {
+    "original_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+    "adapted_sha256": "5d0f1cc72ec5accfd6aae9d3ba0c5aa18d8c430b415bae1e83aedb94325b9772",
+    "changes": [
+      {
+        "original_start": 2,
+        "original_end": 2,
+        "adapted_start": 2,
+        "adapted_end": 3,
+        "old": "",
+        "new": "import internal_wire_hook\n"
+      },
+      {
+        "original_start": 90,
+        "original_end": 90,
+        "adapted_start": 91,
+        "adapted_end": 100,
+        "old": "",
+        "new": "    declaration_repairs = []\n    def declaration_receipt(receipt):\n        assert compiles and requests and requests[-1]['response_received']\n        assert receipt['original_sha256'] == compiles[-1]['source_before_sha256']\n        declaration_repairs.append(dict(index=len(declaration_repairs), arm=args.arm,\n            compile_index=len(compiles)-1,\n            response_json_sha256=requests[-1]['response_sha256'], **receipt))\n        save(out/'internal_declaration_journal.json', declaration_repairs)\n    internal_wire_hook.configure(runtime, args.arm == 'P', declaration_receipt)\n"
+      }
+    ]
+  },
+  "package/agent/map_runtime.py": {
+    "original_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+    "adapted_sha256": "42650125392511a8f1bee5c608d3b9e606b56f858a7a35523c45ba805603e288",
+    "changes": [
+      {
+        "original_start": 34,
+        "original_end": 34,
+        "adapted_start": 34,
+        "adapted_end": 36,
+        "old": "",
+        "new": "# Optional compiler-named repair after the existing ANSI repair abstains.\nDECLARATION_REPAIR = None\n"
+      },
+      {
+        "original_start": 409,
+        "original_end": 409,
+        "adapted_start": 411,
+        "adapted_end": 413,
+        "old": "",
+        "new": "                if patched is None and DECLARATION_REPAIR is not None:\n                    patched = DECLARATION_REPAIR(code, feedback)\n"
+      }
+    ]
+  }
+}

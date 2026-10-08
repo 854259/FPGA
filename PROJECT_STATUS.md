@@ -1,3 +1,11 @@
+## 2026-10-08 声明修复完整worker来源接线通过，真实评分仍待准备
+
+AMD新4完整wrapper/baseline_worker流程、18来源/请求篡改拒绝通过；HTTP/编译明确模拟，活动日志截入私有模拟记录，0真实模型/EDA/FIFO。成功修复C2/P1请求，失败修复C2/P2且原repair raw wire逐字一致；两对首次request相同。原44源、baseline及原common worker/runtime逆向重建保持，P新机械journal逐次绑定响应/原稿/真实诊断/点名与推断/后继编译。
+
+73源保持、60秒实际exec0/reaped约0.239秒、child退休、模型/PRIMARY两文件/原106和peer120源保持。175成员ZIP3d79e4a4已AMD/E绑定到捕获manifest；不声称另一次逐成员AMD重读。初次检查因夹具未计原extract尾换行在首C第二请求断言失败，101成员原件保留；仅修夹具预期，生产源码未改，不冲销失败。旧22/8/4/2和native118/121不重跑。
+
+固定15/30评分stage、冻结准入及完整auditor整合仍待完成，尚未入队/测分/全156资格/采用，目标120/.80 ACTIVE未达。peer独立持39项L1通用功能分析，root持声明15，不混展开或抢队友源。详情见 [实际摘要](03_analysis/internal_wire_pipeline_controls_20261008/PUBLIC_RESULT.json)。
+
 ## 2026-10-08 原121有限真实工具验证通过；开始准备新题目对照
 
 新声明推断helper7f0a05aa下，原121实际11工具（5xvlog/3xelab/3xsim）/23保护/69新有限观察符合预期；新helper对原118两个已通过结构输出原patch同SHA，复用2053观察，旧三个C编译不重跑。原118仍正式失败，不用新结果冲销。17源8c08c1e8、141保护与peer120源保持，模型/槽/清理verified，59出生另读退休；208成员完整AMD/E双端ZIP3bdb47a5，receiptc0522c42。
