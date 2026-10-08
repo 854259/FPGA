@@ -80,7 +80,7 @@ def make_contract(coverage, public, manifest, original):
                         'No independent generalization, family independence or promotion established.'])
 
 
-def bind_phase_p(contract, arm_sources):
+def bind_phase_p(contract, arm_sources, generation_sources=None):
     """Create a new source-bound contract; never relabel historical C results.
 
     The caller audits these execution identities before binding. This only
@@ -99,7 +99,26 @@ def bind_phase_p(contract, arm_sources):
     bound.update(schema='rtllm_finite_reporting_phaseP_v2', arms=['A', 'P', 'B'],
                  parent_contract_sha256=digest(original.encode()),
                  arm_sources=copy.deepcopy(arm_sources), candidate_arm='P')
+    if generation_sources is not None:
+        require(set(generation_sources) == {'A', 'P'}, 'generation source arms')
+        for label, source in generation_sources.items():
+            require(source['outer_arm'] == label and source['worker_arm'] == 'P' and
+                    source['spec_sha256'] == arm_sources[label], 'generation source identity')
+        bound['generation_sources'] = copy.deepcopy(generation_sources)
     return bound
+
+
+def verify_generation(binding, label, contract, input_sha256):
+    """Check an already audited judge binding against the frozen report source."""
+    require(label in ('A', 'P') and isinstance(binding, dict), 'missing generation binding')
+    source = contract.get('generation_sources', {}).get(label)
+    require(source is not None, 'generation source not frozen in report')
+    require(binding['outer_arm'] == label and binding['worker_arm'] == 'P' and
+            binding['stage_generation_binding_verified'] is True, 'generation arm or verification')
+    require(binding['source_root'] == source['root'] and
+            binding['source_spec_sha256'] == source['spec_sha256'] == contract['arm_sources'][label] and
+            binding['original_spec_sha256'] == source['original_spec_sha256'], 'generation source drift')
+    require(binding['input_sha256'] == {'prompt.txt': input_sha256}, 'generation prompt drift')
 
 
 def normalize_queue_row(folder, row, plan, contract, run):
@@ -114,14 +133,14 @@ def normalize_queue_row(folder, row, plan, contract, run):
     folder = Path(folder)
     require(plan['reporting_run'] == run, 'unfrozen reporting run')
     require(plan['reporting_implementation_sha256'] == digest(Path(__file__).read_bytes()), 'report implementation drift')
-    require(run['observation_kind'] == 'real_model', 'non-model run cannot become model scores')
+    expected_kind = 'real_agent' if 'generation_sources' in contract else 'real_model'
+    require(run['observation_kind'] == expected_kind, 'synthetic run cannot become scores')
     serialized = (json.dumps(contract, indent=2, ensure_ascii=False)+'\n').encode()
     require(plan['reporting_contract_sha256'] == digest(serialized), 'report contract drift')
     require(contract['arm_sources'] == run['arm_sources'], 'run source drift')
     require(row in plan['rows'], 'row outside plan')
     receipt = queue.verify_terminal(folder, row, queue.digest(plan))
-    require(receipt.get('synthetic') is not True and receipt.get('real_model_calls') != 0,
-            'synthetic observations cannot become model scores')
+    require(receipt.get('synthetic') is not True, 'synthetic observations cannot become scores')
     require(type(receipt.get('finite_pass')) is bool, 'not a finite-domain receipt')
     name = 'judge/BOUND_VERDICT.json'
     require(name in receipt['files'], 'unbound judge result')
@@ -143,12 +162,31 @@ def normalize_queue_row(folder, row, plan, contract, run):
     require(bound['client_request_attempts'] == bound['confirmed_model_responses'] ==
             receipt['actual_calls'] and receipt['unconfirmed_calls'] == 0, 'unconfirmed responses')
     require(bound['verdict']['passed'] == receipt['finite_pass'], 'outcome drift')
-    return dict(task=row['task'], arm=row['arm'], sample=row['sample'],
+    binding = bound.get('generation_binding')
+    if 'generation_sources' in contract:
+        require(plan['sources']['generation_arms'] == contract['generation_sources'], 'plan generation source drift')
+        if row['arm'] != 'B':
+            verify_generation(binding, row['arm'], contract, bound['input_sha256'])
+            require((binding.get('emitted_solution_sha256') or bound['solution_sha256']) ==
+                    bound['solution_sha256'], 'generated solution drift')
+        else:
+            require(binding is None, 'baseline generation override')
+    zero = receipt['actual_calls'] == 0
+    if zero:
+        verify_generation(binding, row['arm'], contract, bound['input_sha256'])
+        require(binding['generation_route'].startswith('mechanical_') and
+                binding['emitted_solution_sha256'] == bound['solution_sha256'], 'unbound zero call')
+    else:
+        require(receipt.get('real_model_calls') != 0, 'synthetic model observations')
+    normalized = dict(task=row['task'], arm=row['arm'], sample=row['sample'],
         passed=receipt['finite_pass'], status='completed', input_sha256=bound['input_sha256'],
         judge_sha256=bound['judge_sha256'], run_id=run['run_id'],
         model_config_sha256=run['model_config_sha256'], arm_source_sha256=run['arm_sources'][row['arm']],
         call_attempts=receipt['actual_calls'], call_confirmed=bound['confirmed_model_responses'],
         solve_s=receipt['solve_elapsed_s'], judge_s=receipt['judge_elapsed_s'])
+    if binding is not None:
+        normalized['generation_binding'] = binding
+    return normalized
 
 
 def summarize(rows, contract, run):
@@ -184,7 +222,12 @@ def summarize(rows, contract, run):
                              ('arm_source_sha256', run['arm_sources'][row['arm']])):
             require(row[field] == value, field+' mismatch')
         calls = row['call_attempts']
-        require(type(calls) is int and 1 <= calls <= (1 if row['arm'] == 'B' else 2), 'call budget')
+        require(type(calls) is int and 0 <= calls <= (1 if row['arm'] == 'B' else 2), 'call budget')
+        if calls == 0:
+            binding = row.get('generation_binding')
+            verify_generation(binding, row['arm'], contract, row['input_sha256'])
+            require(binding['generation_route'].startswith('mechanical_') and
+                    len(binding['emitted_solution_sha256']) == 64, 'unbound zero call')
         require(type(row['call_confirmed']) is int and row['call_confirmed'] == calls, 'unconfirmed call')
         for field in ('solve_s', 'judge_s'):
             require(type(row[field]) in (int, float) and math.isfinite(row[field]) and row[field] >= 0,

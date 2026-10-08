@@ -155,7 +155,6 @@ def validate(plan):
         assert official.sha(path) == expected, path
     if 'generation_arms' in plan['sources']:
         import three_arm_generation_20261008 as generation
-        assert 'finite_judge' not in plan, 'Finite judge needs its own generation-source integration'
         assert set(plan['sources']['generation_arms']) == {'A', 'P'}
         entry = str(Path(generation.__file__).resolve())
         assert plan['sources']['files'][entry] == official.sha(entry)
@@ -405,6 +404,7 @@ def execute_row(plan, argv, row, folder, resource_check):
         validate(plan)
         resource.check_resource(resource_check,Path(plan['kit']))
         if finite:
+            assert bound.get('generation_binding') == original.get('generation_binding'), 'Finite generation source drift'
             assert bound['schema'] == 'rtllm_finite_verdict_v1'
             assert bound['evaluator_sha256'] == finite['entry_sha256']
             assert bound['contract_sha256'] == finite['contract_sha256']
