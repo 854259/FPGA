@@ -1,3 +1,19 @@
+# Native result: ordinary-always counterexample retained
+
+FIFO117 stopped on its first unexpected result: five worker controls met their frozen expectations; the sixth, P ordinary multiple writers, did not. Six xvlog and three xelab commands ran, with zero real model calls. Both ANSI structures were not reached. PUBLIC_NATIVE_RESULT.json is the bounded result; the original native_controls.py and its failed expectations are retained unchanged.
+
+Vivado2026.1 accepted ordinary combinational and clocked processes writing the same reg. Thus candidate-only xelab is not a general multiple-writer detector. This original native stage failed and grants no native or scoring admission. Do not change this fixture and relabel the stage as passed.
+
+Read-only diagnosis of the retained A114 candidate/log found a different language construct: always_comb/always_ff, with VRFC10-3818/10-2921 identifying an always_comb variable written by another process. Whether candidate-only elaboration reproduces that strict-SV restriction remains a hypothesis. A separate prospective stage must freeze legal/conflicting strict-SV structures, the unexecuted ANSI exits, all budgets and stop rules; reuse unchanged positive evidence and preserve the ordinary-always blind spot. No other candidate factor is combined.
+
+All nine command receipts bind preexec birth, planned argv, stdout/source hashes, rc0 and reap. The stage failed its assertion with rc1. The guard recorded unchanged protected files/model and released its slot;44 recorded identities and FIFO runner/child were checked retired before release. External15.473786s covers child birth to exit/reap and owned cleanup but stops before final-artifact binding; it excludes preparation, observer exit and archive/transfer. The guard interval is15.802598s.
+
+A329-member private archive was verified against AMD originals and again locally; original raw files remain. Archive2c4c9d3936953f087a161dda0603ccafc34ba01beb8dc9c506c77bab0b39fb84; deliveryf5aeebdd853e2a8dafea1c5d2be69ab85bdc36562a9b45eb1f1f03acff8e1709; local verification28cd44ad4a3ec6a69da6ba861c18b14c5fcf4dc847ead3103aeb187763cca30c has identical AMD bytes. Benchmark source and judge logs stay private.
+
+No accuracy result was produced. Historical118/156 remains unbeaten; the full three-arm156, auditedRTLLM, important five samples and resource/interface/recovery objective remains incomplete.
+
+The following controlled-flow record remains valid within its original simulated scope.
+
 # Candidate-side static elaboration — controlled flow verified
 
 Status, 2026-10-08: twelve distinct simulated-flow scenarios verified on AMD. Not deployed, not a scoring run, not native-qualified. Source patch prepared on 2026-10-07 remains unchanged.
