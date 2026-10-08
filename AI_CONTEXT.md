@@ -1,3 +1,9 @@
+2026-10-08 08:48 +08:00：独立static elaboration原生前测FIFO117已按冻结首错停止，未获native或评分资格。5结构/10个C-P worker的原计划只完成6个worker：前5项符合预期，普通always @*与always @(posedge clk)共同写同一reg的P路径意外xvlog0/xelab0，没有触发repair；共6次xvlog+3次xelab、6次模拟首请求、真实模型0，两个ANSI结构均未执行。此反例否定“静态展开能拒绝任意组合/时序多驱动”的宽泛假设，不能改材料重跑或把原native5记为通过；已有12项模拟流程证据仍按原有限范围复用。summary ac2f4b60、source manifest8573e063、生产patch9b174d44/runtime c8d4a369/worker cdca09cb保持。
+
+原guard返回rc1，44记录身份及FIFO runner/child已核退休，模型与保护文件保持按原guard回执绑定，自有槽已释放；117现failed_released_after_inspection。外层15.473786秒仅child出生至退出回收与清理，失败在最终文件绑定前停止，不含observer自退出、准备或归档传输；guard区间15.802598秒不混同。329成员私有档案2c4c9d39已逐成员与AMD原物理/本地核验，交付f5aeebdd、LOCAL_VERIFY28cd44ad两端字节相同；原件与失败保留。详见03_analysis/agent_static_elaboration_20261007/PUBLIC_NATIVE_RESULT.json。一次只读归档路径误指sample/solution.v，在建目录前失败，按实际worker/solution.v更正并记录，无项目重跑。
+
+只读原A114留存candidate和日志确认其具体错误是always_comb变量被另一过程写入（VRFC10-3818/10-2921），原candidate含always_comb/always_ff；与本次普通always不同。严格SV过程的candidate-only检测仍是待独立检验假设，不把原judge错误当新原生通过。下一阶段需另冻严格合法/冲突结构、未执行ANSI出口及总预算/停止条件，保留普通always盲区，不混对方内部wire或其他因素。Issue6049779528已全文回读；本轮没有新评分或准确率增长，115的C112/P115原门拒绝、历史118及完整三臂156/RTLLM/重要五样本/资源接口恢复缺口保持。30分钟检查、12:00邮件、21:30远端排程与23:00本地停止不变。
+
 2026-10-08 08:24 +08:00：独立static elaboration的12项AMD模拟流程控制已完成（PR150），生产patch9b174d44/runtime c8d4a369/worker cdca09cb保持。首轮C_success通过后，P_success因控制预期漏算原extract末尾LF而停止；rc1和原件保留。只修正控制字节预期及失败记录，续跑其余11项全通过，复用首项不重跑。覆盖C原wire/不展开、P普通及声明修正出口、原一次repair与修正后candidate/当前diagnostics、两次请求耗尽，以及缺工具/timeout/launch/live group/源码变动立即停止。真实模型0/EDA0/FIFO0，未产生新准确率、native或评分资格。
 
 两次外层硬90秒含10秒清理预留，原失败.241648秒、后续成功.388594秒分别只涵盖各child出生至退出回收/受控清理（失败在最终结果绑定前停止）；不含准备、两次间隔、observer自退出或传输，observer已另核退休。356成员私有档案18ce649c已AMD原物理与本地全成员核验；实际交付99376df0、LOCAL_VERIFY bcbb36de两端同字节。首安装CRLF/LF断言在项目执行前更正，原CRLF补丁保留；不改生产或冒充重抽。详见03_analysis/agent_static_elaboration_20261007/PUBLIC_RESULT.json和README.md。
