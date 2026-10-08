@@ -1,0 +1,37 @@
+{
+  "schema": "static_elaboration_retained_development_coverage_v1",
+  "updated_at": "2026-10-08T01:11:17.436581+00:00",
+  "source_run_ticket": 115,
+  "source_summary_sha256": "a5cbf497cdca921461341eaba604c304c876a37cb6c7ec4dcd8d437121a46ebb",
+  "scope": "Read-only existing C156 compile receipts and final L0 diagnostic logs; no original project module or tool execution. Permanent development data. No reference/TB content opened.",
+  "control_levels": {
+    "3": 112,
+    "1": 39,
+    "0": 5
+  },
+  "original_C_requests": 167,
+  "compile_failed_tasks": 5,
+  "failure_categories": {
+    "testbench_interface_mismatch": 1,
+    "existing_xvlog_failure": 3,
+    "strict_sv_multidriver": 1
+  },
+  "strict_sv_opportunity_count": 1,
+  "strict_sv_source_sha256": "a5f70d2358057245a76ba616dbc3e5cd6d12b5ad1068959ee1daf7267c834751",
+  "first_round_compile_success_then_repair": {
+    "tasks": 4,
+    "final_L3": 4,
+    "candidate_only_elaboration_not_executed": true
+  },
+  "interpretation": "One known final-failure mechanism matches the bounded native controls. This is not a hard ceiling for a new generation run, not a measured repaired answer, and not seven new L3 needed to exceed historical118 from this C112. Final 39 L1 cases had judge compilation success; static elaboration is not evidence of functional repair. Interface mismatch requires separate prompt/interface-only reasoning, not use of TB diagnostics in production.",
+  "decision": "Retain as a bounded reliability component. Do not launch a standalone full156 score on the claim it can exceed118. Coordinate broader evidence-backed candidate coverage before freezing the next paid model screen; keep factor isolation and original gates until a prospective agreement.",
+  "new_model_calls": 0,
+  "new_EDA_calls": 0,
+  "new_FIFO_submissions": 0,
+  "accuracy_gain_measured": false,
+  "scoring_admission": false,
+  "full_goal_complete": false,
+  "files_read": 681,
+  "inventory_sha256": "72d19c7469d93c6857e0bb79118349129716fe77d30926434fd323e1067fc3ed",
+  "elapsed_readonly_s": 0.02310548722743988
+}

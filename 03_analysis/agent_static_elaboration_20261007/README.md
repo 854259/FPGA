@@ -1,3 +1,19 @@
+# Strict-SV/ANSI native controls passed; retained coverage is narrow
+
+Status, 2026-10-08 09:11 +08:00: FIFO120 completed four P-only native controls. PUBLIC_STRICT_RESULT.json binds the exact executed source d672fa37 / SHA176505a5, unchanged production patch, receipts and private archive. Strict separate writers pass; strict conflicting always_comb/always_ff writers fail xelab with VRFC10-3818/10-2921 and use the original repair. Both ANSI-corrected exits behave as frozen. No functional oracle was used.
+
+The stage consumed 8 xvlog and 6 xelab commands,6 simulated requests and0 real model calls. Together with117 this exhausts the original23 EDA/12 simulated request allowance. Ordinary C/P positives and12 simulated-flow scenarios are reused. The ordinary-always counterexample in117 remains a failed control, not a passed generic writer check.
+
+FIFO119 was rejected by guard argument parsing before any guard directory or stage existed:430 did not satisfy cap<480-60. After preserving source/logs and checking retirement, the ticket was released. Separate v2 uses415, leaves65 seconds of lease margin, and preserves fixtures, production and budgets. Only120 executed the four new controls. Child370/cleanup30/outer400/guard415/slot8min and tool60/worker300 were frozen before submission.
+
+All14 tool receipts bind birth, argv, source/stream hashes, rc and reap. The66 guard identities and FIFO roles were checked retired. Outer20.945413s includes child exit/reap, owned cleanup and final binding; guard21.070734s has a separate scope. The sum with117,36.419200s, excludes preparation, gaps, observer exit and archive/transfer. Synthetic xelab times are not a156-task cost forecast. The410-member archive21fa3189 is verified against AMD originals and locally; delivery77e8c1a8 and local verification992e8117 are retained on both sides.
+
+PUBLIC_COVERAGE.json records a read-only check of115's retained C156 development evidence. C has112 L3,39 L1 and5 L0. Three L0 cases already fail xvlog, one is a testbench-side interface mismatch, and one matches strict-SV multiple writers. Four first-round compilation successes later used the existing repair and ended L3; their intermediate candidate-only elaboration is unknown. No reference/TB content was opened, and no candidate was executed again.
+
+This identifies one known opportunity, not a hard ceiling for future generations or a successful repair. It does not support spending a standalone full156 run on a claim of exceeding118. Keep this as a bounded reliability component and coordinate broader candidate coverage before a prospective scoring freeze. No score, adoption, general writer proof or full acceptance follows from these controls. Scoring data, complete request/time budget and elaboration provenance remain required.
+
+The original117 negative result and older simulated controls below are historical evidence and remain unchanged.
+
 # Native result: ordinary-always counterexample retained
 
 FIFO117 stopped on its first unexpected result: five worker controls met their frozen expectations; the sixth, P ordinary multiple writers, did not. Six xvlog and three xelab commands ran, with zero real model calls. Both ANSI structures were not reached. PUBLIC_NATIVE_RESULT.json is the bounded result; the original native_controls.py and its failed expectations are retained unchanged.

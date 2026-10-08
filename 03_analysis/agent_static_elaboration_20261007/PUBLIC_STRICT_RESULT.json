@@ -1,0 +1,154 @@
+{
+  "schema": "strict_sv_ansi_native_bounded_v1",
+  "updated_at_utc": "2026-10-08T01:02:51.009622+00:00",
+  "status": "four_native_P_controls_passed_no_scoring_admission",
+  "source_commit": "d672fa3796a91915f7d3baa1b2f6a8219ad2e72f",
+  "source_sha256": "176505a58063ed457388c5f96532f868d61f16c3313dfd936941a442573a5ce4",
+  "source_manifest_sha256": "b27d539ec6b28908088721f43391a490426f677c258303fd06da622f9e62d8b6",
+  "plan_sha256": "1d92a63d3e017fdd14255fdd9e3c95d0dfa40a29c3691cb0bd353097645cfb0c",
+  "spec_sha256": "3b8c7ef2bf971d927a5f8f2987d7e759a70b137b42905428e57bcdcc4a2d69b5",
+  "summary_sha256": "c9fa21f351ff360c2b0d5d15bdeb72712ba97e7484c2fd16783dcbd7c6c314a3",
+  "production_patch_sha256": "9b174d44f91d64009e119a09cbe1322a20c6648a8bc533af2bf4d2825f8edac4",
+  "rows": [
+    {
+      "name": "strict_separate",
+      "passed": true,
+      "simulated_HTTP": 1,
+      "tool_codes": [
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "strict_conflict",
+      "passed": true,
+      "simulated_HTTP": 2,
+      "tool_codes": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "name": "ansi_valid",
+      "passed": true,
+      "simulated_HTTP": 1,
+      "tool_codes": [
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "ansi_invalid",
+      "passed": true,
+      "simulated_HTTP": 2,
+      "tool_codes": [
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        2,
+        3,
+        2,
+        1
+      ]
+    }
+  ],
+  "actual": {
+    "real_xvlog": 8,
+    "real_xelab": 6,
+    "real_model": 0,
+    "simulated_HTTP": 6,
+    "new_P_controls": 4,
+    "new_CP_pairs": 0
+  },
+  "total_with117": {
+    "EDA": 23,
+    "simulated_HTTP": 12,
+    "real_model": 0,
+    "original_117_failed": true
+  },
+  "result": "Strict-SV conflicting always_comb/always_ff writers fail candidate-only xelab with VRFC10-3818/10-2921 and use the original single repair. Separate writers pass. ANSI corrected valid and invalid exits behave as frozen.",
+  "limitation": "Original117 ordinary-always multiple-driver counterexample remains. Controls use synthetic responses and no functional oracle; no general writer proof, benchmark score or new C/P pairing.",
+  "rejected119": {
+    "EDA": 0,
+    "stage_invocations": 0,
+    "reason": "guard430 violates strict cap<slot480-60 at argument parsing before guard directory creation.",
+    "original_source_manifest_sha256": "1edf7a7ca5a526bcb6a7e3e21da282bc985aee5bfbe3a95b8e70cab6a28f2006",
+    "corrected": "Separate v2 guard415/slot8 leaves65s lease margin. Fixtures/production/budget unchanged.",
+    "state": "failed_released_after_inspection"
+  },
+  "ticket": 120,
+  "ticket_state": "completed",
+  "submission_sha256": "aa725930e2011d97488395ac1fc7f0336823e4f0e3b8bdd78d2543fd88e74d35",
+  "budget": {
+    "new_EDA_max": 14,
+    "aggregate_EDA_max": 23,
+    "new_simulated_HTTP_max": 6,
+    "aggregate_simulated_HTTP_max": 12,
+    "tool_s": 60,
+    "worker_s": 300,
+    "child_s": 370,
+    "cleanup_reserve_s": 30,
+    "outer_s": 400,
+    "guard_s": 415,
+    "slot_minutes": 8
+  },
+  "timing": {
+    "external_s": 20.94541348144412,
+    "guard_s": 21.070733519271016,
+    "sum117_and120_external_s": 36.41919975914061,
+    "xelab_seconds": [
+      1.2143581304699183,
+      1.179025236517191,
+      1.2144241109490395,
+      1.2126893904060125,
+      1.1763479728251696,
+      1.214868389070034
+    ],
+    "scope": "Separate child-birth through exit/reap, cleanup and final binding; original117 fails before final binding. Excludes setup, gaps, observer exit and archive/transfer. Not full wall time."
+  },
+  "terminal": {
+    "external_sha256": "1a3b9d3a343ab767d05c71717023ac57bdee4a9ef6c62bd728b92d713462f0dd",
+    "guard_sha256": "8999c9cb0d75a25d203013007178253ac7241a309dd5456e3dff8567a8a294eb",
+    "guard_identities": 66,
+    "recorded_identities_retired": true,
+    "slot_released": true,
+    "model_unchanged_recorded": true,
+    "protected_files_unchanged_recorded": true
+  },
+  "native_qualified_scope": "These four strict-SV/ANSI candidate elaboration controls only, reusing117 ordinary C/P and12 simulated-flow evidence.",
+  "scoring_qualified": false,
+  "accuracy_gain_measured": false,
+  "next": "Use retained development diagnostics to assess mechanism coverage and freeze comparable scoring inputs, request/time budget and elaboration provenance before any model screen. Do not repeat controls or combine peer factors without a new prospective plan.",
+  "evidence": {
+    "root": "/workspace/team/activity/fpga_teammate/artifacts/static-elaboration-strict4-complete-20261008-v1",
+    "members": 410,
+    "archive_sha256": "21fa318941a6cb70ff0fd191462021f0cdfd9648584014337fb653b914ee58ec",
+    "manifest_sha256": "3a45e7181ea7a42cb96bc0c0bb8e2039d83312cdb6de79b432835c25f1f2da8c",
+    "archive_bytes": 416299
+  }
+}
