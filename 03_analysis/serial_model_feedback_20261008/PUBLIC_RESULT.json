@@ -1,0 +1,56 @@
+{
+  "schema": "serial_model_feedback_prepared_public_v1",
+  "status": "static_review_complete_native_controls_pending",
+  "model_generated_rtl_required": true,
+  "factor": "Complete serial protocol prompt -> finite testbench -> actual model RTL observations -> original one-repair feedback; never emits a DUT.",
+  "source_hashes": {
+    "serial_feedback.py": "a692ee1a8e2c409ae7c6421b9a3916e4a989fba89dd20c6c4d87b293bc3e23b3",
+    "controls.py": "aef535d977b9d911829e6784454842cd3dd89f517820d44d735be6d743ac489f",
+    "test_serial_feedback.py": "bd17cdddd9b83f52216b669da550ea260e5902573cb9271a2917954be2644ea2",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "fixtures/late_stop_mutant.sv": "73fd6bcdbcae101788fec3b21d06ec8068e28f4eae8eb4c827e10a96aaf0b699",
+    "fixtures/positive.sv": "b65e1f56a2d1a6cad7420be9ad43878b3eb54befcb5a0fd59891ee50c3425257",
+    "fixtures/reversed_data_mutant.sv": "67c483dfc3cb2875bec325656c9902e1593db739dbfc2ada0db5f3187d60665d",
+    "fixtures/unknown_done_mutant.sv": "3f59a6973b4626fa9df038ae951e7685e690e81c45011028b125b3e5b45371ac"
+  },
+  "source_manifest_sha256": "7542e83863a89216e62bc561643f3504734752028f5d8c32dfb741fe342696a2",
+  "run_spec_sha256": "552233d8e0afd5870fb092232362293d39c655cf36ff60181bdd2eefc0f30b38",
+  "native_controls": {
+    "queued": false,
+    "executed": false,
+    "passed": null,
+    "pure_tests": 8,
+    "simulated_worker_flows": 3,
+    "simulated_http_max": 4,
+    "real_model_max": 0,
+    "real_eda_max": 12,
+    "tool_cap_s": 60,
+    "stage_cap_s": 900,
+    "guard_cap_s": 1000,
+    "slot_minutes": 18
+  },
+  "existing_model128": {
+    "evidence_valid": true,
+    "C_L3": 4,
+    "P_L3": 4,
+    "C_weighted": 0.6,
+    "P_weighted": 0.6,
+    "C_requests": 8,
+    "P_requests": 8,
+    "diagnostic_promising": false,
+    "audit_sha256": "454a6071a460f0fc77897bc305c3938321a632e176c55be00481e2ce283aa345",
+    "complete_archive_sha256": "b28280e2a09d23e05c71cd25caf34925ed195a4b63f1ae0732136c8d3cf17cdf",
+    "all_archive_members_verified_on_E": true,
+    "adopted": false
+  },
+  "scope_limits": [
+    "Only exact fully consumed protocol text is supported.",
+    "Finite traces do not establish general protocol equivalence or unseen-task gain.",
+    "Synthetic controls are not model accuracy measurements.",
+    "Native X output control; Z comparison is supported but lacks a separate native control.",
+    "Original ANSI declaration-fix early return can bypass feedback."
+  ],
+  "next": "Queue native qualification after peer129 by whole-task FIFO. If qualified, use prompt-only intake and a fresh model comparison, then decide whether full156 is justified.",
+  "full_goal_complete": false,
+  "score_improvement_claimed": false
+}

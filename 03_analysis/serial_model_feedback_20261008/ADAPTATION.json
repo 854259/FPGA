@@ -1,0 +1,19 @@
+{
+  "original_worker_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+  "paired_sha256": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+  "probe_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+  "bounded_sha256": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+  "contract_origin": "Reuse only the complete prose grammar from table_history_cp8_integration_20261008/serial_framing_producer.py; no DUT emitter/import.",
+  "control_adaptation": "Adds resource-check forwarding and source validation. Existing bounded executor wraps each native command; existing guard owns the stage. No executor implementation changed.",
+  "public_files": [
+    "serial_feedback.py",
+    "controls.py",
+    "test_serial_feedback.py",
+    "reserved_keywords.py",
+    "fixtures/late_stop_mutant.sv",
+    "fixtures/positive.sv",
+    "fixtures/reversed_data_mutant.sv",
+    "fixtures/unknown_done_mutant.sv"
+  ],
+  "packet_source_count": 27
+}
