@@ -1,0 +1,100 @@
+{
+  "schema": "framing115_completed_development_result_v1",
+  "updated_at": "2026-10-08T07:57:53.934795+08:00",
+  "ticket": 115,
+  "run_spec_sha256": "dbce8beb5342fe590078dd8eafb29a4d762575a58db2599cab9942f453331c4b",
+  "summary_sha256": "a5cbf497cdca921461341eaba604c304c876a37cb6c7ec4dcd8d437121a46ebb",
+  "scope": "156 previously seen development tasks, one C/P output per task. No independent or five-sample claim.",
+  "completed_outputs": 312,
+  "source_files": 120,
+  "L3": {
+    "C": 112,
+    "P": 115
+  },
+  "L3_rate": {
+    "C": 0.717948717948718,
+    "P": 0.7371794871794872
+  },
+  "weighted": {
+    "C": 0.7679487179487179,
+    "P": 0.7833333333333333
+  },
+  "requests": {
+    "C": 167,
+    "P": 166,
+    "total": 333,
+    "cap": 624
+  },
+  "paired_L3": {
+    "both": 112,
+    "P_only": 3,
+    "C_only": 0,
+    "neither": 41,
+    "descriptive_exact_McNemar_p": 0.25
+  },
+  "generation_routes": {
+    "C": {
+      "model": 156
+    },
+    "P": {
+      "model": 154,
+      "mechanical_serial_framing": 2
+    }
+  },
+  "improvements": {
+    "mechanical": 2,
+    "model": 1
+  },
+  "paired_grade_regressions": 0,
+  "historical_correct_failures": 3,
+  "historical_failures_same_solution_both_arms": true,
+  "historical_correct_cost_increases": 1,
+  "cost_note": "One historically correct model-route task improves L1 to L3 but uses C1/P2 calls; the original historical per-task cost gate fails. Total cost falls by one.",
+  "first_reply_pairs": {
+    "identical": 153,
+    "different": 1,
+    "not_applicable_mechanical": 2
+  },
+  "stage_elapsed_seconds": 15720.059529464692,
+  "stage_elapsed_scope": "Scoring stage only, not complete external archive/transport closure.",
+  "historical_best_L3": 118,
+  "exceeded_historical_best": false,
+  "goal_thresholds_met": false,
+  "adoption": false,
+  "screening_eligible": false,
+  "audited_full156_evidence_valid": true,
+  "original_terminal_pending": false,
+  "terminal": {
+    "original_collector_calls": 0,
+    "compatible_collector_calls": 1,
+    "original_auditor_calls": 0,
+    "compatible_auditor_attempts": 2,
+    "failed_attempts": 1,
+    "successful_attempts": 1,
+    "changes": "Separate copies correct preparation receipt filename, obsolete 8-task assertion, entrypoint source resolution, and strictly bind inherited CP8 dependency path to unchanged hashes/current dependencies. Frozen experiment and all scoring/gates unchanged.",
+    "failure": "First compatible audit rc1 at inherited environment dependency path equality. Original stream and failed terminal retained; collector/archive reused.",
+    "audit_sha256": "c6d6b0486c1e76a6ba2e5f6e254604c41cf64858154a106785561c82e1651271",
+    "archive_sha256": "c55ad21e52b1b69cd49656349e7e55482f8442d5c23b7b1934e2bc0dd93f6e44",
+    "archive_bytes": 117188645,
+    "archive_members": 11990,
+    "every_member_bound_to_AMD_original": true,
+    "followup_receipt_sha256": "97510f39583cc6d6fea0bd0b9287cd997a0d00760602f7b267aa3d0f4ddcdeee",
+    "external_receipt_sha256": "68573d7259789d8b5cf415b422d58cf636fedbb71d38f533a289005af223587e",
+    "failed_attempt_external_seconds": 12.888389058411121,
+    "followup_external_seconds": 8.406372006982565,
+    "external_scope": "Each separate terminal child through actual exit/reap, owned-tree cleanup and final reads. Excludes observer serialization/exit, preparation, time between attempts, and SSH/local transfer.",
+    "observers_independently_retired": true,
+    "original_guard_identities_checked_retired": 11240
+  },
+  "new_execution": {
+    "model": 0,
+    "eda": 0,
+    "scoring": 0,
+    "fifo": 0
+  },
+  "decision": "Reject this factor under original gates; retain bounded two-case component benefit. No resampling or same-factor repeat to seek a new best.",
+  "full_inclusive_acceptance_complete": false,
+  "independent_unseen_tasks": 0,
+  "effective_independent_family_N": null,
+  "next": "Independent static-elaboration mechanism remains separate and not native-qualified. Peer owns lexical-boundary work; no factor mixing. Full three-arm156, audited RTLLM, five-sample and resource/interface/recovery acceptance remain outstanding."
+}
