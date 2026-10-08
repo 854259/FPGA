@@ -30,8 +30,9 @@ def shared_helper():
 
 def protected_receipts(run, spec):
     groups = read(run/'raw_evidence/PROTECTED_GROUPS_CAPTURE.json')
-    assert len(groups['groups']) == spec['protected_group_count'] == 22
-    assert groups['source_assets'] == spec['protected_source_assets'] == 1425
+    assert sha(run/'raw_evidence/PROTECTED_GROUPS_CAPTURE.json') == spec['protected_groups_capture_sha256']
+    assert len(groups['groups']) == spec['protected_group_count']
+    assert groups['source_assets'] == spec['protected_source_assets']
     assert sum(len(item['source_hashes']) for item in groups['groups'].values()) == groups['source_assets']
     expected_groups = {name: dict(spec_sha256=item['spec_sha256'],
         source_hashes=item['source_hashes'], source_assets=len(item['source_hashes']))
@@ -165,7 +166,6 @@ def mechanical_provenance(work, run, task, row, result, cloud_work, runner, pars
 
 
 def audit(archive,out,spec_sha):
-    raise RuntimeError('Comparison archive admission is not frozen; route helpers are preparation only')
     assert sys.version_info[:2]==(3,12)
     assert not out.exists()
     shared=shared_helper()
@@ -175,7 +175,7 @@ def audit(archive,out,spec_sha):
         root=Path(tmp);manifest=shared.unpack(archive,root);run=root/'run'
         assert sha(run/'RUN_SPEC.json')==spec_sha==manifest['run_spec_sha256']
         spec=read(run/'RUN_SPEC.json');report=read(run/'results/summary.json')
-        for name in ['audit.py','metrics.py','upstream/replay.py']:
+        for name in ['audit.py','metrics.py','prepare.py','upstream/replay.py']:
             assert sha(here/name)==spec['source_hashes'][name]
         assert spec['schema']=='table_parent_vector_full156_frozen_v1' and spec['arms']==['C','P']
         assert len(spec['task_ids'])==156
@@ -185,6 +185,8 @@ def audit(archive,out,spec_sha):
         assert report['complete'] and report['passed'] and report['spec_sha256']==spec_sha
         assert report['first_generation_replayed'] is False
         for n,h in spec['source_hashes'].items():assert sha(run/n)==h,n
+        preparation=load('comparison_sealed_preparation',run/'prepare.py')
+        preparation.validate_authorization(run,spec)
         for n,h in spec['dependency_hashes'].items():assert sha(root/'dependencies'/n)==h,n
         assert 'SOURCE_FACTOR_PROOF.json' in spec['source_hashes']
         proof=load('table_sealed_source_proof',run/'factor_proof.py')
@@ -258,10 +260,10 @@ def audit(archive,out,spec_sha):
             assert row==read(sample/'row.json')
             command=read(sample/'worker_command.json');shared.command(command,sample/'worker.log',allow_timeout=True)
             assert row['solve_deadline_reached']==command['timeout'] and row['solve_elapsed_s']==command['elapsed_s']
-            assert PurePosixPath(command['argv'][2]).name=='worker.py'
+            assert PurePosixPath(command['argv'][2]).name=='pilot.py' and command['argv'][3]=='worker'
             cloud=PurePosixPath(spec['cloud_root'])
             sample_cloud=cloud/'results/samples'/arm/task
-            assert command['argv'][1:]==['-B',str(cloud/'worker.py'),'--out',str(sample_cloud/'worker'),
+            assert command['argv'][1:]==['-B',str(cloud/'pilot.py'),'worker','--out',str(sample_cloud/'worker'),
                 '--task',task,'--arm',arm,'--kit',spec['kit'],'--resource-check',str(cloud/'guard/resource_check.json')]
             judge_command=read(sample/'judge_command.json')
             assert judge_command['argv'][1:]==['-B',str(cloud/'pilot.py'),'judge','--task',task,
