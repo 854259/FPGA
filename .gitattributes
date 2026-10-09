@@ -146,3 +146,6 @@ Dockerfile text eol=lf
 # Preserve this frozen adaptation receipt byte-for-byte.
 03_analysis/history_wave_recovery_score5_20261008/GENERATION_ADAPTATION.json -text -whitespace
 03_analysis/history_wave_recovery_score5_20261008/PREPARE_ADAPTATION.json -text -whitespace
+
+# Match the byte hashes of the separately verified AMD checker preparation.
+03_analysis/onehot_model_feedback_20261009/** -text -whitespace
