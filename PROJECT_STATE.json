@@ -1,8 +1,8 @@
 {
   "fifo_wait_recovery_20261009": {
   "schema": "owned_fifo_wait_recovery_20261009_v1",
-  "updated_at": "2026-10-09T15:50:00+08:00",
-  "status": "controls_verified_recovery_plan_frozen_watcher_not_started",
+  "updated_at": "2026-10-09T15:54:00+08:00",
+  "status": "controls_verified_conditional_watcher_running_no_recovery_triggered",
   "problem": {
     "fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
     "waiting_lifetime_seconds": 86400,
@@ -81,8 +81,21 @@
       "134": 31
     },
     "watch_expires": "2026-10-09T22:00:00+08:00",
-    "watcher_started": false,
-    "real_recovery_triggered": false
+    "watcher_started": true,
+    "real_recovery_triggered": false,
+    "watcher": {
+      "pid": 3955844,
+      "starttime": "880603628",
+      "command_sha256": "a2557f7d0204e07506c3eb76a1ee93ad205c215efabda81162d6c7f7c8f22db3",
+      "sid": 3955844,
+      "plan_sha256": "6283f2bebf2ed3d9bd6f4a3ee222927f5717589a4fdb6159e235f5fad8d8d4fb",
+      "source_commit": "c1525ed2b2b23beff8614b0b7c2d1a2ae16cfd19",
+      "started_at_utc": "2026-10-09T07:53:06.856903+00:00",
+      "watcher_started": true,
+      "real_recovery_triggered": false,
+      "tickets_unchanged": true
+    },
+    "detached_ppid1_verified": true
   },
   "collaboration": {
     "risk_issue": "https://github.com/854259/FPGA/issues/7#issuecomment-6076534686",
@@ -97,7 +110,7 @@
   "formal_score_gain": false,
   "full_goal_complete": false,
   "selection": "Official total score; model-generated design and unchanged current experiment freezes.",
-  "next": "After source/PR review, launch bounded detached condition watcher for owned133134. Any actual132 failure still requires independent original exit/resource inspection; recovery cannot skip it."
+  "next": "Follow original132 at the existing 30-minute cadence and inspect this original watcher at meaningful state changes. Original133134 recover only after exact natural waiting timeout and retirement; inspect actual132 failure separately. Do not launch another watcher or ticket."
 },
   "queue_prefix_digest_20261009": {
   "schema": "queue_prefix_digest_review_v1",
