@@ -1,3 +1,11 @@
+## 2026-10-09 原135/136续等已实际完成，等待恢复watcher正常结束
+
+实际原135于21:10:36、136于21:33:06恢复queued；新monitor分别4175420/start882508578、4187849/start882643583，同原命令、父1及独立pgid/sid。仅原等待24小时到限且从未执行、旧monitor自然退休后续等，票号/先到先得顺序/命令/预算保持；39/71份冻结源均相符，无task日志、guard或queue/native_results。原失败票字节保存在各一次INTENT，实际RESULT与WATCH_RESULT d7ce736d一致。原watcher3966482已Z退休且无WATCH_FAILURE，不能再启动它。
+
+实际闭合只读档案在 `/workspace/team/activity/fpga_owner/artifacts/fifo135136-wait-recovery-closeout-20261009-v1`：REVIEW80bcb975、MANIFESTf4111305、17成员EVIDENCE1d310529，AMD原物理文件与E盘私有档案逐件hash核验。原PLAN0f826664、wrapper da01ab8c、共享core69230505及模型/STATUS/SNAPSHOT保持；旧控制未重跑，0模型/EDA/新评分票。后续终态收集必须绑定实际恢复收据的新monitor身份；这不是135/136评测已执行或完成。
+
+132仍独立运行；133/134由队友负责且已有实际续等闭合。完整提分目标未达，下一步接原132–136真实对照结果再选一个能力因素。下方保留历史快照。
+
 2026-10-09 21:15 +08:00：原133/134等待恢复已实际完成并核验，替代此前“尚未触发”的当前状态。原monitor各自自然24h到限，精确TimeoutError失败票与一次INTENT均保留；原133于20:46:07、134于21:10:07恢复queued。新唯一monitor为4161723/start882361698及4175417/start882505704，原任务字段、45个冻结文件保持，无started/runner/child或guard。两旧monitor与原watcher3955844已退休，WATCH_RESULT完整；只恢复等待监控，原133 native与134模型比较仍未执行，模型/EDA/新票/旧控重跑均0。后续跟实际新身份，不再启动已完成watcher。
 
 15成员/19709B私有档案f569e7e9已AMD与本地逐成员核验，review4cd25bd3；本地位于05_handoff/independent_validation_20261004/waveform_resource_fix_20261006/fifo_wait_recovery133134/production_recovery，仅保留EVIDENCE.zip与LOCAL_VERIFY.json，无解包/缓存。详见03_analysis/helper_extraction_20261004/FIFO_WAIT_RECOVERY_20261009.json。135/136及第二等待窗仍peer持有；原132总48h上限10-10 20:09:54与独立watcher保持，21:12同身份running、1609/2340封存只是过程。
