@@ -33,11 +33,70 @@ class DeploymentShellTests(unittest.TestCase):
         path = SERVE if service else ACCEPT
         marker = '# ---- 首次启动 ----' if service else '# ---------------------------------------------------------------- main'
         prefix = path.read_text(encoding='utf-8').split(marker)[0]
-        result = subprocess.run([BASH, '-s'], input=prefix + '\n' + code,
+        command = [BASH, '-s']
+        if service:
+            script = self.work / 'copied package/serve/serve_all.sh'
+            script.parent.mkdir(parents=True, exist_ok=True)
+            script.write_text(prefix + '\n' + code, encoding='utf-8')
+            command = [BASH, str(script)]
+        result = subprocess.run(command, input=None if service else prefix + '\n' + code,
                                 text=True, encoding='utf-8', capture_output=True,
                                 env=self.env, timeout=25)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         return result.stdout
+
+    def test_relocated_and_explicit_legacy_entries_start_the_bound_runtime(self):
+        for legacy in (False, True):
+            with self.subTest(legacy=legacy):
+                root = self.work / ('legacy project' if legacy else 'copied package')
+                runtime = root / ('submission/agent/runtime.py' if legacy else 'agent/runtime.py')
+                runtime.parent.mkdir(parents=True, exist_ok=True)
+                receipt = self.work / ('legacy.json' if legacy else 'relocated.json')
+                runtime.write_text('import json, os, pathlib, sys, time\n'
+                                   'pathlib.Path(os.environ["ENTRY_RECEIPT"]).write_text(json.dumps({'
+                                   '"pid":os.getpid(),"cwd":os.getcwd(),"argv":sys.argv,'
+                                   '"starttime":pathlib.Path("/proc/self/stat").read_text().rsplit(")",1)[1].split()[19]}))\n'
+                                   'time.sleep(0.2)\n', encoding='utf-8')
+                self.env.pop('KIT', None)
+                if legacy:
+                    self.env['KIT'] = str(root)
+                self.env['ENTRY_RECEIPT'] = str(receipt)
+                self.shell('''
+port_is_free() { return 0; }
+remember_pid() { printf '%s\n' "$1" > "$2"; }
+agent_state() { [ -s "$ENTRY_RECEIPT" ]; }
+start_agent || exit 10
+wait "$(cat "$AGENT_PIDFILE")" || exit 11
+''', service=True)
+                record = json.loads(receipt.read_text())
+                self.assertEqual(record['cwd'], str(root.resolve()))
+                self.assertEqual(record['argv'], [str(runtime.resolve()), 'serve', '--port', '7860'])
+                self.assertEqual(record['pid'], int((self.work / 'agent-serve.pid').read_text()))
+                self.assertFalse(Path('/proc', str(record['pid'])).exists())
+                print(json.dumps({'case': 'legacy' if legacy else 'relocated',
+                                  'record': record, 'wait_rc': 0, 'retired': True}))
+
+    def test_missing_packaged_runtime_exits_before_any_service_probe(self):
+        script = self.work / 'absent package/serve/serve_all.sh'
+        script.parent.mkdir(parents=True)
+        script.write_text(SERVE.read_text(encoding='utf-8'), encoding='utf-8')
+        commands = self.work / 'fakebin'
+        commands.mkdir()
+        marker = self.work / 'unexpected-probe'
+        curl = commands / 'curl'
+        curl.write_text('#!/bin/sh\ntouch "$PROBE_MARKER"\nexit 97\n', encoding='utf-8')
+        curl.chmod(0o755)
+        self.env.pop('KIT', None)
+        self.env.update(PATH=str(commands) + os.pathsep + os.environ['PATH'], PROBE_MARKER=str(marker))
+        result = subprocess.run([BASH, str(script)], cwd=self.work, env=self.env,
+                                capture_output=True, text=True, timeout=5)
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn('runtime 不存在', result.stdout)
+        self.assertFalse(marker.exists())
+        self.assertFalse((self.work / 'llama-server.pid').exists())
+        self.assertFalse((self.work / 'agent-serve.pid').exists())
+        print(json.dumps({'case': 'missing_runtime', 'returncode': result.returncode,
+                          'probe_called': False, 'service_started': False}))
 
     def fake_judge(self):
         judge = self.work / 'fake_judge.py'
