@@ -427,14 +427,22 @@ def compiler_feedback(stdout):
     # Repeated errors at different lines can crowd other failing signals out of
     # the repair request. Keep the first original line for each message/file,
     # with errors ahead of warnings. The complete compiler log stays untouched.
+    def identity(line):
+        location = re.search(r' \[([^\]\r\n]+):\d+\]$', line)
+        return (line[:location.start()], location[1]) if location else (line, '')
+
     unique, seen = [], set()
     for line in lines:
-        location = re.search(r' \[([^\]\r\n]+):\d+\]$', line)
-        key = (line[:location.start()], location[1]) if location else (line, '')
+        key = identity(line)
         if key not in seen:
             seen.add(key)
             unique.append(line)
     critical = [s for s in unique if re.match(r'^\s*(?:ERROR|FATAL):', s)]
+    # A long log alone is not a reason to alter a successful repair request.
+    # Preserve its original prefix if every distinct critical fact is visible.
+    visible = {identity(s) for s in original[:2048].splitlines()}
+    if all(identity(s) in visible for s in critical):
+        return original[:2048]
     other = [s for s in unique if not re.match(r'^\s*(?:ERROR|FATAL):', s)]
     selected, size = [], 0
     for line in critical + other:

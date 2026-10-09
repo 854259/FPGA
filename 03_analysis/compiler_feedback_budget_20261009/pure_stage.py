@@ -74,7 +74,16 @@ class DiagnosticControls(unittest.TestCase):
     def test_repeated_locations_keep_first_original_line(self):
         errors = ['ERROR: [VRFC 10-1280] non-register v [/tmp/a.sv:' + str(i) + ']' for i in range(80)]
         answer = runtime.compiler_feedback('\n'.join(errors))
-        self.assertEqual(answer, errors[0])
+        self.assertEqual(answer, '\n'.join(errors)[:2048])
+
+    def test_long_log_with_visible_critical_facts_is_unchanged(self):
+        error = 'ERROR: [VRFC 10-1280] non-register result [/tmp/a.sv:1]'
+        log = '\n'.join([error] + ['WARNING: other context ' + str(i) for i in range(150)])
+        self.assertEqual(runtime.compiler_feedback(log), log[:2048])
+
+    def test_long_warning_only_log_is_unchanged(self):
+        log = '\n'.join('WARNING: width context ' + str(i) for i in range(150))
+        self.assertEqual(runtime.compiler_feedback(log), log[:2048])
 
     def test_single_huge_error_is_bounded(self):
         error = 'FATAL: ' + 'x' * 3000
@@ -111,6 +120,8 @@ with patch.object(subprocess, 'Popen', forbidden), patch.object(subprocess, 'run
             assert len(feedback) <= 2048
             if len('\n'.join(lines)) <= 2048:
                 assert old_feedback == feedback
+            if name == 'run/results/samples/P/Prob140_fsm_hdlc/worker/compile_receipts/0/owned_compile.log':
+                assert feedback == old_feedback
             if feedback != old_feedback:
                 changed.append(dict(member=name,old_sha256=sha(old_feedback.encode()),new_sha256=sha(feedback.encode())))
             replays.append(dict(member=name,input_sha256=sha(text.encode()),changed=feedback != old_feedback))
@@ -178,6 +189,7 @@ assert all(sha((ROOT / n).read_bytes()) == h for n, h in manifest.items())
 summary = dict(passed=True,tests=result.testsRun,retained_log_replays=len(replays),changed_diagnostics=changed,
     source_hashes_held=True,original_archive_sha256=archive_hash,retained_hashes=bindings,
     actual_worker_simulated_requests=2,actual_worker_simulated_compiler_calls=2,
+    retained_successful_repair_diagnostic_exact=True,
     first_request_exact=True,repair_request_only_diagnostics_changed=True,
     recovered_failing_signal_count=2,new_model_calls=0,new_eda_calls=0,new_fifo_tickets=0,
     original_runtime_other_AST_unchanged=True,score_measured=False,adoption=False,
