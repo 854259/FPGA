@@ -1,4 +1,123 @@
 {
+  "full132_wall48h_20261009": {
+  "schema": "full132_total48h_authorized_amendment_v1",
+  "updated_at": "2026-10-09T18:29:20+08:00",
+  "status": "verified_controls_and_detached_watcher_deployed_continuation_not_triggered",
+  "user_request": "能调整成48h吗",
+  "scope": {
+    "ticket": 132,
+    "original_total_seconds": 129600,
+    "authorized_total_seconds": 172800,
+    "deadline_beijing": "2026-10-10T20:09:54.455768+08:00",
+    "last_row_admission_boundary_beijing": "2026-10-10T19:58:44.455768+08:00",
+    "samples": 2340,
+    "max_reserved_calls": 3900,
+    "unchanged": [
+      "model identity",
+      "candidate/baseline/input hashes",
+      "five samples per task and arm",
+      "per-row budgets",
+      "FIFO ticket/order",
+      "completed samples and original logs"
+    ],
+    "time_extension_only": true
+  },
+  "implementation": {
+    "source_commit": "dfc4bec07e24a78d981d7451c522c212bf2a3570",
+    "source_sha256": "0d36b36d277b497b5afde829443b95f6f861a3c7667c2e0316dbff426c35fc65",
+    "test_sha256": "a9724ca093bcf305498bc509a708f3d787af25c43966ca13aa3740d39c4f4eba",
+    "original_plan_sha256": "c85226725bab88c08503cd9feda393378ef17c491fabebec4bea0abd930d954c",
+    "original_spec_sha256": "b499f6c16fa91868ca7ba60a168929204f02d5b0e164f5ade776a65983aa5c5d",
+    "original_queue_sha256": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de",
+    "amended_advance_sha256": "55cdf28affe4ed3e2475cb18b6ff95884123c620966c93e1e390839f437dae1a",
+    "mechanism": "Keep original live sources/PLAN unchanged. After exact original wall-budget exit and complete retirement/resource/prefix verification, preserve failed ticket and once intent, let unchanged original FIFO adopt a fresh original guard on ticket132, then run only the unstarted suffix using one explicit loaded advance budget substitution.",
+    "ordinary_failure_bypassed": false,
+    "unknown_launch": "Preserve may_continue and never rollback or automatically retry."
+  },
+  "validation": {
+    "amd_only": true,
+    "core_checks": 20,
+    "model_identity_delta_checks": 4,
+    "old_controls_rerun": false,
+    "real_original_fifo_synthetic_adoption": true,
+    "fake_row_dispatches": 1,
+    "model_calls": 0,
+    "eda_commands": 0,
+    "new_production_fifo_submissions": 0,
+    "core_plan_sha256": "5111215ab0d18c91e8293c1b9971383245152588f74832db8a01d17f41fc8f34",
+    "core_result_sha256": "df7590874e946439ea1341bb150f302751a0506b54c65c4345ea361720d5e9d6",
+    "core_process_sha256": "a5b480041cd633cd7c4bb9c63efa8354e6afed2fdc80553422b22f3a00eaead8",
+    "identity_plan_sha256": "4bf1f6d405a35547fedd31e219ace47ce5eaed4813c867e89e878db8df86340e",
+    "identity_result_sha256": "b8c41cfa2d79e87ec659c82a105804588650a5401169557947ac0280c53747e1",
+    "identity_process_sha256": "e89070dcc26574fa8dec5f68b14dcf4346b206636b073cbcd5ef4242235b03b8",
+    "child_pids": [
+      4048695,
+      4048696,
+      4050419
+    ],
+    "all_children_retired": true,
+    "child_elapsed_s": [
+      0.9903742410242558,
+      0.2608746010810137
+    ],
+    "time_scope": "Child birth gate through wait/reap/owned cleanup and stream read only; excludes setup, observer exit, archiving and transfer."
+  },
+  "deployment": {
+    "root": "/workspace/team/runs/fpga_teammate/full132_total48h_continuation_20261009_v1",
+    "plan_sha256": "d003f8050986aa963fd4e338f436eb608bb0ea5ee0fa629f3d983e4256d316c2",
+    "frozen_files": 39,
+    "watcher": {
+      "pid": 4053997,
+      "starttime": "881538083",
+      "command_sha256": "466975594dd5e70f03f4e01253ee3128617ca7e640c989c4d503fc7a71d5fa77",
+      "observed_state": "S",
+      "observed_ppid": 1,
+      "pgid": 4053997,
+      "sid": 4053997
+    },
+    "submission_sha256": "7026080793c95061c9e63b9457cb40264b428ada901eca02faeffc5ed63ed0ee",
+    "watch_intent_sha256": "58ae23f981d7ad228a23da280e071e06c4cb3139da5243e81a76698c4f156479",
+    "original_ticket_unchanged": true,
+    "resume_intent_absent": true,
+    "watch_failure_absent": true,
+    "do_not_launch_again": true
+  },
+  "terminal": {
+    "binding_sha256": "5bc201e092313dbc5b361bce2122599bb0d3550a67fd41270b0ec86a99d358f0",
+    "reader_unchanged": true,
+    "reader_executed": false,
+    "full2340_required": true,
+    "adopted_returncode": null,
+    "success_requires": "Bound adopted ticket completed AND new guard complete/passed/stage_rc0/verified cleanup/model/protected/slot/idle AND actual roles retired AND all original2340 receipts verified. Original normal rc0 path remains accepted. Use original exclusive READ_INTENT and bounded180s once reader.",
+    "elapsed": "Report actual original start through final completion including any handoff gap; retain both original36h PLAN and explicit48h amendment."
+  },
+  "evidence": {
+    "zip_sha256": "945002671fcf92bcd0c5e09593ccbd201f5d04d64575a9babc2b0080d1a1e00b",
+    "zip_bytes": 366221,
+    "members": 561,
+    "all_members_verified_on_amd_and_local": true,
+    "local_verify_sha256": "33b6babaa120ac97dbf428bf007ea95c8d33828e4b6b371534d60b652e510cb2",
+    "removed_new_empty_control_dirs": 19,
+    "no_new_cache": true,
+    "private_raw_in_git": false
+  },
+  "coordination": {
+    "issue_comment": "https://github.com/854259/FPGA/issues/7#issuecomment-6079121988",
+    "full_readback_verified": true,
+    "peer135136_owner_unchanged": true,
+    "existing_wait_recovery_watchers_unchanged": true,
+    "peer_second_wait_window_risk_notified": true,
+    "official_total_score_priority": true,
+    "complete_goal_achieved": false
+  },
+  "limitations": [
+    "Production suffix continuation has not yet triggered; deployment is not a completed evaluation.",
+    "48h is a total safety cap, not a guaranteed completion time.",
+    "Any genuine failure or unconfirmed row stays held; no sample replay.",
+    "Formal32GB/container/complete RTLLM and overall acceptance remain pending."
+  ]
+},
+
   "fifo_wait_recovery_20261009": {
   "schema": "owned_fifo_wait_recovery_20261009_v1",
   "updated_at": "2026-10-09T15:54:00+08:00",
