@@ -18067,5 +18067,63 @@
       "ownership": "Peer132/133/134; owner135/136 and semantic review",
       "new_tickets": 0
     }
+  },
+  "run132_frozen_window_sensitivity_20261009": {
+    "scope": "Timing feasibility sensitivity only; no score, selection or guaranteed ETA",
+    "observed_beijing": "2026-10-09T14:18:36.331455+08:00",
+    "sealed_outputs": 1226,
+    "total_outputs": 2340,
+    "remaining_outputs": 1114,
+    "elapsed_seconds": 65321.87568688393,
+    "frozen_queue_wall_seconds": 129600,
+    "frozen_queue_deadline_beijing": "2026-10-10T08:09:54.455768+08:00",
+    "remaining_frozen_window_seconds": 64278.12431311607,
+    "required_remaining_outputs_per_hour": 62.391366314055155,
+    "observed_whole_run_outputs_per_hour": 67.56695140164527,
+    "recent_windows": [
+      {
+        "completions": 30,
+        "observed_seconds": 2303.4116020202637,
+        "outputs_per_hour": 46.88697404548798,
+        "conditional_remaining_seconds": 85533.35082168579,
+        "exceeds_remaining_frozen_window": true
+      },
+      {
+        "completions": 60,
+        "observed_seconds": 4339.347518444061,
+        "outputs_per_hour": 49.777068806291425,
+        "conditional_remaining_seconds": 80567.21892577807,
+        "exceeds_remaining_frozen_window": true
+      },
+      {
+        "completions": 120,
+        "observed_seconds": 7892.957692623138,
+        "outputs_per_hour": 54.732334420562374,
+        "conditional_remaining_seconds": 73272.95724651814,
+        "exceeds_remaining_frozen_window": true
+      },
+      {
+        "completions": 300,
+        "observed_seconds": 21217.94998192787,
+        "outputs_per_hour": 50.90029908261056,
+        "conditional_remaining_seconds": 78789.32093289217,
+        "exceeds_remaining_frozen_window": true
+      }
+    ],
+    "exact_monitor_live": true,
+    "source_hashes_held": true,
+    "configuration_changed": false,
+    "new_calls": 0,
+    "new_tickets": 0,
+    "do_not_restart_or_extend_peer_frozen_plan": true,
+    "schema": "run132_frozen_window_sensitivity_v1",
+    "owner": "fpga_teammate",
+    "timing_evidence_sha256": "5c8667b1f0297788f35ab0c31ae92d9f969bd59259ef43a39e7e73b6935de036",
+    "active_task_not_failed": true,
+    "complete_score_unknown": true,
+    "recent_rate_not_future_guarantee": true,
+    "only_owner_may_decide_peer_run_handling": true,
+    "no_restart_resubmission_or_frozen_cap_edit": true,
+    "next": "Notify132 owner of conditional deadline risk; retain frozen source and all originals; no new ticket."
   }
 }
