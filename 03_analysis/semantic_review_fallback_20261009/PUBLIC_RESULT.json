@@ -65,7 +65,7 @@
       "selected_scored_experiment": false
     },
     "public_source_hashes": {
-      "comparison_result.py": "c8c97a474ccfaf650603a000a2ff1ebb412b330b6268fd6743d324ecc4a0e573",
+      "comparison_result.py": "1c64ed1ecb8c4e315e3f7575fca60d22d4163ebac8e6f93b903579cd11572d18",
       "prepare_comparison.py": "72c43998677aa6fdf5f47fa27f0fe50afb343ff2418edc5dec681e02e6232604",
       "protocol_stage.py": "30f13953948568f8c6715609dd8df71b41d6248b2d5ec1ca2c7003805a84c043"
     },
@@ -81,6 +81,20 @@
     "real_model_benefit_and_wall_time_pending": true,
     "score_measured": false,
     "adoption": false,
-    "next": "Choose actual fixed scored comparison after existing132-136 outcome review; current preparation fixture is not that selection."
+    "next": "Choose actual fixed scored comparison after existing132-136 outcome review; current preparation fixture is not that selection.",
+    "qualified_packet_source_hashes": {
+      "comparison_result.py": "c8c97a474ccfaf650603a000a2ff1ebb412b330b6268fd6743d324ecc4a0e573",
+      "prepare_comparison.py": "72c43998677aa6fdf5f47fa27f0fe50afb343ff2418edc5dec681e02e6232604",
+      "protocol_stage.py": "30f13953948568f8c6715609dd8df71b41d6248b2d5ec1ca2c7003805a84c043"
+    },
+    "reader_source_file_canonicalization": {
+      "scope": "CRLF to LF and trailing blank line only; static AST review, not another project control run",
+      "qualified_source_sha256": "c8c97a474ccfaf650603a000a2ff1ebb412b330b6268fd6743d324ecc4a0e573",
+      "canonical_source_sha256": "1c64ed1ecb8c4e315e3f7575fca60d22d4163ebac8e6f93b903579cd11572d18",
+      "AST_identical": true,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_tests_executed": 0
+    }
   }
 }

@@ -168,4 +168,3 @@ if __name__ == '__main__':
         json.dump(result, stream, indent=2, ensure_ascii=False)
         stream.write('\n')
     print(json.dumps({k: v for k, v in result.items() if k in ('complete', 'named_tasks', 'generation_rows', 'P_minus_A_mean')}))
-
