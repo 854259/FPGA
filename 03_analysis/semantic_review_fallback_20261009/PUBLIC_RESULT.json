@@ -43,5 +43,44 @@
   "score_measured": false,
   "adoption": false,
   "full_goal_complete": false,
-  "next": "Review existing132-136 outcomes, then select a fixed single-factor comparison; no new ticket admitted now."
+  "next": "Review existing132-136 outcomes, then select a fixed single-factor comparison; no new ticket admitted now.",
+  "queue_protocol_qualification": {
+    "schema": "semantic_review_queue_protocol_qualification_v1",
+    "status": "qualified_unadmitted_preparation_and_protocol",
+    "controls": 7,
+    "cold_CLI_binders": 4,
+    "unchanged_external_scorer_eligibility_verified": true,
+    "derived_mock_bindings": 4,
+    "only_mock_model_alias_projected": true,
+    "original_mock_files_held": true,
+    "wrong_outer_arm_rejections": 2,
+    "preparation_rejections": 4,
+    "inherited_complete_table_A_and_P_worker_arm": "P",
+    "own_terminal_reader_expected_role_adapted": true,
+    "official_scorer_and_summary_unchanged": true,
+    "prepared_only_fixture": {
+      "outputs": 30,
+      "max_calls": 50,
+      "execution_authorized": false,
+      "selected_scored_experiment": false
+    },
+    "public_source_hashes": {
+      "comparison_result.py": "c8c97a474ccfaf650603a000a2ff1ebb412b330b6268fd6743d324ecc4a0e573",
+      "prepare_comparison.py": "72c43998677aa6fdf5f47fa27f0fe50afb343ff2418edc5dec681e02e6232604",
+      "protocol_stage.py": "30f13953948568f8c6715609dd8df71b41d6248b2d5ec1ca2c7003805a84c043"
+    },
+    "result_sha256": "04171560ce46133c1c77ee24831fb3e315c5a7627ee65189124eb02b3f342897",
+    "archive_sha256": "664099cd8adf364381c771ae4bc660eaa73c26383a98b672ca216fda2159a059",
+    "archive_members": 166,
+    "AMD_E_verified": true,
+    "existing_source_and_primary_held": true,
+    "new_real_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "full_terminal_audit_not_executed": true,
+    "real_model_benefit_and_wall_time_pending": true,
+    "score_measured": false,
+    "adoption": false,
+    "next": "Choose actual fixed scored comparison after existing132-136 outcome review; current preparation fixture is not that selection."
+  }
 }
