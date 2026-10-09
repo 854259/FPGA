@@ -18009,6 +18009,48 @@
       "tests": 8,
       "retained": true
     },
-    "trigger": "Only overflowing diagnostics with at least one distinct ERROR/FATAL message/file absent from the original2048-character prefix."
+    "trigger": "Only overflowing diagnostics with at least one distinct ERROR/FATAL message/file absent from the original2048-character prefix.",
+    "selection_policy": {
+      "criterion": "Official total score: capability30, same-run unmodified-baseline gain40, measured wall time10, engineering20.",
+      "diagnostic_only": [
+        "historical per-task correctness",
+        "paired per-task grades",
+        "per-task/total request counts",
+        "120L3/.80 development target"
+      ],
+      "no_additional_selection_veto": true,
+      "fixed_comparison_and_original_run_limits_preserved": true,
+      "future_budget_or_component_combinations_require_new_frozen_configuration": true,
+      "unknown_M_Tref_engineering_score_remain_unknown": true,
+      "reviewed_issue_comments": [
+        6055389050,
+        6059651093,
+        6059796376,
+        6074308276
+      ],
+      "current_factor_model_benefit_pending": true,
+      "current_132_to_136_unchanged": true
+    }
+  },
+  "current_official_selection_policy_20261009": {
+    "criterion": "Official total score: capability30, same-run unmodified-baseline gain40, measured wall time10, engineering20.",
+    "diagnostic_only": [
+      "historical per-task correctness",
+      "paired per-task grades",
+      "per-task/total request counts",
+      "120L3/.80 development target"
+    ],
+    "no_additional_selection_veto": true,
+    "fixed_comparison_and_original_run_limits_preserved": true,
+    "future_budget_or_component_combinations_require_new_frozen_configuration": true,
+    "unknown_M_Tref_engineering_score_remain_unknown": true,
+    "reviewed_issue_comments": [
+      6055389050,
+      6059651093,
+      6059796376,
+      6074308276
+    ],
+    "current_factor_model_benefit_pending": true,
+    "current_132_to_136_unchanged": true
   }
 }
