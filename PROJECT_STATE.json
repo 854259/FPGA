@@ -17958,5 +17958,377 @@
       "formal_adoption": false,
       "independent_unseen": 0
     }
+  },
+  "semantic_review_fallback_qualification_20261009": {
+    "schema": "unsupported_clocked_model_review_qualification_v1",
+    "status": "qualified_mock_wiring_real_benefit_pending",
+    "development_tasks": 156,
+    "prompt_eligible": 49,
+    "prompt_ineligible": 107,
+    "tests": 5,
+    "actual_frozen_worker_mock_flows": 11,
+    "mock_requests": 17,
+    "mock_compiler_calls": 17,
+    "mock_oracle_calls": 5,
+    "binder_tamper_rejections": 4,
+    "original_first_request_exact": true,
+    "original_compile_failure_and_measured_feedback_wires_exact": true,
+    "inherited_complete_table_candidate_in_both_arms": true,
+    "inherited_worker_arm": "P",
+    "inherited_frozen_spec_sha256": "b499f6c16fa91868ca7ba60a168929204f02d5b0e164f5ade776a65983aa5c5d",
+    "public_source_hashes": {
+      "semantic_review.py": "f51c7ba330f4d2a31e4aaac232f04749435092ee089f24a582aaf8090ece5f65",
+      "semantic_feedback.py": "9d68847788e0c14eb60a982ee26b50dff832d5e881927d053264b366f31180bd",
+      "worker.py": "bf0bae7283c4b63f7625241a901d0a7d41c3c82782f4da2302a7d6b0e7befbbe",
+      "pure_stage.py": "ec4a1b22100da1ebbde4e3c445ba2c94ce566104a977340d06ba69b7f0b3c7f5",
+      "interface_feedback.py": "b4d180b80501decc4bc42dca3ef8654d0c44dee25b273b96112454cff586bf1b",
+      "agent_extract_boundary.py": "0fde5a08d5ba0ceb78e8ba431bb91d84d6be3b12d1a0d630cdf4f3cf68d4c2b7",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "INHERITED_SOURCE_BINDING.json": "4653ee371a31578535ed8311cf3c909292d83aa721837d6c1041c468f193588c"
+    },
+    "max_requests": 2,
+    "max_tokens": 8192,
+    "repairs": 1,
+    "original_solve_seconds": 300,
+    "result_sha256": "912c54882b82ca5dc69dc9e966c4226a51777269f1843843b70a84e41b507c71",
+    "archive_sha256": "5105833788877d0a39790e1b0cf0c1be36f044ef018c5f1ce376f0126c695214",
+    "archive_members": 262,
+    "AMD_E_verified": true,
+    "shared_activity_writes": 0,
+    "new_real_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "measured_functional_counterexample": false,
+    "model_generated_RTL_preserved": true,
+    "real_model_benefit_and_wall_time_pending": true,
+    "score_measured": false,
+    "adoption": false,
+    "full_goal_complete": false,
+    "next": "Review existing132-136 outcomes, then select a fixed single-factor comparison; no new ticket admitted now.",
+    "queue_protocol_qualification": {
+      "schema": "semantic_review_queue_protocol_qualification_v1",
+      "status": "qualified_unadmitted_preparation_and_protocol",
+      "controls": 7,
+      "cold_CLI_binders": 4,
+      "unchanged_external_scorer_eligibility_verified": true,
+      "derived_mock_bindings": 4,
+      "only_mock_model_alias_projected": true,
+      "original_mock_files_held": true,
+      "wrong_outer_arm_rejections": 2,
+      "preparation_rejections": 4,
+      "inherited_complete_table_A_and_P_worker_arm": "P",
+      "own_terminal_reader_expected_role_adapted": true,
+      "official_scorer_and_summary_unchanged": true,
+      "prepared_only_fixture": {
+        "outputs": 30,
+        "max_calls": 50,
+        "execution_authorized": false,
+        "selected_scored_experiment": false
+      },
+      "public_source_hashes": {
+        "comparison_result.py": "1c64ed1ecb8c4e315e3f7575fca60d22d4163ebac8e6f93b903579cd11572d18",
+        "prepare_comparison.py": "72c43998677aa6fdf5f47fa27f0fe50afb343ff2418edc5dec681e02e6232604",
+        "protocol_stage.py": "30f13953948568f8c6715609dd8df71b41d6248b2d5ec1ca2c7003805a84c043"
+      },
+      "result_sha256": "04171560ce46133c1c77ee24831fb3e315c5a7627ee65189124eb02b3f342897",
+      "archive_sha256": "664099cd8adf364381c771ae4bc660eaa73c26383a98b672ca216fda2159a059",
+      "archive_members": 166,
+      "AMD_E_verified": true,
+      "existing_source_and_primary_held": true,
+      "new_real_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_tickets": 0,
+      "full_terminal_audit_not_executed": true,
+      "real_model_benefit_and_wall_time_pending": true,
+      "score_measured": false,
+      "adoption": false,
+      "next": "Choose actual fixed scored comparison after existing132-136 outcome review; current preparation fixture is not that selection.",
+      "qualified_packet_source_hashes": {
+        "comparison_result.py": "c8c97a474ccfaf650603a000a2ff1ebb412b330b6268fd6743d324ecc4a0e573",
+        "prepare_comparison.py": "72c43998677aa6fdf5f47fa27f0fe50afb343ff2418edc5dec681e02e6232604",
+        "protocol_stage.py": "30f13953948568f8c6715609dd8df71b41d6248b2d5ec1ca2c7003805a84c043"
+      },
+      "reader_source_file_canonicalization": {
+        "scope": "CRLF to LF and trailing blank line only; static AST review, not another project control run",
+        "qualified_source_sha256": "c8c97a474ccfaf650603a000a2ff1ebb412b330b6268fd6743d324ecc4a0e573",
+        "canonical_source_sha256": "1c64ed1ecb8c4e315e3f7575fca60d22d4163ebac8e6f93b903579cd11572d18",
+        "AST_identical": true,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "new_tests_executed": 0
+      }
+    },
+    "peer_review_6075303386": {
+      "limited_reviewed_head": "98cc761cb282001865cf4a61fb162bc9a1be371a",
+      "no_new_static_wiring_blocker_reported": true,
+      "later_protocol_work_not_independently_reviewed_by_peer": true,
+      "actual_model_benefit_not_verified": true,
+      "accepted_next_comparison_rule": "Freeze both originally correct and incorrect first drafts; report actual triggers, gains, regressions, extra calls and measured time; match first drafts before causal attribution; diagnostics do not add selection vetoes.",
+      "ownership": "Peer132/133/134; owner135/136 and semantic review",
+      "new_tickets": 0
+    }
+  },
+  "run132_frozen_window_sensitivity_20261009": {
+    "scope": "Timing feasibility sensitivity only; no score, selection or guaranteed ETA",
+    "observed_beijing": "2026-10-09T14:18:36.331455+08:00",
+    "sealed_outputs": 1226,
+    "total_outputs": 2340,
+    "remaining_outputs": 1114,
+    "elapsed_seconds": 65321.87568688393,
+    "frozen_queue_wall_seconds": 129600,
+    "frozen_queue_deadline_beijing": "2026-10-10T08:09:54.455768+08:00",
+    "remaining_frozen_window_seconds": 64278.12431311607,
+    "required_remaining_outputs_per_hour": 62.391366314055155,
+    "observed_whole_run_outputs_per_hour": 67.56695140164527,
+    "recent_windows": [
+      {
+        "completions": 30,
+        "observed_seconds": 2303.4116020202637,
+        "outputs_per_hour": 46.88697404548798,
+        "conditional_remaining_seconds": 85533.35082168579,
+        "exceeds_remaining_frozen_window": true
+      },
+      {
+        "completions": 60,
+        "observed_seconds": 4339.347518444061,
+        "outputs_per_hour": 49.777068806291425,
+        "conditional_remaining_seconds": 80567.21892577807,
+        "exceeds_remaining_frozen_window": true
+      },
+      {
+        "completions": 120,
+        "observed_seconds": 7892.957692623138,
+        "outputs_per_hour": 54.732334420562374,
+        "conditional_remaining_seconds": 73272.95724651814,
+        "exceeds_remaining_frozen_window": true
+      },
+      {
+        "completions": 300,
+        "observed_seconds": 21217.94998192787,
+        "outputs_per_hour": 50.90029908261056,
+        "conditional_remaining_seconds": 78789.32093289217,
+        "exceeds_remaining_frozen_window": true
+      }
+    ],
+    "exact_monitor_live": true,
+    "source_hashes_held": true,
+    "configuration_changed": false,
+    "new_calls": 0,
+    "new_tickets": 0,
+    "do_not_restart_or_extend_peer_frozen_plan": true,
+    "schema": "run132_frozen_window_sensitivity_v1",
+    "owner": "fpga_teammate",
+    "timing_evidence_sha256": "5c8667b1f0297788f35ab0c31ae92d9f969bd59259ef43a39e7e73b6935de036",
+    "active_task_not_failed": true,
+    "complete_score_unknown": true,
+    "recent_rate_not_future_guarantee": true,
+    "only_owner_may_decide_peer_run_handling": true,
+    "no_restart_resubmission_or_frozen_cap_edit": true,
+    "next": "Notify132 owner of conditional deadline risk; retain frozen source and all originals; no new ticket.",
+    "row_reservation_seconds": 670,
+    "new_row_admission_cutoff_beijing": "2026-10-10T07:58:44.455768+08:00",
+    "original_header_clock_confirmed": true,
+    "simple_restart_does_not_extend_window": true,
+    "queue_source_sha256": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de"
+  },
+  "run132_timing_components_20261009": {
+    "schema": "run132_timing_components_v1",
+    "observed_epoch": 1791527986.8474114,
+    "sealed_snapshot": 1249,
+    "cohorts": {
+      "first300": {
+        "rows": 299,
+        "index_range": [
+          0,
+          299
+        ],
+        "wall_s": 11597.400912761688,
+        "totals": {
+          "solve_elapsed_s": 1060.0202887300402,
+          "judge_elapsed_s": 8258.296524528414,
+          "within_execute_overhead_s": 683.3039465397596,
+          "outside_execute_s": 1595.7801529634744,
+          "pre_dispatch_s": 951.6833906173706,
+          "after_started_outside_execute_s": 644.0967623461038
+        },
+        "percentages": {
+          "solve_elapsed_s": 9.140153873301061,
+          "judge_elapsed_s": 71.20816626629721,
+          "within_execute_overhead_s": 5.891871391527539,
+          "outside_execute_s": 13.759808468874182,
+          "pre_dispatch_s": 8.206005791954176,
+          "after_started_outside_execute_s": 5.5538026769200055
+        },
+        "median_outside_execute_s": 5.334526184946299,
+        "median_pre_dispatch_s": 3.1767029762268066,
+        "arms": {
+          "A": {
+            "rows": 99,
+            "solve_s": 376.4438730161637,
+            "judge_s": 2776.016841283068,
+            "calls": 99,
+            "outside_execute_s": 529.9997977875173
+          },
+          "P": {
+            "rows": 100,
+            "solve_s": 363.3103033788502,
+            "judge_s": 2795.5688508711755,
+            "calls": 100,
+            "outside_execute_s": 533.2685798965394
+          },
+          "B": {
+            "rows": 100,
+            "solve_s": 320.26611233502626,
+            "judge_s": 2686.7108323741704,
+            "calls": 100,
+            "outside_execute_s": 532.5117752794176
+          }
+        }
+      },
+      "latest300": {
+        "rows": 300,
+        "index_range": [
+          949,
+          1248
+        ],
+        "wall_s": 21250.4247879982,
+        "totals": {
+          "solve_elapsed_s": 7103.119217146188,
+          "judge_elapsed_s": 7734.165716869757,
+          "within_execute_overhead_s": 685.7874042894691,
+          "outside_execute_s": 5727.352449692786,
+          "pre_dispatch_s": 5080.078417778015,
+          "after_started_outside_execute_s": 647.2740319147706
+        },
+        "percentages": {
+          "solve_elapsed_s": 33.42577519277583,
+          "judge_elapsed_s": 36.39534641791186,
+          "within_execute_overhead_s": 3.227170332504542,
+          "outside_execute_s": 26.951708056807767,
+          "pre_dispatch_s": 23.905773500806152,
+          "after_started_outside_execute_s": 3.0459345560016176
+        },
+        "median_outside_execute_s": 19.116897283121943,
+        "median_pre_dispatch_s": 16.96412229537964,
+        "arms": {
+          "A": {
+            "rows": 101,
+            "solve_s": 2430.528004501015,
+            "judge_s": 2683.117309855297,
+            "calls": 106,
+            "outside_execute_s": 1928.2799291778356
+          },
+          "P": {
+            "rows": 99,
+            "solve_s": 2368.4192057009786,
+            "judge_s": 2632.204759635031,
+            "calls": 105,
+            "outside_execute_s": 1891.3707047756761
+          },
+          "B": {
+            "rows": 100,
+            "solve_s": 2304.1720069441944,
+            "judge_s": 2418.843647379428,
+            "calls": 100,
+            "outside_execute_s": 1907.701815739274
+          }
+        }
+      }
+    },
+    "scope": "Partial sealed timing components; no performance score or model capability result",
+    "metadata_readback_sha256": "9cfee651a85bfb496e063182afe235c3e2e132ce71bd33848122580cb6a4e288",
+    "analysis_sha256": "e38600e1e6c8d6a812356d048e975c9e4dde413e3f16e2f55fc8413aef235360",
+    "digest_measurement_sha256": "432181871fee348b70b98b2d98397c305ebf7d7603c219b40cdb470618f54a90",
+    "canonical_plan_bytes": 2263318,
+    "digest_iterations": 20,
+    "median_digest_seconds": 0.008600135333836079,
+    "estimated_repeated_digest_per_advance_seconds": 10.758769302628934,
+    "diagnosis": "Prefix verification repeatedly digests the identical full plan for each completed row; plausible avoidable serialization component, not a causal end-to-end measurement.",
+    "future_change": "Hoist only the unchanged prefix-loop plan digest after original plan/header verification. Preserve all original row, terminal, file/archive hash checks and recompute digest after execute before sealing.",
+    "change_implemented": false,
+    "end_to_end_speedup_measured": false,
+    "official_time_score_unknown": true,
+    "no_live_frozen_change": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "public_index": "03_analysis/semantic_review_fallback_20261009/RUN132_TIMING_COMPONENTS.json"
+  },
+  "semantic_review_peer_queue_selection_20261009": {
+    "schema": "semantic_queue_preparation_delta_v1",
+    "passed": true,
+    "reports": [
+      {
+        "case": "new_queue_bound_unadmitted_preparation",
+        "passed": true,
+        "outputs": 30,
+        "maximum_reserved_calls": 50,
+        "model_worker_bytes_unchanged": true
+      },
+      {
+        "case": "wrong_queue_sha_rejected_before_new_root",
+        "passed": true
+      },
+      {
+        "case": "copied_queue_drift_rejected_before_plan_and_retained",
+        "passed": true
+      }
+    ],
+    "qualified_peer_queue_sha256": "4290944199cddd54c6a08a55d1a62f0d81d7946f144ccba6fb98ca14619971e1",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "old_protocol_controls_repeated": false,
+    "peer_prefix_controls_repeated": false,
+    "real_queue_execution_or_speed_measured": false,
+    "scored_experiment_selected": false,
+    "current_frozen_132_136_changed": false,
+    "status": "qualified_explicit_peer_queue_selection_unadmitted",
+    "controls": 3,
+    "result_sha256": "efdb275154119a9ae4ac7590fbde55e0beb095250ebbfba9c06e271449055213",
+    "archive_sha256": "99df18fdc3ffb369a03cf33a7cc76a2349423f6a036aa0c3a9a7f05a8ef5a3b7",
+    "archive_members": 118,
+    "AMD_E_every_member_verified": true,
+    "original_child_retired": true,
+    "public_source_hashes": {
+      "prepare_comparison.py": "3672bee2c523183920bbd9182126a1c7fef85fc47e863b798bf53eea659aebac",
+      "queue_preparation_stage.py": "657ca41ea8bc198ce7aebad06c2b0ee0e23b77005973ff2a36e21e3bcafcc305"
+    },
+    "inherited_generation_worker_and_skills_unchanged": true,
+    "peer_optimization_PR": "https://github.com/854259/FPGA/pull/198",
+    "peer_optimization_head": "f4a854c75a6af3b71a7313ffdfb1374c8db80c05",
+    "peer_queue_parent_sha256": "fc39a74b224fca87b56f3f2b0e16c1668539f787897defad54e9f6132f5fb6e1",
+    "two_line_reverse_restores_peer_parent_exactly": true,
+    "additional_parent_change": "Six finite-judge model-source binding checks, outside this VerilogEval plan with no finite_judge.",
+    "default_old_preparation_path_preserved": true,
+    "queue_selection_must_be_explicit": true,
+    "score_measured": false,
+    "adoption": false,
+    "full_goal_complete": false
+  },
+  "fifo_135136_wait_lifetime_risk_20261009": {
+    "schema": "fifo135136_wait_lifetime_risk_v1",
+    "source_fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
+    "wait_lifetime_defaults": {
+      "execute": 86400
+    },
+    "binding_sha256": "24808da83ad841b0cf6d182226b70eabbfa9c1bb35200aa007c9428eca4ba430",
+    "shared_binding": "/workspace/team/activity/fpga_owner/artifacts/fifo135136-wait-recovery-bindings-20261009-v1/BINDINGS.json",
+    "tickets": [
+      135,
+      136
+    ],
+    "current_state": "queued_original_monitors_live",
+    "restoration_currently_permitted": false,
+    "common_helper_owner": "fpga_teammate",
+    "own_restoration_owner": "fpga_owner",
+    "helper_not_yet_reviewed_or_installed": true,
+    "restore_only_never_started_original_wait_expiry": true,
+    "no_ticket_restart_resubmission_or_budget_change": true,
+    "night_continuation_not_yet_guaranteed": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "latest_peer_comment": 6076534686
   }
 }
