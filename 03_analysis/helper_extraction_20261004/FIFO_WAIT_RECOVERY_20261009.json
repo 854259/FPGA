@@ -1,6 +1,6 @@
 {
   "schema": "owned_fifo_wait_recovery_20261009_v1",
-  "updated_at": "2026-10-09T21:15:00+08:00",
+  "updated_at": "2026-10-09T22:05:27.218046+08:00",
   "status": "original133134_wait_monitors_recovered_watcher_retired_tasks_still_queued",
   "problem": {
     "fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
@@ -217,6 +217,53 @@
       "Watch/result is complete for133134 only. Follow actual recovered monitor identities; do not restart the retired watcher.",
       "135136 and any second waiting window remain peer-owned; original132 total48h continuation remains a separate live watcher.",
       "No new score or formal32GB/container/recovery acceptance is supplied by this narrow recovery."
+    ]
+  },
+  "terminal_preparation": {
+    "schema": "recovered134_terminal_preparation_v1",
+    "prepared_at": "2026-10-09T22:05:27.218046+08:00",
+    "status": "files_prepared_actual_recovery_bound_reader_not_executed",
+    "root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison134_terminal_20261009_v1",
+    "source_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison9x5_20261008_v1",
+    "expected_plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+    "expected_run_spec_sha256": "0cdacd933a0f799783d5e8195217cdfa4aeadbdb77b8b80271a58756d2c9cbc6",
+    "terminal_plan_sha256": "95a38ac56a91b9c64a167e3f6f4cb20e94bb5d8a5456d4463de234a3d77fe833",
+    "supervision_binding_sha256": "b9b732522ddb490acb6ba721e4d8f24cb35ad5bcf4a31dc4a036579cd56dccb4",
+    "preparation_receipt_sha256": "ee5e2e761b9318599327ae85c4e7ea254737f0a9e52248ab25ecc45b84b57696",
+    "unchanged_reader_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+    "unchanged_supervisor_sha256": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+    "tasks": 9,
+    "samples_per_arm": 5,
+    "required_rows": 135,
+    "reader_cap_s": 180,
+    "once": "Exclusive READ_INTENT.json only after real terminal gates; no retry after intent/process/output.",
+    "recovery_identity": "Retain original133/134 identities and immutable first INTENT/RESULT; use actual4161723/start882361698 and4175417/start882505704. Later recovery needs its actual receipt.",
+    "terminal_gate": "Original134 completed/rc0; original133 native3 prerequisite/external/guard/cleanup/released slot; immutable recovery/task bindings; actual monitor/runner/child retirement; original sources/score unchanged; nonblocking runner.lock and all135 valid receipts.",
+    "conditional133_static_review": "Original prepare_multi_comparison.py f87c56f9 checks original133 completed/native3/external/guard cleanup and slot release; no hardcoded old monitor PID. Unchanged, not reexecuted.",
+    "validation": {
+      "file_hashes_and_actual_live_identities_verified": true,
+      "current_terminal_gate_satisfied": false,
+      "reader_executed": false,
+      "project_functions_executed": 0,
+      "new_tests": 0,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "new_fifo_tickets": 0,
+      "frozen_run_modified": false
+    },
+    "archive": {
+      "root": "/workspace/team/activity/fpga_teammate/artifacts/recovered134-terminal-preparation-20261009-v1",
+      "zip_sha256": "f6d6553b2c2d82530d4f34527752f1f13e1107e8f86101892a3fda0305b68694",
+      "manifest_sha256": "0a9ac8a45a0be4f9f5b19ab01b6a0281800b67d90adaaf948c2a2d2fc298b416",
+      "members": 5,
+      "bytes": 10984,
+      "amd_local_all_members_verified": true,
+      "private_raw_in_git": false
+    },
+    "limits": [
+      "File preparation and static/metadata verification only, not an executed terminal gate test or qualification.",
+      "No result, score gain, adoption or complete acceptance; wait true original133 and134 exits.",
+      "Reader combined stdout.bin and original180s supervision reused; normal_completion also requires returncode0 and actual retirement."
     ]
   }
 }
