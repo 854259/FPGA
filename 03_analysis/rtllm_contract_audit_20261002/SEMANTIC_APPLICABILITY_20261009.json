@@ -1,0 +1,64 @@
+{
+  "schema": "rtllm_semantic_review_applicability_v1",
+  "updated_at": "2026-10-09T14:44:40+08:00",
+  "status": "completed_potential_applicability_zero_no_scoring",
+  "source_commit": "e017a28f47043a74d2bcd42e9188204e7b52274b",
+  "intake_sha256": "c07fcc81b12a5f100fb124fcf8bb5fcf622996fab75475fc2a21f3e63d298898",
+  "semantic_review_sha256": "f51c7ba330f4d2a31e4aaac232f04749435092ee089f24a582aaf8090ece5f65",
+  "qualified_parent_result_sha256": "912c54882b82ca5dc69dc9e966c4226a51777269f1843843b70a84e41b507c71",
+  "plan_sha256": "81751964f303a64874024674ffd49e9578bb784f3d3e12500989fc8dec26c190",
+  "result_sha256": "097383fa0289f6a2b4ad369e8d6c85347f10652efcf39ee431b6a1c8898f5c69",
+  "process_complete_sha256": "de24d5c1499e9c7ea2e620a04d0566c956b61d7092d9973afc480519ee7e373e",
+  "development_tasks": 29,
+  "potentially_eligible": 0,
+  "reason_counts": {
+    "unbound_interface:no_explicit_port_contract": 29
+  },
+  "original_contract_statuses": {
+    "abstain": 29
+  },
+  "remaining_specification_blocked_tasks": 15,
+  "independent_unseen_tasks": 0,
+  "effective_independent_families": null,
+  "unchanged_parser_sources": 12,
+  "prior_table_abstentions_reused": 29,
+  "prior_table_intake_reexecuted": false,
+  "first_compile_pass_assumed_only_for_applicability": true,
+  "actual_compile_or_review_trigger_verified": false,
+  "model_calls": 0,
+  "eda_calls": 0,
+  "fifo_calls": 0,
+  "scoring_inputs_read": false,
+  "execution": {
+    "runs": 1,
+    "returncode": 0,
+    "exec_confirmed": true,
+    "leader_reaped": true,
+    "remaining_group": 0,
+    "original_child_retired": true,
+    "child_cap_s": 60,
+    "elapsed_s": 0.19432774186134338,
+    "elapsed_scope": "Owned child birth gate through wait/reap/cleanup and stdout read; excludes preparation, observer exit and transfer"
+  },
+  "evidence": {
+    "local_and_AMD_same_hash": [
+      "PLAN.json",
+      "RESULT.json",
+      "COMPLETE.json"
+    ],
+    "remote_effective_files": 24,
+    "local_private_effective_files": 3,
+    "cache_files": 0,
+    "empty_directories": 0
+  },
+  "limitations": [
+    "The unchanged parser cannot bind a supported explicit port contract from these inputs; this is not proof that the designs lack interfaces.",
+    "Potential prompt applicability is not model accuracy, actual trigger coverage, native qualification, or an official score.",
+    "The 29 finite-domain development tasks remain separate from the 15 specification gaps and VerilogEval.",
+    "No same-factor RTLLM A/P scoring is scheduled for an unchanged strategy with zero applicable prompts; other complete RTLLM evaluation remains pending."
+  ],
+  "next": "Continue original132 result and original133->134 conditional sequence; peer retains135/136 and semantic candidate. Discuss any future RTLLM interface-format support as a separately frozen change, not post-hoc widening of this intake.",
+  "official_total_score": null,
+  "adoption": false,
+  "full_goal_complete": false
+}
