@@ -120,6 +120,14 @@ def check(prompt, code, out, attempt, paired, task, root):
     source_sha, tb_sha = paired.sha(source), paired.sha(tb)
     checks = 2 * (1 << len(c['labels']))
     result = paired.oracle(dict(task=task, checks=checks, tb=str(tb.relative_to(root))), source, folder / 'probe')
+    original_path = folder / 'probe/result.json'
+    adapter_path = folder / 'probe/adapter_receipt.json'
+    original = json.loads(original_path.read_text(encoding='utf-8'))
+    if (json.loads(adapter_path.read_text(encoding='utf-8')) != result or
+            Path(result.get('inherited_result_path', '')).resolve() != original_path.resolve() or
+            result.get('inherited_result_sha256') != paired.sha(original_path) or
+            any(result.get(key) != value for key, value in original.items())):
+        raise RuntimeError('native return differs from retained measurement receipts')
     if (paired.sha(source) != source_sha or paired.sha(tb) != tb_sha or
             result.get('inputs_unchanged') is not True or result.get('checks') != checks or
             result.get('solution_sha256') != source_sha or result.get('tb_sha256') != tb_sha):

@@ -1,13 +1,15 @@
 {
   "schema": "onehot_model_feedback_pure_preparation_v1",
-  "status": "pure_passed_native_and_worker_pending",
+  "status": "helper_and_simulated_adapter_controls_passed_native_worker_pending",
   "source_sha256": {
     "graph_contract.py": "d11b1480fab3c363ea01313d4f92984bfa3f71f65bd0a7e58c595b72bc052770",
     "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
     "native_material_fixture.py": "a98f4c3b5c982be8cdd99a160f5e8a004b4dc2274b61d18e51131d30c7058701",
-    "onehot_feedback.py": "6452f9f01d27b1929ec074401c5ee374b73fcf6b990f138e757011ad1204b33a",
+    "onehot_feedback.py": "c772395b207d5731035db2e393caa492ac8d7a5861d4c5bf3c58f598f1c2f788",
     "test_onehot_feedback.py": "2562c6e9e895ee32389cd96ef4ba1d02a49ed0a4ca136f03de85d237b53a6955",
-    "pure_stage.py": "e97897388371cdaa6204d8247b6c86ef02304d114f352c6f1f73f85d45e046e1"
+    "pure_stage.py": "e97897388371cdaa6204d8247b6c86ef02304d114f352c6f1f73f85d45e046e1",
+    "test_adapter.py": "b66e3a62ad6718a313b75628fc999349a8208ddc16535a6693c9802377587922",
+    "adapter_stage.py": "834aed77b6aeefbd19cb9345b0b992f83d829c614c501a5c63fa5e72bf9f9abf"
   },
   "root": "/workspace/team/runs/fpga_owner/onehot_model_feedback_pure_20261009_v1",
   "controls": 14,
@@ -46,5 +48,57 @@
     "occurred_before_AMD_execution": true,
     "graph_and_core_unchanged": true
   },
-  "scope": "Model generates the design; this draft emits only a prompt-derived testbench and measured counterexamples. Existing132-136 unchanged."
+  "scope": "Model generates the design; this draft emits only a prompt-derived testbench and measured counterexamples. Existing132-136 unchanged.",
+  "initial_pure": {
+    "source_sha256": {
+      "graph_contract.py": "d11b1480fab3c363ea01313d4f92984bfa3f71f65bd0a7e58c595b72bc052770",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "native_material_fixture.py": "a98f4c3b5c982be8cdd99a160f5e8a004b4dc2274b61d18e51131d30c7058701",
+      "onehot_feedback.py": "6452f9f01d27b1929ec074401c5ee374b73fcf6b990f138e757011ad1204b33a",
+      "test_onehot_feedback.py": "2562c6e9e895ee32389cd96ef4ba1d02a49ed0a4ca136f03de85d237b53a6955",
+      "pure_stage.py": "e97897388371cdaa6204d8247b6c86ef02304d114f352c6f1f73f85d45e046e1"
+    },
+    "controls": 14,
+    "result_sha256": "e739be197b8c787a0a94e10c6432decc64048ca13b6f5950cb2441bc24ffc1cb",
+    "archive_sha256": "a21d90d55c53ca73bb1d309e617a4d9d15b782ec0a7a619167a589f85170200b",
+    "archive_members": 19,
+    "root": "/workspace/team/runs/fpga_owner/onehot_model_feedback_pure_20261009_v1"
+  },
+  "adapter_controls": {
+    "status": "simulated_receipt_controls_passed_native_still_pending",
+    "tests": 17,
+    "passed": true,
+    "root": "/workspace/team/runs/fpga_owner/onehot_adapter_fixed_20261009_v1",
+    "result_sha256": "a0aff5469a9592f8b98e7851ea9772dc450db172c8895821cfdc6890c856aafa",
+    "archive_sha256": "f1d8e342d5b24595007dae950d014f94af6ce830bcb570102dea33998b840045",
+    "archive_members": 19,
+    "all_members_AMD_E_verified": true,
+    "protected_held": true,
+    "normal_completion": true,
+    "returncode": 0,
+    "exec_confirmed": true,
+    "leader_reaped": true,
+    "remaining_group": [],
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "pre_fix_reproduced": {
+      "result_sha256": "80528c506670ed9c24cb15a067d54140c13180c47476c86edf6d948e44cb9cc5",
+      "archive_sha256": "cc38574d76bdb38bb88dcd77697ee6d8e137a1b328170e79db1e36890e7feb04",
+      "tests": 1,
+      "failures": 1,
+      "all_members_AMD_E_verified": true
+    },
+    "old14_controls_reused": true,
+    "static_function_reuse_proof": {
+      "only_changed_function": "check",
+      "prior14_controls_reused": true,
+      "parser_and_measured_helpers_unchanged": true,
+      "old_controls_not_rerun": true
+    },
+    "native_qualified": false,
+    "score_measured": false,
+    "public_stage_filename": "adapter_stage.py",
+    "AMD_stage_filename": "pure_stage.py"
+  }
 }
