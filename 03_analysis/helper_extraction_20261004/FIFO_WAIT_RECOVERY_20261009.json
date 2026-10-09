@@ -1,0 +1,113 @@
+{
+  "schema": "owned_fifo_wait_recovery_20261009_v1",
+  "updated_at": "2026-10-09T15:54:00+08:00",
+  "status": "controls_verified_conditional_watcher_running_no_recovery_triggered",
+  "problem": {
+    "fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
+    "waiting_lifetime_seconds": 86400,
+    "preceding132_execution_cap_seconds": 129600,
+    "affected_original_tickets": [
+      133,
+      134,
+      135,
+      136
+    ],
+    "owned_scope": [
+      133,
+      134
+    ],
+    "approximate_wait_expiry_beijing": {
+      "133": "2026-10-09 20:45:50",
+      "134": "2026-10-09 21:09:47",
+      "135": "2026-10-09 21:10:08",
+      "136": "2026-10-09 21:32:58"
+    },
+    "time_scope": "Acceptance times approximate monitor start; actual deadline uses monotonic time."
+  },
+  "change": {
+    "source_sha256": "692305058c4499ffbe599ada3badb316f866e918da5a78df348e58ac146ca302",
+    "exact_error": "TimeoutError: FIFO wait lifetime expired; retained for inspection",
+    "conditions": [
+      "Original monitor retired; any same-birth live monitor is left untouched.",
+      "Exact original queued object with only the known held state/error added.",
+      "No started/runner/child fields, original task log or guard directory.",
+      "Original command, cwd, receipt, all frozen sources and FIFO source unchanged.",
+      "No other matching live monitor; original registry lock and exclusive recovery intent."
+    ],
+    "action": "Preserve failed raw ticket, restore same ticket to queued with recovery provenance, launch one original FIFO waiting controller. Keep current head, task budgets, sources and 134 native prerequisite unchanged.",
+    "failure": "Before Popen success restore original held bytes. After Popen succeeds, uncertain identity retains evidence and may leave one live monitor; never retry or roll its ticket back.",
+    "task_resubmitted": false,
+    "active_monitor_killed": false,
+    "original132_changed": false,
+    "peer135136_in_scope": false
+  },
+  "verification": {
+    "root": "/workspace/team/runs/fpga_teammate/fifo_wait_recovery_controls_20261009_v1",
+    "plan_sha256": "828467e5f3fcb2f5bcde676022534bc2fd79afc4bcb19879175c92c81ff09209",
+    "test_sha256": "1821e3134499f812d642d9f2afab3e6fe089c0c2d83d53236f61c5ca871d146c",
+    "result_sha256": "a6fae78e8e85692e9b5f8a61a0d7a5f8a166499deaeed5c497d717539fb95e73",
+    "process_sha256": "ff61333458a7b10e0afd3803f86b17b6bdecc49fb6717b58224dadf18b061717",
+    "cases": 16,
+    "passed": true,
+    "model_calls": 0,
+    "eda_commands": 0,
+    "production_fifo_mutations": 0,
+    "isolated_real_wait_monitors": 1,
+    "child_pid": 3951471,
+    "child_starttime": "880556872",
+    "synthetic_monitor_pid": 3951472,
+    "returncode": 0,
+    "exec_confirmed": true,
+    "reaped": true,
+    "recorded_processes_retired": true,
+    "elapsed_child_scope_s": 0.3606254644691944,
+    "time_limitations": "Child birth gate through wait/reap/owned cleanup and stdout read; excludes preparation, supervisor exit and transfer.",
+    "old_controls_rerun": false
+  },
+  "evidence": {
+    "archive_members": 75,
+    "archive_bytes": 37037,
+    "archive_sha256": "8d4db6393bb8fe59d8ed143783f55b2de99c8b6387213b16c41d341d8f46015c",
+    "manifest_sha256": "60a9240ad68ea2f3201503204d47e9405b7d02ba728f1fa60898fdaf552dce7e",
+    "amd_and_local_all_members_verified": true,
+    "cache_or_empty_directories": false
+  },
+  "recovery_plan": {
+    "root": "/workspace/team/runs/fpga_teammate/fifo_unstarted_wait_recovery133134_20261009_v1",
+    "plan_sha256": "6283f2bebf2ed3d9bd6f4a3ee222927f5717589a4fdb6159e235f5fad8d8d4fb",
+    "frozen_file_counts": {
+      "133": 12,
+      "134": 31
+    },
+    "watch_expires": "2026-10-09T22:00:00+08:00",
+    "watcher_started": true,
+    "real_recovery_triggered": false,
+    "watcher": {
+      "pid": 3955844,
+      "starttime": "880603628",
+      "command_sha256": "a2557f7d0204e07506c3eb76a1ee93ad205c215efabda81162d6c7f7c8f22db3",
+      "sid": 3955844,
+      "plan_sha256": "6283f2bebf2ed3d9bd6f4a3ee222927f5717589a4fdb6159e235f5fad8d8d4fb",
+      "source_commit": "c1525ed2b2b23beff8614b0b7c2d1a2ae16cfd19",
+      "started_at_utc": "2026-10-09T07:53:06.856903+00:00",
+      "watcher_started": true,
+      "real_recovery_triggered": false,
+      "tickets_unchanged": true
+    },
+    "detached_ppid1_verified": true
+  },
+  "collaboration": {
+    "risk_issue": "https://github.com/854259/FPGA/issues/7#issuecomment-6076534686",
+    "readback_exact": true,
+    "peer_ownership": [
+      135,
+      136
+    ],
+    "peer6076529572": "Accepted PR198 and RTLLM natural-language interface diagnosis; PR196 optional pinned queue-source added with 3 new coupling controls per peer, not independently fully audited.",
+    "rtllm_format_diagnosis": "Original 29 prompts have natural-language Module name/Input ports/Output ports sections, no standalone interface or ANSI declaration. Current parser format mismatch explains 0/29 applicability; unknown widths remain unknown. No new intake, score or broadened contract."
+  },
+  "formal_score_gain": false,
+  "full_goal_complete": false,
+  "selection": "Official total score; model-generated design and unchanged current experiment freezes.",
+  "next": "Follow original132 at the existing 30-minute cadence and inspect this original watcher at meaningful state changes. Original133134 recover only after exact natural waiting timeout and retirement; inspect actual132 failure separately. Do not launch another watcher or ticket."
+}
