@@ -1,0 +1,52 @@
+{
+  "schema": "compiler_feedback_budget_preparation_v1",
+  "status": "draft_model_benefit_pending",
+  "source_sha256": {
+    "runtime.py": "ba68ec1bde982be365832e85db2c7e923022214262b53a542c1c66c3ed8f7459",
+    "pure_stage.py": "530dcdbb9bb27c7b9a840b9c4f2d95adb73bc1a71b8e0d72c873f7c1258262ce",
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "runtime_original.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
+    "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00"
+  },
+  "root": "/workspace/team/runs/fpga_owner/compiler_feedback_pure_20261009_v2",
+  "tests": 10,
+  "retained_compile_logs": 343,
+  "changed_log_diagnostics": 4,
+  "unchanged_log_diagnostics": 339,
+  "preserved_missing_error_signals": 2,
+  "actual_worker_mock_requests": 2,
+  "actual_worker_mock_compiles": 2,
+  "first_request_exact": true,
+  "repair_request_only_diagnostics_changed": true,
+  "original_runtime_other_AST_unchanged": true,
+  "result_sha256": "f4f2fe5ae90bee1708429aab039f4dedc8698a80f332e1abb5fe9f3c8dbc38cf",
+  "archive_sha256": "e690a3e6066326095b4b8debbb5e37426903c1a388763ebcc59a2f4b5d2ae247",
+  "archive_members": 17,
+  "all_members_AMD_E_verified": true,
+  "process": {
+    "normal_completion": true,
+    "returncode": 0,
+    "exec_confirmed": true,
+    "leader_reaped": true,
+    "remaining_group": []
+  },
+  "protected_held": true,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo_tickets": 0,
+  "score_measured": false,
+  "adoption": false,
+  "model_comparison_pending": true,
+  "historical_successful_repair_changed": false,
+  "full_goal_complete": false,
+  "version": 2,
+  "retained_successful_repair_diagnostic_exact": true,
+  "previous_version": {
+    "result_sha256": "46041649c798de441ef74985140205b2b36c55006c5a1d19b5e85553dc8783ba",
+    "archive_sha256": "437f16ad0c0d9bbcaa418443f751115c855c9c21debdb4c3315f1c65a0775478",
+    "changed_log_diagnostics": 5,
+    "tests": 8,
+    "retained": true
+  },
+  "trigger": "Only overflowing diagnostics with at least one distinct ERROR/FATAL message/file absent from the original2048-character prefix."
+}
