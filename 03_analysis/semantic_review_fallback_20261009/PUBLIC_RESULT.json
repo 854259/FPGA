@@ -95,6 +95,59 @@
       "new_model_calls": 0,
       "new_eda_calls": 0,
       "new_tests_executed": 0
-    }
+    },
+    "public_source_hashes_scope": "Original seven-control snapshot; later preparer source bound separately in queue_selection_delta."
+  },
+  "queue_selection_delta": {
+    "schema": "semantic_queue_preparation_delta_v1",
+    "passed": true,
+    "reports": [
+      {
+        "case": "new_queue_bound_unadmitted_preparation",
+        "passed": true,
+        "outputs": 30,
+        "maximum_reserved_calls": 50,
+        "model_worker_bytes_unchanged": true
+      },
+      {
+        "case": "wrong_queue_sha_rejected_before_new_root",
+        "passed": true
+      },
+      {
+        "case": "copied_queue_drift_rejected_before_plan_and_retained",
+        "passed": true
+      }
+    ],
+    "qualified_peer_queue_sha256": "4290944199cddd54c6a08a55d1a62f0d81d7946f144ccba6fb98ca14619971e1",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "old_protocol_controls_repeated": false,
+    "peer_prefix_controls_repeated": false,
+    "real_queue_execution_or_speed_measured": false,
+    "scored_experiment_selected": false,
+    "current_frozen_132_136_changed": false,
+    "status": "qualified_explicit_peer_queue_selection_unadmitted",
+    "controls": 3,
+    "result_sha256": "efdb275154119a9ae4ac7590fbde55e0beb095250ebbfba9c06e271449055213",
+    "archive_sha256": "99df18fdc3ffb369a03cf33a7cc76a2349423f6a036aa0c3a9a7f05a8ef5a3b7",
+    "archive_members": 118,
+    "AMD_E_every_member_verified": true,
+    "original_child_retired": true,
+    "public_source_hashes": {
+      "prepare_comparison.py": "3672bee2c523183920bbd9182126a1c7fef85fc47e863b798bf53eea659aebac",
+      "queue_preparation_stage.py": "657ca41ea8bc198ce7aebad06c2b0ee0e23b77005973ff2a36e21e3bcafcc305"
+    },
+    "inherited_generation_worker_and_skills_unchanged": true,
+    "peer_optimization_PR": "https://github.com/854259/FPGA/pull/198",
+    "peer_optimization_head": "f4a854c75a6af3b71a7313ffdfb1374c8db80c05",
+    "peer_queue_parent_sha256": "fc39a74b224fca87b56f3f2b0e16c1668539f787897defad54e9f6132f5fb6e1",
+    "two_line_reverse_restores_peer_parent_exactly": true,
+    "additional_parent_change": "Six finite-judge model-source binding checks, outside this VerilogEval plan with no finite_judge.",
+    "default_old_preparation_path_preserved": true,
+    "queue_selection_must_be_explicit": true,
+    "score_measured": false,
+    "adoption": false,
+    "full_goal_complete": false
   }
 }

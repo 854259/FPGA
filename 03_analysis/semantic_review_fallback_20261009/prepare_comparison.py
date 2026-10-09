@@ -10,6 +10,7 @@ import sys
 PARENT_SPEC_SHA='b499f6c16fa91868ca7ba60a168929204f02d5b0e164f5ade776a65983aa5c5d'
 QUALIFIED_RESULT_SHA='912c54882b82ca5dc69dc9e966c4226a51777269f1843843b70a84e41b507c71'
 SCHEMA='unsupported_clocked_semantic_review_model_comparison_v1'
+PEER_QUEUE_SHA='4290944199cddd54c6a08a55d1a62f0d81d7946f144ccba6fb98ca14619971e1'
 OVERLAY=('semantic_review.py','semantic_feedback.py','worker.py','interface_feedback.py',
          'agent_extract_boundary.py','reserved_keywords.py','INHERITED_SOURCE_BINDING.json')
 
@@ -53,6 +54,10 @@ def prepare(args):
     for n in OVERLAY:
         assert sha(Path(__file__).parent/n)==qualified_sources[n]
     assert sha(args.reader)==args.reader_sha256
+    selected_queue=getattr(args,'queue_source',None)
+    if selected_queue is not None:
+        selected_queue=Path(selected_queue).resolve()
+        assert selected_queue.is_file() and sha(selected_queue)==PEER_QUEUE_SHA
     root.mkdir()
     save(root/'PREPARATION_INTENT.json',dict(model_max=0,eda_max=0,fifo_max=0,execution_authorized=False,
         parent_spec_sha256=PARENT_SPEC_SHA,qualification_result_sha256=QUALIFIED_RESULT_SHA,
@@ -64,6 +69,10 @@ def prepare(args):
         shutil.copyfile(parent/n,target);sources[target_name]=h
     for n in OVERLAY:
         shutil.copyfile(Path(__file__).parent/n,root/n);sources[n]=sha(root/n)
+    if selected_queue is not None:
+        shutil.copyfile(selected_queue,root/'three_arm_queue_20261005.py')
+        assert sha(root/'three_arm_queue_20261005.py')==sha(selected_queue)==PEER_QUEUE_SHA
+        sources['three_arm_queue_20261005.py']=PEER_QUEUE_SHA
     for name,path in [('prepare_comparison.py',Path(__file__)),('comparison_result.py',args.reader)]:
         assert name not in sources
         shutil.copyfile(path,root/name);sources[name]=sha(root/name)
@@ -72,6 +81,10 @@ def prepare(args):
         parent_complete_table_spec_sha256=PARENT_SPEC_SHA,qualification_result_sha256=QUALIFIED_RESULT_SHA,
         qualification_source_hashes={n:qualified_sources[n] for n in OVERLAY},
         inherited_worker_arms=dict(A='P',P='P'),
+        queue_source_binding=dict(parent_sha256=parent_hashes['three_arm_queue_20261005.py'],
+            selected_sha256=sources['three_arm_queue_20261005.py'],
+            peer_PR=198 if selected_queue is not None else None,
+            frozen_parent_unchanged=True,production_worker_unchanged=True),
         factor='One unverified semantic review after first compile-pass and unsupported clocked checks',
         arm_definitions=dict(A='Unchanged132 complete-table P candidate',
             P='Same complete-table candidate plus unsupported-clocked semantic review',B='Untouched official baseline'))
@@ -110,6 +123,7 @@ def prepare(args):
     assert all(sha(root/n)==h for n,h in sources.items())
     assert all(sha(parent/n)==h for n,h in parent_hashes.items())
     assert all(sha(qualified/n)==h for n,h in qualified_sources.items())
+    if selected_queue is not None:assert sha(selected_queue)==PEER_QUEUE_SHA
     save(root/'PREPARATION_RESULT.json',dict(complete=True,prepared=True,submitted=False,execution_authorized=False,
         model_calls=0,eda_calls=0,fifo_calls=0,tasks=len(tasks),outputs=len(plan['rows']),max_calls=calls,
         spec_sha256=sha(root/'RUN_SPEC.json'),plan_sha256=sha(root/'PLAN.json'),sources_held=True,
@@ -122,6 +136,8 @@ if __name__=='__main__':
     p=argparse.ArgumentParser()
     for n in ('out','parent','qualified','kit','reader'):p.add_argument('--'+n,type=Path,required=True)
     p.add_argument('--reader-sha256',required=True)
+    p.add_argument('--queue-source',type=Path,
+        help='Optional exact PR198 queue for a new freeze; existing runs stay unchanged.')
     p.add_argument('--tasks',nargs='+',required=True)
     p.add_argument('--selection-reason',required=True)
     p.add_argument('--qualification-only-selection',action='store_true')
