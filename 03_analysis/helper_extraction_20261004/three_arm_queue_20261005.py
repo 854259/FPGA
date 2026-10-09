@@ -328,6 +328,7 @@ def advance(plan, out, resource_check, execute):
         allowed = {'row_'+str(i).zfill(6) for i in range(len(plan['rows']))}
         assert all(p.is_dir() and p.name in allowed for p in out.glob('row_*')), 'Unexpected result row'
         reserved = 0; next_row = None
+        prefix_plan_digest = digest(plan)
         for index, row in enumerate(plan['rows']):
             folder = out/('row_'+str(index).zfill(6))
             if not folder.exists():
@@ -335,7 +336,7 @@ def advance(plan, out, resource_check, execute):
                     p.name < folder.name for p in out.glob('row_*')), 'Non-prefix results'
                 next_row = (row, folder); break
             reserved += row['reserved_calls']
-            verify_terminal(folder, row, digest(plan))
+            verify_terminal(folder, row, prefix_plan_digest)
         if next_row is None:
             return dict(complete=True, rows=len(plan['rows']), reserved_calls=reserved, full_batch=False)
         row, folder = next_row
