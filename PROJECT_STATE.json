@@ -608,6 +608,278 @@
   },
   "submission_report_update_20261008": {"updated_at": "2026-10-08T22:46:00+08:00", "status": "draft_updated_static_verified_not_deployed", "path": "04_project/amd_rtl_agent/submission/REPORT.md", "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801", "scope": "Official selection and existing129 failure evidence; archived runtime and research candidate distinguished; historical numerical results retained.", "evidence_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38", "new_model_calls": 0, "new_eda_calls": 0, "new_fifo": 0, "deployment": false, "full_goal_complete": false},
   "collaborative_goal_20261007": {
+    "morning_peer_intake_20261010": {
+      "updated_at": "2026-10-10T07:36:25+08:00",
+      "status": "peer_morning_evidence_intake_verified_at_report_scope",
+      "sources": {
+        "issue_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6090887187",
+        "issue_updated_at": "2026-10-09T23:31:05Z",
+        "gmail_id": "1a122f4eb7e1332b",
+        "gmail_matches_initial_comment": true,
+        "later_issue_edits_read_separately": true,
+        "shared_reports": {
+          "resume": {
+            "path": "/workspace/team/activity/fpga_owner/artifacts/morning-capability-priority-20261010-v1/RESUME.json",
+            "sha256": "f302a05e96f017cc0dd9c4db50c7368cf2c35ecc303ea760cfe16094a4bd0fdc",
+            "bytes": 10521
+          },
+          "witness": {
+            "path": "/workspace/team/activity/fpga_owner/artifacts/fsm133-public-window-witness-20261010-v1/STATIC_WITNESS.json",
+            "sha256": "2ff524a7b3f3b80b309c54bb492d4e8fa23cac3c340911054b4f93bd3c00d2e7",
+            "bytes": 6539
+          },
+          "preparation": {
+            "path": "/workspace/team/activity/fpga_owner/artifacts/first-generation-timing-preparation-20261010-v1/SOURCE_PREPARATION.json",
+            "sha256": "51e02b097e6270e34be0f8283efee6567d87946392c9f34b43d8a82c9c1e951f",
+            "bytes": 8712
+          },
+          "capability": {
+            "path": "/workspace/team/activity/fpga_owner/artifacts/prefix138-and-compile-regression-20261010-v1/CAPABILITY_AND_REGRESSION.json",
+            "sha256": "42e38d670a2d4063044385ee1f5bfe133862d090e8b8b826fdddd2a905442e8b",
+            "bytes": 14426
+          }
+        }
+      },
+      "verification_scope": {
+        "shared_report_bytes_read_twice_same_sha": true,
+        "original_2070_rows_independently_reaudited": false,
+        "compile23_source_files_independently_reaudited": false,
+        "ten_fsm133_DUTs_independently_reaudited": false,
+        "new_simulation_or_regrading": false,
+        "private_reference_or_testbench_read": false
+      },
+      "peer_coordination": {
+        "resumed": "Peer reports user-authorized morning resumption and active goal; supersedes prior peer-local pause for current coordination.",
+        "ours": [
+          132,
+          133,
+          134
+        ],
+        "peer": [
+          135,
+          136
+        ],
+        "new_work_assigned": false
+      },
+      "peer_disclosed_fixed_table9": {
+        "A": {
+          "outputs": 45,
+          "fully_correct_outputs": 15,
+          "calls": 45,
+          "solve_elapsed_sum_s": 240.914792
+        },
+        "P": {
+          "outputs": 45,
+          "fully_correct_outputs": 30,
+          "calls": 75,
+          "solve_elapsed_sum_s": 837.043498
+        },
+        "B": {
+          "outputs": 45,
+          "fully_correct_outputs": 10,
+          "calls": 45,
+          "solve_elapsed_sum_s": 176.063607
+        }
+      },
+      "peer_disclosed_prefix138": {
+        "retained_rows": 2071,
+        "complete_paired_tasks": 138,
+        "outputs_per_arm": 690,
+        "partial_rows_excluded": 1,
+        "arms": {
+          "A": {
+            "level_counts": {
+              "0": 10,
+              "1": 138,
+              "3": 542
+            },
+            "L3_outputs": 542,
+            "all_five_L3_tasks": 107,
+            "actual_calls": 731,
+            "solve_elapsed_sum_s": 9121.013843
+          },
+          "P": {
+            "level_counts": {
+              "0": 11,
+              "1": 120,
+              "3": 559
+            },
+            "L3_outputs": 559,
+            "all_five_L3_tasks": 110,
+            "actual_calls": 762,
+            "solve_elapsed_sum_s": 9627.395162
+          },
+          "B": {
+            "level_counts": {
+              "0": 70,
+              "1": 155,
+              "3": 465
+            },
+            "L3_outputs": 465,
+            "all_five_L3_tasks": 93,
+            "actual_calls": 690,
+            "solve_elapsed_sum_s": 7512.092981
+          }
+        },
+        "P_vs_A_new_L3": 17,
+        "P_vs_A_lost_L3": 0,
+        "grade_regression": {
+          "task": "Prob082_lfsr32",
+          "sample": 1,
+          "A_level": 1,
+          "P_level": 0
+        },
+        "scope": "Fixed paired prefix, not full156, independent generalization or final official score. Solve sums are not experiment wall time. All-five counts are descriptive, not an extra adoption veto."
+      },
+      "peer_disclosed_diagnoses": {
+        "fsm133": "Ten A/P outputs have local declaration-fix compile [1,0], one model call each, all L1. Existing public-contract checkers abstain; routing-only return removal would not supply feedback for this contract. Peer reports one AMD parser-only applicability check, not model/EDA scoring.",
+        "window_witness": "Peer's later static witness supersedes the earlier pending-cycle-witness statement: two public input streams differ only at an evaluation-only state that never reads w; generated histories match although continuous three-cycle group decisions must differ. Based on ten final DUTs; no new simulation or measured improvement.",
+        "compile082": "Peer reports identical A/P first request JSON but different replies. P compile [1,1] flags procedural wire declarations in both replies, with the actual diagnostic included in repair. Preserve the L1-to-L0 paired regression; table feedback causation is not established because the first compile error predates it.",
+        "baseline_compile_route": "Unknown where official B lacks agent compile_journal; do not equate absent agent metadata with zero compiler failures."
+      },
+      "first_generation_timing_draft": {
+        "selected": false,
+        "integrated": false,
+        "qualified": false,
+        "queued": false,
+        "measured_gain": false,
+        "source_sha256": "2cbada5292f12ff8e3582a136fac02a2836a35e40be0f249c52ea580e083d1f3",
+        "instruction_sha256": "30bd4b99b04a19f0a3079fdddaca4b1100d250ca69f9351b6d3ac22c291f9f9a",
+        "peer_preparation_scope": "Reuses the request-only transformer from original114; only SCHEMA and SYSTEM_SUFFIX assignments changed, with static AST and reverse-byte checks reported. This is source preparation only; previous format-factor qualification does not establish this factor.",
+        "old_TIMING_scope": {
+          "source_sha256": "94c5452beb7c87126f1411549393851a4330d74cf36d649cc0ec29669931367c",
+          "attempts": 13,
+          "responses": 12,
+          "initial_generations": 0,
+          "moore_guard_completed": false,
+          "original_full_pilot_accepted": false
+        }
+      },
+      "own_live_observation": {
+        "at_beijing": "2026-10-10T07:34:27.109566+08:00",
+        "sealed": 2088,
+        "terminal": 2088,
+        "total": 2340,
+        "processes": {
+          "132monitor": {
+            "pid": 2930407,
+            "state": "S",
+            "ppid": 1,
+            "sid": 2930407,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "132stage": {
+            "pid": 2938975,
+            "state": "S",
+            "ppid": 2938971,
+            "sid": 2938975,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "model": {
+            "pid": 2013333,
+            "state": "R",
+            "ppid": 1,
+            "sid": 2013325,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "133monitor": {
+            "pid": 4161723,
+            "state": "S",
+            "ppid": 1,
+            "sid": 4161723,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "134monitor": {
+            "pid": 4175417,
+            "state": "S",
+            "ppid": 1,
+            "sid": 4175417,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "135monitor": {
+            "pid": 4175420,
+            "state": "S",
+            "ppid": 1,
+            "sid": 4175420,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "136monitor": {
+            "pid": 4187849,
+            "state": "S",
+            "ppid": 1,
+            "sid": 4187849,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "48hwatcher": {
+            "pid": 4053997,
+            "state": "S",
+            "ppid": 1,
+            "sid": 4053997,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          }
+        },
+        "tickets": {
+          "132": {
+            "state": "running",
+            "guard": {
+              "complete": false,
+              "passed": false,
+              "phase": "resource_guard"
+            }
+          },
+          "133": {
+            "state": "queued",
+            "guard": null
+          },
+          "134": {
+            "state": "queued",
+            "guard": null
+          },
+          "135": {
+            "state": "queued",
+            "guard": null
+          },
+          "136": {
+            "state": "queued",
+            "guard": null
+          }
+        },
+        "plan_same": true,
+        "spec_same": true,
+        "continuation_48h": {
+          "plan_same": true,
+          "bound_files": 39,
+          "bad_files": [],
+          "events": {}
+        },
+        "reader_intents": {
+          "132": false,
+          "134": false
+        }
+      },
+      "next": "Receive original132 true terminal and existing133-136 outcomes, then select one factor among existing candidates using official capability/gain/time/engineering evidence. Preserve regressions and costs in the comparison. Peer120/.80 and per-task nonregression are not added as our adoption vetoes. No hot changes, new tickets, repeat controls, or unselected implementation.",
+      "new_project_executions": 0,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_tickets": 0,
+      "full_goal_complete": false
+    },
     "fsm111_first_generation_review_20261010": {
       "updated_at": "2026-10-10T00:07:48.147307+08:00",
       "status": "sample0_static_review_verified_not_a_new_score",
