@@ -1,0 +1,117 @@
+{
+  "schema": "owned_fifo135136_wait_recovery_v1",
+  "status": "qualified_detached_conditional_watcher_running_no_recovery",
+  "owned_tickets": [
+    135,
+    136
+  ],
+  "scope": "Only original never-started wait expiry; no executed task restart, release-held or resubmission.",
+  "shared_core_PR": "https://github.com/854259/FPGA/pull/199",
+  "shared_core_commit": "c1525ed2b2b23beff8614b0b7c2d1a2ae16cfd19",
+  "wrapper_sha256": "da01ab8ceb34bac0900e7548f94e843ab3690fef4651bb5eea76b7ff913d8d5a",
+  "shared_core_sha256": "692305058c4499ffbe599ada3badb316f866e918da5a78df348e58ac146ca302",
+  "owner_plan_sha256": "0f826664441c73722e3a5d49ce952e1adee7b82aa7ce5e0f58c21953677973d5",
+  "plan_root": "/workspace/team/runs/fpga_owner/fifo_unstarted_wait_recovery135136_20261009_v1",
+  "watch_expires_beijing": "2026-10-09 22:00:00",
+  "frozen_file_counts": {
+    "135": 39,
+    "136": 71
+  },
+  "existing_ticket_order_command_budget_sources_preserved": true,
+  "qualification": {
+    "root": "/workspace/team/runs/fpga_owner/fifo_wait_recovery_owned_delta_20261009_v1",
+    "cases": [
+      {
+        "case": "exact_owned_binding_live_waiting_read_only",
+        "passed": true,
+        "outcomes": [
+          {
+            "ticket": 135,
+            "outcome": "waiting_original"
+          },
+          {
+            "ticket": 136,
+            "outcome": "waiting_original"
+          }
+        ]
+      },
+      {
+        "case": "foreign_ticket_133",
+        "refused": true
+      },
+      {
+        "case": "changed_original_command",
+        "refused": true
+      },
+      {
+        "case": "missing_frozen_source",
+        "refused": true
+      }
+    ],
+    "result_sha256": "1818e88b44daac5afc8a330bbc531d7959967f8ecf015264a5ef11bb794b0bcf",
+    "process": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/fifo_wait_recovery_owned_delta_20261009_v1/fifo_wait_recovery_owned_controls_20261009.py",
+        "/workspace/team/runs/fpga_owner/fifo_wait_recovery_owned_delta_20261009_v1/RESULT.json"
+      ],
+      "cwd": "/workspace/team/runs/fpga_owner/fifo_wait_recovery_owned_delta_20261009_v1",
+      "cap_s": 40,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 3964340,
+        "state": "T",
+        "starttime": "880718664",
+        "pgid": 3964340,
+        "sid": 3964340,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 0.20569875091314316,
+      "leader_reaped": true,
+      "stdout_sha256": "65dda4bc16df7465751d6941c26813418654b6f4867dbc825640f5f5955e0b87",
+      "stdout_bytes": 563,
+      "normal_completion": true
+    },
+    "protected_held": true,
+    "archive_sha256": "93803e4fa31163117cd135a69066bdc3aa0590b0693723bf74eeb761f66c1c61",
+    "archive_members": 15,
+    "AMD_E_every_member_verified": true,
+    "peer_original_plan_result_byte_bound": true,
+    "peer_archive_independently_verified": false,
+    "peer_16_controls_repeated": false
+  },
+  "watcher_started": true,
+  "recovery_triggered": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo_tickets": 0,
+  "formal_score_gain": false,
+  "full_goal_complete": false,
+  "next": "Read existing132-136 actual terminal results; keep this unique watcher until completion or its 22:00 cutoff. Do not relaunch it or any existing task.",
+  "watcher": {
+    "pid": 3966482,
+    "present": true,
+    "state": "S",
+    "starttime": "880750502",
+    "ppid": 1,
+    "pgid": 3966482,
+    "sid": 3966482,
+    "command_sha256": "242c299832e97083e3a3af3bacb81edc386a1ff23b44249713de56ed47ef81eb",
+    "live_identity_verified": true,
+    "independent_session": true
+  },
+  "watcher_observed_epoch": 1791533928.101189,
+  "watcher_source_commit": "79c13c95c49fb0db87d5537effcceeda79889165",
+  "detached_ppid1_verified": true,
+  "qualification_child_separately_observed_retired": true
+}
