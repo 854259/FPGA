@@ -607,7 +607,78 @@
     "full_goal_complete": false
   },
   "submission_report_update_20261008": {"updated_at": "2026-10-08T22:46:00+08:00", "status": "draft_updated_static_verified_not_deployed", "path": "04_project/amd_rtl_agent/submission/REPORT.md", "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801", "scope": "Official selection and existing129 failure evidence; archived runtime and research candidate distinguished; historical numerical results retained.", "evidence_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38", "new_model_calls": 0, "new_eda_calls": 0, "new_fifo": 0, "deployment": false, "full_goal_complete": false},
-  "collaborative_goal_20261007": {"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-08T21:36:00+08:00","status":"active_official_total_score_priority_model_generated_candidate_required","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"严格以官方RTL赛题总分最高为目标，遵守官方提交和评测条件；保留真实性、公平性与完整交付，不附加逐题保持或调用不增的成绩否决门。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":["Retain123 exact result and terminal evidence without repeating it; old custom audit gates no longer control selection.","Use official scoring and substantive model generation; do not promote mechanical direct RTL as a contest candidate.","Coordinate completed124/125 and the next model-generated candidate inIssue7; no pure ACK wait or financial balance gate.","Complete same-model original official baseline and five-sample comparison with externally measured wall time; report RTLLM separately and retain full resource/interface/recovery scope."],"unresolved":["Known retained strict-SV opportunity is one final C failure; ordinary-always blind spot remains. New generation benefit, broad coverage, complete runtime cost and scoring admission are unproven.","Complete three-arm156, auditedRTLLM, required five samples and resource/interface/recovery acceptance remain incomplete; historical118 not exceeded."],"overnight_execution":{
+  "collaborative_goal_20261007": {
+    "fsm111_first_generation_review_20261010": {
+      "updated_at": "2026-10-10T00:07:48.147307+08:00",
+      "status": "sample0_static_review_verified_not_a_new_score",
+      "source_root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1",
+      "scope": {
+        "task": "Prob111_fsm2s",
+        "sample": 0,
+        "rows": {
+          "B": 1650,
+          "A": 1651,
+          "P": 1652
+        },
+        "allowed_source_files": 7,
+        "whole_15_row_75_file_audit": false,
+        "private_reference_or_tb_read": false,
+        "source_bytes_unchanged_across_reads": true,
+        "terminal_metadata_sha_matches_sealed": true,
+        "whole_evidence_archives_reverified": false
+      },
+      "file_sha256": {
+        "inputs/Prob111_fsm2s/prompt.txt": "e048cd8e3f02777f938e968ed677d1f802bd4874bd99cdc699b99d55e1f628ed",
+        "queue/row_001650/solve/output/solution.v": "dfe55b119822a80668f0fbaa5a224d62b121aff2698a527950e0ec93b91a49ee",
+        "queue/row_001651/solve/solution.v": "52acb1fee1329f3cd693606ca4f8f32748efd12d29247691a97a86c7077b88cc",
+        "queue/row_001652/solve/solution.v": "52acb1fee1329f3cd693606ca4f8f32748efd12d29247691a97a86c7077b88cc",
+        "queue/row_001650/solve/transport/request_0/request.bin": "c56ef8132ef1a4433776e6ba07409a2fe45e6a30b741238ef99921c5f2671192",
+        "queue/row_001651/solve/requests/0/request.json": "57aee4eadf38fbf6ed0608f76051f0600a24a3d02e10157262aa0f6065e3fb72",
+        "queue/row_001652/solve/requests/0/request.json": "57aee4eadf38fbf6ed0608f76051f0600a24a3d02e10157262aa0f6065e3fb72"
+      },
+      "request_review": {
+        "AP_JSON_equal": true,
+        "APB_equal_except_system": true,
+        "request_directories_per_arm": 1,
+        "AP_worker_reported_requests": 1,
+        "A_worker_internal_label": "C",
+        "row_plan_label_is_authoritative": true,
+        "first_system_matches_frozen_generation_skill": true,
+        "generation_skill_sha256": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01"
+      },
+      "static_inference": "Public reset establishes OFF/out0. On the next sampled j1 transition, A/P update state to ON but their separate output register decodes pre-edge OFF and retains out0; the public diagram requires out1. B directly decodes current state. This is a source-level witness, not new simulation.",
+      "existing_instruction": {
+        "path": "03_analysis/semantic_repair_20261004/timing_pilot.py",
+        "sha256": "94c5452beb7c87126f1411549393851a4330d74cf36d649cc0ec29669931367c",
+        "lines": [
+          18,
+          24
+        ],
+        "scope": "Archived candidate-review pilot already distinguishes Moore decode, Mealy behavior and whole-cycle pulses, and checks extra-cycle delay. Current111 initial HTTP bodies contain the seven generation rules, without this review instruction. Reuse existing knowledge if this factor is selected; do not duplicate the broad checklist or change repair-only text expecting to reach a one-request route."
+      },
+      "references": [
+        {
+          "url": "https://docs.amd.com/r/en-US/ug901-vivado-synthesis/FSM-Description",
+          "document": "UG901 2026.1",
+          "support": "Separates the state register, next-state function and outputs function; not a task-specific latency rule."
+        },
+        {
+          "url": "https://docs.amd.com/r/en-US/ug958-vivado-sysgen-ref/Registered-Moore-State-Machine",
+          "document": "UG958 2020.2",
+          "support": "Documents registered Moore implementations; cannot infer a universal ban on output registers."
+        }
+      ],
+      "limits": [
+        "Remaining samples and aggregate L1/L3 counts remain peer-disclosed, not independently regraded here.",
+        "A/P-versus-B system-message association does not isolate one causal rule.",
+        "No new candidate selected, prompt edited, deployment, project function/test, model call, EDA command or FIFO ticket.",
+        "Original132-136, total48h and ownership stay unchanged; await their real outcomes before selecting one factor. Known task remains development data."
+      ],
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_tickets": 0,
+      "full_goal_complete": false
+    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-08T21:36:00+08:00","status":"active_official_total_score_priority_model_generated_candidate_required","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"严格以官方RTL赛题总分最高为目标，遵守官方提交和评测条件；保留真实性、公平性与完整交付，不附加逐题保持或调用不增的成绩否决门。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":["Retain123 exact result and terminal evidence without repeating it; old custom audit gates no longer control selection.","Use official scoring and substantive model generation; do not promote mechanical direct RTL as a contest candidate.","Coordinate completed124/125 and the next model-generated candidate inIssue7; no pure ACK wait or financial balance gate.","Complete same-model original official baseline and five-sample comparison with externally measured wall time; report RTLLM separately and retain full resource/interface/recovery scope."],"unresolved":["Known retained strict-SV opportunity is one final C failure; ordinary-always blind spot remains. New generation benefit, broad coverage, complete runtime cost and scoring admission are unproven.","Complete three-arm156, auditedRTLLM, required five samples and resource/interface/recovery acceptance remain incomplete; historical118 not exceeded."],"overnight_execution":{
     "automation_id": "amd-rtl-3",
     "preparation_time": "21:30",
     "local_cutoff": "23:00",
