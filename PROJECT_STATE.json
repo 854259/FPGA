@@ -17958,5 +17958,47 @@
       "formal_adoption": false,
       "independent_unseen": 0
     }
+  },
+  "compiler_feedback_budget_20261009": {
+    "schema": "compiler_feedback_budget_preparation_v1",
+    "status": "draft_model_benefit_pending",
+    "source_sha256": {
+      "runtime.py": "33f2480c6a9278afabfeec6b2e0308b8f83d46720431eed9a4e6e737fec1b362",
+      "pure_stage.py": "d9779536bac51decbf004dcd2d3c9ddcc98cbf6d920ca59b32b58f41ac05cb86",
+      "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "runtime_original.py": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97",
+      "bounded_owned_exec.py": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00"
+    },
+    "root": "/workspace/team/runs/fpga_owner/compiler_feedback_pure_20261009_v1",
+    "tests": 8,
+    "retained_compile_logs": 343,
+    "changed_log_diagnostics": 5,
+    "unchanged_log_diagnostics": 338,
+    "preserved_missing_error_signals": 2,
+    "actual_worker_mock_requests": 2,
+    "actual_worker_mock_compiles": 2,
+    "first_request_exact": true,
+    "repair_request_only_diagnostics_changed": true,
+    "original_runtime_other_AST_unchanged": true,
+    "result_sha256": "46041649c798de441ef74985140205b2b36c55006c5a1d19b5e85553dc8783ba",
+    "archive_sha256": "437f16ad0c0d9bbcaa418443f751115c855c9c21debdb4c3315f1c65a0775478",
+    "archive_members": 17,
+    "all_members_AMD_E_verified": true,
+    "process": {
+      "normal_completion": true,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining_group": []
+    },
+    "protected_held": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "score_measured": false,
+    "adoption": false,
+    "model_comparison_pending": true,
+    "historical_successful_repair_changed": true,
+    "full_goal_complete": false
   }
 }

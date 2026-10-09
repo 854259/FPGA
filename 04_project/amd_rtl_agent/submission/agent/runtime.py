@@ -418,6 +418,36 @@ def run_job(mode, task, out, seconds):
     return (out / 'solution.v').read_text(encoding='utf-8'), (out / 'trace.jsonl').read_text(encoding='utf-8')
 
 
+def compiler_feedback(stdout):
+    """Keep short diagnostics exact; compact overflowing logs around real errors."""
+    lines = [s for s in stdout.splitlines() if re.search('ERROR|WARNING|FATAL', s)]
+    original = '\n'.join(lines)
+    if len(original) <= 2048:
+        return original or stdout[-2048:]
+    # Repeated errors at different lines can crowd other failing signals out of
+    # the repair request. Keep the first original line for each message/file,
+    # with errors ahead of warnings. The complete compiler log stays untouched.
+    unique, seen = [], set()
+    for line in lines:
+        location = re.search(r' \[([^\]\r\n]+):\d+\]$', line)
+        key = (line[:location.start()], location[1]) if location else (line, '')
+        if key not in seen:
+            seen.add(key)
+            unique.append(line)
+    critical = [s for s in unique if re.match(r'^\s*(?:ERROR|FATAL):', s)]
+    other = [s for s in unique if not re.match(r'^\s*(?:ERROR|FATAL):', s)]
+    selected, size = [], 0
+    for line in critical + other:
+        required = len(line) + bool(selected)
+        if size + required <= 2048:
+            selected.append(line)
+            size += required
+        elif not selected:
+            selected.append(line[:2048])
+            size = 2048
+    return '\n'.join(selected)
+
+
 def worker(task, out):
     # Import ONLY the untouched extraction helper; never import the development evaluator.
     import baseline
@@ -503,8 +533,7 @@ def worker(task, out):
         result = subprocess.run([tool, '--sv', str(wd / 'candidate.sv')], cwd=wd,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 text=True, errors='replace')
-        lines = [s for s in result.stdout.splitlines() if re.search('ERROR|WARNING|FATAL', s)]
-        feedback = '\n'.join(lines)[:2048] or result.stdout[-2048:]
+        feedback = compiler_feedback(result.stdout)
         trace(out, 'lint', rc=result.returncode, excerpt=feedback, round=attempt)
         if result.returncode != 0:
             # A declaration fault is mechanical, so fix it by text instead of spending a
