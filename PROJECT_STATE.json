@@ -18305,5 +18305,30 @@
     "score_measured": false,
     "adoption": false,
     "full_goal_complete": false
+  },
+  "fifo_135136_wait_lifetime_risk_20261009": {
+    "schema": "fifo135136_wait_lifetime_risk_v1",
+    "source_fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
+    "wait_lifetime_defaults": {
+      "execute": 86400
+    },
+    "binding_sha256": "24808da83ad841b0cf6d182226b70eabbfa9c1bb35200aa007c9428eca4ba430",
+    "shared_binding": "/workspace/team/activity/fpga_owner/artifacts/fifo135136-wait-recovery-bindings-20261009-v1/BINDINGS.json",
+    "tickets": [
+      135,
+      136
+    ],
+    "current_state": "queued_original_monitors_live",
+    "restoration_currently_permitted": false,
+    "common_helper_owner": "fpga_teammate",
+    "own_restoration_owner": "fpga_owner",
+    "helper_not_yet_reviewed_or_installed": true,
+    "restore_only_never_started_original_wait_expiry": true,
+    "no_ticket_restart_resubmission_or_budget_change": true,
+    "night_continuation_not_yet_guaranteed": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "latest_peer_comment": 6076534686
   }
 }
