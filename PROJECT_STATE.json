@@ -14221,7 +14221,7 @@
 },
   "fifo_wait_recovery_owned_135136_20261009": {
     "schema": "owned_fifo135136_wait_recovery_v1",
-    "status": "qualified_watcher_not_started",
+    "status": "qualified_detached_conditional_watcher_running_no_recovery",
     "owned_tickets": [
       135,
       136
@@ -14311,13 +14311,29 @@
       "peer_archive_independently_verified": false,
       "peer_16_controls_repeated": false
     },
-    "watcher_started": false,
+    "watcher_started": true,
     "recovery_triggered": false,
     "new_model_calls": 0,
     "new_eda_calls": 0,
     "new_fifo_tickets": 0,
     "formal_score_gain": false,
     "full_goal_complete": false,
-    "next": "Review and launch one detached owner watcher before the 22:00 authorization cutoff; original132 terminal/resource handling and peer133134 remain independently owned."
+    "next": "Read existing132-136 actual terminal results; keep this unique watcher until completion or its 22:00 cutoff. Do not relaunch it or any existing task.",
+    "watcher": {
+      "pid": 3966482,
+      "present": true,
+      "state": "S",
+      "starttime": "880750502",
+      "ppid": 1,
+      "pgid": 3966482,
+      "sid": 3966482,
+      "command_sha256": "242c299832e97083e3a3af3bacb81edc386a1ff23b44249713de56ed47ef81eb",
+      "live_identity_verified": true,
+      "independent_session": true
+    },
+    "watcher_observed_epoch": 1791533928.101189,
+    "watcher_source_commit": "79c13c95c49fb0db87d5537effcceeda79889165",
+    "detached_ppid1_verified": true,
+    "qualification_child_separately_observed_retired": true
   }
 }
