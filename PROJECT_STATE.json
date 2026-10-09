@@ -195,12 +195,12 @@
 
   "fifo_wait_recovery_20261009": {
   "schema": "owned_fifo_wait_recovery_20261009_v1",
-  "updated_at": "2026-10-09T15:54:00+08:00",
-  "status": "controls_verified_conditional_watcher_running_no_recovery_triggered",
+  "updated_at": "2026-10-09T21:15:00+08:00",
+  "status": "original133134_wait_monitors_recovered_watcher_retired_tasks_still_queued",
   "problem": {
     "fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
     "waiting_lifetime_seconds": 86400,
-    "preceding132_execution_cap_seconds": 129600,
+    "preceding132_execution_cap_seconds": 172800,
     "affected_original_tickets": [
       133,
       134,
@@ -217,7 +217,9 @@
       "135": "2026-10-09 21:10:08",
       "136": "2026-10-09 21:32:58"
     },
-    "time_scope": "Acceptance times approximate monitor start; actual deadline uses monotonic time."
+    "time_scope": "Acceptance times approximate monitor start; actual deadline uses monotonic time.",
+    "original_preceding132_execution_cap_seconds": 129600,
+    "current132_cap_source": "Explicit total48h amendment full132_wall48h_20261009; original36h freeze retained."
   },
   "change": {
     "source_sha256": "692305058c4499ffbe599ada3badb316f866e918da5a78df348e58ac146ca302",
@@ -276,7 +278,7 @@
     },
     "watch_expires": "2026-10-09T22:00:00+08:00",
     "watcher_started": true,
-    "real_recovery_triggered": false,
+    "real_recovery_triggered": true,
     "watcher": {
       "pid": 3955844,
       "starttime": "880603628",
@@ -286,10 +288,14 @@
       "source_commit": "c1525ed2b2b23beff8614b0b7c2d1a2ae16cfd19",
       "started_at_utc": "2026-10-09T07:53:06.856903+00:00",
       "watcher_started": true,
-      "real_recovery_triggered": false,
-      "tickets_unchanged": true
+      "real_recovery_triggered": true,
+      "original_task_fields_unchanged": true,
+      "observed_state": "Z",
+      "retired": true,
+      "completed_at_beijing": "2026-10-09T21:10:07.560855+08:00"
     },
-    "detached_ppid1_verified": true
+    "detached_ppid1_verified": true,
+    "watch_result_sha256": "34c2e27a5d18865879512aab467e0f4b91b5d14ba81a0b7df85014a2df8e39f9"
   },
   "collaboration": {
     "risk_issue": "https://github.com/854259/FPGA/issues/7#issuecomment-6076534686",
@@ -299,12 +305,115 @@
       136
     ],
     "peer6076529572": "Accepted PR198 and RTLLM natural-language interface diagnosis; PR196 optional pinned queue-source added with 3 new coupling controls per peer, not independently fully audited.",
-    "rtllm_format_diagnosis": "Original 29 prompts have natural-language Module name/Input ports/Output ports sections, no standalone interface or ANSI declaration. Current parser format mismatch explains 0/29 applicability; unknown widths remain unknown. No new intake, score or broadened contract."
+    "rtllm_format_diagnosis": "Original 29 prompts have natural-language Module name/Input ports/Output ports sections, no standalone interface or ANSI declaration. Current parser format mismatch explains 0/29 applicability; unknown widths remain unknown. No new intake, score or broadened contract.",
+    "latest_recovery_notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6081212454",
+    "peer_readback": "https://github.com/854259/FPGA/issues/7#issuecomment-6081244037",
+    "serial_context_handoff": {
+      "single_successor_confirmed": true,
+      "formal_goal_status": "active",
+      "old_chat_paused": true,
+      "original_automations_rebound": [
+        "amd-rtl",
+        "amd-rtl-2",
+        "amd-rtl-3"
+      ],
+      "schedules_unchanged": true,
+      "duplicate_automation_created": false,
+      "handoff_issue": "https://github.com/854259/FPGA/issues/7#issuecomment-6080161461",
+      "next_focus": "Finish original132-136, then choose one candidate by official score-related measured benefit. No repeat controls or unselected draft expansion."
+    }
   },
   "formal_score_gain": false,
   "full_goal_complete": false,
   "selection": "Official total score; model-generated design and unchanged current experiment freezes.",
-  "next": "Follow original132 at the existing 30-minute cadence and inspect this original watcher at meaningful state changes. Original133134 recover only after exact natural waiting timeout and retirement; inspect actual132 failure separately. Do not launch another watcher or ticket."
+  "next": "Follow original132 plus receipt-bound133/134 monitors at the established cadence. After132 exits, retain133 native prerequisite before134. Original133134 watcher is complete and retired; never relaunch it. Peer owns135136. Report complete same-run results, not partial rows; formal full goal remains unachieved.",
+  "production_recovery": {
+    "observed_at_beijing": "2026-10-09T21:15:00.747463+08:00",
+    "status": "both_original_wait_monitors_recovered_and_unique_live_tasks_not_started",
+    "frozen_files_verified": 45,
+    "original_wait_failure_preserved": true,
+    "original_monitors_retired": true,
+    "watcher_completed_and_retired": true,
+    "watch_failure_absent": true,
+    "tickets": {
+      "133": {
+        "recovered_at_beijing": "2026-10-09T20:46:07.508627+08:00",
+        "intent_sha256": "fca553bab565e450a2eb49de7f03a8ec60122d7f02319d3fc3676f8db4261069",
+        "result_sha256": "616dd0f1a1217a3dbf62f385a2ea9059fc4b2461ff2b9733a0a5a8bb01907c29",
+        "failed_ticket_sha256": "0f5e44600d556cc7b862898f9fd063ef4da79b9e89f6dd4373031acad5210a9c",
+        "observed_ticket_sha256": "7386e29066615d6114b665e0cd48b8976388face19b82381d94f6b6340261b1a",
+        "original_monitor": {
+          "pid": 2985748,
+          "starttime": "873719994",
+          "retired": true
+        },
+        "actual_monitor": {
+          "pid": 4161723,
+          "present": true,
+          "state": "S",
+          "ppid": 1,
+          "pgid": 4161723,
+          "sid": 4161723,
+          "starttime": "882361698",
+          "command_sha256": "695eb6608ad81628f51a33cf18187cc76f59382d0caa8f23e7a005e47d24d669",
+          "retired": false
+        },
+        "unique_monitor_verified": true,
+        "original_task_fields_unchanged": true,
+        "state": "queued",
+        "task_started": false,
+        "guard_absent": true
+      },
+      "134": {
+        "recovered_at_beijing": "2026-10-09T21:10:07.560465+08:00",
+        "intent_sha256": "d801d674f94bdc5123c9b1bd09941a174c8de71d11f329609f7b83f15b53e42b",
+        "result_sha256": "c71184874d29010d30985a3cd984bddedca2c14991f22daa27c77fe892033e01",
+        "failed_ticket_sha256": "48cc3e13ca156abaa0e4e829b1d619498f06e1cff8d58532322ddc9c185d4973",
+        "observed_ticket_sha256": "894027dbe337205b80f667206cea319da916bf354127ad896d0bc4c237a6ed95",
+        "original_monitor": {
+          "pid": 3016870,
+          "starttime": "873863722",
+          "retired": true
+        },
+        "actual_monitor": {
+          "pid": 4175417,
+          "present": true,
+          "state": "S",
+          "ppid": 1,
+          "pgid": 4175417,
+          "sid": 4175417,
+          "starttime": "882505704",
+          "command_sha256": "f79b0dd91bde13d116bcf7ad32b8f3305e29014941977fd703e959f175d901b6",
+          "retired": false
+        },
+        "unique_monitor_verified": true,
+        "original_task_fields_unchanged": true,
+        "state": "queued",
+        "task_started": false,
+        "guard_absent": true
+      }
+    },
+    "model_calls": 0,
+    "eda_commands": 0,
+    "new_fifo_tickets": 0,
+    "old_controls_rerun": false,
+    "evidence": {
+      "artifact_root": "/workspace/team/activity/fpga_teammate/artifacts/fifo-wait-recovery133134-closeout-20261009-v1",
+      "review_sha256": "4cd25bd35b900b2efc1526049dc35e4a12ce9e05c79a2ca91ea746546249694a",
+      "manifest_sha256": "8bcffedc44ec6510e5e2ddc088acd1461319ea802b5d1b1ca4126b3c8c4c6294",
+      "zip_sha256": "f569e7e9daacd01be4e044f9299841327731b6c6bbc0afbb1cc31e016648ce6d",
+      "zip_bytes": 19709,
+      "members": 15,
+      "amd_and_local_all_members_verified": true,
+      "private_raw_in_git": false
+    },
+    "limitations": [
+      "Actual waiting-monitor recovery only; neither original133 native nor134 model comparison has executed.",
+      "Watch/result is complete for133134 only. Follow actual recovered monitor identities; do not restart the retired watcher.",
+      "135136 and any second waiting window remain peer-owned; original132 total48h continuation remains a separate live watcher.",
+      "No new score or formal32GB/container/recovery acceptance is supplied by this narrow recovery."
+    ]
+  }
 },
   "queue_prefix_digest_20261009": {
   "schema": "queue_prefix_digest_review_v1",
