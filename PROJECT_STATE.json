@@ -18130,5 +18130,128 @@
     "original_header_clock_confirmed": true,
     "simple_restart_does_not_extend_window": true,
     "queue_source_sha256": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de"
+  },
+  "run132_timing_components_20261009": {
+    "schema": "run132_timing_components_v1",
+    "observed_epoch": 1791527986.8474114,
+    "sealed_snapshot": 1249,
+    "cohorts": {
+      "first300": {
+        "rows": 299,
+        "index_range": [
+          0,
+          299
+        ],
+        "wall_s": 11597.400912761688,
+        "totals": {
+          "solve_elapsed_s": 1060.0202887300402,
+          "judge_elapsed_s": 8258.296524528414,
+          "within_execute_overhead_s": 683.3039465397596,
+          "outside_execute_s": 1595.7801529634744,
+          "pre_dispatch_s": 951.6833906173706,
+          "after_started_outside_execute_s": 644.0967623461038
+        },
+        "percentages": {
+          "solve_elapsed_s": 9.140153873301061,
+          "judge_elapsed_s": 71.20816626629721,
+          "within_execute_overhead_s": 5.891871391527539,
+          "outside_execute_s": 13.759808468874182,
+          "pre_dispatch_s": 8.206005791954176,
+          "after_started_outside_execute_s": 5.5538026769200055
+        },
+        "median_outside_execute_s": 5.334526184946299,
+        "median_pre_dispatch_s": 3.1767029762268066,
+        "arms": {
+          "A": {
+            "rows": 99,
+            "solve_s": 376.4438730161637,
+            "judge_s": 2776.016841283068,
+            "calls": 99,
+            "outside_execute_s": 529.9997977875173
+          },
+          "P": {
+            "rows": 100,
+            "solve_s": 363.3103033788502,
+            "judge_s": 2795.5688508711755,
+            "calls": 100,
+            "outside_execute_s": 533.2685798965394
+          },
+          "B": {
+            "rows": 100,
+            "solve_s": 320.26611233502626,
+            "judge_s": 2686.7108323741704,
+            "calls": 100,
+            "outside_execute_s": 532.5117752794176
+          }
+        }
+      },
+      "latest300": {
+        "rows": 300,
+        "index_range": [
+          949,
+          1248
+        ],
+        "wall_s": 21250.4247879982,
+        "totals": {
+          "solve_elapsed_s": 7103.119217146188,
+          "judge_elapsed_s": 7734.165716869757,
+          "within_execute_overhead_s": 685.7874042894691,
+          "outside_execute_s": 5727.352449692786,
+          "pre_dispatch_s": 5080.078417778015,
+          "after_started_outside_execute_s": 647.2740319147706
+        },
+        "percentages": {
+          "solve_elapsed_s": 33.42577519277583,
+          "judge_elapsed_s": 36.39534641791186,
+          "within_execute_overhead_s": 3.227170332504542,
+          "outside_execute_s": 26.951708056807767,
+          "pre_dispatch_s": 23.905773500806152,
+          "after_started_outside_execute_s": 3.0459345560016176
+        },
+        "median_outside_execute_s": 19.116897283121943,
+        "median_pre_dispatch_s": 16.96412229537964,
+        "arms": {
+          "A": {
+            "rows": 101,
+            "solve_s": 2430.528004501015,
+            "judge_s": 2683.117309855297,
+            "calls": 106,
+            "outside_execute_s": 1928.2799291778356
+          },
+          "P": {
+            "rows": 99,
+            "solve_s": 2368.4192057009786,
+            "judge_s": 2632.204759635031,
+            "calls": 105,
+            "outside_execute_s": 1891.3707047756761
+          },
+          "B": {
+            "rows": 100,
+            "solve_s": 2304.1720069441944,
+            "judge_s": 2418.843647379428,
+            "calls": 100,
+            "outside_execute_s": 1907.701815739274
+          }
+        }
+      }
+    },
+    "scope": "Partial sealed timing components; no performance score or model capability result",
+    "metadata_readback_sha256": "9cfee651a85bfb496e063182afe235c3e2e132ce71bd33848122580cb6a4e288",
+    "analysis_sha256": "e38600e1e6c8d6a812356d048e975c9e4dde413e3f16e2f55fc8413aef235360",
+    "digest_measurement_sha256": "432181871fee348b70b98b2d98397c305ebf7d7603c219b40cdb470618f54a90",
+    "canonical_plan_bytes": 2263318,
+    "digest_iterations": 20,
+    "median_digest_seconds": 0.008600135333836079,
+    "estimated_repeated_digest_per_advance_seconds": 10.758769302628934,
+    "diagnosis": "Prefix verification repeatedly digests the identical full plan for each completed row; plausible avoidable serialization component, not a causal end-to-end measurement.",
+    "future_change": "Hoist only the unchanged prefix-loop plan digest after original plan/header verification. Preserve all original row, terminal, file/archive hash checks and recompute digest after execute before sealing.",
+    "change_implemented": false,
+    "end_to_end_speedup_measured": false,
+    "official_time_score_unknown": true,
+    "no_live_frozen_change": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "public_index": "03_analysis/semantic_review_fallback_20261009/RUN132_TIMING_COMPONENTS.json"
   }
 }
