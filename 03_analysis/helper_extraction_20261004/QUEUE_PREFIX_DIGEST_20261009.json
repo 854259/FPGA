@@ -1,0 +1,80 @@
+{
+  "schema": "queue_prefix_digest_review_v1",
+  "updated_at": "2026-10-09T15:06:45+08:00",
+  "status": "AMD_synthetic_controls_passed_not_deployed",
+  "problem": "advance serialized the full frozen plan again for every completed prefix row. Compute that loop-invariant digest once per advance, while retaining every original row/archive/live-file check.",
+  "source_commit": "c84374a28a8bc7b3e21678d113c7fdc1a6c4919d",
+  "source": {
+    "queue_sha256": "4290944199cddd54c6a08a55d1a62f0d81d7946f144ccba6fb98ca14619971e1",
+    "previous_repository_queue_sha256": "fc39a74b224fca87b56f3f2b0e16c1668539f787897defad54e9f6132f5fb6e1",
+    "test_sha256": "84ffa2036a4e515f5bfde754db803fbadd61988f946138f84acd4fd63898044d",
+    "production_diff": "One digest assignment before the completed-prefix loop; one call argument replaced inside it. Reversing these changes restores the previous repository queue bytes."
+  },
+  "verified": {
+    "checks": 5,
+    "normal_prefix_rows": [
+      2,
+      14
+    ],
+    "whole_plan_digests_per_dispatch": [
+      5,
+      5
+    ],
+    "whole_plan_digests_when_all_complete": [
+      3,
+      3
+    ],
+    "all_prefix_rows_verified": true,
+    "new_rows_sealed": true,
+    "late_archive_corruption_rejected_before_dispatch": true,
+    "header_drift_rejected_before_dispatch": true,
+    "plan_mutation_during_execute_rejected_with_started_and_terminal_retained": true,
+    "post_execute_digest_recomputed": true,
+    "old_control_suites_rerun": false,
+    "model_calls": 0,
+    "eda_commands": 0,
+    "fifo_submissions": 0,
+    "fake_dispatches": 3
+  },
+  "evidence": {
+    "plan_sha256": "ee461d557590977fadba8be59fc2b65ccbb29bb83cd226d6bf52e0b6329464ac",
+    "result_sha256": "c1a52dd08f7aaf50d4702ccc5e7a89c14e67f7c40d1c38778fe57a671fb10982",
+    "process_sha256": "9b2eebca5fdf68f38873e00716c3d9153b88a15e9497bae4aa579f977276bd0b",
+    "archive_sha256": "467735942774fd38fbca08eea495718e57a46965f03e5aead517184bd4cd4562",
+    "archive_members": 338,
+    "archive_bytes": 185922,
+    "manifest_sha256": "f8474621b09cc294cd89189101b16fe0843c86c345d0df3615708701763ce301",
+    "local_and_remote_all_archive_members_verified": true,
+    "child_pid": 3925746,
+    "child_starttime": "880319000",
+    "returncode": 0,
+    "exec_confirmed": true,
+    "leader_reaped": true,
+    "remaining_group": [],
+    "child_retired": true,
+    "elapsed_s": 0.4460060317069292,
+    "elapsed_scope": "Child birth gate through wait/reap, owned cleanup and stdout read; excludes preparation, observer exit and transfer.",
+    "remote_effective_files_before_public_receipt": 339,
+    "cache_count": 0,
+    "empty_directory_count": 0
+  },
+  "preparation_correction": "Initial copy-from-132 assumption rejected before directory creation and project execution: current repository already includes finite model-source checks absent from frozen132. The final source preserves those existing checks. No control rerun or original freeze mutation occurred.",
+  "original132": {
+    "queue_sha256": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de",
+    "unchanged": true,
+    "last_observed_at": "2026-10-09T14:54:56+08:00",
+    "state": "running",
+    "sealed_rows": 1261,
+    "total_rows": 2340,
+    "progress_is_not_score": true,
+    "window_end": "2026-10-10T08:09:54.455768+08:00",
+    "last_next_row_admission": "2026-10-10T07:58:44.455768+08:00",
+    "risk": "Recent observed rate may not finish within the frozen window; retain original caps and natural terminal evidence, without extension, restart or partial-to-full score claims."
+  },
+  "limitations": [
+    "No real production wall-clock speedup measured; digest counts and peer estimates are not official wall-clock scores.",
+    "No change to original132–136 sources, plans, budgets or queue order; 133→134 conditional succession and peer135/136 ownership remain.",
+    "No new accuracy or completed full batch; formal total score, RTLLM and 32GB/container/resource/recovery acceptance remain incomplete."
+  ],
+  "next": "Use this reviewed queue only in a separately frozen future plan. Continue original132 and consume its true exit once; handle any original budget stop explicitly."
+}

@@ -183,10 +183,121 @@ def runner_controls(root):
     print(json.dumps(result))
 
 
+def prefix_digest_controls(root):
+    """New synthetic prefixes; retain real validation, ZIP checks and sealing."""
+    import time
+
+    task = root/'prefix_input'; task.mkdir()
+    (task/'prompt.txt').write_text('FAKE prefix control; no solver or judge.\n')
+    tasks = [dict(dataset='synthetic', task='FAKE_PREFIX', family='queue_prefix',
+                  use='development', task_dir=str(task),
+                  hashes={'prompt.txt': official.sha(task/'prompt.txt')})]
+    sources = dict(root=str(root), files={str(Path(queue.__file__)): official.sha(queue.__file__)})
+    counts, verified, calls, checks = [], [], [], []
+    original_digest, original_verify = queue.digest, queue.verify_terminal
+
+    def receipt(folder):
+        (folder/'FAKE_RESULT.txt').write_text('FAKE_NOT_SCORE\n')
+        return dict(complete=True, actual_calls=0, unconfirmed_calls=0,
+                    fixture='FAKE_NO_SOLVER_NO_JUDGE',
+                    files={'FAKE_RESULT.txt': official.sha(folder/'FAKE_RESULT.txt')})
+
+    def fixture(name, samples):
+        plan = queue.build_plan(tasks, samples, sources, root/'official_baseline_arm_20261005.py',
+                                '/workspace/team/tasks/autodl-rtl-kit/project', samples*5, 10000)
+        out = root/name; out.mkdir()
+        plan_sha = queue.digest(plan)
+        queue.save(out/'QUEUE.json', dict(plan_sha256=plan_sha, started_unix=time.time()))
+        queue.save(out/'PLAN.json', plan)
+        for index, row in enumerate(plan['rows'][:-1]):
+            folder = out/('row_'+str(index).zfill(6)); folder.mkdir()
+            queue.save(folder/'STARTED.json', dict(row=row, plan_sha256=plan_sha, fixture='FAKE'))
+            queue.save(folder/'TERMINAL.json', receipt(folder))
+            queue.seal_row(folder, row, plan_sha)
+        return plan, out
+
+    def counted(value):
+        if isinstance(value, dict) and value.get('schema') == 'three_arm_queue_v1':
+            counts.append(original_digest(value))
+            return counts[-1]
+        return original_digest(value)
+
+    def checked(folder, row, plan_sha):
+        verified.append(Path(folder).name)
+        return original_verify(folder, row, plan_sha)
+
+    def advance(plan, out, mutate=False):
+        counts.clear(); verified.clear(); calls.clear()
+
+        def fake_execute(argv, row, folder):
+            assert argv == queue.launch_args(plan, row, folder, root/'FAKE_RESOURCE.json')
+            calls.append(row['key'])
+            result = receipt(folder)
+            if mutate:
+                plan['FAKE_annotation'] = 'changed during execute'
+            return result
+
+        with patch.object(queue, 'digest', side_effect=counted), \
+             patch.object(queue, 'verify_terminal', side_effect=checked), \
+             patch('subprocess.Popen', side_effect=AssertionError('No subprocess permitted')), \
+             patch('socket.socket.connect', side_effect=AssertionError('No network permitted')):
+            return queue.advance(plan, out, root/'FAKE_RESOURCE.json', fake_execute)
+
+    for samples in (1, 5):
+        plan, out = fixture('normal_'+str(samples), samples)
+        prefix = ['row_'+str(i).zfill(6) for i in range(len(plan['rows'])-1)]
+        result = advance(plan, out)
+        assert not result['complete'] and result['reserved_calls'] == samples*5
+        assert len(counts) == 5 and len(calls) == 1
+        assert verified == prefix+[f'row_{len(prefix):06d}']*2
+        dispatch_digests = len(counts)
+        assert advance(plan, out) == dict(complete=True, rows=samples*3,
+                                        reserved_calls=samples*5, full_batch=False)
+        assert len(counts) == 3 and not calls
+        assert verified == prefix+[f'row_{len(prefix):06d}']
+        checks.append(dict(case='normal', prefix_rows=len(prefix),
+                           dispatch_plan_digests=dispatch_digests, completed_plan_digests=len(counts)))
+
+    for kind in ('late_archive', 'header', 'during_execute'):
+        plan, out = fixture(kind, 5)
+        if kind == 'late_archive':
+            with (out/'row_000013/EVIDENCE.zip').open('ab') as handle:
+                handle.write(b'FAKE_CORRUPTION')
+        elif kind == 'header':
+            header = json.loads((out/'QUEUE.json').read_text())
+            header['plan_sha256'] = '0'*64
+            queue.save(out/'QUEUE.json', header)
+        try:
+            advance(plan, out, mutate=kind == 'during_execute')
+        except AssertionError as error:
+            message = str(error)
+        else:
+            raise AssertionError('Mutation accepted: '+kind)
+        last = out/'row_000014'
+        if kind == 'late_archive':
+            assert message == 'Sealed archive drift' and not calls and not last.exists()
+            assert verified == [f'row_{i:06d}' for i in range(14)]
+        elif kind == 'header':
+            assert message == 'Plan drift' and not verified and not calls and not last.exists()
+        else:
+            assert len(calls) == 1 and len(counts) == 5 and counts[-1] != counts[-2]
+            assert (last/'STARTED.json').is_file() and (last/'TERMINAL.json').is_file()
+            assert not (last/'SEALED.json').exists() and not (last/'EVIDENCE.zip').exists()
+        checks.append(dict(case=kind, rejected=True, message=message,
+                           fake_executions=len(calls), verified_rows=len(verified)))
+    result = dict(passed=True, checks=checks, model_calls=0, eda_commands=0,
+                  fifo_submissions=0, fake_dispatches=3, full_batch=False,
+                  scope='Synthetic queue invariants only; no production speed measurement')
+    queue.save(root/'PREFIX_DIGEST_RESULT.json', result)
+    print(json.dumps(result))
+
+
 if __name__ == '__main__':
     root = Path(sys.argv[1]).resolve()
     if sys.argv[2:] == ['--runner-controls']:
         runner_controls(root)
+    elif sys.argv[2:] == ['--prefix-digest-controls']:
+        prefix_digest_controls(root)
     else:
         assert not sys.argv[2:]
         main(root)
