@@ -12,7 +12,7 @@ from unittest.mock import patch
 import full132_wall48h_20261009 as extension
 
 
-def controls(root, original):
+def controls(root, original, identity_only=False):
     root.mkdir(exist_ok=False)
     queue = extension.load_module(original/'three_arm_queue_20261005.py', 'queue48_control')
     recovery = extension.load_module(root.parent/'fifo_wait_recovery_20261009.py', 'recovery48_control')
@@ -76,7 +76,39 @@ def controls(root, original):
             original_header=header,deadline_unix=header['started_unix']+extension.TOTAL_SECONDS,
             files={str(base/'PLAN.json'):extension.sha(base/'PLAN.json')},fifo_source=str(fifo_path),
             owner48='SYNTHETIC48')
+        current=recovery.proc_record(os.getpid())
+        config['model_identity']={k:current[k] for k in ('pid','starttime','command_sha256')}
         return base,out,plan,config,target,guard
+
+    if identity_only:
+        for name in ('matching_identity','wrong_birth','wrong_command','changed_under_registry'):
+            base,out,plan,config,target,guard=case(name)
+            if name=='wrong_birth':config['model_identity']['starttime']='wrong'
+            if name=='wrong_command':config['model_identity']['command_sha256']='wrong'
+            before=target.read_bytes()
+            with patch.object(fifo,'probe',return_value=True),patch.object(extension.subprocess,'Popen',side_effect=AssertionError('no launch')):
+                if name=='changed_under_registry':
+                    real=extension.require_original_model
+                    def changing(c,r):
+                        changing.count+=1
+                        if changing.count==2:raise RuntimeError('original shared model identity changed')
+                        return real(c,r)
+                    changing.count=0
+                    with patch.object(extension,'require_original_model',side_effect=changing), \
+                            patch.object(extension,'command_for',return_value=['FAKE']):
+                        try:extension.resume_once(config,out/'PLAN.json','FAKE',recovery,fifo,queue)
+                        except RuntimeError as error:assert 'model identity changed' in str(error)
+                        else:raise AssertionError('identity race accepted')
+                    assert changing.count==2
+                else:
+                    try:result=extension.eligible(config,recovery,fifo,queue)
+                    except RuntimeError as error:
+                        assert name!='matching_identity' and 'model identity changed' in str(error)
+                    else:assert name=='matching_identity' and result['outcome']=='eligible'
+            assert target.read_bytes()==before and not (out/'RESUME_INTENT.json').exists()
+            results.append(name)
+        return dict(passed=True,checks=results,old20_controls_rerun=False,
+                    model_calls=0,eda_commands=0,production_fifo_mutations=0)
 
     def fake_execute(argv,row,folder):
         calls.append(row['key'])
@@ -214,6 +246,6 @@ def controls(root, original):
 
 if __name__=='__main__':
     assert sys.platform=='linux' and sys.dont_write_bytecode
-    result=controls(Path(sys.argv[1]),Path(sys.argv[2]))
+    result=controls(Path(sys.argv[1]),Path(sys.argv[2]),len(sys.argv)>3 and sys.argv[3]=='identity-only')
     extension.new_json(Path(sys.argv[1]).parent/'RESULT.json',result)
     print(json.dumps(result))

@@ -86,6 +86,14 @@ def retired(records, recovery):
     return True
 
 
+def require_original_model(config, recovery):
+    expected = config['model_identity']
+    current = recovery.proc_record(expected['pid'])
+    if (not current or current['state'] in ('Z', 'X')
+            or any(current[k] != expected[k] for k in ('starttime', 'command_sha256'))):
+        raise RuntimeError('original shared model identity changed')
+
+
 def prefix_evidence(config, queue):
     root = Path(config['original_root'])
     plan = read(root/'PLAN.json')
@@ -128,6 +136,7 @@ def eligible(config, recovery, fifo, queue):
     if time.time()+670 >= config['deadline_unix']:
         raise TimeoutError('total 48h budget cannot cover another row')
     frozen(config)
+    require_original_model(config, recovery)
     root = Path(config['original_root'])
     events = [json.loads(line) for line in (root/'queue/RUNNER_EVENTS.jsonl').read_text().splitlines()]
     last = events[-1]
@@ -216,6 +225,7 @@ def resume_once(config, plan_path, plan_sha, recovery, fifo, queue):
         if recovery.matching_monitors(monitor_argv):
             raise RuntimeError('another ticket132 monitor exists')
         frozen(config)
+        require_original_model(config, recovery)
         if (out/'guard48').exists() or (out/'EXECUTION_INTENT.json').exists():
             raise RuntimeError('continuation execution evidence already exists')
         new_json(intent, dict(plan_sha256=plan_sha, at_unix=time.time(),
@@ -305,6 +315,7 @@ def main():
             raise
     if args.resource_check is None:
         raise RuntimeError('fresh original guard resource check required')
+    require_original_model(config, recovery)
     intent = read(path.parent/'RESUME_INTENT.json')
     if intent['plan_sha256'] != args.plan_sha256 or time.time()+670 >= config['deadline_unix']:
         raise RuntimeError('unbound or expired continuation')
