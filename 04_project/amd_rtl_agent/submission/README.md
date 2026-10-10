@@ -54,7 +54,8 @@ announced contest limit. The supervised baseline mode executes the untouched
 official program in an owned subprocess. Direct `./run_baseline.sh` remains
 the official unsupervised entry and needs an external deadline supervisor.
 
-The model must already be served on the admitted local endpoint at port 8000.
+The model must already be served on the admitted local endpoint at port 8000. All runtime profiles require a loopback model URL;
+`RTL_PROFILE=development` does not bypass this check.
 `MODEL_NAME` must match its listing. Agent and baseline share its weights and
 configuration. Loopback is not proof of local weights or offline isolation.
 `VIVADO_BIN` overrides `XILINX_VIVADO/bin` or PATH.

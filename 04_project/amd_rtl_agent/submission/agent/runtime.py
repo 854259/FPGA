@@ -69,9 +69,8 @@ def endpoint():
     parsed = urlparse(base)
     if parsed.scheme not in ('http', 'https') or parsed.username or parsed.password:
         raise ValueError('LLM_BASE_URL must be an HTTP service URL without credentials')
-    if os.environ.get('RTL_PROFILE', 'submission') != 'development':
-        if parsed.hostname not in ('localhost', '127.0.0.1', '::1'):
-            raise ValueError('submission profile requires a loopback model service')
+    if parsed.hostname not in ('localhost', '127.0.0.1', '::1'):
+        raise ValueError('model service must use a loopback address')
     return base
 
 

@@ -47,7 +47,7 @@
   },
   "runtime": {
     "path": "agent/runtime.py",
-    "sha256": "2ea06b05bada46735389d75626a2bdbe3e4cdd150ef68825ec5ae73a8f263d86"
+    "sha256": "796a48e16d15ded34aff83a0509506f59e7a7fd0c030a08eeadacb34499ad449"
   },
   "candidate_components": {
     "prompt_probe": {
@@ -85,7 +85,8 @@
     "sigterm": "One10second cleanup/recovery reserve from first cancellation; native cleanup errors retain first-signal timestamp. Fourteen AMD CPU chain/guard/health cases pass, including cleanup failure after realSIGTERM. Real model/EDA cancellation and full-service acceptance pending.",
     "evidence": "Every HTTP request gets a unique private RTL_EVIDENCE_DIR directory (default EDA_TMP/rtl-evidence). No cache/resume; local native scratch removed only after verified cleanup, otherwise retained and runtime blocked.",
     "bind": "127.0.0.1 only",
-    "formal_acceptance": false
+    "formal_acceptance": false,
+    "local_model_endpoint": "All runtime profiles require a loopback model URL, including development. This is a URL preflight check, not process/weights/network isolation qualification."
   },
   "selected_candidate": {
     "name": "original table/phase P plus174word first-system suffix",
@@ -163,7 +164,7 @@
       "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
       "agent/prompt_probe.py": "777e21771c26a01e7671df2567d82dc5eec84629bf3e521949452f85b03ee35d",
       "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
-      "agent/runtime.py": "2ea06b05bada46735389d75626a2bdbe3e4cdd150ef68825ec5ae73a8f263d86",
+      "agent/runtime.py": "796a48e16d15ded34aff83a0509506f59e7a7fd0c030a08eeadacb34499ad449",
       "agent/shared_budget.py": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
       "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
       "agent/table_feedback.py": "911911f1f4d77857493425ffa69802afee2f4d706c352c64e9e71c39d82b0d83",
@@ -201,6 +202,20 @@
       "pre_fix_guard_failure_receipt_sha256": "182568563859ca6640058478ddf18507fd79cd83727dd2b2ba2a4ace09a2b6b4",
       "post_test_changes": "Manifest validation metadata and documentation only; executable source and test bytes unchanged.",
       "scope_note": "Historical eleven-case qualification of runtime8367 and supervisor37da; superseded by current fourteen-case synthetic CPU qualification, not formal model/EDA acceptance."
+    },
+    "endpoint_policy_validation": {
+      "at_utc": "2026-10-10T15:51:00Z",
+      "test_methods": 4,
+      "status": "four_new_AMD_CPU_endpoint_policy_methods_passed",
+      "runtime_sha256": "796a48e16d15ded34aff83a0509506f59e7a7fd0c030a08eeadacb34499ad449",
+      "test_source_sha256": "ceaa1ddad5e4988b544872cd0b5a87653ab8744a3716aa307e26d29044224c1a",
+      "pre_fix_summary_sha256": "6a31e6a2aab0af184191ae46d6992d476f2c0819643e027a30abca37321d29e4",
+      "pre_fix_receipt_sha256": "4e9ce6b97c6e0321aac608292b063c73dc580f0208182fbc6ed520b9f922b185",
+      "post_fix_summary_sha256": "58fd707f123a4137f27cd9c968b2c1390b231b5e2ecf825a9fc0a81361cd1436",
+      "post_fix_receipt_sha256": "91f36196e489e7c27ecaaf9fe00d3565d245a0766cd210d51439b54bf0a38e81",
+      "old_other_runtime_definitions_AST_unchanged": 19,
+      "scope": "Runtime endpoint/models()/run_job policy and local positive controls only. HTTP opener synthetic, baseline work blocked by sentinel. No model/EDA/real HTTP/service/FIFO. Prior fourteen chain cases were not rerun. Original baseline.py/run_baseline.sh are unchanged; their separate CLI admission, process/weights/network isolation remain to qualify.",
+      "formal_acceptance": false
     }
   }
 }
