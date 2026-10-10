@@ -1,0 +1,57 @@
+{
+  "schema": "cancel_poll_quiet_delta_delivery_v1",
+  "saved_epoch": 1791633019.9600332,
+  "qualification": {
+    "schema": "cancel_poll_quiet_pinned_queue_delta_v1",
+    "passed": true,
+    "server_queue_sha256": "0e196113d16f130230d2cc0b232915e1f5b4f1dda184790afbfdc4986dd1fd58",
+    "extracted_recv_function_sha256": "e5d2c08c2758ab761715ac83399325360b60bc0ce46f387f01e758e82ee3bbfc",
+    "extracted_send_function_sha256": "b4fe81c34064ea8a0ab8ab288e19117f4057d3990d16cca29add98aca3fb4c2d",
+    "exact_function_bodies_compiled": true,
+    "CPU_supporting_types_reduced": true,
+    "current_failure_source_sha256": "268e4cdae1696990943b796e1bd5fde07c5f08c22b1c83a4a06bbce4bc0a6b08",
+    "pinned_queue_measurement": {
+      "noisy_elapsed_s": 2.501410294,
+      "quiet_elapsed_s": 1.100264817
+    },
+    "helper_quiet_gap_s": 1.2501547634601593,
+    "helper_wait": {
+      "schema": "failed_solver_idle_wait_v1",
+      "started_monotonic": 8906506.444534948,
+      "returned_monotonic": 8906507.694753192,
+      "deadline_monotonic": 8906516.443257676,
+      "polls": 2,
+      "source_sha256": "268e4cdae1696990943b796e1bd5fde07c5f08c22b1c83a4a06bbce4bc0a6b08",
+      "only_read_model": true
+    },
+    "parent_age_and_resource_simulated": true,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "real_model_cancellation_qualified": false,
+    "real_seal_continuation_qualified": false,
+    "full_goal_complete": false
+  },
+  "dual_archive": {
+    "all_members_E_AMD_bound": true,
+    "archive_sha256": "298d8e6a2c6c6f08006d5ea39f783bd41fa9cb61bfb5e7fddb3fc07d422ec9ed",
+    "archive_members": 15,
+    "private_archive": "E:\\26qiansai\\private_archives\\cancel_poll_quiet_delta_20261010_v1"
+  },
+  "associated_server_binary_sha256": "02cdfdc0a56c880e31df46a4fdc06c95cfdb21df3f3e074d8541ba9e2dcfd6c3",
+  "source_locator": "CMake_HOME_DIRECTORY=/workspace/team/tools/llama-src; bound current source files read-only. Exact binary rebuild provenance not proved.",
+  "resource_module_and_solver_limits_unchanged": true,
+  "next_readonly_observer_sha256": "613e9d248e8d19b90d3ace9dd89e3506fbcb6592f00f093add91916ae965518a",
+  "observer_change": "During unsealed budget failure observe files only; do not independently wake shared model result CV.",
+  "observer_runtime_qualification_passed": false,
+  "explanation": "Pinned recv_with_timeout restarts relative one-second wait after unrelated result notifications; should_stop checked only after timeout. Both production idle polls0.1s and observer slots0.5s can postpone disconnect checks. CPU exact-function extraction supports mechanism; original140 actual cancellation occurred only after observation ended.",
+  "previous_controls_not_repeated_or_inherited": true,
+  "production140_failed_released": true,
+  "real_seal_continuation_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "next": "Freeze v4 changing only failure quiet interval and start a source-bound observer that suppresses slots while budget failure unsealed; one new actual qualification, never replay140."
+}

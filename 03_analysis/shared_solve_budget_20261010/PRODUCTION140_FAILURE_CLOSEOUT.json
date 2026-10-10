@@ -1,0 +1,163 @@
+{
+  "schema": "production140_real_cancel_failed_original_inspection_v1",
+  "observed_epoch": 1791632558.1593437,
+  "ticket": 140,
+  "root": "/workspace/team/runs/fpga_owner/temporal_shared_budget_production_20261010_v3",
+  "source_held": true,
+  "guard_original_passed": false,
+  "actual_parent300_budget_exit": true,
+  "budget_elapsed_s": 300.0010688174516,
+  "solve_supervisor_elapsed_s": 300.0586438495666,
+  "parent_return_elapsed_s": 300.0587585698813,
+  "first_response_s": 283.1614689901471,
+  "first_response_tokens": 8192,
+  "first_finish": "length",
+  "second_response_received": false,
+  "second_error": "BudgetExpired",
+  "grade": null,
+  "actual_calls": null,
+  "client_attempts_recorded": 2,
+  "model_processing_during_unconfirmed_second_request": true,
+  "last_busy_monotonic": 8906101.870502124,
+  "last_busy_offset_from_budget_exit_s": 12.383423650637269,
+  "first_idle_monotonic": null,
+  "idle_delay_after_budget_exit_s": null,
+  "actual_wait_reached_original310_end": true,
+  "original310_end": 8906099.486009656,
+  "timeline_scope": "Read-only sampled model slot/owned request timeline; establishes processing during the interrupted request and still busy after parent310; no idle in582 observations, no exact cancellation timestamp or confirmed server call count.",
+  "cause": "New bounded wait reached original parent310 end while model remained busy; failure not sealed and later three entries never attempted.",
+  "whole_production_qualification_passed": false,
+  "real_budget_interrupt_then_slot_idle_observed": false,
+  "A_P_B_continuation_qualified": false,
+  "later_intended_rows_unattempted": 3,
+  "prepared_matrix_rows_unattempted": 5,
+  "cleanup_verified": true,
+  "all_recorded_births_retired": true,
+  "own_slot_retained": true,
+  "slot_owner": "fpga-owner-production-budget-real-entries-20261010-v3",
+  "slot_lock_path": "/workspace/team/SLOT.lock",
+  "slot_lock_sha256": "48ae4ee31fa5828fe137b5edecbafd6fa489c5146313622e09bf982f9b3ac3d5",
+  "original_guard_status_unchanged": true,
+  "FIFO_released": false,
+  "spec_sha256": "7cd4ebe3905cb6f48c3ac860e1e05abb6a7618df17f2bf94e2d99c0d31a4c957",
+  "plan_sha256": "be8ae20bacf5c9652deda541d5b5943ee81c6e94b27af2f5eb98345ba7431aac",
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false,
+  "archive_path": "/workspace/team/activity/fpga_owner/artifacts/production140-original-failed-archive-20261010-v1/ORIGINAL_FAILED140.zip",
+  "archive_sha256": "c356b8e6e83b3c6c0513e8d1d6ee74a355fe7a9c00f612d275640a27bf259072",
+  "archive_members": 76,
+  "dual_archive": {
+    "all_members_E_AMD_bound": true,
+    "archive_sha256": "c356b8e6e83b3c6c0513e8d1d6ee74a355fe7a9c00f612d275640a27bf259072",
+    "archive_members": 76,
+    "private_archive": "E:\\26qiansai\\private_archives\\production140_original_failed_20261010_v1"
+  },
+  "inspection_release": {
+    "ticket": 140,
+    "state": "failed_released_after_inspection",
+    "original_guard_passed": false,
+    "original_guard_slot_released": false,
+    "retained_own_slot_released_after_inspection": true,
+    "original_files_held": true,
+    "all_recorded_births_retired": true,
+    "model_idle": {
+      "model": "Qwen3.6-27B-Q4_K_M",
+      "health_status": "ok",
+      "models": {
+        "models": [
+          {
+            "name": "Qwen3.6-27B-Q4_K_M",
+            "model": "Qwen3.6-27B-Q4_K_M",
+            "modified_at": "",
+            "size": "",
+            "digest": "",
+            "type": "model",
+            "description": "",
+            "tags": [
+              ""
+            ],
+            "capabilities": [
+              "completion"
+            ],
+            "parameters": "",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "",
+              "families": [
+                ""
+              ],
+              "parameter_size": "",
+              "quantization_level": ""
+            }
+          }
+        ],
+        "object": "list",
+        "data": [
+          {
+            "id": "Qwen3.6-27B-Q4_K_M",
+            "aliases": [
+              "Qwen3.6-27B-Q4_K_M"
+            ],
+            "tags": [],
+            "object": "model",
+            "created": 1791632635,
+            "owned_by": "llamacpp",
+            "meta": {
+              "vocab_type": 2,
+              "n_vocab": 248320,
+              "n_ctx": 16384,
+              "n_ctx_train": 262144,
+              "n_embd": 5120,
+              "n_params": 26895998464,
+              "size": 19084773376,
+              "ftype": "Q4_K - Medium"
+            }
+          }
+        ]
+      },
+      "slot_count": 1,
+      "processing_slots": 0
+    },
+    "archive_sha256": "c356b8e6e83b3c6c0513e8d1d6ee74a355fe7a9c00f612d275640a27bf259072",
+    "archive_members": 76,
+    "failed_grade": null,
+    "failed_actual_calls": null,
+    "whole_production_qualification_passed": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false
+  },
+  "actual_server_cancel_log": {
+    "schema": "production140_original_server_cancel_log_range_v1",
+    "observed_epoch": 1791632882.3007712,
+    "model_pid": 2013333,
+    "model_starttime": "823869819",
+    "model_stdout_path": "/workspace/team/model-deployment/qwen-server.log",
+    "offset": 14170854,
+    "bytes": 196608,
+    "sha256": "b197950e299be7338ae754d96e58aa0f76db49b8322fb7eda0958cd62aca7c36",
+    "cancel_task_id": 4389313,
+    "cancel_record_present": true,
+    "cancel_lines": [
+      "11123.24.636.282 W srv          stop: cancel task, id_task = 4389313"
+    ],
+    "clock_mapping_to_parent_monotonic_not_proven": true,
+    "exact_server_cancel_delay_s": null,
+    "scope": "Exact fixed-position original model stdout range bound to live original model PID; private raw range preserved. Does not convert relative server log clock or mtime to exact parent deadline elapsed.",
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "archive_path": "/workspace/team/activity/fpga_owner/artifacts/production140-model-cancel-log-20261010-v1/MODEL_CANCEL_LOG_RANGE.zip",
+    "archive_sha256": "827a3e8364b54807e9f21e719cc756fa068aae02f8cefd64fa1e616906d0d0ab"
+  },
+  "server_cancel_log_dual": {
+    "all_members_E_AMD_bound": true,
+    "archive_sha256": "827a3e8364b54807e9f21e719cc756fa068aae02f8cefd64fa1e616906d0d0ab",
+    "private_archive": "E:\\26qiansai\\private_archives\\production140_original_failed_20261010_v1",
+    "server_range_sha256": "b197950e299be7338ae754d96e58aa0f76db49b8322fb7eda0958cd62aca7c36"
+  }
+}

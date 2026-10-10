@@ -1,3 +1,13 @@
+## 2026-10-10 140真实等待到310仍忙，已归档释放；定位查询推迟取消检查
+
+140最终失败：147 A首答283.161秒/8192/length，第二请求未确认，父300.001秒BudgetExpired，owned已回收；2c等待实际到原parent310截止仍忙。582观测最后busy为预算退出后+12.383秒，未有idle；只有首行，后面三入口未执行、grade/calls保持未知。76成员c356b8e6双端全核；实际server log固定range b197950e/补档827a3e83含cancel4389313，relative钟未映射，不当精确父耗时。之后实际idle/资源模型保持/所有出生退役核验，仅本方retained slot和FIFO140检查释放；原false guard/源码/失败档不改，未重投140。
+
+当前二进制02cdfdc0的CMake关联源0e196113 server-queue.cpp显示：recv_with_timeout每次无关CV唤醒重置相对1秒等待，next仅timeout才查should_stop，send向共享CV notify_all。精确recv/send函数原样抽取编译CPU最小支持类型：0.1秒通知连续1.5秒使返回2.501秒，1.25秒静默则1.100秒；同新268e4cda helper一次busy→idle模拟实际间隔1.250秒且保持父310 end。15成员298d8e6a双端全核，0模型/EDA/FIFO；这是源码机制与helper边界，不证明二进制重建来源或真实续行成功。
+
+新增268e只把忙重查.1秒改1.25秒静默，预算和身份保护不变；后续只读observer在budget失败尚未seal期间仅读原件，抑制独立slots GET，避免同样唤醒。observer新源只静态检查，须下一真实资格验证。旧四控/early资格仍各原源，不重跑或升级。下一v4复制33源仅failure不同，冻结140保留；原174词完整回归候选不变，没有引入window/新能力因素。完整156尚未准入、120/80%及原历史配对成本目标active未达。
+
+索引PRODUCTION140_FAILURE_CLOSEOUT.json、queue_failure_continuation_20261010/CANCEL_POLL_QUIET_QUALIFICATION.json；下一只做必要真实续行资格一次，读最新协作避免并发观察干扰，不能放宽时间门。
+
 ## 2026-10-10 修复后真实续行验证140已独立启动
 
 19:35:39北京时间唯一提交FIFO140，v3 PLAN be8ae20b/SPEC7cd4ebe3；仅失败等待consumer2c655722改变，其余32源保持原139。monitor735097/start890578886、child735098/start890578896与只读observer735108/start890580919同出生实际活着；第一题147 A已派发，原模型slot4380590处理。原139 failed_released/原失败档不改；未提交中继v2保留且superseded。资格与能力成绩当前未知，不能称续行已通过。

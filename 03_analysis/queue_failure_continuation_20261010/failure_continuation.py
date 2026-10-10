@@ -164,7 +164,11 @@ def idle_after_failed_solver(folder, plan, resource, admission):
                     raise
                 if str(error) != 'shared model slots are busy or idle telemetry is unavailable':
                     raise
-            time.sleep(min(.1, budget.remaining()))
+            # The pinned llama server waits one second on a shared result CV
+            # before checking disconnected non-stream clients. Slots queries
+            # notify that CV too. Leave an actual quiet interval rather than
+            # repeatedly waking and postponing its disconnect check.
+            time.sleep(min(1.25, budget.remaining()))
     except shared_budget.BudgetExpired as error:
         raise RuntimeError('Shared model did not become idle within original parent310 cleanup end') from error
 
