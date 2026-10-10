@@ -1,0 +1,165 @@
+{
+  "schema": "archived_model_generated_control_choice_review_v1",
+  "saved_epoch": 1791637390.5048666,
+  "peer_comment": 6097711038,
+  "peer_url": "https://github.com/854259/FPGA/issues/7#issuecomment-6097711038",
+  "source_binding_sha256": "252641ae85271832bc04eae91aea81fb5927839c3163de743278f9f5d329e415",
+  "frozen_sources": {
+    "original132": {
+      "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1",
+      "plan_sha256": "c85226725bab88c08503cd9feda393378ef17c491fabebec4bea0abd930d954c",
+      "spec_sha256": "b499f6c16fa91868ca7ba60a168929204f02d5b0e164f5ade776a65983aa5c5d",
+      "all_frozen_sources_held": true
+    },
+    "temporal138": {
+      "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+      "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+      "spec_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+      "all_frozen_sources_held": true
+    },
+    "production141": {
+      "root": "/workspace/team/runs/fpga_owner/temporal_shared_budget_production_20261010_v4",
+      "plan_sha256": "f20b92ccbc7b04fd0525f7f81487db95d6b2fcd46ae1415b1f67932ce9de8ea5",
+      "spec_sha256": "0c3bb9fef21a19a58133b88f5f5efde1c3d68cbc4b32a0ac01be3bcc76d3b4cd",
+      "all_frozen_sources_held": true
+    }
+  },
+  "shared_generation_and_feedback_files": {
+    "table_feedback.py": {
+      "original132": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+      "temporal138": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+      "production141": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293"
+    },
+    "phase_context.py": {
+      "original132": "90b7c71b480a7cdd9d485e7401509feef996520111e76c03666ac519a2d01afa",
+      "temporal138": "90b7c71b480a7cdd9d485e7401509feef996520111e76c03666ac519a2d01afa",
+      "production141": "90b7c71b480a7cdd9d485e7401509feef996520111e76c03666ac519a2d01afa"
+    },
+    "phase_feedback.py": {
+      "original132": "efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078",
+      "temporal138": "efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078",
+      "production141": "efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078"
+    },
+    "point_feedback.py": {
+      "original132": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+      "temporal138": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+      "production141": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c"
+    },
+    "priority_contract.py": {
+      "original132": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+      "temporal138": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+      "production141": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516"
+    },
+    "shift_contract.py": {
+      "original132": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+      "temporal138": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+      "production141": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca"
+    },
+    "edge_contract.py": {
+      "original132": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+      "temporal138": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+      "production141": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd"
+    },
+    "edge_dispatch.py": {
+      "original132": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680",
+      "temporal138": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680",
+      "production141": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680"
+    },
+    "edge_feedback.py": {
+      "original132": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
+      "temporal138": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
+      "production141": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7"
+    },
+    "prompt_map.py": {
+      "original132": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+      "temporal138": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+      "production141": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953"
+    },
+    "package/agent/map_runtime.py": {
+      "original132": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+      "temporal138": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+      "production141": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba"
+    },
+    "package/baseline.py": {
+      "original132": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "temporal138": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "production141": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51"
+    },
+    "package/skill/rtl-generation/SKILL.md": {
+      "original132": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "temporal138": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "production141": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01"
+    },
+    "package/skill/rtl-feedback-repair/SKILL.md": {
+      "original132": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+      "temporal138": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+      "production141": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+    }
+  },
+  "original132_worker_sha256": "7a301da74d5bdec18c19e308e43018a5385c96574840e2e36e837b6a5b0fa003",
+  "original132_P_routes_to_table_feedback": true,
+  "tracked_worker_substitution_rejected": true,
+  "source_selection_correction": "Tracked current worker differed from frozen132; preliminary save assertions stopped before report/state mutations. Retrieved exact7a301da7 frozen bytes and verified the real main dispatch, preserving both versions.",
+  "temporal138_A_and_production141_A_route_to_same_table_P": true,
+  "source_binding_scope": "14 identical generation/feedback/runtime/skill files and actual worker dispatch; budget transport differs and source equality alone is not new live qualification.",
+  "archived_control_proposal": {
+    "algorithm": "Original132 table/phase P without174 suffix; outerA in138/141",
+    "evidence": "Existing complete146-task five-sample paired prefix; not a complete156 result and not a proven official total-score optimum.",
+    "acceptance_policy_resolved": false,
+    "admission_permitted": false
+  },
+  "retained146_report": {
+    "sha256": "7e7992a831d784b1b1a9f3a2e529e4744ec02a5e340ff90240888c89571b7b6d",
+    "tasks": 146,
+    "rows": 2190,
+    "arms": {
+      "A": {
+        "L3": 552,
+        "samples": 730,
+        "client_attempts": 776,
+        "weighted_coefficient": 0.8008219178082192
+      },
+      "P": {
+        "L3": 569,
+        "samples": 730,
+        "client_attempts": 807,
+        "weighted_coefficient": 0.8191780821917808
+      },
+      "B": {
+        "L3": 470,
+        "samples": 730,
+        "client_attempts": 730,
+        "weighted_coefficient": 0.6904109589041096
+      }
+    },
+    "source": "Previously audited retained records; no old auditor, model or judge replay.",
+    "missing_tasks": 10,
+    "full156": false
+  },
+  "official_cached_source": {
+    "repository": "https://gitee.com/Vickyiii/rtlagent2026",
+    "commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+    "scoring_sha256": "559d828ce7b167ab78410d773295c90e4e7b679e013cbb430ef097330638fdb2",
+    "sections": [
+      "2.9",
+      "2.10",
+      "2.11"
+    ],
+    "live_HEAD_verified": false
+  },
+  "mechanical120_archive_scope": "123 development120/156 remains preserved; mechanical direct DUT generation makes it unsuitable as a model-generated control under cached source-generation rules.",
+  "active_goal_unchanged": true,
+  "goal_complete": false,
+  "original_C_prototypes_unchanged": true,
+  "source_control_choice_and_acceptance_policy_separate": true,
+  "no_fourth_arm": true,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "next": [
+    "Retain original132 table/phase P as the evidence-backed proposed control for the selected174 candidate; do not require a nonexistent complete132 result.",
+    "Resolve the user acceptance-policy question before changing the comparison freeze or submitting.",
+    "Reuse141 proven cancellation/continuation and the complete-five reader; do not repeat completed engineering qualification.",
+    "Review peer actual interface-source PR when available; CPU fixtures are not real model/EDA evidence."
+  ]
+}
