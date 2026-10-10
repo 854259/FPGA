@@ -131,9 +131,9 @@
     "supervisor_terminal_state": "Z, empty cmdline; retained by PID1, not active",
     "original_failure_retained": true
   },
-  "status": "native_v2_preparation_bounded_review_accepted_original107_queued",
-  "conclusion": "No blocker found within bounded original16/new1, source reuse, frozen inventory, original process/stream/archive and environment hash review. Accept preparation only; original107 native execution and original terminal audit remain pending.",
-  "next": "Peer retains original105/106/107 handles and original terminal audits. Review new terminal evidence when delivered; native qualification precedes fixed single-factor C/P, then only a qualified screen may justify separately frozen156. Do not combine candidate gains.",
+  "status": "original110_result_sources_verified_rejected",
+  "conclusion": "Original110 C112/P114 at167 requests each remains rejected under frozen gates. Bounded original archive/row/request and disclosed compatible terminal evidence accepted, not new accuracy or full inclusive qualification.",
+  "next": "Original113 CP8 completed C6/P8, requests11/9 and frozen screening gates satisfied; owner original terminal still pending. Original110 paired result source and111 finite native terminal reviews are bounded-complete and reused. Owner decides unique next admitted freeze/submission; no current156 ticket, no old control replay, no cross-run gain addition. Full inclusive acceptance and historical118 goal remain unmet.",
   "original_tests_or_intake_reexecuted": 0,
   "new_diagnostic_processes": 1,
   "new_synthetic_inputs": 2,
@@ -141,12 +141,75 @@
   "new_eda_calls": 0,
   "new_fifo": 0,
   "live": {
-    "checked_at": "2026-10-07T03:47:09+08:00",
-    "ticket105": "running",
-    "outputs": 132,
-    "requests": 139,
-    "ticket106": "queued",
-    "frozen_sources_model_handles_slot_match": true
+    "checked_at": "2026-10-07T13:57:37.535305+08:00",
+    "slot_owner": "codex_serial_timer_synthesis_full156_20261007_v1",
+    "identities": [
+      {
+        "pid": 1680247,
+        "starttime": "860779708",
+        "state": "Z",
+        "cmd_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "retired": true
+      },
+      {
+        "pid": 1710412,
+        "starttime": "860902725",
+        "state": "S",
+        "cmd_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a",
+        "retired": false
+      },
+      {
+        "pid": 1812846,
+        "starttime": "861451665",
+        "state": "S",
+        "cmd_sha256": "473a7ddfe5d205026071042662f901584601c23c32985a9b9ec7e340748db240",
+        "retired": false
+      },
+      {
+        "pid": 2013333,
+        "starttime": "823869819",
+        "state": "S",
+        "cmd_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1",
+        "retired": false
+      }
+    ],
+    "runs": {
+      "109": {
+        "frozen_sources": 136,
+        "stage": {
+          "observed_at_epoch": 1791349708.9362905,
+          "experiment": "/workspace/team/runs/fpga_owner/onehot_synthesis_full156_20261007_v1",
+          "completed_samples": 312,
+          "expected_samples": 312,
+          "actual_model_requests": 334,
+          "complete": true,
+          "audit_pending": true,
+          "adoption": false,
+          "new_full_score": false
+        },
+        "summary_exists": true
+      },
+      "110": {
+        "frozen_sources": 116,
+        "stage": {
+          "observed_at_epoch": 1791352623.590925,
+          "experiment": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_full156_20261007_v1",
+          "completed_samples": 76,
+          "expected_samples": 312,
+          "actual_model_requests": 78,
+          "complete": false,
+          "audit_pending": true,
+          "adoption": false,
+          "new_full_score": false
+        },
+        "summary_exists": true
+      },
+      "111": {
+        "frozen_sources": 123,
+        "stage": null,
+        "summary_exists": false
+      }
+    }
   },
   "peer78_ack": {
     "comment": 6024013554,
@@ -154,7 +217,7 @@
   },
   "first_counterexample_comment": 6024145680,
   "peer_adoption_of_fix_unconfirmed": false,
-  "natural_scored_results": 0,
+  "natural_scored_results": "Original108 fourteen outputs provenance-bound; known development only",
   "independent_unseen": 0,
   "effective_independent_families": null,
   "adoption": false,
@@ -436,6 +499,1563 @@
     "effective_independent_families": null,
     "adoption": false,
     "full_batch_complete": false,
-    "elapsed_read_only_seconds": 0.9102900829166174
+    "elapsed_read_only_seconds": 0.9102900829166174,
+    "peer_received_our_review": {
+      "comments": [
+        6025112766,
+        6025194533
+      ],
+      "accepted_pr": 83,
+      "accepted_review_sha256": "a89563280f3b35c9a97a76f236f2846f4e3d8b6dc94ff6b791fef98a0bee2501",
+      "scope": "PR81 new16/new1/117-source preparation bounded review only; no native/natural score or this new worker20 review acceptance"
+    }
+  },
+  "worker20_review": {
+    "reviewed_at": "2026-10-07T04:56:26+08:00",
+    "scope": "PR84 serial worker20 original engineering controls and static source/provenance review; no actual native or natural-score qualification",
+    "peer_pr": 84,
+    "peer_head": "d50a72543b6e09a3c37c4a489b847ce541ef42f1",
+    "peer_merge": "1de27db6493fb9454a2f2804a65bcba9cdfd7a6c",
+    "peer_comment": 6025194533,
+    "mail_id": "1a112fb577304b15",
+    "peer_delivery_sha256": "703a689817bd3993b3d43f065ec7a134948812b606cc39344dca71add83c1d4c",
+    "review_receipt_sha256": "ee78d0a28f470e500da741fe3b777a94ec3999c8686af792ec315ffad071c795",
+    "source_files": 75,
+    "public_git_files": 12,
+    "public_python_files": 3,
+    "git_and_actual_source_bytes_match": true,
+    "producer_sha256": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+    "worker_sha256": "1eac9c3b9bac6581bf0aa137fdead50835cf80483d000848554e298f2a7ed90a",
+    "proof_sha256": "bda081df86cd2e6c9b7d597337079ae220a8398723483f9485eb50dc42bbe0fe",
+    "test_sha256": "f35d4751740298cabb8a07f32d90b9fc7c32e5feac41357982e9cc4636b24e62",
+    "common_fallback_sha256": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+    "original_controls": 20,
+    "old_contexts_reexecuted_under_new_source": 17,
+    "new_controls": 3,
+    "source_comparison": {
+      "worker_run_ast_equal_after_route_label_normalization": true,
+      "frozen_adds_required_native_gate": true,
+      "normalized_parent_test_methods_unchanged": 15,
+      "adapted_parent_contexts": [
+        "serial fixture and matching interface",
+        "renamed preparation binding and pending-native assertion"
+      ],
+      "old18_producer_and_fresh156_reused_without_replay": true,
+      "original44_and_common_one_edit_fallback_bound": true
+    },
+    "original_receipt_sha256": "f33c3f05eec84263b8f01cba3a690e244c0e23c3d87dbca06d203666bbcdcd47",
+    "process": {
+      "pid": 1553254,
+      "starttime": "859314980",
+      "unittest_seconds": 0.056,
+      "outer_seconds": 0.2996766082942486,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining_group": [],
+      "complete_sha256": "981446f29b9d7e5544a106699aaeeb4991cbc5cc81746fd1a715e29d94430ebf",
+      "stdout_sha256": "6b6e90cdd09d7ddc2c4d9be5a52e03b805a3cf71a045020f30197b0dde86f6eb"
+    },
+    "archive": {
+      "sha256": "a316c6998ac30aa3818423c4b7fdcf97eb2d7f13b79918b20087c106b8ce8973",
+      "bytes": 615360,
+      "members": 86,
+      "all_members_amd_and_private_local_verified": true
+    },
+    "inventory": {
+      "roots": 109,
+      "unique_files": 7389,
+      "original_anchor_roots": 103,
+      "original_anchor_files": 7069,
+      "original_anchor_sha256": "ecebe107e4a1ab6a16ce9ea11b1272734086719767c32f24dc130ca56b4e961e",
+      "actual_bytes_verified": true
+    },
+    "gates": {
+      "C_and_P_abstention_use_common_original_phaseP": true,
+      "model_request_range": [
+        1,
+        2
+      ],
+      "mechanical_model_requests": 0,
+      "forged_RTL_and_contract_hash_rejected": true,
+      "missing_native_qualification_rejected": true,
+      "real_native_success_binding_pending": true,
+      "formal_run_spec_absent": true,
+      "stage_audit_metrics_pending": true,
+      "whole_worker_outer_seconds_required": 300,
+      "judge_seconds": 300,
+      "supervisor_seconds": 360,
+      "tokens": 8192,
+      "max_requests": 2,
+      "repairs": 1
+    },
+    "pretest_source_proof_false_is_old_snapshot": true,
+    "peer_ack": {
+      "comments": [
+        6025112766,
+        6025194533
+      ],
+      "accepted_pr": 83,
+      "accepted_review_sha256": "a89563280f3b35c9a97a76f236f2846f4e3d8b6dc94ff6b791fef98a0bee2501",
+      "scope": "PR81 new16/new1/117-source preparation bounded review only; no native/natural score or this new worker20 review acceptance"
+    },
+    "live": {
+      "checked_at": "2026-10-07T04:57:04+08:00",
+      "ticket105": "running",
+      "outputs": 208,
+      "requests": 217,
+      "ticket106": "queued",
+      "ticket107": "queued",
+      "frozen109_126_117_sources_model_original_handles_slot_match": true
+    },
+    "conclusion": "Accept bounded worker20 engineering evidence. No blocker found within reviewed source/route/error/cost-bookkeeping and original process/stream/archive scope. Explicit fake controls do not qualify actual EDA, RTL function, natural scores, adoption or a full batch.",
+    "next": "Peer retains original105/106/107 and each original terminal audit. Complete stage/audit/metrics with source-specific controls; bind authentic original107 audit and archive, source/dependency hashes and whole worker300 outer limit before separately freezing fixed single-factor C/P. Qualifying screen may support a new156 development regression. No takeover or repeated original controls.",
+    "limitations": [
+      "Successful real native-qualification binding has not occurred; current negative missing-evidence control is bounded evidence only.",
+      "Fallback elapsed_s excludes adapter/freeze overhead; future stage must count and limit the complete outer worker.",
+      "Historical local CRLF/diff/public-variable preparation failures are peer reports, not independently reviewed process evidence.",
+      "Unseen independent tasks0; family effective N unknown; candidate gains remain separate."
+    ],
+    "reviewer_test_replays": 0,
+    "reviewer_intake_replays": 0,
+    "reviewer_original_audit_replays": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "adoption": false,
+    "full_batch_complete": false,
+    "elapsed_read_only_seconds": 0.7130918018519878,
+    "peer_received_our_review": {
+      "comment": 6025657410,
+      "mail_id": "1a113168defe3f57",
+      "sha256": "4414761c1e295aa39242464401d8670e74583b5500f67946853eaa6113cf52c0",
+      "accepted_pr": 85,
+      "accepted_actual_delivery_sha256": "399522a3df0030c6265c388a7f9bf87eaa11ee84cecee4d63c86750d80dce3d7",
+      "scope": "PR85 worker20 full delivery bounded engineering review only, not current pipeline30/native/natural qualification."
+    }
+  },
+  "pipeline30_review": {
+    "reviewed_at": "2026-10-07T05:26:59.556955+08:00",
+    "scope": "PR86 original pipeline30 fake engineering contexts, static seven-source review, original process/source/archive and inventory binding; no real native or natural score",
+    "peer_pr": 86,
+    "peer_head": "27909e0beaab8cefa3a5c8f4c6c312c9b38a7974",
+    "peer_merge": "3a5382d033cdfa1962ae05a4cdcd205914f40713",
+    "peer_comment": 6025429368,
+    "mail_id": "1a1130912e52f965",
+    "peer_delivery_sha256": "5cb9b2ecd925ed69e2f2ca59592f8df57033d555ddd6d3ebfde38472ee7db1dd",
+    "review_receipt_sha256": "166efc61d894a49dd2f1f4267a826a9abe9e6e7497d867f192ef738b43974536",
+    "source_files": 86,
+    "public_git_files": 16,
+    "public_python_files": 7,
+    "git_and_actual_source_bytes_match": true,
+    "original_controls": 30,
+    "modules": {
+      "metrics_source": 10,
+      "stage": 9,
+      "audit": 11
+    },
+    "old_worker20_and_18_156_16_scope1_not_reexecuted": true,
+    "shared_source_files": 75,
+    "shared_source_changes": [
+      "raw_evidence/PROTECTED_GROUPS_CAPTURE.json"
+    ],
+    "original_receipt_sha256": "a6785a284e4ef80752a5324337cea1a7a5b72188b0192c608c78083ce43eb304",
+    "process": {
+      "pid": 1569532,
+      "starttime": "859398249",
+      "unittest_seconds": 3.203,
+      "outer_seconds": 3.4106171336025,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining_group": [],
+      "complete_sha256": "7f15ff6012139159cd38fd8fb5481516c79bc4273c8120b91d89493f7cdd93a2",
+      "stdout_sha256": "defd4155d0445867369f89d327e55ced570f7620b79a1ad859bbd4490dd8e788"
+    },
+    "archive": {
+      "sha256": "39a66b53ee16d5a62a8144af53321235e39dc96b88088c3ba88d0e0812a280c9",
+      "bytes": 894335,
+      "members": 97,
+      "all_members_amd_and_private_local_verified": true
+    },
+    "inventory": {
+      "roots": 110,
+      "unique_files": 7467,
+      "original_anchor_roots": 109,
+      "original_anchor_files": 7389,
+      "original_anchor_sha256": "61972041751052691c9e42e0683a7d49e51abb9a956c8c32271ed711409091c3",
+      "all_actual_bytes_verified": true
+    },
+    "source_sha256": {
+      "preparation_inputs.py": "e13841c2588dcd7557f380e5775a0dfbbcaab29c83800c856b12fd9c90815e3a",
+      "test_audit.py": "71e25cd8066c78f687c351deacf4305fc4f73adf08bbd16b0d1403775357896c",
+      "test_cp_metrics.py": "cfd54fe29ccd6fde3835c237bf8119d55f61aa5f20a56b9f3850f32cd5b604ee",
+      "pilot.py": "ee694cccb8b29d86fe0ea6afc82b468c67428e67ecca04c4b0c3bd277a189a6e",
+      "metrics.py": "0d6f962da2f3a4b9d389ec6090bbe88d623571e079563ce2fa2545bd61b1675a",
+      "audit.py": "60a41c187fe033418808c5ed7013bc688539d4d14e62fe10d01355f67fbc6796",
+      "test_stage_binding.py": "da86f990fddad83810bc6f26283f16732efbc08106de60fd7b05be5d36832901"
+    },
+    "verified_behaviors": [
+      "Independent recipe contract uses original raw prompt and interface, including CRLF; changed interface refused.",
+      "Stage and audit require original107 native/archive qualification; missing qualification blocks before stage input/results/scoring.",
+      "Each of29 protected receipts retains immutable original109/7389 literal hash anchor; equal-count replacement and rehashed-anchor edits refused; complete append allowed.",
+      "Whole worker command provides300s elapsed and timeout; internal completed fallback cannot hide outer timeout.",
+      "Every fixed task P request count cannot exceed C, including improved historical guards; overall mechanical savings cannot hide per-task increase.",
+      "Exact old safe-unpack method AST and6b141e6d helper reused without execution; 30 selected methods bound to original argv/stdout."
+    ],
+    "budget": {
+      "tokens": 8192,
+      "max_requests": 2,
+      "repairs": 1,
+      "whole_outer_worker_seconds": 300,
+      "judge_seconds": 300,
+      "supervisor_seconds": 360,
+      "expected_outputs": 14,
+      "max_model_requests": 28,
+      "stage_safety_cap_seconds": 12000,
+      "safety_caps_are_not_eta_or_remaining_credit": true
+    },
+    "nonblocking_finding": {
+      "file": "pilot.py",
+      "function": "main",
+      "issue": "Final activity key/text still says onehot-synthesis-stage/onehot although serial schema and scoring logic are correct.",
+      "required_before_new_freeze": "Correct human-facing factor label and bind exact new source SHA; do not rerun unrelated old controls solely for a label change.",
+      "peer_accepted": true,
+      "implemented": true,
+      "implementation_status": "PR91 exact4843 two-literal fix independently reviewed; originalee694 snapshot preserved, future freeze only."
+    },
+    "peer_ack": {
+      "comment": 6025657410,
+      "mail_id": "1a113168defe3f57",
+      "sha256": "4414761c1e295aa39242464401d8670e74583b5500f67946853eaa6113cf52c0",
+      "accepted_pr": 85,
+      "accepted_actual_delivery_sha256": "399522a3df0030c6265c388a7f9bf87eaa11ee84cecee4d63c86750d80dce3d7",
+      "scope": "PR85 worker20 full delivery bounded engineering review only, not current pipeline30/native/natural qualification."
+    },
+    "live": {
+      "checked_at": "2026-10-07T05:27:31+08:00",
+      "ticket105": "running",
+      "outputs": 243,
+      "requests": 258,
+      "ticket106": "queued",
+      "ticket107": "queued",
+      "frozen109_126_117_sources_model_original_handles_slot_match": true
+    },
+    "conclusion": "Accept bounded pipeline30 engineering evidence. Source/contract/qualification/cost/time/inventory checks are supported by original fake controls; one nonblocking activity-label correction is required before new freeze. Real native qualification and natural scores remain pending.",
+    "next": "Peer corrects activity label and prepares source-specific freeze, retains original105/106/107 and once-only original terminal audits. After authentic107 audit/archive success binding, separately freeze fixed C/P7; net gain with no per-task request increase may support a new156 development regression. No takeover/repeated old controls.",
+    "limitations": [
+      "No runnable scoring spec or authentic107 positive qualification chain yet.",
+      "Fake controls do not execute actual HTTP/model/EDA; original safe-unpack evidence is reused.",
+      "Original receipt claims historical PRIMARY equality; reviewer checked current model identity, not reconstructed historical PRIMARY.",
+      "Initial read-only receipt stdout truncation required repeating only read/hash/AST capture to save a complete receipt; zero test/intake/audit reruns.",
+      "All seen tasks remain development; unseen independent0, family effective N unknown."
+    ],
+    "reviewer_test_replays": 0,
+    "reviewer_intake_replays": 0,
+    "reviewer_original_audit_replays": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "adoption": false,
+    "full_batch_complete": false,
+    "elapsed_read_only_seconds": 0.6586803775280714,
+    "peer_received_our_review": {
+      "comment": 6025962528,
+      "mail_id": "1a1132992581e1cd",
+      "sha256": "08301bfbd8c83f7102907a72d214daddaff69607b64174c84481422b78690e13",
+      "accepted_pr": 88,
+      "actual_delivery_sha256": "301efbd9e583e26fd11fe3533874be3e258167a5d765269e7f903ace13412d58",
+      "scope": "pipeline30 bounded engineering only; activity-label correction accepted for next freeze, not yet implemented."
+    }
+  },
+  "terminal_preparation_review": {
+    "reviewed_at": "2026-10-07T05:43:21.641419+08:00",
+    "scope": "PR87 six original fake terminal metadata controls and three-source static review; seven bound files, original process/stream/archive; no terminal supervisor or original audit execution",
+    "peer_pr": 87,
+    "peer_head": "802cd2a2d3c0f180d7aa7e2470e097bfd792ebee",
+    "peer_merge": "27900de9f068d6d019c40d40bd81f828bf17e19a",
+    "peer_comment": 6025768565,
+    "mail_id": "1a1131d38ba37aaf",
+    "peer_delivery_sha256": "b097ee78bae8f594d58ec50a001a2fb0ff637a54b3bc050a327adb696baa2135",
+    "review_receipt_sha256": "55c761ec4e91a17786e58925327b76f25fab326a179f48266a43377da4cf09ba",
+    "source_files": 7,
+    "public_git_files": 12,
+    "public_python_files": 3,
+    "git_and_actual_bytes_match": true,
+    "original_controls": 6,
+    "actual_test_names": [
+      "test_cleanup_release_or_source_model_drift_refuses",
+      "test_complete_metadata_admits_only_audit_eligibility_not_qualification",
+      "test_live_original_or_unknown_prior_audit_never_restarts",
+      "test_missing_or_failed_report_or_wrong_original_spec_refuses",
+      "test_native_counts_cannot_substitute_old_onehot_qualification",
+      "test_queued_running_and_failed_original_cannot_admit"
+    ],
+    "source_sha256": {
+      "terminal_gate.py": "a17bb7c8c028fb83f4ee280f917d752963aa901be0fea0649baab062f5e136a7",
+      "terminal_supervisor.py": "382f808fe6b1550785f47293ba38319e76a294ad79a5c4fe1c7cce255fdbd965",
+      "test_terminal_gate.py": "5f080616023ea64becb1065644da3a9c03188f296949a90dcf28b9bda51f4b81"
+    },
+    "original_receipt_sha256": "9a59463ee1fe7b81abc249b4abb2d4a7922eede63d8f8c6d68da0e55af588a86",
+    "process": {
+      "pid": 1595280,
+      "starttime": "859549677",
+      "unittest_reported_seconds": 0,
+      "outer_seconds": 0.12212334759533405,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining_group": [],
+      "stdout_sha256": "ea00b406ff2c97c11ad9e674923205615f81819c543abaee92748ac4b6e7b5bb",
+      "complete_sha256": "a5802bccd1b0eaaf0e59c9e9929b3908f81c178fa347f3d4aea6c9d63e2c0934"
+    },
+    "archive": {
+      "sha256": "b6f3827175620078315742f75845edd0f10b13e9e8a34f95c3c4a8a4c14828fa",
+      "bytes": 415916,
+      "members": 18,
+      "all_members_amd_and_private_local_verified": true
+    },
+    "inventory": {
+      "roots": 111,
+      "unique_files": 7556,
+      "actual_bytes_verified": true,
+      "legacy99_prefix_sha256": "3ef0f1204ac8f5d8014754fd7744b7f177b17c5843ad3b46d03fe13e6742551a",
+      "legacy_prefix_exact_reuse": true,
+      "legacy_result_not_reused_as_qualification": true
+    },
+    "original107": {
+      "spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+      "frozen_sources": 117,
+      "all_frozen_bytes_verified": true,
+      "kit_hash_only_counts": {
+        "package": 18,
+        "official": 35,
+        "tasks": 936
+      },
+      "queued_no_stage": true
+    },
+    "verified_scope": [
+      "Six fake controls reject queued/running/failed, wrong original/schema/counts, cleanup/release/source/model failures, live-original or prior-attempt metadata.",
+      "Success returns terminal_eligible only, audit_executed=false and native_qualified=false.",
+      "Static supervisor checks original runner/child birth retirement, scans live original auditor, exclusively creates global original107 intent before one owned 60s auditor call.",
+      "Original audit schema/counts/evidence/native flags and full source/command/guard archive are checked in supervisor source; actual execution is pending."
+    ],
+    "limitations": [
+      "Six controls do not execute the supervisor, real process scan, exclusive intent creation, original auditor or ZIP assembly.",
+      "A fresh terminal namespace is required: processes mkdir rejects reuse of the original pure-control directory.",
+      "Original auditor cap60 exists; actual outer wrapper/guard budget and namespace binding need prelaunch freeze.",
+      "Original missing-prefix/missing-parent prestart failures remain peer self-report, not an independently reconstructed failed process.",
+      "Historical PRIMARY equality is original receipt claim; current model identity and protected assets were independently checked.",
+      "Read-only discovery initially requested nonexistent PLAN.json; used actual PREPARATION_SCOPE and ATTEMPT, with no source/test change."
+    ],
+    "conclusion": "Accept bounded six-control terminal preparation evidence; no blocker found within reviewed static once-only intent/retired-process/cleanup/archive path. Actual terminal supervisor/original audit and authentic native qualification remain pending.",
+    "next": "Peer owns original105/106/107 once-only terminal execution with prebound namespace and outer budget; reviewer receives terminal archives to assess provenance, paired uncertainty, regression causes and adoption. Serial activity-label correction remains due before new freeze.",
+    "peer88_ack": {
+      "comment": 6025962528,
+      "mail_id": "1a1132992581e1cd",
+      "sha256": "08301bfbd8c83f7102907a72d214daddaff69607b64174c84481422b78690e13",
+      "accepted_pr": 88,
+      "actual_delivery_sha256": "301efbd9e583e26fd11fe3533874be3e258167a5d765269e7f903ace13412d58",
+      "scope": "pipeline30 bounded engineering only; activity-label correction accepted for next freeze, not yet implemented."
+    },
+    "pending_pr89": {
+      "pr": 89,
+      "head": "1d5dbde3d64b00dbb78bf8806644fa9d7358ca9a",
+      "merge": "1c45252684b8de0fd992c01eb5a94ba5d81b3e58",
+      "comment": 6025984508,
+      "mail_id": "1a1132b08d68a1bf",
+      "delivery_sha256": "9cc26431c61f85e467db7e3c305b3e2ef2c6ae8e03d78b213d091a2ba71fb34d",
+      "scope": "Completed bounded source/archive review; see PUBLIC_FULL156_FREEZE_REVIEW.json terminal_preparation_review. Actual original105 terminal still pending."
+    },
+    "live": {
+      "checked_at": "2026-10-07T05:44:02+08:00",
+      "ticket105": "running",
+      "outputs": 262,
+      "requests": 279,
+      "ticket106": "queued",
+      "ticket107": "queued",
+      "sources_handles_model_slot_match": true
+    },
+    "reviewer_test_replays": 0,
+    "reviewer_original_audit_replays": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "adoption": false,
+    "full_batch_complete": false,
+    "elapsed_read_only_seconds": 0.96363172121346,
+    "peer_received_our_review": {
+      "comment": 6026138255,
+      "mail_id": "1a1133522e382f04",
+      "sha256": "3e40dfd411cd445b37d6ae7da3100b3c07c5784ad5799324b8b378bee92848d9",
+      "actual_delivery_sha256": "95a6a018ca0d2c8bfd12943880699298aad0c13ba26e6af4c817681300ef24da",
+      "accepted_pr": 90,
+      "scope": "Six fake terminal metadata controls and static review only; no actual supervisor/auditor/native qualification."
+    }
+  },
+  "pending_activity_label_pr91": {
+    "pr": 91,
+    "head": "0426f7dd0534d6793af3b89c7526693f463acc55",
+    "merge": "8c95bbab1f05799e91a81899e25f5146ac5fe1b7",
+    "comment": 6026227590,
+    "mail_id": "1a1133b082a49622",
+    "delivery_sha256": "5b7a8590bd4cb2f0cb6fc80e52d3e374ee31a45bec834f45d5b40ee09f9afcc6",
+    "reported_pilot_sha256": "4843a1a85ff5144d231169141e18ede7d1f63e15b1cda9b9cebe2f39cfdf1853",
+    "scope": "Completed bounded source/archive review; see activity_label_review. No pilot or new control execution.",
+    "next": "PR91 bounded review complete; follow original terminals and review new source/outer-budget evidence without replay."
+  },
+  "activity_label_review": {
+    "reviewed_at": "2026-10-07T06:09:41.995313+08:00",
+    "scope": "PR91 source-only serial activity-label fix, three installed sources and seven archive members",
+    "peer_pr": 91,
+    "peer_head": "0426f7dd0534d6793af3b89c7526693f463acc55",
+    "peer_merge": "8c95bbab1f05799e91a81899e25f5146ac5fe1b7",
+    "peer_comment": 6026227590,
+    "mail_id": "1a1133b082a49622",
+    "peer_delivery_sha256": "5b7a8590bd4cb2f0cb6fc80e52d3e374ee31a45bec834f45d5b40ee09f9afcc6",
+    "review_receipt_sha256": "8e214a5e0ba17652043e31ab9209dfc0262c1e3794df75b64c8b01a83a24b543",
+    "old_source_sha256": "ee694cccb8b29d86fe0ea6afc82b468c67428e67ecca04c4b0c3bd277a189a6e",
+    "new_source_sha256": "4843a1a85ff5144d231169141e18ede7d1f63e15b1cda9b9cebe2f39cfdf1853",
+    "literal_changes": [
+      [
+        "onehot-synthesis-stage:",
+        "serial-timer-synthesis-stage:"
+      ],
+      [
+        "完整onehot图机械生成14输出阶段结束；确定性输出与实际模型调用分开统计；终态审计前不发布收益或全量资格，不部署。",
+        "完整串行计时器机械生成14输出阶段结束；确定性输出与实际模型调用分开统计；终态审计前不发布收益或全量资格，不部署。"
+      ]
+    ],
+    "source_files": 3,
+    "public_git_files": 10,
+    "public_python_files": 1,
+    "all_git_actual_bytes_equal": true,
+    "byte_exact_after_reversing_two_literals": true,
+    "normalized_all11_functions_AST_equal": true,
+    "ten_non_main_functions_AST_unchanged": true,
+    "original_pipeline86_sources_unchanged": true,
+    "source_receipt_sha256": "00db174999869774faaeb1b1a5e8d471014ef9856091b6d3acddbf801a30aac1",
+    "archive": {
+      "sha256": "2008cd304a99fe68213b329b20cdb4277fee4407b108498bcd9e3d772de17f4b",
+      "bytes": 349335,
+      "members": 7,
+      "amd_and_private_local_all_members_verified": true
+    },
+    "inventory": {
+      "roots": 113,
+      "unique_files": 7575,
+      "previous112_groups_exact": true,
+      "actual_bytes_verified": true
+    },
+    "kit_hash_only_counts": {
+      "package": 18,
+      "official": 35,
+      "tasks": 936
+    },
+    "conclusion": "Accept source-only activity-label fix: two human-visible literals only, with byte-exact reversal and unchanged scoring/contract/request/budget logic. No runtime or score qualification.",
+    "next": "Peer binds exact4843 pilot only in a future serial CP7 freeze after authentic original107 terminal qualification. Follow original105/106/107 and their once-only terminals; review delivered outer-supervision/source/terminal evidence without replay.",
+    "limitations": [
+      "Static installation/hash evidence only; no pilot execution, new control tests or runtime process/stream/rc0 claim.",
+      "Original30 source/evidence preserved; label fix is not an algorithm gain or a new independently validated sample.",
+      "Prewrite count/transport-field failures remain peer self-report; original failed transports were not independently reconstructed.",
+      "Whole original105/106450s and107120s terminal plans are peer proposals; actual outer enforcement has not been independently verified.",
+      "Original107 finite native qualification, fixed CP7 quality/per-task-cost gate and any new156 freeze remain separate gates."
+    ],
+    "peer92_ack": {
+      "comment": 6026330216,
+      "mail_id": "1a11341f6335e3c5",
+      "sha256": "72afeb440047eb3375e58fb8c170b72a343899f1fdce1df75ced70eb14a91589",
+      "accepted_pr": 92,
+      "actual_delivery_sha256": "2fbbd41c2986b6ae18fe36c34abccf60156714204cb7e60a421b9c5e9b44a65c",
+      "scope": "Six-source installation and ten-member archive only; no executed original terminal or score. Full outer budget acknowledged; proposed105/106450s and107120s not independently verified."
+    },
+    "live": {
+      "checked_at": "2026-10-07T06:08:39+08:00",
+      "ticket105": "running",
+      "outputs": 286,
+      "requests": 305,
+      "ticket106": "queued",
+      "ticket107": "queued",
+      "sources_handles_model_slot_match": true
+    },
+    "reviewer_test_replays": 0,
+    "pilot_executions": 0,
+    "original_terminal_executions": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "adoption": false,
+    "full_batch_complete": false,
+    "elapsed_read_only_seconds": 0.9926451221108437,
+    "peer_received_our_review": {
+      "comment": 6026505081,
+      "mail_id": "1a1134deee1a5f58",
+      "delivery_sha256": "63f5703e24069f1e9a2f95f092ff30c68307c479957ec5c126d393c52ba99a09",
+      "accepted_pr": 93,
+      "our_delivery_sha256": "31742afeea4969d76edb2a2506bc7519bf8123219ecebfc205a403c3c7b5737c",
+      "scope": "Exact label source and seven archive members only; not runtime or score qualification."
+    }
+  },
+  "whole_terminal_budget_review_reference": {
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_FULL156_FREEZE_REVIEW.json",
+    "issue_comment": 6026584226,
+    "node": "whole_terminal_budget_review",
+    "receipt_sha256": "2b4e2926b027ce8bd072d598f7cf34330bfd3816f786e2edeca93e4a7af6af5c",
+    "whole_budget_admission": false,
+    "gap_acknowledgement": {
+      "comment": 6026725808,
+      "mail": "1a1135db0e26dfe7",
+      "hold_receipt_sha256": "95c6f722946b9c53c120a4cb4aee62e03989aa915cb01e8c7c4c4793ea981ba4",
+      "accepted_feedback": 6026584226,
+      "full_pr95_delivery_acknowledged": false,
+      "launcher_HOLD_source_not_independently_read": true
+    },
+    "peer_complete_delivery_accepted": {
+      "comment": 6026894490,
+      "mail_id": "1a1136a3e67f56df",
+      "accepted_pr95_delivery": "16e49eb7e1a84d4cfdf6150c0e8f663b5614d17225500028d669c21e34b9a761",
+      "accepted_pr97_delivery": "b9d3a75abce1d268e174dfa1d081c12a9e7a64389fc8e77c1a8d5c3c64ab429c",
+      "scope": "PR95 work-deadline/source scope and PR97 completed-summary/recorded-exit intake; not original audit or adoption."
+    }
+  },
+  "external_terminal_budget_review_reference": {
+    "actual_complete_process_budget_verified": false,
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_FULL156_FREEZE_REVIEW.json",
+    "node": "external_terminal_budget_review",
+    "prestart_hold": {
+      "comment": 6026938442,
+      "receipt_sha256": "895114177b3c1272e5b920830f2c66fb5bd81c6de1c5991cb6eebb9ceca1d00b",
+      "observed_successful_105_and_106_have_no_error_key": true,
+      "original_child_observer_intent_namespaces_absent": true,
+      "launcher_exception_and_local_HOLD_source": "peer reported; no independent Windows launcher traceback or source read",
+      "next_minimal_change": "Peer source-specific report.get(error) gate with complete/passed/schema/spec/counts preserved, new gate controls and bindings before original once-only terminal launch."
+    },
+    "receipt_sha256": "113c2c2eca0c52fd5ab677b93b5ae7c35eea9536308701d395478af33deb0c49"
+  },
+  "native_terminal_qualification_review": {
+    "schema": "peer100_success_gate_native107_bounded_review_v1",
+    "checked_at": "2026-10-07T07:14:15.702861+08:00",
+    "peer_pr": 100,
+    "peer_head": "81c073379d2e436ca17b634ee63e225437830e8c",
+    "peer_merge": "7fbab7bdf729c06d2e79ca1a814d7a2423b84f09",
+    "peer_comment": 6027081975,
+    "mail_id": "1a11378ba7e6ead9",
+    "peer_delivery_sha256": "5f904146e5cdbc2f864267882ddb2f9d2575d22586764e6050d9670012d38e82",
+    "scope": "Optional error-field source repair and16 extracted report-assertion controls; original107 finite native provenance and actual terminal child budget. No paired105/106 audit acceptance or natural score.",
+    "public_files": 12,
+    "public_python_files": 3,
+    "preparation_sources": 26,
+    "source_delta": {
+      "wave105": {
+        "old_sha256": "2404f7d47a83d94d0a63b4c464be1fe18c1b421a8d3c4411bbc226aad257b74b",
+        "new_sha256": "e644353e40f666f3da4455438764a48070a9d6f55921856be80fd81f2fef335a",
+        "reverse_delta_exact": true
+      },
+      "onehot106": {
+        "old_sha256": "ca74707025f4ac56f35e5f7f274e6f6258e1cbb36fe620e734b6ec0fc6301b7f",
+        "new_sha256": "376ae958f2d956bfaaf51219de8360df052684ee2f2c6ba1c0856d59daea55da",
+        "reverse_delta_exact": true
+      }
+    },
+    "control_receipt_sha256": "130136f70bec5a1a54a7ce943d369892167ba6de3a4a64750531d991c831e365",
+    "control_process": {
+      "pid": 1664026,
+      "starttime": "860125181",
+      "elapsed_s": 0.1930894311517477,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "stdout_sha256": "87830c3e4d55ffebec15106b8d8c0cc76f4c069bbe0dce9f350bf6f921592644"
+    },
+    "first_failure": {
+      "receipt_sha256": "538c3546b9701fd4a923fd54707a01d7d3e34d7b104a9d3b5bc25da58cb0f06b",
+      "pid": 1664007,
+      "starttime": "860117461",
+      "elapsed_s": 0.13670015521347523,
+      "returncode": 1,
+      "stdout_sha256": "f58eac118d94bd82858b7c9a28244dc7e6143a6feddaed63678a5730a16353ee",
+      "scope": "Original selector included the post-audit equality; failed before first scenario. Exact selector-only correction, production two single-line changes unchanged. Failure retained, not a native/algorithm failure."
+    },
+    "controls": 16,
+    "protected_roots": 119,
+    "protected_unique_files": 7670,
+    "old117_groups_preserved": true,
+    "archives": [
+      {
+        "sha256": "ac64f8b061d14583f9ce479af66fd4a6e5af09dbc8473c7f7a648bc90321b6fa",
+        "bytes": 635689,
+        "members": 37,
+        "dual_end_all_members_verified": true
+      },
+      {
+        "sha256": "6a471b2046c54281dc8e9c862cd3a4e41a75914161e1dc57e8908f531f07ff7d",
+        "bytes": 12735824,
+        "members": 509,
+        "dual_end_all_members_verified": true
+      }
+    ],
+    "native107": {
+      "spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+      "source_files": 117,
+      "summary_sha256": "7c99177b80b7d8f90a439f2376d52081a3a14a91e559ae2238a8029d2d0db51f",
+      "original_audit_sha256": "f57af8d7a6d2cb11abc051e757876679a8b7bc040787a52d296894cc2e84d8d7",
+      "audit_pid": 1664047,
+      "audit_starttime": "860134854",
+      "audit_elapsed_s": 1.4407760854810476,
+      "audit_returncode": 0,
+      "audit_exec_and_reaped": true,
+      "audit_stdout_sha256": "3ceebb0a858a454dd9091591d55f6ca41a41bb9035942f6d4bda580e3516e49a",
+      "original_audits": 1,
+      "controls": 12,
+      "positive": 8,
+      "actual_rtl_mutants": 4,
+      "commands": 36,
+      "guard_receipts": 73,
+      "observations": 13800,
+      "model_calls": 0,
+      "recorded_guard_identities_retired": 166,
+      "terminal_receipt_sha256": "869ae57c8816193205670475dba395cfd06bcf0a449fd7d02196079d78639c1e",
+      "terminal_pid": 1664046,
+      "terminal_starttime": "860134671",
+      "terminal_external_seconds": 6.372556610032916,
+      "terminal_cap_seconds": 120,
+      "terminal_final_artifact_exit_reap_cleanup_verified": true,
+      "observer_identity": {
+        "pid": 1664045,
+        "starttime": "860134559",
+        "command_sha256": "141e8c150a066e19d86074321e418c219569dbd9842323f79b733d2ce9346f19",
+        "role": "serial107"
+      },
+      "observer_state": "Z_empty_cmdline",
+      "observer_receipt_not_self_exit_proof": true,
+      "observer_self_complete_budget_not_claimed": true,
+      "scope": "Finite synthetic binary events and synchronous reset/edge observations; no exhaustive parser domain, unknown-input extension, natural score or independent unseen evaluation.",
+      "internal_next_and_xz_not_qualified": true,
+      "original_summary_native_qualified_false_is_pre_audit_snapshot": true,
+      "qualification_accepted_for_future_fixed_cp7": true,
+      "natural_score_measured": false,
+      "adoption": false
+    },
+    "live": {
+      "105": {
+        "state": "completed",
+        "source_files": 109,
+        "spec_sha256": "d3b4b69f85e358c749954c12509908172a74663a83c4739a57d0c26cec5f5c5e",
+        "summary_sha256": "02ffca339afa40c442f93767e6b0a528b65b68bd41ab35edeb4977d98200ae74",
+        "outputs": 312,
+        "requests": 335,
+        "once_intent": true
+      },
+      "106": {
+        "state": "completed",
+        "source_files": 126,
+        "spec_sha256": "d4cc6b511450e4cbc19e95105f2479d11c5bdd7166c6782043b9da7decda70d2",
+        "summary_sha256": "1ae79af06c8d4ebc2bc2d641709761e44928466007603fc2a93cea279ee8113c",
+        "outputs": 14,
+        "requests": 19,
+        "once_intent": true
+      },
+      "107": {
+        "state": "completed",
+        "source_files": 117,
+        "spec_sha256": "141f5ecf638751d37f77c6c72aa61cf4cdef5cc3c2948657906a880c8eafa778",
+        "summary_sha256": "7c99177b80b7d8f90a439f2376d52081a3a14a91e559ae2238a8029d2d0db51f",
+        "outputs": 12,
+        "requests": 0,
+        "once_intent": true
+      }
+    },
+    "scope_limit": "All native raw command identities/streams/candidate/testbench hashes, recorded row measurements,73 guards and509 archive members bound. Reviewer did not reexecute measurement or original audit; finite binary three-output evidence only. 16 gate controls execute extracted assertions, not full supervisors. Runtime107 budget does not qualify105/106.",
+    "read_only_receipt_sha256": "313bad8c3541644c533ffb6daf15fe2113de81d5a52a8df8cc8b4288d69aeae3",
+    "read_only_seconds": 1.463172497227788,
+    "new_tests": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "original_auditor_or_collector_runs": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "full_all_inclusive_batch_complete": false,
+    "remaining_server_quota_verified": false,
+    "peer_acceptance_of_this_review": true,
+    "next": "Peer delivers each original105/106 terminal audit and source/outer-budget evidence, then freezes the serial CP7 using original107 finite qualification. Reviewer checks pairing, uncertainty, root causes and per-task request gates. No original audit/control/FIFO replay; no105 adoption or factor-score addition.",
+    "peer_acceptance": {
+      "accepted_scope": "PR101 complete684d9a37 finite native107 and report-gate scope; no natural adoption.",
+      "mail_id": "1a11387f4623f601",
+      "comment": 6027274917,
+      "actual_delivery_sha256": "1ad70aeaf447d660c8a46e4612862fc31fc1213831efc250b965d863b7d7112f"
+    }
+  },
+  "paired_terminal_followup": {
+    "original107_finite_qualification_reused": true,
+    "original105_rejected": true,
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_FULL156_FREEZE_REVIEW.json",
+    "original106_new156_only": true,
+    "node": "original105_106_terminal_review"
+  },
+  "cp7_freeze_review": {
+    "schema": "peer102_serial_cp7_preparation_bounded_review_v1",
+    "checked_at": "2026-10-07T07:46:05.489576+08:00",
+    "peer_pr": 102,
+    "head": "87ff602441e5dc61984a52599f79f190ef84d124",
+    "merge": "90135509765d25402406155324660ad108647e45",
+    "comment": 6027424289,
+    "mail_id": "1a1139323b359e28",
+    "actual_delivery_sha256": "a2958de9575e482889d21e6aab5d60028adec2fffea62f69875a09495ac66f7d",
+    "fifo_actual_sha256": "484ebbde593532699ec7e508aaa9dd1e03a7002a074ed8b768ab369140eb0b59",
+    "spec_sha256": "378c8706992c4da961dc4c237a4aad6b21bf48c4aefb13e51dfa4a8cf97ef117",
+    "sources": 101,
+    "previous_pipeline_sources": 86,
+    "common_unchanged": 84,
+    "changed_only": [
+      "pilot.py",
+      "raw_evidence/PROTECTED_GROUPS_CAPTURE.json"
+    ],
+    "new_sources": 15,
+    "archival_replaced_sources_exact": true,
+    "label_reverse_exact": true,
+    "preparation_source_sha256": "0c63f248cd4433dbb8830377ac3e7d184c831f30cbc8c878dfdb0e4e625f674d",
+    "original_preparation_process": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/serial_timer_synthesis_cp7_20261007_v1/prepare_serial_cp7.py"
+      ],
+      "cwd": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_cp7_20261007_v1",
+      "cap_s": 40,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 1664244,
+        "state": "T",
+        "starttime": "860297259",
+        "pgid": 1664244,
+        "sid": 1664244,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 2.538575952872634,
+      "leader_reaped": true,
+      "stdout_sha256": "93d7063deda02c3c4bcb5778175bd1e9e1267cc0e4cc8980dce8be7782020f7c",
+      "stdout_bytes": 679,
+      "normal_completion": true
+    },
+    "preparation_receipt_sha256": "eca821fbfef558b058fcbaf981c2cad998465213554b15602f9f04b89c80024d",
+    "process_receipt_sha256": "93e026e6f1eefe7c89cfca92411358dc8e65b00d71ca5311f290fd2638c7a285",
+    "postexit_sha256": "fcc467fffef61dcda428930cee7bde9e7879ace8453ad0807a6fbf2acbcd21d9",
+    "postexit_admission_read_not_reexecuted": true,
+    "protection": {
+      "groups": 119,
+      "declared_files": 7670,
+      "unique_files": 7670,
+      "anchor_sha256": "61972041751052691c9e42e0683a7d49e51abb9a956c8c32271ed711409091c3"
+    },
+    "archive": {
+      "sha256": "279bffabd7e9737ec0aaec8d50bffffe3ae51ad4e5f2a29607d10159133ffaee",
+      "bytes": 13559888,
+      "members": 113,
+      "manifest_sha256": "812a506173b2b4479ff92fabf47f654bc3ca6b1fd465e2744fc0d84dbae27a0d",
+      "dual_end_all_members_verified": true
+    },
+    "original107_native_sha256": "6a471b2046c54281dc8e9c862cd3a4e41a75914161e1dc57e8908f531f07ff7d",
+    "original107_audit_sha256": "f57af8d7a6d2cb11abc051e757876679a8b7bc040787a52d296894cc2e84d8d7",
+    "prior_native_review_reused": true,
+    "original20_and30_reused_no_new_tests": true,
+    "public_git_files_verified": 11,
+    "public_python_files": 1,
+    "budget": {
+      "solve_deadline_s": 300,
+      "judge_timeout_s": 300,
+      "judge_supervisor_timeout_s": 360,
+      "max_worker_requests_per_arm": 2,
+      "max_actual_model_requests": 28,
+      "stage_timeout_s": 12000,
+      "guard_timeout_s": 12400,
+      "slot_minutes": 210,
+      "retries": 0
+    },
+    "ticket": {
+      "ticket": 108,
+      "state": "running",
+      "runner": {
+        "pid": 1664273,
+        "starttime": "860326911"
+      },
+      "live": {
+        "state": "S",
+        "starttime": "860326911",
+        "cmd_sha256": "7653ceb72884b437043009b3cff332a168b6a43c5a18b5453175a6876c62be21"
+      }
+    },
+    "status_at_check": {
+      "observed_at_epoch": 1791330337.2124646,
+      "experiment": "/workspace/team/runs/fpga_owner/serial_timer_synthesis_cp7_20261007_v1",
+      "completed_samples": 11,
+      "expected_samples": 14,
+      "actual_model_requests": 17,
+      "complete": false,
+      "audit_pending": true,
+      "adoption": false,
+      "new_full_score": false
+    },
+    "read_only_receipt_sha256": "92c44fc4da88fea547d32d5480949445afd9d277fa0c67fbea87f2f74a02cf00",
+    "read_only_seconds": 0.8673094287514687,
+    "new_controls": 0,
+    "new_model": 0,
+    "new_eda": 0,
+    "new_original_audit": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_family_N": null,
+    "complete_batch": false,
+    "adoption": false,
+    "complete_budget_actual_quota_verified": false,
+    "peer_acknowledgment_of_this_new_review": true,
+    "limits": [
+      "Finite original107 qualification only.",
+      "Known seven development tasks, independent unseen0.",
+      "No natural terminal score/adoption/full batch or actual quota verified.",
+      "Preparation imports source-specific admission logic on AMD only; reviewer did not invoke it.",
+      "Original source preparation controls reused not newly passed50."
+    ],
+    "next": "Follow original108 once-only run and peer-owned terminal audit; independent terminal pairing/provenance/cost review after formal delivery. Peer separately prepares qualified onehot156. No replays, original105 expansion, combined-factor benefit or adoption.",
+    "peer_acceptance": {
+      "comment": 6028261850,
+      "mail_id": "1a113cd951b5954a",
+      "actual_delivery_sha256": "5680046693f8ad90349c12f785fb702623e8aef6864789aedabadc2fb600ea96",
+      "six_original_artifact_hashes_verified": true,
+      "accepted_bounded_scope": true
+    },
+    "followup_terminal_review": "cp7_terminal_review; status_at_check remains historical snapshot."
+  },
+  "cp7_terminal_review": {
+    "schema": "original108_terminal_bounded_independent_review_v1",
+    "checked_at": "2026-10-07T08:51:56.455658+08:00",
+    "peer_comment": 6028261850,
+    "mail_id": "1a113cd951b5954a",
+    "source_commit": "87ff602441e5dc61984a52599f79f190ef84d124",
+    "peer_actual_delivery_sha256": "5680046693f8ad90349c12f785fb702623e8aef6864789aedabadc2fb600ea96",
+    "peer_original_results_sha256": "f54c0bafc3762951ca4eea9f790b5610afb709390092852eab3c44ec122aaef9",
+    "scope": "Original108 once-only terminal provenance, all14 outputs and19 original requests, finite paired development screening and bounded root-cause review. No reviewer execution of generator/auditor/collector/EDA.",
+    "spec_sha256": "378c8706992c4da961dc4c237a4aad6b21bf48c4aefb13e51dfa4a8cf97ef117",
+    "source_count": 101,
+    "summary_sha256": "ccc7bbcfc01f1951e7c458cba317fdbfb12aa532438e0a3013d253184f5f6fbd",
+    "original_audit_sha256": "4578ce6bbd335d67f1e02a4a33553fa03048fde48cea04fe63c679fbe1044803",
+    "terminal_receipt_sha256": "920bfe6e1f826e9d6dc0318fbd0a57e847ee1375f64654ae7c7f476ee762b562",
+    "original_intent_sha256": "6fc467d919955c4a872fb82a740399d28fe582c291ceeb4bc4b486cf478217b4",
+    "original_processes": {
+      "collector": {
+        "pid": 1680186,
+        "pgid": 1680186,
+        "session": 1680186,
+        "starttime": "860707722",
+        "command_sha256": "efd743aacda63e1a1a13a7d75d03995bb343bfa862ba415692b8bfc17a1917da",
+        "elapsed_s": 0.900296900421381,
+        "returncode": 0,
+        "cap_s": 180,
+        "streams": {
+          "stdout.bin": {
+            "sha256": "95e09bdf999ef3102368a3c7f80a2adba426fe7130e8a7d33de3cc76fcdc52c5",
+            "bytes": 221
+          },
+          "stderr.bin": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        "attempt_argv_streams_bound": true,
+        "current_identity_retired": true
+      },
+      "auditor": {
+        "pid": 1680187,
+        "pgid": 1680187,
+        "session": 1680187,
+        "starttime": "860708004",
+        "command_sha256": "23477123a587ec7e90a9b7402ebd763e33a2349b2a650a08df71520227de662a",
+        "elapsed_s": 0.7492666877806187,
+        "returncode": 0,
+        "cap_s": 180,
+        "streams": {
+          "stdout.bin": {
+            "sha256": "0d5bd8a1b688e627eb85d855a9a22e8903d42323c7c9d841d2f22fe9c98845cb",
+            "bytes": 263
+          },
+          "stderr.bin": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        "attempt_argv_streams_bound": true,
+        "current_identity_retired": true
+      }
+    },
+    "process_identity_scope": "original post-exec PID/start/cmd snapshots, stream/argv/return/recovery binding; no invented raw birth-stat/exec handshake",
+    "terminal_child": {
+      "pid": 1680185,
+      "state": "T",
+      "starttime": "860707534",
+      "pgid": 1680185,
+      "sid": 1680185,
+      "command_sha256": "092ac3cd8efed5e4de0449c619017a015a78a782ed5baa4faaf51731809127fb",
+      "complete_elapsed_s": 9.112118303775787,
+      "cap_s": 450,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "final_artifacts_exit_cleanup_verified": true,
+      "full_deadline_expired": false,
+      "fake_injection": false
+    },
+    "observer": {
+      "pid": 1680184,
+      "starttime": "860707422",
+      "command_sha256": "092ac3cd8efed5e4de0449c619017a015a78a782ed5baa4faaf51731809127fb",
+      "role": "onehot106",
+      "state": "Z_empty_cmdline",
+      "receipt_not_self_exit_proof": true,
+      "self_complete_budget_not_claimed": true
+    },
+    "failed_entry": {
+      "manifest_sha256": "4edf0e3c63550753690d7ab79fab9b3dd718f5a59b074835074f108dcd93bb66",
+      "receipt_sha256": "b27d49d2c08a61e55f684714aacfc5fa420f627accb9b9b7882b746693f4e98a",
+      "traceback_sha256": "8fa0eb97a2da07444960332741a899da74551533b2f6fdf7e82f3a332746a56e",
+      "child": {
+        "pid": 1680177,
+        "state": "T",
+        "starttime": "860696218",
+        "pgid": 1680177,
+        "sid": 1680177,
+        "command_sha256": "bc298aedca388016b17fdaadbc6aa86e4508ed43cdb3023111ffa1e3391a71a5"
+      },
+      "returncode": 1,
+      "complete_elapsed_s": 2.0001971554011106,
+      "original_steps_executed": 0,
+      "empty_collector_folder_preserved": true,
+      "old_intent_preserved": true,
+      "execution_claim_sha256": "063210bc2d2ce2ba9ed3e08db35a7626600cd06298698e68f4f63440fe5e1588",
+      "old_process_source_sha256": "7a07969ada10f56f7e36473990c18c82b341d1db281f3fc87f0fd0782588a22a",
+      "new_process_source_sha256": "a4627d8b3faf6a75dce75cb3c5b02e96de51a52252da7186fe6cdfbf18daccec",
+      "two_path_literals_reverse_to_original_bytes": true,
+      "new_supervisor_sha256": "194c08986c726c953a4824a2a7a305090f5e7a08ef701c65c1c0a1fa9643bce1",
+      "explanation": "Collector is frozen under upstream/. The old path assertion failed before attempt/stdout/Popen. v2 changes only two path checks in process functions; preserves original failed namespace and once intent; adds exclusive execution claim only after binding zero-step failure. No original audit/collector replay."
+    },
+    "archive": {
+      "sha256": "02002e35f411644992723980a0ba2103634418cb74d3a0e958114e8fcb8f3633",
+      "bytes": 17366023,
+      "members": 856,
+      "manifest_sha256": "a8b7d05ca6a414bdc53b59465c324c6c708d41aef0602df3e1e659c6a1929bd0",
+      "all_members_bound_to_actual_files": true,
+      "dual_end_all_members_verified": true
+    },
+    "protected_snapshot": {
+      "groups": 119,
+      "unique_files": 7670,
+      "anchor_manifest_sha256": "b28df2dc806a0300a71bd295bdee23bdad05fb31e456e478139b7c137fe53a11",
+      "all_hashed": true
+    },
+    "protection_receipts": 29,
+    "recorded_guard_identities_retired": 687,
+    "L3": {
+      "C": 6,
+      "P": 7
+    },
+    "requests": {
+      "C": 10,
+      "P": 9
+    },
+    "weighted": {
+      "C": 0.8857142857142858,
+      "P": 1
+    },
+    "paired_L3_table_both_P_only_C_only_neither": [
+      6,
+      1,
+      0,
+      0
+    ],
+    "descriptive_exact_mcnemar_p": 1,
+    "six_guards_both_L3": true,
+    "all_fixed_tasks_and_total_requests_nonincreasing": true,
+    "no_paired_level_regressions": true,
+    "first_model_request_same_for_six_fallback_pairs": true,
+    "mechanical_zero_requests": 1,
+    "all_rows_requests_native_judge_bound": true,
+    "original_audit_pending_field": true,
+    "actual_original_auditor_executed": true,
+    "qualified_for_one_new_same_factor_full156": true,
+    "root_cause": {
+      "scope": "one known natural development task; saved RTL and original logs only, no new execution",
+      "C": "Four shift states followed by an extra empty state before counting; count 224 and done 160 mismatches, total224/5069",
+      "P": "Prompt-only complete-contract emitted four shift states followed immediately by count; original simulation0/5069 and synthesis pass",
+      "other_six_pairs": "L3 preserved with identical first request objects and no per-task cost increase",
+      "no_task_id_rule": true,
+      "no_tuning": true
+    },
+    "limits": [
+      "Seven known development tasks, one sample per arm and only one discordant pair; descriptive p=1 is not generalized efficacy. Independent unseen0, effective familyN unknown.",
+      "Finite original107 binary-event/synchronous-reset/edge three-output scope reused; TRACE next placeholder does not prove internal next, xz or full generator domain.",
+      "This one natural prompt-contract emission passes its original judge; no task-specific rule, reference-derived synthesis or tuning added.",
+      "Original audit_pending=true and producer native_qualification=false remain immutable inherited snapshots; actual original audit and prior native qualification binding are separate evidence.",
+      "Measured subject completion is9.112118s under450, not450s stress proof and not observer-self complete budget. Preparation/transport failures do not justify original audit replay."
+    ],
+    "read_only_receipt_sha256": "08cdaebe9caf240d23ee134a01ea1b2856a8e5c6c09e03298aa61f1a49449b59",
+    "read_only_seconds": 0.9974033124744892,
+    "peer_acceptance_of_pr103_and_pr104": {
+      "comment": 6028261850,
+      "mail_id": "1a113cd951b5954a",
+      "actual_delivery_sha256": "5680046693f8ad90349c12f785fb702623e8aef6864789aedabadc2fb600ea96",
+      "six_original_artifact_hashes_verified": true,
+      "accepted_bounded_scope": true
+    },
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_tests": 0,
+    "original_auditor_or_collector_reviewer_runs": 0,
+    "new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_independent_families": null,
+    "adoption": false,
+    "full_all_inclusive_batch_complete": false,
+    "full_batch_budget_actual_quota_verified": false,
+    "peer_acknowledgment_of_this_new_review": true,
+    "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
+    "terminal_sources_public_binding": {
+      "source_files": 2,
+      "exact_git_amd_bytes": true,
+      "scope": "Only serial108_terminal_process_functions.py and serial108_terminal_supervisor.py were reviewed in PR106; new109 freeze/preparation is now separately complete under PUBLIC_ONEHOT_CP7_FREEZE_REVIEW.full156_freeze_review.",
+      "pr": 105,
+      "head": "9c0d896a3624793029c62d06cd66fcd671e590db"
+    },
+    "own_delivery": {
+      "pr": "https://github.com/854259/FPGA/pull/106",
+      "head": "9c1d1cc4b488bbd04245cfadf393caf292265910",
+      "merge": "9b382efc8f005e124a51fd3ab0d40581d4299bc9",
+      "delivery_sha256": "7fbb1e156a49a59600f04b619c673856b3d3ef39fd76e145430ab77390ef9a99",
+      "comment": 6028586864,
+      "peer_accepted": true
+    },
+    "peer_acceptance": {
+      "comment": 6028716496,
+      "mail_id": "1a113ea56beef3de",
+      "full_actual_files_verified": {
+        "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/PUBLIC_SERIAL_TIMER_REVIEW.json": "3c509039ce9dcebd18696c58fa2b4532a68c40f22d07c9fb779ce25cca88c57e",
+        "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "08cdaebe9caf240d23ee134a01ea1b2856a8e5c6c09e03298aa61f1a49449b59",
+        "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "7fbb1e156a49a59600f04b619c673856b3d3ef39fd76e145430ab77390ef9a99"
+      },
+      "scope": "Explicit acceptance of PR106 final head and all three original108 bounded delivery files; no extra109 or generalization qualification."
+    }
+  },
+  "full156_freeze_review": {
+    "schema": "peer107_serial_full156_freeze_bounded_independent_review_v1",
+    "checked_at": "2026-10-07T09:18:40.145086+08:00",
+    "peer_pr": "https://github.com/854259/FPGA/pull/107",
+    "head": "e4be460fb79125666a3fc7e13f7cd62a9b114467",
+    "merge": "f27c7946acd1af661286f634c3e491eef5a63d1f",
+    "peer_comment": 6028716496,
+    "mail_id": "1a113ea56beef3de",
+    "peer_delivery_sha256": "90b1f93249c7622cdfd2dbd034bfd3f21c99435bc20127076bd69004e3900fc2",
+    "fifo_delivery_sha256": "4cf908c97d1d74f81a3e4ff9ec85a9befc6ce1964e2fbea2e539aa7364cea8ac",
+    "submission_binding_sha256": "1ec8435fc8737c98d15d2d0e48f9a454bb9a79cc0e5f1bf67029e9833e789475",
+    "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+    "scope": "One fresh same-factor serial all156 development C/P source/preparation/admission and original queued FIFO110 binding only; active109 remains unchanged. No natural score or adoption.",
+    "source_count": 116,
+    "parent_source_count": 101,
+    "unchanged_common": 95,
+    "changed": [
+      "audit.py",
+      "metrics.py",
+      "pilot.py",
+      "preparation_inputs.py",
+      "raw_evidence/ENVIRONMENT_CAPTURE.json",
+      "raw_evidence/PROTECTED_GROUPS_CAPTURE.json"
+    ],
+    "added": [
+      "ACTUAL_FULL_SCOPE_ADMISSION.json",
+      "DRAFT_SOURCE_MANIFEST.json",
+      "FULL_BASELINE_REFERENCE.json",
+      "FULL_BASELINE_SOURCE_AUDIT.json",
+      "FULL_SOURCE_ADAPTATION_PROOF.json",
+      "PRODUCTION_ADMISSION.json",
+      "QUALIFYING_CP7_AUDIT.json",
+      "QUALIFYING_CP7_AUDIT_DERIVATIVE.json",
+      "QUALIFYING_CP7_ORIGINAL_BINDING.json",
+      "QUALIFYING_CP7_SPEC.json",
+      "collect_evidence.py",
+      "prepare_full_scope.py",
+      "raw_evidence/ARCHIVAL_CP7_ENVIRONMENT_CAPTURE.json",
+      "raw_evidence/ARCHIVAL_CP7_PROTECTED_GROUPS_CAPTURE.json",
+      "test_full_metrics.py"
+    ],
+    "production_unchanged": {
+      "worker.py": "1eac9c3b9bac6581bf0aa137fdead50835cf80483d000848554e298f2a7ed90a",
+      "synthesis.py": "9080c49a93c807a4e5291e729d0b3ccb85b8d78c680607510ebcec7192fa26d6",
+      "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+      "factor_proof.py": "bda081df86cd2e6c9b7d597337079ae220a8398723483f9485eb50dc42bbe0fe",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "NATIVE_QUALIFICATION_AUDIT.json": "f57af8d7a6d2cb11abc051e757876679a8b7bc040787a52d296894cc2e84d8d7",
+      "NATIVE_ARCHIVE_BINDING.json": "fe1673d5c029e4fd8fb82d8d1069c11f160b9db133b402683df914a8cd632e52",
+      "NATIVE_EVIDENCE.zip": "6a471b2046c54281dc8e9c862cd3a4e41a75914161e1dc57e8908f531f07ff7d",
+      "upstream/official_eval_guarded.py": "5d1911d8b730cbb460bf7ceb33cc602bf1f840402971e3dc1301f470fbd52a4c"
+    },
+    "pilot_unchanged_functions": 8,
+    "audit_unchanged_functions": 8,
+    "generic_metrics_and_tests_exact_route_label_bijection": true,
+    "preparation_source_sha256": "a3a59920928a3fb329a1d2cb846d1147919a1379ad9a5ac972ad94a2cb9542c5",
+    "original_prepare": {
+      "pid": 1692728,
+      "state": "T",
+      "starttime": "860829980",
+      "pgid": 1692728,
+      "sid": 1692728,
+      "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603",
+      "elapsed_s": 2.7558195032179356,
+      "cap_s": 40,
+      "rc": 0,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining": [],
+      "stdout_sha256": "39a6068e654bc2f9c1cfdf3167010a2ab98a32bdc3251b530ebd31bc8b030757",
+      "stdout_bytes": 673,
+      "birth_stat_cmd_argv_stream_receipt_verified": true,
+      "outer_observation_s": 3.863230064511299,
+      "observer_self_complete_budget_not_claimed": true
+    },
+    "preparation_receipt_sha256": "73f4d0d1a9f743d1065c538f8a7e68db26320db2c8737e6dd47ba52c1820fd89",
+    "preparation_process_receipt_sha256": "fc1f351de46306eb4b5ace28c17a6596fea0cacf76228bcf9ce5af060c3e26d5",
+    "post_exit_sha256": "3bca86ab74d764763d7d4a08002394e6c1e1f4513e6548c3f7d04f1a0d04e49c",
+    "source_claim_files": 110,
+    "two_capture_originals_preserved": true,
+    "actual_new_scope_admission_groups": 4,
+    "admission_checks": [
+      "original108 qualifier and exact unchanged single-factor production/native107 bound",
+      "all156 input bytes,113 historical guards and exact1emit155abstain admission bound",
+      "same original grade,provenance,complete300 solver measurement and historical/per-task/total cost gates retained",
+      "immutable95/6516,original109/7389 and current125/7928 retained;136 active109 frozen sources added, progress excluded"
+    ],
+    "new_test_controls_executed": 0,
+    "reused_evidence": "Original108 audit4578ce6b/856-member02002e35; native107f57af8d7/509-member6a471b20; old worker20/pipeline30/numeric156 intake/generic15/original audits reused, not rerun. Root collector alias exact original upstream bytes.",
+    "finite_native_scope": "Finite107 binary-event/synchronous-reset/edge three-output qualification; TRACE next placeholder does not prove internal next/xz/full domain. One known natural CP7 contract case is not generalization.",
+    "protection": {
+      "groups": 126,
+      "declared_entries": 8064,
+      "unique_files": 7938,
+      "original125_preserved": true,
+      "original95_6516_preserved": true,
+      "active109_frozen136_only": true,
+      "kit_counts": {
+        "package": 18,
+        "official": 35,
+        "tasks": 936,
+        "baseline": 2,
+        "upstream_commit": 40
+      },
+      "original_prepare_before_after_groups": 119,
+      "original125_all_retained": true,
+      "original106_duplicate_entries": 126,
+      "all_duplicates_same_hash": true
+    },
+    "archive": {
+      "sha256": "f10f447961a76d30ab0e6f5b81861eb5645e996c00dd021e3dc5f21e3f4852ec",
+      "bytes": 14048795,
+      "members": 129,
+      "manifest_sha256": "17d7fe21cec4a94a9a315a6ad6f15de2c279b3f0bfd249ea06fd1710d50ed95d",
+      "dual_end_all_members_verified": true
+    },
+    "public_files": 15,
+    "public_python_files": 5,
+    "all_public_git_amd_bytes_equal": true,
+    "budget": {
+      "solve_deadline_s": 300,
+      "judge_timeout_s": 300,
+      "judge_supervisor_timeout_s": 360,
+      "max_worker_requests_per_arm": 2,
+      "max_actual_model_requests": 624,
+      "stage_timeout_s": 43200,
+      "guard_timeout_s": 43600,
+      "slot_minutes": 740,
+      "retries": 0
+    },
+    "tasks": 156,
+    "expected_outputs": 312,
+    "historical_guards": 113,
+    "existing_admission": {
+      "emitted": 1,
+      "abstentions": 155,
+      "no_new_intake_scan": true,
+      "original_receipt_sha256": "372887fc6483bd8f0995e88f1089575525f5b9c49c4b47e54a5c08c58b6846f0",
+      "private_rows_sha256": "5d062924bae20ef218a41b4985de3ae6029120bf292604e53c75f226173bf0ad",
+      "metadata_not_production_dispatch": true
+    },
+    "tokens": 8192,
+    "repairs": 1,
+    "acceptance": "All156/312 original judge rows, P>=120 fully correct and weighted>=.80; historical113 allL3, paired grades nondecreasing; P total requests<=C and every historical-correct/unchanged-grade task P requests<=C, no deadline/unconfirmed/tool/source failure; original terminal archive audit required.",
+    "original_fifo": {
+      "number": 110,
+      "state": "queued",
+      "monitor": {
+        "pid": 1710412,
+        "state": "R",
+        "starttime": "860902725",
+        "command_sha256": "c92097b728bc84bf16f5c3513f86c7ba88b9db9deb5b855ad97074d5bacf030a"
+      },
+      "no_stage_or_results": true
+    },
+    "status_at_check": {
+      "state": "queued",
+      "no_stage_or_results": true
+    },
+    "submission_evidence_scope": "Saved submission argv/rc0/stdout ticket, spec/source, monitor birth snapshot and current exact PID/start/cmd; queued without stage/results. No invented preexec submission handshake.",
+    "limits": [
+      "One fresh same-factor all156 development C/P run; no redraw/stored answer/five/independent/hidden/adoption/deployment.",
+      "Single serial timer factor with common original phase-P model fallback; no taskID production dispatch or waveform/FSM/vector/table/onehot composition.",
+      "8192/max2/repair1/complete worker300/judge300/super360 including x-z unchanged.",
+      "Finite107 binary pattern/shift/event/reset three-output qualification and one actual known151 instance are not internal-next/xz/all-parameter proof.",
+      "Stage43200/guard43600/slot740min are safety caps, not ETA.",
+      "Original score gains are not added; target120/.80/history/cost gates all mandatory.",
+      "8064 grouped source records correspond to7938 unique physical files; inherited126 duplicate entries are identical106 source references.",
+      "Original prepare pre/post119-group snapshots are retained; new126 inventory independently checked, active109 progress excluded.",
+      "PR delivery schema alias and prepare docstring retain onehot labels; actual serial root/spec/source/qualification and FIFO serial schema bind scope. Label changes would not prove mechanism benefit.",
+      "Peer precommit CRLF rejection is self-report; actual15Git/AMD bytes plus -text whitespace=cr-at-eol checked, no AMD preparation rerun."
+    ],
+    "readonly_receipt_sha256": "e95d40e7ab817f56ead990b45c7ca72c8b6bdd30d49fa0989ee1cb3c63105bfe",
+    "readonly_seconds": 1.4907888062298298,
+    "reviewer_new_model_calls": 0,
+    "reviewer_new_eda_calls": 0,
+    "reviewer_new_controls": 0,
+    "reviewer_original_audit_or_collector_runs": 0,
+    "reviewer_new_fifo": 0,
+    "independent_unseen": 0,
+    "effective_family_N": null,
+    "adoption": false,
+    "full_all_inclusive_batch_complete": false,
+    "full_budget_actual_quota_verified": false,
+    "peer_acknowledgment_of_this_new_review": true,
+    "next": "Follow original109 running and original110 queued without changing freezes; owner performs each original terminal once, this task reviews paired provenance/uncertainty/root cause/acceptance. No current unreviewed formal delivery.",
+    "qualifying108_audit_sha256": "4578ce6bbd335d67f1e02a4a33553fa03048fde48cea04fe63c679fbe1044803",
+    "native107_audit_sha256": "f57af8d7a6d2cb11abc051e757876679a8b7bc040787a52d296894cc2e84d8d7",
+    "active109_at_check": {
+      "monitor": {
+        "pid": 1680247,
+        "starttime": "860779708"
+      },
+      "completed_samples": 50,
+      "actual_model_requests": 52,
+      "complete": false
+    },
+    "peer_pr106_acceptance": {
+      "comment": 6028716496,
+      "mail_id": "1a113ea56beef3de",
+      "full_actual_files_verified": {
+        "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/PUBLIC_SERIAL_TIMER_REVIEW.json": "3c509039ce9dcebd18696c58fa2b4532a68c40f22d07c9fb779ce25cca88c57e",
+        "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/READ_ONLY_REVIEW.json": "08cdaebe9caf240d23ee134a01ea1b2856a8e5c6c09e03298aa61f1a49449b59",
+        "/workspace/team/activity/fpga_teammate/artifacts/serial108-terminal-bounded-review-20261007-v1/ACTUAL_DELIVERY.json": "7fbb1e156a49a59600f04b619c673856b3d3ef39fd76e145430ab77390ef9a99"
+      },
+      "scope": "Explicit acceptance of PR106 final head and all three original108 bounded delivery files; no extra109 or generalization qualification."
+    },
+    "peer_acceptance": {
+      "comment": 6028973734,
+      "mail_id": "1a113ff5f30dbb47",
+      "accepted_actual_delivery_sha256": "088d6b65beb65aaa1319d22174309c0d39cfe5613859448f4121cd7f5ae7bc9b",
+      "head": "5d7c4e9a5533ef530e4a55357ac2f6998c3d3a48",
+      "scope": "Original110 serial source116/preparation129/15public5Python/4actual admission/one-time queued FIFO110 only;109 source136 unchanged. No scores/audits/adoption/hidden proof. Group entries8064 vs unique7938 distinct."
+    },
+    "own_delivery": {
+      "pr": "https://github.com/854259/FPGA/pull/109",
+      "head": "5d7c4e9a5533ef530e4a55357ac2f6998c3d3a48",
+      "merge": "792b6ec1a26c4bedc55e903dd53fe5f4af50e248",
+      "delivery_sha256": "088d6b65beb65aaa1319d22174309c0d39cfe5613859448f4121cd7f5ae7bc9b",
+      "comment": 6028910857,
+      "peer_accepted": true
+    }
+  },
+  "terminal_inventory_compatibility": {
+    "schema": "original109_110_inventory_static_compatibility_review_v1",
+    "checked_at": "2026-10-07T11:25:44.114845+08:00",
+    "peer_comment": 6030195022,
+    "peer_mail": "1a1145fb33b24ea1",
+    "own_comment": 6030252301,
+    "observations": [
+      {
+        "ticket": 109,
+        "spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+        "audit_sha256": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+        "function": "protected_receipts",
+        "function_start_line": 31,
+        "function_end_line": 61,
+        "function_text_sha256": "9b5303809d5fa3ece88389beaced4e731c0eee8d6922af080dfda0033442abe9",
+        "capture_sha256": "729c323bcdcbfe65bfd887caabd2a176c0e983b51ab074d761b9774011916761",
+        "groups": 125,
+        "source_records": 7928,
+        "unique_files": 7802,
+        "duplicate_records": 126,
+        "duplicate_hash_conflicts": 0,
+        "duplicate_group_pairs": [
+          [
+            "onehot_cp7_frozen_static_v1",
+            "onehot106_qualifying_original_frozen"
+          ]
+        ],
+        "both_uniqueness_assertions_present": true
+      },
+      {
+        "ticket": 110,
+        "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+        "audit_sha256": "63698813e1593a82c1a79c9e954cf40c3f415048e27ba605ea1e3d32dd0ddd7c",
+        "function": "protected_receipts",
+        "function_start_line": 32,
+        "function_end_line": 67,
+        "function_text_sha256": "17756b4bac4b144de801e380858130828120aca69081bfb288c945b5ed76f948",
+        "capture_sha256": "31a57e9cbd073fd32a680b3170fab140fb37f9bb425b54af541fbf0a47917db2",
+        "groups": 126,
+        "source_records": 8064,
+        "unique_files": 7938,
+        "duplicate_records": 126,
+        "duplicate_hash_conflicts": 0,
+        "duplicate_group_pairs": [
+          [
+            "onehot_cp7_frozen_static_v1",
+            "onehot106_qualifying_original_frozen"
+          ]
+        ],
+        "both_uniqueness_assertions_present": true
+      }
+    ],
+    "conclusion": "Frozen inventory contains126 exact same-path same-hash duplicate records. Both frozen protected_receipts functions require every record path unique and final unique count equals record count. Static incompatibility confirmed; original function/auditor/collector not executed by this review, no original terminal failure observed.",
+    "owner_diagnostic31_status": "PR123 original31=30 new source controls plus1 diagnostic method for two original subfunctions independently reviewed. Each original function rejects126 same-hash duplicate records at line48/54. No complete original auditor or collector called.",
+    "required_followup": "Original109 development regression is closed and rejected for adoption; preserve its failure and all evidence, do not rerun or tune on it. Owner retains running110 and queued111, each once-only closure; reviewer receives original110 terminal and original111 native14/42EDA/85guards/12568 observations/six mutant detections. Compatible110 source entry accepted within six original controls, not actual terminal acceptance. Only after111 actual native qualifies may owner freeze CP8 same-budget screening. Full A/P/B156, audited RTLLM, important five samples, resource/interface/recovery and whole budget/actual quota remain outstanding; no combined-factor gain or generalization claim.",
+    "new_controls": 0,
+    "new_project_function_calls": 0,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_original_audits": 0,
+    "new_collectors": 0,
+    "new_fifo": 0,
+    "scoring_failure_claim": false,
+    "model_failure_claim": false,
+    "original_complete_audit_failure_claim": false,
+    "native_qualified": false,
+    "adoption": false,
+    "complete_batch": false,
+    "readonly_seconds": 0.1036893967539072,
+    "readonly_receipt_sha256": "121f197b46719411fe968cb79a23428d30af1a7335ec802a21073fcf4292761f",
+    "peer_acknowledgment": true,
+    "compatibility_fix_accepted": true,
+    "originals_unchanged": true,
+    "owner_diagnostic_review": {
+      "receipt_sha256": "f483b3674f27fe5eb329e8d1936b8cb4db2296ceface95039efb2fd110d0706e",
+      "peer_comment": 6030372786,
+      "peer_pr": "https://github.com/854259/FPGA/pull/123",
+      "diagnostic_sha256": "1f84f3c9d39d02d0d2d14001feea3bfdf1c5a38bc3759286989805fc95175e23",
+      "readonly_receipt_sha256": "d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf",
+      "original_full_auditor_calls": 0,
+      "original_collector_calls": 0
+    },
+    "peer_ack_comment": 6030372786,
+    "cp8_inventory_rule_limited_accepted": true,
+    "compatibility_entry_review": {
+      "schema": "peer125_inventory_compat_source_bounded_review_v1",
+      "checked_at": "2026-10-07T13:57:37.535305+08:00",
+      "peer_pr": "https://github.com/854259/FPGA/pull/125",
+      "head": "e6f5064b5b539df20b63b061cc3f379b38c0745a",
+      "merge": "d615855c8803c036e6955f642f055f0af0858b1b",
+      "peer_comment": 6031494932,
+      "mail_id": "1a114cd1a0bb08d8",
+      "peer_delivery_sha256": "838a1ac5ca58cc9dfc094572f5b9c5acab9c5e93085dd84d95e48fbd6cbcb52b",
+      "readonly_receipt_sha256": "a47fbbfe16ff018d8ec1119c989571821a2bba7cf9734ee97c47f2be4785d18c",
+      "readonly_seconds": 0.7802221477031708,
+      "source_count": 24,
+      "source_manifest_sha256": "2f127f2666de2310cb81ae175d23aa29a68c50dc5a0a9b1e53d0e9380ee1de30",
+      "public_files": 10,
+      "public_python_files": 0,
+      "public_git_amd_bytes_equal": true,
+      "original_methods": 6,
+      "original_process": {
+        "pid": 1868943,
+        "starttime": "861836188",
+        "returncode": 0,
+        "elapsed_s": 4.188665261492133,
+        "cap_s": 40,
+        "stdout_sha256": "539afcd5b8a2f94fe20a365a4e7c468a4ab14bb6c5dcbc2c80d3e06a1bc2a292",
+        "stdout_bytes": 1406,
+        "preexec_stat_cmdline_argv_exec_bound": true,
+        "reaped": true,
+        "remaining": [],
+        "retired_verified": true
+      },
+      "process_sha256": "baec72c0348cef2fb84b2f2c1fdf9bc844ecd22b1471ec19fb59d97e28e5e805",
+      "original_control_receipt_sha256": "d547cb51f73ddc6e36be1d123e0b77f4228279ec85b1f6c060a85d3c46e1db39",
+      "bindings": [
+        {
+          "ticket": 109,
+          "spec_sha256": "11717fea37f096c5e4e32f40d8ea7172304f339318c00f14e0ecbd7ac4bd4311",
+          "original_audit_sha256": "c923732be2c9ae5850531a69515c9305ebaefa35a2f11c5c5a0bbb3928f4215d",
+          "compatible_audit_sha256": "8037b8c10885fb405f32fe5b82ecaae92902fb4eb0734a472e20df095ec73174",
+          "reversed_edits": 7,
+          "exact_original_restored": true,
+          "records": 7928,
+          "unique_files": 7802,
+          "duplicates": 126
+        },
+        {
+          "ticket": 110,
+          "spec_sha256": "846b7d4f2f7116caa9169b3e1d80f66d5f76459f518d878d2624fd69843f3364",
+          "original_audit_sha256": "63698813e1593a82c1a79c9e954cf40c3f415048e27ba605ea1e3d32dd0ddd7c",
+          "compatible_audit_sha256": "75d4f2338a0ff42d9d885cd7cb44b22860ee8b6de871110df30b60cb52480e73",
+          "reversed_edits": 7,
+          "exact_original_restored": true,
+          "records": 8064,
+          "unique_files": 7938,
+          "duplicates": 126
+        }
+      ],
+      "source_admission_before_project_load": true,
+      "original_auditor_exact_reverse": true,
+      "original_scoring_and_adoption_gates_unchanged": true,
+      "guard_controls": "Six methods each cover109/110 physical source copies; numbered625 FAKE placeholders plus controlled read stub. Conflicts/record/unique count injections explicitly FAKE; source/spec/external/anchor tamper checks use actual copied bytes. Not actual625 protection or a complete audit.",
+      "archive": {
+        "sha256": "4bed076032ceb72a079221dc02a58166a15e8a9d76e13d2d8138ee22f1e9e296",
+        "bytes": 1314541,
+        "members": 35,
+        "manifest_sha256": "439f477d092f09269d118f8f764e5951948705672a65be852c3bf0d1349971c7",
+        "all_members_amd_and_local_verified": true
+      },
+      "protection": {
+        "groups": 135,
+        "records": 8648,
+        "unique_files": 8522,
+        "added": "CP8 complete108 original files only; original134/8540 anchor retained",
+        "primary_scope": "Original receipt boolean and recorded hashes only; not independent current primary proof."
+      },
+      "peer124_ack": {
+        "comment": 6031494932,
+        "head": "ac2b63d855616a3f4e81cfcc39f61be769bb32fc",
+        "merge": "50a5196a8346ed31d1d8b5cce8ae4cc04a93dc65",
+        "actual_files_sha256": [
+          "d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf",
+          "1fa7751f4e47650d8c8c38c983a0ad613138bb82f1af57915cb6de3f2396bf14",
+          "e1a83ae04751f06f311b7679a459bb6d4b8d929bbce4e836020edf367860a06d"
+        ],
+        "limited_scope_accepted": true
+      },
+      "scope": "Original source compatibility fix and six original controls accepted within inspected scope. Actual terminal results require separate evidence.",
+      "reviewer_new_project_functions": 0,
+      "reviewer_new_controls": 0,
+      "reviewer_new_model_calls": 0,
+      "reviewer_new_eda_calls": 0,
+      "reviewer_new_fifo": 0
+    },
+    "status": "PR125 disclosed109/110 compatible source entries accepted within six original controls; original109 terminal separately accepted as evidence but adoption rejected;110 terminal pending."
+  },
+  "cp8_pipeline_review_reference": {
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_SERIAL_FRAMING_REVIEW.json",
+    "peer_pr": "https://github.com/854259/FPGA/pull/123",
+    "native_qualified": false,
+    "readonly_receipt_sha256": "d83d096286cfb5e58b492d682fad755840de140153e55dabc77116a0f4ee5cbf"
+  },
+  "updated_at": "2026-10-07T20:20:00+08:00",
+  "original109_terminal_review_reference": {
+    "report": "03_analysis/waveform_resource_lifecycle_20261006/PUBLIC_ONEHOT_CP7_FREEZE_REVIEW.json",
+    "readonly_receipt_sha256": "a3b47bc8f782e4d817b2aa1f860553c6e6a54f10db5ae5afeefe92f60962de61",
+    "adoption": false,
+    "peer_comment": 6031857060
+  },
+  "original110_terminal_followup": {
+    "captured_at": "2026-10-07T20:00:07.412058+08:00",
+    "scope": "retained archive byte binding and original terminal receipts only; no project import or original auditor execution",
+    "archive": {
+      "sha256": "bfc644c9945379642739f548c6d494b16dc29d1ee3bd508bbc969252c10ef9ca",
+      "bytes": 97660880,
+      "members": 11982,
+      "files_verified": 11981,
+      "uncompressed_verified_bytes": 605753828,
+      "manifest_sha256": "e050ea0adfb28c5f3dd6311f0154bdc7ecd9186c777c7c1b6c7b24f2a99f9561"
+    },
+    "sources_current_and_archive": 116,
+    "summary_sha256": "f597f92fbf36666d850bf051d88dea3652cb58e7021ba54aa6c75d6d7e84dc96",
+    "audit_sha256": "f285539b01c0f0364d8066631d9a2a46c1b64df6133013eb6c8ef7f384f06ba8",
+    "receipt_sha256": "880364400427eed6e434c0d968dc8e16c96b1ce61102615f6d20032f91614fe1",
+    "rows": 312,
+    "requests": 334,
+    "L3": {
+      "C": 112,
+      "P": 114
+    },
+    "requests_by_arm": {
+      "C": 167,
+      "P": 167
+    },
+    "paired": {
+      "both": 112,
+      "neither": 42,
+      "P_only": 2
+    },
+    "descriptive_mcnemar_p": 0.5,
+    "coefficients": {
+      "C": 0.7679487179487179,
+      "P": 0.7782051282051282
+    },
+    "guard_receipts_archived": 625,
+    "guard_groups": 126,
+    "guard_record_count": 8064,
+    "current_guard_files_rehashed": false,
+    "processes": [
+      {
+        "role": "original_collector",
+        "pid": 2174477,
+        "starttime": "863970515",
+        "elapsed_s": 8.745666543021798,
+        "stdout_sha256": "db2551fd3dafe6389a9f9b035cdcff9b2c9d8e6cee13a3fefc4fbfc3efa5f9c3",
+        "retired": true
+      },
+      {
+        "role": "compatible_auditor",
+        "pid": 2174478,
+        "starttime": "863971764",
+        "elapsed_s": 5.069279534742236,
+        "stdout_sha256": "56e21dbc1986e46070d7f9c285f5b3b7d18fda5d2078aa40567d629e6c1fe93a",
+        "retired": true
+      }
+    ],
+    "terminal_elapsed_s": 21.766779992729425,
+    "outer_budget": {
+      "total_cap_s": 450,
+      "working_cap_s": 430,
+      "cleanup_reserve_s": 20,
+      "elapsed_s": 21.76677560247481,
+      "working_deadline_expired": false,
+      "within_complete_budget": true
+    },
+    "evidence_reject": true,
+    "adoption": false,
+    "new_project_calls": 0,
+    "new_model_calls": 0,
+    "new_EDA_calls": 0,
+    "new_FIFO": false,
+    "independent_peer_E_archive_verified": false,
+    "complete_external_observer_independently_verified": false,
+    "raw_guard_permissions_verified": false,
+    "local_read_files": 133,
+    "local_read_inventory_sha256": "a0b0a141f2916c595fbf1ba90028de3c954e3e2bc1bcc7589019a5fbcee82fe6",
+    "readonly_elapsed_s": 3.6560542173683643,
+    "review_comment": "https://github.com/854259/FPGA/issues/7#issuecomment-6037521224",
+    "peer_pr": 135,
+    "peer_head": "696e00e2982319c690d416d23b801394ae7ffb9d",
+    "peer_merge": "601c076808aa98db7b2d2b94d0c9226a0c987cb8",
+    "local_private_receipt_sha256": "3743a1b911e0dd768a7b12379ff95988313b43fe1e3169643f8bbb9e5010d8bb",
+    "qualification": "Original110 same-budget development result valid and rejected under frozen gates. Not full inclusive acceptance, independent validation or adoption."
   }
 }

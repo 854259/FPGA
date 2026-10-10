@@ -21,6 +21,18 @@ PARENT_SPEC = '3fb1531c14b011f80ff58de559e326a4904d3fbdbcf3cdce7d6c955285860ba1'
 MAX_CALLS = {'A': 2, 'P': 2, 'B': 1}
 
 
+def prepare_generation_sources(out):
+    """Independent A=original table90 P, P=vector123 P; B remains upstream."""
+    import three_arm_generation_20261008 as generation
+    out = Path(out).resolve()
+    assert not out.exists()
+    out.mkdir(parents=True)
+    arms = {label: generation.prepare(out/label, label) for label in ['A', 'P']}
+    files = {path: digest for value in arms.values() for path, digest in value['files'].items()}
+    files[str(Path(generation.__file__).resolve())] = official.sha(generation.__file__)
+    return dict(root=str(out), generation_arms=arms, files=files)
+
+
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
@@ -141,6 +153,24 @@ def validate(plan):
                    for row in plan['rows'])
     for path, expected in plan['sources']['files'].items():
         assert official.sha(path) == expected, path
+    if plan['sources'].get('model_feedback'):
+        assert 'generation_arms' not in plan['sources']
+        root = Path(plan['sources']['root'])
+        source_spec = json.loads((root/'RUN_SPEC.json').read_text())
+        assert source_spec['model_generated_rtl_only'] is True
+        for name, expected in source_spec['source_hashes'].items():
+            assert plan['sources']['files'][str(root/name)] == expected == official.sha(root/name)
+    if 'generation_arms' in plan['sources']:
+        import three_arm_generation_20261008 as generation
+        assert set(plan['sources']['generation_arms']) == {'A', 'P'}
+        entry = str(Path(generation.__file__).resolve())
+        assert plan['sources']['files'][entry] == official.sha(entry)
+        for label, source in plan['sources']['generation_arms'].items():
+            assert source['outer_arm'] == label and source['worker_arm'] == 'P'
+            assert source['original_spec_sha256'] == generation.ORIGINAL[label][1]
+            assert source['spec_sha256'] == official.sha(Path(source['root'])/'RUN_SPEC.json')
+            generation.validate(source['root'], label)
+            assert all(plan['sources']['files'][path] == digest for path, digest in source['files'].items())
     for name, expected in official.OFFICIAL.items():
         assert official.sha(Path(plan['kit'])/'submission'/name) == expected
     keys = set(); groups = {}
@@ -177,9 +207,17 @@ def launch_args(plan, row, folder, resource_check):
     common = ['--kit', plan['kit'], '--resource-check', str(resource_check), '--out', str(folder/'solve')]
     if row['arm'] == 'B':
         return argv+[plan['official_entry']]+common+['--task', str(prompt)]
+    if 'generation_arms' in plan['sources']:
+        source = plan['sources']['generation_arms'][row['arm']]
+        entry = str(Path(__file__).with_name('three_arm_generation_20261008.py').resolve())
+        return ['/usr/bin/env', 'LLM_BASE_URL=http://127.0.0.1:8000/v1',
+                'MODEL_NAME='+plan['model'], 'RTL_REPAIRS=1', 'RTL_TEMPERATURE=0',
+                'RTL_MAX_TOKENS=8192']+argv+[entry, 'worker']+common+[
+            '--task', str(prompt), '--arm', row['arm'], '--source-root', source['root']]
     return ['/usr/bin/env', 'PAIRED_TASK_DIR='+str(prompt), 'LLM_BASE_URL=http://127.0.0.1:8000/v1',
             'MODEL_NAME='+plan['model'], 'RTL_REPAIRS=1', 'RTL_TEMPERATURE=0', 'RTL_MAX_TOKENS=8192']+argv+[
-        str(Path(plan['sources']['root'])/'worker.py')]+common+['--task', row['task'], '--arm', row['arm']]
+        str(Path(plan['sources']['root'])/'worker.py')]+common+['--task', row['task'], '--arm',
+        'C' if plan['sources'].get('model_feedback') and row['arm'] == 'A' else row['arm']]
 
 
 def verify_terminal(folder, row, plan_sha256):
@@ -269,9 +307,8 @@ def seal_row(folder, row, plan_sha256):
 def advance(plan, out, resource_check, execute):
     """execute receives the frozen argv; tests substitute a process probe.
 
-    A real runner must enforce admission before calling this function. This
-    module intentionally has no production CLI while real cancellation and the
-    full data/resource/budget admission contract remain incomplete.
+    The caller owns admission and the external AMD guard. Failed or unfinished
+    rows retain their reservation and prevent further dispatch.
     """
     out = Path(out).resolve()
     assert out.is_relative_to(Path(plan['sources']['root']).resolve()), 'Native probes require owned source root'
@@ -291,6 +328,7 @@ def advance(plan, out, resource_check, execute):
         allowed = {'row_'+str(i).zfill(6) for i in range(len(plan['rows']))}
         assert all(p.is_dir() and p.name in allowed for p in out.glob('row_*')), 'Unexpected result row'
         reserved = 0; next_row = None
+        prefix_plan_digest = digest(plan)
         for index, row in enumerate(plan['rows']):
             folder = out/('row_'+str(index).zfill(6))
             if not folder.exists():
@@ -298,7 +336,7 @@ def advance(plan, out, resource_check, execute):
                     p.name < folder.name for p in out.glob('row_*')), 'Non-prefix results'
                 next_row = (row, folder); break
             reserved += row['reserved_calls']
-            verify_terminal(folder, row, digest(plan))
+            verify_terminal(folder, row, prefix_plan_digest)
         if next_row is None:
             return dict(complete=True, rows=len(plan['rows']), reserved_calls=reserved, full_batch=False)
         row, folder = next_row
@@ -343,10 +381,12 @@ def execute_row(plan, argv, row, folder, resource_check):
         save(folder/'SOLVE_COMMAND.json',command)
         assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Solver supervision failure'
         solve = folder/'solve'; evaluator = Path(row['evaluator_dir'])
-        original = scoring.eligible(solve,evaluator,row['arm'])
+        generation_source = plan['sources'].get('generation_arms', {}).get(row['arm'], {}).get('root')
+        model_source = plan['sources']['root'] if plan['sources'].get('model_feedback') and row['arm'] != 'B' else None
+        original = scoring.eligible(solve,evaluator,row['arm'],generation_source,model_source)
         assert original['input_sha256'] == row['input_hashes']
         receipt.update(actual_calls=original['client_request_attempts'],unconfirmed_calls=0)
-        assert 1 <= receipt['actual_calls'] <= row['reserved_calls']
+        assert (0 if generation_source else 1) <= receipt['actual_calls'] <= row['reserved_calls']
         save(folder/'SOLVE_BOUND.json',original)
         validate(plan)
         resource.check_resource(resource_check,Path(plan['kit']))
@@ -355,6 +395,10 @@ def execute_row(plan, argv, row, folder, resource_check):
         judge_argv = ['/usr/bin/python3','-B',judge_entry,
             '--kit',plan['kit'],'--solve',str(solve),'--task',str(evaluator),'--arm',row['arm'],
             '--out',str(folder/'judge'),'--resource-check',str(resource_check)]
+        if generation_source:
+            judge_argv += ['--generation-source', generation_source]
+        if model_source:
+            judge_argv += ['--model-source', model_source]
         if finite:
             judge_argv += ['--contract',finite['contract'],'--toolbin',finite['toolbin'],
                            '--minimum-samples',str(row['minimum_observations'])]
@@ -367,10 +411,17 @@ def execute_row(plan, argv, row, folder, resource_check):
         assert bound['task_files'] == row['evaluator_hashes']
         assert bound['verdict_sha256'] == official.sha(folder/'judge/verdict.json')
         assert bound['client_request_attempts'] == receipt['actual_calls']
-        assert scoring.eligible(solve,evaluator,row['arm']) == original
+        assert scoring.eligible(solve,evaluator,row['arm'],generation_source,model_source) == original
         validate(plan)
         resource.check_resource(resource_check,Path(plan['kit']))
         if finite:
+            assert bound.get('generation_binding') == original.get('generation_binding'), 'Finite generation source drift'
+            assert bound.get('model_binding') == original.get('model_binding'), 'Finite model binding drift'
+            if model_source:
+                assert bound['model_source'] == dict(root=str(Path(model_source).resolve()),
+                    spec_sha256=official.sha(Path(model_source)/'RUN_SPEC.json')), 'Finite model source drift'
+            else:
+                assert bound.get('model_source') is None, 'Unexpected finite model override'
             assert bound['schema'] == 'rtllm_finite_verdict_v1'
             assert bound['evaluator_sha256'] == finite['entry_sha256']
             assert bound['contract_sha256'] == finite['contract_sha256']
@@ -389,3 +440,55 @@ def execute_row(plan, argv, row, folder, resource_check):
     receipt['files'] = {str(p.relative_to(folder)):official.sha(p) for p in folder.rglob('*')
                         if p.is_file() and p.name != 'TERMINAL.json'}
     return receipt
+
+
+def run_plan(plan_path, expected_sha256, out, resource_check):
+    """Continue one frozen queue under its external AMD guard; never select/retry.
+
+    execution_authorized is set only in the separately reviewed scoring freeze.
+    It is not inferred from preparation/control success or available balance.
+    A finished queue is safe to inspect again; any unfinished row remains closed.
+    """
+    plan_path, out = Path(plan_path).resolve(), Path(out).resolve()
+    assert official.sha(plan_path) == expected_sha256, 'Frozen plan changed'
+    plan = json.loads(plan_path.read_text())
+    assert plan.get('execution_authorized') is True, 'Preparation plan cannot dispatch'
+    validate(plan)
+    assert out.is_relative_to(Path(plan['sources']['root']).resolve())
+    out.mkdir(parents=True, exist_ok=True)
+    with (out/'runner.lock').open('a+') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        with (out/'RUNNER_EVENTS.jsonl').open('a') as events:
+            try:
+                resource = official.resource_module()
+                resource.check_resource(resource_check, Path(plan['kit']), first=True)
+                events.write(json.dumps(dict(event='start', pid=os.getpid(),
+                    plan_sha256=expected_sha256, at_unix=time.time()))+'\n')
+                events.flush(); os.fsync(events.fileno())
+                while True:
+                    assert official.sha(plan_path) == expected_sha256, 'Frozen plan changed'
+                    progress = advance(plan, out, resource_check,
+                        lambda argv, row, folder: execute_row(plan, argv, row, folder, resource_check))
+                    events.write(json.dumps(dict(event='progress', at_unix=time.time(),
+                        **progress))+'\n')
+                    events.flush(); os.fsync(events.fileno())
+                    if progress['complete']:
+                        return progress
+            except Exception as error:
+                events.write(json.dumps(dict(event='stopped', at_unix=time.time(),
+                    error_type=type(error).__name__, error=str(error)))+'\n')
+                events.flush(); os.fsync(events.fileno())
+                raise
+
+
+if __name__ == '__main__':
+    import argparse
+    import sys
+    assert sys.platform == 'linux', 'Project execution is AMD-only'
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--plan', type=Path, required=True)
+    parser.add_argument('--plan-sha256', required=True)
+    parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--resource-check', type=Path, required=True)
+    args = parser.parse_args()
+    print(json.dumps(run_plan(args.plan, args.plan_sha256, args.out, args.resource_check)))

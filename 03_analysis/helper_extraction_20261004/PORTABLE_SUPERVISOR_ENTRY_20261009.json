@@ -1,0 +1,75 @@
+{
+  "schema": "portable_submission_supervisor_entry_v1",
+  "updated_at": "2026-10-09T19:20:00+08:00",
+  "status": "amd_three_entry_cases_passed_not_deployed",
+  "source_commit": "dbf9c2e991878a846f1a0b2dc0c38b9c41dd4698",
+  "problem": "The submitted supervisor defaulted to an old project directory, so moving the package could start that old runtime or fail to find it.",
+  "change": {
+    "default": "Resolve agent/runtime.py relative to this serve/serve_all.sh, independent of caller cwd.",
+    "explicit_legacy_KIT": "Keep KIT/submission/agent/runtime.py for explicit KIT and normalize its directory.",
+    "missing_runtime": "Exit before the first model or HTTP probe/start.",
+    "manifest": "Update only the supervisor SHA-256.",
+    "runtime_model_ownership_and_restart_logic": "Unchanged."
+  },
+  "source_hashes": {
+    "04_project/amd_rtl_agent/submission/serve/serve_all.sh": "5fc0208a0c7bf55b96f0d6be9056a2a6af334f98aed587e7aff4cda9d75501e9",
+    "04_project/amd_rtl_agent/tests/test_deployment_shell.py": "666d1636980e0f4f5ea4935574d5f0fd15251be3316fb25fc8f68dd49d6ea32a",
+    "04_project/amd_rtl_agent/submission/manifest.json": "49e205c705cb8b033add67942acb2b062d93612717cf5b1b433eed1e81001a05",
+    "04_project/amd_rtl_agent/submission/serve/README.md": "bc53f415dc057f33c40e11f2d3f5b741ecbdbb7922036c401da9b936cdcf700f"
+  },
+  "amd": {
+    "root": "/workspace/team/runs/fpga_teammate/portable_supervisor_entry_controls_20261009_v1",
+    "plan_sha256": "ad3692fbad26c10a36bb2f51381aebc6b7b825462aa9039e6737ea68e226579d",
+    "result_sha256": "7c0f6287d3b25196d79ac88e946d517d09888117b79333808d4d5365c27c16f4",
+    "postexit_sha256": "d3c96b553ec1d8da6938299a9d605820cecbcde7070f70c3629bc35331aff82e",
+    "test_methods": 2,
+    "cases": 3,
+    "cases_passed": [
+      "Relocated package with spaces in its path: actual fake child argv, cwd, recorded PID and retirement match.",
+      "Explicit legacy KIT: actual fake child argv, cwd, recorded PID and retirement match.",
+      "Missing runtime: exit1 before any fake curl probe or service PID creation."
+    ],
+    "control_child": {
+      "pid": 4088912,
+      "starttime": "881835413",
+      "returncode": 0,
+      "exec_confirmed": true,
+      "reaped": true,
+      "remaining_group": [],
+      "elapsed_s": 4.214246055111289
+    },
+    "fake_child_identities": [
+      {
+        "pid": 4088919,
+        "starttime": "881835420"
+      },
+      {
+        "pid": 4088933,
+        "starttime": "881835621"
+      }
+    ],
+    "all_three_children_independently_absent": true,
+    "real_model_calls": 0,
+    "eda_calls": 0,
+    "http_requests": 0,
+    "new_fifo_submissions": 0,
+    "old_controls_rerun": 0,
+    "time_scope": "Child execution through wait/reap and owned cleanup only; not the whole edit, transfer or packaging interval."
+  },
+  "private_evidence": {
+    "sha256": "9000248499e5c0cf93d003f1786ebf3b78d3cd64023822279bf590f285f4812b",
+    "bytes": 21397,
+    "members": 16,
+    "amd_and_local_all_manifest_members_verified": true,
+    "owned_temporary_dirs_removed": true,
+    "cache_files": 0,
+    "empty_dirs": 0
+  },
+  "limits": [
+    "This tests entry selection and missing-file startup only, not model startup, HTTP readiness, real failure recovery, container build or formal32GB.",
+    "The original132 HTTP stage has runtime files but is not a complete final submission; its remaining scaffold and final version binding depend on selection.",
+    "No running132-136 sources, original watchers, model or deployment directories were changed.",
+    "This provides no accuracy gain and does not complete the official-score goal."
+  ],
+  "next": "Continue original132-136 and the existing total48h continuation. After selection, assemble one package from the matching scored runtime and validated scaffold, then perform the outstanding full service/resource/container acceptance."
+}

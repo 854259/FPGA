@@ -1,0 +1,94 @@
+{
+  "schema": "static_elaboration_native_negative_v1",
+  "updated_at": "2026-10-08T08:47:00+08:00",
+  "status": "original_native_stage_failed_generic_multidriver_hypothesis_rejected",
+  "ticket": 117,
+  "source_manifest_sha256": "8573e063b729a14bfcb97e0228bbb0aec1702ee477b0b9b522c63290645f43ac",
+  "native_controls_sha256": "e04e55fb6f651d6cc2c372d8bdd49b9084aa5553c9783e9e5a86490980356240",
+  "patch_sha256": "9b174d44f91d64009e119a09cbe1322a20c6648a8bc533af2bf4d2825f8edac4",
+  "runtime_sha256": "c8d4a369611bd97aca61749ae885e9428cad8c5362d5a7ae8023ddd2a708d40e",
+  "baseline_worker_sha256": "cdca09cb49e7676a7dcbcc803bff88cf29d2b7aeb7494c4f06d3acb160438876",
+  "summary_sha256": "ac2f4b60ceaa6d4df45467dcb97628c181a9bd8f07906531e851beaf7f116013",
+  "original_plan": {
+    "structures": 5,
+    "paired_outputs": 10,
+    "EDA_max": 23,
+    "simulated_HTTP_max": 12,
+    "real_model_max": 0,
+    "tool_seconds": 60,
+    "worker_seconds": 300,
+    "child_seconds": 420,
+    "cleanup_reserve_seconds": 30,
+    "outer_seconds": 450,
+    "guard_seconds": 500,
+    "slot_minutes": 10
+  },
+  "actual": {
+    "worker_results": 6,
+    "expected_controls_passed": 5,
+    "unexpected_result": 1,
+    "real_xvlog": 6,
+    "real_xelab": 3,
+    "real_model": 0,
+    "simulated_HTTP": 6,
+    "ansi_cases_executed": 0,
+    "scored_benchmark_tasks": 0
+  },
+  "result": "Ordinary always @* and always @(posedge clk) both write the same reg; candidate xvlog and xelab return zero. P consumes no repair and fails the frozen expected control.",
+  "expected_P": [
+    2,
+    2,
+    2,
+    1
+  ],
+  "observed_P": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "vector": "simulated HTTP,xvlog,xelab,functional feedback",
+  "counterexample_source_sha256": "fd6f9385252ae245f860d28f07bec96af93296797ce429154f666e136443cfff",
+  "counterexample_tool_elapsed_s": [
+    1.1707220021635294,
+    1.2165399752557278
+  ],
+  "original_diagnostic": {
+    "candidate_sha256": "726c3c663ebc7377d42059230f556508d5228e9b2d1a3ae74fb81c0c770bf99e",
+    "log_sha256": "1af93ca4159c117d61431204a4e10cda2d43956406995809a27af1b06ffde58b",
+    "observation": "Retained A114 candidate uses always_comb and always_ff; judge log explicitly reports VRFC10-3818/10-2921 for another process writing an always_comb variable.",
+    "scope": "Read-only original development candidate and judge log. No benchmark reference/TB read or original execution rerun. Candidate-only strict-SV reproduction remains unverified."
+  },
+  "external": {
+    "receipt_sha256": "0928459799dfcb3ae658fceebbbb381c76052ebf661d170b379babbd9e40f775",
+    "elapsed_s": 15.47378627769649,
+    "rc": 1,
+    "final_artifacts_bound": false,
+    "deadline_expired": false,
+    "scope": "Child birth to exit/reap and owned cleanup. Failure stopped before final binding; excludes observer exit, preparation and archive/transfer."
+  },
+  "guard": {
+    "receipt_sha256": "361b9b27e4ad2490c560d3320c11593bbd48fff02d52f5eca3d62e0237f1bc6b",
+    "elapsed_s": 15.802597772330046,
+    "identities": 44,
+    "recorded_retirement_verified": true,
+    "own_slot_released": true,
+    "model_unchanged_recorded": true,
+    "protected_files_unchanged_recorded": true
+  },
+  "fifo_final_state": "failed_released_after_inspection",
+  "new_FIFO_submissions": 1,
+  "native_qualified": false,
+  "scoring_qualified": false,
+  "accuracy_gain_measured": false,
+  "next": "Freeze a separate strict-SV single-writer hypothesis and the unexecuted ANSI exits with explicit total budget and stop conditions. Reuse ordinary positive evidence; preserve this failure. No factor combination or scoring admission yet.",
+  "unchanged_full_goal": "Exceed historical118/156 L3 and complete three-arm156, audited RTLLM, important five samples and resource/interface/recovery/reproducible acceptance.",
+  "evidence": {
+    "root": "/workspace/team/activity/fpga_teammate/artifacts/static-elaboration-native5-rejected-20261008-v1",
+    "archive_sha256": "2c4c9d3936953f087a161dda0603ccafc34ba01beb8dc9c506c77bab0b39fb84",
+    "manifest_sha256": "2c6fbd260574cf3113ec8b71c7fc1bcfa2335923c99b11bba94697d298b6eadf",
+    "members": 329,
+    "original_bytes": 601335,
+    "archive_bytes": 292649
+  }
+}

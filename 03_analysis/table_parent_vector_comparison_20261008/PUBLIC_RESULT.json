@@ -1,0 +1,238 @@
+{
+  "schema": "table_parent_vector_route_preparation_v1",
+  "updated_at": "2026-10-08T10:00:00.885559+08:00",
+  "source_commit": "dedd9922033cc4ef85325bf68c07c7522f5d0bbe",
+  "factor": "C=archived table parent; P=same parent plus unchanged vector synthesis on parent abstention",
+  "controls": {
+    "new_methods": 9,
+    "passed": 9,
+    "synthetic": true,
+    "fake_tool_receipts": true,
+    "ast_selected_functions_only": true,
+    "complete_pipeline_tested": false
+  },
+  "plan_sha256": "7fddf4a22d6cdbe5625f0394e602d97fd79778ec97ca634cffaba40f8d97cfc4",
+  "result_sha256": "ff1b6f9dfaa4097303d3b6f9ccb70dc6134ff1a973d5241b423fe1c9eeb76312",
+  "execution": {
+    "schema": "table_parent_vector_routes_pure_result_v1",
+    "complete": true,
+    "passed": true,
+    "returncode": 0,
+    "timeout": false,
+    "leader_reaped": true,
+    "remaining_live_group": [],
+    "child_identity": {
+      "pid": 2489252,
+      "starttime": "869716660",
+      "state": "R",
+      "pgid": "2489252",
+      "session": "2489252",
+      "initial_cmdline_sha256": "91c642c0d7928ad92521ce87b30a59c222d8a7f1757b760b11d05089c1200306"
+    },
+    "child_wait_elapsed_s": 0.26454296708106995,
+    "elapsed_scope": "Popen through child wait and stream close only, excludes preparation and transfer",
+    "plan_sha256": "7fddf4a22d6cdbe5625f0394e602d97fd79778ec97ca634cffaba40f8d97cfc4",
+    "source_files": 31,
+    "new_test_methods": 9,
+    "streams": {
+      "stdout.bin": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr.bin": {
+        "sha256": "dd73b6824b7aa37158e97d9d9be4f1e8817ecd5ad26521f9ccaa56ecd8a44c58",
+        "bytes": 1337
+      }
+    },
+    "model_calls": 0,
+    "eda_calls": 0,
+    "fifo_submissions": 0,
+    "score_admission": false,
+    "complete_audit_qualified": false
+  },
+  "old_composition_controls_reused": 8,
+  "old_worker_controls_reused": 12,
+  "original_generators_and_worker_changed": false,
+  "peer_prospective_agreement": "https://github.com/854259/FPGA/issues/7#issuecomment-6050379738",
+  "score_admission": false,
+  "new_accuracy_result": false,
+  "adoption": false,
+  "full_acceptance_complete": false,
+  "next": "Follow original FIFO123; execute the sealed terminal entry once after completed-task and retirement gates, then analyze paired results. No financial-balance prerequisite.",
+  "freeze_preparation": {
+    "updated_at": "2026-10-08T10:00:00.885559+08:00",
+    "source_commit": "657e156070c535e2d3592c2dd0a707bfe23a7128",
+    "status": "prepared_not_scoring_authorized",
+    "plan_sha256": "ea67805cf5ed3c648333f480c0e8bae3898f117ed83ba197068c3b700e4490e8",
+    "result_sha256": "2ae7239f6b84ff0ca7fcf2f074f8fb1b97c80ee661255551d3e18403e3e4a156",
+    "prepared_spec_sha256": "2d2a46fb4945351e48126779f3b04271ee11825e5b4b9e4fce065d766b97acb5",
+    "receipt_sha256": "4a22c7f3ce313ce4ae6ecca66d37605000cd1175e462a0d63908815ff2c5ebfb",
+    "source_assets": 106,
+    "input_plan_sha256": "8868d34aa2500f6392ce5efb9085516eb1cbf2f9fae7a1007665f180e8939bcb",
+    "source_factor_proof_sha256": "62d6f23e57c940c024e3bdc6f731b0b05a9807e5572742dc865d72e7c61e5b2b",
+    "route_counts": {
+      "C": {
+        "model": 147,
+        "mechanical_table": 9,
+        "mechanical_vector": 0
+      },
+      "P": {
+        "model": 144,
+        "mechanical_table": 9,
+        "mechanical_vector": 3
+      }
+    },
+    "changed_routes": 3,
+    "existing_parent_routes_preserved": 9,
+    "new_freeze_controls": 6,
+    "passed_controls": 6,
+    "synthetic_dispatch_and_capture_controls": true,
+    "original_generator_and_worker_unchanged": true,
+    "preparation_attempts": 2,
+    "input_intake_executions": 1,
+    "preserved_failure": "v1 installer copied the historical SOURCE_FACTOR_PROOF to the new output name. Exclusive creation stopped before intake. v2 retains it as PARENT90_SOURCE_FACTOR_PROOF; production source unchanged.",
+    "model_calls": 0,
+    "eda_calls": 0,
+    "fifo_submissions": 0,
+    "executable": false,
+    "new_accuracy_result": false,
+    "complete_pipeline_qualified": false,
+    "child_wait_seconds": {
+      "preparation": 1.41607865691185,
+      "controls": 0.1643747892230749
+    },
+    "elapsed_scope": "Popen through each child's wait and stream close only, not preparation/SSH or full external duration.",
+    "next": "Resolve actual allocation and prospective scoring budget, then freeze the sole executable entry and FIFO submission. No repeat of completed controls or old scoring."
+  },
+  "execution_freeze": {
+    "updated_at": "2026-10-08T10:30:00+08:00",
+    "status": "FIFO123_completed_2026-10-08T14:56:18+08:00",
+    "authorization_sha256": "dddba0c0b90a3d98bf0e0b5c1b65819b3af131f9efc3cc5fd1b7aae9f3dd14b4",
+    "source_commit": "3505590c6d3070fea697a204ee9891b3851d55d3",
+    "spec_sha256": "8e80d776b3df21399fb66a4c99698a794a049527e4c5634e57900ed0c4b9e31c",
+    "receipt_sha256": "9fbe55e3cc67b927bd856b1c3ce8cb5734e32275efc80fd71377ae548d606e46",
+    "source_assets": 107,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "repeated_intake_calls": 0,
+    "fifo_submissions": 1,
+    "financial_balance_verified": false,
+    "financial_balance_execution_prerequisite": false,
+    "peer_serial_window": "https://github.com/854259/FPGA/issues/7#issuecomment-6050797252",
+    "maximum_requests": 624,
+    "maximum_outputs": 312,
+    "maximum_submissions": 1,
+    "new_accuracy_result": false,
+    "goal_complete": false,
+    "next": "Do not repeat123; model-generated candidates are required for official scoring.",
+    "ticket": 123
+  },
+  "terminal_preparation": {
+    "updated_at": "2026-10-08T10:40:00+08:00",
+    "status": "completed_once_compatible_collector_and_auditor",
+    "source_commit": "1d262463b8a7464cfc39fdc4eb6318991c157236",
+    "source_sha256": "44e700c7714634cf4535d2e9a9f3308d497a3c39c3a43bc643e753d977959b54",
+    "manifest_sha256": "72bf1977dd5868810edc523f9c831e41f385f34965cef143908b2d462689447a",
+    "plan_sha256": "8b9a900db95ba6bdff852bdf130099100a9fdf875649143b1370e933aa7aea13",
+    "compatible_collector_sha256": "7bec06965cf324d9d47975b125aec3031f9d20732771e99adff026dfa37d080a",
+    "compatible_auditor_sha256": "daed8f5c03af18dd09a3cda423b6eed7192dfae17410401df6f45441bd68c996",
+    "corrections": [
+      "Archive the actual execution freeze and sealed preparation receipts; preserve their names and hashes.",
+      "Bind inherited capture dependency path to the sealed prepared spec and exact current dependency hashes."
+    ],
+    "byte_exact_inverse_verified": true,
+    "scoring_source_changed": false,
+    "preparation_returncode": 0,
+    "preparation_child_wait_s": 0.0777719784528017,
+    "elapsed_scope": "Popen through wait/stream close/group check only",
+    "collector_calls": 1,
+    "auditor_calls": 1,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "fifo_submissions": 0,
+    "planned_collector_calls": 1,
+    "planned_auditor_calls": 1,
+    "per_command_cap_s": 180,
+    "external_cap_s": 450,
+    "cleanup_reserve_s": 20,
+    "old_helpers_reused": true,
+    "new_accuracy_result": false,
+    "terminal_passed": true
+  },
+  "current_status": "completed123_development_result_official_only_selection_model_generated_route_required",
+  "selection_policy": {
+    "updated_at": "2026-10-08T15:58:00+08:00",
+    "user_instruction": "检查成绩是否最高的唯一标准是赛题要求；总体成绩最高即可。",
+    "objective": "Maximize the official RTL-track total score subject only to official submission and evaluation requirements.",
+    "source": {
+      "upstream": "https://gitee.com/Vickyiii/rtlagent2026",
+      "commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801",
+      "HEAD_verified_at": "2026-10-08T15:55:00+08:00",
+      "scoring_path": "04_project/amd_rtl_agent/official_reference/SCORING.md",
+      "scoring_sha256": "559d828ce7b167ab78410d773295c90e4e7b679e013cbb430ef097330638fdb2",
+      "aggregator_path": "04_project/amd_rtl_agent/official_reference/selftest/score.py",
+      "aggregator_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768"
+    },
+    "weights": {
+      "capability": 30,
+      "gain": 40,
+      "wall_clock_cost": 10,
+      "engineering": 20
+    },
+    "coefficients": {
+      "L0": 0,
+      "L1": 0.2,
+      "L2": 0.7,
+      "L3": 1
+    },
+    "sampling": "Five independent samples per task. Official graded pass@1 averages valid sample coefficients per task, then tasks; pass@5 is diagnostic only. Official environment errors are explicitly excluded.",
+    "formulas": {
+      "capability": "30 * set_score",
+      "gain": "clamp(40 * log(agent_set_score / same_run_official_baseline_set_score) / log(announced_full_mark_multiplier), 0, 40)",
+      "cost": "10 * min(announced_reference_wall_time / measured_full_set_wall_time, 1)",
+      "engineering": "Official assessment, up to 20"
+    },
+    "removed_selection_vetoes": [
+      "historical113_each_task_preserved",
+      "each_paired_task_no_regression",
+      "each_task_model_calls_P_le_C",
+      "total_model_calls_P_le_C",
+      "minimum120_L3",
+      "minimum_weighted_point80",
+      "L3_count_lexicographic_priority"
+    ],
+    "retained_diagnostics": [
+      "L3 count",
+      "paired regressions and uncertainty",
+      "historical task changes",
+      "model calls",
+      "mechanism attribution"
+    ],
+    "official_generation_boundary": "SCORING sections 2.9-2.11 require model-generated design. Deterministic checks and formatting are allowed; directly scripted design with no substantive model generation is not an eligible submission route. A token model call does not cure this.",
+    "development_best": {
+      "ticket": 123,
+      "L3": 120,
+      "tasks": 156,
+      "weighted_set_score": 0.808974358974359,
+      "formal_total_score": null,
+      "official_submission_eligible": false,
+      "reason": "C has9 and P has12 mechanical direct RTL emissions; formal five-sample same-run baseline and full official evaluation are also incomplete."
+    },
+    "archival_policy": "Keep frozen original audit and numerical results intact. Old acceptance=false is historical, not a current score-selection veto. Do not rerun to replace it.",
+    "execution_policy": "Do not promote mechanical-only synthesis candidates to further official-scoring/full three-arm batches. Preserve completed123/124/125 and their diagnostic evidence. Continue model-generated RTL with checks/feedback; retain actual execution safety caps and no hidden retries.",
+    "unknown_official_parameters": [
+      "gain full-mark multiplier and zero-baseline rule not verified from an announcement",
+      "reference wall time and final per-task/full-set limits not verified from an announcement",
+      "final hidden set composition and official engineering assessment"
+    ],
+    "unknowns_do_not_block_authorized_development": true,
+    "financial_balance_gate": false,
+    "full_goal_complete": false
+  },
+  "completed_result": {
+    "path": "PUBLIC_FULL156_RESULT.json",
+    "sha256": "b0693793ba5ecf6cffe0f062c5c793fa617a14f28cfeddf0e80e4b0ca712c822",
+    "historical_decision_snapshot": true,
+    "current_decision": "selection_policy"
+  }
+}

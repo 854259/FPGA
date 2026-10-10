@@ -1,0 +1,737 @@
+{
+  "schema": "prompt_table_model_feedback_preparation_v1",
+  "updated_at": "2026-10-08T21:12:00+08:00",
+  "status": "full156x5_running_native133_and_conditional_comparison134_queued",
+  "selection": "Official RTL competition total score and submission requirements only; no historical-task or per-task-call vetoes.",
+  "factor": "C retains original model/phase feedback. P checks the actual model RTL against a fully consumed prompt table and feeds only a measured counterexample into the existing one-repair loop.",
+  "design_generation": "Model generates the RTL. This module renders only a testbench and diagnostics; no synthesis module is imported.",
+  "source_hashes": {
+    "table_feedback.py": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+    "worker.py": "7a301da74d5bdec18c19e308e43018a5385c96574840e2e36e837b6a5b0fa003",
+    "controls.py": "ab9c28e8eb7dc755856c68b0776735388e9070c9a7f7a919a1e6cb5fb1efa9fe",
+    "intake.py": "5403673172a742eee9caa073ddc7cb43bcab21b7d0edf1c8d10f2b92b90b2cfa"
+  },
+  "inherited": {
+    "baseline_worker.py": "7ff7ed6e397caedee071a7f46015d81370c92f2579bd61dd2cc3337458467742",
+    "contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+    "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e"
+  },
+  "intake": {
+    "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_intake_20261008_v1",
+    "tasks": 156,
+    "applicable": 9,
+    "selection": "All applicable prompt contracts; no score-based selection",
+    "use": "development",
+    "independent_unseen": 0,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "plan_sha256": "0e8dcb035ed3b0400fca7ad6fe31de3097ad880fbe8883cb25dafcabef7220f1",
+    "result_sha256": "3931ce94226526a8662b50cd39773e48e2963840c0c58be23770e8c8814d44b5",
+    "process_sha256": "2419a851262fb7393510825598ed4d60cf140f365ab4acbe88612b432d919f2b",
+    "child_elapsed_s": 0.1395802367478609,
+    "time_scope": "Bounded child execution/reaping/group check only, not preparation or SSH transfer",
+    "exit_code": 0,
+    "exec_confirmed": true,
+    "reaped": true
+  },
+  "controls": {
+    "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_controls_20261008_v1",
+    "ticket": 127,
+    "accepted_at_utc": "2026-10-08T08:18:50.383585+00:00",
+    "state": "completed",
+    "manifest_sha256": "358ba10431bdba161bc6a5dc0f3d238f8caf09e3db81599a439ae95b1ca2e254",
+    "plan_sha256": "eca5e18074c0a9c8e520f4c947f947c8b957fa4dfad319c5b9c910b6a88b20b6",
+    "submission_sha256": "9ffeaafbf58923c5ea770265721b4353d5f2fc360fa52166472b115c97cbba81",
+    "pure_flow_cases": 7,
+    "native_cases": 3,
+    "real_model_max": 0,
+    "simulated_http_max": 9,
+    "real_eda_max": 9,
+    "tool_cap_s": 60,
+    "stage_child_cap_s": 400,
+    "outer_cap_s": 430,
+    "guard_cap_s": 445,
+    "slot_minutes": 9,
+    "retries": 0,
+    "passed": true,
+    "real_model_calls": 0,
+    "real_eda_calls": 9,
+    "simulated_http_calls": 9,
+    "summary_sha256": "6fe418d496fbb6dc2f6cabf7673aa0fc655cfac8ae38d01b7057f65ed3dfb1b6",
+    "measured_external_s": 18.502181869000196,
+    "guard_elapsed_s": 18.81442486681044,
+    "time_scope": "External child birth through exit/reap/owned cleanup/final read; excludes preparation, observer own exit and transfer.",
+    "frozen_worker_sha256": "3a402257f3ccef5c8bc3b4703a00c7c4e3c2455da2ad3c9bbd73c09b06ea6391",
+    "recorded_processes_retired": true
+  },
+  "scope_limits": [
+    "No new model accuracy or official total score.",
+    "Finite two-state prompt-table observations only; X/Z outputs count as mismatches, declared don't-cares are not checked.",
+    "Only explicit combinational waveform prose is admitted; incomplete or ambiguous prompts abstain.",
+    "Existing ANSI declaration-fix return bypasses functional feedback; this inherited behavior is unchanged in both arms.",
+    "Five-sample nine-task comparison is complete only within its development scope. Full156 is running; applicable RTLLM coverage, engineering/resource/interface/recovery and official final total remain outstanding."
+  ],
+  "next": "Follow original132 to its natural exit. FIFO133 then validates the fixed multi-point probe; unique FIFO134 starts the frozen single-versus-multiple model comparison only if original133 completes validly. No local night polling or resubmission; select by official score quantities.",
+  "full_goal_complete": false,
+  "comparison": {
+    "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison9x5_20261008_v1",
+    "ticket": 129,
+    "accepted_at_utc": "2026-10-08T08:55:30.086559+00:00",
+    "state": "completed",
+    "monitor_pid": 2795835,
+    "spec_sha256": "317e40d723e7c0956a11143fc914b1841e036fe871a0ffba415f0939c90399da",
+    "plan_sha256": "224db4651180473c18ce5904ef7e76be8487489cd8814b6949373a18840d1ce9",
+    "submission_sha256": "b77c6dd8612a9470e7dc27b1af8ce4a8d8754f1f11413f0fdc3caa7dc4f377a5",
+    "unique_tasks": 9,
+    "use": "seen_development",
+    "independent_unseen": 0,
+    "samples_per_task_per_arm": 5,
+    "outputs": 135,
+    "max_model_calls": 225,
+    "arms": {
+      "A": "Original model/phase worker C; no deterministic DUT synthesis",
+      "P": "Same model worker plus prompt-table functional feedback",
+      "B": "Original official baseline; single request; no skills or tools"
+    },
+    "request_limits": {
+      "A": 2,
+      "P": 2,
+      "B": 1
+    },
+    "max_tokens": 8192,
+    "retries": 0,
+    "stage_cap_s": 43200,
+    "guard_cap_s": 43600,
+    "slot_minutes": 740,
+    "control_sha256": "166b5343b0e5bafcf1a92e6a61c817f67098a1ac4691ecbb879d3c4aeaff1de4",
+    "preparation_child_s": 0.43242700584232807,
+    "new_binding_controls": "Reused retained synthetic C and P-repair outputs; attribution and A/C/P/B routing pass; fabricated DUT and replaced prompt rejected. Zero new model/EDA/old-control reruns.",
+    "selection": "Report official coefficient-mean pass@1, same-run original baseline gain and measured wall time; no invented official total or historical/per-call veto.",
+    "full156": false,
+    "formal_adoption": false,
+    "result_reader": {
+      "status": "actual_135_row_audit_passed_once",
+      "source_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+      "test_sha256": "8b30b035e2c40593a24fe7a6c881779208a3089d59afdf48cf4f33d304f83d01",
+      "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+      "selection": "Unmodified official five-sample coefficient means; no historical-task or per-call veto. Unknown gain/cost/engineering points remain null.",
+      "controls": {
+        "root": "/workspace/team/runs/fpga_teammate/model_comparison_result_controls_20261008_v1",
+        "checks": [
+          "official_mean_not_best",
+          "higher_weighted_with_fewer_L3",
+          "same_run_baseline",
+          "zero_baseline_unknown",
+          "missing_sample",
+          "duplicate_sample",
+          "zero_call",
+          "third_call",
+          "nan_time",
+          "negative_time",
+          "boolean_sample",
+          "false_coefficient",
+          "tool_error",
+          "wrong_task"
+        ],
+        "result_sha256": "a9fa8c447c57785688a5d00f12ab044c01f6b813ee2411ecba8d5a07ee5f18a6",
+        "plan_sha256": "b586de730bbd0530354e362be0ff01d77bd6afb991b57e1217070743e885503a",
+        "process_sha256": "4f92a1e0112093333d4a01cfac0fcfa8a5eabfa0d1b710e89b64904e6ace4c5a",
+        "pid": 2886847,
+        "starttime": "872641833",
+        "returncode": 0,
+        "exec_confirmed": true,
+        "leader_reaped": true,
+        "remaining_group": [],
+        "retired": true,
+        "child_elapsed_s": 0.1352119091898203,
+        "time_scope": "Bounded child only; excludes preparation and transfer.",
+        "model_calls": 0,
+        "eda_calls": 0,
+        "real_results_read": 0,
+        "tested_reader_sha256": "178b3614f007e0f5a00763665543a8ddb0d60b7da6e44478fd90404186189f5e",
+        "summary_function_identical_to_final": true
+      },
+      "final_static_correction": "Observed original B source label is official_B while judge/outer label is B. Corrected reader label check before actual queue audit; summary AST unchanged, controls not rerun.",
+      "terminal_preparation": {
+        "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison129_terminal_20261008_v1",
+        "plan_sha256": "9f6c0b449da5ce3c3e0df1ab5de16dafba6dcbb5c011a22db0ecc88d04698ce9",
+        "max_model_calls": 0,
+        "max_eda_calls": 0,
+        "child_cap_s": 180,
+        "executed": true
+      },
+      "actual_score": {
+        "A": {
+          "coefficient_mean": 0.5377777777777778,
+          "official_pass_at_1": 0.5378,
+          "diagnostic_pass_at_5": 0.5556,
+          "level_counts": {
+            "L1": 26,
+            "L3": 19
+          },
+          "all_five_L3_tasks": 3,
+          "model_requests": 45,
+          "observed_solve_s": 238.89593600854278,
+          "observed_judge_s": 740.1239135507494,
+          "observed_row_s": 997.462351989001,
+          "same_run_official_B_gain": 1.423529411764706
+        },
+        "P": {
+          "coefficient_mean": 0.7333333333333333,
+          "official_pass_at_1": 0.7333,
+          "diagnostic_pass_at_5": 0.7333,
+          "level_counts": {
+            "L1": 15,
+            "L3": 30
+          },
+          "all_five_L3_tasks": 6,
+          "model_requests": 71,
+          "observed_solve_s": 795.3376629669219,
+          "observed_judge_s": 960.1492297481745,
+          "observed_row_s": 1773.9543345738202,
+          "same_run_official_B_gain": 1.9411764705882353
+        },
+        "B": {
+          "coefficient_mean": 0.37777777777777777,
+          "official_pass_at_1": 0.3778,
+          "diagnostic_pass_at_5": 0.3778,
+          "level_counts": {
+            "L1": 35,
+            "L3": 10
+          },
+          "all_five_L3_tasks": 2,
+          "model_requests": 45,
+          "observed_solve_s": 184.90968455187976,
+          "observed_judge_s": 557.0601986143738,
+          "observed_row_s": 753.9884982090443,
+          "same_run_official_B_gain": null
+        }
+      },
+      "full_goal_complete": false
+    },
+    "completed_result": {
+      "status": "completed_valid_development_comparison",
+      "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison9x5_20261008_v1",
+      "terminal_root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison129_terminal_20261008_v1",
+      "result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38",
+      "process_sha256": "a1a3db03c493fdf91439ae06bbdbc816567b8ddde088c4296493087e1ebafefd",
+      "terminal_process": {
+        "schema": "owned_preexec_birth_gate_v1",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison129_terminal_20261008_v1/comparison_result.py",
+          "--root",
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison9x5_20261008_v1",
+          "--plan-sha256",
+          "224db4651180473c18ce5904ef7e76be8487489cd8814b6949373a18840d1ce9",
+          "--official-score",
+          "/workspace/team/tasks/autodl-rtl-kit/project/official_reference/selftest/score.py",
+          "--out",
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison129_terminal_20261008_v1/RESULT.json"
+        ],
+        "cwd": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_comparison129_terminal_20261008_v1",
+        "cap_s": 180,
+        "timeout": false,
+        "signals": [
+          "SIGCONT_bound_preexec_child"
+        ],
+        "exec_error": null,
+        "error": null,
+        "child_identity": {
+          "pid": 2916559,
+          "state": "T",
+          "starttime": "872747064",
+          "pgid": 2916559,
+          "sid": 2916559,
+          "command_sha256": "5a5cff3ba9f3379bceb96da8fda3ef4a6ab51547f4b5cd0c1d9305e99b4c2ad0"
+        },
+        "exec_confirmed": true,
+        "returncode": 0,
+        "remaining_group": [],
+        "elapsed_s": 1.2953881230205297,
+        "leader_reaped": true,
+        "stdout_sha256": "e07530f25880607814f2f03616d212330a3fd1b1a329490ad69d7086425ee4cb",
+        "stdout_bytes": 100,
+        "normal_completion": true
+      },
+      "reader_time_scope": "Child birth through exit/reap and owned-group cleanup only; excludes preparation and transfer.",
+      "arms": {
+        "A": {
+          "coefficient_mean": 0.5377777777777778,
+          "official_pass_at_1": 0.5378,
+          "diagnostic_pass_at_5": 0.5556,
+          "level_counts": {
+            "L1": 26,
+            "L3": 19
+          },
+          "all_five_L3_tasks": 3,
+          "model_requests": 45,
+          "observed_solve_s": 238.89593600854278,
+          "observed_judge_s": 740.1239135507494,
+          "observed_row_s": 997.462351989001,
+          "same_run_official_B_gain": 1.423529411764706
+        },
+        "P": {
+          "coefficient_mean": 0.7333333333333333,
+          "official_pass_at_1": 0.7333,
+          "diagnostic_pass_at_5": 0.7333,
+          "level_counts": {
+            "L1": 15,
+            "L3": 30
+          },
+          "all_five_L3_tasks": 6,
+          "model_requests": 71,
+          "observed_solve_s": 795.3376629669219,
+          "observed_judge_s": 960.1492297481745,
+          "observed_row_s": 1773.9543345738202,
+          "same_run_official_B_gain": 1.9411764705882353
+        },
+        "B": {
+          "coefficient_mean": 0.37777777777777777,
+          "official_pass_at_1": 0.3778,
+          "diagnostic_pass_at_5": 0.3778,
+          "level_counts": {
+            "L1": 35,
+            "L3": 10
+          },
+          "all_five_L3_tasks": 2,
+          "model_requests": 45,
+          "observed_solve_s": 184.90968455187976,
+          "observed_judge_s": 557.0601986143738,
+          "observed_row_s": 753.9884982090443,
+          "same_run_official_B_gain": null
+        }
+      },
+      "P_minus_A_mean": 0.19555555555555557,
+      "exploratory_task_pair_95_hoeffding": [
+        -0.7098454549381907,
+        1
+      ],
+      "interval_assumptions": "Independent task pairs; unverified family dependence, not a generalization guarantee",
+      "named_tasks": 9,
+      "samples_per_task": 5,
+      "rows": 135,
+      "actual_model_requests": 161,
+      "reserved_model_calls": 225,
+      "queue_wall_s": 3641.753237962723,
+      "queue_wall_scope": "Queue header through completion event, includes all arms and judging; excludes preparation, final guard exit and transfer.",
+      "diagnostics": {
+        "source_sha256": "3a69379588e40b2369fa92bc04d51f9003419a8d068dab4ff04fdb250c34fc06",
+        "paired_samples": 45,
+        "first_wire_equal": 45,
+        "first_response_content_equal": 45,
+        "improved_samples": 11,
+        "regressed_samples": 0,
+        "improved_named_tasks": 3,
+        "unchanged_named_tasks": 6,
+        "P_repairs": 26,
+        "P_repairs_improved": 11,
+        "P_repairs_without_improvement": 15
+      },
+      "selection": "Retain unchanged model-generated P for complete 156 x five comparison. Observed improvement and higher wall time both reported; not official final total or formal adoption.",
+      "independent_unseen_tasks": 0,
+      "effective_independent_families": null,
+      "official_total_score": null,
+      "formal_adoption": false,
+      "full_batch_complete": false,
+      "evidence": {
+        "root": "/workspace/team/activity/fpga_teammate/artifacts/prompt-table129-complete-20261008-v1",
+        "zip_sha256": "938ffa3943043225557baa260151fc4635a5473dccadf840295d7daae08d8a0b",
+        "zip_bytes": 10040460,
+        "members": 7710,
+        "manifest_sha256": "39b99d5f7035ddfc8ac79a4c5f3b2eb13c884d7a066455f9660f3b24af124e95",
+        "raw_file_bytes": 19753492,
+        "original_sources_preserved": true,
+        "terminal_child_retired": true,
+        "preparation_child_retired": true
+      }
+    }
+  },
+  "private_evidence": {
+    "archive_sha256": "bdce4bd8be005a40d77ce133439afd6f82ad1ae35b8618f126942d1ad0cbc2c9",
+    "members": 215,
+    "bytes": 143657,
+    "amd_and_local_all_members_verified": true
+  },
+  "full156_comparison": {
+    "status": "running_snapshot_20261008_2109",
+    "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1",
+    "spec_sha256": "b499f6c16fa91868ca7ba60a168929204f02d5b0e164f5ade776a65983aa5c5d",
+    "plan_sha256": "c85226725bab88c08503cd9feda393378ef17c491fabebec4bea0abd930d954c",
+    "preparation_sha256": "471d85e62d2491f1914bd8f3b02067293177d4979c8387328e42eb178dff5edc",
+    "process_sha256": "d38a393ffc252d751687481bcdbd64e1768b414886260c616b4913985f65f827",
+    "prepare_source_sha256": "0b2b546273ea1cd2299d7a3c3bfeac637950b12c29f3192f50efa700b7f0abb8",
+    "preparation_child": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/prepare_full_comparison.py"
+      ],
+      "cwd": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1",
+      "cap_s": 120,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 2916581,
+        "state": "T",
+        "starttime": "872773119",
+        "pgid": 2916581,
+        "sid": 2916581,
+        "command_sha256": "5a5cff3ba9f3379bceb96da8fda3ef4a6ab51547f4b5cd0c1d9305e99b4c2ad0"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 1.2656786404550076,
+      "leader_reaped": true,
+      "stdout_sha256": "f0ceaf396c3fa7b8667370fa87cf0ecc2c4e4f7af5de8a7238927c86c50f73ee",
+      "stdout_bytes": 222,
+      "normal_completion": true
+    },
+    "source_relation": "All 26 qualified parent source files byte-identical; only independent namespace and full input/sample/budget plan. No production changes, old control reruns or new model/EDA during preparation.",
+    "unique_tasks": 156,
+    "samples_per_task_per_arm": 5,
+    "outputs": 2340,
+    "max_model_calls": 3900,
+    "actual_model_calls": null,
+    "stage_cap_s": 129600,
+    "guard_cap_s": 130000,
+    "slot_minutes": 2180,
+    "cap_scope": "36-hour bounded queue safety cap, not ETA; per-row 300/310/360 seconds and no retries retained.",
+    "data_selection": "All original 156 development intake tasks, including 147 parser abstentions; no outcome filtering.",
+    "independent_unseen_tasks": 0,
+    "full156": true,
+    "full_batch": false,
+    "selection": "Official score quantities only; original same-run baseline; historical/per-task calls/L3 thresholds are diagnostics, no veto.",
+    "remaining_full_goal": "RTLLM finite coverage and specification gaps, official resource/interface/recovery/engineering verification remain separate and incomplete.",
+    "ticket": 132,
+    "submitted_at": "2026-10-08T19:59:34.349603+08:00",
+    "started_at": "2026-10-08T20:09:51.981661+08:00",
+    "submission_sha256": "a71751015fa07c997dfc61d0aee5cacc0536a90b820616833a4a46b8e55cdbc8",
+    "preparation_model_calls": 0,
+    "last_identity_check": "2026-10-08T21:09:47.689176+08:00",
+    "monitor": {
+      "pid": 2930407,
+      "starttime": "873442383",
+      "command_sha256": "f5c789a9e0f39af3a9e0ccbf27d47784722aac181414ad6b39d5c590aa2708c3"
+    }
+  },
+  "rtllm_applicability": {
+    "status": "complete_no_matching_prompt_contracts",
+    "root": "/workspace/team/runs/fpga_teammate/rtllm_table_applicability_20261008_v1",
+    "plan_sha256": "c2ad4d377163607e284a3a1a2b9fddef05d6dcadea62f0e6030dc5ee3234d58a",
+    "source_sha256": "45ac2e0ca59c6da0d4096f05585fbacf9577077dfeceb13619fd1b85ed7b5912",
+    "result_sha256": "0463f1b55c3c773825f301105fd310ef232c372f34c37951d6a8f197f51e9c32",
+    "process_sha256": "7cfd2c48ea7551c91a8cf63b7ef5c4938f085bb933126421d5ac1352bc92eefd",
+    "intake_runs": 1,
+    "tasks": 29,
+    "applicable": 0,
+    "remaining_specification_blocked": 15,
+    "model_calls": 0,
+    "eda_calls": 0,
+    "new_fifo": 0,
+    "child": {
+      "pid": 2958430,
+      "starttime": "873592331",
+      "returncode": 0,
+      "exec_confirmed": true,
+      "reaped": true,
+      "remaining_group": [],
+      "retired": true,
+      "elapsed_s": 0.14035248197615147
+    },
+    "elapsed_scope": "bounded child wait only; not complete external preparation or transfer time",
+    "scope": "All 29 retained finite-domain prompt/interface inputs, unchanged parser; no grading body or outcomes read. No accuracy/generalization claim.",
+    "decision": "Do not dispatch repeated A/P comparisons for this unchanged factor on the 29 inputs. Preserve finite judge and original baseline for future applicable candidates.",
+    "private_files": 13,
+    "temporary_cache_remaining": 0
+  },
+  "multi_counterexample_preparation": {
+    "status": "pure_delta_passed_native_queued_not_scored",
+    "root": "/workspace/team/runs/fpga_teammate/table_multi_counterexamples_controls_20261008_v1",
+    "factor": "Return every unique measured mismatch (at most 32 observations from the existing four-bit contract) with explicit input width/binary literals and total mismatch count; no DUT generation.",
+    "source_sha256": {
+      "table_feedback": "1d04cae753ec195854a9b426f4aa773b32192fdbb9d11261d0f71139c6d4e515",
+      "controls": "ffd4b0bd44ff57a7d1b5959243a790d753fd57f5788411738f8c21be6346ea15"
+    },
+    "unchanged": "Parser, worker routing and original single-counterexample binding AST unchanged. Existing source frozen in FIFO132 remains cd8bed6b; no current model budget change.",
+    "plan_sha256": "841629edde4aa32b0cb13587c10c071f3f52acc7afba519af70fe50e738712dc",
+    "manifest_sha256": "c989a1135c05df06d011700dc87ca9a497e8ccbb4092915c61656ae01d0ce384",
+    "diagnosis": {
+      "root": "/workspace/team/activity/fpga_teammate/artifacts/table-feedback129-repair-diagnosis-20261008-v1",
+      "review_sha256": "24e8373357f47bf41cae5818a04cc925fdc119abbbcd5fcab3a723d7a7baf010",
+      "files_read": 227,
+      "failed_repair_samples": 15,
+      "named_tasks": 3,
+      "within_task_all_five_identical": true,
+      "probe_mismatches_before_after": [
+        [
+          12,
+          14,
+          32
+        ],
+        [
+          8,
+          14,
+          32
+        ],
+        [
+          8,
+          4,
+          26
+        ]
+      ],
+      "repair_received_original_feedback": true,
+      "read_only": true,
+      "project_imports": 0,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "reference_body_read": false,
+      "scope": "Retained development outputs only; not independent evidence or proof of improvement.",
+      "reader_correction": "Initial raw-markdown/prior-candidate byte assumption failed; corrected to retained extracted candidate. No experiment rerun."
+    },
+    "pure": {
+      "positive_checks": 5,
+      "corruption_rejections": 7,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "pid": 2984159,
+      "starttime": "873712171",
+      "returncode": 0,
+      "exec_confirmed": true,
+      "reaped": true,
+      "remaining_group": [],
+      "retired": true,
+      "child_elapsed_s": 0.16068734973669052,
+      "time_scope": "child wait only",
+      "result_sha256": "438806f1b16748b7e998bc56577e1eb19ee9983a29cefa59c39f6ff579b5a69c",
+      "process_sha256": "f61bd312860655ac6823279aa03e391fdbde5cd722685a7976988d29530cbe7c"
+    },
+    "native": {
+      "ticket": 133,
+      "state": "queued",
+      "accepted_at": "2026-10-08T20:45:50.460785+08:00",
+      "monitor_pid": 2985748,
+      "monitor_starttime": "873719994",
+      "monitor_command_sha256": "695eb6608ad81628f51a33cf18187cc76f59382d0caa8f23e7a005e47d24d669",
+      "submission_sha256": "019bce41ef08e8895dccafb0d98f456a29eed956f31e5fce5facf7a53f2366e6",
+      "process_sha256": "22ce4de202d40c4e060b52c3ee33f36cafdc6aca42026bb995626eb5a9732278",
+      "model_max": 0,
+      "eda_max": 3,
+      "native_cases": 1,
+      "tool_cap_s": 60,
+      "child_cap_s": 240,
+      "outer_cap_s": 270,
+      "guard_cap_s": 285,
+      "slot_minutes": 6,
+      "old_controls_repeated": 0,
+      "scoring_authorized": false
+    },
+    "private_originals_local": 7,
+    "private_originals_hash_bound": true,
+    "local_transport_note": "First oversized Windows command rejected before process creation; originals then transferred in bounded chunks and hashes matched. No project retry."
+  },
+  "multi_counterexample_comparison": {
+    "root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison9x5_20261008_v1",
+    "status": "conditional_queued_not_started_or_scored",
+    "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+    "spec_sha256": "0cdacd933a0f799783d5e8195217cdfa4aeadbdb77b8b80271a58756d2c9cbc6",
+    "preparation_sha256": "232fbd2a71aa51c9decd31fd5b39e9f71d983a7c28d9553aba10dcc02652b376",
+    "arms": {
+      "A": "Archived single-counterexample feedback; model-generated DUT",
+      "P": "Multiple measured counterexamples with binary widths; model-generated DUT",
+      "B": "Unmodified official baseline"
+    },
+    "tasks": 9,
+    "samples_per_task": 5,
+    "outputs": 135,
+    "model_max": 225,
+    "retries": 0,
+    "selection": "Official coefficient mean/pass@1, same-run B gain and actual wall time; no invented historical or per-task-call vetoes.",
+    "data": "All nine tasks from original prompt-only applicability intake; seen development, not independent validation.",
+    "controls": {
+      "routing_cases": 5,
+      "conditional_positive": 1,
+      "conditional_rejections": 6,
+      "model_calls": 0,
+      "eda_calls": 0,
+      "old_controls_rerun": 0,
+      "routing_result_sha256": "776ebc4b091da7884a86e896c36295a6a2824b98af6f359250a5a6389800d1c7",
+      "conditional_result_sha256": "ac6c658906ab618d343462be3afeb7e58ae81cfaab9b123e0bc95d5585287823"
+    },
+    "preparation_process": {
+      "pid": 3011078,
+      "starttime": "873836524",
+      "returncode": 0,
+      "reaped": true,
+      "exec_confirmed": true,
+      "remaining_group": [],
+      "retired": true,
+      "child_elapsed_s": 0.2720735017210245,
+      "time_scope": "Child wait only; not complete outer stage or transfer.",
+      "receipt_sha256": "9cef42dba293c88c0eabbaa4f93ba256e07996cc09407e111453e46d6b29da09"
+    },
+    "source_sha256": {
+      "worker": "baf1fbf52acef8ee99c4924cffdc5d545d98e80f7469350a0b19e2cb8d25946f",
+      "prepare": "f87c56f906f284c141c0f12672244c6b55c3cd6f037fd00ca0ece51f84bef0a2",
+      "control": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+      "candidate": "1d04cae753ec195854a9b426f4aa773b32192fdbb9d11261d0f71139c6d4e515"
+    },
+    "unchanged": "Worker.bind AST, official baseline/scoring/queue, parser, model parameters and prior controls. Current132 and133 copies stay frozen.",
+    "prerequisite": {
+      "ticket": 133,
+      "plan_sha256": "841629edde4aa32b0cb13587c10c071f3f52acc7afba519af70fe50e738712dc",
+      "manifest_sha256": "c989a1135c05df06d011700dc87ca9a497e8ccbb4092915c61656ae01d0ce384",
+      "requires": "Original ticket completed, source hashes, native 3 supervised EDA commands, passed outer and guard, released own slot; otherwise stop before any model request.",
+      "native_qualified": false
+    },
+    "submission": {
+      "ticket": 134,
+      "accepted_at": "2026-10-08T21:09:47.740389+08:00",
+      "state": "queued",
+      "monitor_pid": 3016870,
+      "monitor_starttime": "873863722",
+      "monitor_command_sha256": "f79b0dd91bde13d116bcf7ad32b8f3305e29014941977fd703e959f175d901b6",
+      "monitor_ppid": 1,
+      "monitor_sid": 3016870,
+      "last_direct_identity_check": "2026-10-08T21:11:46.486854+08:00",
+      "submission_sha256": "2afa3c3b4cb1fa3432096c999c4ff6d62c71bc978eb6538824b56cfef6a9274c",
+      "intent_sha256": "e9e90829b7a6a2c4cf5cc6b46cfc922a78f2badc6740b03a3a5d2178aaaa1fb4",
+      "process_sha256": "9212fb03e6554091fbe577039ea2e92d86d188a8746cd925a8dcc0be33397e94",
+      "binding_sha256": "d5e1d3f23230a5b135944c97a64504502a42a36b4fd09be3e636b854dc4729aa"
+    },
+    "limits": {
+      "max_tokens": 8192,
+      "AP_max_requests": 2,
+      "B_max_requests": 1,
+      "solve_s": 300,
+      "solve_supervisor_s": 310,
+      "judge_supervisor_s": 360,
+      "queue_s": 43200,
+      "guard_s": 43600,
+      "slot_minutes": 740,
+      "note": "Safety caps, not ETA or permanent official limits."
+    },
+    "archives": {
+      "preparation": {
+        "sha256": "afe6e5b0705dd54389401a1f8de1acb75f391135f46bea2fedb089ff7760aca2",
+        "members": 14
+      },
+      "submission": {
+        "sha256": "0d0ede31752ae43fbb4a0e4ba00369cdb3868d92e93b66a432f8065d9508e90e",
+        "members": 6
+      },
+      "both_end_members_verified": true
+    },
+    "scope": "Preparation/conditional acceptance only. No new accuracy, native qualification or full acceptance claimed.",
+    "readback_notes": [
+      "Preparation rc0 preceded a display error for nonexistent separate stderr; merged stdout retained, no rerun.",
+      "First submission readback assumed nonexistent ticket.monitor_identity; direct returned PID/start/cmd bound afterwards, no resubmission."
+    ]
+  },
+  "http_bridge": {
+    "schema": "table_feedback_http_bridge_bounded_v1",
+    "status": "simulated_http_delta_passed_not_deployed",
+    "source_commit": "dccb3ea9fe12a0743c04d250e64fcc6c2dcfaa0a",
+    "root": "/workspace/team/runs/fpga_teammate/table_feedback_http_bridge_20261008_v1",
+    "plan_sha256": "5e9bf7bf5859fa60d45952a0b65f61e9b83dee52a5fb3d7d6dc29e9032797e71",
+    "preparation_sha256": "6106f2ca1ace8a010d4c25f9ae23a1a6cd1fba66ada080a7de4723cd33c66877",
+    "integrity_sha256": "12ed6b46d9bf439a8edf07c73fb4bee5bc8b46b2f2f9dfc64e13133c2941b4bc",
+    "result_sha256": "14ddef273b7b683f321b313f1ba4f2848a0dd983bae350ae15590f728e8ec8a7",
+    "prepare_process_sha256": "c4acafc81747464b8469fd4341f7517fbab17286d877d32ef5a9c580a1b48d81",
+    "control_process_sha256": "64cc2ddd86f05a92194a67e6b5149d7587ea5d77e354a4942b0e6b0973af41b4",
+    "result": {
+      "complete": true,
+      "passed": true,
+      "real_model_calls": 0,
+      "actual_eda_commands": 0,
+      "cases": [
+        {
+          "name": "table_repair",
+          "passed": true,
+          "fake_posts": 2,
+          "probes": 2
+        },
+        {
+          "name": "table_correct",
+          "passed": true,
+          "fake_posts": 1,
+          "probes": 1
+        },
+        {
+          "name": "abstention",
+          "passed": true,
+          "fake_posts": 1,
+          "probes": 0
+        },
+        {
+          "name": "official_baseline",
+          "passed": true,
+          "fake_posts": 1,
+          "probes": 0
+        }
+      ],
+      "fake_model_calls": 5,
+      "deployed": false,
+      "new_accuracy": false,
+      "fallback_matches_scored": true,
+      "failure_propagates": true,
+      "package_unchanged": true,
+      "fake_tool_processes": 13,
+      "elapsed_s": 1.3845857959240675
+    },
+    "staged_single_feedback_sha256": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+    "source_hashes": {
+      "prepare_http_bridge.py": "24534d711c9b31d2a32b5e58e93a809554881a059b3f835a856f51001c64717d",
+      "http_runtime.py": "585dad8a283055d794646382c7bae4e94b6805c2d45177a96528e65dcf911f7e",
+      "http_bridge_controls.py": "1fe6b60136200713c1d481668960988d082d6470ecef61a09662a4ec5d9cf0bb",
+      "table_http_feedback.py": "48a2bef2c9978d29f23405ad43eb5d9753095aa084257a9123d0e6bcefae29c1"
+    },
+    "limits": [
+      "Original132 feedback and candidate fallback retained; multi-feedback133/134 not substituted.",
+      "FAKE model/tools only; no new native, scoring, Docker build, target32GB or deployment qualification.",
+      "Reuse qualified bridge transport/T5/T6, no rerun of old controls.",
+      "Child elapsed intervals do not measure full packaging, observer exit or transmission."
+    ],
+    "updated_at": "2026-10-08T21:36:00+08:00",
+    "private_archive": {
+      "sha256": "2abcaf13aced65ffa06493f2ca028603077dc3aa08d6f4c12298a4a59681c751",
+      "members": 109,
+      "amd_and_local_all_members_verified": true,
+      "local_verify_sha256": "5c83ebd6fee6f17a2d441d26ec68c006276d8643a4d644eee279130ccdbf6430"
+    },
+    "processes": {
+      "prepare": {
+        "pid": 3044489,
+        "starttime": "873994544",
+        "child_elapsed_s": 0.1348978877067566
+      },
+      "control": {
+        "pid": 3044490,
+        "starttime": "873994557",
+        "child_elapsed_s": 1.5840906724333763
+      },
+      "both_rc0_exec_reaped_retired": true
+    },
+    "peer": {
+      "email_id": "1a11ba4c292def37",
+      "comment_id": 6060636572,
+      "full_text_matched": true,
+      "ticket": 135,
+      "state": "queued",
+      "monitor_pid": 3017416,
+      "starttime": "873865832",
+      "command_sha256": "25efd8708d1277055f2cdd60c28f3c8715a85219ea256a43f1dfde230a1d07fd",
+      "resume_sha256": "4d5193a81ac86ce034851e26edca189dc6989e4cf81c642e9f572116b84ffb22",
+      "source_controls": "peer disclosure, not independently re-executed",
+      "owner": "fpga_owner"
+    },
+    "next": "Keep132/133/134 frozen. Staged HTTP package is available for final selected original132 policy; a later policy needs its own matched package. No extra real model/native call for this delta."
+  }
+}

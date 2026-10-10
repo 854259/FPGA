@@ -1,0 +1,30 @@
+{
+  "schema": "table_parent_vector_execution_authorization_v1",
+  "approved": true,
+  "run_identity": "table_parent_vector_full156_20261008_v1",
+  "authorization_source": "Standing direct user authorization for autonomous AMD RTL experiments; user correction on 2026-10-08 removes the invented financial-balance prerequisite.",
+  "actual_resource_allocation": {
+    "scope": "One serial experiment on the existing authorized AMD instance after FIFO122",
+    "coordination": "https://github.com/854259/FPGA/issues/7#issuecomment-6050797252",
+    "coordination_receipt_sha256": "c00e47d416a45b9d4609feaa09c47beaa9a52bde7efe626ea17feae18b44b0b9",
+    "financial_balance_verified": false,
+    "financial_balance_required_to_execute": false,
+    "new_purchase_or_quota_reset": false
+  },
+  "input_plan_sha256": "8868d34aa2500f6392ce5efb9085516eb1cbf2f9fae7a1007665f180e8939bcb",
+  "source_factor_proof_sha256": "62d6f23e57c940c024e3bdc6f731b0b05a9807e5572742dc865d72e7c61e5b2b",
+  "limits": {
+    "max_actual_model_requests": 624,
+    "max_worker_requests_per_arm": 2,
+    "retries": 0,
+    "max_tokens": 8192,
+    "solve_deadline_s": 300,
+    "judge_timeout_s": 300,
+    "judge_supervisor_timeout_s": 360,
+    "stage_timeout_s": 43200,
+    "guard_timeout_s": 43600,
+    "slot_minutes": 740
+  },
+  "maximum_submissions": 1,
+  "resampling": false
+}

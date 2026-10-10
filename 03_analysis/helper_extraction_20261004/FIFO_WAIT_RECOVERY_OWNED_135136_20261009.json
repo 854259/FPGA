@@ -1,0 +1,239 @@
+{
+  "schema": "owned_fifo135136_wait_recovery_v1",
+  "status": "actual_waiting_monitors_restored_watcher_completed_no_evaluation",
+  "owned_tickets": [
+    135,
+    136
+  ],
+  "scope": "Only original never-started wait expiry; no executed task restart, release-held or resubmission.",
+  "shared_core_PR": "https://github.com/854259/FPGA/pull/199",
+  "shared_core_commit": "c1525ed2b2b23beff8614b0b7c2d1a2ae16cfd19",
+  "wrapper_sha256": "da01ab8ceb34bac0900e7548f94e843ab3690fef4651bb5eea76b7ff913d8d5a",
+  "shared_core_sha256": "692305058c4499ffbe599ada3badb316f866e918da5a78df348e58ac146ca302",
+  "owner_plan_sha256": "0f826664441c73722e3a5d49ce952e1adee7b82aa7ce5e0f58c21953677973d5",
+  "plan_root": "/workspace/team/runs/fpga_owner/fifo_unstarted_wait_recovery135136_20261009_v1",
+  "watch_expires_beijing": "2026-10-09 22:00:00",
+  "frozen_file_counts": {
+    "135": 39,
+    "136": 71
+  },
+  "existing_ticket_order_command_budget_sources_preserved": true,
+  "qualification": {
+    "root": "/workspace/team/runs/fpga_owner/fifo_wait_recovery_owned_delta_20261009_v1",
+    "cases": [
+      {
+        "case": "exact_owned_binding_live_waiting_read_only",
+        "passed": true,
+        "outcomes": [
+          {
+            "ticket": 135,
+            "outcome": "waiting_original"
+          },
+          {
+            "ticket": 136,
+            "outcome": "waiting_original"
+          }
+        ]
+      },
+      {
+        "case": "foreign_ticket_133",
+        "refused": true
+      },
+      {
+        "case": "changed_original_command",
+        "refused": true
+      },
+      {
+        "case": "missing_frozen_source",
+        "refused": true
+      }
+    ],
+    "result_sha256": "1818e88b44daac5afc8a330bbc531d7959967f8ecf015264a5ef11bb794b0bcf",
+    "process": {
+      "schema": "owned_preexec_birth_gate_v1",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/fifo_wait_recovery_owned_delta_20261009_v1/fifo_wait_recovery_owned_controls_20261009.py",
+        "/workspace/team/runs/fpga_owner/fifo_wait_recovery_owned_delta_20261009_v1/RESULT.json"
+      ],
+      "cwd": "/workspace/team/runs/fpga_owner/fifo_wait_recovery_owned_delta_20261009_v1",
+      "cap_s": 40,
+      "timeout": false,
+      "signals": [
+        "SIGCONT_bound_preexec_child"
+      ],
+      "exec_error": null,
+      "error": null,
+      "child_identity": {
+        "pid": 3964340,
+        "state": "T",
+        "starttime": "880718664",
+        "pgid": 3964340,
+        "sid": 3964340,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "exec_confirmed": true,
+      "returncode": 0,
+      "remaining_group": [],
+      "elapsed_s": 0.20569875091314316,
+      "leader_reaped": true,
+      "stdout_sha256": "65dda4bc16df7465751d6941c26813418654b6f4867dbc825640f5f5955e0b87",
+      "stdout_bytes": 563,
+      "normal_completion": true
+    },
+    "protected_held": true,
+    "archive_sha256": "93803e4fa31163117cd135a69066bdc3aa0590b0693723bf74eeb761f66c1c61",
+    "archive_members": 15,
+    "AMD_E_every_member_verified": true,
+    "peer_original_plan_result_byte_bound": true,
+    "peer_archive_independently_verified": false,
+    "peer_16_controls_repeated": false
+  },
+  "watcher_started": true,
+  "recovery_triggered": true,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo_tickets": 0,
+  "formal_score_gain": false,
+  "full_goal_complete": false,
+  "next": "Read actual new monitor identities from immutable recovery receipts;135/136 remain queued and have not executed.Original watcher completed normally;do not relaunch it.Review132-136 actual original outcomes before selecting one next capability factor.",
+  "watcher": {
+    "pid": 3966482,
+    "present": true,
+    "state": "Z",
+    "starttime": "880750502",
+    "ppid": 1,
+    "pgid": 3966482,
+    "sid": 3966482,
+    "command_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "argv": [],
+    "live_identity_verified": false,
+    "independent_session": false
+  },
+  "watcher_observed_epoch": 1791553051.8592136,
+  "watcher_source_commit": "79c13c95c49fb0db87d5537effcceeda79889165",
+  "detached_ppid1_verified": true,
+  "qualification_child_separately_observed_retired": true,
+  "watcher_completed": true,
+  "watcher_running": false,
+  "watcher_launch_original_observation": {
+    "pid": 3966482,
+    "present": true,
+    "state": "S",
+    "starttime": "880750502",
+    "ppid": 1,
+    "pgid": 3966482,
+    "sid": 3966482,
+    "command_sha256": "242c299832e97083e3a3af3bacb81edc386a1ff23b44249713de56ed47ef81eb",
+    "live_identity_verified": true,
+    "independent_session": true
+  },
+  "actual_wait_recovery": [
+    {
+      "ticket": 135,
+      "state": "queued",
+      "restored_unix": 1791551436.3052826,
+      "monitor": {
+        "pid": 4175420,
+        "present": true,
+        "state": "S",
+        "starttime": "882508578",
+        "ppid": 1,
+        "pgid": 4175420,
+        "sid": 4175420,
+        "command_sha256": "25efd8708d1277055f2cdd60c28f3c8715a85219ea256a43f1dfde230a1d07fd",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/tools/task-fifo-20261004/task_fifo.py",
+          "--root",
+          "/workspace/team/task_fifo",
+          "_run",
+          "--ticket",
+          "135"
+        ]
+      },
+      "old_monitor": {
+        "pid": 3017416,
+        "present": true,
+        "state": "Z",
+        "starttime": "873865832",
+        "ppid": 1,
+        "pgid": 3017416,
+        "sid": 3017416,
+        "command_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "argv": []
+      },
+      "original_identity_budget_order_held": true,
+      "frozen_files": 39,
+      "frozen_hashes_held": true,
+      "started": false,
+      "model_eda_execution_not_repeated": true,
+      "original_failed_ticket_sha256": "84e0317293bd055c91992d86ee37c1e07a76cc103901163ba64c80636686a10b",
+      "intent_sha256": "efa4d937d7c9afa3ea0022da271fb85d76b2c2dcaf7730b3732a3377ba08f7ab",
+      "result_sha256": "455654b87deee3de6678df9b503e6ada3a10aca406d21eab7904f6dfdca64f07"
+    },
+    {
+      "ticket": 136,
+      "state": "queued",
+      "restored_unix": 1791552786.3562315,
+      "monitor": {
+        "pid": 4187849,
+        "present": true,
+        "state": "S",
+        "starttime": "882643583",
+        "ppid": 1,
+        "pgid": 4187849,
+        "sid": 4187849,
+        "command_sha256": "eb00e270ddd51ec8c1bfc55fc6e99be4418cca305c566ade9f1bc6e0dd508a4b",
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/workspace/team/tools/task-fifo-20261004/task_fifo.py",
+          "--root",
+          "/workspace/team/task_fifo",
+          "_run",
+          "--ticket",
+          "136"
+        ]
+      },
+      "old_monitor": {
+        "pid": 3046091,
+        "present": true,
+        "state": "Z",
+        "starttime": "874002832",
+        "ppid": 1,
+        "pgid": 3046091,
+        "sid": 3046091,
+        "command_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "argv": []
+      },
+      "original_identity_budget_order_held": true,
+      "frozen_files": 71,
+      "frozen_hashes_held": true,
+      "started": false,
+      "model_eda_execution_not_repeated": true,
+      "original_failed_ticket_sha256": "eaf0dc5f09ebb26933d4b2758590fff8ab5c8f4c9dab64b19738a77a2b27696e",
+      "intent_sha256": "626b8d013470a312884acf33d801b1ab23fe513f4b94c22b3b2bb5335746905c",
+      "result_sha256": "da92f3b6be7abb491634c5324cc8dfb1155d306108b2006212a4a58a36798b23"
+    }
+  ],
+  "closeout": {
+    "root": "/workspace/team/activity/fpga_owner/artifacts/fifo135136-wait-recovery-closeout-20261009-v1",
+    "review_sha256": "80bcb97511dd0cc6689d1e8a3515b7f32c314745555d5495de301c75c365e1e9",
+    "manifest_sha256": "f4111305b98eb3ae72e3552ee7ec973ad65dfa2a66d5aec00a4d2dc996f14ff2",
+    "archive_sha256": "1d31052917fe868baa012b7225e97d44fd9dc43f099d2ac6acc1325dfc844a11",
+    "archive_members": 17,
+    "AMD_E_every_member_verified": true,
+    "source_sha256s": {
+      "/workspace/team/runs/fpga_owner/fifo_unstarted_wait_recovery135136_20261009_v1/fifo_wait_recovery_owned_135136_20261009.py": "da01ab8ceb34bac0900e7548f94e843ab3690fef4651bb5eea76b7ff913d8d5a",
+      "/workspace/team/runs/fpga_owner/fifo_unstarted_wait_recovery135136_20261009_v1/fifo_wait_recovery_20261009.py": "692305058c4499ffbe599ada3badb316f866e918da5a78df348e58ac146ca302",
+      "/workspace/team/activity/fpga_owner/artifacts/fifo135136-wait-recovery-bindings-20261009-v1/BINDINGS.json": "24808da83ad841b0cf6d182226b70eabbfa9c1bb35200aa007c9428eca4ba430",
+      "/workspace/team/tools/task-fifo-20261004/task_fifo.py": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f"
+    },
+    "watch_result_sha256": "d7ce736d427c60acf548033ba53ee8d9267a2a16ecbfcd33853c1488009973a2",
+    "protected_held": true,
+    "old_controls_repeated": false
+  }
+}

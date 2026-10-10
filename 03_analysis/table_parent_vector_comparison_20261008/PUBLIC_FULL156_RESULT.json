@@ -1,0 +1,111 @@
+{
+  "schema": "table_parent_vector_full156_terminal_public_v1",
+  "updated_at": "2026-10-08T15:09:54.194657+08:00",
+  "ticket": 123,
+  "completed_and_audited": true,
+  "scope": "156 previously seen development tasks, one paired C/P sample each; no independent, official-baseline or five-sample qualification",
+  "factor": "C retains complete archived table parent; P adds unchanged vector synthesis only on parent abstention",
+  "rows": 312,
+  "fully_correct_by_arm": {
+    "C": 117,
+    "P": 120
+  },
+  "l3_rate_by_arm": {
+    "C": 0.75,
+    "P": 0.7692307692307693
+  },
+  "weighted_by_arm": {
+    "C": 0.7935897435897435,
+    "P": 0.808974358974359
+  },
+  "requests_by_arm": {
+    "C": 158,
+    "P": 156
+  },
+  "total_requests": 314,
+  "paired_L3": {
+    "both": 117,
+    "P_only": 3,
+    "C_only": 0,
+    "neither": 36,
+    "descriptive_exact_mcnemar_two_sided_p": 0.25
+  },
+  "historical_best_comparison": {
+    "previous_L3": 118,
+    "current_L3": 120,
+    "difference": 2,
+    "cross_run_causal_gain_claimed": false
+  },
+  "mechanism": {
+    "vector_L1_to_L3": 2,
+    "vector_L3_preserved": 1,
+    "each_vector_model_request_change": [
+      1,
+      0
+    ],
+    "other_model_L1_to_L3": 1,
+    "other_model_request_change": [
+      1,
+      2
+    ],
+    "shared_model_first_replies_same": 143,
+    "shared_model_first_replies_different": 1,
+    "not_shared_model_pairs": 12,
+    "table_emissions_per_arm": 9,
+    "table_emissions_preserved": true
+  },
+  "decision": {
+    "numerical_120_and_weighted_point80_met": true,
+    "paired_grade_regressions": 0,
+    "shared_historical_L1_failures_with_identical_solutions": 3,
+    "historical_request_cost_increases": 1,
+    "original_acceptance_passed": false,
+    "adoption": false,
+    "qualified_for_new_full_regression": false,
+    "full_goal_complete": false,
+    "vector_component": "Retain observed development benefit for prospective composition; not adopted or independently generalized; do not rerun123 to select a better draw."
+  },
+  "source": {
+    "spec_sha256": "8e80d776b3df21399fb66a4c99698a794a049527e4c5634e57900ed0c4b9e31c",
+    "frozen_source_files": 107,
+    "summary_sha256": "dbde6575a947ee811e077dfe6c1f045f7d7eb04bf047c5e8bffb6361240ad337",
+    "audit_sha256": "bc9d7adeb0c50f36929bf34e2d6aa0d94f58c04f182f2fdfb759084b732943ba",
+    "terminal_receipt_sha256": "d73f26472813fdd4934ec37ddd40cdd57f31536bd9b98f9bb4cfe3b90b627301",
+    "external_receipt_sha256": "060ec97d02cdc8f10490bd2f6924d5e7a2f8051a0a737a1fe090cd86bdeedf15",
+    "main_archive_sha256": "0e9c19abec3829a91298b45f9ed308c386f3410ba6433b4f0cd901735f9a0b36",
+    "main_archive_members": 12184,
+    "main_archive_bytes": 95324314,
+    "supplement_sha256": "27f0f18f96097b6c97a0957b688a08a260c43bccbb1263e97fd21c8b2cc590fc",
+    "supplement_members": 33
+  },
+  "terminal_execution": {
+    "original_collector_calls": 0,
+    "original_auditor_calls": 0,
+    "compatible_collector_calls": 1,
+    "compatible_auditor_calls": 1,
+    "all_exec_returncode0_reaped_retired": true,
+    "observer_retired_separately_verified": true,
+    "collector_elapsed_s": 9.192763909697533,
+    "auditor_elapsed_s": 5.011034088209271,
+    "external_elapsed_s": 16.9842575378716,
+    "external_scope": "exact terminal child birth gate through real exit/reap; all adopted descendants; final artifact binding",
+    "excluded_from_external_time": [
+      "preparation",
+      "observer self-serialization and exit",
+      "SSH transfer",
+      "local archive"
+    ],
+    "stage_elapsed_s": 15869.634365247563,
+    "new_model_calls": 0,
+    "new_EDA_commands": 0,
+    "new_FIFO_submissions": 0
+  },
+  "limitations": [
+    "All156 permanently development; family effective sample size unknown.",
+    "Three shared historical failures are not P-relative regressions.",
+    "One model-route improvement is not attributed to vector synthesis.",
+    "Stage pending/new_full_score fields remain frozen historical snapshots; terminal audit supplies final provenance.",
+    "Full three-arm156, audited RTLLM, important five-sample and resource/interface/recovery acceptance remain incomplete."
+  ],
+  "next": "Preserve table and supported vector development component; consume owner124/125 unchanged, then freeze any new composition prospectively. No cross-run score summation or financial-balance prerequisite."
+}

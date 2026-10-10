@@ -4,6 +4,12 @@
 
 ## 启动
 
+启动完整服务守护器时，`bash /path/to/package/serve/serve_all.sh` 默认使用
+同一提交包的 `agent/runtime.py`，不依赖调用者的工作目录。显式设置 `KIT`
+仍表示旧项目根目录，入口为 `$KIT/submission/agent/runtime.py`；入口不存在时，
+守护器在探测或启动模型/HTTP 服务前退出。模型、工具链和日志位置仍须按部署环境配置。
+这项路径支持不代表当前研究候选已经部署，或完成正式镜像、32GB和恢复验收。
+
 ```bash
 MODEL_PATH=/opt/models/Qwen3.6-27B-Q4_K_M.gguf ./serve/llama.sh
 ```

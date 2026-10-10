@@ -28,7 +28,15 @@
 #   CHECK_INTERVAL   健康检查间隔秒数，默认 30
 set -uo pipefail
 
-KIT="${KIT:-/workspace/team/tasks/autodl-rtl-kit/project}"
+# An explicit KIT retains the historical project/submission layout. Without
+# it, a copied submission starts its own runtime, independently of the cwd.
+if [ -n "${KIT:-}" ]; then
+  KIT="$(cd -- "$KIT" && pwd)" || exit 1
+  RUNTIME_PATH="$KIT/submission/agent/runtime.py"
+else
+  KIT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)" || exit 1
+  RUNTIME_PATH="$KIT/agent/runtime.py"
+fi
 AGENT_PORT="${AGENT_PORT:-7860}"
 MODEL_PORT="${MODEL_PORT:-8000}"
 CHECK_INTERVAL="${CHECK_INTERVAL:-30}"
@@ -39,7 +47,6 @@ mkdir -p "$LOG_DIR"
 MODEL_PIDFILE="$LOG_DIR/llama-server.pid"
 AGENT_PIDFILE="$LOG_DIR/agent-serve.pid"
 PYTHON_BIN="$(command -v python3)"
-RUNTIME_PATH="$KIT/submission/agent/runtime.py"
 
 if [ -z "${FPGACHINA_TOKEN:-}" ]; then
   echo "FPGACHINA_TOKEN is required" >&2
@@ -213,6 +220,10 @@ start_agent() {
 }
 
 # ---- 首次启动 ----
+if [ ! -f "$RUNTIME_PATH" ]; then
+  say "agent runtime 不存在: $RUNTIME_PATH"
+  exit 1
+fi
 # 必须区分三种状态，不能写成 `state || start`：
 #   0 = 已就绪；1 = 有响应但未就绪（配置问题，重复启动只会起第二个实例）；
 #   2 = 无响应（这才是真的没起来）。
