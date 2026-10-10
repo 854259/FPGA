@@ -1,0 +1,128 @@
+{
+  "schema": "owned_absolute_deadline_qualification_v1",
+  "at": "2026-10-10T09:15:48.596518+00:00",
+  "source_sha256": "ee78332e06a4c16b4047c3874e3aa6de529e95833636bce0cdb70a8da5a9a098",
+  "test_sha256": "9cc47a54fcf2994682fb8c4c8d11d43041550c58b001f808d4846a42811e7fcc",
+  "old_source_sha256": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+  "wrapper_sha256": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+  "controllers": [
+    {
+      "folder": "before_guard",
+      "child_identity": {
+        "pid": 706953,
+        "state": "T",
+        "starttime": "889719554",
+        "pgid": 706953,
+        "sid": 706953,
+        "command_sha256": "5a5cff3ba9f3379bceb96da8fda3ef4a6ab51547f4b5cd0c1d9305e99b4c2ad0"
+      },
+      "returncode": 1,
+      "elapsed_s": 0.8029437623918056,
+      "birth_stdout_bound_and_retired": true
+    },
+    {
+      "folder": "after_guard",
+      "child_identity": {
+        "pid": 707575,
+        "state": "T",
+        "starttime": "889730835",
+        "pgid": 707575,
+        "sid": 707575,
+        "command_sha256": "5a5cff3ba9f3379bceb96da8fda3ef4a6ab51547f4b5cd0c1d9305e99b4c2ad0"
+      },
+      "returncode": 0,
+      "elapsed_s": 1.4694240912795067,
+      "birth_stdout_bound_and_retired": true
+    }
+  ],
+  "old_witness": {
+    "passed": false,
+    "observed_timeout": false,
+    "returncode": 0,
+    "requested_s": 0.45,
+    "startup_delay_s": 0.3,
+    "elapsed_s": 0.6298172175884247
+  },
+  "new_cases": [
+    {
+      "case": "startup",
+      "passed": true,
+      "elapsed_s": 0.46633695624768734,
+      "remaining_owned": [],
+      "handlers_restored": true
+    },
+    {
+      "case": "expired",
+      "passed": true,
+      "elapsed_s": 0.00010919943451881409,
+      "remaining_owned": [],
+      "handlers_restored": true
+    },
+    {
+      "case": "absolute",
+      "passed": true,
+      "elapsed_s": 0.21617783419787884,
+      "remaining_owned": [],
+      "handlers_restored": true
+    },
+    {
+      "case": "success",
+      "passed": true,
+      "elapsed_s": 0.07877732813358307,
+      "remaining_owned": [],
+      "handlers_restored": true
+    },
+    {
+      "case": "parent_exit",
+      "passed": true,
+      "elapsed_s": 0.16738098673522472,
+      "remaining_owned": [],
+      "handlers_restored": true
+    },
+    {
+      "case": "timeout_group",
+      "passed": true,
+      "elapsed_s": 0.31579766795039177,
+      "remaining_owned": [],
+      "handlers_restored": true
+    },
+    {
+      "case": "cancel",
+      "passed": true,
+      "elapsed_s": 0.040137769654393196,
+      "remaining_owned": [],
+      "handlers_restored": true
+    },
+    {
+      "case": "cancel_launch",
+      "passed": true,
+      "elapsed_s": 0.014499252662062645,
+      "remaining_owned": [],
+      "handlers_restored": true
+    },
+    {
+      "case": "invalid",
+      "passed": true,
+      "elapsed_s": 3.260001540184021e-05,
+      "remaining_owned": [],
+      "handlers_restored": true
+    }
+  ],
+  "startup_new_wait_s": 0.14897271245718002,
+  "protected_138_sources": 30,
+  "protected_held": true,
+  "model_identity_held": true,
+  "real_model_calls": 0,
+  "EDA": 0,
+  "FIFO": 0,
+  "production_deployed": false,
+  "full_chain_verified": false,
+  "scope": "Real short CPU subprocesses only. Startup delay is physical; clock is not mocked. OS scheduling and uninterruptible Popen cannot be preempted by this Python function. Queue/B/HTTP integration and real model cancellation remain unqualified.",
+  "archive_root": "/workspace/team/runs/fpga_teammate/owned_absolute_deadline_qualification_20261010_v1",
+  "archive_sha256": "98fa08a836e4f6d1cc614f33e12f5c29ea2e61a75d40ebeca0676a702f795fd5",
+  "archive_bytes": 45561,
+  "archive_members": 43,
+  "manifest_sha256": "f726b2e0f6758e758ebac58a9c09346ecd8d424c6a2ff494f9e63e1d151b788a",
+  "archive_entries": 42,
+  "all_archive_members_match_originals": true
+}
