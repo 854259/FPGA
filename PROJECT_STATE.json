@@ -608,6 +608,128 @@
   },
   "submission_report_update_20261008": {"updated_at": "2026-10-08T22:46:00+08:00", "status": "draft_updated_static_verified_not_deployed", "path": "04_project/amd_rtl_agent/submission/REPORT.md", "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801", "scope": "Official selection and existing129 failure evidence; archived runtime and research candidate distinguished; historical numerical results retained.", "evidence_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38", "new_model_calls": 0, "new_eda_calls": 0, "new_fifo": 0, "deployment": false, "full_goal_complete": false},
   "collaborative_goal_20261007": {
+    "temporal_peer_preparation_20261010": {
+      "updated_at": "2026-10-10T08:41:58+08:00",
+      "status": "peer_preparation_selected_and_reported_qualified_our_scoring_selection_pending_original_results",
+      "source_comments": [
+        6091415379,
+        6091605451
+      ],
+      "latest_peer_comment_updated_at": "2026-10-10T00:32:00Z",
+      "shared_reports": {
+        "TEMPORAL_FACTOR_PREPARATION.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-factor-revision-20261010-v2/TEMPORAL_FACTOR_PREPARATION.json",
+          "sha256": "b4d90b7838c6c10690c9b0fd81009a5ffc871c37ed0ffe74bd13494459c3d364",
+          "bytes": 23606
+        },
+        "TEMPORAL_SELECTION_QUALIFICATION.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-selected-qualified-20261010-v1/TEMPORAL_SELECTION_QUALIFICATION.json",
+          "sha256": "f9a5d6e28645ba362847ae8c6cfbaf81648babc7af1fcddebdfe7b8237e87cbe",
+          "bytes": 20911
+        },
+        "TEMPORAL_INPUT_CONTEXT_PREFLIGHT.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-input-context-20261010-v1/TEMPORAL_INPUT_CONTEXT_PREFLIGHT.json",
+          "sha256": "b320935c1b3f25d6c95bb5c54a3e8cb19929ff8118b8f7388b8d2f49c3573d21",
+          "bytes": 19847
+        }
+      },
+      "mail_matches": [
+        {
+          "id": "1a123356b9c057d4",
+          "full_match": null,
+          "initial_body_match": 6091605451
+        },
+        {
+          "id": "1a12323d198cef08",
+          "full_match": 6091415379,
+          "initial_body_match": null
+        }
+      ],
+      "candidate_scope": {
+        "peer_selected_for_preparation": true,
+        "our_next_scoring_factor_selected": false,
+        "shared_new_ticket_ownership_review_passed": false,
+        "production_submitted": false,
+        "original_132_136_changed": false,
+        "arms": {
+          "A": "original132 table-P plus phase, unchanged first system",
+          "P": "same as A plus fixed174-word temporal suffix only on first system",
+          "B": "unchanged official baseline"
+        },
+        "targets": [
+          "Prob111_fsm2s",
+          "Prob133_2014_q3fsm",
+          "Prob139_2013_q2bfsm",
+          "Prob140_fsm_hdlc"
+        ],
+        "controls": [
+          "Prob095_review2015_fsmshift",
+          "Prob107_fsm1s",
+          "Prob108_rule90",
+          "Prob109_fsm1",
+          "Prob110_fsm2"
+        ],
+        "samples_per_task_arm": 5,
+        "expected_outputs": 135,
+        "max_reserved_requests": 225,
+        "output_max_tokens": 8192,
+        "max_requests_per_agent": 2,
+        "repairs": 1,
+        "solve_seconds": 300,
+        "retries": 0
+      },
+      "peer_reported_qualification": {
+        "AMD_new_synthetic_hook_cases": 4,
+        "fake_HTTP_attempts": 5,
+        "fake_compile_attempts": 4,
+        "real_model_calls": 0,
+        "real_EDA_calls": 0,
+        "new_FIFO": 0,
+        "prototype_execution_authorized": false,
+        "archive_sha256": "5002fb80e6386dd9992ce07f2f2e23eef96797cfe60cda2e21a37fac335853eb",
+        "archive_members": 100,
+        "independently_reexecuted_or_reaudited_here": false,
+        "new_factor_source_sha256": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+        "new_baseline_worker_sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+        "new_worker_sha256": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65"
+      },
+      "peer_reported_capacity": {
+        "fixed_public_inputs": 9,
+        "first_P_conservative_bound_max": 4086,
+        "output_max_tokens": 8192,
+        "context_tokens": 16384,
+        "minimum_first_margin": 4106,
+        "exact_first_tokens_measured": false,
+        "unknown_future_repair_full_fit_proven": false,
+        "model_tokenizer_calls": 0,
+        "read_only_props_calls": 1,
+        "execution_plan_frozen": false,
+        "score_measured": false
+      },
+      "coordination": {
+        "issue_comment": 6091746250,
+        "request": "Retain advance preparation and existing qualified evidence, but do not treat intake as our new-scoring selection or shared ticket ownership approval. Preserve current no-submission state until original132-136 outcomes are received and next-factor selection/ownership is aligned.",
+        "basis": "Current user goal explicitly places next-factor selection after original queue outcomes; advance preparation is compatible and need not be repeated.",
+        "peer_acceptance_received": false,
+        "no_duplicate_factor_started": true,
+        "no_request_to_repeat_qualifications": true,
+        "our_selection_criteria": "Official capability/same-runB gain/actual time/engineering; preserve all regressions and costs without adding peer120/.80, per-task nonregression or call-nonincreasing vetoes."
+      },
+      "live_scope": {
+        "observed_at": "2026-10-10T08:40:15.838712+08:00",
+        "sealed": 2133,
+        "total": 2340,
+        "actual_adopted_roles_and_model_live": true,
+        "frozen39_and_receipt_bindings_hold": true,
+        "tickets133_to136": "queued",
+        "terminal_readers_executed": false
+      },
+      "new_project_execution": 0,
+      "new_model_calls": 0,
+      "new_EDA_calls": 0,
+      "new_FIFO": 0,
+      "full_goal_complete": false
+    },
     "actual132_continuation_20261010": {
       "updated_at": "2026-10-10T08:10:43+08:00",
       "status": "actual_suffix_continuation_verified_running",
