@@ -44,8 +44,8 @@ RUN chmod +x run.sh run_baseline.sh serve/llama.sh
 # 2026.1 是「版本在前」、在 2024.2 及更早是「工具在前」——这正是接口契约要求
 # 「读环境变量、不要自己拼路径」的原因。
 #
-# RTL_PROFILE=submission 是提交档：它要求模型服务走回环地址且显存可读，
-# 与正式验收的门槛一致。本机开发时可显式覆盖为 development。
+# 所有 profile 都要求同机回环模型服务。submission 的 health 对已测显存检查上限，
+# 显存未知仍可能报告 ready；ready 不证明正式资源/隔离验收。development 仅用于 AMD 开发。
 ENV MODEL_PATH=/opt/models/Qwen3.6-27B-Q4_K_M.gguf \
     LLM_BASE_URL=http://127.0.0.1:8000/v1 \
     MODEL_NAME=Qwen3.6-27B-Q4_K_M \
