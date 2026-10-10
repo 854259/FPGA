@@ -1,5 +1,38 @@
 {
   "temporal_first_generation_20261010": {
+    "circuit145_sample0_generation_efficiency": {
+      "result_sha256": "5f69bd3937789b62580976b23f55e2f3f95b033fc48608da231d38b882c521ed",
+      "fixed_sample": 0,
+      "task": "Prob145_circuit8",
+      "A_P_first_L3": true,
+      "A_P_first_payload_and_DUT_identical": true,
+      "table_feedback_used": false,
+      "not_new_table_feedback_gain": true,
+      "completion_tokens": 7475,
+      "source_lines": 450,
+      "line_comment_lines": 381,
+      "nonempty_statement_lines": 14,
+      "worker_total_solve_s": [
+        258.8282209392637,
+        258.12834133580327
+      ],
+      "solve_scope": "Original worker total including compilation;not separately measured model latency",
+      "finish_reason": "stop",
+      "truncation_or_timeout": false,
+      "B_original_level": 0,
+      "B_compiler_single_cause_not_attributed": true,
+      "dual_original_members": 21,
+      "output8192_solve300_calls2_repair1_unchanged": true,
+      "comment_stripping_not_implemented": true,
+      "prompt_variant_not_implemented": true,
+      "frozen_temporal9_unchanged": true,
+      "no_factor_selected": true,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "full_five_sample_score": false,
+      "full_goal_complete": false
+    },
     "complete_prefix144_priority_review": {
       "result_sha256": "c960b8bde3c32d80b81dd5e7ba2876942735ebdb02a73d5bb5aa572d2e4ce43b",
       "complete_tasks": 144,
