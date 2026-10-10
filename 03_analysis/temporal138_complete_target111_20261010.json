@@ -1,0 +1,136 @@
+{
+  "schema": "temporal138_first_complete_stable_target111_v1",
+  "saved_epoch": 1791624188.3152797,
+  "ticket": 138,
+  "task": "Prob111_fsm2s",
+  "original_all_five_terminal_fields_observed": true,
+  "complete_target_pair_matrix": true,
+  "arms": {
+    "A": {
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "client_attempts": 5,
+      "solve_sum_s": 77.35679298453033,
+      "max_solve_s": 15.702206110581756,
+      "terminal_sha256": [
+        "d929d57409b8814ffd2b6b0bd3a90eb0cf1da6d424b438a16ece8ef137bfeb89",
+        "9633b3f406e1ea24841dcd43ab41f18940b80a95ea2f96ad39b9cfd3411ee486",
+        "30e2ebdaa4d8e49355eb30cd8a9c9683bb511b0864c9297c06365745f9abe24f",
+        "dc46d5bf994cd933d7c426174dfd73222268d197ab341551b792ec412cf4a8ba",
+        "220a37527590ea9925a50442ff86ceeb821eeffff989941b7550b2f60fbe9ecd"
+      ]
+    },
+    "P": {
+      "levels": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "client_attempts": 5,
+      "solve_sum_s": 67.09149086289108,
+      "max_solve_s": 13.648841816931963,
+      "terminal_sha256": [
+        "008a8cd00c08f27e1d2b21f15e3575bc8a37bb415949d5d263f7ffac245c6b42",
+        "3ae027677bad3593904b41898bb229cad2462fa0f4bd5c43227d95fb7c32f0ec",
+        "817d95b0b6063e5443e8e9a7fa6e138c420e053bb2e9f737789bd7dbbb143f39",
+        "705ccfe0bddc89074b9e5580fc0c71839108829ff45629a4a399d418e99fcfbf",
+        "8463dc1d43ab1e4a5b03a8632d60fc4f5fba0c749dc3314814696e3ada500037"
+      ]
+    },
+    "B": {
+      "levels": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "client_attempts": 5,
+      "solve_sum_s": 49.3606230635196,
+      "max_solve_s": 10.192830733954906,
+      "terminal_sha256": [
+        "5f1a372dc52c1f1d3e8408eb819f3bc25c677221fb31cb5db5c0e97f6722b9ae",
+        "bcdd834364c506f54a84607283c740ed1e578d142ff2940b77874f5e6fbabf3a",
+        "7023be7d2b7da8cad51afc7fa6c5f85a7ea54995790da3cd69f0480ff7a86260",
+        "7a72385dc29fc98986f32c251095d407dd4379944f96841e130aec03971e04f9",
+        "87957d4079b8dc719cc0086d4d6ea7ae8c426a1e974604cf8bca4e1c2179e14a"
+      ]
+    }
+  },
+  "newly_correct_P_vs_A_samples": 5,
+  "lost_correct_samples": 0,
+  "client_attempt_delta": 0,
+  "scope": "One preregistered stable-error development task,not five independent tasks,not full nine-task or full156 score.",
+  "diagnosis": {
+    "sample": 0,
+    "public_prompt_and_original_model_outputs_only": true,
+    "A_extra_clocked_output_register_lags_state_by_one_edge": true,
+    "P_output_combinational_from_current_state": true,
+    "basis": "Direct source reading and public Moore contract;nonblocking state/output updates read old state in A.",
+    "no_new_simulation": true,
+    "no_private_reference_TB_or_judge_body": true,
+    "no_task_specific_answer_added_to_generation": true,
+    "first_pair_public_feedback_present": false
+  },
+  "first_pair_originals": {
+    "archive_sha256": "87d846d48b18a6ab1699b7c562f2bf2827711da4072c35333e18268b858bfbd5",
+    "members": 17,
+    "private_archive": "E:\\26qiansai\\private_archives\\temporal111_first_pair_public_20261010_v1\\PUBLIC_ORIGINALS.zip",
+    "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/temporal111-first-pair-public-20261010-v1/PUBLIC_ORIGINALS.zip",
+    "all_members_E_AMD_verified": true
+  },
+  "current138": {
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 96,
+    "started_unsealed": [
+      {
+        "index": 96,
+        "task": "Prob133_2014_q3fsm",
+        "sample": 2,
+        "arm": "B"
+      }
+    ]
+  },
+  "remaining_fixed_targets": [
+    "Prob133_2014_q3fsm",
+    "Prob139_2013_q2bfsm",
+    "Prob140_fsm_hdlc"
+  ],
+  "original109_cost_increase_retained": true,
+  "full_comparison_complete": false,
+  "full_reader_and_selection_audit_pending": true,
+  "factor_adopted": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "unseen_generalization_proven": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "old_round_scores_added": false,
+  "supervisor_coordination": {
+    "peer_proposes_compatible_core": true,
+    "own_core_completed_CPU_only": true,
+    "own_further_core_work_stopped": true,
+    "own_queue_B_budget_integration_scope": true,
+    "one_production_core_to_be_selected_after_exact_peer_review": true,
+    "notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6096026701"
+  }
+}
