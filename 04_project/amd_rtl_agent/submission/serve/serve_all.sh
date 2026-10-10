@@ -293,8 +293,9 @@ while true; do
           say "本脚本启动的进程已不在，重新启动"
           start_agent && FAIL_AGENT=0
         elif pid_is_ours "$AGENT_PIDFILE" agent; then
-          say "进程 $AGENT_PID 确认为本脚本启动且无响应，重启"
-          stop_ours "$AGENT_PIDFILE" agent && start_agent && FAIL_AGENT=0
+          # Serial HTTP health waits behind solve. A live owned process is
+          # not evidence of a crash; stopping it would cancel valid work.
+          say "进程 $AGENT_PID 仍存活，health 可能等待当前 solve；保留进程并告警，不自动重启"
         else
           say "⚠ $AGENT_PORT 无响应，但占用者不是本脚本启动的，不动它"
         fi

@@ -21,7 +21,8 @@
     "start_command": "./serve/llama.sh",
     "port": 8000,
     "supervisor": "serve/serve_all.sh",
-    "supervisor_sha256": "5fc0208a0c7bf55b96f0d6be9056a2a6af334f98aed587e7aff4cda9d75501e9"
+    "supervisor_sha256": "6974426a9b3664a915c35f1a90cb80c0f7b5d35dd83f8d1da2638f59a740896b",
+    "agent_unresponsive_policy": "A live owned agent is retained and warned; serialized health can wait behind solve. Restart only after the recorded process has exited. No automatic retry of the failed request."
   },
   "endpoints": {
     "solve": "./run.sh",
@@ -46,7 +47,7 @@
   },
   "runtime": {
     "path": "agent/runtime.py",
-    "sha256": "6db8d1fea8318082ce1c8b1d09f805cbc27c75f0807f1c01e384ecd32305b6ea"
+    "sha256": "8367c010bbef35e4de40fb8b1bdfc1edb1d095016c32d2ebdce6093d48112268"
   },
   "candidate_components": {
     "prompt_probe": {
@@ -81,7 +82,7 @@
   "contract": {
     "health": "GET/v1/health with bearer auth; CPU auth and blocked readiness covered. Actual model, version subprocess and resource qualification pending.",
     "solve": "POST/v1/solve and run.sh use the same selected chain. Exact official response fields; serial main-thread server. Prior7284 conformance does not qualify this revision.",
-    "sigterm": "One10second reserve shared by native cleanup and model idle recovery using first cancellation timestamp; integrated CPU signal/child cases passed. Real model/EDA qualification pending.",
+    "sigterm": "One10second cleanup/model recovery reserve, then preserved InterruptedError causes the HTTP service to exit. Three AMD CPU signal paths (transport/native/recovery failure) pass; actual model/EDA cancellation remains unqualified.",
     "evidence": "Every HTTP request gets a unique private RTL_EVIDENCE_DIR directory (default EDA_TMP/rtl-evidence). No cache/resume; local native scratch removed only after verified cleanup, otherwise retained and runtime blocked.",
     "bind": "127.0.0.1 only",
     "formal_acceptance": false
@@ -133,16 +134,18 @@
     },
     "transport_scope": "CLI and serialHTTP main thread; same local fixed model endpoint; request budget and owned native stages. Outer AMD resource/isolation admission remains separate and is not inherited by this package.",
     "validation": {
-      "status": "seven_AMD_CPU_integration_cases_passed",
-      "tests": 7,
-      "test_source_sha256": "d893f6c9a5f7fbd3ea9efe519a7b75dccecb903ac8a5c8e029851323edfed004",
-      "tested_manifest_sha256": "ebd42749d069d6d8baf72bf79d0f09cef7a659b70148e81ead4c0e0e7c306e87",
-      "process_receipt_sha256": "eb00635c0911efbc893830ac4a7b4c941f8470aa5bf1fad8ad1edb2aa42ffaae",
-      "test_stderr_sha256": "6b4359cd204559587c17b6d66b2f88ae80cc334f12b6a8d5c92a6a2c4c6ff039",
-      "source_zip_sha256": "242595afabbce40bb25b67816b733c1ebf3dbed4852a3b9ae6332b34ee22786b",
-      "scope": "Synthetic model/EDA output; actual serial HTTP, runtime.main CLI dispatch, wallclock signal deadline and CPU child cleanup. Baseline subprocess stubbed. No real model, EDA, FIFO, deployment or formal qualification.",
-      "post_test_changes": "Module documentation in deadline_supervisor only, manifest evidence metadata and documentation. Executable function ASTs and other 23 bound files unchanged.",
-      "original_failure_retained": true
+      "status": "eleven_AMD_CPU_integration_cases_passed",
+      "tests": 11,
+      "test_source_sha256": "f0e5b128581627327a3f0488a85d5283063d309cff7b842b364497e8859f264a",
+      "process_receipt_sha256": "410f05a65bf7379aff967cdec1c1025d5eed28ddf19dcbb9f3fc7263461f28d0",
+      "test_stderr_sha256": "a6fdeb9405ade87c7c28e9c73986cae6c39f9cb6b0aa93c2bcd5ae78158b2f95",
+      "source_zip_sha256": "e1f068cca8a78d859d823e819451489ca9a1cf707d6d5f8bb9b762ca99f00549",
+      "tested_manifest_sha256": "8b2de277fa8d19ebb556018476990836b494342ea2bddf579bf52804973333bb",
+      "scope": "Synthetic model/EDA and HTTP baseline subprocess stub. Real serial HTTP, CLI main, signal deadline, CPU child cleanup; three real HTTP SIGTERM paths now exit; bounded real guard loop preserves a live child on delayed health and restarts an exited one. No real model/EDA/FIFO/deployment/formal qualification.",
+      "prior_seven_case_receipt_sha256": "eb00635c0911efbc893830ac4a7b4c941f8470aa5bf1fad8ad1edb2aa42ffaae",
+      "pre_fix_HTTP_failure_receipt_sha256": "cc44c18f0e228649debaf03856747015310eeb217e45818bf6a5f5250dd4adff",
+      "pre_fix_guard_failure_receipt_sha256": "182568563859ca6640058478ddf18507fd79cd83727dd2b2ba2a4ace09a2b6b4",
+      "post_test_changes": "Manifest validation metadata and documentation only; executable source and test bytes unchanged."
     },
     "files": {
       "agent/candidate_worker.py": "da8d3f1035ed79476b3597af9c557e11acdfe38299a9df3efa0580f47b1af921",
@@ -160,7 +163,7 @@
       "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
       "agent/prompt_probe.py": "777e21771c26a01e7671df2567d82dc5eec84629bf3e521949452f85b03ee35d",
       "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
-      "agent/runtime.py": "6db8d1fea8318082ce1c8b1d09f805cbc27c75f0807f1c01e384ecd32305b6ea",
+      "agent/runtime.py": "8367c010bbef35e4de40fb8b1bdfc1edb1d095016c32d2ebdce6093d48112268",
       "agent/shared_budget.py": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
       "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
       "agent/table_feedback.py": "911911f1f4d77857493425ffa69802afee2f4d706c352c64e9e71c39d82b0d83",

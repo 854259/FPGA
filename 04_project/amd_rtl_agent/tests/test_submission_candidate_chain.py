@@ -1,5 +1,6 @@
 """AMD-only whole submission wiring with synthetic transport/tools, no model or EDA."""
 import contextlib
+import http.client
 import hashlib
 import io
 import json
@@ -54,6 +55,7 @@ class SyntheticIO:
         self.baseline_commands = []
         self.stage_commands = []
         self.slow_next = scenario == 'one_timeout'
+        self.real_owned = deadline_supervisor.owned_command
 
     def open(self, request, *args, **kwargs):
         url = getattr(request, 'full_url', str(request))
@@ -64,6 +66,10 @@ class SyntheticIO:
         elif url == 'http://127.0.0.1:8000/slots':
             value = [dict(id=0, is_processing=False)]
         elif url == 'http://127.0.0.1:8000/v1/chat/completions':
+            if self.scenario in ('cancel_transport', 'cancel_recovery'):
+                Path(os.environ['EDA_TMP']).parent.joinpath('cancel-at.json').write_text(
+                    json.dumps(dict(monotonic=time.monotonic())))
+                os.kill(os.getpid(), signal.SIGTERM)
             body = json.loads(request.data)
             self.calls.append(body)
             repair = '\nPrevious candidate:\n' in body['messages'][1]['content']
@@ -79,6 +85,19 @@ class SyntheticIO:
 
     def owned(self, argv, cwd, log, seconds, **kwargs):
         log, cwd = Path(log), Path(cwd)
+        if self.scenario == 'cancel_native':
+            def cancel():
+                Path(os.environ['EDA_TMP']).parent.joinpath('cancel-at.json').write_text(
+                    json.dumps(dict(monotonic=time.monotonic())))
+                os.kill(os.getpid(), signal.SIGTERM)
+            timer = threading.Timer(.15, cancel)
+            timer.start()
+            try:
+                return self.real_owned([sys.executable, '-B', '-c', 'import time;time.sleep(20)'],
+                                       cwd, log, seconds, **kwargs)
+            finally:
+                timer.cancel()
+                timer.join()
         text = ''
         if len(argv) >= 6 and Path(argv[2]).name == 'baseline.py':
             self.baseline_commands.append(argv)
@@ -118,6 +137,13 @@ def fixture(action, root, scenario):
                       FPGACHINA_TOKEN='synthetic-test-token')
     fake = SyntheticIO(scenario)
     with fake.installed():
+        if scenario == 'cancel_recovery':
+            actual_idle = candidate_worker.model_idle
+            def failed_recovery(budget, opener, *, allow_busy=False):
+                if allow_busy:
+                    raise RuntimeError('Synthetic recovery failure after cancellation')
+                return actual_idle(budget, opener)
+            candidate_worker.model_idle = failed_recovery
         if action == 'http':
             server = runtime.HTTPServer(('127.0.0.1', 0), runtime.Handler)
             print(json.dumps(dict(port=server.server_port, pid=os.getpid())), flush=True)
@@ -313,6 +339,81 @@ class SubmissionChainTests(unittest.TestCase):
         self.assertTrue(cleanup['verified'] and recovery['complete'])
         self.assertLess(time.monotonic() - start, 2)
         self.assertEqual(fake.calls, [])
+
+    def cancellation_service_case(self, scenario):
+        with self.server(scenario) as (port, proc):
+            started = time.monotonic()
+            try:
+                self.request(port, self.data('cancel-service'))
+            except (OSError, http.client.RemoteDisconnected):
+                pass
+            self.assertEqual(proc.wait(timeout=2), 1)
+            self.assertFalse(Path('/proc', str(proc.pid)).exists())
+            cancelled = json.loads((self.root / 'cancel-at.json').read_text())['monotonic']
+            self.assertLess(time.monotonic() - cancelled, 2)
+            records = list((self.root / 'evidence').glob('request-*/out/OWNED_CLEANUP.json'))
+            self.assertEqual(len(records), 1)
+            cleanup = json.loads(records[0].read_text())
+            self.assertTrue(cleanup['verified'])
+            self.assertLessEqual(cleanup['completed_monotonic'], cancelled + 10.1)
+            print(json.dumps(dict(case=scenario, service_retired=True,
+                                  elapsed_s=time.monotonic() - started, cleanup=cleanup)))
+
+    def test_http_sigterm_during_transport_exits_service(self):
+        self.cancellation_service_case('cancel_transport')
+
+    def test_http_sigterm_during_native_exits_service(self):
+        self.cancellation_service_case('cancel_native')
+
+    def test_http_sigterm_with_failed_recovery_still_exits_service(self):
+        self.cancellation_service_case('cancel_recovery')
+        records = list((self.root / 'evidence').glob('request-*/out/MODEL_RECOVERY.json'))
+        self.assertFalse(json.loads(records[0].read_text())['complete'])
+        self.assertTrue(list((self.root / 'evidence').glob('request-*/out/SCRATCH_RETAINED.json')))
+
+    def test_supervisor_health_delay_keeps_live_agent_and_restarts_exited_agent(self):
+        source = (PKG / 'serve/serve_all.sh').read_text()
+        prefix = source.split('# ---- 首次启动 ----')[0]
+        loop = source[source.index('while true; do'):].replace('while true; do', 'for cycle in 1 2; do', 1)
+        for alive in (True, False):
+            folder = self.root / ('alive' if alive else 'exited')
+            folder.mkdir()
+            proc = subprocess.Popen([sys.executable, '-B', '-c', 'import time;time.sleep(20)'])
+            pid = proc.pid
+            try:
+                if not alive:
+                    proc.terminate()
+                    proc.wait(timeout=2)
+                (folder / 'agent-serve.pid').write_text(str(pid))
+                overrides = """
+sleep() { :; }
+model_state() { return 0; }
+agent_state() { return 2; }
+pid_is_ours() { return 0; }
+stop_ours() { echo called >> "$LOG_DIR/unexpected-stop"; return 0; }
+start_agent() { echo called >> "$LOG_DIR/start"; return 0; }
+FAIL_MODEL=0
+FAIL_AGENT=0
+NOTREADY_AGENT=0
+"""
+                control = folder / 'guard-control.sh'
+                control.write_text(prefix + overrides + loop)
+                result = subprocess.run(['/bin/bash', str(control)], cwd=folder,
+                    env=dict(os.environ, KIT=str(PKG.parent), LOG_DIR=str(folder),
+                             FPGACHINA_TOKEN='synthetic-test-token'), capture_output=True,
+                    text=True, timeout=5)
+                (folder / 'stdout.txt').write_text(result.stdout)
+                (folder / 'stderr.txt').write_text(result.stderr)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertFalse((folder / 'unexpected-stop').exists())
+                self.assertEqual((folder / 'start').exists(), not alive)
+                self.assertEqual(proc.poll() is None, alive)
+                print(json.dumps(dict(case='live' if alive else 'exited', pid=pid,
+                                      stopped=False, restart_called=not alive)))
+            finally:
+                if proc.poll() is None:
+                    proc.terminate()
+                proc.wait(timeout=2)
 
     def test_detached_tool_child_is_reaped_before_next_request(self):
         real_owned = deadline_supervisor.owned_command
