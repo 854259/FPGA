@@ -1,7 +1,7 @@
 {
   "schema": "owned_fifo_wait_recovery_20261009_v1",
-  "updated_at": "2026-10-09T22:05:27.218046+08:00",
-  "status": "original133134_wait_monitors_recovered_watcher_retired_tasks_still_queued",
+  "updated_at": "2026-10-10T11:19:00+08:00",
+  "status": "original133_native_verified_completed_original134_running",
   "problem": {
     "fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
     "waiting_lifetime_seconds": 86400,
@@ -131,7 +131,7 @@
   "formal_score_gain": false,
   "full_goal_complete": false,
   "selection": "Official total score; model-generated design and unchanged current experiment freezes.",
-  "next": "Follow original132 plus receipt-bound133/134 monitors at the established cadence. After132 exits, retain133 native prerequisite before134. Original133134 watcher is complete and retired; never relaunch it. Peer owns135136. Report complete same-run results, not partial rows; formal full goal remains unachieved.",
+  "next": "Follow original134 actual running handle and its frozen135-row terminal gate; peer owns135136. Original132 is terminal failed/incomplete, not pending a48h continuation. Do not restart either retired watcher or replay failed132. Retain complete full-goal obligations for subsequent selected candidate validation.",
   "production_recovery": {
     "observed_at_beijing": "2026-10-09T21:15:00.747463+08:00",
     "status": "both_original_wait_monitors_recovered_and_unique_live_tasks_not_started",
@@ -213,7 +213,7 @@
       "private_raw_in_git": false
     },
     "limitations": [
-      "Actual waiting-monitor recovery only; neither original133 native nor134 model comparison has executed.",
+      "At the original recovery observation neither133 native nor134 comparison had executed; this historical observation is superseded by native133_terminal and current running134 status.",
       "Watch/result is complete for133134 only. Follow actual recovered monitor identities; do not restart the retired watcher.",
       "135136 and any second waiting window remain peer-owned; original132 total48h continuation remains a separate live watcher.",
       "No new score or formal32GB/container/recovery acceptance is supplied by this narrow recovery."
@@ -265,5 +265,65 @@
       "No result, score gain, adoption or complete acceptance; wait true original133 and134 exits.",
       "Reader combined stdout.bin and original180s supervision reused; normal_completion also requires returncode0 and actual retirement."
     ]
+  },
+  "native133_terminal": {
+    "schema": "native133_independent_terminal_inspection_v1",
+    "at": "2026-10-10T03:16:05.220467+00:00",
+    "native_result_sha256": "2caf8c486f45993d38e0f9ee3b98b25244ea9c4aa249641c17e98a7994d1c20f",
+    "source_manifest_sha256": "c989a1135c05df06d011700dc87ca9a497e8ccbb4092915c61656ae01d0ce384",
+    "source_bindings_verified": 11,
+    "guard_sha256": "1b13f756f6141b413875c050ebb22fefb26b00655fe19a0f95ef00b9c53e2213",
+    "external_receipt_sha256": "3aac27bd4cb508f45f27425b28497ef8de5c4be413377395b6df6bf16208a43b",
+    "native_cases": 1,
+    "real_EDA_commands": 3,
+    "real_model_calls": 0,
+    "observed_checks": 8,
+    "observed_mismatches": 4,
+    "distinct_counterexamples": 2,
+    "scope": "One previously frozen synthetic native multi-counterexample case; does not measure RTL accuracy or unseen generalization.",
+    "normal_rc0_exec_reaped_empty_groups": true,
+    "actual133roles_and_children_retired": true,
+    "guard_cleanup_model_protected_slot_receipts_hold": true,
+    "guard_elapsed_s": 6.521790346130729,
+    "outer_measured_complete_elapsed_s": 6.297543991357088,
+    "134_ticket_state": "running",
+    "134_active_roles": {
+      "runner": {
+        "pid": 4175417,
+        "live": true,
+        "state": "S",
+        "starttime": "882505704"
+      },
+      "child": {
+        "pid": 394494,
+        "live": true,
+        "state": "S",
+        "starttime": "887569393"
+      }
+    },
+    "old_controls_rerun": false,
+    "new_FIFO": 0,
+    "complete_133_original_execution": true,
+    "private_archive": {
+      "path": "/workspace/team/activity/fpga_teammate/artifacts/native133-terminal-20261010-v1/EVIDENCE.zip",
+      "sha256": "b4faee3b1120324b8a5b8d8564c5f915818bcba9d05abe03783d1f5b60a6431e",
+      "bytes": 129382,
+      "members": 97,
+      "indexed_files": 96,
+      "indexed_bytes": 308302,
+      "manifest_sha256": "7df5390bd31ee6cb2569eff6633b4f744da140c27daa6f3a69c5ab72ab4c4bfd",
+      "all_archived_and_current_bindings_match": true,
+      "extracted": false,
+      "local_path": "D:\\HUST\\IC\\FPGA\\05_handoff\\independent_validation_20261004\\waveform_resource_fix_20261006\\table_multi_feedback_pair\\native133_actual\\EVIDENCE.zip",
+      "local_all_members_verified": true,
+      "archive_extracted": false,
+      "local_verify_sha256": "1dde73e6084a77c307d6c93a01755804499ab4ab29d201ea3a43c2d6144710d7"
+    }
+  },
+  "preceding132_disposition": {
+    "state": "failed_released_after_inspection",
+    "replayed": false,
+    "whole_batch_complete": false,
+    "report": "03_analysis/helper_extraction_20261004/FULL132_WALL48H_20261009.json"
   }
 }

@@ -1,7 +1,7 @@
 {
   "schema": "full132_total48h_authorized_amendment_v1",
-  "updated_at": "2026-10-10T08:10:43+08:00",
-  "status": "actual_suffix_continuation_verified_running",
+  "updated_at": "2026-10-10T11:19:00+08:00",
+  "status": "failed132_released_without_replay_original_full_batch_incomplete",
   "user_request": "能调整成48h吗",
   "scope": {
     "ticket": 132,
@@ -89,7 +89,8 @@
     "full2340_required": true,
     "adopted_returncode": null,
     "success_requires": "Bound adopted ticket completed AND new guard complete/passed/stage_rc0/verified cleanup/model/protected/slot/idle AND actual roles retired AND all original2340 receipts verified. Original normal rc0 path remains accepted. Use original exclusive READ_INTENT and bounded180s once reader.",
-    "elapsed": "Report actual original start through final completion including any handoff gap; retain both original36h PLAN and explicit48h amendment."
+    "elapsed": "Report actual original start through final completion including any handoff gap; retain both original36h PLAN and explicit48h amendment.",
+    "current_disposition": "Original132 failed incomplete; full-success terminal reader must not run. No replay or suffix continuation under this frozen run."
   },
   "evidence": {
     "zip_sha256": "945002671fcf92bcd0c5e09593ccbd201f5d04d64575a9babc2b0080d1a1e00b",
@@ -117,8 +118,8 @@
     "Formal32GB/container/complete RTLLM and overall acceptance remain pending."
   ],
   "actual_continuation": {
-    "updated_at": "2026-10-10T08:10:43+08:00",
-    "status": "actual_suffix_continuation_verified_running",
+    "updated_at": "2026-10-10T11:19:00+08:00",
+    "status": "suffix_failed_released_without_replay_or_full_score",
     "actual_adopted_at_utc": "2026-10-10T00:00:36.334844+00:00",
     "original_boundary": {
       "event": {
@@ -228,18 +229,14 @@
       "parent": true
     },
     "latest_observation": {
-      "at_beijing": "2026-10-10T08:09:54.113020+08:00",
-      "sealed": 2110,
-      "terminal": 2110,
-      "total": 2340,
-      "ticket_state": "adopted_running",
-      "new_guard_complete": false,
-      "actual_roles_live": true,
-      "model_same_identity_live": true,
-      "remaining_tickets": "133-136 queued under their actual recovered monitors",
-      "frozen39_unchanged": true,
-      "original_PLAN_and_spec_unchanged": true,
-      "reader132_and134_intents_absent": true
+      "observed_at": "2026-10-10T11:16:05+08:00",
+      "132_state": "failed_released_after_inspection",
+      "SEALED": 2191,
+      "TERMINAL": 2192,
+      "133_state": "completed",
+      "134_state": "running",
+      "135136": "peer_owned_queued",
+      "full_goal_complete": false
     },
     "private_archive": {
       "archive_dir": "/workspace/team/activity/fpga_teammate/artifacts/full132-wall48h-actual-20261010-v1",
@@ -317,6 +314,226 @@
     "new_model_calls_by_this_verification": 0,
     "new_eda_calls_by_this_verification": 0,
     "new_fifo_tickets": 0,
-    "terminal_reader_executed": false
+    "terminal_reader_executed": false,
+    "failure_exit": {
+      "schema": "full132_failure_inspection_v1",
+      "at": "2026-10-10T03:13:15.918488+00:00",
+      "failed_row": "row_002191",
+      "confirmed_completed_sealed": 2191,
+      "failed_started_rows": 1,
+      "never_started_rows": 148,
+      "original_total_rows": 2340,
+      "ticket_before_sha256": "230a2b6ec6940f03481d7dd56a87728dd0babcf86e48304b41cda311b70c7988",
+      "guard_sha256": "8fc7b57305da1d82408ca702ff67fc696a727754f8de6ae906f3a0f41caef8b6",
+      "stage_log_sha256": "939c503ee925d2ebbb2960fc0c2f0c578ffc1cb8277e8ff56d45f2bb88a76ac0",
+      "failed_terminal_sha256": "780ada3d6b3cd0f989f1bf861350e0c6ec6d05a0bf54e75a02879d0639ece445",
+      "first_response_received": true,
+      "first_request_elapsed_s": 283.07791212014854,
+      "first_completion_tokens": 8192,
+      "first_finish_reason": "length",
+      "recorded_client_requests": 2,
+      "confirmed_responses": 1,
+      "repair_response_unknown": true,
+      "original_actual_calls": null,
+      "original_unconfirmed_calls": null,
+      "grade": null,
+      "outer_supervision_s": 310.02313399501145,
+      "first_source_check_no_complete_endmodule": true,
+      "roles": {
+        "342815": {
+          "pid": 342815,
+          "state": "Z",
+          "starttime": "886408575",
+          "live": false
+        },
+        "342816": {
+          "pid": 342816,
+          "live": false
+        },
+        "342817": {
+          "pid": 342817,
+          "state": "Z",
+          "starttime": "886408576",
+          "live": false
+        },
+        "342821": {
+          "pid": 342821,
+          "live": false
+        },
+        "2930407": {
+          "pid": 2930407,
+          "state": "Z",
+          "starttime": "873442383",
+          "live": false
+        },
+        "2938975": {
+          "pid": 2938975,
+          "live": false
+        },
+        "4053997": {
+          "pid": 4053997,
+          "state": "Z",
+          "starttime": "881538083",
+          "live": false
+        }
+      },
+      "model": {
+        "pid": 2013333,
+        "state": "S",
+        "starttime": "823869819",
+        "live": true
+      },
+      "guard_cleanup_verified": true,
+      "guard_remaining": [],
+      "guard_success": false,
+      "stage_rc": 1,
+      "failure_class": "first-output truncation then incomplete repair supervision; not original total48h stop",
+      "prefix_seal_terminal_bindings": 2191,
+      "prefix_runtime_files_reaudited": false,
+      "failed_row_replayed": false,
+      "full_success_reader_executed": false,
+      "next_action": "Existing task_fifo release-held to terminal failure; no suffix continuation or completed status",
+      "guard_model_and_protected_unchanged": true,
+      "guard_own_slot_released": true,
+      "original_unknown_call_fields_preserved": true,
+      "release": {
+        "started_at": "2026-10-10T03:13:55.037221+00:00",
+        "finished_at": "2026-10-10T03:13:55.151306+00:00",
+        "returncode": 0,
+        "ticket_state": "failed_released_after_inspection",
+        "ticket_after_sha256": "f5d656969ecb9f8293e103399b08691b80507f9e6b1d5545c3cfae8e298c6bbf",
+        "released_at": "2026-10-10T03:13:55.123671+00:00",
+        "inspection_sha256": "a2e93b11b383bbf8fcfa68c84cc6c186d5751483bca39dd7cd3df17c71654e23",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "no_retry": true
+      },
+      "private_archive": {
+        "path": "/workspace/team/activity/fpga_teammate/artifacts/full132-failure-exit-20261010-v1/EVIDENCE.zip",
+        "sha256": "a40414019cf7cdda282b83388b7107459233d2dd54cddbfe83dff2de1b14bc71",
+        "bytes": 681636,
+        "members": 67,
+        "indexed_files": 66,
+        "indexed_bytes": 6649995,
+        "manifest_sha256": "d22ad665b4e6dba8c096427e0f10bf0c98f48a8f91459776f2d015981eb56d38",
+        "all_archived_and_current_bindings_match": true,
+        "extracted": false,
+        "local_path": "D:\\HUST\\IC\\FPGA\\05_handoff\\independent_validation_20261004\\waveform_resource_fix_20261006\\full132_wall48h\\failure_exit\\EVIDENCE.zip",
+        "local_all_members_verified": true,
+        "archive_extracted": false,
+        "local_verify_sha256": "29840a50aae26e048f165e7b80566eaab9a2d5ec2ecf1d5f6d26f55277944c24"
+      },
+      "issue_comment": 6093199345,
+      "goal_complete": false
+    }
+  },
+  "failure_exit": {
+    "schema": "full132_failure_inspection_v1",
+    "at": "2026-10-10T03:13:15.918488+00:00",
+    "failed_row": "row_002191",
+    "confirmed_completed_sealed": 2191,
+    "failed_started_rows": 1,
+    "never_started_rows": 148,
+    "original_total_rows": 2340,
+    "ticket_before_sha256": "230a2b6ec6940f03481d7dd56a87728dd0babcf86e48304b41cda311b70c7988",
+    "guard_sha256": "8fc7b57305da1d82408ca702ff67fc696a727754f8de6ae906f3a0f41caef8b6",
+    "stage_log_sha256": "939c503ee925d2ebbb2960fc0c2f0c578ffc1cb8277e8ff56d45f2bb88a76ac0",
+    "failed_terminal_sha256": "780ada3d6b3cd0f989f1bf861350e0c6ec6d05a0bf54e75a02879d0639ece445",
+    "first_response_received": true,
+    "first_request_elapsed_s": 283.07791212014854,
+    "first_completion_tokens": 8192,
+    "first_finish_reason": "length",
+    "recorded_client_requests": 2,
+    "confirmed_responses": 1,
+    "repair_response_unknown": true,
+    "original_actual_calls": null,
+    "original_unconfirmed_calls": null,
+    "grade": null,
+    "outer_supervision_s": 310.02313399501145,
+    "first_source_check_no_complete_endmodule": true,
+    "roles": {
+      "342815": {
+        "pid": 342815,
+        "state": "Z",
+        "starttime": "886408575",
+        "live": false
+      },
+      "342816": {
+        "pid": 342816,
+        "live": false
+      },
+      "342817": {
+        "pid": 342817,
+        "state": "Z",
+        "starttime": "886408576",
+        "live": false
+      },
+      "342821": {
+        "pid": 342821,
+        "live": false
+      },
+      "2930407": {
+        "pid": 2930407,
+        "state": "Z",
+        "starttime": "873442383",
+        "live": false
+      },
+      "2938975": {
+        "pid": 2938975,
+        "live": false
+      },
+      "4053997": {
+        "pid": 4053997,
+        "state": "Z",
+        "starttime": "881538083",
+        "live": false
+      }
+    },
+    "model": {
+      "pid": 2013333,
+      "state": "S",
+      "starttime": "823869819",
+      "live": true
+    },
+    "guard_cleanup_verified": true,
+    "guard_remaining": [],
+    "guard_success": false,
+    "stage_rc": 1,
+    "failure_class": "first-output truncation then incomplete repair supervision; not original total48h stop",
+    "prefix_seal_terminal_bindings": 2191,
+    "prefix_runtime_files_reaudited": false,
+    "failed_row_replayed": false,
+    "full_success_reader_executed": false,
+    "next_action": "Existing task_fifo release-held to terminal failure; no suffix continuation or completed status",
+    "guard_model_and_protected_unchanged": true,
+    "guard_own_slot_released": true,
+    "original_unknown_call_fields_preserved": true,
+    "release": {
+      "started_at": "2026-10-10T03:13:55.037221+00:00",
+      "finished_at": "2026-10-10T03:13:55.151306+00:00",
+      "returncode": 0,
+      "ticket_state": "failed_released_after_inspection",
+      "ticket_after_sha256": "f5d656969ecb9f8293e103399b08691b80507f9e6b1d5545c3cfae8e298c6bbf",
+      "released_at": "2026-10-10T03:13:55.123671+00:00",
+      "inspection_sha256": "a2e93b11b383bbf8fcfa68c84cc6c186d5751483bca39dd7cd3df17c71654e23",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "no_retry": true
+    },
+    "private_archive": {
+      "path": "/workspace/team/activity/fpga_teammate/artifacts/full132-failure-exit-20261010-v1/EVIDENCE.zip",
+      "sha256": "a40414019cf7cdda282b83388b7107459233d2dd54cddbfe83dff2de1b14bc71",
+      "bytes": 681636,
+      "members": 67,
+      "indexed_files": 66,
+      "indexed_bytes": 6649995,
+      "manifest_sha256": "d22ad665b4e6dba8c096427e0f10bf0c98f48a8f91459776f2d015981eb56d38",
+      "all_archived_and_current_bindings_match": true,
+      "extracted": false,
+      "local_path": "D:\\HUST\\IC\\FPGA\\05_handoff\\independent_validation_20261004\\waveform_resource_fix_20261006\\full132_wall48h\\failure_exit\\EVIDENCE.zip",
+      "local_all_members_verified": true,
+      "archive_extracted": false,
+      "local_verify_sha256": "29840a50aae26e048f165e7b80566eaab9a2d5ec2ecf1d5f6d26f55277944c24"
+    },
+    "issue_comment": 6093199345,
+    "goal_complete": false
   }
 }
