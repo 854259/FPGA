@@ -8,6 +8,7 @@ import datetime
 import hashlib
 import importlib.util
 import json
+import math
 import os
 from pathlib import Path
 import signal
@@ -302,60 +303,114 @@ def row_worker(args):
     return 0 if row["valid"] else 1
 
 
-def owned_command(argv, cwd, log, seconds):
-    """Clean this exact stage group on timeout, cancellation or parent-first exit."""
+def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.):
+    """Charge launch/wait to one monotonic deadline; clean only the owned group.
+
+    Callers with an earlier parent start must pass its absolute deadline. Cleanup
+    shares one reserve (at most 10 seconds), never a fresh reserve per operation.
+    A delayed OS/Popen call cannot be preempted here: late returns fail closed.
+    Linux callers must enable child-subreaping before invoking this function.
+    """
     started = time.monotonic()
+    for name, value in (("seconds", seconds), ("cleanup_seconds", cleanup_seconds),
+                        ("deadline", deadline)):
+        if name == "deadline" and value is None:
+            continue
+        try:
+            valid = not isinstance(value, bool) and isinstance(value, (int, float)) and math.isfinite(value)
+        except OverflowError:
+            valid = False
+        if not valid or (name != "deadline" and value <= 0):
+            raise ValueError(name + " must be a finite " + ("number" if name == "deadline" else "positive number"))
+    if cleanup_seconds > 10:
+        raise ValueError("cleanup_seconds cannot exceed the 10 second total reserve")
+    deadline = min(started + seconds, deadline) if deadline is not None else started + seconds
     proc = None
+    alive = []
+    phase = "run"
+    cancel_signal = None
+    cleanup_started = None
+    cleanup_deadline = None
     result = {"timeout": False, "launch_error": None, "returncode": None, "group_signals": []}
+
     def cancelled(signum, frame):
+        nonlocal cancel_signal
+        cancel_signal = signum
+        # Defer Python's exception until Popen hands us ownership, and keep a
+        # second cancellation from interrupting bounded cleanup. No child mask.
+        if phase in ("launch", "cleanup"):
+            return
         raise InterruptedError("owned stage cancelled by signal " + str(signum))
+
     previous = {sig: signal.signal(sig, cancelled) for sig in (signal.SIGTERM, signal.SIGINT)}
     try:
         with Path(log).open("xb") as stream:
             try:
-                proc = subprocess.Popen(argv, cwd=cwd, stdout=stream, stderr=subprocess.STDOUT,
-                                        stdin=subprocess.DEVNULL, start_new_session=True)
-                proc.wait(timeout=seconds)
+                if time.monotonic() >= deadline:
+                    result["timeout"] = True
+                else:
+                    phase = "launch"
+                    try:
+                        proc = subprocess.Popen(argv, cwd=cwd, stdout=stream, stderr=subprocess.STDOUT,
+                                                stdin=subprocess.DEVNULL, start_new_session=True)
+                    finally:
+                        phase = "run"
+                    if cancel_signal is not None:
+                        raise InterruptedError("owned stage cancelled by signal " + str(cancel_signal))
+                    proc.wait(timeout=max(0., deadline - time.monotonic()))
+                    result["timeout"] = time.monotonic() >= deadline
             except subprocess.TimeoutExpired:
                 result["timeout"] = True
+            except InterruptedError:
+                raise
             except OSError as exc:
                 result["launch_error"] = str(exc)
             finally:
+                phase = "cleanup"
+                cleanup_started = time.monotonic()
+                cleanup_deadline = min(cleanup_started, deadline) + cleanup_seconds
                 if proc is not None:
                     try:
                         os.killpg(proc.pid, signal.SIGKILL)
                         result["group_signals"].append("SIGKILL")
                     except ProcessLookupError:
                         pass
-                    proc.wait(timeout=6)
+                    try:
+                        proc.wait(timeout=max(0., cleanup_deadline - time.monotonic()))
+                    except subprocess.TimeoutExpired:
+                        pass
+                    while True:
+                        # Reap the leader through Popen first, then only adopted
+                        # children in this exact owned PG, within the SAME end.
+                        if proc.poll() is not None:
+                            try:
+                                while os.waitpid(-proc.pid, os.WNOHANG)[0]:
+                                    pass
+                            except ChildProcessError:
+                                pass
+                        alive = []
+                        for directory in Path("/proc").glob("[0-9]*"):
+                            try:
+                                fields = (directory / "stat").read_text().rsplit(")", 1)[1].split()
+                                if int(fields[2]) == proc.pid:
+                                    alive.append(int(directory.name))
+                            except (OSError, IndexError, ValueError):
+                                continue
+                        if not alive and proc.returncode is not None:
+                            break
+                        remaining = cleanup_deadline - time.monotonic()
+                        if remaining <= 0:
+                            raise RuntimeError("owned process cleanup deadline exceeded: " + str(alive))
+                        time.sleep(min(.025, remaining))
                     result["returncode"] = proc.returncode
     finally:
         for sig, handler in previous.items():
             signal.signal(sig, handler)
-    alive = []
-    if proc is not None:
-        cleanup_deadline = time.monotonic() + 6
-        while True:
-            # As a subreaper, reap only adopted children in this exact owned PG.
-            try:
-                while os.waitpid(-proc.pid, os.WNOHANG)[0]:
-                    pass
-            except ChildProcessError:
-                pass
-            alive = []
-            for directory in Path("/proc").glob("[0-9]*"):
-                try:
-                    fields = (directory / "stat").read_text().rsplit(")", 1)[1].split()
-                    if int(fields[2]) == proc.pid:
-                        alive.append(int(directory.name))
-                except (OSError, IndexError, ValueError):
-                    continue
-            if not alive or time.monotonic() >= cleanup_deadline:
-                break
-            time.sleep(.025)
-    if alive:
-        raise RuntimeError("owned process group still alive: " + str(alive))
+    if cancel_signal is not None:
+        raise InterruptedError("owned stage cancelled by signal " + str(cancel_signal))
     return {**result, "elapsed_s": time.monotonic() - started, "remaining_live_group": alive,
+            "started_monotonic": started, "deadline_monotonic": deadline,
+            "cleanup_started_monotonic": cleanup_started, "cleanup_deadline_monotonic": cleanup_deadline,
             "log": str(log), "log_sha256": sha(log), "log_bytes": Path(log).stat().st_size}
 
 

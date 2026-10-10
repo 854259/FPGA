@@ -5302,7 +5302,7 @@
       "no_rerun_or_missing_score_imputation": true
     }
   },
-    "updated_at": "2026-10-10T16:55:00+08:00",
+    "updated_at": "2026-10-10T17:33:00+08:00",
     "status": "live_device_binding_verified_full_delivery_pending",
     "owned_model_gpu_mapping": {
       "checked_at_utc": "2026-10-10T06:32:58.744538+00:00",
@@ -5363,7 +5363,7 @@
         "Observed owned DRM client is on card6/renderD133; previous host-wide card5/card7 high utilization must not be attributed to this model.",
         "Device-wide used bytes and process-client resident VRAM are different measurements taken at different instants; do not subtract them as an ownership or leak estimate.",
         "No device environment override was present in the three allowlisted variables; this does not prove process isolation.",
-        "The visible48GB device and instantaneous resident value below32GiB do not certify a physical32GB target, load/repair peaks, other descendants or full submission lifecycle.",
+        "The disclosed physical48GB capacity and instantaneous resident value below32GiB do not certify the official single-GPU occupancy<=32GB budget across loading/generation/repair,other descendants or full submission lifecycle.",
         "All formal32GB, isolation, full interface and recovery requirements remain pending."
       ],
       "new_model_calls": 0,
@@ -5394,7 +5394,7 @@
       "Official interface, isolation and reproducible complete delivery, each backed by its own evidence.",
       "Exact-source production CLI/new queue300s enforcement and real model cancellation/idle require evidence:137 row62 rawL3 overran303.791s and row64 was killed310.018s. HTTP-only absolute-deadline fixture observed expiry but original qualifier remains failed; no inherited old qualification or frozen-source hot edit."
     ],
-    "queue_scope": "132/137 failed incomplete,never replayed;133-136closed and137 fullAMD archive verified.138 sole running temporal9,65/135sealed16:50;first4controls audited. Parent failure-clock binding qualified only in syntheticCPU scope,not deployed;strict production deadline/cleanup/model recovery still unproven.",
+    "queue_scope": "Original132/137 remain failed incomplete,no replay.138 sole frozen temporal9,105sealed17:30:11;first7tasks audited. Single-supervisor integration needs outer310 absolute cleanup and ownership binding;production chain/model recovery/full156 remain unproven.",
     "encoding_correction": "Old goal summary text was intact UTF-8. PR225 expanded it to the complete current goal objective; earlier mojibake was terminal encoding, not file corruption.",
     "removed_financial_gate_reintroduced": false,
     "new_model_calls": 0,
@@ -8748,6 +8748,531 @@
     },
     "temporal_peer_preparation_20261010": {
   "actual138_execution_review": {
+  "seven_task_prefix_review": {
+    "schema": "temporal138_seven_task_development_prefix_v1",
+    "task_count": 7,
+    "rows": 105,
+    "tasks": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1",
+      "Prob110_fsm2",
+      "Prob111_fsm2s",
+      "Prob133_2014_q3fsm"
+    ],
+    "aggregate": {
+      "A": {
+        "rows": 35,
+        "L3": 25,
+        "coefficient_mean": 0.7714285714285715,
+        "requests": 35,
+        "solve_sum_s": 649.131358737126
+      },
+      "P": {
+        "rows": 35,
+        "L3": 30,
+        "coefficient_mean": 0.8857142857142858,
+        "requests": 40,
+        "solve_sum_s": 836.7401932310313
+      },
+      "B": {
+        "rows": 35,
+        "L3": 25,
+        "coefficient_mean": 0.7657142857142858,
+        "requests": 35,
+        "solve_sum_s": 807.7470286004245
+      }
+    },
+    "paired_P_minus_A_coefficient_per_task": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.8,
+      0
+    ],
+    "unseen_tasks": 0,
+    "official_total_score": null,
+    "scope": "Seven selected development tasks: five controls and two error targets. One target improved; no nine-task adoption or unseen generalization claim.",
+    "paired_P_minus_A_solve_sum_s": 187.6088344939053,
+    "same_prefix_B_ratio_A": 1.007462686567164,
+    "same_prefix_B_ratio_P": 1.1567164179104477
+  },
+  "second_error_target_independent_review": {
+    "schema": "independent_temporal138_second_error_target_originals_review_v1",
+    "at_utc": "2026-10-10T09:30:25.157040+00:00",
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "tasks": [
+      "Prob133_2014_q3fsm"
+    ],
+    "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+    "canonical_plan_sha256": "9fe77d93e27d810eabc94224c449e80da09e769c418e59f21218beb17b132e5c",
+    "source_files_including_spec": 30,
+    "execution_files": 3,
+    "official_files": 2,
+    "aggregate": {
+      "Prob133_2014_q3fsm": {
+        "A": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 5,
+            "2": 0,
+            "3": 0
+          },
+          "coefficient_mean": 0.2,
+          "requests": 5,
+          "solve_sum_s": 228.424948470667,
+          "max_solve_s": 45.896774185821414,
+          "unique_solution_sha256": [
+            "135fcba006d57fd9e0618bd2240a87038d4c72a098e43e7a9ea63a0c3e1fafba"
+          ]
+        },
+        "P": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 5,
+            "2": 0,
+            "3": 0
+          },
+          "coefficient_mean": 0.2,
+          "requests": 5,
+          "solve_sum_s": 301.37347146868706,
+          "max_solve_s": 61.15935471467674,
+          "unique_solution_sha256": [
+            "6bed938448ad6bd309f3b1b2d5e02e842116826d856504c676e4caa9c6e0baa1",
+            "b2148006504b9c1d09fe23d818c3dbc2045fe09fe0a41788c0f007ac8e188e85"
+          ]
+        },
+        "B": {
+          "rows": 5,
+          "levels": {
+            "0": 1,
+            "1": 4,
+            "2": 0,
+            "3": 0
+          },
+          "coefficient_mean": 0.16,
+          "requests": 5,
+          "solve_sum_s": 460.05052794888616,
+          "max_solve_s": 100.42802282609046,
+          "unique_solution_sha256": [
+            "074627bc9b25364fb7fa0c6ce3a77160860db77e9b888f2412cb0602b89649b6",
+            "bb4884ef229f9f3c157a006f1e6408fa9d0e303f5e043dce6e521aea6fd95e38"
+          ]
+        }
+      }
+    },
+    "paired_wire_reviews": [
+      {
+        "task": "Prob133_2014_q3fsm",
+        "sample": 0,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 14.424394434317946
+      },
+      {
+        "task": "Prob133_2014_q3fsm",
+        "sample": 1,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 15.7138890940696
+      },
+      {
+        "task": "Prob133_2014_q3fsm",
+        "sample": 2,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 14.169071460142732
+      },
+      {
+        "task": "Prob133_2014_q3fsm",
+        "sample": 3,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 14.320813039317727
+      },
+      {
+        "task": "Prob133_2014_q3fsm",
+        "sample": 4,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 14.320354970172048
+      }
+    ],
+    "bound_row_files": 555,
+    "unique_indexed_files": 570,
+    "unique_bytes": 1072793,
+    "row_file_index_sha256": "8cbef35705f9c2c32a43449d86f8fff11dba5cb4396ded25229a9267be7c2afe",
+    "all_solve_lt300": true,
+    "private_reference_or_tb_content_read": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "full_comparison_complete": false,
+    "independent_unseen": 0,
+    "row_indices": [
+      90,
+      104
+    ],
+    "normal_rows": 15,
+    "model_response_count": 10,
+    "all_model_finish_reason_stop": true
+  },
+  "six_task_prefix_review": {
+    "schema": "temporal138_six_task_development_prefix_v1",
+    "task_count": 6,
+    "rows": 90,
+    "tasks": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1",
+      "Prob110_fsm2",
+      "Prob111_fsm2s"
+    ],
+    "aggregate": {
+      "A": {
+        "rows": 30,
+        "L3": 25,
+        "coefficient_mean": 0.8666666666666667,
+        "requests": 30,
+        "solve_sum_s": 420.706410266459
+      },
+      "P": {
+        "rows": 30,
+        "L3": 30,
+        "coefficient_mean": 1,
+        "requests": 35,
+        "solve_sum_s": 535.3667217623442
+      },
+      "B": {
+        "rows": 30,
+        "L3": 25,
+        "coefficient_mean": 0.8666666666666667,
+        "requests": 30,
+        "solve_sum_s": 347.6965006515384
+      }
+    },
+    "paired_P_minus_A_coefficient_per_task": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.8
+    ],
+    "unseen_tasks": 0,
+    "official_total_score": null,
+    "scope": "Five seen controls plus first selected error target. One improved task cannot establish the nine-task result or generalization.",
+    "paired_P_minus_A_solve_sum_s": 114.66031149588525,
+    "same_prefix_B_ratio_A": 1,
+    "same_prefix_B_ratio_P": 1.1538461538461537
+  },
+  "five_control_prefix_review": {
+    "schema": "temporal138_five_control_development_prefix_v1",
+    "task_count": 5,
+    "rows": 75,
+    "controls": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1",
+      "Prob110_fsm2"
+    ],
+    "aggregate": {
+      "A": {
+        "rows": 25,
+        "L3": 25,
+        "coefficient_mean": 1,
+        "requests": 25,
+        "solve_sum_s": 343.34961728192866
+      },
+      "P": {
+        "rows": 25,
+        "L3": 25,
+        "coefficient_mean": 1,
+        "requests": 30,
+        "solve_sum_s": 468.27523089945316
+      },
+      "B": {
+        "rows": 25,
+        "L3": 20,
+        "coefficient_mean": 0.8400000000000001,
+        "requests": 25,
+        "solve_sum_s": 298.3358775880188
+      }
+    },
+    "paired_P_minus_A_coefficient_per_task": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "paired_P_minus_A_requests_per_task": [
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    "unseen_tasks": 0,
+    "official_total_score": null,
+    "scope": "Five selected seen control tasks, not25 independent tasks; no new per-task or call veto.",
+    "paired_P_minus_A_solve_sum_s": 124.9256136175245
+  },
+  "first_error_target_independent_review": {
+    "schema": "independent_temporal138_first_error_target_originals_review_v1",
+    "at_utc": "2026-10-10T09:15:46.835605+00:00",
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "tasks": [
+      "Prob111_fsm2s"
+    ],
+    "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+    "canonical_plan_sha256": "9fe77d93e27d810eabc94224c449e80da09e769c418e59f21218beb17b132e5c",
+    "source_files_including_spec": 30,
+    "execution_files": 3,
+    "official_files": 2,
+    "aggregate": {
+      "Prob111_fsm2s": {
+        "A": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 5,
+            "2": 0,
+            "3": 0
+          },
+          "coefficient_mean": 0.2,
+          "requests": 5,
+          "solve_sum_s": 77.35679298453033,
+          "max_solve_s": 15.702206110581756,
+          "unique_solution_sha256": [
+            "52acb1fee1329f3cd693606ca4f8f32748efd12d29247691a97a86c7077b88cc"
+          ]
+        },
+        "P": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 5,
+          "solve_sum_s": 67.09149086289108,
+          "max_solve_s": 13.648841816931963,
+          "unique_solution_sha256": [
+            "82fc20531c7ca6a0f6bb0e01f453c8f849539af119820af832520eeeb8e17e78"
+          ]
+        },
+        "B": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 5,
+          "solve_sum_s": 49.3606230635196,
+          "max_solve_s": 10.192830733954906,
+          "unique_solution_sha256": [
+            "dfe55b119822a80668f0fbaa5a224d62b121aff2698a527950e0ec93b91a49ee"
+          ]
+        }
+      }
+    },
+    "paired_wire_reviews": [
+      {
+        "task": "Prob111_fsm2s",
+        "sample": 0,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0.8,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -2.0533642936497927
+      },
+      {
+        "task": "Prob111_fsm2s",
+        "sample": 1,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0.8,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -2.105901734903455
+      },
+      {
+        "task": "Prob111_fsm2s",
+        "sample": 2,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0.8,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -2.0019445307552814
+      },
+      {
+        "task": "Prob111_fsm2s",
+        "sample": 3,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0.8,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -2.0009364765137434
+      },
+      {
+        "task": "Prob111_fsm2s",
+        "sample": 4,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0.8,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -2.1031550858169794
+      }
+    ],
+    "bound_row_files": 570,
+    "unique_indexed_files": 585,
+    "unique_bytes": 939062,
+    "row_file_index_sha256": "e8636205735972d2099401cf47d8b2dba80d72e632e1ee68713dcad6a7c13a31",
+    "all_solve_lt300": true,
+    "private_reference_or_tb_content_read": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "full_comparison_complete": false,
+    "independent_unseen": 0,
+    "row_indices": [
+      75,
+      89
+    ],
+    "normal_rows": 15
+  },
+  "fifth_control_independent_review": {
+    "schema": "independent_temporal138_fifth_control_originals_review_v1",
+    "at_utc": "2026-10-10T09:01:35.996564+00:00",
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "tasks": [
+      "Prob110_fsm2"
+    ],
+    "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+    "canonical_plan_sha256": "9fe77d93e27d810eabc94224c449e80da09e769c418e59f21218beb17b132e5c",
+    "source_files_including_spec": 30,
+    "execution_files": 3,
+    "official_files": 2,
+    "aggregate": {
+      "Prob110_fsm2": {
+        "A": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 5,
+          "solve_sum_s": 56.821751814335585,
+          "max_solve_s": 11.543451445177197,
+          "unique_solution_sha256": [
+            "5c7f2bf2720650f07bc88c820a9adcc158db4ec9251a6efd79d0b0711fbd9400"
+          ]
+        },
+        "P": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 5,
+          "solve_sum_s": 64.53118412569165,
+          "max_solve_s": 13.148501934483647,
+          "unique_solution_sha256": [
+            "b9e09fb36e3212c458582622fee80623208b90c6725f42d33649455f0dbdbe97"
+          ]
+        },
+        "B": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 5,
+          "solve_sum_s": 57.72743932902813,
+          "max_solve_s": 11.695862792432308,
+          "unique_solution_sha256": [
+            "e0fd3894e86f3f11bdb700d616dfcf2585cf7f226013d4701391849a68036de9"
+          ]
+        }
+      }
+    },
+    "paired_wire_reviews": [
+      {
+        "task": "Prob110_fsm2",
+        "sample": 0,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 1.60505048930645
+      },
+      {
+        "task": "Prob110_fsm2",
+        "sample": 1,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 1.5512817855924368
+      },
+      {
+        "task": "Prob110_fsm2",
+        "sample": 2,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 1.451060477644205
+      },
+      {
+        "task": "Prob110_fsm2",
+        "sample": 3,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 1.5007518511265516
+      },
+      {
+        "task": "Prob110_fsm2",
+        "sample": 4,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 1.6012877076864243
+      }
+    ],
+    "bound_row_files": 585,
+    "unique_indexed_files": 600,
+    "unique_bytes": 1078687,
+    "row_file_index_sha256": "3bfc3d6bae625f04347772744a62df7a94caf2b01591a05f97dc20d9b07f2309",
+    "all_solve_lt300": true,
+    "private_reference_or_tb_content_read": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "full_comparison_complete": false,
+    "independent_unseen": 0,
+    "row_indices": [
+      60,
+      74
+    ],
+    "normal_rows": 15
+  },
   "four_control_prefix_review": {
     "schema": "temporal138_four_control_development_prefix_v1",
     "task_count": 4,
@@ -10235,6 +10760,203 @@
     "full_goal_complete": false
   },
       "future_failure_continuation_review_20261010": {
+  "single_supervisor_integration_contract_review": {
+    "schema": "single_supervisor_integration_contract_review_v1",
+    "at": "2026-10-10T17:33:00+08:00",
+    "peer_commit": "14eb50eadfc5df6692404fde566155263d6aa175",
+    "peer_issue": 6096026701,
+    "our_feedback_issue": 6096115502,
+    "feedback_exact_readback": true,
+    "public_AMD_source_bindings": [
+      {
+        "path": "03_analysis/shared_solve_budget_20261010/owned_deadline.py",
+        "name": "owned_deadline.py",
+        "sha256": "b24214bc447601ad15a845bd55caf0e9506f15c59d5b932bc391888bcf8667ae",
+        "git_blob": "a6ba6a74545536824bffca92400e33941d12a9d2",
+        "bytes": 6559
+      },
+      {
+        "path": "03_analysis/shared_solve_budget_20261010/shared_budget.py",
+        "name": "shared_budget.py",
+        "sha256": "8d54e0a53f3891bf0b898b1bdd97a900d13ddcf61ef604180ce556437cf1e258",
+        "git_blob": "3227ff0935aa4bf5206246b49864889fa3663a31",
+        "bytes": 5764
+      },
+      {
+        "path": "03_analysis/shared_solve_budget_20261010/official_baseline_arm_20261005.py",
+        "name": "official_baseline_arm_20261005.py",
+        "sha256": "c647ff0ada895aa0bc8f9cf61fe9cff1301684d63595a3dda2422ca1083aee7a",
+        "git_blob": "a7927141064d13019dd5bf2190fe96dde8734644",
+        "bytes": 8026
+      },
+      {
+        "path": "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py",
+        "name": "three_arm_queue_20261005.py",
+        "sha256": "ec1601223af61baa269ddc50abbcdd04d49aa319a0c977a9516061ff58e8c3fe",
+        "git_blob": "ae821e5836bebd6f81bb7b9d9f077ebca1ed3b23",
+        "bytes": 31568
+      }
+    ],
+    "peer_archive_sha256": "5fa6dbe998706c98d6e9f847f5abf5231050b3ba637849970f644bfd79740108",
+    "peer_archive_scope": "ZIP hash/member listing and four source raw bytes checked; eight test controls and inner archive manifest not independently audited or inherited.",
+    "our_selected_entry": "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py:owned_command",
+    "our_source_sha256": "ee78332e06a4c16b4047c3874e3aa6de529e95833636bce0cdb70a8da5a9a098",
+    "our_PR": 237,
+    "our_head": "43149b4f67c18a45f46252700acc85eb4d8c9bbf",
+    "our_merge": "5ce2e70c54297b78146bdd8527d1dfa741f54763",
+    "our_delivery_issue": 6096080522,
+    "integration_owner": "nzh152-lang via Issue7; root independently reviews the exact final source and new delta evidence, no duplicate core edits",
+    "required_deltas": [
+      "Preserve optional absolute cleanup_deadline in existing paired function. Outer queue execution and cleanup both capped at same parent+310 endpoint; direct substitution of PR237 with default10 cleanup would otherwise permit320.",
+      "Inner A/P tools and B preparation/Popen/wait retain same parent+300 work endpoint; freeze exact supervisor and all dependency hashes.",
+      "Preserve cancel-before-Popen-return handoff protection and cleanup-then-propagate behavior without changing child signal mask.",
+      "Keep owned leader unreaped until cleanup, or validate exact birth/group before signalling; unknown identity must not signal another process group."
+    ],
+    "legacy_qualification_scope": "Nine new CPU controls belong to ee78332e; peer eight belong to b24214bc. A future unified source must have change-scoped evidence and actual production qualification, without rerunning old controls merely to inherit labels.",
+    "production_chain_deployed": false,
+    "real_model_cancel_idle_qualified": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "new_project_execution": 0,
+    "reader_scope": {
+      "source_sha256": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+      "requires_complete_grid": 135,
+      "paired_unit": "task means of five fresh generations; not45 independent tasks",
+      "interval": "exploratory task-pair95 Hoeffding; requires independent task pairs, family dependence unverified",
+      "unknown_official_points": null,
+      "per_task_and_call_diagnostics_not_vetoes": true,
+      "reader_executed_by_us": false
+    }
+  },
+  "absolute_owned_deadline_cpu_qualification": {
+    "schema": "owned_absolute_deadline_qualification_v1",
+    "at": "2026-10-10T09:15:48.596518+00:00",
+    "source_sha256": "ee78332e06a4c16b4047c3874e3aa6de529e95833636bce0cdb70a8da5a9a098",
+    "test_sha256": "9cc47a54fcf2994682fb8c4c8d11d43041550c58b001f808d4846a42811e7fcc",
+    "old_source_sha256": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "wrapper_sha256": "1ba65a00e4493290b3693dbbc8e50ab73dda4b17e57da9cad3c111ac67789b00",
+    "controllers": [
+      {
+        "folder": "before_guard",
+        "child_identity": {
+          "pid": 706953,
+          "state": "T",
+          "starttime": "889719554",
+          "pgid": 706953,
+          "sid": 706953,
+          "command_sha256": "5a5cff3ba9f3379bceb96da8fda3ef4a6ab51547f4b5cd0c1d9305e99b4c2ad0"
+        },
+        "returncode": 1,
+        "elapsed_s": 0.8029437623918056,
+        "birth_stdout_bound_and_retired": true
+      },
+      {
+        "folder": "after_guard",
+        "child_identity": {
+          "pid": 707575,
+          "state": "T",
+          "starttime": "889730835",
+          "pgid": 707575,
+          "sid": 707575,
+          "command_sha256": "5a5cff3ba9f3379bceb96da8fda3ef4a6ab51547f4b5cd0c1d9305e99b4c2ad0"
+        },
+        "returncode": 0,
+        "elapsed_s": 1.4694240912795067,
+        "birth_stdout_bound_and_retired": true
+      }
+    ],
+    "old_witness": {
+      "passed": false,
+      "observed_timeout": false,
+      "returncode": 0,
+      "requested_s": 0.45,
+      "startup_delay_s": 0.3,
+      "elapsed_s": 0.6298172175884247
+    },
+    "new_cases": [
+      {
+        "case": "startup",
+        "passed": true,
+        "elapsed_s": 0.46633695624768734,
+        "remaining_owned": [],
+        "handlers_restored": true
+      },
+      {
+        "case": "expired",
+        "passed": true,
+        "elapsed_s": 0.00010919943451881409,
+        "remaining_owned": [],
+        "handlers_restored": true
+      },
+      {
+        "case": "absolute",
+        "passed": true,
+        "elapsed_s": 0.21617783419787884,
+        "remaining_owned": [],
+        "handlers_restored": true
+      },
+      {
+        "case": "success",
+        "passed": true,
+        "elapsed_s": 0.07877732813358307,
+        "remaining_owned": [],
+        "handlers_restored": true
+      },
+      {
+        "case": "parent_exit",
+        "passed": true,
+        "elapsed_s": 0.16738098673522472,
+        "remaining_owned": [],
+        "handlers_restored": true
+      },
+      {
+        "case": "timeout_group",
+        "passed": true,
+        "elapsed_s": 0.31579766795039177,
+        "remaining_owned": [],
+        "handlers_restored": true
+      },
+      {
+        "case": "cancel",
+        "passed": true,
+        "elapsed_s": 0.040137769654393196,
+        "remaining_owned": [],
+        "handlers_restored": true
+      },
+      {
+        "case": "cancel_launch",
+        "passed": true,
+        "elapsed_s": 0.014499252662062645,
+        "remaining_owned": [],
+        "handlers_restored": true
+      },
+      {
+        "case": "invalid",
+        "passed": true,
+        "elapsed_s": 3.260001540184021e-05,
+        "remaining_owned": [],
+        "handlers_restored": true
+      }
+    ],
+    "startup_new_wait_s": 0.14897271245718002,
+    "protected_138_sources": 30,
+    "protected_held": true,
+    "model_identity_held": true,
+    "real_model_calls": 0,
+    "EDA": 0,
+    "FIFO": 0,
+    "production_deployed": false,
+    "full_chain_verified": false,
+    "scope": "Real short CPU subprocesses only. Startup delay is physical; clock is not mocked. OS scheduling and uninterruptible Popen cannot be preempted by this Python function. Queue/B/HTTP integration and real model cancellation remain unqualified.",
+    "archive_root": "/workspace/team/runs/fpga_teammate/owned_absolute_deadline_qualification_20261010_v1",
+    "archive_sha256": "98fa08a836e4f6d1cc614f33e12f5c29ea2e61a75d40ebeca0676a702f795fd5",
+    "archive_bytes": 45561,
+    "archive_members": 43,
+    "manifest_sha256": "f726b2e0f6758e758ebac58a9c09346ecd8d424c6a2ff494f9e63e1d151b788a",
+    "archive_entries": 42,
+    "all_archive_members_match_originals": true
+  },
   "parent_failure_clock_independent_review": {
     "schema": "independent_parent_failure_clock_delta_review_v1",
     "at": "2026-10-10T16:53:08+08:00",
@@ -10363,7 +11085,7 @@
     "new_FIFO": 0,
     "full_goal_complete": false
   },
-  "legacy_source_scope": "Existing source_sha256/static_findings/CPU-joint flags describe earlier qualifications. parent_clock_independent_review binds d0e03b05 controls; latest parent_failure_clock_independent_review binds d9250724/0552f5cf only. No automatic source inheritance.",
+  "legacy_source_scope": "Earlier source_sha256/static findings and control flags remain bound to their original sources. New absolute_owned_deadline_cpu_qualification is only for ee78332e+9cc47a54. Parent clock and failure-clock reviews bind their separate original deltas; production integration is not deployed.",
   "parent_clock_independent_review": {
     "schema": "independent_parent_clock_delta_review_v1",
     "at": "2026-10-10T16:43:00+08:00",
@@ -10685,8 +11407,8 @@
     "review_scope": "Read-only original archive, source/AST, exact wire, birth/log/exit checks. Seven short real socket controls retained passed; original300 wrapper remains failed while run_worker HTTP-expiry observation is verified. No original production CLI/new queue integration/model cancellation proof."
   },
         "schema": "independent_future_failure_continuation_review_v1",
-        "updated_at": "2026-10-10T16:55:00+08:00",
-        "status": "parent_failure_clock_binding_delta_audited_production_absolute_cutoff_cleanup_model_recovery_unverified",
+        "updated_at": "2026-10-10T17:33:00+08:00",
+        "status": "single_existing_supervisor_selected_absolute_cleanup_cap_identity_and_production_integration_pending",
         "issue_comment": 6094460715,
         "exact_issue_readback": true,
         "source_sha256": {
@@ -10799,7 +11521,7 @@
             "actual_solver_timeout_not_tested": true
           }
         ],
-        "required_next_evidence": "Preserve parent failure-clock binding and prior evidence. Fix B preparation/Popen countdown against same absolute solve endpoint plus one total cleanup bound; then qualify production B/queue dependencies and real shared-model cancellation/idle in a separately frozen owned lease after138 releases. No hotfix/replay or old control reruns.",
+        "required_next_evidence": "Peer final integration must add compatible absolute cleanup_deadline to existing paired core,cap outer work+cleanup at same parent310 and inner work at parent300,retain launch-handoff cancellation and exact ownership. Review exact new SHA and change-scoped evidence;old9/8 CPU controls remain source-specific. Then actual production B/queue/HTTP/model cancel-idle under owned exclusive lease after138 release. No parallel second core,hotfix or replay.",
         "deployed": false,
         "installed_into_frozen_output_v2": false,
         "original132_resumed": false,
@@ -11178,7 +11900,7 @@
           }
         }
       },
-      "updated_at": "2026-10-10T16:55:00+08:00",
+      "updated_at": "2026-10-10T17:33:00+08:00",
       "status": "temporal138_running_frozen_development_strict300_and_recovery_unproven",
       "source_comments": [
         6091415379,
@@ -11365,43 +12087,33 @@
         "current_scope": "Peer unique running ticket138 independently observed; initial preparation-only acknowledgement retained below as historical, not current unsubmitted status."
       },
       "live_scope": {
-        "observed_at": "2026-10-10T08:50:09.648339+00:00",
-        "original132": "failed_released_after_inspection",
-        "original133136": "completed_and_archived",
-        "original137": "failed_released_after_inspection_incomplete",
-        "current_ticket": 138,
-        "current_state": "running",
-        "sealed": 65,
+        "observed_at": "2026-10-10T09:30:11.219614+00:00",
+        "sealed": 105,
+        "started": 106,
         "total": 135,
-        "monitor": {
-          "pid": 635531,
-          "starttime": "889203351",
-          "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
-          "same_birth": true,
-          "same_command": true,
-          "state": "S",
-          "live": true
-        },
-        "child": {
-          "pid": 635532,
-          "starttime": "889203361",
-          "command_sha256": "a4002002c53af75039bc6f3d96ebfd09ac306d86b9b876048d1803f39ce78461",
-          "same_birth": true,
-          "same_command": true,
-          "state": "S",
-          "live": true
-        },
-        "model": {
-          "pid": 2013333,
-          "starttime": "823869819",
-          "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1",
-          "same_birth": true,
-          "same_command": true,
-          "state": "R",
-          "live": true
-        },
-        "scope": "Targeted monitor/stage exact birth+command live at16:50. Full five-identity health16:42:55;next17:12:56. Firstfour control groups complete,1105sealed.",
-        "started": 66
+        "scope": "Exact original monitor/stage births+commands live17:30:11;seven tasks105rows audited,139started. Full five-identity17:12:38 health kept;next17:42:39.",
+        "routine_health": {
+          "at": "2026-10-10T17:12:38.169806+08:00",
+          "next_due": "2026-10-10T17:42:39+08:00",
+          "sealed": 91,
+          "terminal": 91,
+          "total": 135,
+          "original138_identities_same_birth_command_live": true,
+          "source_files": 30,
+          "bad_sources": [],
+          "old137_failed_released": true,
+          "old48h_bindings": 39,
+          "old48h_bad": [],
+          "disk_free": 2783756288,
+          "gpu_card6_used_bytes": 20336742400,
+          "gpu_card6_busy_percent": 94,
+          "formal32GB_peak_or_isolation": false,
+          "gmail_new_relevant": 2,
+          "gmail_bodies_read_and_issue_ids_confirmed": [
+            6095784173,
+            6095858025
+          ]
+        }
       },
       "new_project_execution": 0,
       "new_model_calls": 0,
@@ -13243,19 +13955,19 @@
       "new_eda_calls": 0,
       "new_fifo_tickets": 0,
       "full_goal_complete": false
-    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T16:55:00+08:00","status":"active_original132_failed_closed133136_archived137_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"与 nzh152-lang 通过 854259/FPGA Issue #7 持续协作，在当前授权 AMD 同机27B、固定公平对照和既定实验预算内，以官方 RTL 四项总分择优，持续改进由模型实质生成RTL的候选，并完成完整验收：唯一候选/最佳归档原版/原样官方baseline的完整156配对、经审计RTLLM、重要候选每题五次独立生成，以及正式资源、接口、恢复和可复现交付。分别报告L3、官方系数均值、同轮B增益、真实墙钟与调用、配对不确定性及数据接触；未知官方参数不编造，开发结果不称泛化，旧118/120、逐题保持或调用不增不得作为额外否决门。当前先完成原132完整结果及133→134条件接续，与peer协调135/136；遵守已授权132从原起点总48h修订及全部其他冻结规则，不重提、重跑旧控制、改在跑候选或重抽挑分。完成原队列后，根据实测收益选择一个最有价值候选，事前冻结并继续必要比较和完整交付。保持30分钟检查、每日12:00本人进展邮件、21:30夜间安排及23:00至次晨实际恢复的本地停止规则；有实质结果/失败/交接及时沟通，无变化不空转或纯ACK。不设项目截止时间；只有全部要求有范围相符证据才标完成，旧任务保持暂停，本新任务独立持续推进。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
+    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T17:33:00+08:00","status":"active_original132_failed_closed133136_archived137_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"与 nzh152-lang 通过 854259/FPGA Issue #7 持续协作，在当前授权 AMD 同机27B、固定公平对照和既定实验预算内，以官方 RTL 四项总分择优，持续改进由模型实质生成RTL的候选，并完成完整验收：唯一候选/最佳归档原版/原样官方baseline的完整156配对、经审计RTLLM、重要候选每题五次独立生成，以及正式资源、接口、恢复和可复现交付。分别报告L3、官方系数均值、同轮B增益、真实墙钟与调用、配对不确定性及数据接触；未知官方参数不编造，开发结果不称泛化，旧118/120、逐题保持或调用不增不得作为额外否决门。当前先完成原132完整结果及133→134条件接续，与peer协调135/136；遵守已授权132从原起点总48h修订及全部其他冻结规则，不重提、重跑旧控制、改在跑候选或重抽挑分。完成原队列后，根据实测收益选择一个最有价值候选，事前冻结并继续必要比较和完整交付。保持30分钟检查、每日12:00本人进展邮件、21:30夜间安排及23:00至次晨实际恢复的本地停止规则；有实质结果/失败/交接及时沟通，无变化不空转或纯ACK。不设项目截止时间；只有全部要求有范围相符证据才标完成，旧任务保持暂停，本新任务独立持续推进。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
       "Retain original132 failure and incomplete156:2191 sealed,1 failed with unknown repair receipt,148 never started. No replay,suffix continuation or full-score claim.",
       "Original133-136 closed. Peer135 once-reader and135136 full private archives are independently verified; our reader/model/EDA reruns remain zero.",
       "Original137 failed released,64sealed1incomplete10unattempted; complete existing AMD4225-member archive independently verified. E-copy not inspected. Raw row62 L3 over300 remains ineligible. No replay,resampling,missing-score imputation,full75 score or adoption.",
-      "New parent-clock failure receipt v2/queueeb4537/budget75ccff/failure45c222 has independently audited4CPU binding controls,not deployed. Exact B setup/Popen deadline and one cleanup bound,production B/queue plus model cancel/idle still pending after138release;old qualifiers do not transfer to changed sources.",
+      "Peer owns final single paired-core integration: optional absolute cleanup end caps outer at parent310,inner atparent300;preserve cancellation handoff and owned identity. Our ee783 nine CPU and peerb242 eight CPU qualifications remain separate undeployed scopes. Independently review exact unified source/new delta,then real production B/queue/HTTP and model cancel/idle after138release.",
       "Preserve full target:one substantive model-generated candidate/best archived original/untouched same-model B full156 pairing,important-candidate five samples,audited RTLLM and formal32GB/interface/recovery/reproducibility. Official total-score evidence only;historical118120/.80/per-task/call-nonincreasing values are not extra vetoes.",
-      "Observe only new138 results/true terminal;peer unique owner.095107108109 all60control rows audited,A/P20L3 B15L3,coeff1/1/.8,calls20/25/20,P-A solve+117.216181s.109 P repairs first-answer arest typo in all5.110 and four error targets remain;no old-row/control reruns,hot edits,extra veto or invented missing outcomes."
+      "Only new138 results/true terminal. Seven tasks105rows audited;133 A/P5L1,B4L1+1L0,calls5each,no P grade gain,+72.948523s. Seven-task L3=25/30/25,coeff.7714286/.8857143/.7657143,calls35/40/35,P-A+187.608834s. Await139140/fixed135 reader;no old reruns,hot edits,extra veto or missing-score imputation."
     ],"unresolved":[
       "Original132 full156 pairing remains incomplete despite audited146 complete-task prefix; a later properly frozen complete comparison remains necessary, without replaying the failed original row.",
       "Original137 incomplete64/75+1failed+10unstarted despite complete AMD archive verification;E copy unverified. RawL3 over300 is ineligible,full75/156 score and candidate adoption unavailable.",
       "Audited RTLLM model scoring and formal32GB/resources/official interface/recovery/reproducible final package remain incomplete. Development results do not prove independent generalization.",
-      "Parent failure-clock v2 binding now has4realCPU fixtures with aged origin and synthetic solver/admission/idle,independently audited113-member archive and4public sources. This does not prove production B/whole-chain physical300/model cancellation;B preparation/Popen subtraction and single cleanup deadline remain pending.",
-      "138 still sole frozen temporal diagnosis:65/135sealed16:50,first4seencontrols60rows audited. P-A grade0,requests+5,solve+117.216181s. Complete135/four error targets and production deadline/recovery remain unproven;no full156 or formal acceptance from prefix."
+      "PR237 owned core ee783 has nine CPU controls but lacks outer absolute cleanup cap; direct outer310 substitution would permit320. Peer final integration must cap work+cleanup atparent310 and preserve identity/cancel handoff,then exact production and real-model qualification. Peerb242 eight controls are not inherited.",
+      "138 remains sole frozen temporal diagnosis:105sealed17:30:11,seven selected tasks audited. Only111 improved,133 P-A grade0 with higher solve cost. Remaining139140/full135 and official four-component result unknown;full156/generalization unproven."
     ],"overnight_execution":{
     "automation_id": "amd-rtl-3",
     "preparation_time": "21:30",
