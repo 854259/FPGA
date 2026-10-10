@@ -609,14 +609,14 @@
   "submission_report_update_20261008": {"updated_at": "2026-10-08T22:46:00+08:00", "status": "draft_updated_static_verified_not_deployed", "path": "04_project/amd_rtl_agent/submission/REPORT.md", "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801", "scope": "Official selection and existing129 failure evidence; archived runtime and research candidate distinguished; historical numerical results retained.", "evidence_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38", "new_model_calls": 0, "new_eda_calls": 0, "new_fifo": 0, "deployment": false, "full_goal_complete": false},
   "collaborative_goal_20261007": {
     "temporal_peer_preparation_20261010": {
-      "updated_at": "2026-10-10T09:12:00+08:00",
+      "updated_at": "2026-10-10T09:43:00+08:00",
       "status": "peer_boundary_accepted_candidate_frozen_not_submitted_our_selection_pending_original_results",
       "source_comments": [
         6091415379,
         6091605451,
         6091789144
       ],
-      "latest_peer_comment_updated_at": "2026-10-10T01:07:44Z",
+      "latest_peer_comment_updated_at": "2026-10-10T01:34:02Z",
       "shared_reports": {
         "TEMPORAL_FACTOR_PREPARATION.json": {
           "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-factor-revision-20261010-v2/TEMPORAL_FACTOR_PREPARATION.json",
@@ -647,6 +647,16 @@
           "path": "/workspace/team/activity/fpga_owner/artifacts/first-reply-terminal136-20261010-v1/FIRST_REPLY_TERMINAL136.json",
           "sha256": "35720b64d08145217fd0efe8c04e9c68e3a502d8b63b7669b9e48ff7f25f0390",
           "bytes": 8789
+        },
+        "CONWAY144_REPAIR_DIAGNOSIS.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/conway144-repair-review-20261010-v1/CONWAY144_REPAIR_DIAGNOSIS.json",
+          "sha256": "7151b53b4e151a66435416ba062a21eadd78aabed4870a4d864efff72a9c467b",
+          "bytes": 10068
+        },
+        "ORIGINAL_GOAL_GATES.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/original-goal-gates-20261010-v1/ORIGINAL_GOAL_GATES.json",
+          "sha256": "f90ce61ff3cf7d79ceb4fe20a8f5be4341821e7887b60e5961e7e25b44f6a1c4",
+          "bytes": 4022
         }
       },
       "mail_matches": [
@@ -740,8 +750,8 @@
         "acceptance_scope": "Peer explicitly accepts preparation is not shared scoring admission; no automatic placement after136, wait for original132-136 outcomes and selection/ownership."
       },
       "live_scope": {
-        "observed_at": "2026-10-10T09:10:39.765456+08:00",
-        "sealed": 2153,
+        "observed_at": "2026-10-10T09:40:40.056823+08:00",
+        "sealed": 2163,
         "total": 2340,
         "actual_adopted_roles_and_model_live": true,
         "frozen39_and_receipt_bindings_hold": true,
@@ -764,7 +774,7 @@
         "source_commit": "6cbcaebebc89e69506cebfee86690c3d9b9a711a",
         "pr": "https://github.com/854259/FPGA/pull/210",
         "pr_state_observed": "open_draft_not_merged",
-        "pr_head_observed": "ba4016ef2b483699a35b900b0d75cc7d8f18fb26",
+        "pr_head_observed": "cefe67b7d783e66fca1f0bceaeb6108df8413cc5",
         "preparation_executions_reported": 1,
         "archive_sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
         "archive_members": 59,
@@ -785,7 +795,79 @@
           "expected_native_scope": "23 scenarios/69 native receipts after actual completed gates",
           "ownership": "peer",
           "no_controls_repeated_here": true
+        },
+        "Prob144": {
+          "scope": "Peer report read and SHA verified;125 original files and stored compiler executions not independently reaudited here.",
+          "A_levels": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "P_levels": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "B_levels": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "actual_requests": {
+            "A": 10,
+            "P": 10,
+            "B": 5
+          },
+          "reported_compiles_per_A_or_P_row": 3,
+          "model_requests_per_A_or_P_row": 2,
+          "all10_repairs_received_full_first1140_character_excerpt": true,
+          "diagnostic_truncated": false,
+          "persistent_error": "VRFC10-2951 index must be a constant",
+          "repaired_DUT_variants": 6,
+          "reported_scalar_index_rows": 5,
+          "source_width_hand_example_not_new_simulation": true,
+          "interpretation": "This evidence supports a repair-quality hypothesis, not missing compiler-log visibility; log compaction alone is not a demonstrated fix for these rows.",
+          "candidate_implemented": false,
+          "score_gain_measured": false,
+          "frozen_temporal9_unchanged": true
         }
+      },
+      "limited_static_source_review": {
+        "five_new_sources_read": true,
+        "scope": "Bounded static source read only; no project imports or tests, AMD work or model/EDA calls; not independent source qualification or execution admission.",
+        "preparation": "Original132 source and task template hashes enforced, both arms inner table-P, original B/queue reused, no new factor selection/admission.",
+        "reader": "Outer A/P bound to inner P; full five-sample grid and official summary, calls and timing preserved; diagnostics not automatic vetoes.",
+        "actionable_static_findings": [],
+        "decision": "Keep peer-owned frozen draft and current original132–136 queue; await actual outcomes/ownership review before scoring.",
+        "source_sha256_verified": {
+          "first_system_request": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+          "baseline_worker": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+          "worker": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65",
+          "comparison_result": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+          "prepare": "e5cffb23800d19d23ba0cad54ca5c87957dcb0d05e4337391ff87c86716e4bf2"
+        },
+        "incremental_scope": "Three commits after ba4016ef change only four status docs. Reviewed five sources remain identical through cefe67b7; not a whole archive/runtime qualification.",
+        "draft_open_unmerged": true,
+        "new_model_calls": 0,
+        "new_EDA_calls": 0,
+        "new_FIFO": 0,
+        "head_reviewed_through": "cefe67b7d783e66fca1f0bceaeb6108df8413cc5"
+      },
+      "peer_goal_gate_source": {
+        "scope": "Peer's original one-sample156 C/P goal; report-level intake only. Not our selection vetoes and not a five-sample qualification.",
+        "reported_source_spec": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
+        "reported_metrics_sha256": "544d70229e1be9042af20376fcd201997dd6d9d302969f50ad4bb087c3477ce2",
+        "reported_historical_L3": 113,
+        "reported_task144_historical_level": 0,
+        "our_official_selection_veto_added": false,
+        "original_metrics_or_controls_reexecuted": false,
+        "five_sample_adoption_proven": false
       }
     },
     "actual132_continuation_20261010": {
