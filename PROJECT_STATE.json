@@ -1,5 +1,48 @@
 {
   "temporal_first_generation_20261010": {
+    "constant_repair_guidance_preparation": {
+      "source_prepared": true,
+      "guide_words": 101,
+      "source_hashes": {
+        "constant_repair_request.py": {
+          "sha256": "21c9f9b35b495612e7d473ed31864b29fd49119c7cf8bcc4c5ce327248bcbde8",
+          "bytes": 5706
+        },
+        "baseline_worker.py": {
+          "sha256": "3e4b7d48482871b7fa04a1135702f72b787ea53e2767848ba0bdbf3e465928fe",
+          "bytes": 9355
+        },
+        "worker.py": {
+          "sha256": "4b7f4a2aa58defd4fd1f7474e9dab78c4ee6f7a9d6529d6f619736d3134f95f3",
+          "bytes": 7599
+        }
+      },
+      "actual_AMD_synthetic_worker_cases": 7,
+      "fake_HTTP_attempts": 12,
+      "fake_compilers": 11,
+      "qualified_scope": "Actual changed worker wire/bind/restore with mocked model/compiler;not native behavior or model score.",
+      "child_pid": 379864,
+      "child_birth": "887010221",
+      "child_rc": 0,
+      "child_elapsed_s": 0.27089526131749153,
+      "exec_confirmed": true,
+      "leader_reaped": true,
+      "remaining_group": [],
+      "qualification_archive_sha256": "2abc8a8d04b048a591023cafebf08da42e54f521d0d557e28b8a0a242b597b3d",
+      "qualification_archive_members": 189,
+      "every_archive_member_dual_verified": true,
+      "protected_model_and_sources_held": true,
+      "native_RTL_qualification": false,
+      "real_model_benefit_unknown": true,
+      "context_admission_pending": true,
+      "scoring_factor_selected": false,
+      "FIFO_submitted": false,
+      "comparison_plan_created": false,
+      "separate_from_frozen_temporal9": true,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_tickets": 0
+    },
     "original_goal_cost_gate_source_recovered": {
       "evidence_sha256": "f90ce61ff3cf7d79ceb4fe20a8f5be4341821e7887b60e5961e7e25b44f6a1c4",
       "source_spec_sha256": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
