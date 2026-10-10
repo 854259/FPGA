@@ -1,4 +1,27 @@
 {
+  "temporal_first_generation_20261010": {
+    "index": "03_analysis/first_generation_temporal_20261010/EVIDENCE_INDEX.json",
+    "status": "prepared_not_submitted_no_score",
+    "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+    "spec_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+    "targets": [
+      "Prob111_fsm2s",
+      "Prob133_2014_q3fsm",
+      "Prob139_2013_q2bfsm",
+      "Prob140_fsm_hdlc"
+    ],
+    "historical_controls": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1",
+      "Prob110_fsm2"
+    ],
+    "outputs": 135,
+    "max_requests": 225,
+    "complete_goal": false,
+    "original132_136_held": true
+  },
   "helper_extraction_20261004": {
     "status": "approved_batch_completed_and_archived_research_only",
     "updated_at": "2026-10-04T13:34:00+08:00",
