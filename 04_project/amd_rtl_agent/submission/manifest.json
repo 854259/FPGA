@@ -72,7 +72,7 @@
     },
     "native_supervisor": {
       "path": "agent/deadline_supervisor.py",
-      "sha256": "37da755053925b9a648121c992616ac758860ff6dde4b084f03d66c26ba61972",
+      "sha256": "16f559e71820348e3f596d0477804ede285f67f2a111d89ed2979bfc2600c077",
       "source_sha256": "680d8790d5031b4dd938af2790acf1296f710a81aedb7c0572110019e8abb54f",
       "runtime_integrated": true,
       "qualification": "Seven AMD whole-chain CPU cases include actual SIGTERM/native cleanup and a detached child. First-cancellation end and request descendant cleanup are tested; real EDA/model acceptance remains pending. Final source differs from tested 0dd3d809 only in module documentation; every executable function AST is unchanged.",
@@ -82,7 +82,7 @@
   "contract": {
     "health": "Bearer-authenticated health uses owned version command and detached descendant cleanup;30s work/one10s cleanup reserve, cancellation exits after cleanup; private health evidence retained. Two targeted AMD CPU cases pass, actual Vivado/model/resource qualification pending.",
     "solve": "POST/v1/solve and run.sh use the same selected chain. Exact official response fields; serial main-thread server. Prior7284 conformance does not qualify this revision.",
-    "sigterm": "One10second cleanup/model recovery reserve, then preserved InterruptedError causes the HTTP service to exit. Three AMD CPU signal paths (transport/native/recovery failure) pass; actual model/EDA cancellation remains unqualified.",
+    "sigterm": "One10second cleanup/recovery reserve from first cancellation; native cleanup errors retain first-signal timestamp. Fourteen AMD CPU chain/guard/health cases pass, including cleanup failure after realSIGTERM. Real model/EDA cancellation and full-service acceptance pending.",
     "evidence": "Every HTTP request gets a unique private RTL_EVIDENCE_DIR directory (default EDA_TMP/rtl-evidence). No cache/resume; local native scratch removed only after verified cleanup, otherwise retained and runtime blocked.",
     "bind": "127.0.0.1 only",
     "formal_acceptance": false
@@ -134,24 +134,23 @@
     },
     "transport_scope": "CLI and serialHTTP main thread; same local fixed model endpoint; request budget and owned native stages. Outer AMD resource/isolation admission remains separate and is not inherited by this package.",
     "validation": {
-      "status": "eleven_AMD_CPU_integration_cases_passed",
-      "tests": 11,
-      "test_source_sha256": "f0e5b128581627327a3f0488a85d5283063d309cff7b842b364497e8859f264a",
-      "process_receipt_sha256": "410f05a65bf7379aff967cdec1c1025d5eed28ddf19dcbb9f3fc7263461f28d0",
-      "test_stderr_sha256": "a6fdeb9405ade87c7c28e9c73986cae6c39f9cb6b0aa93c2bcd5ae78158b2f95",
-      "source_zip_sha256": "e1f068cca8a78d859d823e819451489ca9a1cf707d6d5f8bb9b762ca99f00549",
-      "tested_manifest_sha256": "8b2de277fa8d19ebb556018476990836b494342ea2bddf579bf52804973333bb",
-      "scope": "Synthetic model/EDA and HTTP baseline subprocess stub. Real serial HTTP, CLI main, signal deadline, CPU child cleanup; three real HTTP SIGTERM paths now exit; bounded real guard loop preserves a live child on delayed health and restarts an exited one. No real model/EDA/FIFO/deployment/formal qualification.",
-      "prior_seven_case_receipt_sha256": "eb00635c0911efbc893830ac4a7b4c941f8470aa5bf1fad8ad1edb2aa42ffaae",
-      "pre_fix_HTTP_failure_receipt_sha256": "cc44c18f0e228649debaf03856747015310eeb217e45818bf6a5f5250dd4adff",
-      "pre_fix_guard_failure_receipt_sha256": "182568563859ca6640058478ddf18507fd79cd83727dd2b2ba2a4ace09a2b6b4",
-      "post_test_changes": "Manifest validation metadata and documentation only; executable source and test bytes unchanged.",
-      "scope_note": "Eleven prior chain/guard cases cover runtime8367. Current runtime differs only in vivado_version; its two new targeted cases are recorded in health_validation. No claim that all13 were rerun together."
+      "status": "fourteen_AMD_CPU_integration_cases_passed",
+      "tests": 14,
+      "test_source_sha256": "035a9d35253af372dbf3447fa9c90625d4bcc274260604c6af13f048e22b223e",
+      "runtime_sha256": "2ea06b05bada46735389d75626a2bdbe3e4cdd150ef68825ec5ae73a8f263d86",
+      "supervisor_sha256": "16f559e71820348e3f596d0477804ede285f67f2a111d89ed2979bfc2600c077",
+      "process_receipt_sha256": "c3169d102293f4d6d90e0ae8791850f80c494d9d050c52219515af24eca025e6",
+      "source_zip_sha256": "dc3ff0969cbc8bdbf521eae932b5e6eda17dfd58702b60a0d6bc73448aeadef8",
+      "tested_manifest_sha256": "e10d84acd66ce4b1d1a2d43e089534af3e27a82958f8b2e1623d12c71532efbb",
+      "independent_audit_sha256": "81278c711246ff83f58e92e4a27bbe6540c04cec872c4bbd387574898aa5095d",
+      "pre_fix_cleanup_cancel_failure_receipt_sha256": "d2858c94c1fee640f0608301fc2860834f0208034cb6d12f1a3270e88bd2c61b",
+      "scope": "Actual serial HTTP, CLI main, signals, native synthetic CPU processes and bounded guard branch; model/EDA/upstream/VRAM synthetic and HTTP baseline subprocess stub. New case injects group-cleanup failure after realSIGTERM and verifies cancellation exit after descendant cleanup. No real model/EDA/FIFO/deployment/resource acceptance.",
+      "post_test_changes": "Manifest validation metadata and documentation only; executable source and tests remain exact tested bytes."
     },
     "files": {
       "agent/candidate_worker.py": "da8d3f1035ed79476b3597af9c557e11acdfe38299a9df3efa0580f47b1af921",
       "agent/contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
-      "agent/deadline_supervisor.py": "37da755053925b9a648121c992616ac758860ff6dde4b084f03d66c26ba61972",
+      "agent/deadline_supervisor.py": "16f559e71820348e3f596d0477804ede285f67f2a111d89ed2979bfc2600c077",
       "agent/edge_contract.py": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
       "agent/edge_dispatch.py": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680",
       "agent/edge_feedback.py": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
@@ -187,6 +186,21 @@
       "scope": "Actual CPU synthetic version executable, detached child, serialHTTP health and SIGTERM. Upstream and VRAM synthetic; no actual Vivado/model/EDA/FIFO.",
       "unchanged_other_runtime_functions_AST": true,
       "post_test_changes": "Manifest evidence metadata and documentation only."
+    },
+    "previous_eleven_case_validation": {
+      "status": "eleven_AMD_CPU_integration_cases_passed",
+      "tests": 11,
+      "test_source_sha256": "f0e5b128581627327a3f0488a85d5283063d309cff7b842b364497e8859f264a",
+      "process_receipt_sha256": "410f05a65bf7379aff967cdec1c1025d5eed28ddf19dcbb9f3fc7263461f28d0",
+      "test_stderr_sha256": "a6fdeb9405ade87c7c28e9c73986cae6c39f9cb6b0aa93c2bcd5ae78158b2f95",
+      "source_zip_sha256": "e1f068cca8a78d859d823e819451489ca9a1cf707d6d5f8bb9b762ca99f00549",
+      "tested_manifest_sha256": "8b2de277fa8d19ebb556018476990836b494342ea2bddf579bf52804973333bb",
+      "scope": "Synthetic model/EDA and HTTP baseline subprocess stub. Real serial HTTP, CLI main, signal deadline, CPU child cleanup; three real HTTP SIGTERM paths now exit; bounded real guard loop preserves a live child on delayed health and restarts an exited one. No real model/EDA/FIFO/deployment/formal qualification.",
+      "prior_seven_case_receipt_sha256": "eb00635c0911efbc893830ac4a7b4c941f8470aa5bf1fad8ad1edb2aa42ffaae",
+      "pre_fix_HTTP_failure_receipt_sha256": "cc44c18f0e228649debaf03856747015310eeb217e45818bf6a5f5250dd4adff",
+      "pre_fix_guard_failure_receipt_sha256": "182568563859ca6640058478ddf18507fd79cd83727dd2b2ba2a4ace09a2b6b4",
+      "post_test_changes": "Manifest validation metadata and documentation only; executable source and test bytes unchanged.",
+      "scope_note": "Historical eleven-case qualification of runtime8367 and supervisor37da; superseded by current fourteen-case synthetic CPU qualification, not formal model/EDA acceptance."
     }
   }
 }

@@ -166,6 +166,11 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
                             raise RuntimeError("owned process cleanup deadline exceeded: " + str(alive))
                         time.sleep(min(.025, remaining))
                     result["returncode"] = proc.returncode
+    except BaseException as error:
+        # Cleanup errors must not erase an already observed process stop.
+        if cancel_observed_monotonic is not None:
+            error.cancelled_at_monotonic = cancel_observed_monotonic
+        raise
     finally:
         for sig, handler in previous.items():
             signal.signal(sig, handler)

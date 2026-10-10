@@ -2,7 +2,7 @@
 
 The selected table/phase candidate with the unchanged 174-word first-system
 suffix is now connected to both HTTP and CLI in this source package.
-Eleven AMD CPU chain/guard cases and two targeted health cases passed. Model replies and EDA outputs were
+Fourteen AMD CPU chain/guard/health cases pass together at the current runtime and native supervisor. Model replies and EDA outputs were
 synthetic; actual model/EDA interface qualification, resource acceptance,
 isolation and reproducible deployment are still pending. This is not a scored
 or formally accepted deployment.
@@ -99,6 +99,8 @@ limit, peak usage or isolation; verify raw bytes across the full lifecycle.
 The cached health version probe now uses an owned native group and reaps detached descendants, with 30 seconds of work and one shared 10-second cleanup reserve. Cancellation exits after cleanup. It retains private health evidence; unknown cleanup blocks further work. These limits apply to the version probe, not an asserted bound on every health operation. Actual Vivado qualification remains pending.
 
 ## Validation and packaging
+
+Current qualification reruns the fourteen affected CPU cases after a native cleanup error was shown to erase an earlier SIGTERM timestamp. The supervisor now preserves that timestamp on the replacement error, so callers clean up and exit. The new regression sends a real signal, injects a process-group cleanup failure, and verifies descendant retirement and service exit. The previous eleven- and two-case reports below remain historical scopes; no actual model or EDA qualification is implied.
 
 Two targeted health cases additionally cover normal version-probe child cleanup and cancellation through the real HTTP endpoint using a synthetic CPU executable. Both failures were reproduced before the fix. Other runtime functions remain AST-identical to the eleven-case version; the two health cases were run separately, without repeating unrelated model controls.
 
