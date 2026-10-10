@@ -21,8 +21,8 @@
     "start_command": "./serve/llama.sh",
     "port": 8000,
     "supervisor": "serve/serve_all.sh",
-    "supervisor_sha256": "6974426a9b3664a915c35f1a90cb80c0f7b5d35dd83f8d1da2638f59a740896b",
-    "agent_unresponsive_policy": "A live owned agent is retained and warned; serialized health can wait behind solve. Restart only after the recorded process has exited. No automatic retry of the failed request."
+    "supervisor_sha256": "0769680ef9d8e27ec14cb82ca269f2af56d019c1bbfba57319872a296cd59110",
+    "agent_unresponsive_policy": "After initial startup, observe and warn only. Never stop or restart the model or agent automatically, including exited or unresponsive processes; retain evidence for inspection and do not retry requests. API_CONTRACT section4 prohibits evaluation-time restarts."
   },
   "endpoints": {
     "solve": "./run.sh",
@@ -216,6 +216,24 @@
       "old_other_runtime_definitions_AST_unchanged": 19,
       "scope": "Runtime endpoint/models()/run_job policy and local positive controls only. HTTP opener synthetic, baseline work blocked by sentinel. No model/EDA/real HTTP/service/FIFO. Prior fourteen chain cases were not rerun. Original baseline.py/run_baseline.sh are unchanged; their separate CLI admission, process/weights/network isolation remain to qualify.",
       "formal_acceptance": false
+    },
+    "supervisor_restart_policy_validation": {
+      "status": "AMD_CPU_four_guard_states_passed",
+      "test_methods": 1,
+      "subcases": 4,
+      "supervisor_sha256": "0769680ef9d8e27ec14cb82ca269f2af56d019c1bbfba57319872a296cd59110",
+      "test_source_sha256": "9a192bce2bd35e548ac8f8930d05d1045886232b74e786f78d9062bb809825fa",
+      "pre_fix_summary_sha256": "52e91e6a2d1e9d580797a0a573ab61e9fae3095aa68f01b6e4ff11bfa9820e40",
+      "pre_fix_receipt_sha256": "d89d8b08b7ca3a45abd29eb87b9e9d1b24b3e6c1a3a69d95e30e0ff030ffaa23",
+      "pre_fix_expected_failures": 3,
+      "post_fix_summary_sha256": "82100e9a1b407440f94055dc228a3d98c8c23d4a1ddc53a61697d748a4bb9c74",
+      "post_fix_receipt_sha256": "5f07b1fa83b758295f540a241c5e74567a897f6f9a11301a9b67b2eb35693e5a",
+      "tested_manifest_sha256": "257c8eec4ce4252848ac2af63d2cb8495210864d13ecdd89e32a2128ad7a4c3a",
+      "source_runtime_unchanged": "796a48e16d15ded34aff83a0509506f59e7a7fd0c030a08eeadacb34499ad449",
+      "official_contract_sha256": "443b9eab7bd016a45b64c0b0d66c7efcfd91aaf26dd839f4ca8f7aa1871bcd62",
+      "official_contract_location": "Pinned API_CONTRACT.md section4, line121; FAQ Q20 lines166-169",
+      "scope": "Original shell monitoring loop with stubbed health/start/stop and real CPU child lifecycles; startup functions unchanged and not exercised. No real model/HTTP/EDA, no deployment or full service acceptance. Historical exited-agent restart expectation superseded; unrelated cases not rerun.",
+      "post_test_changes": "Documentation and manifest evidence metadata only; supervisor and test bytes unchanged."
     }
   }
 }
