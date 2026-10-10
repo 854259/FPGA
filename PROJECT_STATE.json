@@ -1,4 +1,60 @@
 {
+  "temporal138_control109_cost_diagnosis_20261010": {
+  "schema": "temporal138_control109_request_cost_diagnosis_v1",
+  "saved_epoch": 1791622267.0163047,
+  "ticket": 138,
+  "task": "Prob109_fsm1",
+  "all_five_observed_original_terminal_fields": true,
+  "levels": {
+    "A": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "P": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "B": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  "client_attempts": {
+    "A": 5,
+    "P": 10,
+    "B": 5
+  },
+  "extra_P_requests": 5,
+  "first_pair_sample": 0,
+  "first_pair_originals_bound_E_AMD": true,
+  "first_P_failure": "Actual compiler rejected undeclared identifier arest;interface and sensitivity list use areset.",
+  "first_P_repair": "Original repair response changes that identifier and removes Markdown fences;the normalized RTL has no other textual changes.",
+  "first_pair_public_derived_feedback_present": false,
+  "first_pair_reason_is_compile_not_FSM_semantic_feedback": true,
+  "causality_scope": "Direct original compiler/repair evidence for sample0 only;other four failure reasons not inspected.",
+  "archive_sha256": "664afa43890e6de7b71fe7b37dae8b4cc4d4b2674a1ed3b5e3f787d231b06a9f",
+  "archive_members": 19,
+  "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/temporal109-first-pair-public-20261010-v1/PUBLIC_ORIGINALS.zip",
+  "private_archive": "E:\\26qiansai\\private_archives\\temporal109_first_pair_public_20261010_v1\\PUBLIC_ORIGINALS.zip",
+  "no_private_reference_or_judge_body_read": true,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "factor_adopted": false,
+  "full_comparison_complete": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "decision_scope": "Report observed cost increase;continue fixed138 targets,then apply existing goal gates. Do not change Moore logic based on this syntax error,do not add a new selection veto or task-specific patch."
+},
   "parent_failure_clock_delta_20261010": {
   "schema": "parent_failure_clock_binding_delta_v1",
   "saved_epoch": 1791621636.4942575,

@@ -1,3 +1,7 @@
+## 2026-10-10 时序138控制109正确但请求翻倍，首配对原因已定位
+
+原109完整五样本A/P/B均L3，客户端尝试A5/P10/B5。只读首配对公开题面/生成响应/编译修复诊断，19成员664afa43原件AMD/E逐SHA/长度绑定；P首答把已声明areset写成arest，实际编译报未声明。原修复响应仅该标识符及Markdown格式变化，未改Moore逻辑；其他四份失败原因未读取，不外推均同因。此成本观察不是完整九题选优/新增否决门，无私有参考/TB/判定正文、重判/生成/EDA/FIFO。保留冻结138继续四稳定错题；未来根据原历史/配对/逐题和总调用门判完整结果，不因单个编译拼写错误改变FSM语义。索引03_analysis/temporal138_control109_cost_diagnosis_20261010.json。
+
 # Temporal first-generation comparison
 
 The current agent repeatedly produces compilable sequential RTL with wrong reset edges, prefix transitions, consecutive-window boundaries, or persistent outputs. This candidate adds a fixed 174-word temporal instruction to the **first system request only**. It provides no task IDs, answer RTL, literal target sequences, reference design, testbench, or judge feedback.
