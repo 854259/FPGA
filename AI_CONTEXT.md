@@ -1,3 +1,13 @@
+## 2026-10-10 139真实取消生效，空闲传播竞态导致续行失败，已归档释放
+
+139只执行147 A：首答290.117秒/8192 tokens/length，第二请求未确认，于真实父300.001秒BudgetExpired中断；拥有进程已回收/组清空。只读时间线在预算中断后1.569秒仍见pending repair的模型槽忙，2.597秒时观察到idle，模型同出生/命令保持。队列和guard立即查idle命中忙，未FAILED_SEALED，后面三入口没执行；whole production资格=false，grade/calls=null保持，不能把中断生效报成续行已通过。
+
+76成员c780dce2原件与时间线E/AMD逐SHA/长度绑定；模型实际idle、出生全退役、原资源/保护文件不变后，只释放本方精确retained slot并release-held139一次，现failed_released_after_inspection。原guard passed=false/own_slot_released=false字节保持，另加交接收据；不重放139，不停模型，不补等级。
+
+新47bed42a失败等待补丁未部署：共享预算路线只在原parent310终点前短暂重查明确busy/unknown，HTTP整体受同终点计时，身份/健康变化立即拒绝，等待后再核资源/身份并封存时间。CPU变化验证仅重放139观测到的2.597秒传播延迟、持续busy到终点拒绝、alias变化不重试三边界，全部父年龄/资源/模型为模拟；14成员54462b97双端绑定，0模型/EDA/FIFO。旧B/CPU资格不继承新源，真实失败封存并连续A/P/B仍待下一精确版本。
+
+索引shared_solve_budget_20261010/PRODUCTION139_FAILURE_CLOSEOUT.json、queue_failure_continuation_20261010/IDLE_WAIT_DELTA_QUALIFICATION.json。目标active未达，完整156仍未准入。
+
 ## 2026-10-10 真实生产链工程资格已一次进入FIFO139
 
 18:57:00北京时间原冻结33源生产包一次提交工程票139：monitor734910/start890347040、child734911/start890347050当前同出生真实活着，原源保持；147 A首请求已真实派发，model槽id_task4371902正在处理。不是新完整评分批次，四行工程前缀最多7预留请求，原父300/外310/token8192/2请求/1修复保持；132/137/138不重放。

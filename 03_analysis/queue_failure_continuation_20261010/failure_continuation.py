@@ -3,6 +3,7 @@ import hashlib
 import json
 import os
 import math
+import time
 from pathlib import Path
 import zipfile
 
@@ -124,6 +125,48 @@ def failure_basis(folder):
     return 'owned_solver_timeout' if command['timeout'] else 'owned_worker_budget_expired'
 
 
+def idle_after_failed_solver(folder, plan, resource, admission):
+    """Allow disconnect propagation only within the parent's existing310 end.
+
+    This is read-only HTTP observation. A model identity/resource change is
+    fatal; only the frozen resource module's explicit busy-slots response may
+    be retried. The HTTP timer prevents slow telemetry from adding another
+    timeout beyond the original cleanup end.
+    """
+    endpoint, model = admission['llm_base_url'], admission['model_name']
+    if not plan.get('allow_shared_budget_failure'):
+        return resource.model_idle(endpoint, model), None
+    import shared_budget
+    clock = json.loads((Path(folder)/'SOLVE_CLOCK.json').read_bytes())
+    assert clock['schema'] == 'parent_solve_clock_v1' and clock['budget_s'] == 300
+    assert plan['solve_supervisor_s'] == 310
+    budget = shared_budget.SolveBudget(10, parent_started=clock['started_monotonic']+300)
+    observed_start, polls = time.monotonic(), 0
+    try:
+        while True:
+            budget.remaining()
+            polls += 1
+            try:
+                with budget.http_deadline():
+                    idle = resource.model_idle(endpoint, model)
+                budget.remaining()
+                returned = time.monotonic()
+                if returned > budget.end:
+                    raise shared_budget.BudgetExpired('Idle observation returned after cleanup end')
+                return idle, dict(schema='failed_solver_idle_wait_v1',
+                    started_monotonic=observed_start, returned_monotonic=returned,
+                    deadline_monotonic=budget.end, polls=polls,
+                    source_sha256=sha(__file__), only_read_model=True)
+            except RuntimeError as error:
+                if type(error) is shared_budget.BudgetExpired:
+                    raise
+                if str(error) != 'shared model slots are busy or idle telemetry is unavailable':
+                    raise
+            time.sleep(min(.1, budget.remaining()))
+    except shared_budget.BudgetExpired as error:
+        raise RuntimeError('Shared model did not become idle within original parent310 cleanup end') from error
+
+
 def verify_failed_seal(folder, row, plan_sha256):
     folder = Path(folder).resolve()
     receipt, files = original_files(folder, row, plan_sha256)
@@ -139,6 +182,16 @@ def verify_failed_seal(folder, row, plan_sha256):
     assert seal['inspection']['owned_solver_reaped_and_group_clear'] is True
     assert seal['inspection']['processing_slots'] == 0
     assert seal['inspection']['health_status'] == 'ok'
+    wait = seal['inspection'].get('idle_wait')
+    if wait is not None:
+        assert wait['schema'] == 'failed_solver_idle_wait_v1' and wait['only_read_model'] is True
+        assert type(wait['polls']) is int and wait['polls'] >= 1
+        assert wait['source_sha256'] == sha(__file__)
+        clock = json.loads((folder/'SOLVE_CLOCK.json').read_bytes())
+        assert wait['deadline_monotonic'] == clock['started_monotonic']+310
+        assert all(type(wait[k]) in (int, float) and math.isfinite(wait[k]) for k in
+                   ('started_monotonic', 'returned_monotonic', 'deadline_monotonic'))
+        assert wait['started_monotonic'] <= wait['returned_monotonic'] <= wait['deadline_monotonic']
     assert seal.get('failure_basis', 'owned_solver_timeout') == failure_basis(folder)
     assert sha(archive) == seal['archive_sha256']
     with zipfile.ZipFile(archive) as z:
@@ -179,9 +232,11 @@ def seal_failed_row(folder, row, plan, plan_sha256, resource_check, resource, sa
     # check_resource binds the original model/resource admission; telemetry is read-only.
     admission = resource.check_resource(resource_check, Path(plan['kit']))
     assert admission['llm_base_url'] == 'http://127.0.0.1:8000/v1'
-    idle = resource.model_idle(admission['llm_base_url'], admission['model_name'])
+    idle, idle_wait = idle_after_failed_solver(folder, plan, resource, admission)
     assert idle['model'] == admission['model_name'] and idle['health_status'] == 'ok'
     assert idle['processing_slots'] == 0 and idle['slot_count'] >= 1
+    # Rebind identity and protected files after any disconnect propagation wait.
+    assert resource.check_resource(resource_check, Path(plan['kit'])) == admission
     assert original_files(folder, row, plan_sha256) == (receipt, files)
     pending, archive = folder/'FAILED_EVIDENCE.zip.pending', folder/'FAILED_EVIDENCE.zip'
     with pending.open('xb') as handle:
@@ -198,6 +253,8 @@ def seal_failed_row(folder, row, plan, plan_sha256, resource_check, resource, sa
         os.close(fd)
     inspection = dict(owned_solver_reaped_and_group_clear=True, health_status=idle['health_status'],
                       processing_slots=idle['processing_slots'], slot_count=idle['slot_count'], model=idle['model'])
+    if idle_wait is not None:
+        inspection['idle_wait'] = idle_wait
     save(folder/'FAILED_SEALED.json', dict(schema=SCHEMA, row_key=row['key'], plan_sha256=plan_sha256,
          terminal_sha256=files['TERMINAL.json'], archive_sha256=sha(archive), reserved_calls=row['reserved_calls'],
          grade=None, actual_calls=None, unconfirmed_calls=None, score_eligible=False,
