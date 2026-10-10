@@ -1,10 +1,10 @@
-2026-10-10 23:37 +08:00：原142五个原进程出生/argv身份保持且running，175已创建、174正常封存与终态、0失败封存；PLAN3f6a6030、speca4be0260及33冻源保持。FIFO唯一活票仍142；八个相关目录249源绑定和旧132总48h的39文件保持，旧失败/完成收据未改。GPUcard6瞬时占用20334137344B/物理51522830336B，两并行读取busy分别6%/0%，磁盘2653982720B；不是全生命周期峰值或正式资源验收。下一普通例检10月11日00:07:36。
+2026-10-10 23:57 +08:00：已修复提交runtime中RTL_PROFILE=development可绕过本地模型地址检查的遗留分支。AMD新4方法先复现4处预期断言失败（development的HTTP/HTTPS地址、models调用点与baseline工作前置点），本地地址正控通过；移除例外后同4方法全部通过。仅endpoint定义变化，其余19个运行定义AST保持，生成/技能/官方baseline字节不改；旧14控制未重跑。当前源码提交36a66517，runtime796a48e1、测试ceaa1dda、manifestce97f750。该检查只约束runtime入口URL，不证明进程/权重/网络隔离，原样run_baseline.sh仍需外层正式准入。
 
-完整报告读取的静态条件已核清：运行目录保留的comparison_result.py907b65c0固定要求A内层P，不适用于本轮A内层C；peer已准备外置comparison_report.py942ee1f1，以显式--A-worker-arm C与SHA绑定历史参考适配本轮。独立AST比较确认排除limitations文字后summarize数值树相同；此次未运行、复制或替换任何reader。终态仍需真实guard完成/通过、四个批次角色退休且27B保持、清理/模型保持以及2340正常且可评分收据后，由唯一owner按确切SHA执行读取。
+修前子进程888195/start892099818、rc1、0.116467秒；修后890234/start892108624、rc0、0.116412秒，均10秒帽并已回收/退休。只有合成HTTP opener与baseline前置哨兵，无实际HTTP、模型、EDA、服务或FIFO。私有endpoint_policy_cpu_20261010_v1保存修前SUMMARY6a31e6a2/receipt4e9ce6b9、修后SUMMARY58fd707f/receipt91f36196；不得把预期失败改写成功或称真实接口通过。
 
-冻结queue8e42e5c0第350–351/505–513行与failure_continuation268e4cda第176–208行已静读：经检查失败可保留位置并继续，但失败grade/actual_calls保持null、score_eligible=false；遍历全位置后若仍有失败，run_plan抛错并写stopped。因此complete遍历标志不等于完整成绩，匹配reader要求最后progress complete且完整5×3网格，会拒绝此类失败终态。没有新运行故障，不需热改或补零/补样本；旧limitations中“一律遇工具故障停”只是过时概括，不覆盖实际上述行为。核查只用标准库读源/AST，0项目函数/模型/EDA/reader/服务/FIFO。
+最终当前36文件包、24候选源、2官方源及Git模式也已由原verify_package32684450实际核验一次通过：894528/start892129970、rc0、0.034281秒/10秒帽、已回收退休；SUMMARYd6a2025b、receipt562f2906、PACKAGE_RESULT9319d56f。此前预启动清单错误地按Windows工作树计算两份许可证CRLF哈希，已保留PREPARATION_FAILURE/RESOLUTION，改按Git原始blob后通过；包内许可证未改，预检阶段没有启动项目程序。独立审计fd18a420核对111源绑定、三原进程出生/argv/日志/退出与Git36文件/模式。171有效私有文件保留，无缓存/空目录，本地无上传临时文件；原142的33冻源与原27B身份在各执行前后保持，未部署到运行实例。
 
-已独立审计范围仍前10题150份：A/P/B L3=50/45/45、系数1/.92/.92、客户端请求各50，未把新174进度冒称174份逐件审计。PR257合并ab91916e、五记录6作用域同步与39既有状态保持、研究树清洁/分支清理及Issue6099129848全文回读已确认；PR256当前36文件包核验范围保持。今晚继续至11日晨间与三个既有自动任务安排不变，peer本地暂停及真实接口资格归属保持。完整156、最佳归档A、RTLLM真实五样本、32GB全生命周期/隔离/真实接口恢复/可复现交付仍待，goal active。
+原142最近完整现场检查仍23:37：五原身份活、174/2340正常封存、0失败；已逐件审计仍前150份，下一普通例检11日00:07:36。匹配C/P reader942ee1f1终态条件与失败不可评分边界已记录；PR258合并9183da14、五记录13作用域同步/39既有状态保持、研究树与分支清理完成，Issue6099227852全文回读一致。今晚本方继续授权、peer暂停与真实接口资格归属保持。完整156、最佳归档A、RTLLM真实五样本、32GB全生命周期/隔离/真实接口恢复/可复现交付仍待，goal active。
 
 2026-10-10 15:38 +08:00：已校正研究源码工作树的submission/README.md与实际归档入口不一致处：HTTP示例改为agent/runtime.py serve（不存在顶层runtime.py）；说明现728499运行骨架尚未绑定本轮最终候选；按实际health实现，VRAM归因未知为null且沿用其他就绪条件，ready不等于32GB/隔离验收；移除过时远程API操作指引，保持AMD同机本地推理；明确工作进程清理不证明真实模型取消/恢复。README新SHA3762e4a7，运行代码/manifest/官方baseline/守护器均未改。CLI与health AST、路径、manifest绑定及文档差异已静态核验；没有运行项目函数、服务、模型、EDA、旧控制或新增FIFO。
 
