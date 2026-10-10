@@ -1,0 +1,114 @@
+{
+  "schema": "owned_gpu_sampling_qualification_v1",
+  "at": "2026-10-10T10:00:20.282470+00:00",
+  "implementation": {
+    "source_sha256": "9adc237f4e406feb3557eab8488e9ae37152e0bc558dda94d54f4d2bca0957d2",
+    "test_sha256": "dbfeef18b29c79b7bbda387260f3ba9fc28a66377a14ba99b25853d444b58d71",
+    "default_enabled": false,
+    "flag": "--sample-gpu-resources",
+    "interval_flag": "--gpu-sample-interval-s",
+    "interval_default_s": 1,
+    "interval_min_s": 0.25,
+    "scope": "Read-only non-atomic owned DRM client observations; duplicate client IDs per PCI are counted once. Distinct clients may share buffers, so the client sum is not unique physical VRAM. Whole-device utilization and usage remain separate."
+  },
+  "qualification": {
+    "host_scope": "authorized AMD server",
+    "passed": true,
+    "cases": [
+      {
+        "case": "shared_client_dedup",
+        "passed": true,
+        "complete": true
+      },
+      {
+        "case": "shared_client_across_pids",
+        "passed": true,
+        "complete": true
+      },
+      {
+        "case": "missing_resident",
+        "passed": true,
+        "complete": false
+      },
+      {
+        "case": "unsupported_unit",
+        "passed": true,
+        "complete": false
+      },
+      {
+        "case": "model_pid_reused",
+        "passed": true,
+        "complete": false
+      },
+      {
+        "case": "device_binding_mismatch",
+        "passed": true,
+        "complete": false
+      },
+      {
+        "case": "two_owned_devices",
+        "passed": true,
+        "complete": true
+      },
+      {
+        "case": "missing_model_client",
+        "passed": true,
+        "complete": false
+      },
+      {
+        "case": "zero_resident_is_known",
+        "passed": true,
+        "complete": true
+      },
+      {
+        "case": "owned_disappears_during_sample",
+        "passed": true,
+        "complete": false
+      }
+    ],
+    "execution": {
+      "child_pid": 725495,
+      "starttime": "889998470",
+      "exec_confirmed": true,
+      "returncode": 0,
+      "leader_reaped": true,
+      "retired_verified": true,
+      "remaining_group": [],
+      "elapsed_s": 0.18467767722904682,
+      "cap_s": 30,
+      "stdout_sha256": "1f60c724fd31505117417586f948fe727b98ccca004092cd82abecf7aaa5d7c2",
+      "stdout_bytes": 1839
+    },
+    "live_snapshot": {
+      "at": "2026-10-10T09:58:55.296473+00:00",
+      "model_birth_and_command_held": true,
+      "model_owned_client_binding_verified": true,
+      "resident_vram_bytes": 20129415168,
+      "physical_vram_capacity_bytes": 51522830336,
+      "whole_device_vram_used_bytes": 20342001664,
+      "whole_device_gpu_busy_percent": 98,
+      "per_process_engine_counters": null,
+      "single_owned_device": true,
+      "non_atomic": true
+    },
+    "guard_loop_executed": false,
+    "model_loading_observed": false,
+    "complete_lifecycle_observed": false,
+    "formal_resource_acceptance": false,
+    "network_connect_and_bind_denied": true
+  },
+  "evidence": {
+    "private_amd_root": "/workspace/team/runs/fpga_teammate/owned_gpu_sampling_qualification_20261010_v1",
+    "archive": "QUALIFICATION_ORIGINALS.zip",
+    "archive_sha256": "dd70842c931e698e96aa205688aff2f3aacbe4b4558cac2800ef3b837e1027c8",
+    "members": 204,
+    "manifest_sha256": "a9b01b18f3e09bce7f9b3ff2e729540bf66530b29f99207b5418a7ca51fa564e",
+    "all_originals_and_archive_members_bound": true,
+    "source_and_frozen138_bindings_held": true,
+    "no_pycache": true
+  },
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "required_next": "Qualify enabled/disabled actual guard main wiring and selected production chain under an exclusive lease after frozen138 releases; then collect the complete loading/generation/repair lifecycle with explicit unknowns. Do not infer formal32GB compliance from this warm snapshot or sampled maxima."
+}

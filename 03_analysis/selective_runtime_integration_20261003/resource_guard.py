@@ -70,6 +70,107 @@ def descendants(pid):
     return found
 
 
+def gpu_sample(owned, model_pid, *, proc_root=Path('/proc'), drm_root=Path('/sys/class/drm')):
+    """Read one non-atomic sample; deduplicate shared DRM clients, never infer zero.
+
+    `owned` contains previously bound PID/starttime records. Device-wide values
+    include other clients; they are separate from owned-client resident memory.
+    Distinct clients can share buffers, so their sum is not unique physical VRAM.
+    Fixture roots are used only by AMD data-boundary qualification.
+    """
+    sample = dict(at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                  monotonic=time.monotonic(), clients=[], devices={}, errors=[],
+                  complete=False, model_birth_seen=False, model_drm_client_seen=False)
+    clients = {}
+
+    def memory_bytes(value):
+        if value == '0':
+            return 0
+        if value is None:
+            return None
+        words = value.split()
+        if len(words) != 2 or words[1] != 'KiB' or not words[0].isdigit():
+            return None
+        return int(words[0]) * 1024
+
+    for pid, expected in sorted(owned.items()):
+        root = proc_root / str(pid)
+        birth_seen = False
+        try:
+            before = (root / 'stat').read_text().rsplit(')', 1)[1].split()
+            if before[19] != str(expected['starttime']) or before[0] in ('Z', 'X'):
+                if pid == model_pid:
+                    sample['errors'].append(dict(pid=pid, reason='model_birth_not_live'))
+                continue
+            birth_seen = True
+            if pid == model_pid:
+                sample['model_birth_seen'] = True
+            pending = []
+            for fd in sorted((root / 'fdinfo').iterdir()):
+                try:
+                    fields = dict(line.split(':', 1) for line in fd.read_text().splitlines() if ':' in line)
+                    fields = {k: v.strip() for k, v in fields.items()}
+                    if fields.get('drm-driver') != 'amdgpu':
+                        continue
+                    node = Path(os.readlink(root / 'fd' / fd.name)).name
+                    device = drm_root / node / 'device'
+                    pci = fields.get('drm-pdev')
+                    client = fields.get('drm-client-id')
+                    if (not client or not client.isdigit() or not pci or
+                            device.resolve().name != pci or (device / 'vendor').read_text().strip() != '0x1002'):
+                        raise ValueError('DRM client/device binding unavailable')
+                    resident = memory_bytes(fields.get('drm-resident-vram'))
+                    allocated = memory_bytes(fields.get('drm-memory-vram'))
+                    if resident is None:
+                        raise ValueError('resident VRAM unavailable or unsupported unit')
+                    engines = {k: v for k, v in fields.items() if k.startswith('drm-engine-')}
+                    pending.append(dict(pci_bdf=pci, client_id=client, resident_vram_bytes=resident,
+                                        allocated_vram_bytes=allocated, engine_counters=engines or None,
+                                        owners=[dict(pid=pid, starttime=before[19], fd=fd.name)]))
+                    if pci not in sample['devices']:
+                        values = {k: int((device / k).read_text().strip()) for k in
+                                  ('mem_info_vram_total', 'mem_info_vram_used', 'gpu_busy_percent')}
+                        if min(values.values()) < 0 or values['gpu_busy_percent'] > 100:
+                            raise ValueError('invalid device telemetry')
+                        sample['devices'][pci] = dict(render_or_card_node=node, **values)
+                except FileNotFoundError:
+                    # An owned process can close an FD during the snapshot.
+                    sample['errors'].append(dict(pid=pid, fd=fd.name, reason='fd_changed_during_sample'))
+                except (OSError, ValueError) as exc:
+                    sample['errors'].append(dict(pid=pid, fd=fd.name, reason=str(exc)))
+            after = (root / 'stat').read_text().rsplit(')', 1)[1].split()
+            if after[19] != before[19] or after[0] in ('Z', 'X'):
+                sample['errors'].append(dict(pid=pid, reason='birth_changed_during_sample'))
+                continue
+            for current in pending:
+                key = (current['pci_bdf'], current['client_id'])
+                if pid == model_pid:
+                    sample['model_drm_client_seen'] = True
+                if key not in clients:
+                    clients[key] = current
+                else:
+                    old = clients[key]
+                    old['owners'].extend(current['owners'])
+                    # Same client may change between FD reads; do not sum it.
+                    old['resident_vram_bytes'] = max(old['resident_vram_bytes'], current['resident_vram_bytes'])
+                    allocated = [x for x in (old['allocated_vram_bytes'], current['allocated_vram_bytes']) if x is not None]
+                    old['allocated_vram_bytes'] = max(allocated) if allocated else None
+        except (FileNotFoundError, ProcessLookupError):
+            if pid == model_pid:
+                sample['errors'].append(dict(pid=pid, reason='model_disappeared'))
+            elif birth_seen:
+                sample['errors'].append(dict(pid=pid, reason='owned_process_disappeared_during_sample'))
+        except (OSError, IndexError, ValueError) as exc:
+            sample['errors'].append(dict(pid=pid, reason=str(exc)))
+    sample['clients'] = sorted(clients.values(), key=lambda x: (x['pci_bdf'], x['client_id']))
+    sample['complete'] = (not sample['errors'] and sample['model_birth_seen'] and sample['model_drm_client_seen'])
+    sample['owned_resident_vram_bytes'] = (sum(x['resident_vram_bytes'] for x in clients.values())
+                                          if sample['complete'] else None)
+    sample['single_owned_device'] = (len({x['pci_bdf'] for x in clients.values()}) == 1
+                                     if sample['complete'] else None)
+    return sample
+
+
 def cleanup(proc, tracked, model_pid):
     """TERM stage cooperatively, then reap/kill only verified owned descendants."""
     if proc and proc.poll() is None:
@@ -218,6 +319,9 @@ def main():
     parser.add_argument('--minimum-free-gib', type=float, default=3)
     parser.add_argument('--slot-minutes', type=int, default=60)
     parser.add_argument('--stage-timeout-s', type=float, default=2400)
+    parser.add_argument('--sample-gpu-resources', action='store_true',
+                        help='Record owned DRM/device observations; not formal resource acceptance')
+    parser.add_argument('--gpu-sample-interval-s', type=float, default=1.)
     parser.add_argument('command', nargs=argparse.REMAINDER)
     args = parser.parse_args()
     if sys.platform != 'linux':
@@ -231,6 +335,8 @@ def main():
         parser.error('disk threshold and lease must be positive and finite')
     if not 0 < args.stage_timeout_s < args.slot_minutes * 60 - 60:
         parser.error('stage timeout must leave at least 60 seconds before slot lease expiry')
+    if not math.isfinite(args.gpu_sample_interval_s) or args.gpu_sample_interval_s < .25:
+        parser.error('GPU sampling interval must be finite and at least .25 seconds')
     args.kit = args.kit.resolve()
     out = args.guard_out.resolve()
     out.mkdir(parents=True, exist_ok=False)
@@ -240,6 +346,30 @@ def main():
     result = dict(schema_version=1, complete=False, passed=False, phase='resource_guard',
                   model_managed=False, instance_managed=False)
     rc = 1
+    gpu_stream, gpu_summary, last_gpu_sample = None, None, None
+
+    def record_gpu(phase):
+        nonlocal last_gpu_sample
+        current_model = process_record(args.model_pid)
+        model_children = (descendants(args.model_pid) if current_model and
+                          current_model['starttime'] == model_before['starttime'] and
+                          current_model['state'] not in ('Z', 'X') else {})
+        owned = {**tracked, **model_children, args.model_pid: model_before}
+        sample = gpu_sample(owned, args.model_pid)
+        sample['phase'] = phase
+        gpu_stream.write(json.dumps(sample, sort_keys=True) + '\n')
+        gpu_stream.flush()
+        gpu_summary['sample_count'] += 1
+        gpu_summary['all_samples_complete'] &= sample['complete']
+        if last_gpu_sample is not None:
+            gpu_summary['max_sample_gap_s'] = max(gpu_summary['max_sample_gap_s'], sample['monotonic'] - last_gpu_sample)
+        last_gpu_sample = sample['monotonic']
+        if sample['complete']:
+            gpu_summary['complete_sample_count'] += 1
+            previous_peak = gpu_summary['observed_peak_owned_resident_vram_bytes']
+            gpu_summary['observed_peak_owned_resident_vram_bytes'] = max(previous_peak or 0, sample['owned_resident_vram_bytes'])
+            single = gpu_summary['all_complete_samples_single_device']
+            gpu_summary['all_complete_samples_single_device'] = sample['single_owned_device'] if single is None else single and sample['single_owned_device']
 
     def cancel(signum, frame):
         raise InterruptedError('stage wrapper received signal ' + str(signum))
@@ -285,6 +415,14 @@ def main():
                      protected=before,
                      slot_script_sha256=sha(args.slot_script))
         save(out / 'resource_check.json', check)
+        if args.sample_gpu_resources:
+            gpu_stream = (out / 'gpu_samples.jsonl').open('x', encoding='utf-8')
+            gpu_summary = dict(sample_count=0, complete_sample_count=0, interval_s=args.gpu_sample_interval_s, max_sample_gap_s=0.,
+                               all_samples_complete=True, all_complete_samples_single_device=None,
+                               observed_peak_owned_resident_vram_bytes=None, covers_model_loading=False,
+                               formal_resource_acceptance=False,
+                               scope='Pre-stage through owned cleanup on an existing model; sampled values, not continuous maxima. Device-wide utilization is not attributable solely to this model.')
+            record_gpu('pre_stage')
         if '{resource_check}' not in command:
             raise RuntimeError('stage command must contain the literal {resource_check} argument')
         command = [str(out / 'resource_check.json') if item == '{resource_check}' else item
@@ -305,6 +443,8 @@ def main():
                     raise RuntimeError('shared slot changed while stage was running')
                 if identity(args.model_pid) != model_before:
                     raise RuntimeError('shared model identity changed while stage was running')
+                if gpu_stream is not None and time.monotonic() - last_gpu_sample >= args.gpu_sample_interval_s:
+                    record_gpu('stage')
                 time.sleep(.25)
             rc = proc.returncode
         result.update(stage_rc=rc, elapsed_s=time.monotonic() - tick)
@@ -322,6 +462,17 @@ def main():
         except Exception as exc:
             result['wrapper_cleanup_error'] = type(exc).__name__ + ': ' + str(exc)
             rc = 1
+        if gpu_stream is not None:
+            try:
+                record_gpu('post_cleanup')
+            except Exception as exc:
+                gpu_summary['sampling_error'] = type(exc).__name__ + ': ' + str(exc)
+                gpu_summary['all_samples_complete'] = False
+            finally:
+                gpu_stream.close()
+                gpu_summary.update(log_sha256=sha(out / 'gpu_samples.jsonl'),
+                                   log_bytes=(out / 'gpu_samples.jsonl').stat().st_size)
+                result['gpu_observation'] = gpu_summary
         try:
             result['model_unchanged'] = model_before is not None and identity(args.model_pid) == model_before
             result['protected_files_unchanged'] = before is not None and protected(args.kit) == before
