@@ -1,0 +1,320 @@
+{
+  "schema": "temporal138_original_completed_comparison_v1",
+  "saved_epoch": 1791628935.7018425,
+  "ticket": 138,
+  "state": "completed",
+  "tasks": 9,
+  "samples_per_task": 5,
+  "arms": {
+    "A": {
+      "weighted_coefficient": 0.7333333333333333,
+      "all_five_L3_tasks": 6,
+      "level_counts": {
+        "L1": 15,
+        "L3": 30
+      },
+      "model_requests": 47,
+      "solve_seconds": 1399.0110634416342
+    },
+    "P": {
+      "weighted_coefficient": 0.8222222222222223,
+      "all_five_L3_tasks": 7,
+      "level_counts": {
+        "L1": 10,
+        "L3": 35
+      },
+      "model_requests": 55,
+      "solve_seconds": 2215.559447458014
+    },
+    "B": {
+      "weighted_coefficient": 0.6133333333333333,
+      "all_five_L3_tasks": 5,
+      "level_counts": {
+        "L0": 7,
+        "L1": 13,
+        "L3": 25
+      },
+      "model_requests": 45,
+      "solve_seconds": 1431.0484443809837
+    }
+  },
+  "outputs": 135,
+  "original_reader_once": true,
+  "original_result_sha256": "333d30b557b4d30ee1eaea728024df41e5cd20a478e4d11633eb70f00da56d03",
+  "original_reader_sha256": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+  "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+  "original_archive_sha256": "7d5541788e8f304442554a1dec7ae9f20e98a6bcf903419e7b80b79540d78886",
+  "archive_members": 5627,
+  "private_archive": "E:\\26qiansai\\private_archives\\temporal138_original_complete_20261010_v1",
+  "AMD_archive": "/workspace/team/activity/fpga_owner/artifacts/temporal138-original-complete-archive-20261010-v1",
+  "all_rows_actual_solve_within300": true,
+  "FIFO_completed_and_released": true,
+  "original_goal_diagnostics": {
+    "per_task": [
+      {
+        "task": "Prob095_review2015_fsmshift",
+        "historical_control": true,
+        "A_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "P_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "new_L3_samples": [],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": true,
+        "A_calls": 5,
+        "P_calls": 5
+      },
+      {
+        "task": "Prob107_fsm1s",
+        "historical_control": true,
+        "A_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "P_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "new_L3_samples": [],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": true,
+        "A_calls": 5,
+        "P_calls": 5
+      },
+      {
+        "task": "Prob108_rule90",
+        "historical_control": true,
+        "A_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "P_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "new_L3_samples": [],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": true,
+        "A_calls": 5,
+        "P_calls": 5
+      },
+      {
+        "task": "Prob109_fsm1",
+        "historical_control": true,
+        "A_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "P_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "new_L3_samples": [],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": true,
+        "A_calls": 5,
+        "P_calls": 10
+      },
+      {
+        "task": "Prob110_fsm2",
+        "historical_control": true,
+        "A_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "P_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "new_L3_samples": [],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": true,
+        "A_calls": 5,
+        "P_calls": 5
+      },
+      {
+        "task": "Prob111_fsm2s",
+        "historical_control": false,
+        "A_levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "new_L3_samples": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": null,
+        "A_calls": 5,
+        "P_calls": 5
+      },
+      {
+        "task": "Prob133_2014_q3fsm",
+        "historical_control": false,
+        "A_levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P_levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "new_L3_samples": [],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": null,
+        "A_calls": 5,
+        "P_calls": 5
+      },
+      {
+        "task": "Prob139_2013_q2bfsm",
+        "historical_control": false,
+        "A_levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P_levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "new_L3_samples": [],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": null,
+        "A_calls": 5,
+        "P_calls": 5
+      },
+      {
+        "task": "Prob140_fsm_hdlc",
+        "historical_control": false,
+        "A_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "P_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "new_L3_samples": [],
+        "lost_L3_samples": [],
+        "paired_grade_regressions": [],
+        "historical_P_all_five_L3": null,
+        "A_calls": 7,
+        "P_calls": 10
+      }
+    ],
+    "newly_correct_samples": 5,
+    "lost_correct_samples": 0,
+    "paired_grade_regressions": 0,
+    "historical_control_failures": [],
+    "per_task_call_increases": [
+      "Prob109_fsm1",
+      "Prob140_fsm_hdlc"
+    ],
+    "total_A_calls": 47,
+    "total_P_calls": 55,
+    "full156_completion_gates_evaluated": false,
+    "full_goal_complete": false,
+    "automatic_adoption": false,
+    "scope": "Complete fixed subset diagnostics; original full156 goal and cost requirements require separate complete review, not inferred here."
+  },
+  "conclusion": "Only fixed development task111 improves across all five pairs. 133/139 remain incorrect; controls do not lose L3, but109/140 use more requests. No automatic adoption or full156 qualification.",
+  "failure_policy": {
+    "ordinary_graded_wrong_answer_continues": true,
+    "old_incomplete_solver_row_stops": true,
+    "future_inspected_budget_failure_continuation_source_prepared": true,
+    "real_shared_model_cancellation_idle_qualified": false,
+    "deployed_to138": false,
+    "grade_and_call_count_unknown_on_failed_rows": true
+  },
+  "peer_review": {
+    "latest_comment": 6096589581,
+    "core_five_delta_accepted": true,
+    "B_budget_delta_source_specific_finite_review_accepted": true,
+    "B_fixture_is_not_real_model_cancellation": true,
+    "peer_submission_entry_review_owned_by_peer": true
+  },
+  "full156": false,
+  "full_goal_complete": false,
+  "automatic_adoption": false,
+  "official_four_component_total_score": null,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "next": [
+    "Freeze one exact production A/P/B package with selected680d supervisor and shared parent300/outer310; align with peer submission-entry integration.",
+    "Validate actual exclusive-model cancellation and idle/resource entry before future complete156 admission.",
+    "Keep original174-word factor as a development candidate; general window feedback remains an unimplemented, separate hypothesis."
+  ]
+}
