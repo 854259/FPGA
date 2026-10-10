@@ -136,6 +136,41 @@ def fixture(action, root, scenario):
     os.environ.update(EDA_TMP=str(root / 'scratch'), RTL_EVIDENCE_DIR=str(root / 'evidence'),
                       FPGACHINA_TOKEN='synthetic-test-token')
     fake = SyntheticIO(scenario)
+    if action == 'health':
+        import ctypes
+        assert ctypes.CDLL(None).prctl(36, 1, 0, 0, 0) == 0
+        tool = root / 'synthetic-vivado'
+        program = """#!/usr/bin/python3
+import os,sys,time,json,subprocess
+from pathlib import Path
+root=Path(os.environ['EDA_TMP']).parent
+child=subprocess.Popen([sys.executable,'-B','-c','import time;time.sleep(20)'],
+                       start_new_session=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+def birth(pid):
+    return dict(pid=pid,starttime=Path('/proc',str(pid),'stat').read_text().rsplit(')',1)[1].split()[19])
+(root/'health-births.json').write_text(json.dumps(dict(tool=birth(os.getpid()),child=birth(child.pid),cwd=os.getcwd())))
+print('vivado v2026.1 (synthetic CPU tool)',flush=True)
+if os.environ['HEALTH_SCENARIO']=='cancel_health':time.sleep(20)
+"""
+        tool.write_text(program)
+        tool.chmod(0o755)
+        if scenario == 'cancel_health':
+            def cancel_health():
+                end = time.monotonic() + 3
+                while not (root / 'health-births.json').is_file() and time.monotonic() < end:
+                    time.sleep(.01)
+                (root / 'cancel-at.json').write_text(json.dumps(dict(monotonic=time.monotonic())))
+                os.kill(os.getpid(), signal.SIGTERM)
+            threading.Thread(target=cancel_health, daemon=True).start()
+        with patch.dict(os.environ, dict(MODEL_NAME='synthetic-no-model', HEALTH_SCENARIO=scenario,
+                                         LLM_BASE_URL='http://127.0.0.1:8000/v1')), \
+             patch.object(urllib.request, 'urlopen', fake.open), \
+             patch.object(runtime, 'vivado_tool', lambda name: str(tool)), \
+             patch.object(runtime, 'vram_gb', lambda: 0):
+            server = runtime.HTTPServer(('127.0.0.1', 0), runtime.Handler)
+            print(json.dumps(dict(port=server.server_port, pid=os.getpid())), flush=True)
+            server.serve_forever()
+        return
     with fake.installed():
         if scenario == 'cancel_recovery':
             actual_idle = candidate_worker.model_idle
@@ -189,9 +224,9 @@ class SubmissionChainTests(unittest.TestCase):
             return response.status, json.load(response)
 
     @contextlib.contextmanager
-    def server(self, scenario='normal'):
+    def server(self, scenario='normal', action='http'):
         stderr = (self.root / 'server.stderr').open('wb')
-        proc = subprocess.Popen([sys.executable, '-B', __file__, '--fixture', 'http',
+        proc = subprocess.Popen([sys.executable, '-B', __file__, '--fixture', action,
                                  str(self.root), scenario], stdout=subprocess.PIPE,
                                 stderr=stderr, text=True)
         try:
@@ -414,6 +449,58 @@ NOTREADY_AGENT=0
                 if proc.poll() is None:
                     proc.terminate()
                 proc.wait(timeout=2)
+
+    def health_process_case(self, scenario):
+        import ctypes
+        import shutil
+        import tempfile
+        self.assertEqual(ctypes.CDLL(None).prctl(36, 1, 0, 0, 0), 0)
+        try:
+            with self.server(scenario, action='health') as (port, proc):
+                if scenario == 'cancel_health':
+                    with self.assertRaises((OSError, http.client.RemoteDisconnected)):
+                        self.request(port, path='/v1/health')
+                    self.assertEqual(proc.wait(timeout=2), 1)
+                else:
+                    status, value = self.request(port, path='/v1/health')
+                    self.assertEqual(status, 200)
+                    self.assertTrue(value['ready'])
+                births = json.loads((self.root / 'health-births.json').read_text())
+                for key in ('tool', 'child'):
+                    self.assertIsNone(deadline_supervisor.process_record(births[key]['pid']))
+                print(json.dumps(dict(case=scenario, tool_and_child_retired=True, births=births)))
+        finally:
+            # Negative-control cleanup only: these exact fixture births are
+            # adopted by this test after its HTTP process exits.
+            path = self.root / 'health-births.json'
+            if path.is_file():
+                births = json.loads(path.read_text())
+                for key in ('tool', 'child'):
+                    row = births[key]
+                    current = deadline_supervisor.process_record(row['pid'])
+                    if current and current['starttime'] == row['starttime']:
+                        try:
+                            os.kill(row['pid'], signal.SIGKILL)
+                        except ProcessLookupError:
+                            pass
+                        end = time.monotonic() + 2
+                        while deadline_supervisor.process_record(row['pid']) and time.monotonic() < end:
+                            try:
+                                os.waitpid(row['pid'], os.WNOHANG)
+                            except ChildProcessError:
+                                pass
+                            time.sleep(.01)
+                old_scratch = Path(births['cwd'])
+                if (old_scratch.parent == Path(tempfile.gettempdir()) and
+                        old_scratch.name.startswith('rtl-version-') and old_scratch.is_dir()):
+                    self.assertEqual(list(old_scratch.iterdir()), [])
+                    old_scratch.rmdir()
+
+    def test_health_version_reaps_detached_child(self):
+        self.health_process_case('normal_health')
+
+    def test_health_sigterm_reaps_tool_and_exits(self):
+        self.health_process_case('cancel_health')
 
     def test_detached_tool_child_is_reaped_before_next_request(self):
         real_owned = deadline_supervisor.owned_command
