@@ -1,3 +1,7 @@
+2026-10-10 13:09 +08:00：补充独立审计peer既有共享300秒预算资格，不重复旧控制。6e964773档案135成员/380804B与AMD原物逐件一致、30源保持；64155ca4/7ac3ba5a源码确认worker入口统一计时、HTTP资源门后取剩余、owned操作取min(原上限,剩余)、finally恢复。五模拟journal及派发标志核验：首答283秒后HTTP剩17、编译17/7；门耗尽虽有预建journal但dispatch_started=false/实际派发0，不能冒称模型已接收。
+
+已独立核550868控制进程与550869/start888158871真实CPU子进程的出生/命令/原日志/超时SIGKILL/rc-9/空组/当前退休；分配约0.3秒、实际0.31677秒是原监督器已有真实增量证据。Issue6094023215补充要求复用此CPU控制，不重跑；剩余未验证的是预算非零退出原件绑定及FAILED_SEALED联合changed-flow、持续socket读的严格全题截止、真实模型取消/idle。新预算非零退出并不满足失败续行v1的外层timeout门，不能把独立资格相加称组合可部署。冻结output-v2/135136保持，本方新项目执行/模型/EDA/FIFO均0；完整156/RTLLM/正式交付目标未达。
+
 2026-10-10 13:03 +08:00：补齐output-v2模拟资格原件的本方独立审计。ca199554档案100成员/340482B与当前AMD原物逐件一致、29源SHA保持；517183/start887961585的stdout出生/完成、rc0/reaped和当前身份退休已核。四份原始/转发wire独立比较证实只有P首次system追加既有64词，C两轮/P修复逐字保持；请求/响应journal、fake compile前后源码及一错一通过日志相符。missing_suffix无请求、transport_failure单次未确认且无worker成功。四用例5fakeHTTP尝试/4fakecompile是原真实worker接线资格，非真实模型收益、147恢复或全部repair容量；本轮没有重跑任何资格。
 
 已独立静审未来失败续行230a07b7/queue0c1de1e8及原监督器78e9b3e1的wait/killpg/waitpid/空组返回合同；失败保留null、原预留不退、不重试、遍历完仍抛错。六旧例档案7eb3922a/105成员、变化两例63b3c5d4/72成员及各源/控制进程退休已核。具体未验证项：测试替换validate/launch_args并直接造SOLVE_COMMAND/TERMINAL，未真正覆盖execute_row→owned timeout→失败封存→下一行；原监督收据无独立pid/starttime/argv，清理声明依赖源码合同。Issue6094023215已全文回读，建议仅对新增路径用AMD受控合成进程验证实际超时/清理/后续一次派发并绑定身份与源，不重复旧控制；模型取消/空闲、共享剩余时限仍单列。此未来改动未部署，原132不续跑，135/136与冻结output-v2不变，未选中/准入新评分。详见PROJECT_STATE现有准备记录；完整目标仍未达。
