@@ -2,7 +2,7 @@
 
 The selected table/phase candidate with the unchanged 174-word first-system
 suffix is now connected to both HTTP and CLI in this source package.
-Seven AMD CPU integration cases passed. Model replies and EDA outputs were
+Eleven AMD CPU integration cases passed. Model replies and EDA outputs were
 synthetic; actual model/EDA interface qualification, resource acceptance,
 isolation and reproducible deployment are still pending. This is not a scored
 or formally accepted deployment.
@@ -84,7 +84,7 @@ reserve, capped from the first observed cancellation. A work timeout clears
 the proposal and records unknown calls where appropriate. Cleanup can extend
 past the work deadline; this is not a promise of a timely official response.
 A failed tool/protocol/recovery check retains evidence and stops further work
-with HTTP 503 until inspection. There are no implicit model retries.
+with HTTP 503 until inspection. A process cancellation exits the HTTP service after bounded cleanup, even when a transport wrapper or recovery fails. There are no implicit model retries.
 
 Every request gets a unique private evidence directory, defaulting to
 `EDA_TMP/rtl-evidence`. It retains staged inputs, request/response receipts,
@@ -101,13 +101,12 @@ has not received the new native cancellation qualification.
 
 ## Validation and packaging
 
-Seven AMD CPU cases cover repeated direct/HTTP calls, authentication, CLI
+Eleven AMD CPU cases cover repeated direct/HTTP calls, authentication, CLI
 dispatch, one actual signal-based deadline followed by another request,
 malformed-checker blocking, SIGTERM cleanup/recovery sharing and reaping a
-detached tool child. HTTP baseline execution is stubbed in these cases; CLI
+detached tool child. Three additional cases send real SIGTERM during transport, a native stage and failing recovery. A bounded real shell guard case checks live and exited agent processes: delayed health never restarts a live agent. HTTP baseline execution is stubbed in these cases; CLI
 coverage calls `runtime.main`, not the shell wrapper. See manifest validation
-receipts. Original failed test evidence is retained; its only correction was
-the expected final newline from the unchanged baseline extractor.
+receipts. Original failed test evidence is retained. The early seven-case fixture corrected the expected final newline from the unchanged baseline extractor. Later regressions reproduced HTTP cancellation being swallowed and the guard trying to restart a live child; both are fixed and verified.
 
 Package only this directory. No parent evaluator or private archive is needed
 by generation. Prompt allowlisting is not an OS sandbox. The final image,

@@ -513,6 +513,12 @@ def run_job(mode, task, out, seconds, *, parent_started=None):
         finally:
             for sig, handler in previous.items():
                 signal.signal(sig, handler)
+            if cancelled_at is not None:
+                # Transport/recovery wrappers must not turn a process stop
+                # into an ordinary HTTP failure followed by more requests.
+                error = InterruptedError('Request process was cancelled')
+                error.cancelled_at_monotonic = cancelled_at
+                raise error
     return (out / 'solution.v').read_text(encoding='utf-8'), (out / 'trace.jsonl').read_text(encoding='utf-8')
 
 
@@ -591,6 +597,10 @@ class Handler(BaseHTTPRequestHandler):
             self.connection.settimeout(10)
             data = json.loads(self.rfile.read(size))
             self.send_json(200, solve(data))
+        except InterruptedError as exc:
+            # HTTPServer catches Exception and otherwise keeps serving.
+            # Exit only after run_job has finished bounded cleanup.
+            raise SystemExit(1) from exc
         except (ValueError, UnicodeError) as exc:
             self.send_json(400, {'error': str(exc)})
         except (OSError, KeyError, RuntimeError, subprocess.SubprocessError):
