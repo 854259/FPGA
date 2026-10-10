@@ -1,3 +1,9 @@
+## 2026-10-10 失败续行补齐父子时间原件绑定（独立未部署）
+
+修复子进程按父起点计300秒、监督器较晚起表时用两者elapsed直接比较导致合法预算退出被拒的问题。queue保存SOLVE_CLOCK，绑定原SOLVE_COMMAND SHA/调度源码SHA及父起止；预算退出v2保存子起点和观测时刻，失败封存要求同父起点、观测位于父区间及scheduler PLAN绑定。旧v1继续原无父钟elapsed规则；等级/调用未知、预留不释放、失败不重放保持。
+
+AMD变化范围四拥有CPU子进程，经真实execute_row/shared_budget退出/seal函数：老化父起点>300而实际短监督合法封存，起点不一致/父钟缺失/调度绑定漂移三项拒绝。113成员d5c9cbc9双端逐SHA/长度核验，源索引shared_solve_budget_20261010/PARENT_FAILURE_CLOCK_QUALIFICATION.json。solver和资源/idle是模拟，不是A/B生产CLI或物理300/真实模型取消/完整恢复证明；旧资格绑定旧源，不继承给新三处改动。0模型/EDA/FIFO，未部署到138/132/137、完整156不准入。
+
 ## 2026-10-10 父进程统一求解起表及判定前300秒门已在独立源码补齐
 
 新增未部署五源码：queue显式共享预算将父monotonic起点传A/P/B；A/P含加载/首答/修复，B仅改拥有wrapper的剩余预算而原baseline字节保持。进入评分前双核原command elapsed及父钟<=300，拒绝超时rc0，保留310原监督但不宣称已证300+10清理界。零请求仅来源绑定预算退出可封存未知失败，外部timeout零请求继续拒绝。

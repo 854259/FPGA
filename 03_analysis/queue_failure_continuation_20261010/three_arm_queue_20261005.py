@@ -395,7 +395,14 @@ def execute_row(plan, argv, row, folder, resource_check):
                 'RTL_SOLVE_PARENT_STARTED_MONOTONIC='+format(solve_started, '.17g'),
                 *argv]
         command = resource.owned_command(solve_argv,folder,folder/'solve.log',plan['solve_supervisor_s'])
+        solve_returned = time.monotonic()
         save(folder/'SOLVE_COMMAND.json',command)
+        if plan.get('allow_shared_budget_failure'):
+            save(folder/'SOLVE_CLOCK.json', dict(schema='parent_solve_clock_v1',
+                 started_monotonic=solve_started, returned_monotonic=solve_returned,
+                 elapsed_s=solve_returned-solve_started, budget_s=plan['solve_deadline_s'],
+                 command_sha256=official.sha(folder/'SOLVE_COMMAND.json'),
+                 scheduler_sha256=official.sha(__file__)))
         assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Solver supervision failure'
         assert command['elapsed_s'] <= plan['solve_deadline_s'] and time.monotonic()-solve_started <= plan['solve_deadline_s'], 'Solver deadline exceeded before grading'
         solve = folder/'solve'; evaluator = Path(row['evaluator_dir'])

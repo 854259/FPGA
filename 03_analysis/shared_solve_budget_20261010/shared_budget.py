@@ -60,10 +60,12 @@ class SolveBudget:
 
     def exit_receipt(self, requests_path, worker_source):
         assert self.seconds == 300 and self.expired()
-        elapsed = self.clock() - self.started
+        observed = self.clock()
+        elapsed = observed - self.started
         assert math.isfinite(elapsed) and elapsed >= 300
         digest = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
-        return dict(schema='shared_worker_budget_expired_v1', budget_s=300, elapsed_s=elapsed,
+        return dict(schema='shared_worker_budget_expired_v2', budget_s=300, elapsed_s=elapsed,
+                    started_monotonic=self.started, observed_monotonic=observed,
                     requests_sha256=digest(requests_path), worker_source_sha256=digest(worker_source),
                     budget_source_sha256=digest(__file__), complete=False, grade=None,
                     actual_calls=None, unconfirmed_calls=None, score_eligible=False)

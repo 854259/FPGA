@@ -50,9 +50,28 @@ def original_files(folder, row, plan_sha256):
         assert command['timeout'] is False and command['returncode'] == 1
         assert 'solve/SHARED_BUDGET_EXIT.json' in files
         budget = json.loads((folder/'solve/SHARED_BUDGET_EXIT.json').read_bytes())
-        assert budget['schema'] == 'shared_worker_budget_expired_v1' and budget['budget_s'] == 300
+        assert budget['schema'] in ('shared_worker_budget_expired_v1', 'shared_worker_budget_expired_v2') and budget['budget_s'] == 300
         assert type(budget['elapsed_s']) in (int, float) and math.isfinite(budget['elapsed_s'])
-        assert 300 <= budget['elapsed_s'] <= command['elapsed_s']
+        if budget['schema'] == 'shared_worker_budget_expired_v2':
+            # Child bootstrap is part of the parent's budget but can precede
+            # the supervisor's own stopwatch. Compare the bound parent clock,
+            # rather than incorrectly requiring the shorter command >=300.
+            assert 'SOLVE_CLOCK.json' in files
+            clock = json.loads((folder/'SOLVE_CLOCK.json').read_bytes())
+            assert clock['schema'] == 'parent_solve_clock_v1' and clock['budget_s'] == 300
+            assert clock['command_sha256'] == files['SOLVE_COMMAND.json']
+            for key in ('started_monotonic', 'returned_monotonic', 'elapsed_s'):
+                assert type(clock[key]) in (int, float) and math.isfinite(clock[key])
+            origin, end = clock['started_monotonic'], clock['returned_monotonic']
+            assert 0 <= origin <= end and clock['elapsed_s'] == end-origin
+            assert budget['started_monotonic'] == origin
+            observed = budget['observed_monotonic']
+            assert type(observed) in (int, float) and math.isfinite(observed)
+            assert origin <= observed <= end and budget['elapsed_s'] == observed-origin
+            assert 300 <= budget['elapsed_s'] <= clock['elapsed_s']
+        else:
+            assert 'SOLVE_CLOCK.json' not in files
+            assert 300 <= budget['elapsed_s'] <= command['elapsed_s']
         assert budget['requests_sha256'] == files['solve/requests.json']
         assert budget['complete'] is False and budget['score_eligible'] is False
         assert budget['grade'] is None and budget['actual_calls'] is None and budget['unconfirmed_calls'] is None
@@ -120,6 +139,9 @@ def seal_failed_row(folder, row, plan, plan_sha256, resource_check, resource, sa
         for name, key in [('shared_budget.py', 'budget_source_sha256'), ('baseline_worker.py', 'worker_source_sha256')]:
             source = root/name
             assert sha(source) == budget[key] == plan['sources']['files'][str(source)]
+        if budget['schema'] == 'shared_worker_budget_expired_v2':
+            clock = json.loads((folder/'SOLVE_CLOCK.json').read_bytes())
+            assert clock['scheduler_sha256'] == plan['scheduler_sha256']
     # check_resource binds the original model/resource admission; telemetry is read-only.
     admission = resource.check_resource(resource_check, Path(plan['kit']))
     assert admission['llm_base_url'] == 'http://127.0.0.1:8000/v1'

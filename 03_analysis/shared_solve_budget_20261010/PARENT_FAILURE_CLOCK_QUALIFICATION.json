@@ -1,0 +1,93 @@
+{
+  "schema": "parent_failure_clock_binding_delta_v1",
+  "saved_epoch": 1791621636.4942575,
+  "source_hashes": {
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "75ccff591dbb8508b22677c1587b5ebf975c5c3ae50fa4187c0be07986da67b4",
+    "03_analysis/shared_solve_budget_20261010/baseline_worker.py": "67a7e31dbf6160a067bdc1948d041a1ef94579eaf26abd260c08d9e04988842b",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "eb4537e111a1ab36afbe51e1860f324e073ab3448d9d0a8b6e877faef2cf3748",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "reason": "Parent bootstrap precedes supervisor stopwatch;comparing child elapsed only with command elapsed can wrongly prevent inspected failure continuation.",
+  "budget_exit_schema": "shared_worker_budget_expired_v2",
+  "parent_clock_receipt": "SOLVE_CLOCK.json",
+  "child_origin_and_observation_bound_to_parent_interval": true,
+  "parent_clock_binds_command_and_scheduler": true,
+  "legacy_v1_keeps_original_no_parent_clock_elapsed_rule": true,
+  "unknown_grade_calls_reservations_preserved": true,
+  "qualification": {
+    "passed": true,
+    "controls": 4,
+    "real_owned_CPU_children": 4,
+    "actual_execute_row_shared_budget_exit_and_failure_seal": true,
+    "cases": [
+      {
+        "case": "matching_parent_with_short_supervisor",
+        "refused": false,
+        "command_elapsed_s": 0.04677300341427326,
+        "parent_elapsed_s": 301.04686096310616
+      },
+      {
+        "case": "child_origin_mismatch_refused",
+        "refused": true,
+        "command_elapsed_s": 0.045770859345793724,
+        "parent_elapsed_s": 301.0458617992699
+      },
+      {
+        "case": "missing_parent_clock_refused",
+        "refused": true,
+        "command_elapsed_s": 0.04555585980415344,
+        "parent_elapsed_s": 301.04562287963927
+      },
+      {
+        "case": "scheduler_binding_drift_refused",
+        "refused": true,
+        "command_elapsed_s": 0.0460439957678318,
+        "parent_elapsed_s": 301.0461275577545
+      }
+    ],
+    "parent_origin_is_aged": true,
+    "synthetic_solver_not_worker_CLI": true,
+    "resource_and_model_idle_synthetic": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 113,
+      "archive_sha256": "d5c9cbc944e83ec92cb00d034ae2acbe4b3dcdcd3e7b438e5bdee48d81c6ead5",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\parent_failure_clock_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/parent_failure_clock_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "deployed": false,
+  "production_B_CLI_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "real_shared_model_cancel_idle_qualified": false,
+  "full_production_chain_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "prior_qualification_scope": "Previous parent CLI/boundary and HTTP proofs retain exact original source SHA;not automatically qualification of this delta.",
+  "actual138": {
+    "ticket": 138,
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 55,
+    "observed_epoch": 1791621635.5349252,
+    "new_source_overlay": false
+  },
+  "next": [
+    "Keep138 frozen and read original stable-target/control/cost results.",
+    "Qualify exact production B CLI/resource/cleanup chain and real cancel-idle after138 under ownFIFO before full156."
+  ]
+}
