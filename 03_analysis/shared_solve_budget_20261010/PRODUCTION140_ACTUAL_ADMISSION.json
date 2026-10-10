@@ -1,0 +1,87 @@
+{
+  "schema": "production140_actual_engineering_admission_v1",
+  "saved_epoch": 1791632218.0004833,
+  "observed_epoch": 1791632166.355183,
+  "ticket": 140,
+  "state": "running",
+  "root": "/workspace/team/runs/fpga_owner/temporal_shared_budget_production_20261010_v3",
+  "admission": {
+    "ticket": 140,
+    "task_name": "production_budget_real_entries_v3",
+    "monitor_pid": 735097,
+    "accepted_at_utc": "2026-10-10T11:35:39.383466+00:00",
+    "root": "/workspace/team/runs/fpga_owner/temporal_shared_budget_production_20261010_v3",
+    "qualification_only": true,
+    "full_score_batch": false,
+    "max_reserved_model_calls": 7,
+    "plan_sha256": "be8ae20bacf5c9652deda541d5b5943ee81c6e94b27af2f5eb98345ba7431aac",
+    "spec_sha256": "7cd4ebe3905cb6f48c3ac860e1e05abb6a7618df17f2bf94e2d99c0d31a4c957",
+    "no_retry": true
+  },
+  "monitor": {
+    "pid": 735097,
+    "starttime": "890578886",
+    "state": "S",
+    "same_birth": true,
+    "command_sha256": "9f8f87ad82741668dbf1c11bd155d88b31aded9f40e326c60636ecbd693f7101",
+    "live_verified": true
+  },
+  "child": {
+    "pid": 735098,
+    "starttime": "890578896",
+    "state": "S",
+    "same_birth": true,
+    "command_sha256": "9894af676d48425184844e6a38f27ce6b440f2e8011a3726a743592bf6dc79ab",
+    "live_verified": true
+  },
+  "source_held": true,
+  "actual_shared_model_processing_seen": true,
+  "read_only_timeline": {
+    "artifact": "/workspace/team/activity/fpga_owner/artifacts/production140-readonly-telemetry-20261010-v1",
+    "observer": {
+      "pid": 735108,
+      "starttime": "890580919",
+      "state": "R",
+      "command_sha256": "bc7affa639d469a210d2dbcacd44aa5e46ac2d0664a723c5465c8afede7bd56f"
+    },
+    "source_sha256": "321c33d736901e47f227fdb0e8424c4e54ab81bd5114bd8f8e9530b3db13fd9f",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/activity/fpga_owner/artifacts/production140-readonly-telemetry-20261010-v1/observe.py"
+    ],
+    "ticket": 140,
+    "read_only": true,
+    "maximum_wall_s": 2820,
+    "owning_model_process_never_signalled": true,
+    "exists_live": true
+  },
+  "read_only_observer": {
+    "pid": 735108,
+    "starttime": "890580919",
+    "state": "S",
+    "same_birth": true,
+    "command_sha256": "bc7affa639d469a210d2dbcacd44aa5e46ac2d0664a723c5465c8afede7bd56f",
+    "live_verified": true
+  },
+  "peer_comment_reviewed": 6097055737,
+  "changed_sources": [
+    "failure_continuation.py"
+  ],
+  "unchanged_sources": 32,
+  "failure_consumer_sha256": "2c6557222622ec49937c85961f29a51d72c8584512ee515cfeff6e9e1daf9d99",
+  "prior139_failed_archived_released": true,
+  "earlier_v2_retained_unsubmitted_superseded": true,
+  "ordinary_judged_incorrect_row_may_continue": true,
+  "incomplete_solve_must_be_cleaned_idle_inspected_and_archived_before_continuation": true,
+  "real_model_cancellation_qualified": false,
+  "production_qualification_passed": null,
+  "scope": "Actual real parent clock/model/queue validation now running; failed seal and later A/P/B not yet demonstrated.",
+  "whole_task_FIFO": true,
+  "qualification_only": true,
+  "full_score_batch": false,
+  "full156": false,
+  "full_goal_complete": false,
+  "max_reserved_model_requests": 7,
+  "next": "Only read existing140/observer. On terminal preserve originals and verify failed seal/continuation/cancellation; never resubmit."
+}
