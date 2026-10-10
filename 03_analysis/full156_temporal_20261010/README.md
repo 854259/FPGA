@@ -1,5 +1,7 @@
 # 完整156题时序候选回归准备
 
+最新状态：GitHub评论6097489721反映两聊天活动目标不一致，已向本聊天用户请求统一。原始C不宣称为“最佳归档原版”。v1准备包及v2准入原型均保留且没有提交；v2的元数据授权位不代表已入队或已解决当前比较口径。`submit_full156.py`只是未安装、未执行的原型，明确要求口径已解决。完整五样本报告使用另存的`comparison_report.py`，对照内臂C/P显式绑定，历史参考需SHA绑定，数值汇总保持原官方及原五样本算法。
+
 本目录对应AMD准备根 `/workspace/team/runs/fpga_owner/temporal_first_system_full156_20261010_v1`。156唯一题、每题每臂5个固定样本，共2340行，原3900请求预留、48小时总预算。当前PLAN `execution_authorized=false`，尚未入队，没有新能力成绩。
 
 外层A绑定原完整目标的C算法：不启用真值表反馈，保留原phase C。外层P使用原table P和已选174词首请求提示；B沿用原官方单请求入口。原138的A是table P，不等同原目标C，不能改标签当成本证据。本次保持P执行及bind函数在P分支特化后的AST相同，其他32源与真实通过141逐字节相同。原C的functional_feedback AST及map_runtime/baseline字节与原完整目标冻结源匹配；新的A分支没有冒充141已经运行过的A。

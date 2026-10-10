@@ -1,3 +1,13 @@
+## 2026-10-10 完整入口增量验证完成，活动目标口径待统一，无新评测
+
+新C/P dispatch CPU实际通过：当前worker2b0a6bac运行函数在fixture中外C→内C不加提示、外P→内P只首请求174词，0网络/EDA/FIFO；新bind读取原156 C的Prob001实际归档并正确外A→内C，所有原件保持。这是新分支CPU/保留证据绑定，不能称新C真实求解/取消通过。空间实读/workspace约2.55GiB，旧132的2192行合计215903673B；比例2340约230481110B是规划参考、不是未来大小保证。根overlay约2TiB为宿主可见空间，不是本实例获配或持久承诺，不迁移或删保护原件。
+
+完整v2准入原型另冻结：PLAN3f6a6030/SPECa4be0260，33源保持v1（P不变），2340/3900/48h，v1不改。随后6097489721提出活动目标不同：队友“最佳归档A/原样B/完整五样本择优、不以旧门额外否决”；本方get_goal实读仍原120/.80/历史113/配对/成本门。未把原C宣称最佳A，已向本聊天用户异步请求统一，未擅自改目标。20:38:46实际只读两个根均无票、无intent/submission/guard/queue，活票为空，模型出生/命令保持；v2 metadata授权位不等同已提交。submit_full156.py仅未安装未执行原型，须policy_resolved，两个源不重投。
+
+完善另存comparison_report1038a145：原五样本数值汇总AST不变、原官方score2b382a41绑定，C/P对照内臂显式参数、历史参考SHA绑定，不依赖原九题计划的history字段；完整五样本矩阵/未知总分边界保持，未运行旧135行reader或制造新分数。下一核队友最佳归档A的同口径证据并接统一目标，不为等待开重复工程票。目标active未达，本轮为实际CPU/冻结/reader增量进展，不是live评测等待。
+
+索引full156_temporal_20261010/ENTRY_POLICY_HOLD、EXECUTION_FREEZE、READER_DELTA及comparison_report、submit_full156原型。
+
 ## 2026-10-10 完整156×5×3回归包已准备，尚未入队
 
 新准备根temporal_first_system_full156_20261010_v1，PLANfaa6d554/SPECdc47a018，156唯一题/2340行/3900预留请求/原48小时，execution_authorized=false、没有新FIFO或成绩。A绑定原目标C（phase C绕过table），P保持原table P+174词；P执行/bind函数特化AST与141相同、其余32源保持，原C functional_feedback AST及map_runtime/baseline字节核齐。新A分支未冒充141真实A资格，正式HTTP/CLI由队友继续同算法接入；下一完整入口与原成本门核对后另冻结准入，不在原准备包改授权位。原目标单样本作用域预先固定sample0，5样本及官方B单独报告，不挑最好样本或放松历史113/配对/原逐题总成本门，不自动采用。

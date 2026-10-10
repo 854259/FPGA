@@ -30987,5 +30987,123 @@
     "new_model_calls": 0,
     "new_EDA": 0,
     "new_FIFO": 0
+  },
+  "full156_entry_ready_goal_policy_hold_20261010": {
+    "schema": "full156_entry_readiness_goal_policy_hold_v1",
+    "saved_epoch": 1791635992.0537384,
+    "current_own_goal_objective": "提高AMD RTL智能体实际解题能力：在156题开发基准上，以原8192 tokens、最多2次请求、1次修复、每题求解300秒及原判定标准，交付一个完整回归至少120题完全正确、加权成绩至少80%的可复现版本；守住原历史正确题、配对等级及既定逐题和总调用成本门。近期优先保留完整真值表策略、接回已验证有效的串行状态机组件，并修复历史退步；其他因素依据真实结果决定保留或放弃，旧轮成绩不能相加。每轮先读GitHub协作区、共享进度和现有任务句柄，依据新增正确题、退步题、成本和剩余稳定错误，自主更新阶段计划与优先级，移出已完成或已证伪的待办。复用已有执行与验证工具，仅补变化所需验证；新因素先做固定单因素小对照，有净收益再做完整回归，不用接线检查或PR数量代替提分。禁止按题号记答案、补抽挑分、放松判定或向生成过程提供私有答案和判定反馈；开发集收益与未见题泛化分开报告。沿用整任务FIFO，保护队友任务、共享模型、冻结源和失败原件，已有任务不重复提交；重要改动和真实结论及时同步共享服务器及GitHub，仓库修改按分支/PR规则交付。无需逐轮等待指令；额度97%前保存停止、不使用额度重置；工作日前夜22:20收尾、22:40前保存并暂停本地，独立云端评测继续，次日用户要求后恢复。目标只有在完整实测满足全部门槛后才完成；达成后根据剩余短板重新制定下一阶段目标。",
+    "peer_comment": 6097489721,
+    "peer_policy": "Best archived A plus same-run official B and full five-sample comparison; old120/80/history/per-task-cost gates not extra vetoes.",
+    "own_goal_policy": "Original156>=120 L3 and weighted>=.80; preserve historical113, paired grade and recovered per-task/total cost requirements.",
+    "original_C_not_claimed_best_archived_A": true,
+    "user_policy_clarification_pending": true,
+    "strict_original_C_execution_freeze_retained_unsubmitted": true,
+    "control_CPU_scope": {
+      "result": {
+        "schema": "changed_original_C_dispatch_and_retained_binding_CPU_v1",
+        "passed": true,
+        "current_worker_sha256": "2b0a6bac6f4fb886379b601331360ac20bfebe9afa6e4210822b52f8119eef28",
+        "spec_sha256": "dc47a018ef15ef7d1a77871517f627c8cc1f43b9c37a7642c484795fdcb9028b",
+        "cases": [
+          {
+            "outer_arm": "C",
+            "inner_arm": "C",
+            "first_system_changed": false,
+            "forwarded_system_sha256": "f9121ba7aee29517b69e4641d600c15ddd01e66b984c584cec39fd0c15fc26a2",
+            "network_dispatch": false
+          },
+          {
+            "outer_arm": "P",
+            "inner_arm": "P",
+            "first_system_changed": true,
+            "forwarded_system_sha256": "8add8a1073fac22aee4ef05bebafa5d2e20a8f6c1359d8d6aa216b4443fdc511",
+            "network_dispatch": false
+          }
+        ],
+        "retained_original_C_binding": {
+          "outer_arm": "A",
+          "worker_arm": "C",
+          "model_generated_rtl_bound": true,
+          "actual_model_responses": 1,
+          "declaration_fix": false,
+          "solution_sha256": "4dcd7cd9fa94c9392d26810f8b4530e92f1d0a93e8a957c87aeaca8c0a0621b8"
+        },
+        "retained_original_C_path": "/workspace/team/runs/fpga_owner/prompt_table_full156_20261006_v1/results/samples/C/Prob001_zero/worker",
+        "retained_original_C_all_files_held": true,
+        "current33_sources_held": true,
+        "no_shared_model_or_EDA_called": true,
+        "new_model_calls": 0,
+        "new_EDA": 0,
+        "new_FIFO": 0,
+        "full156": false,
+        "score_eligible": false,
+        "new_real_C_solve_qualified": false,
+        "original132_storage_observation": {
+          "rows": 2192,
+          "total_bytes": 215903673,
+          "max_row_bytes": 963473,
+          "proportional2340_bytes": 230481110,
+          "future_size_guaranteed": false
+        },
+        "scope": "Actual new wrapper dispatch plus retained original-C binder; CPU fixture transport, no new solve/judge/cancellation claim."
+      },
+      "artifact": "/workspace/team/activity/fpga_owner/artifacts/full156-control-dispatch-cpu-20261010-v1"
+    },
+    "reader_static_delta": {
+      "schema": "full156_reader_control_layout_delta_static_v1",
+      "old_reader_sha256": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+      "new_reader_sha256": "1038a14556b55010ff5d466a0e4c0fa9d1a2b0ed36b7a6bf641c25bdec2b5f2b",
+      "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+      "numerical_summarize_AST_unchanged": true,
+      "complete_five_sample_matrix_required": true,
+      "A_inner_arm_C_or_P_explicit": true,
+      "historical_reference_must_be_SHA_bound": true,
+      "frozen_run_files_changed": false,
+      "new_scores": false,
+      "executed_audit": false,
+      "new_model_calls": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "scope": "Static delta only; preserves official and five-sample numerical aggregation, makes original-C or table-P control binding explicit."
+    },
+    "actual_handle_inspection": {
+      "observed_epoch": 1791635926.851578,
+      "roots": [
+        {
+          "root": "/workspace/team/runs/fpga_owner/temporal_first_system_full156_20261010_v1",
+          "source33_held": true,
+          "plan_sha256": "faa6d554fae2121fc8c2da1939ee4272e01b184e9e7241e5ec6a7edd7f1822c3",
+          "spec_sha256": "dc47a018ef15ef7d1a77871517f627c8cc1f43b9c37a7642c484795fdcb9028b",
+          "metadata_execution_authorized": false,
+          "tickets": [],
+          "execution_files": [],
+          "actually_submitted": false
+        },
+        {
+          "root": "/workspace/team/runs/fpga_owner/temporal_first_system_full156_20261010_v2",
+          "source33_held": true,
+          "plan_sha256": "3f6a6030622e2093cd671efda8563d14ad222620e48e90fc769d85d8c6a25bd7",
+          "spec_sha256": "a4be0260210cbe895def87c734674c52c2cfaf03741d7ba85c56c9bdf0b8fdf7",
+          "metadata_execution_authorized": true,
+          "tickets": [],
+          "execution_files": [],
+          "actually_submitted": false
+        }
+      ],
+      "shared_model_identity_held": true,
+      "new_model_calls": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "active_tickets": []
+    },
+    "source_of_root_goal": "get_goal actual read in ACTIVE_GOAL_AT_POLICY_CONFLICT_20261010_v1.json",
+    "whole_task_FIFO_admissions": 0,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "goal_status": "active_unachieved",
+    "goal_turn_classification": "progress",
+    "goal_changed_without_user": false,
+    "next": "Resolve comparison policy with the user and peer best-archive source evidence; preserve P174 and original failed tickets. Do not submit either held root from intent alone."
   }
 }
