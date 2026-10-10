@@ -1,7 +1,196 @@
 {
+  "comparison134_terminal": {
+    "schema": "original134_completed_pairwise_terminal_20261010_v1",
+    "updated_at": "2026-10-10T12:57:00+08:00",
+    "status": "completed_verified_once_reader_and_dual_end_private_archive",
+    "scope": {
+      "tasks": 9,
+      "samples_per_task": 5,
+      "arms": [
+        "A",
+        "P",
+        "B"
+      ],
+      "rows": 135,
+      "max_reserved_calls": 225,
+      "independent_unseen": 0,
+      "full156_complete": false
+    },
+    "source_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison9x5_20261008_v1",
+    "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+    "spec_sha256": "0cdacd933a0f799783d5e8195217cdfa4aeadbdb77b8b80271a58756d2c9cbc6",
+    "terminal_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison134_terminal_20261009_v1",
+    "result_sha256": "2c31235b38ba370cc1f8c33a943bf72bd924dd60c867b3a899e3c436611c2aaa",
+    "read_intent_sha256": "d0195ad1fec0197c5d4e560fa0a53895ff690b632c69cbd821ec48672bdce895",
+    "reader": {
+      "sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+      "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+      "complete_sha256": "604bec698f4d16a874289983b93a96b2aeee082262e2bdff8f60a1e79d35bac0",
+      "cap_s": 180,
+      "elapsed_s": 1.7573209572583437,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "reaped": true,
+      "remaining_group": [],
+      "physical_retirement_rechecked": true,
+      "executions": 1
+    },
+    "exit_gate": {
+      "guards": {
+        "133": {
+          "sha256": "1b13f756f6141b413875c050ebb22fefb26b00655fe19a0f95ef00b9c53e2213",
+          "retired_recorded_identities": 13,
+          "finished_at": "2026-10-10T03:14:03.058843+00:00",
+          "elapsed_s": 6.521790346130729,
+          "cleanup_verified": true,
+          "model_idle_at_exit": true,
+          "released": true
+        },
+        "134": {
+          "sha256": "2e4dce0e5f2600272d7b630c99b376b3c1941a612aabfa25a0cfc033f541ddec",
+          "retired_recorded_identities": 6753,
+          "finished_at": "2026-10-10T04:41:57.646203+00:00",
+          "elapsed_s": 5272.676855646074,
+          "cleanup_verified": true,
+          "model_idle_at_exit": true,
+          "released": true
+        }
+      },
+      "source_files_checked": 28,
+      "rows_terminal_seal_binding_verified": 135,
+      "native133_prerequisite_unchanged": true,
+      "actual_original_and_recovered_roles_retired": true,
+      "model_same_identity": true,
+      "global_idle_not_required_after135_started": true
+    },
+    "arms": {
+      "A": {
+        "outputs": 45,
+        "L3": 30,
+        "L1": 15,
+        "coefficient_mean": 0.7333333333333333,
+        "official_rounded_set_score": 0.7333,
+        "diagnostic_pass_at_5": 0.7333,
+        "all_five_L3_tasks": 6,
+        "durable_client_requests": 75,
+        "server_received_count": null,
+        "observed_solve_seconds_sum": 876.8492796886712,
+        "observed_judge_seconds_sum": 966.2350177355111,
+        "observed_row_seconds_sum": 1861.6201287582517,
+        "same_run_B_coefficient_ratio": 1.9411764705882353
+      },
+      "P": {
+        "outputs": 45,
+        "L3": 30,
+        "L1": 15,
+        "coefficient_mean": 0.7333333333333333,
+        "official_rounded_set_score": 0.7333,
+        "diagnostic_pass_at_5": 0.7333,
+        "all_five_L3_tasks": 6,
+        "durable_client_requests": 75,
+        "server_received_count": null,
+        "observed_solve_seconds_sum": 1529.884780369699,
+        "observed_judge_seconds_sum": 964.9333717506379,
+        "observed_row_seconds_sum": 2513.343808848411,
+        "same_run_B_coefficient_ratio": 1.9411764705882353
+      },
+      "B": {
+        "outputs": 45,
+        "L3": 10,
+        "L1": 35,
+        "coefficient_mean": 0.37777777777777777,
+        "official_rounded_set_score": 0.3778,
+        "diagnostic_pass_at_5": 0.3778,
+        "all_five_L3_tasks": 2,
+        "durable_client_requests": 45,
+        "server_received_count": null,
+        "observed_solve_seconds_sum": 170.7294394634664,
+        "observed_judge_seconds_sum": 563.5825346000493,
+        "observed_row_seconds_sum": 746.376694586128,
+        "same_run_B_coefficient_ratio": 1
+      }
+    },
+    "paired": {
+      "P_minus_A_L3": 0,
+      "P_minus_A_coefficient": 0,
+      "P_minus_A_requests": 0,
+      "P_minus_A_solve_seconds_sum": 653.0355006810278,
+      "task_deltas": {
+        "Prob050_kmap1": 0,
+        "Prob057_kmap2": 0,
+        "Prob090_circuit1": 0,
+        "Prob101_circuit4": 0,
+        "Prob102_circuit3": -0.8,
+        "Prob103_circuit2": 0,
+        "Prob113_2012_q1g": 0,
+        "Prob122_kmap4": 0,
+        "Prob125_kmap3": 0.8
+      },
+      "exploratory_95_hoeffding": [
+        -0.9054010104937463,
+        0.9054010104937463
+      ],
+      "interval_assumptions": "Independent task pairs; unverified family dependence, not a generalization guarantee",
+      "effective_independent_families": null
+    },
+    "actual_queue_wall_s": 5272.257426023483,
+    "wall_scope": "Queue header through completion event, includes all arms and judging; excludes preparation, final guard exit and transfer.",
+    "runner_events_sha256": "5b6f4eb832d26ff719be44b4023aa6f8e8c7a6004e5c12eefe70600f1f87c5e1",
+    "selection": {
+      "observed_net_ability_benefit": false,
+      "multi_counterexample_adopted": false,
+      "reason": "No net L3/coefficient gain, unchanged client requests and higher observed solve-time sum. Official total remains unknown; per-task regression is not an extra veto.",
+      "future_base": "Keep original132 single-counterexample table-P; original135136 and prepared output/temporal factors unchanged.",
+      "official_total_score": null,
+      "gain_points": null,
+      "cost_points": null,
+      "engineering_points": null
+    },
+    "archive": {
+      "schema": "private_archive_verified_v1",
+      "archive_path": "/workspace/team/activity/fpga_teammate/artifacts/comparison134-terminal-20261010-v1/EVIDENCE.zip",
+      "archive_sha256": "7d096dd7a9c947a7d7ceaa45e412db68c0bc131b76fd8fe1ec64b4dded513f28",
+      "archive_bytes": 15093798,
+      "member_count": 10703,
+      "original_bytes": 31412381,
+      "manifest_sha256": "2dd50f972fb93ec940ccab1c06fd4d188f20eb1009e152dce7c7a6e47d87fd87",
+      "inspection_sha256": "0a76419ea9004ee5eed3f4a8bca94b59a4cad03345370263b83417c0539e9527",
+      "all_members_verified": true,
+      "all_source_hashes_rechecked": true,
+      "reader_execution": 0,
+      "new_model_calls": 0,
+      "new_eda": 0,
+      "new_fifo": 0,
+      "local_path": "D:\\HUST\\IC\\FPGA\\05_handoff\\independent_validation_20261004\\waveform_resource_fix_20261006\\table_multi_feedback_pair\\comparison134_actual\\EVIDENCE.zip",
+      "local_all_members_verified": true,
+      "verified_at_utc": "2026-10-10T04:56:09.347508+00:00",
+      "extracted": false,
+      "cleanup": "Only EVIDENCE.zip and LOCAL_VERIFY.json retained; no temporary files or extraction."
+    },
+    "coordination": {
+      "issue_comment": 6093952631,
+      "exact_body_readback": true,
+      "peer_owned": [
+        135,
+        136
+      ],
+      "peer135_last_actual_handles": {
+        "monitor_pid": 4175420,
+        "monitor_starttime": "882508578",
+        "child_pid": 541064,
+        "child_starttime": "888096787",
+        "live": true
+      },
+      "new_scoring_factor_selected": false
+    },
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false
+  },
   "schema": "owned_fifo_wait_recovery_20261009_v1",
-  "updated_at": "2026-10-10T11:19:00+08:00",
-  "status": "original133_native_verified_completed_original134_running",
+  "updated_at": "2026-10-10T12:57:00+08:00",
+  "status": "original133_native_and_original134_comparison_completed_verified",
   "problem": {
     "fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
     "waiting_lifetime_seconds": 86400,
@@ -131,7 +320,7 @@
   "formal_score_gain": false,
   "full_goal_complete": false,
   "selection": "Official total score; model-generated design and unchanged current experiment freezes.",
-  "next": "Follow original134 actual running handle and its frozen135-row terminal gate; peer owns135136. Original132 is terminal failed/incomplete, not pending a48h continuation. Do not restart either retired watcher or replay failed132. Retain complete full-goal obligations for subsequent selected candidate validation.",
+  "next": "Original134 once-reader and full private archive complete. Follow peer-owned135/136 actual exits; then jointly select one factor. Continue existing output-only preparation and independent failure-continuation review, without replay132, new admission, or changes to frozen queues.",
   "production_recovery": {
     "observed_at_beijing": "2026-10-09T21:15:00.747463+08:00",
     "status": "both_original_wait_monitors_recovered_and_unique_live_tasks_not_started",

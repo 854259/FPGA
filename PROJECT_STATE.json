@@ -376,8 +376,8 @@
 
   "fifo_wait_recovery_20261009": {
   "schema": "owned_fifo_wait_recovery_20261009_v1",
-  "updated_at": "2026-10-10T11:19:00+08:00",
-  "status": "original133_native_verified_completed_original134_running",
+  "updated_at": "2026-10-10T12:57:00+08:00",
+  "status": "original133_native_and_original134_comparison_completed_verified",
   "problem": {
     "fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
     "waiting_lifetime_seconds": 86400,
@@ -507,7 +507,7 @@
   "formal_score_gain": false,
   "full_goal_complete": false,
   "selection": "Official total score; model-generated design and unchanged current experiment freezes.",
-  "next": "Follow original134 actual running handle and its frozen135-row terminal gate; peer owns135136. Original132 is terminal failed/incomplete, not pending a48h continuation. Do not restart either retired watcher or replay failed132. Retain complete full-goal obligations for subsequent selected candidate validation.",
+  "next": "Original134 once-reader and full private archive complete. Follow peer-owned135/136 actual exits; then jointly select one factor. Continue existing output-only preparation and independent failure-continuation review, without replay132, new admission, or changes to frozen queues.",
   "production_recovery": {
     "observed_at_beijing": "2026-10-09T21:15:00.747463+08:00",
     "status": "both_original_wait_monitors_recovered_and_unique_live_tasks_not_started",
@@ -701,6 +701,195 @@
     "replayed": false,
     "whole_batch_complete": false,
     "report": "03_analysis/helper_extraction_20261004/FULL132_WALL48H_20261009.json"
+  },
+  "comparison134_terminal": {
+    "schema": "original134_completed_pairwise_terminal_20261010_v1",
+    "updated_at": "2026-10-10T12:57:00+08:00",
+    "status": "completed_verified_once_reader_and_dual_end_private_archive",
+    "scope": {
+      "tasks": 9,
+      "samples_per_task": 5,
+      "arms": [
+        "A",
+        "P",
+        "B"
+      ],
+      "rows": 135,
+      "max_reserved_calls": 225,
+      "independent_unseen": 0,
+      "full156_complete": false
+    },
+    "source_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison9x5_20261008_v1",
+    "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+    "spec_sha256": "0cdacd933a0f799783d5e8195217cdfa4aeadbdb77b8b80271a58756d2c9cbc6",
+    "terminal_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison134_terminal_20261009_v1",
+    "result_sha256": "2c31235b38ba370cc1f8c33a943bf72bd924dd60c867b3a899e3c436611c2aaa",
+    "read_intent_sha256": "d0195ad1fec0197c5d4e560fa0a53895ff690b632c69cbd821ec48672bdce895",
+    "reader": {
+      "sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+      "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+      "complete_sha256": "604bec698f4d16a874289983b93a96b2aeee082262e2bdff8f60a1e79d35bac0",
+      "cap_s": 180,
+      "elapsed_s": 1.7573209572583437,
+      "returncode": 0,
+      "exec_confirmed": true,
+      "reaped": true,
+      "remaining_group": [],
+      "physical_retirement_rechecked": true,
+      "executions": 1
+    },
+    "exit_gate": {
+      "guards": {
+        "133": {
+          "sha256": "1b13f756f6141b413875c050ebb22fefb26b00655fe19a0f95ef00b9c53e2213",
+          "retired_recorded_identities": 13,
+          "finished_at": "2026-10-10T03:14:03.058843+00:00",
+          "elapsed_s": 6.521790346130729,
+          "cleanup_verified": true,
+          "model_idle_at_exit": true,
+          "released": true
+        },
+        "134": {
+          "sha256": "2e4dce0e5f2600272d7b630c99b376b3c1941a612aabfa25a0cfc033f541ddec",
+          "retired_recorded_identities": 6753,
+          "finished_at": "2026-10-10T04:41:57.646203+00:00",
+          "elapsed_s": 5272.676855646074,
+          "cleanup_verified": true,
+          "model_idle_at_exit": true,
+          "released": true
+        }
+      },
+      "source_files_checked": 28,
+      "rows_terminal_seal_binding_verified": 135,
+      "native133_prerequisite_unchanged": true,
+      "actual_original_and_recovered_roles_retired": true,
+      "model_same_identity": true,
+      "global_idle_not_required_after135_started": true
+    },
+    "arms": {
+      "A": {
+        "outputs": 45,
+        "L3": 30,
+        "L1": 15,
+        "coefficient_mean": 0.7333333333333333,
+        "official_rounded_set_score": 0.7333,
+        "diagnostic_pass_at_5": 0.7333,
+        "all_five_L3_tasks": 6,
+        "durable_client_requests": 75,
+        "server_received_count": null,
+        "observed_solve_seconds_sum": 876.8492796886712,
+        "observed_judge_seconds_sum": 966.2350177355111,
+        "observed_row_seconds_sum": 1861.6201287582517,
+        "same_run_B_coefficient_ratio": 1.9411764705882353
+      },
+      "P": {
+        "outputs": 45,
+        "L3": 30,
+        "L1": 15,
+        "coefficient_mean": 0.7333333333333333,
+        "official_rounded_set_score": 0.7333,
+        "diagnostic_pass_at_5": 0.7333,
+        "all_five_L3_tasks": 6,
+        "durable_client_requests": 75,
+        "server_received_count": null,
+        "observed_solve_seconds_sum": 1529.884780369699,
+        "observed_judge_seconds_sum": 964.9333717506379,
+        "observed_row_seconds_sum": 2513.343808848411,
+        "same_run_B_coefficient_ratio": 1.9411764705882353
+      },
+      "B": {
+        "outputs": 45,
+        "L3": 10,
+        "L1": 35,
+        "coefficient_mean": 0.37777777777777777,
+        "official_rounded_set_score": 0.3778,
+        "diagnostic_pass_at_5": 0.3778,
+        "all_five_L3_tasks": 2,
+        "durable_client_requests": 45,
+        "server_received_count": null,
+        "observed_solve_seconds_sum": 170.7294394634664,
+        "observed_judge_seconds_sum": 563.5825346000493,
+        "observed_row_seconds_sum": 746.376694586128,
+        "same_run_B_coefficient_ratio": 1
+      }
+    },
+    "paired": {
+      "P_minus_A_L3": 0,
+      "P_minus_A_coefficient": 0,
+      "P_minus_A_requests": 0,
+      "P_minus_A_solve_seconds_sum": 653.0355006810278,
+      "task_deltas": {
+        "Prob050_kmap1": 0,
+        "Prob057_kmap2": 0,
+        "Prob090_circuit1": 0,
+        "Prob101_circuit4": 0,
+        "Prob102_circuit3": -0.8,
+        "Prob103_circuit2": 0,
+        "Prob113_2012_q1g": 0,
+        "Prob122_kmap4": 0,
+        "Prob125_kmap3": 0.8
+      },
+      "exploratory_95_hoeffding": [
+        -0.9054010104937463,
+        0.9054010104937463
+      ],
+      "interval_assumptions": "Independent task pairs; unverified family dependence, not a generalization guarantee",
+      "effective_independent_families": null
+    },
+    "actual_queue_wall_s": 5272.257426023483,
+    "wall_scope": "Queue header through completion event, includes all arms and judging; excludes preparation, final guard exit and transfer.",
+    "runner_events_sha256": "5b6f4eb832d26ff719be44b4023aa6f8e8c7a6004e5c12eefe70600f1f87c5e1",
+    "selection": {
+      "observed_net_ability_benefit": false,
+      "multi_counterexample_adopted": false,
+      "reason": "No net L3/coefficient gain, unchanged client requests and higher observed solve-time sum. Official total remains unknown; per-task regression is not an extra veto.",
+      "future_base": "Keep original132 single-counterexample table-P; original135136 and prepared output/temporal factors unchanged.",
+      "official_total_score": null,
+      "gain_points": null,
+      "cost_points": null,
+      "engineering_points": null
+    },
+    "archive": {
+      "schema": "private_archive_verified_v1",
+      "archive_path": "/workspace/team/activity/fpga_teammate/artifacts/comparison134-terminal-20261010-v1/EVIDENCE.zip",
+      "archive_sha256": "7d096dd7a9c947a7d7ceaa45e412db68c0bc131b76fd8fe1ec64b4dded513f28",
+      "archive_bytes": 15093798,
+      "member_count": 10703,
+      "original_bytes": 31412381,
+      "manifest_sha256": "2dd50f972fb93ec940ccab1c06fd4d188f20eb1009e152dce7c7a6e47d87fd87",
+      "inspection_sha256": "0a76419ea9004ee5eed3f4a8bca94b59a4cad03345370263b83417c0539e9527",
+      "all_members_verified": true,
+      "all_source_hashes_rechecked": true,
+      "reader_execution": 0,
+      "new_model_calls": 0,
+      "new_eda": 0,
+      "new_fifo": 0,
+      "local_path": "D:\\HUST\\IC\\FPGA\\05_handoff\\independent_validation_20261004\\waveform_resource_fix_20261006\\table_multi_feedback_pair\\comparison134_actual\\EVIDENCE.zip",
+      "local_all_members_verified": true,
+      "verified_at_utc": "2026-10-10T04:56:09.347508+00:00",
+      "extracted": false,
+      "cleanup": "Only EVIDENCE.zip and LOCAL_VERIFY.json retained; no temporary files or extraction."
+    },
+    "coordination": {
+      "issue_comment": 6093952631,
+      "exact_body_readback": true,
+      "peer_owned": [
+        135,
+        136
+      ],
+      "peer135_last_actual_handles": {
+        "monitor_pid": 4175420,
+        "monitor_starttime": "882508578",
+        "child_pid": 541064,
+        "child_starttime": "888096787",
+        "live": true
+      },
+      "new_scoring_factor_selected": false
+    },
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false
   }
 },
   "queue_prefix_digest_20261009": {
@@ -1567,10 +1756,36 @@
         "actionable_policy_finding": "Peer proposal diagnostic_requirements repeats historical113, paired-grade and same-grade/history/total-call gates. Requested diagnostic-only treatment: these are not extra vetoes under our current official-four-component objective.",
         "ownership_proposal": "After original134-136 true outcomes and joint single-factor selection, peer would be the sole submit/run owner; our side independently reviews admission and terminal evidence. Proposal is not current admission.",
         "archive_audit": {
-          "sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
-          "members_reported": 59,
-          "independently_verified_here": false,
-          "reason": "Report points to peer-host E drive; unavailable on our host and no ZIP under shared frozen AMD root. Requested existing shared AMD archive/manifest path, without rerunning preparation or qualification."
+          "label": "temporal9",
+          "at_utc": "2026-10-10T04:56:27.496939+00:00",
+          "archive": "/workspace/team/runs/fpga_owner/temporal_first_generation_prepare_20261010_v1/PREPARED_ORIGINALS.zip",
+          "archive_sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
+          "archive_bytes": 151236,
+          "manifest_sha256": "1f5d45b10cfecbf7c0ef9e04df52270674fb6b8fe6effd89bc277422360e52c0",
+          "archive_members": 59,
+          "bound_original_members": 58,
+          "bound_original_bytes": 547608,
+          "all_zip_members_and_current_originals_verified": true,
+          "metadata_members": [
+            "run/PREPARATION_INTENT.json",
+            "run/SCORING_INTERFACE_READBACK.json",
+            "run/PLAN.json",
+            "run/RUN_SPEC.json",
+            "run/PREPARATION_RESULT.json",
+            "admin/EXECUTION_RECEIPT.json",
+            "admin/PREREGISTER.json",
+            "admin/INPUT_PREFLIGHT.json",
+            "admin/ONCE_INTENT.json",
+            "admin/SOURCE_REVIEW.json",
+            "admin/QUALIFICATION_READBACK.json",
+            "admin/PROCESS/COMPLETE.json",
+            "admin/PROCESS/ATTEMPT.json",
+            "admin/PROCESS/CHILD_IDENTITY.json"
+          ],
+          "new_execution": 0,
+          "independent_worker_qualification": false,
+          "independently_verified_here": true,
+          "scope": "All ZIP members and bound current AMD originals byte-verified; original worker mock qualification not independently reaudited."
         },
         "new_model_calls": 0,
         "new_EDA_calls": 0,
@@ -1766,10 +1981,37 @@
         "current_queue": false,
         "qualification_scope": "Peer reports4 new mock cases/5 fakeHTTP/4 fakecompile and5 first-input conservative bounds. Not independently reaudited or rerun here; no real model recovery established.",
         "archive": {
-          "sha256": "ecab6b20f866f55c3245dd563dc9557a08aa542bc757c13f5163125c042dc854",
-          "members_reported": 55,
-          "independently_audited_here": false,
-          "accessible_AMD_archive_path_not_yet_provided": true
+          "label": "output5",
+          "at_utc": "2026-10-10T04:56:27.492275+00:00",
+          "archive": "/workspace/team/runs/fpga_owner/output_completion_prepare_20261010_v2/PREPARED_ORIGINALS.zip",
+          "archive_sha256": "ecab6b20f866f55c3245dd563dc9557a08aa542bc757c13f5163125c042dc854",
+          "archive_bytes": 142006,
+          "manifest_sha256": "c4a26c096f7b5d734b85de0f6ba5bb91dec9e5755ee299b1fe7546044401375e",
+          "archive_members": 55,
+          "bound_original_members": 54,
+          "bound_original_bytes": 465457,
+          "all_zip_members_and_current_originals_verified": true,
+          "metadata_members": [
+            "run/PREPARATION_INTENT.json",
+            "run/SCORING_INTERFACE_READBACK.json",
+            "run/PLAN.json",
+            "run/RUN_SPEC.json",
+            "run/PREPARATION_RESULT.json",
+            "admin/EXECUTION_RECEIPT.json",
+            "admin/PREREGISTER.json",
+            "admin/INPUT_PREFLIGHT.json",
+            "admin/ONCE_INTENT.json",
+            "admin/SOURCE_REVIEW.json",
+            "admin/QUALIFICATION_READBACK.json",
+            "admin/PROCESS/COMPLETE.json",
+            "admin/PROCESS/ATTEMPT.json",
+            "admin/PROCESS/CHILD_IDENTITY.json"
+          ],
+          "new_execution": 0,
+          "independent_worker_qualification": false,
+          "independently_audited_here": true,
+          "accessible_AMD_archive_path_not_yet_provided": false,
+          "scope": "All ZIP members and bound current AMD originals byte-verified; worker qualification raw audit remains separate."
         },
         "first_capacity_reported": {
           "max_prompt_bound": 3859,
@@ -2442,9 +2684,9 @@
       "new_eda_calls": 0,
       "new_fifo_tickets": 0,
       "full_goal_complete": false
-    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T12:38:00+08:00","status":"active_original132_failed_released133_native_verified134_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"严格以官方RTL赛题总分最高为目标，遵守官方提交和评测条件；保留真实性、公平性与完整交付，不附加逐题保持或调用不增的成绩否决门。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
+    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T12:57:00+08:00","status":"active_original132_failed_released133_native_verified134_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"严格以官方RTL赛题总分最高为目标，遵守官方提交和评测条件；保留真实性、公平性与完整交付，不附加逐题保持或调用不增的成绩否决门。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
       "Retain original132 terminal failure:2191 sealed,1 failed with unknown repair receipt,148 never started; no replay,suffix continuation or full-score claim.",
-      "Complete original134 frozen comparison and peer-owned135/136 true exits, then jointly select one factor. Current preparation review prioritizes existing64-word output completion5x5; temporal9 is retained, not default or automatically admitted.",
+      "Original134 complete:net P/A ability gain0 with125 gain/102 loss and higher observed solve-time sum; original132 single-counterexample table-P remains the base. Follow peer-owned135/136 true exits, then jointly select one factor. Preparation review prioritizes existing64-word output5x5; temporal9 retained, neither automatically admitted.",
       "Report observed truncation, wall time and call uncertainty; do not import historical120/.80, per-task or call-nonincreasing vetoes.",
       "Preserve full target:one substantive model-generated candidate/best archived original/untouched same-model B full156 pairing, five independent samples for important candidates, audited RTLLM and formal32GB/interface/recovery/reproducibility evidence."
     ],"unresolved":["Known retained strict-SV opportunity is one final C failure; ordinary-always blind spot remains. New generation benefit, broad coverage, complete runtime cost and scoring admission are unproven.","Complete three-arm156, auditedRTLLM, required five samples and resource/interface/recovery acceptance remain incomplete; historical118 not exceeded."],"overnight_execution":{
