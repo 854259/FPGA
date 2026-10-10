@@ -609,14 +609,14 @@
   "submission_report_update_20261008": {"updated_at": "2026-10-08T22:46:00+08:00", "status": "draft_updated_static_verified_not_deployed", "path": "04_project/amd_rtl_agent/submission/REPORT.md", "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801", "scope": "Official selection and existing129 failure evidence; archived runtime and research candidate distinguished; historical numerical results retained.", "evidence_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38", "new_model_calls": 0, "new_eda_calls": 0, "new_fifo": 0, "deployment": false, "full_goal_complete": false},
   "collaborative_goal_20261007": {
     "temporal_peer_preparation_20261010": {
-      "updated_at": "2026-10-10T09:43:00+08:00",
+      "updated_at": "2026-10-10T10:18:00+08:00",
       "status": "peer_boundary_accepted_candidate_frozen_not_submitted_our_selection_pending_original_results",
       "source_comments": [
         6091415379,
         6091605451,
         6091789144
       ],
-      "latest_peer_comment_updated_at": "2026-10-10T01:34:02Z",
+      "latest_peer_comment_updated_at": "2026-10-10T02:03:06Z",
       "shared_reports": {
         "TEMPORAL_FACTOR_PREPARATION.json": {
           "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-factor-revision-20261010-v2/TEMPORAL_FACTOR_PREPARATION.json",
@@ -657,6 +657,21 @@
           "path": "/workspace/team/activity/fpga_owner/artifacts/original-goal-gates-20261010-v1/ORIGINAL_GOAL_GATES.json",
           "sha256": "f90ce61ff3cf7d79ceb4fe20a8f5be4341821e7887b60e5961e7e25b44f6a1c4",
           "bytes": 4022
+        },
+        "CONSTANT_REPAIR_BACKUP.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/constant-repair-backup-20261010-v1/CONSTANT_REPAIR_BACKUP.json",
+          "sha256": "c971493c7878120f941e381b9f545fb42aa24378d5b5b81e83bfa6c66289b33b",
+          "bytes": 89522
+        },
+        "CONSTANT_REPAIR_CONTEXT.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/constant-repair-context-20261010-v1/CONSTANT_REPAIR_CONTEXT.json",
+          "sha256": "382ea6b257e4689d2b8f60e425df3376f6a6a627edc0971fab87296d469ee623",
+          "bytes": 780
+        },
+        "PREFIX144_CAPABILITY_PRIORITIES.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/prefix144-capability-priorities-20261010-v1/PREFIX144_CAPABILITY_PRIORITIES.json",
+          "sha256": "66a7eddbd1e8c959e1a6aa42316411425376fe0815005afc870a5e830e65910f",
+          "bytes": 7257
         }
       },
       "mail_matches": [
@@ -750,8 +765,8 @@
         "acceptance_scope": "Peer explicitly accepts preparation is not shared scoring admission; no automatic placement after136, wait for original132-136 outcomes and selection/ownership."
       },
       "live_scope": {
-        "observed_at": "2026-10-10T09:40:40.056823+08:00",
-        "sealed": 2163,
+        "observed_at": "2026-10-10T10:10:40.952491+08:00",
+        "sealed": 2170,
         "total": 2340,
         "actual_adopted_roles_and_model_live": true,
         "frozen39_and_receipt_bindings_hold": true,
@@ -774,7 +789,7 @@
         "source_commit": "6cbcaebebc89e69506cebfee86690c3d9b9a711a",
         "pr": "https://github.com/854259/FPGA/pull/210",
         "pr_state_observed": "open_draft_not_merged",
-        "pr_head_observed": "cefe67b7d783e66fca1f0bceaeb6108df8413cc5",
+        "pr_head_observed": "05c62579ad4ddd31f6f4134be5b0d6cc4d888a7f",
         "preparation_executions_reported": 1,
         "archive_sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
         "archive_members": 59,
@@ -852,12 +867,12 @@
           "comparison_result": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
           "prepare": "e5cffb23800d19d23ba0cad54ca5c87957dcb0d05e4337391ff87c86716e4bf2"
         },
-        "incremental_scope": "Three commits after ba4016ef change only four status docs. Reviewed five sources remain identical through cefe67b7; not a whole archive/runtime qualification.",
+        "incremental_scope": "All inspected incremental commits from ba4016ef through05c62579 change only four status docs;five temporal sources unchanged. Constant backup sources remain separate and private.",
         "draft_open_unmerged": true,
         "new_model_calls": 0,
         "new_EDA_calls": 0,
         "new_FIFO": 0,
-        "head_reviewed_through": "cefe67b7d783e66fca1f0bceaeb6108df8413cc5"
+        "head_reviewed_through": "05c62579ad4ddd31f6f4134be5b0d6cc4d888a7f"
       },
       "peer_goal_gate_source": {
         "scope": "Peer's original one-sample156 C/P goal; report-level intake only. Not our selection vetoes and not a five-sample qualification.",
@@ -868,6 +883,144 @@
         "our_official_selection_veto_added": false,
         "original_metrics_or_controls_reexecuted": false,
         "five_sample_adoption_proven": false
+      },
+      "peer_constant_repair_backup": {
+        "factor": "Only a matching actual ERROR VRFC10-2951 not-a-constant diagnostic appends fixed101-word guidance to P's sole repair system. First request and C/control unchanged; independent of temporal factor.",
+        "source_hashes": {
+          "constant_repair_request.py": "21c9f9b35b495612e7d473ed31864b29fd49119c7cf8bcc4c5ce327248bcbde8",
+          "baseline_worker.py": "3e4b7d48482871b7fa04a1135702f72b787ea53e2767848ba0bdbf3e465928fe",
+          "worker.py": "4b7f4a2aa58defd4fd1f7474e9dab78c4ee6f7a9d6529d6f619736d3134f95f3"
+        },
+        "current_sources_independently_read_and_hash_bound": true,
+        "source_scope": "Three worker/request sources only; no actual model or native execution.",
+        "qualification": {
+          "scope": "Peer reports seven fresh synthetic hook cases,12 fakeHTTP/11 fakecompile. We read receipt/result and checked archive integrity, without rerunning or independently proving every assertion's adequacy.",
+          "reported_passed": true,
+          "new_cases": 7,
+          "fake_HTTP": 12,
+          "fake_compiles": 11,
+          "reported_process_pid": 379864,
+          "reported_starttime": "887010221",
+          "reported_exec_confirmed": true,
+          "reported_rc": 0,
+          "reported_reaped": true,
+          "actual_pid_absent_verified": true,
+          "archive_sha256": "2abc8a8d04b048a591023cafebf08da42e54f521d0d557e28b8a0a242b597b3d",
+          "archive_bytes": 209284,
+          "archive_members": 189,
+          "current_and_archived_indexed_files": 188,
+          "indexed_bytes": 437932,
+          "all_current_and_archive_SHA_and_size_bindings_match": true,
+          "embedded_manifest_equals_shared_index": true,
+          "archive_extracted": false
+        },
+        "limited_source_review": {
+          "behavior": "Only round1 matching P repair system changes, original prompt and candidate diagnostics preserved, no DUT rewrite or additional generation.",
+          "behavioral_findings": [],
+          "documentation_finding": "worker.py run_worker docstring incorrectly says first system differs; code applies the suffix to repair round1. Nonblocking stale description, not a frozen source edit or request to rerun.",
+          "primary_documents": [
+            "https://docs.amd.com/r/2023.2-English/ug901-vivado-synthesis/Constants",
+            "https://docs.amd.com/r/2024.1-English/ug901-vivado-synthesis/Parameter-and-Generate-For-Example-Verilog"
+          ],
+          "primary_document_scope": "Elaboration-time parameters and generate examples; not a certificate for current runtime behavior."
+        },
+        "context": {
+          "scope": "Peer report for ten retained144 repair requests; raw tokenization responses not independently reaudited here.",
+          "original_tokens": 2287,
+          "candidate_tokens": 2410,
+          "delta_tokens": 123,
+          "context": 16384,
+          "output_reserved": 8192,
+          "headroom": 5782,
+          "metadata_HTTP_calls": 41,
+          "real_generation_calls": 0,
+          "all_future_repair_capacity_proven": false
+        },
+        "selected": false,
+        "comparison_plan_created": false,
+        "FIFO_submitted": false,
+        "real_native_qualified": false,
+        "actual_model_gain_measured": false,
+        "combined_with_temporal": false
+      },
+      "peer_prefix144": {
+        "scope": "Peer-reported fixed complete144-task prefix,2160 rows/720 per arm; source aggregates read, original rows not independently regraded or fully audited here.",
+        "arms": {
+          "A": {
+            "outputs": 720,
+            "level_counts": {
+              "0": 15,
+              "1": 158,
+              "3": 547
+            },
+            "L3_outputs": 547,
+            "all_five_L3_tasks": 108,
+            "all_five_nonL3_tasks": 33,
+            "actual_calls": 766,
+            "prefix_coefficient_sum": 578.6
+          },
+          "P": {
+            "outputs": 720,
+            "level_counts": {
+              "0": 16,
+              "1": 140,
+              "3": 564
+            },
+            "L3_outputs": 564,
+            "all_five_L3_tasks": 111,
+            "all_five_nonL3_tasks": 30,
+            "actual_calls": 797,
+            "prefix_coefficient_sum": 592
+          },
+          "B": {
+            "outputs": 720,
+            "level_counts": {
+              "0": 80,
+              "1": 170,
+              "3": 470
+            },
+            "L3_outputs": 470,
+            "all_five_L3_tasks": 94,
+            "all_five_nonL3_tasks": 50,
+            "actual_calls": 720,
+            "prefix_coefficient_sum": 504
+          }
+        },
+        "remaining_tasks": 12,
+        "actual_paired_grade_losses": [
+          {
+            "task": "Prob082_lfsr32",
+            "sample": 1,
+            "A_level": 1,
+            "P_level": 0,
+            "A_calls": 1,
+            "P_calls": 2
+          }
+        ],
+        "prefix_P_minus_A_calls": 31,
+        "complete156": false,
+        "official_total_score_computed": false,
+        "independent_unseen": 0,
+        "selection_after_original132_136_results": true
+      },
+      "latest_GPU_device_observation": {
+        "at": "2026-10-10T10:11:22.432049+08:00",
+        "pid": 2013333,
+        "state": "R",
+        "starttime": "823869819",
+        "devices": [
+          {
+            "fd": "/dev/dri/renderD133",
+            "device": "/sys/devices/pci0000:a0/0000:a0:01.7/0000:a1:00.0/0000:a2:00.0/0000:a3:00.0",
+            "device_wide_metrics": {
+              "gpu_busy_percent": 99,
+              "mem_busy_percent": 65,
+              "mem_info_vram_total": 51522830336,
+              "mem_info_vram_used": 20346785792
+            }
+          }
+        ],
+        "scope": "Current device-wide counters for GPU opened by the frozen model PID; not exclusive process allocation or formal32GB proof."
       }
     },
     "actual132_continuation_20261010": {
