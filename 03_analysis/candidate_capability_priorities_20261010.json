@@ -1,0 +1,155 @@
+{
+  "schema": "single_factor_capability_priorities_retained_evidence_v1",
+  "saved_epoch": 1791616398.4432585,
+  "actual137": {
+    "state": "running_verified",
+    "sealed_outputs": 61,
+    "monitor": {
+      "pid": 578525,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "888452187",
+      "pgid": 578525,
+      "sid": 578525,
+      "command_sha256": "1ff46b3b31187038233d5b81a837c18deae3c02d9a766e28f9cdf2f35baac737",
+      "same_birth": true
+    },
+    "full_comparison_complete": false,
+    "reported145": {
+      "A": {
+        "levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "reported_client_attempts": 5,
+        "observed_solve_s": 1206.2004625741392,
+        "max_solve_s": 259.62807570397854,
+        "terminal_hashes": [
+          "684e0bc487fb9ce61d8b6d0cfff03406b54b8460e968bb68462bf33b5b6f44c5",
+          "d6cb606bfa8deec5f69452e572b889f551131a68bf617aa0e6b14196f3d15904",
+          "dd08bf6c00cbc9679bc1b791f0282a9df85e12f31e45d2ef1bd53c7ede15de63",
+          "fb289f29d5154ac99da7232864a7b792ceaf27a62417f04183cd29dbae80aa4f",
+          "a2a0a1e2c9584253ef09d1882c4aaa8ab2dcbae857d30de03a684a354921912d"
+        ]
+      },
+      "P": {
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reported_client_attempts": 10,
+        "observed_solve_s": 1331.969472007826,
+        "max_solve_s": 266.95418277941644,
+        "terminal_hashes": [
+          "b1c101d33f572f17f2b9e5307f4c85dd7b9c8bf00e5528e31816d11d5cd8f8fb",
+          "a35aea7f773c064d0fcad7f32248daa140c33c3593e53675ef99df938d7fec8a",
+          "5c14672c743c325cffa0017e207538fe92de9455c134ce72ebce677772033a2c",
+          "558ec66d7b152918356bc3245ce320112fbd598dc0914bf95cc03daaa796aef3",
+          "f20e78c786a4a6cbe0c8d235606ae38a7fed8881bbf4763a5f3588b3abc739e7"
+        ]
+      },
+      "B": {
+        "levels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reported_client_attempts": 5,
+        "observed_solve_s": 726.8766876664013,
+        "max_solve_s": 145.82332078367472,
+        "terminal_hashes": [
+          "d3e2050b30e182cc509a8f57bab585a3e869d630e40052d5d29a0643d53326d3",
+          "0bb28defe706e55c12bda78c16f9cc72e1a15793c5ae24652b7070a88c6abe0b",
+          "f897c75485ddef27191a187dc4c8d6ccc885318932d93776ae57f2a9357eebb5",
+          "826d8436043cf304c24afe5d95194230258f3ad06ea01023fe86018c5e9f8efc",
+          "1a89898c87eddf08564aec7ba1a805ea61b4048be0d6d07e85daaafa0b073ea1"
+        ]
+      }
+    },
+    "reported147_so_far": [
+      {
+        "index": 60,
+        "task": "Prob147_circuit10",
+        "sample": 0,
+        "arm": "P",
+        "complete": true,
+        "terminal_sha256": "2b39170b30ddb88f027e416c3449dbd3b36c7f11ece58ee03f0cd59d6490501c",
+        "solution_sha256": "c1e5c096afb6aa968ad79e1642964dbe16ffdb308e7341b391dbe26285bbfcd6",
+        "reported_level": 1,
+        "reported_coefficient": null,
+        "reported_calls": 1,
+        "solve_elapsed_s": 62.263456190004945
+      }
+    ],
+    "grade_scope": "Original per-row TERMINAL fields observed;full original reader and independent bound-original audit pending"
+  },
+  "output_factor_adoption_permitted": false,
+  "output_factor_failed_both_historical_controls": true,
+  "first_next_factor": {
+    "name": "frozen_temporal_first_request",
+    "known_stable_targets": [
+      "Prob111_fsm2s",
+      "Prob133_2014_q3fsm",
+      "Prob139_2013_q2bfsm",
+      "Prob140_fsm_hdlc"
+    ],
+    "scope": "Four fixed stable-error targets/five controls;does not prove all31 remaining errors covered",
+    "prepared": true,
+    "submitted": false,
+    "requires": "Actual137 terminal/release/retirement and original selection;one owner"
+  },
+  "later_existing_native_candidate": {
+    "eligible_tasks": [
+      "Prob142_lemmings2",
+      "Prob152_lemmings3",
+      "Prob155_lemmings4"
+    ],
+    "known_stable_error_targets": [
+      "Prob142_lemmings2"
+    ],
+    "original132_unobserved": [
+      "Prob152_lemmings3",
+      "Prob155_lemmings4"
+    ],
+    "native_and_binding_qualification_closed": true,
+    "model_benefit_measured": false,
+    "submitted": false
+  },
+  "later_hypothesis": {
+    "name": "multiple_counterexamples_only_for_Karnaugh_contracts",
+    "source_contract_kind": "karnaugh_map",
+    "prior_gain_type": "karnaugh_map",
+    "prior_loss_type": "complete_scalar_waveform",
+    "prior_gain_task": "Prob125_kmap3",
+    "prior_loss_task": "Prob102_circuit3",
+    "evidence": "Original134 whole factor net0;four original sample0 A/P terminals and contracts source/seal bound. Typed restriction is only a new hypothesis.",
+    "task_id_gate_forbidden": true,
+    "code_prepared": false,
+    "qualified": false,
+    "submitted": false,
+    "net_gain_proven": false,
+    "rule_if_explored": "Use only public parsed contract kind;retain original single-counterexample waveform feedback and original judge/budget. Require a new fixed single-factor comparison before adoption."
+  },
+  "no_new_evaluation_queue": true,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "old_scores_added": false,
+  "full156_complete": false,
+  "full_goal_complete": false,
+  "sources": {
+    "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\OUTPUT137_EXISTING_HANDLE_1791616157952503900\\READBACK.json": "c0c66446f8e64e6d8d989fcc4c40521d3fc8e049b0a892157679d86899ff00e9",
+    "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\TABLE134_FAMILY_DIAGNOSIS_20261010_v2\\READBACK.json": "df46ebf07aa95e0b85c5b399151a632a115298b1e50c1341ee943a123495e8c3",
+    "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\LEMMINGS_PURE_INTAKE_ACTUAL_v1\\READBACK.json": "bd5b4239f0e7a60c67123dce393a041bb1cfb2dab97ac633c4063d88d3b4e9aa",
+    "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\PREFIX146_STABLE_ERROR_COVERAGE_20261010_v1\\RESULT.json": "6966f46c119c1f4c9b591c59d398270a1c78ee3d83b81136fc03beec6f0771fc"
+  }
+}
