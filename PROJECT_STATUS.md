@@ -1,10 +1,10 @@
-2026-10-10 10:57 +08:00：独立核对原132的Prob145_circuit8样本0 A/P两行20份公开文件共84442B，原TERMINAL.files与SEALED绑定通过；首次request0337c2ee与DUT6815f24a相同，各1请求/首compile0/原L3/7475输出tokens，stop结束。两份450行DUT各381行整行注释、14行非空非整行注释，worker solve258.83/258.13秒含compile，outer solve258.95/258.25秒，均不冒充纯推理时间；没有repair或本组A/P反馈增益。未读private ref/TB、未重判或生成。首次只读核验将CRLF原prompt与LF wire直接比较而断言失败，按既有运行时换行规则修正比较后通过，原文件未改。
+2026-10-10 11:19 +08:00：原132已失败退出并按既有规则释放，替代此前running/待总48h出口的当前状态。11:00:43 guard48 complete=true/passed=false/stage_rc1；固定row002191（147/A/sample0）首答283.08秒、8192 tokens、finish=length，无完整endmodule，唯一repair有持久请求但无响应，310.02秒监督失败。原actual_calls/unconfirmed_calls为null、等级未知，均按原证据保持，不能补成0、当完整分数或重放失败样本；2191行SEALED、1失败行、148从未启动，132完整156/五样本验收未完成。
 
-peer最新145完整报告8761f502按披露接收：A/P均五L3/5调用、B五L0/5调用，十份agent输出各7475 tokens，257.16–259.50秒为逐行solve总时长；381/14行计数仅本方所审样本0。前145题2175行的P/A/B为569/552/470份L3，五次全L3题112/109/94，实际调用802/771/725；082 sample1等级1→0及P多31调用保留。全前缀和其余145样本未由本方重审，余11题未知，不当156终态、官方总分或泛化，不增加120/.80或调用不增否决门。
+11:13:55独立核2191 TERMINAL/SEALED绑定和失败行11原件SHA，确认旧及接续角色退休、guard清理/模型保护/槽释放，使用原task_fifo.py 4f1714fd的release-held一次rc0；票现failed_released_after_inspection，未强制completed、恢复后缀、重开票或执行成功reader。INSPECTION a2e93b11、失败terminal780ada3d、最终票f5d65696；67成员私有档案a4041401已AMD/本地全成员核验。失败为截断后修复未完成，非总48h或磁盘到限；调用接收不确定性保留。
 
-输出冗长只是后续时间优化假设，事后删注释不能追回生成时间；简洁提示是否提高官方总分仍未知。当前未实现新prompt、选中新因素、建PLAN或加票，先接原132–136真实结果再按官方四项/共同归属择一。PR210合入e648后的head2439d231，七候选Git blob与原版保持；五时序源此前静态审查结论保留。基线合入包含继承历史，不能把全部合并差异称为新增候选修改；draft仍未合并/准入，当前API mergeability未定不作失败或成功证明。
+原133随后自动完成：1个既定合成原生场景、3次真实xvlog/xelab/xsim、0模型请求，8检查中4不匹配并返回两个不同输入反例。已独立核11冻源、真实argv/stdout/SHA/rc0/exec/reap/空组、外层6.298秒及guard6.522秒和实际角色退休；NATIVE_RESULT2caf8c48、guard1b13f756，97成员档案b4faee3b双端核验。只证明多反例接线路径，不是准确率或新题泛化；没有重跑旧控制。
 
-最近10:40实核原132新四角色及模型活、2183/2340封存，39冻结与接续绑定保持，133–136 queued、终态reader未执行；总48h仍从原起点计。三共享报告已读且双读SHA一致，本轮模型/EDA/新FIFO为0，完整目标未达。范围见PROJECT_STATE.json既有temporal_peer_preparation_20261010节点。
+11:16核原134真实running：原monitor4175417/start882505704、child394494/start887569393活，135/136仍peer负责并排队。接续保持原135行/max225、原候选/模型/每行预算和条件门；下一步接134及peer135/136真实出口后按官方四项共同选择一个候选。132失败遗留的完整配对、经审计RTLLM、正式32GB/接口/恢复交付仍须闭合，不缩减目标，不添加120/.80或调用不增否决门。Issue6093199345已及时通知；所有新原始档案留私有，未改任何冻结执行源。
 
 2026-10-10 08:10 +08:00：原132总48h接续已真实采用，替代此前“尚未触发”。原队列因精确Wall budget cannot cover next solve and judge于07:59:52退出，旧guard清理/保护/model/槽释放收据保持；四个原角色与唯一watcher4053997均已退休。08:00:36仍用原FIFO132采用新flock342815/start886408575、monitor342817/start886408576、guard342816/start886408575和stage342821/start886408602，实际argv/父链/独立session已核。RESUME_INTENT80e8d16a、RESUME_RESULT/WATCH_RESULT e7131c14、EXECUTION_INTENT05972b76绑定相符，未重启watcher或另建票。
 

@@ -76,8 +76,8 @@
 },
   "full132_wall48h_20261009": {
   "schema": "full132_total48h_authorized_amendment_v1",
-  "updated_at": "2026-10-09T18:29:20+08:00",
-  "status": "verified_controls_and_detached_watcher_deployed_continuation_not_triggered",
+  "updated_at": "2026-10-10T11:19:00+08:00",
+  "status": "failed132_released_without_replay_original_full_batch_incomplete",
   "user_request": "能调整成48h吗",
   "scope": {
     "ticket": 132,
@@ -190,13 +190,23 @@
     "48h is a total safety cap, not a guaranteed completion time.",
     "Any genuine failure or unconfirmed row stays held; no sample replay.",
     "Formal32GB/container/complete RTLLM and overall acceptance remain pending."
-  ]
+  ],
+  "current_execution": {
+    "ticket_state": "failed_released_after_inspection",
+    "failed_row": "row_002191",
+    "sealed_rows": 2191,
+    "failed_rows": 1,
+    "never_started_rows": 148,
+    "full_batch_complete": false,
+    "source": "collaborative_goal_20261007.actual132_continuation_20261010.failure_exit",
+    "supersedes_historical_deployment_observation": true
+  }
 },
 
   "fifo_wait_recovery_20261009": {
   "schema": "owned_fifo_wait_recovery_20261009_v1",
-  "updated_at": "2026-10-09T22:05:27.218046+08:00",
-  "status": "original133134_wait_monitors_recovered_watcher_retired_tasks_still_queued",
+  "updated_at": "2026-10-10T11:19:00+08:00",
+  "status": "original133_native_verified_completed_original134_running",
   "problem": {
     "fifo_sha256": "4f1714fdd3ffd092a526e29860bdccf718249ced65e9dbb35947c0ecf8885f3f",
     "waiting_lifetime_seconds": 86400,
@@ -326,7 +336,7 @@
   "formal_score_gain": false,
   "full_goal_complete": false,
   "selection": "Official total score; model-generated design and unchanged current experiment freezes.",
-  "next": "Follow original132 plus receipt-bound133/134 monitors at the established cadence. After132 exits, retain133 native prerequisite before134. Original133134 watcher is complete and retired; never relaunch it. Peer owns135136. Report complete same-run results, not partial rows; formal full goal remains unachieved.",
+  "next": "Follow original134 actual running handle and its frozen135-row terminal gate; peer owns135136. Original132 is terminal failed/incomplete, not pending a48h continuation. Do not restart either retired watcher or replay failed132. Retain complete full-goal obligations for subsequent selected candidate validation.",
   "production_recovery": {
     "observed_at_beijing": "2026-10-09T21:15:00.747463+08:00",
     "status": "both_original_wait_monitors_recovered_and_unique_live_tasks_not_started",
@@ -408,7 +418,7 @@
       "private_raw_in_git": false
     },
     "limitations": [
-      "Actual waiting-monitor recovery only; neither original133 native nor134 model comparison has executed.",
+      "At the original recovery observation neither133 native nor134 comparison had executed; this historical observation is superseded by native133_terminal and current running134 status.",
       "Watch/result is complete for133134 only. Follow actual recovered monitor identities; do not restart the retired watcher.",
       "135136 and any second waiting window remain peer-owned; original132 total48h continuation remains a separate live watcher.",
       "No new score or formal32GB/container/recovery acceptance is supplied by this narrow recovery."
@@ -460,6 +470,66 @@
       "No result, score gain, adoption or complete acceptance; wait true original133 and134 exits.",
       "Reader combined stdout.bin and original180s supervision reused; normal_completion also requires returncode0 and actual retirement."
     ]
+  },
+  "native133_terminal": {
+    "schema": "native133_independent_terminal_inspection_v1",
+    "at": "2026-10-10T03:16:05.220467+00:00",
+    "native_result_sha256": "2caf8c486f45993d38e0f9ee3b98b25244ea9c4aa249641c17e98a7994d1c20f",
+    "source_manifest_sha256": "c989a1135c05df06d011700dc87ca9a497e8ccbb4092915c61656ae01d0ce384",
+    "source_bindings_verified": 11,
+    "guard_sha256": "1b13f756f6141b413875c050ebb22fefb26b00655fe19a0f95ef00b9c53e2213",
+    "external_receipt_sha256": "3aac27bd4cb508f45f27425b28497ef8de5c4be413377395b6df6bf16208a43b",
+    "native_cases": 1,
+    "real_EDA_commands": 3,
+    "real_model_calls": 0,
+    "observed_checks": 8,
+    "observed_mismatches": 4,
+    "distinct_counterexamples": 2,
+    "scope": "One previously frozen synthetic native multi-counterexample case; does not measure RTL accuracy or unseen generalization.",
+    "normal_rc0_exec_reaped_empty_groups": true,
+    "actual133roles_and_children_retired": true,
+    "guard_cleanup_model_protected_slot_receipts_hold": true,
+    "guard_elapsed_s": 6.521790346130729,
+    "outer_measured_complete_elapsed_s": 6.297543991357088,
+    "134_ticket_state": "running",
+    "134_active_roles": {
+      "runner": {
+        "pid": 4175417,
+        "live": true,
+        "state": "S",
+        "starttime": "882505704"
+      },
+      "child": {
+        "pid": 394494,
+        "live": true,
+        "state": "S",
+        "starttime": "887569393"
+      }
+    },
+    "old_controls_rerun": false,
+    "new_FIFO": 0,
+    "complete_133_original_execution": true,
+    "private_archive": {
+      "path": "/workspace/team/activity/fpga_teammate/artifacts/native133-terminal-20261010-v1/EVIDENCE.zip",
+      "sha256": "b4faee3b1120324b8a5b8d8564c5f915818bcba9d05abe03783d1f5b60a6431e",
+      "bytes": 129382,
+      "members": 97,
+      "indexed_files": 96,
+      "indexed_bytes": 308302,
+      "manifest_sha256": "7df5390bd31ee6cb2569eff6633b4f744da140c27daa6f3a69c5ab72ab4c4bfd",
+      "all_archived_and_current_bindings_match": true,
+      "extracted": false,
+      "local_path": "D:\\HUST\\IC\\FPGA\\05_handoff\\independent_validation_20261004\\waveform_resource_fix_20261006\\table_multi_feedback_pair\\native133_actual\\EVIDENCE.zip",
+      "local_all_members_verified": true,
+      "archive_extracted": false,
+      "local_verify_sha256": "1dde73e6084a77c307d6c93a01755804499ab4ab29d201ea3a43c2d6144710d7"
+    }
+  },
+  "preceding132_disposition": {
+    "state": "failed_released_after_inspection",
+    "replayed": false,
+    "whole_batch_complete": false,
+    "report": "03_analysis/helper_extraction_20261004/FULL132_WALL48H_20261009.json"
   }
 },
   "queue_prefix_digest_20261009": {
@@ -1294,8 +1364,8 @@
       }
     },
     "actual132_continuation_20261010": {
-      "updated_at": "2026-10-10T08:10:43+08:00",
-      "status": "actual_suffix_continuation_verified_running",
+      "updated_at": "2026-10-10T11:19:00+08:00",
+      "status": "suffix_failed_released_without_replay_or_full_score",
       "actual_adopted_at_utc": "2026-10-10T00:00:36.334844+00:00",
       "original_boundary": {
         "event": {
@@ -1405,18 +1475,14 @@
         "parent": true
       },
       "latest_observation": {
-        "at_beijing": "2026-10-10T08:09:54.113020+08:00",
-        "sealed": 2110,
-        "terminal": 2110,
-        "total": 2340,
-        "ticket_state": "adopted_running",
-        "new_guard_complete": false,
-        "actual_roles_live": true,
-        "model_same_identity_live": true,
-        "remaining_tickets": "133-136 queued under their actual recovered monitors",
-        "frozen39_unchanged": true,
-        "original_PLAN_and_spec_unchanged": true,
-        "reader132_and134_intents_absent": true
+        "observed_at": "2026-10-10T11:16:05+08:00",
+        "132_state": "failed_released_after_inspection",
+        "SEALED": 2191,
+        "TERMINAL": 2192,
+        "133_state": "completed",
+        "134_state": "running",
+        "135136": "peer_owned_queued",
+        "full_goal_complete": false
       },
       "private_archive": {
         "archive_dir": "/workspace/team/activity/fpga_teammate/artifacts/full132-wall48h-actual-20261010-v1",
@@ -1494,7 +1560,117 @@
       "new_model_calls_by_this_verification": 0,
       "new_eda_calls_by_this_verification": 0,
       "new_fifo_tickets": 0,
-      "terminal_reader_executed": false
+      "terminal_reader_executed": false,
+      "failure_exit": {
+        "schema": "full132_failure_inspection_v1",
+        "at": "2026-10-10T03:13:15.918488+00:00",
+        "failed_row": "row_002191",
+        "confirmed_completed_sealed": 2191,
+        "failed_started_rows": 1,
+        "never_started_rows": 148,
+        "original_total_rows": 2340,
+        "ticket_before_sha256": "230a2b6ec6940f03481d7dd56a87728dd0babcf86e48304b41cda311b70c7988",
+        "guard_sha256": "8fc7b57305da1d82408ca702ff67fc696a727754f8de6ae906f3a0f41caef8b6",
+        "stage_log_sha256": "939c503ee925d2ebbb2960fc0c2f0c578ffc1cb8277e8ff56d45f2bb88a76ac0",
+        "failed_terminal_sha256": "780ada3d6b3cd0f989f1bf861350e0c6ec6d05a0bf54e75a02879d0639ece445",
+        "first_response_received": true,
+        "first_request_elapsed_s": 283.07791212014854,
+        "first_completion_tokens": 8192,
+        "first_finish_reason": "length",
+        "recorded_client_requests": 2,
+        "confirmed_responses": 1,
+        "repair_response_unknown": true,
+        "original_actual_calls": null,
+        "original_unconfirmed_calls": null,
+        "grade": null,
+        "outer_supervision_s": 310.02313399501145,
+        "first_source_check_no_complete_endmodule": true,
+        "roles": {
+          "342815": {
+            "pid": 342815,
+            "state": "Z",
+            "starttime": "886408575",
+            "live": false
+          },
+          "342816": {
+            "pid": 342816,
+            "live": false
+          },
+          "342817": {
+            "pid": 342817,
+            "state": "Z",
+            "starttime": "886408576",
+            "live": false
+          },
+          "342821": {
+            "pid": 342821,
+            "live": false
+          },
+          "2930407": {
+            "pid": 2930407,
+            "state": "Z",
+            "starttime": "873442383",
+            "live": false
+          },
+          "2938975": {
+            "pid": 2938975,
+            "live": false
+          },
+          "4053997": {
+            "pid": 4053997,
+            "state": "Z",
+            "starttime": "881538083",
+            "live": false
+          }
+        },
+        "model": {
+          "pid": 2013333,
+          "state": "S",
+          "starttime": "823869819",
+          "live": true
+        },
+        "guard_cleanup_verified": true,
+        "guard_remaining": [],
+        "guard_success": false,
+        "stage_rc": 1,
+        "failure_class": "first-output truncation then incomplete repair supervision; not original total48h stop",
+        "prefix_seal_terminal_bindings": 2191,
+        "prefix_runtime_files_reaudited": false,
+        "failed_row_replayed": false,
+        "full_success_reader_executed": false,
+        "next_action": "Existing task_fifo release-held to terminal failure; no suffix continuation or completed status",
+        "guard_model_and_protected_unchanged": true,
+        "guard_own_slot_released": true,
+        "original_unknown_call_fields_preserved": true,
+        "release": {
+          "started_at": "2026-10-10T03:13:55.037221+00:00",
+          "finished_at": "2026-10-10T03:13:55.151306+00:00",
+          "returncode": 0,
+          "ticket_state": "failed_released_after_inspection",
+          "ticket_after_sha256": "f5d656969ecb9f8293e103399b08691b80507f9e6b1d5545c3cfae8e298c6bbf",
+          "released_at": "2026-10-10T03:13:55.123671+00:00",
+          "inspection_sha256": "a2e93b11b383bbf8fcfa68c84cc6c186d5751483bca39dd7cd3df17c71654e23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "no_retry": true
+        },
+        "private_archive": {
+          "path": "/workspace/team/activity/fpga_teammate/artifacts/full132-failure-exit-20261010-v1/EVIDENCE.zip",
+          "sha256": "a40414019cf7cdda282b83388b7107459233d2dd54cddbfe83dff2de1b14bc71",
+          "bytes": 681636,
+          "members": 67,
+          "indexed_files": 66,
+          "indexed_bytes": 6649995,
+          "manifest_sha256": "d22ad665b4e6dba8c096427e0f10bf0c98f48a8f91459776f2d015981eb56d38",
+          "all_archived_and_current_bindings_match": true,
+          "extracted": false,
+          "local_path": "D:\\HUST\\IC\\FPGA\\05_handoff\\independent_validation_20261004\\waveform_resource_fix_20261006\\full132_wall48h\\failure_exit\\EVIDENCE.zip",
+          "local_all_members_verified": true,
+          "archive_extracted": false,
+          "local_verify_sha256": "29840a50aae26e048f165e7b80566eaab9a2d5ec2ecf1d5f6d26f55277944c24"
+        },
+        "issue_comment": 6093199345,
+        "goal_complete": false
+      }
     },
     "morning_peer_intake_20261010": {
       "updated_at": "2026-10-10T07:36:25+08:00",
@@ -1838,7 +2014,12 @@
       "new_eda_calls": 0,
       "new_fifo_tickets": 0,
       "full_goal_complete": false
-    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-08T21:36:00+08:00","status":"active_official_total_score_priority_model_generated_candidate_required","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"严格以官方RTL赛题总分最高为目标，遵守官方提交和评测条件；保留真实性、公平性与完整交付，不附加逐题保持或调用不增的成绩否决门。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":["Retain123 exact result and terminal evidence without repeating it; old custom audit gates no longer control selection.","Use official scoring and substantive model generation; do not promote mechanical direct RTL as a contest candidate.","Coordinate completed124/125 and the next model-generated candidate inIssue7; no pure ACK wait or financial balance gate.","Complete same-model original official baseline and five-sample comparison with externally measured wall time; report RTLLM separately and retain full resource/interface/recovery scope."],"unresolved":["Known retained strict-SV opportunity is one final C failure; ordinary-always blind spot remains. New generation benefit, broad coverage, complete runtime cost and scoring admission are unproven.","Complete three-arm156, auditedRTLLM, required five samples and resource/interface/recovery acceptance remain incomplete; historical118 not exceeded."],"overnight_execution":{
+    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T11:19:00+08:00","status":"active_original132_failed_released133_native_verified134_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"严格以官方RTL赛题总分最高为目标，遵守官方提交和评测条件；保留真实性、公平性与完整交付，不附加逐题保持或调用不增的成绩否决门。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
+      "Retain original132 terminal failure:2191 sealed,1 failed with unknown repair receipt,148 never started; no replay,suffix continuation or full-score claim.",
+      "Complete original134 frozen comparison and coordinate peer-owned135/136 real exits before choosing one next factor by official four-item value.",
+      "Report observed truncation, wall time and call uncertainty; do not import historical120/.80, per-task or call-nonincreasing vetoes.",
+      "Preserve full target:one substantive model-generated candidate/best archived original/untouched same-model B full156 pairing, five independent samples for important candidates, audited RTLLM and formal32GB/interface/recovery/reproducibility evidence."
+    ],"unresolved":["Known retained strict-SV opportunity is one final C failure; ordinary-always blind spot remains. New generation benefit, broad coverage, complete runtime cost and scoring admission are unproven.","Complete three-arm156, auditedRTLLM, required five samples and resource/interface/recovery acceptance remain incomplete; historical118 not exceeded."],"overnight_execution":{
     "automation_id": "amd-rtl-3",
     "preparation_time": "21:30",
     "local_cutoff": "23:00",
