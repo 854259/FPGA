@@ -1,0 +1,69 @@
+{
+  "schema": "original134_existing_complete_owner_report_intake_v1",
+  "saved_epoch": 1791609113.2356594,
+  "original_reader_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison9x5_20261008_v1",
+  "owner_terminal_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison134_terminal_20261009_v1",
+  "original_result_sha256": "2c31235b38ba370cc1f8c33a943bf72bd924dd60c867b3a899e3c436611c2aaa",
+  "original_process_complete_sha256": "604bec698f4d16a874289983b93a96b2aeee082262e2bdff8f60a1e79d35bac0",
+  "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+  "reader_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+  "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+  "complete_comparison": true,
+  "arms": {
+    "A": {
+      "outputs": 45,
+      "L3": 30,
+      "L1": 15,
+      "coefficient_mean_unrounded": 0.7333333333333333,
+      "client_request_attempts": 75,
+      "observed_solve_s": 876.8492796886712,
+      "all_five_L3_tasks": 6
+    },
+    "P": {
+      "outputs": 45,
+      "L3": 30,
+      "L1": 15,
+      "coefficient_mean_unrounded": 0.7333333333333333,
+      "client_request_attempts": 75,
+      "observed_solve_s": 1529.884780369699,
+      "all_five_L3_tasks": 6
+    },
+    "B": {
+      "outputs": 45,
+      "L3": 10,
+      "L1": 35,
+      "coefficient_mean_unrounded": 0.37777777777777777,
+      "client_request_attempts": 45,
+      "observed_solve_s": 170.7294394634664,
+      "all_five_L3_tasks": 2
+    }
+  },
+  "P_minus_A_coefficient_mean": 0.0,
+  "paired_task_mean_deltas": {
+    "Prob050_kmap1": 0.0,
+    "Prob057_kmap2": 0.0,
+    "Prob090_circuit1": 0.0,
+    "Prob101_circuit4": 0.0,
+    "Prob102_circuit3": -0.8,
+    "Prob103_circuit2": 0.0,
+    "Prob113_2012_q1g": 0.0,
+    "Prob122_kmap4": 0.0,
+    "Prob125_kmap3": 0.8
+  },
+  "P_minus_A_observed_solve_s": 653.0355006810278,
+  "real_queue_wall_s": 5272.257426023483,
+  "official_total_score": null,
+  "gain_points": null,
+  "cost_points": null,
+  "engineering_points": null,
+  "review_scope": "Read bound owner complete report/process/intent and remote reader/official-score hashes;independently checked report arithmetic. Did not repeat reader or independently audit all135 underlying originals.",
+  "multi_feedback_not_selected": true,
+  "retained_base": "Original132 single-counterexample complete-table P",
+  "next_capability_priority": "Output completion remains user priority,subject to original135136 outcomes and one submitting owner.",
+  "new_reader_execution": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo_tickets": 0,
+  "full156_complete": false,
+  "full_goal_complete": false
+}

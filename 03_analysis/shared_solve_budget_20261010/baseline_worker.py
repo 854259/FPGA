@@ -131,6 +131,8 @@ def run_worker(args, paired):
             entry.update(error=type(error).__name__,elapsed_s=time.monotonic()-tick)
             save(out/'requests.json',requests)
             activity.append(ledger,'calls',event_id+':unconfirmed','实际模型调用未收到回复，保留失败不重抽。',dict(task=args.task,arm=args.arm,round=index,**entry))
+            if budget.expired():
+                raise shared_budget.BudgetExpired('Shared budget ended with an unconfirmed request') from error
             raise RuntimeError('Actual fresh model request failed; do not resample') from error
         (folder/'response.json').write_bytes(raw)
         payload = json.loads(raw); choice = payload['choices'][0]
@@ -155,7 +157,10 @@ def run_worker(args, paired):
         (evidence/'source_after.sv').write_bytes(Path(argv[-1]).read_bytes())
         compiles.append(dict(argv=argv, source_sha256=sha(argv[-1]), source_before_sha256=sha(evidence/'source_before.sv'),source_after_sha256=sha(evidence/'source_after.sv'), **result))
         save(out/'compile_journal.json', compiles)
-        if result['timeout'] or result['launch_error'] or result['remaining_live_group']:
+        if result['launch_error'] or result['remaining_live_group']:
+            raise RuntimeError('Native compiler supervision failure')
+        if result['timeout']:
+            budget.remaining()
             raise RuntimeError('Native compiler supervision failure')
         return subprocess.CompletedProcess(argv, result['returncode'], log.read_text(errors='replace'))
 
@@ -176,6 +181,9 @@ def run_worker(args, paired):
         save(out/'worker_result.json', dict(complete=True, arm=args.arm,
             requests=len(requests), actual_model_requests=len(requests),
             elapsed_s=time.monotonic()-started, solution_sha256=sha(out/'solution.v')))
+    except shared_budget.BudgetExpired:
+        save(out/'SHARED_BUDGET_EXIT.json', budget.exit_receipt(out/'requests.json', __file__))
+        raise
     finally:
         paired.owned_command = original_owned
         urllib.request.urlopen, subprocess.run = original_open, original_run

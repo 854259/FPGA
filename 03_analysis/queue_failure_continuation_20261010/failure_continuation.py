@@ -2,6 +2,7 @@
 import hashlib
 import json
 import os
+import math
 from pathlib import Path
 import zipfile
 
@@ -40,10 +41,25 @@ def original_files(folder, row, plan_sha256):
     command = json.loads((folder/'SOLVE_COMMAND.json').read_bytes())
     # The original owned supervisor returns only after wait/reap and exact-group cleanup.
     # This narrowly handles the actual132 timeout class; launch/judge/manifest faults stay closed.
-    assert command['timeout'] is True and command['launch_error'] is None
-    assert type(command['returncode']) is int and command['returncode'] < 0
+    assert command['launch_error'] is None
+    assert type(command['returncode']) is int
     assert command['remaining_live_group'] == []
-    assert 'SIGKILL' in command['group_signals']
+    if command['timeout'] is True:
+        assert command['returncode'] < 0 and 'SIGKILL' in command['group_signals']
+    else:
+        assert command['timeout'] is False and command['returncode'] == 1
+        assert 'solve/SHARED_BUDGET_EXIT.json' in files
+        budget = json.loads((folder/'solve/SHARED_BUDGET_EXIT.json').read_bytes())
+        assert budget['schema'] == 'shared_worker_budget_expired_v1' and budget['budget_s'] == 300
+        assert type(budget['elapsed_s']) in (int, float) and math.isfinite(budget['elapsed_s'])
+        assert 300 <= budget['elapsed_s'] <= command['elapsed_s']
+        assert budget['requests_sha256'] == files['solve/requests.json']
+        assert budget['complete'] is False and budget['score_eligible'] is False
+        assert budget['grade'] is None and budget['actual_calls'] is None and budget['unconfirmed_calls'] is None
+        if 'solve/compile_journal.json' in files:
+            compiles = json.loads((folder/'solve/compile_journal.json').read_bytes())
+            assert isinstance(compiles, list)
+            assert all(c['launch_error'] is None and not c['remaining_live_group'] for c in compiles)
     assert 'solve/requests.json' in files
     requests = json.loads((folder/'solve/requests.json').read_bytes())
     assert isinstance(requests, list) and 1 <= len(requests) <= min(2, row['reserved_calls'])
@@ -53,6 +69,11 @@ def original_files(folder, row, plan_sha256):
     assert log.is_relative_to(folder) and sha(log) == command['log_sha256']
     assert log.stat().st_size == command['log_bytes']
     return receipt, files
+
+
+def failure_basis(folder):
+    command = json.loads((Path(folder)/'SOLVE_COMMAND.json').read_bytes())
+    return 'owned_solver_timeout' if command['timeout'] else 'owned_worker_budget_expired'
 
 
 def verify_failed_seal(folder, row, plan_sha256):
@@ -70,6 +91,7 @@ def verify_failed_seal(folder, row, plan_sha256):
     assert seal['inspection']['owned_solver_reaped_and_group_clear'] is True
     assert seal['inspection']['processing_slots'] == 0
     assert seal['inspection']['health_status'] == 'ok'
+    assert seal.get('failure_basis', 'owned_solver_timeout') == failure_basis(folder)
     assert sha(archive) == seal['archive_sha256']
     with zipfile.ZipFile(archive) as z:
         names = z.namelist()
@@ -86,6 +108,14 @@ def seal_failed_row(folder, row, plan, plan_sha256, resource_check, resource, sa
     assert not (folder/'SEALED.json').exists() and not (folder/'EVIDENCE.zip').exists()
     assert not (folder/'FAILED_SEALED.json').exists() and not (folder/'FAILED_EVIDENCE.zip').exists()
     receipt, files = original_files(folder, row, plan_sha256)
+    basis = failure_basis(folder)
+    if basis == 'owned_worker_budget_expired':
+        assert plan.get('allow_shared_budget_failure') is True
+        root = Path(plan['sources']['root']).resolve()
+        budget = json.loads((folder/'solve/SHARED_BUDGET_EXIT.json').read_bytes())
+        for name, key in [('shared_budget.py', 'budget_source_sha256'), ('baseline_worker.py', 'worker_source_sha256')]:
+            source = root/name
+            assert sha(source) == budget[key] == plan['sources']['files'][str(source)]
     # check_resource binds the original model/resource admission; telemetry is read-only.
     admission = resource.check_resource(resource_check, Path(plan['kit']))
     assert admission['llm_base_url'] == 'http://127.0.0.1:8000/v1'
@@ -111,6 +141,6 @@ def seal_failed_row(folder, row, plan, plan_sha256, resource_check, resource, sa
     save(folder/'FAILED_SEALED.json', dict(schema=SCHEMA, row_key=row['key'], plan_sha256=plan_sha256,
          terminal_sha256=files['TERMINAL.json'], archive_sha256=sha(archive), reserved_calls=row['reserved_calls'],
          grade=None, actual_calls=None, unconfirmed_calls=None, score_eligible=False,
-         public_publish_allowed=False, inspection=inspection))
+         public_publish_allowed=False, inspection=inspection, failure_basis=basis))
     assert verify_failed_seal(folder, row, plan_sha256) == receipt
     return inspection
