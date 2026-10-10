@@ -1509,7 +1509,53 @@
         "no_frozen_output_v2_mutation": true,
         "no_failed132_replay": true
       },
-      "full_goal_complete": false
+      "full_goal_complete": false,
+      "prepared_output_public_source_review": {
+        "verified_at": "2026-10-10T13:30:23+08:00",
+        "commit": "255822490623a428ff867f9dbd475c2b015d9152",
+        "directory": "03_analysis/output_completion_first_request_20261010",
+        "files": [
+          {
+            "name": "baseline_worker.py",
+            "sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+            "bytes": 9241,
+            "git_blob": "cb98efe1c826c82d79cfbbcc44392a1129ac5c22",
+            "match": true
+          },
+          {
+            "name": "comparison_result.py",
+            "sha256": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+            "bytes": 11587,
+            "git_blob": "d70b598de63e52d840c7bfdcbf8d8b3c2f5d6e6c",
+            "match": true
+          },
+          {
+            "name": "first_system_request.py",
+            "sha256": "65da3d134b7b1c3e57a24a6e8d6c78869644542d8865b444c20a63ba6b900a10",
+            "bytes": 4803,
+            "git_blob": "643a828fe92d0360d113bf1179035fbea420343d",
+            "match": true
+          },
+          {
+            "name": "prepare_output_comparison.py",
+            "sha256": "2adc42b2ada9c18f37b460c3bbaa2f724a51f94c598267e4da7f3a5532c71c18",
+            "bytes": 10702,
+            "git_blob": "abed245baeb11f090e31755445b6d1017f6a3a70",
+            "match": true
+          },
+          {
+            "name": "worker.py",
+            "sha256": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65",
+            "bytes": 7473,
+            "git_blob": "8e0d56d46b61d31ddc5e591888ecc341d13b1a71",
+            "match": true
+          }
+        ],
+        "all_public_git_bytes_sha256_length_and_git_blob_verified": true,
+        "all_match_previously_audited_frozen_AMD_sources": true,
+        "prepare_public_filename_maps_to": "prepare_temporal_comparison.py",
+        "scope": "Public transfer integrity only. Prepared output-v2 remains unchanged; no admission, new model/EDA/FIFO or inferred performance."
+      }
     },
     "temporal_peer_preparation_20261010": {
       "future_failure_continuation_review_20261010": {
