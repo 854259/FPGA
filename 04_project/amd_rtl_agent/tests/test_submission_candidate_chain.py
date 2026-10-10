@@ -150,11 +150,11 @@ def birth(pid):
     return dict(pid=pid,starttime=Path('/proc',str(pid),'stat').read_text().rsplit(')',1)[1].split()[19])
 (root/'health-births.json').write_text(json.dumps(dict(tool=birth(os.getpid()),child=birth(child.pid),cwd=os.getcwd())))
 print('vivado v2026.1 (synthetic CPU tool)',flush=True)
-if os.environ['HEALTH_SCENARIO']=='cancel_health':time.sleep(20)
+if os.environ['HEALTH_SCENARIO'].startswith('cancel_health'):time.sleep(20)
 """
         tool.write_text(program)
         tool.chmod(0o755)
-        if scenario == 'cancel_health':
+        if scenario.startswith('cancel_health'):
             def cancel_health():
                 end = time.monotonic() + 3
                 while not (root / 'health-births.json').is_file() and time.monotonic() < end:
@@ -162,7 +162,13 @@ if os.environ['HEALTH_SCENARIO']=='cancel_health':time.sleep(20)
                 (root / 'cancel-at.json').write_text(json.dumps(dict(monotonic=time.monotonic())))
                 os.kill(os.getpid(), signal.SIGTERM)
             threading.Thread(target=cancel_health, daemon=True).start()
-        with patch.dict(os.environ, dict(MODEL_NAME='synthetic-no-model', HEALTH_SCENARIO=scenario,
+        def failed_group_cleanup(pgid, signum):
+            (root / 'native-cleanup-failure.json').write_text(json.dumps(
+                dict(pgid=pgid, signal=signum, at=time.monotonic())))
+            raise PermissionError('Synthetic native group cleanup failure')
+        native_failure = (patch.object(os, 'killpg', failed_group_cleanup)
+                          if scenario == 'cancel_health_native_failure' else contextlib.nullcontext())
+        with native_failure, patch.dict(os.environ, dict(MODEL_NAME='synthetic-no-model', HEALTH_SCENARIO=scenario,
                                          LLM_BASE_URL='http://127.0.0.1:8000/v1')), \
              patch.object(urllib.request, 'urlopen', fake.open), \
              patch.object(runtime, 'vivado_tool', lambda name: str(tool)), \
@@ -457,7 +463,7 @@ NOTREADY_AGENT=0
         self.assertEqual(ctypes.CDLL(None).prctl(36, 1, 0, 0, 0), 0)
         try:
             with self.server(scenario, action='health') as (port, proc):
-                if scenario == 'cancel_health':
+                if scenario.startswith('cancel_health'):
                     with self.assertRaises((OSError, http.client.RemoteDisconnected)):
                         self.request(port, path='/v1/health')
                     self.assertEqual(proc.wait(timeout=2), 1)
@@ -501,6 +507,16 @@ NOTREADY_AGENT=0
 
     def test_health_sigterm_reaps_tool_and_exits(self):
         self.health_process_case('cancel_health')
+
+    def test_health_cancellation_survives_native_cleanup_failure(self):
+        self.health_process_case('cancel_health_native_failure')
+        failure = json.loads((self.root / 'native-cleanup-failure.json').read_text())
+        cancel = json.loads((self.root / 'cancel-at.json').read_text())
+        self.assertGreaterEqual(failure['at'], cancel['monotonic'])
+        receipt = next((self.root / 'evidence').glob('health-*/OWNED_CLEANUP.json'))
+        cleanup = json.loads(receipt.read_text())
+        self.assertTrue(cleanup['verified'])
+        self.assertLessEqual(cleanup['deadline_monotonic'], cancel['monotonic'] + 10.1)
 
     def test_detached_tool_child_is_reaped_before_next_request(self):
         real_owned = deadline_supervisor.owned_command
