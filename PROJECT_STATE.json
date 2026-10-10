@@ -1,5 +1,28 @@
 {
   "temporal_first_generation_20261010": {
+    "constant_repair_retained_context_preflight": {
+      "scope": "Ten retained144 repairs only;exact guidance appended to their system messages;not a new score sample",
+      "result_sha256": "7be35ea5fc98a8076bd8658fe902f640e727def13438db1771e7bc90f2e6912b",
+      "rows": 10,
+      "original_prompt_tokens": 2287,
+      "candidate_prompt_tokens": 2410,
+      "delta_tokens": 123,
+      "context_tokens": 16384,
+      "output_tokens_reserved": 8192,
+      "headroom_tokens": 5782,
+      "all_original_usage_counts_matched": true,
+      "metadata_HTTP_calls": 41,
+      "real_generation_calls": 0,
+      "EDA_calls": 0,
+      "FIFO_tickets": 0,
+      "all_future_repair_capacity_proven": false,
+      "model_benefit_unknown": true,
+      "native_qualification": false,
+      "scoring_selected": false,
+      "submitted": false,
+      "frozen_temporal9_unchanged": true,
+      "original132_136_unchanged": true
+    },
     "constant_repair_guidance_preparation": {
       "source_prepared": true,
       "guide_words": 101,
