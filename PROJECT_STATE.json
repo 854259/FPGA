@@ -1,4 +1,110 @@
 {
+  "parent_clock_delta_20261010": {
+  "schema": "parent_clock_and_pregrading_deadline_isolated_delta_v1",
+  "saved_epoch": 1791620876.9097333,
+  "source_hashes": {
+    "03_analysis\\shared_solve_budget_20261010\\baseline_worker.py": "67a7e31dbf6160a067bdc1948d041a1ef94579eaf26abd260c08d9e04988842b",
+    "03_analysis\\shared_solve_budget_20261010\\shared_budget.py": "910a2a25a1c20ec49b15f8f8941bad02a663b4a6ee50c8017714b48141171bfa",
+    "03_analysis\\shared_solve_budget_20261010\\official_baseline_arm_20261005.py": "c6a90debf526cfd68adc3997b468912b108db6f02ad1d901fea146ec548b5523",
+    "03_analysis\\queue_failure_continuation_20261010\\three_arm_queue_20261005.py": "5205ae5ea973ee33d254242fb9da6bef19869b833f02fd7ae3909e9a281c20ec",
+    "03_analysis\\queue_failure_continuation_20261010\\failure_continuation.py": "72cee985babe50fcff96c7d60ff5853964c6dc79f18c4dafb2b5e394335eb616"
+  },
+  "purpose": "Include CLI/bootstrap in parent solve clock and reject over-budget rc0 before grading;not a capability gain.",
+  "parent_clock_environment": "RTL_SOLVE_PARENT_STARTED_MONOTONIC",
+  "A_P_worker_requires_binding": true,
+  "B_owned_wrapper_uses_same_parent_clock": true,
+  "upstream_official_baseline_bytes_unchanged": true,
+  "outer_supervision_original310_unchanged": true,
+  "outer310_is_not_proven300_plus10_cleanup_bound": true,
+  "before_grading_requires_both_reported_and_parent_clock_within300": true,
+  "zero_requests_allowed_only_for_source_bound_budget_exit": true,
+  "unknown_grade_calls_and_original_reservations_preserved": true,
+  "CLI_qualification": {
+    "passed": true,
+    "aggregate_controls": 7,
+    "actual_A_worker_CLI_controls": 4,
+    "retained_prior_CLI_observations_not_repeated": 4,
+    "synthetic_zero_seal_controls": 2,
+    "invalid_or_future_parent_binding_control": 1,
+    "archive": {
+      "passed": true,
+      "archive_members": 96,
+      "archive_sha256": "9ac77e71bca95b39598d91c345100a340fc08c290a269eb77626ec5cd2731752",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\parent_clock_CLI_qualification_20261010_v4"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/parent_clock_CLI_qualification_20261010_v4/QUALIFICATION_ORIGINALS.zip",
+    "runtime_dependency_admission_idle_are_synthetic": true,
+    "aged_parent_anchor_not_physical300": true,
+    "original_failed_control_entries_preserved": true,
+    "source_clock_scope_refusal_preserved": true
+  },
+  "queue_boundary_qualification": {
+    "passed": true,
+    "controls": 4,
+    "real_owned_CPU_echo_children": 4,
+    "actual_execute_row_function": true,
+    "A_P_B_parent_environment_bridge": true,
+    "reported303_and_underreported_parent_over300_refused_before_grading": true,
+    "grade_clock_and_admission_validation_are_simulated": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 22,
+      "archive_sha256": "bacc601296504b65f5a1643ed10e69902ad0c6527d25b320fd7213f330657d0a",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\parent_queue_boundary_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/parent-queue-boundary-qualification-20261010-v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "production_B_CLI_qualified": false,
+  "full_production_dependencies_and_queue_chain_qualified": false,
+  "real_shared_model_cancel_idle_qualified": false,
+  "physical300_parent_pipeline_qualified": false,
+  "deployed": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "failure_entries": [
+    "LocalSSH connect timeout;read same remote root absent before new entry.",
+    "First CPU child stopped on missing first_system_request before runtime/HTTP;retained.",
+    "Aged parent-clock fixture was correctly refused against short original command;original failure preserved,first CLI not replayed.",
+    "Synthetic zero-seal fixture lacked kit before seal;retained;completed CLI originals reused,not rerun."
+  ],
+  "actual138": {
+    "ticket": 138,
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 41,
+    "observed_epoch": 1791620715.3051643,
+    "frozen_sources_held": true,
+    "new_delta_overlay": false,
+    "first_two_controls_grade_request_net_gain": 0,
+    "stable_error_target_gain_not_yet_observed": true
+  },
+  "peer_reviewed": [
+    6095390869,
+    6095657518
+  ],
+  "original137_cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/output137-original-failed-archive-20261010-v1/ORIGINAL_FAILED137.zip",
+  "original137_cloud_index": "ARCHIVE_MANIFEST.json inside existing ORIGINAL_FAILED137.zip",
+  "next": [
+    "Read fixed138 target outcomes and gates;do not add second scoring ticket.",
+    "Review changed parent-clock/zero-exit/B wrapper and cleanup bounds;full production chain remains incomplete.",
+    "Real shared-model cancellation/idle can only be validated after existing138 release under its own FIFO lease;do not access busy model."
+  ]
+},
   "temporal138_deadline_scope_20261010": {
   "schema": "temporal138_original_deadline_scope_v1",
   "saved_epoch": 1791618951.464361,

@@ -62,7 +62,11 @@ def original_files(folder, row, plan_sha256):
             assert all(c['launch_error'] is None and not c['remaining_live_group'] for c in compiles)
     assert 'solve/requests.json' in files
     requests = json.loads((folder/'solve/requests.json').read_bytes())
-    assert isinstance(requests, list) and 1 <= len(requests) <= min(2, row['reserved_calls'])
+    # With the parent's clock, child bootstrap can exhaust the budget before
+    # any dispatch. A bound budget-exit receipt is required for this zero case;
+    # an external timeout without requests remains outside this narrow route.
+    minimum_requests = 0 if command['timeout'] is False else 1
+    assert isinstance(requests, list) and minimum_requests <= len(requests) <= min(2, row['reserved_calls'])
     assert [r['index'] for r in requests] == list(range(len(requests)))
     assert all(type(r['response_received']) is bool for r in requests)
     log = Path(command['log']).resolve()

@@ -5,6 +5,7 @@ import hashlib
 import signal
 import sys
 import threading
+import os
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -13,12 +14,34 @@ class BudgetExpired(RuntimeError):
     pass
 
 
+PARENT_STARTED_ENV = 'RTL_SOLVE_PARENT_STARTED_MONOTONIC'
+
+
+def parent_started_from_environment():
+    """A production worker must inherit the queue's monotonic solve start."""
+    raw = os.environ.get(PARENT_STARTED_ENV)
+    if raw is None:
+        raise ValueError('Missing parent solve-start binding')
+    try:
+        started = float(raw)
+    except (ValueError, TypeError) as error:
+        raise ValueError('Invalid parent solve-start binding') from error
+    if not math.isfinite(started) or started < 0:
+        raise ValueError('Invalid parent solve-start binding')
+    return started
+
+
 class SolveBudget:
-    def __init__(self, seconds=300, clock=None):
+    def __init__(self, seconds=300, clock=None, parent_started=None):
         if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds <= 0:
             raise ValueError('Invalid shared solve budget')
         self.clock = clock or time.monotonic
-        self.started = self.clock()
+        now = self.clock()
+        if parent_started is not None and (
+                type(parent_started) not in (int, float) or
+                not math.isfinite(parent_started) or not 0 <= parent_started <= now):
+            raise ValueError('Invalid or future parent solve start')
+        self.started = now if parent_started is None else parent_started
         self.seconds = seconds
         self.end = self.started + seconds
 

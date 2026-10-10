@@ -75,7 +75,8 @@ def functional_feedback(prompt, code, out, attempt, paired, task, candidate=Fals
 
 
 def run_worker(args, paired):
-    budget = shared_budget.SolveBudget(300)
+    budget = shared_budget.SolveBudget(300,
+        parent_started=shared_budget.parent_started_from_environment())
     original_owned = paired.owned_command
     root, out = ROOT, args.out.resolve()
     spec = json.loads((root/'RUN_SPEC.json').read_text())

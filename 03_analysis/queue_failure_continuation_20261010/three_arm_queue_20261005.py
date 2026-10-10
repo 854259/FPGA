@@ -384,9 +384,20 @@ def execute_row(plan, argv, row, folder, resource_check):
     receipt = dict(complete=False,actual_calls=None,unconfirmed_calls=None,full_batch=False,
                    call_count_definition='durable client attempts; server receipt unknown',server_received_count=None)
     try:
-        command = resource.owned_command(argv,folder,folder/'solve.log',plan['solve_supervisor_s'])
+        solve_started = time.monotonic()
+        solve_argv = argv
+        if plan.get('allow_shared_budget_failure'):
+            assert plan['sources'].get('model_feedback') is True
+            # Bind child imports/bootstrap, HTTP, tools and repair to the same
+            # parent solve clock. The B wrapper uses the same parent clock;
+            # upstream baseline bytes and the cleanup supervisor stay intact.
+            solve_argv = ['/usr/bin/env',
+                'RTL_SOLVE_PARENT_STARTED_MONOTONIC='+format(solve_started, '.17g'),
+                *argv]
+        command = resource.owned_command(solve_argv,folder,folder/'solve.log',plan['solve_supervisor_s'])
         save(folder/'SOLVE_COMMAND.json',command)
         assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Solver supervision failure'
+        assert command['elapsed_s'] <= plan['solve_deadline_s'] and time.monotonic()-solve_started <= plan['solve_deadline_s'], 'Solver deadline exceeded before grading'
         solve = folder/'solve'; evaluator = Path(row['evaluator_dir'])
         generation_source = plan['sources'].get('generation_arms', {}).get(row['arm'], {}).get('root')
         model_source = plan['sources']['root'] if plan['sources'].get('model_feedback') and row['arm'] != 'B' else None
