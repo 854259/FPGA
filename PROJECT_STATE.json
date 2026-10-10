@@ -1,5 +1,140 @@
 {
   "temporal_first_generation_20261010": {
+    "stable146_uncovered_public_contract_priorities_20261010": {
+      "schema": "uncovered_stable_public_contract_priority_review_v1",
+      "saved_epoch": 1791604338.8964634,
+      "inventory_sha256": "6966f46c119c1f4c9b591c59d398270a1c78ee3d83b81136fc03beec6f0771fc",
+      "public_inputs_index_sha256": "bad4b30af313807fb163a75d17541c15b550fdec6d1f5becae64d99bd4e85739",
+      "stable_failed_tasks": 31,
+      "mixed_sample_tasks": 3,
+      "all_five_correct_tasks": 112,
+      "unknown_remaining_tasks": 10,
+      "primary_fixed_score_coverage": {
+        "original134_stable_targets": [
+          "Prob057_kmap2",
+          "Prob113_2012_q1g",
+          "Prob125_kmap3"
+        ],
+        "original135_stable_targets": [
+          "Prob137_fsm_serial",
+          "Prob146_fsm_serialdata"
+        ],
+        "prepared_temporal9_stable_targets": [
+          "Prob111_fsm2s",
+          "Prob133_2014_q3fsm",
+          "Prob139_2013_q2bfsm",
+          "Prob140_fsm_hdlc"
+        ],
+        "constant_backup_direct_task": [
+          "Prob144_conwaylife"
+        ]
+      },
+      "public_contract_categories": {
+        "clocked_contract_initialization_edge_and_priority": [
+          "Prob034_dff8",
+          "Prob053_m2014_q4d",
+          "Prob066_edgecapture",
+          "Prob074_ece241_2014_q4",
+          "Prob078_dualedge",
+          "Prob104_mt2015_muxdff",
+          "Prob117_circuit9",
+          "Prob141_count_clock"
+        ],
+        "width_concatenation_and_word_selection": [
+          "Prob062_bugs_mux2",
+          "Prob064_vector3",
+          "Prob097_mux9to1v"
+        ],
+        "feedback_shift_and_tap_convention": [
+          "Prob082_lfsr32",
+          "Prob086_lfsr5"
+        ],
+        "combinational_coordinates_encoding_and_output_contract": [
+          "Prob083_mt2015_q4b",
+          "Prob093_ece241_2014_q3",
+          "Prob099_m2014_q6c",
+          "Prob116_m2014_q3",
+          "Prob126_circuit6",
+          "Prob134_2014_q3c",
+          "Prob135_m2014_q6b"
+        ],
+        "related136_lemmings_native_only_no_model_score_comparison": [
+          "Prob142_lemmings2"
+        ]
+      },
+      "category_counts": {
+        "clocked_contract_initialization_edge_and_priority": 8,
+        "width_concatenation_and_word_selection": 3,
+        "feedback_shift_and_tap_convention": 2,
+        "combinational_coordinates_encoding_and_output_contract": 7,
+        "related136_lemmings_native_only_no_model_score_comparison": 1
+      },
+      "caution": "Fixed task presence is coverage,not proof that a method triggers or solves it.136 is native-only with possible relevance to142,not an active model-score comparison. This inventory does not show21 recoverable model failures.",
+      "ross_narrow_existing_draft": {
+        "reviewed_static_only": true,
+        "manual_direct_known_fit": [
+          "Prob097_mux9to1v"
+        ],
+        "related_but_not_current_narrow_selector_scope": [
+          "Prob064_vector3"
+        ],
+        "basis": "Existing097 source diagnosis shows packed-word selection error.064 asks concatenation with two LSB ones,no word selector;cannot widen the narrow draft just to claim applicability.",
+        "remaining19_not_established_direct_selector_fit": true,
+        "model_gain_unknown": true,
+        "no_new_prompt_or_skill_created": true,
+        "no_task_id_runtime_route": true
+      },
+      "existing_dff_evidence_reused": {
+        "allowed_evidence_sha256": "34daed0bd5d4f62596b48fb5e07957cd85f7a45cf9e19742265712b148b04a99",
+        "judge_metadata_sha256": "266d4578c4885c156a9f3d94a755e44fc440a7d7427825a9d75892d95626c650",
+        "row": "row_000496",
+        "source_has_standard_posedge_q_equals_d": true,
+        "original_level": 1,
+        "mismatches": 1,
+        "samples": 41,
+        "conclusion": "Public source plausibly meets straightforward text but original judge remainsL1. No private fixture read/new simulation;cause not established,no initialization hack/no waived loss."
+      },
+      "public_contract_ambiguity_notes": [
+        "099 public port names and next-state bit naming contain inconsistent prose;do not map bits from port-name suffix alone.",
+        "116 public map uses one-based x[1]..x[4] labels;do not silently assume zero-based physical indexing.",
+        "062 is explicitly a bug-fix task;interface preservation must follow required corrected behavior,not mechanically freeze faulty example width."
+      ],
+      "priority_decision": "Keep current134/135/136 and frozen temporal9 primary. Existing ROSS narrow vector draft has limited directly evidenced coverage and remains lower priority,unselected;do not add a fifth candidate or broaden it on names alone. Use uncovered public categories to judge later full regression gaps.",
+      "third134_complete_group": {
+        "task": "Prob090_circuit1",
+        "A_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "P_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "B_levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "each_arm_calls": 5,
+        "source_result_sha256": "9000225947ffc607e1ce7f5c08ede18582bea99ca0a10038a7c4b5c97a52a8da",
+        "P_minus_A_gain": 0
+      },
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "formal_runtime_changed": false,
+      "new_scoring_candidate_created": false,
+      "adoption": false,
+      "full_goal_complete": false
+    },
     "kmap2_multi_feedback_repair_diagnosis_20261010": {
       "schema": "public_kmap_repair_semantics_static_diagnosis_v1",
       "saved_epoch": 1791603737.5467942,
