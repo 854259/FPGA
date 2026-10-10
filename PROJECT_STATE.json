@@ -609,14 +609,14 @@
   "submission_report_update_20261008": {"updated_at": "2026-10-08T22:46:00+08:00", "status": "draft_updated_static_verified_not_deployed", "path": "04_project/amd_rtl_agent/submission/REPORT.md", "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801", "scope": "Official selection and existing129 failure evidence; archived runtime and research candidate distinguished; historical numerical results retained.", "evidence_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38", "new_model_calls": 0, "new_eda_calls": 0, "new_fifo": 0, "deployment": false, "full_goal_complete": false},
   "collaborative_goal_20261007": {
     "temporal_peer_preparation_20261010": {
-      "updated_at": "2026-10-10T10:18:00+08:00",
+      "updated_at": "2026-10-10T10:57:00+08:00",
       "status": "peer_boundary_accepted_candidate_frozen_not_submitted_our_selection_pending_original_results",
       "source_comments": [
         6091415379,
         6091605451,
         6091789144
       ],
-      "latest_peer_comment_updated_at": "2026-10-10T02:03:06Z",
+      "latest_peer_comment_updated_at": "2026-10-10T02:41:50Z",
       "shared_reports": {
         "TEMPORAL_FACTOR_PREPARATION.json": {
           "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-factor-revision-20261010-v2/TEMPORAL_FACTOR_PREPARATION.json",
@@ -672,6 +672,21 @@
           "path": "/workspace/team/activity/fpga_owner/artifacts/prefix144-capability-priorities-20261010-v1/PREFIX144_CAPABILITY_PRIORITIES.json",
           "sha256": "66a7eddbd1e8c959e1a6aa42316411425376fe0815005afc870a5e830e65910f",
           "bytes": 7257
+        },
+        "PR210_BASE_SYNC.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/pr210-base-sync-20261010-v1/PR210_BASE_SYNC.json",
+          "sha256": "ab8120ea1f977ab3553eff782c25003a0fb401681d5749ceec801c5a741bb987",
+          "bytes": 3758
+        },
+        "GENERATION_EFFICIENCY145.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/generation-efficiency145-20261010-v1/GENERATION_EFFICIENCY145.json",
+          "sha256": "5f69bd3937789b62580976b23f55e2f3f95b033fc48608da231d38b882c521ed",
+          "bytes": 3701
+        },
+        "PREFIX145_COMPLETE.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/prefix145-complete-20261010-v1/PREFIX145_COMPLETE.json",
+          "sha256": "8761f502c15d54da74feeb5c26bdb5a9f4817ab8c5a26cb1827e10e974d70da7",
+          "bytes": 10759
         }
       },
       "mail_matches": [
@@ -765,8 +780,8 @@
         "acceptance_scope": "Peer explicitly accepts preparation is not shared scoring admission; no automatic placement after136, wait for original132-136 outcomes and selection/ownership."
       },
       "live_scope": {
-        "observed_at": "2026-10-10T10:10:40.952491+08:00",
-        "sealed": 2170,
+        "observed_at": "2026-10-10T10:40:41.261015+08:00",
+        "sealed": 2183,
         "total": 2340,
         "actual_adopted_roles_and_model_live": true,
         "frozen39_and_receipt_bindings_hold": true,
@@ -789,7 +804,7 @@
         "source_commit": "6cbcaebebc89e69506cebfee86690c3d9b9a711a",
         "pr": "https://github.com/854259/FPGA/pull/210",
         "pr_state_observed": "open_draft_not_merged",
-        "pr_head_observed": "05c62579ad4ddd31f6f4134be5b0d6cc4d888a7f",
+        "pr_head_observed": "2439d2319aa0cb68d7a52ab3b67291d4054303b8",
         "preparation_executions_reported": 1,
         "archive_sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
         "archive_members": 59,
@@ -867,12 +882,12 @@
           "comparison_result": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
           "prepare": "e5cffb23800d19d23ba0cad54ca5c87957dcb0d05e4337391ff87c86716e4bf2"
         },
-        "incremental_scope": "All inspected incremental commits from ba4016ef through05c62579 change only four status docs;five temporal sources unchanged. Constant backup sources remain separate and private.",
+        "incremental_scope": "Previously reviewed five runtime sources unchanged; all seven candidate Git blobs match original packet through2439d231. Peer base merge includes inherited history, not new candidate changes. Draft unmerged and not admitted.",
         "draft_open_unmerged": true,
         "new_model_calls": 0,
         "new_EDA_calls": 0,
         "new_FIFO": 0,
-        "head_reviewed_through": "05c62579ad4ddd31f6f4134be5b0d6cc4d888a7f"
+        "head_reviewed_through": "2439d2319aa0cb68d7a52ab3b67291d4054303b8"
       },
       "peer_goal_gate_source": {
         "scope": "Peer's original one-sample156 C/P goal; report-level intake only. Not our selection vetoes and not a five-sample qualification.",
@@ -1021,6 +1036,261 @@
           }
         ],
         "scope": "Current device-wide counters for GPU opened by the frozen model PID; not exclusive process allocation or formal32GB proof."
+      },
+      "efficiency145_sample0_review": {
+        "scope": "Fixed145 sample0 A/P20 public files; SHA bound by original terminal and sealed receipts. No private reference/TB, compiler, judge or generation.",
+        "rows": [
+          "row_002160",
+          "row_002161"
+        ],
+        "selected_public_files": 20,
+        "selected_public_bytes": 84442,
+        "terminal_file_hash_and_sealed_binding_verified": true,
+        "same_first_request_bytes": true,
+        "same_DUT": true,
+        "A": {
+          "task": "Prob145_circuit8",
+          "sample": 0,
+          "level": 3,
+          "confirmed_responses": 1,
+          "actual_calls": 1,
+          "completion_tokens": 7475,
+          "prompt_tokens": 1066,
+          "finish_reason": "stop",
+          "worker_solve_s": 258.8282209392637,
+          "outer_solve_s": 258.946162706241,
+          "judge_s": 27.870003696531057,
+          "row_s": 289.13875536620617,
+          "first_compile_rc": 0,
+          "compile_receipts": 1,
+          "source_sha256": "6815f24a5e9e0df4d5ee78de9cd466c1755b385c5cbef6982eed6ee78c202e30",
+          "source_bytes": 15729,
+          "source_lines": 450,
+          "full_line_comments": 381,
+          "nonempty_non_full_line_comment_lines": 14,
+          "request_sha256": "0337c2ee54ddb7af5216f65d908cddd97762a6230c5405a26eefe428d5cd3cd7"
+        },
+        "P": {
+          "task": "Prob145_circuit8",
+          "sample": 0,
+          "level": 3,
+          "confirmed_responses": 1,
+          "actual_calls": 1,
+          "completion_tokens": 7475,
+          "prompt_tokens": 1066,
+          "finish_reason": "stop",
+          "worker_solve_s": 258.12834133580327,
+          "outer_solve_s": 258.249925583601,
+          "judge_s": 27.618618696928024,
+          "row_s": 288.19190178625286,
+          "first_compile_rc": 0,
+          "compile_receipts": 1,
+          "source_sha256": "6815f24a5e9e0df4d5ee78de9cd466c1755b385c5cbef6982eed6ee78c202e30",
+          "source_bytes": 15729,
+          "source_lines": 450,
+          "full_line_comments": 381,
+          "nonempty_non_full_line_comment_lines": 14,
+          "request_sha256": "0337c2ee54ddb7af5216f65d908cddd97762a6230c5405a26eefe428d5cd3cd7"
+        },
+        "normalization_correction": "First read-only verification compared raw CRLF prompt to wire LF and asserted;52 CRs explain difference. Corrected only metadata comparison to existing runtime normalization, original files unchanged.",
+        "timing_scope": "Worker includes compilation; outer solve includes wrapper overhead; row includes judging and other overhead. None is separately attributed pure model latency.",
+        "interpretation": "Only an output verbosity/time hypothesis. Sample0 has no repair and no A/P gain; stripping comments after generation cannot recover spent time. Concise prompting accuracy and timing gains unknown.",
+        "new_prompt_implemented": false,
+        "new_factor_selected": false,
+        "new_comparison_plan": false,
+        "new_FIFO": 0,
+        "new_model_calls": 0,
+        "new_EDA": 0,
+        "retained_public_source_index": {
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/STARTED.json": {
+            "sha256": "ae91535daebd5fb9e54fd6171a20d38919690c3079f2364cf121f122b92e7579",
+            "bytes": 2065
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/SOLVE_BOUND.json": {
+            "sha256": "ddca2167f091b7bf7277d25ec2f759d37e92669d931167e0e7c7d98aabdd45ff",
+            "bytes": 799
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/solve/worker_result.json": {
+            "sha256": "16a508175728972426294f2e2072c3d5761d833d599c97af067a6b2d149682e3",
+            "bytes": 207
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/solve/requests.json": {
+            "sha256": "cb08f0fcb026082aeb910590b0875f536030678088bea15474e78f3d9d5c8355",
+            "bytes": 571
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/solve/requests/0/request.json": {
+            "sha256": "0337c2ee54ddb7af5216f65d908cddd97762a6230c5405a26eefe428d5cd3cd7",
+            "bytes": 2784
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/solve/requests/0/response.json": {
+            "sha256": "5e656fb5b90ebec866935fe8ad41fd377d6dd134299aecdcdf79bdadd1acfd2c",
+            "bytes": 16848
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/solve/solution.v": {
+            "sha256": "6815f24a5e9e0df4d5ee78de9cd466c1755b385c5cbef6982eed6ee78c202e30",
+            "bytes": 15729
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/solve/compile_journal.json": {
+            "sha256": "788643fef2be6938e6e70f7c3d5d05d4203b81c626c060c2003bf6f042d05bcd",
+            "bytes": 936
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/solve/trace.jsonl": {
+            "sha256": "4f970d34c60ef3e8345340c15d2636156665b24aba31c9c3877380bdf273141e",
+            "bytes": 808
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002160/solve/prompt_only/prompt.txt": {
+            "sha256": "7504503ea9d27ae67b6591f56c17ad3813bbf3594dd7ebffe701cbdc01e58f37",
+            "bytes": 1474
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/STARTED.json": {
+            "sha256": "c69fa88952acd6e05d506471f45cd2e9f2353229e5db0d3e2ea043b0788e4cf3",
+            "bytes": 2065
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/SOLVE_BOUND.json": {
+            "sha256": "c11c98e2fc4367129f2da84b764b37909cb73a1e064111bba0e7c457cf660b80",
+            "bytes": 800
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/solve/worker_result.json": {
+            "sha256": "09d2ecd374a83a52ee2569aa0c0f23fd27ef701f095b1cb129a89eef455ad8b7",
+            "bytes": 208
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/solve/requests.json": {
+            "sha256": "596b6e084d066abf7d2aacb7bda871e4a0688f9c41e1cfa9d491414440f28be8",
+            "bytes": 574
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/solve/requests/0/request.json": {
+            "sha256": "0337c2ee54ddb7af5216f65d908cddd97762a6230c5405a26eefe428d5cd3cd7",
+            "bytes": 2784
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/solve/requests/0/response.json": {
+            "sha256": "1ffff89dcc32bf2b252294fb3fda3da5b7397f843cbd20e8b4212c4c4c5960ad",
+            "bytes": 16841
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/solve/solution.v": {
+            "sha256": "6815f24a5e9e0df4d5ee78de9cd466c1755b385c5cbef6982eed6ee78c202e30",
+            "bytes": 15729
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/solve/compile_journal.json": {
+            "sha256": "a74d3fc9db9ba8faba290e004446c7fc81508365b71a01f4de0f342167a525d3",
+            "bytes": 936
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/solve/trace.jsonl": {
+            "sha256": "aa5d7d2996bc6e26b5e9ded2c04b9bd075a89bdb258edbd7cd57bb5c74a832b7",
+            "bytes": 810
+          },
+          "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1/queue/row_002161/solve/prompt_only/prompt.txt": {
+            "sha256": "7504503ea9d27ae67b6591f56c17ad3813bbf3594dd7ebffe701cbdc01e58f37",
+            "bytes": 1474
+          }
+        }
+      },
+      "peer_prefix145": {
+        "scope": "Peer aggregate report only, not independent re-audit of2175 rows or additional145 samples; original terminal reader remains unexecuted.",
+        "complete_tasks": 145,
+        "complete_rows": 2175,
+        "arms": {
+          "A": {
+            "outputs": 725,
+            "level_counts": {
+              "0": 15,
+              "1": 158,
+              "3": 552
+            },
+            "L3_outputs": 552,
+            "all_five_L3_tasks": 109,
+            "actual_calls": 771,
+            "prefix_coefficient_sum": 583.6
+          },
+          "P": {
+            "outputs": 725,
+            "level_counts": {
+              "0": 16,
+              "1": 140,
+              "3": 569
+            },
+            "L3_outputs": 569,
+            "all_five_L3_tasks": 112,
+            "actual_calls": 802,
+            "prefix_coefficient_sum": 597
+          },
+          "B": {
+            "outputs": 725,
+            "level_counts": {
+              "0": 85,
+              "1": 170,
+              "3": 470
+            },
+            "L3_outputs": 470,
+            "all_five_L3_tasks": 94,
+            "actual_calls": 725,
+            "prefix_coefficient_sum": 504
+          }
+        },
+        "new145": {
+          "task": "Prob145_circuit8",
+          "samples": 5,
+          "levels": {
+            "A": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "P": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "B": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "calls": {
+            "A": 5,
+            "P": 5,
+            "B": 5
+          },
+          "A_P_paired_gain": 0,
+          "repair_used": false,
+          "agent_output_tokens_per_sample": 7475,
+          "agent_total_output_tokens": 74750,
+          "agent_solve_time_range_s": [
+            257.15869248099625,
+            259.50336684659123
+          ],
+          "sample0_comment_count_scope_only": "381 line comments/14 nonempty statement lines measured on retained sample0 A/P source;not remeasured for other DUTs.",
+          "ten_solve_time_scope": "Retained per-row solve totals,including compilation/startup;not separately attributed model latency."
+        },
+        "actual_paired_grade_losses": [
+          {
+            "task": "Prob082_lfsr32",
+            "sample": 1,
+            "A_level": 1,
+            "P_level": 0,
+            "A_calls": 1,
+            "P_calls": 2
+          }
+        ],
+        "prefix_P_minus_A_calls": 31,
+        "remaining_tasks_unknown": 11,
+        "not_official_final_or_generalization": true,
+        "no_imported_120_or_cost_veto": true
+      },
+      "peer_base_sync": {
+        "report_sha256": "ab8120ea1f977ab3553eff782c25003a0fb401681d5749ceec801c5a741bb987",
+        "target_merged_by_peer": "e648649d3bde68a2062d6adfeb6b1235d8669c57",
+        "seven_candidate_git_blobs_unchanged_verified": true,
+        "inherited_history_not_new_candidate_changes": true,
+        "still_draft_unmerged": true,
+        "latest_API_mergeability": "unknown_not_a_result",
+        "no_new_scoring_admission": true
       }
     },
     "actual132_continuation_20261010": {
