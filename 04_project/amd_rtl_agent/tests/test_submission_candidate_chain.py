@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import signal
+import socket
 import subprocess
 import sys
 import threading
@@ -140,6 +141,28 @@ def fixture(action, root, scenario):
     os.environ.update(EDA_TMP=str(root / 'scratch'), RTL_EVIDENCE_DIR=str(root / 'evidence'),
                       FPGACHINA_TOKEN='synthetic-test-token')
     fake = SyntheticIO(scenario)
+    if action == 'response':
+        def no_upstream(event, args):
+            if event == 'socket.connect':
+                raise AssertionError('Response fixture must not contact upstream services')
+            if event == 'socket.bind':
+                assert args[1][0] == '127.0.0.1'
+        sys.addaudithook(no_upstream)
+        def synthetic_response(data, *, parent_started=None):
+            if data['nonce'] == 'expired':
+                time.sleep(.15)
+            return dict(task_id=data['task_id'], solution=GOOD,
+                        trace='x' * (512 * 1024) if data['nonce'] == 'large' else '',
+                        elapsed_s=time.monotonic() - parent_started)
+        with patch.object(runtime, 'solve', synthetic_response):
+            server = runtime.HTTPServer(('127.0.0.1', 0), runtime.Handler)
+            server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 4096)
+            process = Path('/proc', str(os.getpid()))
+            print(json.dumps(dict(port=server.server_port, pid=os.getpid(),
+                starttime=(process / 'stat').read_text().rsplit(')', 1)[1].split()[19],
+                cmd_sha256=hashlib.sha256((process / 'cmdline').read_bytes()).hexdigest())), flush=True)
+            server.serve_forever()
+        return
     if action == 'health':
         import ctypes
         assert ctypes.CDLL(None).prctl(36, 1, 0, 0, 0) == 0
@@ -356,6 +379,60 @@ class SubmissionChainTests(unittest.TestCase):
         records = list((self.root / 'evidence').glob('request-*/out/MODEL_RECOVERY.json'))
         self.assertEqual(len(records), 1)
         self.assertFalse(json.loads(records[0].read_text())['complete'])
+
+    def test_http_slow_response_releases_next_request(self):
+        with self.server(action='response') as (port, proc):
+            with socket.socket() as first:
+                first.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 1024)
+                first.settimeout(2)
+                first.connect(('127.0.0.1', port))
+                data = self.data('large')
+                data['deadline_s'] = .5
+                body = json.dumps(data).encode()
+                headers = ('POST /v1/solve HTTP/1.0\r\nHost: localhost\r\n'
+                           'Authorization: Bearer synthetic-test-token\r\n'
+                           'Content-Type: application/json\r\nContent-Length: ' +
+                           str(len(body)) + '\r\n\r\n').encode()
+                first.sendall(headers + body)
+                self.assertTrue(first.recv(1024).startswith(b'HTTP/1.0 200'))
+                started = time.monotonic()
+                conn = http.client.HTTPConnection('127.0.0.1', port, timeout=.9)
+                try:
+                    conn.request('POST', '/v1/solve', json.dumps(self.data('next')),
+                                 headers={'Authorization': 'Bearer synthetic-test-token'})
+                    response = conn.getresponse()
+                    value = json.loads(response.read())
+                    self.assertEqual(response.status, 200)
+                    self.assertEqual(value['solution'], GOOD)
+                finally:
+                    conn.close()
+                elapsed = time.monotonic() - started
+                (self.root / 'response-wall.json').write_text(json.dumps(dict(
+                    first_deadline_s=.5, next_wall_s=elapsed,
+                    first_connection_still_open=True, same_service_pid=proc.pid)))
+                self.assertLess(elapsed, .8)
+            self.assertIsNone(proc.poll())
+        self.assertEqual((self.root / 'server.stderr').read_text(), '')
+
+    def test_http_fast_response_preserves_complete_payload(self):
+        with self.server(action='response') as (port, proc):
+            status, value = self.request(port, self.data('large'))
+            self.assertEqual(status, 200)
+            self.assertEqual(value['solution'], GOOD)
+            self.assertEqual(value['trace'], 'x' * (512 * 1024))
+            self.assertIsNone(proc.poll())
+
+    def test_http_expired_response_closes_without_success_then_recovers(self):
+        with self.server(action='response') as (port, proc):
+            data = self.data('expired')
+            data['deadline_s'] = .05
+            with self.assertRaises(http.client.RemoteDisconnected):
+                self.request(port, data)
+            status, value = self.request(port, self.data('next'))
+            self.assertEqual(status, 200)
+            self.assertEqual(value['solution'], GOOD)
+            self.assertIsNone(proc.poll())
+        self.assertEqual((self.root / 'server.stderr').read_text(), '')
 
     def test_solve_preserves_request_start_before_body_parsing(self):
         with SyntheticIO().installed():

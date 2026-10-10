@@ -146,6 +146,20 @@ only 1.2 seconds for a required 1.25-second quiet interval; that failed control
 is retained. Recovery and response reserves are now separate, without relaxing
 either tested deadline. Only affected methods were rerun.
 
+The response writer now inherits the same absolute request deadline for both
+headers and body. An expired response or a socket write failure closes that
+connection; it cannot append a second error response to a partial success.
+Other response paths use a ten-second transport limit. This does not bound
+pre-handler header arrival, serialization CPU time or the caller's network.
+On AMD, seven affected HTTP controls pass with synthetic model/EDA work,
+including normal payload delivery, a stalled reader, expired output, earlier
+deadline/recovery controls and cancellation. The original 2 MiB stalled-reader
+case was also replayed: the next request completed about 0.502 seconds after
+the first request began with a 0.5-second budget, instead of still blocking at
+0.81 seconds. This demonstrates bounded socket waiting and service recovery,
+not a hard real-time or official sender-to-response guarantee. Original failed
+controls and response evidence remain in the private AMD archive.
+
 Package only this directory. No parent evaluator or private archive is needed
 by generation. Prompt allowlisting is not an OS sandbox. The final image,
 service supervisor, real model cancellation, baseline execution, actual EDA,

@@ -47,7 +47,7 @@
   },
   "runtime": {
     "path": "agent/runtime.py",
-    "sha256": "411473e559eaa2a3625595564aa80253f2050a88ede497bcfb816b3e7ce84334"
+    "sha256": "ef1b1e046ee6df14540c9ba4af0058f9ab3f9822822463bc011ae03f2c4152a3"
   },
   "candidate_components": {
     "prompt_probe": {
@@ -164,7 +164,7 @@
       "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
       "agent/prompt_probe.py": "777e21771c26a01e7671df2567d82dc5eec84629bf3e521949452f85b03ee35d",
       "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
-      "agent/runtime.py": "411473e559eaa2a3625595564aa80253f2050a88ede497bcfb816b3e7ce84334",
+      "agent/runtime.py": "ef1b1e046ee6df14540c9ba4af0058f9ab3f9822822463bc011ae03f2c4152a3",
       "agent/shared_budget.py": "c6aebf9f08d24c0d7c429ca98db6ebbf3618a869b6ff9cb38c3101e4e9d3d221",
       "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
       "agent/table_feedback.py": "911911f1f4d77857493425ffa69802afee2f4d706c352c64e9e71c39d82b0d83",
@@ -257,6 +257,30 @@
       ],
       "scope": "Real local serial HTTP, synthetic model/EDA/baseline work; normal timeout recovery+next request, insufficient recovery503+blocked request, inherited request clock and baseline cap. Shared native cap/default method passed on unchanged source in v1. No official external timing, real model/EDA, deployment, resource or full interface acceptance.",
       "post_test_changes": "README and manifest evidence metadata only; tested runtime/budget/test bytes unchanged."
+    },
+    "http_response_deadline_validation": {
+      "status": "AMD_CPU_7_affected_HTTP_controls_passed_not_deployed",
+      "scope": "Response socket waiting and same-service recovery only;header arrival,serialization CPU,network delivery and real model/EDA integration remain separately unqualified.",
+      "previous_runtime_sha256": "411473e559eaa2a3625595564aa80253f2050a88ede497bcfb816b3e7ce84334",
+      "runtime_sha256": "ef1b1e046ee6df14540c9ba4af0058f9ab3f9822822463bc011ae03f2c4152a3",
+      "cases": [
+        "stalled_reader_releases_next_request",
+        "complete_fast_payload",
+        "expired_response_closes_then_next_request",
+        "persistent_agent_baseline_auth",
+        "three_second_timeout_then_next_request",
+        "short_recovery_blocks",
+        "SIGTERM_during_transport_exits"
+      ],
+      "original_2MiB_slow_reader_replays": 2,
+      "server_release_observed_s": [
+        0.5019064377993345,
+        0.5022032670676708
+      ],
+      "regression_receipt_sha256": "fe5339ed909e6a9f352ac170ab363555712c44b57c5b50a8101255e28bfaf575",
+      "replay_receipt_sha256": "d43ac4657b21fc5545c60100f69e6c42a6460895e4318864c186005edb6ea886",
+      "real_model_EDA": false,
+      "formal_external_clock_qualified": false
     }
   }
 }

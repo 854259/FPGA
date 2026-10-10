@@ -632,11 +632,29 @@ class Handler(BaseHTTPRequestHandler):
 
     def send_json(self, status, value):
         raw = json.dumps(value, ensure_ascii=False).encode()
-        self.send_response(status)
-        self.send_header('Content-Type', 'application/json; charset=utf-8')
-        self.send_header('Content-Length', str(len(raw)))
-        self.end_headers()
-        self.wfile.write(raw)
+        deadline = getattr(self, 'response_deadline', None)
+        if deadline is None:
+            deadline = time.monotonic() + 10
+        try:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                self.close_connection = True
+                return
+            self.connection.settimeout(remaining)
+            self.send_response(status)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Content-Length', str(len(raw)))
+            self.end_headers()
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                self.close_connection = True
+                return
+            self.connection.settimeout(remaining)
+            self.wfile.write(raw)
+        except OSError:
+            # A partial response cannot become a second HTTP response. Retire
+            # this connection; completed request cleanup still permits the next.
+            self.close_connection = True
 
     def authorized(self):
         token = os.environ.get('FPGACHINA_TOKEN', '')
@@ -652,6 +670,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         started = time.monotonic()
+        self.response_deadline = None
         if not self.authorized():
             return
         if self.path != '/v1/solve':
@@ -662,6 +681,9 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError('invalid body size')
             self.connection.settimeout(10)
             data = json.loads(self.rfile.read(size))
+            deadline = data.get('deadline_s', 360) if isinstance(data, dict) else None
+            if type(deadline) in (int, float) and math.isfinite(deadline) and deadline > 0:
+                self.response_deadline = started + deadline
             self.send_json(200, solve(data, parent_started=started))
         except InterruptedError as exc:
             # HTTPServer catches Exception and otherwise keeps serving.
