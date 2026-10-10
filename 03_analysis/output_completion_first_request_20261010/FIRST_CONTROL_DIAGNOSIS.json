@@ -1,0 +1,104 @@
+{
+  "schema": "output137_fsmshift_sample0_static_diagnosis_v1",
+  "ticket": 137,
+  "task": "Prob095_review2015_fsmshift",
+  "sample": 0,
+  "reported_original_levels": {
+    "A": 3,
+    "P": 1
+  },
+  "client_request_attempts": {
+    "A": 1,
+    "P": 1
+  },
+  "actual_requests_differ_only_in_first_system_suffix": true,
+  "task_input_unchanged": true,
+  "first_source_sha256": {
+    "A": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+    "P": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a"
+  },
+  "failure": "Candidate emits state literal2-bit decimal4. Compiler warning says it truncates;state4 aliases state0,ending the enable sequence a cycle early.",
+  "warning": {
+    "code": "VRFC10-8497",
+    "native_compile_returncode": 0,
+    "repair_called": false
+  },
+  "diagnosis_scope": "Static reasoning over public generated RTL and original compiler warning;no new native execution or private reference/testbench read.",
+  "no_ability_gain_claimed": true,
+  "complete_five_sample_group_analyzed": false,
+  "entire_factor_rejected_yet": false,
+  "next": "Finish unchanged137;retain historical regression. If factor fails gates,discard it. Consider generic actionable native-warning feedback only after inspecting existing affected wrong outputs;do not hardcode this task or combine factors.",
+  "original_file_count": 16,
+  "all_E_local_member_hashes_verified": true,
+  "private_archive": "E:\\26qiansai\\private_archives\\output137_fsmshift_sample0_allowed_20261010_v1",
+  "public_file_hash_index": {
+    "row_000000/STARTED.json": {
+      "sha256": "8649c501d44744866ddc52200e393c98ab483fc82446d7311a940544cd88f060",
+      "bytes": 2094
+    },
+    "row_000000/prompt_only/prompt.txt": {
+      "sha256": "47c232f4083a5b3d22d7c89825a33ea37a0b20bd7ad037e8e670ad4c412708fa",
+      "bytes": 614
+    },
+    "row_000000/solve/requests/0/request.json": {
+      "sha256": "b75e0d1d52b14688469c18aeb981d60e2d0798a2ed811ae2a0fc95b1bbba194c",
+      "bytes": 1924
+    },
+    "row_000000/solve/requests/0/response.json": {
+      "sha256": "23e9b2bc4a259516e5eda5dedc20acbb22cd2c15b46da690f2a1792c6b161ec6",
+      "bytes": 2273
+    },
+    "row_000000/solve/solution.v": {
+      "sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+      "bytes": 1561
+    },
+    "row_000000/solve/compile_journal.json": {
+      "sha256": "16287bcb6acf7f424eff619a09e378161d7b9de2daef98ec62109d9b59745761",
+      "bytes": 930
+    },
+    "row_000000/solve/trace.jsonl": {
+      "sha256": "63b3529dd44f837518c42fcd6efe118e9850c4358e647176f541fa427f0684f6",
+      "bytes": 804
+    },
+    "row_000000/solve/worker_result.json": {
+      "sha256": "20b38d8145d91feccc6ca34afb6f83ceeeb7bfd4d211bafbbabe5b39ce9dd421",
+      "bytes": 207
+    },
+    "row_000001/STARTED.json": {
+      "sha256": "8223a4443005ec2ccce9a704dba82126bec671f6fbe7186c75d5881cdfbc424b",
+      "bytes": 2093
+    },
+    "row_000001/prompt_only/prompt.txt": {
+      "sha256": "47c232f4083a5b3d22d7c89825a33ea37a0b20bd7ad037e8e670ad4c412708fa",
+      "bytes": 614
+    },
+    "row_000001/solve/requests/0/request.json": {
+      "sha256": "44e93579df7080b560568226d6adc6804947669b1aa4b75db35d6c9d8d7aef81",
+      "bytes": 2380
+    },
+    "row_000001/solve/requests/0/response.json": {
+      "sha256": "3510ce262e99d6753b773bd176447b21cefab4f4e0179e942c112bf1407dcc27",
+      "bytes": 1916
+    },
+    "row_000001/solve/solution.v": {
+      "sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+      "bytes": 1215
+    },
+    "row_000001/solve/compile_journal.json": {
+      "sha256": "6148431053d6bd83e16d8ba5179b2f643ffcb9dbef49bae0803183f1953214fb",
+      "bytes": 930
+    },
+    "row_000001/solve/trace.jsonl": {
+      "sha256": "256ef3075559731ebd3558c7c08dd422078ef3ffc04c9d1185275384a3a4ecf8",
+      "bytes": 1010
+    },
+    "row_000001/solve/worker_result.json": {
+      "sha256": "297deccfcad0b116d9d8db1ca924809ae2a680d9d9b43c2d1f93af98a245930c",
+      "bytes": 208
+    }
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false
+}
