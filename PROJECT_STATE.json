@@ -1,4 +1,187 @@
 {
+  "temporal138_actual_admission_20261010": {
+  "schema": "temporal138_actual_admission_and137_original_closure_v1",
+  "saved_epoch": 1791618602.8768668,
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "closed137": {
+    "state": "failed_released_after_inspection",
+    "complete_outputs": 64,
+    "failed_rows": 1,
+    "unattempted_rows": 10,
+    "archive_members": 4225,
+    "archive_sha256": "7bfbb31b364d0734cfffe02ee4f6fd0e3a0d46bcc28aabb265e5a3ed42c299b9",
+    "private_archive": "E:\\26qiansai\\private_archives\\output137_original_failed_20261010_v1",
+    "original_queue_verifier_used": true,
+    "all_original_members_E_AMD_bound": true,
+    "source_hashes": {
+      "baseline_worker.py": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+      "point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+      "table_feedback.py": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+      "edge_dispatch.py": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680",
+      "phase_feedback.py": "efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078",
+      "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+      "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+      "official_baseline_scoring_20261005.py": "83e6db24b1fd57fb7da4d28efc15a4097e0d0fdacb8a6fe8dbdf903844ed284c",
+      "three_arm_queue_20261005.py": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de",
+      "priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "phase_context.py": "90b7c71b480a7cdd9d485e7401509feef996520111e76c03666ac519a2d01afa",
+      "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422",
+      "edge_feedback.py": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
+      "prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+      "worker.py": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65",
+      "contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+      "edge_contract.py": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+      "shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+      "package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "dependencies/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+      "dependencies/paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+      "package/agent/map_runtime.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+      "package/agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+      "package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+      "package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "first_system_request.py": "65da3d134b7b1c3e57a24a6e8d6c78869644542d8865b444c20a63ba6b900a10",
+      "comparison_result.py": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+      "prepare_temporal_comparison.py": "2adc42b2ada9c18f37b460c3bbaa2f724a51f94c598267e4da7f3a5532c71c18"
+    },
+    "failed_grade": null,
+    "failed_actual_calls": null,
+    "complete_score_available": false,
+    "overtime_successful_rows": [
+      {
+        "index": 62,
+        "task": "Prob147_circuit10",
+        "sample": 0,
+        "arm": "A",
+        "level": 3,
+        "actual_calls": 2,
+        "solve_elapsed_s": 303.79142722673714,
+        "solve_within_original300": false,
+        "terminal_sha256": "dd061a4df141acfd6d4fb1f49fa112e7031f1a38a06115d692c42f4618345298"
+      }
+    ],
+    "output_factor_adoption_permitted": false,
+    "all_originals_held": true,
+    "model_held": true,
+    "replayed": false
+  },
+  "actual138": {
+    "ticket": 138,
+    "accepted_at_utc": "2026-10-10T07:46:24.035317+00:00",
+    "state": "running",
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "frozen_sha256": {
+      "plan": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+      "spec": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+      "preparation": "53a4fc6056737e09172106f1a0a14f35491ec0957b2e9b3bb1f9a6d5824af650"
+    },
+    "outputs": 135,
+    "max_reserved_requests": 225,
+    "tasks": 9,
+    "samples": 5,
+    "arms": [
+      "A",
+      "P",
+      "B"
+    ],
+    "known_stable_error_targets": [
+      "Prob111_fsm2s",
+      "Prob133_2014_q3fsm",
+      "Prob139_2013_q2bfsm",
+      "Prob140_fsm_hdlc"
+    ],
+    "historical_controls": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1",
+      "Prob110_fsm2"
+    ],
+    "factor": "Only P first system adds preregistered174-word temporal guidance;original single-counterexample table feedback retained.",
+    "frozen_sources_held": true,
+    "budget_tokens_requests_repairs_seconds": [
+      8192,
+      2,
+      1,
+      300
+    ],
+    "outer_cleanup_supervision_seconds": 310,
+    "budget_or_continuation_overlay": false,
+    "full156": false,
+    "formal_adoption": false,
+    "observed_sealed_outputs": 2,
+    "observed_rows": [
+      {
+        "index": 0,
+        "task": "Prob095_review2015_fsmshift",
+        "sample": 0,
+        "arm": "A",
+        "complete": true,
+        "terminal_sha256": "1b338b29c5229ab15eec2a12a0278d0b8118156f65a62a32de0a3e45e0962cf2",
+        "solution_sha256": "aac66de3b3dfbc7033d82499b949146484f42b4c7acc4834a3ef13f6946f4080",
+        "reported_level": 3,
+        "reported_coefficient": null,
+        "reported_calls": 1,
+        "solve_elapsed_s": 17.804790943861008
+      },
+      {
+        "index": 1,
+        "task": "Prob095_review2015_fsmshift",
+        "sample": 0,
+        "arm": "P",
+        "complete": true,
+        "terminal_sha256": "6a1abf645d04a4ac08871fb0d0c2ffbdd8d5a419ff09bd91e94c8dc1e6adae62",
+        "solution_sha256": "d3490283aa1973869772070ecedd3b7ca8a967d23c0610e4a658eda92a1a5a27",
+        "reported_level": 3,
+        "reported_coefficient": null,
+        "reported_calls": 1,
+        "solve_elapsed_s": 22.009327052161098
+      }
+    ],
+    "observed_epoch": 1791618526.2574022,
+    "scores_available": false,
+    "first_control_sample_scope": "Only completed initial samples;not all-five control pass or a capability gain.",
+    "admission_entry_sha256": "e30fedf5f12334856d64ef7b258f9952bb1b0768f4d213b17b7766419420a9e4",
+    "whole_task_FIFO": true,
+    "retries": 0,
+    "independent_of_local_SSH_session": true
+  },
+  "peer_merge": {
+    "commit": "45adf0a5",
+    "target": "ce532cbfd41b92fd920d296c2573851eac742ed5",
+    "peer_PRs": [
+      229,
+      230
+    ],
+    "peer_full_document_bytes_and_JSON_semantics_preserved": true,
+    "own_new_JSON_nodes_preserved": 14,
+    "execution_sources_unchanged": 18
+  },
+  "next": [
+    "Read138 retained handle;no repeated submission,restart,in-place source change or resampling.",
+    "Judge full nine-task paired grades/historical controls/per-task and total requests/original300 clock before adoption.",
+    "Archive terminal evidence and use retained original reader once when eligible;do not sum old rounds.",
+    "Future live-model cancellation/strict-budget/failure-continuation chain remains unproven and separate."
+  ],
+  "full156_goal_complete": false,
+  "weighted_minimum": 0.8,
+  "minimum_full_correct": 120,
+  "new_FIFO": 1,
+  "new_model_calls_for_local_analysis": 0,
+  "new_EDA_for_local_analysis": 0
+},
   "output137_failure_checkpoint_20261010": {
   "schema": "output137_failed_row64_checkpoint_v1",
   "saved_epoch": 1791617891.6475601,
