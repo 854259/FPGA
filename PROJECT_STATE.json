@@ -1096,7 +1096,7 @@
       "no_rerun_or_missing_score_imputation": true
     }
   },
-    "updated_at": "2026-10-10T16:43:00+08:00",
+    "updated_at": "2026-10-10T16:55:00+08:00",
     "status": "live_device_binding_verified_full_delivery_pending",
     "owned_model_gpu_mapping": {
       "checked_at_utc": "2026-10-10T06:32:58.744538+00:00",
@@ -1188,7 +1188,7 @@
       "Official interface, isolation and reproducible complete delivery, each backed by its own evidence.",
       "Exact-source production CLI/new queue300s enforcement and real model cancellation/idle require evidence:137 row62 rawL3 overran303.791s and row64 was killed310.018s. HTTP-only absolute-deadline fixture observed expiry but original qualifier remains failed; no inherited old qualification or frozen-source hot edit."
     ],
-    "queue_scope": "132/137 failed incomplete and never replayed;133-136 closed;137 whole AMD archive now verified.138 sole running temporal9,57/135sealed and first3controls audited. Parent-clock delta partially qualified,not deployed;strict production cutoff/cleanup/model recovery unproven;no full156 admission.",
+    "queue_scope": "132/137 failed incomplete,never replayed;133-136closed and137 fullAMD archive verified.138 sole running temporal9,65/135sealed16:50;first4controls audited. Parent failure-clock binding qualified only in syntheticCPU scope,not deployed;strict production deadline/cleanup/model recovery still unproven.",
     "encoding_correction": "Old goal summary text was intact UTF-8. PR225 expanded it to the complete current goal objective; earlier mojibake was terminal encoding, not file corruption.",
     "removed_financial_gate_reintroduced": false,
     "new_model_calls": 0,
@@ -4542,6 +4542,195 @@
     },
     "temporal_peer_preparation_20261010": {
   "actual138_execution_review": {
+  "four_control_prefix_review": {
+    "schema": "temporal138_four_control_development_prefix_v1",
+    "task_count": 4,
+    "rows": 60,
+    "controls": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1"
+    ],
+    "aggregate": {
+      "A": {
+        "rows": 20,
+        "L3": 20,
+        "coefficient_mean": 1,
+        "requests": 20,
+        "solve_sum_s": 286.5278654675931
+      },
+      "P": {
+        "rows": 20,
+        "L3": 20,
+        "coefficient_mean": 1,
+        "requests": 25,
+        "solve_sum_s": 403.7440467737615
+      },
+      "B": {
+        "rows": 20,
+        "L3": 15,
+        "coefficient_mean": 0.8,
+        "requests": 20,
+        "solve_sum_s": 240.60843825899065
+      }
+    },
+    "paired_P_minus_A_coefficient_per_task": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "paired_P_minus_A_requests_per_task": [
+      0,
+      0,
+      0,
+      5
+    ],
+    "official_total_score": null,
+    "unseen_tasks": 0,
+    "target_error_tasks_observed": 0,
+    "scope": "Four selected seen controls; five generations per arm and task, not20 independent tasks. Costs are evidence, no additional call/per-task veto.",
+    "paired_P_minus_A_solve_sum_s": 117.21618130616844,
+    "same_prefix_B_ratio_A": 1.25,
+    "same_prefix_B_ratio_P": 1.25
+  },
+  "fourth_control_independent_review": {
+    "schema": "independent_temporal138_fourth_control_originals_review_v1",
+    "at_utc": "2026-10-10T08:51:02.035577+00:00",
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "tasks": [
+      "Prob109_fsm1"
+    ],
+    "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+    "canonical_plan_sha256": "9fe77d93e27d810eabc94224c449e80da09e769c418e59f21218beb17b132e5c",
+    "source_files_including_spec": 30,
+    "execution_files": 3,
+    "official_files": 2,
+    "aggregate": {
+      "Prob109_fsm1": {
+        "A": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 5,
+          "solve_sum_s": 54.36962289363146,
+          "max_solve_s": 11.093596160411835,
+          "unique_solution_sha256": [
+            "32d0b8e7821b89c8bad93e7fc32f130f13e21318902022000f7ad374f0167c92"
+          ]
+        },
+        "P": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 10,
+          "solve_sum_s": 130.5305000115186,
+          "max_solve_s": 28.222567092627287,
+          "unique_solution_sha256": [
+            "61a9ad5f90e4887f87ac3f071d85976e7c36ce3f4621405c6bdecfb573d2e8c7",
+            "a37550c08316401ba77fc16544aacbf139a1d5646775309c839365aa549ded08"
+          ]
+        },
+        "B": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 5,
+          "solve_sum_s": 64.73069184087217,
+          "max_solve_s": 13.196510756388307,
+          "unique_solution_sha256": [
+            "33cc2cbfd30413a7198aab7bb4b6212b73cb8d8995bd4fb5867dac92a0475847"
+          ]
+        }
+      }
+    },
+    "paired_wire_reviews": [
+      {
+        "task": "Prob109_fsm1",
+        "sample": 0,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 1,
+        "solve_P_minus_A_s": 17.128970932215452
+      },
+      {
+        "task": "Prob109_fsm1",
+        "sample": 1,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 1,
+        "solve_P_minus_A_s": 16.119763359427452
+      },
+      {
+        "task": "Prob109_fsm1",
+        "sample": 2,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 1,
+        "solve_P_minus_A_s": 11.118115816265345
+      },
+      {
+        "task": "Prob109_fsm1",
+        "sample": 3,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 1,
+        "solve_P_minus_A_s": 15.871130695566535
+      },
+      {
+        "task": "Prob109_fsm1",
+        "sample": 4,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 1,
+        "solve_P_minus_A_s": 15.922896314412355
+      }
+    ],
+    "bound_row_files": 645,
+    "unique_indexed_files": 660,
+    "unique_bytes": 1214498,
+    "row_file_index_sha256": "d4242a0942365c2af8eae028cceb7af8317712a6c0e88b871f3127aea5488ef6",
+    "all_solve_lt300": true,
+    "private_reference_or_tb_content_read": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "full_comparison_complete": false,
+    "independent_unseen": 0,
+    "row_indices": [
+      45,
+      59
+    ],
+    "normal_rows": 15,
+    "compile_diagnostic": {
+      "all_five_P_first_source_sha256": "bbdc3a2b1c6970e7c8bc61125ef190a014f7bd6a90c10f0be447892d47c90c45",
+      "first_compile_rc": 1,
+      "native_error_code": "VRFC 10-2989",
+      "native_error": "arest is not declared",
+      "generated_source_line": 19,
+      "second_compile_rc": 0,
+      "model_responses": 10,
+      "all_finish_reason_stop": true,
+      "final_P_unique_sources": 2,
+      "new_EDA": 0,
+      "scope": "Original compiler receipt/log/generated-source hashes only; no private reference/TB or rerun. Five same first outputs are not five independent tasks."
+    }
+  },
   "three_control_prefix_review": {
     "schema": "temporal138_three_control_development_prefix_v1",
     "task_count": 3,
@@ -5840,7 +6029,135 @@
     "full_goal_complete": false
   },
       "future_failure_continuation_review_20261010": {
-  "legacy_source_scope": "Existing source_sha256/static_findings/CPU-joint flags below describe earlier original-source qualifications. Latest parent-clock source and limits are explicit in parent_clock_independent_review; no automatic inheritance.",
+  "parent_failure_clock_independent_review": {
+    "schema": "independent_parent_failure_clock_delta_review_v1",
+    "at": "2026-10-10T16:53:08+08:00",
+    "peer_source_commit": "d925072478bbe23b0ffbac3119c00f13f17c69eb",
+    "peer_format_preserving_head": "0552f5cf37d359f1fbed67e58440d84dc828b66d",
+    "peer_issue": 6095784173,
+    "our_issue": 6095867156,
+    "exact_issue_readback": true,
+    "archive_root": "/workspace/team/runs/fpga_owner/parent_failure_clock_qualification_20261010_v1",
+    "archive_sha256": "d5c9cbc944e83ec92cb00d034ae2acbe4b3dcdcd3e7b438e5bdee48d81c6ead5",
+    "at_utc": "2026-10-10T08:53:08.997666+00:00",
+    "archive_members": 113,
+    "archive_entries": 112,
+    "archive_bytes": 408234,
+    "archive_manifest_sha256": "6db4c6e7c5b39b378f06bdbba40a6c9052a52e8321205f8bcfee880aaa8ba69b",
+    "all_archive_members_current_originals_equal": true,
+    "source_count": 71,
+    "source_public_bindings": [
+      {
+        "name": "failure_continuation.py",
+        "sha256": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9",
+        "git_blob": "06703f41c45b7742d86d476b0ad5a60386ccf852",
+        "bytes": 10194
+      },
+      {
+        "name": "three_arm_queue_20261005.py",
+        "sha256": "eb4537e111a1ab36afbe51e1860f324e073ab3448d9d0a8b6e877faef2cf3748",
+        "git_blob": "874f4d03640b442dc26ef474eb4d3a81917efc2c",
+        "bytes": 30762
+      },
+      {
+        "name": "qualification_parent_failure_clock.py",
+        "sha256": "4d8c0b82855fdf2579b369ff011d1661e2e2fab2c1ca3124b193754161428a4b",
+        "git_blob": "f2dcd855be29511e9184664478796bf9eb16177d",
+        "bytes": 5823
+      },
+      {
+        "name": "shared_budget.py",
+        "sha256": "75ccff591dbb8508b22677c1587b5ebf975c5c3ae50fa4187c0be07986da67b4",
+        "git_blob": "73557370c7f0b0c2fe6679c2bb150cc2437b9193",
+        "bytes": 5552
+      }
+    ],
+    "controller": {
+      "child_identity": {
+        "pid": 679058,
+        "state": "T",
+        "starttime": "889521152",
+        "pgid": 679058,
+        "sid": 679058,
+        "command_sha256": "fcf552dde7f0b76406ecc61a399e9adc3fa19352ba8943b0428696d16dc4f603"
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/workspace/team/runs/fpga_owner/parent_failure_clock_qualification_20261010_v1/qualification_parent_failure_clock.py",
+        "/workspace/team/runs/fpga_owner/parent_failure_clock_qualification_20261010_v1",
+        "/workspace/team/runs/fpga_owner/parent_failure_clock_qualification_20261010_v1/results"
+      ],
+      "elapsed_s": 0.3968302495777607,
+      "returncode": 0,
+      "leader_reaped": true
+    },
+    "controller_birth_stdout_bound_and_retired": true,
+    "result_paths": [
+      "results/QUALIFICATION_RESULT.json"
+    ],
+    "source_manifest": 71,
+    "protected_bindings": 128,
+    "protected_held": true,
+    "terminal_file_bindings": 23,
+    "cases": [
+      {
+        "case": "matching_parent_with_short_supervisor",
+        "refused": false,
+        "raw_fields_verified": true,
+        "command_s": 0.04677300341427326,
+        "parent_elapsed_s": 301.04686096310616,
+        "budget_elapsed_s": 301.02420284226537,
+        "unknown_calls_grade_preserved": true
+      },
+      {
+        "case": "child_origin_mismatch_refused",
+        "refused": true,
+        "raw_fields_verified": true,
+        "command_s": 0.045770859345793724,
+        "parent_elapsed_s": 301.0458617992699,
+        "budget_elapsed_s": 302.0228566918522,
+        "unknown_calls_grade_preserved": true
+      },
+      {
+        "case": "missing_parent_clock_refused",
+        "refused": true,
+        "raw_fields_verified": true,
+        "command_s": 0.04555585980415344,
+        "parent_elapsed_s": 301.04562287963927,
+        "budget_elapsed_s": 301.0246397498995,
+        "unknown_calls_grade_preserved": true
+      },
+      {
+        "case": "scheduler_binding_drift_refused",
+        "refused": true,
+        "raw_fields_verified": true,
+        "command_s": 0.0460439957678318,
+        "parent_elapsed_s": 301.0461275577545,
+        "budget_elapsed_s": 301.0241352021694,
+        "unknown_calls_grade_preserved": true
+      }
+    ],
+    "pure_data_audit_only": true,
+    "scoped_conclusion": "The new budget-v2 exit and SOLVE_CLOCK receipt share one parent start and bind the observation interval, command hash and scheduler/plan. This fixes false refusal caused by comparing parent elapsed against the later supervisor stopwatch.",
+    "qualification_limits": [
+      "Four real CPU fixture children, actual execute_row/exit_receipt/seal; solver/admission/idle simulated and parent start deliberately aged.",
+      "Positive retained unknown grade/calls and full reservation2; three mutated origin/missing clock/scheduler cases left unsealed.",
+      "This is not actual worker/B production CLI, physical300 deadline, full queue recovery or real model cancellation.",
+      "Old parent CLI/HTTP evidence remains bound to its original source hashes; no repeat or automatic inheritance."
+    ],
+    "remaining": [
+      "Production B setup and Popen duration must be deducted from one absolute solve endpoint; one total cleanup bound still unproven.",
+      "Real shared-model cancellation/idle and production chain qualification require a separately frozen owned lease after138 releases."
+    ],
+    "deployed": false,
+    "new_project_execution": 0,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false
+  },
+  "legacy_source_scope": "Existing source_sha256/static_findings/CPU-joint flags describe earlier qualifications. parent_clock_independent_review binds d0e03b05 controls; latest parent_failure_clock_independent_review binds d9250724/0552f5cf only. No automatic source inheritance.",
   "parent_clock_independent_review": {
     "schema": "independent_parent_clock_delta_review_v1",
     "at": "2026-10-10T16:43:00+08:00",
@@ -6162,8 +6479,8 @@
     "review_scope": "Read-only original archive, source/AST, exact wire, birth/log/exit checks. Seven short real socket controls retained passed; original300 wrapper remains failed while run_worker HTTP-expiry observation is verified. No original production CLI/new queue integration/model cancellation proof."
   },
         "schema": "independent_future_failure_continuation_review_v1",
-        "updated_at": "2026-10-10T16:43:00+08:00",
-        "status": "parent_clock_CLI_and_pregrade_delta_audited_production_deadline_cleanup_model_recovery_unverified",
+        "updated_at": "2026-10-10T16:55:00+08:00",
+        "status": "parent_failure_clock_binding_delta_audited_production_absolute_cutoff_cleanup_model_recovery_unverified",
         "issue_comment": 6094460715,
         "exact_issue_readback": true,
         "source_sha256": {
@@ -6276,7 +6593,7 @@
             "actual_solver_timeout_not_tested": true
           }
         ],
-        "required_next_evidence": "Use new parent-clock sources; subtract B setup/Popen and enforce the same absolute end plus one total cleanup bound. Qualify production B/dependencies/queue and real shared-model cancellation/idle under a separately frozen owned lease after138 releases. Reuse existing evidence; no hot edits or132137 replay.",
+        "required_next_evidence": "Preserve parent failure-clock binding and prior evidence. Fix B preparation/Popen countdown against same absolute solve endpoint plus one total cleanup bound; then qualify production B/queue dependencies and real shared-model cancellation/idle in a separately frozen owned lease after138 releases. No hotfix/replay or old control reruns.",
         "deployed": false,
         "installed_into_frozen_output_v2": false,
         "original132_resumed": false,
@@ -6655,7 +6972,7 @@
           }
         }
       },
-      "updated_at": "2026-10-10T16:43:00+08:00",
+      "updated_at": "2026-10-10T16:55:00+08:00",
       "status": "temporal138_running_frozen_development_strict300_and_recovery_unproven",
       "source_comments": [
         6091415379,
@@ -6842,13 +7159,13 @@
         "current_scope": "Peer unique running ticket138 independently observed; initial preparation-only acknowledgement retained below as historical, not current unsubmitted status."
       },
       "live_scope": {
-        "observed_at": "2026-10-10T16:42:55.185433+08:00",
+        "observed_at": "2026-10-10T08:50:09.648339+00:00",
         "original132": "failed_released_after_inspection",
         "original133136": "completed_and_archived",
         "original137": "failed_released_after_inspection_incomplete",
         "current_ticket": 138,
         "current_state": "running",
-        "sealed": 57,
+        "sealed": 65,
         "total": 135,
         "monitor": {
           "pid": 635531,
@@ -6877,7 +7194,8 @@
           "state": "R",
           "live": true
         },
-        "scope": "Full scheduled health:monitor/child/guard/stage/model same birth and command live;57sealed. Started58 inferred from active next row and not independently recounted at this full-health instant; previous direct53sealed54started at16:38."
+        "scope": "Targeted monitor/stage exact birth+command live at16:50. Full five-identity health16:42:55;next17:12:56. Firstfour control groups complete,1105sealed.",
+        "started": 66
       },
       "new_project_execution": 0,
       "new_model_calls": 0,
@@ -8719,19 +9037,19 @@
       "new_eda_calls": 0,
       "new_fifo_tickets": 0,
       "full_goal_complete": false
-    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T16:43:00+08:00","status":"active_original132_failed_closed133136_archived137_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"与 nzh152-lang 通过 854259/FPGA Issue #7 持续协作，在当前授权 AMD 同机27B、固定公平对照和既定实验预算内，以官方 RTL 四项总分择优，持续改进由模型实质生成RTL的候选，并完成完整验收：唯一候选/最佳归档原版/原样官方baseline的完整156配对、经审计RTLLM、重要候选每题五次独立生成，以及正式资源、接口、恢复和可复现交付。分别报告L3、官方系数均值、同轮B增益、真实墙钟与调用、配对不确定性及数据接触；未知官方参数不编造，开发结果不称泛化，旧118/120、逐题保持或调用不增不得作为额外否决门。当前先完成原132完整结果及133→134条件接续，与peer协调135/136；遵守已授权132从原起点总48h修订及全部其他冻结规则，不重提、重跑旧控制、改在跑候选或重抽挑分。完成原队列后，根据实测收益选择一个最有价值候选，事前冻结并继续必要比较和完整交付。保持30分钟检查、每日12:00本人进展邮件、21:30夜间安排及23:00至次晨实际恢复的本地停止规则；有实质结果/失败/交接及时沟通，无变化不空转或纯ACK。不设项目截止时间；只有全部要求有范围相符证据才标完成，旧任务保持暂停，本新任务独立持续推进。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
+    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T16:55:00+08:00","status":"active_original132_failed_closed133136_archived137_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"与 nzh152-lang 通过 854259/FPGA Issue #7 持续协作，在当前授权 AMD 同机27B、固定公平对照和既定实验预算内，以官方 RTL 四项总分择优，持续改进由模型实质生成RTL的候选，并完成完整验收：唯一候选/最佳归档原版/原样官方baseline的完整156配对、经审计RTLLM、重要候选每题五次独立生成，以及正式资源、接口、恢复和可复现交付。分别报告L3、官方系数均值、同轮B增益、真实墙钟与调用、配对不确定性及数据接触；未知官方参数不编造，开发结果不称泛化，旧118/120、逐题保持或调用不增不得作为额外否决门。当前先完成原132完整结果及133→134条件接续，与peer协调135/136；遵守已授权132从原起点总48h修订及全部其他冻结规则，不重提、重跑旧控制、改在跑候选或重抽挑分。完成原队列后，根据实测收益选择一个最有价值候选，事前冻结并继续必要比较和完整交付。保持30分钟检查、每日12:00本人进展邮件、21:30夜间安排及23:00至次晨实际恢复的本地停止规则；有实质结果/失败/交接及时沟通，无变化不空转或纯ACK。不设项目截止时间；只有全部要求有范围相符证据才标完成，旧任务保持暂停，本新任务独立持续推进。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
       "Retain original132 failure and incomplete156:2191 sealed,1 failed with unknown repair receipt,148 never started. No replay,suffix continuation or full-score claim.",
       "Original133-136 closed. Peer135 once-reader and135136 full private archives are independently verified; our reader/model/EDA reruns remain zero.",
       "Original137 failed released,64sealed1incomplete10unattempted; complete existing AMD4225-member archive independently verified. E-copy not inspected. Raw row62 L3 over300 remains ineligible. No replay,resampling,missing-score imputation,full75 score or adoption.",
-      "New parent-clock queue5205 and worker67a/Bwrapperc6a are independently source/control-audited,not deployed. Remaining exact production deadline:B setup/Popen time is not removed from inner wait,cleanup still6+6;production B/queue and actual model cancel/idle await scope-matched qualification after138 releases.",
+      "New parent-clock failure receipt v2/queueeb4537/budget75ccff/failure45c222 has independently audited4CPU binding controls,not deployed. Exact B setup/Popen deadline and one cleanup bound,production B/queue plus model cancel/idle still pending after138release;old qualifiers do not transfer to changed sources.",
       "Preserve full target:one substantive model-generated candidate/best archived original/untouched same-model B full156 pairing,important-candidate five samples,audited RTLLM and formal32GB/interface/recovery/reproducibility. Official total-score evidence only;historical118120/.80/per-task/call-nonincreasing values are not extra vetoes.",
-      "Observe new138 rows/true terminal only;peer unique owner.095107108 all45 control rows independently audited,A/P15L3 B10L3,coeff1/1/.7333333,calls15each,P-A solve+41.055304s.109110 controls and four error targets remain;no old-row/control reruns,hot edits,duplicate ticket or invented missing outcomes."
+      "Observe only new138 results/true terminal;peer unique owner.095107108109 all60control rows audited,A/P20L3 B15L3,coeff1/1/.8,calls20/25/20,P-A solve+117.216181s.109 P repairs first-answer arest typo in all5.110 and four error targets remain;no old-row/control reruns,hot edits,extra veto or invented missing outcomes."
     ],"unresolved":[
       "Original132 full156 pairing remains incomplete despite audited146 complete-task prefix; a later properly frozen complete comparison remains necessary, without replaying the failed original row.",
       "Original137 incomplete64/75+1failed+10unstarted despite complete AMD archive verification;E copy unverified. RawL3 over300 is ineligible,full75/156 score and candidate adoption unavailable.",
       "Audited RTLLM model scoring and formal32GB/resources/official interface/recovery/reproducible final package remain incomplete. Development results do not prove independent generalization.",
-      "New source-bound parent-clock A CLI and CPU queue boundary controls are independently audited. Aged clocks and synthetic runtime/admission/idle do not prove physical300 or production B/full chain/model cancellation. B setup and Popen countdown plus single cleanup deadline remain unresolved;do not inherit old source qualifications.",
-      "Original138 running frozen development diagnosis:57/135sealed at16:42:55;three controls095107108 audited with zero P-A coefficient/request gain. Full135/four known-error targets and exact future deadline/recovery still pending;no complete156 admission or formal acceptance."
+      "Parent failure-clock v2 binding now has4realCPU fixtures with aged origin and synthetic solver/admission/idle,independently audited113-member archive and4public sources. This does not prove production B/whole-chain physical300/model cancellation;B preparation/Popen subtraction and single cleanup deadline remain pending.",
+      "138 still sole frozen temporal diagnosis:65/135sealed16:50,first4seencontrols60rows audited. P-A grade0,requests+5,solve+117.216181s. Complete135/four error targets and production deadline/recovery remain unproven;no full156 or formal acceptance from prefix."
     ],"overnight_execution":{
     "automation_id": "amd-rtl-3",
     "preparation_time": "21:30",
