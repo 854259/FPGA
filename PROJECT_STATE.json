@@ -1481,6 +1481,173 @@
             "present": false,
             "live": false
           }
+        },
+        "independent_native_originals_review": {
+          "schema": "independent_original136_native_originals_review_v1",
+          "at_utc": "2026-10-10T05:36:03.720249+00:00",
+          "root": "/workspace/team/runs/fpga_owner/lemmings_feedback_controls_20261008_v1",
+          "native_result_sha256": "3b4950e0c799f0f3dbaa84ea86ef79f62e38efdc9e21e06af127b2c3b1ff7148",
+          "source_manifest_sha256": "af0eab2ba5b116be36119b9576dfb23dbe583165fff653d59b3f9eaf1f04bd77",
+          "source_files_checked": 70,
+          "implementation_manifest_counts": {
+            "IMPLEMENTATION_MANIFEST.json": 36,
+            "EXTENSION_MANIFEST.json": 3
+          },
+          "original_flow_files_preserved": 73,
+          "bounded_commands_checked": 69,
+          "birth_stat_cmdline_and_attempt_bound": true,
+          "all69_leaders_retired_now": true,
+          "summed_native_child_seconds": 174.49961568787694,
+          "cases": [
+            {
+              "case": "positive_walk_fall",
+              "expected": "pass",
+              "checks": 663,
+              "mismatches": 0
+            },
+            {
+              "case": "positive_dig",
+              "expected": "pass",
+              "checks": 881,
+              "mismatches": 0
+            },
+            {
+              "case": "positive_death_entry0",
+              "expected": "pass",
+              "checks": 881,
+              "mismatches": 0
+            },
+            {
+              "case": "negative_sync_reset",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 20
+            },
+            {
+              "case": "negative_right_double_bump",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 2
+            },
+            {
+              "case": "negative_left_gate",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 30
+            },
+            {
+              "case": "negative_output_activity",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 672
+            },
+            {
+              "case": "negative_early_threshold",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 10
+            },
+            {
+              "case": "negative_wraparound",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 26
+            },
+            {
+              "case": "negative_midair_death",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 204
+            },
+            {
+              "case": "negative_episode_accumulation",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 6
+            },
+            {
+              "case": "negative_dig_priority",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 8
+            },
+            {
+              "case": "negative_fall_priority",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 516
+            },
+            {
+              "case": "negative_landing_reacts",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 22
+            },
+            {
+              "case": "negative_dig_request_hold",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 2
+            },
+            {
+              "case": "negative_air_direction",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 8
+            },
+            {
+              "case": "negative_mealy_output",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 59
+            },
+            {
+              "case": "negative_dead_revives",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 20
+            },
+            {
+              "case": "negative_unknown_output",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 657
+            },
+            {
+              "case": "negative_reset_clock_dominance",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 56
+            },
+            {
+              "case": "positive_death_entry1",
+              "expected": "pass",
+              "checks": 881,
+              "mismatches": 0
+            },
+            {
+              "case": "flow_bad_exact",
+              "expected": "semantic_mismatch",
+              "checks": 881,
+              "mismatches": 2
+            },
+            {
+              "case": "flow_good_exact",
+              "expected": "pass",
+              "checks": 881,
+              "mismatches": 0
+            }
+          ],
+          "positive_cases": 5,
+          "negative_cases": 18,
+          "unique_bound_files": 865,
+          "unique_bound_bytes": 16986971,
+          "evidence_index_sha256": "24ab8ed5ef7e819c8cc707a7f72bb2543797f10376d2943fb0bebdfd7184e2a9",
+          "models_reexecuted": 0,
+          "EDA_reexecuted": 0,
+          "project_modules_imported": 0,
+          "owner_full_archive_verified": false,
+          "scope": "Original evidence integrity/process/log/fixture/result cross-binding; synthetic native qualification only, not model score or new scoring admission."
         }
       },
       "ownership": {
@@ -3511,9 +3678,9 @@
       "new_eda_calls": 0,
       "new_fifo_tickets": 0,
       "full_goal_complete": false
-    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T13:21:00+08:00","status":"active_original132_failed_released133_native_verified134_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"严格以官方RTL赛题总分最高为目标，遵守官方提交和评测条件；保留真实性、公平性与完整交付，不附加逐题保持或调用不增的成绩否决门。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
+    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T13:36:03+08:00","status":"active_original132_failed_released133_native_verified134_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"严格以官方RTL赛题总分最高为目标，遵守官方提交和评测条件；保留真实性、公平性与完整交付，不附加逐题保持或调用不增的成绩否决门。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
       "Retain original132 failure and incomplete156:2191 sealed,1 failed with unknown repair receipt,148 never started. No replay,suffix continuation or full-score claim.",
-      "Original133134 closed;135136 completed with actual original roles retired. Our135 sealed-data review is complete;peer retains135 once-reader/full archive and136 individual native evidence closure.",
+      "Original133134 closed;135136 completed and retired. Our135 all30 sealed-data and136 all69 native-command originals are independently verified; peer retains135 once-reader and135136 full private archival ownership.",
       "Recommend only existing64-word output-completion5x5/75/max125 next, with peer sole submit owner and our independent review; await peer terminal closure and explicit single-owner agreement. Current134135 factors have no measured net ability gain,136 has no model score.",
       "Keep shared300/budget-exit/failed-row continuation separately source-bound and qualified; do not combine unverified paths or mutate frozen output-v2. Preserve incomplete A147 outcomes without fill/replay/resampling.",
       "Preserve full target:one substantive model-generated candidate/best archived original/untouched same-model B full156 pairing,important-candidate five samples,audited RTLLM and formal32GB/interface/recovery/reproducibility. Official total-score evidence only;historical118120/.80/per-task/call-nonincreasing values are not extra vetoes."

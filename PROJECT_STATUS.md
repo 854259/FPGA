@@ -1,3 +1,7 @@
+2026-10-10 13:36 +08:00：本方将原136核验扩展到69次EDA原件：70冻源与36 implementation/3 extension成员绑定、73原pure-flow文件保持；69份NATIVE_COMMAND/COMPLETE/ATTEMPT/出生stat及cmdline/stdout/真实工具log逐一核对，exec/rc0/reap/空组收据通过且69 leader当前均退休。23例fixture/input/dut/trace/adapter/result和xsim实际结果相符，5正控零差异、18负控捕获预置语义错误；exact两例对应原flow回复的已抽取DUT和反馈，不重新执行抽取器、worker或控制。865份唯一原件16986971B，index24ab8ed5；69 child耗时和174.4996秒，不冒充stage184.1693/guard184.3456秒。
+
+原136合成native资格的逐命令证据现已独立核验；不是模型能力成绩、泛化或新采用准入。原135 once-reader和135136完整私有归档仍由peer负责；output-v2唯一提交归属仍待确认，本方新模型/EDA/FIFO均0。Issue6094137735已全文回读。完整156/RTLLM/正式32GB/接口/恢复/可复现交付仍未完成。
+
 2026-10-10 13:30 +08:00：补齐准备output-v2的公版源绑定。Git提交255822490623a428ff867f9dbd475c2b015d9152中五份源原字节的SHA256、字节数和Git blob均独立核对，全部等于先前已审计AMD冻结源；prepare_output_comparison.py仅公版改名，对应AMD prepare_temporal_comparison.py，CRLF原字节也保持。仅确认源传输一致，不是新准入或收益证明；原135136 peer完整归档和下一项唯一提交归属仍待确认。
 
 2026-10-10 13:21 +08:00：原132–136现均有实际退出：132失败不完整、133/134已由本方收尾；135于13:12:09完成rc0/guard通过，136于13:15:14完成rc0/guard通过。13:18再次核原136 monitor4187849已Z、child570782/start888277880及stage570787不存在；不是凭状态文件推断运行结束。136 NATIVE_STAGE_RESULT 3b4950e0记录23例/69 EDA、0模型、184.1693秒，guard87f87225为184.3456秒且model/保护/idle/槽释放保持；本方只核顶层原结果、冻结manifest哈希与guard/实际退休，69工具原件完整审计和135/136 once-reader/归档仍归peer。
