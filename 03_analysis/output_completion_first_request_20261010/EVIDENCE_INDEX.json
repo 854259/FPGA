@@ -1,9 +1,17 @@
 {
+  "actual137_control_gate": {
+  "ticket": 137,
+  "adoption_under_original_goal_permitted": false,
+  "first_control_group_sha256": "7f0ab1e08cadacac5c5b99b48a26f37260eb01109e86d8038332e1223ef043e7",
+  "first_control_group": "FIRST_CONTROL_GROUP.json",
+  "current_admission": "ACTUAL137_ADMISSION.json",
+  "entire_comparison_complete": false
+},
   "schema": "output_completion_132_failure_repair_priority_v1",
   "saved_epoch": 1791606368.0638695,
   "user_authorization": "User explicitly requested full repair of original132 failure and asked why one execution failure stopped later tasks.",
   "selected_for_preparation": true,
-  "FIFO_submitted": false,
+  "FIFO_submitted": true,
   "actual_model_recovery_proven": false,
   "root": "/workspace/team/runs/fpga_owner/output_completion_comparison5x5_20261010_v2",
   "plan_sha256": "b92d3b3b27b9ef814ae7a66d407392bb2266d58b4f08af4f389ebc16e18fbd15",
