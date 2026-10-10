@@ -1,5 +1,133 @@
 {
   "temporal_first_generation_20261010": {
+    "restored_queue_and_fixed134_prefix_20261010": {
+      "schema": "restored_queue_and_fixed134_prefix_intake_v1",
+      "observed_epoch": 1791603219.791473,
+      "readback_sha256": "f663f2e0b79bcf375e7aba2a72592a3b765e5959faa03d6df3fc8fbc37092226",
+      "original132_state": "failed_released_after_inspection",
+      "original132_full_success": false,
+      "failed_row_actual_calls": null,
+      "failed_row_grade": null,
+      "owner_release_independently_observed": true,
+      "owner_release_executed_by_this_task": false,
+      "peer_release_receipt_intake_sha256": "8977a30e6100e6230142ca737828b710cf44647e952d1ce795c9a92d805ba82a",
+      "peer133_native_qualification": "Owner reports frozen one-case/three-tool native closure; this task read report and execution guard,not full native receipts.",
+      "peer_PR216_head": "5026ebd79a2fedda6fa059d8b88b1060cb0345ed",
+      "peer_PR216_merge": "3dbcc80895605578a211f5e938b8ab99edcfb3ac",
+      "original134_state": "running",
+      "original134_sealed_at_observation": 34,
+      "original134_expected_outputs": 135,
+      "original134_monitor": {
+        "pid": 4175417,
+        "present": true,
+        "state": "S",
+        "ppid": 1,
+        "pgid": 4175417,
+        "sid": 4175417,
+        "starttime": "882505704",
+        "command_sha256": "f79b0dd91bde13d116bcf7ad32b8f3305e29014941977fd703e959f175d901b6",
+        "stable_observation": true,
+        "original_birth": true,
+        "live_identity_verified": true,
+        "independent_session": true
+      },
+      "fixed_complete_tasks": [
+        {
+          "task": "Prob050_kmap1",
+          "outputs": 15,
+          "arms": {
+            "A": {
+              "levels": [
+                3,
+                3,
+                3,
+                3,
+                3
+              ],
+              "actual_calls": 10,
+              "coefficient_mean": 1.0
+            },
+            "P": {
+              "levels": [
+                3,
+                3,
+                3,
+                3,
+                3
+              ],
+              "actual_calls": 10,
+              "coefficient_mean": 1.0
+            },
+            "B": {
+              "levels": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "actual_calls": 5,
+              "coefficient_mean": 0.2
+            }
+          },
+          "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+          "source_hashes_held": true
+        },
+        {
+          "task": "Prob057_kmap2",
+          "outputs": 15,
+          "arms": {
+            "A": {
+              "levels": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "actual_calls": 10,
+              "coefficient_mean": 0.2
+            },
+            "P": {
+              "levels": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "actual_calls": 10,
+              "coefficient_mean": 0.2
+            },
+            "B": {
+              "levels": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "actual_calls": 5,
+              "coefficient_mean": 0.2
+            }
+          },
+          "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+          "source_hashes_held": true
+        }
+      ],
+      "prefix_A_P_new_gain_observed": false,
+      "full_comparison_success": false,
+      "selection": false,
+      "fixed_prefix_only": true,
+      "queued": [
+        135,
+        136
+      ],
+      "full_goal_complete": false,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0
+    },
     "output_discipline_separate_source_only_backup_20261010": {
       "review_sha256": "b1d5ffaee7cae3421bd8642d5f4147a004f0fce27264f8c0b77b649fe4679547",
       "source_sha256": "65da3d134b7b1c3e57a24a6e8d6c78869644542d8865b444c20a63ba6b900a10",
