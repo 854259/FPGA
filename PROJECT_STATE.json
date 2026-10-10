@@ -1,5 +1,87 @@
 {
   "temporal_first_generation_20261010": {
+    "complete_prefix144_priority_review": {
+      "result_sha256": "c960b8bde3c32d80b81dd5e7ba2876942735ebdb02a73d5bb5aa572d2e4ce43b",
+      "complete_tasks": 144,
+      "rows": 2160,
+      "P": {
+        "outputs": 720,
+        "level_counts": {
+          "0": 16,
+          "1": 140,
+          "3": 564
+        },
+        "L3_outputs": 564,
+        "all_five_L3_tasks": 111,
+        "all_five_nonL3_tasks": 30,
+        "actual_calls": 797,
+        "prefix_coefficient_sum": 592.0
+      },
+      "A": {
+        "outputs": 720,
+        "level_counts": {
+          "0": 15,
+          "1": 158,
+          "3": 547
+        },
+        "L3_outputs": 547,
+        "all_five_L3_tasks": 108,
+        "all_five_nonL3_tasks": 33,
+        "actual_calls": 766,
+        "prefix_coefficient_sum": 578.6
+      },
+      "B": {
+        "outputs": 720,
+        "level_counts": {
+          "0": 80,
+          "1": 170,
+          "3": 470
+        },
+        "L3_outputs": 470,
+        "all_five_L3_tasks": 94,
+        "all_five_nonL3_tasks": 50,
+        "actual_calls": 720,
+        "prefix_coefficient_sum": 504.0
+      },
+      "remaining_tasks": 12,
+      "diagnostic_bounds": {
+        "all_five_L3": {
+          "prefix_tasks": 111,
+          "needed_from_remaining_to_reach120": 9,
+          "maximum_if_all_remaining_pass": 123
+        },
+        "mean_L3_count": {
+          "prefix_L3_outputs": 564,
+          "needed_remaining_L3_outputs_for120_mean": 36,
+          "remaining_outputs": 60
+        },
+        "full_weighted_mean_interval_from_unknown_remaining": [
+          0.7589743589743589,
+          0.8358974358974359
+        ],
+        "note": "Mathematical bounds only;no grades imputed to remaining tasks. The two L3 readings do not redefine original goal qualification."
+      },
+      "actual_paired_grade_losses": [
+        {
+          "task": "Prob082_lfsr32",
+          "sample": 1,
+          "A_level": 1,
+          "P_level": 0,
+          "A_calls": 1,
+          "P_calls": 2
+        }
+      ],
+      "prefix_P_minus_A_calls": 31,
+      "full_cost_gate_evaluated": false,
+      "full_goal_complete": false,
+      "peer_PR213_read": true,
+      "peer_static_review_scope": "Five frozen temporal sources SHA match; limited static review only; no native/archive/score admission",
+      "primary_score_directions": "Existing serial/native pipeline and frozen temporal first-generation candidate; constant repair backup remains separate and unselected",
+      "original132_136_queue_unchanged": true,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0
+    },
     "constant_repair_retained_context_preflight": {
       "scope": "Ten retained144 repairs only;exact guidance appended to their system messages;not a new score sample",
       "result_sha256": "7be35ea5fc98a8076bd8658fe902f640e727def13438db1771e7bc90f2e6912b",
