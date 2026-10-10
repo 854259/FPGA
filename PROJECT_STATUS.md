@@ -1,3 +1,13 @@
+## 2026-10-10 静默查询修复后真实工程验证141已启动
+
+19:53:24北京时间唯一FIFO141，v4 PLANf20b92cc/SPEC0c3bb9fe，consumer268e4cda仅静默1.25秒重查，其余32源保持139；生成/判定/300/310/8192/2/1不变。monitor735224/start890685362、child735225/start890685371、observer735235/start890686550同出生实际存活，147 A首请求派发/slot4389992处理，33源保持；资格尚未结束，不宣称已续行。
+
+新增observer613e9d24实际启动且初期请求slots正常，但预算失败时抑制slots的真实路径仍待发生。设计只在未seal的SHARED_BUDGET_EXIT期间读原文件/出生，不主动唤醒server的相对1秒等待；budget消耗/失败grade与cost未知保持。140原76成员c356b8e6及cancel补档已归档、检查释放；139/140原失败、未提交v2、旧实验不重投或覆盖。
+
+已读6097132151独审140失败和PR245接口组件，peer负责原174词worker/table/phase的正式HTTP/CLI闭包，组件CPU不是完整模型/EDA验收。下一只读141与observer至终态，归档验证真实取消/idle/FAILED_SEALED/连续三入口；不得频繁额外slots轮询打断取消静默。原P174为唯一完整156候选，完整回归尚未准入，120/80%及原历史配对成本目标active未达。
+
+索引shared_solve_budget_20261010/PRODUCTION141_ACTUAL_ADMISSION.json和PRODUCTION_PACK_PREPARATION_V4.json。
+
 ## 2026-10-10 140真实等待到310仍忙，已归档释放；定位查询推迟取消检查
 
 140最终失败：147 A首答283.161秒/8192/length，第二请求未确认，父300.001秒BudgetExpired，owned已回收；2c等待实际到原parent310截止仍忙。582观测最后busy为预算退出后+12.383秒，未有idle；只有首行，后面三入口未执行、grade/calls保持未知。76成员c356b8e6双端全核；实际server log固定range b197950e/补档827a3e83含cancel4389313，relative钟未映射，不当精确父耗时。之后实际idle/资源模型保持/所有出生退役核验，仅本方retained slot和FIFO140检查释放；原false guard/源码/失败档不改，未重投140。
