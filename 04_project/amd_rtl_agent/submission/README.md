@@ -83,15 +83,22 @@ Responses contain `task_id`, `solution`, `trace` and `elapsed_s`.
 
 HTTPServer processes requests serially in the main thread so signal deadlines
 and native child ownership match CLI behavior. Health requests also wait while
-a solve is running. The solve clock starts when `solve` begins, after body
-parsing; socket queue/read time is not represented by that clock. Concurrent
-arrival and externally measured deadline compliance still need qualification.
+a solve is running. HTTP work and cleanup inherit the clock from entry to `do_POST`, before
+authentication and body parsing. This includes subsequent parsing time; it
+does not include earlier socket queuing or request-header receipt. Concurrent
+arrival and the official sender-to-response wall clock still need qualification.
 
 Preparation, model transport and native stages share one monotonic work end.
-Native cleanup and model-idle recovery share at most one further 10-second
-reserve, capped from the first observed cancellation. A work timeout clears
-the proposal and records unknown calls where appropriate. Cleanup can extend
-past the work deadline; this is not a promise of a timely official response.
+HTTP reserves `min(10, deadline_s / 2)` seconds for cleanup and
+`min(1, deadline_s / 10)` seconds for the response, both inside the requested
+total budget. Agent native operations, baseline supervision, child cleanup
+and model-idle recovery inherit the same absolute cleanup ceiling. Cleanup is
+also capped at ten seconds from the first observed cancellation. CLI retains
+its work budget plus at most ten seconds of cleanup unless an earlier ceiling
+is supplied. A work timeout clears the proposal and records unknown calls
+where appropriate. If recovery cannot be verified in its reserve, the runtime
+blocks rather than borrowing time or reporting recovery complete. Response
+headroom is not proof of the official sender-to-response limit.
 A failed tool/protocol/recovery check retains evidence and stops further work
 with HTTP 503 until inspection. A process cancellation exits the HTTP service after bounded cleanup, even when a transport wrapper or recovery fails. There are no implicit model retries.
 
@@ -126,6 +133,18 @@ reproduced three forbidden restart/stop branches; the fixed script passes all
 four model/agent alive/exited cases. Its startup functions are unchanged and
 were not exercised by these cases. Other test methods were not rerun. This
 checks monitoring policy, not real service availability or deployment.
+
+A retained original CPU HTTP control requested 0.1 seconds but recorded
+1.343 seconds internally; it checked recovery and the next request, not timely
+completion. The revised controls check a three-second timeout returning empty
+in 2.470 seconds followed by a successful request in the same service, and a
+0.1-second recovery limit returning 503 in 0.091 seconds and blocking further
+work. These are actual local HTTP observations with synthetic model/EDA work.
+Inherited request start, baseline cleanup ceiling, native ceiling forwarding
+and unchanged default CLI reserve are also checked. An initial allocation left
+only 1.2 seconds for a required 1.25-second quiet interval; that failed control
+is retained. Recovery and response reserves are now separate, without relaxing
+either tested deadline. Only affected methods were rerun.
 
 Package only this directory. No parent evaluator or private archive is needed
 by generation. Prompt allowlisting is not an OS sandbox. The final image,

@@ -419,7 +419,7 @@ def stop_tree(proc):
         pass
 
 
-def run_job(mode, task, out, seconds, *, parent_started=None):
+def run_job(mode, task, out, seconds, *, parent_started=None, cleanup_deadline=None):
     """CLI and serial HTTP share one main-thread budget, generation and cleanup."""
     import candidate_worker
     import shared_budget
@@ -435,7 +435,8 @@ def run_job(mode, task, out, seconds, *, parent_started=None):
     if deadline_supervisor.descendants(os.getpid()):
         BLOCKED = 'preexisting_children'
         raise RuntimeError('Request ownership unclear: process already has children')
-    budget = shared_budget.SolveBudget(seconds, parent_started=parent_started)
+    budget = shared_budget.SolveBudget(seconds, parent_started=parent_started,
+                                      cleanup_deadline=cleanup_deadline)
     endpoint()
     if not baseline_integrity():
         raise RuntimeError('official baseline integrity check failed')
@@ -449,7 +450,7 @@ def run_job(mode, task, out, seconds, *, parent_started=None):
     write(out / 'trace.jsonl', '')
     candidate_worker.save(out / 'SOLVE_CLOCK.json', dict(
         started_monotonic=budget.started, budget_s=budget.seconds,
-        work_deadline_monotonic=budget.end, cleanup_deadline_monotonic=budget.end + 10))
+        work_deadline_monotonic=budget.end, cleanup_deadline_monotonic=budget.cleanup_end))
     scratch = os.environ.get('EDA_TMP') or None
     if scratch:
         Path(scratch).mkdir(parents=True, exist_ok=True)
@@ -481,7 +482,7 @@ def run_job(mode, task, out, seconds, *, parent_started=None):
                 started_baseline = True
                 supervision = deadline_supervisor.owned_command(
                     command, work, out / 'worker.log', budget.remaining(),
-                    deadline=budget.end, cleanup_deadline=budget.end + 10)
+                    deadline=budget.end, cleanup_deadline=budget.cleanup_end)
                 candidate_worker.save(out / 'BASELINE_SUPERVISION.json', supervision)
                 if supervision['launch_error'] or supervision['remaining_live_group']:
                     raise RuntimeError('Official baseline supervision failed')
@@ -511,7 +512,7 @@ def run_job(mode, task, out, seconds, *, parent_started=None):
             for sig in previous:
                 signal.signal(sig, signal.SIG_IGN)
             cleanup_started = time.monotonic()
-            cleanup_end = min(budget.end + 10, cleanup_started + 10,
+            cleanup_end = min(budget.cleanup_end, cleanup_started + 10,
                               (cancelled_at + 10) if cancelled_at is not None else float('inf'))
             try:
                 cleanup = deadline_supervisor.cleanup_request_children(cleanup_end)
@@ -584,8 +585,8 @@ def run_job(mode, task, out, seconds, *, parent_started=None):
 
 
 
-def solve(data):
-    started = time.monotonic()
+def solve(data, *, parent_started=None):
+    started = time.monotonic() if parent_started is None else parent_started
     if not isinstance(data, dict):
         raise ValueError('JSON object required')
     for key in ('task_id', 'prompt'):
@@ -610,8 +611,14 @@ def solve(data):
     if data.get('interface'):
         write(task / 'interface.txt', data['interface'])
     write(request_root / 'request.json', json.dumps(data, ensure_ascii=False))
-    budget = deadline - min(1, deadline * .1)
-    solution, events = run_job(mode, task, request_root / 'out', budget, parent_started=started)
+    # Reserve cleanup inside the caller's total budget, plus response headroom.
+    # Short requests share that budget; they cannot borrow another ten seconds.
+    response_reserve = min(1, deadline * .1)
+    cleanup_reserve = min(10, deadline * .5)
+    budget = deadline - response_reserve - cleanup_reserve
+    cleanup_end = started + deadline - response_reserve
+    solution, events = run_job(mode, task, request_root / 'out', budget,
+                              parent_started=started, cleanup_deadline=cleanup_end)
     result = dict(task_id=data['task_id'], solution=solution, trace=events,
                   elapsed_s=round(time.monotonic() - started, 3))
     write(request_root / 'response.json', json.dumps(result, ensure_ascii=False))
@@ -644,6 +651,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_json(200, health()) if self.path == '/v1/health' else self.send_json(404, {'error': 'not found'})
 
     def do_POST(self):
+        started = time.monotonic()
         if not self.authorized():
             return
         if self.path != '/v1/solve':
@@ -654,7 +662,7 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError('invalid body size')
             self.connection.settimeout(10)
             data = json.loads(self.rfile.read(size))
-            self.send_json(200, solve(data))
+            self.send_json(200, solve(data, parent_started=started))
         except InterruptedError as exc:
             # HTTPServer catches Exception and otherwise keeps serving.
             # Exit only after run_job has finished bounded cleanup.

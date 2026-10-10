@@ -32,7 +32,7 @@ def parent_started_from_environment():
 
 
 class SolveBudget:
-    def __init__(self, seconds=300, clock=None, parent_started=None):
+    def __init__(self, seconds=300, clock=None, parent_started=None, cleanup_deadline=None):
         if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds <= 0:
             raise ValueError('Invalid shared solve budget')
         self.clock = clock or time.monotonic
@@ -44,6 +44,11 @@ class SolveBudget:
         self.started = now if parent_started is None else parent_started
         self.seconds = seconds
         self.end = self.started + seconds
+        if cleanup_deadline is not None and (
+                type(cleanup_deadline) not in (int, float)
+                or not math.isfinite(cleanup_deadline) or cleanup_deadline < self.end):
+            raise ValueError('Cleanup deadline must be finite and not precede work')
+        self.cleanup_end = min(self.end + 10, cleanup_deadline) if cleanup_deadline is not None else self.end + 10
 
     def remaining(self, cap=None):
         remaining = self.end - self.clock()
@@ -123,5 +128,6 @@ class SolveBudget:
         assert callable(original)
         def bounded(argv, cwd, log, cap):
             import deadline_supervisor
-            return deadline_supervisor.owned_command(argv, cwd, log, self.remaining(cap), deadline=self.end)
+            return deadline_supervisor.owned_command(argv, cwd, log, self.remaining(cap),
+                                                       deadline=self.end, cleanup_deadline=self.cleanup_end)
         return bounded
