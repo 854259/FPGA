@@ -1,5 +1,12 @@
 # RTL official-contract entry
 
+This directory retains an archived runtime and deployment scaffold. A final runtime
+candidate has not yet been selected from the current development comparisons.
+Final delivery must bind the selected, scored runtime to the matching model
+declaration, skills, manifest and validated service scripts, then complete service,
+resource, isolation and recovery acceptance. See the project `PROJECT_STATE.json`
+and `PROJECT_STATUS.md`.
+
 Pinned reference: `https://gitee.com/Vickyiii/rtlagent2026`, commit
 `afd135e7ba5f6ec4c6d77e7c927c894327537801` (2026-09-21).
 
@@ -10,7 +17,7 @@ solutions, evaluator, historical benchmark outputs or task-specific answers.
 
 ## Inputs and outputs
 
-On Linux, from this directory:
+On the authorized AMD Linux server, from this directory:
 
 ```bash
 ./run.sh /path/to/task /tmp/new-agent-output
@@ -24,15 +31,15 @@ not an announced contest budget. The unchanged baseline script relies on the
 external caller for termination; the HTTP service and external evaluation
 driver supervise both modes. Use a new output directory per sample.
 
-Python equivalents for local integration checks:
+Equivalent Python CLI forms (project code runs only on the authorized AMD server):
 
 ```bash
 python3 agent/runtime.py run TASK_DIR NEW_OUT_DIR
 python3 agent/runtime.py baseline TASK_DIR NEW_OUT_DIR
 ```
 
-This directory follows the official package layout, so it can be shipped as
-`<team_name>-agent/` unchanged: `agent/` holds the agent source, `skill/<name>/`
+This scaffold follows the official `<team_name>-agent/` package layout:
+`agent/` holds the agent source, `skill/<name>/`
 the skill pack, `serve/` the inference service, and `baseline.py`, `run.sh`,
 `run_baseline.sh`, `manifest.json`, `Dockerfile`, `model/MODEL.md`, `REPORT.md`
 sit at the package root. `agent/runtime.py` resolves `baseline.py`, `upstream.json`
@@ -57,7 +64,7 @@ export MODEL_NAME=YOUR_ACTUALLY_SERVED_MODEL_ID
 export XILINX_VIVADO=/tools/Xilinx/2026.1/Vivado
 export EDA_TMP=/tmp/eda
 export FPGACHINA_TOKEN=YOUR_PRIVATE_TOKEN
-python3 runtime.py serve --port 7860
+python3 agent/runtime.py serve --port 7860
 ```
 
 Keep the model server running in the same environment on loopback. Both modes
@@ -67,13 +74,13 @@ defaults match the sampling limits; `RTL_MAX_TOKENS` and `RTL_TEMPERATURE`
 are explicit agent-only experiment settings. No legacy `LLM_MOCK_FILE`,
 `LLM_MODEL`, `LLM_API_KEY` or `enable_thinking` option is used here.
 
-The default `RTL_PROFILE=submission` rejects non-loopback model URLs. An
-explicit `RTL_PROFILE=development` permits a remote compatible endpoint but
-does **not** establish final offline compliance. Upstream baseline has no
-Bearer-key support; authenticated commercial APIs require a separately
-configured common compatible gateway for both modes. Do not edit the baseline
-or run it without authentication against an endpoint that requires a key.
-No such gateway or paid API test was added in this change.
+The default `RTL_PROFILE=submission` rejects non-loopback model URLs. The
+archived runtime's `development` compatibility branch does not change the current
+project boundary: development, diagnosis, comparison and submission all use local
+weights and same-machine inference on the authorized AMD server. Do not substitute
+an external API or forwarding gateway. Loopback alone does not prove local inference
+or offline isolation; those require their own process, weight and network evidence.
+The official baseline remains unchanged.
 
 `VIVADO_BIN` overrides the tool directory; otherwise `XILINX_VIVADO/bin` or
 PATH is used. There are no hardcoded drive letters in the submission code.
@@ -87,8 +94,11 @@ Requests accept `task_id`, `nonce`, `mode` (`agent` or `baseline`), `prompt`,
 `solution`, `trace`, and `elapsed_s`. Task IDs are echoed, never used as paths.
 Requests are serialized for the shared model and their waiting time consumes
 the supplied deadline. Each request uses new local scratch and a separate
-worker process. Timeout cancels the process tree and returns the candidate
-already available (or empty text), followed by future requests normally.
+worker process. On timeout, the supervisor attempts to stop its owned worker
+process tree and returns the candidate already available (or empty text). This
+code path alone does not prove cancellation of generation in the shared model
+service, subsequent model idleness or complete production recovery; those remain
+separate acceptance items.
 
 Trace records model calls and candidate checks; `*_start` entries identify
 in-flight operations if a deadline interrupts them. A supervisor timeout event
@@ -96,11 +106,14 @@ is additional diagnostic information, not a fabricated baseline model call.
 Normal baseline traces remain exactly upstream `baseline_meta` + one `llm`.
 
 Health checks the model listing, baseline hashes, xvlog availability and actual
-Vivado 2026.1 version. In submission mode it also requires readable amdgpu
-VRAM byte counters and <=32 GiB; unavailable VRAM is `null` and readiness is
-false, never an invented zero. This is a readiness probe, not a GPU performance
-test. Model loading, quantization, offline network enforcement and final image
-validation remain deployment work. Do not expose the inference port.
+Vivado 2026.1 version. The archived runtime attributes amdgpu counters to the model
+server's render device and returns `null` when attribution is unavailable. Outside
+`development`, a measured value above its 32 GiB threshold makes readiness false;
+an unknown value leaves the other readiness conditions in force. Thus `ready:true`
+with `vram_gb:null` proves neither memory compliance nor completed resource
+acceptance. Report raw bytes and verify the full load/generation/repair lifecycle,
+isolation and final image separately. This is a readiness probe, not a GPU
+performance test. Do not expose the inference port.
 
 ## Packaging boundary
 
