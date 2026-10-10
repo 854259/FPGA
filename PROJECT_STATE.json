@@ -1,4 +1,142 @@
 {
+  "queue_failure_continuation_20261010": {
+    "schema": "future_inspected_solver_failure_continuation_v1",
+    "saved_epoch": 1791607329.1347823,
+    "public_source_hashes": {
+      "failure_continuation.py": {
+        "sha256": "230a07b74017ef25290fcc6e97514a36b62a64b3c0090389079217f599af6ea4",
+        "bytes": 6436
+      },
+      "three_arm_queue_20261005.py": {
+        "sha256": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550",
+        "bytes": 29533
+      }
+    },
+    "qualification_archives": [
+      {
+        "amd_root": "/workspace/team/runs/fpga_owner/failure_continuation_qualification_20261010_v1",
+        "archive_sha256": "7eb3922ac27c339b8d3404cc98f9d2141b9e77c1059e03e2418a022a809a523d",
+        "archive_bytes": 127948,
+        "members": 105,
+        "cases": [
+          {
+            "label": "later_rows_once_reservations_kept_stage_not_success",
+            "passed": true,
+            "synthetic_row_attempts": 3,
+            "reserved_calls": 6,
+            "score_eligible": false,
+            "original_failed_terminal_held": true
+          },
+          {
+            "label": "busy_model",
+            "passed": true,
+            "later_dispatch_rejected": true,
+            "replay_rejected": true
+          },
+          {
+            "label": "remaining_group",
+            "passed": true,
+            "later_dispatch_rejected": true,
+            "replay_rejected": true
+          },
+          {
+            "label": "non_timeout",
+            "passed": true,
+            "later_dispatch_rejected": true,
+            "replay_rejected": true
+          },
+          {
+            "label": "default_closed",
+            "passed": true,
+            "later_dispatch_rejected": true,
+            "replay_rejected": true
+          },
+          {
+            "label": "original_evidence_tamper_rejected",
+            "passed": true
+          }
+        ],
+        "returncode": 0,
+        "owned_child_reaped": true
+      },
+      {
+        "amd_root": "/workspace/team/runs/fpga_owner/failure_continuation_cost_delta_qualification_20261010_v2",
+        "archive_sha256": "63b3c5d4a942a362a2270b7015f4c2185a2de5ca1e60966b031ca12114a68826",
+        "archive_bytes": 117181,
+        "members": 72,
+        "cases": [
+          {
+            "label": "later_rows_once_reservations_kept_stage_not_success",
+            "passed": true,
+            "synthetic_row_attempts": 3,
+            "reserved_calls": 6,
+            "score_eligible": false,
+            "original_failed_terminal_held": true
+          },
+          {
+            "label": "over_reserved_client_attempts_rejected",
+            "passed": true,
+            "limit": 2,
+            "later_dispatch_rejected": true
+          }
+        ],
+        "returncode": 0,
+        "owned_child_reaped": true
+      }
+    ],
+    "current_handle_snapshot": {
+      "path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\NIGHT_HANDLES_20261008_1791607229873538100\\READBACK.json",
+      "observed_epoch": 1791607240.4355261,
+      "jobs": [
+        {
+          "ticket": 132,
+          "state": "failed_released_after_inspection",
+          "sealed_outputs": 2191
+        },
+        {
+          "ticket": 133,
+          "state": "completed",
+          "sealed_outputs": null
+        },
+        {
+          "ticket": 134,
+          "state": "running",
+          "sealed_outputs": 133
+        },
+        {
+          "ticket": 135,
+          "state": "queued",
+          "sealed_outputs": 0
+        },
+        {
+          "ticket": 136,
+          "state": "queued",
+          "sealed_outputs": null
+        }
+      ]
+    },
+    "qualification_scope": "Changed advance/run_plan and durable seals executed on AMD with synthetic inputs and mocked resource/model telemetry and row execution. No actual solver timeout, model or EDA test.",
+    "prior_six_cases_retained": true,
+    "changed_attempt_guard_two_cases_only": true,
+    "deployed": false,
+    "installed_into_frozen_output_v2": false,
+    "failed132_resumed": false,
+    "actual_model_recovery_proven": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "grading_changed": false,
+    "incomplete_row_grade": null,
+    "incomplete_row_actual_calls": null,
+    "original132_complete": false,
+    "full_goal_complete": false,
+    "next_work": [
+      "Independent review of prospective queue source and source-bound supervisor contract.",
+      "Finish original134-136 under existing ownership; select and admit exactly one capability factor.",
+      "Actual output-completion five-task model comparison and then full156 if original gates pass.",
+      "Remaining-time budget enforcement remains a separate unresolved runtime issue."
+    ]
+  },
   "temporal_first_generation_20261010": {
     "output_completion_user_repair_priority_20261010": {
       "schema": "output_completion_132_failure_repair_priority_v1",
