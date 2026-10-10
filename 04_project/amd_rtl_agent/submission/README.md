@@ -18,6 +18,14 @@ remain the outer runner's responsibility. This component is not yet called by
 the archived HTTP/CLI runtime. Six CPU tests passed on AMD using simulated stage
 outputs; actual EDA, candidate binding and end-to-end delivery remain unverified.
 
+The staged `agent/deadline_supervisor.py` retains the existing owned-command
+function without its host evaluation driver. `agent/shared_budget.py` preserves
+the 300-second default and existing HTTP/native deadline behavior, and now records
+the actual requested budget on expiry. Two new AMD CPU tests used a real inherited
+parent clock to verify a non-300-second expiry and rejection of a premature expiry
+receipt. The native function's AST is unchanged; it was not rerun for this
+extraction. These components are not yet connected to the archived HTTP/CLI.
+
 Pinned reference: `https://gitee.com/Vickyiii/rtlagent2026`, commit
 `afd135e7ba5f6ec4c6d77e7c927c894327537801` (2026-09-21).
 

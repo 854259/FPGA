@@ -58,6 +58,24 @@
       "test_source_sha256": "c6fed93c8f7c9b01a7fa2a6110812261bbf7fc247fc117cfa4077e046e5126cf",
       "process_receipt_sha256": "6a72c18af2e90dc6fa341311a7f7d4c28cf22b1366fc62d5c3a634423c433a41",
       "formal_acceptance": false
+    },
+    "request_budget": {
+      "path": "agent/shared_budget.py",
+      "sha256": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
+      "source_sha256": "c0f3b3144cc74a0ffff1a17fa2ceca578bfaf6fbe405986372a3e8a778750b39",
+      "runtime_integrated": false,
+      "qualification": "Two new AMD CPU cases: real inherited parent clock with a non300 expiry receipt, and rejection of a premature expiry receipt. Default300 and all other source remain unchanged; no model, EDA, FIFO or native-control rerun.",
+      "test_source_sha256": "e47ef38a511e7646755c9563a0fd3f2aeb7de6519ef8cfa761399bfa7a6ac969",
+      "process_receipt_sha256": "d6a959897d99cfaad4314da92f5d772366645cf08890588b0bf383ecf62b59a8",
+      "formal_acceptance": false
+    },
+    "native_supervisor": {
+      "path": "agent/deadline_supervisor.py",
+      "sha256": "b00df598044bd73819ad56bd960b9182007cf40fd5c3a88a6a44a2e526153868",
+      "source_sha256": "680d8790d5031b4dd938af2790acf1296f710a81aedb7c0572110019e8abb54f",
+      "runtime_integrated": false,
+      "qualification": "sha and owned_command AST-identical projection only. Host evaluation/resource orchestration omitted; native process supervision was not reexecuted or newly qualified.",
+      "formal_acceptance": false
     }
   },
   "contract": {

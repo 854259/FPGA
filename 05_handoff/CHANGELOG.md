@@ -1,3 +1,11 @@
+2026-10-10 19:57 +08:00：提交请求预算组件已实现并做有限AMD验证。shared_budget5b9671b2仅将退出收据的3处固定300改为实际self.seconds，默认300与其余HTTP/native截止逻辑保持。两个新CPU案例以真实父起点验证0.025秒到期收据及60秒未到期拒绝；源码e47ef38a、pid735242/start890695016/rc0/已回收，收据d6a95989，无模型/EDA/FIFO。deadline_supervisor b00df598从冻结680d仅提取sha与owned_command，两个函数AST逐项完全一致，不携带主机评测/资源驱动；未重跑原生监督控制、不冒充完整生产资格。README/manifest标明两组件尚未接上旧runtime7284；下一必须接上原174词上层worker→table/phase、实际请求起点/deadline_s、外层资源/恢复约束和完整trace，而非以组件测试替代最终接口验收。
+
+生成闭包审查找到另一个包边界：phase_context的prompt/design/run属于开发控制，实际路径仅需instrument_tb/context/render_feedback；不得整体打包开发控制。13份算法依赖在本次公版2b6271f中未找到同SHA，已从AMD冻结目录只读取得源以逐函数核验，尚未上传未审源码或改生产包。原777e题面探针/六CPU通过及旧官方baseline字节保持。Issue6097235827同步本轮组件、有限验证及分工。
+
+19:55:27只读FIFO确认140已19:43:55.717951 failed_released_after_inspection；原guard仍failed，原147A不完整/0seals/后三未执行，不续票/补分。peer6097204715报告76成员c356b8e6归档、582观测lastbusy预算+12.383秒；并提出server共享CV无关notify可重置1秒等待，.1秒idle重查与.5秒observer可能延迟断连检查，有限C++复现和1.25秒静默helper268e已准备v4。上述新整档/机制/新包尚待本方独审，不把peer报告写成已验证；本方取消窗口避免高频slots，只读原件/源码/进程不受影响。原140/139/132/137失败保持，真实恢复仍未通过；下一实际生产票仍由peer唯一拥有。
+
+完整目标不变：唯一原174词P/最佳归档A/原样同模型B完整156五样本、RTLLM、正式32GB、接口/恢复/可复现均需范围相符证据；原138只属已见9题开发结果，未知官方参数保持null，不加旧120/.80/逐题保持/调用不增门。下一完整例行20:00，12:00邮件已完成，21:30夜间安排待，目标active。
+
 2026-10-10 19:43 +08:00：idle两项新边界已独审闭合。5a5d9272共9成员/8原物28899B，manifest a9051d13、index e972a381；233dc2ad共9成员/8原物26560B，manifest d2b1608a、index c79205bc，ZIP/原物/清单与stdout/result/进程收据均一致，735029/735059已退休。三串行本地HTTP的slots体悬停在剩余0.200141秒被整体中断，仍绑定47bed；新2c655722仅改为以真实父起点构造310秒预算，实际父钟/模拟idle验证300前失败，同一绝对parent310终点保持。旧四CPU控不升级给新源，完整封存/真实恢复仍需验证。Issue6097055737已同步，peer6097072461确认分工。
 
 新FIFO140已真实失败，19:41:17独核held_for_inspection；guard19:40:50.137825以stage_rc1结束，elapsed310.301850，owned cleanup verified/remaining空、模型与保护文件保持，postflight仍busy/unknown、slot保留。首147A1不完整终态/0成功或失败seal，后三111A/P/B未执行；首请求283.161469秒/8192/length，第二请求派发16.760339秒后BudgetExpired未确认，budget exit ee5e1d31 elapsed300.001069，SOLVE_COMMAND50c89455 elapsed300.058644/rc1。2c655722等待已耗尽原parent310终点8906099.486010，此次不等于139即时检查竞态。19:41:57才独立读到slot0/task4389313 idle，server尾49,152B/offset14318310/SHA81c14fb3含launch/cancel/release，相对日志钟未映射mono，不编造精确取消耗时。Issue6097132151已同步，由peer唯一审查/归档/释放，不续票、不填分；真实恢复仍未通过。v3 PLAN be8ae20b/SPEC7cd4ebe3、33源/34绑定保持，仅failure consumer异于139；v2从未提交已取代，原139/132/137失败保持。
