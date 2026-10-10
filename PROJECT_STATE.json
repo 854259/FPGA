@@ -1,4 +1,33 @@
 {
+  "full142_launch_checkpoint_index_20261010": {
+    "schema": "full142_launch_checkpoint_index_v1",
+    "saved_epoch": 1791640739.362827,
+    "ticket": 142,
+    "state_at_observation": "running",
+    "observed_epoch": 1791640613.451175,
+    "sealed_successful_rows_at_observation": 11,
+    "original_plan_sha256": "3f6a6030622e2093cd671efda8563d14ad222620e48e90fc769d85d8c6a25bd7",
+    "queue_plan_equals_frozen": true,
+    "queue_hash_scope": "QUEUE plan_sha256 hashes canonical decoded JSON; root_plan_sha256 hashes original file bytes.",
+    "unsupported_failed_seal_counter_not_used": true,
+    "full_score_available": false,
+    "full_goal_complete": false,
+    "raw_e_archive": "E:\\26qiansai\\private_archives\\full142_launch_checkpoint_dual_20261010_v1",
+    "raw_AMD_archive": "/workspace/team/activity/fpga_owner/artifacts/full142-launch-checkpoint-dual-20261010-v1",
+    "raw_members": 20,
+    "raw_members_E_AMD_hashes_held": true,
+    "manifest_sha256": "465b917149d2935d003725127c897e88a19115c2d8890e2a81c6286f74aebaff",
+    "github_reminder": "https://github.com/854259/FPGA/issues/7#issuecomment-6098213845",
+    "shared_current_status": "/workspace/team/activity/fpga_owner/artifacts/actual142-status-correction-20261010-v1",
+    "shared_status_schema": "rolling_competition_goals_v126",
+    "prior_status_overlay_error_corrected_without_execution_change": true,
+    "next": [
+      "Continue existing142 only; no repeated admission, restart, extra arms, replay or new budget.",
+      "Archive completed2340 or terminal failure exactly as observed; never convert unknown outcomes/costs to zero.",
+      "Evaluate original sample0 full156 goal gates and separate five-sample official quantities.",
+      "Formal interface source review can continue without parallel GPU qualification."
+    ]
+  },
   "full156_temporal_actual142_20261010": {
     "schema": "full156_temporal_actual142_v1",
     "saved_epoch": 1791640303.303008,
