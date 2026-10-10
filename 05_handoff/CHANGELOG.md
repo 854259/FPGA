@@ -1,3 +1,11 @@
+## 2026-10-10 提前失败路径父起点已修正，未提交v2保留并移出候选
+
+已读6096916213/6096954463/6096972174：接受早于300失败时origin+300会成未来起点的静态缺口，改2c655722直接用真实parent origin构造同一310 end。helper AST除预算构造外保持，原139实钟origin上旧(origin+300)+10与新origin+310相等；这是静态范围论证，不把旧47bed四资格升级给新源。仅新补一个真实当前父起点、模拟idle/resource的early helper控制，通过且控制器已reaped，9成员233dc2ad双端核齐，0模型/EDA/FIFO。
+
+先前47bed的v2已准备但从未提交，原source/PLAN/SPEC保留，因新增审阅缺口明确superseded，不覆盖或续它。下一真实版本v3只换failure consumer2c6557，其余32源保持；不重跑旧CPU成功套。原174词P仍唯一下一完整比較候选，未实现window不混入，原目标120/80%及既定历史/配对/成本门保持、不新增门。提交容器的生成依赖闭包/外层私有资料保护与deadline_s ABI由队友继续接同源调用链，不能把主机tree_hashes直接搬进agent容器。
+
+索引queue_failure_continuation_20261010/IDLE_WAIT_EARLY_PARENT_DELTA_QUALIFICATION.json。实际失败封存并连续A/P/B仍待v3，完整156未准入，目标active未达。
+
 ## 2026-10-10 139服务器真实cancel原日志补齐，新等待整体HTTP界验证
 
 响应队友6096824906：原model stdout固定range offset14157406/196608B SHA fceceeeb5e18绑定，含task4380546真实cancel记录；两成员补档d7d4fa1a双端核齐，原76成员失败档c780不改。相对server钟未映射parent monotonic，不把mtime当精确取消耗时。首版采集器假设日志格式导致提取断言失败，原失败保留；只修解析后读取相同绑定范围，未增加模型调用。

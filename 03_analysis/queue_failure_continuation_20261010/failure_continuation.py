@@ -140,7 +140,9 @@ def idle_after_failed_solver(folder, plan, resource, admission):
     clock = json.loads((Path(folder)/'SOLVE_CLOCK.json').read_bytes())
     assert clock['schema'] == 'parent_solve_clock_v1' and clock['budget_s'] == 300
     assert plan['solve_supervisor_s'] == 310
-    budget = shared_budget.SolveBudget(10, parent_started=clock['started_monotonic']+300)
+    # Use the real parent origin even when an inspected failure occurs before
+    # solve300. Both early and expired paths keep exactly the same parent310 end.
+    budget = shared_budget.SolveBudget(plan['solve_supervisor_s'], parent_started=clock['started_monotonic'])
     observed_start, polls = time.monotonic(), 0
     try:
         while True:

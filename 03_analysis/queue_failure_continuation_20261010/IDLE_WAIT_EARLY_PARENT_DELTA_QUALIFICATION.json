@@ -1,0 +1,57 @@
+{
+  "schema": "failed_idle_wait_early_parent_delta_delivery_v1",
+  "qualification": {
+    "schema": "failed_idle_wait_early_parent_origin_delta_v1",
+    "complete": true,
+    "passed": true,
+    "source_sha256": "2c6557222622ec49937c85961f29a51d72c8584512ee515cfeff6e9e1daf9d99",
+    "real_parent_clock": true,
+    "resource_and_idle_simulated": true,
+    "pre300_failure_path_no_future_parent_origin": true,
+    "idle_wait": {
+      "schema": "failed_solver_idle_wait_v1",
+      "started_monotonic": 8905277.37161994,
+      "returned_monotonic": 8905277.371668948,
+      "deadline_monotonic": 8905587.370087517,
+      "polls": 1,
+      "source_sha256": "2c6557222622ec49937c85961f29a51d72c8584512ee515cfeff6e9e1daf9d99",
+      "only_read_model": true
+    },
+    "scope": "Only new early-failure helper boundary. Source below300 now constructs a valid budget from real parent origin; model/resource are simulated. No seal or production CLI/model request is exercised; old four controls retain original47bed source binding.",
+    "real_model_continuation_qualified": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false
+  },
+  "dual_archive": {
+    "all_members_E_AMD_bound": true,
+    "archive_sha256": "233dc2adba3e65cf60c5d71b2e9bc40794bd3b63f71978b8f25cae8bb5eae82b",
+    "archive_members": 9,
+    "private_archive": "E:\\26qiansai\\private_archives\\idle_wait_early_parent_delta_20261010_v1"
+  },
+  "source_hashes": {
+    "failure_continuation.py": "2c6557222622ec49937c85961f29a51d72c8584512ee515cfeff6e9e1daf9d99",
+    "qualification_idle_wait_early.py": "01637e99074031cda2355d45e3601aae7f243e3baf1a0ed1ed32bc70bc2dd9c1",
+    "shared_budget.py": "c0f3b3144cc74a0ffff1a17fa2ceca578bfaf6fbe405986372a3e8a778750b39"
+  },
+  "change": "Build the same parent310 observation end directly from the real parent origin, instead of constructing a future origin+300 before solve expiry.",
+  "prior_four_controls_source_sha256": "47bed42a8367b0c3384d0d47e9e60f3c927734c65f6062d541fb4bd95b0268ff",
+  "prior_passed_controls_not_repeated": true,
+  "old_qualification_not_inherited": true,
+  "helper_AST_identical_except_budget_constructor": true,
+  "post300_end_equivalence_static_on_original139": true,
+  "earlier_prepared_pack": {
+    "root": "/workspace/team/runs/fpga_owner/temporal_shared_budget_production_20261010_v2",
+    "plan_sha256": "5b85f37634648c9254f09662fc85952489a9ec9bcad104f654eff2c1e7944ad6",
+    "submitted": false,
+    "status": "retained_unsubmitted_superseded_after_early_path_review"
+  },
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "real_model_continuation_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "next": "Freeze v3 only changing failure consumer2c6557 and execute real budget failure/seal/A-P-B continuation once under whole-taskFIFO."
+}
