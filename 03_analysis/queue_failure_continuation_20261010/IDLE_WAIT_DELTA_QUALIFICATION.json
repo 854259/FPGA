@@ -132,5 +132,61 @@
   "old_qualification_not_inherited": true,
   "full156_admission_permitted": false,
   "full_goal_complete": false,
-  "next": "Freeze v2 changing only idle-wait failure consumer; validate actual failed-row sealing and subsequent A/P/B under same physical300 and whole-taskFIFO. No continuation/replay of139."
+  "next": "Freeze v2 changing only idle-wait failure consumer; validate actual failed-row sealing and subsequent A/P/B under same physical300 and whole-taskFIFO. No continuation/replay of139.",
+  "three_probe_HTTP_delta": {
+    "schema": "failed_idle_wait_three_probe_local_HTTP_delta_v1",
+    "complete": true,
+    "passed": true,
+    "source_sha256": "47bed42a8367b0c3384d0d47e9e60f3c927734c65f6062d541fb4bd95b0268ff",
+    "real_frozen_resource_source_sha256": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+    "real_local_HTTP": true,
+    "parent_age_simulated": true,
+    "real_shared_model": false,
+    "three_sequential_probes": [
+      {
+        "path": "/health",
+        "monotonic": 8904807.423763307
+      },
+      {
+        "path": "/v1/models",
+        "monotonic": 8904807.424730321
+      },
+      {
+        "path": "/slots",
+        "monotonic": 8904807.425446726
+      }
+    ],
+    "elapsed_s": 0.2001412808895111,
+    "error": "Shared model did not become idle within original parent310 cleanup end",
+    "scope": "Actual frozen model_idle performs three real HTTP GETs on an owned local fixture. Its stalled slots body is interrupted by the new helper total remaining deadline; no shared model, resource admission or native process is exercised.",
+    "real_model_continuation_qualified": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false
+  },
+  "HTTP_dual_archive": {
+    "all_members_E_AMD_bound": true,
+    "archive_sha256": "5a5d9272ffc7b4f8321049adbfc4d999db5c73bf41e2b7304f79fad88bf281f8",
+    "archive_members": 9,
+    "private_archive": "E:\\26qiansai\\private_archives\\idle_wait_three_probe_http_delta_20261010_v1"
+  },
+  "original_server_cancel_range": {
+    "model_pid": 2013333,
+    "model_starttime": "823869819",
+    "model_stdout_path": "/workspace/team/model-deployment/qwen-server.log",
+    "offset": 14157406,
+    "bytes": 196608,
+    "sha256": "fceceeeb5e18f732a47483442d369da964bc24d6e50359e69889619e639b4712",
+    "cancel_task_id": 4380546,
+    "cancel_record_present": true,
+    "clock_mapping_to_parent_monotonic_not_proven": true,
+    "exact_server_cancel_delay_s": null
+  },
+  "server_log_dual_archive": {
+    "all_members_E_AMD_bound": true,
+    "archive_sha256": "d7d4fa1abc52737b7f383375a47dd33a874dc84db38e332fecb599def80572b1",
+    "private_archive": "E:\\26qiansai\\private_archives\\production139_original_failed_20261010_v1",
+    "server_range_sha256": "fceceeeb5e18f732a47483442d369da964bc24d6e50359e69889619e639b4712"
+  }
 }

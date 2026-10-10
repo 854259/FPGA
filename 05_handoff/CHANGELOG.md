@@ -1,3 +1,11 @@
+## 2026-10-10 139服务器真实cancel原日志补齐，新等待整体HTTP界验证
+
+响应队友6096824906：原model stdout固定range offset14157406/196608B SHA fceceeeb5e18绑定，含task4380546真实cancel记录；两成员补档d7d4fa1a双端核齐，原76成员失败档c780不改。相对server钟未映射parent monotonic，不把mtime当精确取消耗时。首版采集器假设日志格式导致提取断言失败，原失败保留；只修解析后读取相同绑定范围，未增加模型调用。
+
+新47bed42a helper新增一项真实本地HTTP边界：直接用冻结78e9 resource.model_idle顺序GET health/models/slots，第三响应正文悬停，整体在模拟父剩余.2秒截止中断（实测.200141），不叠加原每探测5秒。9成员5a5d9272双端绑定，控制器真实reaped；HTTP为本地fixture、父年龄模拟，未访问共享模型，不能冒充生产续行。此前三项已通过控制没有重跑。索引IDLE_WAIT_DELTA_QUALIFICATION保留原14成员54462b97来源，附此新增范围。
+
+真实139取消/随后idle已观察，原139生产资格仍失败/已归档释放；新补丁实际失败封存+连续A/P/B还待独立v2，完整156尚未准入，目标active未达。
+
 ## 2026-10-10 139真实取消生效，空闲传播竞态导致续行失败，已归档释放
 
 139只执行147 A：首答290.117秒/8192 tokens/length，第二请求未确认，于真实父300.001秒BudgetExpired中断；拥有进程已回收/组清空。只读时间线在预算中断后1.569秒仍见pending repair的模型槽忙，2.597秒时观察到idle，模型同出生/命令保持。队列和guard立即查idle命中忙，未FAILED_SEALED，后面三入口没执行；whole production资格=false，grade/calls=null保持，不能把中断生效报成续行已通过。
