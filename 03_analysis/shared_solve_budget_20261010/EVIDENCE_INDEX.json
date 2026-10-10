@@ -1,360 +1,451 @@
 {
-  "current_joint_qualification": {
-    "schema": "shared_budget_expired_exit_queue_joint_review_v2",
-    "saved_epoch": 1791609113.235137,
-    "sources": {
-      "baseline_worker.py": {
-        "folder": "shared_solve_budget_20261010",
-        "sha256": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
-        "bytes": 10198
+  "current_absolute_HTTP_delta": {
+    "schema": "absolute_http_deadline_observed_and_failed_wrapper_audited_v1",
+    "saved_epoch": 1791615634.370223,
+    "qualification_root": "/workspace/team/runs/fpga_owner/absolute_http_budget_qualification_20261010_v1",
+    "published_source_hashes": {
+      "baseline_worker.py": "27c50e464d8996eccdcb4a3c0122c89cf75dc655292a3f6c924154140633d33c",
+      "shared_budget.py": "156a32f86791dbf8311d2902cff99091b2dfd57da29496b57eae0dd7d98d82c1",
+      "failure_continuation.py": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+      "three_arm_queue_20261005.py": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550"
+    },
+    "previous_worker_sha256": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+    "previous_budget_sha256": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+    "quick_controls_passed": true,
+    "quick_controls": [
+      {
+        "case": "real_http_fast_complete",
+        "passed": true,
+        "elapsed_s": 0.0013265423476696014
       },
-      "shared_budget.py": {
-        "folder": "shared_solve_budget_20261010",
-        "sha256": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
-        "bytes": 2317
+      {
+        "case": "real_continuous_body_absolute_deadline",
+        "passed": true,
+        "budget_s": 0.2,
+        "elapsed_s": 0.20019929111003876,
+        "bytes_sent_before_interrupt": 8
       },
-      "failure_continuation.py": {
-        "folder": "queue_failure_continuation_20261010",
-        "sha256": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
-        "bytes": 8315
+      {
+        "case": "real_second_http_uses_shared_remainder",
+        "passed": true,
+        "budget_s": 0.28,
+        "second_remainder_s": 0.18868650868535042,
+        "elapsed_s": 0.28017074428498745
       },
-      "three_arm_queue_20261005.py": {
-        "folder": "queue_failure_continuation_20261010",
-        "sha256": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550",
-        "bytes": 29533
+      {
+        "case": "refuse_foreign_signal_handler",
+        "passed": true
+      },
+      {
+        "case": "refuse_foreign_timer",
+        "passed": true
+      },
+      {
+        "case": "refuse_blocked_alarm_preserve_mask",
+        "passed": true
+      },
+      {
+        "case": "refuse_non_main_thread",
+        "passed": true
       }
-    },
-    "qualification": {
-      "root": "/workspace/team/runs/fpga_owner/shared_budget_continuation_qualification_20261010_v2",
-      "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_continuation_qualification_20261010_v2/EVIDENCE.zip",
-      "archive_sha256": "032e5758fd6938bf1e4d035da9091a8726e1cb291c185bd006cf1864f203fec3",
-      "members": 358,
-      "passed": true,
-      "returncode": 0,
-      "owned_child_reaped": true,
-      "cases": [
-        {
-          "label": "expired_worker_joint_later_once",
-          "passed": true,
-          "positive": true,
-          "synthetic_row_attempts": 3,
-          "fake_http_attempts": 1,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        },
-        {
-          "label": "socket_expiry_joint_later_once",
-          "passed": true,
-          "positive": true,
-          "synthetic_row_attempts": 3,
-          "fake_http_attempts": 2,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        },
-        {
-          "label": "expired_worker_requires_new_opt_in",
-          "passed": true,
-          "positive": false,
-          "synthetic_row_attempts": 1,
-          "fake_http_attempts": 1,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        },
-        {
-          "label": "expired_worker_source_binding_rejects",
-          "passed": true,
-          "positive": false,
-          "synthetic_row_attempts": 1,
-          "fake_http_attempts": 1,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        },
-        {
-          "label": "nonexpired_claim_rejects",
-          "passed": true,
-          "positive": false,
-          "synthetic_row_attempts": 1,
-          "fake_http_attempts": 1,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        },
-        {
-          "label": "missing_budget_receipt_rejects",
-          "passed": true,
-          "positive": false,
-          "synthetic_row_attempts": 1,
-          "fake_http_attempts": 1,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        },
-        {
-          "label": "remaining_native_group_rejects",
-          "passed": true,
-          "positive": false,
-          "synthetic_row_attempts": 1,
-          "fake_http_attempts": 1,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        },
-        {
-          "label": "model_still_busy_rejects",
-          "passed": true,
-          "positive": false,
-          "synthetic_row_attempts": 1,
-          "fake_http_attempts": 2,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        },
-        {
-          "label": "original_outer_timeout_route_retained",
-          "passed": true,
-          "positive": true,
-          "synthetic_row_attempts": 3,
-          "fake_http_attempts": 0,
-          "unknown_grade_and_calls_preserved": true,
-          "failed_row_never_replayed": true,
-          "score_eligible": false
-        }
-      ],
-      "scope": "Actual changed worker exit receipt -> actual changed advance/run_plan and seals. HTTP/compiler/outer solve receipt/resource admission and model idle are synthetic. No actual solver or model cancellation/reap proven;unchanged owned-supervisor CPU test is retained from v1,not repeated."
-    },
-    "future_failure_continuation_integration_qualified": true,
-    "integration_scope": "Changed worker receipt and queue seals/traversal with synthetic outer solve receipt and model telemetry.",
-    "prior_normal_positive_and_actual_owned_cpu_receipts_retained": "shared_budget_operation_qualification_20261010_v1;unchanged successful path/owned supervisor evidence,not rerun or relabeled as current model cancellation.",
-    "requires_two_explicit_plan_flags": [
-      "allow_inspected_solver_failure",
-      "allow_shared_budget_failure"
     ],
-    "strict_entire_solve_deadline_qualified": false,
-    "real_model_cancel_idle_qualified": false,
+    "quick_real_HTTP_fixture_calls": 4,
+    "actual300_HTTP_expiry_observed": true,
+    "actual_budget_exit_elapsed_s": 300.0005175936967,
+    "owned_wrapper_elapsed_s": 300.51750680990517,
+    "original_full_wrapper_passed": false,
+    "original_full_wrapper_result_retained": true,
+    "original_full_wrapper_returncode": 1,
+    "original_wrapper_failure": "Post-expiry qualifier compared pretty request-record SHA with compact actual-wire SHA;original runtime serialization independently AST-bound and actual wire hash matches.",
+    "metadata_originals_audit_passed": true,
+    "actual_worker_run_function_proven": true,
+    "production_worker_CLI_exit_proven": false,
+    "actual_model_cancel_proven": false,
+    "fixture_attempts": 1,
+    "fixture_streamed_bytes": 5991,
+    "fixture_connection_closed": true,
+    "admission_and_model_idle_mocked": true,
+    "grade_and_call_counts_unknown": true,
+    "actual300_reruns": 0,
     "new_model_calls": 0,
-    "new_eda_calls": 0,
-    "new_fifo_tickets": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "old_controls_rerun": 0,
+    "archive_sha256": "5049e2829702b7c33377b1653adfcf89a47f79a923fb1df064c32d7c81cb8d5a",
+    "archive_members": 68,
+    "every_member_verified_E_AMD": true,
+    "private_archive": "E:\\26qiansai\\private_archives\\absolute_http_qualification_20261010_v1\\EVIDENCE.zip",
+    "current137_frozen_sources_held": true,
+    "old132_frozen_sources_held": true,
+    "shared_model_identity_held": true,
     "deployed": false,
-    "frozen_output_v2_changed": false,
-    "actual_model_recovery_proven": false,
+    "score_measured": false,
     "full_goal_complete": false,
-    "next_work": [
-      "Freeze source-bound prospective common infrastructure without changing frozen output-v2.",
-      "Complete independent source/archive review and consume original135136 outcomes;choose one capability factor and one owner.",
-      "Actual model output-completion comparison;unknown failures still keep complete score unavailable,never replay."
+    "remaining": [
+      "Real shared-model cancellation/idle and original production CLI/queue recovery remain unproven.",
+      "Do not overlay new sources into137 or temporal frozen root; keep temporal next capability priority.",
+      "New HTTP source does not inherit old mock joint qualification without respecting its exact old source hashes."
     ]
   },
-  "previous_separate_qualification": {
-    "schema": "shared300_operation_budget_source_v1",
-    "original_baseline_sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
-    "sources": {
-      "baseline_worker.py": {
-        "sha256": "64155ca4070406d81b41c20c67ac51d76d8d21ee45a59004c87d6d6f3f74c91c",
-        "bytes": 9793
+  "current_scope": "HTTP-only absolute deadline added;real local300 function expiry audited after retained wrapper failure. Old joint qualifications below apply only to their original source hashes;no live-model/CLI recovery claim.",
+  "previous_source_qualifications": {
+    "current_joint_qualification": {
+      "schema": "shared_budget_expired_exit_queue_joint_review_v2",
+      "saved_epoch": 1791609113.235137,
+      "sources": {
+        "baseline_worker.py": {
+          "folder": "shared_solve_budget_20261010",
+          "sha256": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+          "bytes": 10198
+        },
+        "shared_budget.py": {
+          "folder": "shared_solve_budget_20261010",
+          "sha256": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+          "bytes": 2317
+        },
+        "failure_continuation.py": {
+          "folder": "queue_failure_continuation_20261010",
+          "sha256": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+          "bytes": 8315
+        },
+        "three_arm_queue_20261005.py": {
+          "folder": "queue_failure_continuation_20261010",
+          "sha256": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550",
+          "bytes": 29533
+        }
       },
-      "shared_budget.py": {
-        "sha256": "7ac3ba5a8fbdfba0dec87bd96ecf3106fec7cd347b34e5c08025870a6c602faa",
-        "bytes": 1437
-      }
-    },
-    "changes": [
-      [
-        "import point_feedback\n",
-        "import point_feedback\nimport shared_budget\n"
+      "qualification": {
+        "root": "/workspace/team/runs/fpga_owner/shared_budget_continuation_qualification_20261010_v2",
+        "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_continuation_qualification_20261010_v2/EVIDENCE.zip",
+        "archive_sha256": "032e5758fd6938bf1e4d035da9091a8726e1cb291c185bd006cf1864f203fec3",
+        "members": 358,
+        "passed": true,
+        "returncode": 0,
+        "owned_child_reaped": true,
+        "cases": [
+          {
+            "label": "expired_worker_joint_later_once",
+            "passed": true,
+            "positive": true,
+            "synthetic_row_attempts": 3,
+            "fake_http_attempts": 1,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          },
+          {
+            "label": "socket_expiry_joint_later_once",
+            "passed": true,
+            "positive": true,
+            "synthetic_row_attempts": 3,
+            "fake_http_attempts": 2,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          },
+          {
+            "label": "expired_worker_requires_new_opt_in",
+            "passed": true,
+            "positive": false,
+            "synthetic_row_attempts": 1,
+            "fake_http_attempts": 1,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          },
+          {
+            "label": "expired_worker_source_binding_rejects",
+            "passed": true,
+            "positive": false,
+            "synthetic_row_attempts": 1,
+            "fake_http_attempts": 1,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          },
+          {
+            "label": "nonexpired_claim_rejects",
+            "passed": true,
+            "positive": false,
+            "synthetic_row_attempts": 1,
+            "fake_http_attempts": 1,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          },
+          {
+            "label": "missing_budget_receipt_rejects",
+            "passed": true,
+            "positive": false,
+            "synthetic_row_attempts": 1,
+            "fake_http_attempts": 1,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          },
+          {
+            "label": "remaining_native_group_rejects",
+            "passed": true,
+            "positive": false,
+            "synthetic_row_attempts": 1,
+            "fake_http_attempts": 1,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          },
+          {
+            "label": "model_still_busy_rejects",
+            "passed": true,
+            "positive": false,
+            "synthetic_row_attempts": 1,
+            "fake_http_attempts": 2,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          },
+          {
+            "label": "original_outer_timeout_route_retained",
+            "passed": true,
+            "positive": true,
+            "synthetic_row_attempts": 3,
+            "fake_http_attempts": 0,
+            "unknown_grade_and_calls_preserved": true,
+            "failed_row_never_replayed": true,
+            "score_eligible": false
+          }
+        ],
+        "scope": "Actual changed worker exit receipt -> actual changed advance/run_plan and seals. HTTP/compiler/outer solve receipt/resource admission and model idle are synthetic. No actual solver or model cancellation/reap proven;unchanged owned-supervisor CPU test is retained from v1,not repeated."
+      },
+      "future_failure_continuation_integration_qualified": true,
+      "integration_scope": "Changed worker receipt and queue seals/traversal with synthetic outer solve receipt and model telemetry.",
+      "prior_normal_positive_and_actual_owned_cpu_receipts_retained": "shared_budget_operation_qualification_20261010_v1;unchanged successful path/owned supervisor evidence,not rerun or relabeled as current model cancellation.",
+      "requires_two_explicit_plan_flags": [
+        "allow_inspected_solver_failure",
+        "allow_shared_budget_failure"
       ],
-      [
-        "def run_worker(args, paired):\n",
-        "def run_worker(args, paired):\n    budget = shared_budget.SolveBudget(300)\n    original_owned = paired.owned_command\n"
-      ],
-      [
-        "        index = len(requests); assert index < 2\n",
-        "        budget.remaining()\n        index = len(requests); assert index < 2\n"
-      ],
-      [
-        "entry = dict(index=index, replayed=False, response_received=False,",
-        "entry = dict(index=index, replayed=False, response_received=False, dispatch_started=False,"
-      ],
-      [
-        "            with original_open(request, *positional, **kwargs) as response: raw=response.read()",
-        "            bounded_kwargs = budget.http_timeout(positional, kwargs)\n            entry['dispatch_started'] = True\n            save(out/'requests.json', requests)\n            with original_open(request, *positional, **bounded_kwargs) as response: raw=response.read()"
-      ],
-      [
-        "        return io.BytesIO(raw)",
-        "        budget.remaining()\n        return io.BytesIO(raw)"
-      ],
-      [
-        "        gate()\n        folder = Path(kwargs['cwd'])",
-        "        budget.remaining()\n        gate()\n        folder = Path(kwargs['cwd'])"
-      ],
-      [
-        "        gate()\n        return functional_feedback",
-        "        budget.remaining()\n        gate()\n        return functional_feedback"
-      ],
-      [
-        "        urllib.request.urlopen, subprocess.run = transport, compiler",
-        "        urllib.request.urlopen, subprocess.run = transport, compiler\n        paired.owned_command = budget.owned_operation(original_owned)"
-      ],
-      [
-        "        save(out/'worker_result.json', dict(complete=True",
-        "        budget.remaining()\n        save(out/'worker_result.json', dict(complete=True"
-      ],
-      [
-        "        urllib.request.urlopen, subprocess.run = original_open, original_run",
-        "        paired.owned_command = original_owned\n        urllib.request.urlopen, subprocess.run = original_open, original_run"
+      "strict_entire_solve_deadline_qualified": false,
+      "real_model_cancel_idle_qualified": false,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_tickets": 0,
+      "deployed": false,
+      "frozen_output_v2_changed": false,
+      "actual_model_recovery_proven": false,
+      "full_goal_complete": false,
+      "next_work": [
+        "Freeze source-bound prospective common infrastructure without changing frozen output-v2.",
+        "Complete independent source/archive review and consume original135136 outcomes;choose one capability factor and one owner.",
+        "Actual model output-completion comparison;unknown failures still keep complete score unavailable,never replay."
       ]
-    ],
-    "wire_or_generation_changed": false,
-    "new_model_calls": 0,
-    "new_eda_calls": 0,
-    "new_fifo_tickets": 0,
-    "deployed": false,
-    "outer310_cleanup_guard_unchanged": true,
-    "strict_entire_solve_deadline_qualified": false,
-    "scope": "Common A/P worker caps HTTP and owned operations by the same existing300 seconds. Existing outer310 supervisor remains. No universal socket streaming/read hard-deadline claim; official B is untouched.",
-    "saved_epoch": 1791608084.9849002,
-    "qualification": {
-      "root": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1",
-      "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/EVIDENCE.zip",
-      "archive_sha256": "6e964773060047d6c9281370b4ccbfd0fb5ca6a5f02cc82f0aed4347a46590d2",
-      "archive_bytes": 171160,
-      "members": 135,
-      "passed": true,
-      "returncode": 0,
-      "owned_child_reaped": true,
-      "cases": [
-        {
-          "label": "C_remaining_after283",
-          "passed": true,
-          "http_timeout_caps": [
-            300.0,
-            17.0
-          ],
-          "native_caps": [
-            {
-              "cap": 17.0
-            },
-            {
-              "cap": 7.0
-            }
-          ],
-          "fake_http_attempts": 2,
-          "new_model_calls": 0,
-          "new_eda_calls": 0,
-          "actual_worker_bind_passed": true,
-          "wire_and_original_repair_preserved": true
-        },
-        {
-          "label": "P_remaining_after283",
-          "passed": true,
-          "http_timeout_caps": [
-            300.0,
-            17.0
-          ],
-          "native_caps": [
-            {
-              "cap": 17.0
-            },
-            {
-              "cap": 7.0
-            }
-          ],
-          "fake_http_attempts": 2,
-          "new_model_calls": 0,
-          "new_eda_calls": 0,
-          "actual_worker_bind_passed": true,
-          "wire_and_original_repair_preserved": true
-        },
-        {
-          "label": "budget_exhausted_before_repair",
-          "passed": true,
-          "http_timeout_caps": [
-            300.0
-          ],
-          "native_caps": [
-            {
-              "cap": 1.0
-            }
-          ],
-          "fake_http_attempts": 1,
-          "new_model_calls": 0,
-          "new_eda_calls": 0,
-          "failed_receipt_retained": true,
-          "completed_worker_not_invented": true
-        },
-        {
-          "label": "repair_socket_timeout",
-          "passed": true,
-          "http_timeout_caps": [
-            300.0,
-            17.0
-          ],
-          "native_caps": [
-            {
-              "cap": 17.0
-            }
-          ],
-          "fake_http_attempts": 2,
-          "new_model_calls": 0,
-          "new_eda_calls": 0,
-          "failed_receipt_retained": true,
-          "completed_worker_not_invented": true
-        },
-        {
-          "label": "gate_exhausts_before_dispatch",
-          "passed": true,
-          "http_timeout_caps": [],
-          "native_caps": [],
-          "fake_http_attempts": 0,
-          "new_model_calls": 0,
-          "new_eda_calls": 0,
-          "failed_receipt_retained": true,
-          "completed_worker_not_invented": true
-        },
-        {
-          "label": "actual_owned_cpu_timeout_remaining_and_retirement",
-          "passed": true,
-          "allocated_s": 0.30000000000001137,
-          "elapsed_s": 0.3167707324028015,
-          "begin": {
-            "pid": 550869,
-            "starttime": "888158871",
-            "command_sha256": "2069e754a171e82b88a92fecd0d1fb52973ad2c4731e8a960167f17be698ea2f",
-            "pgid": 550869
-          },
-          "receipt": {
-            "timeout": true,
-            "launch_error": null,
-            "returncode": -9,
-            "group_signals": [
-              "SIGKILL"
-            ],
-            "elapsed_s": 0.31667948327958584,
-            "remaining_live_group": [],
-            "log": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/owned_cpu_timeout/owned.log",
-            "log_sha256": "64a1c03f537ca70ce166ab0ff84b9e1476d8fc9cb216a19622e1803ca0c72301",
-            "log_bytes": 144
-          },
-          "original_child_identity_retired": true,
-          "new_model_calls": 0,
-          "new_eda_calls": 0
-        }
-      ],
-      "scope": "Actual changed A/P worker HTTP/native budget propagation with fake HTTP/compile;one real original owned CPU child timeout/reap. No actual model/EDA or strict entire solve deadline qualification. Outer310 guard unchanged."
     },
-    "future_failure_continuation_integration_qualified": false,
-    "integration_gap": "Inspected-failure v1 only accepts owned supervisor timeout. A bounded HTTP/expired-budget worker can instead exit nonzero without outer timeout;v1 correctly rejects it. Need a separate source-bound budget-exit receipt and joint flow qualification before deployment.",
-    "real_model_cancel_idle_qualified": false,
-    "actual_model_recovery_proven": false,
-    "full_goal_complete": false,
-    "next_work": [
-      "Bind budget-expired nonzero worker exit without guessing grade/calls;qualify its integration with inspected-failure traversal.",
-      "Consume original134 owner complete result and original135136 terminal outcomes.",
-      "Select one actual capability factor and admit one owner;do not alter existing frozen output-v2 or current jobs."
-    ]
-  },
-  "current_scope": "Latest source is joint-budget-exit v2;prior receipts remain historical and source-bound."
+    "previous_separate_qualification": {
+      "schema": "shared300_operation_budget_source_v1",
+      "original_baseline_sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+      "sources": {
+        "baseline_worker.py": {
+          "sha256": "64155ca4070406d81b41c20c67ac51d76d8d21ee45a59004c87d6d6f3f74c91c",
+          "bytes": 9793
+        },
+        "shared_budget.py": {
+          "sha256": "7ac3ba5a8fbdfba0dec87bd96ecf3106fec7cd347b34e5c08025870a6c602faa",
+          "bytes": 1437
+        }
+      },
+      "changes": [
+        [
+          "import point_feedback\n",
+          "import point_feedback\nimport shared_budget\n"
+        ],
+        [
+          "def run_worker(args, paired):\n",
+          "def run_worker(args, paired):\n    budget = shared_budget.SolveBudget(300)\n    original_owned = paired.owned_command\n"
+        ],
+        [
+          "        index = len(requests); assert index < 2\n",
+          "        budget.remaining()\n        index = len(requests); assert index < 2\n"
+        ],
+        [
+          "entry = dict(index=index, replayed=False, response_received=False,",
+          "entry = dict(index=index, replayed=False, response_received=False, dispatch_started=False,"
+        ],
+        [
+          "            with original_open(request, *positional, **kwargs) as response: raw=response.read()",
+          "            bounded_kwargs = budget.http_timeout(positional, kwargs)\n            entry['dispatch_started'] = True\n            save(out/'requests.json', requests)\n            with original_open(request, *positional, **bounded_kwargs) as response: raw=response.read()"
+        ],
+        [
+          "        return io.BytesIO(raw)",
+          "        budget.remaining()\n        return io.BytesIO(raw)"
+        ],
+        [
+          "        gate()\n        folder = Path(kwargs['cwd'])",
+          "        budget.remaining()\n        gate()\n        folder = Path(kwargs['cwd'])"
+        ],
+        [
+          "        gate()\n        return functional_feedback",
+          "        budget.remaining()\n        gate()\n        return functional_feedback"
+        ],
+        [
+          "        urllib.request.urlopen, subprocess.run = transport, compiler",
+          "        urllib.request.urlopen, subprocess.run = transport, compiler\n        paired.owned_command = budget.owned_operation(original_owned)"
+        ],
+        [
+          "        save(out/'worker_result.json', dict(complete=True",
+          "        budget.remaining()\n        save(out/'worker_result.json', dict(complete=True"
+        ],
+        [
+          "        urllib.request.urlopen, subprocess.run = original_open, original_run",
+          "        paired.owned_command = original_owned\n        urllib.request.urlopen, subprocess.run = original_open, original_run"
+        ]
+      ],
+      "wire_or_generation_changed": false,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_tickets": 0,
+      "deployed": false,
+      "outer310_cleanup_guard_unchanged": true,
+      "strict_entire_solve_deadline_qualified": false,
+      "scope": "Common A/P worker caps HTTP and owned operations by the same existing300 seconds. Existing outer310 supervisor remains. No universal socket streaming/read hard-deadline claim; official B is untouched.",
+      "saved_epoch": 1791608084.9849002,
+      "qualification": {
+        "root": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1",
+        "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/EVIDENCE.zip",
+        "archive_sha256": "6e964773060047d6c9281370b4ccbfd0fb5ca6a5f02cc82f0aed4347a46590d2",
+        "archive_bytes": 171160,
+        "members": 135,
+        "passed": true,
+        "returncode": 0,
+        "owned_child_reaped": true,
+        "cases": [
+          {
+            "label": "C_remaining_after283",
+            "passed": true,
+            "http_timeout_caps": [
+              300.0,
+              17.0
+            ],
+            "native_caps": [
+              {
+                "cap": 17.0
+              },
+              {
+                "cap": 7.0
+              }
+            ],
+            "fake_http_attempts": 2,
+            "new_model_calls": 0,
+            "new_eda_calls": 0,
+            "actual_worker_bind_passed": true,
+            "wire_and_original_repair_preserved": true
+          },
+          {
+            "label": "P_remaining_after283",
+            "passed": true,
+            "http_timeout_caps": [
+              300.0,
+              17.0
+            ],
+            "native_caps": [
+              {
+                "cap": 17.0
+              },
+              {
+                "cap": 7.0
+              }
+            ],
+            "fake_http_attempts": 2,
+            "new_model_calls": 0,
+            "new_eda_calls": 0,
+            "actual_worker_bind_passed": true,
+            "wire_and_original_repair_preserved": true
+          },
+          {
+            "label": "budget_exhausted_before_repair",
+            "passed": true,
+            "http_timeout_caps": [
+              300.0
+            ],
+            "native_caps": [
+              {
+                "cap": 1.0
+              }
+            ],
+            "fake_http_attempts": 1,
+            "new_model_calls": 0,
+            "new_eda_calls": 0,
+            "failed_receipt_retained": true,
+            "completed_worker_not_invented": true
+          },
+          {
+            "label": "repair_socket_timeout",
+            "passed": true,
+            "http_timeout_caps": [
+              300.0,
+              17.0
+            ],
+            "native_caps": [
+              {
+                "cap": 17.0
+              }
+            ],
+            "fake_http_attempts": 2,
+            "new_model_calls": 0,
+            "new_eda_calls": 0,
+            "failed_receipt_retained": true,
+            "completed_worker_not_invented": true
+          },
+          {
+            "label": "gate_exhausts_before_dispatch",
+            "passed": true,
+            "http_timeout_caps": [],
+            "native_caps": [],
+            "fake_http_attempts": 0,
+            "new_model_calls": 0,
+            "new_eda_calls": 0,
+            "failed_receipt_retained": true,
+            "completed_worker_not_invented": true
+          },
+          {
+            "label": "actual_owned_cpu_timeout_remaining_and_retirement",
+            "passed": true,
+            "allocated_s": 0.30000000000001137,
+            "elapsed_s": 0.3167707324028015,
+            "begin": {
+              "pid": 550869,
+              "starttime": "888158871",
+              "command_sha256": "2069e754a171e82b88a92fecd0d1fb52973ad2c4731e8a960167f17be698ea2f",
+              "pgid": 550869
+            },
+            "receipt": {
+              "timeout": true,
+              "launch_error": null,
+              "returncode": -9,
+              "group_signals": [
+                "SIGKILL"
+              ],
+              "elapsed_s": 0.31667948327958584,
+              "remaining_live_group": [],
+              "log": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/owned_cpu_timeout/owned.log",
+              "log_sha256": "64a1c03f537ca70ce166ab0ff84b9e1476d8fc9cb216a19622e1803ca0c72301",
+              "log_bytes": 144
+            },
+            "original_child_identity_retired": true,
+            "new_model_calls": 0,
+            "new_eda_calls": 0
+          }
+        ],
+        "scope": "Actual changed A/P worker HTTP/native budget propagation with fake HTTP/compile;one real original owned CPU child timeout/reap. No actual model/EDA or strict entire solve deadline qualification. Outer310 guard unchanged."
+      },
+      "future_failure_continuation_integration_qualified": false,
+      "integration_gap": "Inspected-failure v1 only accepts owned supervisor timeout. A bounded HTTP/expired-budget worker can instead exit nonzero without outer timeout;v1 correctly rejects it. Need a separate source-bound budget-exit receipt and joint flow qualification before deployment.",
+      "real_model_cancel_idle_qualified": false,
+      "actual_model_recovery_proven": false,
+      "full_goal_complete": false,
+      "next_work": [
+        "Bind budget-expired nonzero worker exit without guessing grade/calls;qualify its integration with inspected-failure traversal.",
+        "Consume original134 owner complete result and original135136 terminal outcomes.",
+        "Select one actual capability factor and admit one owner;do not alter existing frozen output-v2 or current jobs."
+      ]
+    },
+    "current_scope": "Latest source is joint-budget-exit v2;prior receipts remain historical and source-bound."
+  }
 }

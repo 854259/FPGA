@@ -126,7 +126,8 @@ def run_worker(args, paired):
             bounded_kwargs = budget.http_timeout(positional, kwargs)
             entry['dispatch_started'] = True
             save(out/'requests.json', requests)
-            with original_open(request, *positional, **bounded_kwargs) as response: raw=response.read()
+            with budget.http_deadline():
+                with original_open(request, *positional, **bounded_kwargs) as response: raw=response.read()
         except Exception as error:
             entry.update(error=type(error).__name__,elapsed_s=time.monotonic()-tick)
             save(out/'requests.json',requests)

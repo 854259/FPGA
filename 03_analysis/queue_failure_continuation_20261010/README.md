@@ -1,3 +1,13 @@
+# HTTP绝对截止补丁：独立原件验证，未部署
+
+新源码仅在HTTP打开/读响应期间使用Linux主线程计时器，按整题剩余预算中断持续返回数据的连接；不包住原生工具监督或清理。已有计时器、处理函数、屏蔽信号或非主线程一律拒绝，不覆盖其他归属。8192/2请求/1修复/300秒保持，未覆盖137或冻结temporal。
+
+7项新短时真实时钟/本地HTTP检查通过。唯一300秒真实HTTP fixture在300.0005176秒使实际baseline_worker.run_worker抛出BudgetExpired并写来源绑定退出记录；完整受控包装进程300.5175秒退出1、组清空、已回收。但包装脚本末尾错误比较了格式化请求记录SHA与紧凑wire SHA，原passed=false和AssertionError完整保留。后续只读原件审计依据原runtime AST的json.dumps(body).encode()复算wire与fixture一致，确认超时、请求未完成、未知等级/调用和连接关闭；没有重复这次300秒或任何旧检查。
+
+68成员5049e282双端逐SHA/长度核验。此证据证明实际函数的持续HTTP总截止，不证明原生产CLI完整退出或真实共享模型取消/空闲；资源及idle准入为模拟，0模型/EDA/FIFO。旧九项联合资格仍绑定原730ce866/cc7b6cd9版本，不能自动作为新源码的联合验收。复核源码与摘要见shared_solve_budget_20261010/ABSOLUTE_HTTP_QUALIFICATION.json及两份qualification/audit脚本；原始失败与网络日志留E盘私有档案。
+
+以下为原版本记录，保持历史来源范围：
+
 # 预算耗尽后的失败封存与诊断续行（未部署）
 
 当前源码接通A/P共享300秒预算与未来队列的失败续行。预算到期写SHARED_BUDGET_EXIT原件，绑定原请求记录、worker和预算模块SHA；非零退出仍未知等级/调用。队列在原受控监督器返回并确认组清空、编译无残留、预算原件有效、冻结source/PLAN绑定和模型空闲时，才允许保存FAILED_SEALED并继续后续题。该路径同时要求allow_inspected_solver_failure和allow_shared_budget_failure明确开启。普通非零错误、缺少/未耗尽/篡改原件、未启用、编译残留和模型忙均拒绝。原外部timeout路线保持。
