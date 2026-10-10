@@ -1,4 +1,89 @@
 {
+  "selected_peer_core_delta": {
+  "schema": "selected_peer_owned_core_compatibility_delta_v1",
+  "saved_epoch": 1791625895.3677297,
+  "source_hashes": {
+    "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py": "680d8790d5031b4dd938af2790acf1296f710a81aedb7c0572110019e8abb54f",
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "c0f3b3144cc74a0ffff1a17fa2ceca578bfaf6fbe405986372a3e8a778750b39",
+    "03_analysis/shared_solve_budget_20261010/official_baseline_arm_20261005.py": "c647ff0ada895aa0bc8f9cf61fe9cff1301684d63595a3dda2422ca1083aee7a",
+    "03_analysis/shared_solve_budget_20261010/qualification_selected_core_delta.py": "1e7facd2623c327162edccc9b23b6a7077c737d500343c2cca1166b1763c4798",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "8e42e5c0a8fbbcae96d86dd44e1f4e13d0c5ed1d692d4d8c39029f6b1c056595",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "selected_core": "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py",
+  "packed_import": "deadline_supervisor.py",
+  "packed_source_bytes_must_equal_canonical": true,
+  "peer_original_SHA": "ee78332e06a4c16b4047c3874e3aa6de529e95833636bce0cdb70a8da5a9a098",
+  "only_owned_command_AST_changed": true,
+  "peer_launch_phase_cancel_deferral_preserved": true,
+  "changes": [
+    "Optional absolute cleanup_deadline caps the single cleanup reserve.",
+    "Capture leader birth before flushing launch cancellation; WNOWAIT observes exit without recycling its PID before the only group signal.",
+    "Birth/PG/SID authorization rejects unknown identity before killpg.",
+    "Queue and SolveBudget consume exact selected core; historical own core is undeployed and not imported."
+  ],
+  "qualification": {
+    "passed": true,
+    "controls": 5,
+    "cases": [
+      "peer_core_hard_cleanup_limit",
+      "leader_waitable_until_group_signal",
+      "injected_birth_mismatch_refuses_signal",
+      "cancel_during_new_birth_capture",
+      "selected_consumer_ABI"
+    ],
+    "real_owned_CPU": true,
+    "independent_sentinel_protected_and_retired": true,
+    "queue_admission_and_parent_age_synthetic": true,
+    "identity_mismatch_fault_synthetic": true,
+    "B_main_not_executed": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 93,
+      "archive_sha256": "498f46da7e487be41ccac5cf28c3fca954f86f288fcfa518ec491d81ba2a700f",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\selected_core_delta_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/selected_core_delta_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "prior_8_and_9_suites_replayed": false,
+  "prior_qualifications_keep_their_original_source_SHA": true,
+  "deprecated_own_core": "03_analysis/shared_solve_budget_20261010/owned_deadline.py",
+  "deprecated_own_core_unchanged": true,
+  "deployed": false,
+  "full_production_chain_qualified": false,
+  "production_B_CLI_qualified": false,
+  "real_model_cancel_idle_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "actual138": {
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "state": "running",
+    "sealed": 117,
+    "observed_epoch": 1791625535.0750694,
+    "frozen_sources_held": true
+  },
+  "unresolved": [
+    "Exact production A/P/B source pack/resource/CLI validation after138 release.",
+    "Owned exclusive model request cancellation and observed idle after disconnect, not inferred from CPU cleanup.",
+    "Existing failure seal is narrow; B request layout and late rc0 are not automatically supported.",
+    "Synchronous Popen and post-cleanup metadata are not proven hard-return bounded. Actual300 pregrade gate remains."
+  ]
+},
   "current_owned_deadline_delta": {
   "schema": "owned_absolute_wait_and_cleanup_delta_v1",
   "saved_epoch": 1791623419.7716079,

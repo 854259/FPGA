@@ -122,9 +122,6 @@ class SolveBudget:
     def owned_operation(self, original):
         assert callable(original)
         def bounded(argv, cwd, log, cap):
-            import owned_deadline
-            try:
-                return owned_deadline.owned_command(argv, cwd, log, self.remaining(cap), deadline=self.end)
-            except owned_deadline.DeadlineBeforeLaunch as error:
-                raise BudgetExpired('Shared solve budget exhausted before owned launch') from error
+            import deadline_supervisor
+            return deadline_supervisor.owned_command(argv, cwd, log, self.remaining(cap), deadline=self.end)
         return bounded

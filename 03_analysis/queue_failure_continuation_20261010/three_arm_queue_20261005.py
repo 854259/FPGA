@@ -13,7 +13,7 @@ import shutil
 import time
 import zipfile
 import failure_continuation
-import owned_deadline
+import deadline_supervisor as owned_deadline
 
 import official_baseline_arm_20261005 as official
 
@@ -164,7 +164,7 @@ def validate(plan):
             assert plan['sources']['files'][str(root/name)] == expected == official.sha(root/name)
         if plan.get('allow_shared_budget_failure'):
             supervisor = Path(owned_deadline.__file__).resolve()
-            assert supervisor == (root/'owned_deadline.py').resolve()
+            assert supervisor == (root/'deadline_supervisor.py').resolve()
             assert plan['sources']['files'][str(supervisor)] == official.sha(supervisor)
     if 'generation_arms' in plan['sources']:
         import three_arm_generation_20261008 as generation

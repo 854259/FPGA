@@ -1,3 +1,11 @@
+## 2026-10-10 选定队友监督器，完成两处兼容修改及五项AMD变化检查（未部署）
+
+按Issue7的6096115502分工，唯一未来生产核心选用paired_next/paired_checkpoint.py的owned_command；本方旧owned_deadline保留历史且不再被queue/budget导入。新增可选绝对cleanup_deadline，外queue执行和清理同父310终点；工具/B调用仍父300工作及最多10清理。新核心在Popen交接保护期内捕获leader出生/PG/SID，WNOWAIT观察退出但在唯一组信号前不回收leader，身份未知拒绝信号；保留队友取消延后交接，不向子进程屏蔽信号。仅owned_command AST变化，其他研究函数不改。未来冻结包必须将此完整源原字节保存为deadline_supervisor.py并绑定RUN_SPEC/PLAN SHA，不拿原78e9资源模块或旧b242替换。
+
+AMD五项新变化检查通过：peer核心硬清理终点、新leader保持可回收身份至组信号、模拟出生漂移拒绝信号、取消发生在新增身份捕获窗口、实际SolveBudget/execute_row新接口桥。93成员498f46da双端逐SHA/长度核齐，独立sentinel保护并退役，旧8/9套未重跑；父预算老化/准入/身份故障是模拟。实际B main、模型断连后空闲、物理300及完整生产资源链仍未证明；旧资格均保留原SHA，不能继承给新核心。索引shared_solve_budget_20261010/SELECTED_CORE_DELTA_QUALIFICATION.json。138保留原冻结源继续，132/137不重放，完整156未准入，目标active未达。
+
+已合并peer237/238至b472f963，队友全MD/JSON、本方21状态节点及24既有执行源码在合并时保持；133五组A/P均L1、B四L1一L0，P在该已见题无提升。111五组改善保持一个固定开发题的证据；不跨轮相加，不把CPU资格计为能力收益。
+
 ## 2026-10-10 实际等待改用统一绝对截止点，八项CPU变化检查通过（未部署）
 
 新增owned_deadline：准备/文件创建及Popen返回后重新扣剩余等待，拥有进程组按leader生日起点核验后清理；取消先回收再抛出，恢复信号处理器。A/P工具和拥有B调用由同父300终点封顶；queue外监督同父310终点，清理也受同一310终点，不追加两段6秒。评分仍要求实际parent/command<=300，官方baseline.py/sh不改。B main仅源码接入而非真实入口验收；同步Popen本身及日志hash不代表已受绝对整链回程界。
