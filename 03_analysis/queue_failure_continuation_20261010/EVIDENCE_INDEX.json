@@ -1,4 +1,26 @@
 {
+  "actual_timeout_path_v2": {
+  "root": "/workspace/team/runs/fpga_owner/actual_timeout_queue_path_qualification_20261010_v2",
+  "passed": true,
+  "archive_sha256": "af475b33a1dd364b6df034a2af4ad877fbd9326e1055a1280485dca8b0576485",
+  "members": 76,
+  "source_hashes": {
+    "baseline_worker.py": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+    "shared_budget.py": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+    "failure_continuation.py": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+    "three_arm_queue_20261005.py": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550"
+  },
+  "path": "Real validate/launch_args/execute_row/original owned timeout/failed seal/two later CPU dispatches once",
+  "scope": "Real queue validation/launch_args/first execute_row and original owned supervisor timeout/cleanup -> failed seal -> two real later CPU dispatches once. CPU fixture inputs/entries,scaled timeout and resource admission are synthetic;model idle GET telemetry is real. No model/EDA or real model cancellation.",
+  "scaled_CPU_timeout": true,
+  "synthetic_resource_admission": true,
+  "actual_model_cancellation_qualified": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo": 0,
+  "original_failed_fixture_v1_preserved": true,
+  "old_CPU_control_not_repeated": true
+},
   "current_joint_qualification": {
     "schema": "shared_budget_expired_exit_queue_joint_review_v2",
     "saved_epoch": 1791609113.235137,
