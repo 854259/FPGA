@@ -1,3 +1,11 @@
+## 2026-10-10 正式接口248源码独审完成，生命周期修复由队友负责
+
+已读6097782060及合并PR248/2111c82e，独立从Git blob核selected manifest的24个绑定文件逐SHA一致；generation六函数与原2f7cb98b runtime AST、phase_context三函数、table三个解析/渲染/反例函数，共12函数逐AST一致，first_system_request860b字节保持。table对照使用实际132 cd8bed6b冻结字节，拒绝当前tracked版本替代。此次仅源码/AST审阅，没有重跑peer7项CPU或旧141，没有新模型/EDA/FIFO。
+
+对旧300收据疑点已排除：新shared_budget5b9671b2 exit_receipt按self.seconds记录，支持接口可变预算，不继承旧c0f3固定300断言。正式接口默认deadline不证明本聊天300开发门；未来真实资格需显式绑定原300求解/310收尾。
+
+peer已明确248暂不部署：SIGTERM可能被Handler OSError吞为503；长solve阻塞health可能触发serve_all重启活agent；旧health Vivado版本子进程未纳入owned监督。由其继续最小生命周期修复，本方不重复改其文件，待精确修正merge仅核变化。21:07:16实际两个完整准备根无票/执行文件、活票空、33源与模型保持；不是live等待，当前进展是独立源绑定。原目标与待统一采用标准保持；原132 table-P对照提案、174候选及原2340/3900/48h范围不变，完整能力目标未达。索引full156_temporal_20261010/PEER248_SOURCE_REVIEW.json；源与读件E私有pr248_source_review_20261010_v1已逐文件核齐。
+
 ## 2026-10-10 归档对照源码已落实，口径待统一，无新评测
 
 已读Issue6097711038，并实际只读核原132 SPECb499f6c1/PLANc8522672、138 SPEC15dd9aba、141 SPEC0c3bb9fe所有冻源保持。14个table/phase反馈、runtime、生成/修复技能及baseline文件在三根逐字节一致；原132 worker7a301da7的P真实路由table，138/141外A同table-P无174后缀。因此它是现有174候选的有证据归档对照提案，不能把旧phase C或机械123的120/.80897改名当成这个A。

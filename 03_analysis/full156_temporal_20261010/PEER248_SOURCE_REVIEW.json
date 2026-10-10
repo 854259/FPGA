@@ -1,0 +1,119 @@
+{
+  "schema": "peer248_frozen_source_and_algorithm_review_v1",
+  "saved_epoch": 1791637880.3937933,
+  "peer_comment": 6097782060,
+  "PR": "https://github.com/854259/FPGA/pull/248",
+  "merge_commit": "2111c82e9cccbd475586a60cab7f4c884ba7e3e6",
+  "bound_sources_verified": {
+    "agent/candidate_worker.py": "da8d3f1035ed79476b3597af9c557e11acdfe38299a9df3efa0580f47b1af921",
+    "agent/contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+    "agent/deadline_supervisor.py": "37da755053925b9a648121c992616ac758860ff6dde4b084f03d66c26ba61972",
+    "agent/edge_contract.py": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+    "agent/edge_dispatch.py": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680",
+    "agent/edge_feedback.py": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
+    "agent/first_system_request.py": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+    "agent/generation.py": "a32af9ed2535706e4ead4560fd3199587b1de3103b992cc5c29d26b823a4f44f",
+    "agent/phase_context.py": "92f93b2d7485ca9a5e042b0c16adc0bcb6f9368e0a4a42cf1ed29f017771d5c1",
+    "agent/phase_feedback.py": "efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078",
+    "agent/point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+    "agent/priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+    "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+    "agent/prompt_probe.py": "777e21771c26a01e7671df2567d82dc5eec84629bf3e521949452f85b03ee35d",
+    "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+    "agent/runtime.py": "6db8d1fea8318082ce1c8b1d09f805cbc27c75f0807f1c01e384ecd32305b6ea",
+    "agent/shared_budget.py": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
+    "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+    "agent/table_feedback.py": "911911f1f4d77857493425ffa69802afee2f4d706c352c64e9e71c39d82b0d83",
+    "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+    "run.sh": "a8f298273b470947dd36a36675c2dc0098a001896cf037ca96c4972dc94f2a90",
+    "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+    "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+    "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+  },
+  "algorithm_function_AST_comparison": {
+    "agent/generation.py": {
+      "endpoint": {
+        "equal": true,
+        "original_ast_sha256": "6b42b01fcc39d5bafc9114f068575f4427695cc2db79e6dc954f9ec78f1991c6",
+        "new_ast_sha256": "6b42b01fcc39d5bafc9114f068575f4427695cc2db79e6dc954f9ec78f1991c6"
+      },
+      "skill_texts": {
+        "equal": true,
+        "original_ast_sha256": "ed2a4298420bb488806d46e44a0cdcfb6999dba3f7ac733146ebd52b5def9950",
+        "new_ast_sha256": "ed2a4298420bb488806d46e44a0cdcfb6999dba3f7ac733146ebd52b5def9950"
+      },
+      "vivado_tool": {
+        "equal": true,
+        "original_ast_sha256": "a9777db58a361de0ab6e265b84cddc5a5667c2273b4f6ce412f1d496985c4788",
+        "new_ast_sha256": "a9777db58a361de0ab6e265b84cddc5a5667c2273b4f6ce412f1d496985c4788"
+      },
+      "undefined_submodules": {
+        "equal": true,
+        "original_ast_sha256": "d7c844808177fd9b4d30e8a9200c66106cef76042559dcc4961f7ec5d4ef2114",
+        "new_ast_sha256": "d7c844808177fd9b4d30e8a9200c66106cef76042559dcc4961f7ec5d4ef2114"
+      },
+      "repair_ansi_declarations": {
+        "equal": true,
+        "original_ast_sha256": "ea3d26c272d3754bc1264e896c70a401a8ca55f350f6934742db9b6064a27665",
+        "new_ast_sha256": "ea3d26c272d3754bc1264e896c70a401a8ca55f350f6934742db9b6064a27665"
+      },
+      "worker": {
+        "equal": true,
+        "original_ast_sha256": "b5fa088ddd8c7ffe43e7b3bc47573f1577fa02671bb6c9cd992e8324d112064a",
+        "new_ast_sha256": "b5fa088ddd8c7ffe43e7b3bc47573f1577fa02671bb6c9cd992e8324d112064a"
+      }
+    },
+    "agent/phase_context.py": {
+      "instrument_tb": {
+        "equal": true,
+        "original_ast_sha256": "12638a6ef021bd8afe438dda9858c025e622a70a1ce7e302fb5cbc376e59453a",
+        "new_ast_sha256": "12638a6ef021bd8afe438dda9858c025e622a70a1ce7e302fb5cbc376e59453a"
+      },
+      "context": {
+        "equal": true,
+        "original_ast_sha256": "da619764d507ab9ca7fddf79c671b125ba75d6338c998ddf8116df2b5e202c9b",
+        "new_ast_sha256": "da619764d507ab9ca7fddf79c671b125ba75d6338c998ddf8116df2b5e202c9b"
+      },
+      "render_feedback": {
+        "equal": true,
+        "original_ast_sha256": "2b061cb0698ca90f728d42d2d91943c635cda18f8203377f09b29a77b0ad27d8",
+        "new_ast_sha256": "2b061cb0698ca90f728d42d2d91943c635cda18f8203377f09b29a77b0ad27d8"
+      }
+    },
+    "agent/table_feedback.py": {
+      "parse": {
+        "equal": true,
+        "original_ast_sha256": "9bbfff4d5654ddfca34b90e4b58549859dd8306d7e689903e999adf3a6e8d758",
+        "new_ast_sha256": "9bbfff4d5654ddfca34b90e4b58549859dd8306d7e689903e999adf3a6e8d758"
+      },
+      "render_tb": {
+        "equal": true,
+        "original_ast_sha256": "cb0fe907cc53c33b322ffc0128827f37056f7c1363cc9e00fb6098bd5e093173",
+        "new_ast_sha256": "cb0fe907cc53c33b322ffc0128827f37056f7c1363cc9e00fb6098bd5e093173"
+      },
+      "counterexample": {
+        "equal": true,
+        "original_ast_sha256": "d3ca1f34f9600f1a4212f0eb9fd97246566224e56ce705279ddeb63cd3b03253",
+        "new_ast_sha256": "d3ca1f34f9600f1a4212f0eb9fd97246566224e56ce705279ddeb63cd3b03253"
+      }
+    }
+  },
+  "first_system_request_original860b_preserved": true,
+  "budget_receipt_generic_seconds_verified": true,
+  "old300_receipt_suspicion_rejected": true,
+  "lifecycle_hold_from_peer": [
+    "Handler OSError may swallow SIGTERM InterruptedError and continue service.",
+    "Old serve_all health-restart branch can restart a live agent while serial solve blocks health.",
+    "Old Vivado health-version subprocess lacks new owned supervision."
+  ],
+  "review_scope": "Independent source/AST review only; no replay of peer seven CPU cases and no new model/EDA/FIFO.",
+  "exact300_goal_gate_scope": "Formal interface permits caller deadlines. Future development qualification must explicitly bind300 solve and310 cleanup; default HTTP deadline is not evidence of original goal compliance.",
+  "deployment_permitted": false,
+  "actual_interface_qualified": false,
+  "full_goal_complete": false,
+  "acceptance_policy_pending": true,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "next": "Wait for the peer exact lifecycle-fix merge, review only changed functions; retain original141 proof and unchanged174 candidate."
+}
