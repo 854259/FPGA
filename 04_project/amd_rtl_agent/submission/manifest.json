@@ -47,7 +47,7 @@
   },
   "runtime": {
     "path": "agent/runtime.py",
-    "sha256": "8367c010bbef35e4de40fb8b1bdfc1edb1d095016c32d2ebdce6093d48112268"
+    "sha256": "2ea06b05bada46735389d75626a2bdbe3e4cdd150ef68825ec5ae73a8f263d86"
   },
   "candidate_components": {
     "prompt_probe": {
@@ -80,7 +80,7 @@
     }
   },
   "contract": {
-    "health": "GET/v1/health with bearer auth; CPU auth and blocked readiness covered. Actual model, version subprocess and resource qualification pending.",
+    "health": "Bearer-authenticated health uses owned version command and detached descendant cleanup;30s work/one10s cleanup reserve, cancellation exits after cleanup; private health evidence retained. Two targeted AMD CPU cases pass, actual Vivado/model/resource qualification pending.",
     "solve": "POST/v1/solve and run.sh use the same selected chain. Exact official response fields; serial main-thread server. Prior7284 conformance does not qualify this revision.",
     "sigterm": "One10second cleanup/model recovery reserve, then preserved InterruptedError causes the HTTP service to exit. Three AMD CPU signal paths (transport/native/recovery failure) pass; actual model/EDA cancellation remains unqualified.",
     "evidence": "Every HTTP request gets a unique private RTL_EVIDENCE_DIR directory (default EDA_TMP/rtl-evidence). No cache/resume; local native scratch removed only after verified cleanup, otherwise retained and runtime blocked.",
@@ -145,7 +145,8 @@
       "prior_seven_case_receipt_sha256": "eb00635c0911efbc893830ac4a7b4c941f8470aa5bf1fad8ad1edb2aa42ffaae",
       "pre_fix_HTTP_failure_receipt_sha256": "cc44c18f0e228649debaf03856747015310eeb217e45818bf6a5f5250dd4adff",
       "pre_fix_guard_failure_receipt_sha256": "182568563859ca6640058478ddf18507fd79cd83727dd2b2ba2a4ace09a2b6b4",
-      "post_test_changes": "Manifest validation metadata and documentation only; executable source and test bytes unchanged."
+      "post_test_changes": "Manifest validation metadata and documentation only; executable source and test bytes unchanged.",
+      "scope_note": "Eleven prior chain/guard cases cover runtime8367. Current runtime differs only in vivado_version; its two new targeted cases are recorded in health_validation. No claim that all13 were rerun together."
     },
     "files": {
       "agent/candidate_worker.py": "da8d3f1035ed79476b3597af9c557e11acdfe38299a9df3efa0580f47b1af921",
@@ -163,7 +164,7 @@
       "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
       "agent/prompt_probe.py": "777e21771c26a01e7671df2567d82dc5eec84629bf3e521949452f85b03ee35d",
       "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
-      "agent/runtime.py": "8367c010bbef35e4de40fb8b1bdfc1edb1d095016c32d2ebdce6093d48112268",
+      "agent/runtime.py": "2ea06b05bada46735389d75626a2bdbe3e4cdd150ef68825ec5ae73a8f263d86",
       "agent/shared_budget.py": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
       "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
       "agent/table_feedback.py": "911911f1f4d77857493425ffa69802afee2f4d706c352c64e9e71c39d82b0d83",
@@ -172,6 +173,20 @@
       "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
       "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
       "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+    },
+    "health_validation": {
+      "tests": 2,
+      "status": "AMD_CPU_targeted_cases_passed",
+      "test_source_sha256": "3d7f02ed78c042108c27aefeea8260a4ef953bcfcfd6f64a2c00b061cbc8e2b3",
+      "runtime_sha256": "2ea06b05bada46735389d75626a2bdbe3e4cdd150ef68825ec5ae73a8f263d86",
+      "process_receipt_sha256": "b4284077dbb2cd2801cda0e2799e696d56984f8918c09359a32e19cfa66cd8d8",
+      "source_zip_sha256": "2cb4df76da93632a77654ff7529ba22cda002d56dda83c1c35fe63c5b35b2de6",
+      "tested_manifest_sha256": "499cb8401211bd02e838433c237cb6b022953808d36a0bbe359963a58f79dc2a",
+      "audit_sha256": "989bf7daddc6467e1a86aedc820fcac35ee8dda1211c2d63faa3e83b8bcd2ce5",
+      "pre_fix_failure_receipt_sha256": "05a3f9882ce6308df8ec4d5e006baa13c9b645c6f22fac14fc374cd838a0a214",
+      "scope": "Actual CPU synthetic version executable, detached child, serialHTTP health and SIGTERM. Upstream and VRAM synthetic; no actual Vivado/model/EDA/FIFO.",
+      "unchanged_other_runtime_functions_AST": true,
+      "post_test_changes": "Manifest evidence metadata and documentation only."
     }
   }
 }

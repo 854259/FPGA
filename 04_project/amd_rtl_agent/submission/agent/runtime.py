@@ -310,19 +310,78 @@ def _drop_declared_name(text, name):
 
 @lru_cache(maxsize=4)
 def vivado_version(tool):
+    """Probe in an owned group; health must not leave tool children behind."""
+    import ctypes
+    import deadline_supervisor
+    global BLOCKED
     if not tool:
         return None
-    try:
-        with tempfile.TemporaryDirectory(prefix='rtl-version-') as td:
-            result = subprocess.run([tool, '-version'], cwd=td, capture_output=True,
-                                    text=True, errors='replace', timeout=30)
-        # The banner lowercases it: `vivado v2026.1 (64-bit)`. Matching `Vivado`
-        # case-sensitively never matched, which left the tool reported as absent and
-        # held /v1/health at ready=false even though everything was working.
-        match = re.search(r'vivado\s+v?(\d{4}\.\d+)', result.stdout, re.I)
-        return match[1] if result.returncode == 0 and match else None
-    except (OSError, subprocess.SubprocessError):
+    if (sys.platform != 'linux' or threading.current_thread() is not threading.main_thread()
+            or deadline_supervisor.descendants(os.getpid())):
+        BLOCKED = 'health_tool_ownership_unavailable'
         return None
+    if ctypes.CDLL(None, use_errno=True).prctl(36, 1, 0, 0, 0) != 0:
+        BLOCKED = 'health_subreaping_unavailable'
+        return None
+    base = Path(os.environ.get('RTL_EVIDENCE_DIR') or
+                (Path(os.environ.get('EDA_TMP') or tempfile.gettempdir()) / 'rtl-evidence'))
+    base.mkdir(parents=True, exist_ok=True, mode=0o700)
+    evidence = Path(tempfile.mkdtemp(prefix='health-', dir=base))
+    work = evidence / 'work'
+    work.mkdir()
+    started, cancelled_at, verified, version = time.monotonic(), None, False, None
+
+    def cancelled(signum, frame):
+        nonlocal cancelled_at
+        if cancelled_at is None:
+            cancelled_at = time.monotonic()
+        raise InterruptedError('Health version probe cancelled')
+
+    previous = {sig: signal.signal(sig, cancelled) for sig in (signal.SIGTERM, signal.SIGINT)}
+    try:
+        try:
+            result = deadline_supervisor.owned_command(
+                [tool, '-version'], work, evidence / 'version.log', 30,
+                deadline=started + 30, cleanup_deadline=started + 40)
+            write(evidence / 'NATIVE_VERSION.json', json.dumps(result))
+            if not (result['timeout'] or result['launch_error'] or result['remaining_live_group']):
+                banner = (evidence / 'version.log').read_text(errors='replace')
+                match = re.search(r'vivado\s+v?(\d{4}\.\d+)', banner, re.I)
+                if result['returncode'] == 0 and match:
+                    version = match[1]
+        except Exception as error:
+            observed = getattr(error, 'cancelled_at_monotonic', None)
+            if observed is not None:
+                cancelled_at = min(cancelled_at or observed, observed)
+            write(evidence / 'VERSION_FAILURE.json', json.dumps(dict(error=type(error).__name__)))
+        finally:
+            for sig in previous:
+                signal.signal(sig, signal.SIG_IGN)
+            cleanup_end = min(started + 40, time.monotonic() + 10,
+                              cancelled_at + 10 if cancelled_at is not None else float('inf'))
+            try:
+                result = deadline_supervisor.cleanup_request_children(cleanup_end)
+                write(evidence / 'OWNED_CLEANUP.json', json.dumps(result))
+                verified = True
+            except Exception as error:
+                BLOCKED = 'health_cleanup_' + type(error).__name__
+                write(evidence / 'OWNED_CLEANUP.json', json.dumps(dict(
+                    verified=False, error=type(error).__name__, deadline_monotonic=cleanup_end,
+                    recorded=getattr(error, 'recorded', None), remaining=getattr(error, 'remaining', None))))
+            if verified:
+                try:
+                    shutil.rmtree(work)
+                except OSError as error:
+                    BLOCKED = 'health_scratch_' + type(error).__name__
+            if not verified or work.exists():
+                write(evidence / 'SCRATCH_RETAINED.json', json.dumps(dict(
+                    path=str(work), reason='health cleanup requires inspection')))
+    finally:
+        for sig, handler in previous.items():
+            signal.signal(sig, handler)
+        if cancelled_at is not None:
+            raise SystemExit(1)
+    return version if BLOCKED is None else None
 
 
 def health():

@@ -2,7 +2,7 @@
 
 The selected table/phase candidate with the unchanged 174-word first-system
 suffix is now connected to both HTTP and CLI in this source package.
-Eleven AMD CPU integration cases passed. Model replies and EDA outputs were
+Eleven AMD CPU chain/guard cases and two targeted health cases passed. Model replies and EDA outputs were
 synthetic; actual model/EDA interface qualification, resource acceptance,
 isolation and reproducible deployment are still pending. This is not a scored
 or formally accepted deployment.
@@ -96,10 +96,11 @@ Health checks the model listing, official baseline hashes and Vivado 2026.1.
 It reports attributed VRAM or null. Unknown VRAM does not by itself make
 readiness false. Readiness therefore does not establish the official memory
 limit, peak usage or isolation; verify raw bytes across the full lifecycle.
-The existing health version subprocess is outside the solve supervisor and
-has not received the new native cancellation qualification.
+The cached health version probe now uses an owned native group and reaps detached descendants, with 30 seconds of work and one shared 10-second cleanup reserve. Cancellation exits after cleanup. It retains private health evidence; unknown cleanup blocks further work. These limits apply to the version probe, not an asserted bound on every health operation. Actual Vivado qualification remains pending.
 
 ## Validation and packaging
+
+Two targeted health cases additionally cover normal version-probe child cleanup and cancellation through the real HTTP endpoint using a synthetic CPU executable. Both failures were reproduced before the fix. Other runtime functions remain AST-identical to the eleven-case version; the two health cases were run separately, without repeating unrelated model controls.
 
 Eleven AMD CPU cases cover repeated direct/HTTP calls, authentication, CLI
 dispatch, one actual signal-based deadline followed by another request,
