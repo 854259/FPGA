@@ -2,21 +2,7 @@
   "temporal_first_generation_20261010": {
     "original134_circuit3_regression_20261010": {
       "schema": "original134_circuit3_paired_regression_public_diagnosis_v1",
-      "observed_epoch": 1791603219.791473,
-      "readback_sha256": "f663f2e0b79bcf375e7aba2a72592a3b765e5959faa03d6df3fc8fbc37092226",
-      "original132_state": "failed_released_after_inspection",
-      "original132_full_success": false,
-      "failed_row_actual_calls": null,
-      "failed_row_grade": null,
-      "owner_release_independently_observed": true,
-      "owner_release_executed_by_this_task": false,
-      "peer_release_receipt_intake_sha256": "8977a30e6100e6230142ca737828b710cf44647e952d1ce795c9a92d805ba82a",
-      "peer133_native_qualification": "Owner reports frozen one-case/three-tool native closure; this task read report and execution guard,not full native receipts.",
-      "peer_PR216_head": "5026ebd79a2fedda6fa059d8b88b1060cb0345ed",
-      "peer_PR216_merge": "3dbcc80895605578a211f5e938b8ab99edcfb3ac",
-      "original134_state": "running",
-      "original134_sealed_at_observation": 34,
-      "original134_expected_outputs": 135,
+      "saved_epoch": 1791605516.6110392,
       "original134_monitor": {
         "pid": 4175417,
         "present": true,
@@ -31,110 +17,6 @@
         "live_identity_verified": true,
         "independent_session": true
       },
-      "fixed_complete_tasks": [
-        {
-          "task": "Prob050_kmap1",
-          "outputs": 15,
-          "arms": {
-            "A": {
-              "levels": [
-                3,
-                3,
-                3,
-                3,
-                3
-              ],
-              "actual_calls": 10,
-              "coefficient_mean": 1.0
-            },
-            "P": {
-              "levels": [
-                3,
-                3,
-                3,
-                3,
-                3
-              ],
-              "actual_calls": 10,
-              "coefficient_mean": 1.0
-            },
-            "B": {
-              "levels": [
-                1,
-                1,
-                1,
-                1,
-                1
-              ],
-              "actual_calls": 5,
-              "coefficient_mean": 0.2
-            }
-          },
-          "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
-          "source_hashes_held": true
-        },
-        {
-          "task": "Prob057_kmap2",
-          "outputs": 15,
-          "arms": {
-            "A": {
-              "levels": [
-                1,
-                1,
-                1,
-                1,
-                1
-              ],
-              "actual_calls": 10,
-              "coefficient_mean": 0.2
-            },
-            "P": {
-              "levels": [
-                1,
-                1,
-                1,
-                1,
-                1
-              ],
-              "actual_calls": 10,
-              "coefficient_mean": 0.2
-            },
-            "B": {
-              "levels": [
-                1,
-                1,
-                1,
-                1,
-                1
-              ],
-              "actual_calls": 5,
-              "coefficient_mean": 0.2
-            }
-          },
-          "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
-          "source_hashes_held": true
-        }
-      ],
-      "prefix_A_P_new_gain_observed": false,
-      "full_comparison_success": false,
-      "selection": false,
-      "fixed_prefix_only": true,
-      "queued": [
-        135,
-        136
-      ],
-      "full_goal_complete": false,
-      "new_generation": 0,
-      "new_EDA": 0,
-      "new_FIFO": 0,
-      "next_work": [
-        "Finish original134 and inspect all gains/losses/costs; retain its original run and owner. Do not directly adopt multi-counterexample P into the user-goal release because fixed102 has five paired L3-to-L1 losses.",
-        "Keep original single-counterexample complete-table baseline for the next candidate; neither the temporal packet nor serial comparison should silently inherit rejected134 P.",
-        "Consume135/136 actual terminal evidence and jointly select one next factor/one submitting owner; frozen temporal9 remains a proposed independent candidate, not an automatic submission.",
-        "If future table-repair work is selected, prioritize satisfying the zero and positive public rows simultaneously and preserving already-correct rows over adding more examples. No new factor is submitted by this diagnosis.",
-        "Preserve original historical113, paired grade and same-grade/history/total call gates; only complete156 evidence can qualify120/.80."
-      ],
-      "saved_epoch": 1791605516.6110392,
       "observed_handles": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\NIGHT_HANDLES_20261008_1791605323688481300\\READBACK.json",
       "observed_sealed_outputs": 95,
       "complete_fixed_groups": 6,
@@ -475,156 +357,24 @@
         "direct_adoption_under_user_goal": false,
         "official_whole_factor_selection_uncomputed": true
       },
-      "original_feedback_traces": [
-        {
-          "row": "row_000062",
-          "arm": "A",
-          "sample": 0,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found: inputs a=0, b=1, c=0, d=0; expected q=0, observed q=1.",
-              "repair_available": true
-            }
-          ]
-        },
-        {
-          "row": "row_000064",
-          "arm": "A",
-          "sample": 1,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found: inputs a=0, b=1, c=0, d=0; expected q=0, observed q=1.",
-              "repair_available": true
-            }
-          ]
-        },
-        {
-          "row": "row_000066",
-          "arm": "A",
-          "sample": 2,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found: inputs a=0, b=1, c=0, d=0; expected q=0, observed q=1.",
-              "repair_available": true
-            }
-          ]
-        },
-        {
-          "row": "row_000071",
-          "arm": "A",
-          "sample": 3,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found: inputs a=0, b=1, c=0, d=0; expected q=0, observed q=1.",
-              "repair_available": true
-            }
-          ]
-        },
-        {
-          "row": "row_000073",
-          "arm": "A",
-          "sample": 4,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found: inputs a=0, b=1, c=0, d=0; expected q=0, observed q=1.",
-              "repair_available": true
-            }
-          ]
-        },
-        {
-          "row": "row_000060",
-          "arm": "P",
-          "sample": 0,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 8 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\ninputs a=1'b1, b=1'b1, c=1'b0, d=1'b1; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b0; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b1; expected q=1'b1, observed q=1'b0.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": true
-            },
-            {
-              "round": 1,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 2 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": false
-            }
-          ]
-        },
-        {
-          "row": "row_000065",
-          "arm": "P",
-          "sample": 1,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 8 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\ninputs a=1'b1, b=1'b1, c=1'b0, d=1'b1; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b0; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b1; expected q=1'b1, observed q=1'b0.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": true
-            },
-            {
-              "round": 1,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 2 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": false
-            }
-          ]
-        },
-        {
-          "row": "row_000067",
-          "arm": "P",
-          "sample": 2,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 8 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\ninputs a=1'b1, b=1'b1, c=1'b0, d=1'b1; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b0; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b1; expected q=1'b1, observed q=1'b0.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": true
-            },
-            {
-              "round": 1,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 2 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": false
-            }
-          ]
-        },
-        {
-          "row": "row_000069",
-          "arm": "P",
-          "sample": 3,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 8 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\ninputs a=1'b1, b=1'b1, c=1'b0, d=1'b1; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b0; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b1; expected q=1'b1, observed q=1'b0.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": true
-            },
-            {
-              "round": 1,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 2 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": false
-            }
-          ]
-        },
-        {
-          "row": "row_000074",
-          "arm": "P",
-          "sample": 4,
-          "feedback": [
-            {
-              "round": 0,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 8 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\ninputs a=1'b1, b=1'b1, c=1'b0, d=1'b1; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b0; expected q=1'b1, observed q=1'b0.\ninputs a=1'b1, b=1'b1, c=1'b1, d=1'b1; expected q=1'b1, observed q=1'b0.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": true
-            },
-            {
-              "round": 1,
-              "excerpt": "A check derived only from the complete combinational table in the prompt found 2 mismatches in 32 checks (forward and reverse order).\nMeasured counterexamples; input values use explicit Verilog binary literals:\ninputs a=1'b0, b=1'b1, c=1'b0, d=1'b0; expected q=1'b0, observed q=1'b1.\nRecheck the complete prompt table, including cases that already worked. Repair the RTL; do not treat one counterexample as the entire specification.",
-              "repair_available": false
-            }
-          ]
-        }
-      ],
       "public_originals_index_sha256": "0a5510d6f40e49774a150e889045dfc4bf86c50d85e07810d9db7d5e826941fa",
       "private_reference_read": false,
-      "judge_tb_read": false
+      "judge_tb_read": false,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "full_goal_complete": false,
+      "next_work": [
+        "Finish original134 and inspect all gains/losses/costs; retain its original run and owner. Do not directly adopt multi-counterexample P into the user-goal release because fixed102 has five paired L3-to-L1 losses.",
+        "Keep original single-counterexample complete-table baseline for the next candidate; neither the temporal packet nor serial comparison should silently inherit rejected134 P.",
+        "Consume135/136 actual terminal evidence and jointly select one next factor/one submitting owner; frozen temporal9 remains a proposed independent candidate, not an automatic submission.",
+        "If future table-repair work is selected, prioritize satisfying the zero and positive public rows simultaneously and preserving already-correct rows over adding more examples. No new factor is submitted by this diagnosis.",
+        "Preserve original historical113, paired grade and same-grade/history/total call gates; only complete156 evidence can qualify120/.80."
+      ],
+      "private_full_report": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\ACTUAL134_CIRCUIT3_REGRESSION_20261010_v1\\RESULT.json",
+      "private_full_report_sha256": "d52fc6c90a984224f1f72e714865d83615390c687d9f613acbb2b6ba66b61be0",
+      "E_archive": "E:/26qiansai/private_archives/actual134_circuit3_regression_20261010_v1",
+      "full_trace_excerpts_omitted_from_public_summary": true
     },
     "next_joint_temporal9_proposal_20261010": {
       "schema": "joint_next_temporal9_candidate_proposal_v1",
