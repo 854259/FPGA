@@ -1,0 +1,48 @@
+{
+  "schema": "native_warning_applicability_and_next_temporal_preparation_v1",
+  "saved_epoch": 1791612164.3827276,
+  "previous_goal_turn_classification": "progress",
+  "stable_wrong_tasks": 31,
+  "samples_per_task_inspected": 1,
+  "correct_control_tasks": 1,
+  "all_first_native_logs_read": true,
+  "compile_pass_wrong_warning_tasks": [],
+  "compiled_first_pass_wrong_tasks": 27,
+  "sole_warning_task": "Prob134_2014_q3c",
+  "sole_warning_compile_rc": 1,
+  "sole_warning_codes": [
+    "VRFC 10-8497"
+  ],
+  "first_trace_result_sha256": "604196b95aac80d4410f5286bed7dc4f28c65ecbe63dd9df89f32ea25a3bfeff",
+  "first_trace_files": 160,
+  "full_native_log_delta_result_sha256": "2a387db1f4ed7528eb3bcf2d18c11edf33594b45ab01ac16be5128f51bc719c4",
+  "full_native_delta_files": 64,
+  "all_E_local_originals_verified": true,
+  "existing_AMD_originals_unchanged": true,
+  "private_archives": [
+    "E:/26qiansai/private_archives/stable132_native_warning_applicability_20261010_v1",
+    "E:/26qiansai/private_archives/stable132_full_native_warning_delta_20261010_v1"
+  ],
+  "conclusion": "No first compile-success native-warning trigger in original31 stable-wrong P sample0. Existing134 compile-error already invokes repair. Do not build/test a new warning-only factor solely to rescue discarded output-factor regression.",
+  "scope": "Fixed original baseline P sample0 first compiler log,not all five samples/all rounds/hidden tasks or general proof that warning feedback is useless",
+  "new_warning_factor_preparation_deferred": true,
+  "existing_warning_safety_gap_not_denied": true,
+  "temporal": {
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "tasks": 9,
+    "samples": 5,
+    "outputs": 135,
+    "max_requests": 225,
+    "PLAN_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+    "SPEC_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+    "priority": "Next existing single-factor candidate after actual137 outcome and shared selection",
+    "admission_source_prepared_only": true,
+    "submitted": false,
+    "source_overlay_unchanged": true,
+    "requires137_completed_or_inspected_failed_release": true
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false
+}
