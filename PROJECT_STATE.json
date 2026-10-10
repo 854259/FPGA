@@ -1,4 +1,212 @@
 {
+  "shared_solve_budget_20261010": {
+    "schema": "shared300_operation_budget_source_v1",
+    "original_baseline_sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+    "sources": {
+      "baseline_worker.py": {
+        "sha256": "64155ca4070406d81b41c20c67ac51d76d8d21ee45a59004c87d6d6f3f74c91c",
+        "bytes": 9793
+      },
+      "shared_budget.py": {
+        "sha256": "7ac3ba5a8fbdfba0dec87bd96ecf3106fec7cd347b34e5c08025870a6c602faa",
+        "bytes": 1437
+      }
+    },
+    "changes": [
+      [
+        "import point_feedback\n",
+        "import point_feedback\nimport shared_budget\n"
+      ],
+      [
+        "def run_worker(args, paired):\n",
+        "def run_worker(args, paired):\n    budget = shared_budget.SolveBudget(300)\n    original_owned = paired.owned_command\n"
+      ],
+      [
+        "        index = len(requests); assert index < 2\n",
+        "        budget.remaining()\n        index = len(requests); assert index < 2\n"
+      ],
+      [
+        "entry = dict(index=index, replayed=False, response_received=False,",
+        "entry = dict(index=index, replayed=False, response_received=False, dispatch_started=False,"
+      ],
+      [
+        "            with original_open(request, *positional, **kwargs) as response: raw=response.read()",
+        "            bounded_kwargs = budget.http_timeout(positional, kwargs)\n            entry['dispatch_started'] = True\n            save(out/'requests.json', requests)\n            with original_open(request, *positional, **bounded_kwargs) as response: raw=response.read()"
+      ],
+      [
+        "        return io.BytesIO(raw)",
+        "        budget.remaining()\n        return io.BytesIO(raw)"
+      ],
+      [
+        "        gate()\n        folder = Path(kwargs['cwd'])",
+        "        budget.remaining()\n        gate()\n        folder = Path(kwargs['cwd'])"
+      ],
+      [
+        "        gate()\n        return functional_feedback",
+        "        budget.remaining()\n        gate()\n        return functional_feedback"
+      ],
+      [
+        "        urllib.request.urlopen, subprocess.run = transport, compiler",
+        "        urllib.request.urlopen, subprocess.run = transport, compiler\n        paired.owned_command = budget.owned_operation(original_owned)"
+      ],
+      [
+        "        save(out/'worker_result.json', dict(complete=True",
+        "        budget.remaining()\n        save(out/'worker_result.json', dict(complete=True"
+      ],
+      [
+        "        urllib.request.urlopen, subprocess.run = original_open, original_run",
+        "        paired.owned_command = original_owned\n        urllib.request.urlopen, subprocess.run = original_open, original_run"
+      ]
+    ],
+    "wire_or_generation_changed": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "deployed": false,
+    "outer310_cleanup_guard_unchanged": true,
+    "strict_entire_solve_deadline_qualified": false,
+    "scope": "Common A/P worker caps HTTP and owned operations by the same existing300 seconds. Existing outer310 supervisor remains. No universal socket streaming/read hard-deadline claim; official B is untouched.",
+    "saved_epoch": 1791608084.9849002,
+    "qualification": {
+      "root": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1",
+      "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/EVIDENCE.zip",
+      "archive_sha256": "6e964773060047d6c9281370b4ccbfd0fb5ca6a5f02cc82f0aed4347a46590d2",
+      "archive_bytes": 171160,
+      "members": 135,
+      "passed": true,
+      "returncode": 0,
+      "owned_child_reaped": true,
+      "cases": [
+        {
+          "label": "C_remaining_after283",
+          "passed": true,
+          "http_timeout_caps": [
+            300.0,
+            17.0
+          ],
+          "native_caps": [
+            {
+              "cap": 17.0
+            },
+            {
+              "cap": 7.0
+            }
+          ],
+          "fake_http_attempts": 2,
+          "new_model_calls": 0,
+          "new_eda_calls": 0,
+          "actual_worker_bind_passed": true,
+          "wire_and_original_repair_preserved": true
+        },
+        {
+          "label": "P_remaining_after283",
+          "passed": true,
+          "http_timeout_caps": [
+            300.0,
+            17.0
+          ],
+          "native_caps": [
+            {
+              "cap": 17.0
+            },
+            {
+              "cap": 7.0
+            }
+          ],
+          "fake_http_attempts": 2,
+          "new_model_calls": 0,
+          "new_eda_calls": 0,
+          "actual_worker_bind_passed": true,
+          "wire_and_original_repair_preserved": true
+        },
+        {
+          "label": "budget_exhausted_before_repair",
+          "passed": true,
+          "http_timeout_caps": [
+            300.0
+          ],
+          "native_caps": [
+            {
+              "cap": 1.0
+            }
+          ],
+          "fake_http_attempts": 1,
+          "new_model_calls": 0,
+          "new_eda_calls": 0,
+          "failed_receipt_retained": true,
+          "completed_worker_not_invented": true
+        },
+        {
+          "label": "repair_socket_timeout",
+          "passed": true,
+          "http_timeout_caps": [
+            300.0,
+            17.0
+          ],
+          "native_caps": [
+            {
+              "cap": 17.0
+            }
+          ],
+          "fake_http_attempts": 2,
+          "new_model_calls": 0,
+          "new_eda_calls": 0,
+          "failed_receipt_retained": true,
+          "completed_worker_not_invented": true
+        },
+        {
+          "label": "gate_exhausts_before_dispatch",
+          "passed": true,
+          "http_timeout_caps": [],
+          "native_caps": [],
+          "fake_http_attempts": 0,
+          "new_model_calls": 0,
+          "new_eda_calls": 0,
+          "failed_receipt_retained": true,
+          "completed_worker_not_invented": true
+        },
+        {
+          "label": "actual_owned_cpu_timeout_remaining_and_retirement",
+          "passed": true,
+          "allocated_s": 0.30000000000001137,
+          "elapsed_s": 0.3167707324028015,
+          "begin": {
+            "pid": 550869,
+            "starttime": "888158871",
+            "command_sha256": "2069e754a171e82b88a92fecd0d1fb52973ad2c4731e8a960167f17be698ea2f",
+            "pgid": 550869
+          },
+          "receipt": {
+            "timeout": true,
+            "launch_error": null,
+            "returncode": -9,
+            "group_signals": [
+              "SIGKILL"
+            ],
+            "elapsed_s": 0.31667948327958584,
+            "remaining_live_group": [],
+            "log": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/owned_cpu_timeout/owned.log",
+            "log_sha256": "64a1c03f537ca70ce166ab0ff84b9e1476d8fc9cb216a19622e1803ca0c72301",
+            "log_bytes": 144
+          },
+          "original_child_identity_retired": true,
+          "new_model_calls": 0,
+          "new_eda_calls": 0
+        }
+      ],
+      "scope": "Actual changed A/P worker HTTP/native budget propagation with fake HTTP/compile;one real original owned CPU child timeout/reap. No actual model/EDA or strict entire solve deadline qualification. Outer310 guard unchanged."
+    },
+    "future_failure_continuation_integration_qualified": false,
+    "integration_gap": "Inspected-failure v1 only accepts owned supervisor timeout. A bounded HTTP/expired-budget worker can instead exit nonzero without outer timeout;v1 correctly rejects it. Need a separate source-bound budget-exit receipt and joint flow qualification before deployment.",
+    "real_model_cancel_idle_qualified": false,
+    "actual_model_recovery_proven": false,
+    "full_goal_complete": false,
+    "next_work": [
+      "Bind budget-expired nonzero worker exit without guessing grade/calls;qualify its integration with inspected-failure traversal.",
+      "Consume original134 owner complete result and original135136 terminal outcomes.",
+      "Select one actual capability factor and admit one owner;do not alter existing frozen output-v2 or current jobs."
+    ]
+  },
   "queue_failure_continuation_20261010": {
     "schema": "future_inspected_solver_failure_continuation_v1",
     "saved_epoch": 1791607329.1347823,
