@@ -1925,6 +1925,993 @@
         "model_cancel_idle_and_strict_deadline_remain_unproven": true
       },
       "output137_admission": {
+  "next_two_groups_independent_review": {
+    "schema": "independent_output137_next_two_groups_originals_review_v1",
+    "at_utc": "2026-10-10T06:46:07.109754+00:00",
+    "root": "/workspace/team/runs/fpga_owner/output_completion_comparison5x5_20261010_v2",
+    "tasks": [
+      "Prob101_circuit4",
+      "Prob102_circuit3"
+    ],
+    "plan_sha256": "b92d3b3b27b9ef814ae7a66d407392bb2266d58b4f08af4f389ebc16e18fbd15",
+    "canonical_plan_sha256": "354f8acc381ad19971d3702fedf380b29917c74dd669e4a2d8577f45f9e3a33d",
+    "source_files_including_spec": 30,
+    "execution_files": 3,
+    "official_files": 2,
+    "rows": [
+      {
+        "index": 15,
+        "task": "Prob101_circuit4",
+        "sample": 0,
+        "arm": "P",
+        "terminal_sha256": "a4629227bdc40b59be29155865a04215ba1648743a5006d4a92e54ba9138cbaa",
+        "solution_sha256": "322aeade73d6fd81a8478de7ec1ceec8dfe4fc45c1605868c025d336c0e04856",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 21.458097841590643,
+        "end_to_end_s": 50.18670477718115,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 16,
+        "task": "Prob101_circuit4",
+        "sample": 0,
+        "arm": "B",
+        "terminal_sha256": "574f423397ec7656474745b43586f89654dfddfeef8924901c779aaea3a6e67c",
+        "solution_sha256": "c5a82d17ab63ccfbe18e2ef7d0a30e3fe25382e6f0c82ccd0f26eef1faedb519",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 3.533209901303053,
+        "end_to_end_s": 11.837944684550166,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 17,
+        "task": "Prob101_circuit4",
+        "sample": 0,
+        "arm": "A",
+        "terminal_sha256": "5b88929195ca0e4de661f615e5db87e8c1433b4e302e5765a09a21f39a671e41",
+        "solution_sha256": "9c51136a89125083eec09f35745578868885cf611e4ff686b73b8d9fb568049f",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 21.258690264075994,
+        "end_to_end_s": 50.03868320211768,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 18,
+        "task": "Prob101_circuit4",
+        "sample": 1,
+        "arm": "B",
+        "terminal_sha256": "b30077213e3486fafd473811eac50be0f76c64e36196957466f6baaee041a094",
+        "solution_sha256": "c5a82d17ab63ccfbe18e2ef7d0a30e3fe25382e6f0c82ccd0f26eef1faedb519",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 2.832132739946246,
+        "end_to_end_s": 11.184378981590271,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 19,
+        "task": "Prob101_circuit4",
+        "sample": 1,
+        "arm": "A",
+        "terminal_sha256": "f13c0cfc058aded787d17f4f518b9de4735d83f300bd7011a04eda8bef112580",
+        "solution_sha256": "9c51136a89125083eec09f35745578868885cf611e4ff686b73b8d9fb568049f",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.85640244744718,
+        "end_to_end_s": 48.59794759005308,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 20,
+        "task": "Prob101_circuit4",
+        "sample": 1,
+        "arm": "P",
+        "terminal_sha256": "f38cabe88b774433916d7524a06a1b8b4e0286df69f40ec180cb84d1858fd5f7",
+        "solution_sha256": "322aeade73d6fd81a8478de7ec1ceec8dfe4fc45c1605868c025d336c0e04856",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 20.457046698778868,
+        "end_to_end_s": 48.73289173282683,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 21,
+        "task": "Prob101_circuit4",
+        "sample": 2,
+        "arm": "A",
+        "terminal_sha256": "30717d693c0314aa1f7faebf64500b3677ee6e66b5c92f368ac88412b55289d2",
+        "solution_sha256": "9c51136a89125083eec09f35745578868885cf611e4ff686b73b8d9fb568049f",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 20.50749522820115,
+        "end_to_end_s": 48.891130808740854,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 22,
+        "task": "Prob101_circuit4",
+        "sample": 2,
+        "arm": "P",
+        "terminal_sha256": "1284e764ea86cdb5967c799a846aaf836f14ed7550743be794f8da49d47e4cef",
+        "solution_sha256": "322aeade73d6fd81a8478de7ec1ceec8dfe4fc45c1605868c025d336c0e04856",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 20.457414714619517,
+        "end_to_end_s": 48.98548925481737,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 23,
+        "task": "Prob101_circuit4",
+        "sample": 2,
+        "arm": "B",
+        "terminal_sha256": "3fa25bfce97097223a1a4e06bc1660bb8ff9302266f57aefb2402deb1a09e2f6",
+        "solution_sha256": "c5a82d17ab63ccfbe18e2ef7d0a30e3fe25382e6f0c82ccd0f26eef1faedb519",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 2.7820664644241333,
+        "end_to_end_s": 11.083813363686204,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 24,
+        "task": "Prob101_circuit4",
+        "sample": 3,
+        "arm": "P",
+        "terminal_sha256": "ecdde41218e38154334b8708a4664f70f62173dafe89ed9cffbdfeea389c7b24",
+        "solution_sha256": "322aeade73d6fd81a8478de7ec1ceec8dfe4fc45c1605868c025d336c0e04856",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.90490843169391,
+        "end_to_end_s": 48.03533671796322,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 25,
+        "task": "Prob101_circuit4",
+        "sample": 3,
+        "arm": "B",
+        "terminal_sha256": "5c651a4bc0c3a67e1feec1a4b0076b2a66e2d677b8b36bff6b343339db37c823",
+        "solution_sha256": "c5a82d17ab63ccfbe18e2ef7d0a30e3fe25382e6f0c82ccd0f26eef1faedb519",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 2.7883224301040173,
+        "end_to_end_s": 11.09799974411726,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 26,
+        "task": "Prob101_circuit4",
+        "sample": 3,
+        "arm": "A",
+        "terminal_sha256": "f8f933fa7308c150008503d59952003cf4d6b91b4cf6b91f441a1416e80f3bf6",
+        "solution_sha256": "9c51136a89125083eec09f35745578868885cf611e4ff686b73b8d9fb568049f",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 20.308677159249783,
+        "end_to_end_s": 48.35184207931161,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 27,
+        "task": "Prob101_circuit4",
+        "sample": 4,
+        "arm": "B",
+        "terminal_sha256": "93ff08e50a9d00dbe23f22ba2d11ddd4fb707da5feaba00d5315911fc4c5bbf9",
+        "solution_sha256": "c5a82d17ab63ccfbe18e2ef7d0a30e3fe25382e6f0c82ccd0f26eef1faedb519",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 2.7823347244411707,
+        "end_to_end_s": 11.159360483288765,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 28,
+        "task": "Prob101_circuit4",
+        "sample": 4,
+        "arm": "A",
+        "terminal_sha256": "a32d00aaa0421e9bdc13763d96140b36d3861738518bbaeff2817014ed21a7a6",
+        "solution_sha256": "9c51136a89125083eec09f35745578868885cf611e4ff686b73b8d9fb568049f",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.85660468414426,
+        "end_to_end_s": 47.933949979022145,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 29,
+        "task": "Prob101_circuit4",
+        "sample": 4,
+        "arm": "P",
+        "terminal_sha256": "77adb12a83c2b425d255176b3963cc61b20bad4a2005b5c95a9e8bde3305f736",
+        "solution_sha256": "322aeade73d6fd81a8478de7ec1ceec8dfe4fc45c1605868c025d336c0e04856",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 20.507533567026258,
+        "end_to_end_s": 48.836910696700215,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 30,
+        "task": "Prob102_circuit3",
+        "sample": 0,
+        "arm": "B",
+        "terminal_sha256": "ab87caf2f3135671daa9a183d6cc045042b0d25e39e513ec0601b1384a095ac6",
+        "solution_sha256": "fb6039f044ef52fd2836a95afe5d99fb81cffbf19e4ec8a8c9fdb6f9ebe124dc",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 4.5347446501255035,
+        "end_to_end_s": 12.90567859634757,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 31,
+        "task": "Prob102_circuit3",
+        "sample": 0,
+        "arm": "A",
+        "terminal_sha256": "f490e94ef24842fc2cdc0265af8b95d444ea0629826dd01077ada3a51b860c9d",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 20.858234276995063,
+        "end_to_end_s": 49.08695038408041,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 32,
+        "task": "Prob102_circuit3",
+        "sample": 0,
+        "arm": "P",
+        "terminal_sha256": "651496ffbea4ef166f61e813ec360b48d05c0c377454ae60bc4929c5e92dbe56",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 20.55597784370184,
+        "end_to_end_s": 49.036937311291695,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 33,
+        "task": "Prob102_circuit3",
+        "sample": 1,
+        "arm": "A",
+        "terminal_sha256": "97889a56d51c4be81fc704fa429af12ee41ebf5ea151985a5be66e7b0bd3b8f2",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.756893377751112,
+        "end_to_end_s": 48.68185570277274,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 34,
+        "task": "Prob102_circuit3",
+        "sample": 1,
+        "arm": "P",
+        "terminal_sha256": "26b1a4b36d310daa53e08e87a476f2cc8601f9577a1175f54b3d7ea107cc9949",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.8561800327152,
+        "end_to_end_s": 48.13957245647907,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 35,
+        "task": "Prob102_circuit3",
+        "sample": 1,
+        "arm": "B",
+        "terminal_sha256": "bb7077c3c1a23ceb0e9caf39ed3ddc15ed50a057fab93ff2658d3e0c71924bc4",
+        "solution_sha256": "fb6039f044ef52fd2836a95afe5d99fb81cffbf19e4ec8a8c9fdb6f9ebe124dc",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 3.933876235038042,
+        "end_to_end_s": 12.2888014446944,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 36,
+        "task": "Prob102_circuit3",
+        "sample": 2,
+        "arm": "P",
+        "terminal_sha256": "0e73b1155c90ab156ff712e0c0a172da8ce4a7acb9d13b459452150f3f866589",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.756008699536324,
+        "end_to_end_s": 47.98259415104985,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 37,
+        "task": "Prob102_circuit3",
+        "sample": 2,
+        "arm": "B",
+        "terminal_sha256": "9b421a5880035dc879c8f99f99ba5f346840942d0a87880e6b7101af33dd9a50",
+        "solution_sha256": "fb6039f044ef52fd2836a95afe5d99fb81cffbf19e4ec8a8c9fdb6f9ebe124dc",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 3.933791968971491,
+        "end_to_end_s": 12.236701473593712,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 38,
+        "task": "Prob102_circuit3",
+        "sample": 2,
+        "arm": "A",
+        "terminal_sha256": "ada167f700c30cf581255dc1155a57b0ea054fc0dcd88eb9dd2f0310bd4e9b25",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.806376799941063,
+        "end_to_end_s": 48.08375649526715,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 39,
+        "task": "Prob102_circuit3",
+        "sample": 3,
+        "arm": "B",
+        "terminal_sha256": "0e085605f92c9778357c5722ee7698ae53412c7393612c3e2a4c837773e9db4f",
+        "solution_sha256": "fb6039f044ef52fd2836a95afe5d99fb81cffbf19e4ec8a8c9fdb6f9ebe124dc",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 3.9335281550884247,
+        "end_to_end_s": 12.336087996140122,
+        "compiles": [],
+        "response_finish_reasons": []
+      },
+      {
+        "index": 40,
+        "task": "Prob102_circuit3",
+        "sample": 3,
+        "arm": "A",
+        "terminal_sha256": "26794fc0c31251c14129311201e38cf4e8c9cb07d4b921cf24ac4cca1417aa55",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.75596305169165,
+        "end_to_end_s": 48.23137662559748,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 41,
+        "task": "Prob102_circuit3",
+        "sample": 3,
+        "arm": "P",
+        "terminal_sha256": "39ff3998dfc55092bafc85d92557d6024a2a46ed17fb487a79c0b4ff59353982",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.85500343516469,
+        "end_to_end_s": 48.03293205425143,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 42,
+        "task": "Prob102_circuit3",
+        "sample": 4,
+        "arm": "A",
+        "terminal_sha256": "b3842178c4847927a9ed12929666819155852ccd9812719583d447ddb2fabd32",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.856463737785816,
+        "end_to_end_s": 48.5353584587574,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 43,
+        "task": "Prob102_circuit3",
+        "sample": 4,
+        "arm": "P",
+        "terminal_sha256": "5d94eb885bb526f53972d58cd07f5f664330837b683572e475ae6df3e74b8f73",
+        "solution_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "level": 3,
+        "coefficient": 1,
+        "requests": 2,
+        "solve_s": 19.957520494237542,
+        "end_to_end_s": 49.73703306168318,
+        "compiles": [
+          {
+            "returncode": 0,
+            "timeout": false
+          },
+          {
+            "returncode": 0,
+            "timeout": false
+          }
+        ],
+        "response_finish_reasons": [
+          [
+            "stop"
+          ],
+          [
+            "stop"
+          ]
+        ]
+      },
+      {
+        "index": 44,
+        "task": "Prob102_circuit3",
+        "sample": 4,
+        "arm": "B",
+        "terminal_sha256": "234fb6fabf4d986ce815981b17cd4317107035b84be861f48ecea1c59e7837d5",
+        "solution_sha256": "fb6039f044ef52fd2836a95afe5d99fb81cffbf19e4ec8a8c9fdb6f9ebe124dc",
+        "level": 1,
+        "coefficient": 0.2,
+        "requests": 1,
+        "solve_s": 3.9339978955686092,
+        "end_to_end_s": 12.1867353040725,
+        "compiles": [],
+        "response_finish_reasons": []
+      }
+    ],
+    "aggregate": {
+      "Prob101_circuit4": {
+        "A": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 10,
+          "solve_sum_s": 101.78786978311837,
+          "max_solve_s": 21.258690264075994,
+          "unique_solution_sha256": [
+            "9c51136a89125083eec09f35745578868885cf611e4ff686b73b8d9fb568049f"
+          ]
+        },
+        "P": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 10,
+          "solve_sum_s": 102.7850012537092,
+          "max_solve_s": 21.458097841590643,
+          "unique_solution_sha256": [
+            "322aeade73d6fd81a8478de7ec1ceec8dfe4fc45c1605868c025d336c0e04856"
+          ]
+        },
+        "B": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 5,
+            "2": 0,
+            "3": 0
+          },
+          "coefficient_mean": 0.2,
+          "requests": 5,
+          "solve_sum_s": 14.71806626021862,
+          "max_solve_s": 3.533209901303053,
+          "unique_solution_sha256": [
+            "c5a82d17ab63ccfbe18e2ef7d0a30e3fe25382e6f0c82ccd0f26eef1faedb519"
+          ]
+        }
+      },
+      "Prob102_circuit3": {
+        "A": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 10,
+          "solve_sum_s": 100.0339312441647,
+          "max_solve_s": 20.858234276995063,
+          "unique_solution_sha256": [
+            "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be"
+          ]
+        },
+        "P": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 5
+          },
+          "coefficient_mean": 1,
+          "requests": 10,
+          "solve_sum_s": 99.9806905053556,
+          "max_solve_s": 20.55597784370184,
+          "unique_solution_sha256": [
+            "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be"
+          ]
+        },
+        "B": {
+          "rows": 5,
+          "levels": {
+            "0": 0,
+            "1": 5,
+            "2": 0,
+            "3": 0
+          },
+          "coefficient_mean": 0.2,
+          "requests": 5,
+          "solve_sum_s": 20.26993890479207,
+          "max_solve_s": 4.5347446501255035,
+          "unique_solution_sha256": [
+            "fb6039f044ef52fd2836a95afe5d99fb81cffbf19e4ec8a8c9fdb6f9ebe124dc"
+          ]
+        }
+      }
+    },
+    "paired_wire_reviews": [
+      {
+        "task": "Prob101_circuit4",
+        "sample": 0,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 0.19940757751464844
+      },
+      {
+        "task": "Prob101_circuit4",
+        "sample": 1,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 0.600644251331687
+      },
+      {
+        "task": "Prob101_circuit4",
+        "sample": 2,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -0.05008051358163357
+      },
+      {
+        "task": "Prob101_circuit4",
+        "sample": 3,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -0.403768727555871
+      },
+      {
+        "task": "Prob101_circuit4",
+        "sample": 4,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 0.650928882881999
+      },
+      {
+        "task": "Prob102_circuit3",
+        "sample": 0,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -0.3022564332932234
+      },
+      {
+        "task": "Prob102_circuit3",
+        "sample": 1,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 0.0992866549640894
+      },
+      {
+        "task": "Prob102_circuit3",
+        "sample": 2,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": -0.05036810040473938
+      },
+      {
+        "task": "Prob102_circuit3",
+        "sample": 3,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 0.09904038347303867
+      },
+      {
+        "task": "Prob102_circuit3",
+        "sample": 4,
+        "only_first_system_suffix_diff": true,
+        "coefficient_P_minus_A": 0,
+        "requests_P_minus_A": 0,
+        "solve_P_minus_A_s": 0.10105675645172596
+      }
+    ],
+    "bound_row_files": 2700,
+    "unique_indexed_files": 2730,
+    "unique_bytes": 5995403,
+    "row_file_index_sha256": "a27c8cd69f5a9c356b3f76dac63a68680036dd2c8486208db68a79cf8f3aa4fe",
+    "all_solve_lt300": true,
+    "private_reference_or_tb_content_read": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "full_comparison_complete": false,
+    "independent_unseen": 0,
+    "issue": {
+      "id": 6094798524,
+      "url": "https://github.com/854259/FPGA/issues/7#issuecomment-6094798524"
+    },
+    "scope": "Only newly audited fixed101/102 groups. Combine existing095 without rerunning it;145/147 and full75/actual exit still pending. Not full gain/adoption or formal total score.",
+    "server_received_count": null,
+    "row_data_exposure": "No private reference or TB text read; all hashes checked as opaque bytes. Sealed generated outputs and public first-request parameters audited."
+  },
         "schema": "independent_output137_admission_live_review_v1",
         "at_beijing": "2026-10-10T13:44:11.508457+08:00",
         "root": "/workspace/team/runs/fpga_owner/output_completion_comparison5x5_20261010_v2",
@@ -2340,8 +3327,8 @@
           }
         },
         "latest_health_review": {
-          "at_beijing": "2026-10-10T14:12:56.995878+08:00",
-          "next_check_beijing": "2026-10-10T14:42:57+08:00",
+          "at_beijing": "2026-10-10T14:41:55.798475+08:00",
+          "next_check_beijing": "2026-10-10T15:11:56+08:00",
           "ticket137": {
             "state": "running",
             "started_at_utc": "2026-10-10T05:41:12.486786+00:00",
@@ -2363,15 +3350,15 @@
           "progress137": {
             "plan_same": true,
             "spec_same": true,
-            "SEALED": 45,
-            "TERMINAL": 45,
+            "SEALED": 53,
+            "TERMINAL": 53,
             "total": 75,
             "source_files_including_spec": 30,
             "bad_source_files": []
           },
           "model": {
             "pid": 2013333,
-            "state": "S",
+            "state": "R",
             "ppid": 1,
             "sid": 2013325,
             "same_birth": true,
@@ -2405,28 +3392,13 @@
             "same_command": true,
             "live": true
           },
-          "original132": {
-            "plan_same": true,
-            "spec_same": true,
-            "SEALED": 2191,
-            "TERMINAL": 2192,
-            "total": 2340
-          },
-          "original134": {
-            "plan_same": true,
-            "spec_same": true,
-            "SEALED": 135,
-            "TERMINAL": 135,
-            "total": 135
-          },
           "original132_state": "failed_released_after_inspection",
           "original133136_completed": true,
           "old48h_bound_files": 39,
           "old48h_bad_files": [],
-          "disk_free": 2855145472,
-          "gpu_scope": "Read-only host-wide sysfs; multiple visible48GB devices, utilization not independently attributed to this worker. Formal32GB remains unverified.",
-          "issue_comment": 6094483291,
-          "gmail_read": "1a1246ae7f8a4367"
+          "disk_free": 2832457728,
+          "gmail_new_relevant_messages": 0,
+          "issue_latest_before_audit": 6094743784
         }
       }
     },
@@ -4958,7 +5930,7 @@
       "new_eda_calls": 0,
       "new_fifo_tickets": 0,
       "full_goal_complete": false
-    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T14:38:00+08:00","status":"active_original132_failed_closed133136_archived137_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"与 nzh152-lang 通过 854259/FPGA Issue #7 持续协作，在当前授权 AMD 同机27B、固定公平对照和既定实验预算内，以官方 RTL 四项总分择优，持续改进由模型实质生成RTL的候选，并完成完整验收：唯一候选/最佳归档原版/原样官方baseline的完整156配对、经审计RTLLM、重要候选每题五次独立生成，以及正式资源、接口、恢复和可复现交付。分别报告L3、官方系数均值、同轮B增益、真实墙钟与调用、配对不确定性及数据接触；未知官方参数不编造，开发结果不称泛化，旧118/120、逐题保持或调用不增不得作为额外否决门。当前先完成原132完整结果及133→134条件接续，与peer协调135/136；遵守已授权132从原起点总48h修订及全部其他冻结规则，不重提、重跑旧控制、改在跑候选或重抽挑分。完成原队列后，根据实测收益选择一个最有价值候选，事前冻结并继续必要比较和完整交付。保持30分钟检查、每日12:00本人进展邮件、21:30夜间安排及23:00至次晨实际恢复的本地停止规则；有实质结果/失败/交接及时沟通，无变化不空转或纯ACK。不设项目截止时间；只有全部要求有范围相符证据才标完成，旧任务保持暂停，本新任务独立持续推进。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
+    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T14:48:00+08:00","status":"active_original132_failed_closed133136_archived137_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"与 nzh152-lang 通过 854259/FPGA Issue #7 持续协作，在当前授权 AMD 同机27B、固定公平对照和既定实验预算内，以官方 RTL 四项总分择优，持续改进由模型实质生成RTL的候选，并完成完整验收：唯一候选/最佳归档原版/原样官方baseline的完整156配对、经审计RTLLM、重要候选每题五次独立生成，以及正式资源、接口、恢复和可复现交付。分别报告L3、官方系数均值、同轮B增益、真实墙钟与调用、配对不确定性及数据接触；未知官方参数不编造，开发结果不称泛化，旧118/120、逐题保持或调用不增不得作为额外否决门。当前先完成原132完整结果及133→134条件接续，与peer协调135/136；遵守已授权132从原起点总48h修订及全部其他冻结规则，不重提、重跑旧控制、改在跑候选或重抽挑分。完成原队列后，根据实测收益选择一个最有价值候选，事前冻结并继续必要比较和完整交付。保持30分钟检查、每日12:00本人进展邮件、21:30夜间安排及23:00至次晨实际恢复的本地停止规则；有实质结果/失败/交接及时沟通，无变化不空转或纯ACK。不设项目截止时间；只有全部要求有范围相符证据才标完成，旧任务保持暂停，本新任务独立持续推进。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
       "Retain original132 failure and incomplete156:2191 sealed,1 failed with unknown repair receipt,148 never started. No replay,suffix continuation or full-score claim.",
       "Original133-136 closed. Peer135 once-reader and135136 full private archives are independently verified; our reader/model/EDA reruns remain zero.",
       "Peer remains sole137 submit/run owner for unchanged64-word output-completion5x5/75/max125. First095 group now independently audited: A5L3/P5L1/B5L1; do not replace whole-result official selection with a per-task veto. Wait for original terminal or honest failure,then audit all rows/time/calls.",
