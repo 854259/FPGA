@@ -609,13 +609,14 @@
   "submission_report_update_20261008": {"updated_at": "2026-10-08T22:46:00+08:00", "status": "draft_updated_static_verified_not_deployed", "path": "04_project/amd_rtl_agent/submission/REPORT.md", "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801", "scope": "Official selection and existing129 failure evidence; archived runtime and research candidate distinguished; historical numerical results retained.", "evidence_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38", "new_model_calls": 0, "new_eda_calls": 0, "new_fifo": 0, "deployment": false, "full_goal_complete": false},
   "collaborative_goal_20261007": {
     "temporal_peer_preparation_20261010": {
-      "updated_at": "2026-10-10T08:41:58+08:00",
-      "status": "peer_preparation_selected_and_reported_qualified_our_scoring_selection_pending_original_results",
+      "updated_at": "2026-10-10T09:12:00+08:00",
+      "status": "peer_boundary_accepted_candidate_frozen_not_submitted_our_selection_pending_original_results",
       "source_comments": [
         6091415379,
-        6091605451
+        6091605451,
+        6091789144
       ],
-      "latest_peer_comment_updated_at": "2026-10-10T00:32:00Z",
+      "latest_peer_comment_updated_at": "2026-10-10T01:07:44Z",
       "shared_reports": {
         "TEMPORAL_FACTOR_PREPARATION.json": {
           "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-factor-revision-20261010-v2/TEMPORAL_FACTOR_PREPARATION.json",
@@ -631,6 +632,21 @@
           "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-input-context-20261010-v1/TEMPORAL_INPUT_CONTEXT_PREFLIGHT.json",
           "sha256": "b320935c1b3f25d6c95bb5c54a3e8cb19929ff8118b8f7388b8d2f49c3573d21",
           "bytes": 19847
+        },
+        "TEMPORAL_FROZEN_DELIVERY.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-frozen-delivery-20261010-v1/TEMPORAL_FROZEN_DELIVERY.json",
+          "sha256": "39ef475846f78d7245204aeb8b8b518a14d3370d144405cf5916d0e3a17b1830",
+          "bytes": 8199
+        },
+        "LEMMINGS142_PUBLIC_WITNESS.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/lemmings142-witness-20261010-v1/LEMMINGS142_PUBLIC_WITNESS.json",
+          "sha256": "3cc3d66a3a86738d175f5c9714857281cbfe314a6dbb0214649fc470ec8913e8",
+          "bytes": 6250
+        },
+        "FIRST_REPLY_TERMINAL136.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/first-reply-terminal136-20261010-v1/FIRST_REPLY_TERMINAL136.json",
+          "sha256": "35720b64d08145217fd0efe8c04e9c68e3a502d8b63b7669b9e48ff7f25f0390",
+          "bytes": 8789
         }
       },
       "mail_matches": [
@@ -643,6 +659,12 @@
           "id": "1a12323d198cef08",
           "full_match": 6091415379,
           "initial_body_match": null
+        },
+        {
+          "id": "1a123471547e447f",
+          "initial_comment_exact": true,
+          "full_current_comment_exact": false,
+          "later_edits_read_from_issue": true
         }
       ],
       "candidate_scope": {
@@ -703,21 +725,23 @@
         "unknown_future_repair_full_fit_proven": false,
         "model_tokenizer_calls": 0,
         "read_only_props_calls": 1,
-        "execution_plan_frozen": false,
+        "execution_plan_frozen": true,
         "score_measured": false
       },
       "coordination": {
         "issue_comment": 6091746250,
         "request": "Retain advance preparation and existing qualified evidence, but do not treat intake as our new-scoring selection or shared ticket ownership approval. Preserve current no-submission state until original132-136 outcomes are received and next-factor selection/ownership is aligned.",
         "basis": "Current user goal explicitly places next-factor selection after original queue outcomes; advance preparation is compatible and need not be repeated.",
-        "peer_acceptance_received": false,
+        "peer_acceptance_received": true,
         "no_duplicate_factor_started": true,
         "no_request_to_repeat_qualifications": true,
-        "our_selection_criteria": "Official capability/same-runB gain/actual time/engineering; preserve all regressions and costs without adding peer120/.80, per-task nonregression or call-nonincreasing vetoes."
+        "our_selection_criteria": "Official capability/same-runB gain/actual time/engineering; preserve all regressions and costs without adding peer120/.80, per-task nonregression or call-nonincreasing vetoes.",
+        "acceptance_comment": 6091789144,
+        "acceptance_scope": "Peer explicitly accepts preparation is not shared scoring admission; no automatic placement after136, wait for original132-136 outcomes and selection/ownership."
       },
       "live_scope": {
-        "observed_at": "2026-10-10T08:40:15.838712+08:00",
-        "sealed": 2133,
+        "observed_at": "2026-10-10T09:10:39.765456+08:00",
+        "sealed": 2153,
         "total": 2340,
         "actual_adopted_roles_and_model_live": true,
         "frozen39_and_receipt_bindings_hold": true,
@@ -728,7 +752,41 @@
       "new_model_calls": 0,
       "new_EDA_calls": 0,
       "new_FIFO": 0,
-      "full_goal_complete": false
+      "full_goal_complete": false,
+      "peer_frozen_delivery": {
+        "reported_prepared": true,
+        "submitted": false,
+        "score_measured": false,
+        "source_count": 29,
+        "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+        "spec_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+        "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+        "source_commit": "6cbcaebebc89e69506cebfee86690c3d9b9a711a",
+        "pr": "https://github.com/854259/FPGA/pull/210",
+        "pr_state_observed": "open_draft_not_merged",
+        "pr_head_observed": "ba4016ef2b483699a35b900b0d75cc7d8f18fb26",
+        "preparation_executions_reported": 1,
+        "archive_sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
+        "archive_members": 59,
+        "source_reader_and_archive_independently_audited_here": false,
+        "existing_scoring_bridge_cases_reported": 2,
+        "unknown_future_repair_fit_still_unproven": true,
+        "admission_requires_root_review": true
+      },
+      "peer_auxiliary_evidence": {
+        "Prob142": "Peer reports15 rows/105 public originals, all A/P and B fiveL1. Public static bump/fall witnesses support existing pending136 coverage; no new native qualification or model gain, no addition to frozen temporal9. This intake does not independently re-audit those originals.",
+        "Prob082": "Peer retained sample1 confirms identical stored first request bytes but different first replies; original P regression/cost kept. No backend/cache/seed cause or variability rate inferred.",
+        "terminal136": {
+          "source_sha256": "a3d27a8c49bcf01d5258dc333723bffcea23cc22598521012596da6b6e047dd2",
+          "actual_recovery_receipt_sha256": "da92f3b6be7abb491634c5324cc8dfb1155d306108b2006212a4a58a36798b23",
+          "peer_reported_live_negative_preflight": true,
+          "collector_executed": false,
+          "positive_terminal_audit_qualified": false,
+          "expected_native_scope": "23 scenarios/69 native receipts after actual completed gates",
+          "ownership": "peer",
+          "no_controls_repeated_here": true
+        }
+      }
     },
     "actual132_continuation_20261010": {
       "updated_at": "2026-10-10T08:10:43+08:00",
