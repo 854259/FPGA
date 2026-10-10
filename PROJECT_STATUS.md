@@ -1,3 +1,9 @@
+2026-10-10 12:28 +08:00：对下一轮首次时序候选完成本方只读复核：AMD29份冻源、9份公开输入7410B及135个唯一task/arm/sample位置一致，max225为预留调用；PLAN117c9e5d、SPEC15dd9aba保持，无SUBMISSION_INTENT/queue/guard。PR210当前draft head1e799f82相对6cbcaebe的比较未改temporal专属源包，继承历史不算本候选新增代码。未选择/准入/提交候选；先收原134–136真出口，若共同选中，提议peer唯一持有提交运行、本方独立复核。
+
+独立核原134/Prob102固定sample0的A/P共20份公开原件27442B及TERMINAL/SEALED绑定，首请求/首答content相同、repair system与非messages参数相同。公开35ns零输出反例静态代入证实P仍违例，A满足；原最终公开检查P2/32、A0/32不匹配，对应P1/A3、各2调用。这不是五样本或全9题终审，无私有参考/判定TB读取、新模型/EDA/FIFO。Issue6093755325已逐字回读，明确peer提案的历史113/逐题保持/调用不增仅作诊断，不增本方否决门；保留损失，仍按官方四项相关量择优。
+
+peer59成员准备档案17c355ad仅提供其本机路径，本方尚未逐成员核验；已请其提供现有AMD共享档案及清单，不重跑资格或准备。原132失败已释放、133原生通过保持，最近12:14实核134为105/135且原monitor/stage/model活，135/136排队；本段新工作为来源审查，非新的进度轮询。132遗留完整156配对、经审计RTLLM及正式资源/接口/恢复交付仍未完成。详见PROJECT_STATE.json现有temporal_peer_preparation_20261010节点。
+
 2026-10-10 11:19 +08:00：原132已失败退出并按既有规则释放，替代此前running/待总48h出口的当前状态。11:00:43 guard48 complete=true/passed=false/stage_rc1；固定row002191（147/A/sample0）首答283.08秒、8192 tokens、finish=length，无完整endmodule，唯一repair有持久请求但无响应，310.02秒监督失败。原actual_calls/unconfirmed_calls为null、等级未知，均按原证据保持，不能补成0、当完整分数或重放失败样本；2191行SEALED、1失败行、148从未启动，132完整156/五样本验收未完成。
 
 11:13:55独立核2191 TERMINAL/SEALED绑定和失败行11原件SHA，确认旧及接续角色退休、guard清理/模型保护/槽释放，使用原task_fifo.py 4f1714fd的release-held一次rc0；票现failed_released_after_inspection，未强制completed、恢复后缀、重开票或执行成功reader。INSPECTION a2e93b11、失败terminal780ada3d、最终票f5d65696；67成员私有档案a4041401已AMD/本地全成员核验。失败为截断后修复未完成，非总48h或磁盘到限；调用接收不确定性保留。
