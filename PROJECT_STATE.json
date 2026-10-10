@@ -1,5 +1,88 @@
 {
   "temporal_first_generation_20261010": {
+    "next_joint_temporal9_proposal_20261010": {
+      "schema": "joint_next_temporal9_candidate_proposal_v1",
+      "saved_epoch": 1791604714.0004725,
+      "prepared": true,
+      "source_unchanged_since_frozen_commit": true,
+      "frozen_source_commit": "6cbcaebebc89e69506cebfee86690c3d9b9a711a",
+      "review_PR": "https://github.com/854259/FPGA/pull/210",
+      "PR_draft": true,
+      "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+      "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+      "spec_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+      "archive_sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
+      "first_request_source_sha256": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+      "targets": [
+        "Prob111_fsm2s",
+        "Prob133_2014_q3fsm",
+        "Prob139_2013_q2bfsm",
+        "Prob140_fsm_hdlc"
+      ],
+      "historical_controls": [
+        "Prob095_review2015_fsmshift",
+        "Prob107_fsm1s",
+        "Prob108_rule90",
+        "Prob109_fsm1",
+        "Prob110_fsm2"
+      ],
+      "all_tasks": [
+        "Prob095_review2015_fsmshift",
+        "Prob107_fsm1s",
+        "Prob108_rule90",
+        "Prob109_fsm1",
+        "Prob110_fsm2",
+        "Prob111_fsm2s",
+        "Prob133_2014_q3fsm",
+        "Prob139_2013_q2bfsm",
+        "Prob140_fsm_hdlc"
+      ],
+      "samples_per_arm": 5,
+      "arms": [
+        "A",
+        "P",
+        "B"
+      ],
+      "outputs": 135,
+      "maximum_reserved_calls": 225,
+      "parameters": {
+        "output_max_tokens": 8192,
+        "maximum_requests_per_agent_solve": 2,
+        "repairs": 1,
+        "solve_deadline_s": 300,
+        "temperature": 0,
+        "top_p": 1,
+        "retries": 0
+      },
+      "factors": {
+        "A": "Unchanged original132 table-P feedback and original first system.",
+        "P": "Same base and repair;only first system appends frozen174-word temporal contract guidance.",
+        "B": "Unmodified same-run official baseline."
+      },
+      "reason": "Four stable complete-five task errors have first-generation clocked-contract evidence and no fixed coverage in134 table9 or135 serial2. This is an existing prepared candidate,not a new factor or an accuracy claim.",
+      "prerequisites": [
+        "Consume original134/135/136 true outcomes and source/retirement receipts,then jointly select/confirm ownership.",
+        "If current results reveal a more valuable or conflicting direction,reject/defer this candidate with evidence.",
+        "Verify existing packet/input/model/PLAN/capacity/protection bytes at actual admission;do not re-run old controls without a changed reason."
+      ],
+      "diagnostic_requirements": [
+        "Report all paired five-sample grades,each actual call,time and any losses;no best-sample selection.",
+        "Preserve original historical113 and paired-grade requirements and exact original same-grade/history/total call requirements;full156 qualification remains separate.",
+        "A call increase on a nonhistorical improved-grade task is not by itself a cost veto;total/history/same-grade gates still apply.",
+        "Only net useful capability gain with preserved guards justifies later full regression;this subset cannot establish120/.80."
+      ],
+      "not_selected": true,
+      "selection_after136_automatic": false,
+      "FIFO_submitted": false,
+      "constant_or_output_factor_combined": false,
+      "task147_added": false,
+      "original134_four_groups_read_outputs": 60,
+      "P_A_gain_in_fixed_first_four_groups": 0,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "full_goal_complete": false
+    },
     "stable146_uncovered_public_contract_priorities_20261010": {
       "schema": "uncovered_stable_public_contract_priority_review_v1",
       "saved_epoch": 1791604338.8964634,
