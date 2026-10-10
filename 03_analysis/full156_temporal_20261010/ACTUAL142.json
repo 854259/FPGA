@@ -1,0 +1,86 @@
+{
+  "schema": "full156_temporal_actual142_v1",
+  "saved_epoch": 1791640303.303008,
+  "ticket": 142,
+  "state_at_observation": "running",
+  "accepted_at_utc": "2026-10-10T13:49:30.082313+00:00",
+  "root": "/workspace/team/runs/fpga_owner/temporal_first_system_full156_20261010_v2",
+  "plan_sha256": "3f6a6030622e2093cd671efda8563d14ad222620e48e90fc769d85d8c6a25bd7",
+  "spec_sha256": "a4be0260210cbe895def87c734674c52c2cfaf03741d7ba85c56c9bdf0b8fdf7",
+  "admission_entry_sha256": "b4b58db2c1f6565c1984258e7f299b46aec6db17f1651d1b2482ee34a6ab46cd",
+  "source_count": 33,
+  "frozen_sources_held": true,
+  "monitor": {
+    "pid": 737920,
+    "exists": true,
+    "state": "S",
+    "ppid": 1,
+    "pgid": 737920,
+    "sid": 737920,
+    "starttime": "891381956",
+    "command_sha256": "fea6cc76d0e2e125dac94a6578e3d2faafdb5a262320a44fb5728749e48858dd"
+  },
+  "stage": {
+    "pid": 737926,
+    "exists": true,
+    "state": "S",
+    "ppid": 737922,
+    "pgid": 737926,
+    "sid": 737926,
+    "starttime": "891381993",
+    "command_sha256": "756b215dfad7affe3e9f923454a32fd6058a7a420c6116bda27b8e58fa3f408b"
+  },
+  "model": {
+    "pid": 2013333,
+    "exists": true,
+    "state": "S",
+    "ppid": 1,
+    "pgid": 2013325,
+    "sid": 2013325,
+    "starttime": "823869819",
+    "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+  },
+  "independent_of_local_SSH": true,
+  "only_active_FIFO_ticket_at_observation": true,
+  "whole_task_FIFO": true,
+  "duplicate_submissions": 0,
+  "scope": {
+    "tasks": 156,
+    "samples": 5,
+    "arms": [
+      "original_C",
+      "table_P_plus174",
+      "official_B"
+    ],
+    "rows": 2340,
+    "reserved_max_requests": 3900,
+    "wall_budget_seconds": 172800
+  },
+  "safety_caps": {
+    "tokens": 8192,
+    "solve_seconds": 300,
+    "cleanup_seconds": 310,
+    "AP_requests": 2,
+    "B_requests": 1,
+    "repair": 1,
+    "retries": 0
+  },
+  "original_goal_unchanged": true,
+  "original_goal_canonical_sample": 0,
+  "no_best_sample_selection": true,
+  "official_five_sample_quantities_reported_separately": true,
+  "new_policy_approval_claimed": false,
+  "formal_interface_deployed": false,
+  "prior_failed_archives_preserved": true,
+  "full_goal_complete": false,
+  "score_available": false,
+  "adoption": false,
+  "observed_epoch": 1791640237.3711863,
+  "private_readback_sha256": "d30bddf2fe482f2e3f669c058f99ed423064028c7fa0e6d5791bcfc737fba8bf",
+  "next": [
+    "Read ticket142 and its existing rows only; never restart or resubmit on observation timeout.",
+    "Preserve all failed seals and unknown grades/costs; no replay or best-sample selection.",
+    "After terminal state archive raw evidence to E and AMD, run the bound full-five report and original sample0 gates.",
+    "Review peer formal interface changes without modifying this freeze or overlapping GPU evaluation."
+  ]
+}
