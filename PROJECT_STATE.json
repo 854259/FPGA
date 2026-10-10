@@ -1934,9 +1934,398 @@
           "B_L1": 5,
           "requests_per_arm": 5,
           "warning": "VRFC10-8497 state constant truncation",
-          "independently_audited_by_us": false,
+          "independently_audited_by_us": true,
           "peer_history_gate_not_imported": true,
           "whole_comparison_result_available": false
+        },
+        "first_control_independent_review": {
+          "schema": "independent_output137_first_control_originals_review_v1",
+          "at_utc": "2026-10-10T06:10:36.317396+00:00",
+          "root": "/workspace/team/runs/fpga_owner/output_completion_comparison5x5_20261010_v2",
+          "task": "Prob095_review2015_fsmshift",
+          "plan_sha256": "b92d3b3b27b9ef814ae7a66d407392bb2266d58b4f08af4f389ebc16e18fbd15",
+          "canonical_plan_sha256": "354f8acc381ad19971d3702fedf380b29917c74dd669e4a2d8577f45f9e3a33d",
+          "source_files_including_spec": 30,
+          "execution_files": 3,
+          "official_files": 2,
+          "rows": [
+            {
+              "index": 0,
+              "sample": 0,
+              "arm": "A",
+              "terminal_sha256": "eabbae361cd3911fb62e6fe473bd63fc7c548fe378008b04068d30f43ea0c78a",
+              "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+              "level": 3,
+              "coefficient": 1,
+              "requests": 1,
+              "solve_s": 17.10173117183149,
+              "end_to_end_s": 62.551804941147566,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 1,
+              "sample": 0,
+              "arm": "P",
+              "terminal_sha256": "6f9b086ce87ba6cc81a787ab36c5df6767e424bf7e99fdd63943f20b853d5980",
+              "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 16.5009171590209,
+              "end_to_end_s": 25.14957588352263,
+              "semantic_truncation_warning": true
+            },
+            {
+              "index": 2,
+              "sample": 0,
+              "arm": "B",
+              "terminal_sha256": "dd974382582b3be852a8aca93c28980a5702d961c41ea73dc727e3c61bc5c386",
+              "solution_sha256": "6375f57b6e7baa9d1ba6a1a3705cbb139d7f564e15b612d6458edcacf9bd472f",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 17.856045642867684,
+              "end_to_end_s": 26.161061208695173,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 3,
+              "sample": 1,
+              "arm": "P",
+              "terminal_sha256": "16422d7496eed50f8a7e4bb8bb8bdfb74a911158abfcafaad184efe9bbe06501",
+              "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 16.102161260321736,
+              "end_to_end_s": 24.702656550332904,
+              "semantic_truncation_warning": true
+            },
+            {
+              "index": 4,
+              "sample": 1,
+              "arm": "B",
+              "terminal_sha256": "a2da02b176163f45fb2cb149831f70752fa34d5a763454a724db2e4e8d2881d9",
+              "solution_sha256": "6375f57b6e7baa9d1ba6a1a3705cbb139d7f564e15b612d6458edcacf9bd472f",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 17.555780755355954,
+              "end_to_end_s": 25.816627092659473,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 5,
+              "sample": 1,
+              "arm": "A",
+              "terminal_sha256": "2ea4794fa09871eeff020001da00708fa1176b082e354c3ed54bf5a296ed27cd",
+              "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+              "level": 3,
+              "coefficient": 1,
+              "requests": 1,
+              "solve_s": 16.653205359354615,
+              "end_to_end_s": 62.96513252519071,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 6,
+              "sample": 2,
+              "arm": "B",
+              "terminal_sha256": "181fc83a1a543a78fba88a1b39856b78095d615ee95542d992d7160712957c20",
+              "solution_sha256": "6375f57b6e7baa9d1ba6a1a3705cbb139d7f564e15b612d6458edcacf9bd472f",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 17.55910957418382,
+              "end_to_end_s": 25.765587467700243,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 7,
+              "sample": 2,
+              "arm": "A",
+              "terminal_sha256": "5f0c92127073c5c394c930622eaa9c15a0f4d2e8a5b5198be783984e1ed091cf",
+              "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+              "level": 3,
+              "coefficient": 1,
+              "requests": 1,
+              "solve_s": 16.55586550012231,
+              "end_to_end_s": 61.51157275773585,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 8,
+              "sample": 2,
+              "arm": "P",
+              "terminal_sha256": "14f970f829d1ea50d0da11351c6ff859596753e5c8e992def0ab42ccc2c63454",
+              "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 16.10276743583381,
+              "end_to_end_s": 24.659299748018384,
+              "semantic_truncation_warning": true
+            },
+            {
+              "index": 9,
+              "sample": 3,
+              "arm": "A",
+              "terminal_sha256": "b737b69a3a45b42a8425baca9fa67916db6269d42c3264dfe99e21052671d951",
+              "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+              "level": 3,
+              "coefficient": 1,
+              "requests": 1,
+              "solve_s": 16.702778700739145,
+              "end_to_end_s": 62.068026073277,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 10,
+              "sample": 3,
+              "arm": "P",
+              "terminal_sha256": "25930f4f15c54dc4755298fc69d884c21f97edfff67b35c627b6714710364423",
+              "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 16.153057225048542,
+              "end_to_end_s": 24.71006628870964,
+              "semantic_truncation_warning": true
+            },
+            {
+              "index": 11,
+              "sample": 3,
+              "arm": "B",
+              "terminal_sha256": "12bacd7467ed3f29572b5af5802a123c71c1d4cbb9198c891a0760e4ebeb64c3",
+              "solution_sha256": "6375f57b6e7baa9d1ba6a1a3705cbb139d7f564e15b612d6458edcacf9bd472f",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 17.553735407069325,
+              "end_to_end_s": 25.91282944008708,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 12,
+              "sample": 4,
+              "arm": "P",
+              "terminal_sha256": "30a50fe8bb253dc4545f254f6b2b3d96d6cea5511c37eab528aee230e58b8daa",
+              "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 16.000315548852086,
+              "end_to_end_s": 24.655434302985668,
+              "semantic_truncation_warning": true
+            },
+            {
+              "index": 13,
+              "sample": 4,
+              "arm": "B",
+              "terminal_sha256": "4f77ae7eeae39161de2704a74ab663cfccf7dd253215e9d5c2b93f670779b8e3",
+              "solution_sha256": "6375f57b6e7baa9d1ba6a1a3705cbb139d7f564e15b612d6458edcacf9bd472f",
+              "level": 1,
+              "coefficient": 0.2,
+              "requests": 1,
+              "solve_s": 17.55193497799337,
+              "end_to_end_s": 25.906100682914257,
+              "semantic_truncation_warning": false
+            },
+            {
+              "index": 14,
+              "sample": 4,
+              "arm": "A",
+              "terminal_sha256": "f6604dcac517b86d9bec9215200282534c6792b401797d1fc6be818d30a88348",
+              "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+              "level": 3,
+              "coefficient": 1,
+              "requests": 1,
+              "solve_s": 16.60119597055018,
+              "end_to_end_s": 62.2547694016248,
+              "semantic_truncation_warning": false
+            }
+          ],
+          "aggregate": {
+            "A": {
+              "rows": 5,
+              "L3": 5,
+              "L1": 0,
+              "coefficient_mean": 1,
+              "requests": 5,
+              "solve_sum_s": 83.61477670259774,
+              "max_solve_s": 17.10173117183149,
+              "unique_solution_sha256": [
+                "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e"
+              ]
+            },
+            "P": {
+              "rows": 5,
+              "L3": 0,
+              "L1": 5,
+              "coefficient_mean": 0.2,
+              "requests": 5,
+              "solve_sum_s": 80.85921862907708,
+              "max_solve_s": 16.5009171590209,
+              "unique_solution_sha256": [
+                "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a"
+              ]
+            },
+            "B": {
+              "rows": 5,
+              "L3": 0,
+              "L1": 5,
+              "coefficient_mean": 0.2,
+              "requests": 5,
+              "solve_sum_s": 88.07660635747015,
+              "max_solve_s": 17.856045642867684,
+              "unique_solution_sha256": [
+                "6375f57b6e7baa9d1ba6a1a3705cbb139d7f564e15b612d6458edcacf9bd472f"
+              ]
+            }
+          },
+          "paired_wire_reviews": [
+            {
+              "sample": 0,
+              "only_first_system_suffix_diff": true,
+              "suffix_words": 64,
+              "suffix_sha256": "a69d930be15b415a34899ba7fb861f443e638ae63f04b1bc4b83515d141e995f"
+            },
+            {
+              "sample": 1,
+              "only_first_system_suffix_diff": true,
+              "suffix_words": 64,
+              "suffix_sha256": "a69d930be15b415a34899ba7fb861f443e638ae63f04b1bc4b83515d141e995f"
+            },
+            {
+              "sample": 2,
+              "only_first_system_suffix_diff": true,
+              "suffix_words": 64,
+              "suffix_sha256": "a69d930be15b415a34899ba7fb861f443e638ae63f04b1bc4b83515d141e995f"
+            },
+            {
+              "sample": 3,
+              "only_first_system_suffix_diff": true,
+              "suffix_words": 64,
+              "suffix_sha256": "a69d930be15b415a34899ba7fb861f443e638ae63f04b1bc4b83515d141e995f"
+            },
+            {
+              "sample": 4,
+              "only_first_system_suffix_diff": true,
+              "suffix_words": 64,
+              "suffix_sha256": "a69d930be15b415a34899ba7fb861f443e638ae63f04b1bc4b83515d141e995f"
+            }
+          ],
+          "bound_row_files": 555,
+          "unique_indexed_files": 570,
+          "unique_bytes": 802542,
+          "row_file_index_sha256": "cb4f05f672531cdbac1dc3c8dcbfd7c78c2ff351d44f580ec4ff470a6ec3bbfd",
+          "all_solve_lt300": true,
+          "private_reference_or_tb_content_read": false,
+          "new_model_calls": 0,
+          "new_EDA": 0,
+          "full_comparison_complete": false,
+          "independent_unseen": 0,
+          "issue": {
+            "id": 6094528389,
+            "url": "https://github.com/854259/FPGA/issues/7#issuecomment-6094528389",
+            "updated_at": "2026-10-10T06:18:10Z",
+            "exact": true
+          },
+          "static_diagnosis": "Compiler-native literal truncation aliases an active state to idle and shortens enable sequence. This statement comes from current model-generated source and native warning; no private reference/TB content or new simulation.",
+          "same_group_B_gain": {
+            "A": 5,
+            "P": 1,
+            "scope": "first control only, not whole comparison or official total score"
+          }
+        },
+        "latest_health_review": {
+          "at_beijing": "2026-10-10T14:12:56.995878+08:00",
+          "next_check_beijing": "2026-10-10T14:42:57+08:00",
+          "ticket137": {
+            "state": "running",
+            "started_at_utc": "2026-10-10T05:41:12.486786+00:00",
+            "runner": {
+              "pid": 578525,
+              "starttime": "888452187"
+            },
+            "child": {
+              "pid": 578526,
+              "starttime": "888452196"
+            },
+            "guard": {
+              "complete": false,
+              "passed": false,
+              "phase": "resource_guard",
+              "stage_pid": 578531
+            }
+          },
+          "progress137": {
+            "plan_same": true,
+            "spec_same": true,
+            "SEALED": 45,
+            "TERMINAL": 45,
+            "total": 75,
+            "source_files_including_spec": 30,
+            "bad_source_files": []
+          },
+          "model": {
+            "pid": 2013333,
+            "state": "S",
+            "ppid": 1,
+            "sid": 2013325,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "monitor137": {
+            "pid": 578525,
+            "state": "S",
+            "ppid": 1,
+            "sid": 578525,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "child137": {
+            "pid": 578526,
+            "state": "S",
+            "ppid": 578525,
+            "sid": 578526,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "stage137": {
+            "pid": 578531,
+            "state": "S",
+            "ppid": 578527,
+            "sid": 578531,
+            "same_birth": true,
+            "same_command": true,
+            "live": true
+          },
+          "original132": {
+            "plan_same": true,
+            "spec_same": true,
+            "SEALED": 2191,
+            "TERMINAL": 2192,
+            "total": 2340
+          },
+          "original134": {
+            "plan_same": true,
+            "spec_same": true,
+            "SEALED": 135,
+            "TERMINAL": 135,
+            "total": 135
+          },
+          "original132_state": "failed_released_after_inspection",
+          "original133136_completed": true,
+          "old48h_bound_files": 39,
+          "old48h_bad_files": [],
+          "disk_free": 2855145472,
+          "gpu_scope": "Read-only host-wide sysfs; multiple visible48GB devices, utilization not independently attributed to this worker. Formal32GB remains unverified.",
+          "issue_comment": 6094483291,
+          "gmail_read": "1a1246ae7f8a4367"
         }
       }
     },
@@ -2436,14 +2825,14 @@
           }
         }
       },
-      "updated_at": "2026-10-10T12:38:00+08:00",
+      "updated_at": "2026-10-10T14:19:00+08:00",
       "status": "output_completion_preparation_review_prioritized_joint_selection_pending_original134_136",
       "source_comments": [
         6091415379,
         6091605451,
         6091789144
       ],
-      "latest_peer_comment_updated_at": "2026-10-10T02:41:50Z",
+      "latest_peer_comment_updated_at": "2026-10-10T06:05:25Z",
       "shared_reports": {
         "TEMPORAL_FACTOR_PREPARATION.json": {
           "path": "/workspace/team/activity/fpga_owner/artifacts/temporal-factor-revision-20261010-v2/TEMPORAL_FACTOR_PREPARATION.json",
@@ -2575,7 +2964,8 @@
         "max_requests_per_agent": 2,
         "repairs": 1,
         "solve_seconds": 300,
-        "retries": 0
+        "retries": 0,
+        "priority_after137": "Existing174-word temporal nine-task candidate prioritized for joint post137 selection; not yet admitted."
       },
       "peer_reported_qualification": {
         "AMD_new_synthetic_hook_cases": 4,
@@ -3478,6 +3868,342 @@
           "new_FIFO": 0
         },
         "qualification_independent_audit_at": "2026-10-10T13:03:00+08:00"
+      },
+      "native_warning_applicability_independent_review": {
+        "schema": "independent_original132_warning_applicability_review_v1",
+        "at_utc": "2026-10-10T06:15:47.280219+00:00",
+        "root": "/workspace/team/runs/fpga_teammate/prompt_table_feedback_full156x5_20261008_v1",
+        "plan_sha256": "c85226725bab88c08503cd9feda393378ef17c491fabebec4bea0abd930d954c",
+        "P_complete_rows_with_seal_verdict_binding": 730,
+        "complete_P_tasks": 146,
+        "stable_wrong_all5": 31,
+        "correct_control_tasks": 1,
+        "selected_sample": 0,
+        "selected_compile_attempt": 0,
+        "selected_files": 96,
+        "selected_file_bytes": 72976,
+        "selected_file_index_sha256": "0c3dbebc9915bae8fc3138c0701ee4bdd89c90face76679e0132e85806a7b8c5",
+        "all_selected_native_logs_journals_equal_sealed_archive": true,
+        "rows": [
+          {
+            "task": "Prob034_dff8",
+            "row": 496,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob053_m2014_q4d",
+            "row": 780,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob057_kmap2",
+            "row": 842,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 2,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob062_bugs_mux2",
+            "row": 915,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob064_vector3",
+            "row": 946,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob066_edgecapture",
+            "row": 977,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob074_ece241_2014_q4",
+            "row": 1095,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob078_dualedge",
+            "row": 1157,
+            "first_compile_rc": 1,
+            "native_warning_codes": [],
+            "requests": 2,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob082_lfsr32",
+            "row": 1216,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob083_mt2015_q4b",
+            "row": 1230,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob086_lfsr5",
+            "row": 1275,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob093_ece241_2014_q3",
+            "row": 1382,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob095_review2015_fsmshift",
+            "row": 1410,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": false
+          },
+          {
+            "task": "Prob097_mux9to1v",
+            "row": 1441,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob099_m2014_q6c",
+            "row": 1472,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob104_mt2015_muxdff",
+            "row": 1545,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob111_fsm2s",
+            "row": 1652,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob113_2012_q1g",
+            "row": 1680,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 2,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob116_m2014_q3",
+            "row": 1725,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob117_circuit9",
+            "row": 1742,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob125_kmap3",
+            "row": 1860,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 2,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob126_circuit6",
+            "row": 1877,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob133_2014_q3fsm",
+            "row": 1981,
+            "first_compile_rc": 1,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob134_2014_q3c",
+            "row": 1995,
+            "first_compile_rc": 1,
+            "native_warning_codes": [
+              "VRFC 10-8497"
+            ],
+            "requests": 2,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob135_m2014_q6b",
+            "row": 2012,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob137_fsm_serial",
+            "row": 2040,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob139_2013_q2bfsm",
+            "row": 2071,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob140_fsm_hdlc",
+            "row": 2085,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob141_count_clock",
+            "row": 2102,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob142_lemmings2",
+            "row": 2116,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob144_conwaylife",
+            "row": 2147,
+            "first_compile_rc": 1,
+            "native_warning_codes": [],
+            "requests": 2,
+            "stable_wrong_all5": true
+          },
+          {
+            "task": "Prob146_fsm_serialdata",
+            "row": 2175,
+            "first_compile_rc": 0,
+            "native_warning_codes": [],
+            "requests": 1,
+            "stable_wrong_all5": true
+          }
+        ],
+        "compile_pass_wrong_count": 27,
+        "compile_pass_wrong_warning_count": 0,
+        "native_warning_case": {
+          "task": "Prob134_2014_q3c",
+          "row": 1995,
+          "sample": 0,
+          "stable_wrong_all5": true,
+          "first_compile_rc": 1,
+          "native_warning_codes": [
+            "VRFC 10-8497",
+            "VRFC 10-8497",
+            "VRFC 10-8497",
+            "VRFC 10-8497",
+            "VRFC 10-8497"
+          ],
+          "first_native_log_bytes": 4787,
+          "terminal_requests": 2,
+          "requests_journal_entries": 2
+        },
+        "scope": "31 seen stable-wrong tasks plus one correct control; first compile in P/sample0 only, not all samples/rounds or unseen tasks. Existing compile-error warning already triggered repair; no evidence here for a new compile-success-warning scoring factor.",
+        "private_reference_or_tb_content_read": false,
+        "new_model_calls": 0,
+        "new_EDA": 0,
+        "new_FIFO": 0,
+        "full_goal_complete": false,
+        "peer_comment": 6094483291,
+        "peer_E_archives_checked_by_us": false,
+        "new_warning_scoring_factor_selected": false
+      },
+      "prepared_temporal_admission_static_review": {
+        "at_utc": "2026-10-10T06:17:20.634581+00:00",
+        "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+        "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+        "spec_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+        "frozen_sources": 29,
+        "bad_sources": [],
+        "rows": 135,
+        "reserved": 225,
+        "execution_markers": {
+          "SUBMISSION_INTENT.json": false,
+          "SUBMISSION.json": false,
+          "queue": false,
+          "guard": false,
+          "MONITOR_BIRTH.json": false
+        },
+        "same_root_tickets": [],
+        "submit_sources": [],
+        "public_source": {
+          "sha256": "e30fedf5f12334856d64ef7b258f9952bb1b0768f4d213b17b7766419420a9e4",
+          "bytes": 10906,
+          "git_blob": "12bbfc86fbf66f440c40b7fd1c1cb6934edb8aba"
+        },
+        "source_commit": "7fb7f963764e3abeff48c9ed9dd271af02bcfbc7",
+        "executed": false,
+        "scoring_admitted": false,
+        "static_findings": [
+          "Entry outside frozen root verifies9x5x3/225 and unchanged budgets/model/source/official bytes; same-root exclusion,exclusive fsynced intent and no retry after ambiguous submit retained.",
+          "137 must have terminal ticket state and operator selected-after137-review flag. Comment id/coordination epoch and flag are caller assertions,not Issue readback or independent PID-exit checks.",
+          "Before actual admission independently verify original137 identities/guard/release and genuine shared selection. No entry or new scoring execution was performed."
+        ]
       }
     },
     "actual132_continuation_20261010": {
@@ -4131,15 +4857,16 @@
       "new_eda_calls": 0,
       "new_fifo_tickets": 0,
       "full_goal_complete": false
-    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T14:04:00+08:00","status":"active_original132_failed_closed133136_archived137_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"与 nzh152-lang 通过 854259/FPGA Issue #7 持续协作，在当前授权 AMD 同机27B、固定公平对照和既定实验预算内，以官方 RTL 四项总分择优，持续改进由模型实质生成RTL的候选，并完成完整验收：唯一候选/最佳归档原版/原样官方baseline的完整156配对、经审计RTLLM、重要候选每题五次独立生成，以及正式资源、接口、恢复和可复现交付。分别报告L3、官方系数均值、同轮B增益、真实墙钟与调用、配对不确定性及数据接触；未知官方参数不编造，开发结果不称泛化，旧118/120、逐题保持或调用不增不得作为额外否决门。当前先完成原132完整结果及133→134条件接续，与peer协调135/136；遵守已授权132从原起点总48h修订及全部其他冻结规则，不重提、重跑旧控制、改在跑候选或重抽挑分。完成原队列后，根据实测收益选择一个最有价值候选，事前冻结并继续必要比较和完整交付。保持30分钟检查、每日12:00本人进展邮件、21:30夜间安排及23:00至次晨实际恢复的本地停止规则；有实质结果/失败/交接及时沟通，无变化不空转或纯ACK。不设项目截止时间；只有全部要求有范围相符证据才标完成，旧任务保持暂停，本新任务独立持续推进。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
+    },"reaffirmed_user_constraints":{"attachment_sha256":"62d46a0ff743347b3a1ad5b6ce3077906b3fd38e8bcfe173efdfd91882d43ddd","matches_existing_automation_handoff_ignoring_whitespace":true,"preserved":"完整批次、防过拟合、AMD执行、现有预算、失败留证、先同步再衔接及既有协作责任；历史状态以实际最新现场为准","frequency_override":"Latest user decision:30-minute checks; prior15/5-minute schedules superseded."},"updated_at":"2026-10-10T14:19:00+08:00","status":"active_original132_failed_closed133136_archived137_running_full_goal_incomplete","user_confirmed":{"joint_discussion_and_faster_progress":true,"check_interval_minutes":30,"deadline":null,"completion_basis":"完整验收；不设截止时间","daily_progress_email":{"time":"12:00","timezone":"Asia/Shanghai","recipient":"authenticated_user_self","must_report_on_no_gain":true,"focus":"实际L3与加权分增长、可比性、成本、阻塞和下一有效实验；调试/文档数量不等成绩","automation_id":"amd-rtl-2","schedule_active_verified":true,"first_send_due":"2026-10-08","first_send_completed":false},"local_unavailable_window":{"from":"23:00","until":"次日早上不定时","timezone":"Asia/Shanghai","effective_date":"2026-10-07","requirement":"23:00 stop local execution, save first; detached admitted AMD work continues. No automatic OS shutdown; next morning resume when local computer is available."},"delayed_peer_response_takeover":true},"objective":"与 nzh152-lang 通过 854259/FPGA Issue #7 持续协作，在当前授权 AMD 同机27B、固定公平对照和既定实验预算内，以官方 RTL 四项总分择优，持续改进由模型实质生成RTL的候选，并完成完整验收：唯一候选/最佳归档原版/原样官方baseline的完整156配对、经审计RTLLM、重要候选每题五次独立生成，以及正式资源、接口、恢复和可复现交付。分别报告L3、官方系数均值、同轮B增益、真实墙钟与调用、配对不确定性及数据接触；未知官方参数不编造，开发结果不称泛化，旧118/120、逐题保持或调用不增不得作为额外否决门。当前先完成原132完整结果及133→134条件接续，与peer协调135/136；遵守已授权132从原起点总48h修订及全部其他冻结规则，不重提、重跑旧控制、改在跑候选或重抽挑分。完成原队列后，根据实测收益选择一个最有价值候选，事前冻结并继续必要比较和完整交付。保持30分钟检查、每日12:00本人进展邮件、21:30夜间安排及23:00至次晨实际恢复的本地停止规则；有实质结果/失败/交接及时沟通，无变化不空转或纯ACK。不设项目截止时间；只有全部要求有范围相符证据才标完成，旧任务保持暂停，本新任务独立持续推进。","historical_reference":{"l3":118,"total":156,"l3_rate":0.7564102564102564,"weighted_score":0.7987179487179488,"scope":"真值表候选既有开发结果，成绩保留，历史adoption=false不追改","report_commit":"067fa65fbea3b30b7b7112d16f0543a5d7be6a9d"},"acceptance_scope":["同机27B唯一候选、最佳归档原版和官方baseline的156题配对","经审计RTLLM，分别报告两题集与数据用途","按实验大纲的重要候选五样本","资源、官方接口、恢复、可复现交付及真实预算","配对不确定性、有效独立样本量；已见开发不冒充泛化"],"cooperation":{"channel":"https://github.com/854259/FPGA/issues/7","discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6034642013","review_baseline_pr":130,"review_baseline_sha":"965c811cfe5184a545f9994790e3309c750900bc","proposal_posted_and_read_back":true,"peer_acknowledged":true,"peer_agreed_new_gates":false,"owner":"nzh152-lang：候选与原运行/收尾","reviewer":"本任务：可行性、配对结果、根因和采用条件；直接讨论分歧","peer_reply":"https://github.com/854259/FPGA/issues/7#issuecomment-6034930858","reviewer_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6035122713","agreed_workflow":"Normal cooperation retained; direct user authorization permits fallback takeover after delayed reply and conflict checks. No peer ACK is required to act within existing budget.","peer_score_gate_position":"对方保留新156至少120 L3、加权至少.80及历史113保护；与本方超过118方向兼容，未同意自动降低。","latest_peer_ack":{"url":"https://github.com/854259/FPGA/issues/7#issuecomment-6037419564","gmail_id":"1a1163b09400c2f9","email_and_original_exact_match":true,"accepted":"Literal112 rejection, general extraction boundary defect, PR136 and bounded native111 terminal review; owner selects CP8 uniquely."},"latest_execution_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6049194062","latest_execution_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6049172627","latest_result_agreement":"https://github.com/854259/FPGA/issues/7#issuecomment-6037062332","latest_mechanism_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037143895","latest_result_response":"https://github.com/854259/FPGA/issues/7#issuecomment-6037707870","latest_coverage_discussion":"https://github.com/854259/FPGA/issues/7#issuecomment-6037615812"},"next_gate_proposal":{"status":"分层讨论可继续，但对方不同意自动放宽；110/111与fixed15已冻结门保持，新取舍仅在未来新实验前共同冻结","focus":["同轮总体L3收益","配对退步机制及不确定性","总调用、完整耗时与资源成本"],"reconsider":"不默认将每道历史题均L3且每道题调用均不增加永久作为候选的一票否决；可接受取舍数值尚未冻结","distinguish":["探索保留","下一阶段准入","正式采用"],"single_result_over_118_not_automatic_acceptance":true},"workflow":["优先处理最影响正确率或真实交付的阻塞；每项写清责任、决定继续/放弃的证据和下一步","已核验且源码、输入、依赖不变的证据复用，只审新增差异及影响","控制针对实际新风险；不重复旧控制、纯ACK或非阻断表述修文，不为旧计时补跑","正常推进静默；新结论、失败、关键分歧及时在Issue7协作并按用户通知规则报告"],"preserved_boundaries":{"original_110_111_freezes_ownership_budgets_stop_rules_unchanged":true,"no_new_model_eda_fifo_execution":false,"no_budget_reset_or_deployment":true,"no_reference_leakage_task_id_exceptions_or_retry_selection":true,"all_project_execution_on_authorized_amd":true,"private_raw_evidence_and_pr_delivery":true},"next_actions":[
       "Retain original132 failure and incomplete156:2191 sealed,1 failed with unknown repair receipt,148 never started. No replay,suffix continuation or full-score claim.",
       "Original133-136 closed. Peer135 once-reader and135136 full private archives are independently verified; our reader/model/EDA reruns remain zero.",
-      "Peer is sole137 submit/run owner for unchanged64-word output-completion5x5/75/max125. Monitor same actual137 identities; independently audit terminal all-row scores,requests,elapsed and failure evidence without resubmitting.",
-      "Keep future shared300/failure continuation separate. Peer new joint CPU/mocked-budget originals are received and await independent audit; do not alter frozen137 or replay original132/A147. Actual model cancellation/idle and strict total deadline remain unverified.",
-      "Preserve full target:one substantive model-generated candidate/best archived original/untouched same-model B full156 pairing,important-candidate five samples,audited RTLLM and formal32GB/interface/recovery/reproducibility. Official total-score evidence only;historical118120/.80/per-task/call-nonincreasing values are not extra vetoes."
+      "Peer remains sole137 submit/run owner for unchanged64-word output-completion5x5/75/max125. First095 group now independently audited: A5L3/P5L1/B5L1; do not replace whole-result official selection with a per-task veto. Wait for original terminal or honest failure,then audit all rows/time/calls.",
+      "CPU timeout/failed-seal/later-dispatch and mocked budget-exit integration originals are now independently audited. Keep strict whole-solve deadline,actual budget-nonzero process exit and real model cancellation/idle unverified and separate; no137 hot edits or132 replay.",
+      "Preserve full target:one substantive model-generated candidate/best archived original/untouched same-model B full156 pairing,important-candidate five samples,audited RTLLM and formal32GB/interface/recovery/reproducibility. Official total-score evidence only;historical118120/.80/per-task/call-nonincreasing values are not extra vetoes.",
+      "Original31 stable-wrong P/sample0 first-compile logs do not support a new compile-success-warning scoring factor. Prioritize already prepared174-word temporal9 candidate only after137 outcome,shared substantive selection and actual exit/admission review; source entry is static-reviewed but not executed."
     ],"unresolved":[
       "Original132 full156 pairing remains incomplete despite audited146 complete-task prefix; a later properly frozen complete comparison remains necessary, without replaying the failed original row.",
-      "Original137 had29/75 sealed at13:59 with original processes live and PLAN/SPEC held. Peer095 group regression is reported, not independently audited here; no complete result/net gain/147 recovery or adoption conclusion yet.",
+      "Original137 had45/75 sealed at14:12:57 with all original process identities alive and30 sources includingSPEC held. First095 group regression now independently audited; full comparison/net gain/147 recovery and adoption remain pending.",
       "Audited RTLLM model scoring and formal32GB/resources/official interface/recovery/reproducible final package remain incomplete. Development results do not prove independent generalization.",
       "CPU execute_row timeout/seal/next-dispatch and mock budget-nonzero joint controls are now independently audited. Strict continuous-read whole-solve deadline, actual budget-nonzero process path and real model cancellation/idle remain unverified; no deployment into137."
     ],"overnight_execution":{
