@@ -1,3 +1,11 @@
+## 2026-10-10 官方B补齐预算耗尽原件和失败来源绑定（未部署）
+
+官方baseline.py/sh保持原字节，只改拥有wrapper：B main在同父300预算内监督，COMMAND保存后先核预算，避免超时只留下初始trace时被成功路径断言遮住；到期从原observer的STATE/request/response生成绑定的requests索引和BASELINE_BUDGET_FAILURE，再写official_B角色的预算退出。失败封存据角色核B wrapper/observer/父钟/原HTTP文件SHA，A/P原worker绑定保持；等级/调用仍未知、预留不释放、失败不重放、普通非预算错误仍停止。
+
+AMD新资格用实际B main/argparse、原shell/Python/observer、实际execute_row与seal函数：一真实CPU/本地HTTP挂起（1次fixture POST）在老化父300终点退出，一准备时已过期零派发；两例都核错误observer源拒绝后再按有效原件封存。父钟年龄/资源和idle准入/HTTP端点重定向为模拟，不是物理300或真实共享模型取消。122成员251d4139双端逐SHA/长度绑定。首版fixture把-B当observer脚本，未走预算分支；passed=false/完整104成员cddc776d及真实CLI引导失败保留双端，修包装器后仅补未完成检查，未重放旧成功套。索引shared_solve_budget_20261010/OFFICIAL_B_BUDGET_QUALIFICATION.json。
+
+680d监督器核心未变，队友只读资源采样工作不重叠；真实独占模型取消空闲/生产资源链仍须138释放后验证，不能称线上失败续行已经修好。138原冻结源继续，完整156未准入，能力窗口检查尚未实现，目标active未达。
+
 ## 2026-10-10 选定队友监督器，完成两处兼容修改及五项AMD变化检查（未部署）
 
 按Issue7的6096115502分工，唯一未来生产核心选用paired_next/paired_checkpoint.py的owned_command；本方旧owned_deadline保留历史且不再被queue/budget导入。新增可选绝对cleanup_deadline，外queue执行和清理同父310终点；工具/B调用仍父300工作及最多10清理。新核心在Popen交接保护期内捕获leader出生/PG/SID，WNOWAIT观察退出但在唯一组信号前不回收leader，身份未知拒绝信号；保留队友取消延后交接，不向子进程屏蔽信号。仅owned_command AST变化，其他研究函数不改。未来冻结包必须将此完整源原字节保存为deadline_supervisor.py并绑定RUN_SPEC/PLAN SHA，不拿原78e9资源模块或旧b242替换。

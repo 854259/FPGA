@@ -51,6 +51,31 @@ def original_files(folder, row, plan_sha256):
         assert 'solve/SHARED_BUDGET_EXIT.json' in files
         budget = json.loads((folder/'solve/SHARED_BUDGET_EXIT.json').read_bytes())
         assert budget['schema'] in ('shared_worker_budget_expired_v1', 'shared_worker_budget_expired_v2') and budget['budget_s'] == 300
+        role = budget.get('worker_role', 'agent_A_or_P')
+        assert role in ('agent_A_or_P', 'official_B')
+        assert (row['arm'] == 'B') == (role == 'official_B')
+        if role == 'official_B':
+            name = 'solve/BASELINE_BUDGET_FAILURE.json'
+            assert name in files and files[name] == budget['request_proof_sha256']
+            proof = json.loads((folder/name).read_bytes())
+            assert proof['schema'] == 'official_baseline_budget_transport_binding_v1'
+            assert proof['worker_role'] == 'official_B' and proof['complete'] is False
+            assert proof['grade'] is None and proof['actual_calls'] is None and proof['server_received_count'] is None
+            assert proof['requests_sha256'] == files['solve/requests.json']
+            for relative, digest in proof['original_transport_files'].items():
+                assert relative.startswith('transport/') and files['solve/'+relative] == digest
+            requests = json.loads((folder/'solve/requests.json').read_bytes())
+            assert proof['client_attempts'] == len(requests) <= 1
+            assert not requests or proof['observer_ready'] is True
+            for index, request in enumerate(requests):
+                prefix = 'solve/transport/request_'+str(index)+'/'
+                state = json.loads((folder/(prefix+'STATE.json')).read_bytes())
+                assert request['index'] == state['index'] == index and state['client_attempted'] is True
+                assert request['observer_state_sha256'] == files[prefix+'STATE.json']
+                assert request['request_sha256'] == state['request_sha256'] == files[prefix+'request.bin']
+                assert request['response_received'] == state['response_body_complete']
+                if request['response_received']:
+                    assert request['response_sha256'] == state['response_sha256'] == files[prefix+'response.bin']
         assert type(budget['elapsed_s']) in (int, float) and math.isfinite(budget['elapsed_s'])
         if budget['schema'] == 'shared_worker_budget_expired_v2':
             # Child bootstrap is part of the parent's budget but can precede
@@ -136,9 +161,18 @@ def seal_failed_row(folder, row, plan, plan_sha256, resource_check, resource, sa
         assert plan.get('allow_shared_budget_failure') is True
         root = Path(plan['sources']['root']).resolve()
         budget = json.loads((folder/'solve/SHARED_BUDGET_EXIT.json').read_bytes())
-        for name, key in [('shared_budget.py', 'budget_source_sha256'), ('baseline_worker.py', 'worker_source_sha256')]:
+        worker = 'official_baseline_arm_20261005.py' if budget.get('worker_role') == 'official_B' else 'baseline_worker.py'
+        for name, key in [('shared_budget.py', 'budget_source_sha256'), (worker, 'worker_source_sha256')]:
             source = root/name
             assert sha(source) == budget[key] == plan['sources']['files'][str(source)]
+        if budget.get('worker_role') == 'official_B':
+            proof = json.loads((folder/'solve/BASELINE_BUDGET_FAILURE.json').read_bytes())
+            observer = root/'official_baseline_observed_20261005.py'
+            assert sha(observer) == proof['observer_source_sha256'] == plan['sources']['files'][str(observer)]
+            official = json.loads((folder/'solve/transport/BOOTSTRAP.json').read_bytes()) if proof['observer_ready'] else None
+            if official is not None:
+                assert official['observer_sha256'] == proof['observer_source_sha256']
+                assert official['official_sha256'] == proof['official_sha256']
         if budget['schema'] == 'shared_worker_budget_expired_v2':
             clock = json.loads((folder/'SOLVE_CLOCK.json').read_bytes())
             assert clock['scheduler_sha256'] == plan['scheduler_sha256']

@@ -1,3 +1,11 @@
+## 2026-10-10 官方B补齐预算耗尽原件和失败来源绑定（未部署）
+
+官方baseline.py/sh保持原字节，只改拥有wrapper：B main在同父300预算内监督，COMMAND保存后先核预算，避免超时只留下初始trace时被成功路径断言遮住；到期从原observer的STATE/request/response生成绑定的requests索引和BASELINE_BUDGET_FAILURE，再写official_B角色的预算退出。失败封存据角色核B wrapper/observer/父钟/原HTTP文件SHA，A/P原worker绑定保持；等级/调用仍未知、预留不释放、失败不重放、普通非预算错误仍停止。
+
+AMD新资格用实际B main/argparse、原shell/Python/observer、实际execute_row与seal函数：一真实CPU/本地HTTP挂起（1次fixture POST）在老化父300终点退出，一准备时已过期零派发；两例都核错误observer源拒绝后再按有效原件封存。父钟年龄/资源和idle准入/HTTP端点重定向为模拟，不是物理300或真实共享模型取消。122成员251d4139双端逐SHA/长度绑定。首版fixture把-B当observer脚本，未走预算分支；passed=false/完整104成员cddc776d及真实CLI引导失败保留双端，修包装器后仅补未完成检查，未重放旧成功套。索引shared_solve_budget_20261010/OFFICIAL_B_BUDGET_QUALIFICATION.json。
+
+680d监督器核心未变，队友只读资源采样工作不重叠；真实独占模型取消空闲/生产资源链仍须138释放后验证，不能称线上失败续行已经修好。138原冻结源继续，完整156未准入，能力窗口检查尚未实现，目标active未达。
+
 ## 2026-10-10 133新首配对公开输出揭示窗口计数缺口（静态诊断）
 
 复用队友全五A/P均L1结论，仅新读取138首配对公开题面/原生成响应，17成员b62d27c8双端原件绑定。A仍在独立评估状态不采w，窗口间漏一采样，属于旧132已见类别；P改为连续B1/B2/B3，但在新窗口继续累加旧count，未按窗口重新计数，且z_reg同时组合/时序赋值。静态计数见证：两组100各仅一1，P在第二次B1看到累计2而非本组1；此只证明计数判据错误，不替代双驱动输出的仿真或原判定。公开衍生反馈为空，原各一请求，现有路线未触发修复。不能宣称静态分析已经修好或提分。

@@ -1,4 +1,121 @@
 {
+  "official_B_budget_failure_delta": {
+  "schema": "official_B_parent_budget_transport_failure_delta_v1",
+  "saved_epoch": 1791627970.1648476,
+  "source_hashes": {
+    "03_analysis/shared_solve_budget_20261010/official_baseline_arm_20261005.py": "c68d309449ce77fbadb838914257f5a6d3cea00e4e9a87a173e4faec7c70976c",
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "c0f3b3144cc74a0ffff1a17fa2ceca578bfaf6fbe405986372a3e8a778750b39",
+    "03_analysis/shared_solve_budget_20261010/qualification_official_budget.py": "ddacd99f2dbe29ce345772cec64ee8588e507801992f61df780a71d2861c23c1",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "8e42e5c0a8fbbcae96d86dd44e1f4e13d0c5ed1d692d4d8c39029f6b1c056595",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "f133f1884f15db3b17e08dc9b9589199a0e2f3c0c05f3dfc804395bb3df0ddd7",
+    "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py": "680d8790d5031b4dd938af2790acf1296f710a81aedb7c0572110019e8abb54f"
+  },
+  "changes": [
+    "B main forwards the parent300 budget into its owned call and checks expiry before parsing a success trace.",
+    "Expired B creates bound normalized attempts from original observer transport;raw request/response/STATE originals remain unchanged.",
+    "Budget exit declares official_B role;failed-row sealing binds B wrapper/observer/parent clock and original transport SHA instead of assuming A/P worker/layout."
+  ],
+  "official_baseline_python_shell_unchanged": true,
+  "request_budget": {
+    "max_tokens": 8192,
+    "max_requests": 2,
+    "max_repairs": 1,
+    "solve_s": 300,
+    "B_attempts_max": 1
+  },
+  "qualification": {
+    "passed": true,
+    "main_cases": 2,
+    "observer_source_negative_controls": 2,
+    "actual_B_main_argparse": true,
+    "original_baseline_shell_python_observer": true,
+    "real_CPU_owned_group_cleanup": true,
+    "actual_execute_row_and_failed_seal": true,
+    "parent_clock_age_synthetic": true,
+    "resource_and_idle_admission_synthetic": true,
+    "urllib_endpoint_redirection_fixture": true,
+    "local_HTTP_POSTs": 1,
+    "no_shared_model_connection": true,
+    "cases": [
+      {
+        "case": "B_actual_CLI_budget_timeout",
+        "requests": 1,
+        "observed_budget_elapsed": 300.03327396325767,
+        "failed_seal_sha256": "4a30bdc561bb09f81964e4c43f1ebcb7177f85bd39d0969579fd0e85f6455bac"
+      },
+      {
+        "case": "B_expired_before_dispatch",
+        "requests": 0,
+        "observed_budget_elapsed": 301.0331691727042,
+        "failed_seal_sha256": "f38ce90dc17e97a4cb17b413ce5076d12a3226bd3c85946058e2ca5f9dcf58de"
+      }
+    ],
+    "archive": {
+      "passed": true,
+      "archive_members": 122,
+      "archive_sha256": "251d4139e9bff77ec283931c706b3269dcad8d7da1133cc557edba92a5a6de5a",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\official_B_budget_qualification_20261010_v2"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/official_B_budget_qualification_20261010_v2/QUALIFICATION_ORIGINALS.zip"
+  },
+  "prior_fixture_failure": {
+    "archive": {
+      "path": "/workspace/team/activity/fpga_owner/artifacts/B-budget-fixture-bootstrap-failure-20261010-v1/FAILED_FIXTURE_ORIGINALS.zip",
+      "sha256": "cddc776de6d6f8f0968f8bc590f5ff0ed58abc0ac5717545f8be65234e56bd88",
+      "members": 104,
+      "fixture_argument_failure": "Python -B was forwarded as the observer script path.",
+      "model_calls": 0,
+      "completed_budget_controls": 0,
+      "all_original_members_E_AMD_bound": true
+    },
+    "reason": "-B forwarded as observer script path;bootstrap stopped before budget branch.",
+    "original_passed": false,
+    "budget_controls_completed": 0,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "originals_retained": true
+  },
+  "old_successful_controls_replayed": false,
+  "prior_qualifications_not_inherited": true,
+  "grade_unknown_on_failure": true,
+  "actual_calls_unknown_on_failure": true,
+  "reservations_retained": true,
+  "failed_originals_not_replayed": true,
+  "deployed": false,
+  "physical300_pipeline_qualified": false,
+  "real_model_cancel_idle_qualified": false,
+  "full_production_resource_chain_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "actual138": {
+    "ticket": 138,
+    "state": "running",
+    "sealed": 133,
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sources_held": true
+  },
+  "unresolved": [
+    "Exclusive actual shared-model cancellation/idle and exact production A/P/B resource/entry chain after138 release.",
+    "Failure continuation remains a diagnostic traversal;unknown failed grades/calls never become invented L0 or a complete scored result.",
+    "Generic non-budget/bootstrap errors still stop;no automatic retry or source overlay into frozen runs.",
+    "Consecutive-window feedback remains an unimplemented capability hypothesis;no score gain claimed for this recovery change."
+  ]
+},
   "selected_peer_core_delta": {
   "schema": "selected_peer_owned_core_compatibility_delta_v1",
   "saved_epoch": 1791625895.3677297,

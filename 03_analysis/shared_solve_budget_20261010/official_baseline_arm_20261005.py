@@ -38,7 +38,7 @@ def resource_module():
     return mod
 
 
-def run_arm(official, task, out, resource, endpoint, seconds=300):
+def run_arm(official, task, out, resource, endpoint, seconds=300, budget=None):
     """Engineering tests may supply another local port; production fixes :8000."""
     parsed = urlsplit(endpoint)
     assert (parsed.scheme, parsed.hostname, parsed.path) == ('http', '127.0.0.1', '/v1')
@@ -79,6 +79,10 @@ def run_arm(official, task, out, resource, endpoint, seconds=300):
     command = resource.owned_command(argv, out, out/'baseline.log', seconds)
     save(out/'COMMAND.json', command)
     assert not command['remaining_live_group']
+    if budget is not None:
+        # A timed-out CLI may have only the initial trace event. Preserve the
+        # command and transport originals before attempting success parsing.
+        budget.remaining()
     assert {p.name: sha(p) for p in prompt.iterdir()} == input_hashes
     assert all(sha(package/name) == digest for name, digest in OFFICIAL.items())
     trace_path, solution = out/'output/trace.jsonl', out/'output/solution.v'
@@ -145,12 +149,65 @@ def main():
     try:
         resource.owned_command = budget.owned_operation(original_owned)
         result = run_arm(args.kit/'submission', args.task.resolve(), args.out.resolve(),
-                         resource, 'http://127.0.0.1:8000/v1', seconds=budget.remaining())
+                         resource, 'http://127.0.0.1:8000/v1', seconds=budget.remaining(), budget=budget)
+        budget.remaining()
+    except shared_budget.BudgetExpired:
+        budget_failure_receipt(args.out.resolve(), budget)
+        raise
     finally:
         resource.owned_command = original_owned
-    budget.remaining()
     resource.check_resource(args.resource_check, args.kit)
     print(json.dumps(result))
+
+
+def budget_failure_receipt(out, budget):
+    """Bind official observer attempts without rewriting the upstream CLI.
+
+    HTTP-body completion is only an observed transport fact; no model grade,
+    inference completion or known request cost is inferred from a failed solve.
+    """
+    assert budget.expired() and budget.seconds == 300
+    out.mkdir(parents=True, exist_ok=True)
+    assert not (out/'requests.json').exists() and not (out/'SHARED_BUDGET_EXIT.json').exists()
+    observer = Path(__file__).with_name('official_baseline_observed_20261005.py')
+    transport = out/'transport'
+    bootstrap = transport/'BOOTSTRAP.json'
+    originals, requests = {}, []
+    ready = bootstrap.is_file()
+    if ready:
+        record = json.loads(bootstrap.read_bytes())
+        assert record['ready'] is True and record['observer_sha256'] == sha(observer)
+        assert record['official_sha256'] == OFFICIAL
+        originals['transport/BOOTSTRAP.json'] = sha(bootstrap)
+    directories = sorted(transport.glob('request_*')) if transport.exists() else []
+    assert len(directories) <= 1 and (not directories or ready)
+    for index, directory in enumerate(directories):
+        assert directory.name == 'request_'+str(index) and not directory.is_symlink()
+        state = json.loads((directory/'STATE.json').read_bytes())
+        assert state['index'] == index and state['client_attempted'] is True
+        assert state['request_sha256'] == sha(directory/'request.bin')
+        body = json.loads((directory/'request.bin').read_bytes())
+        assert (body['temperature'], body['top_p'], body['max_tokens']) == (0, 1, 8192)
+        assert type(state['response_body_complete']) is bool
+        item = dict(index=index, response_received=state['response_body_complete'],
+                    request_sha256=state['request_sha256'], observer_state_sha256=sha(directory/'STATE.json'))
+        for name in ['STATE.json', 'request.bin']:
+            originals[(directory/name).relative_to(out).as_posix()] = sha(directory/name)
+        if state['response_body_complete']:
+            assert state['response_sha256'] == sha(directory/'response.bin')
+            item['response_sha256'] = state['response_sha256']
+            originals[(directory/'response.bin').relative_to(out).as_posix()] = state['response_sha256']
+        requests.append(item)
+    save(out/'requests.json', requests)
+    proof = dict(schema='official_baseline_budget_transport_binding_v1', worker_role='official_B',
+                 observer_source_sha256=sha(observer), official_sha256=OFFICIAL,
+                 observer_ready=ready, requests_sha256=sha(out/'requests.json'),
+                 original_transport_files=originals, client_attempts=len(requests),
+                 complete=False, grade=None, actual_calls=None, server_received_count=None)
+    save(out/'BASELINE_BUDGET_FAILURE.json', proof)
+    receipt = budget.exit_receipt(out/'requests.json', __file__)
+    save(out/'SHARED_BUDGET_EXIT.json', dict(receipt, worker_role='official_B',
+         request_proof_sha256=sha(out/'BASELINE_BUDGET_FAILURE.json')))
 
 
 if __name__ == '__main__':
