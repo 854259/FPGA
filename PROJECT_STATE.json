@@ -1,5 +1,149 @@
 {
   "temporal_first_generation_20261010": {
+    "actual132_failed2191_20261010": {
+      "schema": "original132_failed2191_source_and_transport_diagnosis_v1",
+      "saved_epoch": 1791601551.2865748,
+      "completed_sealed_rows": 2191,
+      "terminal_rows": 2192,
+      "failed_row": "row_002191",
+      "task": "Prob147_circuit10",
+      "arm": "A",
+      "sample": 0,
+      "actual_first_response": true,
+      "first_elapsed_s": 283.07791212014854,
+      "first_output_tokens": 8192,
+      "first_finish": "length",
+      "complete_endmodule_absent": true,
+      "first_source_check_failed": true,
+      "first_compile_not_reached": true,
+      "repair_request_recorded": true,
+      "repair_response_received": false,
+      "actual_model_calls": null,
+      "unconfirmed_calls": null,
+      "grade": null,
+      "original_failed_terminal_complete": false,
+      "outer_supervision_elapsed_s": 310.02313399501145,
+      "remaining_s_under_solve300_after_first_request_upper_bound": 16.92208787985146,
+      "timing_scope": "Request elapsed only; remaining value is an upper bound, excluding worker setup/check/request construction. Outer310 includes supervision grace;not a relaxed solve budget.",
+      "generated_source_sha256": "bd1d06d57d74dbedf3ba794c1afd2dd4dac79f2538ab27f00a72027612aba598",
+      "source_lines": 414,
+      "whole_line_comments": 348,
+      "nonblank_non_whole_line_comment_lines": 12,
+      "output_artifact_scope": "Truncated text includes an opening code fence;these counts are not a complete valid RTL implementation.",
+      "public_waveform_observation": {
+        "before65": {
+          "time_ns": 60,
+          "clk": "0",
+          "a": "1",
+          "b": "0",
+          "state": "0",
+          "q": "1"
+        },
+        "after65": {
+          "time_ns": 65,
+          "clk": "1",
+          "a": "1",
+          "b": "1",
+          "state": "0",
+          "q": "0"
+        },
+        "before95": {
+          "time_ns": 90,
+          "clk": "0",
+          "a": "1",
+          "b": "1",
+          "state": "0",
+          "q": "0"
+        },
+        "after95": {
+          "time_ns": 95,
+          "clk": "1",
+          "a": "1",
+          "b": "1",
+          "state": "1",
+          "q": "1"
+        },
+        "inference": "Generated comments compare updated same-edge inputs as though they were sampled inputs. The two claimed contradictions have different preceding b values (0 versus1), so that comparison does not establish an inconsistent public waveform.",
+        "proof_scope": "Static public table/comment comparison only. Not a complete recovered design, simulation, or proof of why the model produced its whole response."
+      },
+      "failure_class": "Known first-output truncation followed by unfinished repair and failed supervision;not total48h wall stop.",
+      "guard": {
+        "complete": true,
+        "passed": false,
+        "stage_rc": 1,
+        "owned_cleanup_verified": true,
+        "remaining": [],
+        "own_slot_released": true,
+        "model_unchanged": true,
+        "protected_files_unchanged": true,
+        "finished_at_utc": "2026-10-10T03:00:43.627585+00:00"
+      },
+      "monitor_terminal": true,
+      "original_full132_success": false,
+      "official_final_total_score_computed": false,
+      "full_goal_complete": false,
+      "private_evidence_index": {
+        "SOLVE_COMMAND.json": {
+          "sha256": "ad533703e1e2595f0f4480e784060616c0c8dabaac5735525eb1524f2efb1f5f",
+          "bytes": 391
+        },
+        "STARTED.json": {
+          "sha256": "81e3b8365d847c4633d6c9b3efa38a41069f2c51c2cbee36a76e03ea51c8fb18",
+          "bytes": 2069
+        },
+        "prompt_only/prompt.txt": {
+          "sha256": "d8eb255b565aa72aba2ca191784f1a5a3dac8c3bf3fcf6e030f0a7770e80e3a2",
+          "bytes": 1820
+        },
+        "solve.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        "solve/prompt_only/prompt.txt": {
+          "sha256": "d8eb255b565aa72aba2ca191784f1a5a3dac8c3bf3fcf6e030f0a7770e80e3a2",
+          "bytes": 1820
+        },
+        "solve/requests.json": {
+          "sha256": "9afe54902d208ded3b606b1223e660ea2350108fafe15efaf48f5284d6c3fdfb",
+          "bytes": 743
+        },
+        "solve/requests/0/request.json": {
+          "sha256": "6ae2d41124c5ce954560855d2f8cefac593da17549f3909833224310c531cb80",
+          "bytes": 3130
+        },
+        "solve/requests/0/response.json": {
+          "sha256": "f6f95b2f6c203da6107e3ee86a7451d3a24eefa7a0dde8ac74e7a9c326055b1a",
+          "bytes": 19070
+        },
+        "solve/requests/1/request.json": {
+          "sha256": "7d2882081cbda3c242763ad7eb286da73c041265f79c1669bce655b403babe7f",
+          "bytes": 22886
+        },
+        "solve/solution.v": {
+          "sha256": "bd1d06d57d74dbedf3ba794c1afd2dd4dac79f2538ab27f00a72027612aba598",
+          "bytes": 17997
+        },
+        "solve/trace.jsonl": {
+          "sha256": "3ef65cb4377a58bbd37537c7dfb9d12a28ddad1d486ebb0ee7711589b376d89a",
+          "bytes": 698
+        },
+        "TERMINAL.json": {
+          "sha256": "780ada3d6b3cd0f989f1bf861350e0c6ec6d05a0bf54e75a02879d0639ece445",
+          "bytes": 1406
+        }
+      },
+      "handle_observation_path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\NIGHT_HANDLES_20261008_1791601259450007600\\READBACK.json",
+      "failure_notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6093112533",
+      "ownership": "132-134 peer;135-136 owner,unchanged",
+      "next_action": "Preserve incomplete row and request accounting;peer must resolve true failed132 exit before existing133-136 progress. No replay,forcedsuccess,budget expansion or speculative new admission.",
+      "candidate_priority": "Temporal first-generation guidance remains a prepared primary;output discipline now has actual truncation evidence but is separate and unselected. Do not append147 to frozen temporal9 or mix factors.",
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "project_imports": 0,
+      "private_reference_or_testbench_read": false,
+      "result_sha256": "9a2877e1e65e273eb9cbe4af7ccc0d3142e1afb9a5ebef62a43ece1edbc5eb45"
+    },
     "complete146_public_serial_diagnosis": {
       "result_sha256": "bc9ad8f71adb489fbb694675bc03dbd679492a6a0ba334d036aeb58273d63ef5",
       "diagnosis_sha256": "76963bcd92ce4bde935cc339c9fb4cf3d56192a730924aa51970903e10ddb429",

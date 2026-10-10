@@ -1,3 +1,7 @@
+## 2026-10-10 原132真实失败退出及优先处置
+
+11:00:43北京时间原132在2191封存/2192终态时因row002191（147 circuit10/A/sample0）失败退出，现held_for_inspection，不能再写为全量在跑；342817/342815已Z，guard8fc7b573 complete真/passed假/stage_rc1，清理验证/无剩余/模型及保护保持/槽已释放，原133–136监控活但仍queued。stage939c503e为Unconfirmed/failed row blocks continuation。失败行12公开原件72030B在AMD及E盘逐SHA/长度保持；首答283.0779秒/8192tokens/length、无endmodule，source check拒绝、未compile；唯一repair已写request但无response，310.023秒外层监督失败，actual_calls/unconfirmed_calls/grade均未知，不能记为完成L0、补抽、原失败行重放或扩预算。414文本行含348整行注释/12非空非整行注释，含开头fence且不完整，不能称完整12行RTL。公开波形60→65与90→95的采样前b分别0/1，生成评论用更新后输入制造的矛盾并不成立；这是静态推理定位、非新仿真或完整答案。输出时效已有真实截断证据，但简洁提示仍未选中/建PLAN/入队，147不添加到已冻结时序九题。已在Issue6093112533请求负责132–134的队友收尾失败原件/调用计账和合法FIFO出口，使已有133–136继续；本方不改其ticket或伪造success。完整156目标及正式总分未达/未知，原146前缀112全五正确仅完整前缀诊断。0新生成/EDA/FIFO。
+
 ## 2026-10-10 第146题稳定功能错误定位
 
 原132前146题完整2190行：P569份L3/112题全五L3，A552/109题、B470/94题；P/A调用807/776（+31），082原配对损失保持，剩10题未知，完整目标/成本/历史门及正式总分未判。新146 A/P均五L1且十次同DUT e310849b，首次compile0、各1调用/745输出tokens/stop，无功能反馈或repair；B五L0/5调用。固定sample0公开21原件在AMD及E盘双端SHA/长度匹配，未读私有ref/TB正文。手工公开源码轨迹定位：case(next_state)让start进入数据计数，未收完8位就转CHECK_STOP；收到stop=1时next_state=IDLE，跳过done=1赋值，合法全零帧stop边沿done仍0。此为静态证据、未新仿真/计分。原135冻结serial源a692ee1a已含该全零合法帧，两agent臂都已有serial反馈、单因素为追加scalar多过程驱动事实，并非132 table与serial直接对照，不能提前说已解决或直接计为全量收益；原队序保持，不增重复实验。仍先原132–136真实结果及共同选优，保留冻结时序方向与独立常量备选；0新生成/EDA/FIFO。
