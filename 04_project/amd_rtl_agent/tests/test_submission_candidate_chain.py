@@ -518,6 +518,45 @@ NOTREADY_AGENT=0
         self.assertTrue(cleanup['verified'])
         self.assertLessEqual(cleanup['deadline_monotonic'], cancel['monotonic'] + 10.1)
 
+    def test_endpoint_rejects_remote_in_all_profiles(self):
+        for profile in ('submission', 'development', 'other'):
+            for base in ('http://model.invalid/v1', 'https://model.invalid/v1'):
+                with self.subTest(profile=profile, base=base), patch.dict(
+                        os.environ, dict(RTL_PROFILE=profile, LLM_BASE_URL=base)):
+                    with self.assertRaisesRegex(ValueError, 'loopback'):
+                        runtime.endpoint()
+
+    def test_models_rejects_development_remote_before_http(self):
+        with patch.dict(os.environ, dict(RTL_PROFILE='development',
+                        LLM_BASE_URL='https://model.invalid/v1')), patch.object(
+                        urllib.request, 'urlopen', return_value=io.BytesIO(b'{"data":[]}')) as opener:
+            with self.assertRaisesRegex(ValueError, 'loopback'):
+                runtime.models()
+            opener.assert_not_called()
+
+    def test_run_job_rejects_remote_before_baseline_work(self):
+        with patch.dict(os.environ, dict(RTL_PROFILE='development',
+                        LLM_BASE_URL='https://model.invalid/v1')), patch.object(
+                        runtime, 'baseline_integrity', side_effect=AssertionError('baseline work reached')) as baseline:
+            with self.assertRaisesRegex(ValueError, 'loopback'):
+                runtime.run_job('baseline', self.inp, self.root / 'out', 1)
+            baseline.assert_not_called()
+        self.assertFalse((self.root / 'out').exists())
+
+    def test_local_endpoints_remain_valid_in_all_profiles(self):
+        for profile in ('submission', 'development', 'other'):
+            for base in ('http://127.0.0.1:8000/v1/', 'http://localhost:8000/v1',
+                         'http://[::1]:8000/v1'):
+                with self.subTest(profile=profile, base=base), patch.dict(
+                        os.environ, dict(RTL_PROFILE=profile, LLM_BASE_URL=base)):
+                    self.assertEqual(runtime.endpoint(), base.rstrip('/'))
+        with patch.dict(os.environ, dict(RTL_PROFILE='development',
+                        LLM_BASE_URL='http://127.0.0.1:8000/v1/')), patch.object(
+                        urllib.request, 'urlopen', return_value=io.BytesIO(
+                            b'{"data":[{"id":"synthetic-no-model"}]}')) as opener:
+            self.assertEqual(runtime.models(), ['synthetic-no-model'])
+            opener.assert_called_once_with('http://127.0.0.1:8000/v1/models', timeout=2)
+
     def test_detached_tool_child_is_reaped_before_next_request(self):
         real_owned = deadline_supervisor.owned_command
         def detached(task, out, work, budget):
