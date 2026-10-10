@@ -1,7 +1,7 @@
 {
   "schema": "full132_total48h_authorized_amendment_v1",
-  "updated_at": "2026-10-09T18:29:20+08:00",
-  "status": "verified_controls_and_detached_watcher_deployed_continuation_not_triggered",
+  "updated_at": "2026-10-10T08:10:43+08:00",
+  "status": "actual_suffix_continuation_verified_running",
   "user_request": "能调整成48h吗",
   "scope": {
     "ticket": 132,
@@ -79,7 +79,8 @@
     "original_ticket_unchanged": true,
     "resume_intent_absent": true,
     "watch_failure_absent": true,
-    "do_not_launch_again": true
+    "do_not_launch_again": true,
+    "observation_scope": "Historical deployment snapshot on 2026-10-09; current actual adoption and watcher retirement are in actual_continuation."
   },
   "terminal": {
     "binding_sha256": "5bc201e092313dbc5b361bce2122599bb0d3550a67fd41270b0ec86a99d358f0",
@@ -110,9 +111,212 @@
     "complete_goal_achieved": false
   },
   "limitations": [
-    "Production suffix continuation has not yet triggered; deployment is not a completed evaluation.",
+    "Actual suffix continuation adopted; full2340 result and final terminal gates remain pending.",
     "48h is a total safety cap, not a guaranteed completion time.",
     "Any genuine failure or unconfirmed row stays held; no sample replay.",
     "Formal32GB/container/complete RTLLM and overall acceptance remain pending."
-  ]
+  ],
+  "actual_continuation": {
+    "updated_at": "2026-10-10T08:10:43+08:00",
+    "status": "actual_suffix_continuation_verified_running",
+    "actual_adopted_at_utc": "2026-10-10T00:00:36.334844+00:00",
+    "original_boundary": {
+      "event": {
+        "event": "stopped",
+        "at_unix": 1791590392.3475132,
+        "error_type": "AssertionError",
+        "error": "Wall budget cannot cover next solve and judge"
+      },
+      "guard_sha256": "82b156493fe6b3ef1dde0cd030c3d2b2ce6e1eacc24aa59801b3409c1b00dd46",
+      "guard": {
+        "complete": true,
+        "passed": false,
+        "stage_rc": 1,
+        "owned_cleanup_verified": true,
+        "owned_cleanup_remaining": [],
+        "recorded_process_count": 76554,
+        "model_unchanged": true,
+        "protected_files_unchanged": true,
+        "model_idle_after": {
+          "health_status": "ok",
+          "model_name": "Qwen3.6-27B-Q4_K_M",
+          "slot_count": 1,
+          "processing_slots": 0,
+          "model_pid_owns_port": true
+        },
+        "own_slot_released": true,
+        "finished_at_utc": "2026-10-09T23:59:54.404105+00:00"
+      },
+      "all_original_roles_retired": true,
+      "watcher_retired": true
+    },
+    "receipts": {
+      "intent": "80e8d16adad9072f00e7d650bdc68817b0a781381062df697853d2c368730460",
+      "result": "e7131c1493b4003466db0864bd17c9e9a3a22bfd46c45049eac6289769541da4",
+      "watch": "e7131c1493b4003466db0864bd17c9e9a3a22bfd46c45049eac6289769541da4",
+      "execution_intent": "05972b76d8fbc1487f28978c7acbb1373b773a844bae45909431f7dee7ce4dbf"
+    },
+    "bindings": {
+      "intent_plan_matches": true,
+      "failed_ticket_bytes_hash_matches": true,
+      "failed_ticket_matches_evidence": true,
+      "old_guard_hash_matches": true,
+      "old_events_hash_prefix_bytes": 377789,
+      "old_events_current_bytes": 378656,
+      "ticket_command_matches_intent": true,
+      "ticket_runner_matches_result": true,
+      "ticket_adopted_matches_result": true,
+      "ticket_completion_json_matches": true,
+      "ticket_original_plan_binding": "c85226725bab88c08503cd9feda393378ef17c491fabebec4bea0abd930d954c",
+      "total_seconds": 172800,
+      "deadline_unix": 1791634194.4557679
+    },
+    "prefix_integrity": {
+      "rows": 2104,
+      "remaining": 236,
+      "reserved_calls_not_actual": 3507,
+      "files": 8416,
+      "bytes": 72493961,
+      "bad": [],
+      "scope": "Read-only SHA verification of all four existing evidence files for each of 2104 completed rows; no archive extraction, regrading or model replay. Reserved calls are not actual calls."
+    },
+    "actual_roles": {
+      "flock": {
+        "pid": 342815,
+        "starttime": "886408575",
+        "state": "S",
+        "ppid": 1,
+        "pgid": 342815,
+        "sid": 342815,
+        "command_sha256": "3153c4fb5548000649415acfd667c089dc700455633d412037ef3baceaa45b5e",
+        "same_birth": true,
+        "same_command": true,
+        "live": true
+      },
+      "monitor": {
+        "pid": 342817,
+        "starttime": "886408576",
+        "state": "S",
+        "ppid": 1,
+        "pgid": 342817,
+        "sid": 342817,
+        "command_sha256": "f5c789a9e0f39af3a9e0ccbf27d47784722aac181414ad6b39d5c590aa2708c3",
+        "same_birth": true,
+        "same_command": true,
+        "live": true
+      },
+      "guard_python": {
+        "pid": 342816,
+        "starttime": "886408575",
+        "state": "S",
+        "ppid": 342815,
+        "sid": 342815,
+        "command_sha256": "8dd5a348686ea7c7752256bedfb86e09453e8096d16ff6bef7ef25af3eca369b"
+      },
+      "stage": {
+        "pid": 342821,
+        "starttime": "886408602",
+        "state": "S",
+        "ppid": 342816,
+        "sid": 342821,
+        "command_sha256": "04c182ac9c68d1cf9e7fca001521454aa6a855d43447dfc44d9d8a414f9da971"
+      }
+    },
+    "role_argv_verified": {
+      "guard": true,
+      "stage": true,
+      "parent": true
+    },
+    "latest_observation": {
+      "at_beijing": "2026-10-10T08:09:54.113020+08:00",
+      "sealed": 2110,
+      "terminal": 2110,
+      "total": 2340,
+      "ticket_state": "adopted_running",
+      "new_guard_complete": false,
+      "actual_roles_live": true,
+      "model_same_identity_live": true,
+      "remaining_tickets": "133-136 queued under their actual recovered monitors",
+      "frozen39_unchanged": true,
+      "original_PLAN_and_spec_unchanged": true,
+      "reader132_and134_intents_absent": true
+    },
+    "private_archive": {
+      "archive_dir": "/workspace/team/activity/fpga_teammate/artifacts/full132-wall48h-actual-20261010-v1",
+      "zip_sha256": "176cfb8244383ab5153edda19dcee52c7f69cfc88f8a3211b61f6ad58e0e0635",
+      "zip_bytes": 1407139,
+      "member_count": 14,
+      "manifest_sha256": "a793804b3858413cf63c500e1850731b24b0d56ecff09327b108cd738b05ba38",
+      "files": [
+        "EVIDENCE.zip",
+        "EVIDENCE_MANIFEST.json"
+      ],
+      "local_dir": "D:\\HUST\\IC\\FPGA\\05_handoff\\independent_validation_20261004\\waveform_resource_fix_20261006\\full132_wall48h\\production_continuation",
+      "local_verify_sha256": "43372698bf6878d2565c71c9bbfd85841dc65baa922858b1b0a619e8e6846f25",
+      "all14_members_verified_on_both_hosts": true,
+      "local_files": [
+        "EVIDENCE.zip",
+        "LOCAL_VERIFY.json"
+      ],
+      "no_extraction_or_new_cache": true,
+      "ignored_by_git": true,
+      "raw_private_uploaded_to_GitHub": false
+    },
+    "terminal_gate": "Do not use retired original roles or completed watcher as a failure signal. Observe bound actual monitor342817/flock342815/guard342816/stage342821. Full result still requires completed adopted ticket, bound receipts, new guard complete/passed/stage_rc0 plus cleanup/model/protected/slot/idle exit evidence, all original and actual roles retired, free runner lock and 2340 valid receipts. Existing exclusive READ_INTENT and bounded180s reader remain unexecuted; null returncode alone is not success.",
+    "observation_tool": "Current read-only observer tracks all four actual roles and verifies immutable INTENT/RESULT/WATCH/EXECUTION hashes and current ticket command/runner/adopted/completion path. No server observer, watcher or frozen source changed.",
+    "peer_intake": {
+      "comments": [
+        6091076771,
+        6091197302,
+        6091378295
+      ],
+      "gmail_messages": [
+        {
+          "id": "1a12320378106e87",
+          "matched_comment": 6091378295,
+          "body_exact": true
+        },
+        {
+          "id": "1a1230faad456f07",
+          "matched_comment": 6091197302,
+          "body_exact": true
+        },
+        {
+          "id": "1a1230562417639c",
+          "matched_comment": 6091076771,
+          "body_exact": true
+        }
+      ],
+      "shared_reports": {
+        "ISSUE_READER_DIAGNOSIS.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/issue-edit-detection-20261010-v1/ISSUE_READER_DIAGNOSIS.json",
+          "sha256": "932bb3a455911a1b0d1c1848e432f52822c473148aef7e546e4440b5fa4b9d15",
+          "bytes": 1512
+        },
+        "FSM134_DIAGNOSTIC_GAP.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/fsm134-diagnostic-gap-20261010-v1/FSM134_DIAGNOSTIC_GAP.json",
+          "sha256": "37445c6b3aa89396bcaee25c96df7737a19e4a520c08943ed63e8acb7b36a3aa",
+          "bytes": 28780
+        },
+        "ACTUAL132_FSM139140_DIAGNOSIS.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/actual132-fsm139140-20261010-v1/ACTUAL132_FSM139140_DIAGNOSIS.json",
+          "sha256": "fc4b33ad54b345dfe05ab7d510a476689394033c56c0b87d9383f7741f8e93fa",
+          "bytes": 17955
+        }
+      },
+      "report_scope_only": true,
+      "raw125plus20_and210_files_independently_reaudited": false,
+      "notes": [
+        "Edited6090887187 had already been read in full and recorded by PR208; incremental GitHub reading uses updated time and does not discard same-ID body edits.",
+        "Prob134 inside FIFO132 is distinct from queued FIFO134. Peer reports original2048-character repair feedback truncates real input-y compiler errors; metadata dedup preview is not model improvement.",
+        "Peer public static139/140 witnesses support possible first-generation timing/sequence work;139 y-window and140 disc/flag errors were not established. No factor selected or wired."
+      ]
+    },
+    "full_goal_complete": false,
+    "new_manual_continuation_launches": 0,
+    "new_model_calls_by_this_verification": 0,
+    "new_eda_calls_by_this_verification": 0,
+    "new_fifo_tickets": 0,
+    "terminal_reader_executed": false
+  }
 }
