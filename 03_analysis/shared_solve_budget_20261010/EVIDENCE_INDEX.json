@@ -1,0 +1,872 @@
+{
+  "selected_peer_core_delta": {
+  "schema": "selected_peer_owned_core_compatibility_delta_v1",
+  "saved_epoch": 1791625895.3677297,
+  "source_hashes": {
+    "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py": "680d8790d5031b4dd938af2790acf1296f710a81aedb7c0572110019e8abb54f",
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "c0f3b3144cc74a0ffff1a17fa2ceca578bfaf6fbe405986372a3e8a778750b39",
+    "03_analysis/shared_solve_budget_20261010/official_baseline_arm_20261005.py": "c647ff0ada895aa0bc8f9cf61fe9cff1301684d63595a3dda2422ca1083aee7a",
+    "03_analysis/shared_solve_budget_20261010/qualification_selected_core_delta.py": "1e7facd2623c327162edccc9b23b6a7077c737d500343c2cca1166b1763c4798",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "8e42e5c0a8fbbcae96d86dd44e1f4e13d0c5ed1d692d4d8c39029f6b1c056595",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "selected_core": "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py",
+  "packed_import": "deadline_supervisor.py",
+  "packed_source_bytes_must_equal_canonical": true,
+  "peer_original_SHA": "ee78332e06a4c16b4047c3874e3aa6de529e95833636bce0cdb70a8da5a9a098",
+  "only_owned_command_AST_changed": true,
+  "peer_launch_phase_cancel_deferral_preserved": true,
+  "changes": [
+    "Optional absolute cleanup_deadline caps the single cleanup reserve.",
+    "Capture leader birth before flushing launch cancellation; WNOWAIT observes exit without recycling its PID before the only group signal.",
+    "Birth/PG/SID authorization rejects unknown identity before killpg.",
+    "Queue and SolveBudget consume exact selected core; historical own core is undeployed and not imported."
+  ],
+  "qualification": {
+    "passed": true,
+    "controls": 5,
+    "cases": [
+      "peer_core_hard_cleanup_limit",
+      "leader_waitable_until_group_signal",
+      "injected_birth_mismatch_refuses_signal",
+      "cancel_during_new_birth_capture",
+      "selected_consumer_ABI"
+    ],
+    "real_owned_CPU": true,
+    "independent_sentinel_protected_and_retired": true,
+    "queue_admission_and_parent_age_synthetic": true,
+    "identity_mismatch_fault_synthetic": true,
+    "B_main_not_executed": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 93,
+      "archive_sha256": "498f46da7e487be41ccac5cf28c3fca954f86f288fcfa518ec491d81ba2a700f",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\selected_core_delta_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/selected_core_delta_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "prior_8_and_9_suites_replayed": false,
+  "prior_qualifications_keep_their_original_source_SHA": true,
+  "deprecated_own_core": "03_analysis/shared_solve_budget_20261010/owned_deadline.py",
+  "deprecated_own_core_unchanged": true,
+  "deployed": false,
+  "full_production_chain_qualified": false,
+  "production_B_CLI_qualified": false,
+  "real_model_cancel_idle_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "actual138": {
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "state": "running",
+    "sealed": 117,
+    "observed_epoch": 1791625535.0750694,
+    "frozen_sources_held": true
+  },
+  "unresolved": [
+    "Exact production A/P/B source pack/resource/CLI validation after138 release.",
+    "Owned exclusive model request cancellation and observed idle after disconnect, not inferred from CPU cleanup.",
+    "Existing failure seal is narrow; B request layout and late rc0 are not automatically supported.",
+    "Synchronous Popen and post-cleanup metadata are not proven hard-return bounded. Actual300 pregrade gate remains."
+  ]
+},
+  "current_owned_deadline_delta": {
+  "schema": "owned_absolute_wait_and_cleanup_delta_v1",
+  "saved_epoch": 1791623419.7716079,
+  "source_hashes": {
+    "03_analysis/shared_solve_budget_20261010/owned_deadline.py": "b24214bc447601ad15a845bd55caf0e9506f15c59d5b932bc391888bcf8667ae",
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "8d54e0a53f3891bf0b898b1bdd97a900d13ddcf61ef604180ce556437cf1e258",
+    "03_analysis/shared_solve_budget_20261010/official_baseline_arm_20261005.py": "c647ff0ada895aa0bc8f9cf61fe9cff1301684d63595a3dda2422ca1083aee7a",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "ec1601223af61baa269ddc50abbcdd04d49aa319a0c977a9516061ff58e8c3fe",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "purpose": "Keep one absolute end through preparation/Popen/wait and one cleanup interval;not a capability gain.",
+  "work_and_cleanup_scope": "A/P owned tools and owned B baseline invocation use parent300 end;outer queue supervisor uses parent310 end with cleanup capped at the same310 end;child work and scoring still300.",
+  "original_official_baseline_python_and_shell_unchanged": true,
+  "subreaper_required": true,
+  "owned_group_signals_require_leader_birth_and_group_binding": true,
+  "cancellation_cleans_and_reaps_before_rethrow": true,
+  "signal_handlers_restored": true,
+  "qualification": {
+    "passed": true,
+    "controls": 8,
+    "cases": [
+      "fast_owned_operation",
+      "expired_after_preparation_no_dispatch",
+      "shared_parent_deadline_kills_wait",
+      "Popen_delay_does_not_refresh_wait",
+      "parent_first_group_cleanup",
+      "signal_cancellation_reaps_owned_child",
+      "one_hard_cleanup_endpoint",
+      "actual_queue_absolute_supervisor_bridge"
+    ],
+    "real_owned_CPU_and_independent_sentinel": true,
+    "actual_SolveBudget_owned_operation_and_queue_execute_row": true,
+    "Popen_delay_is_synthetic": true,
+    "parent_budgets_are_aged": true,
+    "queue_admission_is_synthetic": true,
+    "B_main_is_not_executed_in_this_qualification": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 97,
+      "archive_sha256": "5fa6dbe998706c98d6e9f847f5abf5231050b3ba637849970f644bfd79740108",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\owned_deadline_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/owned_deadline_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "deployed": false,
+  "production_B_CLI_qualified": false,
+  "full_production_chain_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "real_shared_model_cancel_idle_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "prior_qualification_scope": "All older CLI/HTTP/parent-clock/seal qualifications retain their exact previous source SHA;not inherited by this new supervisor/integration.",
+  "unresolved": [
+    "Synchronous Popen itself is not interruptible by this helper;only its post-return wait is clamped.",
+    "CPU wait/cleanup tests do not establish full production A/P/B bootstrap/runtime/resource chain or physically300s pipeline.",
+    "Real shared-model disconnect/cancel and idle require exclusive ownFIFO after138 release.",
+    "Failure seal still requires its supported request/budget evidence layout;B transport-layout faults and overbudget rc0 outside that route stay closed.",
+    "Metadata/log hashing after cleanup is not proof of a strict total function-return bound;pre-grading300 check remains required."
+  ],
+  "peer235_merged_preserving_19_owned_nodes_and22_sources": true,
+  "actual138": {
+    "ticket": 138,
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 84,
+    "observed_epoch": 1791623207.1893194,
+    "new_source_overlay": false
+  },
+  "actual138_first_stable_target_partial": {
+    "task": "Prob111_fsm2s",
+    "observed": {
+      "A": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          1,
+          1,
+          1
+        ],
+        "client_attempts": 3
+      },
+      "P": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          3,
+          3,
+          3
+        ],
+        "client_attempts": 3
+      },
+      "B": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          3,
+          3,
+          3
+        ],
+        "client_attempts": 3
+      }
+    },
+    "all_five_complete": false,
+    "full_comparison_gain_proven": false,
+    "unseen_generalization_proven": false
+  },
+  "next": [
+    "Complete fixed138 pairs/controls/cost/actual300 diagnostics;no replay or second score ticket.",
+    "After138 release,qualify exact production entry/model cancel-idle under ownFIFO before complete156.",
+    "Original109 extra request cause sample0 is compiler identifier typo;do not change FSM semantics or task-ID patch."
+  ]
+},
+  "current_parent_failure_clock_delta": {
+  "schema": "parent_failure_clock_binding_delta_v1",
+  "saved_epoch": 1791621636.4942575,
+  "source_hashes": {
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "75ccff591dbb8508b22677c1587b5ebf975c5c3ae50fa4187c0be07986da67b4",
+    "03_analysis/shared_solve_budget_20261010/baseline_worker.py": "67a7e31dbf6160a067bdc1948d041a1ef94579eaf26abd260c08d9e04988842b",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "eb4537e111a1ab36afbe51e1860f324e073ab3448d9d0a8b6e877faef2cf3748",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "reason": "Parent bootstrap precedes supervisor stopwatch;comparing child elapsed only with command elapsed can wrongly prevent inspected failure continuation.",
+  "budget_exit_schema": "shared_worker_budget_expired_v2",
+  "parent_clock_receipt": "SOLVE_CLOCK.json",
+  "child_origin_and_observation_bound_to_parent_interval": true,
+  "parent_clock_binds_command_and_scheduler": true,
+  "legacy_v1_keeps_original_no_parent_clock_elapsed_rule": true,
+  "unknown_grade_calls_reservations_preserved": true,
+  "qualification": {
+    "passed": true,
+    "controls": 4,
+    "real_owned_CPU_children": 4,
+    "actual_execute_row_shared_budget_exit_and_failure_seal": true,
+    "cases": [
+      {
+        "case": "matching_parent_with_short_supervisor",
+        "refused": false,
+        "command_elapsed_s": 0.04677300341427326,
+        "parent_elapsed_s": 301.04686096310616
+      },
+      {
+        "case": "child_origin_mismatch_refused",
+        "refused": true,
+        "command_elapsed_s": 0.045770859345793724,
+        "parent_elapsed_s": 301.0458617992699
+      },
+      {
+        "case": "missing_parent_clock_refused",
+        "refused": true,
+        "command_elapsed_s": 0.04555585980415344,
+        "parent_elapsed_s": 301.04562287963927
+      },
+      {
+        "case": "scheduler_binding_drift_refused",
+        "refused": true,
+        "command_elapsed_s": 0.0460439957678318,
+        "parent_elapsed_s": 301.0461275577545
+      }
+    ],
+    "parent_origin_is_aged": true,
+    "synthetic_solver_not_worker_CLI": true,
+    "resource_and_model_idle_synthetic": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 113,
+      "archive_sha256": "d5c9cbc944e83ec92cb00d034ae2acbe4b3dcdcd3e7b438e5bdee48d81c6ead5",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\parent_failure_clock_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/parent_failure_clock_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "deployed": false,
+  "production_B_CLI_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "real_shared_model_cancel_idle_qualified": false,
+  "full_production_chain_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "prior_qualification_scope": "Previous parent CLI/boundary and HTTP proofs retain exact original source SHA;not automatically qualification of this delta.",
+  "actual138": {
+    "ticket": 138,
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 55,
+    "observed_epoch": 1791621635.5349252,
+    "new_source_overlay": false
+  },
+  "next": [
+    "Keep138 frozen and read original stable-target/control/cost results.",
+    "Qualify exact production B CLI/resource/cleanup chain and real cancel-idle after138 under ownFIFO before full156."
+  ]
+},
+  "current_parent_clock_delta": {
+    "schema": "parent_clock_and_pregrading_deadline_isolated_delta_v1",
+    "saved_epoch": 1791620876.9097333,
+    "source_hashes": {
+      "03_analysis\\shared_solve_budget_20261010\\baseline_worker.py": "67a7e31dbf6160a067bdc1948d041a1ef94579eaf26abd260c08d9e04988842b",
+      "03_analysis\\shared_solve_budget_20261010\\shared_budget.py": "910a2a25a1c20ec49b15f8f8941bad02a663b4a6ee50c8017714b48141171bfa",
+      "03_analysis\\shared_solve_budget_20261010\\official_baseline_arm_20261005.py": "c6a90debf526cfd68adc3997b468912b108db6f02ad1d901fea146ec548b5523",
+      "03_analysis\\queue_failure_continuation_20261010\\three_arm_queue_20261005.py": "5205ae5ea973ee33d254242fb9da6bef19869b833f02fd7ae3909e9a281c20ec",
+      "03_analysis\\queue_failure_continuation_20261010\\failure_continuation.py": "72cee985babe50fcff96c7d60ff5853964c6dc79f18c4dafb2b5e394335eb616"
+    },
+    "purpose": "Include CLI/bootstrap in parent solve clock and reject over-budget rc0 before grading;not a capability gain.",
+    "parent_clock_environment": "RTL_SOLVE_PARENT_STARTED_MONOTONIC",
+    "A_P_worker_requires_binding": true,
+    "B_owned_wrapper_uses_same_parent_clock": true,
+    "upstream_official_baseline_bytes_unchanged": true,
+    "outer_supervision_original310_unchanged": true,
+    "outer310_is_not_proven300_plus10_cleanup_bound": true,
+    "before_grading_requires_both_reported_and_parent_clock_within300": true,
+    "zero_requests_allowed_only_for_source_bound_budget_exit": true,
+    "unknown_grade_calls_and_original_reservations_preserved": true,
+    "CLI_qualification": {
+      "passed": true,
+      "aggregate_controls": 7,
+      "actual_A_worker_CLI_controls": 4,
+      "retained_prior_CLI_observations_not_repeated": 4,
+      "synthetic_zero_seal_controls": 2,
+      "invalid_or_future_parent_binding_control": 1,
+      "archive": {
+        "passed": true,
+        "archive_members": 96,
+        "archive_sha256": "9ac77e71bca95b39598d91c345100a340fc08c290a269eb77626ec5cd2731752",
+        "all_original_members_E_AMD_bound": true,
+        "private_archive": "E:\\26qiansai\\private_archives\\parent_clock_CLI_qualification_20261010_v4"
+      },
+      "cloud_archive": "/workspace/team/runs/fpga_owner/parent_clock_CLI_qualification_20261010_v4/QUALIFICATION_ORIGINALS.zip",
+      "runtime_dependency_admission_idle_are_synthetic": true,
+      "aged_parent_anchor_not_physical300": true,
+      "original_failed_control_entries_preserved": true,
+      "source_clock_scope_refusal_preserved": true
+    },
+    "queue_boundary_qualification": {
+      "passed": true,
+      "controls": 4,
+      "real_owned_CPU_echo_children": 4,
+      "actual_execute_row_function": true,
+      "A_P_B_parent_environment_bridge": true,
+      "reported303_and_underreported_parent_over300_refused_before_grading": true,
+      "grade_clock_and_admission_validation_are_simulated": true,
+      "archive": {
+        "passed": true,
+        "archive_members": 22,
+        "archive_sha256": "bacc601296504b65f5a1643ed10e69902ad0c6527d25b320fd7213f330657d0a",
+        "all_original_members_E_AMD_bound": true,
+        "private_archive": "E:\\26qiansai\\private_archives\\parent_queue_boundary_qualification_20261010_v1"
+      },
+      "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/parent-queue-boundary-qualification-20261010-v1/QUALIFICATION_ORIGINALS.zip"
+    },
+    "production_B_CLI_qualified": false,
+    "full_production_dependencies_and_queue_chain_qualified": false,
+    "real_shared_model_cancel_idle_qualified": false,
+    "physical300_parent_pipeline_qualified": false,
+    "deployed": false,
+    "full156_admission_permitted": false,
+    "full_goal_complete": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "failure_entries": [
+      "LocalSSH connect timeout;read same remote root absent before new entry.",
+      "First CPU child stopped on missing first_system_request before runtime/HTTP;retained.",
+      "Aged parent-clock fixture was correctly refused against short original command;original failure preserved,first CLI not replayed.",
+      "Synthetic zero-seal fixture lacked kit before seal;retained;completed CLI originals reused,not rerun."
+    ],
+    "actual138": {
+      "ticket": 138,
+      "state": "running_verified",
+      "monitor": {
+        "pid": 635531,
+        "present": true,
+        "live_verified": true,
+        "state": "S",
+        "starttime": "889203351",
+        "pgid": 635531,
+        "sid": 635531,
+        "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+        "same_birth": true
+      },
+      "sealed_outputs": 41,
+      "observed_epoch": 1791620715.3051643,
+      "frozen_sources_held": true,
+      "new_delta_overlay": false,
+      "first_two_controls_grade_request_net_gain": 0,
+      "stable_error_target_gain_not_yet_observed": true
+    },
+    "peer_reviewed": [
+      6095390869,
+      6095657518
+    ],
+    "original137_cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/output137-original-failed-archive-20261010-v1/ORIGINAL_FAILED137.zip",
+    "original137_cloud_index": "ARCHIVE_MANIFEST.json inside existing ORIGINAL_FAILED137.zip",
+    "next": [
+      "Read fixed138 target outcomes and gates;do not add second scoring ticket.",
+      "Review changed parent-clock/zero-exit/B wrapper and cleanup bounds;full production chain remains incomplete.",
+      "Real shared-model cancellation/idle can only be validated after existing138 release under its own FIFO lease;do not access busy model."
+    ]
+  },
+  "previous_source_qualifications": {
+    "current_absolute_HTTP_delta": {
+      "schema": "absolute_http_deadline_observed_and_failed_wrapper_audited_v1",
+      "saved_epoch": 1791615634.370223,
+      "qualification_root": "/workspace/team/runs/fpga_owner/absolute_http_budget_qualification_20261010_v1",
+      "published_source_hashes": {
+        "baseline_worker.py": "27c50e464d8996eccdcb4a3c0122c89cf75dc655292a3f6c924154140633d33c",
+        "shared_budget.py": "156a32f86791dbf8311d2902cff99091b2dfd57da29496b57eae0dd7d98d82c1",
+        "failure_continuation.py": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+        "three_arm_queue_20261005.py": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550"
+      },
+      "previous_worker_sha256": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+      "previous_budget_sha256": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+      "quick_controls_passed": true,
+      "quick_controls": [
+        {
+          "case": "real_http_fast_complete",
+          "passed": true,
+          "elapsed_s": 0.0013265423476696014
+        },
+        {
+          "case": "real_continuous_body_absolute_deadline",
+          "passed": true,
+          "budget_s": 0.2,
+          "elapsed_s": 0.20019929111003876,
+          "bytes_sent_before_interrupt": 8
+        },
+        {
+          "case": "real_second_http_uses_shared_remainder",
+          "passed": true,
+          "budget_s": 0.28,
+          "second_remainder_s": 0.18868650868535042,
+          "elapsed_s": 0.28017074428498745
+        },
+        {
+          "case": "refuse_foreign_signal_handler",
+          "passed": true
+        },
+        {
+          "case": "refuse_foreign_timer",
+          "passed": true
+        },
+        {
+          "case": "refuse_blocked_alarm_preserve_mask",
+          "passed": true
+        },
+        {
+          "case": "refuse_non_main_thread",
+          "passed": true
+        }
+      ],
+      "quick_real_HTTP_fixture_calls": 4,
+      "actual300_HTTP_expiry_observed": true,
+      "actual_budget_exit_elapsed_s": 300.0005175936967,
+      "owned_wrapper_elapsed_s": 300.51750680990517,
+      "original_full_wrapper_passed": false,
+      "original_full_wrapper_result_retained": true,
+      "original_full_wrapper_returncode": 1,
+      "original_wrapper_failure": "Post-expiry qualifier compared pretty request-record SHA with compact actual-wire SHA;original runtime serialization independently AST-bound and actual wire hash matches.",
+      "metadata_originals_audit_passed": true,
+      "actual_worker_run_function_proven": true,
+      "production_worker_CLI_exit_proven": false,
+      "actual_model_cancel_proven": false,
+      "fixture_attempts": 1,
+      "fixture_streamed_bytes": 5991,
+      "fixture_connection_closed": true,
+      "admission_and_model_idle_mocked": true,
+      "grade_and_call_counts_unknown": true,
+      "actual300_reruns": 0,
+      "new_model_calls": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "old_controls_rerun": 0,
+      "archive_sha256": "5049e2829702b7c33377b1653adfcf89a47f79a923fb1df064c32d7c81cb8d5a",
+      "archive_members": 68,
+      "every_member_verified_E_AMD": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\absolute_http_qualification_20261010_v1\\EVIDENCE.zip",
+      "current137_frozen_sources_held": true,
+      "old132_frozen_sources_held": true,
+      "shared_model_identity_held": true,
+      "deployed": false,
+      "score_measured": false,
+      "full_goal_complete": false,
+      "remaining": [
+        "Real shared-model cancellation/idle and original production CLI/queue recovery remain unproven.",
+        "Do not overlay new sources into137 or temporal frozen root; keep temporal next capability priority.",
+        "New HTTP source does not inherit old mock joint qualification without respecting its exact old source hashes."
+      ]
+    },
+    "current_scope": "HTTP-only absolute deadline added;real local300 function expiry audited after retained wrapper failure. Old joint qualifications below apply only to their original source hashes;no live-model/CLI recovery claim.",
+    "previous_source_qualifications": {
+      "current_joint_qualification": {
+        "schema": "shared_budget_expired_exit_queue_joint_review_v2",
+        "saved_epoch": 1791609113.235137,
+        "sources": {
+          "baseline_worker.py": {
+            "folder": "shared_solve_budget_20261010",
+            "sha256": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+            "bytes": 10198
+          },
+          "shared_budget.py": {
+            "folder": "shared_solve_budget_20261010",
+            "sha256": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+            "bytes": 2317
+          },
+          "failure_continuation.py": {
+            "folder": "queue_failure_continuation_20261010",
+            "sha256": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+            "bytes": 8315
+          },
+          "three_arm_queue_20261005.py": {
+            "folder": "queue_failure_continuation_20261010",
+            "sha256": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550",
+            "bytes": 29533
+          }
+        },
+        "qualification": {
+          "root": "/workspace/team/runs/fpga_owner/shared_budget_continuation_qualification_20261010_v2",
+          "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_continuation_qualification_20261010_v2/EVIDENCE.zip",
+          "archive_sha256": "032e5758fd6938bf1e4d035da9091a8726e1cb291c185bd006cf1864f203fec3",
+          "members": 358,
+          "passed": true,
+          "returncode": 0,
+          "owned_child_reaped": true,
+          "cases": [
+            {
+              "label": "expired_worker_joint_later_once",
+              "passed": true,
+              "positive": true,
+              "synthetic_row_attempts": 3,
+              "fake_http_attempts": 1,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            },
+            {
+              "label": "socket_expiry_joint_later_once",
+              "passed": true,
+              "positive": true,
+              "synthetic_row_attempts": 3,
+              "fake_http_attempts": 2,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            },
+            {
+              "label": "expired_worker_requires_new_opt_in",
+              "passed": true,
+              "positive": false,
+              "synthetic_row_attempts": 1,
+              "fake_http_attempts": 1,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            },
+            {
+              "label": "expired_worker_source_binding_rejects",
+              "passed": true,
+              "positive": false,
+              "synthetic_row_attempts": 1,
+              "fake_http_attempts": 1,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            },
+            {
+              "label": "nonexpired_claim_rejects",
+              "passed": true,
+              "positive": false,
+              "synthetic_row_attempts": 1,
+              "fake_http_attempts": 1,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            },
+            {
+              "label": "missing_budget_receipt_rejects",
+              "passed": true,
+              "positive": false,
+              "synthetic_row_attempts": 1,
+              "fake_http_attempts": 1,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            },
+            {
+              "label": "remaining_native_group_rejects",
+              "passed": true,
+              "positive": false,
+              "synthetic_row_attempts": 1,
+              "fake_http_attempts": 1,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            },
+            {
+              "label": "model_still_busy_rejects",
+              "passed": true,
+              "positive": false,
+              "synthetic_row_attempts": 1,
+              "fake_http_attempts": 2,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            },
+            {
+              "label": "original_outer_timeout_route_retained",
+              "passed": true,
+              "positive": true,
+              "synthetic_row_attempts": 3,
+              "fake_http_attempts": 0,
+              "unknown_grade_and_calls_preserved": true,
+              "failed_row_never_replayed": true,
+              "score_eligible": false
+            }
+          ],
+          "scope": "Actual changed worker exit receipt -> actual changed advance/run_plan and seals. HTTP/compiler/outer solve receipt/resource admission and model idle are synthetic. No actual solver or model cancellation/reap proven;unchanged owned-supervisor CPU test is retained from v1,not repeated."
+        },
+        "future_failure_continuation_integration_qualified": true,
+        "integration_scope": "Changed worker receipt and queue seals/traversal with synthetic outer solve receipt and model telemetry.",
+        "prior_normal_positive_and_actual_owned_cpu_receipts_retained": "shared_budget_operation_qualification_20261010_v1;unchanged successful path/owned supervisor evidence,not rerun or relabeled as current model cancellation.",
+        "requires_two_explicit_plan_flags": [
+          "allow_inspected_solver_failure",
+          "allow_shared_budget_failure"
+        ],
+        "strict_entire_solve_deadline_qualified": false,
+        "real_model_cancel_idle_qualified": false,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "new_fifo_tickets": 0,
+        "deployed": false,
+        "frozen_output_v2_changed": false,
+        "actual_model_recovery_proven": false,
+        "full_goal_complete": false,
+        "next_work": [
+          "Freeze source-bound prospective common infrastructure without changing frozen output-v2.",
+          "Complete independent source/archive review and consume original135136 outcomes;choose one capability factor and one owner.",
+          "Actual model output-completion comparison;unknown failures still keep complete score unavailable,never replay."
+        ]
+      },
+      "previous_separate_qualification": {
+        "schema": "shared300_operation_budget_source_v1",
+        "original_baseline_sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+        "sources": {
+          "baseline_worker.py": {
+            "sha256": "64155ca4070406d81b41c20c67ac51d76d8d21ee45a59004c87d6d6f3f74c91c",
+            "bytes": 9793
+          },
+          "shared_budget.py": {
+            "sha256": "7ac3ba5a8fbdfba0dec87bd96ecf3106fec7cd347b34e5c08025870a6c602faa",
+            "bytes": 1437
+          }
+        },
+        "changes": [
+          [
+            "import point_feedback\n",
+            "import point_feedback\nimport shared_budget\n"
+          ],
+          [
+            "def run_worker(args, paired):\n",
+            "def run_worker(args, paired):\n    budget = shared_budget.SolveBudget(300)\n    original_owned = paired.owned_command\n"
+          ],
+          [
+            "        index = len(requests); assert index < 2\n",
+            "        budget.remaining()\n        index = len(requests); assert index < 2\n"
+          ],
+          [
+            "entry = dict(index=index, replayed=False, response_received=False,",
+            "entry = dict(index=index, replayed=False, response_received=False, dispatch_started=False,"
+          ],
+          [
+            "            with original_open(request, *positional, **kwargs) as response: raw=response.read()",
+            "            bounded_kwargs = budget.http_timeout(positional, kwargs)\n            entry['dispatch_started'] = True\n            save(out/'requests.json', requests)\n            with original_open(request, *positional, **bounded_kwargs) as response: raw=response.read()"
+          ],
+          [
+            "        return io.BytesIO(raw)",
+            "        budget.remaining()\n        return io.BytesIO(raw)"
+          ],
+          [
+            "        gate()\n        folder = Path(kwargs['cwd'])",
+            "        budget.remaining()\n        gate()\n        folder = Path(kwargs['cwd'])"
+          ],
+          [
+            "        gate()\n        return functional_feedback",
+            "        budget.remaining()\n        gate()\n        return functional_feedback"
+          ],
+          [
+            "        urllib.request.urlopen, subprocess.run = transport, compiler",
+            "        urllib.request.urlopen, subprocess.run = transport, compiler\n        paired.owned_command = budget.owned_operation(original_owned)"
+          ],
+          [
+            "        save(out/'worker_result.json', dict(complete=True",
+            "        budget.remaining()\n        save(out/'worker_result.json', dict(complete=True"
+          ],
+          [
+            "        urllib.request.urlopen, subprocess.run = original_open, original_run",
+            "        paired.owned_command = original_owned\n        urllib.request.urlopen, subprocess.run = original_open, original_run"
+          ]
+        ],
+        "wire_or_generation_changed": false,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "new_fifo_tickets": 0,
+        "deployed": false,
+        "outer310_cleanup_guard_unchanged": true,
+        "strict_entire_solve_deadline_qualified": false,
+        "scope": "Common A/P worker caps HTTP and owned operations by the same existing300 seconds. Existing outer310 supervisor remains. No universal socket streaming/read hard-deadline claim; official B is untouched.",
+        "saved_epoch": 1791608084.9849002,
+        "qualification": {
+          "root": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1",
+          "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/EVIDENCE.zip",
+          "archive_sha256": "6e964773060047d6c9281370b4ccbfd0fb5ca6a5f02cc82f0aed4347a46590d2",
+          "archive_bytes": 171160,
+          "members": 135,
+          "passed": true,
+          "returncode": 0,
+          "owned_child_reaped": true,
+          "cases": [
+            {
+              "label": "C_remaining_after283",
+              "passed": true,
+              "http_timeout_caps": [
+                300.0,
+                17.0
+              ],
+              "native_caps": [
+                {
+                  "cap": 17.0
+                },
+                {
+                  "cap": 7.0
+                }
+              ],
+              "fake_http_attempts": 2,
+              "new_model_calls": 0,
+              "new_eda_calls": 0,
+              "actual_worker_bind_passed": true,
+              "wire_and_original_repair_preserved": true
+            },
+            {
+              "label": "P_remaining_after283",
+              "passed": true,
+              "http_timeout_caps": [
+                300.0,
+                17.0
+              ],
+              "native_caps": [
+                {
+                  "cap": 17.0
+                },
+                {
+                  "cap": 7.0
+                }
+              ],
+              "fake_http_attempts": 2,
+              "new_model_calls": 0,
+              "new_eda_calls": 0,
+              "actual_worker_bind_passed": true,
+              "wire_and_original_repair_preserved": true
+            },
+            {
+              "label": "budget_exhausted_before_repair",
+              "passed": true,
+              "http_timeout_caps": [
+                300.0
+              ],
+              "native_caps": [
+                {
+                  "cap": 1.0
+                }
+              ],
+              "fake_http_attempts": 1,
+              "new_model_calls": 0,
+              "new_eda_calls": 0,
+              "failed_receipt_retained": true,
+              "completed_worker_not_invented": true
+            },
+            {
+              "label": "repair_socket_timeout",
+              "passed": true,
+              "http_timeout_caps": [
+                300.0,
+                17.0
+              ],
+              "native_caps": [
+                {
+                  "cap": 17.0
+                }
+              ],
+              "fake_http_attempts": 2,
+              "new_model_calls": 0,
+              "new_eda_calls": 0,
+              "failed_receipt_retained": true,
+              "completed_worker_not_invented": true
+            },
+            {
+              "label": "gate_exhausts_before_dispatch",
+              "passed": true,
+              "http_timeout_caps": [],
+              "native_caps": [],
+              "fake_http_attempts": 0,
+              "new_model_calls": 0,
+              "new_eda_calls": 0,
+              "failed_receipt_retained": true,
+              "completed_worker_not_invented": true
+            },
+            {
+              "label": "actual_owned_cpu_timeout_remaining_and_retirement",
+              "passed": true,
+              "allocated_s": 0.30000000000001137,
+              "elapsed_s": 0.3167707324028015,
+              "begin": {
+                "pid": 550869,
+                "starttime": "888158871",
+                "command_sha256": "2069e754a171e82b88a92fecd0d1fb52973ad2c4731e8a960167f17be698ea2f",
+                "pgid": 550869
+              },
+              "receipt": {
+                "timeout": true,
+                "launch_error": null,
+                "returncode": -9,
+                "group_signals": [
+                  "SIGKILL"
+                ],
+                "elapsed_s": 0.31667948327958584,
+                "remaining_live_group": [],
+                "log": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/owned_cpu_timeout/owned.log",
+                "log_sha256": "64a1c03f537ca70ce166ab0ff84b9e1476d8fc9cb216a19622e1803ca0c72301",
+                "log_bytes": 144
+              },
+              "original_child_identity_retired": true,
+              "new_model_calls": 0,
+              "new_eda_calls": 0
+            }
+          ],
+          "scope": "Actual changed A/P worker HTTP/native budget propagation with fake HTTP/compile;one real original owned CPU child timeout/reap. No actual model/EDA or strict entire solve deadline qualification. Outer310 guard unchanged."
+        },
+        "future_failure_continuation_integration_qualified": false,
+        "integration_gap": "Inspected-failure v1 only accepts owned supervisor timeout. A bounded HTTP/expired-budget worker can instead exit nonzero without outer timeout;v1 correctly rejects it. Need a separate source-bound budget-exit receipt and joint flow qualification before deployment.",
+        "real_model_cancel_idle_qualified": false,
+        "actual_model_recovery_proven": false,
+        "full_goal_complete": false,
+        "next_work": [
+          "Bind budget-expired nonzero worker exit without guessing grade/calls;qualify its integration with inspected-failure traversal.",
+          "Consume original134 owner complete result and original135136 terminal outcomes.",
+          "Select one actual capability factor and admit one owner;do not alter existing frozen output-v2 or current jobs."
+        ]
+      },
+      "current_scope": "Latest source is joint-budget-exit v2;prior receipts remain historical and source-bound."
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "absolute_http_deadline_observed_and_failed_wrapper_audited_v1",
+  "saved_epoch": 1791615634.370223,
+  "qualification_root": "/workspace/team/runs/fpga_owner/absolute_http_budget_qualification_20261010_v1",
+  "published_source_hashes": {
+    "baseline_worker.py": "27c50e464d8996eccdcb4a3c0122c89cf75dc655292a3f6c924154140633d33c",
+    "shared_budget.py": "156a32f86791dbf8311d2902cff99091b2dfd57da29496b57eae0dd7d98d82c1",
+    "failure_continuation.py": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+    "three_arm_queue_20261005.py": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550"
+  },
+  "previous_worker_sha256": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+  "previous_budget_sha256": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+  "quick_controls_passed": true,
+  "quick_controls": [
+    {
+      "case": "real_http_fast_complete",
+      "passed": true,
+      "elapsed_s": 0.0013265423476696014
+    },
+    {
+      "case": "real_continuous_body_absolute_deadline",
+      "passed": true,
+      "budget_s": 0.2,
+      "elapsed_s": 0.20019929111003876,
+      "bytes_sent_before_interrupt": 8
+    },
+    {
+      "case": "real_second_http_uses_shared_remainder",
+      "passed": true,
+      "budget_s": 0.28,
+      "second_remainder_s": 0.18868650868535042,
+      "elapsed_s": 0.28017074428498745
+    },
+    {
+      "case": "refuse_foreign_signal_handler",
+      "passed": true
+    },
+    {
+      "case": "refuse_foreign_timer",
+      "passed": true
+    },
+    {
+      "case": "refuse_blocked_alarm_preserve_mask",
+      "passed": true
+    },
+    {
+      "case": "refuse_non_main_thread",
+      "passed": true
+    }
+  ],
+  "quick_real_HTTP_fixture_calls": 4,
+  "actual300_HTTP_expiry_observed": true,
+  "actual_budget_exit_elapsed_s": 300.0005175936967,
+  "owned_wrapper_elapsed_s": 300.51750680990517,
+  "original_full_wrapper_passed": false,
+  "original_full_wrapper_result_retained": true,
+  "original_full_wrapper_returncode": 1,
+  "original_wrapper_failure": "Post-expiry qualifier compared pretty request-record SHA with compact actual-wire SHA;original runtime serialization independently AST-bound and actual wire hash matches.",
+  "metadata_originals_audit_passed": true,
+  "actual_worker_run_function_proven": true,
+  "production_worker_CLI_exit_proven": false,
+  "actual_model_cancel_proven": false,
+  "fixture_attempts": 1,
+  "fixture_streamed_bytes": 5991,
+  "fixture_connection_closed": true,
+  "admission_and_model_idle_mocked": true,
+  "grade_and_call_counts_unknown": true,
+  "actual300_reruns": 0,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "old_controls_rerun": 0,
+  "archive_sha256": "5049e2829702b7c33377b1653adfcf89a47f79a923fb1df064c32d7c81cb8d5a",
+  "archive_members": 68,
+  "every_member_verified_E_AMD": true,
+  "private_archive": "E:\\26qiansai\\private_archives\\absolute_http_qualification_20261010_v1\\EVIDENCE.zip",
+  "current137_frozen_sources_held": true,
+  "old132_frozen_sources_held": true,
+  "shared_model_identity_held": true,
+  "deployed": false,
+  "score_measured": false,
+  "full_goal_complete": false,
+  "remaining": [
+    "Real shared-model cancellation/idle and original production CLI/queue recovery remain unproven.",
+    "Do not overlay new sources into137 or temporal frozen root; keep temporal next capability priority.",
+    "New HTTP source does not inherit old mock joint qualification without respecting its exact old source hashes."
+  ]
+}

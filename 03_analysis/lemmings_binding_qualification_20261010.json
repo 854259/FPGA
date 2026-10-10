@@ -1,0 +1,100 @@
+{
+  "schema": "lemmings_native_to_feedback_binding_qualification_v1",
+  "saved_epoch": 1791613914.1793106,
+  "PR_source": "https://github.com/854259/FPGA/pull/190",
+  "qualification_root": "/workspace/team/runs/fpga_owner/lemmings_binding_controls_20261010_v3",
+  "passed": true,
+  "simulated_cases": 8,
+  "positive_cases": 1,
+  "negative_cases": 7,
+  "controls": [
+    {
+      "name": "positive_bad_then_good",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_trace_log_hash",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_counterexample_event",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_log_event_semantics",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_next_request_diagnostic",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_missing_trace_binding",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_native_summary_mismatch",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_feedback_without_successful_lint",
+      "passed": true,
+      "simulated": true
+    }
+  ],
+  "original_native_cases_used": 2,
+  "original_native_case_kind": "Original136 exact extraction of retained synthetic flow responses;not benchmark answers",
+  "original_native_result_sha256": "c82027c7be537dc3cdc4a4a68300b9e2a59e9217a3cd1fa36f5ae9898f3103eb",
+  "pure_flow_result_sha256": "d4034a1b7356b2ab1d66518e61f352a5048daf92d6163f4c9ee1dd0e7559afda",
+  "binding_inputs_sha256": "5c838e8e87e28ed7de15f772ba5af48b237530ae97733e9d22589c5df6227df0",
+  "source_files": 72,
+  "source_hashes": {
+    "worker.py": "17527785141847c66dff8d05ac25b0e0684a0729a3c228fb774fceaeebfd64c2",
+    "lemmings_binding.py": "89a87f832a6680fd9550f3d2a331feeca714ba2cc6a3322a859316421c5ade2e",
+    "binding_controls.py": "e38b064aa615329721e37bbc048c9e10615b67118d6ee54785ff76b399e0430d",
+    "baseline_worker.py": "a4d212f06d16079d45cb79eb2843e7163cf8745d211706c4534e534a84b7fb66",
+    "lemmings_feedback.py": "e178d62a61bd279bb3dfcf4a17357a90e8a26b4537da83ba0f6e3714ae0a753a"
+  },
+  "archive_sha256": "652478445359d6ebbd8a0a11bcf536cc3f6bed9b87c38ad9a642d43d2005be0e",
+  "archive_members": 333,
+  "private_archive": "E:\\26qiansai\\private_archives\\lemmings_binding_actual_20261010_v3\\EVIDENCE.zip",
+  "original_member_hashes_verified_E_AMD": true,
+  "original136_sources_and_results_held": true,
+  "actual137_frozen_sources_held": true,
+  "process": {
+    "returncode": 0,
+    "leader_reaped": true,
+    "elapsed_s": 0.529398100450635,
+    "scope": "Owned qualification child only,not full SSH/archive transfer"
+  },
+  "actual_model_generation_proven": false,
+  "score_measured": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_FIFO": 0,
+  "old_flow_reruns": 0,
+  "native_reruns": 0,
+  "controls_executed_once": true,
+  "preparation_failures_retained": [
+    {
+      "version": "v1",
+      "error": "Wrong guard field;pre-write,zero owned children/controls"
+    },
+    {
+      "version": "v2",
+      "error": "Wrong supervisor argument count;packet prepared but zero owned children/controls"
+    }
+  ],
+  "candidate_worker_and_binder_source_changes_this_turn": 0,
+  "readiness_scope": "Native23 qualification and eight simulated binding controls complete;requires real single-factor model comparison before adoption",
+  "adopted": false,
+  "full_goal_complete": false,
+  "next": "Keep original137 only;choose temporal9 after terminal review. Native feedback binding is independently ready for later fixed ability comparison,not mixed into either frozen candidate."
+}

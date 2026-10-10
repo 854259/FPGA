@@ -303,7 +303,7 @@ def row_worker(args):
     return 0 if row["valid"] else 1
 
 
-def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.):
+def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10., cleanup_deadline=None):
     """Charge launch/wait to one monotonic deadline; clean only the owned group.
 
     Callers with an earlier parent start must pass its absolute deadline. Cleanup
@@ -313,25 +313,50 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
     """
     started = time.monotonic()
     for name, value in (("seconds", seconds), ("cleanup_seconds", cleanup_seconds),
-                        ("deadline", deadline)):
-        if name == "deadline" and value is None:
+                        ("deadline", deadline), ("cleanup_deadline", cleanup_deadline)):
+        if name in ("deadline", "cleanup_deadline") and value is None:
             continue
         try:
             valid = not isinstance(value, bool) and isinstance(value, (int, float)) and math.isfinite(value)
         except OverflowError:
             valid = False
-        if not valid or (name != "deadline" and value <= 0):
+        if not valid or (name not in ("deadline", "cleanup_deadline") and value <= 0):
             raise ValueError(name + " must be a finite " + ("number" if name == "deadline" else "positive number"))
     if cleanup_seconds > 10:
         raise ValueError("cleanup_seconds cannot exceed the 10 second total reserve")
     deadline = min(started + seconds, deadline) if deadline is not None else started + seconds
+    cleanup_limit = cleanup_deadline
+    if cleanup_limit is not None and cleanup_limit < deadline:
+        raise ValueError("cleanup_deadline precedes the work deadline")
     proc = None
+    leader_birth = None
     alive = []
     phase = "run"
     cancel_signal = None
     cleanup_started = None
     cleanup_deadline = None
     result = {"timeout": False, "launch_error": None, "returncode": None, "group_signals": []}
+
+    def identity(pid):
+        try:
+            fields = (Path("/proc") / str(pid) / "stat").read_text().rsplit(")", 1)[1].split()
+        except FileNotFoundError:
+            return None
+        return (int(fields[19]), int(fields[2]), int(fields[3]))
+
+    def owned_members():
+        # The leader remains waitable until after the only group signal. Its
+        # PID therefore cannot be recycled while authorizing that signal.
+        if leader_birth is None or identity(proc.pid) != (leader_birth, proc.pid, proc.pid):
+            raise RuntimeError("owned leader identity changed; refuse group signal")
+        members = []
+        for directory in Path("/proc").glob("[0-9]*"):
+            current = identity(int(directory.name))
+            if current is not None and current[1] == proc.pid:
+                if current[0] < leader_birth or current[2] != proc.pid:
+                    raise RuntimeError("unknown process group ownership; refuse group signal")
+                members.append(int(directory.name))
+        return members
 
     def cancelled(signum, frame):
         nonlocal cancel_signal
@@ -353,11 +378,21 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
                     try:
                         proc = subprocess.Popen(argv, cwd=cwd, stdout=stream, stderr=subprocess.STDOUT,
                                                 stdin=subprocess.DEVNULL, start_new_session=True)
+                        leader = identity(proc.pid)
+                        if leader is None or leader[1:] != (proc.pid, proc.pid):
+                            raise RuntimeError("owned launch identity unavailable")
+                        leader_birth = leader[0]
                     finally:
                         phase = "run"
                     if cancel_signal is not None:
                         raise InterruptedError("owned stage cancelled by signal " + str(cancel_signal))
-                    proc.wait(timeout=max(0., deadline - time.monotonic()))
+                    # Observe exit without reaping; retain the birth-bound
+                    # leader until group authorization and cleanup below.
+                    while os.waitid(os.P_PID, proc.pid, os.WEXITED | os.WNOHANG | os.WNOWAIT) is None:
+                        remaining = deadline - time.monotonic()
+                        if remaining <= 0:
+                            raise subprocess.TimeoutExpired(argv, seconds)
+                        time.sleep(min(.025, remaining))
                     result["timeout"] = time.monotonic() >= deadline
             except subprocess.TimeoutExpired:
                 result["timeout"] = True
@@ -369,7 +404,10 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
                 phase = "cleanup"
                 cleanup_started = time.monotonic()
                 cleanup_deadline = min(cleanup_started, deadline) + cleanup_seconds
+                if cleanup_limit is not None:
+                    cleanup_deadline = min(cleanup_deadline, cleanup_limit)
                 if proc is not None:
+                    owned_members()
                     try:
                         os.killpg(proc.pid, signal.SIGKILL)
                         result["group_signals"].append("SIGKILL")
@@ -411,6 +449,7 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
     return {**result, "elapsed_s": time.monotonic() - started, "remaining_live_group": alive,
             "started_monotonic": started, "deadline_monotonic": deadline,
             "cleanup_started_monotonic": cleanup_started, "cleanup_deadline_monotonic": cleanup_deadline,
+            "cleanup_limit_monotonic": cleanup_limit, "leader_starttime": leader_birth,
             "log": str(log), "log_sha256": sha(log), "log_bytes": Path(log).stat().st_size}
 
 

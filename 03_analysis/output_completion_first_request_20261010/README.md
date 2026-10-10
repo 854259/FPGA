@@ -1,0 +1,11 @@
+# First-request output completion candidate
+
+Original132 stopped after an8192-token truncated first reply and unfinished repair on task147. This isolated candidate appends the existing generic64-word concise/complete RTL rule to the first P system message. It retains original132 single-counterexample complete-table feedback, unchanged repair, official baseline and8192 tokens /2 requests /1 repair /300 seconds. It is independent of the retained temporal candidate.
+
+The prepared fixed comparison contains095,101,102,145 and147, five samples for each A/P/B arm:75 outputs and125 maximum reserved requests. Original historical controls are095 and145;101/102 are recent paired correctness controls, not original historical L3. Old failure replies or hand-derived implementations never enter generation.
+
+The completed095 group has A five L3 versus P five L1 at equal five-request cost. Each arm's five final sources are identical. This factor therefore fails the original historical/paired correctness gate and cannot be adopted for the active goal. FIFO137 continues its unchanged remaining fixed diagnostics; no complete156 regression of this factor is planned. See FIRST_CONTROL_GROUP.json and the public static truncation-warning diagnosis.
+
+Four isolated mock integration cases and conservative first-prompt context checks passed. This establishes source/wire integration, not actual correctness recovery or score gain. The v2 PLAN and all55 archive members are verified; v1's inconsistent summary is retained privately and is not admissible. After original135/136 closure and peer selection, the unchanged v2 was admitted once as FIFO137 by fpga_owner. The detached original monitor was verified running; see ACTUAL137_ADMISSION.json. Existing132-136 records/model/frozen temporal sources remain unchanged.
+
+An incomplete control remains an incomplete comparison. No failed response is replayed, assigned a guessed grade or replaced with a selected sample. Queue failure-continuation and remaining-time enforcement require separate review and are not included here. Actual original-judge results and historical/paired/call guards are required before adoption, followed by complete156 regression.

@@ -1,0 +1,66 @@
+{
+  "schema": "temporal138_target133_public_first_pair_diagnosis_v1",
+  "saved_epoch": 1791626230.0085845,
+  "ticket": 138,
+  "task": "Prob133_2014_q3fsm",
+  "scope": "Only first A/P pair public prompt and original model replies;peer all-five result audit reused.",
+  "public_prompt_SHA256": "304f1942dede3ead058c8600830a66e495a0c3c91ef710a136431bfe8bf52b56",
+  "original_terminal_SHA256": {
+    "A": "9f8161fcebc0f87f786f6ae14235679d899ae443994ccc2133d9aae756edfb5d",
+    "P": "3027bb59fc142979281984650e478bffe0711cf741ff83036914444b03ae5c34"
+  },
+  "private_E_archive": "E:/26qiansai/private_archives/temporal133_first_pair_public_20261010_v1/PUBLIC_ORIGINALS.zip",
+  "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/temporal133-first-pair-public-20261010-v1/PUBLIC_ORIGINALS.zip",
+  "archive_sha256": "b62d27c872aaf1d3c483072a29e5d1a32f33d5321f9bdfe2c57d06e626cdd3ab",
+  "archive_members": 17,
+  "public_contract": "Count exactly two asserted inputs in consecutive three-cycle windows after entry;each new window begins without dropping its first sample.",
+  "A_static_defect": "Evaluation-only STATE_C clears count but does not read w,skipping one sample between consecutive windows;same category as old132 static witness.",
+  "P_static_defects": [
+    "B1/B2/B3 continuously sample but next_count carries the previous window count;no reset of count at each new window.",
+    "z_reg is assigned both combinationally and in posedge block;output behavior needs actual prompt-derived simulation rather than assuming a clean single driver."
+  ],
+  "P_count_predicate_witness": {
+    "windows": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "public_ones_per_window": [
+      1,
+      1
+    ],
+    "expected_predicate_per_window": [
+      false,
+      false
+    ],
+    "generated_cumulative_count_at_next_B1": [
+      1,
+      2
+    ],
+    "generated_count_equals_two_predicate": [
+      false,
+      true
+    ],
+    "scope": "Static count-equation witness only;does not resolve dual-driver output or replace an original judge/EDA test."
+  },
+  "public_derived_feedback_count": 0,
+  "next_hypothesis": "Support unambiguous public consecutive-window/count contracts and report simulated boundary counterexamples through the existing single-repair path;no task-ID dispatch or supplied answer.",
+  "candidate_implemented": false,
+  "candidate_qualified": false,
+  "candidate_admitted": false,
+  "new_score_gain": false,
+  "no_private_judge_or_reference_body_read": true,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false,
+  "public_feedback_observed": false,
+  "checker_support_not_retested_this_turn": true
+}

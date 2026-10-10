@@ -1,4 +1,4361 @@
 {
+  "temporal138_target133_public_diagnosis_20261010": {
+  "schema": "temporal138_target133_public_first_pair_diagnosis_v1",
+  "saved_epoch": 1791626230.0085845,
+  "ticket": 138,
+  "task": "Prob133_2014_q3fsm",
+  "scope": "Only first A/P pair public prompt and original model replies;peer all-five result audit reused.",
+  "public_prompt_SHA256": "304f1942dede3ead058c8600830a66e495a0c3c91ef710a136431bfe8bf52b56",
+  "original_terminal_SHA256": {
+    "A": "9f8161fcebc0f87f786f6ae14235679d899ae443994ccc2133d9aae756edfb5d",
+    "P": "3027bb59fc142979281984650e478bffe0711cf741ff83036914444b03ae5c34"
+  },
+  "private_E_archive": "E:/26qiansai/private_archives/temporal133_first_pair_public_20261010_v1/PUBLIC_ORIGINALS.zip",
+  "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/temporal133-first-pair-public-20261010-v1/PUBLIC_ORIGINALS.zip",
+  "archive_sha256": "b62d27c872aaf1d3c483072a29e5d1a32f33d5321f9bdfe2c57d06e626cdd3ab",
+  "archive_members": 17,
+  "public_contract": "Count exactly two asserted inputs in consecutive three-cycle windows after entry;each new window begins without dropping its first sample.",
+  "A_static_defect": "Evaluation-only STATE_C clears count but does not read w,skipping one sample between consecutive windows;same category as old132 static witness.",
+  "P_static_defects": [
+    "B1/B2/B3 continuously sample but next_count carries the previous window count;no reset of count at each new window.",
+    "z_reg is assigned both combinationally and in posedge block;output behavior needs actual prompt-derived simulation rather than assuming a clean single driver."
+  ],
+  "P_count_predicate_witness": {
+    "windows": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "public_ones_per_window": [
+      1,
+      1
+    ],
+    "expected_predicate_per_window": [
+      false,
+      false
+    ],
+    "generated_cumulative_count_at_next_B1": [
+      1,
+      2
+    ],
+    "generated_count_equals_two_predicate": [
+      false,
+      true
+    ],
+    "scope": "Static count-equation witness only;does not resolve dual-driver output or replace an original judge/EDA test."
+  },
+  "public_derived_feedback_count": 0,
+  "next_hypothesis": "Support unambiguous public consecutive-window/count contracts and report simulated boundary counterexamples through the existing single-repair path;no task-ID dispatch or supplied answer.",
+  "candidate_implemented": false,
+  "candidate_qualified": false,
+  "candidate_admitted": false,
+  "new_score_gain": false,
+  "no_private_judge_or_reference_body_read": true,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false,
+  "public_feedback_observed": false,
+  "checker_support_not_retested_this_turn": true
+},
+  "selected_peer_supervisor_compatibility_delta_20261010": {
+  "schema": "selected_peer_owned_core_compatibility_delta_v1",
+  "saved_epoch": 1791625895.3677297,
+  "source_hashes": {
+    "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py": "680d8790d5031b4dd938af2790acf1296f710a81aedb7c0572110019e8abb54f",
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "c0f3b3144cc74a0ffff1a17fa2ceca578bfaf6fbe405986372a3e8a778750b39",
+    "03_analysis/shared_solve_budget_20261010/official_baseline_arm_20261005.py": "c647ff0ada895aa0bc8f9cf61fe9cff1301684d63595a3dda2422ca1083aee7a",
+    "03_analysis/shared_solve_budget_20261010/qualification_selected_core_delta.py": "1e7facd2623c327162edccc9b23b6a7077c737d500343c2cca1166b1763c4798",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "8e42e5c0a8fbbcae96d86dd44e1f4e13d0c5ed1d692d4d8c39029f6b1c056595",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "selected_core": "03_analysis/selective_runtime_integration_20261003/paired_next/paired_checkpoint.py",
+  "packed_import": "deadline_supervisor.py",
+  "packed_source_bytes_must_equal_canonical": true,
+  "peer_original_SHA": "ee78332e06a4c16b4047c3874e3aa6de529e95833636bce0cdb70a8da5a9a098",
+  "only_owned_command_AST_changed": true,
+  "peer_launch_phase_cancel_deferral_preserved": true,
+  "changes": [
+    "Optional absolute cleanup_deadline caps the single cleanup reserve.",
+    "Capture leader birth before flushing launch cancellation; WNOWAIT observes exit without recycling its PID before the only group signal.",
+    "Birth/PG/SID authorization rejects unknown identity before killpg.",
+    "Queue and SolveBudget consume exact selected core; historical own core is undeployed and not imported."
+  ],
+  "qualification": {
+    "passed": true,
+    "controls": 5,
+    "cases": [
+      "peer_core_hard_cleanup_limit",
+      "leader_waitable_until_group_signal",
+      "injected_birth_mismatch_refuses_signal",
+      "cancel_during_new_birth_capture",
+      "selected_consumer_ABI"
+    ],
+    "real_owned_CPU": true,
+    "independent_sentinel_protected_and_retired": true,
+    "queue_admission_and_parent_age_synthetic": true,
+    "identity_mismatch_fault_synthetic": true,
+    "B_main_not_executed": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 93,
+      "archive_sha256": "498f46da7e487be41ccac5cf28c3fca954f86f288fcfa518ec491d81ba2a700f",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\selected_core_delta_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/selected_core_delta_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "prior_8_and_9_suites_replayed": false,
+  "prior_qualifications_keep_their_original_source_SHA": true,
+  "deprecated_own_core": "03_analysis/shared_solve_budget_20261010/owned_deadline.py",
+  "deprecated_own_core_unchanged": true,
+  "deployed": false,
+  "full_production_chain_qualified": false,
+  "production_B_CLI_qualified": false,
+  "real_model_cancel_idle_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "actual138": {
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "state": "running",
+    "sealed": 117,
+    "observed_epoch": 1791625535.0750694,
+    "frozen_sources_held": true
+  },
+  "unresolved": [
+    "Exact production A/P/B source pack/resource/CLI validation after138 release.",
+    "Owned exclusive model request cancellation and observed idle after disconnect, not inferred from CPU cleanup.",
+    "Existing failure seal is narrow; B request layout and late rc0 are not automatically supported.",
+    "Synchronous Popen and post-cleanup metadata are not proven hard-return bounded. Actual300 pregrade gate remains."
+  ]
+},
+  "temporal138_complete_target111_20261010": {
+  "schema": "temporal138_first_complete_stable_target111_v1",
+  "saved_epoch": 1791624188.3152797,
+  "ticket": 138,
+  "task": "Prob111_fsm2s",
+  "original_all_five_terminal_fields_observed": true,
+  "complete_target_pair_matrix": true,
+  "arms": {
+    "A": {
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "client_attempts": 5,
+      "solve_sum_s": 77.35679298453033,
+      "max_solve_s": 15.702206110581756,
+      "terminal_sha256": [
+        "d929d57409b8814ffd2b6b0bd3a90eb0cf1da6d424b438a16ece8ef137bfeb89",
+        "9633b3f406e1ea24841dcd43ab41f18940b80a95ea2f96ad39b9cfd3411ee486",
+        "30e2ebdaa4d8e49355eb30cd8a9c9683bb511b0864c9297c06365745f9abe24f",
+        "dc46d5bf994cd933d7c426174dfd73222268d197ab341551b792ec412cf4a8ba",
+        "220a37527590ea9925a50442ff86ceeb821eeffff989941b7550b2f60fbe9ecd"
+      ]
+    },
+    "P": {
+      "levels": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "client_attempts": 5,
+      "solve_sum_s": 67.09149086289108,
+      "max_solve_s": 13.648841816931963,
+      "terminal_sha256": [
+        "008a8cd00c08f27e1d2b21f15e3575bc8a37bb415949d5d263f7ffac245c6b42",
+        "3ae027677bad3593904b41898bb229cad2462fa0f4bd5c43227d95fb7c32f0ec",
+        "817d95b0b6063e5443e8e9a7fa6e138c420e053bb2e9f737789bd7dbbb143f39",
+        "705ccfe0bddc89074b9e5580fc0c71839108829ff45629a4a399d418e99fcfbf",
+        "8463dc1d43ab1e4a5b03a8632d60fc4f5fba0c749dc3314814696e3ada500037"
+      ]
+    },
+    "B": {
+      "levels": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "client_attempts": 5,
+      "solve_sum_s": 49.3606230635196,
+      "max_solve_s": 10.192830733954906,
+      "terminal_sha256": [
+        "5f1a372dc52c1f1d3e8408eb819f3bc25c677221fb31cb5db5c0e97f6722b9ae",
+        "bcdd834364c506f54a84607283c740ed1e578d142ff2940b77874f5e6fbabf3a",
+        "7023be7d2b7da8cad51afc7fa6c5f85a7ea54995790da3cd69f0480ff7a86260",
+        "7a72385dc29fc98986f32c251095d407dd4379944f96841e130aec03971e04f9",
+        "87957d4079b8dc719cc0086d4d6ea7ae8c426a1e974604cf8bca4e1c2179e14a"
+      ]
+    }
+  },
+  "newly_correct_P_vs_A_samples": 5,
+  "lost_correct_samples": 0,
+  "client_attempt_delta": 0,
+  "scope": "One preregistered stable-error development task,not five independent tasks,not full nine-task or full156 score.",
+  "diagnosis": {
+    "sample": 0,
+    "public_prompt_and_original_model_outputs_only": true,
+    "A_extra_clocked_output_register_lags_state_by_one_edge": true,
+    "P_output_combinational_from_current_state": true,
+    "basis": "Direct source reading and public Moore contract;nonblocking state/output updates read old state in A.",
+    "no_new_simulation": true,
+    "no_private_reference_TB_or_judge_body": true,
+    "no_task_specific_answer_added_to_generation": true,
+    "first_pair_public_feedback_present": false
+  },
+  "first_pair_originals": {
+    "archive_sha256": "87d846d48b18a6ab1699b7c562f2bf2827711da4072c35333e18268b858bfbd5",
+    "members": 17,
+    "private_archive": "E:\\26qiansai\\private_archives\\temporal111_first_pair_public_20261010_v1\\PUBLIC_ORIGINALS.zip",
+    "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/temporal111-first-pair-public-20261010-v1/PUBLIC_ORIGINALS.zip",
+    "all_members_E_AMD_verified": true
+  },
+  "current138": {
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 96,
+    "started_unsealed": [
+      {
+        "index": 96,
+        "task": "Prob133_2014_q3fsm",
+        "sample": 2,
+        "arm": "B"
+      }
+    ]
+  },
+  "remaining_fixed_targets": [
+    "Prob133_2014_q3fsm",
+    "Prob139_2013_q2bfsm",
+    "Prob140_fsm_hdlc"
+  ],
+  "original109_cost_increase_retained": true,
+  "full_comparison_complete": false,
+  "full_reader_and_selection_audit_pending": true,
+  "factor_adopted": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "unseen_generalization_proven": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "old_round_scores_added": false,
+  "supervisor_coordination": {
+    "peer_proposes_compatible_core": true,
+    "own_core_completed_CPU_only": true,
+    "own_further_core_work_stopped": true,
+    "own_queue_B_budget_integration_scope": true,
+    "one_production_core_to_be_selected_after_exact_peer_review": true,
+    "notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6096026701"
+  }
+},
+  "owned_deadline_delta_20261010": {
+  "schema": "owned_absolute_wait_and_cleanup_delta_v1",
+  "saved_epoch": 1791623419.7716079,
+  "source_hashes": {
+    "03_analysis/shared_solve_budget_20261010/owned_deadline.py": "b24214bc447601ad15a845bd55caf0e9506f15c59d5b932bc391888bcf8667ae",
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "8d54e0a53f3891bf0b898b1bdd97a900d13ddcf61ef604180ce556437cf1e258",
+    "03_analysis/shared_solve_budget_20261010/official_baseline_arm_20261005.py": "c647ff0ada895aa0bc8f9cf61fe9cff1301684d63595a3dda2422ca1083aee7a",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "ec1601223af61baa269ddc50abbcdd04d49aa319a0c977a9516061ff58e8c3fe",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "purpose": "Keep one absolute end through preparation/Popen/wait and one cleanup interval;not a capability gain.",
+  "work_and_cleanup_scope": "A/P owned tools and owned B baseline invocation use parent300 end;outer queue supervisor uses parent310 end with cleanup capped at the same310 end;child work and scoring still300.",
+  "original_official_baseline_python_and_shell_unchanged": true,
+  "subreaper_required": true,
+  "owned_group_signals_require_leader_birth_and_group_binding": true,
+  "cancellation_cleans_and_reaps_before_rethrow": true,
+  "signal_handlers_restored": true,
+  "qualification": {
+    "passed": true,
+    "controls": 8,
+    "cases": [
+      "fast_owned_operation",
+      "expired_after_preparation_no_dispatch",
+      "shared_parent_deadline_kills_wait",
+      "Popen_delay_does_not_refresh_wait",
+      "parent_first_group_cleanup",
+      "signal_cancellation_reaps_owned_child",
+      "one_hard_cleanup_endpoint",
+      "actual_queue_absolute_supervisor_bridge"
+    ],
+    "real_owned_CPU_and_independent_sentinel": true,
+    "actual_SolveBudget_owned_operation_and_queue_execute_row": true,
+    "Popen_delay_is_synthetic": true,
+    "parent_budgets_are_aged": true,
+    "queue_admission_is_synthetic": true,
+    "B_main_is_not_executed_in_this_qualification": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 97,
+      "archive_sha256": "5fa6dbe998706c98d6e9f847f5abf5231050b3ba637849970f644bfd79740108",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\owned_deadline_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/owned_deadline_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "deployed": false,
+  "production_B_CLI_qualified": false,
+  "full_production_chain_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "real_shared_model_cancel_idle_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "prior_qualification_scope": "All older CLI/HTTP/parent-clock/seal qualifications retain their exact previous source SHA;not inherited by this new supervisor/integration.",
+  "unresolved": [
+    "Synchronous Popen itself is not interruptible by this helper;only its post-return wait is clamped.",
+    "CPU wait/cleanup tests do not establish full production A/P/B bootstrap/runtime/resource chain or physically300s pipeline.",
+    "Real shared-model disconnect/cancel and idle require exclusive ownFIFO after138 release.",
+    "Failure seal still requires its supported request/budget evidence layout;B transport-layout faults and overbudget rc0 outside that route stay closed.",
+    "Metadata/log hashing after cleanup is not proof of a strict total function-return bound;pre-grading300 check remains required."
+  ],
+  "peer235_merged_preserving_19_owned_nodes_and22_sources": true,
+  "actual138": {
+    "ticket": 138,
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 84,
+    "observed_epoch": 1791623207.1893194,
+    "new_source_overlay": false
+  },
+  "actual138_first_stable_target_partial": {
+    "task": "Prob111_fsm2s",
+    "observed": {
+      "A": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          1,
+          1,
+          1
+        ],
+        "client_attempts": 3
+      },
+      "P": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          3,
+          3,
+          3
+        ],
+        "client_attempts": 3
+      },
+      "B": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          3,
+          3,
+          3
+        ],
+        "client_attempts": 3
+      }
+    },
+    "all_five_complete": false,
+    "full_comparison_gain_proven": false,
+    "unseen_generalization_proven": false
+  },
+  "next": [
+    "Complete fixed138 pairs/controls/cost/actual300 diagnostics;no replay or second score ticket.",
+    "After138 release,qualify exact production entry/model cancel-idle under ownFIFO before complete156.",
+    "Original109 extra request cause sample0 is compiler identifier typo;do not change FSM semantics or task-ID patch."
+  ]
+},
+  "temporal138_control109_cost_diagnosis_20261010": {
+  "schema": "temporal138_control109_request_cost_diagnosis_v1",
+  "saved_epoch": 1791622267.0163047,
+  "ticket": 138,
+  "task": "Prob109_fsm1",
+  "all_five_observed_original_terminal_fields": true,
+  "levels": {
+    "A": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "P": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "B": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  "client_attempts": {
+    "A": 5,
+    "P": 10,
+    "B": 5
+  },
+  "extra_P_requests": 5,
+  "first_pair_sample": 0,
+  "first_pair_originals_bound_E_AMD": true,
+  "first_P_failure": "Actual compiler rejected undeclared identifier arest;interface and sensitivity list use areset.",
+  "first_P_repair": "Original repair response changes that identifier and removes Markdown fences;the normalized RTL has no other textual changes.",
+  "first_pair_public_derived_feedback_present": false,
+  "first_pair_reason_is_compile_not_FSM_semantic_feedback": true,
+  "causality_scope": "Direct original compiler/repair evidence for sample0 only;other four failure reasons not inspected.",
+  "archive_sha256": "664afa43890e6de7b71fe7b37dae8b4cc4d4b2674a1ed3b5e3f787d231b06a9f",
+  "archive_members": 19,
+  "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/temporal109-first-pair-public-20261010-v1/PUBLIC_ORIGINALS.zip",
+  "private_archive": "E:\\26qiansai\\private_archives\\temporal109_first_pair_public_20261010_v1\\PUBLIC_ORIGINALS.zip",
+  "no_private_reference_or_judge_body_read": true,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "factor_adopted": false,
+  "full_comparison_complete": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "decision_scope": "Report observed cost increase;continue fixed138 targets,then apply existing goal gates. Do not change Moore logic based on this syntax error,do not add a new selection veto or task-specific patch."
+},
+  "parent_failure_clock_delta_20261010": {
+  "schema": "parent_failure_clock_binding_delta_v1",
+  "saved_epoch": 1791621636.4942575,
+  "source_hashes": {
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "75ccff591dbb8508b22677c1587b5ebf975c5c3ae50fa4187c0be07986da67b4",
+    "03_analysis/shared_solve_budget_20261010/baseline_worker.py": "67a7e31dbf6160a067bdc1948d041a1ef94579eaf26abd260c08d9e04988842b",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "eb4537e111a1ab36afbe51e1860f324e073ab3448d9d0a8b6e877faef2cf3748",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "reason": "Parent bootstrap precedes supervisor stopwatch;comparing child elapsed only with command elapsed can wrongly prevent inspected failure continuation.",
+  "budget_exit_schema": "shared_worker_budget_expired_v2",
+  "parent_clock_receipt": "SOLVE_CLOCK.json",
+  "child_origin_and_observation_bound_to_parent_interval": true,
+  "parent_clock_binds_command_and_scheduler": true,
+  "legacy_v1_keeps_original_no_parent_clock_elapsed_rule": true,
+  "unknown_grade_calls_reservations_preserved": true,
+  "qualification": {
+    "passed": true,
+    "controls": 4,
+    "real_owned_CPU_children": 4,
+    "actual_execute_row_shared_budget_exit_and_failure_seal": true,
+    "cases": [
+      {
+        "case": "matching_parent_with_short_supervisor",
+        "refused": false,
+        "command_elapsed_s": 0.04677300341427326,
+        "parent_elapsed_s": 301.04686096310616
+      },
+      {
+        "case": "child_origin_mismatch_refused",
+        "refused": true,
+        "command_elapsed_s": 0.045770859345793724,
+        "parent_elapsed_s": 301.0458617992699
+      },
+      {
+        "case": "missing_parent_clock_refused",
+        "refused": true,
+        "command_elapsed_s": 0.04555585980415344,
+        "parent_elapsed_s": 301.04562287963927
+      },
+      {
+        "case": "scheduler_binding_drift_refused",
+        "refused": true,
+        "command_elapsed_s": 0.0460439957678318,
+        "parent_elapsed_s": 301.0461275577545
+      }
+    ],
+    "parent_origin_is_aged": true,
+    "synthetic_solver_not_worker_CLI": true,
+    "resource_and_model_idle_synthetic": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 113,
+      "archive_sha256": "d5c9cbc944e83ec92cb00d034ae2acbe4b3dcdcd3e7b438e5bdee48d81c6ead5",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\parent_failure_clock_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/parent_failure_clock_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "deployed": false,
+  "production_B_CLI_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "real_shared_model_cancel_idle_qualified": false,
+  "full_production_chain_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "prior_qualification_scope": "Previous parent CLI/boundary and HTTP proofs retain exact original source SHA;not automatically qualification of this delta.",
+  "actual138": {
+    "ticket": 138,
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 55,
+    "observed_epoch": 1791621635.5349252,
+    "new_source_overlay": false
+  },
+  "next": [
+    "Keep138 frozen and read original stable-target/control/cost results.",
+    "Qualify exact production B CLI/resource/cleanup chain and real cancel-idle after138 under ownFIFO before full156."
+  ]
+},
+  "parent_clock_delta_20261010": {
+  "schema": "parent_clock_and_pregrading_deadline_isolated_delta_v1",
+  "saved_epoch": 1791620876.9097333,
+  "source_hashes": {
+    "03_analysis\\shared_solve_budget_20261010\\baseline_worker.py": "67a7e31dbf6160a067bdc1948d041a1ef94579eaf26abd260c08d9e04988842b",
+    "03_analysis\\shared_solve_budget_20261010\\shared_budget.py": "910a2a25a1c20ec49b15f8f8941bad02a663b4a6ee50c8017714b48141171bfa",
+    "03_analysis\\shared_solve_budget_20261010\\official_baseline_arm_20261005.py": "c6a90debf526cfd68adc3997b468912b108db6f02ad1d901fea146ec548b5523",
+    "03_analysis\\queue_failure_continuation_20261010\\three_arm_queue_20261005.py": "5205ae5ea973ee33d254242fb9da6bef19869b833f02fd7ae3909e9a281c20ec",
+    "03_analysis\\queue_failure_continuation_20261010\\failure_continuation.py": "72cee985babe50fcff96c7d60ff5853964c6dc79f18c4dafb2b5e394335eb616"
+  },
+  "purpose": "Include CLI/bootstrap in parent solve clock and reject over-budget rc0 before grading;not a capability gain.",
+  "parent_clock_environment": "RTL_SOLVE_PARENT_STARTED_MONOTONIC",
+  "A_P_worker_requires_binding": true,
+  "B_owned_wrapper_uses_same_parent_clock": true,
+  "upstream_official_baseline_bytes_unchanged": true,
+  "outer_supervision_original310_unchanged": true,
+  "outer310_is_not_proven300_plus10_cleanup_bound": true,
+  "before_grading_requires_both_reported_and_parent_clock_within300": true,
+  "zero_requests_allowed_only_for_source_bound_budget_exit": true,
+  "unknown_grade_calls_and_original_reservations_preserved": true,
+  "CLI_qualification": {
+    "passed": true,
+    "aggregate_controls": 7,
+    "actual_A_worker_CLI_controls": 4,
+    "retained_prior_CLI_observations_not_repeated": 4,
+    "synthetic_zero_seal_controls": 2,
+    "invalid_or_future_parent_binding_control": 1,
+    "archive": {
+      "passed": true,
+      "archive_members": 96,
+      "archive_sha256": "9ac77e71bca95b39598d91c345100a340fc08c290a269eb77626ec5cd2731752",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\parent_clock_CLI_qualification_20261010_v4"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/parent_clock_CLI_qualification_20261010_v4/QUALIFICATION_ORIGINALS.zip",
+    "runtime_dependency_admission_idle_are_synthetic": true,
+    "aged_parent_anchor_not_physical300": true,
+    "original_failed_control_entries_preserved": true,
+    "source_clock_scope_refusal_preserved": true
+  },
+  "queue_boundary_qualification": {
+    "passed": true,
+    "controls": 4,
+    "real_owned_CPU_echo_children": 4,
+    "actual_execute_row_function": true,
+    "A_P_B_parent_environment_bridge": true,
+    "reported303_and_underreported_parent_over300_refused_before_grading": true,
+    "grade_clock_and_admission_validation_are_simulated": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 22,
+      "archive_sha256": "bacc601296504b65f5a1643ed10e69902ad0c6527d25b320fd7213f330657d0a",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\parent_queue_boundary_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/parent-queue-boundary-qualification-20261010-v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "production_B_CLI_qualified": false,
+  "full_production_dependencies_and_queue_chain_qualified": false,
+  "real_shared_model_cancel_idle_qualified": false,
+  "physical300_parent_pipeline_qualified": false,
+  "deployed": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "failure_entries": [
+    "LocalSSH connect timeout;read same remote root absent before new entry.",
+    "First CPU child stopped on missing first_system_request before runtime/HTTP;retained.",
+    "Aged parent-clock fixture was correctly refused against short original command;original failure preserved,first CLI not replayed.",
+    "Synthetic zero-seal fixture lacked kit before seal;retained;completed CLI originals reused,not rerun."
+  ],
+  "actual138": {
+    "ticket": 138,
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 41,
+    "observed_epoch": 1791620715.3051643,
+    "frozen_sources_held": true,
+    "new_delta_overlay": false,
+    "first_two_controls_grade_request_net_gain": 0,
+    "stable_error_target_gain_not_yet_observed": true
+  },
+  "peer_reviewed": [
+    6095390869,
+    6095657518
+  ],
+  "original137_cloud_archive": "/workspace/team/activity/fpga_owner/artifacts/output137-original-failed-archive-20261010-v1/ORIGINAL_FAILED137.zip",
+  "original137_cloud_index": "ARCHIVE_MANIFEST.json inside existing ORIGINAL_FAILED137.zip",
+  "next": [
+    "Read fixed138 target outcomes and gates;do not add second scoring ticket.",
+    "Review changed parent-clock/zero-exit/B wrapper and cleanup bounds;full production chain remains incomplete.",
+    "Real shared-model cancellation/idle can only be validated after existing138 release under its own FIFO lease;do not access busy model."
+  ]
+},
+  "temporal138_deadline_scope_20261010": {
+  "schema": "temporal138_original_deadline_scope_v1",
+  "saved_epoch": 1791618951.464361,
+  "ticket": 138,
+  "reviewed_peer_comment": 6095172840,
+  "reviewed_peer_updated_scope": "15:50 additional budget evidence and PR232",
+  "source": "Original frozen138 worker/queue unchanged;future HTTP and shared-budget prototypes are not deployed.",
+  "strict300_enforcement_proven": false,
+  "live_model_cancellation_proven": false,
+  "production_CLI_full_recovery_proven": false,
+  "observed_grade_scope": "Original reported grade;each paired row must independently satisfy original solve<=300 before goal eligibility.",
+  "if_any_row_exceeds300": "Retain raw grade;cannot claim original-budget-compliant complete comparison or adopt/full156 from it.",
+  "full156_prerequisite": "Qualify production entry + strict absolute total solve deadline + real shared-model cancellation/idle + original queue recovery at exact future frozen sources.",
+  "full156_admission_permitted": false,
+  "do_not_hot_modify138": true,
+  "do_not_stop_or_replay138": true,
+  "observed_sealed_outputs": 8,
+  "observed_epoch": 1791618818.7297354,
+  "monitor": {
+    "pid": 635531,
+    "present": true,
+    "live_verified": true,
+    "state": "S",
+    "starttime": "889203351",
+    "pgid": 635531,
+    "sid": 635531,
+    "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+    "same_birth": true
+  },
+  "actual138_admitted_before_peer15_50_addendum": true,
+  "prior_overrun_reclassified_without_altering_grade": true,
+  "new_FIFO": 0,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "full_goal_complete": false
+},
+  "temporal138_actual_admission_20261010": {
+  "schema": "temporal138_actual_admission_and137_original_closure_v1",
+  "saved_epoch": 1791618602.8768668,
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "closed137": {
+    "state": "failed_released_after_inspection",
+    "complete_outputs": 64,
+    "failed_rows": 1,
+    "unattempted_rows": 10,
+    "archive_members": 4225,
+    "archive_sha256": "7bfbb31b364d0734cfffe02ee4f6fd0e3a0d46bcc28aabb265e5a3ed42c299b9",
+    "private_archive": "E:\\26qiansai\\private_archives\\output137_original_failed_20261010_v1",
+    "original_queue_verifier_used": true,
+    "all_original_members_E_AMD_bound": true,
+    "source_hashes": {
+      "baseline_worker.py": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+      "point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+      "table_feedback.py": "cd8bed6b0bc572ad70c4807097e213a81d6b10e80f2008b6ed55e9a04ab2c293",
+      "edge_dispatch.py": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680",
+      "phase_feedback.py": "efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078",
+      "guard_wrapper.py": "fdd22d547cab6884b071044a7a1f26f847d8937618a55a201838ff10f77ff9d9",
+      "official_baseline_observed_20261005.py": "c47f83c5a09936c2c386050c46771d3aa6645786e3fe76d2e669c64bf7f0bdb5",
+      "official_baseline_scoring_20261005.py": "83e6db24b1fd57fb7da4d28efc15a4097e0d0fdacb8a6fe8dbdf903844ed284c",
+      "three_arm_queue_20261005.py": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de",
+      "priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "phase_context.py": "90b7c71b480a7cdd9d485e7401509feef996520111e76c03666ac519a2d01afa",
+      "official_baseline_arm_20261005.py": "c43edf51bb4f9bbc7a041045264ad9d32d6001ffbc3ff69f54c4294e20b8c422",
+      "edge_feedback.py": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
+      "prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+      "worker.py": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65",
+      "contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+      "edge_contract.py": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+      "shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+      "package/baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "dependencies/probe_runner.py": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
+      "dependencies/paired_checkpoint.py": "78e9b3e144f2bd43ebab371e15ac3946017686db890a8e45891db7a386841e1c",
+      "package/agent/map_runtime.py": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+      "package/agent/runtime.py": "22e32251664f31a6a8a51b9d443860442359aa2588b187ea816c6973c8cd08e7",
+      "package/skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74",
+      "package/skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "first_system_request.py": "65da3d134b7b1c3e57a24a6e8d6c78869644542d8865b444c20a63ba6b900a10",
+      "comparison_result.py": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+      "prepare_temporal_comparison.py": "2adc42b2ada9c18f37b460c3bbaa2f724a51f94c598267e4da7f3a5532c71c18"
+    },
+    "failed_grade": null,
+    "failed_actual_calls": null,
+    "complete_score_available": false,
+    "overtime_successful_rows": [
+      {
+        "index": 62,
+        "task": "Prob147_circuit10",
+        "sample": 0,
+        "arm": "A",
+        "level": 3,
+        "actual_calls": 2,
+        "solve_elapsed_s": 303.79142722673714,
+        "solve_within_original300": false,
+        "terminal_sha256": "dd061a4df141acfd6d4fb1f49fa112e7031f1a38a06115d692c42f4618345298"
+      }
+    ],
+    "output_factor_adoption_permitted": false,
+    "all_originals_held": true,
+    "model_held": true,
+    "replayed": false
+  },
+  "actual138": {
+    "ticket": 138,
+    "accepted_at_utc": "2026-10-10T07:46:24.035317+00:00",
+    "state": "running",
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "frozen_sha256": {
+      "plan": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+      "spec": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+      "preparation": "53a4fc6056737e09172106f1a0a14f35491ec0957b2e9b3bb1f9a6d5824af650"
+    },
+    "outputs": 135,
+    "max_reserved_requests": 225,
+    "tasks": 9,
+    "samples": 5,
+    "arms": [
+      "A",
+      "P",
+      "B"
+    ],
+    "known_stable_error_targets": [
+      "Prob111_fsm2s",
+      "Prob133_2014_q3fsm",
+      "Prob139_2013_q2bfsm",
+      "Prob140_fsm_hdlc"
+    ],
+    "historical_controls": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1",
+      "Prob110_fsm2"
+    ],
+    "factor": "Only P first system adds preregistered174-word temporal guidance;original single-counterexample table feedback retained.",
+    "frozen_sources_held": true,
+    "budget_tokens_requests_repairs_seconds": [
+      8192,
+      2,
+      1,
+      300
+    ],
+    "outer_cleanup_supervision_seconds": 310,
+    "budget_or_continuation_overlay": false,
+    "full156": false,
+    "formal_adoption": false,
+    "observed_sealed_outputs": 2,
+    "observed_rows": [
+      {
+        "index": 0,
+        "task": "Prob095_review2015_fsmshift",
+        "sample": 0,
+        "arm": "A",
+        "complete": true,
+        "terminal_sha256": "1b338b29c5229ab15eec2a12a0278d0b8118156f65a62a32de0a3e45e0962cf2",
+        "solution_sha256": "aac66de3b3dfbc7033d82499b949146484f42b4c7acc4834a3ef13f6946f4080",
+        "reported_level": 3,
+        "reported_coefficient": null,
+        "reported_calls": 1,
+        "solve_elapsed_s": 17.804790943861008
+      },
+      {
+        "index": 1,
+        "task": "Prob095_review2015_fsmshift",
+        "sample": 0,
+        "arm": "P",
+        "complete": true,
+        "terminal_sha256": "6a1abf645d04a4ac08871fb0d0c2ffbdd8d5a419ff09bd91e94c8dc1e6adae62",
+        "solution_sha256": "d3490283aa1973869772070ecedd3b7ca8a967d23c0610e4a658eda92a1a5a27",
+        "reported_level": 3,
+        "reported_coefficient": null,
+        "reported_calls": 1,
+        "solve_elapsed_s": 22.009327052161098
+      }
+    ],
+    "observed_epoch": 1791618526.2574022,
+    "scores_available": false,
+    "first_control_sample_scope": "Only completed initial samples;not all-five control pass or a capability gain.",
+    "admission_entry_sha256": "e30fedf5f12334856d64ef7b258f9952bb1b0768f4d213b17b7766419420a9e4",
+    "whole_task_FIFO": true,
+    "retries": 0,
+    "independent_of_local_SSH_session": true
+  },
+  "peer_merge": {
+    "commit": "45adf0a5",
+    "target": "ce532cbfd41b92fd920d296c2573851eac742ed5",
+    "peer_PRs": [
+      229,
+      230
+    ],
+    "peer_full_document_bytes_and_JSON_semantics_preserved": true,
+    "own_new_JSON_nodes_preserved": 14,
+    "execution_sources_unchanged": 18
+  },
+  "next": [
+    "Read138 retained handle;no repeated submission,restart,in-place source change or resampling.",
+    "Judge full nine-task paired grades/historical controls/per-task and total requests/original300 clock before adoption.",
+    "Archive terminal evidence and use retained original reader once when eligible;do not sum old rounds.",
+    "Future live-model cancellation/strict-budget/failure-continuation chain remains unproven and separate."
+  ],
+  "full156_goal_complete": false,
+  "weighted_minimum": 0.8,
+  "minimum_full_correct": 120,
+  "new_FIFO": 1,
+  "new_model_calls_for_local_analysis": 0,
+  "new_EDA_for_local_analysis": 0
+},
+  "output137_failure_checkpoint_20261010": {
+  "schema": "output137_failed_row64_checkpoint_v1",
+  "saved_epoch": 1791617891.6475601,
+  "ticket": 137,
+  "state": "held_for_inspection",
+  "finished_at_utc": "2026-10-10T07:28:50.001962+00:00",
+  "complete_outputs": 64,
+  "incomplete_output_count": 1,
+  "unattempted_output_count": 10,
+  "planned_outputs": 75,
+  "failed": {
+    "task": "Prob147_circuit10",
+    "arm": "A",
+    "sample": 1,
+    "row": 64,
+    "grade": null,
+    "actual_calls": null,
+    "first_response_elapsed_s": 283.76684012264013,
+    "first_response_tokens": 8192,
+    "first_finish": "length",
+    "repair_response_received": false,
+    "outer_supervisor_s": 310.01824370771646,
+    "returncode": -9
+  },
+  "cause": "Incomplete solver row rejected by current fail-stop queue; ordinary graded wrong answers continue.",
+  "cleanup_verified": true,
+  "recorded_same_birth_live": [],
+  "model_idle": true,
+  "model_unchanged": true,
+  "frozen_sources_held": true,
+  "FIFO_released": false,
+  "full_original_archive_completed": false,
+  "complete_score_available": false,
+  "future_failure_continuation_source_prepared": true,
+  "future_failure_continuation_deployed": false,
+  "next": [
+    "Archive and independently inspect original failure/prefix;release held FIFO only after required inspection.",
+    "No restart, replay, in-place source change, synthetic grade or synthetic call count.",
+    "Future diagnostic continuation requires verified cleanup and model idle;strict HTTP/full production chain remains unproven."
+  ],
+  "reviewed_peer_comment": 6095172840,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false,
+  "evidence_sha256": "8413576e256f1955881d0c83845859f10579e36ea05ed8d5550d798ffc7edcc2"
+},
+  "candidate_capability_priorities_20261010": {
+  "schema": "single_factor_capability_priorities_retained_evidence_v1",
+  "saved_epoch": 1791616398.4432585,
+  "actual137": {
+    "state": "running_verified",
+    "sealed_outputs": 61,
+    "monitor": {
+      "pid": 578525,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "888452187",
+      "pgid": 578525,
+      "sid": 578525,
+      "command_sha256": "1ff46b3b31187038233d5b81a837c18deae3c02d9a766e28f9cdf2f35baac737",
+      "same_birth": true
+    },
+    "full_comparison_complete": false,
+    "reported145": {
+      "A": {
+        "levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "reported_client_attempts": 5,
+        "observed_solve_s": 1206.2004625741392,
+        "max_solve_s": 259.62807570397854,
+        "terminal_hashes": [
+          "684e0bc487fb9ce61d8b6d0cfff03406b54b8460e968bb68462bf33b5b6f44c5",
+          "d6cb606bfa8deec5f69452e572b889f551131a68bf617aa0e6b14196f3d15904",
+          "dd08bf6c00cbc9679bc1b791f0282a9df85e12f31e45d2ef1bd53c7ede15de63",
+          "fb289f29d5154ac99da7232864a7b792ceaf27a62417f04183cd29dbae80aa4f",
+          "a2a0a1e2c9584253ef09d1882c4aaa8ab2dcbae857d30de03a684a354921912d"
+        ]
+      },
+      "P": {
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reported_client_attempts": 10,
+        "observed_solve_s": 1331.969472007826,
+        "max_solve_s": 266.95418277941644,
+        "terminal_hashes": [
+          "b1c101d33f572f17f2b9e5307f4c85dd7b9c8bf00e5528e31816d11d5cd8f8fb",
+          "a35aea7f773c064d0fcad7f32248daa140c33c3593e53675ef99df938d7fec8a",
+          "5c14672c743c325cffa0017e207538fe92de9455c134ce72ebce677772033a2c",
+          "558ec66d7b152918356bc3245ce320112fbd598dc0914bf95cc03daaa796aef3",
+          "f20e78c786a4a6cbe0c8d235606ae38a7fed8881bbf4763a5f3588b3abc739e7"
+        ]
+      },
+      "B": {
+        "levels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reported_client_attempts": 5,
+        "observed_solve_s": 726.8766876664013,
+        "max_solve_s": 145.82332078367472,
+        "terminal_hashes": [
+          "d3e2050b30e182cc509a8f57bab585a3e869d630e40052d5d29a0643d53326d3",
+          "0bb28defe706e55c12bda78c16f9cc72e1a15793c5ae24652b7070a88c6abe0b",
+          "f897c75485ddef27191a187dc4c8d6ccc885318932d93776ae57f2a9357eebb5",
+          "826d8436043cf304c24afe5d95194230258f3ad06ea01023fe86018c5e9f8efc",
+          "1a89898c87eddf08564aec7ba1a805ea61b4048be0d6d07e85daaafa0b073ea1"
+        ]
+      }
+    },
+    "reported147_so_far": [
+      {
+        "index": 60,
+        "task": "Prob147_circuit10",
+        "sample": 0,
+        "arm": "P",
+        "complete": true,
+        "terminal_sha256": "2b39170b30ddb88f027e416c3449dbd3b36c7f11ece58ee03f0cd59d6490501c",
+        "solution_sha256": "c1e5c096afb6aa968ad79e1642964dbe16ffdb308e7341b391dbe26285bbfcd6",
+        "reported_level": 1,
+        "reported_coefficient": null,
+        "reported_calls": 1,
+        "solve_elapsed_s": 62.263456190004945
+      }
+    ],
+    "grade_scope": "Original per-row TERMINAL fields observed;full original reader and independent bound-original audit pending"
+  },
+  "output_factor_adoption_permitted": false,
+  "output_factor_failed_both_historical_controls": true,
+  "first_next_factor": {
+    "name": "frozen_temporal_first_request",
+    "known_stable_targets": [
+      "Prob111_fsm2s",
+      "Prob133_2014_q3fsm",
+      "Prob139_2013_q2bfsm",
+      "Prob140_fsm_hdlc"
+    ],
+    "scope": "Four fixed stable-error targets/five controls;does not prove all31 remaining errors covered",
+    "prepared": true,
+    "submitted": false,
+    "requires": "Actual137 terminal/release/retirement and original selection;one owner"
+  },
+  "later_existing_native_candidate": {
+    "eligible_tasks": [
+      "Prob142_lemmings2",
+      "Prob152_lemmings3",
+      "Prob155_lemmings4"
+    ],
+    "known_stable_error_targets": [
+      "Prob142_lemmings2"
+    ],
+    "original132_unobserved": [
+      "Prob152_lemmings3",
+      "Prob155_lemmings4"
+    ],
+    "native_and_binding_qualification_closed": true,
+    "model_benefit_measured": false,
+    "submitted": false
+  },
+  "later_hypothesis": {
+    "name": "multiple_counterexamples_only_for_Karnaugh_contracts",
+    "source_contract_kind": "karnaugh_map",
+    "prior_gain_type": "karnaugh_map",
+    "prior_loss_type": "complete_scalar_waveform",
+    "prior_gain_task": "Prob125_kmap3",
+    "prior_loss_task": "Prob102_circuit3",
+    "evidence": "Original134 whole factor net0;four original sample0 A/P terminals and contracts source/seal bound. Typed restriction is only a new hypothesis.",
+    "task_id_gate_forbidden": true,
+    "code_prepared": false,
+    "qualified": false,
+    "submitted": false,
+    "net_gain_proven": false,
+    "rule_if_explored": "Use only public parsed contract kind;retain original single-counterexample waveform feedback and original judge/budget. Require a new fixed single-factor comparison before adoption."
+  },
+  "no_new_evaluation_queue": true,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "old_scores_added": false,
+  "full156_complete": false,
+  "full_goal_complete": false,
+  "sources": {
+    "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\OUTPUT137_EXISTING_HANDLE_1791616157952503900\\READBACK.json": "c0c66446f8e64e6d8d989fcc4c40521d3fc8e049b0a892157679d86899ff00e9",
+    "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\TABLE134_FAMILY_DIAGNOSIS_20261010_v2\\READBACK.json": "df46ebf07aa95e0b85c5b399151a632a115298b1e50c1341ee943a123495e8c3",
+    "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\LEMMINGS_PURE_INTAKE_ACTUAL_v1\\READBACK.json": "bd5b4239f0e7a60c67123dce393a041bb1cfb2dab97ac633c4063d88d3b4e9aa",
+    "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\PREFIX146_STABLE_ERROR_COVERAGE_20261010_v1\\RESULT.json": "6966f46c119c1f4c9b591c59d398270a1c78ee3d83b81136fc03beec6f0771fc"
+  }
+},
+  "absolute_HTTP_deadline_20261010": {
+  "schema": "absolute_http_deadline_observed_and_failed_wrapper_audited_v1",
+  "saved_epoch": 1791615634.370223,
+  "qualification_root": "/workspace/team/runs/fpga_owner/absolute_http_budget_qualification_20261010_v1",
+  "published_source_hashes": {
+    "baseline_worker.py": "27c50e464d8996eccdcb4a3c0122c89cf75dc655292a3f6c924154140633d33c",
+    "shared_budget.py": "156a32f86791dbf8311d2902cff99091b2dfd57da29496b57eae0dd7d98d82c1",
+    "failure_continuation.py": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+    "three_arm_queue_20261005.py": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550"
+  },
+  "previous_worker_sha256": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+  "previous_budget_sha256": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+  "quick_controls_passed": true,
+  "quick_controls": [
+    {
+      "case": "real_http_fast_complete",
+      "passed": true,
+      "elapsed_s": 0.0013265423476696014
+    },
+    {
+      "case": "real_continuous_body_absolute_deadline",
+      "passed": true,
+      "budget_s": 0.2,
+      "elapsed_s": 0.20019929111003876,
+      "bytes_sent_before_interrupt": 8
+    },
+    {
+      "case": "real_second_http_uses_shared_remainder",
+      "passed": true,
+      "budget_s": 0.28,
+      "second_remainder_s": 0.18868650868535042,
+      "elapsed_s": 0.28017074428498745
+    },
+    {
+      "case": "refuse_foreign_signal_handler",
+      "passed": true
+    },
+    {
+      "case": "refuse_foreign_timer",
+      "passed": true
+    },
+    {
+      "case": "refuse_blocked_alarm_preserve_mask",
+      "passed": true
+    },
+    {
+      "case": "refuse_non_main_thread",
+      "passed": true
+    }
+  ],
+  "quick_real_HTTP_fixture_calls": 4,
+  "actual300_HTTP_expiry_observed": true,
+  "actual_budget_exit_elapsed_s": 300.0005175936967,
+  "owned_wrapper_elapsed_s": 300.51750680990517,
+  "original_full_wrapper_passed": false,
+  "original_full_wrapper_result_retained": true,
+  "original_full_wrapper_returncode": 1,
+  "original_wrapper_failure": "Post-expiry qualifier compared pretty request-record SHA with compact actual-wire SHA;original runtime serialization independently AST-bound and actual wire hash matches.",
+  "metadata_originals_audit_passed": true,
+  "actual_worker_run_function_proven": true,
+  "production_worker_CLI_exit_proven": false,
+  "actual_model_cancel_proven": false,
+  "fixture_attempts": 1,
+  "fixture_streamed_bytes": 5991,
+  "fixture_connection_closed": true,
+  "admission_and_model_idle_mocked": true,
+  "grade_and_call_counts_unknown": true,
+  "actual300_reruns": 0,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "old_controls_rerun": 0,
+  "archive_sha256": "5049e2829702b7c33377b1653adfcf89a47f79a923fb1df064c32d7c81cb8d5a",
+  "archive_members": 68,
+  "every_member_verified_E_AMD": true,
+  "private_archive": "E:\\26qiansai\\private_archives\\absolute_http_qualification_20261010_v1\\EVIDENCE.zip",
+  "current137_frozen_sources_held": true,
+  "old132_frozen_sources_held": true,
+  "shared_model_identity_held": true,
+  "deployed": false,
+  "score_measured": false,
+  "full_goal_complete": false,
+  "remaining": [
+    "Real shared-model cancellation/idle and original production CLI/queue recovery remain unproven.",
+    "Do not overlay new sources into137 or temporal frozen root; keep temporal next capability priority.",
+    "New HTTP source does not inherit old mock joint qualification without respecting its exact old source hashes."
+  ]
+},
+  "lemmings_binding_qualification_20261010": {
+  "schema": "lemmings_native_to_feedback_binding_qualification_v1",
+  "saved_epoch": 1791613914.1793106,
+  "PR_source": "https://github.com/854259/FPGA/pull/190",
+  "qualification_root": "/workspace/team/runs/fpga_owner/lemmings_binding_controls_20261010_v3",
+  "passed": true,
+  "simulated_cases": 8,
+  "positive_cases": 1,
+  "negative_cases": 7,
+  "controls": [
+    {
+      "name": "positive_bad_then_good",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_trace_log_hash",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_counterexample_event",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_log_event_semantics",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_next_request_diagnostic",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_missing_trace_binding",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_native_summary_mismatch",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "reject_feedback_without_successful_lint",
+      "passed": true,
+      "simulated": true
+    }
+  ],
+  "original_native_cases_used": 2,
+  "original_native_case_kind": "Original136 exact extraction of retained synthetic flow responses;not benchmark answers",
+  "original_native_result_sha256": "c82027c7be537dc3cdc4a4a68300b9e2a59e9217a3cd1fa36f5ae9898f3103eb",
+  "pure_flow_result_sha256": "d4034a1b7356b2ab1d66518e61f352a5048daf92d6163f4c9ee1dd0e7559afda",
+  "binding_inputs_sha256": "5c838e8e87e28ed7de15f772ba5af48b237530ae97733e9d22589c5df6227df0",
+  "source_files": 72,
+  "source_hashes": {
+    "worker.py": "17527785141847c66dff8d05ac25b0e0684a0729a3c228fb774fceaeebfd64c2",
+    "lemmings_binding.py": "89a87f832a6680fd9550f3d2a331feeca714ba2cc6a3322a859316421c5ade2e",
+    "binding_controls.py": "e38b064aa615329721e37bbc048c9e10615b67118d6ee54785ff76b399e0430d",
+    "baseline_worker.py": "a4d212f06d16079d45cb79eb2843e7163cf8745d211706c4534e534a84b7fb66",
+    "lemmings_feedback.py": "e178d62a61bd279bb3dfcf4a17357a90e8a26b4537da83ba0f6e3714ae0a753a"
+  },
+  "archive_sha256": "652478445359d6ebbd8a0a11bcf536cc3f6bed9b87c38ad9a642d43d2005be0e",
+  "archive_members": 333,
+  "private_archive": "E:\\26qiansai\\private_archives\\lemmings_binding_actual_20261010_v3\\EVIDENCE.zip",
+  "original_member_hashes_verified_E_AMD": true,
+  "original136_sources_and_results_held": true,
+  "actual137_frozen_sources_held": true,
+  "process": {
+    "returncode": 0,
+    "leader_reaped": true,
+    "elapsed_s": 0.529398100450635,
+    "scope": "Owned qualification child only,not full SSH/archive transfer"
+  },
+  "actual_model_generation_proven": false,
+  "score_measured": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_FIFO": 0,
+  "old_flow_reruns": 0,
+  "native_reruns": 0,
+  "controls_executed_once": true,
+  "preparation_failures_retained": [
+    {
+      "version": "v1",
+      "error": "Wrong guard field;pre-write,zero owned children/controls"
+    },
+    {
+      "version": "v2",
+      "error": "Wrong supervisor argument count;packet prepared but zero owned children/controls"
+    }
+  ],
+  "candidate_worker_and_binder_source_changes_this_turn": 0,
+  "readiness_scope": "Native23 qualification and eight simulated binding controls complete;requires real single-factor model comparison before adoption",
+  "adopted": false,
+  "full_goal_complete": false,
+  "next": "Keep original137 only;choose temporal9 after terminal review. Native feedback binding is independently ready for later fixed ability comparison,not mixed into either frozen candidate."
+},
+  "native_warning_applicability_20261010": {
+  "schema": "native_warning_applicability_and_next_temporal_preparation_v1",
+  "saved_epoch": 1791612164.3827276,
+  "previous_goal_turn_classification": "progress",
+  "stable_wrong_tasks": 31,
+  "samples_per_task_inspected": 1,
+  "correct_control_tasks": 1,
+  "all_first_native_logs_read": true,
+  "compile_pass_wrong_warning_tasks": [],
+  "compiled_first_pass_wrong_tasks": 27,
+  "sole_warning_task": "Prob134_2014_q3c",
+  "sole_warning_compile_rc": 1,
+  "sole_warning_codes": [
+    "VRFC 10-8497"
+  ],
+  "first_trace_result_sha256": "604196b95aac80d4410f5286bed7dc4f28c65ecbe63dd9df89f32ea25a3bfeff",
+  "first_trace_files": 160,
+  "full_native_log_delta_result_sha256": "2a387db1f4ed7528eb3bcf2d18c11edf33594b45ab01ac16be5128f51bc719c4",
+  "full_native_delta_files": 64,
+  "all_E_local_originals_verified": true,
+  "existing_AMD_originals_unchanged": true,
+  "private_archives": [
+    "E:/26qiansai/private_archives/stable132_native_warning_applicability_20261010_v1",
+    "E:/26qiansai/private_archives/stable132_full_native_warning_delta_20261010_v1"
+  ],
+  "conclusion": "No first compile-success native-warning trigger in original31 stable-wrong P sample0. Existing134 compile-error already invokes repair. Do not build/test a new warning-only factor solely to rescue discarded output-factor regression.",
+  "scope": "Fixed original baseline P sample0 first compiler log,not all five samples/all rounds/hidden tasks or general proof that warning feedback is useless",
+  "new_warning_factor_preparation_deferred": true,
+  "existing_warning_safety_gap_not_denied": true,
+  "temporal": {
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "tasks": 9,
+    "samples": 5,
+    "outputs": 135,
+    "max_requests": 225,
+    "PLAN_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+    "SPEC_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+    "priority": "Next existing single-factor candidate after actual137 outcome and shared selection",
+    "admission_source_prepared_only": true,
+    "submitted": false,
+    "source_overlay_unchanged": true,
+    "requires137_completed_or_inspected_failed_release": true
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false
+},
+  "output137_first_control_group": {
+  "schema": "output137_completed_first_control_group_v1",
+  "saved_epoch": 1791611625.3708284,
+  "ticket": 137,
+  "observed_epoch": 1791611624.3461974,
+  "task": "Prob095_review2015_fsmshift",
+  "fixed_samples": 5,
+  "rows": [
+    {
+      "index": 0,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 0,
+      "arm": "A",
+      "complete": true,
+      "terminal_sha256": "eabbae361cd3911fb62e6fe473bd63fc7c548fe378008b04068d30f43ea0c78a",
+      "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+      "reported_level": 3,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 17.10173117183149
+    },
+    {
+      "index": 1,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 0,
+      "arm": "P",
+      "complete": true,
+      "terminal_sha256": "6f9b086ce87ba6cc81a787ab36c5df6767e424bf7e99fdd63943f20b853d5980",
+      "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.5009171590209
+    },
+    {
+      "index": 2,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 0,
+      "arm": "B",
+      "complete": true,
+      "terminal_sha256": "dd974382582b3be852a8aca93c28980a5702d961c41ea73dc727e3c61bc5c386",
+      "solution_sha256": null,
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 17.856045642867684
+    },
+    {
+      "index": 3,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 1,
+      "arm": "P",
+      "complete": true,
+      "terminal_sha256": "16422d7496eed50f8a7e4bb8bb8bdfb74a911158abfcafaad184efe9bbe06501",
+      "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.102161260321736
+    },
+    {
+      "index": 4,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 1,
+      "arm": "B",
+      "complete": true,
+      "terminal_sha256": "a2da02b176163f45fb2cb149831f70752fa34d5a763454a724db2e4e8d2881d9",
+      "solution_sha256": null,
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 17.555780755355954
+    },
+    {
+      "index": 5,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 1,
+      "arm": "A",
+      "complete": true,
+      "terminal_sha256": "2ea4794fa09871eeff020001da00708fa1176b082e354c3ed54bf5a296ed27cd",
+      "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+      "reported_level": 3,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.653205359354615
+    },
+    {
+      "index": 6,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 2,
+      "arm": "B",
+      "complete": true,
+      "terminal_sha256": "181fc83a1a543a78fba88a1b39856b78095d615ee95542d992d7160712957c20",
+      "solution_sha256": null,
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 17.55910957418382
+    },
+    {
+      "index": 7,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 2,
+      "arm": "A",
+      "complete": true,
+      "terminal_sha256": "5f0c92127073c5c394c930622eaa9c15a0f4d2e8a5b5198be783984e1ed091cf",
+      "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+      "reported_level": 3,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.55586550012231
+    },
+    {
+      "index": 8,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 2,
+      "arm": "P",
+      "complete": true,
+      "terminal_sha256": "14f970f829d1ea50d0da11351c6ff859596753e5c8e992def0ab42ccc2c63454",
+      "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.10276743583381
+    },
+    {
+      "index": 9,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 3,
+      "arm": "A",
+      "complete": true,
+      "terminal_sha256": "b737b69a3a45b42a8425baca9fa67916db6269d42c3264dfe99e21052671d951",
+      "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+      "reported_level": 3,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.702778700739145
+    },
+    {
+      "index": 10,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 3,
+      "arm": "P",
+      "complete": true,
+      "terminal_sha256": "25930f4f15c54dc4755298fc69d884c21f97edfff67b35c627b6714710364423",
+      "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.153057225048542
+    },
+    {
+      "index": 11,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 3,
+      "arm": "B",
+      "complete": true,
+      "terminal_sha256": "12bacd7467ed3f29572b5af5802a123c71c1d4cbb9198c891a0760e4ebeb64c3",
+      "solution_sha256": null,
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 17.553735407069325
+    },
+    {
+      "index": 12,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 4,
+      "arm": "P",
+      "complete": true,
+      "terminal_sha256": "30a50fe8bb253dc4545f254f6b2b3d96d6cea5511c37eab528aee230e58b8daa",
+      "solution_sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.000315548852086
+    },
+    {
+      "index": 13,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 4,
+      "arm": "B",
+      "complete": true,
+      "terminal_sha256": "4f77ae7eeae39161de2704a74ab663cfccf7dd253215e9d5c2b93f670779b8e3",
+      "solution_sha256": null,
+      "reported_level": 1,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 17.55193497799337
+    },
+    {
+      "index": 14,
+      "task": "Prob095_review2015_fsmshift",
+      "sample": 4,
+      "arm": "A",
+      "complete": true,
+      "terminal_sha256": "f6604dcac517b86d9bec9215200282534c6792b401797d1fc6be818d30a88348",
+      "solution_sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+      "reported_level": 3,
+      "reported_coefficient": null,
+      "reported_calls": 1,
+      "solve_elapsed_s": 16.60119597055018
+    }
+  ],
+  "A": {
+    "L3": 5,
+    "L1": 0,
+    "calls": 5
+  },
+  "P": {
+    "L3": 0,
+    "L1": 5,
+    "calls": 5
+  },
+  "B": {
+    "L3": 0,
+    "L1": 5,
+    "calls": 5
+  },
+  "five_A_solutions_identical": true,
+  "five_P_solutions_identical": true,
+  "paired_historical_control_regression": true,
+  "adoption_under_original_goal_permitted": false,
+  "output_factor_to_full156_todo_removed": true,
+  "entire_comparison_complete": false,
+  "official_total_score": null,
+  "independent_unseen": 0,
+  "new_execution": 0,
+  "next": "Finish existing137 for output147 recovery/failure and other paired diagnostics;do not adopt this unchanged factor. Prioritize already prepared independent temporal comparison after terminal selection;generic warning feedback remains an evidence lead,not a second queued task.",
+  "diagnosis": "Candidate emits state literal2-bit decimal4. Compiler warning says it truncates;state4 aliases state0,ending the enable sequence a cycle early.",
+  "diagnosis_scope": "Same actual final solution hashes across five samples;static public sample0 diagnosis,not repeated simulation",
+  "full_goal_complete": false
+},
+  "output137_first_control_diagnosis": {
+  "schema": "output137_fsmshift_sample0_static_diagnosis_v1",
+  "ticket": 137,
+  "task": "Prob095_review2015_fsmshift",
+  "sample": 0,
+  "reported_original_levels": {
+    "A": 3,
+    "P": 1
+  },
+  "client_request_attempts": {
+    "A": 1,
+    "P": 1
+  },
+  "actual_requests_differ_only_in_first_system_suffix": true,
+  "task_input_unchanged": true,
+  "first_source_sha256": {
+    "A": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+    "P": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a"
+  },
+  "failure": "Candidate emits state literal2-bit decimal4. Compiler warning says it truncates;state4 aliases state0,ending the enable sequence a cycle early.",
+  "warning": {
+    "code": "VRFC10-8497",
+    "native_compile_returncode": 0,
+    "repair_called": false
+  },
+  "diagnosis_scope": "Static reasoning over public generated RTL and original compiler warning;no new native execution or private reference/testbench read.",
+  "no_ability_gain_claimed": true,
+  "complete_five_sample_group_analyzed": false,
+  "entire_factor_rejected_yet": false,
+  "next": "Finish unchanged137;retain historical regression. If factor fails gates,discard it. Consider generic actionable native-warning feedback only after inspecting existing affected wrong outputs;do not hardcode this task or combine factors.",
+  "original_file_count": 16,
+  "all_E_local_member_hashes_verified": true,
+  "private_archive": "E:\\26qiansai\\private_archives\\output137_fsmshift_sample0_allowed_20261010_v1",
+  "public_file_hash_index": {
+    "row_000000/STARTED.json": {
+      "sha256": "8649c501d44744866ddc52200e393c98ab483fc82446d7311a940544cd88f060",
+      "bytes": 2094
+    },
+    "row_000000/prompt_only/prompt.txt": {
+      "sha256": "47c232f4083a5b3d22d7c89825a33ea37a0b20bd7ad037e8e670ad4c412708fa",
+      "bytes": 614
+    },
+    "row_000000/solve/requests/0/request.json": {
+      "sha256": "b75e0d1d52b14688469c18aeb981d60e2d0798a2ed811ae2a0fc95b1bbba194c",
+      "bytes": 1924
+    },
+    "row_000000/solve/requests/0/response.json": {
+      "sha256": "23e9b2bc4a259516e5eda5dedc20acbb22cd2c15b46da690f2a1792c6b161ec6",
+      "bytes": 2273
+    },
+    "row_000000/solve/solution.v": {
+      "sha256": "f2b979eca334519f8358fd0d36b2e223cffce889ed982596ecf443944b18423e",
+      "bytes": 1561
+    },
+    "row_000000/solve/compile_journal.json": {
+      "sha256": "16287bcb6acf7f424eff619a09e378161d7b9de2daef98ec62109d9b59745761",
+      "bytes": 930
+    },
+    "row_000000/solve/trace.jsonl": {
+      "sha256": "63b3529dd44f837518c42fcd6efe118e9850c4358e647176f541fa427f0684f6",
+      "bytes": 804
+    },
+    "row_000000/solve/worker_result.json": {
+      "sha256": "20b38d8145d91feccc6ca34afb6f83ceeeb7bfd4d211bafbbabe5b39ce9dd421",
+      "bytes": 207
+    },
+    "row_000001/STARTED.json": {
+      "sha256": "8223a4443005ec2ccce9a704dba82126bec671f6fbe7186c75d5881cdfbc424b",
+      "bytes": 2093
+    },
+    "row_000001/prompt_only/prompt.txt": {
+      "sha256": "47c232f4083a5b3d22d7c89825a33ea37a0b20bd7ad037e8e670ad4c412708fa",
+      "bytes": 614
+    },
+    "row_000001/solve/requests/0/request.json": {
+      "sha256": "44e93579df7080b560568226d6adc6804947669b1aa4b75db35d6c9d8d7aef81",
+      "bytes": 2380
+    },
+    "row_000001/solve/requests/0/response.json": {
+      "sha256": "3510ce262e99d6753b773bd176447b21cefab4f4e0179e942c112bf1407dcc27",
+      "bytes": 1916
+    },
+    "row_000001/solve/solution.v": {
+      "sha256": "6da4d1a727327a696b3d773eceaa2c6b66b59ac386e15aee889537057484be7a",
+      "bytes": 1215
+    },
+    "row_000001/solve/compile_journal.json": {
+      "sha256": "6148431053d6bd83e16d8ba5179b2f643ffcb9dbef49bae0803183f1953214fb",
+      "bytes": 930
+    },
+    "row_000001/solve/trace.jsonl": {
+      "sha256": "256ef3075559731ebd3558c7c08dd422078ef3ffc04c9d1185275384a3a4ecf8",
+      "bytes": 1010
+    },
+    "row_000001/solve/worker_result.json": {
+      "sha256": "297deccfcad0b116d9d8db1ca924809ae2a680d9d9b43c2d1f93af98a245930c",
+      "bytes": 208
+    }
+  },
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false
+},
+  "output137_actual_admission": {
+  "schema": "output137_actual_fifo_admission_v1",
+  "saved_epoch": 1791610961.4117272,
+  "ticket": 137,
+  "root": "/workspace/team/runs/fpga_owner/output_completion_comparison5x5_20261010_v2",
+  "state_observed": "running",
+  "observation_epoch": 1791610902.7882333,
+  "monitor": {
+    "pid": 578525,
+    "present": true,
+    "live_verified": true,
+    "state": "S",
+    "starttime": "888452187",
+    "pgid": 578525,
+    "sid": 578525,
+    "command_sha256": "1ff46b3b31187038233d5b81a837c18deae3c02d9a766e28f9cdf2f35baac737",
+    "same_birth": true
+  },
+  "detached": true,
+  "whole_task_FIFO": true,
+  "sole_owner": "fpga_owner",
+  "peer_selection_comment": 6094137735,
+  "peer_independent_reviewer": "fpga_teammate",
+  "frozen_plan_sha256": "b92d3b3b27b9ef814ae7a66d407392bb2266d58b4f08af4f389ebc16e18fbd15",
+  "spec_sha256": "907c2b025d4f3743ad62994d6368bf460fd93d9d132d137a0a0c84e59bb93a82",
+  "admission_receipt": "/workspace/team/activity/fpga_owner/artifacts/output-completion-admission-20261010-v1/ACTUAL_SUBMISSION.json",
+  "admission_receipt_sha256": "20d4af30e836e18e9fba48855241ea61cf2e1f323cb6534a3a802964b7abcafe",
+  "public_submit_source_sha256": "2a4f612fcfc14b02cf1825e3ca509365de8a46bd6206ba23538e252c88e83c7e",
+  "tasks": 5,
+  "samples": 5,
+  "outputs": 75,
+  "max_reserved_requests": 125,
+  "factor": "64-word concise complete RTL rule added to P first system only",
+  "original_single_counterexample_table_feedback": true,
+  "shared_budget_and_failure_continuation_included": false,
+  "generation_max_tokens": 8192,
+  "requests_per_agent_solve": 2,
+  "repairs": 1,
+  "solve_deadline_s": 300,
+  "strict_entire_solve_deadline_guaranteed": false,
+  "actual_elapsed300_required_for_goal_qualification": true,
+  "new_FIFO": 1,
+  "actual_model_calls_so_far": null,
+  "actual_EDA_calls_so_far": null,
+  "score_available": false,
+  "complete": false,
+  "adopted": false,
+  "full_goal_complete": false,
+  "existing_frozen_sources_and_protected_records_held": true,
+  "no_retry_or_resampling": true,
+  "raw_archive": "E:/26qiansai/private_archives/output_completion_comparison5x5_20261010_v2"
+},
+  "completed135136_output_selection_20261010": {
+  "schema": "completed135136_one_output_factor_selection_v1",
+  "saved_epoch": 1791610630.2201483,
+  "previous_goal_turn_classification": "progress",
+  "structural135": {
+    "root": "/workspace/team/runs/fpga_owner/structural_serial_feedback_comparison2x5_20261008_v1",
+    "complete": true,
+    "outputs": 30,
+    "tasks": 2,
+    "samples": 5,
+    "A": {
+      "L3": 0,
+      "L1": 10,
+      "mean": 0.2,
+      "client_request_attempts": 20
+    },
+    "P": {
+      "L3": 0,
+      "L1": 10,
+      "mean": 0.2,
+      "client_request_attempts": 20
+    },
+    "B": {
+      "L3": 0,
+      "L0": 10,
+      "mean": 0,
+      "client_request_attempts": 10
+    },
+    "P_minus_A_mean": 0,
+    "net_correct_gain": 0,
+    "factor_not_adopted": true,
+    "factor": "Additional source-driven scalar structural facts;both agent arms already use serial feedback",
+    "conclusion_scope": "This factor gave no gain on fixed137/146;not evidence against the serial component itself",
+    "result_sha256": "49d967c5c232ce7395fd7055ccc071c77fb39239ca8b629daa6da920f4b7abb3",
+    "archive": "/workspace/team/runs/fpga_owner/structural135_terminal_20261008_v1/ORIGINAL_COMPLETE.zip",
+    "archive_sha256": "6489b718210ad08ee1a39968d6b207cc4cdd3d5d3189f34e50c8a01cbcfa30a2",
+    "private_archive": "E:\\26qiansai\\private_archives\\structural_serial_feedback_comparison2x5_20261008_v1\\ORIGINAL_COMPLETE.zip",
+    "archive_members": 2728,
+    "all_declared_members_verified": true,
+    "same_run_B_ratio": null,
+    "official_score": null,
+    "independent_unseen": 0
+  },
+  "native136": {
+    "root": "/workspace/team/runs/fpga_owner/lemmings_feedback_controls_20261008_v1",
+    "completed": true,
+    "passed": true,
+    "cases": 23,
+    "core_cases": 21,
+    "exact_extension_cases": 2,
+    "original_eda_commands": 69,
+    "model_calls": 0,
+    "score_measured": false,
+    "archive": "/workspace/team/runs/fpga_owner/lemmings136_terminal_20261010_v2/QUALIFICATION_ORIGINALS.zip",
+    "archive_sha256": "5e323e8a721851f95c8165814b5df97adc81fd56f90497b52661360a10c7610f",
+    "archive_members": 954,
+    "private_archive": "E:\\26qiansai\\private_archives\\lemmings_feedback_controls_20261008_v1\\QUALIFICATION_ORIGINALS.zip",
+    "all_declared_members_verified": true,
+    "collector_v1_failed": "Missing reserved_keywords import search path;original native work already completed",
+    "collector_v2_change": "Add frozen source root to import search path;new metadata reader,zero native reruns",
+    "collector_v2_source_sha256": "363a94a4e70fd5c98278f775b3395d1728d1b7800e337207e992f86c08a4fc22"
+  },
+  "real_timeout_path": {
+    "root": "/workspace/team/runs/fpga_owner/actual_timeout_queue_path_qualification_20261010_v2",
+    "passed": true,
+    "archive_sha256": "af475b33a1dd364b6df034a2af4ad877fbd9326e1055a1280485dca8b0576485",
+    "members": 76,
+    "source_hashes": {
+      "baseline_worker.py": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+      "shared_budget.py": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+      "failure_continuation.py": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+      "three_arm_queue_20261005.py": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550"
+    },
+    "path": "Real validate/launch_args/execute_row/original owned timeout/failed seal/two later CPU dispatches once",
+    "scope": "Real queue validation/launch_args/first execute_row and original owned supervisor timeout/cleanup -> failed seal -> two real later CPU dispatches once. CPU fixture inputs/entries,scaled timeout and resource admission are synthetic;model idle GET telemetry is real. No model/EDA or real model cancellation.",
+    "scaled_CPU_timeout": true,
+    "synthetic_resource_admission": true,
+    "actual_model_cancellation_qualified": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo": 0,
+    "original_failed_fixture_v1_preserved": true,
+    "old_CPU_control_not_repeated": true
+  },
+  "selection": {
+    "factor": "Existing64-word first-system concise complete RTL instruction only",
+    "root": "/workspace/team/runs/fpga_owner/output_completion_comparison5x5_20261010_v2",
+    "owner": "fpga_owner",
+    "peer_independent_reviewer": "fpga_teammate",
+    "peer_choice_and_ownership_comment": 6094137735,
+    "original_mock_and_source_review_comment": 6094023215,
+    "tasks": 5,
+    "outputs": 75,
+    "max_reserved_requests": 125,
+    "FIFO_submitted": false,
+    "shared_budget_and_failure_continuation_included": false,
+    "unknown_control_stops_comparison": true,
+    "no_replay_or_filled_grade": true,
+    "actual_elapsed_must_meet_original300_before_goal_qualification": true,
+    "strict_entire_solve_wall_guarantee_not_proven": true
+  },
+  "full_goal_complete": false,
+  "adoption": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_FIFO": 0
+},
+  "shared_budget_failure_joint_20261010_v2": {
+  "schema": "shared_budget_expired_exit_queue_joint_review_v2",
+  "saved_epoch": 1791609113.235137,
+  "sources": {
+    "baseline_worker.py": {
+      "folder": "shared_solve_budget_20261010",
+      "sha256": "730ce866e332c4af859046348a21d4a46826d7895c30a388d02385b204646ed3",
+      "bytes": 10198
+    },
+    "shared_budget.py": {
+      "folder": "shared_solve_budget_20261010",
+      "sha256": "cc7b6cd925b73634974f0aecd0354239e4a1465f7fdae8b2c9f3676818e2752d",
+      "bytes": 2317
+    },
+    "failure_continuation.py": {
+      "folder": "queue_failure_continuation_20261010",
+      "sha256": "b5873430b4a2d77ba375cb7d8a2cec80b93222b0f227ae79fe0b8ec516c6c470",
+      "bytes": 8315
+    },
+    "three_arm_queue_20261005.py": {
+      "folder": "queue_failure_continuation_20261010",
+      "sha256": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550",
+      "bytes": 29533
+    }
+  },
+  "qualification": {
+    "root": "/workspace/team/runs/fpga_owner/shared_budget_continuation_qualification_20261010_v2",
+    "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_continuation_qualification_20261010_v2/EVIDENCE.zip",
+    "archive_sha256": "032e5758fd6938bf1e4d035da9091a8726e1cb291c185bd006cf1864f203fec3",
+    "members": 358,
+    "passed": true,
+    "returncode": 0,
+    "owned_child_reaped": true,
+    "cases": [
+      {
+        "label": "expired_worker_joint_later_once",
+        "passed": true,
+        "positive": true,
+        "synthetic_row_attempts": 3,
+        "fake_http_attempts": 1,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      },
+      {
+        "label": "socket_expiry_joint_later_once",
+        "passed": true,
+        "positive": true,
+        "synthetic_row_attempts": 3,
+        "fake_http_attempts": 2,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      },
+      {
+        "label": "expired_worker_requires_new_opt_in",
+        "passed": true,
+        "positive": false,
+        "synthetic_row_attempts": 1,
+        "fake_http_attempts": 1,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      },
+      {
+        "label": "expired_worker_source_binding_rejects",
+        "passed": true,
+        "positive": false,
+        "synthetic_row_attempts": 1,
+        "fake_http_attempts": 1,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      },
+      {
+        "label": "nonexpired_claim_rejects",
+        "passed": true,
+        "positive": false,
+        "synthetic_row_attempts": 1,
+        "fake_http_attempts": 1,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      },
+      {
+        "label": "missing_budget_receipt_rejects",
+        "passed": true,
+        "positive": false,
+        "synthetic_row_attempts": 1,
+        "fake_http_attempts": 1,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      },
+      {
+        "label": "remaining_native_group_rejects",
+        "passed": true,
+        "positive": false,
+        "synthetic_row_attempts": 1,
+        "fake_http_attempts": 1,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      },
+      {
+        "label": "model_still_busy_rejects",
+        "passed": true,
+        "positive": false,
+        "synthetic_row_attempts": 1,
+        "fake_http_attempts": 2,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      },
+      {
+        "label": "original_outer_timeout_route_retained",
+        "passed": true,
+        "positive": true,
+        "synthetic_row_attempts": 3,
+        "fake_http_attempts": 0,
+        "unknown_grade_and_calls_preserved": true,
+        "failed_row_never_replayed": true,
+        "score_eligible": false
+      }
+    ],
+    "scope": "Actual changed worker exit receipt -> actual changed advance/run_plan and seals. HTTP/compiler/outer solve receipt/resource admission and model idle are synthetic. No actual solver or model cancellation/reap proven;unchanged owned-supervisor CPU test is retained from v1,not repeated."
+  },
+  "future_failure_continuation_integration_qualified": true,
+  "integration_scope": "Changed worker receipt and queue seals/traversal with synthetic outer solve receipt and model telemetry.",
+  "prior_normal_positive_and_actual_owned_cpu_receipts_retained": "shared_budget_operation_qualification_20261010_v1;unchanged successful path/owned supervisor evidence,not rerun or relabeled as current model cancellation.",
+  "requires_two_explicit_plan_flags": [
+    "allow_inspected_solver_failure",
+    "allow_shared_budget_failure"
+  ],
+  "strict_entire_solve_deadline_qualified": false,
+  "real_model_cancel_idle_qualified": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo_tickets": 0,
+  "deployed": false,
+  "frozen_output_v2_changed": false,
+  "actual_model_recovery_proven": false,
+  "full_goal_complete": false,
+  "next_work": [
+    "Freeze source-bound prospective common infrastructure without changing frozen output-v2.",
+    "Complete independent source/archive review and consume original135136 outcomes;choose one capability factor and one owner.",
+    "Actual model output-completion comparison;unknown failures still keep complete score unavailable,never replay."
+  ]
+},
+  "original134_complete_owner_report_intake_20261010": {
+  "schema": "original134_existing_complete_owner_report_intake_v1",
+  "saved_epoch": 1791609113.2356594,
+  "original_reader_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison9x5_20261008_v1",
+  "owner_terminal_root": "/workspace/team/runs/fpga_teammate/table_multi_feedback_comparison134_terminal_20261009_v1",
+  "original_result_sha256": "2c31235b38ba370cc1f8c33a943bf72bd924dd60c867b3a899e3c436611c2aaa",
+  "original_process_complete_sha256": "604bec698f4d16a874289983b93a96b2aeee082262e2bdff8f60a1e79d35bac0",
+  "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+  "reader_sha256": "f270b078e4f96b93dab231d26dec8af24d53bc23a69123ada4679fe6b609ca39",
+  "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
+  "complete_comparison": true,
+  "arms": {
+    "A": {
+      "outputs": 45,
+      "L3": 30,
+      "L1": 15,
+      "coefficient_mean_unrounded": 0.7333333333333333,
+      "client_request_attempts": 75,
+      "observed_solve_s": 876.8492796886712,
+      "all_five_L3_tasks": 6
+    },
+    "P": {
+      "outputs": 45,
+      "L3": 30,
+      "L1": 15,
+      "coefficient_mean_unrounded": 0.7333333333333333,
+      "client_request_attempts": 75,
+      "observed_solve_s": 1529.884780369699,
+      "all_five_L3_tasks": 6
+    },
+    "B": {
+      "outputs": 45,
+      "L3": 10,
+      "L1": 35,
+      "coefficient_mean_unrounded": 0.37777777777777777,
+      "client_request_attempts": 45,
+      "observed_solve_s": 170.7294394634664,
+      "all_five_L3_tasks": 2
+    }
+  },
+  "P_minus_A_coefficient_mean": 0.0,
+  "paired_task_mean_deltas": {
+    "Prob050_kmap1": 0.0,
+    "Prob057_kmap2": 0.0,
+    "Prob090_circuit1": 0.0,
+    "Prob101_circuit4": 0.0,
+    "Prob102_circuit3": -0.8,
+    "Prob103_circuit2": 0.0,
+    "Prob113_2012_q1g": 0.0,
+    "Prob122_kmap4": 0.0,
+    "Prob125_kmap3": 0.8
+  },
+  "P_minus_A_observed_solve_s": 653.0355006810278,
+  "real_queue_wall_s": 5272.257426023483,
+  "official_total_score": null,
+  "gain_points": null,
+  "cost_points": null,
+  "engineering_points": null,
+  "review_scope": "Read bound owner complete report/process/intent and remote reader/official-score hashes;independently checked report arithmetic. Did not repeat reader or independently audit all135 underlying originals.",
+  "multi_feedback_not_selected": true,
+  "retained_base": "Original132 single-counterexample complete-table P",
+  "next_capability_priority": "Output completion remains user priority,subject to original135136 outcomes and one submitting owner.",
+  "new_reader_execution": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo_tickets": 0,
+  "full156_complete": false,
+  "full_goal_complete": false
+},
+  "shared_solve_budget_20261010": {
+  "schema": "shared300_operation_budget_source_v1",
+  "original_baseline_sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+  "sources": {
+    "baseline_worker.py": {
+      "sha256": "64155ca4070406d81b41c20c67ac51d76d8d21ee45a59004c87d6d6f3f74c91c",
+      "bytes": 9793
+    },
+    "shared_budget.py": {
+      "sha256": "7ac3ba5a8fbdfba0dec87bd96ecf3106fec7cd347b34e5c08025870a6c602faa",
+      "bytes": 1437
+    }
+  },
+  "changes": [
+    [
+      "import point_feedback\n",
+      "import point_feedback\nimport shared_budget\n"
+    ],
+    [
+      "def run_worker(args, paired):\n",
+      "def run_worker(args, paired):\n    budget = shared_budget.SolveBudget(300)\n    original_owned = paired.owned_command\n"
+    ],
+    [
+      "        index = len(requests); assert index < 2\n",
+      "        budget.remaining()\n        index = len(requests); assert index < 2\n"
+    ],
+    [
+      "entry = dict(index=index, replayed=False, response_received=False,",
+      "entry = dict(index=index, replayed=False, response_received=False, dispatch_started=False,"
+    ],
+    [
+      "            with original_open(request, *positional, **kwargs) as response: raw=response.read()",
+      "            bounded_kwargs = budget.http_timeout(positional, kwargs)\n            entry['dispatch_started'] = True\n            save(out/'requests.json', requests)\n            with original_open(request, *positional, **bounded_kwargs) as response: raw=response.read()"
+    ],
+    [
+      "        return io.BytesIO(raw)",
+      "        budget.remaining()\n        return io.BytesIO(raw)"
+    ],
+    [
+      "        gate()\n        folder = Path(kwargs['cwd'])",
+      "        budget.remaining()\n        gate()\n        folder = Path(kwargs['cwd'])"
+    ],
+    [
+      "        gate()\n        return functional_feedback",
+      "        budget.remaining()\n        gate()\n        return functional_feedback"
+    ],
+    [
+      "        urllib.request.urlopen, subprocess.run = transport, compiler",
+      "        urllib.request.urlopen, subprocess.run = transport, compiler\n        paired.owned_command = budget.owned_operation(original_owned)"
+    ],
+    [
+      "        save(out/'worker_result.json', dict(complete=True",
+      "        budget.remaining()\n        save(out/'worker_result.json', dict(complete=True"
+    ],
+    [
+      "        urllib.request.urlopen, subprocess.run = original_open, original_run",
+      "        paired.owned_command = original_owned\n        urllib.request.urlopen, subprocess.run = original_open, original_run"
+    ]
+  ],
+  "wire_or_generation_changed": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo_tickets": 0,
+  "deployed": false,
+  "outer310_cleanup_guard_unchanged": true,
+  "strict_entire_solve_deadline_qualified": false,
+  "scope": "Common A/P worker caps HTTP and owned operations by the same existing300 seconds. Existing outer310 supervisor remains. No universal socket streaming/read hard-deadline claim; official B is untouched.",
+  "saved_epoch": 1791608084.9849002,
+  "qualification": {
+    "root": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1",
+    "archive_path": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/EVIDENCE.zip",
+    "archive_sha256": "6e964773060047d6c9281370b4ccbfd0fb5ca6a5f02cc82f0aed4347a46590d2",
+    "archive_bytes": 171160,
+    "members": 135,
+    "passed": true,
+    "returncode": 0,
+    "owned_child_reaped": true,
+    "cases": [
+      {
+        "label": "C_remaining_after283",
+        "passed": true,
+        "http_timeout_caps": [
+          300.0,
+          17.0
+        ],
+        "native_caps": [
+          {
+            "cap": 17.0
+          },
+          {
+            "cap": 7.0
+          }
+        ],
+        "fake_http_attempts": 2,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "actual_worker_bind_passed": true,
+        "wire_and_original_repair_preserved": true
+      },
+      {
+        "label": "P_remaining_after283",
+        "passed": true,
+        "http_timeout_caps": [
+          300.0,
+          17.0
+        ],
+        "native_caps": [
+          {
+            "cap": 17.0
+          },
+          {
+            "cap": 7.0
+          }
+        ],
+        "fake_http_attempts": 2,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "actual_worker_bind_passed": true,
+        "wire_and_original_repair_preserved": true
+      },
+      {
+        "label": "budget_exhausted_before_repair",
+        "passed": true,
+        "http_timeout_caps": [
+          300.0
+        ],
+        "native_caps": [
+          {
+            "cap": 1.0
+          }
+        ],
+        "fake_http_attempts": 1,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "failed_receipt_retained": true,
+        "completed_worker_not_invented": true
+      },
+      {
+        "label": "repair_socket_timeout",
+        "passed": true,
+        "http_timeout_caps": [
+          300.0,
+          17.0
+        ],
+        "native_caps": [
+          {
+            "cap": 17.0
+          }
+        ],
+        "fake_http_attempts": 2,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "failed_receipt_retained": true,
+        "completed_worker_not_invented": true
+      },
+      {
+        "label": "gate_exhausts_before_dispatch",
+        "passed": true,
+        "http_timeout_caps": [],
+        "native_caps": [],
+        "fake_http_attempts": 0,
+        "new_model_calls": 0,
+        "new_eda_calls": 0,
+        "failed_receipt_retained": true,
+        "completed_worker_not_invented": true
+      },
+      {
+        "label": "actual_owned_cpu_timeout_remaining_and_retirement",
+        "passed": true,
+        "allocated_s": 0.30000000000001137,
+        "elapsed_s": 0.3167707324028015,
+        "begin": {
+          "pid": 550869,
+          "starttime": "888158871",
+          "command_sha256": "2069e754a171e82b88a92fecd0d1fb52973ad2c4731e8a960167f17be698ea2f",
+          "pgid": 550869
+        },
+        "receipt": {
+          "timeout": true,
+          "launch_error": null,
+          "returncode": -9,
+          "group_signals": [
+            "SIGKILL"
+          ],
+          "elapsed_s": 0.31667948327958584,
+          "remaining_live_group": [],
+          "log": "/workspace/team/runs/fpga_owner/shared_budget_operation_qualification_20261010_v1/owned_cpu_timeout/owned.log",
+          "log_sha256": "64a1c03f537ca70ce166ab0ff84b9e1476d8fc9cb216a19622e1803ca0c72301",
+          "log_bytes": 144
+        },
+        "original_child_identity_retired": true,
+        "new_model_calls": 0,
+        "new_eda_calls": 0
+      }
+    ],
+    "scope": "Actual changed A/P worker HTTP/native budget propagation with fake HTTP/compile;one real original owned CPU child timeout/reap. No actual model/EDA or strict entire solve deadline qualification. Outer310 guard unchanged."
+  },
+  "future_failure_continuation_integration_qualified": false,
+  "integration_gap": "Inspected-failure v1 only accepts owned supervisor timeout. A bounded HTTP/expired-budget worker can instead exit nonzero without outer timeout;v1 correctly rejects it. Need a separate source-bound budget-exit receipt and joint flow qualification before deployment.",
+  "real_model_cancel_idle_qualified": false,
+  "actual_model_recovery_proven": false,
+  "full_goal_complete": false,
+  "next_work": [
+    "Bind budget-expired nonzero worker exit without guessing grade/calls;qualify its integration with inspected-failure traversal.",
+    "Consume original134 owner complete result and original135136 terminal outcomes.",
+    "Select one actual capability factor and admit one owner;do not alter existing frozen output-v2 or current jobs."
+  ]
+},
+  "queue_failure_continuation_20261010": {
+  "schema": "future_inspected_solver_failure_continuation_v1",
+  "saved_epoch": 1791607329.1347823,
+  "public_source_hashes": {
+    "failure_continuation.py": {
+      "sha256": "230a07b74017ef25290fcc6e97514a36b62a64b3c0090389079217f599af6ea4",
+      "bytes": 6436
+    },
+    "three_arm_queue_20261005.py": {
+      "sha256": "0c1de1e82c4d4a29751ce916e16a5e9900bb2503ac94a136695c2954c595c550",
+      "bytes": 29533
+    }
+  },
+  "qualification_archives": [
+    {
+      "amd_root": "/workspace/team/runs/fpga_owner/failure_continuation_qualification_20261010_v1",
+      "archive_sha256": "7eb3922ac27c339b8d3404cc98f9d2141b9e77c1059e03e2418a022a809a523d",
+      "archive_bytes": 127948,
+      "members": 105,
+      "cases": [
+        {
+          "label": "later_rows_once_reservations_kept_stage_not_success",
+          "passed": true,
+          "synthetic_row_attempts": 3,
+          "reserved_calls": 6,
+          "score_eligible": false,
+          "original_failed_terminal_held": true
+        },
+        {
+          "label": "busy_model",
+          "passed": true,
+          "later_dispatch_rejected": true,
+          "replay_rejected": true
+        },
+        {
+          "label": "remaining_group",
+          "passed": true,
+          "later_dispatch_rejected": true,
+          "replay_rejected": true
+        },
+        {
+          "label": "non_timeout",
+          "passed": true,
+          "later_dispatch_rejected": true,
+          "replay_rejected": true
+        },
+        {
+          "label": "default_closed",
+          "passed": true,
+          "later_dispatch_rejected": true,
+          "replay_rejected": true
+        },
+        {
+          "label": "original_evidence_tamper_rejected",
+          "passed": true
+        }
+      ],
+      "returncode": 0,
+      "owned_child_reaped": true
+    },
+    {
+      "amd_root": "/workspace/team/runs/fpga_owner/failure_continuation_cost_delta_qualification_20261010_v2",
+      "archive_sha256": "63b3c5d4a942a362a2270b7015f4c2185a2de5ca1e60966b031ca12114a68826",
+      "archive_bytes": 117181,
+      "members": 72,
+      "cases": [
+        {
+          "label": "later_rows_once_reservations_kept_stage_not_success",
+          "passed": true,
+          "synthetic_row_attempts": 3,
+          "reserved_calls": 6,
+          "score_eligible": false,
+          "original_failed_terminal_held": true
+        },
+        {
+          "label": "over_reserved_client_attempts_rejected",
+          "passed": true,
+          "limit": 2,
+          "later_dispatch_rejected": true
+        }
+      ],
+      "returncode": 0,
+      "owned_child_reaped": true
+    }
+  ],
+  "current_handle_snapshot": {
+    "path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\NIGHT_HANDLES_20261008_1791607229873538100\\READBACK.json",
+    "observed_epoch": 1791607240.4355261,
+    "jobs": [
+      {
+        "ticket": 132,
+        "state": "failed_released_after_inspection",
+        "sealed_outputs": 2191
+      },
+      {
+        "ticket": 133,
+        "state": "completed",
+        "sealed_outputs": null
+      },
+      {
+        "ticket": 134,
+        "state": "running",
+        "sealed_outputs": 133
+      },
+      {
+        "ticket": 135,
+        "state": "queued",
+        "sealed_outputs": 0
+      },
+      {
+        "ticket": 136,
+        "state": "queued",
+        "sealed_outputs": null
+      }
+    ]
+  },
+  "qualification_scope": "Changed advance/run_plan and durable seals executed on AMD with synthetic inputs and mocked resource/model telemetry and row execution. No actual solver timeout, model or EDA test.",
+  "prior_six_cases_retained": true,
+  "changed_attempt_guard_two_cases_only": true,
+  "deployed": false,
+  "installed_into_frozen_output_v2": false,
+  "failed132_resumed": false,
+  "actual_model_recovery_proven": false,
+  "new_model_calls": 0,
+  "new_eda_calls": 0,
+  "new_fifo_tickets": 0,
+  "grading_changed": false,
+  "incomplete_row_grade": null,
+  "incomplete_row_actual_calls": null,
+  "original132_complete": false,
+  "full_goal_complete": false,
+  "next_work": [
+    "Independent review of prospective queue source and source-bound supervisor contract.",
+    "Finish original134-136 under existing ownership; select and admit exactly one capability factor.",
+    "Actual output-completion five-task model comparison and then full156 if original gates pass.",
+    "Remaining-time budget enforcement remains a separate unresolved runtime issue."
+  ]
+},
+  "temporal_first_generation_20261010": {
+  "output_completion_user_repair_priority_20261010": {
+    "schema": "output_completion_132_failure_repair_priority_v1",
+    "saved_epoch": 1791606368.0638695,
+    "user_authorization": "User explicitly requested full repair of original132 failure and asked why one execution failure stopped later tasks.",
+    "selected_for_preparation": true,
+    "FIFO_submitted": false,
+    "actual_model_recovery_proven": false,
+    "root": "/workspace/team/runs/fpga_owner/output_completion_comparison5x5_20261010_v2",
+    "plan_sha256": "b92d3b3b27b9ef814ae7a66d407392bb2266d58b4f08af4f389ebc16e18fbd15",
+    "spec_sha256": "907c2b025d4f3743ad62994d6368bf460fd93d9d132d137a0a0c84e59bb93a82",
+    "archive_sha256": "ecab6b20f866f55c3245dd563dc9557a08aa542bc757c13f5163125c042dc854",
+    "archive_members": 55,
+    "private_archive": "E:\\26qiansai\\private_archives\\output_completion_comparison5x5_20261010_v2\\PREPARED_ORIGINALS.zip",
+    "source_hashes": {
+      "first_system_request.py": {
+        "remote_name": "first_system_request.py",
+        "sha256": "65da3d134b7b1c3e57a24a6e8d6c78869644542d8865b444c20a63ba6b900a10",
+        "bytes": 4803
+      },
+      "baseline_worker.py": {
+        "remote_name": "baseline_worker.py",
+        "sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+        "bytes": 9241
+      },
+      "worker.py": {
+        "remote_name": "worker.py",
+        "sha256": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65",
+        "bytes": 7473
+      },
+      "comparison_result.py": {
+        "remote_name": "comparison_result.py",
+        "sha256": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+        "bytes": 11587
+      },
+      "prepare_output_comparison.py": {
+        "remote_name": "prepare_temporal_comparison.py",
+        "sha256": "2adc42b2ada9c18f37b460c3bbaa2f724a51f94c598267e4da7f3a5532c71c18",
+        "bytes": 10702
+      }
+    },
+    "fixed_tasks": [
+      "Prob095_review2015_fsmshift",
+      "Prob101_circuit4",
+      "Prob102_circuit3",
+      "Prob145_circuit8",
+      "Prob147_circuit10"
+    ],
+    "historical_correct_controls": [
+      "Prob095_review2015_fsmshift",
+      "Prob145_circuit8"
+    ],
+    "correctness_controls": [
+      "Prob095_review2015_fsmshift",
+      "Prob101_circuit4",
+      "Prob102_circuit3"
+    ],
+    "original_historical_levels": {
+      "Prob095_review2015_fsmshift": 3,
+      "Prob101_circuit4": 1,
+      "Prob102_circuit3": 1,
+      "Prob145_circuit8": 3,
+      "Prob147_circuit10": 1
+    },
+    "expected_outputs": 75,
+    "max_reserved_requests": 125,
+    "parameters": {
+      "output_max_tokens": 8192,
+      "maximum_requests_per_agent_solve": 2,
+      "repairs": 1,
+      "solve_deadline_s": 300,
+      "temperature": 0,
+      "top_p": 1,
+      "retries": 0
+    },
+    "factor": "Existing generic64-word complete/concise RTL instruction on P first system only;both agent arms preserve original132 table-P,repair and8192/2/1/300.",
+    "qualification": {
+      "passed": true,
+      "child": 517183,
+      "returncode": 0,
+      "reaped": true,
+      "cases": 4,
+      "mock_http_attempts": 5,
+      "mock_compiles": 4,
+      "actual_model_or_EDA": 0,
+      "archive_sha256": "ca199554d674d427fe23e67eeae3dc9ff855aba9d97b5070fe47d1b2220550b4"
+    },
+    "first_prompt_context": {
+      "passed": true,
+      "tasks": 5,
+      "conservative_max_prompt_tokens": 3859,
+      "minimum_headroom": 4333,
+      "context_tokens": 16384,
+      "output_reserved": 8192,
+      "all_future_repairs_fit_proven": false
+    },
+    "frozen_preparation": {
+      "passed": true,
+      "child": 524896,
+      "returncode": 0,
+      "reaped": true,
+      "remaining_group": [],
+      "protected_held": true
+    },
+    "deadline_root_cause": {
+      "runtime_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+      "queue_sha256": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de",
+      "runtime_chat_timeout_s": 300,
+      "timeout_scope": "Each request has socket timeout300. This is not a shared remaining-time budget; original outer supervisor remains310 including grace.",
+      "original_failure_first_request_elapsed_s": 283.07791212014854,
+      "remaining_under300_upper_bound_s": 16.92208787985146,
+      "unknown_repair_response": true,
+      "actual_failed_call_count_unknown": true,
+      "runtime_change_in_this_factor": false,
+      "reason": "Avoid combine scheduling changes with output-content factor; retain original300 deadline and supervision. Never call a controlled abort or shortened record an accuracy recovery.",
+      "followup": "Review remaining-time enforcement independently; do not change active/frozen workers or mask an incomplete response as a confirmed call or graded result."
+    },
+    "ordinary_wrong_answer_continues": true,
+    "original132_stop_reason": "TERMINAL complete=false / unconfirmed repair; verify_terminal refuses to seal and advance, not an ordinaryL1 answer failure.",
+    "queue_hardening_changed": false,
+    "queue_hardening_next": "Inspect a separate failure-continuation policy only after actual owned process and model are idle, calls remain honestly unknown and no score/eligibility is fabricated. No active/frozen queue code changed.",
+    "user_repair_priority_replaces_temporal_next_preparation": true,
+    "temporal9_frozen_source_unchanged": true,
+    "temporal_factor_combined": false,
+    "multi_counterexample_combined": false,
+    "v1_preparation_rejected_reason": "PLAN actually5/75/125 but inherited summary hardcoded9/135/225 and absent empty stderr-file read failed; v1 preserved and never admitted. Corrected v2 reran preparation metadata only, not worker qualification/model/EDA.",
+    "original134_monitor": {
+      "pid": 4175417,
+      "present": true,
+      "state": "S",
+      "ppid": 1,
+      "pgid": 4175417,
+      "sid": 4175417,
+      "starttime": "882505704",
+      "command_sha256": "f79b0dd91bde13d116bcf7ad32b8f3305e29014941977fd703e959f175d901b6",
+      "stable_observation": true,
+      "original_birth": true,
+      "live_identity_verified": true,
+      "independent_session": true
+    },
+    "observed_sealed_outputs": 122,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false,
+    "next_work": [
+      "Consume134-136 true outcomes, communicate this explicit user repair priority and establish one submitting owner; no duplicate or blind restart.",
+      "Review/freeze output-only5-task comparison source; if original A147 again fails, preserve it and report incomplete comparison without grading/replacing the failure.",
+      "Run actual fixed factor at original budgets only after admission; complete output, correct behavior and preserved grade/call gates must all be shown.",
+      "Independently investigate safe queue failure continuation and shared300 remaining-time enforcement; do not mix either change into the output-only comparison or mutate current queues.",
+      "Only net verified gain allows complete156 regression;≥120/.80 and all original historical/paired/call gates remain unachieved."
+    ]
+  },
+  "original134_circuit3_regression_20261010": {
+    "schema": "original134_circuit3_paired_regression_public_diagnosis_v1",
+    "saved_epoch": 1791605516.6110392,
+    "original134_monitor": {
+      "pid": 4175417,
+      "present": true,
+      "state": "S",
+      "ppid": 1,
+      "pgid": 4175417,
+      "sid": 4175417,
+      "starttime": "882505704",
+      "command_sha256": "f79b0dd91bde13d116bcf7ad32b8f3305e29014941977fd703e959f175d901b6",
+      "stable_observation": true,
+      "original_birth": true,
+      "live_identity_verified": true,
+      "independent_session": true
+    },
+    "observed_handles": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\NIGHT_HANDLES_20261008_1791605323688481300\\READBACK.json",
+    "observed_sealed_outputs": 95,
+    "complete_fixed_groups": 6,
+    "read_outputs": 90,
+    "full_expected_outputs": 135,
+    "original134_complete": false,
+    "fixed_groups": [
+      {
+        "task": "Prob050_kmap1",
+        "arms": {
+          "A": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 1.0
+          },
+          "P": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 1.0
+          },
+          "B": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 0.2
+          }
+        }
+      },
+      {
+        "task": "Prob057_kmap2",
+        "arms": {
+          "A": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 0.2
+          },
+          "P": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 0.2
+          },
+          "B": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 0.2
+          }
+        }
+      },
+      {
+        "task": "Prob090_circuit1",
+        "arms": {
+          "A": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 1.0
+          },
+          "P": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 1.0
+          },
+          "B": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 1.0
+          }
+        }
+      },
+      {
+        "task": "Prob101_circuit4",
+        "arms": {
+          "A": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 1.0
+          },
+          "P": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 1.0
+          },
+          "B": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 0.2
+          }
+        }
+      },
+      {
+        "task": "Prob102_circuit3",
+        "arms": {
+          "A": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 1.0
+          },
+          "P": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 0.2
+          },
+          "B": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 0.2
+          }
+        }
+      },
+      {
+        "task": "Prob103_circuit2",
+        "arms": {
+          "A": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 1.0
+          },
+          "P": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 1.0
+          },
+          "B": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 0.2
+          }
+        }
+      }
+    ],
+    "fixed_prefix_totals": {
+      "A": {
+        "L3": 25,
+        "actual_calls": 50
+      },
+      "P": {
+        "L3": 20,
+        "actual_calls": 50
+      },
+      "B": {
+        "L3": 5,
+        "actual_calls": 30
+      }
+    },
+    "paired_regression": {
+      "task": "Prob102_circuit3",
+      "A": {
+        "levels": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "actual_calls": 10,
+        "coefficient_mean": 1.0
+      },
+      "P": {
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "actual_calls": 10,
+        "coefficient_mean": 0.2
+      },
+      "B": {
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "actual_calls": 5,
+        "coefficient_mean": 0.2
+      },
+      "solution_hashes": {
+        "A": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+        "P": "98e8b75108bff797e02b34146f1646acd51736e49c09ce7fc91be6eee6c1920a"
+      },
+      "all_five_A_same_final_source": true,
+      "all_five_P_same_final_source": true,
+      "sample0_first_request_equal": true,
+      "sample0_first_reply_content_equal": true,
+      "sample0_repair_system_equal": true,
+      "sample0_public_witness": {
+        "inputs": {
+          "a": 0,
+          "b": 1,
+          "c": 0,
+          "d": 0
+        },
+        "public_time_ns": 35,
+        "expected_q": 0,
+        "initial_q": 1,
+        "P_repair_q": 1,
+        "A_repair_q": 0,
+        "scope": "Manual substitution into already-generated sample0 expressions; no RTL execution or private reference."
+      },
+      "P_original_public_check_mismatches_all_five": [
+        {
+          "before": 8,
+          "after": 2,
+          "checks": 32
+        },
+        {
+          "before": 8,
+          "after": 2,
+          "checks": 32
+        },
+        {
+          "before": 8,
+          "after": 2,
+          "checks": 32
+        },
+        {
+          "before": 8,
+          "after": 2,
+          "checks": 32
+        },
+        {
+          "before": 8,
+          "after": 2,
+          "checks": 32
+        }
+      ],
+      "inference": "P repairs three positive counterexamples but retains the explicitly supplied zero-case; the same final P source appears in all five retained rows. More measured examples did not ensure simultaneous satisfaction.",
+      "original_user_paired_grade_guard_satisfied": false,
+      "direct_adoption_under_user_goal": false,
+      "official_whole_factor_selection_uncomputed": true
+    },
+    "public_originals_index_sha256": "0a5510d6f40e49774a150e889045dfc4bf86c50d85e07810d9db7d5e826941fa",
+    "private_reference_read": false,
+    "judge_tb_read": false,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false,
+    "next_work": [
+      "Finish original134 and inspect all gains/losses/costs; retain its original run and owner. Do not directly adopt multi-counterexample P into the user-goal release because fixed102 has five paired L3-to-L1 losses.",
+      "Keep original single-counterexample complete-table baseline for the next candidate; neither the temporal packet nor serial comparison should silently inherit rejected134 P.",
+      "Consume135/136 actual terminal evidence and jointly select one next factor/one submitting owner; frozen temporal9 remains a proposed independent candidate, not an automatic submission.",
+      "If future table-repair work is selected, prioritize satisfying the zero and positive public rows simultaneously and preserving already-correct rows over adding more examples. No new factor is submitted by this diagnosis.",
+      "Preserve original historical113, paired grade and same-grade/history/total call gates; only complete156 evidence can qualify120/.80."
+    ],
+    "private_full_report": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\ACTUAL134_CIRCUIT3_REGRESSION_20261010_v1\\RESULT.json",
+    "private_full_report_sha256": "d52fc6c90a984224f1f72e714865d83615390c687d9f613acbb2b6ba66b61be0",
+    "E_archive": "E:/26qiansai/private_archives/actual134_circuit3_regression_20261010_v1",
+    "full_trace_excerpts_omitted_from_public_summary": true
+  },
+  "next_joint_temporal9_proposal_20261010": {
+    "schema": "joint_next_temporal9_candidate_proposal_v1",
+    "saved_epoch": 1791604714.0004725,
+    "prepared": true,
+    "source_unchanged_since_frozen_commit": true,
+    "frozen_source_commit": "6cbcaebebc89e69506cebfee86690c3d9b9a711a",
+    "review_PR": "https://github.com/854259/FPGA/pull/210",
+    "PR_draft": true,
+    "root": "/workspace/team/runs/fpga_owner/temporal_first_generation_comparison9x5_20261010_v1",
+    "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+    "spec_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+    "archive_sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
+    "first_request_source_sha256": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+    "targets": [
+      "Prob111_fsm2s",
+      "Prob133_2014_q3fsm",
+      "Prob139_2013_q2bfsm",
+      "Prob140_fsm_hdlc"
+    ],
+    "historical_controls": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1",
+      "Prob110_fsm2"
+    ],
+    "all_tasks": [
+      "Prob095_review2015_fsmshift",
+      "Prob107_fsm1s",
+      "Prob108_rule90",
+      "Prob109_fsm1",
+      "Prob110_fsm2",
+      "Prob111_fsm2s",
+      "Prob133_2014_q3fsm",
+      "Prob139_2013_q2bfsm",
+      "Prob140_fsm_hdlc"
+    ],
+    "samples_per_arm": 5,
+    "arms": [
+      "A",
+      "P",
+      "B"
+    ],
+    "outputs": 135,
+    "maximum_reserved_calls": 225,
+    "parameters": {
+      "output_max_tokens": 8192,
+      "maximum_requests_per_agent_solve": 2,
+      "repairs": 1,
+      "solve_deadline_s": 300,
+      "temperature": 0,
+      "top_p": 1,
+      "retries": 0
+    },
+    "factors": {
+      "A": "Unchanged original132 table-P feedback and original first system.",
+      "P": "Same base and repair;only first system appends frozen174-word temporal contract guidance.",
+      "B": "Unmodified same-run official baseline."
+    },
+    "reason": "Four stable complete-five task errors have first-generation clocked-contract evidence and no fixed coverage in134 table9 or135 serial2. This is an existing prepared candidate,not a new factor or an accuracy claim.",
+    "prerequisites": [
+      "Consume original134/135/136 true outcomes and source/retirement receipts,then jointly select/confirm ownership.",
+      "If current results reveal a more valuable or conflicting direction,reject/defer this candidate with evidence.",
+      "Verify existing packet/input/model/PLAN/capacity/protection bytes at actual admission;do not re-run old controls without a changed reason."
+    ],
+    "diagnostic_requirements": [
+      "Report all paired five-sample grades,each actual call,time and any losses;no best-sample selection.",
+      "Preserve original historical113 and paired-grade requirements and exact original same-grade/history/total call requirements;full156 qualification remains separate.",
+      "A call increase on a nonhistorical improved-grade task is not by itself a cost veto;total/history/same-grade gates still apply.",
+      "Only net useful capability gain with preserved guards justifies later full regression;this subset cannot establish120/.80."
+    ],
+    "not_selected": true,
+    "selection_after136_automatic": false,
+    "FIFO_submitted": false,
+    "constant_or_output_factor_combined": false,
+    "task147_added": false,
+    "original134_four_groups_read_outputs": 60,
+    "P_A_gain_in_fixed_first_four_groups": 0,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_goal_complete": false
+  },
+  "stable146_uncovered_public_contract_priorities_20261010": {
+    "schema": "uncovered_stable_public_contract_priority_review_v1",
+    "saved_epoch": 1791604338.8964634,
+    "inventory_sha256": "6966f46c119c1f4c9b591c59d398270a1c78ee3d83b81136fc03beec6f0771fc",
+    "public_inputs_index_sha256": "bad4b30af313807fb163a75d17541c15b550fdec6d1f5becae64d99bd4e85739",
+    "stable_failed_tasks": 31,
+    "mixed_sample_tasks": 3,
+    "all_five_correct_tasks": 112,
+    "unknown_remaining_tasks": 10,
+    "primary_fixed_score_coverage": {
+      "original134_stable_targets": [
+        "Prob057_kmap2",
+        "Prob113_2012_q1g",
+        "Prob125_kmap3"
+      ],
+      "original135_stable_targets": [
+        "Prob137_fsm_serial",
+        "Prob146_fsm_serialdata"
+      ],
+      "prepared_temporal9_stable_targets": [
+        "Prob111_fsm2s",
+        "Prob133_2014_q3fsm",
+        "Prob139_2013_q2bfsm",
+        "Prob140_fsm_hdlc"
+      ],
+      "constant_backup_direct_task": [
+        "Prob144_conwaylife"
+      ]
+    },
+    "public_contract_categories": {
+      "clocked_contract_initialization_edge_and_priority": [
+        "Prob034_dff8",
+        "Prob053_m2014_q4d",
+        "Prob066_edgecapture",
+        "Prob074_ece241_2014_q4",
+        "Prob078_dualedge",
+        "Prob104_mt2015_muxdff",
+        "Prob117_circuit9",
+        "Prob141_count_clock"
+      ],
+      "width_concatenation_and_word_selection": [
+        "Prob062_bugs_mux2",
+        "Prob064_vector3",
+        "Prob097_mux9to1v"
+      ],
+      "feedback_shift_and_tap_convention": [
+        "Prob082_lfsr32",
+        "Prob086_lfsr5"
+      ],
+      "combinational_coordinates_encoding_and_output_contract": [
+        "Prob083_mt2015_q4b",
+        "Prob093_ece241_2014_q3",
+        "Prob099_m2014_q6c",
+        "Prob116_m2014_q3",
+        "Prob126_circuit6",
+        "Prob134_2014_q3c",
+        "Prob135_m2014_q6b"
+      ],
+      "related136_lemmings_native_only_no_model_score_comparison": [
+        "Prob142_lemmings2"
+      ]
+    },
+    "category_counts": {
+      "clocked_contract_initialization_edge_and_priority": 8,
+      "width_concatenation_and_word_selection": 3,
+      "feedback_shift_and_tap_convention": 2,
+      "combinational_coordinates_encoding_and_output_contract": 7,
+      "related136_lemmings_native_only_no_model_score_comparison": 1
+    },
+    "caution": "Fixed task presence is coverage,not proof that a method triggers or solves it.136 is native-only with possible relevance to142,not an active model-score comparison. This inventory does not show21 recoverable model failures.",
+    "ross_narrow_existing_draft": {
+      "reviewed_static_only": true,
+      "manual_direct_known_fit": [
+        "Prob097_mux9to1v"
+      ],
+      "related_but_not_current_narrow_selector_scope": [
+        "Prob064_vector3"
+      ],
+      "basis": "Existing097 source diagnosis shows packed-word selection error.064 asks concatenation with two LSB ones,no word selector;cannot widen the narrow draft just to claim applicability.",
+      "remaining19_not_established_direct_selector_fit": true,
+      "model_gain_unknown": true,
+      "no_new_prompt_or_skill_created": true,
+      "no_task_id_runtime_route": true
+    },
+    "existing_dff_evidence_reused": {
+      "allowed_evidence_sha256": "34daed0bd5d4f62596b48fb5e07957cd85f7a45cf9e19742265712b148b04a99",
+      "judge_metadata_sha256": "266d4578c4885c156a9f3d94a755e44fc440a7d7427825a9d75892d95626c650",
+      "row": "row_000496",
+      "source_has_standard_posedge_q_equals_d": true,
+      "original_level": 1,
+      "mismatches": 1,
+      "samples": 41,
+      "conclusion": "Public source plausibly meets straightforward text but original judge remainsL1. No private fixture read/new simulation;cause not established,no initialization hack/no waived loss."
+    },
+    "public_contract_ambiguity_notes": [
+      "099 public port names and next-state bit naming contain inconsistent prose;do not map bits from port-name suffix alone.",
+      "116 public map uses one-based x[1]..x[4] labels;do not silently assume zero-based physical indexing.",
+      "062 is explicitly a bug-fix task;interface preservation must follow required corrected behavior,not mechanically freeze faulty example width."
+    ],
+    "priority_decision": "Keep current134/135/136 and frozen temporal9 primary. Existing ROSS narrow vector draft has limited directly evidenced coverage and remains lower priority,unselected;do not add a fifth candidate or broaden it on names alone. Use uncovered public categories to judge later full regression gaps.",
+    "third134_complete_group": {
+      "task": "Prob090_circuit1",
+      "A_levels": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "P_levels": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "B_levels": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "each_arm_calls": 5,
+      "source_result_sha256": "9000225947ffc607e1ce7f5c08ede18582bea99ca0a10038a7c4b5c97a52a8da",
+      "P_minus_A_gain": 0
+    },
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "formal_runtime_changed": false,
+    "new_scoring_candidate_created": false,
+    "adoption": false,
+    "full_goal_complete": false
+  },
+  "kmap2_multi_feedback_repair_diagnosis_20261010": {
+    "schema": "public_kmap_repair_semantics_static_diagnosis_v1",
+    "saved_epoch": 1791603737.5467942,
+    "task": "Prob057_kmap2",
+    "retained_complete_agent_traces": 10,
+    "trace_results": [
+      {
+        "row": "row_000015",
+        "arm": "P",
+        "sample": 0,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          14,
+          16
+        ],
+        "feedback_check_counts": [
+          32,
+          32
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          2323
+        ],
+        "trace_sha256": "56a3a23713e30fa6affd9654d2ad60831eb833cf7846864e6f3fb657edb60f85"
+      },
+      {
+        "row": "row_000017",
+        "arm": "A",
+        "sample": 0,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          null,
+          null
+        ],
+        "feedback_check_counts": [
+          null,
+          null
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          123
+        ],
+        "trace_sha256": "73e9f28fd66ad0593b3ff93103b21939e753529d2b9198e2f7d60c04359b59ed"
+      },
+      {
+        "row": "row_000019",
+        "arm": "A",
+        "sample": 1,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          null,
+          null
+        ],
+        "feedback_check_counts": [
+          null,
+          null
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          123
+        ],
+        "trace_sha256": "be823e2b3e653170375f97636f1d3bc9421c2a98b2eaf8ebb8f3cb03cda85b3b"
+      },
+      {
+        "row": "row_000020",
+        "arm": "P",
+        "sample": 1,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          14,
+          14
+        ],
+        "feedback_check_counts": [
+          32,
+          32
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          110
+        ],
+        "trace_sha256": "16535c31b3dc5045d14a994acba0f91b17c7bb20224dd278abdebca2b59c1930"
+      },
+      {
+        "row": "row_000021",
+        "arm": "A",
+        "sample": 2,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          null,
+          null
+        ],
+        "feedback_check_counts": [
+          null,
+          null
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          123
+        ],
+        "trace_sha256": "936c99d6ed520500f283204624f613770c2e450ad875a229b0aa27093facfec2"
+      },
+      {
+        "row": "row_000022",
+        "arm": "P",
+        "sample": 2,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          14,
+          14
+        ],
+        "feedback_check_counts": [
+          32,
+          32
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          110
+        ],
+        "trace_sha256": "0904254e83f8652d75f9511b8723ca579813b038bde5f34d6c77e296bd6724a5"
+      },
+      {
+        "row": "row_000024",
+        "arm": "P",
+        "sample": 3,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          14,
+          14
+        ],
+        "feedback_check_counts": [
+          32,
+          32
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          110
+        ],
+        "trace_sha256": "dc8c77abe7a5e35d0ec9cb3e6c3d4d3635f110fff02cf924d2a4c21d04df1cde"
+      },
+      {
+        "row": "row_000026",
+        "arm": "A",
+        "sample": 3,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          null,
+          null
+        ],
+        "feedback_check_counts": [
+          null,
+          null
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          123
+        ],
+        "trace_sha256": "715dce4f777c618a2616c1d054ad9f2172545a761bfeebc0d4d1da189cfec92e"
+      },
+      {
+        "row": "row_000028",
+        "arm": "A",
+        "sample": 4,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          null,
+          null
+        ],
+        "feedback_check_counts": [
+          null,
+          null
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          123
+        ],
+        "trace_sha256": "80e42426d7ca4f820e8fa806f29d5235398661feb3c6a6dc4b0e2917575155dc"
+      },
+      {
+        "row": "row_000029",
+        "arm": "P",
+        "sample": 4,
+        "feedback_rounds": [
+          0,
+          1
+        ],
+        "feedback_mismatch_counts": [
+          14,
+          14
+        ],
+        "feedback_check_counts": [
+          32,
+          32
+        ],
+        "first_counterexample_persists": true,
+        "output_tokens": [
+          116,
+          110
+        ],
+        "trace_sha256": "3a1958c61cc3a811d8078c41eba662b305915c00db848c3ff26ee1f7ebd67a4c"
+      }
+    ],
+    "fixed_sample0_public_originals": {
+      "files": 14,
+      "bytes": 26540,
+      "index_sha256": "0984c769adcbd7e601f362942c14cf03a0ace84cf6cfc8a441ba6f40d541c320"
+    },
+    "sample0_first_model_responses_identical": true,
+    "static_manual_witnesses": [
+      {
+        "inputs": "a=0,b=0,c=1,d=1",
+        "public_cell": "row cd=11,col ab=00 =>0",
+        "P_final": "~a & ~b term gives1",
+        "A_final": "~b & c & d term gives1",
+        "conclusion": "Both repairs still violate their explicitly received first counterexample."
+      },
+      {
+        "inputs": "a=1,b=1,c=0,d=0",
+        "public_cell": "row cd=00,col ab=11 =>0",
+        "P_final": "b & ~c & ~d term gives1",
+        "conclusion": "Generated grouping introduces a public zero-cell false positive."
+      },
+      {
+        "inputs": "a=1,b=1,c=1,d=1",
+        "public_cell": "row cd=11,col ab=11 =>1",
+        "P_final": "All five emitted product terms give0",
+        "conclusion": "Generated grouping also misses a required one-cell."
+      }
+    ],
+    "public_counterexample_expected_cell_verified_for_first_witness": true,
+    "interpretation": "P sample0 comments copy the map but translate at least cell0011 incorrectly and group against that incorrect intermediate list. More counterexamples reached the model but did not repair coordinate/minterm grounding.",
+    "applicability": "Ten retained traces preserve the first bad input afterrepair;detailed source witnesses are sample0 only.",
+    "entire_feedback_or_factor_declared_invalid": false,
+    "full_comparison_finished": false,
+    "new_model_gain": false,
+    "next_action": "Consume remaining original134 outcomes; for future joint selection consider public-table coordinate/bit-order grounding and preservation of zero cells,rather than increasing counterexample count again based on this task. No new factor or scoring queue now.",
+    "no_task_specific_answer_installed": true,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "RTL_executed": false,
+    "judge_rerun": false
+  },
+  "restored_queue_and_fixed134_prefix_20261010": {
+    "schema": "restored_queue_and_fixed134_prefix_intake_v1",
+    "observed_epoch": 1791603219.791473,
+    "readback_sha256": "f663f2e0b79bcf375e7aba2a72592a3b765e5959faa03d6df3fc8fbc37092226",
+    "original132_state": "failed_released_after_inspection",
+    "original132_full_success": false,
+    "failed_row_actual_calls": null,
+    "failed_row_grade": null,
+    "owner_release_independently_observed": true,
+    "owner_release_executed_by_this_task": false,
+    "peer_release_receipt_intake_sha256": "8977a30e6100e6230142ca737828b710cf44647e952d1ce795c9a92d805ba82a",
+    "peer133_native_qualification": "Owner reports frozen one-case/three-tool native closure; this task read report and execution guard,not full native receipts.",
+    "peer_PR216_head": "5026ebd79a2fedda6fa059d8b88b1060cb0345ed",
+    "peer_PR216_merge": "3dbcc80895605578a211f5e938b8ab99edcfb3ac",
+    "original134_state": "running",
+    "original134_sealed_at_observation": 34,
+    "original134_expected_outputs": 135,
+    "original134_monitor": {
+      "pid": 4175417,
+      "present": true,
+      "state": "S",
+      "ppid": 1,
+      "pgid": 4175417,
+      "sid": 4175417,
+      "starttime": "882505704",
+      "command_sha256": "f79b0dd91bde13d116bcf7ad32b8f3305e29014941977fd703e959f175d901b6",
+      "stable_observation": true,
+      "original_birth": true,
+      "live_identity_verified": true,
+      "independent_session": true
+    },
+    "fixed_complete_tasks": [
+      {
+        "task": "Prob050_kmap1",
+        "outputs": 15,
+        "arms": {
+          "A": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 1.0
+          },
+          "P": {
+            "levels": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 1.0
+          },
+          "B": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 0.2
+          }
+        },
+        "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+        "source_hashes_held": true
+      },
+      {
+        "task": "Prob057_kmap2",
+        "outputs": 15,
+        "arms": {
+          "A": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 0.2
+          },
+          "P": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 10,
+            "coefficient_mean": 0.2
+          },
+          "B": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "coefficient_mean": 0.2
+          }
+        },
+        "plan_sha256": "bb7b1256964f164629de067c4b6f51888dd9cc8b7cdf61b6213df904779fce84",
+        "source_hashes_held": true
+      }
+    ],
+    "prefix_A_P_new_gain_observed": false,
+    "full_comparison_success": false,
+    "selection": false,
+    "fixed_prefix_only": true,
+    "queued": [
+      135,
+      136
+    ],
+    "full_goal_complete": false,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0
+  },
+  "output_discipline_separate_source_only_backup_20261010": {
+    "review_sha256": "b1d5ffaee7cae3421bd8642d5f4147a004f0fce27264f8c0b77b649fe4679547",
+    "source_sha256": "65da3d134b7b1c3e57a24a6e8d6c78869644542d8865b444c20a63ba6b900a10",
+    "suffix_words": 64,
+    "parent_source_sha256": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+    "changes_only": [
+      "SCHEMA literal",
+      "SYSTEM_SUFFIX literal"
+    ],
+    "all_other_AST_nodes_identical": true,
+    "first_P_system_only_static_scope": true,
+    "base_required_format_preserved": true,
+    "source_private_path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\OUTPUT_DISCIPLINE_SOURCE_DRAFT_20261010_v2\\sources\\first_system_request.py",
+    "old_v1_retained_unselected_format_conflict": true,
+    "hypothesis": "Reduce emitted reasoning comments so a complete design and allowed repair fit existing output/time budget;unmeasured accuracy/time effect.",
+    "risks": [
+      "Less emitted reasoning could reduce correctness.",
+      "Does not directly repair pre-edge/post-edge interpretation."
+    ],
+    "worker_packet_prepared": false,
+    "mock_wire_qualification_passed": false,
+    "context_capacity_proven": false,
+    "comparison_PLAN_created": false,
+    "fixed_comparison_selected": false,
+    "FIFO_submitted": false,
+    "actual_model_gain_proven": false,
+    "temporal9_source_or_plan_modified": false,
+    "current132_136_modified": false,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0
+  },
+  "actual132_failed2191_20261010": {
+    "schema": "original132_failed2191_source_and_transport_diagnosis_v1",
+    "saved_epoch": 1791601551.2865748,
+    "completed_sealed_rows": 2191,
+    "terminal_rows": 2192,
+    "failed_row": "row_002191",
+    "task": "Prob147_circuit10",
+    "arm": "A",
+    "sample": 0,
+    "actual_first_response": true,
+    "first_elapsed_s": 283.07791212014854,
+    "first_output_tokens": 8192,
+    "first_finish": "length",
+    "complete_endmodule_absent": true,
+    "first_source_check_failed": true,
+    "first_compile_not_reached": true,
+    "repair_request_recorded": true,
+    "repair_response_received": false,
+    "actual_model_calls": null,
+    "unconfirmed_calls": null,
+    "grade": null,
+    "original_failed_terminal_complete": false,
+    "outer_supervision_elapsed_s": 310.02313399501145,
+    "remaining_s_under_solve300_after_first_request_upper_bound": 16.92208787985146,
+    "timing_scope": "Request elapsed only; remaining value is an upper bound, excluding worker setup/check/request construction. Outer310 includes supervision grace;not a relaxed solve budget.",
+    "generated_source_sha256": "bd1d06d57d74dbedf3ba794c1afd2dd4dac79f2538ab27f00a72027612aba598",
+    "source_lines": 414,
+    "whole_line_comments": 348,
+    "nonblank_non_whole_line_comment_lines": 12,
+    "output_artifact_scope": "Truncated text includes an opening code fence;these counts are not a complete valid RTL implementation.",
+    "public_waveform_observation": {
+      "before65": {
+        "time_ns": 60,
+        "clk": "0",
+        "a": "1",
+        "b": "0",
+        "state": "0",
+        "q": "1"
+      },
+      "after65": {
+        "time_ns": 65,
+        "clk": "1",
+        "a": "1",
+        "b": "1",
+        "state": "0",
+        "q": "0"
+      },
+      "before95": {
+        "time_ns": 90,
+        "clk": "0",
+        "a": "1",
+        "b": "1",
+        "state": "0",
+        "q": "0"
+      },
+      "after95": {
+        "time_ns": 95,
+        "clk": "1",
+        "a": "1",
+        "b": "1",
+        "state": "1",
+        "q": "1"
+      },
+      "inference": "Generated comments compare updated same-edge inputs as though they were sampled inputs. The two claimed contradictions have different preceding b values (0 versus1), so that comparison does not establish an inconsistent public waveform.",
+      "proof_scope": "Static public table/comment comparison only. Not a complete recovered design, simulation, or proof of why the model produced its whole response."
+    },
+    "failure_class": "Known first-output truncation followed by unfinished repair and failed supervision;not total48h wall stop.",
+    "guard": {
+      "complete": true,
+      "passed": false,
+      "stage_rc": 1,
+      "owned_cleanup_verified": true,
+      "remaining": [],
+      "own_slot_released": true,
+      "model_unchanged": true,
+      "protected_files_unchanged": true,
+      "finished_at_utc": "2026-10-10T03:00:43.627585+00:00"
+    },
+    "monitor_terminal": true,
+    "original_full132_success": false,
+    "official_final_total_score_computed": false,
+    "full_goal_complete": false,
+    "private_evidence_index": {
+      "SOLVE_COMMAND.json": {
+        "sha256": "ad533703e1e2595f0f4480e784060616c0c8dabaac5735525eb1524f2efb1f5f",
+        "bytes": 391
+      },
+      "STARTED.json": {
+        "sha256": "81e3b8365d847c4633d6c9b3efa38a41069f2c51c2cbee36a76e03ea51c8fb18",
+        "bytes": 2069
+      },
+      "prompt_only/prompt.txt": {
+        "sha256": "d8eb255b565aa72aba2ca191784f1a5a3dac8c3bf3fcf6e030f0a7770e80e3a2",
+        "bytes": 1820
+      },
+      "solve.log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "solve/prompt_only/prompt.txt": {
+        "sha256": "d8eb255b565aa72aba2ca191784f1a5a3dac8c3bf3fcf6e030f0a7770e80e3a2",
+        "bytes": 1820
+      },
+      "solve/requests.json": {
+        "sha256": "9afe54902d208ded3b606b1223e660ea2350108fafe15efaf48f5284d6c3fdfb",
+        "bytes": 743
+      },
+      "solve/requests/0/request.json": {
+        "sha256": "6ae2d41124c5ce954560855d2f8cefac593da17549f3909833224310c531cb80",
+        "bytes": 3130
+      },
+      "solve/requests/0/response.json": {
+        "sha256": "f6f95b2f6c203da6107e3ee86a7451d3a24eefa7a0dde8ac74e7a9c326055b1a",
+        "bytes": 19070
+      },
+      "solve/requests/1/request.json": {
+        "sha256": "7d2882081cbda3c242763ad7eb286da73c041265f79c1669bce655b403babe7f",
+        "bytes": 22886
+      },
+      "solve/solution.v": {
+        "sha256": "bd1d06d57d74dbedf3ba794c1afd2dd4dac79f2538ab27f00a72027612aba598",
+        "bytes": 17997
+      },
+      "solve/trace.jsonl": {
+        "sha256": "3ef65cb4377a58bbd37537c7dfb9d12a28ddad1d486ebb0ee7711589b376d89a",
+        "bytes": 698
+      },
+      "TERMINAL.json": {
+        "sha256": "780ada3d6b3cd0f989f1bf861350e0c6ec6d05a0bf54e75a02879d0639ece445",
+        "bytes": 1406
+      }
+    },
+    "handle_observation_path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\NIGHT_HANDLES_20261008_1791601259450007600\\READBACK.json",
+    "failure_notice": "https://github.com/854259/FPGA/issues/7#issuecomment-6093112533",
+    "ownership": "132-134 peer;135-136 owner,unchanged",
+    "next_action": "Preserve incomplete row and request accounting;peer must resolve true failed132 exit before existing133-136 progress. No replay,forcedsuccess,budget expansion or speculative new admission.",
+    "candidate_priority": "Temporal first-generation guidance remains a prepared primary;output discipline now has actual truncation evidence but is separate and unselected. Do not append147 to frozen temporal9 or mix factors.",
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "project_imports": 0,
+    "private_reference_or_testbench_read": false,
+    "result_sha256": "9a2877e1e65e273eb9cbe4af7ccc0d3142e1afb9a5ebef62a43ece1edbc5eb45"
+  },
+  "complete146_public_serial_diagnosis": {
+    "result_sha256": "bc9ad8f71adb489fbb694675bc03dbd679492a6a0ba334d036aeb58273d63ef5",
+    "diagnosis_sha256": "76963bcd92ce4bde935cc339c9fb4cf3d56192a730924aa51970903e10ddb429",
+    "complete_tasks": 146,
+    "rows": 2190,
+    "P": {
+      "outputs": 730,
+      "level_counts": {
+        "0": 16,
+        "1": 145,
+        "3": 569
+      },
+      "L3_outputs": 569,
+      "all_five_L3_tasks": 112,
+      "actual_calls": 807,
+      "prefix_coefficient_sum": 598.0
+    },
+    "A": {
+      "outputs": 730,
+      "level_counts": {
+        "0": 15,
+        "1": 163,
+        "3": 552
+      },
+      "L3_outputs": 552,
+      "all_five_L3_tasks": 109,
+      "actual_calls": 776,
+      "prefix_coefficient_sum": 584.6
+    },
+    "B": {
+      "outputs": 730,
+      "level_counts": {
+        "0": 90,
+        "1": 170,
+        "3": 470
+      },
+      "L3_outputs": 470,
+      "all_five_L3_tasks": 94,
+      "actual_calls": 730,
+      "prefix_coefficient_sum": 504.0
+    },
+    "remaining_tasks": 10,
+    "diagnostic_bounds": {
+      "unknown_remaining_tasks": 10,
+      "unknown_remaining_outputs": 50,
+      "all_five_L3_tasks_needed_for120": 8,
+      "L3_outputs_needed_for120_mean": 31,
+      "full_weighted_mean_interval": [
+        0.7666666666666667,
+        0.8307692307692308
+      ],
+      "scope": "Bounds only, no missing grades imputed, no original goal or five-sample gate redefinition."
+    },
+    "actual_paired_grade_losses": [
+      {
+        "task": "Prob082_lfsr32",
+        "sample": 1,
+        "A_level": 1,
+        "P_level": 0,
+        "A_calls": 1,
+        "P_calls": 2
+      }
+    ],
+    "prefix_P_minus_A_calls": 31,
+    "new146": {
+      "task": "Prob146_fsm_serialdata",
+      "arms": {
+        "A": {
+          "levels": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "actual_calls": 5,
+          "solution_hashes": [
+            "e310849bd3281cdb4e33630739d2a7443ffd71f824712440a769232fd0bfebde"
+          ]
+        },
+        "P": {
+          "levels": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "actual_calls": 5,
+          "solution_hashes": [
+            "e310849bd3281cdb4e33630739d2a7443ffd71f824712440a769232fd0bfebde"
+          ]
+        },
+        "B": {
+          "levels": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actual_calls": 5,
+          "solution_hashes": [
+            "b5b68f8c0b19ec745e51eb030b5cd1bce64373171cb54683d0e3159f3c49d9bc"
+          ]
+        }
+      },
+      "agent_same_generated_source_all10": true,
+      "first_compile_pass_all10": true,
+      "functional_feedback_used": false,
+      "repair_used": false,
+      "agent_completion_tokens_each": 745,
+      "agent_finish_each": "stop",
+      "agent_solve_time_range_s": [
+        26.766664249822497,
+        27.26748074963689
+      ],
+      "causal_interpretation": "Shared generation failure before table feedback. Static public-contract diagnosis pending; serial135 already covers146, no additional score factor."
+    },
+    "public_static_errors": [
+      "State-dependent datapath uses next_state, so the start bit is counted/captured and data capture exits before all8 payload bits.",
+      "When CHECK_STOP sees a valid stop1, next_state becomes IDLE; sequential IDLE branch skips the sole done=1 assignment. Valid all-zero frame cannot signal done at stop."
+    ],
+    "manual_witness_only": true,
+    "native_witness_executed": false,
+    "actual_model_gain_proven": false,
+    "existing135": {
+      "spec_sha256": "bae9c415cebffb4bedd75ea6d41df58415db24cb880f69dae88ddc5b07a4b211",
+      "serial_source_sha256": "a692ee1a8e2c409ae7c6421b9a3916e4a989fba89dd20c6c4d87b293bc3e23b3",
+      "state": "queued",
+      "original_monitor": {
+        "pid": 4175420,
+        "present": true,
+        "state": "S",
+        "ppid": 1,
+        "pgid": 4175420,
+        "sid": 4175420,
+        "starttime": "882508578",
+        "command_sha256": "25efd8708d1277055f2cdd60c28f3c8715a85219ea256a43f1dfde230a1d07fd",
+        "stable_observation": true,
+        "original_birth": true,
+        "live_identity_verified": true,
+        "independent_session": true
+      },
+      "both_agent_arms_already_have_serial_feedback": true,
+      "zero_payload_valid_frame_already_in_finite_trace": true,
+      "isolated_factor": "Append candidate-source scalar multi-process driver facts to existing measured serial failure feedback only",
+      "arm_definitions": {
+        "A": "131 original P serial feedback; internal C unchanged",
+        "P": "Same serial feedback plus source-derived scalar driver facts",
+        "B": "Untouched official baseline"
+      },
+      "scope": "135 compares scalar-source diagnostics appended to serial feedback. It is not a direct table132 versus serial comparison, nor proof this ten-output failure is solved.",
+      "no_patch_or_extra_ticket_needed_for_witness_coverage": true
+    },
+    "original132_complete": false,
+    "full_goal_complete": false,
+    "full_cost_gate_evaluated": false,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0
+  },
+  "complete_prefix145_review": {
+    "result_sha256": "8761f502c15d54da74feeb5c26bdb5a9f4817ab8c5a26cb1827e10e974d70da7",
+    "complete_tasks": 145,
+    "complete_rows": 2175,
+    "partial_rows_excluded": 1,
+    "arms": {
+      "A": {
+        "outputs": 725,
+        "level_counts": {
+          "0": 15,
+          "1": 158,
+          "3": 552
+        },
+        "L3_outputs": 552,
+        "all_five_L3_tasks": 109,
+        "actual_calls": 771,
+        "prefix_coefficient_sum": 583.6
+      },
+      "P": {
+        "outputs": 725,
+        "level_counts": {
+          "0": 16,
+          "1": 140,
+          "3": 569
+        },
+        "L3_outputs": 569,
+        "all_five_L3_tasks": 112,
+        "actual_calls": 802,
+        "prefix_coefficient_sum": 597.0
+      },
+      "B": {
+        "outputs": 725,
+        "level_counts": {
+          "0": 85,
+          "1": 170,
+          "3": 470
+        },
+        "L3_outputs": 470,
+        "all_five_L3_tasks": 94,
+        "actual_calls": 725,
+        "prefix_coefficient_sum": 504.0
+      }
+    },
+    "bounds": {
+      "all_five_L3": {
+        "prefix_tasks": 112,
+        "needed_remaining_tasks_for120": 8,
+        "unknown_remaining_tasks": 11
+      },
+      "mean_L3_count": {
+        "prefix_outputs": 569,
+        "needed_remaining_outputs_for120_mean": 31,
+        "unknown_remaining_outputs": 55
+      },
+      "full_weighted_mean_interval": [
+        0.7653846153846153,
+        0.8358974358974359
+      ],
+      "note": "Bounds only;no unobserved grades assumed;two L3 readings do not redefine original goal qualification or official final scoring."
+    },
+    "new145": {
+      "task": "Prob145_circuit8",
+      "samples": 5,
+      "levels": {
+        "A": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "P": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "B": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "calls": {
+        "A": 5,
+        "P": 5,
+        "B": 5
+      },
+      "A_P_paired_gain": 0,
+      "repair_used": false,
+      "agent_output_tokens_per_sample": 7475,
+      "agent_total_output_tokens": 74750,
+      "agent_solve_time_range_s": [
+        257.15869248099625,
+        259.50336684659123
+      ],
+      "sample0_comment_count_scope_only": "381 line comments/14 nonempty statement lines measured on retained sample0 A/P source;not remeasured for other DUTs.",
+      "ten_solve_time_scope": "Retained per-row solve totals,including compilation/startup;not separately attributed model latency."
+    },
+    "partial146": {
+      "row": "row_002175",
+      "task": "Prob146_fsm_serialdata",
+      "sample": 0,
+      "arm": "P",
+      "level": 1,
+      "actual_calls": 1,
+      "not_complete_five_sample": true,
+      "not_new_factor_or_resampling": true
+    },
+    "actual_paired_losses": [
+      {
+        "task": "Prob082_lfsr32",
+        "sample": 1,
+        "A_level": 1,
+        "P_level": 0,
+        "A_calls": 1,
+        "P_calls": 2
+      }
+    ],
+    "prefix_P_minus_A_calls": 31,
+    "peer_PR214_scope": "Independent current3 source/hash and189 archive integrity report received;not additional mock assertion/native/model-benefit qualification",
+    "constant_repair_docstring_nonblocking_deferred_to_selected_delivery": true,
+    "full_goal_complete": false,
+    "historical113_guard_evaluated": false,
+    "full_cost_gate_evaluated": false,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0
+  },
+  "circuit145_sample0_generation_efficiency": {
+    "result_sha256": "5f69bd3937789b62580976b23f55e2f3f95b033fc48608da231d38b882c521ed",
+    "fixed_sample": 0,
+    "task": "Prob145_circuit8",
+    "A_P_first_L3": true,
+    "A_P_first_payload_and_DUT_identical": true,
+    "table_feedback_used": false,
+    "not_new_table_feedback_gain": true,
+    "completion_tokens": 7475,
+    "source_lines": 450,
+    "line_comment_lines": 381,
+    "nonempty_statement_lines": 14,
+    "worker_total_solve_s": [
+      258.8282209392637,
+      258.12834133580327
+    ],
+    "solve_scope": "Original worker total including compilation;not separately measured model latency",
+    "finish_reason": "stop",
+    "truncation_or_timeout": false,
+    "B_original_level": 0,
+    "B_compiler_single_cause_not_attributed": true,
+    "dual_original_members": 21,
+    "output8192_solve300_calls2_repair1_unchanged": true,
+    "comment_stripping_not_implemented": true,
+    "prompt_variant_not_implemented": true,
+    "frozen_temporal9_unchanged": true,
+    "no_factor_selected": true,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "full_five_sample_score": false,
+    "full_goal_complete": false
+  },
+  "complete_prefix144_priority_review": {
+    "result_sha256": "c960b8bde3c32d80b81dd5e7ba2876942735ebdb02a73d5bb5aa572d2e4ce43b",
+    "complete_tasks": 144,
+    "rows": 2160,
+    "P": {
+      "outputs": 720,
+      "level_counts": {
+        "0": 16,
+        "1": 140,
+        "3": 564
+      },
+      "L3_outputs": 564,
+      "all_five_L3_tasks": 111,
+      "all_five_nonL3_tasks": 30,
+      "actual_calls": 797,
+      "prefix_coefficient_sum": 592.0
+    },
+    "A": {
+      "outputs": 720,
+      "level_counts": {
+        "0": 15,
+        "1": 158,
+        "3": 547
+      },
+      "L3_outputs": 547,
+      "all_five_L3_tasks": 108,
+      "all_five_nonL3_tasks": 33,
+      "actual_calls": 766,
+      "prefix_coefficient_sum": 578.6
+    },
+    "B": {
+      "outputs": 720,
+      "level_counts": {
+        "0": 80,
+        "1": 170,
+        "3": 470
+      },
+      "L3_outputs": 470,
+      "all_five_L3_tasks": 94,
+      "all_five_nonL3_tasks": 50,
+      "actual_calls": 720,
+      "prefix_coefficient_sum": 504.0
+    },
+    "remaining_tasks": 12,
+    "diagnostic_bounds": {
+      "all_five_L3": {
+        "prefix_tasks": 111,
+        "needed_from_remaining_to_reach120": 9,
+        "maximum_if_all_remaining_pass": 123
+      },
+      "mean_L3_count": {
+        "prefix_L3_outputs": 564,
+        "needed_remaining_L3_outputs_for120_mean": 36,
+        "remaining_outputs": 60
+      },
+      "full_weighted_mean_interval_from_unknown_remaining": [
+        0.7589743589743589,
+        0.8358974358974359
+      ],
+      "note": "Mathematical bounds only;no grades imputed to remaining tasks. The two L3 readings do not redefine original goal qualification."
+    },
+    "actual_paired_grade_losses": [
+      {
+        "task": "Prob082_lfsr32",
+        "sample": 1,
+        "A_level": 1,
+        "P_level": 0,
+        "A_calls": 1,
+        "P_calls": 2
+      }
+    ],
+    "prefix_P_minus_A_calls": 31,
+    "full_cost_gate_evaluated": false,
+    "full_goal_complete": false,
+    "peer_PR213_read": true,
+    "peer_static_review_scope": "Five frozen temporal sources SHA match; limited static review only; no native/archive/score admission",
+    "primary_score_directions": "Existing serial/native pipeline and frozen temporal first-generation candidate; constant repair backup remains separate and unselected",
+    "original132_136_queue_unchanged": true,
+    "new_generation": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0
+  },
+  "constant_repair_retained_context_preflight": {
+    "scope": "Ten retained144 repairs only;exact guidance appended to their system messages;not a new score sample",
+    "result_sha256": "7be35ea5fc98a8076bd8658fe902f640e727def13438db1771e7bc90f2e6912b",
+    "rows": 10,
+    "original_prompt_tokens": 2287,
+    "candidate_prompt_tokens": 2410,
+    "delta_tokens": 123,
+    "context_tokens": 16384,
+    "output_tokens_reserved": 8192,
+    "headroom_tokens": 5782,
+    "all_original_usage_counts_matched": true,
+    "metadata_HTTP_calls": 41,
+    "real_generation_calls": 0,
+    "EDA_calls": 0,
+    "FIFO_tickets": 0,
+    "all_future_repair_capacity_proven": false,
+    "model_benefit_unknown": true,
+    "native_qualification": false,
+    "scoring_selected": false,
+    "submitted": false,
+    "frozen_temporal9_unchanged": true,
+    "original132_136_unchanged": true
+  },
+  "constant_repair_guidance_preparation": {
+    "source_prepared": true,
+    "guide_words": 101,
+    "source_hashes": {
+      "constant_repair_request.py": {
+        "sha256": "21c9f9b35b495612e7d473ed31864b29fd49119c7cf8bcc4c5ce327248bcbde8",
+        "bytes": 5706
+      },
+      "baseline_worker.py": {
+        "sha256": "3e4b7d48482871b7fa04a1135702f72b787ea53e2767848ba0bdbf3e465928fe",
+        "bytes": 9355
+      },
+      "worker.py": {
+        "sha256": "4b7f4a2aa58defd4fd1f7474e9dab78c4ee6f7a9d6529d6f619736d3134f95f3",
+        "bytes": 7599
+      }
+    },
+    "actual_AMD_synthetic_worker_cases": 7,
+    "fake_HTTP_attempts": 12,
+    "fake_compilers": 11,
+    "qualified_scope": "Actual changed worker wire/bind/restore with mocked model/compiler;not native behavior or model score.",
+    "child_pid": 379864,
+    "child_birth": "887010221",
+    "child_rc": 0,
+    "child_elapsed_s": 0.27089526131749153,
+    "exec_confirmed": true,
+    "leader_reaped": true,
+    "remaining_group": [],
+    "qualification_archive_sha256": "2abc8a8d04b048a591023cafebf08da42e54f521d0d557e28b8a0a242b597b3d",
+    "qualification_archive_members": 189,
+    "every_archive_member_dual_verified": true,
+    "protected_model_and_sources_held": true,
+    "native_RTL_qualification": false,
+    "real_model_benefit_unknown": true,
+    "context_admission_pending": true,
+    "scoring_factor_selected": false,
+    "FIFO_submitted": false,
+    "comparison_plan_created": false,
+    "separate_from_frozen_temporal9": true,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0
+  },
+  "original_goal_cost_gate_source_recovered": {
+    "evidence_sha256": "f90ce61ff3cf7d79ceb4fe20a8f5be4341821e7887b60e5961e7e25b44f6a1c4",
+    "source_spec_sha256": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
+    "source_metrics_sha256": "544d70229e1be9042af20376fcd201997dd6d9d302969f50ad4bb087c3477ce2",
+    "cloud_originals_verified": true,
+    "original_scope": "Original one-sample156 task C/P goal qualification; not a five-sample/hidden/generalization/adoption certificate.",
+    "cost_requirements": [
+      "P total actual requests <= C total actual requests.",
+      "For each of original113 historical L3 tasks,P actual requests <= paired C requests.",
+      "For each task with equal P/C grade coefficient,P actual requests <= paired C requests.",
+      "A request increase on a nonhistorical improved-grade task is not alone a cost veto;original budget,total,history and other gates still apply."
+    ],
+    "historical_L3": 113,
+    "task144_historical_level": 0,
+    "new_gate_created": false,
+    "five_sample_translation_not_redefined": true,
+    "current132_goal_pass_computed": false,
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0
+  },
+  "latest_compile_repair_review": {
+    "task": "Prob144_conwaylife",
+    "A_levels": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "P_levels": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "B_levels": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "actual_requests": {
+      "A": 10,
+      "P": 10,
+      "B": 5
+    },
+    "public_files_verified": 125,
+    "key_error_present_in_all10_repair_requests": true,
+    "diagnostic_chars": 1140,
+    "compile_failure_persists_after_repair": true,
+    "repaired_source_variants": 6,
+    "scalar_index_risk_count": 5,
+    "static_source_analysis_only": true,
+    "evidence_sha256": "7151b53b4e151a66435416ba062a21eadd78aabed4870a4d864efff72a9c467b",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0,
+    "frozen_temporal9_unchanged": true,
+    "new_factor_admitted": false,
+    "full_goal_complete": false,
+    "implication": "Repair-quality and compile-time-constant/index-width candidate; log compaction alone adds no missing error for these outputs.",
+    "last_peer_boundary_PR": 212,
+    "peer_boundary_acceptance_recorded": true
+  },
+  "latest_readonly_reviews": {
+    "first_reply82": {
+      "sample": 1,
+      "saved_first_requests_equal": true,
+      "first_answers_differ": true,
+      "A_first_compile": 0,
+      "P_first_compile": 1,
+      "original_loss_and_cost_preserved": true,
+      "backend_cause_unknown": true,
+      "evidence_sha256": "767af2fa6892c4e38c4328a5955f86d555b327f080a161bdf1a8e03b29d47060"
+    },
+    "pending136_reader": {
+      "source_sha256": "a3d27a8c49bcf01d5258dc333723bffcea23cc22598521012596da6b6e047dd2",
+      "actual_live_refusal_confirmed": true,
+      "terminal_collector_executed": false,
+      "positive_terminal_audit_qualified": false,
+      "native_control_reexecuted": false,
+      "source_only": true
+    },
+    "official_repository_heads_unchanged": true,
+    "official_recheck_sha256": "3d31bb81b64435bf2074c50682467e495ccbecb94d706ff37719810d1318d614",
+    "new_model_calls": 0,
+    "new_eda_calls": 0,
+    "new_fifo_tickets": 0
+  },
+  "related142_static_overlap": {
+    "complete_rows": 15,
+    "public_original_files": 105,
+    "AP_both_bump_source_witness": true,
+    "B_opposite_bump_source_witness": true,
+    "static_only": true,
+    "source_witness_sha256": "3cc3d66a3a86738d175f5c9714857281cbfe314a6dbb0214649fc470ec8913e8",
+    "pending136_original_coverage": true,
+    "temporal9_scope_unchanged": true,
+    "new_evaluation_tickets": 0,
+    "shared_evidence": "/workspace/team/activity/fpga_owner/artifacts/lemmings142-witness-20261010-v1/LEMMINGS142_PUBLIC_WITNESS.json"
+  },
+  "index": "03_analysis/first_generation_temporal_20261010/EVIDENCE_INDEX.json",
+  "status": "prepared_not_submitted_no_score",
+  "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+  "spec_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+  "targets": [
+    "Prob111_fsm2s",
+    "Prob133_2014_q3fsm",
+    "Prob139_2013_q2bfsm",
+    "Prob140_fsm_hdlc"
+  ],
+  "historical_controls": [
+    "Prob095_review2015_fsmshift",
+    "Prob107_fsm1s",
+    "Prob108_rule90",
+    "Prob109_fsm1",
+    "Prob110_fsm2"
+  ],
+  "outputs": 135,
+  "max_requests": 225,
+  "complete_goal": false,
+  "original132_136_held": true,
+  "peer_base_document_sync": {
+    "peer_commit": "e648649d3bde68a2062d6adfeb6b1235d8669c57",
+    "own_pre_merge_commit": "05c62579ad4ddd31f6f4134be5b0d6cc4d888a7f",
+    "conflicts_resolved": [
+      "05_handoff/CHANGELOG.md",
+      "AI_CONTEXT.md",
+      "PROJECT_STATE.json",
+      "PROJECT_STATUS.md"
+    ],
+    "peer_JSON_semantics_preserved": true,
+    "peer_markdown_bytes_preserved": true,
+    "own_original_evidence_preserved": true,
+    "frozen_packet_files": {
+      "03_analysis/first_generation_temporal_20261010/EVIDENCE_INDEX.json": "5ee15daf199cdb6fecec2217d1e1db50a960553e58625c5f6d19cb0d92cd45a5",
+      "03_analysis/first_generation_temporal_20261010/README.md": "2fb00cb6f6fffeabd35f6f001d9f7ba6f0b7686a8f7529c7f21c201e064fe3ce",
+      "03_analysis/first_generation_temporal_20261010/baseline_worker.py": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+      "03_analysis/first_generation_temporal_20261010/comparison_result.py": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+      "03_analysis/first_generation_temporal_20261010/first_system_request.py": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+      "03_analysis/first_generation_temporal_20261010/prepare_temporal_comparison.py": "e5cffb23800d19d23ba0cad54ca5c87957dcb0d05e4337391ff87c86716e4bf2",
+      "03_analysis/first_generation_temporal_20261010/worker.py": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65"
+    },
+    "runtime_working_SHA": {
+      "03_analysis/first_generation_temporal_20261010/baseline_worker.py": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+      "03_analysis/first_generation_temporal_20261010/comparison_result.py": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+      "03_analysis/first_generation_temporal_20261010/first_system_request.py": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+      "03_analysis/first_generation_temporal_20261010/prepare_temporal_comparison.py": "e5cffb23800d19d23ba0cad54ca5c87957dcb0d05e4337391ff87c86716e4bf2",
+      "03_analysis/first_generation_temporal_20261010/worker.py": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65"
+    },
+    "candidate_execution_sources_changed": false,
+    "PR_merged": false,
+    "scoring_admission": false,
+    "new_FIFO": 0
+  }
+},
   "portable_supervisor_entry_20261009": {
   "schema": "portable_submission_supervisor_entry_v1",
   "updated_at": "2026-10-09T19:20:00+08:00",
