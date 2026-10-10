@@ -1,5 +1,6 @@
 """AMD-only direct official baseline arm; preserve upstream bytes and failures."""
 import argparse
+import ctypes
 import hashlib
 import importlib.util
 import json
@@ -139,8 +140,14 @@ def main():
     resource.check_resource(args.resource_check, args.kit)
     budget = shared_budget.SolveBudget(300,
         parent_started=shared_budget.parent_started_from_environment())
-    result = run_arm(args.kit/'submission', args.task.resolve(), args.out.resolve(),
-                     resource, 'http://127.0.0.1:8000/v1', seconds=budget.remaining())
+    assert ctypes.CDLL(None, use_errno=True).prctl(36,1,0,0,0)==0
+    original_owned = resource.owned_command
+    try:
+        resource.owned_command = budget.owned_operation(original_owned)
+        result = run_arm(args.kit/'submission', args.task.resolve(), args.out.resolve(),
+                         resource, 'http://127.0.0.1:8000/v1', seconds=budget.remaining())
+    finally:
+        resource.owned_command = original_owned
     budget.remaining()
     resource.check_resource(args.resource_check, args.kit)
     print(json.dumps(result))

@@ -13,6 +13,7 @@ import shutil
 import time
 import zipfile
 import failure_continuation
+import owned_deadline
 
 import official_baseline_arm_20261005 as official
 
@@ -161,6 +162,10 @@ def validate(plan):
         assert source_spec['model_generated_rtl_only'] is True
         for name, expected in source_spec['source_hashes'].items():
             assert plan['sources']['files'][str(root/name)] == expected == official.sha(root/name)
+        if plan.get('allow_shared_budget_failure'):
+            supervisor = Path(owned_deadline.__file__).resolve()
+            assert supervisor == (root/'owned_deadline.py').resolve()
+            assert plan['sources']['files'][str(supervisor)] == official.sha(supervisor)
     if 'generation_arms' in plan['sources']:
         import three_arm_generation_20261008 as generation
         assert set(plan['sources']['generation_arms']) == {'A', 'P'}
@@ -394,7 +399,12 @@ def execute_row(plan, argv, row, folder, resource_check):
             solve_argv = ['/usr/bin/env',
                 'RTL_SOLVE_PARENT_STARTED_MONOTONIC='+format(solve_started, '.17g'),
                 *argv]
-        command = resource.owned_command(solve_argv,folder,folder/'solve.log',plan['solve_supervisor_s'])
+        if plan.get('allow_shared_budget_failure'):
+            command = owned_deadline.owned_command(solve_argv,folder,folder/'solve.log',
+                      plan['solve_supervisor_s'],deadline=solve_started+plan['solve_supervisor_s'],
+                      cleanup_deadline=solve_started+plan['solve_supervisor_s'])
+        else:
+            command = resource.owned_command(solve_argv,folder,folder/'solve.log',plan['solve_supervisor_s'])
         solve_returned = time.monotonic()
         save(folder/'SOLVE_COMMAND.json',command)
         if plan.get('allow_shared_budget_failure'):
@@ -402,7 +412,8 @@ def execute_row(plan, argv, row, folder, resource_check):
                  started_monotonic=solve_started, returned_monotonic=solve_returned,
                  elapsed_s=solve_returned-solve_started, budget_s=plan['solve_deadline_s'],
                  command_sha256=official.sha(folder/'SOLVE_COMMAND.json'),
-                 scheduler_sha256=official.sha(__file__)))
+                 scheduler_sha256=official.sha(__file__),
+                 owned_deadline_source_sha256=official.sha(owned_deadline.__file__)))
         assert not command['timeout'] and not command['launch_error'] and command['returncode'] == 0 and not command['remaining_live_group'], 'Solver supervision failure'
         assert command['elapsed_s'] <= plan['solve_deadline_s'] and time.monotonic()-solve_started <= plan['solve_deadline_s'], 'Solver deadline exceeded before grading'
         solve = folder/'solve'; evaluator = Path(row['evaluator_dir'])
@@ -505,7 +516,9 @@ def run_plan(plan_path, expected_sha256, out, resource_check):
 if __name__ == '__main__':
     import argparse
     import sys
+    import ctypes
     assert sys.platform == 'linux', 'Project execution is AMD-only'
+    assert ctypes.CDLL(None,use_errno=True).prctl(36,1,0,0,0)==0
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--plan', type=Path, required=True)
     parser.add_argument('--plan-sha256', required=True)

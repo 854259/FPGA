@@ -1,4 +1,139 @@
 {
+  "owned_deadline_delta_20261010": {
+  "schema": "owned_absolute_wait_and_cleanup_delta_v1",
+  "saved_epoch": 1791623419.7716079,
+  "source_hashes": {
+    "03_analysis/shared_solve_budget_20261010/owned_deadline.py": "b24214bc447601ad15a845bd55caf0e9506f15c59d5b932bc391888bcf8667ae",
+    "03_analysis/shared_solve_budget_20261010/shared_budget.py": "8d54e0a53f3891bf0b898b1bdd97a900d13ddcf61ef604180ce556437cf1e258",
+    "03_analysis/shared_solve_budget_20261010/official_baseline_arm_20261005.py": "c647ff0ada895aa0bc8f9cf61fe9cff1301684d63595a3dda2422ca1083aee7a",
+    "03_analysis/queue_failure_continuation_20261010/three_arm_queue_20261005.py": "ec1601223af61baa269ddc50abbcdd04d49aa319a0c977a9516061ff58e8c3fe",
+    "03_analysis/queue_failure_continuation_20261010/failure_continuation.py": "45c22270d286a70f00b796ddce5c6475a7735ba5f3c9c1c4dd0d438265e5b1c9"
+  },
+  "purpose": "Keep one absolute end through preparation/Popen/wait and one cleanup interval;not a capability gain.",
+  "work_and_cleanup_scope": "A/P owned tools and owned B baseline invocation use parent300 end;outer queue supervisor uses parent310 end with cleanup capped at the same310 end;child work and scoring still300.",
+  "original_official_baseline_python_and_shell_unchanged": true,
+  "subreaper_required": true,
+  "owned_group_signals_require_leader_birth_and_group_binding": true,
+  "cancellation_cleans_and_reaps_before_rethrow": true,
+  "signal_handlers_restored": true,
+  "qualification": {
+    "passed": true,
+    "controls": 8,
+    "cases": [
+      "fast_owned_operation",
+      "expired_after_preparation_no_dispatch",
+      "shared_parent_deadline_kills_wait",
+      "Popen_delay_does_not_refresh_wait",
+      "parent_first_group_cleanup",
+      "signal_cancellation_reaps_owned_child",
+      "one_hard_cleanup_endpoint",
+      "actual_queue_absolute_supervisor_bridge"
+    ],
+    "real_owned_CPU_and_independent_sentinel": true,
+    "actual_SolveBudget_owned_operation_and_queue_execute_row": true,
+    "Popen_delay_is_synthetic": true,
+    "parent_budgets_are_aged": true,
+    "queue_admission_is_synthetic": true,
+    "B_main_is_not_executed_in_this_qualification": true,
+    "archive": {
+      "passed": true,
+      "archive_members": 97,
+      "archive_sha256": "5fa6dbe998706c98d6e9f847f5abf5231050b3ba637849970f644bfd79740108",
+      "all_original_members_E_AMD_bound": true,
+      "private_archive": "E:\\26qiansai\\private_archives\\owned_deadline_qualification_20261010_v1"
+    },
+    "cloud_archive": "/workspace/team/runs/fpga_owner/owned_deadline_qualification_20261010_v1/QUALIFICATION_ORIGINALS.zip"
+  },
+  "deployed": false,
+  "production_B_CLI_qualified": false,
+  "full_production_chain_qualified": false,
+  "physical300_pipeline_qualified": false,
+  "real_shared_model_cancel_idle_qualified": false,
+  "full156_admission_permitted": false,
+  "full_goal_complete": false,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "prior_qualification_scope": "All older CLI/HTTP/parent-clock/seal qualifications retain their exact previous source SHA;not inherited by this new supervisor/integration.",
+  "unresolved": [
+    "Synchronous Popen itself is not interruptible by this helper;only its post-return wait is clamped.",
+    "CPU wait/cleanup tests do not establish full production A/P/B bootstrap/runtime/resource chain or physically300s pipeline.",
+    "Real shared-model disconnect/cancel and idle require exclusive ownFIFO after138 release.",
+    "Failure seal still requires its supported request/budget evidence layout;B transport-layout faults and overbudget rc0 outside that route stay closed.",
+    "Metadata/log hashing after cleanup is not proof of a strict total function-return bound;pre-grading300 check remains required."
+  ],
+  "peer235_merged_preserving_19_owned_nodes_and22_sources": true,
+  "actual138": {
+    "ticket": 138,
+    "state": "running_verified",
+    "monitor": {
+      "pid": 635531,
+      "present": true,
+      "live_verified": true,
+      "state": "S",
+      "starttime": "889203351",
+      "pgid": 635531,
+      "sid": 635531,
+      "command_sha256": "7082dc49f496b3bbf6f38fdd9f456c13874455ce7ce6eb28f0882178471a0d4d",
+      "same_birth": true
+    },
+    "sealed_outputs": 84,
+    "observed_epoch": 1791623207.1893194,
+    "new_source_overlay": false
+  },
+  "actual138_first_stable_target_partial": {
+    "task": "Prob111_fsm2s",
+    "observed": {
+      "A": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          1,
+          1,
+          1
+        ],
+        "client_attempts": 3
+      },
+      "P": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          3,
+          3,
+          3
+        ],
+        "client_attempts": 3
+      },
+      "B": {
+        "samples": [
+          0,
+          1,
+          2
+        ],
+        "levels": [
+          3,
+          3,
+          3
+        ],
+        "client_attempts": 3
+      }
+    },
+    "all_five_complete": false,
+    "full_comparison_gain_proven": false,
+    "unseen_generalization_proven": false
+  },
+  "next": [
+    "Complete fixed138 pairs/controls/cost/actual300 diagnostics;no replay or second score ticket.",
+    "After138 release,qualify exact production entry/model cancel-idle under ownFIFO before complete156.",
+    "Original109 extra request cause sample0 is compiler identifier typo;do not change FSM semantics or task-ID patch."
+  ]
+},
   "temporal138_control109_cost_diagnosis_20261010": {
   "schema": "temporal138_control109_request_cost_diagnosis_v1",
   "saved_epoch": 1791622267.0163047,
