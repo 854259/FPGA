@@ -1,4 +1,48 @@
 {
+  "peer249_lifecycle_delta_20261010": {
+    "schema": "peer249_lifecycle_delta_source_review_v1",
+    "saved_epoch": 1791638513.774855,
+    "peer_comment": 6097885357,
+    "PR": "https://github.com/854259/FPGA/pull/249",
+    "merge_commit": "99f7cad4cfe3c78ef6a938d02581d15204dc35ca",
+    "prior_source_review_sha256": "73d5e27b29d006e7495d8936124ee6a31cf1eca4362c3fa0d1301e915ce717ed",
+    "changed_candidate_files": {
+      "agent/runtime.py": "8367c010bbef35e4de40fb8b1bdfc1edb1d095016c32d2ebdce6093d48112268"
+    },
+    "unchanged_candidate_sources": 23,
+    "reuse_scope": "Prior24824-file binding and12 algorithm-function comparisons reused; no old test or model replay.",
+    "cancellation_handler_before_OSError": true,
+    "finally_preserves_cancellation_after_recovery_failure": true,
+    "guard_sha256": "6974426a9b3664a915c35f1a90cb80c0f7b5d35dd83f8d1da2638f59a740896b",
+    "guard_live_health_timeout_restart_removed": true,
+    "health_version_function_AST_unchanged": true,
+    "health_version_owned_supervision_still_pending": true,
+    "tests_source_sha256": "f0e5b128581627327a3f0488a85d5283063d309cff7b842b364497e8859f264a",
+    "peer_reported_CPU_validation": {
+      "status": "eleven_AMD_CPU_integration_cases_passed",
+      "tests": 11,
+      "test_source_sha256": "f0e5b128581627327a3f0488a85d5283063d309cff7b842b364497e8859f264a",
+      "process_receipt_sha256": "410f05a65bf7379aff967cdec1c1025d5eed28ddf19dcbb9f3fc7263461f28d0",
+      "test_stderr_sha256": "a6fdeb9405ade87c7c28e9c73986cae6c39f9cb6b0aa93c2bcd5ae78158b2f95",
+      "source_zip_sha256": "e1f068cca8a78d859d823e819451489ca9a1cf707d6d5f8bb9b762ca99f00549",
+      "tested_manifest_sha256": "8b2de277fa8d19ebb556018476990836b494342ea2bddf579bf52804973333bb",
+      "scope": "Synthetic model/EDA and HTTP baseline subprocess stub. Real serial HTTP, CLI main, signal deadline, CPU child cleanup; three real HTTP SIGTERM paths now exit; bounded real guard loop preserves a live child on delayed health and restarts an exited one. No real model/EDA/FIFO/deployment/formal qualification.",
+      "prior_seven_case_receipt_sha256": "eb00635c0911efbc893830ac4a7b4c941f8470aa5bf1fad8ad1edb2aa42ffaae",
+      "pre_fix_HTTP_failure_receipt_sha256": "cc44c18f0e228649debaf03856747015310eeb217e45818bf6a5f5250dd4adff",
+      "pre_fix_guard_failure_receipt_sha256": "182568563859ca6640058478ddf18507fd79cd83727dd2b2ba2a4ace09a2b6b4",
+      "post_test_changes": "Manifest validation metadata and documentation only; executable source and test bytes unchanged."
+    },
+    "independent_CPU_replay": false,
+    "independent_peer_receipt_full_byte_audit": false,
+    "new_model_calls": 0,
+    "new_EDA": 0,
+    "new_FIFO": 0,
+    "actual_interface_qualified": false,
+    "deployment_permitted": false,
+    "acceptance_policy_pending": true,
+    "full_goal_complete": false,
+    "next": "Review the remaining health-version ownership fix only, then bind one exact real-interface qualification; no duplicate FIFO, no algorithm change."
+  },
   "peer248_source_review_20261010": {
     "schema": "peer248_frozen_source_and_algorithm_review_v1",
     "saved_epoch": 1791637880.3937933,

@@ -1,3 +1,11 @@
+## 2026-10-10 接口249取消与守护变化核齐，剩余health子进程待修
+
+已读6097885357，实际Git merge99f7cad4。相对248，selected24源仅runtime8367c010变动，23保持，复用既有12算法函数独审，不重跑旧CPU/141。Handler在OSError前专门捕InterruptedError退出服务；run_job finally保留cancel，即使恢复异常仍退出；serve_all6974426a删除“health超时重启活agent”分支。新测试f0e5b128与manifest绑定一致；peer报告11CPU及负控保留，未冒充本方逐原件CPU复审或实际模型验收。
+
+vivado_version函数AST实际未变，仍直接subprocess.run30秒；peer明确继续收口health子进程owned监督。故249仍不可当完整正式接口资格/部署通过，下一仅该变化及精确交付。21:15:54实读两个完整准备根无票/执行文件、活票空，33源/模型保持；无新模型/EDA/FIFO。原174、table-P对照提案、原2340/3900/48h完整范围及本聊天120/.80/历史/成本目标保持，采用口径仍待用户回复，目标未达。
+
+索引full156_temporal_20261010/PEER249_LIFECYCLE_DELTA.json；变化源与报告E私有peer249_lifecycle_delta_20261010_v1已核齐。原248审阅及原失败不改，不用未验证队友进程充当live等待。
+
 ## 2026-10-10 正式接口248源码独审完成，生命周期修复由队友负责
 
 已读6097782060及合并PR248/2111c82e，独立从Git blob核selected manifest的24个绑定文件逐SHA一致；generation六函数与原2f7cb98b runtime AST、phase_context三函数、table三个解析/渲染/反例函数，共12函数逐AST一致，first_system_request860b字节保持。table对照使用实际132 cd8bed6b冻结字节，拒绝当前tracked版本替代。此次仅源码/AST审阅，没有重跑peer7项CPU或旧141，没有新模型/EDA/FIFO。
