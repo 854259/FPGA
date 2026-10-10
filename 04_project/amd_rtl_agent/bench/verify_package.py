@@ -75,6 +75,22 @@ def main() -> int:
             # would turn ../serve/serve_all.sh into a different, valid path.
             rel = supervisor[2:] if supervisor.startswith("./") else supervisor
             claims.append((rel, supervisor_sha, "serving.supervisor"))
+        if "selected_candidate" in man:
+            selected = man["selected_candidate"]
+            bound = selected.get("files") if isinstance(selected, dict) else None
+            if not isinstance(bound, dict) or not bound:
+                problems.append("manifest selected_candidate.files 必须是非空哈希映射")
+            else:
+                for rel, want in bound.items():
+                    path = pathlib.PurePosixPath(rel)
+                    if (not rel or path.is_absolute() or ".." in path.parts
+                            or "\\" in rel or str(path) != rel):
+                        problems.append("manifest selected_candidate.files 路径无效: %s" % rel)
+                    elif (not isinstance(want, str) or len(want) != 64
+                          or any(c not in "0123456789abcdef" for c in want)):
+                        problems.append("manifest selected_candidate.files SHA256无效: %s" % rel)
+                    else:
+                        claims.append((rel, want, "selected_candidate.files"))
         for rel, want, where in claims:
             got = files.get(rel)
             if got is None:

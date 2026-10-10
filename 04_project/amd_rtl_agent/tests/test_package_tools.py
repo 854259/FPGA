@@ -56,6 +56,43 @@ class PackageToolTests(unittest.TestCase):
         self.assertTrue(result_path.is_file(), result.stdout + result.stderr)
         return result, json.loads(result_path.read_text(encoding='utf-8'))
 
+    def selected_candidate(self):
+        candidate = self.package / 'agent' / 'candidate_worker.py'
+        candidate.write_bytes(b'selected candidate source\n')
+        self.manifest['selected_candidate'] = {
+            'files': {'agent/candidate_worker.py': digest(candidate.read_bytes())}}
+        self.save_manifest()
+        return candidate
+
+    def test_matching_selected_candidate_passes(self):
+        self.selected_candidate()
+        result, report = self.verify()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(report['problems'], [])
+
+    def test_changed_or_missing_selected_candidate_fails(self):
+        candidate = self.selected_candidate()
+        for missing in (False, True):
+            with self.subTest(missing=missing):
+                if missing:
+                    candidate.unlink()
+                else:
+                    candidate.write_bytes(b'wrong deployed candidate\n')
+                result, report = self.verify()
+                self.assertEqual(result.returncode, 1)
+                self.assertTrue(any('agent/candidate_worker.py' in p for p in report['problems']))
+
+    def test_invalid_selected_candidate_bindings_fail(self):
+        self.selected_candidate()
+        for files in ({}, [], {'../outside.py': '0' * 64},
+                      {'agent/candidate_worker.py': 'not-a-sha256'}):
+            with self.subTest(files=files):
+                self.manifest['selected_candidate']['files'] = files
+                self.save_manifest()
+                result, report = self.verify()
+                self.assertEqual(result.returncode, 1)
+                self.assertTrue(report['problems'])
+
     def test_matching_supervisor_passes(self):
         result, report = self.verify()
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
