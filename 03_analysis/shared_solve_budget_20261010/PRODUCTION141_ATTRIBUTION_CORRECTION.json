@@ -1,0 +1,19 @@
+{
+  "schema": "production141_pending_processing_attribution_correction_v1",
+  "saved_epoch": 1791634517.7946017,
+  "source_archive_sha256": "4270e691c1c01ea24ec2e022df7a5ba97f6d62dd8721717efca1894bc86d5283",
+  "source_observations_sha256": "3f5f25c0f686dac162e5f97e19c0093ac06c9338a0b1fd2b2f614125f07d17af",
+  "original_archive_report_count": 104,
+  "corrected_pre_failed_seal_count": 31,
+  "excluded_after_failed_seal_count": 73,
+  "predicate": "row0 has unreceived second request AND row0 not FAILED_SEALED AND observed processing slots",
+  "task_ids": [
+    4398734
+  ],
+  "original_archive_unchanged": true,
+  "original_qualification_result_unchanged": true,
+  "peer_comment": 6097351653,
+  "new_model_calls": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0
+}

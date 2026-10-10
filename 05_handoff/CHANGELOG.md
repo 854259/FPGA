@@ -1,3 +1,11 @@
+## 2026-10-10 完整156×5×3回归包已准备，尚未入队
+
+新准备根temporal_first_system_full156_20261010_v1，PLANfaa6d554/SPECdc47a018，156唯一题/2340行/3900预留请求/原48小时，execution_authorized=false、没有新FIFO或成绩。A绑定原目标C（phase C绕过table），P保持原table P+174词；P执行/bind函数特化AST与141相同、其余32源保持，原C functional_feedback AST及map_runtime/baseline字节核齐。新A分支未冒充141真实A资格，正式HTTP/CLI由队友继续同算法接入；下一完整入口与原成本门核对后另冻结准入，不在原准备包改授权位。原目标单样本作用域预先固定sample0，5样本及官方B单独报告，不挑最好样本或放松历史113/配对/原逐题总成本门，不自动采用。
+
+已读6097351653独审：141完整203成员及四行ZIP、108个出生退休、300退出/310内seal/后三入口均通过；140/quiet原档亦逐字节一致。修正本方processing归属统计：原report104中73是首行封存后的其他入口忙，旁路按row0未FAILED_SEALED限定为31条、单一4398734，原203档保持。该统计偏差不推翻真实processing→idle→后续成功结论，不冒充精确server cancel时刻。第一准备器AST检查索引误用body1，在创建AMD根前失败；原失败保存，新只改索引body0后准备成功，无模型/EDA/FIFO或旧实验重跑。
+
+索引full156_temporal_20261010/PREPARATION_RESULT.json、README.md、worker.py及shared_solve_budget_20261010/PRODUCTION141_ATTRIBUTION_CORRECTION.json。目标active未达，已完成的续题资格移出待办，下一直接推进该完整范围。
+
 ## 2026-10-10 141真实超时后续题成功，203原件归档完成
 
 141 completed/原guard passed/stage_rc0且占位已释放，所有任务出生已退役、33源/模型/保护文件保持。147 A在父300.001039秒超时，第二请求未确认，grade/服务端calls保持未知；真实pending processing已观察，预算退出后约1.398秒观察到idle，在原parent310前FAILED_SEALED。后111 A/P/B分别L1/L3/L3，各1请求、各真实SEALED，整个前缀正常结束。863观测中3次在未seal预算退出窗口抑制slots查询，真实静默分支已发生。普通L1不阻止续行；旧140高频查询干扰取消检查的问题已由268e静默间隔及613e observer配套修复，没有扩300/310/8192/2/1。
