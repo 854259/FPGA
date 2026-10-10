@@ -1,0 +1,91 @@
+{
+  "schema": "production139_actual_engineering_admission_v1",
+  "saved_epoch": 1791630099.8290467,
+  "observed_epoch": 1791630040.596562,
+  "ticket": 139,
+  "state": "running",
+  "root": "/workspace/team/runs/fpga_owner/temporal_shared_budget_production_20261010_v1",
+  "admission": {
+    "ticket": 139,
+    "task_name": "production_budget_real_entries_v1",
+    "monitor_pid": 734910,
+    "accepted_at_utc": "2026-10-10T10:57:00.926028+00:00",
+    "root": "/workspace/team/runs/fpga_owner/temporal_shared_budget_production_20261010_v1",
+    "qualification_only": true,
+    "full_score_batch": false,
+    "max_reserved_model_calls": 7,
+    "plan_sha256": "5d1d25da2e15c725223a9292bfc4cb6f56cfc7377ab9fcf0c40ad3b6e7599ef4",
+    "spec_sha256": "4f763fd0c13bcc329fc1646cce8727b37242e89fced86b49d497e5c10ffa2359",
+    "no_retry": true
+  },
+  "monitor": {
+    "pid": 734910,
+    "starttime": "890347040",
+    "state": "S",
+    "same_birth": true,
+    "command_sha256": "2908bb293238611cab1beba46f18065058b9d21e640b62114ab271e297e67ac8",
+    "live_verified": true
+  },
+  "child": {
+    "pid": 734911,
+    "starttime": "890347050",
+    "state": "S",
+    "same_birth": true,
+    "command_sha256": "9e77fd77a67f4aa1b44699f5514c67e9dbe5a213023a8d58c0508a870bb020c4",
+    "live_verified": true
+  },
+  "source_held": true,
+  "actual_shared_model_processing_seen": true,
+  "observed_request": {
+    "index": 0,
+    "dispatch_started": true,
+    "response_received": false
+  },
+  "read_only_timeline": {
+    "artifact": "/workspace/team/activity/fpga_owner/artifacts/production139-readonly-telemetry-20261010-v1",
+    "observer": {
+      "pid": 734927,
+      "starttime": "890353697",
+      "state": "R",
+      "command_sha256": "69934d2379c5ca1c0873b57909aa91377a5eeec1a74dd6e93fda489f2015a5fa"
+    },
+    "source_sha256": "8b13b0a348138971a338c3cbd96a4f2cc72e11c1d6368565b197d16bcdce1532",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/workspace/team/activity/fpga_owner/artifacts/production139-readonly-telemetry-20261010-v1/observe.py"
+    ],
+    "ticket": 139,
+    "read_only": true,
+    "maximum_wall_s": 2820,
+    "owning_model_process_never_signalled": true,
+    "exists_live": true
+  },
+  "read_only_observer": {
+    "pid": 734927,
+    "starttime": "890353697",
+    "state": "S",
+    "same_birth": true,
+    "command_sha256": "69934d2379c5ca1c0873b57909aa91377a5eeec1a74dd6e93fda489f2015a5fa",
+    "live_verified": true
+  },
+  "peer_comment_reviewed": 6096760572,
+  "scope": "Actual CLI/resource/shared-model qualification in progress; budget continuation and model cancellation/idle are separate, both outcomes still unknown.",
+  "real_model_cancellation_qualified": false,
+  "production_qualification_passed": null,
+  "original138_unchanged_and_completed": true,
+  "whole_task_FIFO": true,
+  "qualification_only": true,
+  "full_score_batch": false,
+  "full156": false,
+  "full_goal_complete": false,
+  "max_reserved_model_requests": 7,
+  "peer_merge": {
+    "upstream": "2072a62a6f9717835b6598a0fcf5bd0b2787147d",
+    "merge": "4323fd83",
+    "own_JSON_nodes_preserved": 26,
+    "own_execution_sources_preserved": 27,
+    "peer_resource_sampler_is_not_deployed_to139": true
+  },
+  "next": "Read only139 and observer; archive physical-clock/request/slot timeline and actual continuation evidence after terminal; no retries."
+}
