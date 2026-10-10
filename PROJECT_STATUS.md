@@ -1,4 +1,10 @@
-2026-10-11 03:48 +08:00：原142新增033/034两题30行已独立核验，索引480–509完整保留。033为A/P各五L3、B五L0；034为A/P各五L1（系数.2）、B五L0；三臂每题均五次客户端调用，AP无声明修正。逐行审计分别SHA2f486c9e1b93a2f5ae420763a837418d2ece89a4da827f44826975c464c7ecc1、16ff741cb3ce4072e114865f7229254d57d52cf644bd8dd61b9871f087b5d3d7，共1140绑定/1140原物1338552B。ZIP/live/STARTED/TERMINAL/solve/judge/model及33冻源、PLAN/SPEC一致；未补样、重判或改候选。
+2026-10-11 03:56 +08:00：只读核验官方远端版本：rtlagent2026的HEAD/master仍为afd135e7ba5f6ec4c6d77e7c927c894327537801，fpgachina26-amd的HEAD/master仍为e47e4a81c2a6a35dbd0b25dcaa4d2edef9daf643；Git查询均正常返回。锁定README/SCORING/API_CONTRACT/FAQ四份原始文件SHA保持。该范围只覆盖默认HEAD/master，不证明其他tag/release/issue或独立公告无变化。官网及FPGA公告页未可靠读取，HTTPS证书名称校验未通过时未绕过；搜索结果未核得本赛道正式参数。正式基础镜像标签、单题/全题时限、增益满分线、零基线处理与基准时长仍“未核验”，不能写成“未公布”，未改任何冻结版本。
+
+原142结束后的既定外部汇总源重新静审：peer PR210仍open、head b050ee7b；comparison_report.py SHA942ee1f1adba917a49146b30c12a194f87331142f2af081c89ae86fba3a68588与既定源一致。显式--A-worker-arm C、完整题×5×A/P/B网格、原样官方score绑定及未知总分保留符合当前读取范围；它的Hoeffding区间仍依赖未核实的独立题假设，不能当总体/泛化CI，历史退步或调用增长诊断不是额外否决门。原142全部2340正常封存、真实guard通过/清理、四批次角色退休、原模型身份保持及诚实FIFO释放仍须在外部先核验，不能靠reader的lock或complete字段替代。只解析源码与校验哈希，没有执行reader、导入项目模块、重跑测试或模型/EDA调用。
+
+PR275交付已核实：head71430909、review6101530617、merge3e2df898，Issue6101538753全文回读一致；五公开blob/17 JSON范围、五记录安全同步、主目录原39项状态、研究树和本方分支清理均已核。下列03:48结果仍为最近完整独审前缀；03:56:14只读等待确认原stage出生/argv保持，第035题8/15正常封存，没有失败封存，该部分尚未加入汇总。下一完整例检仍04:08:26。
+
+03:48原始结果：原142新增033/034两题30行已独立核验，索引480–509完整保留。033为A/P各五L3、B五L0；034为A/P各五L1（系数.2）、B五L0；三臂每题均五次客户端调用，AP无声明修正。逐行审计分别SHA2f486c9e1b93a2f5ae420763a837418d2ece89a4da827f44826975c464c7ecc1、16ff741cb3ce4072e114865f7229254d57d52cf644bd8dd61b9871f087b5d3d7，共1140绑定/1140原物1338552B。ZIP/live/STARTED/TERMINAL/solve/judge/model及33冻源、PLAN/SPEC一致；未补样、重判或改候选。
 
 新增判定阶段回读SHAadb438fad777892f4c16742320f80e2775bf60cbb4a85e6a30806688e8a0d0a7，120绑定文件283617B：033基线五次编译失败，日志含VRFC10-4982；034基线五次编译失败，含VRFC10-1280。034的AP各五次编译通过但仿真失败，每次判定计数1/41不匹配。30行判定器进程均rc0、tool_error=null、evidence_complete=true；rc0表示判定流程正常返回，不代表RTL通过，上游失败后的synth=false不证明执行过综合。未推断034失配原因，未读取参考RTL/TB/向量正文，未用已见成绩调参，无新模型/EDA执行。
 
