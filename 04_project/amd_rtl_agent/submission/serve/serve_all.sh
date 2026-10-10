@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 一键起服务 + 守护，保证比赛期间"一直不退出，守着一个端口"（契约 ①）。
+# 首次启动服务，之后只观测并告警；评测期间不自动停止或重启服务。
 #
 # 为什么需要这个
 # --------------
@@ -11,11 +11,10 @@
 # ------------------------------------------------------
 #  1) 就绪判断不能只看"curl 有没有返回"。
 #     HTTP 401 / 500 / ready:false 都会让 curl 返回 0。现在解析状态码与 ready 字段。
-#  2) 重启不能对共享实例用宽泛 pkill。
-#     现在只动【自己启动、且已核验归属】的 PID；别人的进程一律不碰。
+#  2) 官方 API_CONTRACT 第四节禁止评测期间重启。
+#     首次启动后不再调用 stop/start，失败保留供检查，不重投请求。
 #  3) 要区分"进程死了"与"进程活着但没就绪"。
-#     ready:false 是配置信号，不是崩溃——反复重启只会让它永远起不来。这种情况
-#     只告警，不重启。
+#     串行 health 可能等待 solve；两种情况都只告警，不能自动重启。
 #
 # 用法
 # ----
@@ -240,12 +239,8 @@ case $(agent_state; echo $?) in
   *) start_agent ;;
 esac
 if [ ! -f "$AGENT_PIDFILE" ]; then
-  # 统一策略说明：没有 PID 文件时无法确认归属。
-  #   - 服务活着       -> 不碰它（可能是别的终端启动的，杀了就是误杀）
-  #   - 端口无响应     -> 会尝试启动。这是自限的：若端口确实被占，bind 会失败并记入
-  #                       日志，不会杀掉占用者；若端口真的空了，则正好恢复。
-  # 这样"日志说的"和"循环做的"才一致。
-  say "⚠ 没有 $AGENT_PIDFILE：无法确认归属。活着就不碰；无响应时会尝试启动（bind 失败即记录，不杀占用者）"
+  # 首次启动后没有 PID 文件也不能据此重启；保留未知归属供检查。
+  say "⚠ 没有 $AGENT_PIDFILE：无法确认归属，后续只观测并告警，不自动启动或停止服务"
 fi
 
 say "进入守护循环，间隔 ${CHECK_INTERVAL}s，日志 $LOG_DIR"
@@ -256,7 +251,7 @@ NOTREADY_AGENT=0
 while true; do
   sleep "$CHECK_INTERVAL"
 
-  # 模型：无响应才重启；有响应但未就绪只告警（配置问题，重启无用）
+  # 模型：无响应和未就绪均只告警，首次启动后不再停止或重启。
   case $(model_state; echo $?) in
     0) FAIL_MODEL=0 ;;
     1) FAIL_MODEL=0; say "⚠ 模型服务有响应但未就绪" ;;
@@ -264,19 +259,14 @@ while true; do
       FAIL_MODEL=$((FAIL_MODEL+1))
       say "⚠ 模型服务无响应（连续 $FAIL_MODEL 次）"
       if [ "$FAIL_MODEL" -ge 2 ]; then
-        if stop_ours "$MODEL_PIDFILE" model; then
-          start_model && FAIL_MODEL=0
-        else
-          say "模型 PID 归属无法确认，不停止或另启模型"
-        fi
+        say "模型持续无响应，保留现场供检查；评测期间不自动停止或重启模型"
       fi
       ;;
   esac
 
   # agent：三态处理。
   #   0/1 -> 活着，不重启（1 是配置问题）
-  #   2   -> 无响应：只有确认"我们启动的那个进程确实不在了"才重启；
-  #          如果端口被别人的进程占着，只告警，不动它。
+  #   2   -> 无响应：区分活进程、已退出与归属未知，仅告警，不自动重启。
   AGENT_PID=$(cat "$AGENT_PIDFILE" 2>/dev/null || true)
   case $(agent_state; echo $?) in
     0) FAIL_AGENT=0; NOTREADY_AGENT=0 ;;
@@ -290,8 +280,7 @@ while true; do
       say "⚠ agent 无响应（连续 $FAIL_AGENT 次）"
       if [ "$FAIL_AGENT" -ge 2 ]; then
         if [ -z "$AGENT_PID" ] || ! kill -0 "$AGENT_PID" 2>/dev/null; then
-          say "本脚本启动的进程已不在，重新启动"
-          start_agent && FAIL_AGENT=0
+          say "记录的 agent 进程已退出或归属未知，保留现场供检查；评测期间不自动重启"
         elif pid_is_ours "$AGENT_PIDFILE" agent; then
           # Serial HTTP health waits behind solve. A live owned process is
           # not evidence of a crash; stopping it would cancel valid work.

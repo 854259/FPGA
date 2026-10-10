@@ -2,10 +2,12 @@
 
 The selected table/phase candidate with the unchanged 174-word first-system
 suffix is now connected to both HTTP and CLI in this source package.
-Fourteen AMD CPU chain/guard/health cases pass together at the current runtime and native supervisor. Model replies and EDA outputs were
-synthetic; actual model/EDA interface qualification, resource acceptance,
-isolation and reproducible deployment are still pending. This is not a scored
-or formally accepted deployment.
+CPU chain, guard, health and endpoint evidence is bound to the separate revisions
+recorded in the manifest; historical suites are not claims about every later
+revision. The current guard has four targeted AMD CPU state cases. Model replies
+and EDA outputs in the historical integration cases were synthetic; actual
+model/EDA interface qualification, resource acceptance, isolation and reproducible
+deployment are still pending. This is not a scored or formally accepted deployment.
 
 Pinned official reference: `https://gitee.com/Vickyiii/rtlagent2026`, commit
 `afd135e7ba5f6ec4c6d77e7c927c894327537801`.
@@ -68,6 +70,12 @@ export RTL_EVIDENCE_DIR=/private/path/rtl-evidence
 python3 agent/runtime.py serve --port 7860
 ```
 
+`serve/serve_all.sh` starts absent services only during its initial startup.
+After startup it observes and warns, including when a recorded process has
+exited. It never automatically stops or restarts either service: the pinned
+API_CONTRACT section 4 prohibits restarts during evaluation. A failed or
+unresponsive service is retained for inspection; requests are not replayed.
+
 The server binds 127.0.0.1. Both `GET /v1/health` and `POST /v1/solve`
 require Bearer authentication. Solve accepts `task_id`, `nonce`, `mode`
 (`agent` or `baseline`), `prompt`, `interface` and `deadline_s`.
@@ -101,16 +109,23 @@ The cached health version probe now uses an owned native group and reaps detache
 
 ## Validation and packaging
 
-Current qualification reruns the fourteen affected CPU cases after a native cleanup error was shown to erase an earlier SIGTERM timestamp. The supervisor now preserves that timestamp on the replacement error, so callers clean up and exit. The new regression sends a real signal, injects a process-group cleanup failure, and verifies descendant retirement and service exit. The previous eleven- and two-case reports below remain historical scopes; no actual model or EDA qualification is implied.
+The historical fourteen-case qualification at runtime `2ea06b05` and native supervisor `16f559e7` followed a native cleanup error that erased an earlier SIGTERM timestamp. The supervisor now preserves that timestamp on the replacement error, so callers clean up and exit. The new regression sends a real signal, injects a process-group cleanup failure, and verifies descendant retirement and service exit. The previous eleven- and two-case reports below remain historical scopes; no actual model or EDA qualification is implied.
 
 Two targeted health cases additionally cover normal version-probe child cleanup and cancellation through the real HTTP endpoint using a synthetic CPU executable. Both failures were reproduced before the fix. Other runtime functions remain AST-identical to the eleven-case version; the two health cases were run separately, without repeating unrelated model controls.
 
 Eleven AMD CPU cases cover repeated direct/HTTP calls, authentication, CLI
 dispatch, one actual signal-based deadline followed by another request,
 malformed-checker blocking, SIGTERM cleanup/recovery sharing and reaping a
-detached tool child. Three additional cases send real SIGTERM during transport, a native stage and failing recovery. A bounded real shell guard case checks live and exited agent processes: delayed health never restarts a live agent. HTTP baseline execution is stubbed in these cases; CLI
+detached tool child. Three additional cases send real SIGTERM during transport, a native stage and failing recovery. The historical bounded shell guard case retained a live agent but permitted restarting an exited agent; that restart expectation is now superseded by the no-restart contract check below. HTTP baseline execution is stubbed in these cases; CLI
 coverage calls `runtime.main`, not the shell wrapper. See manifest validation
 receipts. Original failed test evidence is retained. The early seven-case fixture corrected the expected final newline from the unchanged baseline extractor. Later regressions reproduced HTTP cancellation being swallowed and the guard trying to restart a live child; both are fixed and verified.
+
+The updated guard method runs the original shell monitoring loop with synthetic
+health/start/stop functions and real CPU child lifecycles. The old script
+reproduced three forbidden restart/stop branches; the fixed script passes all
+four model/agent alive/exited cases. Its startup functions are unchanged and
+were not exercised by these cases. Other test methods were not rerun. This
+checks monitoring policy, not real service availability or deployment.
 
 Package only this directory. No parent evaluator or private archive is needed
 by generation. Prompt allowlisting is not an OS sandbox. The final image,

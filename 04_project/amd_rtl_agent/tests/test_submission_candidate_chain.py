@@ -412,49 +412,65 @@ class SubmissionChainTests(unittest.TestCase):
         self.assertFalse(json.loads(records[0].read_text())['complete'])
         self.assertTrue(list((self.root / 'evidence').glob('request-*/out/SCRATCH_RETAINED.json')))
 
-    def test_supervisor_health_delay_keeps_live_agent_and_restarts_exited_agent(self):
+    def test_supervisor_never_restarts_model_or_agent_after_startup(self):
         source = (PKG / 'serve/serve_all.sh').read_text()
         prefix = source.split('# ---- 首次启动 ----')[0]
         loop = source[source.index('while true; do'):].replace('while true; do', 'for cycle in 1 2; do', 1)
-        for alive in (True, False):
-            folder = self.root / ('alive' if alive else 'exited')
-            folder.mkdir()
-            proc = subprocess.Popen([sys.executable, '-B', '-c', 'import time;time.sleep(20)'])
-            pid = proc.pid
-            try:
-                if not alive:
-                    proc.terminate()
-                    proc.wait(timeout=2)
-                (folder / 'agent-serve.pid').write_text(str(pid))
-                overrides = """
+        for kind in ('model', 'agent'):
+            for alive in (True, False):
+                with self.subTest(kind=kind, alive=alive):
+                    folder = self.root / (kind + ('-alive' if alive else '-exited'))
+                    folder.mkdir()
+                    proc = subprocess.Popen([sys.executable, '-B', '-c', 'import time;time.sleep(20)'])
+                    pid = proc.pid
+                    try:
+                        stat = Path('/proc', str(pid), 'stat').read_text()
+                        birth = stat.rsplit(')', 1)[1].split()[19]
+                        (folder / 'child-start.json').write_text(json.dumps(
+                            dict(pid=pid, starttime=birth)))
+                        if not alive:
+                            proc.terminate()
+                            proc.wait(timeout=2)
+                        (folder / 'agent-serve.pid').write_text(str(pid))
+                        (folder / 'llama-server.pid').write_text(str(pid))
+                        overrides = """
 sleep() { :; }
-model_state() { return 0; }
-agent_state() { return 2; }
+model_state() { return """ + ('2' if kind == 'model' else '0') + """; }
+agent_state() { return """ + ('2' if kind == 'agent' else '0') + """; }
 pid_is_ours() { return 0; }
 stop_ours() { echo called >> "$LOG_DIR/unexpected-stop"; return 0; }
-start_agent() { echo called >> "$LOG_DIR/start"; return 0; }
+start_agent() { echo agent >> "$LOG_DIR/start"; return 0; }
+start_model() { echo model >> "$LOG_DIR/start"; return 0; }
 FAIL_MODEL=0
 FAIL_AGENT=0
 NOTREADY_AGENT=0
 """
-                control = folder / 'guard-control.sh'
-                control.write_text(prefix + overrides + loop)
-                result = subprocess.run(['/bin/bash', str(control)], cwd=folder,
-                    env=dict(os.environ, KIT=str(PKG.parent), LOG_DIR=str(folder),
-                             FPGACHINA_TOKEN='synthetic-test-token'), capture_output=True,
-                    text=True, timeout=5)
-                (folder / 'stdout.txt').write_text(result.stdout)
-                (folder / 'stderr.txt').write_text(result.stderr)
-                self.assertEqual(result.returncode, 0, result.stderr)
-                self.assertFalse((folder / 'unexpected-stop').exists())
-                self.assertEqual((folder / 'start').exists(), not alive)
-                self.assertEqual(proc.poll() is None, alive)
-                print(json.dumps(dict(case='live' if alive else 'exited', pid=pid,
-                                      stopped=False, restart_called=not alive)))
-            finally:
-                if proc.poll() is None:
-                    proc.terminate()
-                proc.wait(timeout=2)
+                        control = folder / 'guard-control.sh'
+                        control.write_text(prefix + overrides + loop)
+                        result = subprocess.run(['/bin/bash', str(control)], cwd=folder,
+                            env=dict(os.environ, KIT=str(PKG.parent), LOG_DIR=str(folder),
+                                     FPGACHINA_TOKEN='synthetic-test-token'), capture_output=True,
+                            text=True, timeout=5)
+                        (folder / 'stdout.txt').write_text(result.stdout)
+                        (folder / 'stderr.txt').write_text(result.stderr)
+                        observed = dict(kind=kind, alive=alive, pid=pid,
+                                        returncode=result.returncode,
+                                        stopped=(folder / 'unexpected-stop').exists(),
+                                        restart_called=(folder / 'start').exists(),
+                                        still_alive=proc.poll() is None)
+                        (folder / 'observed.json').write_text(json.dumps(observed))
+                        print(json.dumps(observed))
+                        self.assertEqual(result.returncode, 0, result.stderr)
+                        self.assertFalse(observed['stopped'])
+                        self.assertFalse(observed['restart_called'])
+                        self.assertEqual(observed['still_alive'], alive)
+                    finally:
+                        if proc.poll() is None:
+                            proc.terminate()
+                        proc.wait(timeout=2)
+                        (folder / 'child-exit.json').write_text(json.dumps(
+                            dict(pid=pid, returncode=proc.returncode, reaped=True,
+                                 proc_missing=not Path('/proc', str(pid)).exists())))
 
     def health_process_case(self, scenario):
         import ctypes
