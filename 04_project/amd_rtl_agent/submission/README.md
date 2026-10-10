@@ -1,11 +1,22 @@
 # RTL official-contract entry
 
-This directory retains an archived runtime and deployment scaffold. A final runtime
-candidate has not yet been selected from the current development comparisons.
+This directory retains an archived runtime and deployment scaffold. The unchanged
+174-word first-system candidate is selected for the next full comparison; it has
+not yet been wired into this runtime or formally adopted.
 Final delivery must bind the selected, scored runtime to the matching model
 declaration, skills, manifest and validated service scripts, then complete service,
 resource, isolation and recovery acceptance. See the project `PROJECT_STATE.json`
 and `PROJECT_STATUS.md`.
+
+`agent/prompt_probe.py` is the first extracted component for that integration.
+It preserves the frozen probe classifier and xvlog/xelab/xsim commands, while
+taking an explicit generated testbench, check count and deadline-owned stage
+function. It contains no historical task table, control fixtures, evaluator-tree
+hashing or process launcher. The caller must supply only the model candidate and
+the testbench derived from the staged prompt. Resource and isolation admission
+remain the outer runner's responsibility. This component is not yet called by
+the archived HTTP/CLI runtime. Six CPU tests passed on AMD using simulated stage
+outputs; actual EDA, candidate binding and end-to-end delivery remain unverified.
 
 Pinned reference: `https://gitee.com/Vickyiii/rtlagent2026`, commit
 `afd135e7ba5f6ec4c6d77e7c927c894327537801` (2026-09-21).
