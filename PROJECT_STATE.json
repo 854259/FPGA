@@ -1,5 +1,167 @@
 {
   "temporal_first_generation_20261010": {
+    "complete146_public_serial_diagnosis": {
+      "result_sha256": "bc9ad8f71adb489fbb694675bc03dbd679492a6a0ba334d036aeb58273d63ef5",
+      "diagnosis_sha256": "76963bcd92ce4bde935cc339c9fb4cf3d56192a730924aa51970903e10ddb429",
+      "complete_tasks": 146,
+      "rows": 2190,
+      "P": {
+        "outputs": 730,
+        "level_counts": {
+          "0": 16,
+          "1": 145,
+          "3": 569
+        },
+        "L3_outputs": 569,
+        "all_five_L3_tasks": 112,
+        "actual_calls": 807,
+        "prefix_coefficient_sum": 598.0
+      },
+      "A": {
+        "outputs": 730,
+        "level_counts": {
+          "0": 15,
+          "1": 163,
+          "3": 552
+        },
+        "L3_outputs": 552,
+        "all_five_L3_tasks": 109,
+        "actual_calls": 776,
+        "prefix_coefficient_sum": 584.6
+      },
+      "B": {
+        "outputs": 730,
+        "level_counts": {
+          "0": 90,
+          "1": 170,
+          "3": 470
+        },
+        "L3_outputs": 470,
+        "all_five_L3_tasks": 94,
+        "actual_calls": 730,
+        "prefix_coefficient_sum": 504.0
+      },
+      "remaining_tasks": 10,
+      "diagnostic_bounds": {
+        "unknown_remaining_tasks": 10,
+        "unknown_remaining_outputs": 50,
+        "all_five_L3_tasks_needed_for120": 8,
+        "L3_outputs_needed_for120_mean": 31,
+        "full_weighted_mean_interval": [
+          0.7666666666666667,
+          0.8307692307692308
+        ],
+        "scope": "Bounds only, no missing grades imputed, no original goal or five-sample gate redefinition."
+      },
+      "actual_paired_grade_losses": [
+        {
+          "task": "Prob082_lfsr32",
+          "sample": 1,
+          "A_level": 1,
+          "P_level": 0,
+          "A_calls": 1,
+          "P_calls": 2
+        }
+      ],
+      "prefix_P_minus_A_calls": 31,
+      "new146": {
+        "task": "Prob146_fsm_serialdata",
+        "arms": {
+          "A": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "solution_hashes": [
+              "e310849bd3281cdb4e33630739d2a7443ffd71f824712440a769232fd0bfebde"
+            ]
+          },
+          "P": {
+            "levels": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "actual_calls": 5,
+            "solution_hashes": [
+              "e310849bd3281cdb4e33630739d2a7443ffd71f824712440a769232fd0bfebde"
+            ]
+          },
+          "B": {
+            "levels": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "actual_calls": 5,
+            "solution_hashes": [
+              "b5b68f8c0b19ec745e51eb030b5cd1bce64373171cb54683d0e3159f3c49d9bc"
+            ]
+          }
+        },
+        "agent_same_generated_source_all10": true,
+        "first_compile_pass_all10": true,
+        "functional_feedback_used": false,
+        "repair_used": false,
+        "agent_completion_tokens_each": 745,
+        "agent_finish_each": "stop",
+        "agent_solve_time_range_s": [
+          26.766664249822497,
+          27.26748074963689
+        ],
+        "causal_interpretation": "Shared generation failure before table feedback. Static public-contract diagnosis pending; serial135 already covers146, no additional score factor."
+      },
+      "public_static_errors": [
+        "State-dependent datapath uses next_state, so the start bit is counted/captured and data capture exits before all8 payload bits.",
+        "When CHECK_STOP sees a valid stop1, next_state becomes IDLE; sequential IDLE branch skips the sole done=1 assignment. Valid all-zero frame cannot signal done at stop."
+      ],
+      "manual_witness_only": true,
+      "native_witness_executed": false,
+      "actual_model_gain_proven": false,
+      "existing135": {
+        "spec_sha256": "bae9c415cebffb4bedd75ea6d41df58415db24cb880f69dae88ddc5b07a4b211",
+        "serial_source_sha256": "a692ee1a8e2c409ae7c6421b9a3916e4a989fba89dd20c6c4d87b293bc3e23b3",
+        "state": "queued",
+        "original_monitor": {
+          "pid": 4175420,
+          "present": true,
+          "state": "S",
+          "ppid": 1,
+          "pgid": 4175420,
+          "sid": 4175420,
+          "starttime": "882508578",
+          "command_sha256": "25efd8708d1277055f2cdd60c28f3c8715a85219ea256a43f1dfde230a1d07fd",
+          "stable_observation": true,
+          "original_birth": true,
+          "live_identity_verified": true,
+          "independent_session": true
+        },
+        "both_agent_arms_already_have_serial_feedback": true,
+        "zero_payload_valid_frame_already_in_finite_trace": true,
+        "isolated_factor": "Append candidate-source scalar multi-process driver facts to existing measured serial failure feedback only",
+        "arm_definitions": {
+          "A": "131 original P serial feedback; internal C unchanged",
+          "P": "Same serial feedback plus source-derived scalar driver facts",
+          "B": "Untouched official baseline"
+        },
+        "scope": "135 compares scalar-source diagnostics appended to serial feedback. It is not a direct table132 versus serial comparison, nor proof this ten-output failure is solved.",
+        "no_patch_or_extra_ticket_needed_for_witness_coverage": true
+      },
+      "original132_complete": false,
+      "full_goal_complete": false,
+      "full_cost_gate_evaluated": false,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0
+    },
     "complete_prefix145_review": {
       "result_sha256": "8761f502c15d54da74feeb5c26bdb5a9f4817ab8c5a26cb1827e10e974d70da7",
       "complete_tasks": 145,
