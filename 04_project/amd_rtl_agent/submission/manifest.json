@@ -31,9 +31,9 @@
   "agent": {
     "max_rounds": 2,
     "checks": [
-      "source_shape: requires a complete TopModule ending in endmodule, and rejects include directives and file IO",
-      "undefined_submodules: text check that flags an instantiation whose module is never defined in the same file, because analysis does not resolve instantiation and the failure would otherwise appear only at elaboration",
-      "xvlog_compile: the only tool that runs the compiler"
+      "source_shape and undefined_submodules: selected frozen generation checks",
+      "owned xvlog compile and accepted compiler-directed ANSI declaration fix",
+      "prompt-derived complete table checks, then priority/shift/edge/phase checks when supported; actual diagnostic may drive the sole repair"
     ],
     "deterministic_repairs": [
       "repair_ansi_declarations: turns an ANSI output assigned in a procedural block into output reg and drops the duplicate body declaration, accepted only if the source then recompiles"
@@ -42,18 +42,18 @@
       "rtl-generation",
       "rtl-feedback-repair"
     ],
-    "no_functional_feedback": "The agent never sees the reference testbench, expected outputs or simulation results. Only compiler diagnostics and the two text checks above."
+    "functional_feedback_boundary": "Only current prompt-derived generated checks; no evaluator/reference/private vectors or results enter generation."
   },
   "runtime": {
     "path": "agent/runtime.py",
-    "sha256": "728499f4699ed2214d5f4355ce0b5c58dc7504d3e177d40f914cf8e7b6f5ea97"
+    "sha256": "6db8d1fea8318082ce1c8b1d09f805cbc27c75f0807f1c01e384ecd32305b6ea"
   },
   "candidate_components": {
     "prompt_probe": {
       "path": "agent/prompt_probe.py",
       "sha256": "777e21771c26a01e7671df2567d82dc5eec84629bf3e521949452f85b03ee35d",
       "source_sha256": "954a1bcac0015e9d0d104eade9d75d111e819ad827343cc4a462e4eb055beac0",
-      "runtime_integrated": false,
+      "runtime_integrated": true,
       "qualification": "Six AMD CPU tests of explicit inputs, preserved classification and stage commands, request isolation, malformed summaries, environment errors, input mutation and propagated deadline exceptions. Stage outputs simulated; no EDA/model/FIFO.",
       "test_source_sha256": "c6fed93c8f7c9b01a7fa2a6110812261bbf7fc247fc117cfa4077e046e5126cf",
       "process_receipt_sha256": "6a72c18af2e90dc6fa341311a7f7d4c28cf22b1366fc62d5c3a634423c433a41",
@@ -63,7 +63,7 @@
       "path": "agent/shared_budget.py",
       "sha256": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
       "source_sha256": "c0f3b3144cc74a0ffff1a17fa2ceca578bfaf6fbe405986372a3e8a778750b39",
-      "runtime_integrated": false,
+      "runtime_integrated": true,
       "qualification": "Two new AMD CPU cases: real inherited parent clock with a non300 expiry receipt, and rejection of a premature expiry receipt. Default300 and all other source remain unchanged; no model, EDA, FIFO or native-control rerun.",
       "test_source_sha256": "e47ef38a511e7646755c9563a0fd3f2aeb7de6519ef8cfa761399bfa7a6ac969",
       "process_receipt_sha256": "d6a959897d99cfaad4314da92f5d772366645cf08890588b0bf383ecf62b59a8",
@@ -71,17 +71,104 @@
     },
     "native_supervisor": {
       "path": "agent/deadline_supervisor.py",
-      "sha256": "b00df598044bd73819ad56bd960b9182007cf40fd5c3a88a6a44a2e526153868",
+      "sha256": "37da755053925b9a648121c992616ac758860ff6dde4b084f03d66c26ba61972",
       "source_sha256": "680d8790d5031b4dd938af2790acf1296f710a81aedb7c0572110019e8abb54f",
-      "runtime_integrated": false,
-      "qualification": "sha and owned_command AST-identical projection only. Host evaluation/resource orchestration omitted; native process supervision was not reexecuted or newly qualified.",
+      "runtime_integrated": true,
+      "qualification": "Seven AMD whole-chain CPU cases include actual SIGTERM/native cleanup and a detached child. First-cancellation end and request descendant cleanup are tested; real EDA/model acceptance remains pending. Final source differs from tested 0dd3d809 only in module documentation; every executable function AST is unchanged.",
       "formal_acceptance": false
     }
   },
   "contract": {
-    "health": "GET /v1/health returns ready/track/model/vram_gb; verified end to end over HTTP, including the 401 without a token",
-    "solve": "POST /v1/solve takes task_id, nonce, mode, prompt, interface and deadline_s, and returns exactly task_id, solution, trace and elapsed_s; verified with eight conformance cases, including an empty interface, a one-second deadline returning an empty solution rather than an error, and 400 for a missing task_id",
-    "sigterm": "exits within 0.10 s of SIGTERM, measured both early and while EDA tools were running, against the contract's ten-second limit",
-    "bind": "127.0.0.1 only"
+    "health": "GET/v1/health with bearer auth; CPU auth and blocked readiness covered. Actual model, version subprocess and resource qualification pending.",
+    "solve": "POST/v1/solve and run.sh use the same selected chain. Exact official response fields; serial main-thread server. Prior7284 conformance does not qualify this revision.",
+    "sigterm": "One10second reserve shared by native cleanup and model idle recovery using first cancellation timestamp; integrated CPU signal/child cases passed. Real model/EDA qualification pending.",
+    "evidence": "Every HTTP request gets a unique private RTL_EVIDENCE_DIR directory (default EDA_TMP/rtl-evidence). No cache/resume; local native scratch removed only after verified cleanup, otherwise retained and runtime blocked.",
+    "bind": "127.0.0.1 only",
+    "formal_acceptance": false
+  },
+  "selected_candidate": {
+    "name": "original table/phase P plus174word first-system suffix",
+    "runtime_integrated": true,
+    "deployment_qualified": false,
+    "formal_acceptance": false,
+    "generation_source_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+    "original_outer_worker_sha256": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65",
+    "original_budget_worker_sha256": "67a7e31dbf6160a067bdc1948d041a1ef94579eaf26abd260c08d9e04988842b",
+    "first_system_request_sha256": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+    "unchanged_algorithm_sources": {
+      "contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+      "edge_contract.py": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+      "edge_dispatch.py": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680",
+      "edge_feedback.py": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
+      "phase_feedback.py": "efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078",
+      "point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+      "priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+      "prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+      "reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+      "first_system_request.py": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95"
+    },
+    "AST_identical_function_projections": {
+      "package/agent/map_runtime.py": {
+        "skill_texts": "ed2a4298420bb488806d46e44a0cdcfb6999dba3f7ac733146ebd52b5def9950",
+        "write": "13b90668c3e0044b8ad4decb3485f339b9cab17b39d2ddc7ccafc8cff747c3fd",
+        "trace": "c1aa16bd4e1f2ff8a0e63a34366cb5082eccb7ea2c98b2504488100055cf594e",
+        "endpoint": "6b42b01fcc39d5bafc9114f068575f4427695cc2db79e6dc954f9ec78f1991c6",
+        "models": "f6ab6a6177c7cc6c781b2af94c3f4b9fafd18b4fc73dbd3116d334c0178ba332",
+        "vivado_tool": "a9777db58a361de0ab6e265b84cddc5a5667c2273b4f6ce412f1d496985c4788",
+        "undefined_submodules": "d7c844808177fd9b4d30e8a9200c66106cef76042559dcc4961f7ec5d4ef2114",
+        "repair_ansi_declarations": "ea3d26c272d3754bc1264e896c70a401a8ca55f350f6934742db9b6064a27665",
+        "worker": "b5fa088ddd8c7ffe43e7b3bc47573f1577fa02671bb6c9cd992e8324d112064a"
+      },
+      "phase_context.py": {
+        "instrument_tb": "12638a6ef021bd8afe438dda9858c025e622a70a1ce7e302fb5cbc376e59453a",
+        "context": "da619764d507ab9ca7fddf79c671b125ba75d6338c998ddf8116df2b5e202c9b",
+        "render_feedback": "2b061cb0698ca90f728d42d2d91943c635cda18f8203377f09b29a77b0ad27d8"
+      },
+      "table_feedback.py": {
+        "parse": "9bbfff4d5654ddfca34b90e4b58549859dd8306d7e689903e999adf3a6e8d758",
+        "render_tb": "cb0fe907cc53c33b322ffc0128827f37056f7c1363cc9e00fb6098bd5e093173",
+        "counterexample": "d3ca1f34f9600f1a4212f0eb9fd97246566224e56ce705279ddeb63cd3b03253"
+      }
+    },
+    "transport_scope": "CLI and serialHTTP main thread; same local fixed model endpoint; request budget and owned native stages. Outer AMD resource/isolation admission remains separate and is not inherited by this package.",
+    "validation": {
+      "status": "seven_AMD_CPU_integration_cases_passed",
+      "tests": 7,
+      "test_source_sha256": "d893f6c9a5f7fbd3ea9efe519a7b75dccecb903ac8a5c8e029851323edfed004",
+      "tested_manifest_sha256": "ebd42749d069d6d8baf72bf79d0f09cef7a659b70148e81ead4c0e0e7c306e87",
+      "process_receipt_sha256": "eb00635c0911efbc893830ac4a7b4c941f8470aa5bf1fad8ad1edb2aa42ffaae",
+      "test_stderr_sha256": "6b4359cd204559587c17b6d66b2f88ae80cc334f12b6a8d5c92a6a2c4c6ff039",
+      "source_zip_sha256": "242595afabbce40bb25b67816b733c1ebf3dbed4852a3b9ae6332b34ee22786b",
+      "scope": "Synthetic model/EDA output; actual serial HTTP, runtime.main CLI dispatch, wallclock signal deadline and CPU child cleanup. Baseline subprocess stubbed. No real model, EDA, FIFO, deployment or formal qualification.",
+      "post_test_changes": "Module documentation in deadline_supervisor only, manifest evidence metadata and documentation. Executable function ASTs and other 23 bound files unchanged.",
+      "original_failure_retained": true
+    },
+    "files": {
+      "agent/candidate_worker.py": "da8d3f1035ed79476b3597af9c557e11acdfe38299a9df3efa0580f47b1af921",
+      "agent/contract.py": "46d53aee94b55034c1677873551c651b9a496e4331374c291d7f750a6043d206",
+      "agent/deadline_supervisor.py": "37da755053925b9a648121c992616ac758860ff6dde4b084f03d66c26ba61972",
+      "agent/edge_contract.py": "cacb6efa0de8f3bd46acefe789c35bbb53fa007bd4d6476fb97c6251ad0888cd",
+      "agent/edge_dispatch.py": "1ec1f38505659ea41bb04ddee006e67c033cc65cf8a9177b2ea7629bb627d680",
+      "agent/edge_feedback.py": "2ddb6331ff00ffb44cc4874f176d322b026549069da3036f20bec994d81571b7",
+      "agent/first_system_request.py": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+      "agent/generation.py": "a32af9ed2535706e4ead4560fd3199587b1de3103b992cc5c29d26b823a4f44f",
+      "agent/phase_context.py": "92f93b2d7485ca9a5e042b0c16adc0bcb6f9368e0a4a42cf1ed29f017771d5c1",
+      "agent/phase_feedback.py": "efc43f3c8f543bc8e2bb21a7e88ea89bdb17f52e9a8887ac88bd5c72eddfb078",
+      "agent/point_feedback.py": "34ceaad9d289eafd937e4cb16f0979d8998e93affaccc7c150bca5a552d1573c",
+      "agent/priority_contract.py": "4f2c1d3dde722d4e9e67338ba764a084577f452ae62c6d6e1b7b08fc75ccd516",
+      "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
+      "agent/prompt_probe.py": "777e21771c26a01e7671df2567d82dc5eec84629bf3e521949452f85b03ee35d",
+      "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
+      "agent/runtime.py": "6db8d1fea8318082ce1c8b1d09f805cbc27c75f0807f1c01e384ecd32305b6ea",
+      "agent/shared_budget.py": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
+      "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
+      "agent/table_feedback.py": "911911f1f4d77857493425ffa69802afee2f4d706c352c64e9e71c39d82b0d83",
+      "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
+      "run.sh": "a8f298273b470947dd36a36675c2dc0098a001896cf037ca96c4972dc94f2a90",
+      "run_baseline.sh": "5c46c40d32c0cf4c4e1dc52ae12e60f8396a0deccafaa4e6f69d7316a3482e75",
+      "skill/rtl-generation/SKILL.md": "f4c4c8e2d97ec476b1282dd517f5c5008a497c4a03b36996fdabb27cf1cabd01",
+      "skill/rtl-feedback-repair/SKILL.md": "aee81f188b3717ce10dc72efd11b01f009acc0d27211e7dcd4ce02cbf0802f74"
+    }
   }
 }

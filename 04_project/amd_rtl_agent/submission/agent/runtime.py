@@ -19,7 +19,7 @@ import threading
 import time
 import urllib.request
 from urllib.parse import urlparse
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 ROOT = Path(__file__).resolve().parent
 # In the packaged layout the agent lives at <pkg>/agent/ while the official baseline
@@ -31,7 +31,7 @@ PKG = ROOT.parent if (ROOT.parent / 'baseline.py').is_file() else ROOT
 # this file, so make the package root importable in both layouts.
 if str(PKG) not in sys.path:
     sys.path.insert(0, str(PKG))
-LOCK = threading.Lock()
+BLOCKED = None  # Infrastructure failures require inspection before another request.
 
 
 def skill_texts():
@@ -329,7 +329,7 @@ def health():
     model = os.environ.get('MODEL_NAME', '')
     ready = False
     try:
-        ready = bool(model and model in models() and baseline_integrity() and vivado_tool('xvlog')
+        ready = bool(BLOCKED is None and model and model in models() and baseline_integrity() and vivado_tool('xvlog')
                      and vivado_version(vivado_tool('vivado')) == '2026.1')
     except (OSError, ValueError, KeyError, TypeError):
         pass
@@ -361,171 +361,163 @@ def stop_tree(proc):
         pass
 
 
-def run_job(mode, task, out, seconds):
-    """Copy only permitted input into fresh local scratch, supervise one process tree."""
+def run_job(mode, task, out, seconds, *, parent_started=None):
+    """CLI and serial HTTP share one main-thread budget, generation and cleanup."""
+    import candidate_worker
+    import shared_budget
+    import deadline_supervisor
+    import ctypes
+    global BLOCKED
+    if sys.platform != 'linux' or threading.current_thread() is not threading.main_thread():
+        raise RuntimeError('The selected runtime must execute in the Linux main thread')
+    if BLOCKED is not None:
+        raise RuntimeError('Runtime retained for inspection after an infrastructure failure')
     if mode not in ('agent', 'baseline') or not math.isfinite(seconds) or seconds <= 0:
         raise ValueError('invalid mode or deadline')
+    if deadline_supervisor.descendants(os.getpid()):
+        BLOCKED = 'preexisting_children'
+        raise RuntimeError('Request ownership unclear: process already has children')
+    budget = shared_budget.SolveBudget(seconds, parent_started=parent_started)
     endpoint()
     if not baseline_integrity():
-        raise ValueError('official baseline integrity check failed')
+        raise RuntimeError('official baseline integrity check failed')
     out = Path(out).resolve()
     out.mkdir(parents=True, exist_ok=True)
-    # Atomic ownership, including when two CLI invocations target the same directory.
     with (out / '.run.lock').open('x'):
         pass
     if (out / 'solution.v').exists() or (out / 'trace.jsonl').exists():
         raise ValueError('use a new output directory')
     write(out / 'solution.v', '')
     write(out / 'trace.jsonl', '')
-    started = time.monotonic()
+    candidate_worker.save(out / 'SOLVE_CLOCK.json', dict(
+        started_monotonic=budget.started, budget_s=budget.seconds,
+        work_deadline_monotonic=budget.end, cleanup_deadline_monotonic=budget.end + 10))
     scratch = os.environ.get('EDA_TMP') or None
     if scratch:
         Path(scratch).mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix='rtl-', dir=scratch) as td:
-        work = Path(td)
+    started_baseline = False
+    work = None
+    cancelled_at = None
+    def cancelled(signum, frame):
+        nonlocal cancelled_at
+        if cancelled_at is None:
+            cancelled_at = time.monotonic()
+        raise InterruptedError('Request cancelled by signal ' + str(signum))
+    previous = {sig: signal.signal(sig, cancelled) for sig in (signal.SIGTERM, signal.SIGINT)}
+    try:
+        work = Path(tempfile.mkdtemp(prefix="rtl-", dir=scratch))
         inp = work / 'task'
         inp.mkdir()
-        # Deliberately never enumerate task_dir or read task.json, testbench or reference.
         write(inp / 'prompt.txt', (Path(task) / 'prompt.txt').read_text(encoding='utf-8'))
         iface = Path(task) / 'interface.txt'
         if iface.is_file():
             write(inp / 'interface.txt', iface.read_text(encoding='utf-8'))
-        env = dict(os.environ, PYTHONUTF8='1', TRACK='rtl')
-        if mode == 'baseline':
-            command = [sys.executable, str(PKG / 'baseline.py'), str(inp), str(out), 'rtl']
-        else:
-            command = [sys.executable, str(ROOT / 'runtime.py'), 'worker', str(inp), str(out)]
-        flags = {'start_new_session': True} if os.name != 'nt' else {}
-        with (out / 'worker.log').open('w', encoding='utf-8') as log:
-            proc = subprocess.Popen(command, cwd=work, env=env, stdout=log, stderr=log, **flags)
-            previous = {}
-            def cancelled(signum, frame):
-                stop_tree(proc)
-                raise SystemExit(128 + signum)
-            if threading.current_thread() is threading.main_thread():
-                for sig in (signal.SIGTERM, signal.SIGINT):
-                    previous[sig] = signal.signal(sig, cancelled)
+        try:
+            budget.remaining()
+            if mode == 'agent':
+                candidate_worker.run(inp, out, work / 'candidate', budget)
+            else:
+                if ctypes.CDLL(None, use_errno=True).prctl(36, 1, 0, 0, 0) != 0:
+                    raise RuntimeError('Cannot enable baseline child subreaping')
+                command = [sys.executable, '-B', str(PKG / 'baseline.py'), str(inp), str(out), 'rtl']
+                started_baseline = True
+                supervision = deadline_supervisor.owned_command(
+                    command, work, out / 'worker.log', budget.remaining(),
+                    deadline=budget.end, cleanup_deadline=budget.end + 10)
+                candidate_worker.save(out / 'BASELINE_SUPERVISION.json', supervision)
+                if supervision['launch_error'] or supervision['remaining_live_group']:
+                    raise RuntimeError('Official baseline supervision failed')
+                if supervision['timeout']:
+                    raise shared_budget.BudgetExpired('Official baseline deadline reached')
+                if supervision['returncode'] != 0:
+                    raise RuntimeError('Official baseline exited unsuccessfully')
+        except shared_budget.BudgetExpired:
+            write(out / 'solution.v', '')
+            trace(out, 'supervisor', event='deadline', mode=mode, actual_calls=None)
+        except BaseException as error:
+            cause = error
+            while cause is not None:
+                observed_cancel = getattr(cause, 'cancelled_at_monotonic', None)
+                if observed_cancel is not None:
+                    cancelled_at = min(cancelled_at or observed_cancel, observed_cancel)
+                cause = cause.__cause__
+            write(out / 'solution.v', '')
+            trace(out, 'supervisor', event='failed', mode=mode, error=type(error).__name__)
+            if isinstance(error, Exception) and not isinstance(error, InterruptedError):
+                BLOCKED = type(error).__name__
+                raise RuntimeError('Request infrastructure failed; retain for inspection') from error
+            raise
+        finally:
+            # Native owned_command has already reaped its exact group. A
+            # closed upstream HTTP connection still needs server-side idle.
+            for sig in previous:
+                signal.signal(sig, signal.SIG_IGN)
+            cleanup_started = time.monotonic()
+            cleanup_end = min(budget.end + 10, cleanup_started + 10,
+                              (cancelled_at + 10) if cancelled_at is not None else float('inf'))
             try:
-                proc.wait(timeout=max(.01, seconds - (time.monotonic() - started)))
-            except subprocess.TimeoutExpired:
-                stop_tree(proc)
-                # Preserve existing official events; explicitly identify supervisor cancellation.
-                trace(out, 'supervisor', event='deadline', mode=mode)
-            finally:
-                stop_tree(proc)
-                for sig, handler in previous.items():
-                    signal.signal(sig, handler)
+                cleanup = deadline_supervisor.cleanup_request_children(cleanup_end)
+                candidate_worker.save(out / 'OWNED_CLEANUP.json', cleanup)
+                trace(out, 'owned_cleanup', verified=cleanup['verified'],
+                      observed_children=len(cleanup['recorded']))
+            except BaseException as error:
+                BLOCKED = type(error).__name__
+                candidate_worker.save(out / 'OWNED_CLEANUP.json',
+                    dict(verified=False, deadline_monotonic=cleanup_end,
+                         error=type(error).__name__, recorded=getattr(error, 'recorded', None),
+                         remaining=getattr(error, 'remaining', None)))
+                trace(out, 'owned_cleanup', verified=False, error=type(error).__name__)
+                raise
+            req_path = out / 'requests.json'
+            attempted = started_baseline or (req_path.is_file() and any(
+                row.get('dispatch_started') for row in json.loads(req_path.read_bytes())))
+            if attempted:
+                recovery = shared_budget.SolveBudget(cleanup_end - budget.started,
+                                                      parent_started=budget.started)
+                observed = dict(complete=False, work_deadline_monotonic=budget.end,
+                                cleanup_deadline_monotonic=recovery.end,
+                                cancelled_at_monotonic=cancelled_at)
+                try:
+                    if budget.expired():
+                        time.sleep(min(1.25, recovery.remaining()))
+                    while True:
+                        telemetry = candidate_worker.model_idle(
+                            recovery, urllib.request.urlopen, allow_busy=True)
+                        if telemetry['processing_slots'] == 0:
+                            observed.update(complete=True, idle=telemetry,
+                                            observed_monotonic=time.monotonic())
+                            break
+                        time.sleep(min(1.25, recovery.remaining()))
+                except BaseException as error:
+                    BLOCKED = type(error).__name__
+                    observed['error'] = type(error).__name__
+                    raise RuntimeError('Shared model recovery unverified; retain for inspection') from error
+                finally:
+                    candidate_worker.save(out / 'MODEL_RECOVERY.json', observed)
+                    trace(out, 'model_recovery', complete=observed['complete'],
+                          error=observed.get('error'))
+    finally:
+        try:
+            if work is not None:
+                if BLOCKED is None:
+                    try:
+                        shutil.rmtree(work)
+                    except OSError as error:
+                        BLOCKED = type(error).__name__
+                        candidate_worker.save(out / 'SCRATCH_RETAINED.json',
+                            dict(path=str(work), reason='cleanup_failed', error=type(error).__name__))
+                        raise
+                else:
+                    candidate_worker.save(out / 'SCRATCH_RETAINED.json',
+                        dict(path=str(work), reason='infrastructure_failure_requires_inspection'))
+        finally:
+            for sig, handler in previous.items():
+                signal.signal(sig, handler)
     return (out / 'solution.v').read_text(encoding='utf-8'), (out / 'trace.jsonl').read_text(encoding='utf-8')
 
 
-def worker(task, out):
-    # Import ONLY the untouched extraction helper; never import the development evaluator.
-    import baseline
-    out = Path(out)
-    prompt = (Path(task) / 'prompt.txt').read_text(encoding='utf-8')
-    iface = Path(task) / 'interface.txt'
-    if iface.is_file() and iface.read_text(encoding='utf-8').strip():
-        prompt += '\n\nInterface:\n' + iface.read_text(encoding='utf-8')
-    skill, repair_skill = skill_texts()
-    repairs = int(os.environ.get('RTL_REPAIRS', '1'))
-    if not 0 <= repairs <= 2:
-        raise ValueError('RTL_REPAIRS must be 0..2')
-    model = os.environ.get('MODEL_NAME') or models()[0]
-    code, feedback = '', ''
-    trace(out, 'agent_meta', boundary='prompt_only_candidate_compile',
-          skill_sha256=hashlib.sha256(skill.encode()).hexdigest(),
-          repair_skill_sha256=hashlib.sha256(repair_skill.encode()).hexdigest(), repairs=repairs)
-    for attempt in range(repairs + 1):
-        user = prompt if attempt == 0 else prompt + '\nPrevious candidate:\n' + code + '\nCandidate diagnostics:\n' + feedback
-        body = dict(model=model, messages=[dict(role='system', content=skill + ('\n' + repair_skill if attempt else '')),
-                                         dict(role='user', content=user)],
-                    temperature=float(os.environ.get('RTL_TEMPERATURE', '0')),
-                    top_p=1.0, max_tokens=int(os.environ.get('RTL_MAX_TOKENS', '8192')))
-        trace(out, 'llm_start', round=attempt)
-        try:
-            req = urllib.request.Request(endpoint() + '/chat/completions',
-                                         data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'})
-            with urllib.request.urlopen(req, timeout=300) as r:
-                payload = json.load(r)
-            choice = payload['choices'][0]
-            usage = payload.get('usage') or {}
-            reply = choice['message'].get('content') or ''
-            trace(out, 'llm', round=attempt, tokens_in=usage.get('prompt_tokens'),
-                  tokens_out=usage.get('completion_tokens'), finish=choice.get('finish_reason'))
-            code = baseline.extract(reply, 'rtl')
-        except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
-            trace(out, 'llm', round=attempt, error=type(exc).__name__)
-            return
-        write(out / 'solution.v', code)
-        # Includes/file IO are unnecessary for a self-contained TopModule and could cross the input boundary.
-        if re.search(r'`include|\$(?:readmem\w*|fopen|system)\b', code):
-            feedback = 'Return a self-contained module without file access or include directives.'
-            trace(out, 'check_source', rc=1, excerpt=feedback)
-            continue
-        if not re.search(r'\bmodule\s+TopModule\b', code) or 'endmodule' not in code:
-            feedback = 'Return a complete TopModule ending in endmodule.'
-            if choice.get('finish_reason') == 'length':
-                feedback += ' Output reached the token limit; shorten the implementation.'
-            trace(out, 'check_source', rc=1, excerpt=feedback)
-            continue
-        # A hierarchical design that instantiates a module it never defines still passes
-        # xvlog, because analysis does not resolve module instantiation; it only fails at
-        # elaboration, which the judge runs and we do not. Catch it by text instead: it
-        # costs nothing, whereas an xelab pass costs about a second on every task.
-        # Validated against xelab ground truth on 200 generated solutions with no false
-        # positives; it finds every missing-submodule case and ignores other error classes.
-        # Measured effect on the four tasks it fires on: one moved L0 to L3.
-        #
-        # This runs on every candidate, so it must never be able to break one. The check
-        # is an optimisation, not a requirement: any failure here means "nothing flagged"
-        # and the pipeline carries on exactly as before.
-        try:
-            undefined = undefined_submodules(code)
-        except Exception:
-            undefined = []
-        if undefined:
-            # Report the fact only. A paired A/B showed that adding a prescription
-            # ("define it, or rewrite as one flat module") produced no benefit and
-            # steered the model into a flattened form that then failed xvlog, so the
-            # message stays factual, matching the condition that recovered 2 of 5.
-            feedback = ('The design instantiates module(s) that this file never defines: ' +
-                        ', '.join(undefined) + '.')
-            trace(out, 'check_submodules', rc=1, excerpt=feedback)
-            continue
-        tool = vivado_tool('xvlog')
-        if not tool:
-            trace(out, 'lint', rc=None, error='xvlog unavailable; candidate unverified')
-            return
-        wd = Path.cwd() / ('compile-' + str(attempt))
-        wd.mkdir()
-        write(wd / 'candidate.sv', code)
-        trace(out, 'lint_start', round=attempt)
-        result = subprocess.run([tool, '--sv', str(wd / 'candidate.sv')], cwd=wd,
-                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                text=True, errors='replace')
-        lines = [s for s in result.stdout.splitlines() if re.search('ERROR|WARNING|FATAL', s)]
-        feedback = '\n'.join(lines)[:2048] or result.stdout[-2048:]
-        trace(out, 'lint', rc=result.returncode, excerpt=feedback, round=attempt)
-        if result.returncode != 0:
-            # A declaration fault is mechanical, so fix it by text instead of spending a
-            # model call on it. The patch is only accepted if it actually recompiles;
-            # otherwise the loop falls through to the normal model repair below.
-            # Prob058_alwaysblock2 goes from L0 to L3 this way with no model call.
-            try:
-                patched = repair_ansi_declarations(code, feedback)
-            except Exception:
-                patched = None
-            if patched:
-                write(wd / 'candidate.sv', patched)
-                again = subprocess.run([tool, '--sv', str(wd / 'candidate.sv')], cwd=wd,
-                                       stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                       text=True, errors='replace')
-                if again.returncode == 0:
-                    write(out / 'solution.v', patched)
-                    trace(out, 'declaration_fix', rc=0, round=attempt)
-                    return  # Compilation is NOT an official L1/L2/L3 judgement.
-        if result.returncode == 0:
-            return  # Compilation is NOT an official L1/L2/L3 judgement.
+
+
 
 
 def solve(data):
@@ -542,22 +534,25 @@ def solve(data):
     deadline = data.get('deadline_s', 360)
     if mode not in ('agent', 'baseline') or type(deadline) not in (int, float) or not math.isfinite(deadline) or deadline <= 0:
         raise ValueError('invalid mode or deadline')
-    if not LOCK.acquire(timeout=max(0, deadline - .1)):
-        return dict(task_id=data['task_id'], solution='', trace='', elapsed_s=time.monotonic()-started)
-    try:
-        if os.environ.get('EDA_TMP'):
-            Path(os.environ['EDA_TMP']).mkdir(parents=True, exist_ok=True)
-        with tempfile.TemporaryDirectory(prefix='rtl-request-', dir=os.environ.get('EDA_TMP')) as td:
-            task = Path(td) / 'in'
-            task.mkdir()
-            write(task / 'prompt.txt', data['prompt'])
-            if data.get('interface'):
-                write(task / 'interface.txt', data['interface'])
-            budget = deadline - (time.monotonic() - started) - min(1, deadline * .1)
-            solution, events = ('', '') if budget <= 0 else run_job(mode, task, Path(td)/'out', budget)
-        return dict(task_id=data['task_id'], solution=solution, trace=events, elapsed_s=round(time.monotonic()-started, 3))
-    finally:
-        LOCK.release()
+    # Each accepted request gets a new private evidence directory. Caller IDs
+    # are metadata only; no cache, resume, or task-derived filesystem paths.
+    base = Path(os.environ.get('RTL_EVIDENCE_DIR') or
+                (Path(os.environ.get('EDA_TMP') or tempfile.gettempdir()) / 'rtl-evidence'))
+    base.mkdir(parents=True, exist_ok=True, mode=0o700)
+    request_root = Path(tempfile.mkdtemp(prefix='request-', dir=base))
+    task = request_root / 'in'
+    task.mkdir()
+    write(task / 'prompt.txt', data['prompt'])
+    if data.get('interface'):
+        write(task / 'interface.txt', data['interface'])
+    write(request_root / 'request.json', json.dumps(data, ensure_ascii=False))
+    budget = deadline - min(1, deadline * .1)
+    solution, events = run_job(mode, task, request_root / 'out', budget, parent_started=started)
+    result = dict(task_id=data['task_id'], solution=solution, trace=events,
+                  elapsed_s=round(time.monotonic() - started, 3))
+    write(request_root / 'response.json', json.dumps(result, ensure_ascii=False))
+    return result
+
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -598,13 +593,13 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json(200, solve(data))
         except (ValueError, UnicodeError) as exc:
             self.send_json(400, {'error': str(exc)})
-        except (OSError, KeyError, subprocess.SubprocessError):
+        except (OSError, KeyError, RuntimeError, subprocess.SubprocessError):
             self.send_json(503, {'error': 'runtime unavailable'})
 
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('action', choices=('run', 'baseline', 'worker', 'serve'))
+    p.add_argument('action', choices=('run', 'baseline', 'serve'))
     p.add_argument('task', nargs='?')
     p.add_argument('out', nargs='?')
     p.add_argument('--port', type=int, default=7860)
@@ -615,11 +610,9 @@ def main():
         endpoint()
         if os.environ.get('EDA_TMP'):
             Path(os.environ['EDA_TMP']).mkdir(parents=True, exist_ok=True)
-        ThreadingHTTPServer(('127.0.0.1', args.port), Handler).serve_forever()
+        HTTPServer(('127.0.0.1', args.port), Handler).serve_forever()
     elif args.task is None or args.out is None:
         p.error('task_dir and out_dir required')
-    elif args.action == 'worker':
-        worker(args.task, args.out)
     else:
         run_job('agent' if args.action == 'run' else 'baseline', args.task, args.out,
                 float(os.environ.get('AGENT_DEADLINE_S', '300')))

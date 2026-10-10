@@ -8,7 +8,7 @@
 同一提交包的 `agent/runtime.py`，不依赖调用者的工作目录。显式设置 `KIT`
 仍表示旧项目根目录，入口为 `$KIT/submission/agent/runtime.py`；入口不存在时，
 守护器在探测或启动模型/HTTP 服务前退出。模型、工具链和日志位置仍须按部署环境配置。
-这项路径支持不代表当前研究候选已经部署，或完成正式镜像、32GB和恢复验收。
+当前 HTTP/CLI 源码已接入所选候选，七项 AMD CPU 集成通过；模型/EDA 使用合成夹具，尚未部署为真实模型验证过的服务。守护器整体、正式镜像、32GB 和恢复验收仍待。HTTP 为主线程串行服务，solve 期间 health 会等待，不能沿用旧并发探测假设。
 
 ```bash
 MODEL_PATH=/opt/models/Qwen3.6-27B-Q4_K_M.gguf ./serve/llama.sh
@@ -46,4 +46,4 @@ MODEL_PATH=/opt/models/Qwen3.6-27B-Q4_K_M.gguf ./serve/llama.sh
 
 ## 端口
 
-`serve/` 的模型端口（默认 8000）**只供容器内部调用，不对外暴露**。对外只需要 `run.sh` 的 HTTP 入口（默认 7860）。
+`serve/` 的模型端口（默认 8000）**只供容器内部调用，不对外暴露**。对外只需要 `agent/runtime.py serve` 的 HTTP 入口（默认 7860）；`run.sh` 是目录输入/输出的 CLI。

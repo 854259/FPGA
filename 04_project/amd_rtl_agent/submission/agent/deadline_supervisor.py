@@ -2,8 +2,10 @@
 
 Projected from source SHA-256
 680d8790d5031b4dd938af2790acf1296f710a81aedb7c0572110019e8abb54f.
-Both functions retain their original AST. Linux callers must enable subreaping
-and invoke owned_command in their owned main thread, as before.
+The integration adds the first-cancellation timestamp and one shared cleanup
+end, plus birth-bound cleanup of request-owned detached children. Original
+AST-only qualification does not cover these changes. Linux callers must enable
+subreaping and invoke owned_command in their owned main thread.
 """
 import hashlib
 import math
@@ -47,6 +49,7 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
     alive = []
     phase = "run"
     cancel_signal = None
+    cancel_observed_monotonic = None
     cleanup_started = None
     cleanup_deadline = None
     result = {"timeout": False, "launch_error": None, "returncode": None, "group_signals": []}
@@ -73,13 +76,17 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
         return members
 
     def cancelled(signum, frame):
-        nonlocal cancel_signal
+        nonlocal cancel_signal, cancel_observed_monotonic
+        if cancel_signal is None:
+            cancel_observed_monotonic = time.monotonic()
         cancel_signal = signum
         # Defer Python's exception until Popen hands us ownership, and keep a
         # second cancellation from interrupting bounded cleanup. No child mask.
         if phase in ("launch", "cleanup"):
             return
-        raise InterruptedError("owned stage cancelled by signal " + str(signum))
+        error = InterruptedError("owned stage cancelled by signal " + str(signum))
+        error.cancelled_at_monotonic = cancel_observed_monotonic
+        raise error
 
     previous = {sig: signal.signal(sig, cancelled) for sig in (signal.SIGTERM, signal.SIGINT)}
     try:
@@ -99,7 +106,9 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
                     finally:
                         phase = "run"
                     if cancel_signal is not None:
-                        raise InterruptedError("owned stage cancelled by signal " + str(cancel_signal))
+                        error = InterruptedError("owned stage cancelled by signal " + str(cancel_signal))
+                        error.cancelled_at_monotonic = cancel_observed_monotonic
+                        raise error
                     # Observe exit without reaping; retain the birth-bound
                     # leader until group authorization and cleanup below.
                     while os.waitid(os.P_PID, proc.pid, os.WEXITED | os.WNOHANG | os.WNOWAIT) is None:
@@ -118,6 +127,8 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
                 phase = "cleanup"
                 cleanup_started = time.monotonic()
                 cleanup_deadline = min(cleanup_started, deadline) + cleanup_seconds
+                if cancel_observed_monotonic is not None:
+                    cleanup_deadline = min(cleanup_deadline, cancel_observed_monotonic + cleanup_seconds)
                 if cleanup_limit is not None:
                     cleanup_deadline = min(cleanup_deadline, cleanup_limit)
                 if proc is not None:
@@ -159,9 +170,83 @@ def owned_command(argv, cwd, log, seconds, *, deadline=None, cleanup_seconds=10.
         for sig, handler in previous.items():
             signal.signal(sig, handler)
     if cancel_signal is not None:
-        raise InterruptedError("owned stage cancelled by signal " + str(cancel_signal))
+        error = InterruptedError("owned stage cancelled by signal " + str(cancel_signal))
+        error.cancelled_at_monotonic = cancel_observed_monotonic
+        raise error
     return {**result, "elapsed_s": time.monotonic() - started, "remaining_live_group": alive,
             "started_monotonic": started, "deadline_monotonic": deadline,
             "cleanup_started_monotonic": cleanup_started, "cleanup_deadline_monotonic": cleanup_deadline,
             "cleanup_limit_monotonic": cleanup_limit, "leader_starttime": leader_birth,
             "log": str(log), "log_sha256": sha(log), "log_bytes": Path(log).stat().st_size}
+
+
+def process_record(pid):
+    try:
+        fields = (Path('/proc') / str(pid) / 'stat').read_text().rsplit(')', 1)[1].split()
+        return dict(pid=pid, starttime=fields[19], state=fields[0], ppid=int(fields[1]), pgid=int(fields[2]), sid=int(fields[3]))
+    except (FileNotFoundError, ProcessLookupError):
+        return None
+
+def descendants(pid):
+    found, todo = ({}, [pid])
+    while todo:
+        parent = todo.pop()
+        try:
+            threads = list((Path('/proc') / str(parent) / 'task').iterdir())
+        except (FileNotFoundError, ProcessLookupError):
+            continue
+        for thread in threads:
+            try:
+                children = (thread / 'children').read_text().split()
+            except (FileNotFoundError, ProcessLookupError):
+                continue
+            for child in map(int, children):
+                row = process_record(child)
+                if row and child not in found:
+                    found[child] = row
+                    todo.append(child)
+    return found
+
+def cleanup_request_children(deadline):
+    """Reap only this dedicated request process's newly owned descendants.
+
+    The entry point refuses pre-existing children before dispatch. Child
+    subreaping retains ownership even if a tool starts a detached session.
+    The caller supplies the same absolute cleanup end used for model recovery.
+    """
+    tracked = {}
+    while True:
+        tracked.update(descendants(os.getpid()))
+        for pid, recorded in list(tracked.items()):
+            if pid == os.getpid():
+                raise RuntimeError('Request process cannot own itself')
+            current = process_record(pid)
+            if current is None or current['starttime'] != recorded['starttime']:
+                continue
+            if current['state'] != 'Z':
+                try:
+                    os.kill(pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+            try:
+                os.waitpid(pid, os.WNOHANG)
+            except ChildProcessError:
+                pass
+        new = descendants(os.getpid())
+        tracked.update(new)
+        remaining = []
+        for pid, recorded in tracked.items():
+            current = process_record(pid)
+            if current and current['starttime'] == recorded['starttime']:
+                remaining.append(current)
+        observed = time.monotonic()
+        if not remaining and not new and observed <= deadline:
+            return dict(verified=True, recorded=list(tracked.values()), remaining=[],
+                        deadline_monotonic=deadline, completed_monotonic=observed)
+        left = deadline - observed
+        if left <= 0:
+            error = RuntimeError('Request child cleanup exceeded shared deadline')
+            error.recorded = list(tracked.values())
+            error.remaining = remaining
+            raise error
+        time.sleep(min(.025, left))
