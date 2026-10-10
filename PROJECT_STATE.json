@@ -1,5 +1,37 @@
 {
   "temporal_first_generation_20261010": {
+    "output_discipline_separate_source_only_backup_20261010": {
+      "review_sha256": "b1d5ffaee7cae3421bd8642d5f4147a004f0fce27264f8c0b77b649fe4679547",
+      "source_sha256": "65da3d134b7b1c3e57a24a6e8d6c78869644542d8865b444c20a63ba6b900a10",
+      "suffix_words": 64,
+      "parent_source_sha256": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
+      "changes_only": [
+        "SCHEMA literal",
+        "SYSTEM_SUFFIX literal"
+      ],
+      "all_other_AST_nodes_identical": true,
+      "first_P_system_only_static_scope": true,
+      "base_required_format_preserved": true,
+      "source_private_path": "E:\\26qiansai\\worktrees\\fsm-native-calibration-20261006\\03_analysis\\fsm_native_calibration_20261006\\raw_evidence\\OUTPUT_DISCIPLINE_SOURCE_DRAFT_20261010_v2\\sources\\first_system_request.py",
+      "old_v1_retained_unselected_format_conflict": true,
+      "hypothesis": "Reduce emitted reasoning comments so a complete design and allowed repair fit existing output/time budget;unmeasured accuracy/time effect.",
+      "risks": [
+        "Less emitted reasoning could reduce correctness.",
+        "Does not directly repair pre-edge/post-edge interpretation."
+      ],
+      "worker_packet_prepared": false,
+      "mock_wire_qualification_passed": false,
+      "context_capacity_proven": false,
+      "comparison_PLAN_created": false,
+      "fixed_comparison_selected": false,
+      "FIFO_submitted": false,
+      "actual_model_gain_proven": false,
+      "temporal9_source_or_plan_modified": false,
+      "current132_136_modified": false,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0
+    },
     "actual132_failed2191_20261010": {
       "schema": "original132_failed2191_source_and_transport_diagnosis_v1",
       "saved_epoch": 1791601551.2865748,

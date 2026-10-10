@@ -1,3 +1,7 @@
+## 2026-10-10 输出完整性独立源码备选
+
+针对原132真实8192截断/283秒首答及未完成repair，新建独立64词输出纪律源码草稿65da3d13，仅SCHEMA与SYSTEM_SUFFIX两字面量改变，其余AST与冻结首请求转换器860b09aa一致；静态范围为仅P首system，C及全部repair/user/8192/max2/1repair保持，未执行项目函数。原system本已要求纯RTL、不要Markdown/解释；v1误加code block的格式冲突被原wire阅读发现，初稿及纠正记录私有保留，v2保持原输出格式并具体约束冗长推理注释。此仅source-only备选，无worker包、mock接线或容量证明、比较PLAN、选优、FIFO或实际收益；少输出推理可能降低正确率，不能把时效线索当提分。未并入时序174词/常量备选，未增147到冻结九题，未修改132–136或PR210五执行源。仍先负责132–134的队友处理实际失败出口，再接133–136实测及共同单因素选优。0新生成/EDA/FIFO，完整目标未达。
+
 ## 2026-10-10 原132真实失败退出及优先处置
 
 11:00:43北京时间原132在2191封存/2192终态时因row002191（147 circuit10/A/sample0）失败退出，现held_for_inspection，不能再写为全量在跑；342817/342815已Z，guard8fc7b573 complete真/passed假/stage_rc1，清理验证/无剩余/模型及保护保持/槽已释放，原133–136监控活但仍queued。stage939c503e为Unconfirmed/failed row blocks continuation。失败行12公开原件72030B在AMD及E盘逐SHA/长度保持；首答283.0779秒/8192tokens/length、无endmodule，source check拒绝、未compile；唯一repair已写request但无response，310.023秒外层监督失败，actual_calls/unconfirmed_calls/grade均未知，不能记为完成L0、补抽、原失败行重放或扩预算。414文本行含348整行注释/12非空非整行注释，含开头fence且不完整，不能称完整12行RTL。公开波形60→65与90→95的采样前b分别0/1，生成评论用更新后输入制造的矛盾并不成立；这是静态推理定位、非新仿真或完整答案。输出时效已有真实截断证据，但简洁提示仍未选中/建PLAN/入队，147不添加到已冻结时序九题。已在Issue6093112533请求负责132–134的队友收尾失败原件/调用计账和合法FIFO出口，使已有133–136继续；本方不改其ticket或伪造success。完整156目标及正式总分未达/未知，原146前缀112全五正确仅完整前缀诊断。0新生成/EDA/FIFO。
