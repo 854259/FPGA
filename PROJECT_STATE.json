@@ -1,5 +1,26 @@
 {
   "temporal_first_generation_20261010": {
+    "original_goal_cost_gate_source_recovered": {
+      "evidence_sha256": "f90ce61ff3cf7d79ceb4fe20a8f5be4341821e7887b60e5961e7e25b44f6a1c4",
+      "source_spec_sha256": "0b9c1c07ed275eff5ba81d9281c86575db7f89b729d7951491dcafea73df6702",
+      "source_metrics_sha256": "544d70229e1be9042af20376fcd201997dd6d9d302969f50ad4bb087c3477ce2",
+      "cloud_originals_verified": true,
+      "original_scope": "Original one-sample156 task C/P goal qualification; not a five-sample/hidden/generalization/adoption certificate.",
+      "cost_requirements": [
+        "P total actual requests <= C total actual requests.",
+        "For each of original113 historical L3 tasks,P actual requests <= paired C requests.",
+        "For each task with equal P/C grade coefficient,P actual requests <= paired C requests.",
+        "A request increase on a nonhistorical improved-grade task is not alone a cost veto;original budget,total,history and other gates still apply."
+      ],
+      "historical_L3": 113,
+      "task144_historical_level": 0,
+      "new_gate_created": false,
+      "five_sample_translation_not_redefined": true,
+      "current132_goal_pass_computed": false,
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_tickets": 0
+    },
     "latest_compile_repair_review": {
       "task": "Prob144_conwaylife",
       "A_levels": [
