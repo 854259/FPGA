@@ -679,8 +679,8 @@
   "submission_report_update_20261008": {"updated_at": "2026-10-08T22:46:00+08:00", "status": "draft_updated_static_verified_not_deployed", "path": "04_project/amd_rtl_agent/submission/REPORT.md", "official_commit": "afd135e7ba5f6ec4c6d77e7c927c894327537801", "scope": "Official selection and existing129 failure evidence; archived runtime and research candidate distinguished; historical numerical results retained.", "evidence_result_sha256": "f8d5543266371bf4e7a0a6c3258d6f17cef8b3e6bd7237c0d6252b8644dc2d38", "new_model_calls": 0, "new_eda_calls": 0, "new_fifo": 0, "deployment": false, "full_goal_complete": false},
   "collaborative_goal_20261007": {
     "temporal_peer_preparation_20261010": {
-      "updated_at": "2026-10-10T10:57:00+08:00",
-      "status": "peer_boundary_accepted_candidate_frozen_not_submitted_our_selection_pending_original_results",
+      "updated_at": "2026-10-10T12:28:06+08:00",
+      "status": "frozen_source_and_grid_reviewed_joint_selection_pending_original134_136",
       "source_comments": [
         6091415379,
         6091605451,
@@ -757,6 +757,16 @@
           "path": "/workspace/team/activity/fpga_owner/artifacts/prefix145-complete-20261010-v1/PREFIX145_COMPLETE.json",
           "sha256": "8761f502c15d54da74feeb5c26bdb5a9f4817ab8c5a26cb1827e10e974d70da7",
           "bytes": 10759
+        },
+        "NEXT_JOINT_PROPOSAL_REVIEW.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/next-joint-temporal-proposal-20261010-v1/NEXT_JOINT_PROPOSAL_REVIEW.json",
+          "sha256": "43751aa6114feb755c63836033ed7e764c089b6870d7f357ffd59ba255a99bc4",
+          "bytes": 7347
+        },
+        "ACTUAL134_CIRCUIT3_REGRESSION.json": {
+          "path": "/workspace/team/activity/fpga_owner/artifacts/actual134-circuit3-regression-20261010-v1/ACTUAL134_CIRCUIT3_REGRESSION.json",
+          "sha256": "e90a6dd6a7a5ffed3bea07d9580daf19fe7e96a4d8380243281a587cf9efcab4",
+          "bytes": 19915
         }
       },
       "mail_matches": [
@@ -850,13 +860,15 @@
         "acceptance_scope": "Peer explicitly accepts preparation is not shared scoring admission; no automatic placement after136, wait for original132-136 outcomes and selection/ownership."
       },
       "live_scope": {
-        "observed_at": "2026-10-10T10:40:41.261015+08:00",
-        "sealed": 2183,
-        "total": 2340,
-        "actual_adopted_roles_and_model_live": true,
-        "frozen39_and_receipt_bindings_hold": true,
-        "tickets133_to136": "queued",
-        "terminal_readers_executed": false
+        "observed_at": "2026-10-10T12:14:28.633021+08:00",
+        "original132": "failed_released_after_inspection",
+        "original133": "completed_native3_independently_verified",
+        "original134_sealed": 105,
+        "original134_total": 135,
+        "original134_actual_monitor_stage_model_live": true,
+        "original135_136": "queued_actual_monitors_live",
+        "terminal134_reader_executed": false,
+        "scope": "Latest scheduled process check;12:28 source review does not imply a fresh process poll."
       },
       "new_project_execution": 0,
       "new_model_calls": 0,
@@ -874,7 +886,7 @@
         "source_commit": "6cbcaebebc89e69506cebfee86690c3d9b9a711a",
         "pr": "https://github.com/854259/FPGA/pull/210",
         "pr_state_observed": "open_draft_not_merged",
-        "pr_head_observed": "2439d2319aa0cb68d7a52ab3b67291d4054303b8",
+        "pr_head_observed": "1e799f82c0c32530c163c61f14fae6d5fb9d798b",
         "preparation_executions_reported": 1,
         "archive_sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
         "archive_members": 59,
@@ -944,7 +956,7 @@
         "preparation": "Original132 source and task template hashes enforced, both arms inner table-P, original B/queue reused, no new factor selection/admission.",
         "reader": "Outer A/P bound to inner P; full five-sample grid and official summary, calls and timing preserved; diagnostics not automatic vetoes.",
         "actionable_static_findings": [],
-        "decision": "Keep peer-owned frozen draft and current original132–136 queue; await actual outcomes/ownership review before scoring.",
+        "decision": "Original132 failed/released and133 native completed. Await original134-136 true outcomes before joint single-factor selection and ownership admission.",
         "source_sha256_verified": {
           "first_system_request": "860b09aa9a88348a4ff3be531af6680d6d30c22c42b7f3ef14ca30981a058a95",
           "baseline_worker": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
@@ -952,12 +964,12 @@
           "comparison_result": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
           "prepare": "e5cffb23800d19d23ba0cad54ca5c87957dcb0d05e4337391ff87c86716e4bf2"
         },
-        "incremental_scope": "Previously reviewed five runtime sources unchanged; all seven candidate Git blobs match original packet through2439d231. Peer base merge includes inherited history, not new candidate changes. Draft unmerged and not admitted.",
+        "incremental_scope": "Current29 AMD source hashes and9 input files/135-grid checked. Compare6cbcaebe..1e799f82 has no temporal-specific packet changes; inherited research history is not new candidate code. Archive member audit remains pending, draft unmerged and not admitted.",
         "draft_open_unmerged": true,
         "new_model_calls": 0,
         "new_EDA_calls": 0,
         "new_FIFO": 0,
-        "head_reviewed_through": "2439d2319aa0cb68d7a52ab3b67291d4054303b8"
+        "head_reviewed_through": "1e799f82c0c32530c163c61f14fae6d5fb9d798b"
       },
       "peer_goal_gate_source": {
         "scope": "Peer's original one-sample156 C/P goal; report-level intake only. Not our selection vetoes and not a five-sample qualification.",
@@ -1361,6 +1373,189 @@
         "still_draft_unmerged": true,
         "latest_API_mergeability": "unknown_not_a_result",
         "no_new_scoring_admission": true
+      },
+      "joint_proposal_review_20261010": {
+        "observed_at": "2026-10-10T12:28:06+08:00",
+        "issue_comment": 6093755325,
+        "issue_readback_exact": true,
+        "current_AMD_source_hashes_checked": 29,
+        "source_mismatches": [],
+        "unique_input_files_checked": 9,
+        "input_bytes": 7410,
+        "parent132_input_hashes_match": true,
+        "unique_task_arm_sample_rows": 135,
+        "max_reserved_calls": 225,
+        "plan_sha256": "117c9e5d7ef7b3c44e4e3b906d25202a6c7ec96ef64f63d3fdbde0d9c085d6df",
+        "spec_sha256": "15dd9abad40e6e9f6921f332fdd0da0d7bf1900ae08b686657591aaf30dac5cc",
+        "submission_intent_present": false,
+        "queue_directory_present": false,
+        "guard_directory_present": false,
+        "pr_head": "1e799f82c0c32530c163c61f14fae6d5fb9d798b",
+        "frozen_packet_unchanged_in_commit_comparison": true,
+        "source_scope": "Read-only current source/input hashes and frozen grid; earlier five-source static review remains applicable. No tests, source preparation, native qualification or generation repeated.",
+        "actionable_policy_finding": "Peer proposal diagnostic_requirements repeats historical113, paired-grade and same-grade/history/total-call gates. Requested diagnostic-only treatment: these are not extra vetoes under our current official-four-component objective.",
+        "ownership_proposal": "After original134-136 true outcomes and joint single-factor selection, peer would be the sole submit/run owner; our side independently reviews admission and terminal evidence. Proposal is not current admission.",
+        "archive_audit": {
+          "sha256": "17c355adef87ea4b456f37716b4502500e645ae7bb1bb04922c804dccf2445db",
+          "members_reported": 59,
+          "independently_verified_here": false,
+          "reason": "Report points to peer-host E drive; unavailable on our host and no ZIP under shared frozen AMD root. Requested existing shared AMD archive/manifest path, without rerunning preparation or qualification."
+        },
+        "new_model_calls": 0,
+        "new_EDA_calls": 0,
+        "new_FIFO": 0,
+        "candidate_selected": false,
+        "full_goal_complete": false
+      },
+      "original134_sample0_regression_review": {
+        "scope": "Fixed original134 Prob102 sample0 A/P only;20 public-source/trace/check-receipt files SHA-verified against TERMINAL and SEALED-to-TERMINAL bindings. No private reference or judge TB read; no project execution or regrading.",
+        "rows": {
+          "P": "row_000060",
+          "A": "row_000062"
+        },
+        "public_files": 20,
+        "public_bytes": 27442,
+        "first_request_equal": true,
+        "first_reply_content_equal": true,
+        "repair_system_equal": true,
+        "repair_nonmessage_parameters_equal": true,
+        "public_witness": {
+          "time_ns": 35,
+          "input_bits_in_public_abcd_order": "0100",
+          "expected_q": 0,
+          "initial_q": 1,
+          "P_repair_q": 1,
+          "A_repair_q": 0,
+          "method": "Manual substitution into retained generated expressions; not a new RTL simulation."
+        },
+        "results": {
+          "P": {
+            "actual_calls": 2,
+            "call_count_definition": "durable client attempts; server receipt unknown",
+            "coefficient": 0.2,
+            "complete": true,
+            "end_to_end_s": 30.808906063437462,
+            "full_batch": false,
+            "judge_elapsed_s": 8.289719929918647,
+            "level": 1,
+            "server_received_count": null,
+            "solve_elapsed_s": 22.110360642895103,
+            "unconfirmed_calls": 0,
+            "final_public_check": {
+              "checks": 32,
+              "mismatches": 2
+            },
+            "source_sha256": "98e8b75108bff797e02b34146f1646acd51736e49c09ce7fc91be6eee6c1920a",
+            "terminal_sha256": "4bea481e18935fd1eec4e95640e49afe754aa42ea267a832e550a3656d121ad5",
+            "selected_public_file_index": {
+              "prompt_only/prompt.txt": {
+                "sha256": "39f9ad5cc2f1a88250a8df3b83e61992ee296c3bf6e7bb788e76d9ea0e7b9d10",
+                "bytes": 826
+              },
+              "solve/requests/0/request.json": {
+                "sha256": "5cfd3c7cb97f33fe53aaa83bb15c35883390fefcf8a371ef1018ca65140c55e4",
+                "bytes": 2136
+              },
+              "solve/requests/0/response.json": {
+                "sha256": "7b39c3940f391501629c8ea29a1f2f99bad4463696a2f50b6b4a77bc5420fb83",
+                "bytes": 808
+              },
+              "solve/requests/1/request.json": {
+                "sha256": "f518ad5d6402698b26b261a8af67658d0b7a4f3b057a845c2d4bcbcfa2ffcd7a",
+                "bytes": 4173
+              },
+              "solve/requests/1/response.json": {
+                "sha256": "3799b03a25fde2d1ac193ccc4a24c8a0e48f88659dbe18a739b29ec96b858236",
+                "bytes": 790
+              },
+              "solve/solution.v": {
+                "sha256": "98e8b75108bff797e02b34146f1646acd51736e49c09ce7fc91be6eee6c1920a",
+                "bytes": 143
+              },
+              "solve/table_check_0/input.sv": {
+                "sha256": "922f85011f0c37b23abe3e3d8c452c10d41496ee7c968acc4d470fa22d5d4449",
+                "bytes": 148
+              },
+              "solve/table_check_0/feedback.txt": {
+                "sha256": "9b111985092b5c1c360ec989aaa1df90892ac5fc3fb143cb77d91f51806af622",
+                "bytes": 651
+              },
+              "solve/table_check_1/probe/result.json": {
+                "sha256": "177a55c3ce51c44305f186663d1261059e8c1aa9af4ee0d95e15cd1145163288",
+                "bytes": 2474
+              },
+              "solve/trace.jsonl": {
+                "sha256": "8bb903c5805a154bf399809548a4315f16f1396cf348ff6bde10a0dac6736ab1",
+                "bytes": 2632
+              }
+            }
+          },
+          "A": {
+            "actual_calls": 2,
+            "call_count_definition": "durable client attempts; server receipt unknown",
+            "coefficient": 1,
+            "complete": true,
+            "end_to_end_s": 49.541856123134494,
+            "full_batch": false,
+            "judge_elapsed_s": 28.268902745097876,
+            "level": 3,
+            "server_received_count": null,
+            "solve_elapsed_s": 20.859490256756544,
+            "unconfirmed_calls": 0,
+            "final_public_check": {
+              "checks": 32,
+              "mismatches": 0
+            },
+            "source_sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+            "terminal_sha256": "bc2ce84df6d08a40b84f8a76e4ff0162ca82826a6fc21619e3f0b4d263418897",
+            "selected_public_file_index": {
+              "prompt_only/prompt.txt": {
+                "sha256": "39f9ad5cc2f1a88250a8df3b83e61992ee296c3bf6e7bb788e76d9ea0e7b9d10",
+                "bytes": 826
+              },
+              "solve/requests/0/request.json": {
+                "sha256": "5cfd3c7cb97f33fe53aaa83bb15c35883390fefcf8a371ef1018ca65140c55e4",
+                "bytes": 2136
+              },
+              "solve/requests/0/response.json": {
+                "sha256": "91d33f247f2af09691c8ffe0cf17eb6abebe0fca2212d753f3358bad3d7cec04",
+                "bytes": 799
+              },
+              "solve/requests/1/request.json": {
+                "sha256": "7b01ac7c49caa1dc4e1b528e4277b49b0e15d3920cd45eb2fea4b9501c25e32c",
+                "bytes": 3650
+              },
+              "solve/requests/1/response.json": {
+                "sha256": "f519e89a170f94be81152ad11f295c3b865fa43eb9de4875f6236ce609649e9a",
+                "bytes": 794
+              },
+              "solve/solution.v": {
+                "sha256": "5d7063127986ea00cf43ebdf17dcf06bff45d42f73cc7b5dbe257ff08388e4be",
+                "bytes": 148
+              },
+              "solve/table_check_0/input.sv": {
+                "sha256": "922f85011f0c37b23abe3e3d8c452c10d41496ee7c968acc4d470fa22d5d4449",
+                "bytes": 148
+              },
+              "solve/table_check_0/feedback.txt": {
+                "sha256": "dc2184630521e9317f6dad5e2c14e22399ac5d16bab2e3a030c03991166c4945",
+                "bytes": 134
+              },
+              "solve/table_check_1/probe/result.json": {
+                "sha256": "be4c99e45f02b889d2dc3b2e91bbd19f9e93081bab40d31eddf8652a7651f308",
+                "bytes": 2458
+              },
+              "solve/trace.jsonl": {
+                "sha256": "78985fc070e843d761e412a3b97043037d73187cc60c6d7fb0018d4e77a291f7",
+                "bytes": 1568
+              }
+            }
+          }
+        },
+        "scope_limit": "Other samples and full9-task factor result await original terminal reader. This loss is preserved, not an added per-task nonregression veto.",
+        "new_model_calls": 0,
+        "new_EDA_calls": 0,
+        "new_FIFO": 0
       }
     },
     "actual132_continuation_20261010": {
