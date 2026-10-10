@@ -1,5 +1,283 @@
 {
   "temporal_first_generation_20261010": {
+    "kmap2_multi_feedback_repair_diagnosis_20261010": {
+      "schema": "public_kmap_repair_semantics_static_diagnosis_v1",
+      "saved_epoch": 1791603737.5467942,
+      "task": "Prob057_kmap2",
+      "retained_complete_agent_traces": 10,
+      "trace_results": [
+        {
+          "row": "row_000015",
+          "arm": "P",
+          "sample": 0,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            14,
+            16
+          ],
+          "feedback_check_counts": [
+            32,
+            32
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            2323
+          ],
+          "trace_sha256": "56a3a23713e30fa6affd9654d2ad60831eb833cf7846864e6f3fb657edb60f85"
+        },
+        {
+          "row": "row_000017",
+          "arm": "A",
+          "sample": 0,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            null,
+            null
+          ],
+          "feedback_check_counts": [
+            null,
+            null
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            123
+          ],
+          "trace_sha256": "73e9f28fd66ad0593b3ff93103b21939e753529d2b9198e2f7d60c04359b59ed"
+        },
+        {
+          "row": "row_000019",
+          "arm": "A",
+          "sample": 1,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            null,
+            null
+          ],
+          "feedback_check_counts": [
+            null,
+            null
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            123
+          ],
+          "trace_sha256": "be823e2b3e653170375f97636f1d3bc9421c2a98b2eaf8ebb8f3cb03cda85b3b"
+        },
+        {
+          "row": "row_000020",
+          "arm": "P",
+          "sample": 1,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            14,
+            14
+          ],
+          "feedback_check_counts": [
+            32,
+            32
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            110
+          ],
+          "trace_sha256": "16535c31b3dc5045d14a994acba0f91b17c7bb20224dd278abdebca2b59c1930"
+        },
+        {
+          "row": "row_000021",
+          "arm": "A",
+          "sample": 2,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            null,
+            null
+          ],
+          "feedback_check_counts": [
+            null,
+            null
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            123
+          ],
+          "trace_sha256": "936c99d6ed520500f283204624f613770c2e450ad875a229b0aa27093facfec2"
+        },
+        {
+          "row": "row_000022",
+          "arm": "P",
+          "sample": 2,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            14,
+            14
+          ],
+          "feedback_check_counts": [
+            32,
+            32
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            110
+          ],
+          "trace_sha256": "0904254e83f8652d75f9511b8723ca579813b038bde5f34d6c77e296bd6724a5"
+        },
+        {
+          "row": "row_000024",
+          "arm": "P",
+          "sample": 3,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            14,
+            14
+          ],
+          "feedback_check_counts": [
+            32,
+            32
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            110
+          ],
+          "trace_sha256": "dc8c77abe7a5e35d0ec9cb3e6c3d4d3635f110fff02cf924d2a4c21d04df1cde"
+        },
+        {
+          "row": "row_000026",
+          "arm": "A",
+          "sample": 3,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            null,
+            null
+          ],
+          "feedback_check_counts": [
+            null,
+            null
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            123
+          ],
+          "trace_sha256": "715dce4f777c618a2616c1d054ad9f2172545a761bfeebc0d4d1da189cfec92e"
+        },
+        {
+          "row": "row_000028",
+          "arm": "A",
+          "sample": 4,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            null,
+            null
+          ],
+          "feedback_check_counts": [
+            null,
+            null
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            123
+          ],
+          "trace_sha256": "80e42426d7ca4f820e8fa806f29d5235398661feb3c6a6dc4b0e2917575155dc"
+        },
+        {
+          "row": "row_000029",
+          "arm": "P",
+          "sample": 4,
+          "feedback_rounds": [
+            0,
+            1
+          ],
+          "feedback_mismatch_counts": [
+            14,
+            14
+          ],
+          "feedback_check_counts": [
+            32,
+            32
+          ],
+          "first_counterexample_persists": true,
+          "output_tokens": [
+            116,
+            110
+          ],
+          "trace_sha256": "3a1958c61cc3a811d8078c41eba662b305915c00db848c3ff26ee1f7ebd67a4c"
+        }
+      ],
+      "fixed_sample0_public_originals": {
+        "files": 14,
+        "bytes": 26540,
+        "index_sha256": "0984c769adcbd7e601f362942c14cf03a0ace84cf6cfc8a441ba6f40d541c320"
+      },
+      "sample0_first_model_responses_identical": true,
+      "static_manual_witnesses": [
+        {
+          "inputs": "a=0,b=0,c=1,d=1",
+          "public_cell": "row cd=11,col ab=00 =>0",
+          "P_final": "~a & ~b term gives1",
+          "A_final": "~b & c & d term gives1",
+          "conclusion": "Both repairs still violate their explicitly received first counterexample."
+        },
+        {
+          "inputs": "a=1,b=1,c=0,d=0",
+          "public_cell": "row cd=00,col ab=11 =>0",
+          "P_final": "b & ~c & ~d term gives1",
+          "conclusion": "Generated grouping introduces a public zero-cell false positive."
+        },
+        {
+          "inputs": "a=1,b=1,c=1,d=1",
+          "public_cell": "row cd=11,col ab=11 =>1",
+          "P_final": "All five emitted product terms give0",
+          "conclusion": "Generated grouping also misses a required one-cell."
+        }
+      ],
+      "public_counterexample_expected_cell_verified_for_first_witness": true,
+      "interpretation": "P sample0 comments copy the map but translate at least cell0011 incorrectly and group against that incorrect intermediate list. More counterexamples reached the model but did not repair coordinate/minterm grounding.",
+      "applicability": "Ten retained traces preserve the first bad input afterrepair;detailed source witnesses are sample0 only.",
+      "entire_feedback_or_factor_declared_invalid": false,
+      "full_comparison_finished": false,
+      "new_model_gain": false,
+      "next_action": "Consume remaining original134 outcomes; for future joint selection consider public-table coordinate/bit-order grounding and preservation of zero cells,rather than increasing counterexample count again based on this task. No new factor or scoring queue now.",
+      "no_task_specific_answer_installed": true,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0,
+      "RTL_executed": false,
+      "judge_rerun": false
+    },
     "restored_queue_and_fixed134_prefix_20261010": {
       "schema": "restored_queue_and_fixed134_prefix_intake_v1",
       "observed_epoch": 1791603219.791473,
