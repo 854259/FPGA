@@ -1,5 +1,137 @@
 {
   "temporal_first_generation_20261010": {
+    "complete_prefix145_review": {
+      "result_sha256": "8761f502c15d54da74feeb5c26bdb5a9f4817ab8c5a26cb1827e10e974d70da7",
+      "complete_tasks": 145,
+      "complete_rows": 2175,
+      "partial_rows_excluded": 1,
+      "arms": {
+        "A": {
+          "outputs": 725,
+          "level_counts": {
+            "0": 15,
+            "1": 158,
+            "3": 552
+          },
+          "L3_outputs": 552,
+          "all_five_L3_tasks": 109,
+          "actual_calls": 771,
+          "prefix_coefficient_sum": 583.6
+        },
+        "P": {
+          "outputs": 725,
+          "level_counts": {
+            "0": 16,
+            "1": 140,
+            "3": 569
+          },
+          "L3_outputs": 569,
+          "all_five_L3_tasks": 112,
+          "actual_calls": 802,
+          "prefix_coefficient_sum": 597.0
+        },
+        "B": {
+          "outputs": 725,
+          "level_counts": {
+            "0": 85,
+            "1": 170,
+            "3": 470
+          },
+          "L3_outputs": 470,
+          "all_five_L3_tasks": 94,
+          "actual_calls": 725,
+          "prefix_coefficient_sum": 504.0
+        }
+      },
+      "bounds": {
+        "all_five_L3": {
+          "prefix_tasks": 112,
+          "needed_remaining_tasks_for120": 8,
+          "unknown_remaining_tasks": 11
+        },
+        "mean_L3_count": {
+          "prefix_outputs": 569,
+          "needed_remaining_outputs_for120_mean": 31,
+          "unknown_remaining_outputs": 55
+        },
+        "full_weighted_mean_interval": [
+          0.7653846153846153,
+          0.8358974358974359
+        ],
+        "note": "Bounds only;no unobserved grades assumed;two L3 readings do not redefine original goal qualification or official final scoring."
+      },
+      "new145": {
+        "task": "Prob145_circuit8",
+        "samples": 5,
+        "levels": {
+          "A": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "P": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "B": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "calls": {
+          "A": 5,
+          "P": 5,
+          "B": 5
+        },
+        "A_P_paired_gain": 0,
+        "repair_used": false,
+        "agent_output_tokens_per_sample": 7475,
+        "agent_total_output_tokens": 74750,
+        "agent_solve_time_range_s": [
+          257.15869248099625,
+          259.50336684659123
+        ],
+        "sample0_comment_count_scope_only": "381 line comments/14 nonempty statement lines measured on retained sample0 A/P source;not remeasured for other DUTs.",
+        "ten_solve_time_scope": "Retained per-row solve totals,including compilation/startup;not separately attributed model latency."
+      },
+      "partial146": {
+        "row": "row_002175",
+        "task": "Prob146_fsm_serialdata",
+        "sample": 0,
+        "arm": "P",
+        "level": 1,
+        "actual_calls": 1,
+        "not_complete_five_sample": true,
+        "not_new_factor_or_resampling": true
+      },
+      "actual_paired_losses": [
+        {
+          "task": "Prob082_lfsr32",
+          "sample": 1,
+          "A_level": 1,
+          "P_level": 0,
+          "A_calls": 1,
+          "P_calls": 2
+        }
+      ],
+      "prefix_P_minus_A_calls": 31,
+      "peer_PR214_scope": "Independent current3 source/hash and189 archive integrity report received;not additional mock assertion/native/model-benefit qualification",
+      "constant_repair_docstring_nonblocking_deferred_to_selected_delivery": true,
+      "full_goal_complete": false,
+      "historical113_guard_evaluated": false,
+      "full_cost_gate_evaluated": false,
+      "new_generation": 0,
+      "new_EDA": 0,
+      "new_FIFO": 0
+    },
     "circuit145_sample0_generation_efficiency": {
       "result_sha256": "5f69bd3937789b62580976b23f55e2f3f95b033fc48608da231d38b882c521ed",
       "fixed_sample": 0,
