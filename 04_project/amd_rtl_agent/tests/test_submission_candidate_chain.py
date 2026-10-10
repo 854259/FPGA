@@ -43,8 +43,12 @@ BAD = "module TopModule(input a, input b, output y); assign y = 1'b0; endmodule"
 
 
 class SlowBody(io.BytesIO):
+    def __init__(self, raw, delay=.4):
+        super().__init__(raw)
+        self.delay = delay
+
     def read(self, *args):
-        time.sleep(.4)
+        time.sleep(self.delay)
         return super().read(*args)
 
 
@@ -54,7 +58,7 @@ class SyntheticIO:
         self.calls = []
         self.baseline_commands = []
         self.stage_commands = []
-        self.slow_next = scenario == 'one_timeout'
+        self.slow_next = scenario in ('one_timeout', 'one_long_timeout')
         self.real_owned = deadline_supervisor.owned_command
 
     def open(self, request, *args, **kwargs):
@@ -78,7 +82,7 @@ class SyntheticIO:
                          usage=dict(prompt_tokens=1, completion_tokens=1))
             if self.slow_next:
                 self.slow_next = False
-                return SlowBody(json.dumps(value).encode())
+                return SlowBody(json.dumps(value).encode(), 5 if self.scenario == 'one_long_timeout' else .4)
         else:
             raise AssertionError('Synthetic case attempted real/external transport: ' + url)
         return io.BytesIO(json.dumps(value).encode())
@@ -310,11 +314,17 @@ class SubmissionChainTests(unittest.TestCase):
         self.assertEqual(sum((p / 'out/BASELINE_SUPERVISION.json').exists() for p in evidence), 1)
 
     def test_http_real_deadline_then_next_request_same_service(self):
-        with self.server('one_timeout') as (port, proc):
+        with self.server('one_long_timeout') as (port, proc):
             data = self.data('timeout')
-            data['deadline_s'] = .1
+            data['deadline_s'] = 3
+            started = time.monotonic()
             status, value = self.request(port, data)
+            elapsed = time.monotonic() - started
+            (self.root / 'request-wall.json').write_text(json.dumps(dict(
+                deadline_s=data['deadline_s'], elapsed_s=elapsed)))
+            self.assertLess(elapsed, data['deadline_s'])
             self.assertEqual(status, 200)
+            self.assertLess(value['elapsed_s'], data['deadline_s'])
             self.assertEqual(value['solution'], '')
             self.assertIn('"event": "deadline"', value['trace'])
             status, value = self.request(port, self.data('after-timeout'))
@@ -328,6 +338,70 @@ class SubmissionChainTests(unittest.TestCase):
         self.assertEqual(len(calls), 1)
         self.assertFalse(calls[0]['response_received'])
         self.assertTrue(json.loads((failed[0] / 'out/MODEL_RECOVERY.json').read_text())['complete'])
+
+    def test_short_http_recovery_cannot_borrow_time_past_deadline(self):
+        with self.server('one_long_timeout') as (port, proc):
+            data = self.data('short-timeout')
+            data['deadline_s'] = .1
+            started = time.monotonic()
+            status, value = self.request(port, data)
+            elapsed = time.monotonic() - started
+            (self.root / 'request-wall.json').write_text(json.dumps(
+                dict(deadline_s=data['deadline_s'], elapsed_s=elapsed, status=status)))
+            self.assertLess(elapsed, data['deadline_s'])
+            self.assertEqual(status, 503)
+            status, _ = self.request(port, self.data('after-block'))
+            self.assertEqual(status, 503)
+            self.assertIsNone(proc.poll())
+        records = list((self.root / 'evidence').glob('request-*/out/MODEL_RECOVERY.json'))
+        self.assertEqual(len(records), 1)
+        self.assertFalse(json.loads(records[0].read_text())['complete'])
+
+    def test_solve_preserves_request_start_before_body_parsing(self):
+        with SyntheticIO().installed():
+            started = time.monotonic() - 1
+            result = runtime.solve(self.data('inherited-start'), parent_started=started)
+        clock_file = next((self.root / 'evidence').glob('request-*/out/SOLVE_CLOCK.json'))
+        clock = json.loads(clock_file.read_text())
+        self.assertEqual(clock['started_monotonic'], started)
+        self.assertLessEqual(clock['cleanup_deadline_monotonic'], started + 5)
+        self.assertGreaterEqual(result['elapsed_s'], 1)
+        self.assertEqual(result['solution'], GOOD)
+
+    def test_http_baseline_receives_the_same_cleanup_ceiling(self):
+        fake = SyntheticIO()
+        observed = []
+        def command(*args, **kwargs):
+            observed.append(kwargs)
+            return fake.owned(*args, **kwargs)
+        with fake.installed(), patch.object(deadline_supervisor, 'owned_command', command):
+            result = runtime.solve(self.data('baseline-ceiling', mode='baseline'))
+        clock = json.loads(next((self.root / 'evidence').glob('request-*/out/SOLVE_CLOCK.json')).read_text())
+        self.assertEqual(len(observed), 1)
+        self.assertEqual(observed[0]['deadline'], clock['work_deadline_monotonic'])
+        self.assertEqual(observed[0]['cleanup_deadline'], clock['cleanup_deadline_monotonic'])
+        self.assertLess(clock['cleanup_deadline_monotonic'], clock['started_monotonic'] + 5)
+        self.assertEqual(result['solution'], GOOD)
+
+    def test_native_budget_forwards_cleanup_ceiling_and_keeps_cli_default(self):
+        import shared_budget
+        seen = []
+        def command(*args, **kwargs):
+            seen.append(kwargs)
+            return {}
+        with patch.object(deadline_supervisor, 'owned_command', command):
+            bounded = shared_budget.SolveBudget(3, clock=lambda: 100, cleanup_deadline=105)
+            bounded.owned_operation(command)([], self.root, self.root / 'unused.log', 1)
+        self.assertEqual(seen[0]['deadline'], 103)
+        self.assertEqual(seen[0]['cleanup_deadline'], 105)
+        default = shared_budget.SolveBudget(300, clock=lambda: 100)
+        self.assertEqual(default.end, 400)
+        self.assertEqual(default.cleanup_end, 410)
+        capped = shared_budget.SolveBudget(3, clock=lambda: 100, cleanup_deadline=120)
+        self.assertEqual(capped.cleanup_end, 113)
+        for value in (102, True, float('nan'), float('inf')):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                shared_budget.SolveBudget(3, clock=lambda: 100, cleanup_deadline=value)
 
     def test_malformed_probe_blocks_following_request_without_retry(self):
         with self.server('bad_probe') as (port, proc):

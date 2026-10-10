@@ -47,7 +47,7 @@
   },
   "runtime": {
     "path": "agent/runtime.py",
-    "sha256": "796a48e16d15ded34aff83a0509506f59e7a7fd0c030a08eeadacb34499ad449"
+    "sha256": "411473e559eaa2a3625595564aa80253f2050a88ede497bcfb816b3e7ce84334"
   },
   "candidate_components": {
     "prompt_probe": {
@@ -62,10 +62,10 @@
     },
     "request_budget": {
       "path": "agent/shared_budget.py",
-      "sha256": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
+      "sha256": "c6aebf9f08d24c0d7c429ca98db6ebbf3618a869b6ff9cb38c3101e4e9d3d221",
       "source_sha256": "c0f3b3144cc74a0ffff1a17fa2ceca578bfaf6fbe405986372a3e8a778750b39",
       "runtime_integrated": true,
-      "qualification": "Two new AMD CPU cases: real inherited parent clock with a non300 expiry receipt, and rejection of a premature expiry receipt. Default300 and all other source remain unchanged; no model, EDA, FIFO or native-control rerun.",
+      "qualification": "Historical two receipt cases apply to5b9671b2. Currentc6aebf9f additionally accepts an earlier absolute cleanup ceiling and forwards it to native ownership; targeted AMDCPU ceiling/default/invalid-cap control passed. DefaultCLI work+10s retained; no real model/EDA or formal acceptance.",
       "test_source_sha256": "e47ef38a511e7646755c9563a0fd3f2aeb7de6519ef8cfa761399bfa7a6ac969",
       "process_receipt_sha256": "d6a959897d99cfaad4314da92f5d772366645cf08890588b0bf383ecf62b59a8",
       "formal_acceptance": false
@@ -81,7 +81,7 @@
   },
   "contract": {
     "health": "Bearer-authenticated health uses owned version command and detached descendant cleanup;30s work/one10s cleanup reserve, cancellation exits after cleanup; private health evidence retained. Two targeted AMD CPU cases pass, actual Vivado/model/resource qualification pending.",
-    "solve": "POST/v1/solve and run.sh use the same selected chain. Exact official response fields; serial main-thread server. Prior7284 conformance does not qualify this revision.",
+    "solve": "HTTP starts its inherited clock at do_POST entry before auth/body parsing; work and cleanup share the declared total deadline with separate recovery/response reserves. Native operations and baseline receive same cleanup ceiling. CLI default work+10s cleanup retained. Four targeted affected AMDCPU solve/HTTP cases passed; unchanged native forwarding/default case reused. Earlier socket/header/queue time and official sender-to-response acceptance remain unqualified.",
     "sigterm": "One10second cleanup/recovery reserve from first cancellation; native cleanup errors retain first-signal timestamp. Fourteen AMD CPU chain/guard/health cases pass, including cleanup failure after realSIGTERM. Real model/EDA cancellation and full-service acceptance pending.",
     "evidence": "Every HTTP request gets a unique private RTL_EVIDENCE_DIR directory (default EDA_TMP/rtl-evidence). No cache/resume; local native scratch removed only after verified cleanup, otherwise retained and runtime blocked.",
     "bind": "127.0.0.1 only",
@@ -164,8 +164,8 @@
       "agent/prompt_map.py": "46756181a57bc1036ca5755240c69a07c529ea63b0719776d3fd5737d14e0953",
       "agent/prompt_probe.py": "777e21771c26a01e7671df2567d82dc5eec84629bf3e521949452f85b03ee35d",
       "agent/reserved_keywords.py": "3546fb60545966885a050b74590fd5ce4645ee8f37671e3f1768088c0d98756e",
-      "agent/runtime.py": "796a48e16d15ded34aff83a0509506f59e7a7fd0c030a08eeadacb34499ad449",
-      "agent/shared_budget.py": "5b9671b2d30106a8035fe082f4097b5e0b2c69430170f9d1ad8f5bb92e312baf",
+      "agent/runtime.py": "411473e559eaa2a3625595564aa80253f2050a88ede497bcfb816b3e7ce84334",
+      "agent/shared_budget.py": "c6aebf9f08d24c0d7c429ca98db6ebbf3618a869b6ff9cb38c3101e4e9d3d221",
       "agent/shift_contract.py": "ff153779647bd84ddb1cad0f5922c4952c747fc6d3f3adbd004652aa5dcfb1ca",
       "agent/table_feedback.py": "911911f1f4d77857493425ffa69802afee2f4d706c352c64e9e71c39d82b0d83",
       "baseline.py": "537783e39db22079c33c19af475dbdb760a29ff1656a48c481d434131f84fb51",
@@ -234,6 +234,29 @@
       "official_contract_location": "Pinned API_CONTRACT.md section4, line121; FAQ Q20 lines166-169",
       "scope": "Original shell monitoring loop with stubbed health/start/stop and real CPU child lifecycles; startup functions unchanged and not exercised. No real model/HTTP/EDA, no deployment or full service acceptance. Historical exited-agent restart expectation superseded; unrelated cases not rerun.",
       "post_test_changes": "Documentation and manifest evidence metadata only; supervisor and test bytes unchanged."
+    },
+    "http_total_deadline_validation": {
+      "status": "four_affected_AMD_CPU_methods_passed_plus_unchanged_native_cap_control",
+      "runtime_sha256": "411473e559eaa2a3625595564aa80253f2050a88ede497bcfb816b3e7ce84334",
+      "shared_budget_sha256": "c6aebf9f08d24c0d7c429ca98db6ebbf3618a869b6ff9cb38c3101e4e9d3d221",
+      "test_source_sha256": "8158ea797f422156ef56765d570963657a571462617725fe912612bd550f5341",
+      "historical_reproduction_sha256": "1e4e8f54ec088b4ff5bcb9d3dfa4ce19bc6633e988a3ff975da3391cfd01482b",
+      "v1_failed_receipt_sha256": "204d26529e7a238b597cbcb2da88fffc57a06dea077f8959f53b4f1b292ffdd7",
+      "v1_failure_record_sha256": "78e339deb246ecec16fc6e6fe63ad9bc5e5936554b2464ac15bb959563898aa4",
+      "v2_summary_sha256": "69c3f5d57d9297b7b958c009cf0815aefd62a33277dfbe1c73b2951d549523cc",
+      "v2_receipt_sha256": "9bf3898180d3d201c2d3de22dbc02d4b65177bb48665acdfac24a64b7040b080",
+      "tested_manifest_sha256": "b9597dabffca52ea7e78aa56544573b756b6c9ade686ba084a5f66241708cb83",
+      "native_cap_control_reused_from_v1": true,
+      "observed_HTTP_s": [
+        2.4702928625047207,
+        0.09125018492341042
+      ],
+      "requested_deadline_s": [
+        3,
+        0.1
+      ],
+      "scope": "Real local serial HTTP, synthetic model/EDA/baseline work; normal timeout recovery+next request, insufficient recovery503+blocked request, inherited request clock and baseline cap. Shared native cap/default method passed on unchanged source in v1. No official external timing, real model/EDA, deployment, resource or full interface acceptance.",
+      "post_test_changes": "README and manifest evidence metadata only; tested runtime/budget/test bytes unchanged."
     }
   }
 }
