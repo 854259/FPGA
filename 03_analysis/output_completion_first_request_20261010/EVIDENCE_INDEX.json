@@ -1,0 +1,152 @@
+{
+  "schema": "output_completion_132_failure_repair_priority_v1",
+  "saved_epoch": 1791606368.0638695,
+  "user_authorization": "User explicitly requested full repair of original132 failure and asked why one execution failure stopped later tasks.",
+  "selected_for_preparation": true,
+  "FIFO_submitted": false,
+  "actual_model_recovery_proven": false,
+  "root": "/workspace/team/runs/fpga_owner/output_completion_comparison5x5_20261010_v2",
+  "plan_sha256": "b92d3b3b27b9ef814ae7a66d407392bb2266d58b4f08af4f389ebc16e18fbd15",
+  "spec_sha256": "907c2b025d4f3743ad62994d6368bf460fd93d9d132d137a0a0c84e59bb93a82",
+  "archive_sha256": "ecab6b20f866f55c3245dd563dc9557a08aa542bc757c13f5163125c042dc854",
+  "archive_members": 55,
+  "private_archive": "E:\\26qiansai\\private_archives\\output_completion_comparison5x5_20261010_v2\\PREPARED_ORIGINALS.zip",
+  "source_hashes": {
+    "first_system_request.py": {
+      "remote_name": "first_system_request.py",
+      "sha256": "65da3d134b7b1c3e57a24a6e8d6c78869644542d8865b444c20a63ba6b900a10",
+      "bytes": 4803
+    },
+    "baseline_worker.py": {
+      "remote_name": "baseline_worker.py",
+      "sha256": "17ff2b54cdbc469a631e6dcc29446726f00612f755e9d823699f779bf0870e11",
+      "bytes": 9241
+    },
+    "worker.py": {
+      "remote_name": "worker.py",
+      "sha256": "1dba9741da82e79e24db62b1ccb767920320f6b8b73477de6e635ef584897d65",
+      "bytes": 7473
+    },
+    "comparison_result.py": {
+      "remote_name": "comparison_result.py",
+      "sha256": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
+      "bytes": 11587
+    },
+    "prepare_output_comparison.py": {
+      "remote_name": "prepare_temporal_comparison.py",
+      "sha256": "2adc42b2ada9c18f37b460c3bbaa2f724a51f94c598267e4da7f3a5532c71c18",
+      "bytes": 10702
+    }
+  },
+  "fixed_tasks": [
+    "Prob095_review2015_fsmshift",
+    "Prob101_circuit4",
+    "Prob102_circuit3",
+    "Prob145_circuit8",
+    "Prob147_circuit10"
+  ],
+  "historical_correct_controls": [
+    "Prob095_review2015_fsmshift",
+    "Prob145_circuit8"
+  ],
+  "correctness_controls": [
+    "Prob095_review2015_fsmshift",
+    "Prob101_circuit4",
+    "Prob102_circuit3"
+  ],
+  "original_historical_levels": {
+    "Prob095_review2015_fsmshift": 3,
+    "Prob101_circuit4": 1,
+    "Prob102_circuit3": 1,
+    "Prob145_circuit8": 3,
+    "Prob147_circuit10": 1
+  },
+  "expected_outputs": 75,
+  "max_reserved_requests": 125,
+  "parameters": {
+    "output_max_tokens": 8192,
+    "maximum_requests_per_agent_solve": 2,
+    "repairs": 1,
+    "solve_deadline_s": 300,
+    "temperature": 0,
+    "top_p": 1,
+    "retries": 0
+  },
+  "factor": "Existing generic64-word complete/concise RTL instruction on P first system only;both agent arms preserve original132 table-P,repair and8192/2/1/300.",
+  "qualification": {
+    "passed": true,
+    "child": 517183,
+    "returncode": 0,
+    "reaped": true,
+    "cases": 4,
+    "mock_http_attempts": 5,
+    "mock_compiles": 4,
+    "actual_model_or_EDA": 0,
+    "archive_sha256": "ca199554d674d427fe23e67eeae3dc9ff855aba9d97b5070fe47d1b2220550b4"
+  },
+  "first_prompt_context": {
+    "passed": true,
+    "tasks": 5,
+    "conservative_max_prompt_tokens": 3859,
+    "minimum_headroom": 4333,
+    "context_tokens": 16384,
+    "output_reserved": 8192,
+    "all_future_repairs_fit_proven": false
+  },
+  "frozen_preparation": {
+    "passed": true,
+    "child": 524896,
+    "returncode": 0,
+    "reaped": true,
+    "remaining_group": [],
+    "protected_held": true
+  },
+  "deadline_root_cause": {
+    "runtime_sha256": "2f7cb98bc44a9e100d36ca12ac4ef7bf9ae2535473da358e166afa2559e96cba",
+    "queue_sha256": "5371acf6c18ea9949d7943f4cc303126dfdeafe29ddf1657ee3738bbcc9cc3de",
+    "runtime_chat_timeout_s": 300,
+    "timeout_scope": "Each request has socket timeout300. This is not a shared remaining-time budget; original outer supervisor remains310 including grace.",
+    "original_failure_first_request_elapsed_s": 283.07791212014854,
+    "remaining_under300_upper_bound_s": 16.92208787985146,
+    "unknown_repair_response": true,
+    "actual_failed_call_count_unknown": true,
+    "runtime_change_in_this_factor": false,
+    "reason": "Avoid combine scheduling changes with output-content factor; retain original300 deadline and supervision. Never call a controlled abort or shortened record an accuracy recovery.",
+    "followup": "Review remaining-time enforcement independently; do not change active/frozen workers or mask an incomplete response as a confirmed call or graded result."
+  },
+  "ordinary_wrong_answer_continues": true,
+  "original132_stop_reason": "TERMINAL complete=false / unconfirmed repair; verify_terminal refuses to seal and advance, not an ordinaryL1 answer failure.",
+  "queue_hardening_changed": false,
+  "queue_hardening_next": "Inspect a separate failure-continuation policy only after actual owned process and model are idle, calls remain honestly unknown and no score/eligibility is fabricated. No active/frozen queue code changed.",
+  "user_repair_priority_replaces_temporal_next_preparation": true,
+  "temporal9_frozen_source_unchanged": true,
+  "temporal_factor_combined": false,
+  "multi_counterexample_combined": false,
+  "v1_preparation_rejected_reason": "PLAN actually5/75/125 but inherited summary hardcoded9/135/225 and absent empty stderr-file read failed; v1 preserved and never admitted. Corrected v2 reran preparation metadata only, not worker qualification/model/EDA.",
+  "original134_monitor": {
+    "pid": 4175417,
+    "present": true,
+    "state": "S",
+    "ppid": 1,
+    "pgid": 4175417,
+    "sid": 4175417,
+    "starttime": "882505704",
+    "command_sha256": "f79b0dd91bde13d116bcf7ad32b8f3305e29014941977fd703e959f175d901b6",
+    "stable_observation": true,
+    "original_birth": true,
+    "live_identity_verified": true,
+    "independent_session": true
+  },
+  "observed_sealed_outputs": 122,
+  "new_generation": 0,
+  "new_EDA": 0,
+  "new_FIFO": 0,
+  "full_goal_complete": false,
+  "next_work": [
+    "Consume134-136 true outcomes, communicate this explicit user repair priority and establish one submitting owner; no duplicate or blind restart.",
+    "Review/freeze output-only5-task comparison source; if original A147 again fails, preserve it and report incomplete comparison without grading/replacing the failure.",
+    "Run actual fixed factor at original budgets only after admission; complete output, correct behavior and preserved grade/call gates must all be shown.",
+    "Independently investigate safe queue failure continuation and shared300 remaining-time enforcement; do not mix either change into the output-only comparison or mutate current queues.",
+    "Only net verified gain allows complete156 regression;≥120/.80 and all original historical/paired/call gates remain unachieved."
+  ]
+}
