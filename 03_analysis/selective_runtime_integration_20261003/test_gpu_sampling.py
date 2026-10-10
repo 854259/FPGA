@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""AMD-only filesystem boundary controls and one read-only warm-model sample.
+"""AMD-only GPU evidence controls, selected explicitly by execution mode.
 
-No model request, EDA, slot acquisition or process signalling. Preserves fixture
-and result files in a fresh output directory. Run -B under an external guard.
+Default: filesystem boundary cases and one read-only warm-model sample.
+--guard-main-only: actual guard main/cleanup with five CPU stages and a private
+synthetic lease; admission/model/DRM are fixtures, no shared slot or model access.
+Preserve results in a fresh output directory; run -B under an external guard.
 """
 import argparse
 import hashlib
@@ -12,14 +14,183 @@ from pathlib import Path
 import sys
 
 
+def guard_main_cases(module, source, out):
+    """Exercise actual main/cleanup with CPU stages and a private synthetic lease.
+
+    Model identity/idle, protected package, global admission and GPU samples are
+    explicit fixtures. No shared model, slot, GPU or EDA operation is performed.
+    This validates wiring only, not resource admission or complete lifecycle.
+    """
+    import contextlib
+    import io
+    import os
+    import time
+    from unittest.mock import patch
+
+    records = []
+    cases = ('enabled', 'disabled', 'partial_sample', 'post_sample_error',
+             'stage_timeout', 'invalid_interval')
+    own_pid = os.getpid()
+    original_process = module.process_record(own_pid)
+    assert original_process and original_process['state'] not in ('Z', 'X')
+    model = dict(pid=own_pid, starttime=original_process['starttime'],
+                 exe='synthetic-model-identity', command_sha256=hashlib.sha256(
+                     (Path('/proc') / str(own_pid) / 'cmdline').read_bytes()).hexdigest())
+    source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+    for name in cases:
+        case = out / name
+        case.mkdir()
+        lock, guard_out = case / 'SLOT.lock', case / 'guard'
+        slot = case / 'slot.py'
+        slot.write_text(
+            '#!' + sys.executable + '\n'
+            'import pathlib,sys\n'
+            'lock=pathlib.Path(' + repr(str(lock)) + ')\n'
+            'if sys.argv[1]=="acquire":\n'
+            ' with lock.open("x") as f:f.write(sys.argv[2]+"\\nfixture lease\\n")\n'
+            'elif sys.argv[1]=="release":\n'
+            ' assert lock.read_text().splitlines()[0]==sys.argv[2]\n'
+            ' lock.unlink()\n'
+            'else:raise AssertionError("unexpected lease command")\n',
+            encoding='utf-8')
+        slot.chmod(0o700)
+        stage = case / 'stage.py'
+        stage.write_text(
+            'import pathlib,json,os,time\n'
+            'root=pathlib.Path(__file__).parent\n'
+            'p=pathlib.Path("/proc")/str(os.getpid())\n'
+            'stat=(p/"stat").read_bytes();cmd=(p/"cmdline").read_bytes()\n'
+            '(root/"stage_stat.bin").write_bytes(stat)\n'
+            '(root/"stage_cmdline.bin").write_bytes(cmd)\n'
+            '(root/"stage_identity.json").write_text(json.dumps(dict(pid=os.getpid(),'
+            'starttime=stat.decode().rsplit(")",1)[1].split()[19])))\n'
+            'time.sleep(' + ('2' if name == 'stage_timeout' else '.65') + ')\n',
+            encoding='utf-8')
+        sample_calls = []
+        def sample(owned, model_pid):
+            assert model_pid == own_pid and owned[own_pid]['starttime'] == model['starttime']
+            active = [pid for pid in owned if pid != own_pid and module.process_record(pid)]
+            phase = 'pre_stage' if not sample_calls else ('stage' if active else 'post_cleanup')
+            sample_calls.append(dict(phase=phase, owned=owned))
+            if name == 'post_sample_error' and phase == 'post_cleanup':
+                raise OSError('synthetic post-cleanup sampling read failure')
+            complete = not (name == 'partial_sample' and len(sample_calls) == 2)
+            value = {'pre_stage': 1024, 'stage': 2048, 'post_cleanup': 4096}[phase]
+            return dict(monotonic=time.monotonic(), complete=complete,
+                        model_birth_seen=True, model_drm_client_seen=complete,
+                        owned_resident_vram_bytes=value if complete else None,
+                        single_owned_device=True if complete else None,
+                        clients=[], devices={},
+                        errors=[] if complete else [dict(reason='synthetic missing resident')])
+        def identity(pid):
+            assert pid == own_pid
+            current = module.process_record(pid)
+            assert current and current['starttime'] == model['starttime']
+            return dict(model)
+        protected = dict(package={'fixture.txt': source_hash}, official={},
+                         tasks={}, baseline={}, upstream_commit='synthetic-admission-only')
+        command = ['resource_guard.py', '--kit', str(case), '--model-pid', str(own_pid),
+                   '--model-name', 'synthetic-no-inference', '--slot-script', str(slot),
+                   '--slot-lock', str(lock), '--owner', 'cpu-wiring-' + name,
+                   '--guard-out', str(guard_out), '--minimum-free-gib', '.001',
+                   '--slot-minutes', '2', '--stage-timeout-s',
+                   '.55' if name == 'stage_timeout' else '3',
+                   '--gpu-sample-interval-s', '.1' if name == 'invalid_interval' else '.25']
+        if name != 'disabled':
+            command.append('--sample-gpu-resources')
+        command += ['--', sys.executable, '-B', str(stage), '{resource_check}']
+        output, errors = io.StringIO(), io.StringIO()
+        with patch.object(sys, 'argv', command), \
+                patch.object(module, 'identity', identity), \
+                patch.object(module, 'model_idle', return_value=dict(processing_slots=0, synthetic=True)), \
+                patch.object(module, 'require_idle', return_value=dict(
+                    observed_busy_processes=[], limit='synthetic admission;not actual exclusivity')), \
+                patch.object(module, 'protected', return_value=protected), \
+                patch.object(module, 'gpu_sample', sample), \
+                contextlib.redirect_stdout(output), contextlib.redirect_stderr(errors):
+            try:
+                rc = module.main()
+            except SystemExit as exc:
+                rc = exc.code
+        (case / 'stdout.txt').write_text(output.getvalue(), encoding='utf-8')
+        (case / 'stderr.txt').write_text(errors.getvalue(), encoding='utf-8')
+        (case / 'sample_calls.json').write_text(json.dumps(sample_calls, indent=2) + '\n')
+        if name == 'invalid_interval':
+            assert rc == 2 and not guard_out.exists() and not lock.exists() and not sample_calls
+            assert not (case / 'stage_identity.json').exists()
+            records.append(dict(case=name, passed=True, returncode=rc, stage_started=False))
+            continue
+        result = json.loads((guard_out / 'status.json').read_text())
+        assert rc == (1 if name == 'stage_timeout' else 0), result
+        assert result['passed'] == (rc == 0) and result['complete']
+        assert result['owned_cleanup']['verified'] and not result['owned_cleanup']['remaining']
+        assert result['own_slot_released'] and not lock.exists()
+        assert result['model_unchanged'] and result['protected_files_unchanged']
+        birth = json.loads((case / 'stage_identity.json').read_text())
+        assert result['stage_pid'] == birth['pid']
+        assert module.process_record(birth['pid']) is None
+        raw_stat = (case / 'stage_stat.bin').read_text()
+        assert raw_stat.rsplit(')', 1)[1].split()[19] == birth['starttime']
+        assert (case / 'stage_cmdline.bin').read_bytes().split(b'\0')[:3] == [
+            sys.executable.encode(), b'-B', str(stage).encode()]
+        if name == 'disabled':
+            assert not sample_calls and 'gpu_observation' not in result
+            assert not (guard_out / 'gpu_samples.jsonl').exists()
+            observation = None
+        else:
+            observation = result['gpu_observation']
+            log = (guard_out / 'gpu_samples.jsonl').read_bytes()
+            samples = [json.loads(line) for line in log.splitlines()]
+            assert observation['log_sha256'] == hashlib.sha256(log).hexdigest()
+            assert observation['log_bytes'] == len(log)
+            assert observation['sample_count'] == len(samples) >= 2
+            assert samples[0]['phase'] == 'pre_stage' and any(s['phase'] == 'stage' for s in samples)
+            assert observation['complete_sample_count'] == sum(s['complete'] for s in samples)
+            assert observation['covers_model_loading'] is False
+            assert observation['formal_resource_acceptance'] is False
+            assert observation['interval_s'] == .25 and observation['max_sample_gap_s'] > 0
+            if name == 'post_sample_error':
+                assert observation['all_samples_complete'] is False and 'sampling_error' in observation
+                assert samples[-1]['phase'] != 'post_cleanup' and result['passed'] is True
+            else:
+                assert samples[-1]['phase'] == 'post_cleanup'
+                assert observation['observed_peak_owned_resident_vram_bytes'] == 4096
+                assert observation['all_samples_complete'] == (name != 'partial_sample')
+            if name == 'partial_sample':
+                incomplete = [s for s in samples if not s['complete']]
+                assert len(incomplete) == 1 and incomplete[0]['owned_resident_vram_bytes'] is None
+            if name == 'stage_timeout':
+                assert result['error'].startswith('TimeoutError:') and result['passed'] is False
+        records.append(dict(case=name, passed=True, returncode=rc, stage_started=True,
+                            stage_identity=birth, stage_retired=True,
+                            sampling_observation=observation))
+    assert hashlib.sha256(source.read_bytes()).hexdigest() == source_hash
+    report = dict(schema='gpu_sampling_main_wiring_CPU_v1', passed=True, cases=records,
+                  source_sha256=source_hash,
+                  test_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                  guard_main_executed=True, actual_CPU_stage_processes=5,
+                  synthetic_boundaries=['model identity/idle', 'global admission', 'protected package',
+                                        'GPU samples', 'private lease protocol'],
+                  shared_model_accessed=False, shared_slot_accessed=False,
+                  real_GPU_read=False, model_loading_observed=False,
+                  complete_lifecycle_observed=False, formal_resource_acceptance=False,
+                  old_boundary_controls_rerun=False, network='connect_and_bind_denied',
+                  new_model_calls=0, new_EDA=0, new_FIFO=0)
+    (out / 'RESULT.json').write_text(json.dumps(report, indent=2) + '\n')
+    print(json.dumps(report))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--model-pid', type=int, required=True)
-    parser.add_argument('--model-starttime', required=True)
-    parser.add_argument('--model-command-sha256', required=True)
+    parser.add_argument('--guard-main-only', action='store_true')
+    parser.add_argument('--model-pid', type=int)
+    parser.add_argument('--model-starttime')
+    parser.add_argument('--model-command-sha256')
     args = parser.parse_args()
+    if not args.guard_main_only and (args.model_pid is None or not args.model_starttime or not args.model_command_sha256):
+        parser.error('warm-model boundary controls require all three model identity arguments')
     assert sys.platform == 'linux' and sys.dont_write_bytecode
     args.out.mkdir(exist_ok=False)
 
@@ -30,6 +201,9 @@ def main():
     spec = importlib.util.spec_from_file_location('resource_under_test', args.source)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
+    if args.guard_main_only:
+        guard_main_cases(module, args.source, args.out)
+        return
     source_sha = hashlib.sha256(args.source.read_bytes()).hexdigest()
     records = []
     cases = ['shared_client_dedup', 'shared_client_across_pids', 'missing_resident', 'unsupported_unit',
