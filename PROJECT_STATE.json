@@ -1,4 +1,81 @@
 {
+  "explicit_user_pause_20261010": {
+    "schema": "explicit_user_night_pause_20261010_v1",
+    "saved_epoch": 1791641365.2089655,
+    "authorization": "User explicitly requested stopping tonight; resume only after the user asks to continue.",
+    "local_goal_status": "paused",
+    "cloud_task_not_stopped": true,
+    "cloud_ticket": 142,
+    "cloud_root": "/workspace/team/runs/fpga_owner/temporal_first_system_full156_20261010_v2",
+    "observed_epoch": 1791641292.9270945,
+    "sealed_rows_at_observation": 30,
+    "monitor": {
+      "pid": 737920,
+      "exists": true,
+      "state": "S",
+      "ppid": 1,
+      "pgid": 737920,
+      "sid": 737920,
+      "starttime": "891381956",
+      "command_sha256": "fea6cc76d0e2e125dac94a6578e3d2faafdb5a262320a44fb5728749e48858dd"
+    },
+    "stage": {
+      "pid": 737926,
+      "exists": true,
+      "state": "S",
+      "ppid": 737922,
+      "pgid": 737926,
+      "sid": 737926,
+      "starttime": "891381993",
+      "command_sha256": "756b215dfad7affe3e9f923454a32fd6058a7a420c6116bda27b8e58fa3f408b"
+    },
+    "model": {
+      "pid": 2013333,
+      "exists": true,
+      "state": "S",
+      "ppid": 1,
+      "pgid": 2013325,
+      "sid": 2013325,
+      "starttime": "823869819",
+      "command_sha256": "2ef1233963df0e5cc660fc2bed2baa2fca4e30b84d450e79bc9f77381cbd24e1"
+    },
+    "frozen_source_count": 33,
+    "frozen_sources_held": true,
+    "queue_plan_equals_frozen": true,
+    "local_readback_sha256": "663e5e7930049b8b5b7c1106151d2f3eba45c3a5c26f015d78143fb4470ca2ad",
+    "cloud_full_scope": {
+      "tasks": 156,
+      "samples": 5,
+      "arms": 3,
+      "rows": 2340,
+      "reserved_requests": 3900,
+      "wall_seconds": 172800
+    },
+    "pending_draft": {
+      "path": "03_analysis\\register_ownership_feedback_20261010\\ownership_feedback.py",
+      "sha256": "6d08d6453ba815f6d7c0fcdfb08dd9dd7f2cd40eb90893504399d7959266f421",
+      "source_written": true,
+      "CPU_controls_run": false,
+      "EDA_tested": false,
+      "model_tested": false,
+      "worker_integrated": false,
+      "deployed": false,
+      "admitted": false,
+      "score_gain_proven": false
+    },
+    "quota_used_percent_at_latest_check": 86,
+    "quota_stop_percent": 97,
+    "reset_used": false,
+    "full_goal_complete": false,
+    "score_available": false,
+    "recovery": [
+      "Wait for an explicit user continue request before local optimization.",
+      "First read latest Issue7/shared progress and existing142 ticket/process birth; never retry or restart on a read timeout.",
+      "If142 terminal, preserve all original outcomes and archive E/AMD before full-five and original sample0 gate review.",
+      "The ownership draft needs independent CPU positive/negative controls and archived first-response assessment; no presumed gain or integration.",
+      "Formal interface remains separately owned for qualification; peer source delivery is not a full real-model certificate."
+    ]
+  },
   "full142_launch_checkpoint_index_20261010": {
     "schema": "full142_launch_checkpoint_index_v1",
     "saved_epoch": 1791640739.362827,
