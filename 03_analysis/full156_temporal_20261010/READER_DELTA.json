@@ -1,7 +1,7 @@
 {
   "schema": "full156_reader_control_layout_delta_static_v1",
   "old_reader_sha256": "907b65c00e9b959b186ea41de4f7bf32ec846caf51069ece0f908a5011db9eb7",
-  "new_reader_sha256": "1038a14556b55010ff5d466a0e4c0fa9d1a2b0ed36b7a6bf641c25bdec2b5f2b",
+  "new_reader_sha256": "942ee1f1adba917a49146b30c12a194f87331142f2af081c89ae86fba3a68588",
   "official_score_sha256": "2b382a41fa2d357d021c09d41b65bdfcd598149f038f4c9b571ef48d74816768",
   "numerical_summarize_AST_unchanged": true,
   "complete_five_sample_matrix_required": true,
@@ -13,5 +13,7 @@
   "new_model_calls": 0,
   "new_EDA": 0,
   "new_FIFO": 0,
-  "scope": "Static delta only; preserves official and five-sample numerical aggregation, makes original-C or table-P control binding explicit."
+  "scope": "Static delta only; preserves official and five-sample numerical aggregation, makes original-C or table-P control binding explicit.",
+  "prior_untrimmed_reader_sha256": "1038a14556b55010ff5d466a0e4c0fa9d1a2b0ed36b7a6bf641c25bdec2b5f2b",
+  "reader_whitespace_AST_equivalent": true
 }
