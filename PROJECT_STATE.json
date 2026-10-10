@@ -1,5 +1,51 @@
 {
   "temporal_first_generation_20261010": {
+    "latest_compile_repair_review": {
+      "task": "Prob144_conwaylife",
+      "A_levels": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "P_levels": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "B_levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actual_requests": {
+        "A": 10,
+        "P": 10,
+        "B": 5
+      },
+      "public_files_verified": 125,
+      "key_error_present_in_all10_repair_requests": true,
+      "diagnostic_chars": 1140,
+      "compile_failure_persists_after_repair": true,
+      "repaired_source_variants": 6,
+      "scalar_index_risk_count": 5,
+      "static_source_analysis_only": true,
+      "evidence_sha256": "7151b53b4e151a66435416ba062a21eadd78aabed4870a4d864efff72a9c467b",
+      "new_model_calls": 0,
+      "new_eda_calls": 0,
+      "new_fifo_tickets": 0,
+      "frozen_temporal9_unchanged": true,
+      "new_factor_admitted": false,
+      "full_goal_complete": false,
+      "implication": "Repair-quality and compile-time-constant/index-width candidate; log compaction alone adds no missing error for these outputs.",
+      "last_peer_boundary_PR": 212,
+      "peer_boundary_acceptance_recorded": true
+    },
     "latest_readonly_reviews": {
       "first_reply82": {
         "sample": 1,
